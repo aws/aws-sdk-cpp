@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_activationId;
-    bool m_activationIdHasBeenSet;
+    bool m_activationIdHasBeenSet = false;
   };
 
 } // namespace Model

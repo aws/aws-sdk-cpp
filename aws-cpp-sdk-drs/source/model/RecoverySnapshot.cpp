@@ -41,7 +41,7 @@ RecoverySnapshot& RecoverySnapshot::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ebsSnapshots"))
   {
-    Array<JsonView> ebsSnapshotsJsonList = jsonValue.GetArray("ebsSnapshots");
+    Aws::Utils::Array<JsonView> ebsSnapshotsJsonList = jsonValue.GetArray("ebsSnapshots");
     for(unsigned ebsSnapshotsIndex = 0; ebsSnapshotsIndex < ebsSnapshotsJsonList.GetLength(); ++ebsSnapshotsIndex)
     {
       m_ebsSnapshots.push_back(ebsSnapshotsJsonList[ebsSnapshotsIndex].AsString());
@@ -86,7 +86,7 @@ JsonValue RecoverySnapshot::Jsonize() const
 
   if(m_ebsSnapshotsHasBeenSet)
   {
-   Array<JsonValue> ebsSnapshotsJsonList(m_ebsSnapshots.size());
+   Aws::Utils::Array<JsonValue> ebsSnapshotsJsonList(m_ebsSnapshots.size());
    for(unsigned ebsSnapshotsIndex = 0; ebsSnapshotsIndex < ebsSnapshotsJsonList.GetLength(); ++ebsSnapshotsIndex)
    {
      ebsSnapshotsJsonList[ebsSnapshotsIndex].AsString(m_ebsSnapshots[ebsSnapshotsIndex]);

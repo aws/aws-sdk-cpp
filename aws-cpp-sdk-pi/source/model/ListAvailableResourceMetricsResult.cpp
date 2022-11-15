@@ -30,7 +30,7 @@ ListAvailableResourceMetricsResult& ListAvailableResourceMetricsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Metrics"))
   {
-    Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");
+    Aws::Utils::Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");
     for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
     {
       m_metrics.push_back(metricsJsonList[metricsIndex].AsObject());

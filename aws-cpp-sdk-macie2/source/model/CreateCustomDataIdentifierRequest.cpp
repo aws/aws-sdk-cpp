@@ -45,7 +45,7 @@ Aws::String CreateCustomDataIdentifierRequest::SerializePayload() const
 
   if(m_ignoreWordsHasBeenSet)
   {
-   Array<JsonValue> ignoreWordsJsonList(m_ignoreWords.size());
+   Aws::Utils::Array<JsonValue> ignoreWordsJsonList(m_ignoreWords.size());
    for(unsigned ignoreWordsIndex = 0; ignoreWordsIndex < ignoreWordsJsonList.GetLength(); ++ignoreWordsIndex)
    {
      ignoreWordsJsonList[ignoreWordsIndex].AsString(m_ignoreWords[ignoreWordsIndex]);
@@ -56,7 +56,7 @@ Aws::String CreateCustomDataIdentifierRequest::SerializePayload() const
 
   if(m_keywordsHasBeenSet)
   {
-   Array<JsonValue> keywordsJsonList(m_keywords.size());
+   Aws::Utils::Array<JsonValue> keywordsJsonList(m_keywords.size());
    for(unsigned keywordsIndex = 0; keywordsIndex < keywordsJsonList.GetLength(); ++keywordsIndex)
    {
      keywordsJsonList[keywordsIndex].AsString(m_keywords[keywordsIndex]);
@@ -85,7 +85,7 @@ Aws::String CreateCustomDataIdentifierRequest::SerializePayload() const
 
   if(m_severityLevelsHasBeenSet)
   {
-   Array<JsonValue> severityLevelsJsonList(m_severityLevels.size());
+   Aws::Utils::Array<JsonValue> severityLevelsJsonList(m_severityLevels.size());
    for(unsigned severityLevelsIndex = 0; severityLevelsIndex < severityLevelsJsonList.GetLength(); ++severityLevelsIndex)
    {
      severityLevelsJsonList[severityLevelsIndex].AsObject(m_severityLevels[severityLevelsIndex].Jsonize());

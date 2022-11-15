@@ -165,10 +165,10 @@ namespace Model
   private:
 
     StopScope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
   };
 
 } // namespace Model

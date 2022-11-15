@@ -174,16 +174,16 @@ namespace Model
   private:
 
     S3Location m_scriptS3Location;
-    bool m_scriptS3LocationHasBeenSet;
+    bool m_scriptS3LocationHasBeenSet = false;
 
     Aws::String m_executablePath;
-    bool m_executablePathHasBeenSet;
+    bool m_executablePathHasBeenSet = false;
 
     Aws::String m_executableParameters;
-    bool m_executableParametersHasBeenSet;
+    bool m_executableParametersHasBeenSet = false;
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ Aws::String DescribeTrailsRequest::SerializePayload() const
 
   if(m_trailNameListHasBeenSet)
   {
-   Array<JsonValue> trailNameListJsonList(m_trailNameList.size());
+   Aws::Utils::Array<JsonValue> trailNameListJsonList(m_trailNameList.size());
    for(unsigned trailNameListIndex = 0; trailNameListIndex < trailNameListJsonList.GetLength(); ++trailNameListIndex)
    {
      trailNameListJsonList[trailNameListIndex].AsString(m_trailNameList[trailNameListIndex]);

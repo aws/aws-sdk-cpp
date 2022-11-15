@@ -23,6 +23,8 @@ DashPackage::DashPackage() :
     m_encryptionHasBeenSet(false),
     m_includeEncoderConfigurationInSegments(false),
     m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
+    m_includeIframeOnlyStream(false),
+    m_includeIframeOnlyStreamHasBeenSet(false),
     m_periodTriggersHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
@@ -36,6 +38,8 @@ DashPackage::DashPackage(JsonView jsonValue) :
     m_encryptionHasBeenSet(false),
     m_includeEncoderConfigurationInSegments(false),
     m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
+    m_includeIframeOnlyStream(false),
+    m_includeIframeOnlyStreamHasBeenSet(false),
     m_periodTriggersHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
@@ -49,7 +53,7 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("dashManifests"))
   {
-    Array<JsonView> dashManifestsJsonList = jsonValue.GetArray("dashManifests");
+    Aws::Utils::Array<JsonView> dashManifestsJsonList = jsonValue.GetArray("dashManifests");
     for(unsigned dashManifestsIndex = 0; dashManifestsIndex < dashManifestsJsonList.GetLength(); ++dashManifestsIndex)
     {
       m_dashManifests.push_back(dashManifestsJsonList[dashManifestsIndex].AsObject());
@@ -71,9 +75,16 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     m_includeEncoderConfigurationInSegmentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("includeIframeOnlyStream"))
+  {
+    m_includeIframeOnlyStream = jsonValue.GetBool("includeIframeOnlyStream");
+
+    m_includeIframeOnlyStreamHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("periodTriggers"))
   {
-    Array<JsonView> periodTriggersJsonList = jsonValue.GetArray("periodTriggers");
+    Aws::Utils::Array<JsonView> periodTriggersJsonList = jsonValue.GetArray("periodTriggers");
     for(unsigned periodTriggersIndex = 0; periodTriggersIndex < periodTriggersJsonList.GetLength(); ++periodTriggersIndex)
     {
       m_periodTriggers.push_back(__PeriodTriggersElementMapper::Get__PeriodTriggersElementForName(periodTriggersJsonList[periodTriggersIndex].AsString()));
@@ -104,7 +115,7 @@ JsonValue DashPackage::Jsonize() const
 
   if(m_dashManifestsHasBeenSet)
   {
-   Array<JsonValue> dashManifestsJsonList(m_dashManifests.size());
+   Aws::Utils::Array<JsonValue> dashManifestsJsonList(m_dashManifests.size());
    for(unsigned dashManifestsIndex = 0; dashManifestsIndex < dashManifestsJsonList.GetLength(); ++dashManifestsIndex)
    {
      dashManifestsJsonList[dashManifestsIndex].AsObject(m_dashManifests[dashManifestsIndex].Jsonize());
@@ -125,9 +136,15 @@ JsonValue DashPackage::Jsonize() const
 
   }
 
+  if(m_includeIframeOnlyStreamHasBeenSet)
+  {
+   payload.WithBool("includeIframeOnlyStream", m_includeIframeOnlyStream);
+
+  }
+
   if(m_periodTriggersHasBeenSet)
   {
-   Array<JsonValue> periodTriggersJsonList(m_periodTriggers.size());
+   Aws::Utils::Array<JsonValue> periodTriggersJsonList(m_periodTriggers.size());
    for(unsigned periodTriggersIndex = 0; periodTriggersIndex < periodTriggersJsonList.GetLength(); ++periodTriggersIndex)
    {
      periodTriggersJsonList[periodTriggersIndex].AsString(__PeriodTriggersElementMapper::GetNameFor__PeriodTriggersElement(m_periodTriggers[periodTriggersIndex]));

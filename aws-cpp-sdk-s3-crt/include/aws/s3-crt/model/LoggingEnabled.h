@@ -256,13 +256,13 @@ namespace Model
   private:
 
     Aws::String m_targetBucket;
-    bool m_targetBucketHasBeenSet;
+    bool m_targetBucketHasBeenSet = false;
 
     Aws::Vector<TargetGrant> m_targetGrants;
-    bool m_targetGrantsHasBeenSet;
+    bool m_targetGrantsHasBeenSet = false;
 
     Aws::String m_targetPrefix;
-    bool m_targetPrefixHasBeenSet;
+    bool m_targetPrefixHasBeenSet = false;
   };
 
 } // namespace Model

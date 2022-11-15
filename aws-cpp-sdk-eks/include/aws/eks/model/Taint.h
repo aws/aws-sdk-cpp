@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     TaintEffect m_effect;
-    bool m_effectHasBeenSet;
+    bool m_effectHasBeenSet = false;
   };
 
 } // namespace Model

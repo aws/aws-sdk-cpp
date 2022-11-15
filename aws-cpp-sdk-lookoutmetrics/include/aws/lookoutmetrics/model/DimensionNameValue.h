@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_dimensionName;
-    bool m_dimensionNameHasBeenSet;
+    bool m_dimensionNameHasBeenSet = false;
 
     Aws::String m_dimensionValue;
-    bool m_dimensionValueHasBeenSet;
+    bool m_dimensionValueHasBeenSet = false;
   };
 
 } // namespace Model

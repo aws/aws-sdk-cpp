@@ -36,7 +36,7 @@ ListAppVersionResourceMappingsResult& ListAppVersionResourceMappingsResult::oper
 
   if(jsonValue.ValueExists("resourceMappings"))
   {
-    Array<JsonView> resourceMappingsJsonList = jsonValue.GetArray("resourceMappings");
+    Aws::Utils::Array<JsonView> resourceMappingsJsonList = jsonValue.GetArray("resourceMappings");
     for(unsigned resourceMappingsIndex = 0; resourceMappingsIndex < resourceMappingsJsonList.GetLength(); ++resourceMappingsIndex)
     {
       m_resourceMappings.push_back(resourceMappingsJsonList[resourceMappingsIndex].AsObject());

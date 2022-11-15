@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     ShipmentState m_shipmentState;
-    bool m_shipmentStateHasBeenSet;
+    bool m_shipmentStateHasBeenSet = false;
   };
 
 } // namespace Model

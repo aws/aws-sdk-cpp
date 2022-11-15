@@ -211,25 +211,25 @@ namespace Model
   private:
 
     Aws::String m_amznClientToken;
-    bool m_amznClientTokenHasBeenSet;
+    bool m_amznClientTokenHasBeenSet = false;
 
     Aws::String m_s3UrlSignerRole;
-    bool m_s3UrlSignerRoleHasBeenSet;
+    bool m_s3UrlSignerRoleHasBeenSet = false;
 
     SoftwareToUpdate m_softwareToUpdate;
-    bool m_softwareToUpdateHasBeenSet;
+    bool m_softwareToUpdateHasBeenSet = false;
 
     UpdateAgentLogLevel m_updateAgentLogLevel;
-    bool m_updateAgentLogLevelHasBeenSet;
+    bool m_updateAgentLogLevelHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_updateTargets;
-    bool m_updateTargetsHasBeenSet;
+    bool m_updateTargetsHasBeenSet = false;
 
     UpdateTargetsArchitecture m_updateTargetsArchitecture;
-    bool m_updateTargetsArchitectureHasBeenSet;
+    bool m_updateTargetsArchitectureHasBeenSet = false;
 
     UpdateTargetsOperatingSystem m_updateTargetsOperatingSystem;
-    bool m_updateTargetsOperatingSystemHasBeenSet;
+    bool m_updateTargetsOperatingSystemHasBeenSet = false;
   };
 
 } // namespace Model

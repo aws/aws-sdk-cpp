@@ -67,7 +67,7 @@ MetricDataResult& MetricDataResult::operator =(const XmlNode& xmlNode)
       XmlNode timestampsMember = timestampsNode.FirstChild("member");
       while(!timestampsMember.IsNull())
       {
-        m_timestamps.push_back(DateTime(StringUtils::Trim(timestampsMember.GetText().c_str()).c_str(), DateFormat::ISO_8601));
+        m_timestamps.push_back(DateTime(StringUtils::Trim(timestampsMember.GetText().c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601));
         timestampsMember = timestampsMember.NextNode("member");
       }
 
@@ -125,7 +125,7 @@ void MetricDataResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned timestampsIdx = 1;
       for(auto& item : m_timestamps)
       {
-        oStream << location << index << locationValue << ".Timestamps.member." << timestampsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+        oStream << location << index << locationValue << ".Timestamps.member." << timestampsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
       }
   }
 
@@ -171,7 +171,7 @@ void MetricDataResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned timestampsIdx = 1;
       for(auto& item : m_timestamps)
       {
-        oStream << location << ".Timestamps.member." << timestampsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+        oStream << location << ".Timestamps.member." << timestampsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
       }
   }
   if(m_valuesHasBeenSet)

@@ -217,49 +217,49 @@ namespace Model
 
     /**
      * <p>The protocol that the rule applies to. To deny or allow access to all
-     * protocols, use the value -1.</p>
+     * protocols, use the value <code>-1</code>.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol that the rule applies to. To deny or allow access to all
-     * protocols, use the value -1.</p>
+     * protocols, use the value <code>-1</code>.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol that the rule applies to. To deny or allow access to all
-     * protocols, use the value -1.</p>
+     * protocols, use the value <code>-1</code>.</p>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol that the rule applies to. To deny or allow access to all
-     * protocols, use the value -1.</p>
+     * protocols, use the value <code>-1</code>.</p>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol that the rule applies to. To deny or allow access to all
-     * protocols, use the value -1.</p>
+     * protocols, use the value <code>-1</code>.</p>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
      * <p>The protocol that the rule applies to. To deny or allow access to all
-     * protocols, use the value -1.</p>
+     * protocols, use the value <code>-1</code>.</p>
      */
     inline AwsEc2NetworkAclEntry& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol that the rule applies to. To deny or allow access to all
-     * protocols, use the value -1.</p>
+     * protocols, use the value <code>-1</code>.</p>
      */
     inline AwsEc2NetworkAclEntry& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The protocol that the rule applies to. To deny or allow access to all
-     * protocols, use the value -1.</p>
+     * protocols, use the value <code>-1</code>.</p>
      */
     inline AwsEc2NetworkAclEntry& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
@@ -328,28 +328,28 @@ namespace Model
   private:
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     bool m_egress;
-    bool m_egressHasBeenSet;
+    bool m_egressHasBeenSet = false;
 
     IcmpTypeCode m_icmpTypeCode;
-    bool m_icmpTypeCodeHasBeenSet;
+    bool m_icmpTypeCodeHasBeenSet = false;
 
     Aws::String m_ipv6CidrBlock;
-    bool m_ipv6CidrBlockHasBeenSet;
+    bool m_ipv6CidrBlockHasBeenSet = false;
 
     PortRangeFromTo m_portRange;
-    bool m_portRangeHasBeenSet;
+    bool m_portRangeHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_ruleAction;
-    bool m_ruleActionHasBeenSet;
+    bool m_ruleActionHasBeenSet = false;
 
     int m_ruleNumber;
-    bool m_ruleNumberHasBeenSet;
+    bool m_ruleNumberHasBeenSet = false;
   };
 
 } // namespace Model

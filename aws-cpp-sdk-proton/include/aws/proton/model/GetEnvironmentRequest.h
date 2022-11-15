@@ -35,49 +35,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the environment that you want to get the detail data for.</p>
+     * <p>The name of the environment that you want to get the detailed data for.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the environment that you want to get the detail data for.</p>
+     * <p>The name of the environment that you want to get the detailed data for.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the environment that you want to get the detail data for.</p>
+     * <p>The name of the environment that you want to get the detailed data for.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the environment that you want to get the detail data for.</p>
+     * <p>The name of the environment that you want to get the detailed data for.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the environment that you want to get the detail data for.</p>
+     * <p>The name of the environment that you want to get the detailed data for.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the environment that you want to get the detail data for.</p>
+     * <p>The name of the environment that you want to get the detailed data for.</p>
      */
     inline GetEnvironmentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the environment that you want to get the detail data for.</p>
+     * <p>The name of the environment that you want to get the detailed data for.</p>
      */
     inline GetEnvironmentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the environment that you want to get the detail data for.</p>
+     * <p>The name of the environment that you want to get the detailed data for.</p>
      */
     inline GetEnvironmentRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

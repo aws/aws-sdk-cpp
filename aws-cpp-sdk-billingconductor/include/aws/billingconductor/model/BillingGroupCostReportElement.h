@@ -295,22 +295,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_aWSCost;
-    bool m_aWSCostHasBeenSet;
+    bool m_aWSCostHasBeenSet = false;
 
     Aws::String m_proformaCost;
-    bool m_proformaCostHasBeenSet;
+    bool m_proformaCostHasBeenSet = false;
 
     Aws::String m_margin;
-    bool m_marginHasBeenSet;
+    bool m_marginHasBeenSet = false;
 
     Aws::String m_marginPercentage;
-    bool m_marginPercentageHasBeenSet;
+    bool m_marginPercentageHasBeenSet = false;
 
     Aws::String m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
   };
 
 } // namespace Model

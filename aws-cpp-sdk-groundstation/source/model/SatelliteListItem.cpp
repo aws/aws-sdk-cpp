@@ -19,6 +19,7 @@ namespace Model
 {
 
 SatelliteListItem::SatelliteListItem() : 
+    m_currentEphemerisHasBeenSet(false),
     m_groundStationsHasBeenSet(false),
     m_noradSatelliteID(0),
     m_noradSatelliteIDHasBeenSet(false),
@@ -28,6 +29,7 @@ SatelliteListItem::SatelliteListItem() :
 }
 
 SatelliteListItem::SatelliteListItem(JsonView jsonValue) : 
+    m_currentEphemerisHasBeenSet(false),
     m_groundStationsHasBeenSet(false),
     m_noradSatelliteID(0),
     m_noradSatelliteIDHasBeenSet(false),
@@ -39,9 +41,16 @@ SatelliteListItem::SatelliteListItem(JsonView jsonValue) :
 
 SatelliteListItem& SatelliteListItem::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("currentEphemeris"))
+  {
+    m_currentEphemeris = jsonValue.GetObject("currentEphemeris");
+
+    m_currentEphemerisHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("groundStations"))
   {
-    Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");
+    Aws::Utils::Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");
     for(unsigned groundStationsIndex = 0; groundStationsIndex < groundStationsJsonList.GetLength(); ++groundStationsIndex)
     {
       m_groundStations.push_back(groundStationsJsonList[groundStationsIndex].AsString());
@@ -77,9 +86,15 @@ JsonValue SatelliteListItem::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_currentEphemerisHasBeenSet)
+  {
+   payload.WithObject("currentEphemeris", m_currentEphemeris.Jsonize());
+
+  }
+
   if(m_groundStationsHasBeenSet)
   {
-   Array<JsonValue> groundStationsJsonList(m_groundStations.size());
+   Aws::Utils::Array<JsonValue> groundStationsJsonList(m_groundStations.size());
    for(unsigned groundStationsIndex = 0; groundStationsIndex < groundStationsJsonList.GetLength(); ++groundStationsIndex)
    {
      groundStationsJsonList[groundStationsIndex].AsString(m_groundStations[groundStationsIndex]);

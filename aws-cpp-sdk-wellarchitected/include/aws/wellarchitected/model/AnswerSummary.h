@@ -277,31 +277,31 @@ namespace Model
   private:
 
     Aws::String m_questionId;
-    bool m_questionIdHasBeenSet;
+    bool m_questionIdHasBeenSet = false;
 
     Aws::String m_pillarId;
-    bool m_pillarIdHasBeenSet;
+    bool m_pillarIdHasBeenSet = false;
 
     Aws::String m_questionTitle;
-    bool m_questionTitleHasBeenSet;
+    bool m_questionTitleHasBeenSet = false;
 
     Aws::Vector<Choice> m_choices;
-    bool m_choicesHasBeenSet;
+    bool m_choicesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_selectedChoices;
-    bool m_selectedChoicesHasBeenSet;
+    bool m_selectedChoicesHasBeenSet = false;
 
     Aws::Vector<ChoiceAnswerSummary> m_choiceAnswerSummaries;
-    bool m_choiceAnswerSummariesHasBeenSet;
+    bool m_choiceAnswerSummariesHasBeenSet = false;
 
     bool m_isApplicable;
-    bool m_isApplicableHasBeenSet;
+    bool m_isApplicableHasBeenSet = false;
 
     Risk m_risk;
-    bool m_riskHasBeenSet;
+    bool m_riskHasBeenSet = false;
 
     AnswerReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

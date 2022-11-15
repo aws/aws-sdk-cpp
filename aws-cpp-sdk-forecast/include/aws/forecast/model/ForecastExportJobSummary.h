@@ -399,25 +399,25 @@ namespace Model
   private:
 
     Aws::String m_forecastExportJobArn;
-    bool m_forecastExportJobArnHasBeenSet;
+    bool m_forecastExportJobArnHasBeenSet = false;
 
     Aws::String m_forecastExportJobName;
-    bool m_forecastExportJobNameHasBeenSet;
+    bool m_forecastExportJobNameHasBeenSet = false;
 
     DataDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

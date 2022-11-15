@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     PhoneNumberCountryCode m_phoneNumberCountryCode;
-    bool m_phoneNumberCountryCodeHasBeenSet;
+    bool m_phoneNumberCountryCodeHasBeenSet = false;
 
     PhoneNumberType m_phoneNumberType;
-    bool m_phoneNumberTypeHasBeenSet;
+    bool m_phoneNumberTypeHasBeenSet = false;
   };
 
 } // namespace Model

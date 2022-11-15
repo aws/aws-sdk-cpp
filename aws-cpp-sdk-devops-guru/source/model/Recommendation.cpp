@@ -73,7 +73,7 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RelatedEvents"))
   {
-    Array<JsonView> relatedEventsJsonList = jsonValue.GetArray("RelatedEvents");
+    Aws::Utils::Array<JsonView> relatedEventsJsonList = jsonValue.GetArray("RelatedEvents");
     for(unsigned relatedEventsIndex = 0; relatedEventsIndex < relatedEventsJsonList.GetLength(); ++relatedEventsIndex)
     {
       m_relatedEvents.push_back(relatedEventsJsonList[relatedEventsIndex].AsObject());
@@ -83,7 +83,7 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RelatedAnomalies"))
   {
-    Array<JsonView> relatedAnomaliesJsonList = jsonValue.GetArray("RelatedAnomalies");
+    Aws::Utils::Array<JsonView> relatedAnomaliesJsonList = jsonValue.GetArray("RelatedAnomalies");
     for(unsigned relatedAnomaliesIndex = 0; relatedAnomaliesIndex < relatedAnomaliesJsonList.GetLength(); ++relatedAnomaliesIndex)
     {
       m_relatedAnomalies.push_back(relatedAnomaliesJsonList[relatedAnomaliesIndex].AsObject());
@@ -131,7 +131,7 @@ JsonValue Recommendation::Jsonize() const
 
   if(m_relatedEventsHasBeenSet)
   {
-   Array<JsonValue> relatedEventsJsonList(m_relatedEvents.size());
+   Aws::Utils::Array<JsonValue> relatedEventsJsonList(m_relatedEvents.size());
    for(unsigned relatedEventsIndex = 0; relatedEventsIndex < relatedEventsJsonList.GetLength(); ++relatedEventsIndex)
    {
      relatedEventsJsonList[relatedEventsIndex].AsObject(m_relatedEvents[relatedEventsIndex].Jsonize());
@@ -142,7 +142,7 @@ JsonValue Recommendation::Jsonize() const
 
   if(m_relatedAnomaliesHasBeenSet)
   {
-   Array<JsonValue> relatedAnomaliesJsonList(m_relatedAnomalies.size());
+   Aws::Utils::Array<JsonValue> relatedAnomaliesJsonList(m_relatedAnomalies.size());
    for(unsigned relatedAnomaliesIndex = 0; relatedAnomaliesIndex < relatedAnomaliesJsonList.GetLength(); ++relatedAnomaliesIndex)
    {
      relatedAnomaliesJsonList[relatedAnomaliesIndex].AsObject(m_relatedAnomalies[relatedAnomaliesIndex].Jsonize());

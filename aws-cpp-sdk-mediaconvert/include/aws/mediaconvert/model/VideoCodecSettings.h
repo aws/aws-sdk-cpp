@@ -514,40 +514,40 @@ namespace Model
   private:
 
     Av1Settings m_av1Settings;
-    bool m_av1SettingsHasBeenSet;
+    bool m_av1SettingsHasBeenSet = false;
 
     AvcIntraSettings m_avcIntraSettings;
-    bool m_avcIntraSettingsHasBeenSet;
+    bool m_avcIntraSettingsHasBeenSet = false;
 
     VideoCodec m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     FrameCaptureSettings m_frameCaptureSettings;
-    bool m_frameCaptureSettingsHasBeenSet;
+    bool m_frameCaptureSettingsHasBeenSet = false;
 
     H264Settings m_h264Settings;
-    bool m_h264SettingsHasBeenSet;
+    bool m_h264SettingsHasBeenSet = false;
 
     H265Settings m_h265Settings;
-    bool m_h265SettingsHasBeenSet;
+    bool m_h265SettingsHasBeenSet = false;
 
     Mpeg2Settings m_mpeg2Settings;
-    bool m_mpeg2SettingsHasBeenSet;
+    bool m_mpeg2SettingsHasBeenSet = false;
 
     ProresSettings m_proresSettings;
-    bool m_proresSettingsHasBeenSet;
+    bool m_proresSettingsHasBeenSet = false;
 
     Vc3Settings m_vc3Settings;
-    bool m_vc3SettingsHasBeenSet;
+    bool m_vc3SettingsHasBeenSet = false;
 
     Vp8Settings m_vp8Settings;
-    bool m_vp8SettingsHasBeenSet;
+    bool m_vp8SettingsHasBeenSet = false;
 
     Vp9Settings m_vp9Settings;
-    bool m_vp9SettingsHasBeenSet;
+    bool m_vp9SettingsHasBeenSet = false;
 
     XavcSettings m_xavcSettings;
-    bool m_xavcSettingsHasBeenSet;
+    bool m_xavcSettingsHasBeenSet = false;
   };
 
 } // namespace Model

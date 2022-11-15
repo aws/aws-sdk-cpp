@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_frameworkId;
-    bool m_frameworkIdHasBeenSet;
+    bool m_frameworkIdHasBeenSet = false;
 
     Aws::String m_destinationAccount;
-    bool m_destinationAccountHasBeenSet;
+    bool m_destinationAccountHasBeenSet = false;
 
     Aws::String m_destinationRegion;
-    bool m_destinationRegionHasBeenSet;
+    bool m_destinationRegionHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
   };
 
 } // namespace Model

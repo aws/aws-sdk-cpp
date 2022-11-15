@@ -30,7 +30,7 @@ GetBatchPredictionJobsResult& GetBatchPredictionJobsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("batchPredictions"))
   {
-    Array<JsonView> batchPredictionsJsonList = jsonValue.GetArray("batchPredictions");
+    Aws::Utils::Array<JsonView> batchPredictionsJsonList = jsonValue.GetArray("batchPredictions");
     for(unsigned batchPredictionsIndex = 0; batchPredictionsIndex < batchPredictionsJsonList.GetLength(); ++batchPredictionsIndex)
     {
       m_batchPredictions.push_back(batchPredictionsJsonList[batchPredictionsIndex].AsObject());

@@ -30,7 +30,7 @@ ListDelegatedServicesForAccountResult& ListDelegatedServicesForAccountResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DelegatedServices"))
   {
-    Array<JsonView> delegatedServicesJsonList = jsonValue.GetArray("DelegatedServices");
+    Aws::Utils::Array<JsonView> delegatedServicesJsonList = jsonValue.GetArray("DelegatedServices");
     for(unsigned delegatedServicesIndex = 0; delegatedServicesIndex < delegatedServicesJsonList.GetLength(); ++delegatedServicesIndex)
     {
       m_delegatedServices.push_back(delegatedServicesJsonList[delegatedServicesIndex].AsObject());

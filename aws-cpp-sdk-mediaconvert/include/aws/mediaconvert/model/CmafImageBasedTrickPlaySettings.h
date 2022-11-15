@@ -234,22 +234,22 @@ namespace Model
   private:
 
     CmafIntervalCadence m_intervalCadence;
-    bool m_intervalCadenceHasBeenSet;
+    bool m_intervalCadenceHasBeenSet = false;
 
     int m_thumbnailHeight;
-    bool m_thumbnailHeightHasBeenSet;
+    bool m_thumbnailHeightHasBeenSet = false;
 
     double m_thumbnailInterval;
-    bool m_thumbnailIntervalHasBeenSet;
+    bool m_thumbnailIntervalHasBeenSet = false;
 
     int m_thumbnailWidth;
-    bool m_thumbnailWidthHasBeenSet;
+    bool m_thumbnailWidthHasBeenSet = false;
 
     int m_tileHeight;
-    bool m_tileHeightHasBeenSet;
+    bool m_tileHeightHasBeenSet = false;
 
     int m_tileWidth;
-    bool m_tileWidthHasBeenSet;
+    bool m_tileWidthHasBeenSet = false;
   };
 
 } // namespace Model

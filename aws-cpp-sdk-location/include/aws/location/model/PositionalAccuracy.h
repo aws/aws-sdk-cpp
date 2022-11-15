@@ -62,7 +62,7 @@ namespace Model
   private:
 
     double m_horizontal;
-    bool m_horizontalHasBeenSet;
+    bool m_horizontalHasBeenSet = false;
   };
 
 } // namespace Model

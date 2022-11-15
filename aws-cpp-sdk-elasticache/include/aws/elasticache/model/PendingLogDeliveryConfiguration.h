@@ -186,16 +186,16 @@ namespace Model
   private:
 
     LogType m_logType;
-    bool m_logTypeHasBeenSet;
+    bool m_logTypeHasBeenSet = false;
 
     DestinationType m_destinationType;
-    bool m_destinationTypeHasBeenSet;
+    bool m_destinationTypeHasBeenSet = false;
 
     DestinationDetails m_destinationDetails;
-    bool m_destinationDetailsHasBeenSet;
+    bool m_destinationDetailsHasBeenSet = false;
 
     LogFormat m_logFormat;
-    bool m_logFormatHasBeenSet;
+    bool m_logFormatHasBeenSet = false;
   };
 
 } // namespace Model

@@ -46,7 +46,7 @@ ErrorRootCauseEntity& ErrorRootCauseEntity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Exceptions"))
   {
-    Array<JsonView> exceptionsJsonList = jsonValue.GetArray("Exceptions");
+    Aws::Utils::Array<JsonView> exceptionsJsonList = jsonValue.GetArray("Exceptions");
     for(unsigned exceptionsIndex = 0; exceptionsIndex < exceptionsJsonList.GetLength(); ++exceptionsIndex)
     {
       m_exceptions.push_back(exceptionsJsonList[exceptionsIndex].AsObject());
@@ -76,7 +76,7 @@ JsonValue ErrorRootCauseEntity::Jsonize() const
 
   if(m_exceptionsHasBeenSet)
   {
-   Array<JsonValue> exceptionsJsonList(m_exceptions.size());
+   Aws::Utils::Array<JsonValue> exceptionsJsonList(m_exceptions.size());
    for(unsigned exceptionsIndex = 0; exceptionsIndex < exceptionsJsonList.GetLength(); ++exceptionsIndex)
    {
      exceptionsJsonList[exceptionsIndex].AsObject(m_exceptions[exceptionsIndex].Jsonize());

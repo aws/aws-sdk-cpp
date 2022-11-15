@@ -39,45 +39,39 @@ namespace Model
 
 
     /**
-     * <p>Enum to denote whether the dev eui join event topic is enabled or
-     * disabled.</p>
+     * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetDevEuiEventTopic() const{ return m_devEuiEventTopic; }
 
     /**
-     * <p>Enum to denote whether the dev eui join event topic is enabled or
-     * disabled.</p>
+     * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
      */
     inline bool DevEuiEventTopicHasBeenSet() const { return m_devEuiEventTopicHasBeenSet; }
 
     /**
-     * <p>Enum to denote whether the dev eui join event topic is enabled or
-     * disabled.</p>
+     * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
      */
     inline void SetDevEuiEventTopic(const EventNotificationTopicStatus& value) { m_devEuiEventTopicHasBeenSet = true; m_devEuiEventTopic = value; }
 
     /**
-     * <p>Enum to denote whether the dev eui join event topic is enabled or
-     * disabled.</p>
+     * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
      */
     inline void SetDevEuiEventTopic(EventNotificationTopicStatus&& value) { m_devEuiEventTopicHasBeenSet = true; m_devEuiEventTopic = std::move(value); }
 
     /**
-     * <p>Enum to denote whether the dev eui join event topic is enabled or
-     * disabled.</p>
+     * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
      */
     inline LoRaWANJoinEventNotificationConfigurations& WithDevEuiEventTopic(const EventNotificationTopicStatus& value) { SetDevEuiEventTopic(value); return *this;}
 
     /**
-     * <p>Enum to denote whether the dev eui join event topic is enabled or
-     * disabled.</p>
+     * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
      */
     inline LoRaWANJoinEventNotificationConfigurations& WithDevEuiEventTopic(EventNotificationTopicStatus&& value) { SetDevEuiEventTopic(std::move(value)); return *this;}
 
   private:
 
     EventNotificationTopicStatus m_devEuiEventTopic;
-    bool m_devEuiEventTopicHasBeenSet;
+    bool m_devEuiEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

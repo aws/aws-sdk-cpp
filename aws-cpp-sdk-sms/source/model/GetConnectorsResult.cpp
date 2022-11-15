@@ -30,7 +30,7 @@ GetConnectorsResult& GetConnectorsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("connectorList"))
   {
-    Array<JsonView> connectorListJsonList = jsonValue.GetArray("connectorList");
+    Aws::Utils::Array<JsonView> connectorListJsonList = jsonValue.GetArray("connectorList");
     for(unsigned connectorListIndex = 0; connectorListIndex < connectorListJsonList.GetLength(); ++connectorListIndex)
     {
       m_connectorList.push_back(connectorListJsonList[connectorListIndex].AsObject());

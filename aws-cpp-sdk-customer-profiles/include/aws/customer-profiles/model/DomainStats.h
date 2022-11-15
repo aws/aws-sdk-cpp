@@ -133,16 +133,16 @@ namespace Model
   private:
 
     long long m_profileCount;
-    bool m_profileCountHasBeenSet;
+    bool m_profileCountHasBeenSet = false;
 
     long long m_meteringProfileCount;
-    bool m_meteringProfileCountHasBeenSet;
+    bool m_meteringProfileCountHasBeenSet = false;
 
     long long m_objectCount;
-    bool m_objectCountHasBeenSet;
+    bool m_objectCountHasBeenSet = false;
 
     long long m_totalSize;
-    bool m_totalSizeHasBeenSet;
+    bool m_totalSizeHasBeenSet = false;
   };
 
 } // namespace Model

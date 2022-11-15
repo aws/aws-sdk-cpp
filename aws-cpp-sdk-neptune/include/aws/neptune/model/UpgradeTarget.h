@@ -212,22 +212,50 @@ namespace Model
      */
     inline UpgradeTarget& WithIsMajorVersionUpgrade(bool value) { SetIsMajorVersionUpgrade(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with the
+     * target engine version.</p>
+     */
+    inline bool GetSupportsGlobalDatabases() const{ return m_supportsGlobalDatabases; }
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with the
+     * target engine version.</p>
+     */
+    inline bool SupportsGlobalDatabasesHasBeenSet() const { return m_supportsGlobalDatabasesHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with the
+     * target engine version.</p>
+     */
+    inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabasesHasBeenSet = true; m_supportsGlobalDatabases = value; }
+
+    /**
+     * <p>A value that indicates whether you can use Neptune global databases with the
+     * target engine version.</p>
+     */
+    inline UpgradeTarget& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
+
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_autoUpgrade;
-    bool m_autoUpgradeHasBeenSet;
+    bool m_autoUpgradeHasBeenSet = false;
 
     bool m_isMajorVersionUpgrade;
-    bool m_isMajorVersionUpgradeHasBeenSet;
+    bool m_isMajorVersionUpgradeHasBeenSet = false;
+
+    bool m_supportsGlobalDatabases;
+    bool m_supportsGlobalDatabasesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -90,7 +90,7 @@ GetMigrationResult& GetMigrationResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("alerts"))
   {
-    Array<JsonView> alertsJsonList = jsonValue.GetArray("alerts");
+    Aws::Utils::Array<JsonView> alertsJsonList = jsonValue.GetArray("alerts");
     for(unsigned alertsIndex = 0; alertsIndex < alertsJsonList.GetLength(); ++alertsIndex)
     {
       m_alerts.push_back(alertsJsonList[alertsIndex].AsObject());

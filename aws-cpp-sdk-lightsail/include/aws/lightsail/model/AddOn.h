@@ -252,16 +252,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_snapshotTimeOfDay;
-    bool m_snapshotTimeOfDayHasBeenSet;
+    bool m_snapshotTimeOfDayHasBeenSet = false;
 
     Aws::String m_nextSnapshotTimeOfDay;
-    bool m_nextSnapshotTimeOfDayHasBeenSet;
+    bool m_nextSnapshotTimeOfDayHasBeenSet = false;
   };
 
 } // namespace Model

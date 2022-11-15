@@ -160,10 +160,10 @@ namespace Model
   private:
 
     bool m_acceptTermsAndConditions;
-    bool m_acceptTermsAndConditionsHasBeenSet;
+    bool m_acceptTermsAndConditionsHasBeenSet = false;
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
   };
 
 } // namespace Model

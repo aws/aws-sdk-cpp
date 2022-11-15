@@ -930,37 +930,37 @@ namespace Model
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     Aws::Vector<InstanceDefinition> m_instanceDefinitions;
-    bool m_instanceDefinitionsHasBeenSet;
+    bool m_instanceDefinitionsHasBeenSet = false;
 
     GameServerGroupAutoScalingPolicy m_autoScalingPolicy;
-    bool m_autoScalingPolicyHasBeenSet;
+    bool m_autoScalingPolicyHasBeenSet = false;
 
     BalancingStrategy m_balancingStrategy;
-    bool m_balancingStrategyHasBeenSet;
+    bool m_balancingStrategyHasBeenSet = false;
 
     GameServerProtectionPolicy m_gameServerProtectionPolicy;
-    bool m_gameServerProtectionPolicyHasBeenSet;
+    bool m_gameServerProtectionPolicyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSubnets;
-    bool m_vpcSubnetsHasBeenSet;
+    bool m_vpcSubnetsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

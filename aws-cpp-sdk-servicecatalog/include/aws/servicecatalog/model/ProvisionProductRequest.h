@@ -384,49 +384,57 @@ namespace Model
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline const Aws::String& GetProvisionedProductName() const{ return m_provisionedProductName; }
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline bool ProvisionedProductNameHasBeenSet() const { return m_provisionedProductNameHasBeenSet; }
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline void SetProvisionedProductName(const Aws::String& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = std::move(value); }
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline void SetProvisionedProductName(const char* value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName.assign(value); }
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline ProvisionProductRequest& WithProvisionedProductName(const Aws::String& value) { SetProvisionedProductName(value); return *this;}
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline ProvisionProductRequest& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(std::move(value)); return *this;}
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline ProvisionProductRequest& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}
 
@@ -656,43 +664,43 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_productName;
-    bool m_productNameHasBeenSet;
+    bool m_productNameHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactName;
-    bool m_provisioningArtifactNameHasBeenSet;
+    bool m_provisioningArtifactNameHasBeenSet = false;
 
     Aws::String m_pathId;
-    bool m_pathIdHasBeenSet;
+    bool m_pathIdHasBeenSet = false;
 
     Aws::String m_pathName;
-    bool m_pathNameHasBeenSet;
+    bool m_pathNameHasBeenSet = false;
 
     Aws::String m_provisionedProductName;
-    bool m_provisionedProductNameHasBeenSet;
+    bool m_provisionedProductNameHasBeenSet = false;
 
     Aws::Vector<ProvisioningParameter> m_provisioningParameters;
-    bool m_provisioningParametersHasBeenSet;
+    bool m_provisioningParametersHasBeenSet = false;
 
     ProvisioningPreferences m_provisioningPreferences;
-    bool m_provisioningPreferencesHasBeenSet;
+    bool m_provisioningPreferencesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notificationArns;
-    bool m_notificationArnsHasBeenSet;
+    bool m_notificationArnsHasBeenSet = false;
 
     Aws::String m_provisionToken;
-    bool m_provisionTokenHasBeenSet;
+    bool m_provisionTokenHasBeenSet = false;
   };
 
 } // namespace Model

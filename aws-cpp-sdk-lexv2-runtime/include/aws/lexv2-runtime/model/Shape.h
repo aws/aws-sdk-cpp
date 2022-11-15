@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Scalar,
-    List
+    List,
+    Composite
   };
 
 namespace ShapeMapper

@@ -345,25 +345,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_countersToAggregate;
-    bool m_countersToAggregateHasBeenSet;
+    bool m_countersToAggregateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_resolutionSteps;
-    bool m_resolutionStepsHasBeenSet;
+    bool m_resolutionStepsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_targetFrames;
-    bool m_targetFramesHasBeenSet;
+    bool m_targetFramesHasBeenSet = false;
 
     double m_thresholdPercent;
-    bool m_thresholdPercentHasBeenSet;
+    bool m_thresholdPercentHasBeenSet = false;
   };
 
 } // namespace Model

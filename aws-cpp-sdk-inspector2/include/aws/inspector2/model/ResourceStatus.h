@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Status m_ec2;
-    bool m_ec2HasBeenSet;
+    bool m_ec2HasBeenSet = false;
 
     Status m_ecr;
-    bool m_ecrHasBeenSet;
+    bool m_ecrHasBeenSet = false;
   };
 
 } // namespace Model

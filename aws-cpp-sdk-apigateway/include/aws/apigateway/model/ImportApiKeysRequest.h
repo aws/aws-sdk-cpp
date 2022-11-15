@@ -79,25 +79,25 @@ namespace Model
 
 
     /**
-     * <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation
+     * <p>A query parameter to indicate whether to rollback ApiKey importation
      * (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
      */
     inline bool GetFailOnWarnings() const{ return m_failOnWarnings; }
 
     /**
-     * <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation
+     * <p>A query parameter to indicate whether to rollback ApiKey importation
      * (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
      */
     inline bool FailOnWarningsHasBeenSet() const { return m_failOnWarningsHasBeenSet; }
 
     /**
-     * <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation
+     * <p>A query parameter to indicate whether to rollback ApiKey importation
      * (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
      */
     inline void SetFailOnWarnings(bool value) { m_failOnWarningsHasBeenSet = true; m_failOnWarnings = value; }
 
     /**
-     * <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation
+     * <p>A query parameter to indicate whether to rollback ApiKey importation
      * (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
      */
     inline ImportApiKeysRequest& WithFailOnWarnings(bool value) { SetFailOnWarnings(value); return *this;}
@@ -106,10 +106,10 @@ namespace Model
 
 
     ApiKeysFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     bool m_failOnWarnings;
-    bool m_failOnWarningsHasBeenSet;
+    bool m_failOnWarningsHasBeenSet = false;
   };
 
 } // namespace Model

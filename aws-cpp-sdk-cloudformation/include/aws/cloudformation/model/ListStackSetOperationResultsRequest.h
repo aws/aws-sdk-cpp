@@ -8,6 +8,8 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/CallAs.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/OperationResultFilter.h>
 #include <utility>
 
 namespace Aws
@@ -128,81 +130,81 @@ namespace Model
 
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
-     * response object's <code>NextToken</code> parameter value is set to a token. To
-     * retrieve the next set of results, call <code>ListStackSetOperationResults</code>
-     * again and assign that token to the request object's <code>NextToken</code>
-     * parameter. If there are no remaining results, the previous response object's
+     * <p>If the previous request didn't return all the remaining results, the response
+     * object's <code>NextToken</code> parameter value is set to a token. To retrieve
+     * the next set of results, call <code>ListStackSetOperationResults</code> again
+     * and assign that token to the request object's <code>NextToken</code> parameter.
+     * If there are no remaining results, the previous response object's
      * <code>NextToken</code> parameter is set to <code>null</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
-     * response object's <code>NextToken</code> parameter value is set to a token. To
-     * retrieve the next set of results, call <code>ListStackSetOperationResults</code>
-     * again and assign that token to the request object's <code>NextToken</code>
-     * parameter. If there are no remaining results, the previous response object's
+     * <p>If the previous request didn't return all the remaining results, the response
+     * object's <code>NextToken</code> parameter value is set to a token. To retrieve
+     * the next set of results, call <code>ListStackSetOperationResults</code> again
+     * and assign that token to the request object's <code>NextToken</code> parameter.
+     * If there are no remaining results, the previous response object's
      * <code>NextToken</code> parameter is set to <code>null</code>.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
-     * response object's <code>NextToken</code> parameter value is set to a token. To
-     * retrieve the next set of results, call <code>ListStackSetOperationResults</code>
-     * again and assign that token to the request object's <code>NextToken</code>
-     * parameter. If there are no remaining results, the previous response object's
+     * <p>If the previous request didn't return all the remaining results, the response
+     * object's <code>NextToken</code> parameter value is set to a token. To retrieve
+     * the next set of results, call <code>ListStackSetOperationResults</code> again
+     * and assign that token to the request object's <code>NextToken</code> parameter.
+     * If there are no remaining results, the previous response object's
      * <code>NextToken</code> parameter is set to <code>null</code>.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
-     * response object's <code>NextToken</code> parameter value is set to a token. To
-     * retrieve the next set of results, call <code>ListStackSetOperationResults</code>
-     * again and assign that token to the request object's <code>NextToken</code>
-     * parameter. If there are no remaining results, the previous response object's
+     * <p>If the previous request didn't return all the remaining results, the response
+     * object's <code>NextToken</code> parameter value is set to a token. To retrieve
+     * the next set of results, call <code>ListStackSetOperationResults</code> again
+     * and assign that token to the request object's <code>NextToken</code> parameter.
+     * If there are no remaining results, the previous response object's
      * <code>NextToken</code> parameter is set to <code>null</code>.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
-     * response object's <code>NextToken</code> parameter value is set to a token. To
-     * retrieve the next set of results, call <code>ListStackSetOperationResults</code>
-     * again and assign that token to the request object's <code>NextToken</code>
-     * parameter. If there are no remaining results, the previous response object's
+     * <p>If the previous request didn't return all the remaining results, the response
+     * object's <code>NextToken</code> parameter value is set to a token. To retrieve
+     * the next set of results, call <code>ListStackSetOperationResults</code> again
+     * and assign that token to the request object's <code>NextToken</code> parameter.
+     * If there are no remaining results, the previous response object's
      * <code>NextToken</code> parameter is set to <code>null</code>.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
-     * response object's <code>NextToken</code> parameter value is set to a token. To
-     * retrieve the next set of results, call <code>ListStackSetOperationResults</code>
-     * again and assign that token to the request object's <code>NextToken</code>
-     * parameter. If there are no remaining results, the previous response object's
+     * <p>If the previous request didn't return all the remaining results, the response
+     * object's <code>NextToken</code> parameter value is set to a token. To retrieve
+     * the next set of results, call <code>ListStackSetOperationResults</code> again
+     * and assign that token to the request object's <code>NextToken</code> parameter.
+     * If there are no remaining results, the previous response object's
      * <code>NextToken</code> parameter is set to <code>null</code>.</p>
      */
     inline ListStackSetOperationResultsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
-     * response object's <code>NextToken</code> parameter value is set to a token. To
-     * retrieve the next set of results, call <code>ListStackSetOperationResults</code>
-     * again and assign that token to the request object's <code>NextToken</code>
-     * parameter. If there are no remaining results, the previous response object's
+     * <p>If the previous request didn't return all the remaining results, the response
+     * object's <code>NextToken</code> parameter value is set to a token. To retrieve
+     * the next set of results, call <code>ListStackSetOperationResults</code> again
+     * and assign that token to the request object's <code>NextToken</code> parameter.
+     * If there are no remaining results, the previous response object's
      * <code>NextToken</code> parameter is set to <code>null</code>.</p>
      */
     inline ListStackSetOperationResultsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
-     * response object's <code>NextToken</code> parameter value is set to a token. To
-     * retrieve the next set of results, call <code>ListStackSetOperationResults</code>
-     * again and assign that token to the request object's <code>NextToken</code>
-     * parameter. If there are no remaining results, the previous response object's
+     * <p>If the previous request didn't return all the remaining results, the response
+     * object's <code>NextToken</code> parameter value is set to a token. To retrieve
+     * the next set of results, call <code>ListStackSetOperationResults</code> again
+     * and assign that token to the request object's <code>NextToken</code> parameter.
+     * If there are no remaining results, the previous response object's
      * <code>NextToken</code> parameter is set to <code>null</code>.</p>
      */
     inline ListStackSetOperationResultsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -337,22 +339,66 @@ namespace Model
      */
     inline ListStackSetOperationResultsRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline const Aws::Vector<OperationResultFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline void SetFilters(const Aws::Vector<OperationResultFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline void SetFilters(Aws::Vector<OperationResultFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& WithFilters(const Aws::Vector<OperationResultFilter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& WithFilters(Aws::Vector<OperationResultFilter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& AddFilters(const OperationResultFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& AddFilters(OperationResultFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
+
+    Aws::Vector<OperationResultFilter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

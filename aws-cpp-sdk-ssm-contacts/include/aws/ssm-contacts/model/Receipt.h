@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_contactChannelArn;
-    bool m_contactChannelArnHasBeenSet;
+    bool m_contactChannelArnHasBeenSet = false;
 
     ReceiptType m_receiptType;
-    bool m_receiptTypeHasBeenSet;
+    bool m_receiptTypeHasBeenSet = false;
 
     Aws::String m_receiptInfo;
-    bool m_receiptInfoHasBeenSet;
+    bool m_receiptInfoHasBeenSet = false;
 
     Aws::Utils::DateTime m_receiptTime;
-    bool m_receiptTimeHasBeenSet;
+    bool m_receiptTimeHasBeenSet = false;
   };
 
 } // namespace Model

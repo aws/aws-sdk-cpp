@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::Vector<ContentClassifier> m_contentClassifiers;
-    bool m_contentClassifiersHasBeenSet;
+    bool m_contentClassifiersHasBeenSet = false;
   };
 
 } // namespace Model

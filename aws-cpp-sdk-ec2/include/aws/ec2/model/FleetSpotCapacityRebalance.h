@@ -178,10 +178,10 @@ namespace Model
   private:
 
     FleetReplacementStrategy m_replacementStrategy;
-    bool m_replacementStrategyHasBeenSet;
+    bool m_replacementStrategyHasBeenSet = false;
 
     int m_terminationDelay;
-    bool m_terminationDelayHasBeenSet;
+    bool m_terminationDelayHasBeenSet = false;
   };
 
 } // namespace Model

@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_secretARN;
-    bool m_secretARNHasBeenSet;
+    bool m_secretARNHasBeenSet = false;
   };
 
 } // namespace Model

@@ -637,40 +637,40 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::String m_roleId;
-    bool m_roleIdHasBeenSet;
+    bool m_roleIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::String m_assumeRolePolicyDocument;
-    bool m_assumeRolePolicyDocumentHasBeenSet;
+    bool m_assumeRolePolicyDocumentHasBeenSet = false;
 
     Aws::Vector<InstanceProfile> m_instanceProfileList;
-    bool m_instanceProfileListHasBeenSet;
+    bool m_instanceProfileListHasBeenSet = false;
 
     Aws::Vector<PolicyDetail> m_rolePolicyList;
-    bool m_rolePolicyListHasBeenSet;
+    bool m_rolePolicyListHasBeenSet = false;
 
     Aws::Vector<AttachedPolicy> m_attachedManagedPolicies;
-    bool m_attachedManagedPoliciesHasBeenSet;
+    bool m_attachedManagedPoliciesHasBeenSet = false;
 
     AttachedPermissionsBoundary m_permissionsBoundary;
-    bool m_permissionsBoundaryHasBeenSet;
+    bool m_permissionsBoundaryHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     RoleLastUsed m_roleLastUsed;
-    bool m_roleLastUsedHasBeenSet;
+    bool m_roleLastUsedHasBeenSet = false;
   };
 
 } // namespace Model

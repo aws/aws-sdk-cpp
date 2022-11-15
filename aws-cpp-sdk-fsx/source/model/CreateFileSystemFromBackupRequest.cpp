@@ -25,7 +25,9 @@ CreateFileSystemFromBackupRequest::CreateFileSystemFromBackupRequest() :
     m_storageTypeHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_fileSystemTypeVersionHasBeenSet(false),
-    m_openZFSConfigurationHasBeenSet(false)
+    m_openZFSConfigurationHasBeenSet(false),
+    m_storageCapacity(0),
+    m_storageCapacityHasBeenSet(false)
 {
 }
 
@@ -47,7 +49,7 @@ Aws::String CreateFileSystemFromBackupRequest::SerializePayload() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
@@ -58,7 +60,7 @@ Aws::String CreateFileSystemFromBackupRequest::SerializePayload() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -69,7 +71,7 @@ Aws::String CreateFileSystemFromBackupRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -110,6 +112,12 @@ Aws::String CreateFileSystemFromBackupRequest::SerializePayload() const
   if(m_openZFSConfigurationHasBeenSet)
   {
    payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
+
+  }
+
+  if(m_storageCapacityHasBeenSet)
+  {
+   payload.WithInteger("StorageCapacity", m_storageCapacity);
 
   }
 

@@ -745,43 +745,43 @@ namespace Model
   private:
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::String m_domainARN;
-    bool m_domainARNHasBeenSet;
+    bool m_domainARNHasBeenSet = false;
 
     Aws::String m_clusterEndpoint;
-    bool m_clusterEndpointHasBeenSet;
+    bool m_clusterEndpointHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     ElasticsearchIndexRotationPeriod m_indexRotationPeriod;
-    bool m_indexRotationPeriodHasBeenSet;
+    bool m_indexRotationPeriodHasBeenSet = false;
 
     ElasticsearchBufferingHints m_bufferingHints;
-    bool m_bufferingHintsHasBeenSet;
+    bool m_bufferingHintsHasBeenSet = false;
 
     ElasticsearchRetryOptions m_retryOptions;
-    bool m_retryOptionsHasBeenSet;
+    bool m_retryOptionsHasBeenSet = false;
 
     ElasticsearchS3BackupMode m_s3BackupMode;
-    bool m_s3BackupModeHasBeenSet;
+    bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationConfiguration m_s3Configuration;
-    bool m_s3ConfigurationHasBeenSet;
+    bool m_s3ConfigurationHasBeenSet = false;
 
     ProcessingConfiguration m_processingConfiguration;
-    bool m_processingConfigurationHasBeenSet;
+    bool m_processingConfigurationHasBeenSet = false;
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-    bool m_cloudWatchLoggingOptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

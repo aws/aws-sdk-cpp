@@ -118,7 +118,7 @@ namespace Model
   private:
 
     USD m_amountInUsd;
-    bool m_amountInUsdHasBeenSet;
+    bool m_amountInUsdHasBeenSet = false;
   };
 
 } // namespace Model

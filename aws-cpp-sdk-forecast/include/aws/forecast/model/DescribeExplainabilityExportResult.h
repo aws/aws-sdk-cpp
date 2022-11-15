@@ -107,37 +107,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
      */
     inline const Aws::String& GetExplainabilityArn() const{ return m_explainabilityArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
      */
     inline void SetExplainabilityArn(const Aws::String& value) { m_explainabilityArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
      */
     inline void SetExplainabilityArn(Aws::String&& value) { m_explainabilityArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
      */
     inline void SetExplainabilityArn(const char* value) { m_explainabilityArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
      */
     inline DescribeExplainabilityExportResult& WithExplainabilityArn(const Aws::String& value) { SetExplainabilityArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
      */
     inline DescribeExplainabilityExportResult& WithExplainabilityArn(Aws::String&& value) { SetExplainabilityArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
      */
     inline DescribeExplainabilityExportResult& WithExplainabilityArn(const char* value) { SetExplainabilityArn(value); return *this;}
 
@@ -346,6 +346,42 @@ namespace Model
      */
     inline DescribeExplainabilityExportResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline const Aws::String& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline void SetFormat(const Aws::String& value) { m_format = value; }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline void SetFormat(Aws::String&& value) { m_format = std::move(value); }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline void SetFormat(const char* value) { m_format.assign(value); }
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline DescribeExplainabilityExportResult& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline DescribeExplainabilityExportResult& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of the exported data, CSV or PARQUET.</p>
+     */
+    inline DescribeExplainabilityExportResult& WithFormat(const char* value) { SetFormat(value); return *this;}
+
   private:
 
     Aws::String m_explainabilityExportArn;
@@ -363,6 +399,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Utils::DateTime m_lastModificationTime;
+
+    Aws::String m_format;
   };
 
 } // namespace Model

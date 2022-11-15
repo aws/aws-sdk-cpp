@@ -1625,37 +1625,37 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_roleSessionName;
-    bool m_roleSessionNameHasBeenSet;
+    bool m_roleSessionNameHasBeenSet = false;
 
     Aws::Vector<PolicyDescriptorType> m_policyArns;
-    bool m_policyArnsHasBeenSet;
+    bool m_policyArnsHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_transitiveTagKeys;
-    bool m_transitiveTagKeysHasBeenSet;
+    bool m_transitiveTagKeysHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::String m_tokenCode;
-    bool m_tokenCodeHasBeenSet;
+    bool m_tokenCodeHasBeenSet = false;
 
     Aws::String m_sourceIdentity;
-    bool m_sourceIdentityHasBeenSet;
+    bool m_sourceIdentityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Payer m_payer;
-    bool m_payerHasBeenSet;
+    bool m_payerHasBeenSet = false;
   };
 
 } // namespace Model

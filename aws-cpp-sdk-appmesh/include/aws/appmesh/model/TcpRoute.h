@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/TcpRouteAction.h>
+#include <aws/appmesh/model/TcpRouteMatch.h>
 #include <aws/appmesh/model/TcpTimeout.h>
 #include <utility>
 
@@ -70,6 +71,37 @@ namespace Model
 
 
     /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline const TcpRouteMatch& GetMatch() const{ return m_match; }
+
+    /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
+
+    /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline void SetMatch(const TcpRouteMatch& value) { m_matchHasBeenSet = true; m_match = value; }
+
+    /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline void SetMatch(TcpRouteMatch&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
+
+    /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline TcpRoute& WithMatch(const TcpRouteMatch& value) { SetMatch(value); return *this;}
+
+    /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline TcpRoute& WithMatch(TcpRouteMatch&& value) { SetMatch(std::move(value)); return *this;}
+
+
+    /**
      * <p>An object that represents types of timeouts. </p>
      */
     inline const TcpTimeout& GetTimeout() const{ return m_timeout; }
@@ -102,10 +134,13 @@ namespace Model
   private:
 
     TcpRouteAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
+
+    TcpRouteMatch m_match;
+    bool m_matchHasBeenSet = false;
 
     TcpTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

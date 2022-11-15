@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The amount of Savings Plans eligible usage that is covered by Savings Plans.
+   * <p>The amount of Savings Plans eligible usage that's covered by Savings Plans.
    * All calculations consider the On-Demand equivalent of your Savings Plans
    * usage.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansCoverage">AWS
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     SavingsPlansCoverageData m_coverage;
-    bool m_coverageHasBeenSet;
+    bool m_coverageHasBeenSet = false;
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
   };
 
 } // namespace Model

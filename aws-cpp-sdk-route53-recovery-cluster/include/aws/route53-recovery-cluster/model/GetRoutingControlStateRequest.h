@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_routingControlArn;
-    bool m_routingControlArnHasBeenSet;
+    bool m_routingControlArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_appTemplateBody;
-    bool m_appTemplateBodyHasBeenSet;
+    bool m_appTemplateBodyHasBeenSet = false;
   };
 
 } // namespace Model

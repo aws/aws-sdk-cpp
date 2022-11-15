@@ -43,7 +43,7 @@ CorsRule& CorsRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AllowedOrigins"))
   {
-    Array<JsonView> allowedOriginsJsonList = jsonValue.GetArray("AllowedOrigins");
+    Aws::Utils::Array<JsonView> allowedOriginsJsonList = jsonValue.GetArray("AllowedOrigins");
     for(unsigned allowedOriginsIndex = 0; allowedOriginsIndex < allowedOriginsJsonList.GetLength(); ++allowedOriginsIndex)
     {
       m_allowedOrigins.push_back(allowedOriginsJsonList[allowedOriginsIndex].AsString());
@@ -53,7 +53,7 @@ CorsRule& CorsRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AllowedMethods"))
   {
-    Array<JsonView> allowedMethodsJsonList = jsonValue.GetArray("AllowedMethods");
+    Aws::Utils::Array<JsonView> allowedMethodsJsonList = jsonValue.GetArray("AllowedMethods");
     for(unsigned allowedMethodsIndex = 0; allowedMethodsIndex < allowedMethodsJsonList.GetLength(); ++allowedMethodsIndex)
     {
       m_allowedMethods.push_back(MethodNameMapper::GetMethodNameForName(allowedMethodsJsonList[allowedMethodsIndex].AsString()));
@@ -63,7 +63,7 @@ CorsRule& CorsRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AllowedHeaders"))
   {
-    Array<JsonView> allowedHeadersJsonList = jsonValue.GetArray("AllowedHeaders");
+    Aws::Utils::Array<JsonView> allowedHeadersJsonList = jsonValue.GetArray("AllowedHeaders");
     for(unsigned allowedHeadersIndex = 0; allowedHeadersIndex < allowedHeadersJsonList.GetLength(); ++allowedHeadersIndex)
     {
       m_allowedHeaders.push_back(allowedHeadersJsonList[allowedHeadersIndex].AsString());
@@ -80,7 +80,7 @@ CorsRule& CorsRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExposeHeaders"))
   {
-    Array<JsonView> exposeHeadersJsonList = jsonValue.GetArray("ExposeHeaders");
+    Aws::Utils::Array<JsonView> exposeHeadersJsonList = jsonValue.GetArray("ExposeHeaders");
     for(unsigned exposeHeadersIndex = 0; exposeHeadersIndex < exposeHeadersJsonList.GetLength(); ++exposeHeadersIndex)
     {
       m_exposeHeaders.push_back(exposeHeadersJsonList[exposeHeadersIndex].AsString());
@@ -97,7 +97,7 @@ JsonValue CorsRule::Jsonize() const
 
   if(m_allowedOriginsHasBeenSet)
   {
-   Array<JsonValue> allowedOriginsJsonList(m_allowedOrigins.size());
+   Aws::Utils::Array<JsonValue> allowedOriginsJsonList(m_allowedOrigins.size());
    for(unsigned allowedOriginsIndex = 0; allowedOriginsIndex < allowedOriginsJsonList.GetLength(); ++allowedOriginsIndex)
    {
      allowedOriginsJsonList[allowedOriginsIndex].AsString(m_allowedOrigins[allowedOriginsIndex]);
@@ -108,7 +108,7 @@ JsonValue CorsRule::Jsonize() const
 
   if(m_allowedMethodsHasBeenSet)
   {
-   Array<JsonValue> allowedMethodsJsonList(m_allowedMethods.size());
+   Aws::Utils::Array<JsonValue> allowedMethodsJsonList(m_allowedMethods.size());
    for(unsigned allowedMethodsIndex = 0; allowedMethodsIndex < allowedMethodsJsonList.GetLength(); ++allowedMethodsIndex)
    {
      allowedMethodsJsonList[allowedMethodsIndex].AsString(MethodNameMapper::GetNameForMethodName(m_allowedMethods[allowedMethodsIndex]));
@@ -119,7 +119,7 @@ JsonValue CorsRule::Jsonize() const
 
   if(m_allowedHeadersHasBeenSet)
   {
-   Array<JsonValue> allowedHeadersJsonList(m_allowedHeaders.size());
+   Aws::Utils::Array<JsonValue> allowedHeadersJsonList(m_allowedHeaders.size());
    for(unsigned allowedHeadersIndex = 0; allowedHeadersIndex < allowedHeadersJsonList.GetLength(); ++allowedHeadersIndex)
    {
      allowedHeadersJsonList[allowedHeadersIndex].AsString(m_allowedHeaders[allowedHeadersIndex]);
@@ -136,7 +136,7 @@ JsonValue CorsRule::Jsonize() const
 
   if(m_exposeHeadersHasBeenSet)
   {
-   Array<JsonValue> exposeHeadersJsonList(m_exposeHeaders.size());
+   Aws::Utils::Array<JsonValue> exposeHeadersJsonList(m_exposeHeaders.size());
    for(unsigned exposeHeadersIndex = 0; exposeHeadersIndex < exposeHeadersJsonList.GetLength(); ++exposeHeadersIndex)
    {
      exposeHeadersJsonList[exposeHeadersIndex].AsString(m_exposeHeaders[exposeHeadersIndex]);

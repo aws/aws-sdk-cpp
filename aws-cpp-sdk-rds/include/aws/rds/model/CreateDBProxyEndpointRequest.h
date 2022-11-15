@@ -250,37 +250,49 @@ namespace Model
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline const DBProxyEndpointTargetRole& GetTargetRole() const{ return m_targetRole; }
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline bool TargetRoleHasBeenSet() const { return m_targetRoleHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline void SetTargetRole(const DBProxyEndpointTargetRole& value) { m_targetRoleHasBeenSet = true; m_targetRole = value; }
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline void SetTargetRole(DBProxyEndpointTargetRole&& value) { m_targetRoleHasBeenSet = true; m_targetRole = std::move(value); }
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline CreateDBProxyEndpointRequest& WithTargetRole(const DBProxyEndpointTargetRole& value) { SetTargetRole(value); return *this;}
 
     /**
      * <p>A value that indicates whether the DB proxy endpoint can be used for
-     * read/write or read-only operations. The default is <code>READ_WRITE</code>.</p>
+     * read/write or read-only operations. The default is <code>READ_WRITE</code>. The
+     * only role that proxies for RDS for Microsoft SQL Server support is
+     * <code>READ_WRITE</code>.</p>
      */
     inline CreateDBProxyEndpointRequest& WithTargetRole(DBProxyEndpointTargetRole&& value) { SetTargetRole(std::move(value)); return *this;}
 
@@ -312,22 +324,22 @@ namespace Model
   private:
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
 
     Aws::String m_dBProxyEndpointName;
-    bool m_dBProxyEndpointNameHasBeenSet;
+    bool m_dBProxyEndpointNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSubnetIds;
-    bool m_vpcSubnetIdsHasBeenSet;
+    bool m_vpcSubnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     DBProxyEndpointTargetRole m_targetRole;
-    bool m_targetRoleHasBeenSet;
+    bool m_targetRoleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,7 +40,7 @@ namespace Model
 
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
      * in different tables, but the tables must reside in the same Amazon Web Services
@@ -49,7 +49,7 @@ namespace Model
     inline const Aws::Vector<TransactWriteItem>& GetTransactItems() const{ return m_transactItems; }
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
      * in different tables, but the tables must reside in the same Amazon Web Services
@@ -58,7 +58,7 @@ namespace Model
     inline bool TransactItemsHasBeenSet() const { return m_transactItemsHasBeenSet; }
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
      * in different tables, but the tables must reside in the same Amazon Web Services
@@ -67,7 +67,7 @@ namespace Model
     inline void SetTransactItems(const Aws::Vector<TransactWriteItem>& value) { m_transactItemsHasBeenSet = true; m_transactItems = value; }
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
      * in different tables, but the tables must reside in the same Amazon Web Services
@@ -76,7 +76,7 @@ namespace Model
     inline void SetTransactItems(Aws::Vector<TransactWriteItem>&& value) { m_transactItemsHasBeenSet = true; m_transactItems = std::move(value); }
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
      * in different tables, but the tables must reside in the same Amazon Web Services
@@ -85,7 +85,7 @@ namespace Model
     inline TransactWriteItemsRequest& WithTransactItems(const Aws::Vector<TransactWriteItem>& value) { SetTransactItems(value); return *this;}
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
      * in different tables, but the tables must reside in the same Amazon Web Services
@@ -94,7 +94,7 @@ namespace Model
     inline TransactWriteItemsRequest& WithTransactItems(Aws::Vector<TransactWriteItem>&& value) { SetTransactItems(std::move(value)); return *this;}
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
      * in different tables, but the tables must reside in the same Amazon Web Services
@@ -103,7 +103,7 @@ namespace Model
     inline TransactWriteItemsRequest& AddTransactItems(const TransactWriteItem& value) { m_transactItemsHasBeenSet = true; m_transactItems.push_back(value); return *this; }
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of
      * which contains a <code>ConditionCheck</code>, <code>Put</code>,
      * <code>Update</code>, or <code>Delete</code> object. These can operate on items
      * in different tables, but the tables must reside in the same Amazon Web Services
@@ -351,16 +351,16 @@ namespace Model
   private:
 
     Aws::Vector<TransactWriteItem> m_transactItems;
-    bool m_transactItemsHasBeenSet;
+    bool m_transactItemsHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
 
     ReturnItemCollectionMetrics m_returnItemCollectionMetrics;
-    bool m_returnItemCollectionMetricsHasBeenSet;
+    bool m_returnItemCollectionMetricsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

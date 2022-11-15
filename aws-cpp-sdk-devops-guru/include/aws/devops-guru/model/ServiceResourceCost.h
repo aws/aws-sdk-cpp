@@ -226,19 +226,19 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CostEstimationServiceResourceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     double m_unitCost;
-    bool m_unitCostHasBeenSet;
+    bool m_unitCostHasBeenSet = false;
 
     double m_cost;
-    bool m_costHasBeenSet;
+    bool m_costHasBeenSet = false;
   };
 
 } // namespace Model

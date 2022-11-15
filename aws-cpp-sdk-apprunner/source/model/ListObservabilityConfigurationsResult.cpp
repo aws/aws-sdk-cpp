@@ -30,7 +30,7 @@ ListObservabilityConfigurationsResult& ListObservabilityConfigurationsResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ObservabilityConfigurationSummaryList"))
   {
-    Array<JsonView> observabilityConfigurationSummaryListJsonList = jsonValue.GetArray("ObservabilityConfigurationSummaryList");
+    Aws::Utils::Array<JsonView> observabilityConfigurationSummaryListJsonList = jsonValue.GetArray("ObservabilityConfigurationSummaryList");
     for(unsigned observabilityConfigurationSummaryListIndex = 0; observabilityConfigurationSummaryListIndex < observabilityConfigurationSummaryListJsonList.GetLength(); ++observabilityConfigurationSummaryListIndex)
     {
       m_observabilityConfigurationSummaryList.push_back(observabilityConfigurationSummaryListJsonList[observabilityConfigurationSummaryListIndex].AsObject());

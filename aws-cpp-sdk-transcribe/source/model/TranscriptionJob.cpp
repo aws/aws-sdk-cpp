@@ -40,9 +40,12 @@ TranscriptionJob::TranscriptionJob() :
     m_contentRedactionHasBeenSet(false),
     m_identifyLanguage(false),
     m_identifyLanguageHasBeenSet(false),
+    m_identifyMultipleLanguages(false),
+    m_identifyMultipleLanguagesHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_identifiedLanguageScore(0.0),
     m_identifiedLanguageScoreHasBeenSet(false),
+    m_languageCodesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_subtitlesHasBeenSet(false),
     m_languageIdSettingsHasBeenSet(false)
@@ -71,9 +74,12 @@ TranscriptionJob::TranscriptionJob(JsonView jsonValue) :
     m_contentRedactionHasBeenSet(false),
     m_identifyLanguage(false),
     m_identifyLanguageHasBeenSet(false),
+    m_identifyMultipleLanguages(false),
+    m_identifyMultipleLanguagesHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_identifiedLanguageScore(0.0),
     m_identifiedLanguageScoreHasBeenSet(false),
+    m_languageCodesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_subtitlesHasBeenSet(false),
     m_languageIdSettingsHasBeenSet(false)
@@ -195,9 +201,16 @@ TranscriptionJob& TranscriptionJob::operator =(JsonView jsonValue)
     m_identifyLanguageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdentifyMultipleLanguages"))
+  {
+    m_identifyMultipleLanguages = jsonValue.GetBool("IdentifyMultipleLanguages");
+
+    m_identifyMultipleLanguagesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LanguageOptions"))
   {
-    Array<JsonView> languageOptionsJsonList = jsonValue.GetArray("LanguageOptions");
+    Aws::Utils::Array<JsonView> languageOptionsJsonList = jsonValue.GetArray("LanguageOptions");
     for(unsigned languageOptionsIndex = 0; languageOptionsIndex < languageOptionsJsonList.GetLength(); ++languageOptionsIndex)
     {
       m_languageOptions.push_back(LanguageCodeMapper::GetLanguageCodeForName(languageOptionsJsonList[languageOptionsIndex].AsString()));
@@ -212,9 +225,19 @@ TranscriptionJob& TranscriptionJob::operator =(JsonView jsonValue)
     m_identifiedLanguageScoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LanguageCodes"))
+  {
+    Aws::Utils::Array<JsonView> languageCodesJsonList = jsonValue.GetArray("LanguageCodes");
+    for(unsigned languageCodesIndex = 0; languageCodesIndex < languageCodesJsonList.GetLength(); ++languageCodesIndex)
+    {
+      m_languageCodes.push_back(languageCodesJsonList[languageCodesIndex].AsObject());
+    }
+    m_languageCodesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -336,9 +359,15 @@ JsonValue TranscriptionJob::Jsonize() const
 
   }
 
+  if(m_identifyMultipleLanguagesHasBeenSet)
+  {
+   payload.WithBool("IdentifyMultipleLanguages", m_identifyMultipleLanguages);
+
+  }
+
   if(m_languageOptionsHasBeenSet)
   {
-   Array<JsonValue> languageOptionsJsonList(m_languageOptions.size());
+   Aws::Utils::Array<JsonValue> languageOptionsJsonList(m_languageOptions.size());
    for(unsigned languageOptionsIndex = 0; languageOptionsIndex < languageOptionsJsonList.GetLength(); ++languageOptionsIndex)
    {
      languageOptionsJsonList[languageOptionsIndex].AsString(LanguageCodeMapper::GetNameForLanguageCode(m_languageOptions[languageOptionsIndex]));
@@ -353,9 +382,20 @@ JsonValue TranscriptionJob::Jsonize() const
 
   }
 
+  if(m_languageCodesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> languageCodesJsonList(m_languageCodes.size());
+   for(unsigned languageCodesIndex = 0; languageCodesIndex < languageCodesJsonList.GetLength(); ++languageCodesIndex)
+   {
+     languageCodesJsonList[languageCodesIndex].AsObject(m_languageCodes[languageCodesIndex].Jsonize());
+   }
+   payload.WithArray("LanguageCodes", std::move(languageCodesJsonList));
+
+  }
+
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

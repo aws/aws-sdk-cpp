@@ -48,7 +48,7 @@ Join& Join::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
@@ -65,7 +65,7 @@ Join& Join::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Columns"))
   {
-    Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
+    Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
     for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
     {
       m_columns.push_back(columnsJsonList[columnsIndex].AsObject());
@@ -88,7 +88,7 @@ JsonValue Join::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
@@ -104,7 +104,7 @@ JsonValue Join::Jsonize() const
 
   if(m_columnsHasBeenSet)
   {
-   Array<JsonValue> columnsJsonList(m_columns.size());
+   Aws::Utils::Array<JsonValue> columnsJsonList(m_columns.size());
    for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
    {
      columnsJsonList[columnsIndex].AsObject(m_columns[columnsIndex].Jsonize());

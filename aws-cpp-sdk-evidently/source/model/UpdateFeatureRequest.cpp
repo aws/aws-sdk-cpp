@@ -31,7 +31,7 @@ Aws::String UpdateFeatureRequest::SerializePayload() const
 
   if(m_addOrUpdateVariationsHasBeenSet)
   {
-   Array<JsonValue> addOrUpdateVariationsJsonList(m_addOrUpdateVariations.size());
+   Aws::Utils::Array<JsonValue> addOrUpdateVariationsJsonList(m_addOrUpdateVariations.size());
    for(unsigned addOrUpdateVariationsIndex = 0; addOrUpdateVariationsIndex < addOrUpdateVariationsJsonList.GetLength(); ++addOrUpdateVariationsIndex)
    {
      addOrUpdateVariationsJsonList[addOrUpdateVariationsIndex].AsObject(m_addOrUpdateVariations[addOrUpdateVariationsIndex].Jsonize());
@@ -70,7 +70,7 @@ Aws::String UpdateFeatureRequest::SerializePayload() const
 
   if(m_removeVariationsHasBeenSet)
   {
-   Array<JsonValue> removeVariationsJsonList(m_removeVariations.size());
+   Aws::Utils::Array<JsonValue> removeVariationsJsonList(m_removeVariations.size());
    for(unsigned removeVariationsIndex = 0; removeVariationsIndex < removeVariationsJsonList.GetLength(); ++removeVariationsIndex)
    {
      removeVariationsJsonList[removeVariationsIndex].AsString(m_removeVariations[removeVariationsIndex]);

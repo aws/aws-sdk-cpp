@@ -93,48 +93,42 @@ namespace Model
 
 
     /**
-     * <p>The status of the log publishing options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the log publishing options for the domain.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the log publishing options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the log publishing options for the domain.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the log publishing options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the log publishing options for the domain.</p>
      */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the log publishing options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the log publishing options for the domain.</p>
      */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the log publishing options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the log publishing options for the domain.</p>
      */
     inline LogPublishingOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the log publishing options for the domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
+     * <p>The status of the log publishing options for the domain.</p>
      */
     inline LogPublishingOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
 
     Aws::Map<LogType, LogPublishingOption> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     OptionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -263,49 +263,49 @@ namespace Model
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline DescribeTypeRequest& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline DescribeTypeRequest& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
 
     /**
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
-     * Amazon are not assigned a publisher ID.</p>
+     * Amazon Web Services are not assigned a publisher ID.</p>
      */
     inline DescribeTypeRequest& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
 
@@ -353,22 +353,22 @@ namespace Model
   private:
 
     RegistryType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_publisherId;
-    bool m_publisherIdHasBeenSet;
+    bool m_publisherIdHasBeenSet = false;
 
     Aws::String m_publicVersionNumber;
-    bool m_publicVersionNumberHasBeenSet;
+    bool m_publicVersionNumberHasBeenSet = false;
   };
 
 } // namespace Model

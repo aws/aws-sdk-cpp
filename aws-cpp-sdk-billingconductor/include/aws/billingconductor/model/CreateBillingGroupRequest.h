@@ -244,42 +244,42 @@ namespace Model
 
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline CreateBillingGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline CreateBillingGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline CreateBillingGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -365,25 +365,25 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AccountGrouping m_accountGrouping;
-    bool m_accountGroupingHasBeenSet;
+    bool m_accountGroupingHasBeenSet = false;
 
     ComputationPreference m_computationPreference;
-    bool m_computationPreferenceHasBeenSet;
+    bool m_computationPreferenceHasBeenSet = false;
 
     Aws::String m_primaryAccountId;
-    bool m_primaryAccountIdHasBeenSet;
+    bool m_primaryAccountIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

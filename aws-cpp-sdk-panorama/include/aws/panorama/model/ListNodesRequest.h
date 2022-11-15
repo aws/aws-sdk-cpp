@@ -306,25 +306,25 @@ namespace Model
   private:
 
     NodeCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     Aws::String m_packageVersion;
-    bool m_packageVersionHasBeenSet;
+    bool m_packageVersionHasBeenSet = false;
 
     Aws::String m_patchVersion;
-    bool m_patchVersionHasBeenSet;
+    bool m_patchVersionHasBeenSet = false;
   };
 
 } // namespace Model

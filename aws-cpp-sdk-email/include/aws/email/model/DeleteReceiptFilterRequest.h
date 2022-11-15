@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_filterName;
-    bool m_filterNameHasBeenSet;
+    bool m_filterNameHasBeenSet = false;
   };
 
 } // namespace Model

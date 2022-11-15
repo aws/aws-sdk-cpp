@@ -111,13 +111,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_maxAgeInDays;
-    bool m_maxAgeInDaysHasBeenSet;
+    bool m_maxAgeInDaysHasBeenSet = false;
 
     bool m_deleteSourceFromS3;
-    bool m_deleteSourceFromS3HasBeenSet;
+    bool m_deleteSourceFromS3HasBeenSet = false;
   };
 
 } // namespace Model

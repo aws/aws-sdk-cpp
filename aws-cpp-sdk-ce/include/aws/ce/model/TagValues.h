@@ -29,8 +29,8 @@ namespace Model
    * <p>The values that are available for a tag.</p> <p>If <code>Values</code> and
    * <code>Key</code> aren't specified, the <code>ABSENT</code>
    * <code>MatchOption</code> is applied to all tags. That is, it's filtered on
-   * resources with no tags.</p> <p>If <code>Values</code> is provided and
-   * <code>Key</code> isn't specified, the <code>ABSENT</code>
+   * resources with no tags.</p> <p>If <code>Key</code> is provided and
+   * <code>Values</code> isn't specified, the <code>ABSENT</code>
    * <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is,
    * it's filtered on resources without the given tag key.</p><p><h3>See Also:</h3>  
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagValues">AWS API
@@ -199,13 +199,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Aws::Vector<MatchOption> m_matchOptions;
-    bool m_matchOptionsHasBeenSet;
+    bool m_matchOptionsHasBeenSet = false;
   };
 
 } // namespace Model

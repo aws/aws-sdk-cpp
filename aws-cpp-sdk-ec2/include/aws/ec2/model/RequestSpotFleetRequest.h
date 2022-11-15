@@ -105,10 +105,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     SpotFleetRequestConfigData m_spotFleetRequestConfig;
-    bool m_spotFleetRequestConfigHasBeenSet;
+    bool m_spotFleetRequestConfigHasBeenSet = false;
   };
 
 } // namespace Model

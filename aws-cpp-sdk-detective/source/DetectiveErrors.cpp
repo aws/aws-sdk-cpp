@@ -6,15 +6,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/detective/DetectiveErrors.h>
+#include <aws/detective/model/ServiceQuotaExceededException.h>
+#include <aws/detective/model/ValidationException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Detective;
+using namespace Aws::Detective::Model;
 
 namespace Aws
 {
 namespace Detective
 {
+template<> AWS_DETECTIVE_API ServiceQuotaExceededException DetectiveError::GetModeledError()
+{
+  assert(this->GetErrorType() == DetectiveErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DETECTIVE_API ValidationException DetectiveError::GetModeledError()
+{
+  assert(this->GetErrorType() == DetectiveErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
+}
+
 namespace DetectiveErrorMapper
 {
 

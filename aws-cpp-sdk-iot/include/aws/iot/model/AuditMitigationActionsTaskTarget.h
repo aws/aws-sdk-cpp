@@ -232,13 +232,13 @@ namespace Model
   private:
 
     Aws::String m_auditTaskId;
-    bool m_auditTaskIdHasBeenSet;
+    bool m_auditTaskIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_findingIds;
-    bool m_findingIdsHasBeenSet;
+    bool m_findingIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_auditCheckToReasonCodeFilter;
-    bool m_auditCheckToReasonCodeFilterHasBeenSet;
+    bool m_auditCheckToReasonCodeFilterHasBeenSet = false;
   };
 
 } // namespace Model

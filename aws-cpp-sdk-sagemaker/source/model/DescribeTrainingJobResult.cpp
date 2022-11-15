@@ -121,7 +121,7 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("InputDataConfig"))
   {
-    Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
+    Aws::Utils::Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
     for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
     {
       m_inputDataConfig.push_back(inputDataConfigJsonList[inputDataConfigIndex].AsObject());
@@ -178,7 +178,7 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("SecondaryStatusTransitions"))
   {
-    Array<JsonView> secondaryStatusTransitionsJsonList = jsonValue.GetArray("SecondaryStatusTransitions");
+    Aws::Utils::Array<JsonView> secondaryStatusTransitionsJsonList = jsonValue.GetArray("SecondaryStatusTransitions");
     for(unsigned secondaryStatusTransitionsIndex = 0; secondaryStatusTransitionsIndex < secondaryStatusTransitionsJsonList.GetLength(); ++secondaryStatusTransitionsIndex)
     {
       m_secondaryStatusTransitions.push_back(secondaryStatusTransitionsJsonList[secondaryStatusTransitionsIndex].AsObject());
@@ -187,7 +187,7 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("FinalMetricDataList"))
   {
-    Array<JsonView> finalMetricDataListJsonList = jsonValue.GetArray("FinalMetricDataList");
+    Aws::Utils::Array<JsonView> finalMetricDataListJsonList = jsonValue.GetArray("FinalMetricDataList");
     for(unsigned finalMetricDataListIndex = 0; finalMetricDataListIndex < finalMetricDataListJsonList.GetLength(); ++finalMetricDataListIndex)
     {
       m_finalMetricDataList.push_back(finalMetricDataListJsonList[finalMetricDataListIndex].AsObject());
@@ -244,7 +244,7 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("DebugRuleConfigurations"))
   {
-    Array<JsonView> debugRuleConfigurationsJsonList = jsonValue.GetArray("DebugRuleConfigurations");
+    Aws::Utils::Array<JsonView> debugRuleConfigurationsJsonList = jsonValue.GetArray("DebugRuleConfigurations");
     for(unsigned debugRuleConfigurationsIndex = 0; debugRuleConfigurationsIndex < debugRuleConfigurationsJsonList.GetLength(); ++debugRuleConfigurationsIndex)
     {
       m_debugRuleConfigurations.push_back(debugRuleConfigurationsJsonList[debugRuleConfigurationsIndex].AsObject());
@@ -259,7 +259,7 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("DebugRuleEvaluationStatuses"))
   {
-    Array<JsonView> debugRuleEvaluationStatusesJsonList = jsonValue.GetArray("DebugRuleEvaluationStatuses");
+    Aws::Utils::Array<JsonView> debugRuleEvaluationStatusesJsonList = jsonValue.GetArray("DebugRuleEvaluationStatuses");
     for(unsigned debugRuleEvaluationStatusesIndex = 0; debugRuleEvaluationStatusesIndex < debugRuleEvaluationStatusesJsonList.GetLength(); ++debugRuleEvaluationStatusesIndex)
     {
       m_debugRuleEvaluationStatuses.push_back(debugRuleEvaluationStatusesJsonList[debugRuleEvaluationStatusesIndex].AsObject());
@@ -274,7 +274,7 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ProfilerRuleConfigurations"))
   {
-    Array<JsonView> profilerRuleConfigurationsJsonList = jsonValue.GetArray("ProfilerRuleConfigurations");
+    Aws::Utils::Array<JsonView> profilerRuleConfigurationsJsonList = jsonValue.GetArray("ProfilerRuleConfigurations");
     for(unsigned profilerRuleConfigurationsIndex = 0; profilerRuleConfigurationsIndex < profilerRuleConfigurationsJsonList.GetLength(); ++profilerRuleConfigurationsIndex)
     {
       m_profilerRuleConfigurations.push_back(profilerRuleConfigurationsJsonList[profilerRuleConfigurationsIndex].AsObject());
@@ -283,7 +283,7 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ProfilerRuleEvaluationStatuses"))
   {
-    Array<JsonView> profilerRuleEvaluationStatusesJsonList = jsonValue.GetArray("ProfilerRuleEvaluationStatuses");
+    Aws::Utils::Array<JsonView> profilerRuleEvaluationStatusesJsonList = jsonValue.GetArray("ProfilerRuleEvaluationStatuses");
     for(unsigned profilerRuleEvaluationStatusesIndex = 0; profilerRuleEvaluationStatusesIndex < profilerRuleEvaluationStatusesJsonList.GetLength(); ++profilerRuleEvaluationStatusesIndex)
     {
       m_profilerRuleEvaluationStatuses.push_back(profilerRuleEvaluationStatusesJsonList[profilerRuleEvaluationStatusesIndex].AsObject());
@@ -309,6 +309,12 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
     {
       m_environment[environmentItem.first] = environmentItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("WarmPoolStatus"))
+  {
+    m_warmPoolStatus = jsonValue.GetObject("WarmPoolStatus");
+
   }
 
 

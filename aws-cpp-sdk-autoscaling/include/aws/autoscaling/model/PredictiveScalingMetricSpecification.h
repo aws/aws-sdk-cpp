@@ -308,25 +308,25 @@ namespace Model
   private:
 
     double m_targetValue;
-    bool m_targetValueHasBeenSet;
+    bool m_targetValueHasBeenSet = false;
 
     PredictiveScalingPredefinedMetricPair m_predefinedMetricPairSpecification;
-    bool m_predefinedMetricPairSpecificationHasBeenSet;
+    bool m_predefinedMetricPairSpecificationHasBeenSet = false;
 
     PredictiveScalingPredefinedScalingMetric m_predefinedScalingMetricSpecification;
-    bool m_predefinedScalingMetricSpecificationHasBeenSet;
+    bool m_predefinedScalingMetricSpecificationHasBeenSet = false;
 
     PredictiveScalingPredefinedLoadMetric m_predefinedLoadMetricSpecification;
-    bool m_predefinedLoadMetricSpecificationHasBeenSet;
+    bool m_predefinedLoadMetricSpecificationHasBeenSet = false;
 
     PredictiveScalingCustomizedScalingMetric m_customizedScalingMetricSpecification;
-    bool m_customizedScalingMetricSpecificationHasBeenSet;
+    bool m_customizedScalingMetricSpecificationHasBeenSet = false;
 
     PredictiveScalingCustomizedLoadMetric m_customizedLoadMetricSpecification;
-    bool m_customizedLoadMetricSpecificationHasBeenSet;
+    bool m_customizedLoadMetricSpecificationHasBeenSet = false;
 
     PredictiveScalingCustomizedCapacityMetric m_customizedCapacityMetricSpecification;
-    bool m_customizedCapacityMetricSpecificationHasBeenSet;
+    bool m_customizedCapacityMetricSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

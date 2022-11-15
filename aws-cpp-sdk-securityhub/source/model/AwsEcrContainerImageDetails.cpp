@@ -71,7 +71,7 @@ AwsEcrContainerImageDetails& AwsEcrContainerImageDetails::operator =(JsonView js
 
   if(jsonValue.ValueExists("ImageTags"))
   {
-    Array<JsonView> imageTagsJsonList = jsonValue.GetArray("ImageTags");
+    Aws::Utils::Array<JsonView> imageTagsJsonList = jsonValue.GetArray("ImageTags");
     for(unsigned imageTagsIndex = 0; imageTagsIndex < imageTagsJsonList.GetLength(); ++imageTagsIndex)
     {
       m_imageTags.push_back(imageTagsJsonList[imageTagsIndex].AsString());
@@ -119,7 +119,7 @@ JsonValue AwsEcrContainerImageDetails::Jsonize() const
 
   if(m_imageTagsHasBeenSet)
   {
-   Array<JsonValue> imageTagsJsonList(m_imageTags.size());
+   Aws::Utils::Array<JsonValue> imageTagsJsonList(m_imageTags.size());
    for(unsigned imageTagsIndex = 0; imageTagsIndex < imageTagsJsonList.GetLength(); ++imageTagsIndex)
    {
      imageTagsJsonList[imageTagsIndex].AsString(m_imageTags[imageTagsIndex]);

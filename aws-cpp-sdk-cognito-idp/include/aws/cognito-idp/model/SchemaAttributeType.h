@@ -168,11 +168,11 @@ namespace Model
 
     /**
      * <p>Specifies whether the value of the attribute can be changed.</p> <p>For any
-     * user pool attribute that is mapped to an identity provider attribute, you must
-     * set this parameter to <code>true</code>. Amazon Cognito updates mapped
-     * attributes when users sign in to your application through an identity provider.
-     * If an attribute is immutable, Amazon Cognito throws an error when it attempts to
-     * update the attribute. For more information, see <a
+     * user pool attribute that is mapped to an IdP attribute, you must set this
+     * parameter to <code>true</code>. Amazon Cognito updates mapped attributes when
+     * users sign in to your application through an IdP. If an attribute is immutable,
+     * Amazon Cognito throws an error when it attempts to update the attribute. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
@@ -180,11 +180,11 @@ namespace Model
 
     /**
      * <p>Specifies whether the value of the attribute can be changed.</p> <p>For any
-     * user pool attribute that is mapped to an identity provider attribute, you must
-     * set this parameter to <code>true</code>. Amazon Cognito updates mapped
-     * attributes when users sign in to your application through an identity provider.
-     * If an attribute is immutable, Amazon Cognito throws an error when it attempts to
-     * update the attribute. For more information, see <a
+     * user pool attribute that is mapped to an IdP attribute, you must set this
+     * parameter to <code>true</code>. Amazon Cognito updates mapped attributes when
+     * users sign in to your application through an IdP. If an attribute is immutable,
+     * Amazon Cognito throws an error when it attempts to update the attribute. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
@@ -192,11 +192,11 @@ namespace Model
 
     /**
      * <p>Specifies whether the value of the attribute can be changed.</p> <p>For any
-     * user pool attribute that is mapped to an identity provider attribute, you must
-     * set this parameter to <code>true</code>. Amazon Cognito updates mapped
-     * attributes when users sign in to your application through an identity provider.
-     * If an attribute is immutable, Amazon Cognito throws an error when it attempts to
-     * update the attribute. For more information, see <a
+     * user pool attribute that is mapped to an IdP attribute, you must set this
+     * parameter to <code>true</code>. Amazon Cognito updates mapped attributes when
+     * users sign in to your application through an IdP. If an attribute is immutable,
+     * Amazon Cognito throws an error when it attempts to update the attribute. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
@@ -204,11 +204,11 @@ namespace Model
 
     /**
      * <p>Specifies whether the value of the attribute can be changed.</p> <p>For any
-     * user pool attribute that is mapped to an identity provider attribute, you must
-     * set this parameter to <code>true</code>. Amazon Cognito updates mapped
-     * attributes when users sign in to your application through an identity provider.
-     * If an attribute is immutable, Amazon Cognito throws an error when it attempts to
-     * update the attribute. For more information, see <a
+     * user pool attribute that is mapped to an IdP attribute, you must set this
+     * parameter to <code>true</code>. Amazon Cognito updates mapped attributes when
+     * users sign in to your application through an IdP. If an attribute is immutable,
+     * Amazon Cognito throws an error when it attempts to update the attribute. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
@@ -308,25 +308,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AttributeDataType m_attributeDataType;
-    bool m_attributeDataTypeHasBeenSet;
+    bool m_attributeDataTypeHasBeenSet = false;
 
     bool m_developerOnlyAttribute;
-    bool m_developerOnlyAttributeHasBeenSet;
+    bool m_developerOnlyAttributeHasBeenSet = false;
 
     bool m_mutable;
-    bool m_mutableHasBeenSet;
+    bool m_mutableHasBeenSet = false;
 
     bool m_required;
-    bool m_requiredHasBeenSet;
+    bool m_requiredHasBeenSet = false;
 
     NumberAttributeConstraintsType m_numberAttributeConstraints;
-    bool m_numberAttributeConstraintsHasBeenSet;
+    bool m_numberAttributeConstraintsHasBeenSet = false;
 
     StringAttributeConstraintsType m_stringAttributeConstraints;
-    bool m_stringAttributeConstraintsHasBeenSet;
+    bool m_stringAttributeConstraintsHasBeenSet = false;
   };
 
 } // namespace Model

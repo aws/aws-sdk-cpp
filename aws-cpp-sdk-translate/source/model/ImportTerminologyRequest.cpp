@@ -18,7 +18,8 @@ ImportTerminologyRequest::ImportTerminologyRequest() :
     m_mergeStrategyHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_terminologyDataHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false)
+    m_encryptionKeyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,17 @@ Aws::String ImportTerminologyRequest::SerializePayload() const
   if(m_encryptionKeyHasBeenSet)
   {
    payload.WithObject("EncryptionKey", m_encryptionKey.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

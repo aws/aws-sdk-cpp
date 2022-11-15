@@ -83,7 +83,7 @@ namespace Model
   private:
 
     TriggerType m_triggerType;
-    bool m_triggerTypeHasBeenSet;
+    bool m_triggerTypeHasBeenSet = false;
   };
 
 } // namespace Model

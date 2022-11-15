@@ -210,88 +210,94 @@ namespace Model
     /**
      * <p>You can define the <code>CostCategoryRule</code> rule type as either
      * <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The
-     * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
-     * that dynamically inherits the cost category value from the dimension value
-     * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * want to dynamically group costs based on the value of a specific tag key, first
-     * choose an inherited value rule type, then choose the tag dimension and specify
-     * the tag key to use.</p>
+     * <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule
+     * that dynamically inherits the cost category value. This value is from the
+     * dimension value that's defined by
+     * <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you
+     * want to costs to be dynamically grouped based on the value of a specific tag
+     * key. First, choose an inherited value rule type, and then choose the tag
+     * dimension and specify the tag key to use.</p>
      */
     inline const CostCategoryRuleType& GetType() const{ return m_type; }
 
     /**
      * <p>You can define the <code>CostCategoryRule</code> rule type as either
      * <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The
-     * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
-     * that dynamically inherits the cost category value from the dimension value
-     * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * want to dynamically group costs based on the value of a specific tag key, first
-     * choose an inherited value rule type, then choose the tag dimension and specify
-     * the tag key to use.</p>
+     * <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule
+     * that dynamically inherits the cost category value. This value is from the
+     * dimension value that's defined by
+     * <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you
+     * want to costs to be dynamically grouped based on the value of a specific tag
+     * key. First, choose an inherited value rule type, and then choose the tag
+     * dimension and specify the tag key to use.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>You can define the <code>CostCategoryRule</code> rule type as either
      * <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The
-     * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
-     * that dynamically inherits the cost category value from the dimension value
-     * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * want to dynamically group costs based on the value of a specific tag key, first
-     * choose an inherited value rule type, then choose the tag dimension and specify
-     * the tag key to use.</p>
+     * <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule
+     * that dynamically inherits the cost category value. This value is from the
+     * dimension value that's defined by
+     * <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you
+     * want to costs to be dynamically grouped based on the value of a specific tag
+     * key. First, choose an inherited value rule type, and then choose the tag
+     * dimension and specify the tag key to use.</p>
      */
     inline void SetType(const CostCategoryRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>You can define the <code>CostCategoryRule</code> rule type as either
      * <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The
-     * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
-     * that dynamically inherits the cost category value from the dimension value
-     * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * want to dynamically group costs based on the value of a specific tag key, first
-     * choose an inherited value rule type, then choose the tag dimension and specify
-     * the tag key to use.</p>
+     * <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule
+     * that dynamically inherits the cost category value. This value is from the
+     * dimension value that's defined by
+     * <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you
+     * want to costs to be dynamically grouped based on the value of a specific tag
+     * key. First, choose an inherited value rule type, and then choose the tag
+     * dimension and specify the tag key to use.</p>
      */
     inline void SetType(CostCategoryRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>You can define the <code>CostCategoryRule</code> rule type as either
      * <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The
-     * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
-     * that dynamically inherits the cost category value from the dimension value
-     * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * want to dynamically group costs based on the value of a specific tag key, first
-     * choose an inherited value rule type, then choose the tag dimension and specify
-     * the tag key to use.</p>
+     * <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule
+     * that dynamically inherits the cost category value. This value is from the
+     * dimension value that's defined by
+     * <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you
+     * want to costs to be dynamically grouped based on the value of a specific tag
+     * key. First, choose an inherited value rule type, and then choose the tag
+     * dimension and specify the tag key to use.</p>
      */
     inline CostCategoryRule& WithType(const CostCategoryRuleType& value) { SetType(value); return *this;}
 
     /**
      * <p>You can define the <code>CostCategoryRule</code> rule type as either
      * <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The
-     * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
-     * that dynamically inherits the cost category value from the dimension value
-     * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * want to dynamically group costs based on the value of a specific tag key, first
-     * choose an inherited value rule type, then choose the tag dimension and specify
-     * the tag key to use.</p>
+     * <code>INHERITED_VALUE</code> rule type adds the flexibility to define a rule
+     * that dynamically inherits the cost category value. This value is from the
+     * dimension value that's defined by
+     * <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you
+     * want to costs to be dynamically grouped based on the value of a specific tag
+     * key. First, choose an inherited value rule type, and then choose the tag
+     * dimension and specify the tag key to use.</p>
      */
     inline CostCategoryRule& WithType(CostCategoryRuleType&& value) { SetType(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Expression m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
 
     CostCategoryInheritedValueDimension m_inheritedValue;
-    bool m_inheritedValueHasBeenSet;
+    bool m_inheritedValueHasBeenSet = false;
 
     CostCategoryRuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

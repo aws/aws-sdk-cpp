@@ -44,7 +44,7 @@ DetectorState& DetectorState::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("variables"))
   {
-    Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
+    Aws::Utils::Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
     for(unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex)
     {
       m_variables.push_back(variablesJsonList[variablesIndex].AsObject());
@@ -54,7 +54,7 @@ DetectorState& DetectorState::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("timers"))
   {
-    Array<JsonView> timersJsonList = jsonValue.GetArray("timers");
+    Aws::Utils::Array<JsonView> timersJsonList = jsonValue.GetArray("timers");
     for(unsigned timersIndex = 0; timersIndex < timersJsonList.GetLength(); ++timersIndex)
     {
       m_timers.push_back(timersJsonList[timersIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue DetectorState::Jsonize() const
 
   if(m_variablesHasBeenSet)
   {
-   Array<JsonValue> variablesJsonList(m_variables.size());
+   Aws::Utils::Array<JsonValue> variablesJsonList(m_variables.size());
    for(unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex)
    {
      variablesJsonList[variablesIndex].AsObject(m_variables[variablesIndex].Jsonize());
@@ -88,7 +88,7 @@ JsonValue DetectorState::Jsonize() const
 
   if(m_timersHasBeenSet)
   {
-   Array<JsonValue> timersJsonList(m_timers.size());
+   Aws::Utils::Array<JsonValue> timersJsonList(m_timers.size());
    for(unsigned timersIndex = 0; timersIndex < timersJsonList.GetLength(); ++timersIndex)
    {
      timersJsonList[timersIndex].AsObject(m_timers[timersIndex].Jsonize());

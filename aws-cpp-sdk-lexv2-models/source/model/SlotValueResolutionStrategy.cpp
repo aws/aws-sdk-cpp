@@ -22,6 +22,7 @@ namespace Aws
 
         static const int OriginalValue_HASH = HashingUtils::HashString("OriginalValue");
         static const int TopResolution_HASH = HashingUtils::HashString("TopResolution");
+        static const int Concatenation_HASH = HashingUtils::HashString("Concatenation");
 
 
         SlotValueResolutionStrategy GetSlotValueResolutionStrategyForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == TopResolution_HASH)
           {
             return SlotValueResolutionStrategy::TopResolution;
+          }
+          else if (hashCode == Concatenation_HASH)
+          {
+            return SlotValueResolutionStrategy::Concatenation;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "OriginalValue";
           case SlotValueResolutionStrategy::TopResolution:
             return "TopResolution";
+          case SlotValueResolutionStrategy::Concatenation:
+            return "Concatenation";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

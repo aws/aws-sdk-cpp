@@ -346,22 +346,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_revisionChangeIdentifier;
-    bool m_revisionChangeIdentifierHasBeenSet;
+    bool m_revisionChangeIdentifierHasBeenSet = false;
 
     Aws::String m_revisionSummary;
-    bool m_revisionSummaryHasBeenSet;
+    bool m_revisionSummaryHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::String m_revisionUrl;
-    bool m_revisionUrlHasBeenSet;
+    bool m_revisionUrlHasBeenSet = false;
   };
 
 } // namespace Model

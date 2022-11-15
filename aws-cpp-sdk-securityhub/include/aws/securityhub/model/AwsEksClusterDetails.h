@@ -122,42 +122,74 @@ namespace Model
 
 
     /**
-     * <p>The status of the cluster.</p>
+     * <p>The status of the cluster. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li> <li>
+     * <p> <code>DELETING</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li>
+     * <li> <p> <code>PENDING</code> </p> </li> <li> <p> <code>UPDATING</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetClusterStatus() const{ return m_clusterStatus; }
 
     /**
-     * <p>The status of the cluster.</p>
+     * <p>The status of the cluster. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li> <li>
+     * <p> <code>DELETING</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li>
+     * <li> <p> <code>PENDING</code> </p> </li> <li> <p> <code>UPDATING</code> </p>
+     * </li> </ul>
      */
     inline bool ClusterStatusHasBeenSet() const { return m_clusterStatusHasBeenSet; }
 
     /**
-     * <p>The status of the cluster.</p>
+     * <p>The status of the cluster. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li> <li>
+     * <p> <code>DELETING</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li>
+     * <li> <p> <code>PENDING</code> </p> </li> <li> <p> <code>UPDATING</code> </p>
+     * </li> </ul>
      */
     inline void SetClusterStatus(const Aws::String& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = value; }
 
     /**
-     * <p>The status of the cluster.</p>
+     * <p>The status of the cluster. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li> <li>
+     * <p> <code>DELETING</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li>
+     * <li> <p> <code>PENDING</code> </p> </li> <li> <p> <code>UPDATING</code> </p>
+     * </li> </ul>
      */
     inline void SetClusterStatus(Aws::String&& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = std::move(value); }
 
     /**
-     * <p>The status of the cluster.</p>
+     * <p>The status of the cluster. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li> <li>
+     * <p> <code>DELETING</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li>
+     * <li> <p> <code>PENDING</code> </p> </li> <li> <p> <code>UPDATING</code> </p>
+     * </li> </ul>
      */
     inline void SetClusterStatus(const char* value) { m_clusterStatusHasBeenSet = true; m_clusterStatus.assign(value); }
 
     /**
-     * <p>The status of the cluster.</p>
+     * <p>The status of the cluster. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li> <li>
+     * <p> <code>DELETING</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li>
+     * <li> <p> <code>PENDING</code> </p> </li> <li> <p> <code>UPDATING</code> </p>
+     * </li> </ul>
      */
     inline AwsEksClusterDetails& WithClusterStatus(const Aws::String& value) { SetClusterStatus(value); return *this;}
 
     /**
-     * <p>The status of the cluster.</p>
+     * <p>The status of the cluster. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li> <li>
+     * <p> <code>DELETING</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li>
+     * <li> <p> <code>PENDING</code> </p> </li> <li> <p> <code>UPDATING</code> </p>
+     * </li> </ul>
      */
     inline AwsEksClusterDetails& WithClusterStatus(Aws::String&& value) { SetClusterStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the cluster.</p>
+     * <p>The status of the cluster. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li> <li>
+     * <p> <code>DELETING</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li>
+     * <li> <p> <code>PENDING</code> </p> </li> <li> <p> <code>UPDATING</code> </p>
+     * </li> </ul>
      */
     inline AwsEksClusterDetails& WithClusterStatus(const char* value) { SetClusterStatus(value); return *this;}
 
@@ -398,31 +430,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_certificateAuthorityData;
-    bool m_certificateAuthorityDataHasBeenSet;
+    bool m_certificateAuthorityDataHasBeenSet = false;
 
     Aws::String m_clusterStatus;
-    bool m_clusterStatusHasBeenSet;
+    bool m_clusterStatusHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AwsEksClusterResourcesVpcConfigDetails m_resourcesVpcConfig;
-    bool m_resourcesVpcConfigHasBeenSet;
+    bool m_resourcesVpcConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     AwsEksClusterLoggingDetails m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
   };
 
 } // namespace Model

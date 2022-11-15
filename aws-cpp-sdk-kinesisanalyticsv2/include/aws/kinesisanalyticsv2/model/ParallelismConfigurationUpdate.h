@@ -202,16 +202,16 @@ namespace Model
   private:
 
     ConfigurationType m_configurationTypeUpdate;
-    bool m_configurationTypeUpdateHasBeenSet;
+    bool m_configurationTypeUpdateHasBeenSet = false;
 
     int m_parallelismUpdate;
-    bool m_parallelismUpdateHasBeenSet;
+    bool m_parallelismUpdateHasBeenSet = false;
 
     int m_parallelismPerKPUUpdate;
-    bool m_parallelismPerKPUUpdateHasBeenSet;
+    bool m_parallelismPerKPUUpdateHasBeenSet = false;
 
     bool m_autoScalingEnabledUpdate;
-    bool m_autoScalingEnabledUpdateHasBeenSet;
+    bool m_autoScalingEnabledUpdateHasBeenSet = false;
   };
 
 } // namespace Model

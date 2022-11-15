@@ -32,7 +32,7 @@ Aws::String UpdateLinkAttributesRequest::SerializePayload() const
 
   if(m_attributeUpdatesHasBeenSet)
   {
-   Array<JsonValue> attributeUpdatesJsonList(m_attributeUpdates.size());
+   Aws::Utils::Array<JsonValue> attributeUpdatesJsonList(m_attributeUpdates.size());
    for(unsigned attributeUpdatesIndex = 0; attributeUpdatesIndex < attributeUpdatesJsonList.GetLength(); ++attributeUpdatesIndex)
    {
      attributeUpdatesJsonList[attributeUpdatesIndex].AsObject(m_attributeUpdates[attributeUpdatesIndex].Jsonize());

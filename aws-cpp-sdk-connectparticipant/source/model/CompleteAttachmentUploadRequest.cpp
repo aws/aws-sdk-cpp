@@ -27,7 +27,7 @@ Aws::String CompleteAttachmentUploadRequest::SerializePayload() const
 
   if(m_attachmentIdsHasBeenSet)
   {
-   Array<JsonValue> attachmentIdsJsonList(m_attachmentIds.size());
+   Aws::Utils::Array<JsonValue> attachmentIdsJsonList(m_attachmentIds.size());
    for(unsigned attachmentIdsIndex = 0; attachmentIdsIndex < attachmentIdsJsonList.GetLength(); ++attachmentIdsIndex)
    {
      attachmentIdsJsonList[attachmentIdsIndex].AsString(m_attachmentIds[attachmentIdsIndex]);

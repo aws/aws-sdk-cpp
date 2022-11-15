@@ -352,28 +352,28 @@ namespace Model
   private:
 
     CreateBackendAuthForgotPasswordConfig m_forgotPassword;
-    bool m_forgotPasswordHasBeenSet;
+    bool m_forgotPasswordHasBeenSet = false;
 
     CreateBackendAuthMFAConfig m_mfa;
-    bool m_mfaHasBeenSet;
+    bool m_mfaHasBeenSet = false;
 
     CreateBackendAuthOAuthConfig m_oAuth;
-    bool m_oAuthHasBeenSet;
+    bool m_oAuthHasBeenSet = false;
 
     CreateBackendAuthPasswordPolicyConfig m_passwordPolicy;
-    bool m_passwordPolicyHasBeenSet;
+    bool m_passwordPolicyHasBeenSet = false;
 
     Aws::Vector<RequiredSignUpAttributesElement> m_requiredSignUpAttributes;
-    bool m_requiredSignUpAttributesHasBeenSet;
+    bool m_requiredSignUpAttributesHasBeenSet = false;
 
     SignInMethod m_signInMethod;
-    bool m_signInMethodHasBeenSet;
+    bool m_signInMethodHasBeenSet = false;
 
     Aws::String m_userPoolName;
-    bool m_userPoolNameHasBeenSet;
+    bool m_userPoolNameHasBeenSet = false;
 
     CreateBackendAuthVerificationMessageConfig m_verificationMessage;
-    bool m_verificationMessageHasBeenSet;
+    bool m_verificationMessageHasBeenSet = false;
   };
 
 } // namespace Model

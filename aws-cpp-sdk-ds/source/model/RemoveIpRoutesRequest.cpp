@@ -30,7 +30,7 @@ Aws::String RemoveIpRoutesRequest::SerializePayload() const
 
   if(m_cidrIpsHasBeenSet)
   {
-   Array<JsonValue> cidrIpsJsonList(m_cidrIps.size());
+   Aws::Utils::Array<JsonValue> cidrIpsJsonList(m_cidrIps.size());
    for(unsigned cidrIpsIndex = 0; cidrIpsIndex < cidrIpsJsonList.GetLength(); ++cidrIpsIndex)
    {
      cidrIpsJsonList[cidrIpsIndex].AsString(m_cidrIps[cidrIpsIndex]);

@@ -231,22 +231,22 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     DirectoryType m_identityManagementType;
-    bool m_identityManagementTypeHasBeenSet;
+    bool m_identityManagementTypeHasBeenSet = false;
 
     Aws::String m_instanceAlias;
-    bool m_instanceAliasHasBeenSet;
+    bool m_instanceAliasHasBeenSet = false;
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     bool m_inboundCallsEnabled;
-    bool m_inboundCallsEnabledHasBeenSet;
+    bool m_inboundCallsEnabledHasBeenSet = false;
 
     bool m_outboundCallsEnabled;
-    bool m_outboundCallsEnabledHasBeenSet;
+    bool m_outboundCallsEnabledHasBeenSet = false;
   };
 
 } // namespace Model

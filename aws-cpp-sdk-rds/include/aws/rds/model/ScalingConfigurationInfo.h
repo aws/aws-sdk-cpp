@@ -44,25 +44,25 @@ namespace Model
 
 
     /**
-     * <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB
+     * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
      * engine mode.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
 
     /**
-     * <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB
+     * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
      * engine mode.</p>
      */
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
 
     /**
-     * <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB
+     * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
      * engine mode.</p>
      */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
-     * <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB
+     * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
      * engine mode.</p>
      */
     inline ScalingConfigurationInfo& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
@@ -283,22 +283,22 @@ namespace Model
   private:
 
     int m_minCapacity;
-    bool m_minCapacityHasBeenSet;
+    bool m_minCapacityHasBeenSet = false;
 
     int m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     bool m_autoPause;
-    bool m_autoPauseHasBeenSet;
+    bool m_autoPauseHasBeenSet = false;
 
     int m_secondsUntilAutoPause;
-    bool m_secondsUntilAutoPauseHasBeenSet;
+    bool m_secondsUntilAutoPauseHasBeenSet = false;
 
     Aws::String m_timeoutAction;
-    bool m_timeoutActionHasBeenSet;
+    bool m_timeoutActionHasBeenSet = false;
 
     int m_secondsBeforeTimeout;
-    bool m_secondsBeforeTimeoutHasBeenSet;
+    bool m_secondsBeforeTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

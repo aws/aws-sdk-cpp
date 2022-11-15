@@ -274,19 +274,19 @@ namespace Model
   private:
 
     Aws::String m_adminRoleArn;
-    bool m_adminRoleArnHasBeenSet;
+    bool m_adminRoleArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     Aws::String m_userRoleArn;
-    bool m_userRoleArnHasBeenSet;
+    bool m_userRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

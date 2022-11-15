@@ -283,22 +283,22 @@ namespace Model
   private:
 
     Aws::String m_monitorArn;
-    bool m_monitorArnHasBeenSet;
+    bool m_monitorArnHasBeenSet = false;
 
     AnomalyDateInterval m_dateInterval;
-    bool m_dateIntervalHasBeenSet;
+    bool m_dateIntervalHasBeenSet = false;
 
     AnomalyFeedbackType m_feedback;
-    bool m_feedbackHasBeenSet;
+    bool m_feedbackHasBeenSet = false;
 
     TotalImpactFilter m_totalImpact;
-    bool m_totalImpactHasBeenSet;
+    bool m_totalImpactHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -404,49 +404,57 @@ namespace Model
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline CreateEndpointRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline CreateEndpointRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the endpoint database. For a MySQL source or target endpoint, do
-     * not specify DatabaseName.</p>
+     * not specify DatabaseName. To migrate to a specific database, use this setting
+     * and <code>targetDbType</code>.</p>
      */
     inline CreateEndpointRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
@@ -1907,106 +1915,106 @@ namespace Model
   private:
 
     Aws::String m_endpointIdentifier;
-    bool m_endpointIdentifierHasBeenSet;
+    bool m_endpointIdentifierHasBeenSet = false;
 
     ReplicationEndpointTypeValue m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_engineName;
-    bool m_engineNameHasBeenSet;
+    bool m_engineNameHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_extraConnectionAttributes;
-    bool m_extraConnectionAttributesHasBeenSet;
+    bool m_extraConnectionAttributesHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     DmsSslModeValue m_sslMode;
-    bool m_sslModeHasBeenSet;
+    bool m_sslModeHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     Aws::String m_externalTableDefinition;
-    bool m_externalTableDefinitionHasBeenSet;
+    bool m_externalTableDefinitionHasBeenSet = false;
 
     DynamoDbSettings m_dynamoDbSettings;
-    bool m_dynamoDbSettingsHasBeenSet;
+    bool m_dynamoDbSettingsHasBeenSet = false;
 
     S3Settings m_s3Settings;
-    bool m_s3SettingsHasBeenSet;
+    bool m_s3SettingsHasBeenSet = false;
 
     DmsTransferSettings m_dmsTransferSettings;
-    bool m_dmsTransferSettingsHasBeenSet;
+    bool m_dmsTransferSettingsHasBeenSet = false;
 
     MongoDbSettings m_mongoDbSettings;
-    bool m_mongoDbSettingsHasBeenSet;
+    bool m_mongoDbSettingsHasBeenSet = false;
 
     KinesisSettings m_kinesisSettings;
-    bool m_kinesisSettingsHasBeenSet;
+    bool m_kinesisSettingsHasBeenSet = false;
 
     KafkaSettings m_kafkaSettings;
-    bool m_kafkaSettingsHasBeenSet;
+    bool m_kafkaSettingsHasBeenSet = false;
 
     ElasticsearchSettings m_elasticsearchSettings;
-    bool m_elasticsearchSettingsHasBeenSet;
+    bool m_elasticsearchSettingsHasBeenSet = false;
 
     NeptuneSettings m_neptuneSettings;
-    bool m_neptuneSettingsHasBeenSet;
+    bool m_neptuneSettingsHasBeenSet = false;
 
     RedshiftSettings m_redshiftSettings;
-    bool m_redshiftSettingsHasBeenSet;
+    bool m_redshiftSettingsHasBeenSet = false;
 
     PostgreSQLSettings m_postgreSQLSettings;
-    bool m_postgreSQLSettingsHasBeenSet;
+    bool m_postgreSQLSettingsHasBeenSet = false;
 
     MySQLSettings m_mySQLSettings;
-    bool m_mySQLSettingsHasBeenSet;
+    bool m_mySQLSettingsHasBeenSet = false;
 
     OracleSettings m_oracleSettings;
-    bool m_oracleSettingsHasBeenSet;
+    bool m_oracleSettingsHasBeenSet = false;
 
     SybaseSettings m_sybaseSettings;
-    bool m_sybaseSettingsHasBeenSet;
+    bool m_sybaseSettingsHasBeenSet = false;
 
     MicrosoftSQLServerSettings m_microsoftSQLServerSettings;
-    bool m_microsoftSQLServerSettingsHasBeenSet;
+    bool m_microsoftSQLServerSettingsHasBeenSet = false;
 
     IBMDb2Settings m_iBMDb2Settings;
-    bool m_iBMDb2SettingsHasBeenSet;
+    bool m_iBMDb2SettingsHasBeenSet = false;
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     DocDbSettings m_docDbSettings;
-    bool m_docDbSettingsHasBeenSet;
+    bool m_docDbSettingsHasBeenSet = false;
 
     RedisSettings m_redisSettings;
-    bool m_redisSettingsHasBeenSet;
+    bool m_redisSettingsHasBeenSet = false;
 
     GcpMySQLSettings m_gcpMySQLSettings;
-    bool m_gcpMySQLSettingsHasBeenSet;
+    bool m_gcpMySQLSettingsHasBeenSet = false;
   };
 
 } // namespace Model

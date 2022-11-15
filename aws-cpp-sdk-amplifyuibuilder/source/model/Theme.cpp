@@ -91,7 +91,7 @@ Theme& Theme::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("overrides"))
   {
-    Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
+    Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
     for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
     {
       m_overrides.push_back(overridesJsonList[overridesIndex].AsObject());
@@ -111,7 +111,7 @@ Theme& Theme::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("values"))
   {
-    Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
+    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsObject());
@@ -134,7 +134,7 @@ JsonValue Theme::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_environmentNameHasBeenSet)
@@ -151,7 +151,7 @@ JsonValue Theme::Jsonize() const
 
   if(m_modifiedAtHasBeenSet)
   {
-   payload.WithString("modifiedAt", m_modifiedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("modifiedAt", m_modifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_nameHasBeenSet)
@@ -162,7 +162,7 @@ JsonValue Theme::Jsonize() const
 
   if(m_overridesHasBeenSet)
   {
-   Array<JsonValue> overridesJsonList(m_overrides.size());
+   Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
    for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
    {
      overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());
@@ -184,7 +184,7 @@ JsonValue Theme::Jsonize() const
 
   if(m_valuesHasBeenSet)
   {
-   Array<JsonValue> valuesJsonList(m_values.size());
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
    {
      valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());

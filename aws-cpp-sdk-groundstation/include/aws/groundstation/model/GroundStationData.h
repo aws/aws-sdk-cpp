@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_groundStationId;
-    bool m_groundStationIdHasBeenSet;
+    bool m_groundStationIdHasBeenSet = false;
 
     Aws::String m_groundStationName;
-    bool m_groundStationNameHasBeenSet;
+    bool m_groundStationNameHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

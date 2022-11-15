@@ -148,7 +148,7 @@ Aws::String CreateFunctionRequest::SerializePayload() const
 
   if(m_layersHasBeenSet)
   {
-   Array<JsonValue> layersJsonList(m_layers.size());
+   Aws::Utils::Array<JsonValue> layersJsonList(m_layers.size());
    for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
    {
      layersJsonList[layersIndex].AsString(m_layers[layersIndex]);
@@ -159,7 +159,7 @@ Aws::String CreateFunctionRequest::SerializePayload() const
 
   if(m_fileSystemConfigsHasBeenSet)
   {
-   Array<JsonValue> fileSystemConfigsJsonList(m_fileSystemConfigs.size());
+   Aws::Utils::Array<JsonValue> fileSystemConfigsJsonList(m_fileSystemConfigs.size());
    for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
    {
      fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
@@ -182,7 +182,7 @@ Aws::String CreateFunctionRequest::SerializePayload() const
 
   if(m_architecturesHasBeenSet)
   {
-   Array<JsonValue> architecturesJsonList(m_architectures.size());
+   Aws::Utils::Array<JsonValue> architecturesJsonList(m_architectures.size());
    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
    {
      architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));

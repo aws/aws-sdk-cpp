@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 UpdateCostCategoryDefinitionRequest::UpdateCostCategoryDefinitionRequest() : 
     m_costCategoryArnHasBeenSet(false),
+    m_effectiveStartHasBeenSet(false),
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
     m_rulesHasBeenSet(false),
@@ -32,6 +33,12 @@ Aws::String UpdateCostCategoryDefinitionRequest::SerializePayload() const
 
   }
 
+  if(m_effectiveStartHasBeenSet)
+  {
+   payload.WithString("EffectiveStart", m_effectiveStart);
+
+  }
+
   if(m_ruleVersionHasBeenSet)
   {
    payload.WithString("RuleVersion", CostCategoryRuleVersionMapper::GetNameForCostCategoryRuleVersion(m_ruleVersion));
@@ -39,7 +46,7 @@ Aws::String UpdateCostCategoryDefinitionRequest::SerializePayload() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
@@ -56,7 +63,7 @@ Aws::String UpdateCostCategoryDefinitionRequest::SerializePayload() const
 
   if(m_splitChargeRulesHasBeenSet)
   {
-   Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
+   Aws::Utils::Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
    for(unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex)
    {
      splitChargeRulesJsonList[splitChargeRulesIndex].AsObject(m_splitChargeRules[splitChargeRulesIndex].Jsonize());

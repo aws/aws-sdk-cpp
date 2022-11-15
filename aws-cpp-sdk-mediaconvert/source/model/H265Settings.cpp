@@ -49,6 +49,8 @@ H265Settings::H265Settings() :
     m_gopSizeHasBeenSet(false),
     m_gopSizeUnits(H265GopSizeUnits::NOT_SET),
     m_gopSizeUnitsHasBeenSet(false),
+    m_hrdBufferFinalFillPercentage(0),
+    m_hrdBufferFinalFillPercentageHasBeenSet(false),
     m_hrdBufferInitialFillPercentage(0),
     m_hrdBufferInitialFillPercentageHasBeenSet(false),
     m_hrdBufferSize(0),
@@ -132,6 +134,8 @@ H265Settings::H265Settings(JsonView jsonValue) :
     m_gopSizeHasBeenSet(false),
     m_gopSizeUnits(H265GopSizeUnits::NOT_SET),
     m_gopSizeUnitsHasBeenSet(false),
+    m_hrdBufferFinalFillPercentage(0),
+    m_hrdBufferFinalFillPercentageHasBeenSet(false),
     m_hrdBufferInitialFillPercentage(0),
     m_hrdBufferInitialFillPercentageHasBeenSet(false),
     m_hrdBufferSize(0),
@@ -290,6 +294,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_gopSizeUnits = H265GopSizeUnitsMapper::GetH265GopSizeUnitsForName(jsonValue.GetString("gopSizeUnits"));
 
     m_gopSizeUnitsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hrdBufferFinalFillPercentage"))
+  {
+    m_hrdBufferFinalFillPercentage = jsonValue.GetInteger("hrdBufferFinalFillPercentage");
+
+    m_hrdBufferFinalFillPercentageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hrdBufferInitialFillPercentage"))
@@ -552,6 +563,12 @@ JsonValue H265Settings::Jsonize() const
   if(m_gopSizeUnitsHasBeenSet)
   {
    payload.WithString("gopSizeUnits", H265GopSizeUnitsMapper::GetNameForH265GopSizeUnits(m_gopSizeUnits));
+  }
+
+  if(m_hrdBufferFinalFillPercentageHasBeenSet)
+  {
+   payload.WithInteger("hrdBufferFinalFillPercentage", m_hrdBufferFinalFillPercentage);
+
   }
 
   if(m_hrdBufferInitialFillPercentageHasBeenSet)

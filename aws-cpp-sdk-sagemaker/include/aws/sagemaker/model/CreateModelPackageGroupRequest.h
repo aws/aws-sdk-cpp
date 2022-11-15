@@ -193,13 +193,13 @@ namespace Model
   private:
 
     Aws::String m_modelPackageGroupName;
-    bool m_modelPackageGroupNameHasBeenSet;
+    bool m_modelPackageGroupNameHasBeenSet = false;
 
     Aws::String m_modelPackageGroupDescription;
-    bool m_modelPackageGroupDescriptionHasBeenSet;
+    bool m_modelPackageGroupDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

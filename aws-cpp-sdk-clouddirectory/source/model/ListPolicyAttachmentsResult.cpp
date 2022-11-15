@@ -30,7 +30,7 @@ ListPolicyAttachmentsResult& ListPolicyAttachmentsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ObjectIdentifiers"))
   {
-    Array<JsonView> objectIdentifiersJsonList = jsonValue.GetArray("ObjectIdentifiers");
+    Aws::Utils::Array<JsonView> objectIdentifiersJsonList = jsonValue.GetArray("ObjectIdentifiers");
     for(unsigned objectIdentifiersIndex = 0; objectIdentifiersIndex < objectIdentifiersJsonList.GetLength(); ++objectIdentifiersIndex)
     {
       m_objectIdentifiers.push_back(objectIdentifiersJsonList[objectIdentifiersIndex].AsString());

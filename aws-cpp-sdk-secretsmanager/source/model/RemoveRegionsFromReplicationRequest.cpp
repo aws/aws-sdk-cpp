@@ -30,7 +30,7 @@ Aws::String RemoveRegionsFromReplicationRequest::SerializePayload() const
 
   if(m_removeReplicaRegionsHasBeenSet)
   {
-   Array<JsonValue> removeReplicaRegionsJsonList(m_removeReplicaRegions.size());
+   Aws::Utils::Array<JsonValue> removeReplicaRegionsJsonList(m_removeReplicaRegions.size());
    for(unsigned removeReplicaRegionsIndex = 0; removeReplicaRegionsIndex < removeReplicaRegionsJsonList.GetLength(); ++removeReplicaRegionsIndex)
    {
      removeReplicaRegionsJsonList[removeReplicaRegionsIndex].AsString(m_removeReplicaRegions[removeReplicaRegionsIndex]);

@@ -14,12 +14,12 @@ using namespace Aws::Utils;
 
 CreateAnalyzerRequest::CreateAnalyzerRequest() : 
     m_analyzerNameHasBeenSet(false),
-    m_archiveRulesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false),
     m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_archiveRulesHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -33,20 +33,19 @@ Aws::String CreateAnalyzerRequest::SerializePayload() const
 
   }
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", TypeMapper::GetNameForType(m_type));
+  }
+
   if(m_archiveRulesHasBeenSet)
   {
-   Array<JsonValue> archiveRulesJsonList(m_archiveRules.size());
+   Aws::Utils::Array<JsonValue> archiveRulesJsonList(m_archiveRules.size());
    for(unsigned archiveRulesIndex = 0; archiveRulesIndex < archiveRulesJsonList.GetLength(); ++archiveRulesIndex)
    {
      archiveRulesJsonList[archiveRulesIndex].AsObject(m_archiveRules[archiveRulesIndex].Jsonize());
    }
    payload.WithArray("archiveRules", std::move(archiveRulesJsonList));
-
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
 
   }
 
@@ -61,9 +60,10 @@ Aws::String CreateAnalyzerRequest::SerializePayload() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("type", TypeMapper::GetNameForType(m_type));
+   payload.WithString("clientToken", m_clientToken);
+
   }
 
   return payload.View().WriteReadable();

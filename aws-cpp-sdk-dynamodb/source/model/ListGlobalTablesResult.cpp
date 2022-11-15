@@ -30,7 +30,7 @@ ListGlobalTablesResult& ListGlobalTablesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GlobalTables"))
   {
-    Array<JsonView> globalTablesJsonList = jsonValue.GetArray("GlobalTables");
+    Aws::Utils::Array<JsonView> globalTablesJsonList = jsonValue.GetArray("GlobalTables");
     for(unsigned globalTablesIndex = 0; globalTablesIndex < globalTablesJsonList.GetLength(); ++globalTablesIndex)
     {
       m_globalTables.push_back(globalTablesJsonList[globalTablesIndex].AsObject());

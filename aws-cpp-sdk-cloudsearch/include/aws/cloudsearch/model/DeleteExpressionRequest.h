@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_expressionName;
-    bool m_expressionNameHasBeenSet;
+    bool m_expressionNameHasBeenSet = false;
   };
 
 } // namespace Model

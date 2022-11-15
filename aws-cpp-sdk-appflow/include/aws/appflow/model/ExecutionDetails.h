@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_mostRecentExecutionMessage;
-    bool m_mostRecentExecutionMessageHasBeenSet;
+    bool m_mostRecentExecutionMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_mostRecentExecutionTime;
-    bool m_mostRecentExecutionTimeHasBeenSet;
+    bool m_mostRecentExecutionTimeHasBeenSet = false;
 
     ExecutionStatus m_mostRecentExecutionStatus;
-    bool m_mostRecentExecutionStatusHasBeenSet;
+    bool m_mostRecentExecutionStatusHasBeenSet = false;
   };
 
 } // namespace Model

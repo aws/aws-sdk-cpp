@@ -43,58 +43,50 @@ namespace Model
 
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline const Aws::String& GetUsagePlanId() const{ return m_usagePlanId; }
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline void SetUsagePlanId(const char* value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId.assign(value); }
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline GetUsagePlanKeysRequest& WithUsagePlanId(const Aws::String& value) { SetUsagePlanId(value); return *this;}
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline GetUsagePlanKeysRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
-     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
-     * plan customer.</p>
+     * <p>The Id of the UsagePlan resource representing the usage plan containing the
+     * to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
      */
     inline GetUsagePlanKeysRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
@@ -216,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_usagePlanId;
-    bool m_usagePlanIdHasBeenSet;
+    bool m_usagePlanIdHasBeenSet = false;
 
     Aws::String m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nameQuery;
-    bool m_nameQueryHasBeenSet;
+    bool m_nameQueryHasBeenSet = false;
   };
 
 } // namespace Model

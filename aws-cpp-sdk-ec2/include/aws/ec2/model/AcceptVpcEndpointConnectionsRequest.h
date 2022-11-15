@@ -159,13 +159,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcEndpointIds;
-    bool m_vpcEndpointIdsHasBeenSet;
+    bool m_vpcEndpointIdsHasBeenSet = false;
   };
 
 } // namespace Model

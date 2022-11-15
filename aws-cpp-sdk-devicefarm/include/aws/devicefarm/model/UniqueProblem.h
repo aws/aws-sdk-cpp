@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<Problem> m_problems;
-    bool m_problemsHasBeenSet;
+    bool m_problemsHasBeenSet = false;
   };
 
 } // namespace Model

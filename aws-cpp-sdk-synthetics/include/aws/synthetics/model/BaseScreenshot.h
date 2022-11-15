@@ -98,83 +98,92 @@ namespace Model
 
     /**
      * <p>Coordinates that define the part of a screen to ignore during screenshot
-     * comparisons. To obtain the coordinates to use here, use the CloudWatch Logs
-     * console to draw the boundaries on the screen. For more information, see
-     * {LINK}</p>
+     * comparisons. To obtain the coordinates to use here, use the CloudWatch console
+     * to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     * Editing or deleting a canary</a> </p>
      */
     inline const Aws::Vector<Aws::String>& GetIgnoreCoordinates() const{ return m_ignoreCoordinates; }
 
     /**
      * <p>Coordinates that define the part of a screen to ignore during screenshot
-     * comparisons. To obtain the coordinates to use here, use the CloudWatch Logs
-     * console to draw the boundaries on the screen. For more information, see
-     * {LINK}</p>
+     * comparisons. To obtain the coordinates to use here, use the CloudWatch console
+     * to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     * Editing or deleting a canary</a> </p>
      */
     inline bool IgnoreCoordinatesHasBeenSet() const { return m_ignoreCoordinatesHasBeenSet; }
 
     /**
      * <p>Coordinates that define the part of a screen to ignore during screenshot
-     * comparisons. To obtain the coordinates to use here, use the CloudWatch Logs
-     * console to draw the boundaries on the screen. For more information, see
-     * {LINK}</p>
+     * comparisons. To obtain the coordinates to use here, use the CloudWatch console
+     * to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     * Editing or deleting a canary</a> </p>
      */
     inline void SetIgnoreCoordinates(const Aws::Vector<Aws::String>& value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates = value; }
 
     /**
      * <p>Coordinates that define the part of a screen to ignore during screenshot
-     * comparisons. To obtain the coordinates to use here, use the CloudWatch Logs
-     * console to draw the boundaries on the screen. For more information, see
-     * {LINK}</p>
+     * comparisons. To obtain the coordinates to use here, use the CloudWatch console
+     * to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     * Editing or deleting a canary</a> </p>
      */
     inline void SetIgnoreCoordinates(Aws::Vector<Aws::String>&& value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates = std::move(value); }
 
     /**
      * <p>Coordinates that define the part of a screen to ignore during screenshot
-     * comparisons. To obtain the coordinates to use here, use the CloudWatch Logs
-     * console to draw the boundaries on the screen. For more information, see
-     * {LINK}</p>
+     * comparisons. To obtain the coordinates to use here, use the CloudWatch console
+     * to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     * Editing or deleting a canary</a> </p>
      */
     inline BaseScreenshot& WithIgnoreCoordinates(const Aws::Vector<Aws::String>& value) { SetIgnoreCoordinates(value); return *this;}
 
     /**
      * <p>Coordinates that define the part of a screen to ignore during screenshot
-     * comparisons. To obtain the coordinates to use here, use the CloudWatch Logs
-     * console to draw the boundaries on the screen. For more information, see
-     * {LINK}</p>
+     * comparisons. To obtain the coordinates to use here, use the CloudWatch console
+     * to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     * Editing or deleting a canary</a> </p>
      */
     inline BaseScreenshot& WithIgnoreCoordinates(Aws::Vector<Aws::String>&& value) { SetIgnoreCoordinates(std::move(value)); return *this;}
 
     /**
      * <p>Coordinates that define the part of a screen to ignore during screenshot
-     * comparisons. To obtain the coordinates to use here, use the CloudWatch Logs
-     * console to draw the boundaries on the screen. For more information, see
-     * {LINK}</p>
+     * comparisons. To obtain the coordinates to use here, use the CloudWatch console
+     * to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     * Editing or deleting a canary</a> </p>
      */
     inline BaseScreenshot& AddIgnoreCoordinates(const Aws::String& value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates.push_back(value); return *this; }
 
     /**
      * <p>Coordinates that define the part of a screen to ignore during screenshot
-     * comparisons. To obtain the coordinates to use here, use the CloudWatch Logs
-     * console to draw the boundaries on the screen. For more information, see
-     * {LINK}</p>
+     * comparisons. To obtain the coordinates to use here, use the CloudWatch console
+     * to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     * Editing or deleting a canary</a> </p>
      */
     inline BaseScreenshot& AddIgnoreCoordinates(Aws::String&& value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Coordinates that define the part of a screen to ignore during screenshot
-     * comparisons. To obtain the coordinates to use here, use the CloudWatch Logs
-     * console to draw the boundaries on the screen. For more information, see
-     * {LINK}</p>
+     * comparisons. To obtain the coordinates to use here, use the CloudWatch console
+     * to draw the boundaries on the screen. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+     * Editing or deleting a canary</a> </p>
      */
     inline BaseScreenshot& AddIgnoreCoordinates(const char* value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates.push_back(value); return *this; }
 
   private:
 
     Aws::String m_screenshotName;
-    bool m_screenshotNameHasBeenSet;
+    bool m_screenshotNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ignoreCoordinates;
-    bool m_ignoreCoordinatesHasBeenSet;
+    bool m_ignoreCoordinatesHasBeenSet = false;
   };
 
 } // namespace Model

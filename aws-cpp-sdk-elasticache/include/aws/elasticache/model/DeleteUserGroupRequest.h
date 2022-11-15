@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_userGroupId;
-    bool m_userGroupIdHasBeenSet;
+    bool m_userGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

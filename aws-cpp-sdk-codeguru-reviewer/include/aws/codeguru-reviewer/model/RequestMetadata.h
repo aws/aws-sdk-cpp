@@ -176,8 +176,7 @@ namespace Model
      * the repository association's <code>ProviderType</code> is <code>S3Bucket</code>
      * and the CI/CD repository vendor name is GitHub. For more information, see the
      * definition for <code>ProviderType</code> in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.
-     * </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
      */
     inline const VendorName& GetVendorName() const{ return m_vendorName; }
 
@@ -188,8 +187,7 @@ namespace Model
      * the repository association's <code>ProviderType</code> is <code>S3Bucket</code>
      * and the CI/CD repository vendor name is GitHub. For more information, see the
      * definition for <code>ProviderType</code> in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.
-     * </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
      */
     inline bool VendorNameHasBeenSet() const { return m_vendorNameHasBeenSet; }
 
@@ -200,8 +198,7 @@ namespace Model
      * the repository association's <code>ProviderType</code> is <code>S3Bucket</code>
      * and the CI/CD repository vendor name is GitHub. For more information, see the
      * definition for <code>ProviderType</code> in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.
-     * </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
      */
     inline void SetVendorName(const VendorName& value) { m_vendorNameHasBeenSet = true; m_vendorName = value; }
 
@@ -212,8 +209,7 @@ namespace Model
      * the repository association's <code>ProviderType</code> is <code>S3Bucket</code>
      * and the CI/CD repository vendor name is GitHub. For more information, see the
      * definition for <code>ProviderType</code> in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.
-     * </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
      */
     inline void SetVendorName(VendorName&& value) { m_vendorNameHasBeenSet = true; m_vendorName = std::move(value); }
 
@@ -224,8 +220,7 @@ namespace Model
      * the repository association's <code>ProviderType</code> is <code>S3Bucket</code>
      * and the CI/CD repository vendor name is GitHub. For more information, see the
      * definition for <code>ProviderType</code> in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.
-     * </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
      */
     inline RequestMetadata& WithVendorName(const VendorName& value) { SetVendorName(value); return *this;}
 
@@ -236,24 +231,23 @@ namespace Model
      * the repository association's <code>ProviderType</code> is <code>S3Bucket</code>
      * and the CI/CD repository vendor name is GitHub. For more information, see the
      * definition for <code>ProviderType</code> in <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.
-     * </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
      */
     inline RequestMetadata& WithVendorName(VendorName&& value) { SetVendorName(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_requester;
-    bool m_requesterHasBeenSet;
+    bool m_requesterHasBeenSet = false;
 
     EventInfo m_eventInfo;
-    bool m_eventInfoHasBeenSet;
+    bool m_eventInfoHasBeenSet = false;
 
     VendorName m_vendorName;
-    bool m_vendorNameHasBeenSet;
+    bool m_vendorNameHasBeenSet = false;
   };
 
 } // namespace Model

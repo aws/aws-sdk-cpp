@@ -262,16 +262,16 @@ namespace Model
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_backtrackTo;
-    bool m_backtrackToHasBeenSet;
+    bool m_backtrackToHasBeenSet = false;
 
     bool m_force;
-    bool m_forceHasBeenSet;
+    bool m_forceHasBeenSet = false;
 
     bool m_useEarliestTimeOnPointInTimeUnavailable;
-    bool m_useEarliestTimeOnPointInTimeUnavailableHasBeenSet;
+    bool m_useEarliestTimeOnPointInTimeUnavailableHasBeenSet = false;
   };
 
 } // namespace Model

@@ -321,22 +321,22 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_endpointConfigName;
-    bool m_endpointConfigNameHasBeenSet;
+    bool m_endpointConfigNameHasBeenSet = false;
 
     bool m_retainAllVariantProperties;
-    bool m_retainAllVariantPropertiesHasBeenSet;
+    bool m_retainAllVariantPropertiesHasBeenSet = false;
 
     Aws::Vector<VariantProperty> m_excludeRetainedVariantProperties;
-    bool m_excludeRetainedVariantPropertiesHasBeenSet;
+    bool m_excludeRetainedVariantPropertiesHasBeenSet = false;
 
     DeploymentConfig m_deploymentConfig;
-    bool m_deploymentConfigHasBeenSet;
+    bool m_deploymentConfigHasBeenSet = false;
 
     bool m_retainDeploymentConfig;
-    bool m_retainDeploymentConfigHasBeenSet;
+    bool m_retainDeploymentConfigHasBeenSet = false;
   };
 
 } // namespace Model

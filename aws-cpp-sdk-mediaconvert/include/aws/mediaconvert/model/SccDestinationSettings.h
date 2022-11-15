@@ -107,7 +107,7 @@ namespace Model
   private:
 
     SccDestinationFramerate m_framerate;
-    bool m_framerateHasBeenSet;
+    bool m_framerateHasBeenSet = false;
   };
 
 } // namespace Model

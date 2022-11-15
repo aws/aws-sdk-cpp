@@ -27,8 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>This data type is used as a response element in the
-   * <code>DescribeEvents</code> action.</p><p><h3>See Also:</h3>   <a
+   * <p>This data type is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Event">AWS API
    * Reference</a></p>
    */
@@ -276,22 +277,22 @@ namespace Model
   private:
 
     Aws::String m_sourceIdentifier;
-    bool m_sourceIdentifierHasBeenSet;
+    bool m_sourceIdentifierHasBeenSet = false;
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventCategories;
-    bool m_eventCategoriesHasBeenSet;
+    bool m_eventCategoriesHasBeenSet = false;
 
     Aws::Utils::DateTime m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
   };
 
 } // namespace Model

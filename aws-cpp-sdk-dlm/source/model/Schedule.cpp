@@ -29,7 +29,8 @@ Schedule::Schedule() :
     m_fastRestoreRuleHasBeenSet(false),
     m_crossRegionCopyRulesHasBeenSet(false),
     m_shareRulesHasBeenSet(false),
-    m_deprecateRuleHasBeenSet(false)
+    m_deprecateRuleHasBeenSet(false),
+    m_archiveRuleHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Schedule::Schedule(JsonView jsonValue) :
     m_fastRestoreRuleHasBeenSet(false),
     m_crossRegionCopyRulesHasBeenSet(false),
     m_shareRulesHasBeenSet(false),
-    m_deprecateRuleHasBeenSet(false)
+    m_deprecateRuleHasBeenSet(false),
+    m_archiveRuleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,7 +69,7 @@ Schedule& Schedule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TagsToAdd"))
   {
-    Array<JsonView> tagsToAddJsonList = jsonValue.GetArray("TagsToAdd");
+    Aws::Utils::Array<JsonView> tagsToAddJsonList = jsonValue.GetArray("TagsToAdd");
     for(unsigned tagsToAddIndex = 0; tagsToAddIndex < tagsToAddJsonList.GetLength(); ++tagsToAddIndex)
     {
       m_tagsToAdd.push_back(tagsToAddJsonList[tagsToAddIndex].AsObject());
@@ -77,7 +79,7 @@ Schedule& Schedule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("VariableTags"))
   {
-    Array<JsonView> variableTagsJsonList = jsonValue.GetArray("VariableTags");
+    Aws::Utils::Array<JsonView> variableTagsJsonList = jsonValue.GetArray("VariableTags");
     for(unsigned variableTagsIndex = 0; variableTagsIndex < variableTagsJsonList.GetLength(); ++variableTagsIndex)
     {
       m_variableTags.push_back(variableTagsJsonList[variableTagsIndex].AsObject());
@@ -108,7 +110,7 @@ Schedule& Schedule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CrossRegionCopyRules"))
   {
-    Array<JsonView> crossRegionCopyRulesJsonList = jsonValue.GetArray("CrossRegionCopyRules");
+    Aws::Utils::Array<JsonView> crossRegionCopyRulesJsonList = jsonValue.GetArray("CrossRegionCopyRules");
     for(unsigned crossRegionCopyRulesIndex = 0; crossRegionCopyRulesIndex < crossRegionCopyRulesJsonList.GetLength(); ++crossRegionCopyRulesIndex)
     {
       m_crossRegionCopyRules.push_back(crossRegionCopyRulesJsonList[crossRegionCopyRulesIndex].AsObject());
@@ -118,7 +120,7 @@ Schedule& Schedule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ShareRules"))
   {
-    Array<JsonView> shareRulesJsonList = jsonValue.GetArray("ShareRules");
+    Aws::Utils::Array<JsonView> shareRulesJsonList = jsonValue.GetArray("ShareRules");
     for(unsigned shareRulesIndex = 0; shareRulesIndex < shareRulesJsonList.GetLength(); ++shareRulesIndex)
     {
       m_shareRules.push_back(shareRulesJsonList[shareRulesIndex].AsObject());
@@ -131,6 +133,13 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     m_deprecateRule = jsonValue.GetObject("DeprecateRule");
 
     m_deprecateRuleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ArchiveRule"))
+  {
+    m_archiveRule = jsonValue.GetObject("ArchiveRule");
+
+    m_archiveRuleHasBeenSet = true;
   }
 
   return *this;
@@ -154,7 +163,7 @@ JsonValue Schedule::Jsonize() const
 
   if(m_tagsToAddHasBeenSet)
   {
-   Array<JsonValue> tagsToAddJsonList(m_tagsToAdd.size());
+   Aws::Utils::Array<JsonValue> tagsToAddJsonList(m_tagsToAdd.size());
    for(unsigned tagsToAddIndex = 0; tagsToAddIndex < tagsToAddJsonList.GetLength(); ++tagsToAddIndex)
    {
      tagsToAddJsonList[tagsToAddIndex].AsObject(m_tagsToAdd[tagsToAddIndex].Jsonize());
@@ -165,7 +174,7 @@ JsonValue Schedule::Jsonize() const
 
   if(m_variableTagsHasBeenSet)
   {
-   Array<JsonValue> variableTagsJsonList(m_variableTags.size());
+   Aws::Utils::Array<JsonValue> variableTagsJsonList(m_variableTags.size());
    for(unsigned variableTagsIndex = 0; variableTagsIndex < variableTagsJsonList.GetLength(); ++variableTagsIndex)
    {
      variableTagsJsonList[variableTagsIndex].AsObject(m_variableTags[variableTagsIndex].Jsonize());
@@ -194,7 +203,7 @@ JsonValue Schedule::Jsonize() const
 
   if(m_crossRegionCopyRulesHasBeenSet)
   {
-   Array<JsonValue> crossRegionCopyRulesJsonList(m_crossRegionCopyRules.size());
+   Aws::Utils::Array<JsonValue> crossRegionCopyRulesJsonList(m_crossRegionCopyRules.size());
    for(unsigned crossRegionCopyRulesIndex = 0; crossRegionCopyRulesIndex < crossRegionCopyRulesJsonList.GetLength(); ++crossRegionCopyRulesIndex)
    {
      crossRegionCopyRulesJsonList[crossRegionCopyRulesIndex].AsObject(m_crossRegionCopyRules[crossRegionCopyRulesIndex].Jsonize());
@@ -205,7 +214,7 @@ JsonValue Schedule::Jsonize() const
 
   if(m_shareRulesHasBeenSet)
   {
-   Array<JsonValue> shareRulesJsonList(m_shareRules.size());
+   Aws::Utils::Array<JsonValue> shareRulesJsonList(m_shareRules.size());
    for(unsigned shareRulesIndex = 0; shareRulesIndex < shareRulesJsonList.GetLength(); ++shareRulesIndex)
    {
      shareRulesJsonList[shareRulesIndex].AsObject(m_shareRules[shareRulesIndex].Jsonize());
@@ -217,6 +226,12 @@ JsonValue Schedule::Jsonize() const
   if(m_deprecateRuleHasBeenSet)
   {
    payload.WithObject("DeprecateRule", m_deprecateRule.Jsonize());
+
+  }
+
+  if(m_archiveRuleHasBeenSet)
+  {
+   payload.WithObject("ArchiveRule", m_archiveRule.Jsonize());
 
   }
 

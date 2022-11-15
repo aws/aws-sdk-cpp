@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet;
+    bool m_s3KeyHasBeenSet = false;
 
     Aws::String m_etag;
-    bool m_etagHasBeenSet;
+    bool m_etagHasBeenSet = false;
   };
 
 } // namespace Model

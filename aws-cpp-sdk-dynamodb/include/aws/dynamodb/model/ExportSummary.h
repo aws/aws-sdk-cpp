@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_exportArn;
-    bool m_exportArnHasBeenSet;
+    bool m_exportArnHasBeenSet = false;
 
     ExportStatus m_exportStatus;
-    bool m_exportStatusHasBeenSet;
+    bool m_exportStatusHasBeenSet = false;
   };
 
 } // namespace Model

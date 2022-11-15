@@ -129,10 +129,10 @@ namespace Model
   private:
 
     DeliveryMediumType m_deliveryMedium;
-    bool m_deliveryMediumHasBeenSet;
+    bool m_deliveryMediumHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
   };
 
 } // namespace Model

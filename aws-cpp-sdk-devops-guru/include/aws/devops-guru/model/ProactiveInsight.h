@@ -356,31 +356,31 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InsightSeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     InsightStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     InsightTimeRange m_insightTimeRange;
-    bool m_insightTimeRangeHasBeenSet;
+    bool m_insightTimeRangeHasBeenSet = false;
 
     PredictionTimeRange m_predictionTimeRange;
-    bool m_predictionTimeRangeHasBeenSet;
+    bool m_predictionTimeRangeHasBeenSet = false;
 
     ResourceCollection m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
+    bool m_resourceCollectionHasBeenSet = false;
 
     Aws::String m_ssmOpsItemId;
-    bool m_ssmOpsItemIdHasBeenSet;
+    bool m_ssmOpsItemIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

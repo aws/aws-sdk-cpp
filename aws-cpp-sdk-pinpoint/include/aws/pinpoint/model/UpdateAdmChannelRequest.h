@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ADMChannelRequest m_aDMChannelRequest;
-    bool m_aDMChannelRequestHasBeenSet;
+    bool m_aDMChannelRequestHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
   };
 
 } // namespace Model

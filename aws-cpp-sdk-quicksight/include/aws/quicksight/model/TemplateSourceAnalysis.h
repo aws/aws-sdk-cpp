@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<DataSetReference> m_dataSetReferences;
-    bool m_dataSetReferencesHasBeenSet;
+    bool m_dataSetReferencesHasBeenSet = false;
   };
 
 } // namespace Model

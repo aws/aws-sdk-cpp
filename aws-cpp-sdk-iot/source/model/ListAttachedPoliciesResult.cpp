@@ -30,7 +30,7 @@ ListAttachedPoliciesResult& ListAttachedPoliciesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("policies"))
   {
-    Array<JsonView> policiesJsonList = jsonValue.GetArray("policies");
+    Aws::Utils::Array<JsonView> policiesJsonList = jsonValue.GetArray("policies");
     for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
     {
       m_policies.push_back(policiesJsonList[policiesIndex].AsObject());

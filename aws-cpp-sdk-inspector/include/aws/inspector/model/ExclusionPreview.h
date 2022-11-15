@@ -248,19 +248,19 @@ namespace Model
   private:
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_recommendation;
-    bool m_recommendationHasBeenSet;
+    bool m_recommendationHasBeenSet = false;
 
     Aws::Vector<Scope> m_scopes;
-    bool m_scopesHasBeenSet;
+    bool m_scopesHasBeenSet = false;
 
     Aws::Vector<Attribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

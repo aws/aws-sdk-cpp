@@ -271,16 +271,16 @@ namespace Model
   private:
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     ShardIteratorType m_shardIteratorType;
-    bool m_shardIteratorTypeHasBeenSet;
+    bool m_shardIteratorTypeHasBeenSet = false;
 
     Aws::String m_sequenceNumber;
-    bool m_sequenceNumberHasBeenSet;
+    bool m_sequenceNumberHasBeenSet = false;
   };
 
 } // namespace Model

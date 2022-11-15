@@ -524,37 +524,37 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     bool m_removePrivateDnsName;
-    bool m_removePrivateDnsNameHasBeenSet;
+    bool m_removePrivateDnsNameHasBeenSet = false;
 
     bool m_acceptanceRequired;
-    bool m_acceptanceRequiredHasBeenSet;
+    bool m_acceptanceRequiredHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addNetworkLoadBalancerArns;
-    bool m_addNetworkLoadBalancerArnsHasBeenSet;
+    bool m_addNetworkLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeNetworkLoadBalancerArns;
-    bool m_removeNetworkLoadBalancerArnsHasBeenSet;
+    bool m_removeNetworkLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addGatewayLoadBalancerArns;
-    bool m_addGatewayLoadBalancerArnsHasBeenSet;
+    bool m_addGatewayLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeGatewayLoadBalancerArns;
-    bool m_removeGatewayLoadBalancerArnsHasBeenSet;
+    bool m_removeGatewayLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addSupportedIpAddressTypes;
-    bool m_addSupportedIpAddressTypesHasBeenSet;
+    bool m_addSupportedIpAddressTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeSupportedIpAddressTypes;
-    bool m_removeSupportedIpAddressTypesHasBeenSet;
+    bool m_removeSupportedIpAddressTypesHasBeenSet = false;
   };
 
 } // namespace Model

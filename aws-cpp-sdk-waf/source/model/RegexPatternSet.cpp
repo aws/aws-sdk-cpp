@@ -51,7 +51,7 @@ RegexPatternSet& RegexPatternSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RegexPatternStrings"))
   {
-    Array<JsonView> regexPatternStringsJsonList = jsonValue.GetArray("RegexPatternStrings");
+    Aws::Utils::Array<JsonView> regexPatternStringsJsonList = jsonValue.GetArray("RegexPatternStrings");
     for(unsigned regexPatternStringsIndex = 0; regexPatternStringsIndex < regexPatternStringsJsonList.GetLength(); ++regexPatternStringsIndex)
     {
       m_regexPatternStrings.push_back(regexPatternStringsJsonList[regexPatternStringsIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue RegexPatternSet::Jsonize() const
 
   if(m_regexPatternStringsHasBeenSet)
   {
-   Array<JsonValue> regexPatternStringsJsonList(m_regexPatternStrings.size());
+   Aws::Utils::Array<JsonValue> regexPatternStringsJsonList(m_regexPatternStrings.size());
    for(unsigned regexPatternStringsIndex = 0; regexPatternStringsIndex < regexPatternStringsJsonList.GetLength(); ++regexPatternStringsIndex)
    {
      regexPatternStringsJsonList[regexPatternStringsIndex].AsString(m_regexPatternStrings[regexPatternStringsIndex]);

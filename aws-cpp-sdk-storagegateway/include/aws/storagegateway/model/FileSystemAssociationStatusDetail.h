@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
   };
 
 } // namespace Model

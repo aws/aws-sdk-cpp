@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_quantumTaskArn;
-    bool m_quantumTaskArnHasBeenSet;
+    bool m_quantumTaskArnHasBeenSet = false;
   };
 
 } // namespace Model

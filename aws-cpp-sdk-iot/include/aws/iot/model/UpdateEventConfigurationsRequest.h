@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Map<EventType, Configuration> m_eventConfigurations;
-    bool m_eventConfigurationsHasBeenSet;
+    bool m_eventConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

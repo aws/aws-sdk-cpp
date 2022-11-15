@@ -122,7 +122,7 @@ DataSet& DataSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OutputColumns"))
   {
-    Array<JsonView> outputColumnsJsonList = jsonValue.GetArray("OutputColumns");
+    Aws::Utils::Array<JsonView> outputColumnsJsonList = jsonValue.GetArray("OutputColumns");
     for(unsigned outputColumnsIndex = 0; outputColumnsIndex < outputColumnsJsonList.GetLength(); ++outputColumnsIndex)
     {
       m_outputColumns.push_back(outputColumnsJsonList[outputColumnsIndex].AsObject());
@@ -146,7 +146,7 @@ DataSet& DataSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ColumnGroups"))
   {
-    Array<JsonView> columnGroupsJsonList = jsonValue.GetArray("ColumnGroups");
+    Aws::Utils::Array<JsonView> columnGroupsJsonList = jsonValue.GetArray("ColumnGroups");
     for(unsigned columnGroupsIndex = 0; columnGroupsIndex < columnGroupsJsonList.GetLength(); ++columnGroupsIndex)
     {
       m_columnGroups.push_back(columnGroupsJsonList[columnGroupsIndex].AsObject());
@@ -180,7 +180,7 @@ DataSet& DataSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ColumnLevelPermissionRules"))
   {
-    Array<JsonView> columnLevelPermissionRulesJsonList = jsonValue.GetArray("ColumnLevelPermissionRules");
+    Aws::Utils::Array<JsonView> columnLevelPermissionRulesJsonList = jsonValue.GetArray("ColumnLevelPermissionRules");
     for(unsigned columnLevelPermissionRulesIndex = 0; columnLevelPermissionRulesIndex < columnLevelPermissionRulesJsonList.GetLength(); ++columnLevelPermissionRulesIndex)
     {
       m_columnLevelPermissionRules.push_back(columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject());
@@ -254,7 +254,7 @@ JsonValue DataSet::Jsonize() const
 
   if(m_outputColumnsHasBeenSet)
   {
-   Array<JsonValue> outputColumnsJsonList(m_outputColumns.size());
+   Aws::Utils::Array<JsonValue> outputColumnsJsonList(m_outputColumns.size());
    for(unsigned outputColumnsIndex = 0; outputColumnsIndex < outputColumnsJsonList.GetLength(); ++outputColumnsIndex)
    {
      outputColumnsJsonList[outputColumnsIndex].AsObject(m_outputColumns[outputColumnsIndex].Jsonize());
@@ -276,7 +276,7 @@ JsonValue DataSet::Jsonize() const
 
   if(m_columnGroupsHasBeenSet)
   {
-   Array<JsonValue> columnGroupsJsonList(m_columnGroups.size());
+   Aws::Utils::Array<JsonValue> columnGroupsJsonList(m_columnGroups.size());
    for(unsigned columnGroupsIndex = 0; columnGroupsIndex < columnGroupsJsonList.GetLength(); ++columnGroupsIndex)
    {
      columnGroupsJsonList[columnGroupsIndex].AsObject(m_columnGroups[columnGroupsIndex].Jsonize());
@@ -310,7 +310,7 @@ JsonValue DataSet::Jsonize() const
 
   if(m_columnLevelPermissionRulesHasBeenSet)
   {
-   Array<JsonValue> columnLevelPermissionRulesJsonList(m_columnLevelPermissionRules.size());
+   Aws::Utils::Array<JsonValue> columnLevelPermissionRulesJsonList(m_columnLevelPermissionRules.size());
    for(unsigned columnLevelPermissionRulesIndex = 0; columnLevelPermissionRulesIndex < columnLevelPermissionRulesJsonList.GetLength(); ++columnLevelPermissionRulesIndex)
    {
      columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject(m_columnLevelPermissionRules[columnLevelPermissionRulesIndex].Jsonize());

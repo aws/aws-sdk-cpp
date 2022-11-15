@@ -25,7 +25,9 @@ RecommendationJobInputConfig::RecommendationJobInputConfig() :
     m_trafficPatternHasBeenSet(false),
     m_resourceLimitHasBeenSet(false),
     m_endpointConfigurationsHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
+    m_volumeKmsKeyIdHasBeenSet(false),
+    m_containerConfigHasBeenSet(false),
+    m_endpointsHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ RecommendationJobInputConfig::RecommendationJobInputConfig(JsonView jsonValue) :
     m_trafficPatternHasBeenSet(false),
     m_resourceLimitHasBeenSet(false),
     m_endpointConfigurationsHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
+    m_volumeKmsKeyIdHasBeenSet(false),
+    m_containerConfigHasBeenSet(false),
+    m_endpointsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,7 +77,7 @@ RecommendationJobInputConfig& RecommendationJobInputConfig::operator =(JsonView 
 
   if(jsonValue.ValueExists("EndpointConfigurations"))
   {
-    Array<JsonView> endpointConfigurationsJsonList = jsonValue.GetArray("EndpointConfigurations");
+    Aws::Utils::Array<JsonView> endpointConfigurationsJsonList = jsonValue.GetArray("EndpointConfigurations");
     for(unsigned endpointConfigurationsIndex = 0; endpointConfigurationsIndex < endpointConfigurationsJsonList.GetLength(); ++endpointConfigurationsIndex)
     {
       m_endpointConfigurations.push_back(endpointConfigurationsJsonList[endpointConfigurationsIndex].AsObject());
@@ -86,6 +90,23 @@ RecommendationJobInputConfig& RecommendationJobInputConfig::operator =(JsonView 
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
 
     m_volumeKmsKeyIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ContainerConfig"))
+  {
+    m_containerConfig = jsonValue.GetObject("ContainerConfig");
+
+    m_containerConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Endpoints"))
+  {
+    Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
+    for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
+    {
+      m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsObject());
+    }
+    m_endpointsHasBeenSet = true;
   }
 
   return *this;
@@ -121,7 +142,7 @@ JsonValue RecommendationJobInputConfig::Jsonize() const
 
   if(m_endpointConfigurationsHasBeenSet)
   {
-   Array<JsonValue> endpointConfigurationsJsonList(m_endpointConfigurations.size());
+   Aws::Utils::Array<JsonValue> endpointConfigurationsJsonList(m_endpointConfigurations.size());
    for(unsigned endpointConfigurationsIndex = 0; endpointConfigurationsIndex < endpointConfigurationsJsonList.GetLength(); ++endpointConfigurationsIndex)
    {
      endpointConfigurationsJsonList[endpointConfigurationsIndex].AsObject(m_endpointConfigurations[endpointConfigurationsIndex].Jsonize());
@@ -133,6 +154,23 @@ JsonValue RecommendationJobInputConfig::Jsonize() const
   if(m_volumeKmsKeyIdHasBeenSet)
   {
    payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
+
+  }
+
+  if(m_containerConfigHasBeenSet)
+  {
+   payload.WithObject("ContainerConfig", m_containerConfig.Jsonize());
+
+  }
+
+  if(m_endpointsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> endpointsJsonList(m_endpoints.size());
+   for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
+   {
+     endpointsJsonList[endpointsIndex].AsObject(m_endpoints[endpointsIndex].Jsonize());
+   }
+   payload.WithArray("Endpoints", std::move(endpointsJsonList));
 
   }
 

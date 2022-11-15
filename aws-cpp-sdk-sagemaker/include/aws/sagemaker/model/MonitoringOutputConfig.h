@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::Vector<MonitoringOutput> m_monitoringOutputs;
-    bool m_monitoringOutputsHasBeenSet;
+    bool m_monitoringOutputsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

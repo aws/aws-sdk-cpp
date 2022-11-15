@@ -106,7 +106,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_detailsMap;
-    bool m_detailsMapHasBeenSet;
+    bool m_detailsMapHasBeenSet = false;
   };
 
 } // namespace Model

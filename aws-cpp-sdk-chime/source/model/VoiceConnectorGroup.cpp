@@ -57,7 +57,7 @@ VoiceConnectorGroup& VoiceConnectorGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("VoiceConnectorItems"))
   {
-    Array<JsonView> voiceConnectorItemsJsonList = jsonValue.GetArray("VoiceConnectorItems");
+    Aws::Utils::Array<JsonView> voiceConnectorItemsJsonList = jsonValue.GetArray("VoiceConnectorItems");
     for(unsigned voiceConnectorItemsIndex = 0; voiceConnectorItemsIndex < voiceConnectorItemsJsonList.GetLength(); ++voiceConnectorItemsIndex)
     {
       m_voiceConnectorItems.push_back(voiceConnectorItemsJsonList[voiceConnectorItemsIndex].AsObject());
@@ -107,7 +107,7 @@ JsonValue VoiceConnectorGroup::Jsonize() const
 
   if(m_voiceConnectorItemsHasBeenSet)
   {
-   Array<JsonValue> voiceConnectorItemsJsonList(m_voiceConnectorItems.size());
+   Aws::Utils::Array<JsonValue> voiceConnectorItemsJsonList(m_voiceConnectorItems.size());
    for(unsigned voiceConnectorItemsIndex = 0; voiceConnectorItemsIndex < voiceConnectorItemsJsonList.GetLength(); ++voiceConnectorItemsIndex)
    {
      voiceConnectorItemsJsonList[voiceConnectorItemsIndex].AsObject(m_voiceConnectorItems[voiceConnectorItemsIndex].Jsonize());
@@ -118,12 +118,12 @@ JsonValue VoiceConnectorGroup::Jsonize() const
 
   if(m_createdTimestampHasBeenSet)
   {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedTimestampHasBeenSet)
   {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_voiceConnectorGroupArnHasBeenSet)

@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_transformId;
-    bool m_transformIdHasBeenSet;
+    bool m_transformIdHasBeenSet = false;
 
     Aws::String m_outputS3Path;
-    bool m_outputS3PathHasBeenSet;
+    bool m_outputS3PathHasBeenSet = false;
   };
 
 } // namespace Model

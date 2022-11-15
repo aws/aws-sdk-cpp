@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_api;
-    bool m_apiHasBeenSet;
+    bool m_apiHasBeenSet = false;
 
     Aws::String m_apiServiceName;
-    bool m_apiServiceNameHasBeenSet;
+    bool m_apiServiceNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstSeen;
-    bool m_firstSeenHasBeenSet;
+    bool m_firstSeenHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSeen;
-    bool m_lastSeenHasBeenSet;
+    bool m_lastSeenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListAlarmModelVersionsResult& ListAlarmModelVersionsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("alarmModelVersionSummaries"))
   {
-    Array<JsonView> alarmModelVersionSummariesJsonList = jsonValue.GetArray("alarmModelVersionSummaries");
+    Aws::Utils::Array<JsonView> alarmModelVersionSummariesJsonList = jsonValue.GetArray("alarmModelVersionSummaries");
     for(unsigned alarmModelVersionSummariesIndex = 0; alarmModelVersionSummariesIndex < alarmModelVersionSummariesJsonList.GetLength(); ++alarmModelVersionSummariesIndex)
     {
       m_alarmModelVersionSummaries.push_back(alarmModelVersionSummariesJsonList[alarmModelVersionSummariesIndex].AsObject());

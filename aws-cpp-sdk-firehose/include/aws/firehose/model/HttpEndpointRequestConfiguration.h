@@ -137,10 +137,10 @@ namespace Model
   private:
 
     ContentEncoding m_contentEncoding;
-    bool m_contentEncodingHasBeenSet;
+    bool m_contentEncodingHasBeenSet = false;
 
     Aws::Vector<HttpEndpointCommonAttribute> m_commonAttributes;
-    bool m_commonAttributesHasBeenSet;
+    bool m_commonAttributesHasBeenSet = false;
   };
 
 } // namespace Model

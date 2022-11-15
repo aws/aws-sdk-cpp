@@ -318,19 +318,19 @@ namespace Model
   private:
 
     Aws::String m_resourceSetArn;
-    bool m_resourceSetArnHasBeenSet;
+    bool m_resourceSetArnHasBeenSet = false;
 
     Aws::String m_resourceSetName;
-    bool m_resourceSetNameHasBeenSet;
+    bool m_resourceSetNameHasBeenSet = false;
 
     Aws::String m_resourceSetType;
-    bool m_resourceSetTypeHasBeenSet;
+    bool m_resourceSetTypeHasBeenSet = false;
 
     Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -116,38 +116,38 @@ namespace Model
 
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline const LambdaTarget& GetLambdaTarget() const{ return m_lambdaTarget; }
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline bool LambdaTargetHasBeenSet() const { return m_lambdaTargetHasBeenSet; }
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline void SetLambdaTarget(const LambdaTarget& value) { m_lambdaTargetHasBeenSet = true; m_lambdaTarget = value; }
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline void SetLambdaTarget(LambdaTarget&& value) { m_lambdaTargetHasBeenSet = true; m_lambdaTarget = std::move(value); }
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline DeploymentTarget& WithLambdaTarget(const LambdaTarget& value) { SetLambdaTarget(value); return *this;}
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline DeploymentTarget& WithLambdaTarget(LambdaTarget&& value) { SetLambdaTarget(std::move(value)); return *this;}
 
@@ -210,19 +210,19 @@ namespace Model
   private:
 
     DeploymentTargetType m_deploymentTargetType;
-    bool m_deploymentTargetTypeHasBeenSet;
+    bool m_deploymentTargetTypeHasBeenSet = false;
 
     InstanceTarget m_instanceTarget;
-    bool m_instanceTargetHasBeenSet;
+    bool m_instanceTargetHasBeenSet = false;
 
     LambdaTarget m_lambdaTarget;
-    bool m_lambdaTargetHasBeenSet;
+    bool m_lambdaTargetHasBeenSet = false;
 
     ECSTarget m_ecsTarget;
-    bool m_ecsTargetHasBeenSet;
+    bool m_ecsTargetHasBeenSet = false;
 
     CloudFormationTarget m_cloudFormationTarget;
-    bool m_cloudFormationTargetHasBeenSet;
+    bool m_cloudFormationTargetHasBeenSet = false;
   };
 
 } // namespace Model

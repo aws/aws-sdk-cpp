@@ -57,7 +57,7 @@ CustomDomain& CustomDomain::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CertificateValidationRecords"))
   {
-    Array<JsonView> certificateValidationRecordsJsonList = jsonValue.GetArray("CertificateValidationRecords");
+    Aws::Utils::Array<JsonView> certificateValidationRecordsJsonList = jsonValue.GetArray("CertificateValidationRecords");
     for(unsigned certificateValidationRecordsIndex = 0; certificateValidationRecordsIndex < certificateValidationRecordsJsonList.GetLength(); ++certificateValidationRecordsIndex)
     {
       m_certificateValidationRecords.push_back(certificateValidationRecordsJsonList[certificateValidationRecordsIndex].AsObject());
@@ -93,7 +93,7 @@ JsonValue CustomDomain::Jsonize() const
 
   if(m_certificateValidationRecordsHasBeenSet)
   {
-   Array<JsonValue> certificateValidationRecordsJsonList(m_certificateValidationRecords.size());
+   Aws::Utils::Array<JsonValue> certificateValidationRecordsJsonList(m_certificateValidationRecords.size());
    for(unsigned certificateValidationRecordsIndex = 0; certificateValidationRecordsIndex < certificateValidationRecordsJsonList.GetLength(); ++certificateValidationRecordsIndex)
    {
      certificateValidationRecordsJsonList[certificateValidationRecordsIndex].AsObject(m_certificateValidationRecords[certificateValidationRecordsIndex].Jsonize());

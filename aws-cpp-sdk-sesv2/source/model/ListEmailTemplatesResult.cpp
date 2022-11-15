@@ -30,7 +30,7 @@ ListEmailTemplatesResult& ListEmailTemplatesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TemplatesMetadata"))
   {
-    Array<JsonView> templatesMetadataJsonList = jsonValue.GetArray("TemplatesMetadata");
+    Aws::Utils::Array<JsonView> templatesMetadataJsonList = jsonValue.GetArray("TemplatesMetadata");
     for(unsigned templatesMetadataIndex = 0; templatesMetadataIndex < templatesMetadataJsonList.GetLength(); ++templatesMetadataIndex)
     {
       m_templatesMetadata.push_back(templatesMetadataJsonList[templatesMetadataIndex].AsObject());

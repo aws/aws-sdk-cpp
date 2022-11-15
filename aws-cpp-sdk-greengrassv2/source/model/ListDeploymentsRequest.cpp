@@ -19,6 +19,7 @@ ListDeploymentsRequest::ListDeploymentsRequest() :
     m_targetArnHasBeenSet(false),
     m_historyFilter(DeploymentHistoryFilter::NOT_SET),
     m_historyFilterHasBeenSet(false),
+    m_parentTargetArnHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -44,6 +45,13 @@ void ListDeploymentsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << DeploymentHistoryFilterMapper::GetNameForDeploymentHistoryFilter(m_historyFilter);
       uri.AddQueryStringParameter("historyFilter", ss.str());
+      ss.str("");
+    }
+
+    if(m_parentTargetArnHasBeenSet)
+    {
+      ss << m_parentTargetArn;
+      uri.AddQueryStringParameter("parentTargetArn", ss.str());
       ss.str("");
     }
 

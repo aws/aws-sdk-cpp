@@ -335,82 +335,164 @@ namespace Model
 
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when the job runs. A DPU is a relative measure of processing power that consists
-     * of 4 vCPUs of compute capacity and 16 GB memory. </p>
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * the job runs. A DPU is a relative measure of processing power that consists of 4
+     * vCPUs of compute capacity and 16 GB memory. </p>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when the job runs. A DPU is a relative measure of processing power that consists
-     * of 4 vCPUs of compute capacity and 16 GB memory. </p>
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * the job runs. A DPU is a relative measure of processing power that consists of 4
+     * vCPUs of compute capacity and 16 GB memory. </p>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when the job runs. A DPU is a relative measure of processing power that consists
-     * of 4 vCPUs of compute capacity and 16 GB memory. </p>
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * the job runs. A DPU is a relative measure of processing power that consists of 4
+     * vCPUs of compute capacity and 16 GB memory. </p>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when the job runs. A DPU is a relative measure of processing power that consists
-     * of 4 vCPUs of compute capacity and 16 GB memory. </p>
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * the job runs. A DPU is a relative measure of processing power that consists of 4
+     * vCPUs of compute capacity and 16 GB memory. </p>
      */
     inline CreateSessionRequest& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
 
 
     /**
-     * <p>The number of workers to use for the session. </p>
+     * <p>The number of workers of a defined <code>WorkerType</code> to use for the
+     * session. </p>
      */
     inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
 
     /**
-     * <p>The number of workers to use for the session. </p>
+     * <p>The number of workers of a defined <code>WorkerType</code> to use for the
+     * session. </p>
      */
     inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
 
     /**
-     * <p>The number of workers to use for the session. </p>
+     * <p>The number of workers of a defined <code>WorkerType</code> to use for the
+     * session. </p>
      */
     inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
 
     /**
-     * <p>The number of workers to use for the session. </p>
+     * <p>The number of workers of a defined <code>WorkerType</code> to use for the
+     * session. </p>
      */
     inline CreateSessionRequest& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
 
 
     /**
-     * <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+     * <p>The type of predefined worker that is allocated to use for the session.
+     * Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline const WorkerType& GetWorkerType() const{ return m_workerType; }
 
     /**
-     * <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+     * <p>The type of predefined worker that is allocated to use for the session.
+     * Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
 
     /**
-     * <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+     * <p>The type of predefined worker that is allocated to use for the session.
+     * Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
 
     /**
-     * <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+     * <p>The type of predefined worker that is allocated to use for the session.
+     * Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
 
     /**
-     * <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+     * <p>The type of predefined worker that is allocated to use for the session.
+     * Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline CreateSessionRequest& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
 
     /**
-     * <p>The Worker Type. Can be one of G.1X, G.2X, Standard </p>
+     * <p>The type of predefined worker that is allocated to use for the session.
+     * Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline CreateSessionRequest& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
 
@@ -465,50 +547,50 @@ namespace Model
 
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0. </p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0. </p>
      */
     inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0. </p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0. </p>
      */
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0. </p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0. </p>
      */
     inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0. </p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0. </p>
      */
     inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0. </p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0. </p>
      */
     inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0. </p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0. </p>
      */
     inline CreateSessionRequest& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0. </p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0. </p>
      */
     inline CreateSessionRequest& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Glue version determines the versions of Apache Spark and Python that AWS
-     * Glue supports. The GlueVersion must be greater than 2.0. </p>
+     * <p>The Glue version determines the versions of Apache Spark and Python that Glue
+     * supports. The GlueVersion must be greater than 2.0. </p>
      */
     inline CreateSessionRequest& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
 
@@ -622,49 +704,49 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     SessionCommand m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     int m_idleTimeout;
-    bool m_idleTimeoutHasBeenSet;
+    bool m_idleTimeoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultArguments;
-    bool m_defaultArgumentsHasBeenSet;
+    bool m_defaultArgumentsHasBeenSet = false;
 
     ConnectionsList m_connections;
-    bool m_connectionsHasBeenSet;
+    bool m_connectionsHasBeenSet = false;
 
     double m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     int m_numberOfWorkers;
-    bool m_numberOfWorkersHasBeenSet;
+    bool m_numberOfWorkersHasBeenSet = false;
 
     WorkerType m_workerType;
-    bool m_workerTypeHasBeenSet;
+    bool m_workerTypeHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    bool m_securityConfigurationHasBeenSet = false;
 
     Aws::String m_glueVersion;
-    bool m_glueVersionHasBeenSet;
+    bool m_glueVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestOrigin;
-    bool m_requestOriginHasBeenSet;
+    bool m_requestOriginHasBeenSet = false;
   };
 
 } // namespace Model

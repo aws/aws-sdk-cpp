@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_encodedMessage;
-    bool m_encodedMessageHasBeenSet;
+    bool m_encodedMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ ListComponentTypesResult& ListComponentTypesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("componentTypeSummaries"))
   {
-    Array<JsonView> componentTypeSummariesJsonList = jsonValue.GetArray("componentTypeSummaries");
+    Aws::Utils::Array<JsonView> componentTypeSummariesJsonList = jsonValue.GetArray("componentTypeSummaries");
     for(unsigned componentTypeSummariesIndex = 0; componentTypeSummariesIndex < componentTypeSummariesJsonList.GetLength(); ++componentTypeSummariesIndex)
     {
       m_componentTypeSummaries.push_back(componentTypeSummariesJsonList[componentTypeSummariesIndex].AsObject());

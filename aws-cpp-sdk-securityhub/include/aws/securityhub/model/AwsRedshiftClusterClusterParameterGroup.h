@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::Vector<AwsRedshiftClusterClusterParameterStatus> m_clusterParameterStatusList;
-    bool m_clusterParameterStatusListHasBeenSet;
+    bool m_clusterParameterStatusListHasBeenSet = false;
 
     Aws::String m_parameterApplyStatus;
-    bool m_parameterApplyStatusHasBeenSet;
+    bool m_parameterApplyStatusHasBeenSet = false;
 
     Aws::String m_parameterGroupName;
-    bool m_parameterGroupNameHasBeenSet;
+    bool m_parameterGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

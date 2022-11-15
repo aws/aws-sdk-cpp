@@ -199,13 +199,13 @@ namespace Model
   private:
 
     Aws::String m_remoteDomainName;
-    bool m_remoteDomainNameHasBeenSet;
+    bool m_remoteDomainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsIpAddrs;
-    bool m_dnsIpAddrsHasBeenSet;
+    bool m_dnsIpAddrsHasBeenSet = false;
 
     ReplicationScope m_replicationScope;
-    bool m_replicationScopeHasBeenSet;
+    bool m_replicationScopeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -358,25 +358,141 @@ namespace Model
      */
     inline ReplaceRootVolumeTask& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of the AMI used to create the replacement root volume.</p>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the AMI used to create the replacement root volume.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AMI used to create the replacement root volume.</p>
+     */
+    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+
+    /**
+     * <p>The ID of the AMI used to create the replacement root volume.</p>
+     */
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
+
+    /**
+     * <p>The ID of the AMI used to create the replacement root volume.</p>
+     */
+    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
+
+    /**
+     * <p>The ID of the AMI used to create the replacement root volume.</p>
+     */
+    inline ReplaceRootVolumeTask& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+
+    /**
+     * <p>The ID of the AMI used to create the replacement root volume.</p>
+     */
+    inline ReplaceRootVolumeTask& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the AMI used to create the replacement root volume.</p>
+     */
+    inline ReplaceRootVolumeTask& WithImageId(const char* value) { SetImageId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the snapshot used to create the replacement root volume.</p>
+     */
+    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The ID of the snapshot used to create the replacement root volume.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the snapshot used to create the replacement root volume.</p>
+     */
+    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+
+    /**
+     * <p>The ID of the snapshot used to create the replacement root volume.</p>
+     */
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
+
+    /**
+     * <p>The ID of the snapshot used to create the replacement root volume.</p>
+     */
+    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
+
+    /**
+     * <p>The ID of the snapshot used to create the replacement root volume.</p>
+     */
+    inline ReplaceRootVolumeTask& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
+
+    /**
+     * <p>The ID of the snapshot used to create the replacement root volume.</p>
+     */
+    inline ReplaceRootVolumeTask& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the snapshot used to create the replacement root volume.</p>
+     */
+    inline ReplaceRootVolumeTask& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the original root volume is to be deleted after the root
+     * volume replacement task completes.</p>
+     */
+    inline bool GetDeleteReplacedRootVolume() const{ return m_deleteReplacedRootVolume; }
+
+    /**
+     * <p>Indicates whether the original root volume is to be deleted after the root
+     * volume replacement task completes.</p>
+     */
+    inline bool DeleteReplacedRootVolumeHasBeenSet() const { return m_deleteReplacedRootVolumeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the original root volume is to be deleted after the root
+     * volume replacement task completes.</p>
+     */
+    inline void SetDeleteReplacedRootVolume(bool value) { m_deleteReplacedRootVolumeHasBeenSet = true; m_deleteReplacedRootVolume = value; }
+
+    /**
+     * <p>Indicates whether the original root volume is to be deleted after the root
+     * volume replacement task completes.</p>
+     */
+    inline ReplaceRootVolumeTask& WithDeleteReplacedRootVolume(bool value) { SetDeleteReplacedRootVolume(value); return *this;}
+
   private:
 
     Aws::String m_replaceRootVolumeTaskId;
-    bool m_replaceRootVolumeTaskIdHasBeenSet;
+    bool m_replaceRootVolumeTaskIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     ReplaceRootVolumeTaskState m_taskState;
-    bool m_taskStateHasBeenSet;
+    bool m_taskStateHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_completeTime;
-    bool m_completeTimeHasBeenSet;
+    bool m_completeTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet = false;
+
+    Aws::String m_snapshotId;
+    bool m_snapshotIdHasBeenSet = false;
+
+    bool m_deleteReplacedRootVolume;
+    bool m_deleteReplacedRootVolumeHasBeenSet = false;
   };
 
 } // namespace Model

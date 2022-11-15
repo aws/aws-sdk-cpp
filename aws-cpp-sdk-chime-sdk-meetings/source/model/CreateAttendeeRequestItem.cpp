@@ -19,12 +19,14 @@ namespace Model
 {
 
 CreateAttendeeRequestItem::CreateAttendeeRequestItem() : 
-    m_externalUserIdHasBeenSet(false)
+    m_externalUserIdHasBeenSet(false),
+    m_capabilitiesHasBeenSet(false)
 {
 }
 
 CreateAttendeeRequestItem::CreateAttendeeRequestItem(JsonView jsonValue) : 
-    m_externalUserIdHasBeenSet(false)
+    m_externalUserIdHasBeenSet(false),
+    m_capabilitiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ CreateAttendeeRequestItem& CreateAttendeeRequestItem::operator =(JsonView jsonVa
     m_externalUserIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Capabilities"))
+  {
+    m_capabilities = jsonValue.GetObject("Capabilities");
+
+    m_capabilitiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue CreateAttendeeRequestItem::Jsonize() const
   if(m_externalUserIdHasBeenSet)
   {
    payload.WithString("ExternalUserId", m_externalUserId);
+
+  }
+
+  if(m_capabilitiesHasBeenSet)
+  {
+   payload.WithObject("Capabilities", m_capabilities.Jsonize());
 
   }
 

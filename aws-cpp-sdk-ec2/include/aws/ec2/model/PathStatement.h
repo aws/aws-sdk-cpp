@@ -104,10 +104,10 @@ namespace Model
   private:
 
     PacketHeaderStatement m_packetHeaderStatement;
-    bool m_packetHeaderStatementHasBeenSet;
+    bool m_packetHeaderStatementHasBeenSet = false;
 
     ResourceStatement m_resourceStatement;
-    bool m_resourceStatementHasBeenSet;
+    bool m_resourceStatementHasBeenSet = false;
   };
 
 } // namespace Model

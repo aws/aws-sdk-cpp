@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_nextActivity;
-    bool m_nextActivityHasBeenSet;
+    bool m_nextActivityHasBeenSet = false;
 
     WaitTime m_waitTime;
-    bool m_waitTimeHasBeenSet;
+    bool m_waitTimeHasBeenSet = false;
   };
 
 } // namespace Model

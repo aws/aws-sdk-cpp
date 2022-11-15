@@ -73,7 +73,7 @@ ConfigurationEvent& ConfigurationEvent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("welcomeMessages"))
   {
-    Array<JsonView> welcomeMessagesJsonList = jsonValue.GetArray("welcomeMessages");
+    Aws::Utils::Array<JsonView> welcomeMessagesJsonList = jsonValue.GetArray("welcomeMessages");
     for(unsigned welcomeMessagesIndex = 0; welcomeMessagesIndex < welcomeMessagesJsonList.GetLength(); ++welcomeMessagesIndex)
     {
       m_welcomeMessages.push_back(welcomeMessagesJsonList[welcomeMessagesIndex].AsObject());
@@ -134,7 +134,7 @@ JsonValue ConfigurationEvent::Jsonize() const
 
   if(m_welcomeMessagesHasBeenSet)
   {
-   Array<JsonValue> welcomeMessagesJsonList(m_welcomeMessages.size());
+   Aws::Utils::Array<JsonValue> welcomeMessagesJsonList(m_welcomeMessages.size());
    for(unsigned welcomeMessagesIndex = 0; welcomeMessagesIndex < welcomeMessagesJsonList.GetLength(); ++welcomeMessagesIndex)
    {
      welcomeMessagesJsonList[welcomeMessagesIndex].AsObject(m_welcomeMessages[welcomeMessagesIndex].Jsonize());

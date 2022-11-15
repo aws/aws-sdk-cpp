@@ -30,7 +30,7 @@ BatchAssociateAssessmentReportEvidenceResult& BatchAssociateAssessmentReportEvid
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("evidenceIds"))
   {
-    Array<JsonView> evidenceIdsJsonList = jsonValue.GetArray("evidenceIds");
+    Aws::Utils::Array<JsonView> evidenceIdsJsonList = jsonValue.GetArray("evidenceIds");
     for(unsigned evidenceIdsIndex = 0; evidenceIdsIndex < evidenceIdsJsonList.GetLength(); ++evidenceIdsIndex)
     {
       m_evidenceIds.push_back(evidenceIdsJsonList[evidenceIdsIndex].AsString());
@@ -39,7 +39,7 @@ BatchAssociateAssessmentReportEvidenceResult& BatchAssociateAssessmentReportEvid
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

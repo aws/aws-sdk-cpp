@@ -37,7 +37,7 @@ Tls& Tls::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("certificateAuthorityArnList"))
   {
-    Array<JsonView> certificateAuthorityArnListJsonList = jsonValue.GetArray("certificateAuthorityArnList");
+    Aws::Utils::Array<JsonView> certificateAuthorityArnListJsonList = jsonValue.GetArray("certificateAuthorityArnList");
     for(unsigned certificateAuthorityArnListIndex = 0; certificateAuthorityArnListIndex < certificateAuthorityArnListJsonList.GetLength(); ++certificateAuthorityArnListIndex)
     {
       m_certificateAuthorityArnList.push_back(certificateAuthorityArnListJsonList[certificateAuthorityArnListIndex].AsString());
@@ -61,7 +61,7 @@ JsonValue Tls::Jsonize() const
 
   if(m_certificateAuthorityArnListHasBeenSet)
   {
-   Array<JsonValue> certificateAuthorityArnListJsonList(m_certificateAuthorityArnList.size());
+   Aws::Utils::Array<JsonValue> certificateAuthorityArnListJsonList(m_certificateAuthorityArnList.size());
    for(unsigned certificateAuthorityArnListIndex = 0; certificateAuthorityArnListIndex < certificateAuthorityArnListJsonList.GetLength(); ++certificateAuthorityArnListIndex)
    {
      certificateAuthorityArnListJsonList[certificateAuthorityArnListIndex].AsString(m_certificateAuthorityArnList[certificateAuthorityArnListIndex]);

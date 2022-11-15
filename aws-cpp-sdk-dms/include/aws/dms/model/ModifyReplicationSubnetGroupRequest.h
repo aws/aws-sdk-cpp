@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_replicationSubnetGroupIdentifier;
-    bool m_replicationSubnetGroupIdentifierHasBeenSet;
+    bool m_replicationSubnetGroupIdentifierHasBeenSet = false;
 
     Aws::String m_replicationSubnetGroupDescription;
-    bool m_replicationSubnetGroupDescriptionHasBeenSet;
+    bool m_replicationSubnetGroupDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
   };
 
 } // namespace Model

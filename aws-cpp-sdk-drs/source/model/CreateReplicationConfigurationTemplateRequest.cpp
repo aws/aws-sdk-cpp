@@ -82,7 +82,7 @@ Aws::String CreateReplicationConfigurationTemplateRequest::SerializePayload() co
 
   if(m_pitPolicyHasBeenSet)
   {
-   Array<JsonValue> pitPolicyJsonList(m_pitPolicy.size());
+   Aws::Utils::Array<JsonValue> pitPolicyJsonList(m_pitPolicy.size());
    for(unsigned pitPolicyIndex = 0; pitPolicyIndex < pitPolicyJsonList.GetLength(); ++pitPolicyIndex)
    {
      pitPolicyJsonList[pitPolicyIndex].AsObject(m_pitPolicy[pitPolicyIndex].Jsonize());
@@ -99,7 +99,7 @@ Aws::String CreateReplicationConfigurationTemplateRequest::SerializePayload() co
 
   if(m_replicationServersSecurityGroupsIDsHasBeenSet)
   {
-   Array<JsonValue> replicationServersSecurityGroupsIDsJsonList(m_replicationServersSecurityGroupsIDs.size());
+   Aws::Utils::Array<JsonValue> replicationServersSecurityGroupsIDsJsonList(m_replicationServersSecurityGroupsIDs.size());
    for(unsigned replicationServersSecurityGroupsIDsIndex = 0; replicationServersSecurityGroupsIDsIndex < replicationServersSecurityGroupsIDsJsonList.GetLength(); ++replicationServersSecurityGroupsIDsIndex)
    {
      replicationServersSecurityGroupsIDsJsonList[replicationServersSecurityGroupsIDsIndex].AsString(m_replicationServersSecurityGroupsIDs[replicationServersSecurityGroupsIDsIndex]);

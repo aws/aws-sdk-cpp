@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_dimensionName;
-    bool m_dimensionNameHasBeenSet;
+    bool m_dimensionNameHasBeenSet = false;
 
     Aws::Vector<DimensionValueContribution> m_dimensionValueContributionList;
-    bool m_dimensionValueContributionListHasBeenSet;
+    bool m_dimensionValueContributionListHasBeenSet = false;
   };
 
 } // namespace Model

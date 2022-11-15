@@ -44,25 +44,29 @@ namespace Model
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the person's path
-     * was tracked.</p>
+     * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
+     * to the individual frame where the person's path first appears.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the person's path
-     * was tracked.</p>
+     * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
+     * to the individual frame where the person's path first appears.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the person's path
-     * was tracked.</p>
+     * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
+     * to the individual frame where the person's path first appears.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the person's path
-     * was tracked.</p>
+     * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
+     * to the individual frame where the person's path first appears.</p>
      */
     inline PersonDetection& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 
@@ -100,10 +104,10 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     PersonDetail m_person;
-    bool m_personHasBeenSet;
+    bool m_personHasBeenSet = false;
   };
 
 } // namespace Model

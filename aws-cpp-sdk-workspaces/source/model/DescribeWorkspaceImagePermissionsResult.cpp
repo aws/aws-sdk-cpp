@@ -36,7 +36,7 @@ DescribeWorkspaceImagePermissionsResult& DescribeWorkspaceImagePermissionsResult
 
   if(jsonValue.ValueExists("ImagePermissions"))
   {
-    Array<JsonView> imagePermissionsJsonList = jsonValue.GetArray("ImagePermissions");
+    Aws::Utils::Array<JsonView> imagePermissionsJsonList = jsonValue.GetArray("ImagePermissions");
     for(unsigned imagePermissionsIndex = 0; imagePermissionsIndex < imagePermissionsJsonList.GetLength(); ++imagePermissionsIndex)
     {
       m_imagePermissions.push_back(imagePermissionsJsonList[imagePermissionsIndex].AsObject());

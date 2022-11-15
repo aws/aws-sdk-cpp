@@ -230,19 +230,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     MetricDimension m_metricDimension;
-    bool m_metricDimensionHasBeenSet;
+    bool m_metricDimensionHasBeenSet = false;
 
     BehaviorCriteria m_criteria;
-    bool m_criteriaHasBeenSet;
+    bool m_criteriaHasBeenSet = false;
 
     bool m_suppressAlerts;
-    bool m_suppressAlertsHasBeenSet;
+    bool m_suppressAlertsHasBeenSet = false;
   };
 
 } // namespace Model

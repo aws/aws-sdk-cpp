@@ -382,22 +382,22 @@ namespace Model
   private:
 
     AutoScalingGroupConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Vector<UtilizationMetric> m_projectedUtilizationMetrics;
-    bool m_projectedUtilizationMetricsHasBeenSet;
+    bool m_projectedUtilizationMetricsHasBeenSet = false;
 
     double m_performanceRisk;
-    bool m_performanceRiskHasBeenSet;
+    bool m_performanceRiskHasBeenSet = false;
 
     int m_rank;
-    bool m_rankHasBeenSet;
+    bool m_rankHasBeenSet = false;
 
     SavingsOpportunity m_savingsOpportunity;
-    bool m_savingsOpportunityHasBeenSet;
+    bool m_savingsOpportunityHasBeenSet = false;
 
     MigrationEffort m_migrationEffort;
-    bool m_migrationEffortHasBeenSet;
+    bool m_migrationEffortHasBeenSet = false;
   };
 
 } // namespace Model

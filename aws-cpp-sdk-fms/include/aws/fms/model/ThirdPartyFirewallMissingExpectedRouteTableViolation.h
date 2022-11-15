@@ -285,19 +285,19 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_vPC;
-    bool m_vPCHasBeenSet;
+    bool m_vPCHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_currentRouteTable;
-    bool m_currentRouteTableHasBeenSet;
+    bool m_currentRouteTableHasBeenSet = false;
 
     Aws::String m_expectedRouteTable;
-    bool m_expectedRouteTableHasBeenSet;
+    bool m_expectedRouteTableHasBeenSet = false;
   };
 
 } // namespace Model

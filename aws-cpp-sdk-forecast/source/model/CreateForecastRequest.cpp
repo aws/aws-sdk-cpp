@@ -16,7 +16,8 @@ CreateForecastRequest::CreateForecastRequest() :
     m_forecastNameHasBeenSet(false),
     m_predictorArnHasBeenSet(false),
     m_forecastTypesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_timeSeriesSelectorHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,7 @@ Aws::String CreateForecastRequest::SerializePayload() const
 
   if(m_forecastTypesHasBeenSet)
   {
-   Array<JsonValue> forecastTypesJsonList(m_forecastTypes.size());
+   Aws::Utils::Array<JsonValue> forecastTypesJsonList(m_forecastTypes.size());
    for(unsigned forecastTypesIndex = 0; forecastTypesIndex < forecastTypesJsonList.GetLength(); ++forecastTypesIndex)
    {
      forecastTypesJsonList[forecastTypesIndex].AsString(m_forecastTypes[forecastTypesIndex]);
@@ -49,12 +50,18 @@ Aws::String CreateForecastRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_timeSeriesSelectorHasBeenSet)
+  {
+   payload.WithObject("TimeSeriesSelector", m_timeSeriesSelector.Jsonize());
 
   }
 

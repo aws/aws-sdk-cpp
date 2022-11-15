@@ -39,67 +39,73 @@ namespace Model
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline GetUsageForecastRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
     /**
      * <p>The start and end dates of the period that you want to retrieve usage
-     * forecast for. The start date is inclusive, but the end date is exclusive. For
-     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
-     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
-     * including <code>2017-05-01</code>. The start date must be equal to or later than
-     * the current date to avoid a validation error.</p>
+     * forecast for. The start date is included in the period, but the end date isn't
+     * included in the period. For example, if <code>start</code> is
+     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The
+     * start date must be equal to or later than the current date to avoid a validation
+     * error.</p>
      */
     inline GetUsageForecastRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
 
@@ -324,57 +330,57 @@ namespace Model
 
 
     /**
-     * <p>Cost Explorer always returns the mean forecast as a single point. You can
-     * request a prediction interval around the mean by specifying a confidence level.
-     * The higher the confidence level, the more confident Cost Explorer is about the
-     * actual value falling in the prediction interval. Higher confidence levels result
-     * in wider prediction intervals.</p>
+     * <p>Amazon Web Services Cost Explorer always returns the mean forecast as a
+     * single point. You can request a prediction interval around the mean by
+     * specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction
+     * interval. Higher confidence levels result in wider prediction intervals.</p>
      */
     inline int GetPredictionIntervalLevel() const{ return m_predictionIntervalLevel; }
 
     /**
-     * <p>Cost Explorer always returns the mean forecast as a single point. You can
-     * request a prediction interval around the mean by specifying a confidence level.
-     * The higher the confidence level, the more confident Cost Explorer is about the
-     * actual value falling in the prediction interval. Higher confidence levels result
-     * in wider prediction intervals.</p>
+     * <p>Amazon Web Services Cost Explorer always returns the mean forecast as a
+     * single point. You can request a prediction interval around the mean by
+     * specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction
+     * interval. Higher confidence levels result in wider prediction intervals.</p>
      */
     inline bool PredictionIntervalLevelHasBeenSet() const { return m_predictionIntervalLevelHasBeenSet; }
 
     /**
-     * <p>Cost Explorer always returns the mean forecast as a single point. You can
-     * request a prediction interval around the mean by specifying a confidence level.
-     * The higher the confidence level, the more confident Cost Explorer is about the
-     * actual value falling in the prediction interval. Higher confidence levels result
-     * in wider prediction intervals.</p>
+     * <p>Amazon Web Services Cost Explorer always returns the mean forecast as a
+     * single point. You can request a prediction interval around the mean by
+     * specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction
+     * interval. Higher confidence levels result in wider prediction intervals.</p>
      */
     inline void SetPredictionIntervalLevel(int value) { m_predictionIntervalLevelHasBeenSet = true; m_predictionIntervalLevel = value; }
 
     /**
-     * <p>Cost Explorer always returns the mean forecast as a single point. You can
-     * request a prediction interval around the mean by specifying a confidence level.
-     * The higher the confidence level, the more confident Cost Explorer is about the
-     * actual value falling in the prediction interval. Higher confidence levels result
-     * in wider prediction intervals.</p>
+     * <p>Amazon Web Services Cost Explorer always returns the mean forecast as a
+     * single point. You can request a prediction interval around the mean by
+     * specifying a confidence level. The higher the confidence level, the more
+     * confident Cost Explorer is about the actual value falling in the prediction
+     * interval. Higher confidence levels result in wider prediction intervals.</p>
      */
     inline GetUsageForecastRequest& WithPredictionIntervalLevel(int value) { SetPredictionIntervalLevel(value); return *this;}
 
   private:
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     Metric m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     Granularity m_granularity;
-    bool m_granularityHasBeenSet;
+    bool m_granularityHasBeenSet = false;
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     int m_predictionIntervalLevel;
-    bool m_predictionIntervalLevelHasBeenSet;
+    bool m_predictionIntervalLevelHasBeenSet = false;
   };
 
 } // namespace Model

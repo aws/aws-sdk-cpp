@@ -145,10 +145,10 @@ namespace Model
   private:
 
     BlueGreenUpdatePolicy m_blueGreenUpdatePolicy;
-    bool m_blueGreenUpdatePolicyHasBeenSet;
+    bool m_blueGreenUpdatePolicyHasBeenSet = false;
 
     AutoRollbackConfig m_autoRollbackConfiguration;
-    bool m_autoRollbackConfigurationHasBeenSet;
+    bool m_autoRollbackConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

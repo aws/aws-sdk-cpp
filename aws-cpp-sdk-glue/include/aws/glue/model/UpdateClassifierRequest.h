@@ -163,16 +163,16 @@ namespace Model
   private:
 
     UpdateGrokClassifierRequest m_grokClassifier;
-    bool m_grokClassifierHasBeenSet;
+    bool m_grokClassifierHasBeenSet = false;
 
     UpdateXMLClassifierRequest m_xMLClassifier;
-    bool m_xMLClassifierHasBeenSet;
+    bool m_xMLClassifierHasBeenSet = false;
 
     UpdateJsonClassifierRequest m_jsonClassifier;
-    bool m_jsonClassifierHasBeenSet;
+    bool m_jsonClassifierHasBeenSet = false;
 
     UpdateCsvClassifierRequest m_csvClassifier;
-    bool m_csvClassifierHasBeenSet;
+    bool m_csvClassifierHasBeenSet = false;
   };
 
 } // namespace Model

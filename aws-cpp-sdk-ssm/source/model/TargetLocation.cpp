@@ -23,7 +23,8 @@ TargetLocation::TargetLocation() :
     m_regionsHasBeenSet(false),
     m_targetLocationMaxConcurrencyHasBeenSet(false),
     m_targetLocationMaxErrorsHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false)
+    m_executionRoleNameHasBeenSet(false),
+    m_targetLocationAlarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ TargetLocation::TargetLocation(JsonView jsonValue) :
     m_regionsHasBeenSet(false),
     m_targetLocationMaxConcurrencyHasBeenSet(false),
     m_targetLocationMaxErrorsHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false)
+    m_executionRoleNameHasBeenSet(false),
+    m_targetLocationAlarmConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -41,7 +43,7 @@ TargetLocation& TargetLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Accounts"))
   {
-    Array<JsonView> accountsJsonList = jsonValue.GetArray("Accounts");
+    Aws::Utils::Array<JsonView> accountsJsonList = jsonValue.GetArray("Accounts");
     for(unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex)
     {
       m_accounts.push_back(accountsJsonList[accountsIndex].AsString());
@@ -51,7 +53,7 @@ TargetLocation& TargetLocation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Regions"))
   {
-    Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
+    Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
     for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
     {
       m_regions.push_back(regionsJsonList[regionsIndex].AsString());
@@ -80,6 +82,13 @@ TargetLocation& TargetLocation::operator =(JsonView jsonValue)
     m_executionRoleNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetLocationAlarmConfiguration"))
+  {
+    m_targetLocationAlarmConfiguration = jsonValue.GetObject("TargetLocationAlarmConfiguration");
+
+    m_targetLocationAlarmConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -89,7 +98,7 @@ JsonValue TargetLocation::Jsonize() const
 
   if(m_accountsHasBeenSet)
   {
-   Array<JsonValue> accountsJsonList(m_accounts.size());
+   Aws::Utils::Array<JsonValue> accountsJsonList(m_accounts.size());
    for(unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex)
    {
      accountsJsonList[accountsIndex].AsString(m_accounts[accountsIndex]);
@@ -100,7 +109,7 @@ JsonValue TargetLocation::Jsonize() const
 
   if(m_regionsHasBeenSet)
   {
-   Array<JsonValue> regionsJsonList(m_regions.size());
+   Aws::Utils::Array<JsonValue> regionsJsonList(m_regions.size());
    for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
    {
      regionsJsonList[regionsIndex].AsString(m_regions[regionsIndex]);
@@ -124,6 +133,12 @@ JsonValue TargetLocation::Jsonize() const
   if(m_executionRoleNameHasBeenSet)
   {
    payload.WithString("ExecutionRoleName", m_executionRoleName);
+
+  }
+
+  if(m_targetLocationAlarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("TargetLocationAlarmConfiguration", m_targetLocationAlarmConfiguration.Jsonize());
 
   }
 

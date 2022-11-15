@@ -33,7 +33,7 @@ UpdateResult& UpdateResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("generatedFields"))
   {
-    Array<JsonView> generatedFieldsJsonList = jsonValue.GetArray("generatedFields");
+    Aws::Utils::Array<JsonView> generatedFieldsJsonList = jsonValue.GetArray("generatedFields");
     for(unsigned generatedFieldsIndex = 0; generatedFieldsIndex < generatedFieldsJsonList.GetLength(); ++generatedFieldsIndex)
     {
       m_generatedFields.push_back(generatedFieldsJsonList[generatedFieldsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue UpdateResult::Jsonize() const
 
   if(m_generatedFieldsHasBeenSet)
   {
-   Array<JsonValue> generatedFieldsJsonList(m_generatedFields.size());
+   Aws::Utils::Array<JsonValue> generatedFieldsJsonList(m_generatedFields.size());
    for(unsigned generatedFieldsIndex = 0; generatedFieldsIndex < generatedFieldsJsonList.GetLength(); ++generatedFieldsIndex)
    {
      generatedFieldsJsonList[generatedFieldsIndex].AsObject(m_generatedFields[generatedFieldsIndex].Jsonize());

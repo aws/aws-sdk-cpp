@@ -30,7 +30,7 @@ ListEnvironmentsResult& ListEnvironmentsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EnvironmentSummaryList"))
   {
-    Array<JsonView> environmentSummaryListJsonList = jsonValue.GetArray("EnvironmentSummaryList");
+    Aws::Utils::Array<JsonView> environmentSummaryListJsonList = jsonValue.GetArray("EnvironmentSummaryList");
     for(unsigned environmentSummaryListIndex = 0; environmentSummaryListIndex < environmentSummaryListJsonList.GetLength(); ++environmentSummaryListIndex)
     {
       m_environmentSummaryList.push_back(environmentSummaryListJsonList[environmentSummaryListIndex].AsObject());

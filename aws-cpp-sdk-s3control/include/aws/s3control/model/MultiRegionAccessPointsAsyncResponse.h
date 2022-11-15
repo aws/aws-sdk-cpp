@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<MultiRegionAccessPointRegionalResponse> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model

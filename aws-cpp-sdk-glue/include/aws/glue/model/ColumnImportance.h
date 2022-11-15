@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     double m_importance;
-    bool m_importanceHasBeenSet;
+    bool m_importanceHasBeenSet = false;
   };
 
 } // namespace Model

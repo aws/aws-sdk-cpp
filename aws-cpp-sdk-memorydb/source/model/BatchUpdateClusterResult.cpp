@@ -30,7 +30,7 @@ BatchUpdateClusterResult& BatchUpdateClusterResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProcessedClusters"))
   {
-    Array<JsonView> processedClustersJsonList = jsonValue.GetArray("ProcessedClusters");
+    Aws::Utils::Array<JsonView> processedClustersJsonList = jsonValue.GetArray("ProcessedClusters");
     for(unsigned processedClustersIndex = 0; processedClustersIndex < processedClustersJsonList.GetLength(); ++processedClustersIndex)
     {
       m_processedClusters.push_back(processedClustersJsonList[processedClustersIndex].AsObject());
@@ -39,7 +39,7 @@ BatchUpdateClusterResult& BatchUpdateClusterResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("UnprocessedClusters"))
   {
-    Array<JsonView> unprocessedClustersJsonList = jsonValue.GetArray("UnprocessedClusters");
+    Aws::Utils::Array<JsonView> unprocessedClustersJsonList = jsonValue.GetArray("UnprocessedClusters");
     for(unsigned unprocessedClustersIndex = 0; unprocessedClustersIndex < unprocessedClustersJsonList.GetLength(); ++unprocessedClustersIndex)
     {
       m_unprocessedClusters.push_back(unprocessedClustersJsonList[unprocessedClustersIndex].AsObject());

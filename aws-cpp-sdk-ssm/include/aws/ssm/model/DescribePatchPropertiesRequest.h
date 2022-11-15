@@ -222,19 +222,19 @@ namespace Model
   private:
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     PatchProperty m_property;
-    bool m_propertyHasBeenSet;
+    bool m_propertyHasBeenSet = false;
 
     PatchSet m_patchSet;
-    bool m_patchSetHasBeenSet;
+    bool m_patchSetHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

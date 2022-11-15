@@ -384,16 +384,16 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     int m_gitCloneDepth;
-    bool m_gitCloneDepthHasBeenSet;
+    bool m_gitCloneDepthHasBeenSet = false;
 
     bool m_insecureSsl;
-    bool m_insecureSslHasBeenSet;
+    bool m_insecureSslHasBeenSet = false;
   };
 
 } // namespace Model

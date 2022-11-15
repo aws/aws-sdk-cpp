@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_fromPhoneNumber;
-    bool m_fromPhoneNumberHasBeenSet;
+    bool m_fromPhoneNumberHasBeenSet = false;
 
     Aws::String m_toPhoneNumber;
-    bool m_toPhoneNumberHasBeenSet;
+    bool m_toPhoneNumberHasBeenSet = false;
 
     Aws::String m_sipMediaApplicationId;
-    bool m_sipMediaApplicationIdHasBeenSet;
+    bool m_sipMediaApplicationIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sipHeaders;
-    bool m_sipHeadersHasBeenSet;
+    bool m_sipHeadersHasBeenSet = false;
   };
 
 } // namespace Model

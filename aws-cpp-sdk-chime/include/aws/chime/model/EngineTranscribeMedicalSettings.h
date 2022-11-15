@@ -253,22 +253,22 @@ namespace Model
   private:
 
     TranscribeMedicalLanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     TranscribeMedicalSpecialty m_specialty;
-    bool m_specialtyHasBeenSet;
+    bool m_specialtyHasBeenSet = false;
 
     TranscribeMedicalType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     TranscribeMedicalRegion m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     TranscribeMedicalContentIdentificationType m_contentIdentificationType;
-    bool m_contentIdentificationTypeHasBeenSet;
+    bool m_contentIdentificationTypeHasBeenSet = false;
   };
 
 } // namespace Model

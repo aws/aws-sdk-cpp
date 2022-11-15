@@ -132,13 +132,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_readyDateTime;
-    bool m_readyDateTimeHasBeenSet;
+    bool m_readyDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDateTime;
-    bool m_endDateTimeHasBeenSet;
+    bool m_endDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

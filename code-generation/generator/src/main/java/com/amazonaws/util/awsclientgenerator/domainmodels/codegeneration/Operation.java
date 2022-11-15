@@ -8,6 +8,7 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Map;
 
 @Data
 public class Operation {
@@ -21,9 +22,13 @@ public class Operation {
     private boolean virtualAddressAllowed;
     private String virtualAddressMemberName;
     private String authtype;
+    private String signerName;
     private String authorizer;
     private boolean eventStream;
     private boolean supportsChunkedEncoding;
+
+    // Endpoint Rule static context parameters
+    private Map<String, Map<String, String>> staticContextParams;
 
     // ARN supports.
     private boolean arnEndpointAllowed;

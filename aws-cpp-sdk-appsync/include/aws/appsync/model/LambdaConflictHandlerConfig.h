@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_lambdaConflictHandlerArn;
-    bool m_lambdaConflictHandlerArnHasBeenSet;
+    bool m_lambdaConflictHandlerArnHasBeenSet = false;
   };
 
 } // namespace Model

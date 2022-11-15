@@ -48,10 +48,12 @@ enum class ChimeSDKMeetingsErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
   FORBIDDEN,
   LIMIT_EXCEEDED,
   NOT_FOUND,
   SERVICE_FAILURE,
+  TOO_MANY_TAGS,
   UNAUTHORIZED,
   UNPROCESSABLE_ENTITY
 };

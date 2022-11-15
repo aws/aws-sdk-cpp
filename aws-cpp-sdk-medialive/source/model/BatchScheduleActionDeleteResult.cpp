@@ -33,7 +33,7 @@ BatchScheduleActionDeleteResult& BatchScheduleActionDeleteResult::operator =(Jso
 {
   if(jsonValue.ValueExists("scheduleActions"))
   {
-    Array<JsonView> scheduleActionsJsonList = jsonValue.GetArray("scheduleActions");
+    Aws::Utils::Array<JsonView> scheduleActionsJsonList = jsonValue.GetArray("scheduleActions");
     for(unsigned scheduleActionsIndex = 0; scheduleActionsIndex < scheduleActionsJsonList.GetLength(); ++scheduleActionsIndex)
     {
       m_scheduleActions.push_back(scheduleActionsJsonList[scheduleActionsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue BatchScheduleActionDeleteResult::Jsonize() const
 
   if(m_scheduleActionsHasBeenSet)
   {
-   Array<JsonValue> scheduleActionsJsonList(m_scheduleActions.size());
+   Aws::Utils::Array<JsonValue> scheduleActionsJsonList(m_scheduleActions.size());
    for(unsigned scheduleActionsIndex = 0; scheduleActionsIndex < scheduleActionsJsonList.GetLength(); ++scheduleActionsIndex)
    {
      scheduleActionsJsonList[scheduleActionsIndex].AsObject(m_scheduleActions[scheduleActionsIndex].Jsonize());

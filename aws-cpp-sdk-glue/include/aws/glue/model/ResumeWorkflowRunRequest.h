@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nodeIds;
-    bool m_nodeIdsHasBeenSet;
+    bool m_nodeIdsHasBeenSet = false;
   };
 
 } // namespace Model

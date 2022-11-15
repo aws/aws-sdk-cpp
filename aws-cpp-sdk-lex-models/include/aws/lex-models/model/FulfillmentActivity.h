@@ -121,10 +121,10 @@ namespace Model
   private:
 
     FulfillmentActivityType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CodeHook m_codeHook;
-    bool m_codeHookHasBeenSet;
+    bool m_codeHookHasBeenSet = false;
   };
 
 } // namespace Model

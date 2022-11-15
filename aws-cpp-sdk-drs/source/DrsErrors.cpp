@@ -9,8 +9,8 @@
 #include <aws/drs/model/ConflictException.h>
 #include <aws/drs/model/ServiceQuotaExceededException.h>
 #include <aws/drs/model/ThrottlingException.h>
-#include <aws/drs/model/InternalServerException.h>
 #include <aws/drs/model/ResourceNotFoundException.h>
+#include <aws/drs/model/InternalServerException.h>
 #include <aws/drs/model/ValidationException.h>
 #include <aws/drs/model/UninitializedAccountException.h>
 #include <aws/drs/model/AccessDeniedException.h>
@@ -42,16 +42,16 @@ template<> AWS_DRS_API ThrottlingException DrsError::GetModeledError()
   return ThrottlingException(this->GetJsonPayload().View());
 }
 
-template<> AWS_DRS_API InternalServerException DrsError::GetModeledError()
-{
-  assert(this->GetErrorType() == DrsErrors::INTERNAL_SERVER);
-  return InternalServerException(this->GetJsonPayload().View());
-}
-
 template<> AWS_DRS_API ResourceNotFoundException DrsError::GetModeledError()
 {
   assert(this->GetErrorType() == DrsErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DRS_API InternalServerException DrsError::GetModeledError()
+{
+  assert(this->GetErrorType() == DrsErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
 }
 
 template<> AWS_DRS_API ValidationException DrsError::GetModeledError()

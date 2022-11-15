@@ -35,7 +35,7 @@ Aws::String CreateInputSecurityGroupRequest::SerializePayload() const
 
   if(m_whitelistRulesHasBeenSet)
   {
-   Array<JsonValue> whitelistRulesJsonList(m_whitelistRules.size());
+   Aws::Utils::Array<JsonValue> whitelistRulesJsonList(m_whitelistRules.size());
    for(unsigned whitelistRulesIndex = 0; whitelistRulesIndex < whitelistRulesJsonList.GetLength(); ++whitelistRulesIndex)
    {
      whitelistRulesJsonList[whitelistRulesIndex].AsObject(m_whitelistRules[whitelistRulesIndex].Jsonize());

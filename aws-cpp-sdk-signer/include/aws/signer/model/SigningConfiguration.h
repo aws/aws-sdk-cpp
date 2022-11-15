@@ -108,10 +108,10 @@ namespace Model
   private:
 
     EncryptionAlgorithmOptions m_encryptionAlgorithmOptions;
-    bool m_encryptionAlgorithmOptionsHasBeenSet;
+    bool m_encryptionAlgorithmOptionsHasBeenSet = false;
 
     HashAlgorithmOptions m_hashAlgorithmOptions;
-    bool m_hashAlgorithmOptionsHasBeenSet;
+    bool m_hashAlgorithmOptionsHasBeenSet = false;
   };
 
 } // namespace Model

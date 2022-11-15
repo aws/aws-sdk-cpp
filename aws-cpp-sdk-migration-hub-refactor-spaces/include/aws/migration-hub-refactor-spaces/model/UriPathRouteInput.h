@@ -41,38 +41,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline const RouteActivationState& GetActivationState() const{ return m_activationState; }
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline bool ActivationStateHasBeenSet() const { return m_activationStateHasBeenSet; }
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline void SetActivationState(const RouteActivationState& value) { m_activationStateHasBeenSet = true; m_activationState = value; }
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline void SetActivationState(RouteActivationState&& value) { m_activationStateHasBeenSet = true; m_activationState = std::move(value); }
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline UriPathRouteInput& WithActivationState(const RouteActivationState& value) { SetActivationState(value); return *this;}
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline UriPathRouteInput& WithActivationState(RouteActivationState&& value) { SetActivationState(std::move(value)); return *this;}
 
@@ -214,16 +214,16 @@ namespace Model
   private:
 
     RouteActivationState m_activationState;
-    bool m_activationStateHasBeenSet;
+    bool m_activationStateHasBeenSet = false;
 
     bool m_includeChildPaths;
-    bool m_includeChildPathsHasBeenSet;
+    bool m_includeChildPathsHasBeenSet = false;
 
     Aws::Vector<HttpMethod> m_methods;
-    bool m_methodsHasBeenSet;
+    bool m_methodsHasBeenSet = false;
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
   };
 
 } // namespace Model

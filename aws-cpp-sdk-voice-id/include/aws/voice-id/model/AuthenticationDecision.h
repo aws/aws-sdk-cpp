@@ -21,7 +21,8 @@ namespace Model
     NOT_ENOUGH_SPEECH,
     SPEAKER_NOT_ENROLLED,
     SPEAKER_OPTED_OUT,
-    SPEAKER_ID_NOT_PROVIDED
+    SPEAKER_ID_NOT_PROVIDED,
+    SPEAKER_EXPIRED
   };
 
 namespace AuthenticationDecisionMapper

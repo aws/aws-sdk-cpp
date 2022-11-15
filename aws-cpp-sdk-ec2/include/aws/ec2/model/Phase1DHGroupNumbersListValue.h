@@ -61,7 +61,7 @@ namespace Model
   private:
 
     int m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

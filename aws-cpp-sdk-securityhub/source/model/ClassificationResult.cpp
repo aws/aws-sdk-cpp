@@ -75,7 +75,7 @@ ClassificationResult& ClassificationResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SensitiveData"))
   {
-    Array<JsonView> sensitiveDataJsonList = jsonValue.GetArray("SensitiveData");
+    Aws::Utils::Array<JsonView> sensitiveDataJsonList = jsonValue.GetArray("SensitiveData");
     for(unsigned sensitiveDataIndex = 0; sensitiveDataIndex < sensitiveDataJsonList.GetLength(); ++sensitiveDataIndex)
     {
       m_sensitiveData.push_back(sensitiveDataJsonList[sensitiveDataIndex].AsObject());
@@ -123,7 +123,7 @@ JsonValue ClassificationResult::Jsonize() const
 
   if(m_sensitiveDataHasBeenSet)
   {
-   Array<JsonValue> sensitiveDataJsonList(m_sensitiveData.size());
+   Aws::Utils::Array<JsonValue> sensitiveDataJsonList(m_sensitiveData.size());
    for(unsigned sensitiveDataIndex = 0; sensitiveDataIndex < sensitiveDataJsonList.GetLength(); ++sensitiveDataIndex)
    {
      sensitiveDataJsonList[sensitiveDataIndex].AsObject(m_sensitiveData[sensitiveDataIndex].Jsonize());

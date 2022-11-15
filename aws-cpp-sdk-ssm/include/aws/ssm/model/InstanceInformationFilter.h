@@ -123,10 +123,10 @@ namespace Model
   private:
 
     InstanceInformationFilterKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_valueSet;
-    bool m_valueSetHasBeenSet;
+    bool m_valueSetHasBeenSet = false;
   };
 
 } // namespace Model

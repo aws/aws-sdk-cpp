@@ -179,16 +179,16 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_incidentId;
-    bool m_incidentIdHasBeenSet;
+    bool m_incidentIdHasBeenSet = false;
 
     TimeRange m_timeRangeValue;
-    bool m_timeRangeValueHasBeenSet;
+    bool m_timeRangeValueHasBeenSet = false;
   };
 
 } // namespace Model

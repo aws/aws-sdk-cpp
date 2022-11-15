@@ -10,6 +10,10 @@
 #include <aws/detective/model/MemberDisabledReason.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/detective/model/InvitationType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/detective/model/DatasourcePackage.h>
+#include <aws/detective/model/DatasourcePackageUsageInfo.h>
+#include <aws/detective/model/DatasourcePackageIngestState.h>
 #include <utility>
 
 namespace Aws
@@ -563,70 +567,6 @@ namespace Model
 
 
     /**
-     * <p>The data volume in bytes per day for the member account.</p>
-     */
-    inline long long GetVolumeUsageInBytes() const{ return m_volumeUsageInBytes; }
-
-    /**
-     * <p>The data volume in bytes per day for the member account.</p>
-     */
-    inline bool VolumeUsageInBytesHasBeenSet() const { return m_volumeUsageInBytesHasBeenSet; }
-
-    /**
-     * <p>The data volume in bytes per day for the member account.</p>
-     */
-    inline void SetVolumeUsageInBytes(long long value) { m_volumeUsageInBytesHasBeenSet = true; m_volumeUsageInBytes = value; }
-
-    /**
-     * <p>The data volume in bytes per day for the member account.</p>
-     */
-    inline MemberDetail& WithVolumeUsageInBytes(long long value) { SetVolumeUsageInBytes(value); return *this;}
-
-
-    /**
-     * <p>The data and time when the member account data volume was last updated. The
-     * value is an ISO8601 formatted string. For example,
-     * <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
-    inline const Aws::Utils::DateTime& GetVolumeUsageUpdatedTime() const{ return m_volumeUsageUpdatedTime; }
-
-    /**
-     * <p>The data and time when the member account data volume was last updated. The
-     * value is an ISO8601 formatted string. For example,
-     * <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
-    inline bool VolumeUsageUpdatedTimeHasBeenSet() const { return m_volumeUsageUpdatedTimeHasBeenSet; }
-
-    /**
-     * <p>The data and time when the member account data volume was last updated. The
-     * value is an ISO8601 formatted string. For example,
-     * <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
-    inline void SetVolumeUsageUpdatedTime(const Aws::Utils::DateTime& value) { m_volumeUsageUpdatedTimeHasBeenSet = true; m_volumeUsageUpdatedTime = value; }
-
-    /**
-     * <p>The data and time when the member account data volume was last updated. The
-     * value is an ISO8601 formatted string. For example,
-     * <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
-    inline void SetVolumeUsageUpdatedTime(Aws::Utils::DateTime&& value) { m_volumeUsageUpdatedTimeHasBeenSet = true; m_volumeUsageUpdatedTime = std::move(value); }
-
-    /**
-     * <p>The data and time when the member account data volume was last updated. The
-     * value is an ISO8601 formatted string. For example,
-     * <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
-    inline MemberDetail& WithVolumeUsageUpdatedTime(const Aws::Utils::DateTime& value) { SetVolumeUsageUpdatedTime(value); return *this;}
-
-    /**
-     * <p>The data and time when the member account data volume was last updated. The
-     * value is an ISO8601 formatted string. For example,
-     * <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
-    inline MemberDetail& WithVolumeUsageUpdatedTime(Aws::Utils::DateTime&& value) { SetVolumeUsageUpdatedTime(std::move(value)); return *this;}
-
-
-    /**
      * <p>The type of behavior graph membership.</p> <p>For an organization account in
      * the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
      * <p>For an account that was invited to a behavior graph, the type is
@@ -674,40 +614,152 @@ namespace Model
      */
     inline MemberDetail& WithInvitationType(InvitationType&& value) { SetInvitationType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Details on the volume of usage for each data source package in a behavior
+     * graph.</p>
+     */
+    inline const Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>& GetVolumeUsageByDatasourcePackage() const{ return m_volumeUsageByDatasourcePackage; }
+
+    /**
+     * <p>Details on the volume of usage for each data source package in a behavior
+     * graph.</p>
+     */
+    inline bool VolumeUsageByDatasourcePackageHasBeenSet() const { return m_volumeUsageByDatasourcePackageHasBeenSet; }
+
+    /**
+     * <p>Details on the volume of usage for each data source package in a behavior
+     * graph.</p>
+     */
+    inline void SetVolumeUsageByDatasourcePackage(const Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage = value; }
+
+    /**
+     * <p>Details on the volume of usage for each data source package in a behavior
+     * graph.</p>
+     */
+    inline void SetVolumeUsageByDatasourcePackage(Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>&& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage = std::move(value); }
+
+    /**
+     * <p>Details on the volume of usage for each data source package in a behavior
+     * graph.</p>
+     */
+    inline MemberDetail& WithVolumeUsageByDatasourcePackage(const Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>& value) { SetVolumeUsageByDatasourcePackage(value); return *this;}
+
+    /**
+     * <p>Details on the volume of usage for each data source package in a behavior
+     * graph.</p>
+     */
+    inline MemberDetail& WithVolumeUsageByDatasourcePackage(Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>&& value) { SetVolumeUsageByDatasourcePackage(std::move(value)); return *this;}
+
+    /**
+     * <p>Details on the volume of usage for each data source package in a behavior
+     * graph.</p>
+     */
+    inline MemberDetail& AddVolumeUsageByDatasourcePackage(const DatasourcePackage& key, const DatasourcePackageUsageInfo& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage.emplace(key, value); return *this; }
+
+    /**
+     * <p>Details on the volume of usage for each data source package in a behavior
+     * graph.</p>
+     */
+    inline MemberDetail& AddVolumeUsageByDatasourcePackage(DatasourcePackage&& key, const DatasourcePackageUsageInfo& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Details on the volume of usage for each data source package in a behavior
+     * graph.</p>
+     */
+    inline MemberDetail& AddVolumeUsageByDatasourcePackage(const DatasourcePackage& key, DatasourcePackageUsageInfo&& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Details on the volume of usage for each data source package in a behavior
+     * graph.</p>
+     */
+    inline MemberDetail& AddVolumeUsageByDatasourcePackage(DatasourcePackage&& key, DatasourcePackageUsageInfo&& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage.emplace(std::move(key), std::move(value)); return *this; }
+
+
+    /**
+     * <p>The state of a data source package for the behavior graph.</p>
+     */
+    inline const Aws::Map<DatasourcePackage, DatasourcePackageIngestState>& GetDatasourcePackageIngestStates() const{ return m_datasourcePackageIngestStates; }
+
+    /**
+     * <p>The state of a data source package for the behavior graph.</p>
+     */
+    inline bool DatasourcePackageIngestStatesHasBeenSet() const { return m_datasourcePackageIngestStatesHasBeenSet; }
+
+    /**
+     * <p>The state of a data source package for the behavior graph.</p>
+     */
+    inline void SetDatasourcePackageIngestStates(const Aws::Map<DatasourcePackage, DatasourcePackageIngestState>& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates = value; }
+
+    /**
+     * <p>The state of a data source package for the behavior graph.</p>
+     */
+    inline void SetDatasourcePackageIngestStates(Aws::Map<DatasourcePackage, DatasourcePackageIngestState>&& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates = std::move(value); }
+
+    /**
+     * <p>The state of a data source package for the behavior graph.</p>
+     */
+    inline MemberDetail& WithDatasourcePackageIngestStates(const Aws::Map<DatasourcePackage, DatasourcePackageIngestState>& value) { SetDatasourcePackageIngestStates(value); return *this;}
+
+    /**
+     * <p>The state of a data source package for the behavior graph.</p>
+     */
+    inline MemberDetail& WithDatasourcePackageIngestStates(Aws::Map<DatasourcePackage, DatasourcePackageIngestState>&& value) { SetDatasourcePackageIngestStates(std::move(value)); return *this;}
+
+    /**
+     * <p>The state of a data source package for the behavior graph.</p>
+     */
+    inline MemberDetail& AddDatasourcePackageIngestStates(const DatasourcePackage& key, const DatasourcePackageIngestState& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates.emplace(key, value); return *this; }
+
+    /**
+     * <p>The state of a data source package for the behavior graph.</p>
+     */
+    inline MemberDetail& AddDatasourcePackageIngestStates(DatasourcePackage&& key, const DatasourcePackageIngestState& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The state of a data source package for the behavior graph.</p>
+     */
+    inline MemberDetail& AddDatasourcePackageIngestStates(const DatasourcePackage& key, DatasourcePackageIngestState&& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The state of a data source package for the behavior graph.</p>
+     */
+    inline MemberDetail& AddDatasourcePackageIngestStates(DatasourcePackage&& key, DatasourcePackageIngestState&& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     Aws::String m_administratorId;
-    bool m_administratorIdHasBeenSet;
+    bool m_administratorIdHasBeenSet = false;
 
     MemberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     MemberDisabledReason m_disabledReason;
-    bool m_disabledReasonHasBeenSet;
+    bool m_disabledReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_invitedTime;
-    bool m_invitedTimeHasBeenSet;
+    bool m_invitedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTime;
-    bool m_updatedTimeHasBeenSet;
-
-    long long m_volumeUsageInBytes;
-    bool m_volumeUsageInBytesHasBeenSet;
-
-    Aws::Utils::DateTime m_volumeUsageUpdatedTime;
-    bool m_volumeUsageUpdatedTimeHasBeenSet;
+    bool m_updatedTimeHasBeenSet = false;
 
     InvitationType m_invitationType;
-    bool m_invitationTypeHasBeenSet;
+    bool m_invitationTypeHasBeenSet = false;
+
+    Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo> m_volumeUsageByDatasourcePackage;
+    bool m_volumeUsageByDatasourcePackageHasBeenSet = false;
+
+    Aws::Map<DatasourcePackage, DatasourcePackageIngestState> m_datasourcePackageIngestStates;
+    bool m_datasourcePackageIngestStatesHasBeenSet = false;
   };
 
 } // namespace Model

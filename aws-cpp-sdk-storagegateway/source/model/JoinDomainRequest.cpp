@@ -48,7 +48,7 @@ Aws::String JoinDomainRequest::SerializePayload() const
 
   if(m_domainControllersHasBeenSet)
   {
-   Array<JsonValue> domainControllersJsonList(m_domainControllers.size());
+   Aws::Utils::Array<JsonValue> domainControllersJsonList(m_domainControllers.size());
    for(unsigned domainControllersIndex = 0; domainControllersIndex < domainControllersJsonList.GetLength(); ++domainControllersIndex)
    {
      domainControllersJsonList[domainControllersIndex].AsString(m_domainControllers[domainControllersIndex]);

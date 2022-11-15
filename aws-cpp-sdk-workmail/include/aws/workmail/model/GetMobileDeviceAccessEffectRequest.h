@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+     * <p>The WorkMail organization to simulate the access effect for.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+     * <p>The WorkMail organization to simulate the access effect for.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
-     * <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+     * <p>The WorkMail organization to simulate the access effect for.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+     * <p>The WorkMail organization to simulate the access effect for.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+     * <p>The WorkMail organization to simulate the access effect for.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+     * <p>The WorkMail organization to simulate the access effect for.</p>
      */
     inline GetMobileDeviceAccessEffectRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+     * <p>The WorkMail organization to simulate the access effect for.</p>
      */
     inline GetMobileDeviceAccessEffectRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+     * <p>The WorkMail organization to simulate the access effect for.</p>
      */
     inline GetMobileDeviceAccessEffectRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 
@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
 
     Aws::String m_deviceModel;
-    bool m_deviceModelHasBeenSet;
+    bool m_deviceModelHasBeenSet = false;
 
     Aws::String m_deviceOperatingSystem;
-    bool m_deviceOperatingSystemHasBeenSet;
+    bool m_deviceOperatingSystemHasBeenSet = false;
 
     Aws::String m_deviceUserAgent;
-    bool m_deviceUserAgentHasBeenSet;
+    bool m_deviceUserAgentHasBeenSet = false;
   };
 
 } // namespace Model

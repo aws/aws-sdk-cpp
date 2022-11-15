@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_vcenterClientID;
-    bool m_vcenterClientIDHasBeenSet;
+    bool m_vcenterClientIDHasBeenSet = false;
   };
 
 } // namespace Model

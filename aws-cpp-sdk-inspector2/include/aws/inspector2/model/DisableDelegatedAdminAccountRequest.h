@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_delegatedAdminAccountId;
-    bool m_delegatedAdminAccountIdHasBeenSet;
+    bool m_delegatedAdminAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

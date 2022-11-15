@@ -26,9 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a rule for enabling fast snapshot restore. You can enable fast
-   * snapshot restore based on either a count or a time interval.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p> <b>[Snapshot policies only]</b> Specifies a rule for enabling fast snapshot
+   * restore for snapshots created by snapshot policies. You can enable fast snapshot
+   * restore based on either a count or a time interval.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/FastRestoreRule">AWS
    * API Reference</a></p>
    */
@@ -166,16 +167,16 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     RetentionIntervalUnitValues m_intervalUnit;
-    bool m_intervalUnitHasBeenSet;
+    bool m_intervalUnitHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
   };
 
 } // namespace Model

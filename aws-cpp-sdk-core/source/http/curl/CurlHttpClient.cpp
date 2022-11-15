@@ -284,7 +284,7 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata)
                 memmove(ptr + hex.size(), "\r\n", 2);
                 amountRead += hex.size() + 4;
             }
-            else if (amountRead == 0 && !context->m_chunkEnd)
+            else if (!context->m_chunkEnd)
             {
                 Aws::StringStream chunkedTrailer;
                 chunkedTrailer << "0\r\n";

@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_siteMaps;
-    bool m_siteMapsHasBeenSet;
+    bool m_siteMapsHasBeenSet = false;
   };
 
 } // namespace Model

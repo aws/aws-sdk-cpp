@@ -33,7 +33,7 @@ Aws::String CreateStreamRequest::SerializePayload() const
 
   if(m_filesHasBeenSet)
   {
-   Array<JsonValue> filesJsonList(m_files.size());
+   Aws::Utils::Array<JsonValue> filesJsonList(m_files.size());
    for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
    {
      filesJsonList[filesIndex].AsObject(m_files[filesIndex].Jsonize());
@@ -50,7 +50,7 @@ Aws::String CreateStreamRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -225,7 +225,7 @@ namespace Model
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
      * Default 100. Max 10,000.</p> </li> </ul>
      */
@@ -240,7 +240,7 @@ namespace Model
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
      * Default 100. Max 10,000.</p> </li> </ul>
      */
@@ -255,7 +255,7 @@ namespace Model
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
      * Default 100. Max 10,000.</p> </li> </ul>
      */
@@ -270,7 +270,7 @@ namespace Model
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
      * Default 100. Max 10,000.</p> </li> </ul>
      */
@@ -452,29 +452,29 @@ namespace Model
 
     /**
      * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records will
-     * be retried until the record expires.</p>
+     * default value is infinite (-1). When set to infinite (-1), failed records are
+     * retried until the record expires.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
 
     /**
      * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records will
-     * be retried until the record expires.</p>
+     * default value is infinite (-1). When set to infinite (-1), failed records are
+     * retried until the record expires.</p>
      */
     inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
 
     /**
      * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records will
-     * be retried until the record expires.</p>
+     * default value is infinite (-1). When set to infinite (-1), failed records are
+     * retried until the record expires.</p>
      */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
 
     /**
      * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records will
-     * be retried until the record expires.</p>
+     * default value is infinite (-1). When set to infinite (-1), failed records are
+     * retried until the record expires.</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
 
@@ -555,25 +555,25 @@ namespace Model
 
     /**
      * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second up to 900 seconds.</p>
+     * between 1 second and 900 seconds.</p>
      */
     inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
 
     /**
      * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second up to 900 seconds.</p>
+     * between 1 second and 900 seconds.</p>
      */
     inline bool TumblingWindowInSecondsHasBeenSet() const { return m_tumblingWindowInSecondsHasBeenSet; }
 
     /**
      * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second up to 900 seconds.</p>
+     * between 1 second and 900 seconds.</p>
      */
     inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSecondsHasBeenSet = true; m_tumblingWindowInSeconds = value; }
 
     /**
      * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second up to 900 seconds.</p>
+     * between 1 second and 900 seconds.</p>
      */
     inline UpdateEventSourceMappingRequest& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
 
@@ -629,46 +629,46 @@ namespace Model
   private:
 
     Aws::String m_uUID;
-    bool m_uUIDHasBeenSet;
+    bool m_uUIDHasBeenSet = false;
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_batchSize;
-    bool m_batchSizeHasBeenSet;
+    bool m_batchSizeHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet;
+    bool m_filterCriteriaHasBeenSet = false;
 
     int m_maximumBatchingWindowInSeconds;
-    bool m_maximumBatchingWindowInSecondsHasBeenSet;
+    bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
 
     int m_maximumRecordAgeInSeconds;
-    bool m_maximumRecordAgeInSecondsHasBeenSet;
+    bool m_maximumRecordAgeInSecondsHasBeenSet = false;
 
     bool m_bisectBatchOnFunctionError;
-    bool m_bisectBatchOnFunctionErrorHasBeenSet;
+    bool m_bisectBatchOnFunctionErrorHasBeenSet = false;
 
     int m_maximumRetryAttempts;
-    bool m_maximumRetryAttemptsHasBeenSet;
+    bool m_maximumRetryAttemptsHasBeenSet = false;
 
     int m_parallelizationFactor;
-    bool m_parallelizationFactorHasBeenSet;
+    bool m_parallelizationFactorHasBeenSet = false;
 
     Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
-    bool m_sourceAccessConfigurationsHasBeenSet;
+    bool m_sourceAccessConfigurationsHasBeenSet = false;
 
     int m_tumblingWindowInSeconds;
-    bool m_tumblingWindowInSecondsHasBeenSet;
+    bool m_tumblingWindowInSecondsHasBeenSet = false;
 
     Aws::Vector<FunctionResponseType> m_functionResponseTypes;
-    bool m_functionResponseTypesHasBeenSet;
+    bool m_functionResponseTypesHasBeenSet = false;
   };
 
 } // namespace Model

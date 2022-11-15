@@ -227,22 +227,22 @@ namespace Model
   private:
 
     Aws::String m_devEui;
-    bool m_devEuiHasBeenSet;
+    bool m_devEuiHasBeenSet = false;
 
     int m_fPort;
-    bool m_fPortHasBeenSet;
+    bool m_fPortHasBeenSet = false;
 
     int m_dataRate;
-    bool m_dataRateHasBeenSet;
+    bool m_dataRateHasBeenSet = false;
 
     int m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     Aws::String m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::Vector<LoRaWANGatewayMetadata> m_gateways;
-    bool m_gatewaysHasBeenSet;
+    bool m_gatewaysHasBeenSet = false;
   };
 
 } // namespace Model

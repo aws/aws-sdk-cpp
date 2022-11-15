@@ -108,12 +108,13 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
 
@@ -124,12 +125,13 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
 
@@ -140,12 +142,13 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
 
@@ -156,12 +159,13 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
 
@@ -172,12 +176,13 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline TagResourceRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
 
@@ -188,12 +193,13 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline TagResourceRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
 
@@ -204,12 +210,13 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline TagResourceRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
 
@@ -220,22 +227,23 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline TagResourceRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

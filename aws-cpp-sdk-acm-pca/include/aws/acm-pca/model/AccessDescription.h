@@ -105,10 +105,10 @@ namespace Model
   private:
 
     AccessMethod m_accessMethod;
-    bool m_accessMethodHasBeenSet;
+    bool m_accessMethodHasBeenSet = false;
 
     GeneralName m_accessLocation;
-    bool m_accessLocationHasBeenSet;
+    bool m_accessLocationHasBeenSet = false;
   };
 
 } // namespace Model

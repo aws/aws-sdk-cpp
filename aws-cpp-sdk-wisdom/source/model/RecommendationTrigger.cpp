@@ -59,7 +59,7 @@ RecommendationTrigger& RecommendationTrigger::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("recommendationIds"))
   {
-    Array<JsonView> recommendationIdsJsonList = jsonValue.GetArray("recommendationIds");
+    Aws::Utils::Array<JsonView> recommendationIdsJsonList = jsonValue.GetArray("recommendationIds");
     for(unsigned recommendationIdsIndex = 0; recommendationIdsIndex < recommendationIdsJsonList.GetLength(); ++recommendationIdsIndex)
     {
       m_recommendationIds.push_back(recommendationIdsJsonList[recommendationIdsIndex].AsString());
@@ -102,7 +102,7 @@ JsonValue RecommendationTrigger::Jsonize() const
 
   if(m_recommendationIdsHasBeenSet)
   {
-   Array<JsonValue> recommendationIdsJsonList(m_recommendationIds.size());
+   Aws::Utils::Array<JsonValue> recommendationIdsJsonList(m_recommendationIds.size());
    for(unsigned recommendationIdsIndex = 0; recommendationIdsIndex < recommendationIdsJsonList.GetLength(); ++recommendationIdsIndex)
    {
      recommendationIdsJsonList[recommendationIdsIndex].AsString(m_recommendationIds[recommendationIdsIndex]);

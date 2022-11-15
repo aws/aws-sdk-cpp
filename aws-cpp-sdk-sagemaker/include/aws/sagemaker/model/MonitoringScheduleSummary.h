@@ -330,28 +330,28 @@ namespace Model
   private:
 
     Aws::String m_monitoringScheduleName;
-    bool m_monitoringScheduleNameHasBeenSet;
+    bool m_monitoringScheduleNameHasBeenSet = false;
 
     Aws::String m_monitoringScheduleArn;
-    bool m_monitoringScheduleArnHasBeenSet;
+    bool m_monitoringScheduleArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     ScheduleStatus m_monitoringScheduleStatus;
-    bool m_monitoringScheduleStatusHasBeenSet;
+    bool m_monitoringScheduleStatusHasBeenSet = false;
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_monitoringJobDefinitionName;
-    bool m_monitoringJobDefinitionNameHasBeenSet;
+    bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
     MonitoringType m_monitoringType;
-    bool m_monitoringTypeHasBeenSet;
+    bool m_monitoringTypeHasBeenSet = false;
   };
 
 } // namespace Model

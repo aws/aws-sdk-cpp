@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_analyzerName;
-    bool m_analyzerNameHasBeenSet;
+    bool m_analyzerNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_partitionKey;
-    bool m_partitionKeyHasBeenSet;
+    bool m_partitionKeyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,6 +25,7 @@ namespace Aws
         static const int FAILBACK_HASH = HashingUtils::HashString("FAILBACK");
         static const int DIAGNOSTIC_HASH = HashingUtils::HashString("DIAGNOSTIC");
         static const int TERMINATE_RECOVERY_INSTANCES_HASH = HashingUtils::HashString("TERMINATE_RECOVERY_INSTANCES");
+        static const int TARGET_ACCOUNT_HASH = HashingUtils::HashString("TARGET_ACCOUNT");
 
 
         InitiatedBy GetInitiatedByForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return InitiatedBy::TERMINATE_RECOVERY_INSTANCES;
           }
+          else if (hashCode == TARGET_ACCOUNT_HASH)
+          {
+            return InitiatedBy::TARGET_ACCOUNT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "DIAGNOSTIC";
           case InitiatedBy::TERMINATE_RECOVERY_INSTANCES:
             return "TERMINATE_RECOVERY_INSTANCES";
+          case InitiatedBy::TARGET_ACCOUNT:
+            return "TARGET_ACCOUNT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

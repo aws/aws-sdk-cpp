@@ -277,16 +277,16 @@ namespace Model
   private:
 
     DecryptionMode m_decryptionMode;
-    bool m_decryptionModeHasBeenSet;
+    bool m_decryptionModeHasBeenSet = false;
 
     Aws::String m_encryptedDecryptionKey;
-    bool m_encryptedDecryptionKeyHasBeenSet;
+    bool m_encryptedDecryptionKeyHasBeenSet = false;
 
     Aws::String m_initializationVector;
-    bool m_initializationVectorHasBeenSet;
+    bool m_initializationVectorHasBeenSet = false;
 
     Aws::String m_kmsKeyRegion;
-    bool m_kmsKeyRegionHasBeenSet;
+    bool m_kmsKeyRegionHasBeenSet = false;
   };
 
 } // namespace Model

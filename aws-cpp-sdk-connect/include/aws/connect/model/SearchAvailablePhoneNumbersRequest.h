@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline SearchAvailablePhoneNumbersRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline SearchAvailablePhoneNumbersRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline SearchAvailablePhoneNumbersRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
@@ -266,22 +266,22 @@ namespace Model
   private:
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     PhoneNumberCountryCode m_phoneNumberCountryCode;
-    bool m_phoneNumberCountryCodeHasBeenSet;
+    bool m_phoneNumberCountryCodeHasBeenSet = false;
 
     PhoneNumberType m_phoneNumberType;
-    bool m_phoneNumberTypeHasBeenSet;
+    bool m_phoneNumberTypeHasBeenSet = false;
 
     Aws::String m_phoneNumberPrefix;
-    bool m_phoneNumberPrefixHasBeenSet;
+    bool m_phoneNumberPrefixHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

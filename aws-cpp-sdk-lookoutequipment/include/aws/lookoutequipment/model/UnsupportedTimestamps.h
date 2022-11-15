@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_totalNumberOfUnsupportedTimestamps;
-    bool m_totalNumberOfUnsupportedTimestampsHasBeenSet;
+    bool m_totalNumberOfUnsupportedTimestampsHasBeenSet = false;
   };
 
 } // namespace Model

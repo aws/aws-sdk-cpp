@@ -42,7 +42,7 @@ Details& Details::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ImportAssetsFromS3JobErrorDetails"))
   {
-    Array<JsonView> importAssetsFromS3JobErrorDetailsJsonList = jsonValue.GetArray("ImportAssetsFromS3JobErrorDetails");
+    Aws::Utils::Array<JsonView> importAssetsFromS3JobErrorDetailsJsonList = jsonValue.GetArray("ImportAssetsFromS3JobErrorDetails");
     for(unsigned importAssetsFromS3JobErrorDetailsIndex = 0; importAssetsFromS3JobErrorDetailsIndex < importAssetsFromS3JobErrorDetailsJsonList.GetLength(); ++importAssetsFromS3JobErrorDetailsIndex)
     {
       m_importAssetsFromS3JobErrorDetails.push_back(importAssetsFromS3JobErrorDetailsJsonList[importAssetsFromS3JobErrorDetailsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue Details::Jsonize() const
 
   if(m_importAssetsFromS3JobErrorDetailsHasBeenSet)
   {
-   Array<JsonValue> importAssetsFromS3JobErrorDetailsJsonList(m_importAssetsFromS3JobErrorDetails.size());
+   Aws::Utils::Array<JsonValue> importAssetsFromS3JobErrorDetailsJsonList(m_importAssetsFromS3JobErrorDetails.size());
    for(unsigned importAssetsFromS3JobErrorDetailsIndex = 0; importAssetsFromS3JobErrorDetailsIndex < importAssetsFromS3JobErrorDetailsJsonList.GetLength(); ++importAssetsFromS3JobErrorDetailsIndex)
    {
      importAssetsFromS3JobErrorDetailsJsonList[importAssetsFromS3JobErrorDetailsIndex].AsObject(m_importAssetsFromS3JobErrorDetails[importAssetsFromS3JobErrorDetailsIndex].Jsonize());

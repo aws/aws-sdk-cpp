@@ -41,100 +41,100 @@ namespace Model
 
 
     /**
-     * <p>The Savings Plans recommendation type requested.</p>
+     * <p>The Savings Plans recommendation type that's requested.</p>
      */
     inline const SupportedSavingsPlansType& GetSavingsPlansType() const{ return m_savingsPlansType; }
 
     /**
-     * <p>The Savings Plans recommendation type requested.</p>
+     * <p>The Savings Plans recommendation type that's requested.</p>
      */
     inline bool SavingsPlansTypeHasBeenSet() const { return m_savingsPlansTypeHasBeenSet; }
 
     /**
-     * <p>The Savings Plans recommendation type requested.</p>
+     * <p>The Savings Plans recommendation type that's requested.</p>
      */
     inline void SetSavingsPlansType(const SupportedSavingsPlansType& value) { m_savingsPlansTypeHasBeenSet = true; m_savingsPlansType = value; }
 
     /**
-     * <p>The Savings Plans recommendation type requested.</p>
+     * <p>The Savings Plans recommendation type that's requested.</p>
      */
     inline void SetSavingsPlansType(SupportedSavingsPlansType&& value) { m_savingsPlansTypeHasBeenSet = true; m_savingsPlansType = std::move(value); }
 
     /**
-     * <p>The Savings Plans recommendation type requested.</p>
+     * <p>The Savings Plans recommendation type that's requested.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithSavingsPlansType(const SupportedSavingsPlansType& value) { SetSavingsPlansType(value); return *this;}
 
     /**
-     * <p>The Savings Plans recommendation type requested.</p>
+     * <p>The Savings Plans recommendation type that's requested.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithSavingsPlansType(SupportedSavingsPlansType&& value) { SetSavingsPlansType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The savings plan recommendation term used to generate these
+     * <p>The savings plan recommendation term that's used to generate these
      * recommendations.</p>
      */
     inline const TermInYears& GetTermInYears() const{ return m_termInYears; }
 
     /**
-     * <p>The savings plan recommendation term used to generate these
+     * <p>The savings plan recommendation term that's used to generate these
      * recommendations.</p>
      */
     inline bool TermInYearsHasBeenSet() const { return m_termInYearsHasBeenSet; }
 
     /**
-     * <p>The savings plan recommendation term used to generate these
+     * <p>The savings plan recommendation term that's used to generate these
      * recommendations.</p>
      */
     inline void SetTermInYears(const TermInYears& value) { m_termInYearsHasBeenSet = true; m_termInYears = value; }
 
     /**
-     * <p>The savings plan recommendation term used to generate these
+     * <p>The savings plan recommendation term that's used to generate these
      * recommendations.</p>
      */
     inline void SetTermInYears(TermInYears&& value) { m_termInYearsHasBeenSet = true; m_termInYears = std::move(value); }
 
     /**
-     * <p>The savings plan recommendation term used to generate these
+     * <p>The savings plan recommendation term that's used to generate these
      * recommendations.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithTermInYears(const TermInYears& value) { SetTermInYears(value); return *this;}
 
     /**
-     * <p>The savings plan recommendation term used to generate these
+     * <p>The savings plan recommendation term that's used to generate these
      * recommendations.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithTermInYears(TermInYears&& value) { SetTermInYears(std::move(value)); return *this;}
 
 
     /**
-     * <p>The payment option used to generate these recommendations.</p>
+     * <p>The payment option that's used to generate these recommendations.</p>
      */
     inline const PaymentOption& GetPaymentOption() const{ return m_paymentOption; }
 
     /**
-     * <p>The payment option used to generate these recommendations.</p>
+     * <p>The payment option that's used to generate these recommendations.</p>
      */
     inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
 
     /**
-     * <p>The payment option used to generate these recommendations.</p>
+     * <p>The payment option that's used to generate these recommendations.</p>
      */
     inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
 
     /**
-     * <p>The payment option used to generate these recommendations.</p>
+     * <p>The payment option that's used to generate these recommendations.</p>
      */
     inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
 
     /**
-     * <p>The payment option used to generate these recommendations.</p>
+     * <p>The payment option that's used to generate these recommendations.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithPaymentOption(const PaymentOption& value) { SetPaymentOption(value); return *this;}
 
     /**
-     * <p>The payment option used to generate these recommendations.</p>
+     * <p>The payment option that's used to generate these recommendations.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
 
@@ -271,32 +271,32 @@ namespace Model
 
 
     /**
-     * <p>The lookback period used to generate the recommendation.</p>
+     * <p>The lookback period that's used to generate the recommendation.</p>
      */
     inline const LookbackPeriodInDays& GetLookbackPeriodInDays() const{ return m_lookbackPeriodInDays; }
 
     /**
-     * <p>The lookback period used to generate the recommendation.</p>
+     * <p>The lookback period that's used to generate the recommendation.</p>
      */
     inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
 
     /**
-     * <p>The lookback period used to generate the recommendation.</p>
+     * <p>The lookback period that's used to generate the recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(const LookbackPeriodInDays& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
 
     /**
-     * <p>The lookback period used to generate the recommendation.</p>
+     * <p>The lookback period that's used to generate the recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(LookbackPeriodInDays&& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = std::move(value); }
 
     /**
-     * <p>The lookback period used to generate the recommendation.</p>
+     * <p>The lookback period that's used to generate the recommendation.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithLookbackPeriodInDays(const LookbackPeriodInDays& value) { SetLookbackPeriodInDays(value); return *this;}
 
     /**
-     * <p>The lookback period used to generate the recommendation.</p>
+     * <p>The lookback period that's used to generate the recommendation.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithLookbackPeriodInDays(LookbackPeriodInDays&& value) { SetLookbackPeriodInDays(std::move(value)); return *this;}
 
@@ -305,14 +305,14 @@ namespace Model
      * <p>You can filter your recommendations by Account ID with the
      * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
      * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
-     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
-     * Savings Plans purchase recommendations.</p> <p>For
-     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>Value</code> as the comma-separated Acount ID(s) that you want to see
+     * Savings Plans purchase recommendations for.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include
      * <code>CostCategories</code> or <code>Tags</code>. It only includes
      * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
      * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
-     * multiple comma-separated Account IDs for which you want to see Savings Plans
-     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * multiple comma-separated Account IDs that you want to see Savings Plans Purchase
+     * Recommendations for. <code>AND</code> and <code>OR</code> operators are not
      * supported.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
@@ -321,14 +321,14 @@ namespace Model
      * <p>You can filter your recommendations by Account ID with the
      * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
      * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
-     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
-     * Savings Plans purchase recommendations.</p> <p>For
-     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>Value</code> as the comma-separated Acount ID(s) that you want to see
+     * Savings Plans purchase recommendations for.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include
      * <code>CostCategories</code> or <code>Tags</code>. It only includes
      * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
      * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
-     * multiple comma-separated Account IDs for which you want to see Savings Plans
-     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * multiple comma-separated Account IDs that you want to see Savings Plans Purchase
+     * Recommendations for. <code>AND</code> and <code>OR</code> operators are not
      * supported.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
@@ -337,14 +337,14 @@ namespace Model
      * <p>You can filter your recommendations by Account ID with the
      * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
      * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
-     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
-     * Savings Plans purchase recommendations.</p> <p>For
-     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>Value</code> as the comma-separated Acount ID(s) that you want to see
+     * Savings Plans purchase recommendations for.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include
      * <code>CostCategories</code> or <code>Tags</code>. It only includes
      * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
      * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
-     * multiple comma-separated Account IDs for which you want to see Savings Plans
-     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * multiple comma-separated Account IDs that you want to see Savings Plans Purchase
+     * Recommendations for. <code>AND</code> and <code>OR</code> operators are not
      * supported.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
@@ -353,14 +353,14 @@ namespace Model
      * <p>You can filter your recommendations by Account ID with the
      * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
      * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
-     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
-     * Savings Plans purchase recommendations.</p> <p>For
-     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>Value</code> as the comma-separated Acount ID(s) that you want to see
+     * Savings Plans purchase recommendations for.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include
      * <code>CostCategories</code> or <code>Tags</code>. It only includes
      * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
      * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
-     * multiple comma-separated Account IDs for which you want to see Savings Plans
-     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * multiple comma-separated Account IDs that you want to see Savings Plans Purchase
+     * Recommendations for. <code>AND</code> and <code>OR</code> operators are not
      * supported.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
@@ -369,14 +369,14 @@ namespace Model
      * <p>You can filter your recommendations by Account ID with the
      * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
      * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
-     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
-     * Savings Plans purchase recommendations.</p> <p>For
-     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>Value</code> as the comma-separated Acount ID(s) that you want to see
+     * Savings Plans purchase recommendations for.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include
      * <code>CostCategories</code> or <code>Tags</code>. It only includes
      * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
      * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
-     * multiple comma-separated Account IDs for which you want to see Savings Plans
-     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * multiple comma-separated Account IDs that you want to see Savings Plans Purchase
+     * Recommendations for. <code>AND</code> and <code>OR</code> operators are not
      * supported.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
@@ -385,14 +385,14 @@ namespace Model
      * <p>You can filter your recommendations by Account ID with the
      * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
      * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
-     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
-     * Savings Plans purchase recommendations.</p> <p>For
-     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>Value</code> as the comma-separated Acount ID(s) that you want to see
+     * Savings Plans purchase recommendations for.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include
      * <code>CostCategories</code> or <code>Tags</code>. It only includes
      * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
      * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
-     * multiple comma-separated Account IDs for which you want to see Savings Plans
-     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * multiple comma-separated Account IDs that you want to see Savings Plans Purchase
+     * Recommendations for. <code>AND</code> and <code>OR</code> operators are not
      * supported.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
@@ -400,28 +400,28 @@ namespace Model
   private:
 
     SupportedSavingsPlansType m_savingsPlansType;
-    bool m_savingsPlansTypeHasBeenSet;
+    bool m_savingsPlansTypeHasBeenSet = false;
 
     TermInYears m_termInYears;
-    bool m_termInYearsHasBeenSet;
+    bool m_termInYearsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     AccountScope m_accountScope;
-    bool m_accountScopeHasBeenSet;
+    bool m_accountScopeHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     LookbackPeriodInDays m_lookbackPeriodInDays;
-    bool m_lookbackPeriodInDaysHasBeenSet;
+    bool m_lookbackPeriodInDaysHasBeenSet = false;
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

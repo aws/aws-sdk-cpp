@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::String m_ruleArn;
-    bool m_ruleArnHasBeenSet;
+    bool m_ruleArnHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

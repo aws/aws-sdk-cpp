@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_channelFlowArn;
-    bool m_channelFlowArnHasBeenSet;
+    bool m_channelFlowArnHasBeenSet = false;
   };
 
 } // namespace Model

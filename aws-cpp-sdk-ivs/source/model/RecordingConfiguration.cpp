@@ -22,6 +22,8 @@ RecordingConfiguration::RecordingConfiguration() :
     m_arnHasBeenSet(false),
     m_destinationConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_recordingReconnectWindowSeconds(0),
+    m_recordingReconnectWindowSecondsHasBeenSet(false),
     m_state(RecordingConfigurationState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -33,6 +35,8 @@ RecordingConfiguration::RecordingConfiguration(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_destinationConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_recordingReconnectWindowSeconds(0),
+    m_recordingReconnectWindowSecondsHasBeenSet(false),
     m_state(RecordingConfigurationState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -62,6 +66,13 @@ RecordingConfiguration& RecordingConfiguration::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recordingReconnectWindowSeconds"))
+  {
+    m_recordingReconnectWindowSeconds = jsonValue.GetInteger("recordingReconnectWindowSeconds");
+
+    m_recordingReconnectWindowSecondsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -110,6 +121,12 @@ JsonValue RecordingConfiguration::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_recordingReconnectWindowSecondsHasBeenSet)
+  {
+   payload.WithInteger("recordingReconnectWindowSeconds", m_recordingReconnectWindowSeconds);
 
   }
 

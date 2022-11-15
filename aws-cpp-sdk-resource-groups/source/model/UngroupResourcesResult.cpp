@@ -30,7 +30,7 @@ UngroupResourcesResult& UngroupResourcesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Succeeded"))
   {
-    Array<JsonView> succeededJsonList = jsonValue.GetArray("Succeeded");
+    Aws::Utils::Array<JsonView> succeededJsonList = jsonValue.GetArray("Succeeded");
     for(unsigned succeededIndex = 0; succeededIndex < succeededJsonList.GetLength(); ++succeededIndex)
     {
       m_succeeded.push_back(succeededJsonList[succeededIndex].AsString());
@@ -39,7 +39,7 @@ UngroupResourcesResult& UngroupResourcesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Failed"))
   {
-    Array<JsonView> failedJsonList = jsonValue.GetArray("Failed");
+    Aws::Utils::Array<JsonView> failedJsonList = jsonValue.GetArray("Failed");
     for(unsigned failedIndex = 0; failedIndex < failedJsonList.GetLength(); ++failedIndex)
     {
       m_failed.push_back(failedJsonList[failedIndex].AsObject());
@@ -48,7 +48,7 @@ UngroupResourcesResult& UngroupResourcesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Pending"))
   {
-    Array<JsonView> pendingJsonList = jsonValue.GetArray("Pending");
+    Aws::Utils::Array<JsonView> pendingJsonList = jsonValue.GetArray("Pending");
     for(unsigned pendingIndex = 0; pendingIndex < pendingJsonList.GetLength(); ++pendingIndex)
     {
       m_pending.push_back(pendingJsonList[pendingIndex].AsObject());

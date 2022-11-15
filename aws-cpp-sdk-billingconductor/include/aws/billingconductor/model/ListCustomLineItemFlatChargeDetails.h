@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p> A representation of the charge details associated with a flat custom line
-   * item. </p><p><h3>See Also:</h3>   <a
+   * <p> A representation of the charge details that are associated with a flat
+   * custom line item. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemFlatChargeDetails">AWS
    * API Reference</a></p>
    */
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     double m_chargeValue;
-    bool m_chargeValueHasBeenSet;
+    bool m_chargeValueHasBeenSet = false;
   };
 
 } // namespace Model

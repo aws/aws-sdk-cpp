@@ -174,10 +174,10 @@ namespace Model
   private:
 
     ScanType m_scanType;
-    bool m_scanTypeHasBeenSet;
+    bool m_scanTypeHasBeenSet = false;
 
     Aws::Vector<RegistryScanningRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

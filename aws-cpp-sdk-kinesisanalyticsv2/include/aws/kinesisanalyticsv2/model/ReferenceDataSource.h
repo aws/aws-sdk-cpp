@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     S3ReferenceDataSource m_s3ReferenceDataSource;
-    bool m_s3ReferenceDataSourceHasBeenSet;
+    bool m_s3ReferenceDataSourceHasBeenSet = false;
 
     SourceSchema m_referenceSchema;
-    bool m_referenceSchemaHasBeenSet;
+    bool m_referenceSchemaHasBeenSet = false;
   };
 
 } // namespace Model

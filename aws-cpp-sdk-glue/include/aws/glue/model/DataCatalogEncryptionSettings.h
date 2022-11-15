@@ -127,10 +127,10 @@ namespace Model
   private:
 
     EncryptionAtRest m_encryptionAtRest;
-    bool m_encryptionAtRestHasBeenSet;
+    bool m_encryptionAtRestHasBeenSet = false;
 
     ConnectionPasswordEncryption m_connectionPasswordEncryption;
-    bool m_connectionPasswordEncryptionHasBeenSet;
+    bool m_connectionPasswordEncryptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -290,25 +290,25 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_branchInterfaceId;
-    bool m_branchInterfaceIdHasBeenSet;
+    bool m_branchInterfaceIdHasBeenSet = false;
 
     Aws::String m_trunkInterfaceId;
-    bool m_trunkInterfaceIdHasBeenSet;
+    bool m_trunkInterfaceIdHasBeenSet = false;
 
     InterfaceProtocolType m_interfaceProtocol;
-    bool m_interfaceProtocolHasBeenSet;
+    bool m_interfaceProtocolHasBeenSet = false;
 
     int m_vlanId;
-    bool m_vlanIdHasBeenSet;
+    bool m_vlanIdHasBeenSet = false;
 
     int m_greKey;
-    bool m_greKeyHasBeenSet;
+    bool m_greKeyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

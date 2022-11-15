@@ -20,7 +20,8 @@ CreateContainerServiceRequest::CreateContainerServiceRequest() :
     m_scaleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_publicDomainNamesHasBeenSet(false),
-    m_deploymentHasBeenSet(false)
+    m_deploymentHasBeenSet(false),
+    m_privateRegistryAccessHasBeenSet(false)
 {
 }
 
@@ -47,7 +48,7 @@ Aws::String CreateContainerServiceRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -61,7 +62,7 @@ Aws::String CreateContainerServiceRequest::SerializePayload() const
    JsonValue publicDomainNamesJsonMap;
    for(auto& publicDomainNamesItem : m_publicDomainNames)
    {
-     Array<JsonValue> containerServicePublicDomainsListJsonList(publicDomainNamesItem.second.size());
+     Aws::Utils::Array<JsonValue> containerServicePublicDomainsListJsonList(publicDomainNamesItem.second.size());
      for(unsigned containerServicePublicDomainsListIndex = 0; containerServicePublicDomainsListIndex < containerServicePublicDomainsListJsonList.GetLength(); ++containerServicePublicDomainsListIndex)
      {
        containerServicePublicDomainsListJsonList[containerServicePublicDomainsListIndex].AsString(publicDomainNamesItem.second[containerServicePublicDomainsListIndex]);
@@ -75,6 +76,12 @@ Aws::String CreateContainerServiceRequest::SerializePayload() const
   if(m_deploymentHasBeenSet)
   {
    payload.WithObject("deployment", m_deployment.Jsonize());
+
+  }
+
+  if(m_privateRegistryAccessHasBeenSet)
+  {
+   payload.WithObject("privateRegistryAccess", m_privateRegistryAccess.Jsonize());
 
   }
 

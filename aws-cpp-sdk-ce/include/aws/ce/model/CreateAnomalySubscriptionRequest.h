@@ -68,7 +68,7 @@ namespace Model
 
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
      * <code>AnomalySubscription</code> </a>. You can use resource tags to control
      * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
@@ -77,17 +77,18 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
      * <code>AnomalySubscription</code> </a>. You can use resource tags to control
      * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
@@ -96,17 +97,18 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
      * <code>AnomalySubscription</code> </a>. You can use resource tags to control
      * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
@@ -115,17 +117,18 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
      * <code>AnomalySubscription</code> </a>. You can use resource tags to control
      * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
@@ -134,17 +137,18 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
      * <code>AnomalySubscription</code> </a>. You can use resource tags to control
      * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
@@ -153,17 +157,18 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline CreateAnomalySubscriptionRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
      * <code>AnomalySubscription</code> </a>. You can use resource tags to control
      * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
@@ -172,17 +177,18 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline CreateAnomalySubscriptionRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
      * <code>AnomalySubscription</code> </a>. You can use resource tags to control
      * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
@@ -191,17 +197,18 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline CreateAnomalySubscriptionRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
 
     /**
-     * <p> An optional list of tags to associate with the specified <a
+     * <p>An optional list of tags to associate with the specified <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
      * <code>AnomalySubscription</code> </a>. You can use resource tags to control
      * access to your <code>subscription</code> using IAM policies.</p> <p>Each tag
@@ -210,22 +217,23 @@ namespace Model
      * maximum number of array members is 200, you can assign a maximum of 50 user-tags
      * to one resource. The remaining are reserved for Amazon Web Services use</p>
      * </li> <li> <p>The maximum length of a key is 128 characters</p> </li> <li>
-     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Valid
-     * characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-     * <code>_.:/=+-</code> </p> </li> <li> <p>Keys and values are case sensitive</p>
-     * </li> <li> <p>Keys and values are trimmed for any leading or trailing
-     * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
-     * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
+     * <p>The maximum length of a value is 256 characters</p> </li> <li> <p>Keys and
+     * values can only contain alphanumeric characters, spaces, and any of the
+     * following: <code>_.:/=+@-</code> </p> </li> <li> <p>Keys and values are case
+     * sensitive</p> </li> <li> <p>Keys and values are trimmed for any leading or
+     * trailing whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix
+     * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+     * </ul>
      */
     inline CreateAnomalySubscriptionRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
 
   private:
 
     AnomalySubscription m_anomalySubscription;
-    bool m_anomalySubscriptionHasBeenSet;
+    bool m_anomalySubscriptionHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

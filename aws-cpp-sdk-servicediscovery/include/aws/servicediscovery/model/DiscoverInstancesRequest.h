@@ -469,22 +469,22 @@ namespace Model
   private:
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_queryParameters;
-    bool m_queryParametersHasBeenSet;
+    bool m_queryParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_optionalParameters;
-    bool m_optionalParametersHasBeenSet;
+    bool m_optionalParametersHasBeenSet = false;
 
     HealthStatusFilter m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
   };
 
 } // namespace Model

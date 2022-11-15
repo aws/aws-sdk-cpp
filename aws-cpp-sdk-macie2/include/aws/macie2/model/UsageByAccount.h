@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Currency m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
 
     Aws::String m_estimatedCost;
-    bool m_estimatedCostHasBeenSet;
+    bool m_estimatedCostHasBeenSet = false;
 
     ServiceLimit m_serviceLimit;
-    bool m_serviceLimitHasBeenSet;
+    bool m_serviceLimitHasBeenSet = false;
 
     UsageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

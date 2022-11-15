@@ -92,96 +92,104 @@ namespace Model
 
 
     /**
-     * <p>The service instance name.</p>
+     * <p>The name of the service instance whose provisioned resources you want.</p>
      */
     inline const Aws::String& GetServiceInstanceName() const{ return m_serviceInstanceName; }
 
     /**
-     * <p>The service instance name.</p>
+     * <p>The name of the service instance whose provisioned resources you want.</p>
      */
     inline bool ServiceInstanceNameHasBeenSet() const { return m_serviceInstanceNameHasBeenSet; }
 
     /**
-     * <p>The service instance name.</p>
+     * <p>The name of the service instance whose provisioned resources you want.</p>
      */
     inline void SetServiceInstanceName(const Aws::String& value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName = value; }
 
     /**
-     * <p>The service instance name.</p>
+     * <p>The name of the service instance whose provisioned resources you want.</p>
      */
     inline void SetServiceInstanceName(Aws::String&& value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName = std::move(value); }
 
     /**
-     * <p>The service instance name.</p>
+     * <p>The name of the service instance whose provisioned resources you want.</p>
      */
     inline void SetServiceInstanceName(const char* value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName.assign(value); }
 
     /**
-     * <p>The service instance name.</p>
+     * <p>The name of the service instance whose provisioned resources you want.</p>
      */
     inline ListServiceInstanceProvisionedResourcesRequest& WithServiceInstanceName(const Aws::String& value) { SetServiceInstanceName(value); return *this;}
 
     /**
-     * <p>The service instance name.</p>
+     * <p>The name of the service instance whose provisioned resources you want.</p>
      */
     inline ListServiceInstanceProvisionedResourcesRequest& WithServiceInstanceName(Aws::String&& value) { SetServiceInstanceName(std::move(value)); return *this;}
 
     /**
-     * <p>The service instance name.</p>
+     * <p>The name of the service instance whose provisioned resources you want.</p>
      */
     inline ListServiceInstanceProvisionedResourcesRequest& WithServiceInstanceName(const char* value) { SetServiceInstanceName(value); return *this;}
 
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service that <code>serviceInstanceName</code> is associated
+     * to.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service that <code>serviceInstanceName</code> is associated
+     * to.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service that <code>serviceInstanceName</code> is associated
+     * to.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service that <code>serviceInstanceName</code> is associated
+     * to.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service that <code>serviceInstanceName</code> is associated
+     * to.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service that <code>serviceInstanceName</code> is associated
+     * to.</p>
      */
     inline ListServiceInstanceProvisionedResourcesRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service that <code>serviceInstanceName</code> is associated
+     * to.</p>
      */
     inline ListServiceInstanceProvisionedResourcesRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the service that <code>serviceInstanceName</code> is associated
+     * to.</p>
      */
     inline ListServiceInstanceProvisionedResourcesRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_serviceInstanceName;
-    bool m_serviceInstanceNameHasBeenSet;
+    bool m_serviceInstanceNameHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

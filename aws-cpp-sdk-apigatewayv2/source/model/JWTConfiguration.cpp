@@ -35,7 +35,7 @@ JWTConfiguration& JWTConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audience"))
   {
-    Array<JsonView> audienceJsonList = jsonValue.GetArray("audience");
+    Aws::Utils::Array<JsonView> audienceJsonList = jsonValue.GetArray("audience");
     for(unsigned audienceIndex = 0; audienceIndex < audienceJsonList.GetLength(); ++audienceIndex)
     {
       m_audience.push_back(audienceJsonList[audienceIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue JWTConfiguration::Jsonize() const
 
   if(m_audienceHasBeenSet)
   {
-   Array<JsonValue> audienceJsonList(m_audience.size());
+   Aws::Utils::Array<JsonValue> audienceJsonList(m_audience.size());
    for(unsigned audienceIndex = 0; audienceIndex < audienceJsonList.GetLength(); ++audienceIndex)
    {
      audienceJsonList[audienceIndex].AsString(m_audience[audienceIndex]);

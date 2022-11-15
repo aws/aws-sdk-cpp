@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<Usage> m_usage;
-    bool m_usageHasBeenSet;
+    bool m_usageHasBeenSet = false;
   };
 
 } // namespace Model

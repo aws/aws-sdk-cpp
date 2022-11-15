@@ -206,13 +206,13 @@ namespace Model
   private:
 
     ThirdPartyFirewall m_thirdPartyFirewall;
-    bool m_thirdPartyFirewallHasBeenSet;
+    bool m_thirdPartyFirewallHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

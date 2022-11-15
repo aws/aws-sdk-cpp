@@ -77,7 +77,7 @@ namespace Model
   private:
 
     TextWithHighlights m_textWithHighlightsValue;
-    bool m_textWithHighlightsValueHasBeenSet;
+    bool m_textWithHighlightsValueHasBeenSet = false;
   };
 
 } // namespace Model

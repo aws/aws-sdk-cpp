@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The environment account connection detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested environment account connection.</p>
      */
     inline const EnvironmentAccountConnection& GetEnvironmentAccountConnection() const{ return m_environmentAccountConnection; }
 
     /**
-     * <p>The environment account connection detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested environment account connection.</p>
      */
     inline void SetEnvironmentAccountConnection(const EnvironmentAccountConnection& value) { m_environmentAccountConnection = value; }
 
     /**
-     * <p>The environment account connection detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested environment account connection.</p>
      */
     inline void SetEnvironmentAccountConnection(EnvironmentAccountConnection&& value) { m_environmentAccountConnection = std::move(value); }
 
     /**
-     * <p>The environment account connection detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested environment account connection.</p>
      */
     inline GetEnvironmentAccountConnectionResult& WithEnvironmentAccountConnection(const EnvironmentAccountConnection& value) { SetEnvironmentAccountConnection(value); return *this;}
 
     /**
-     * <p>The environment account connection detail data that's returned by Proton.</p>
+     * <p>The detailed data of the requested environment account connection.</p>
      */
     inline GetEnvironmentAccountConnectionResult& WithEnvironmentAccountConnection(EnvironmentAccountConnection&& value) { SetEnvironmentAccountConnection(std::move(value)); return *this;}
 

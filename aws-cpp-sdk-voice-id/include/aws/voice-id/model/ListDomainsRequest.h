@@ -35,30 +35,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results that are returned per call. You can use
-     * <code>NextToken</code> to obtain further pages of results. The default is 100;
-     * the maximum allowed page size is also 100. </p>
+     * <p>The maximum number of domains to list per API call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results that are returned per call. You can use
-     * <code>NextToken</code> to obtain further pages of results. The default is 100;
-     * the maximum allowed page size is also 100. </p>
+     * <p>The maximum number of domains to list per API call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results that are returned per call. You can use
-     * <code>NextToken</code> to obtain further pages of results. The default is 100;
-     * the maximum allowed page size is also 100. </p>
+     * <p>The maximum number of domains to list per API call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results that are returned per call. You can use
-     * <code>NextToken</code> to obtain further pages of results. The default is 100;
-     * the maximum allowed page size is also 100. </p>
+     * <p>The maximum number of domains to list per API call.</p>
      */
     inline ListDomainsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -130,10 +122,10 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

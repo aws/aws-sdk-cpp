@@ -434,10 +434,10 @@ namespace Model
   private:
 
     DeploymentCommandName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_args;
-    bool m_argsHasBeenSet;
+    bool m_argsHasBeenSet = false;
   };
 
 } // namespace Model

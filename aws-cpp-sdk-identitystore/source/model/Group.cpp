@@ -20,13 +20,19 @@ namespace Model
 
 Group::Group() : 
     m_groupIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+    m_displayNameHasBeenSet(false),
+    m_externalIdsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_identityStoreIdHasBeenSet(false)
 {
 }
 
 Group::Group(JsonView jsonValue) : 
     m_groupIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+    m_displayNameHasBeenSet(false),
+    m_externalIdsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_identityStoreIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +53,30 @@ Group& Group::operator =(JsonView jsonValue)
     m_displayNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExternalIds"))
+  {
+    Aws::Utils::Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
+    for(unsigned externalIdsIndex = 0; externalIdsIndex < externalIdsJsonList.GetLength(); ++externalIdsIndex)
+    {
+      m_externalIds.push_back(externalIdsJsonList[externalIdsIndex].AsObject());
+    }
+    m_externalIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdentityStoreId"))
+  {
+    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
+
+    m_identityStoreIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +93,29 @@ JsonValue Group::Jsonize() const
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("DisplayName", m_displayName);
+
+  }
+
+  if(m_externalIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> externalIdsJsonList(m_externalIds.size());
+   for(unsigned externalIdsIndex = 0; externalIdsIndex < externalIdsJsonList.GetLength(); ++externalIdsIndex)
+   {
+     externalIdsJsonList[externalIdsIndex].AsObject(m_externalIds[externalIdsIndex].Jsonize());
+   }
+   payload.WithArray("ExternalIds", std::move(externalIdsJsonList));
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_identityStoreIdHasBeenSet)
+  {
+   payload.WithString("IdentityStoreId", m_identityStoreId);
 
   }
 

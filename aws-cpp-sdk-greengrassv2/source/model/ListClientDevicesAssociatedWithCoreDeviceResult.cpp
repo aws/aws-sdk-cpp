@@ -30,7 +30,7 @@ ListClientDevicesAssociatedWithCoreDeviceResult& ListClientDevicesAssociatedWith
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("associatedClientDevices"))
   {
-    Array<JsonView> associatedClientDevicesJsonList = jsonValue.GetArray("associatedClientDevices");
+    Aws::Utils::Array<JsonView> associatedClientDevicesJsonList = jsonValue.GetArray("associatedClientDevices");
     for(unsigned associatedClientDevicesIndex = 0; associatedClientDevicesIndex < associatedClientDevicesJsonList.GetLength(); ++associatedClientDevicesIndex)
     {
       m_associatedClientDevices.push_back(associatedClientDevicesJsonList[associatedClientDevicesIndex].AsObject());

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Identifies a network interface for the EC2 instance.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Identifies a network interface for the Amazon EC2 instance.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2InstanceNetworkInterfacesDetails">AWS
    * API Reference</a></p>
    */
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
   };
 
 } // namespace Model

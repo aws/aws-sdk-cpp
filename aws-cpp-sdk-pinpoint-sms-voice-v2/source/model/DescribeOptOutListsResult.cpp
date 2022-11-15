@@ -30,7 +30,7 @@ DescribeOptOutListsResult& DescribeOptOutListsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OptOutLists"))
   {
-    Array<JsonView> optOutListsJsonList = jsonValue.GetArray("OptOutLists");
+    Aws::Utils::Array<JsonView> optOutListsJsonList = jsonValue.GetArray("OptOutLists");
     for(unsigned optOutListsIndex = 0; optOutListsIndex < optOutListsJsonList.GetLength(); ++optOutListsIndex)
     {
       m_optOutLists.push_back(optOutListsJsonList[optOutListsIndex].AsObject());

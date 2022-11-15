@@ -39,11 +39,18 @@ Expression::Expression(JsonView jsonValue) :
   *this = jsonValue;
 }
 
+const Expression& Expression::GetNot() const{ return *m_not; }
+bool Expression::NotHasBeenSet() const { return m_notHasBeenSet; }
+void Expression::SetNot(const Expression& value) { m_notHasBeenSet = true; m_not = Aws::MakeShared<Expression>("Expression", value); }
+void Expression::SetNot(Expression&& value) { m_notHasBeenSet = true; m_not = Aws::MakeShared<Expression>("Expression", std::move(value)); }
+Expression& Expression::WithNot(const Expression& value) { SetNot(value); return *this;}
+Expression& Expression::WithNot(Expression&& value) { SetNot(std::move(value)); return *this;}
+
 Expression& Expression::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Or"))
   {
-    Array<JsonView> orJsonList = jsonValue.GetArray("Or");
+    Aws::Utils::Array<JsonView> orJsonList = jsonValue.GetArray("Or");
     for(unsigned orIndex = 0; orIndex < orJsonList.GetLength(); ++orIndex)
     {
       m_or.push_back(orJsonList[orIndex].AsObject());
@@ -53,7 +60,7 @@ Expression& Expression::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("And"))
   {
-    Array<JsonView> andJsonList = jsonValue.GetArray("And");
+    Aws::Utils::Array<JsonView> andJsonList = jsonValue.GetArray("And");
     for(unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex)
     {
       m_and.push_back(andJsonList[andIndex].AsObject());
@@ -63,8 +70,7 @@ Expression& Expression::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Not"))
   {
-    m_not.resize(1);
-    m_not[0] = jsonValue.GetObject("Not");
+    m_not = Aws::MakeShared<Expression>("Expression", jsonValue.GetObject("Not"));
 
     m_notHasBeenSet = true;
   }
@@ -99,7 +105,7 @@ JsonValue Expression::Jsonize() const
 
   if(m_orHasBeenSet)
   {
-   Array<JsonValue> orJsonList(m_or.size());
+   Aws::Utils::Array<JsonValue> orJsonList(m_or.size());
    for(unsigned orIndex = 0; orIndex < orJsonList.GetLength(); ++orIndex)
    {
      orJsonList[orIndex].AsObject(m_or[orIndex].Jsonize());
@@ -110,7 +116,7 @@ JsonValue Expression::Jsonize() const
 
   if(m_andHasBeenSet)
   {
-   Array<JsonValue> andJsonList(m_and.size());
+   Aws::Utils::Array<JsonValue> andJsonList(m_and.size());
    for(unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex)
    {
      andJsonList[andIndex].AsObject(m_and[andIndex].Jsonize());
@@ -121,7 +127,7 @@ JsonValue Expression::Jsonize() const
 
   if(m_notHasBeenSet)
   {
-   payload.WithObject("Not", m_not[0].Jsonize());
+   payload.WithObject("Not", m_not->Jsonize());
 
   }
 

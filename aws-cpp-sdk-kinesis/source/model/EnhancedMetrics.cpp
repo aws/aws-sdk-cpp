@@ -33,7 +33,7 @@ EnhancedMetrics& EnhancedMetrics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ShardLevelMetrics"))
   {
-    Array<JsonView> shardLevelMetricsJsonList = jsonValue.GetArray("ShardLevelMetrics");
+    Aws::Utils::Array<JsonView> shardLevelMetricsJsonList = jsonValue.GetArray("ShardLevelMetrics");
     for(unsigned shardLevelMetricsIndex = 0; shardLevelMetricsIndex < shardLevelMetricsJsonList.GetLength(); ++shardLevelMetricsIndex)
     {
       m_shardLevelMetrics.push_back(MetricsNameMapper::GetMetricsNameForName(shardLevelMetricsJsonList[shardLevelMetricsIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue EnhancedMetrics::Jsonize() const
 
   if(m_shardLevelMetricsHasBeenSet)
   {
-   Array<JsonValue> shardLevelMetricsJsonList(m_shardLevelMetrics.size());
+   Aws::Utils::Array<JsonValue> shardLevelMetricsJsonList(m_shardLevelMetrics.size());
    for(unsigned shardLevelMetricsIndex = 0; shardLevelMetricsIndex < shardLevelMetricsJsonList.GetLength(); ++shardLevelMetricsIndex)
    {
      shardLevelMetricsJsonList[shardLevelMetricsIndex].AsString(MetricsNameMapper::GetNameForMetricsName(m_shardLevelMetrics[shardLevelMetricsIndex]));

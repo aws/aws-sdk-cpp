@@ -44,7 +44,7 @@ DescribeContributorInsightsResult& DescribeContributorInsightsResult::operator =
 
   if(jsonValue.ValueExists("ContributorInsightsRuleList"))
   {
-    Array<JsonView> contributorInsightsRuleListJsonList = jsonValue.GetArray("ContributorInsightsRuleList");
+    Aws::Utils::Array<JsonView> contributorInsightsRuleListJsonList = jsonValue.GetArray("ContributorInsightsRuleList");
     for(unsigned contributorInsightsRuleListIndex = 0; contributorInsightsRuleListIndex < contributorInsightsRuleListJsonList.GetLength(); ++contributorInsightsRuleListIndex)
     {
       m_contributorInsightsRuleList.push_back(contributorInsightsRuleListJsonList[contributorInsightsRuleListIndex].AsString());

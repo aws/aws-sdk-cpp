@@ -55,7 +55,7 @@ NodeProperties& NodeProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("nodeRangeProperties"))
   {
-    Array<JsonView> nodeRangePropertiesJsonList = jsonValue.GetArray("nodeRangeProperties");
+    Aws::Utils::Array<JsonView> nodeRangePropertiesJsonList = jsonValue.GetArray("nodeRangeProperties");
     for(unsigned nodeRangePropertiesIndex = 0; nodeRangePropertiesIndex < nodeRangePropertiesJsonList.GetLength(); ++nodeRangePropertiesIndex)
     {
       m_nodeRangeProperties.push_back(nodeRangePropertiesJsonList[nodeRangePropertiesIndex].AsObject());
@@ -84,7 +84,7 @@ JsonValue NodeProperties::Jsonize() const
 
   if(m_nodeRangePropertiesHasBeenSet)
   {
-   Array<JsonValue> nodeRangePropertiesJsonList(m_nodeRangeProperties.size());
+   Aws::Utils::Array<JsonValue> nodeRangePropertiesJsonList(m_nodeRangeProperties.size());
    for(unsigned nodeRangePropertiesIndex = 0; nodeRangePropertiesIndex < nodeRangePropertiesJsonList.GetLength(); ++nodeRangePropertiesIndex)
    {
      nodeRangePropertiesJsonList[nodeRangePropertiesIndex].AsObject(m_nodeRangeProperties[nodeRangePropertiesIndex].Jsonize());

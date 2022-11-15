@@ -23,7 +23,7 @@ Aws::String DescribeRemediationConfigurationsRequest::SerializePayload() const
 
   if(m_configRuleNamesHasBeenSet)
   {
-   Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
+   Aws::Utils::Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
    for(unsigned configRuleNamesIndex = 0; configRuleNamesIndex < configRuleNamesJsonList.GetLength(); ++configRuleNamesIndex)
    {
      configRuleNamesJsonList[configRuleNamesIndex].AsString(m_configRuleNames[configRuleNamesIndex]);

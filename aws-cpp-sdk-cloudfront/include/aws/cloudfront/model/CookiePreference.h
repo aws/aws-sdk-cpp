@@ -317,10 +317,10 @@ namespace Model
   private:
 
     ItemSelection m_forward;
-    bool m_forwardHasBeenSet;
+    bool m_forwardHasBeenSet = false;
 
     CookieNames m_whitelistedNames;
-    bool m_whitelistedNamesHasBeenSet;
+    bool m_whitelistedNamesHasBeenSet = false;
   };
 
 } // namespace Model

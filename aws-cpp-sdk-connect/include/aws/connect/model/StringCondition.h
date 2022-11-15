@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A leaf node condition which can be used to specify a string condition, for
-   * example, <code>username = 'abc'</code>. </p><p><h3>See Also:</h3>   <a
+   * <p>A leaf node condition which can be used to specify a string condition. </p>
+   *  <p>The currently supported value for <code>FieldName</code>:
+   * <code>name</code> </p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StringCondition">AWS
    * API Reference</a></p>
    */
@@ -154,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_fieldName;
-    bool m_fieldNameHasBeenSet;
+    bool m_fieldNameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     StringComparisonType m_comparisonType;
-    bool m_comparisonTypeHasBeenSet;
+    bool m_comparisonTypeHasBeenSet = false;
   };
 
 } // namespace Model

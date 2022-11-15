@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>An array of outputs.</p>
+     * <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
      */
     inline const Aws::Vector<Output>& GetOutputs() const{ return m_outputs; }
 
     /**
-     * <p>An array of outputs.</p>
+     * <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
      */
     inline void SetOutputs(const Aws::Vector<Output>& value) { m_outputs = value; }
 
     /**
-     * <p>An array of outputs.</p>
+     * <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
      */
     inline void SetOutputs(Aws::Vector<Output>&& value) { m_outputs = std::move(value); }
 
     /**
-     * <p>An array of outputs.</p>
+     * <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
      */
     inline ListServicePipelineOutputsResult& WithOutputs(const Aws::Vector<Output>& value) { SetOutputs(value); return *this;}
 
     /**
-     * <p>An array of outputs.</p>
+     * <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
      */
     inline ListServicePipelineOutputsResult& WithOutputs(Aws::Vector<Output>&& value) { SetOutputs(std::move(value)); return *this;}
 
     /**
-     * <p>An array of outputs.</p>
+     * <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
      */
     inline ListServicePipelineOutputsResult& AddOutputs(const Output& value) { m_outputs.push_back(value); return *this; }
 
     /**
-     * <p>An array of outputs.</p>
+     * <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
      */
     inline ListServicePipelineOutputsResult& AddOutputs(Output&& value) { m_outputs.push_back(std::move(value)); return *this; }
 

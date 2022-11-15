@@ -513,25 +513,25 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_monday;
-    bool m_mondayHasBeenSet;
+    bool m_mondayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tuesday;
-    bool m_tuesdayHasBeenSet;
+    bool m_tuesdayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_wednesday;
-    bool m_wednesdayHasBeenSet;
+    bool m_wednesdayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_thursday;
-    bool m_thursdayHasBeenSet;
+    bool m_thursdayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_friday;
-    bool m_fridayHasBeenSet;
+    bool m_fridayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_saturday;
-    bool m_saturdayHasBeenSet;
+    bool m_saturdayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sunday;
-    bool m_sundayHasBeenSet;
+    bool m_sundayHasBeenSet = false;
   };
 
 } // namespace Model

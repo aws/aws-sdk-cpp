@@ -72,7 +72,9 @@ Explanation::Explanation() :
     m_transitGatewayHasBeenSet(false),
     m_transitGatewayRouteTableHasBeenSet(false),
     m_transitGatewayRouteTableRouteHasBeenSet(false),
-    m_transitGatewayAttachmentHasBeenSet(false)
+    m_transitGatewayAttachmentHasBeenSet(false),
+    m_componentAccountHasBeenSet(false),
+    m_componentRegionHasBeenSet(false)
 {
 }
 
@@ -128,7 +130,9 @@ Explanation::Explanation(const XmlNode& xmlNode) :
     m_transitGatewayHasBeenSet(false),
     m_transitGatewayRouteTableHasBeenSet(false),
     m_transitGatewayRouteTableRouteHasBeenSet(false),
-    m_transitGatewayAttachmentHasBeenSet(false)
+    m_transitGatewayAttachmentHasBeenSet(false),
+    m_componentAccountHasBeenSet(false),
+    m_componentRegionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -474,6 +478,18 @@ Explanation& Explanation::operator =(const XmlNode& xmlNode)
     {
       m_transitGatewayAttachment = transitGatewayAttachmentNode;
       m_transitGatewayAttachmentHasBeenSet = true;
+    }
+    XmlNode componentAccountNode = resultNode.FirstChild("componentAccount");
+    if(!componentAccountNode.IsNull())
+    {
+      m_componentAccount = Aws::Utils::Xml::DecodeEscapedXmlText(componentAccountNode.GetText());
+      m_componentAccountHasBeenSet = true;
+    }
+    XmlNode componentRegionNode = resultNode.FirstChild("componentRegion");
+    if(!componentRegionNode.IsNull())
+    {
+      m_componentRegion = Aws::Utils::Xml::DecodeEscapedXmlText(componentRegionNode.GetText());
+      m_componentRegionHasBeenSet = true;
     }
   }
 
@@ -825,6 +841,16 @@ void Explanation::OutputToStream(Aws::OStream& oStream, const char* location, un
       m_transitGatewayAttachment.OutputToStream(oStream, transitGatewayAttachmentLocationAndMemberSs.str().c_str());
   }
 
+  if(m_componentAccountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ComponentAccount=" << StringUtils::URLEncode(m_componentAccount.c_str()) << "&";
+  }
+
+  if(m_componentRegionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ComponentRegion=" << StringUtils::URLEncode(m_componentRegion.c_str()) << "&";
+  }
+
 }
 
 void Explanation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1122,6 +1148,14 @@ void Explanation::OutputToStream(Aws::OStream& oStream, const char* location) co
       Aws::String transitGatewayAttachmentLocationAndMember(location);
       transitGatewayAttachmentLocationAndMember += ".TransitGatewayAttachment";
       m_transitGatewayAttachment.OutputToStream(oStream, transitGatewayAttachmentLocationAndMember.c_str());
+  }
+  if(m_componentAccountHasBeenSet)
+  {
+      oStream << location << ".ComponentAccount=" << StringUtils::URLEncode(m_componentAccount.c_str()) << "&";
+  }
+  if(m_componentRegionHasBeenSet)
+  {
+      oStream << location << ".ComponentRegion=" << StringUtils::URLEncode(m_componentRegion.c_str()) << "&";
   }
 }
 

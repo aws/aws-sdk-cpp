@@ -162,98 +162,150 @@ namespace Model
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline CreateRoomRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline CreateRoomRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline CreateRoomRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline CreateRoomRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline CreateRoomRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline CreateRoomRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline CreateRoomRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline CreateRoomRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Tags to attach to the resource. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. </p>
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline CreateRoomRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
     int m_maximumMessageLength;
-    bool m_maximumMessageLengthHasBeenSet;
+    bool m_maximumMessageLengthHasBeenSet = false;
 
     int m_maximumMessageRatePerSecond;
-    bool m_maximumMessageRatePerSecondHasBeenSet;
+    bool m_maximumMessageRatePerSecondHasBeenSet = false;
 
     MessageReviewHandler m_messageReviewHandler;
-    bool m_messageReviewHandlerHasBeenSet;
+    bool m_messageReviewHandlerHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

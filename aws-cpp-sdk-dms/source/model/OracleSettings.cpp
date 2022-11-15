@@ -81,7 +81,9 @@ OracleSettings::OracleSettings() :
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false),
     m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
-    m_secretsManagerOracleAsmSecretIdHasBeenSet(false)
+    m_secretsManagerOracleAsmSecretIdHasBeenSet(false),
+    m_trimSpaceInChar(false),
+    m_trimSpaceInCharHasBeenSet(false)
 {
 }
 
@@ -148,7 +150,9 @@ OracleSettings::OracleSettings(JsonView jsonValue) :
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false),
     m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
-    m_secretsManagerOracleAsmSecretIdHasBeenSet(false)
+    m_secretsManagerOracleAsmSecretIdHasBeenSet(false),
+    m_trimSpaceInChar(false),
+    m_trimSpaceInCharHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -178,7 +182,7 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExtraArchivedLogDestIds"))
   {
-    Array<JsonView> extraArchivedLogDestIdsJsonList = jsonValue.GetArray("ExtraArchivedLogDestIds");
+    Aws::Utils::Array<JsonView> extraArchivedLogDestIdsJsonList = jsonValue.GetArray("ExtraArchivedLogDestIds");
     for(unsigned extraArchivedLogDestIdsIndex = 0; extraArchivedLogDestIdsIndex < extraArchivedLogDestIdsJsonList.GetLength(); ++extraArchivedLogDestIdsIndex)
     {
       m_extraArchivedLogDestIds.push_back(extraArchivedLogDestIdsJsonList[extraArchivedLogDestIdsIndex].AsInteger());
@@ -438,6 +442,13 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_secretsManagerOracleAsmSecretIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TrimSpaceInChar"))
+  {
+    m_trimSpaceInChar = jsonValue.GetBool("TrimSpaceInChar");
+
+    m_trimSpaceInCharHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -465,7 +476,7 @@ JsonValue OracleSettings::Jsonize() const
 
   if(m_extraArchivedLogDestIdsHasBeenSet)
   {
-   Array<JsonValue> extraArchivedLogDestIdsJsonList(m_extraArchivedLogDestIds.size());
+   Aws::Utils::Array<JsonValue> extraArchivedLogDestIdsJsonList(m_extraArchivedLogDestIds.size());
    for(unsigned extraArchivedLogDestIdsIndex = 0; extraArchivedLogDestIdsIndex < extraArchivedLogDestIdsJsonList.GetLength(); ++extraArchivedLogDestIdsIndex)
    {
      extraArchivedLogDestIdsJsonList[extraArchivedLogDestIdsIndex].AsInteger(m_extraArchivedLogDestIds[extraArchivedLogDestIdsIndex]);
@@ -686,6 +697,12 @@ JsonValue OracleSettings::Jsonize() const
   if(m_secretsManagerOracleAsmSecretIdHasBeenSet)
   {
    payload.WithString("SecretsManagerOracleAsmSecretId", m_secretsManagerOracleAsmSecretId);
+
+  }
+
+  if(m_trimSpaceInCharHasBeenSet)
+  {
+   payload.WithBool("TrimSpaceInChar", m_trimSpaceInChar);
 
   }
 

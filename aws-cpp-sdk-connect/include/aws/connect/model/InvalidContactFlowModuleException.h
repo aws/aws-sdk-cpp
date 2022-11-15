@@ -66,7 +66,7 @@ namespace Model
   private:
 
     Aws::Vector<ProblemDetail> m_problems;
-    bool m_problemsHasBeenSet;
+    bool m_problemsHasBeenSet = false;
   };
 
 } // namespace Model

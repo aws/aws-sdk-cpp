@@ -347,7 +347,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -384,7 +384,7 @@ namespace Model
      * template that contains macros <i>and</i> nested stacks, you must create or
      * update the stack directly from the template using the <a>CreateStack</a> or
      * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information on macros, see <a
+     * more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
@@ -406,7 +406,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -443,7 +443,7 @@ namespace Model
      * template that contains macros <i>and</i> nested stacks, you must create or
      * update the stack directly from the template using the <a>CreateStack</a> or
      * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information on macros, see <a
+     * more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
@@ -465,7 +465,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -502,7 +502,7 @@ namespace Model
      * template that contains macros <i>and</i> nested stacks, you must create or
      * update the stack directly from the template using the <a>CreateStack</a> or
      * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information on macros, see <a
+     * more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
@@ -524,7 +524,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -561,7 +561,7 @@ namespace Model
      * template that contains macros <i>and</i> nested stacks, you must create or
      * update the stack directly from the template using the <a>CreateStack</a> or
      * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information on macros, see <a
+     * more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
@@ -583,7 +583,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -620,7 +620,7 @@ namespace Model
      * template that contains macros <i>and</i> nested stacks, you must create or
      * update the stack directly from the template using the <a>CreateStack</a> or
      * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information on macros, see <a
+     * more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
@@ -642,7 +642,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -679,7 +679,7 @@ namespace Model
      * template that contains macros <i>and</i> nested stacks, you must create or
      * update the stack directly from the template using the <a>CreateStack</a> or
      * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information on macros, see <a
+     * more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
@@ -701,7 +701,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -738,7 +738,7 @@ namespace Model
      * template that contains macros <i>and</i> nested stacks, you must create or
      * update the stack directly from the template using the <a>CreateStack</a> or
      * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information on macros, see <a
+     * more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
@@ -760,7 +760,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -797,7 +797,7 @@ namespace Model
      * template that contains macros <i>and</i> nested stacks, you must create or
      * update the stack directly from the template using the <a>CreateStack</a> or
      * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information on macros, see <a
+     * more information about macros, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
@@ -1537,55 +1537,55 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_templateURL;
-    bool m_templateURLHasBeenSet;
+    bool m_templateURLHasBeenSet = false;
 
     bool m_usePreviousTemplate;
-    bool m_usePreviousTemplateHasBeenSet;
+    bool m_usePreviousTemplateHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<Capability> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     RollbackConfiguration m_rollbackConfiguration;
-    bool m_rollbackConfigurationHasBeenSet;
+    bool m_rollbackConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notificationARNs;
-    bool m_notificationARNsHasBeenSet;
+    bool m_notificationARNsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_changeSetName;
-    bool m_changeSetNameHasBeenSet;
+    bool m_changeSetNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ChangeSetType m_changeSetType;
-    bool m_changeSetTypeHasBeenSet;
+    bool m_changeSetTypeHasBeenSet = false;
 
     Aws::Vector<ResourceToImport> m_resourcesToImport;
-    bool m_resourcesToImportHasBeenSet;
+    bool m_resourcesToImportHasBeenSet = false;
 
     bool m_includeNestedStacks;
-    bool m_includeNestedStacksHasBeenSet;
+    bool m_includeNestedStacksHasBeenSet = false;
   };
 
 } // namespace Model

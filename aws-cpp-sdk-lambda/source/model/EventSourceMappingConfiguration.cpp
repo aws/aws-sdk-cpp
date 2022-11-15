@@ -49,7 +49,9 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_maximumRetryAttemptsHasBeenSet(false),
     m_tumblingWindowInSeconds(0),
     m_tumblingWindowInSecondsHasBeenSet(false),
-    m_functionResponseTypesHasBeenSet(false)
+    m_functionResponseTypesHasBeenSet(false),
+    m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
+    m_selfManagedKafkaEventSourceConfigHasBeenSet(false)
 {
 }
 
@@ -84,7 +86,9 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonVa
     m_maximumRetryAttemptsHasBeenSet(false),
     m_tumblingWindowInSeconds(0),
     m_tumblingWindowInSecondsHasBeenSet(false),
-    m_functionResponseTypesHasBeenSet(false)
+    m_functionResponseTypesHasBeenSet(false),
+    m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
+    m_selfManagedKafkaEventSourceConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -191,7 +195,7 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
 
   if(jsonValue.ValueExists("Topics"))
   {
-    Array<JsonView> topicsJsonList = jsonValue.GetArray("Topics");
+    Aws::Utils::Array<JsonView> topicsJsonList = jsonValue.GetArray("Topics");
     for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
     {
       m_topics.push_back(topicsJsonList[topicsIndex].AsString());
@@ -201,7 +205,7 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
 
   if(jsonValue.ValueExists("Queues"))
   {
-    Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
+    Aws::Utils::Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
     for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
     {
       m_queues.push_back(queuesJsonList[queuesIndex].AsString());
@@ -211,7 +215,7 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
 
   if(jsonValue.ValueExists("SourceAccessConfigurations"))
   {
-    Array<JsonView> sourceAccessConfigurationsJsonList = jsonValue.GetArray("SourceAccessConfigurations");
+    Aws::Utils::Array<JsonView> sourceAccessConfigurationsJsonList = jsonValue.GetArray("SourceAccessConfigurations");
     for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
     {
       m_sourceAccessConfigurations.push_back(sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject());
@@ -256,12 +260,26 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
 
   if(jsonValue.ValueExists("FunctionResponseTypes"))
   {
-    Array<JsonView> functionResponseTypesJsonList = jsonValue.GetArray("FunctionResponseTypes");
+    Aws::Utils::Array<JsonView> functionResponseTypesJsonList = jsonValue.GetArray("FunctionResponseTypes");
     for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
     {
       m_functionResponseTypes.push_back(FunctionResponseTypeMapper::GetFunctionResponseTypeForName(functionResponseTypesJsonList[functionResponseTypesIndex].AsString()));
     }
     m_functionResponseTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AmazonManagedKafkaEventSourceConfig"))
+  {
+    m_amazonManagedKafkaEventSourceConfig = jsonValue.GetObject("AmazonManagedKafkaEventSourceConfig");
+
+    m_amazonManagedKafkaEventSourceConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SelfManagedKafkaEventSourceConfig"))
+  {
+    m_selfManagedKafkaEventSourceConfig = jsonValue.GetObject("SelfManagedKafkaEventSourceConfig");
+
+    m_selfManagedKafkaEventSourceConfigHasBeenSet = true;
   }
 
   return *this;
@@ -354,7 +372,7 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
 
   if(m_topicsHasBeenSet)
   {
-   Array<JsonValue> topicsJsonList(m_topics.size());
+   Aws::Utils::Array<JsonValue> topicsJsonList(m_topics.size());
    for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
    {
      topicsJsonList[topicsIndex].AsString(m_topics[topicsIndex]);
@@ -365,7 +383,7 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
 
   if(m_queuesHasBeenSet)
   {
-   Array<JsonValue> queuesJsonList(m_queues.size());
+   Aws::Utils::Array<JsonValue> queuesJsonList(m_queues.size());
    for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
    {
      queuesJsonList[queuesIndex].AsString(m_queues[queuesIndex]);
@@ -376,7 +394,7 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
 
   if(m_sourceAccessConfigurationsHasBeenSet)
   {
-   Array<JsonValue> sourceAccessConfigurationsJsonList(m_sourceAccessConfigurations.size());
+   Aws::Utils::Array<JsonValue> sourceAccessConfigurationsJsonList(m_sourceAccessConfigurations.size());
    for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
    {
      sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject(m_sourceAccessConfigurations[sourceAccessConfigurationsIndex].Jsonize());
@@ -417,12 +435,24 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
 
   if(m_functionResponseTypesHasBeenSet)
   {
-   Array<JsonValue> functionResponseTypesJsonList(m_functionResponseTypes.size());
+   Aws::Utils::Array<JsonValue> functionResponseTypesJsonList(m_functionResponseTypes.size());
    for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
    {
      functionResponseTypesJsonList[functionResponseTypesIndex].AsString(FunctionResponseTypeMapper::GetNameForFunctionResponseType(m_functionResponseTypes[functionResponseTypesIndex]));
    }
    payload.WithArray("FunctionResponseTypes", std::move(functionResponseTypesJsonList));
+
+  }
+
+  if(m_amazonManagedKafkaEventSourceConfigHasBeenSet)
+  {
+   payload.WithObject("AmazonManagedKafkaEventSourceConfig", m_amazonManagedKafkaEventSourceConfig.Jsonize());
+
+  }
+
+  if(m_selfManagedKafkaEventSourceConfigHasBeenSet)
+  {
+   payload.WithObject("SelfManagedKafkaEventSourceConfig", m_selfManagedKafkaEventSourceConfig.Jsonize());
 
   }
 

@@ -1212,41 +1212,37 @@ namespace Model
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to
-     * allocate initially for the DB instance. For information about valid Iops values,
+     * allocate initially for the DB instance. For information about valid IOPS values,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide.</i> </p>
+     * RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to
-     * allocate initially for the DB instance. For information about valid Iops values,
+     * allocate initially for the DB instance. For information about valid IOPS values,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide.</i> </p>
+     * RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to
-     * allocate initially for the DB instance. For information about valid Iops values,
+     * allocate initially for the DB instance. For information about valid IOPS values,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide.</i> </p>
+     * RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to
-     * allocate initially for the DB instance. For information about valid Iops values,
+     * allocate initially for the DB instance. For information about valid IOPS values,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide.</i> </p>
+     * RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithIops(int value) { SetIops(value); return *this;}
 
@@ -1432,8 +1428,8 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
-     * </p> <p>If you specify <code>io1</code>, you must also include a value for the
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
      */
@@ -1441,8 +1437,8 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
-     * </p> <p>If you specify <code>io1</code>, you must also include a value for the
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
      */
@@ -1450,8 +1446,8 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
-     * </p> <p>If you specify <code>io1</code>, you must also include a value for the
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
      */
@@ -1459,8 +1455,8 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
-     * </p> <p>If you specify <code>io1</code>, you must also include a value for the
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
      */
@@ -1468,8 +1464,8 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
-     * </p> <p>If you specify <code>io1</code>, you must also include a value for the
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
      */
@@ -1477,8 +1473,8 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
-     * </p> <p>If you specify <code>io1</code>, you must also include a value for the
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
      */
@@ -1486,8 +1482,8 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
-     * </p> <p>If you specify <code>io1</code>, you must also include a value for the
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
      */
@@ -1495,8 +1491,8 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
-     * </p> <p>If you specify <code>io1</code>, you must also include a value for the
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
      */
@@ -2082,7 +2078,7 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
@@ -2090,7 +2086,7 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
@@ -2098,7 +2094,7 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
@@ -2106,7 +2102,7 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
@@ -2201,26 +2197,50 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
@@ -2572,142 +2592,170 @@ namespace Model
      */
     inline RestoreDBInstanceFromS3Request& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
 
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline RestoreDBInstanceFromS3Request& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
-    bool m_dBNameHasBeenSet;
+    bool m_dBNameHasBeenSet = false;
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dBSecurityGroups;
-    bool m_dBSecurityGroupsHasBeenSet;
+    bool m_dBSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_dBParameterGroupName;
-    bool m_dBParameterGroupNameHasBeenSet;
+    bool m_dBParameterGroupNameHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     int m_monitoringInterval;
-    bool m_monitoringIntervalHasBeenSet;
+    bool m_monitoringIntervalHasBeenSet = false;
 
     Aws::String m_monitoringRoleArn;
-    bool m_monitoringRoleArnHasBeenSet;
+    bool m_monitoringRoleArnHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
-    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
     Aws::String m_sourceEngine;
-    bool m_sourceEngineHasBeenSet;
+    bool m_sourceEngineHasBeenSet = false;
 
     Aws::String m_sourceEngineVersion;
-    bool m_sourceEngineVersionHasBeenSet;
+    bool m_sourceEngineVersionHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
 
     Aws::String m_s3IngestionRoleArn;
-    bool m_s3IngestionRoleArnHasBeenSet;
+    bool m_s3IngestionRoleArnHasBeenSet = false;
 
     bool m_enablePerformanceInsights;
-    bool m_enablePerformanceInsightsHasBeenSet;
+    bool m_enablePerformanceInsightsHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
-    bool m_performanceInsightsKMSKeyIdHasBeenSet;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
     int m_performanceInsightsRetentionPeriod;
-    bool m_performanceInsightsRetentionPeriodHasBeenSet;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-    bool m_enableCloudwatchLogsExportsHasBeenSet;
+    bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
     Aws::Vector<ProcessorFeature> m_processorFeatures;
-    bool m_processorFeaturesHasBeenSet;
+    bool m_processorFeaturesHasBeenSet = false;
 
     bool m_useDefaultProcessorFeatures;
-    bool m_useDefaultProcessorFeaturesHasBeenSet;
+    bool m_useDefaultProcessorFeaturesHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     int m_maxAllocatedStorage;
-    bool m_maxAllocatedStorageHasBeenSet;
+    bool m_maxAllocatedStorageHasBeenSet = false;
 
     Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet;
+    bool m_networkTypeHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

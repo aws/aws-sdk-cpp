@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the Network Firewall firewall policy options to configure a
-   * centralized deployment model.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the Network Firewall firewall policy options to configure the
+   * policy's deployment model and third-party firewall policy
+   * settings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyOption">AWS
    * API Reference</a></p>
    */
@@ -103,10 +104,10 @@ namespace Model
   private:
 
     NetworkFirewallPolicy m_networkFirewallPolicy;
-    bool m_networkFirewallPolicyHasBeenSet;
+    bool m_networkFirewallPolicyHasBeenSet = false;
 
     ThirdPartyFirewallPolicy m_thirdPartyFirewallPolicy;
-    bool m_thirdPartyFirewallPolicyHasBeenSet;
+    bool m_thirdPartyFirewallPolicyHasBeenSet = false;
   };
 
 } // namespace Model

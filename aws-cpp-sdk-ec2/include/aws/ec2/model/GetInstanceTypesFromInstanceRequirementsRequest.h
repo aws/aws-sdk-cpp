@@ -262,22 +262,22 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<ArchitectureType> m_architectureTypes;
-    bool m_architectureTypesHasBeenSet;
+    bool m_architectureTypesHasBeenSet = false;
 
     Aws::Vector<VirtualizationType> m_virtualizationTypes;
-    bool m_virtualizationTypesHasBeenSet;
+    bool m_virtualizationTypesHasBeenSet = false;
 
     InstanceRequirementsRequest m_instanceRequirements;
-    bool m_instanceRequirementsHasBeenSet;
+    bool m_instanceRequirementsHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -408,31 +408,31 @@ namespace Model
   private:
 
     Aws::String m_rdsDbInstanceArn;
-    bool m_rdsDbInstanceArnHasBeenSet;
+    bool m_rdsDbInstanceArnHasBeenSet = false;
 
     Aws::String m_dbInstanceIdentifier;
-    bool m_dbInstanceIdentifierHasBeenSet;
+    bool m_dbInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::String m_dbPassword;
-    bool m_dbPasswordHasBeenSet;
+    bool m_dbPasswordHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     bool m_missingOnRds;
-    bool m_missingOnRdsHasBeenSet;
+    bool m_missingOnRdsHasBeenSet = false;
   };
 
 } // namespace Model

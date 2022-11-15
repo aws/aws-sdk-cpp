@@ -46,7 +46,7 @@ ModifySnapshotTierResponse& ModifySnapshotTierResponse::operator =(const Aws::Am
     XmlNode tieringStartTimeNode = resultNode.FirstChild("tieringStartTime");
     if(!tieringStartTimeNode.IsNull())
     {
-      m_tieringStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tieringStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_tieringStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tieringStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
   }
 

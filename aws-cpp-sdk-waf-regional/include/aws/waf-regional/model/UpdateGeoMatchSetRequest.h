@@ -233,13 +233,13 @@ namespace Model
   private:
 
     Aws::String m_geoMatchSetId;
-    bool m_geoMatchSetIdHasBeenSet;
+    bool m_geoMatchSetIdHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
 
     Aws::Vector<GeoMatchSetUpdate> m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
   };
 
 } // namespace Model

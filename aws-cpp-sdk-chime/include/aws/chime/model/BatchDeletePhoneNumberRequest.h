@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_phoneNumberIds;
-    bool m_phoneNumberIdsHasBeenSet;
+    bool m_phoneNumberIdsHasBeenSet = false;
   };
 
 } // namespace Model

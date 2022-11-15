@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::Vector<FaultRootCauseService> m_services;
-    bool m_servicesHasBeenSet;
+    bool m_servicesHasBeenSet = false;
 
     bool m_clientImpacting;
-    bool m_clientImpactingHasBeenSet;
+    bool m_clientImpactingHasBeenSet = false;
   };
 
 } // namespace Model

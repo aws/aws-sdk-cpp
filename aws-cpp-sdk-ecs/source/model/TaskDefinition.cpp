@@ -96,7 +96,7 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("containerDefinitions"))
   {
-    Array<JsonView> containerDefinitionsJsonList = jsonValue.GetArray("containerDefinitions");
+    Aws::Utils::Array<JsonView> containerDefinitionsJsonList = jsonValue.GetArray("containerDefinitions");
     for(unsigned containerDefinitionsIndex = 0; containerDefinitionsIndex < containerDefinitionsJsonList.GetLength(); ++containerDefinitionsIndex)
     {
       m_containerDefinitions.push_back(containerDefinitionsJsonList[containerDefinitionsIndex].AsObject());
@@ -141,7 +141,7 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("volumes"))
   {
-    Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
+    Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
     for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
     {
       m_volumes.push_back(volumesJsonList[volumesIndex].AsObject());
@@ -158,7 +158,7 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("requiresAttributes"))
   {
-    Array<JsonView> requiresAttributesJsonList = jsonValue.GetArray("requiresAttributes");
+    Aws::Utils::Array<JsonView> requiresAttributesJsonList = jsonValue.GetArray("requiresAttributes");
     for(unsigned requiresAttributesIndex = 0; requiresAttributesIndex < requiresAttributesJsonList.GetLength(); ++requiresAttributesIndex)
     {
       m_requiresAttributes.push_back(requiresAttributesJsonList[requiresAttributesIndex].AsObject());
@@ -168,7 +168,7 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("placementConstraints"))
   {
-    Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
+    Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
     for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
     {
       m_placementConstraints.push_back(placementConstraintsJsonList[placementConstraintsIndex].AsObject());
@@ -178,7 +178,7 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("compatibilities"))
   {
-    Array<JsonView> compatibilitiesJsonList = jsonValue.GetArray("compatibilities");
+    Aws::Utils::Array<JsonView> compatibilitiesJsonList = jsonValue.GetArray("compatibilities");
     for(unsigned compatibilitiesIndex = 0; compatibilitiesIndex < compatibilitiesJsonList.GetLength(); ++compatibilitiesIndex)
     {
       m_compatibilities.push_back(CompatibilityMapper::GetCompatibilityForName(compatibilitiesJsonList[compatibilitiesIndex].AsString()));
@@ -195,7 +195,7 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("requiresCompatibilities"))
   {
-    Array<JsonView> requiresCompatibilitiesJsonList = jsonValue.GetArray("requiresCompatibilities");
+    Aws::Utils::Array<JsonView> requiresCompatibilitiesJsonList = jsonValue.GetArray("requiresCompatibilities");
     for(unsigned requiresCompatibilitiesIndex = 0; requiresCompatibilitiesIndex < requiresCompatibilitiesJsonList.GetLength(); ++requiresCompatibilitiesIndex)
     {
       m_requiresCompatibilities.push_back(CompatibilityMapper::GetCompatibilityForName(requiresCompatibilitiesJsonList[requiresCompatibilitiesIndex].AsString()));
@@ -219,7 +219,7 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inferenceAccelerators"))
   {
-    Array<JsonView> inferenceAcceleratorsJsonList = jsonValue.GetArray("inferenceAccelerators");
+    Aws::Utils::Array<JsonView> inferenceAcceleratorsJsonList = jsonValue.GetArray("inferenceAccelerators");
     for(unsigned inferenceAcceleratorsIndex = 0; inferenceAcceleratorsIndex < inferenceAcceleratorsJsonList.GetLength(); ++inferenceAcceleratorsIndex)
     {
       m_inferenceAccelerators.push_back(inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject());
@@ -291,7 +291,7 @@ JsonValue TaskDefinition::Jsonize() const
 
   if(m_containerDefinitionsHasBeenSet)
   {
-   Array<JsonValue> containerDefinitionsJsonList(m_containerDefinitions.size());
+   Aws::Utils::Array<JsonValue> containerDefinitionsJsonList(m_containerDefinitions.size());
    for(unsigned containerDefinitionsIndex = 0; containerDefinitionsIndex < containerDefinitionsJsonList.GetLength(); ++containerDefinitionsIndex)
    {
      containerDefinitionsJsonList[containerDefinitionsIndex].AsObject(m_containerDefinitions[containerDefinitionsIndex].Jsonize());
@@ -331,7 +331,7 @@ JsonValue TaskDefinition::Jsonize() const
 
   if(m_volumesHasBeenSet)
   {
-   Array<JsonValue> volumesJsonList(m_volumes.size());
+   Aws::Utils::Array<JsonValue> volumesJsonList(m_volumes.size());
    for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
    {
      volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());
@@ -347,7 +347,7 @@ JsonValue TaskDefinition::Jsonize() const
 
   if(m_requiresAttributesHasBeenSet)
   {
-   Array<JsonValue> requiresAttributesJsonList(m_requiresAttributes.size());
+   Aws::Utils::Array<JsonValue> requiresAttributesJsonList(m_requiresAttributes.size());
    for(unsigned requiresAttributesIndex = 0; requiresAttributesIndex < requiresAttributesJsonList.GetLength(); ++requiresAttributesIndex)
    {
      requiresAttributesJsonList[requiresAttributesIndex].AsObject(m_requiresAttributes[requiresAttributesIndex].Jsonize());
@@ -358,7 +358,7 @@ JsonValue TaskDefinition::Jsonize() const
 
   if(m_placementConstraintsHasBeenSet)
   {
-   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   Aws::Utils::Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
    for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
    {
      placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
@@ -369,7 +369,7 @@ JsonValue TaskDefinition::Jsonize() const
 
   if(m_compatibilitiesHasBeenSet)
   {
-   Array<JsonValue> compatibilitiesJsonList(m_compatibilities.size());
+   Aws::Utils::Array<JsonValue> compatibilitiesJsonList(m_compatibilities.size());
    for(unsigned compatibilitiesIndex = 0; compatibilitiesIndex < compatibilitiesJsonList.GetLength(); ++compatibilitiesIndex)
    {
      compatibilitiesJsonList[compatibilitiesIndex].AsString(CompatibilityMapper::GetNameForCompatibility(m_compatibilities[compatibilitiesIndex]));
@@ -386,7 +386,7 @@ JsonValue TaskDefinition::Jsonize() const
 
   if(m_requiresCompatibilitiesHasBeenSet)
   {
-   Array<JsonValue> requiresCompatibilitiesJsonList(m_requiresCompatibilities.size());
+   Aws::Utils::Array<JsonValue> requiresCompatibilitiesJsonList(m_requiresCompatibilities.size());
    for(unsigned requiresCompatibilitiesIndex = 0; requiresCompatibilitiesIndex < requiresCompatibilitiesJsonList.GetLength(); ++requiresCompatibilitiesIndex)
    {
      requiresCompatibilitiesJsonList[requiresCompatibilitiesIndex].AsString(CompatibilityMapper::GetNameForCompatibility(m_requiresCompatibilities[requiresCompatibilitiesIndex]));
@@ -409,7 +409,7 @@ JsonValue TaskDefinition::Jsonize() const
 
   if(m_inferenceAcceleratorsHasBeenSet)
   {
-   Array<JsonValue> inferenceAcceleratorsJsonList(m_inferenceAccelerators.size());
+   Aws::Utils::Array<JsonValue> inferenceAcceleratorsJsonList(m_inferenceAccelerators.size());
    for(unsigned inferenceAcceleratorsIndex = 0; inferenceAcceleratorsIndex < inferenceAcceleratorsJsonList.GetLength(); ++inferenceAcceleratorsIndex)
    {
      inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject(m_inferenceAccelerators[inferenceAcceleratorsIndex].Jsonize());

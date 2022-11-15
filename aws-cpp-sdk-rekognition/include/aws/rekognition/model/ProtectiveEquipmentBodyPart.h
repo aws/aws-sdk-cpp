@@ -149,13 +149,13 @@ namespace Model
   private:
 
     BodyPart m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::Vector<EquipmentDetection> m_equipmentDetections;
-    bool m_equipmentDetectionsHasBeenSet;
+    bool m_equipmentDetectionsHasBeenSet = false;
   };
 
 } // namespace Model

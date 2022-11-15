@@ -567,43 +567,43 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_offeringIds;
-    bool m_offeringIdsHasBeenSet;
+    bool m_offeringIdsHasBeenSet = false;
 
     Aws::Vector<SavingsPlanPaymentOption> m_paymentOptions;
-    bool m_paymentOptionsHasBeenSet;
+    bool m_paymentOptionsHasBeenSet = false;
 
     SavingsPlanProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
 
     Aws::Vector<SavingsPlanType> m_planTypes;
-    bool m_planTypesHasBeenSet;
+    bool m_planTypesHasBeenSet = false;
 
     Aws::Vector<long long> m_durations;
-    bool m_durationsHasBeenSet;
+    bool m_durationsHasBeenSet = false;
 
     Aws::Vector<CurrencyCode> m_currencies;
-    bool m_currenciesHasBeenSet;
+    bool m_currenciesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_descriptions;
-    bool m_descriptionsHasBeenSet;
+    bool m_descriptionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_serviceCodes;
-    bool m_serviceCodesHasBeenSet;
+    bool m_serviceCodesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_usageTypes;
-    bool m_usageTypesHasBeenSet;
+    bool m_usageTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_operations;
-    bool m_operationsHasBeenSet;
+    bool m_operationsHasBeenSet = false;
 
     Aws::Vector<SavingsPlanOfferingFilterElement> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

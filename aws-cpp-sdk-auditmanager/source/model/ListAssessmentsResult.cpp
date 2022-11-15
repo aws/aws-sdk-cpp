@@ -30,7 +30,7 @@ ListAssessmentsResult& ListAssessmentsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assessmentMetadata"))
   {
-    Array<JsonView> assessmentMetadataJsonList = jsonValue.GetArray("assessmentMetadata");
+    Aws::Utils::Array<JsonView> assessmentMetadataJsonList = jsonValue.GetArray("assessmentMetadata");
     for(unsigned assessmentMetadataIndex = 0; assessmentMetadataIndex < assessmentMetadataJsonList.GetLength(); ++assessmentMetadataIndex)
     {
       m_assessmentMetadata.push_back(assessmentMetadataJsonList[assessmentMetadataIndex].AsObject());

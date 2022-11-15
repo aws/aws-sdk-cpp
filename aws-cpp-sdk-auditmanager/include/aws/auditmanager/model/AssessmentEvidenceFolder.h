@@ -464,28 +464,28 @@ namespace Model
     /**
      * <p> The number of evidence that falls under the configuration data category.
      * This evidence is collected from configuration snapshots of other Amazon Web
-     * Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+     * Services such as Amazon EC2, Amazon S3, or IAM. </p>
      */
     inline int GetEvidenceByTypeConfigurationDataCount() const{ return m_evidenceByTypeConfigurationDataCount; }
 
     /**
      * <p> The number of evidence that falls under the configuration data category.
      * This evidence is collected from configuration snapshots of other Amazon Web
-     * Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+     * Services such as Amazon EC2, Amazon S3, or IAM. </p>
      */
     inline bool EvidenceByTypeConfigurationDataCountHasBeenSet() const { return m_evidenceByTypeConfigurationDataCountHasBeenSet; }
 
     /**
      * <p> The number of evidence that falls under the configuration data category.
      * This evidence is collected from configuration snapshots of other Amazon Web
-     * Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+     * Services such as Amazon EC2, Amazon S3, or IAM. </p>
      */
     inline void SetEvidenceByTypeConfigurationDataCount(int value) { m_evidenceByTypeConfigurationDataCountHasBeenSet = true; m_evidenceByTypeConfigurationDataCount = value; }
 
     /**
      * <p> The number of evidence that falls under the configuration data category.
      * This evidence is collected from configuration snapshots of other Amazon Web
-     * Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+     * Services such as Amazon EC2, Amazon S3, or IAM. </p>
      */
     inline AssessmentEvidenceFolder& WithEvidenceByTypeConfigurationDataCount(int value) { SetEvidenceByTypeConfigurationDataCount(value); return *this;}
 
@@ -617,58 +617,58 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
 
     Aws::String m_controlSetId;
-    bool m_controlSetIdHasBeenSet;
+    bool m_controlSetIdHasBeenSet = false;
 
     Aws::String m_controlId;
-    bool m_controlIdHasBeenSet;
+    bool m_controlIdHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_author;
-    bool m_authorHasBeenSet;
+    bool m_authorHasBeenSet = false;
 
     int m_totalEvidence;
-    bool m_totalEvidenceHasBeenSet;
+    bool m_totalEvidenceHasBeenSet = false;
 
     int m_assessmentReportSelectionCount;
-    bool m_assessmentReportSelectionCountHasBeenSet;
+    bool m_assessmentReportSelectionCountHasBeenSet = false;
 
     Aws::String m_controlName;
-    bool m_controlNameHasBeenSet;
+    bool m_controlNameHasBeenSet = false;
 
     int m_evidenceResourcesIncludedCount;
-    bool m_evidenceResourcesIncludedCountHasBeenSet;
+    bool m_evidenceResourcesIncludedCountHasBeenSet = false;
 
     int m_evidenceByTypeConfigurationDataCount;
-    bool m_evidenceByTypeConfigurationDataCountHasBeenSet;
+    bool m_evidenceByTypeConfigurationDataCountHasBeenSet = false;
 
     int m_evidenceByTypeManualCount;
-    bool m_evidenceByTypeManualCountHasBeenSet;
+    bool m_evidenceByTypeManualCountHasBeenSet = false;
 
     int m_evidenceByTypeComplianceCheckCount;
-    bool m_evidenceByTypeComplianceCheckCountHasBeenSet;
+    bool m_evidenceByTypeComplianceCheckCountHasBeenSet = false;
 
     int m_evidenceByTypeComplianceCheckIssuesCount;
-    bool m_evidenceByTypeComplianceCheckIssuesCountHasBeenSet;
+    bool m_evidenceByTypeComplianceCheckIssuesCountHasBeenSet = false;
 
     int m_evidenceByTypeUserActivityCount;
-    bool m_evidenceByTypeUserActivityCountHasBeenSet;
+    bool m_evidenceByTypeUserActivityCountHasBeenSet = false;
 
     int m_evidenceAwsServiceSourceCount;
-    bool m_evidenceAwsServiceSourceCountHasBeenSet;
+    bool m_evidenceAwsServiceSourceCountHasBeenSet = false;
   };
 
 } // namespace Model

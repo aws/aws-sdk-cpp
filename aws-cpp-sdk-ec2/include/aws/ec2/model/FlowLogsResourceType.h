@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     VPC,
     Subnet,
-    NetworkInterface
+    NetworkInterface,
+    TransitGateway,
+    TransitGatewayAttachment
   };
 
 namespace FlowLogsResourceTypeMapper

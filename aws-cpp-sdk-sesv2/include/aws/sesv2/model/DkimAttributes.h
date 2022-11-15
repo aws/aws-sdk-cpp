@@ -482,25 +482,25 @@ namespace Model
   private:
 
     bool m_signingEnabled;
-    bool m_signingEnabledHasBeenSet;
+    bool m_signingEnabledHasBeenSet = false;
 
     DkimStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tokens;
-    bool m_tokensHasBeenSet;
+    bool m_tokensHasBeenSet = false;
 
     DkimSigningAttributesOrigin m_signingAttributesOrigin;
-    bool m_signingAttributesOriginHasBeenSet;
+    bool m_signingAttributesOriginHasBeenSet = false;
 
     DkimSigningKeyLength m_nextSigningKeyLength;
-    bool m_nextSigningKeyLengthHasBeenSet;
+    bool m_nextSigningKeyLengthHasBeenSet = false;
 
     DkimSigningKeyLength m_currentSigningKeyLength;
-    bool m_currentSigningKeyLengthHasBeenSet;
+    bool m_currentSigningKeyLengthHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastKeyGenerationTimestamp;
-    bool m_lastKeyGenerationTimestampHasBeenSet;
+    bool m_lastKeyGenerationTimestampHasBeenSet = false;
   };
 
 } // namespace Model

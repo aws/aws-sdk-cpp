@@ -231,19 +231,19 @@ namespace Model
   private:
 
     Aws::String m_clientVpnEndpointId;
-    bool m_clientVpnEndpointIdHasBeenSet;
+    bool m_clientVpnEndpointIdHasBeenSet = false;
 
     Aws::String m_targetNetworkCidr;
-    bool m_targetNetworkCidrHasBeenSet;
+    bool m_targetNetworkCidrHasBeenSet = false;
 
     Aws::String m_accessGroupId;
-    bool m_accessGroupIdHasBeenSet;
+    bool m_accessGroupIdHasBeenSet = false;
 
     bool m_revokeAllGroups;
-    bool m_revokeAllGroupsHasBeenSet;
+    bool m_revokeAllGroupsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

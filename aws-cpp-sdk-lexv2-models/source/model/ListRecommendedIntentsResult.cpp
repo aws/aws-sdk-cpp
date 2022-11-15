@@ -54,7 +54,7 @@ ListRecommendedIntentsResult& ListRecommendedIntentsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("summaryList"))
   {
-    Array<JsonView> summaryListJsonList = jsonValue.GetArray("summaryList");
+    Aws::Utils::Array<JsonView> summaryListJsonList = jsonValue.GetArray("summaryList");
     for(unsigned summaryListIndex = 0; summaryListIndex < summaryListJsonList.GetLength(); ++summaryListIndex)
     {
       m_summaryList.push_back(summaryListJsonList[summaryListIndex].AsObject());

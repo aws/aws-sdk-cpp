@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_entitlementName;
-    bool m_entitlementNameHasBeenSet;
+    bool m_entitlementNameHasBeenSet = false;
 
     Aws::String m_applicationIdentifier;
-    bool m_applicationIdentifierHasBeenSet;
+    bool m_applicationIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,13 +20,15 @@ namespace Model
 
 Ec2Configuration::Ec2Configuration() : 
     m_imageTypeHasBeenSet(false),
-    m_imageIdOverrideHasBeenSet(false)
+    m_imageIdOverrideHasBeenSet(false),
+    m_imageKubernetesVersionHasBeenSet(false)
 {
 }
 
 Ec2Configuration::Ec2Configuration(JsonView jsonValue) : 
     m_imageTypeHasBeenSet(false),
-    m_imageIdOverrideHasBeenSet(false)
+    m_imageIdOverrideHasBeenSet(false),
+    m_imageKubernetesVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ Ec2Configuration& Ec2Configuration::operator =(JsonView jsonValue)
     m_imageIdOverrideHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageKubernetesVersion"))
+  {
+    m_imageKubernetesVersion = jsonValue.GetString("imageKubernetesVersion");
+
+    m_imageKubernetesVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue Ec2Configuration::Jsonize() const
   if(m_imageIdOverrideHasBeenSet)
   {
    payload.WithString("imageIdOverride", m_imageIdOverride);
+
+  }
+
+  if(m_imageKubernetesVersionHasBeenSet)
+  {
+   payload.WithString("imageKubernetesVersion", m_imageKubernetesVersion);
 
   }
 

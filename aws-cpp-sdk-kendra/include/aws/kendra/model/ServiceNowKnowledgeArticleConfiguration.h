@@ -41,26 +41,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether Amazon Kendra should index attachments to knowledge
-     * articles.</p>
+     * <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
      */
     inline bool GetCrawlAttachments() const{ return m_crawlAttachments; }
 
     /**
-     * <p>Indicates whether Amazon Kendra should index attachments to knowledge
-     * articles.</p>
+     * <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
      */
     inline bool CrawlAttachmentsHasBeenSet() const { return m_crawlAttachmentsHasBeenSet; }
 
     /**
-     * <p>Indicates whether Amazon Kendra should index attachments to knowledge
-     * articles.</p>
+     * <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
      */
     inline void SetCrawlAttachments(bool value) { m_crawlAttachmentsHasBeenSet = true; m_crawlAttachments = value; }
 
     /**
-     * <p>Indicates whether Amazon Kendra should index attachments to knowledge
-     * articles.</p>
+     * <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& WithCrawlAttachments(bool value) { SetCrawlAttachments(value); return *this;}
 
@@ -527,25 +523,25 @@ namespace Model
   private:
 
     bool m_crawlAttachments;
-    bool m_crawlAttachmentsHasBeenSet;
+    bool m_crawlAttachmentsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeAttachmentFilePatterns;
-    bool m_includeAttachmentFilePatternsHasBeenSet;
+    bool m_includeAttachmentFilePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeAttachmentFilePatterns;
-    bool m_excludeAttachmentFilePatternsHasBeenSet;
+    bool m_excludeAttachmentFilePatternsHasBeenSet = false;
 
     Aws::String m_documentDataFieldName;
-    bool m_documentDataFieldNameHasBeenSet;
+    bool m_documentDataFieldNameHasBeenSet = false;
 
     Aws::String m_documentTitleFieldName;
-    bool m_documentTitleFieldNameHasBeenSet;
+    bool m_documentTitleFieldNameHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
 
     Aws::String m_filterQuery;
-    bool m_filterQueryHasBeenSet;
+    bool m_filterQueryHasBeenSet = false;
   };
 
 } // namespace Model

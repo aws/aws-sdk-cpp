@@ -280,25 +280,25 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayRouteTableId;
-    bool m_transitGatewayRouteTableIdHasBeenSet;
+    bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     TransitGatewayRouteTableState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     bool m_defaultAssociationRouteTable;
-    bool m_defaultAssociationRouteTableHasBeenSet;
+    bool m_defaultAssociationRouteTableHasBeenSet = false;
 
     bool m_defaultPropagationRouteTable;
-    bool m_defaultPropagationRouteTableHasBeenSet;
+    bool m_defaultPropagationRouteTableHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

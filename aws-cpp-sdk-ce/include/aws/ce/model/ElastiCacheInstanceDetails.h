@@ -250,22 +250,22 @@ namespace Model
   private:
 
     Aws::String m_family;
-    bool m_familyHasBeenSet;
+    bool m_familyHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_productDescription;
-    bool m_productDescriptionHasBeenSet;
+    bool m_productDescriptionHasBeenSet = false;
 
     bool m_currentGeneration;
-    bool m_currentGenerationHasBeenSet;
+    bool m_currentGenerationHasBeenSet = false;
 
     bool m_sizeFlexEligible;
-    bool m_sizeFlexEligibleHasBeenSet;
+    bool m_sizeFlexEligibleHasBeenSet = false;
   };
 
 } // namespace Model

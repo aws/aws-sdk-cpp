@@ -393,31 +393,31 @@ namespace Model
   private:
 
     Aws::String m_migrationId;
-    bool m_migrationIdHasBeenSet;
+    bool m_migrationIdHasBeenSet = false;
 
     Aws::String m_v1BotName;
-    bool m_v1BotNameHasBeenSet;
+    bool m_v1BotNameHasBeenSet = false;
 
     Aws::String m_v1BotVersion;
-    bool m_v1BotVersionHasBeenSet;
+    bool m_v1BotVersionHasBeenSet = false;
 
     Locale m_v1BotLocale;
-    bool m_v1BotLocaleHasBeenSet;
+    bool m_v1BotLocaleHasBeenSet = false;
 
     Aws::String m_v2BotId;
-    bool m_v2BotIdHasBeenSet;
+    bool m_v2BotIdHasBeenSet = false;
 
     Aws::String m_v2BotRole;
-    bool m_v2BotRoleHasBeenSet;
+    bool m_v2BotRoleHasBeenSet = false;
 
     MigrationStatus m_migrationStatus;
-    bool m_migrationStatusHasBeenSet;
+    bool m_migrationStatusHasBeenSet = false;
 
     MigrationStrategy m_migrationStrategy;
-    bool m_migrationStrategyHasBeenSet;
+    bool m_migrationStrategyHasBeenSet = false;
 
     Aws::Utils::DateTime m_migrationTimestamp;
-    bool m_migrationTimestampHasBeenSet;
+    bool m_migrationTimestampHasBeenSet = false;
   };
 
 } // namespace Model

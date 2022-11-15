@@ -36,141 +36,132 @@ namespace Model
 
 
     /**
-     * <p>The requested status of the medical transcription jobs returned.</p>
+     * <p>Lists all medical transcription jobs that have the status specified in your
+     * request. Jobs are ordered by creation date, with the newest job first.</p>
      */
     inline const TranscriptionJobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The requested status of the medical transcription jobs returned.</p>
+     * <p>Lists all medical transcription jobs that have the status specified in your
+     * request. Jobs are ordered by creation date, with the newest job first.</p>
      */
     inline void SetStatus(const TranscriptionJobStatus& value) { m_status = value; }
 
     /**
-     * <p>The requested status of the medical transcription jobs returned.</p>
+     * <p>Lists all medical transcription jobs that have the status specified in your
+     * request. Jobs are ordered by creation date, with the newest job first.</p>
      */
     inline void SetStatus(TranscriptionJobStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The requested status of the medical transcription jobs returned.</p>
+     * <p>Lists all medical transcription jobs that have the status specified in your
+     * request. Jobs are ordered by creation date, with the newest job first.</p>
      */
     inline ListMedicalTranscriptionJobsResult& WithStatus(const TranscriptionJobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The requested status of the medical transcription jobs returned.</p>
+     * <p>Lists all medical transcription jobs that have the status specified in your
+     * request. Jobs are ordered by creation date, with the newest job first.</p>
      */
     inline ListMedicalTranscriptionJobsResult& WithStatus(TranscriptionJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of
-     * jobs at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
-     * a page, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalTranscriptionJobs</code> operation to return in the next page
-     * of jobs.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of
-     * jobs at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
-     * a page, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalTranscriptionJobs</code> operation to return in the next page
-     * of jobs.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of
-     * jobs at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
-     * a page, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalTranscriptionJobs</code> operation to return in the next page
-     * of jobs.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of
-     * jobs at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
-     * a page, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalTranscriptionJobs</code> operation to return in the next page
-     * of jobs.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of
-     * jobs at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
-     * a page, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalTranscriptionJobs</code> operation to return in the next page
-     * of jobs.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline ListMedicalTranscriptionJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of
-     * jobs at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
-     * a page, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalTranscriptionJobs</code> operation to return in the next page
-     * of jobs.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline ListMedicalTranscriptionJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of
-     * jobs at a time. The maximum size of the page is set by the
-     * <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
-     * a page, Amazon Transcribe Medical returns the <code>NextPage</code> token.
-     * Include the token in the next request to the
-     * <code>ListMedicalTranscriptionJobs</code> operation to return in the next page
-     * of jobs.</p>
+     * <p>If <code>NextToken</code> is present in your response, it indicates that not
+     * all results are displayed. To view the next set of results, copy the string
+     * associated with the <code>NextToken</code> parameter in your results output,
+     * then run your request again including <code>NextToken</code> with the value of
+     * the copied string. Repeat as needed to view all your results.</p>
      */
     inline ListMedicalTranscriptionJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>A list of objects containing summary information for a transcription job.</p>
+     * <p>Provides a summary of information about each result.</p>
      */
     inline const Aws::Vector<MedicalTranscriptionJobSummary>& GetMedicalTranscriptionJobSummaries() const{ return m_medicalTranscriptionJobSummaries; }
 
     /**
-     * <p>A list of objects containing summary information for a transcription job.</p>
+     * <p>Provides a summary of information about each result.</p>
      */
     inline void SetMedicalTranscriptionJobSummaries(const Aws::Vector<MedicalTranscriptionJobSummary>& value) { m_medicalTranscriptionJobSummaries = value; }
 
     /**
-     * <p>A list of objects containing summary information for a transcription job.</p>
+     * <p>Provides a summary of information about each result.</p>
      */
     inline void SetMedicalTranscriptionJobSummaries(Aws::Vector<MedicalTranscriptionJobSummary>&& value) { m_medicalTranscriptionJobSummaries = std::move(value); }
 
     /**
-     * <p>A list of objects containing summary information for a transcription job.</p>
+     * <p>Provides a summary of information about each result.</p>
      */
     inline ListMedicalTranscriptionJobsResult& WithMedicalTranscriptionJobSummaries(const Aws::Vector<MedicalTranscriptionJobSummary>& value) { SetMedicalTranscriptionJobSummaries(value); return *this;}
 
     /**
-     * <p>A list of objects containing summary information for a transcription job.</p>
+     * <p>Provides a summary of information about each result.</p>
      */
     inline ListMedicalTranscriptionJobsResult& WithMedicalTranscriptionJobSummaries(Aws::Vector<MedicalTranscriptionJobSummary>&& value) { SetMedicalTranscriptionJobSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of objects containing summary information for a transcription job.</p>
+     * <p>Provides a summary of information about each result.</p>
      */
     inline ListMedicalTranscriptionJobsResult& AddMedicalTranscriptionJobSummaries(const MedicalTranscriptionJobSummary& value) { m_medicalTranscriptionJobSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of objects containing summary information for a transcription job.</p>
+     * <p>Provides a summary of information about each result.</p>
      */
     inline ListMedicalTranscriptionJobsResult& AddMedicalTranscriptionJobSummaries(MedicalTranscriptionJobSummary&& value) { m_medicalTranscriptionJobSummaries.push_back(std::move(value)); return *this; }
 

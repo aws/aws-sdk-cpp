@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     long long m_codeSize;
-    bool m_codeSizeHasBeenSet;
+    bool m_codeSizeHasBeenSet = false;
 
     Aws::String m_signingProfileVersionArn;
-    bool m_signingProfileVersionArnHasBeenSet;
+    bool m_signingProfileVersionArnHasBeenSet = false;
 
     Aws::String m_signingJobArn;
-    bool m_signingJobArnHasBeenSet;
+    bool m_signingJobArnHasBeenSet = false;
   };
 
 } // namespace Model

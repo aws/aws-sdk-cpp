@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_ebsReadOpsPerSecond;
-    bool m_ebsReadOpsPerSecondHasBeenSet;
+    bool m_ebsReadOpsPerSecondHasBeenSet = false;
 
     Aws::String m_ebsWriteOpsPerSecond;
-    bool m_ebsWriteOpsPerSecondHasBeenSet;
+    bool m_ebsWriteOpsPerSecondHasBeenSet = false;
 
     Aws::String m_ebsReadBytesPerSecond;
-    bool m_ebsReadBytesPerSecondHasBeenSet;
+    bool m_ebsReadBytesPerSecondHasBeenSet = false;
 
     Aws::String m_ebsWriteBytesPerSecond;
-    bool m_ebsWriteBytesPerSecondHasBeenSet;
+    bool m_ebsWriteBytesPerSecondHasBeenSet = false;
   };
 
 } // namespace Model

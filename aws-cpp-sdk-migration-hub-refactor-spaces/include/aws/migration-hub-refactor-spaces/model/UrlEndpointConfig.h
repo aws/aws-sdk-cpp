@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_healthUrl;
-    bool m_healthUrlHasBeenSet;
+    bool m_healthUrlHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -182,13 +182,13 @@ namespace Model
   private:
 
     ConfluenceBlogFieldName m_dataSourceFieldName;
-    bool m_dataSourceFieldNameHasBeenSet;
+    bool m_dataSourceFieldNameHasBeenSet = false;
 
     Aws::String m_dateFieldFormat;
-    bool m_dateFieldFormatHasBeenSet;
+    bool m_dateFieldFormatHasBeenSet = false;
 
     Aws::String m_indexFieldName;
-    bool m_indexFieldNameHasBeenSet;
+    bool m_indexFieldNameHasBeenSet = false;
   };
 
 } // namespace Model

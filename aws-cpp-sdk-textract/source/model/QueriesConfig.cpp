@@ -33,7 +33,7 @@ QueriesConfig& QueriesConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Queries"))
   {
-    Array<JsonView> queriesJsonList = jsonValue.GetArray("Queries");
+    Aws::Utils::Array<JsonView> queriesJsonList = jsonValue.GetArray("Queries");
     for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
     {
       m_queries.push_back(queriesJsonList[queriesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue QueriesConfig::Jsonize() const
 
   if(m_queriesHasBeenSet)
   {
-   Array<JsonValue> queriesJsonList(m_queries.size());
+   Aws::Utils::Array<JsonValue> queriesJsonList(m_queries.size());
    for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
    {
      queriesJsonList[queriesIndex].AsObject(m_queries[queriesIndex].Jsonize());

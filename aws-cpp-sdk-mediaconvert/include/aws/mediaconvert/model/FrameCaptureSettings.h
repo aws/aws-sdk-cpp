@@ -158,16 +158,16 @@ namespace Model
   private:
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     int m_maxCaptures;
-    bool m_maxCapturesHasBeenSet;
+    bool m_maxCapturesHasBeenSet = false;
 
     int m_quality;
-    bool m_qualityHasBeenSet;
+    bool m_qualityHasBeenSet = false;
   };
 
 } // namespace Model

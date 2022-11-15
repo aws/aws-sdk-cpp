@@ -20,7 +20,9 @@ CreateDataRepositoryTaskRequest::CreateDataRepositoryTaskRequest() :
     m_reportHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_capacityToRelease(0),
+    m_capacityToReleaseHasBeenSet(false)
 {
 }
 
@@ -35,7 +37,7 @@ Aws::String CreateDataRepositoryTaskRequest::SerializePayload() const
 
   if(m_pathsHasBeenSet)
   {
-   Array<JsonValue> pathsJsonList(m_paths.size());
+   Aws::Utils::Array<JsonValue> pathsJsonList(m_paths.size());
    for(unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex)
    {
      pathsJsonList[pathsIndex].AsString(m_paths[pathsIndex]);
@@ -64,12 +66,18 @@ Aws::String CreateDataRepositoryTaskRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_capacityToReleaseHasBeenSet)
+  {
+   payload.WithInt64("CapacityToRelease", m_capacityToRelease);
 
   }
 

@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The environment template detail data that's returned by Proton.</p>
+     * <p>The detailed data of the environment template being deleted.</p>
      */
     inline const EnvironmentTemplate& GetEnvironmentTemplate() const{ return m_environmentTemplate; }
 
     /**
-     * <p>The environment template detail data that's returned by Proton.</p>
+     * <p>The detailed data of the environment template being deleted.</p>
      */
     inline void SetEnvironmentTemplate(const EnvironmentTemplate& value) { m_environmentTemplate = value; }
 
     /**
-     * <p>The environment template detail data that's returned by Proton.</p>
+     * <p>The detailed data of the environment template being deleted.</p>
      */
     inline void SetEnvironmentTemplate(EnvironmentTemplate&& value) { m_environmentTemplate = std::move(value); }
 
     /**
-     * <p>The environment template detail data that's returned by Proton.</p>
+     * <p>The detailed data of the environment template being deleted.</p>
      */
     inline DeleteEnvironmentTemplateResult& WithEnvironmentTemplate(const EnvironmentTemplate& value) { SetEnvironmentTemplate(value); return *this;}
 
     /**
-     * <p>The environment template detail data that's returned by Proton.</p>
+     * <p>The detailed data of the environment template being deleted.</p>
      */
     inline DeleteEnvironmentTemplateResult& WithEnvironmentTemplate(EnvironmentTemplate&& value) { SetEnvironmentTemplate(std::move(value)); return *this;}
 

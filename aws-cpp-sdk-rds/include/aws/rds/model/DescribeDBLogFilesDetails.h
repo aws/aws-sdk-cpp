@@ -125,13 +125,13 @@ namespace Model
   private:
 
     Aws::String m_logFileName;
-    bool m_logFileNameHasBeenSet;
+    bool m_logFileNameHasBeenSet = false;
 
     long long m_lastWritten;
-    bool m_lastWrittenHasBeenSet;
+    bool m_lastWrittenHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

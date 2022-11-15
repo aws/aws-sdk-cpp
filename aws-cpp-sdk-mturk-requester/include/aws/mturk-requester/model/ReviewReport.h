@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<ReviewResultDetail> m_reviewResults;
-    bool m_reviewResultsHasBeenSet;
+    bool m_reviewResultsHasBeenSet = false;
 
     Aws::Vector<ReviewActionDetail> m_reviewActions;
-    bool m_reviewActionsHasBeenSet;
+    bool m_reviewActionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ Aws::String GetAccessTokenRequest::SerializePayload() const
 
   if(m_tokenPropertiesHasBeenSet)
   {
-   Array<JsonValue> tokenPropertiesJsonList(m_tokenProperties.size());
+   Aws::Utils::Array<JsonValue> tokenPropertiesJsonList(m_tokenProperties.size());
    for(unsigned tokenPropertiesIndex = 0; tokenPropertiesIndex < tokenPropertiesJsonList.GetLength(); ++tokenPropertiesIndex)
    {
      tokenPropertiesJsonList[tokenPropertiesIndex].AsString(m_tokenProperties[tokenPropertiesIndex]);

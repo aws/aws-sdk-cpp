@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_mLModelId;
-    bool m_mLModelIdHasBeenSet;
+    bool m_mLModelIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_record;
-    bool m_recordHasBeenSet;
+    bool m_recordHasBeenSet = false;
 
     Aws::String m_predictEndpoint;
-    bool m_predictEndpointHasBeenSet;
+    bool m_predictEndpointHasBeenSet = false;
   };
 
 } // namespace Model

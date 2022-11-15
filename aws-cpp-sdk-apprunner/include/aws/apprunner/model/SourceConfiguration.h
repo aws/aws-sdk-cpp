@@ -202,16 +202,16 @@ namespace Model
   private:
 
     CodeRepository m_codeRepository;
-    bool m_codeRepositoryHasBeenSet;
+    bool m_codeRepositoryHasBeenSet = false;
 
     ImageRepository m_imageRepository;
-    bool m_imageRepositoryHasBeenSet;
+    bool m_imageRepositoryHasBeenSet = false;
 
     bool m_autoDeploymentsEnabled;
-    bool m_autoDeploymentsEnabledHasBeenSet;
+    bool m_autoDeploymentsEnabledHasBeenSet = false;
 
     AuthenticationConfiguration m_authenticationConfiguration;
-    bool m_authenticationConfigurationHasBeenSet;
+    bool m_authenticationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

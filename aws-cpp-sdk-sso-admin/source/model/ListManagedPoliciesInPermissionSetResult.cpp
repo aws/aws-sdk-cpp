@@ -30,7 +30,7 @@ ListManagedPoliciesInPermissionSetResult& ListManagedPoliciesInPermissionSetResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AttachedManagedPolicies"))
   {
-    Array<JsonView> attachedManagedPoliciesJsonList = jsonValue.GetArray("AttachedManagedPolicies");
+    Aws::Utils::Array<JsonView> attachedManagedPoliciesJsonList = jsonValue.GetArray("AttachedManagedPolicies");
     for(unsigned attachedManagedPoliciesIndex = 0; attachedManagedPoliciesIndex < attachedManagedPoliciesJsonList.GetLength(); ++attachedManagedPoliciesIndex)
     {
       m_attachedManagedPolicies.push_back(attachedManagedPoliciesJsonList[attachedManagedPoliciesIndex].AsObject());

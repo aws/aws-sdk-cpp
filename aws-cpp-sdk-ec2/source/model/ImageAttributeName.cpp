@@ -31,6 +31,7 @@ namespace Aws
         static const int tpmSupport_HASH = HashingUtils::HashString("tpmSupport");
         static const int uefiData_HASH = HashingUtils::HashString("uefiData");
         static const int lastLaunchedTime_HASH = HashingUtils::HashString("lastLaunchedTime");
+        static const int imdsSupport_HASH = HashingUtils::HashString("imdsSupport");
 
 
         ImageAttributeName GetImageAttributeNameForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return ImageAttributeName::lastLaunchedTime;
           }
+          else if (hashCode == imdsSupport_HASH)
+          {
+            return ImageAttributeName::imdsSupport;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -116,6 +121,8 @@ namespace Aws
             return "uefiData";
           case ImageAttributeName::lastLaunchedTime:
             return "lastLaunchedTime";
+          case ImageAttributeName::imdsSupport:
+            return "imdsSupport";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

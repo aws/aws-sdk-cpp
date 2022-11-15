@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_netBiosName;
-    bool m_netBiosNameHasBeenSet;
+    bool m_netBiosNameHasBeenSet = false;
 
     SelfManagedActiveDirectoryConfiguration m_selfManagedActiveDirectoryConfiguration;
-    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet;
+    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

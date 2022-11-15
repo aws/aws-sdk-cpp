@@ -74,7 +74,7 @@ namespace Model
   private:
 
     S3AccessControlPolicy m_accessControlPolicy;
-    bool m_accessControlPolicyHasBeenSet;
+    bool m_accessControlPolicyHasBeenSet = false;
   };
 
 } // namespace Model

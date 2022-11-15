@@ -125,6 +125,47 @@ namespace Model
 
 
     /**
+     * <p>The updated name for the hypervisor</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The updated name for the hypervisor</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The updated name for the hypervisor</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The updated name for the hypervisor</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The updated name for the hypervisor</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The updated name for the hypervisor</p>
+     */
+    inline UpdateHypervisorRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The updated name for the hypervisor</p>
+     */
+    inline UpdateHypervisorRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The updated name for the hypervisor</p>
+     */
+    inline UpdateHypervisorRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
      * <p>The updated password for the hypervisor.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
@@ -208,16 +249,19 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     Aws::String m_hypervisorArn;
-    bool m_hypervisorArnHasBeenSet;
+    bool m_hypervisorArnHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

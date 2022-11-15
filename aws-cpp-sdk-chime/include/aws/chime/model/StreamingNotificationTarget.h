@@ -71,7 +71,7 @@ namespace Model
   private:
 
     NotificationTarget m_notificationTarget;
-    bool m_notificationTargetHasBeenSet;
+    bool m_notificationTargetHasBeenSet = false;
   };
 
 } // namespace Model

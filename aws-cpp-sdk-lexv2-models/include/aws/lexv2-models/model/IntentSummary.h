@@ -345,25 +345,25 @@ namespace Model
   private:
 
     Aws::String m_intentId;
-    bool m_intentIdHasBeenSet;
+    bool m_intentIdHasBeenSet = false;
 
     Aws::String m_intentName;
-    bool m_intentNameHasBeenSet;
+    bool m_intentNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_parentIntentSignature;
-    bool m_parentIntentSignatureHasBeenSet;
+    bool m_parentIntentSignatureHasBeenSet = false;
 
     Aws::Vector<InputContext> m_inputContexts;
-    bool m_inputContextsHasBeenSet;
+    bool m_inputContextsHasBeenSet = false;
 
     Aws::Vector<OutputContext> m_outputContexts;
-    bool m_outputContextsHasBeenSet;
+    bool m_outputContextsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

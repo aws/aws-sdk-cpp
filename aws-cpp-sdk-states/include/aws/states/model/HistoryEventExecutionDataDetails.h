@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_truncated;
-    bool m_truncatedHasBeenSet;
+    bool m_truncatedHasBeenSet = false;
   };
 
 } // namespace Model

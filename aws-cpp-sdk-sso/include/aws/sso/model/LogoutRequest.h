@@ -38,7 +38,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
@@ -46,7 +46,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
@@ -54,7 +54,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
@@ -62,7 +62,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
@@ -70,7 +70,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
@@ -78,7 +78,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline LogoutRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
@@ -86,7 +86,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline LogoutRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
@@ -94,14 +94,14 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline LogoutRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
   };
 
 } // namespace Model

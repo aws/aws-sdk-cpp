@@ -172,10 +172,10 @@ namespace Model
   private:
 
     Aws::String m_assumedRoleId;
-    bool m_assumedRoleIdHasBeenSet;
+    bool m_assumedRoleIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_sourceReference;
-    bool m_sourceReferenceHasBeenSet;
+    bool m_sourceReferenceHasBeenSet = false;
 
     Aws::String m_destinationReference;
-    bool m_destinationReferenceHasBeenSet;
+    bool m_destinationReferenceHasBeenSet = false;
   };
 
 } // namespace Model

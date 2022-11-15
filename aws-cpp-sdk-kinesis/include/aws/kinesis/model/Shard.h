@@ -233,19 +233,19 @@ namespace Model
   private:
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     Aws::String m_parentShardId;
-    bool m_parentShardIdHasBeenSet;
+    bool m_parentShardIdHasBeenSet = false;
 
     Aws::String m_adjacentParentShardId;
-    bool m_adjacentParentShardIdHasBeenSet;
+    bool m_adjacentParentShardIdHasBeenSet = false;
 
     HashKeyRange m_hashKeyRange;
-    bool m_hashKeyRangeHasBeenSet;
+    bool m_hashKeyRangeHasBeenSet = false;
 
     SequenceNumberRange m_sequenceNumberRange;
-    bool m_sequenceNumberRangeHasBeenSet;
+    bool m_sequenceNumberRangeHasBeenSet = false;
   };
 
 } // namespace Model

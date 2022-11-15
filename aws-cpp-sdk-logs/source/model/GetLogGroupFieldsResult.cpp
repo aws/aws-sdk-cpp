@@ -30,7 +30,7 @@ GetLogGroupFieldsResult& GetLogGroupFieldsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("logGroupFields"))
   {
-    Array<JsonView> logGroupFieldsJsonList = jsonValue.GetArray("logGroupFields");
+    Aws::Utils::Array<JsonView> logGroupFieldsJsonList = jsonValue.GetArray("logGroupFields");
     for(unsigned logGroupFieldsIndex = 0; logGroupFieldsIndex < logGroupFieldsJsonList.GetLength(); ++logGroupFieldsIndex)
     {
       m_logGroupFields.push_back(logGroupFieldsJsonList[logGroupFieldsIndex].AsObject());

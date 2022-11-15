@@ -28,7 +28,7 @@ Aws::String UpdateContactRequest::SerializePayload() const
 
   if(m_topicPreferencesHasBeenSet)
   {
-   Array<JsonValue> topicPreferencesJsonList(m_topicPreferences.size());
+   Aws::Utils::Array<JsonValue> topicPreferencesJsonList(m_topicPreferences.size());
    for(unsigned topicPreferencesIndex = 0; topicPreferencesIndex < topicPreferencesJsonList.GetLength(); ++topicPreferencesIndex)
    {
      topicPreferencesJsonList[topicPreferencesIndex].AsObject(m_topicPreferences[topicPreferencesIndex].Jsonize());

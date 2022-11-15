@@ -17,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Requests API Gateway to create a new <a>BasePathMapping</a>
-   * resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Requests API Gateway to create a new BasePathMapping resource.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMappingRequest">AWS
    * API Reference</a></p>
    */
@@ -37,50 +37,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * create.</p>
+     * <p>The domain name of the BasePathMapping resource to create.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * create.</p>
+     * <p>The domain name of the BasePathMapping resource to create.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * create.</p>
+     * <p>The domain name of the BasePathMapping resource to create.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * create.</p>
+     * <p>The domain name of the BasePathMapping resource to create.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * create.</p>
+     * <p>The domain name of the BasePathMapping resource to create.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * create.</p>
+     * <p>The domain name of the BasePathMapping resource to create.</p>
      */
     inline CreateBasePathMappingRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * create.</p>
+     * <p>The domain name of the BasePathMapping resource to create.</p>
      */
     inline CreateBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * create.</p>
+     * <p>The domain name of the BasePathMapping resource to create.</p>
      */
     inline CreateBasePathMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -151,42 +143,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline CreateBasePathMappingRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline CreateBasePathMappingRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline CreateBasePathMappingRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
@@ -250,16 +242,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_basePath;
-    bool m_basePathHasBeenSet;
+    bool m_basePathHasBeenSet = false;
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
   };
 
 } // namespace Model

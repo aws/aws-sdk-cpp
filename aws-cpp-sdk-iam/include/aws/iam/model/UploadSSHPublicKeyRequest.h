@@ -232,10 +232,10 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_sSHPublicKeyBody;
-    bool m_sSHPublicKeyBodyHasBeenSet;
+    bool m_sSHPublicKeyBodyHasBeenSet = false;
   };
 
 } // namespace Model

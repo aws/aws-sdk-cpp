@@ -34,7 +34,7 @@ Aws::String CreateWorldExportJobRequest::SerializePayload() const
 
   if(m_worldsHasBeenSet)
   {
-   Array<JsonValue> worldsJsonList(m_worlds.size());
+   Aws::Utils::Array<JsonValue> worldsJsonList(m_worlds.size());
    for(unsigned worldsIndex = 0; worldsIndex < worldsJsonList.GetLength(); ++worldsIndex)
    {
      worldsJsonList[worldsIndex].AsString(m_worlds[worldsIndex]);

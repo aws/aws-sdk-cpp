@@ -40,7 +40,7 @@ Aws::String SendAutomationSignalRequest::SerializePayload() const
    JsonValue payloadJsonMap;
    for(auto& payloadItem : m_payload)
    {
-     Array<JsonValue> automationParameterValueListJsonList(payloadItem.second.size());
+     Aws::Utils::Array<JsonValue> automationParameterValueListJsonList(payloadItem.second.size());
      for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
      {
        automationParameterValueListJsonList[automationParameterValueListIndex].AsString(payloadItem.second[automationParameterValueListIndex]);

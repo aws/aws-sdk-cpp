@@ -118,57 +118,45 @@ namespace Model
 
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline const Tier& GetTier() const{ return m_tier; }
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline DescribeComponentConfigurationRecommendationRequest& WithTier(const Tier& value) { SetTier(value); return *this;}
 
     /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <p>The tier of the application component.</p>
      */
     inline DescribeComponentConfigurationRecommendationRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Tier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
   };
 
 } // namespace Model

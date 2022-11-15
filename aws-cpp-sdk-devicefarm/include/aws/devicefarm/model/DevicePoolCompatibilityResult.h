@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Device m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     bool m_compatible;
-    bool m_compatibleHasBeenSet;
+    bool m_compatibleHasBeenSet = false;
 
     Aws::Vector<IncompatibilityMessage> m_incompatibilityMessages;
-    bool m_incompatibilityMessagesHasBeenSet;
+    bool m_incompatibilityMessagesHasBeenSet = false;
   };
 
 } // namespace Model

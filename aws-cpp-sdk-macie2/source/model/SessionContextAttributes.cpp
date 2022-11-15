@@ -58,7 +58,7 @@ JsonValue SessionContextAttributes::Jsonize() const
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithString("creationDate", m_creationDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("creationDate", m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_mfaAuthenticatedHasBeenSet)

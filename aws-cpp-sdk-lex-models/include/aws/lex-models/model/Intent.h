@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_intentName;
-    bool m_intentNameHasBeenSet;
+    bool m_intentNameHasBeenSet = false;
 
     Aws::String m_intentVersion;
-    bool m_intentVersionHasBeenSet;
+    bool m_intentVersionHasBeenSet = false;
   };
 
 } // namespace Model

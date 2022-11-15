@@ -30,7 +30,7 @@ DescribePatchGroupsResult& DescribePatchGroupsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Mappings"))
   {
-    Array<JsonView> mappingsJsonList = jsonValue.GetArray("Mappings");
+    Aws::Utils::Array<JsonView> mappingsJsonList = jsonValue.GetArray("Mappings");
     for(unsigned mappingsIndex = 0; mappingsIndex < mappingsJsonList.GetLength(); ++mappingsIndex)
     {
       m_mappings.push_back(mappingsJsonList[mappingsIndex].AsObject());

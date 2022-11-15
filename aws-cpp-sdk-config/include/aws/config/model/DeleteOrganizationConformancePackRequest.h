@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_organizationConformancePackName;
-    bool m_organizationConformancePackNameHasBeenSet;
+    bool m_organizationConformancePackNameHasBeenSet = false;
   };
 
 } // namespace Model

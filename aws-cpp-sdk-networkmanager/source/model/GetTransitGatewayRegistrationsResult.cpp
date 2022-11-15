@@ -30,7 +30,7 @@ GetTransitGatewayRegistrationsResult& GetTransitGatewayRegistrationsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TransitGatewayRegistrations"))
   {
-    Array<JsonView> transitGatewayRegistrationsJsonList = jsonValue.GetArray("TransitGatewayRegistrations");
+    Aws::Utils::Array<JsonView> transitGatewayRegistrationsJsonList = jsonValue.GetArray("TransitGatewayRegistrations");
     for(unsigned transitGatewayRegistrationsIndex = 0; transitGatewayRegistrationsIndex < transitGatewayRegistrationsJsonList.GetLength(); ++transitGatewayRegistrationsIndex)
     {
       m_transitGatewayRegistrations.push_back(transitGatewayRegistrationsJsonList[transitGatewayRegistrationsIndex].AsObject());

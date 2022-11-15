@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ScriptBootstrapActionConfig m_scriptBootstrapAction;
-    bool m_scriptBootstrapActionHasBeenSet;
+    bool m_scriptBootstrapActionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_operationsRole;
-    bool m_operationsRoleHasBeenSet;
+    bool m_operationsRoleHasBeenSet = false;
   };
 
 } // namespace Model

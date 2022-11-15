@@ -133,58 +133,66 @@ namespace Model
 
 
     /**
-     * <p>The pagination token used on subsequent call to get pricing plans. </p>
+     * <p>The pagination token that's used on subsequent call to get pricing plans.
+     * </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The pagination token used on subsequent call to get pricing plans. </p>
+     * <p>The pagination token that's used on subsequent call to get pricing plans.
+     * </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The pagination token used on subsequent call to get pricing plans. </p>
+     * <p>The pagination token that's used on subsequent call to get pricing plans.
+     * </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The pagination token used on subsequent call to get pricing plans. </p>
+     * <p>The pagination token that's used on subsequent call to get pricing plans.
+     * </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The pagination token used on subsequent call to get pricing plans. </p>
+     * <p>The pagination token that's used on subsequent call to get pricing plans.
+     * </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The pagination token used on subsequent call to get pricing plans. </p>
+     * <p>The pagination token that's used on subsequent call to get pricing plans.
+     * </p>
      */
     inline ListPricingPlansRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The pagination token used on subsequent call to get pricing plans. </p>
+     * <p>The pagination token that's used on subsequent call to get pricing plans.
+     * </p>
      */
     inline ListPricingPlansRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The pagination token used on subsequent call to get pricing plans. </p>
+     * <p>The pagination token that's used on subsequent call to get pricing plans.
+     * </p>
      */
     inline ListPricingPlansRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
     Aws::String m_billingPeriod;
-    bool m_billingPeriodHasBeenSet;
+    bool m_billingPeriodHasBeenSet = false;
 
     ListPricingPlansFilter m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

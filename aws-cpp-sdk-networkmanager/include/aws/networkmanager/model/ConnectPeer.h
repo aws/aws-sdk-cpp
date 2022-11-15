@@ -300,70 +300,70 @@ namespace Model
 
 
     /**
-     * <p>The tags associated with the Connect peer.</p>
+     * <p>The list of key-value tags associated with the Connect peer.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags associated with the Connect peer.</p>
+     * <p>The list of key-value tags associated with the Connect peer.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags associated with the Connect peer.</p>
+     * <p>The list of key-value tags associated with the Connect peer.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags associated with the Connect peer.</p>
+     * <p>The list of key-value tags associated with the Connect peer.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags associated with the Connect peer.</p>
+     * <p>The list of key-value tags associated with the Connect peer.</p>
      */
     inline ConnectPeer& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags associated with the Connect peer.</p>
+     * <p>The list of key-value tags associated with the Connect peer.</p>
      */
     inline ConnectPeer& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags associated with the Connect peer.</p>
+     * <p>The list of key-value tags associated with the Connect peer.</p>
      */
     inline ConnectPeer& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags associated with the Connect peer.</p>
+     * <p>The list of key-value tags associated with the Connect peer.</p>
      */
     inline ConnectPeer& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_connectAttachmentId;
-    bool m_connectAttachmentIdHasBeenSet;
+    bool m_connectAttachmentIdHasBeenSet = false;
 
     Aws::String m_connectPeerId;
-    bool m_connectPeerIdHasBeenSet;
+    bool m_connectPeerIdHasBeenSet = false;
 
     Aws::String m_edgeLocation;
-    bool m_edgeLocationHasBeenSet;
+    bool m_edgeLocationHasBeenSet = false;
 
     ConnectPeerState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ConnectPeerConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

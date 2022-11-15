@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_sourceUri;
-    bool m_sourceUriHasBeenSet;
+    bool m_sourceUriHasBeenSet = false;
 
     Aws::Vector<ArtifactSourceType> m_sourceTypes;
-    bool m_sourceTypesHasBeenSet;
+    bool m_sourceTypesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -178,38 +178,42 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline ListRoutingProfileQueuesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_routingProfileId;
-    bool m_routingProfileIdHasBeenSet;
+    bool m_routingProfileIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

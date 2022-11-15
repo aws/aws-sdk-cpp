@@ -42,7 +42,7 @@ GetWorkUnitsResult& GetWorkUnitsResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("WorkUnitRanges"))
   {
-    Array<JsonView> workUnitRangesJsonList = jsonValue.GetArray("WorkUnitRanges");
+    Aws::Utils::Array<JsonView> workUnitRangesJsonList = jsonValue.GetArray("WorkUnitRanges");
     for(unsigned workUnitRangesIndex = 0; workUnitRangesIndex < workUnitRangesJsonList.GetLength(); ++workUnitRangesIndex)
     {
       m_workUnitRanges.push_back(workUnitRangesJsonList[workUnitRangesIndex].AsObject());

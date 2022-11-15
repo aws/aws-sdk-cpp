@@ -147,13 +147,13 @@ namespace Model
   private:
 
     AccessControlList m_accessControlList;
-    bool m_accessControlListHasBeenSet;
+    bool m_accessControlListHasBeenSet = false;
 
     BlockPublicAccess m_blockPublicAccess;
-    bool m_blockPublicAccessHasBeenSet;
+    bool m_blockPublicAccessHasBeenSet = false;
 
     BucketPolicy m_bucketPolicy;
-    bool m_bucketPolicyHasBeenSet;
+    bool m_bucketPolicyHasBeenSet = false;
   };
 
 } // namespace Model

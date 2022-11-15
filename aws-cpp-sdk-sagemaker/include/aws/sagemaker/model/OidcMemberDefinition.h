@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
   };
 
 } // namespace Model

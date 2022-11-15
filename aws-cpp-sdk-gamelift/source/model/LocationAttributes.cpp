@@ -46,7 +46,7 @@ LocationAttributes& LocationAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StoppedActions"))
   {
-    Array<JsonView> stoppedActionsJsonList = jsonValue.GetArray("StoppedActions");
+    Aws::Utils::Array<JsonView> stoppedActionsJsonList = jsonValue.GetArray("StoppedActions");
     for(unsigned stoppedActionsIndex = 0; stoppedActionsIndex < stoppedActionsJsonList.GetLength(); ++stoppedActionsIndex)
     {
       m_stoppedActions.push_back(FleetActionMapper::GetFleetActionForName(stoppedActionsJsonList[stoppedActionsIndex].AsString()));
@@ -76,7 +76,7 @@ JsonValue LocationAttributes::Jsonize() const
 
   if(m_stoppedActionsHasBeenSet)
   {
-   Array<JsonValue> stoppedActionsJsonList(m_stoppedActions.size());
+   Aws::Utils::Array<JsonValue> stoppedActionsJsonList(m_stoppedActions.size());
    for(unsigned stoppedActionsIndex = 0; stoppedActionsIndex < stoppedActionsJsonList.GetLength(); ++stoppedActionsIndex)
    {
      stoppedActionsJsonList[stoppedActionsIndex].AsString(FleetActionMapper::GetNameForFleetAction(m_stoppedActions[stoppedActionsIndex]));

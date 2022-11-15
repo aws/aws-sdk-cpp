@@ -44,7 +44,7 @@ BlockPublicAccessConfiguration& BlockPublicAccessConfiguration::operator =(JsonV
 
   if(jsonValue.ValueExists("PermittedPublicSecurityGroupRuleRanges"))
   {
-    Array<JsonView> permittedPublicSecurityGroupRuleRangesJsonList = jsonValue.GetArray("PermittedPublicSecurityGroupRuleRanges");
+    Aws::Utils::Array<JsonView> permittedPublicSecurityGroupRuleRangesJsonList = jsonValue.GetArray("PermittedPublicSecurityGroupRuleRanges");
     for(unsigned permittedPublicSecurityGroupRuleRangesIndex = 0; permittedPublicSecurityGroupRuleRangesIndex < permittedPublicSecurityGroupRuleRangesJsonList.GetLength(); ++permittedPublicSecurityGroupRuleRangesIndex)
     {
       m_permittedPublicSecurityGroupRuleRanges.push_back(permittedPublicSecurityGroupRuleRangesJsonList[permittedPublicSecurityGroupRuleRangesIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue BlockPublicAccessConfiguration::Jsonize() const
 
   if(m_permittedPublicSecurityGroupRuleRangesHasBeenSet)
   {
-   Array<JsonValue> permittedPublicSecurityGroupRuleRangesJsonList(m_permittedPublicSecurityGroupRuleRanges.size());
+   Aws::Utils::Array<JsonValue> permittedPublicSecurityGroupRuleRangesJsonList(m_permittedPublicSecurityGroupRuleRanges.size());
    for(unsigned permittedPublicSecurityGroupRuleRangesIndex = 0; permittedPublicSecurityGroupRuleRangesIndex < permittedPublicSecurityGroupRuleRangesJsonList.GetLength(); ++permittedPublicSecurityGroupRuleRangesIndex)
    {
      permittedPublicSecurityGroupRuleRangesJsonList[permittedPublicSecurityGroupRuleRangesIndex].AsObject(m_permittedPublicSecurityGroupRuleRanges[permittedPublicSecurityGroupRuleRangesIndex].Jsonize());

@@ -25,8 +25,7 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p>The result of an <code> <a>AcceptInboundConnection</a> </code> operation.
-   * Contains details about the accepted inbound connection. </p><p><h3>See
+   * <p>Contains details about the accepted inbound connection.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AcceptInboundConnectionResponse">AWS
    * API Reference</a></p>
@@ -40,32 +39,27 @@ namespace Model
 
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the accepted inbound
-     * connection. </p>
+     * <p>Information about the accepted inbound connection.</p>
      */
     inline const InboundConnection& GetConnection() const{ return m_connection; }
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the accepted inbound
-     * connection. </p>
+     * <p>Information about the accepted inbound connection.</p>
      */
     inline void SetConnection(const InboundConnection& value) { m_connection = value; }
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the accepted inbound
-     * connection. </p>
+     * <p>Information about the accepted inbound connection.</p>
      */
     inline void SetConnection(InboundConnection&& value) { m_connection = std::move(value); }
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the accepted inbound
-     * connection. </p>
+     * <p>Information about the accepted inbound connection.</p>
      */
     inline AcceptInboundConnectionResult& WithConnection(const InboundConnection& value) { SetConnection(value); return *this;}
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the accepted inbound
-     * connection. </p>
+     * <p>Information about the accepted inbound connection.</p>
      */
     inline AcceptInboundConnectionResult& WithConnection(InboundConnection&& value) { SetConnection(std::move(value)); return *this;}
 

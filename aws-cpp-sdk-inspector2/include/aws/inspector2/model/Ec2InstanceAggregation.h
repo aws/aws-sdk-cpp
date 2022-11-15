@@ -294,22 +294,22 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_amis;
-    bool m_amisHasBeenSet;
+    bool m_amisHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     Aws::Vector<MapFilter> m_instanceTags;
-    bool m_instanceTagsHasBeenSet;
+    bool m_instanceTagsHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_operatingSystems;
-    bool m_operatingSystemsHasBeenSet;
+    bool m_operatingSystemsHasBeenSet = false;
 
     Ec2InstanceSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

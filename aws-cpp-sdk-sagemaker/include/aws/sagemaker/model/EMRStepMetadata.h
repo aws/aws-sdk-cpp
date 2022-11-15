@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_stepId;
-    bool m_stepIdHasBeenSet;
+    bool m_stepIdHasBeenSet = false;
 
     Aws::String m_stepName;
-    bool m_stepNameHasBeenSet;
+    bool m_stepNameHasBeenSet = false;
 
     Aws::String m_logFilePath;
-    bool m_logFilePathHasBeenSet;
+    bool m_logFilePathHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,7 +23,8 @@ ChannelMessageCallback::ChannelMessageCallback() :
     m_contentHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_pushNotificationHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false)
+    m_messageAttributesHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ ChannelMessageCallback::ChannelMessageCallback(JsonView jsonValue) :
     m_contentHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_pushNotificationHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false)
+    m_messageAttributesHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ ChannelMessageCallback& ChannelMessageCallback::operator =(JsonView jsonValue)
     m_messageAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubChannelId"))
+  {
+    m_subChannelId = jsonValue.GetString("SubChannelId");
+
+    m_subChannelIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +125,12 @@ JsonValue ChannelMessageCallback::Jsonize() const
      messageAttributesJsonMap.WithObject(messageAttributesItem.first, messageAttributesItem.second.Jsonize());
    }
    payload.WithObject("MessageAttributes", std::move(messageAttributesJsonMap));
+
+  }
+
+  if(m_subChannelIdHasBeenSet)
+  {
+   payload.WithString("SubChannelId", m_subChannelId);
 
   }
 

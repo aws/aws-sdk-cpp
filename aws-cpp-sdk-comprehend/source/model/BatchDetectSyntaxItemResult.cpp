@@ -44,7 +44,7 @@ BatchDetectSyntaxItemResult& BatchDetectSyntaxItemResult::operator =(JsonView js
 
   if(jsonValue.ValueExists("SyntaxTokens"))
   {
-    Array<JsonView> syntaxTokensJsonList = jsonValue.GetArray("SyntaxTokens");
+    Aws::Utils::Array<JsonView> syntaxTokensJsonList = jsonValue.GetArray("SyntaxTokens");
     for(unsigned syntaxTokensIndex = 0; syntaxTokensIndex < syntaxTokensJsonList.GetLength(); ++syntaxTokensIndex)
     {
       m_syntaxTokens.push_back(syntaxTokensJsonList[syntaxTokensIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue BatchDetectSyntaxItemResult::Jsonize() const
 
   if(m_syntaxTokensHasBeenSet)
   {
-   Array<JsonValue> syntaxTokensJsonList(m_syntaxTokens.size());
+   Aws::Utils::Array<JsonValue> syntaxTokensJsonList(m_syntaxTokens.size());
    for(unsigned syntaxTokensIndex = 0; syntaxTokensIndex < syntaxTokensJsonList.GetLength(); ++syntaxTokensIndex)
    {
      syntaxTokensJsonList[syntaxTokensIndex].AsObject(m_syntaxTokens[syntaxTokensIndex].Jsonize());

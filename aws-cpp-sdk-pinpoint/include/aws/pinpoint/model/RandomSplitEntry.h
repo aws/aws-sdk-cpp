@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_nextActivity;
-    bool m_nextActivityHasBeenSet;
+    bool m_nextActivityHasBeenSet = false;
 
     int m_percentage;
-    bool m_percentageHasBeenSet;
+    bool m_percentageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -103,7 +103,7 @@ Experiment& Experiment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("stopConditions"))
   {
-    Array<JsonView> stopConditionsJsonList = jsonValue.GetArray("stopConditions");
+    Aws::Utils::Array<JsonView> stopConditionsJsonList = jsonValue.GetArray("stopConditions");
     for(unsigned stopConditionsIndex = 0; stopConditionsIndex < stopConditionsJsonList.GetLength(); ++stopConditionsIndex)
     {
       m_stopConditions.push_back(stopConditionsJsonList[stopConditionsIndex].AsObject());
@@ -204,7 +204,7 @@ JsonValue Experiment::Jsonize() const
 
   if(m_stopConditionsHasBeenSet)
   {
-   Array<JsonValue> stopConditionsJsonList(m_stopConditions.size());
+   Aws::Utils::Array<JsonValue> stopConditionsJsonList(m_stopConditions.size());
    for(unsigned stopConditionsIndex = 0; stopConditionsIndex < stopConditionsJsonList.GetLength(); ++stopConditionsIndex)
    {
      stopConditionsJsonList[stopConditionsIndex].AsObject(m_stopConditions[stopConditionsIndex].Jsonize());

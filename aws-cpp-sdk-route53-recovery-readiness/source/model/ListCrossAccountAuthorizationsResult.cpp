@@ -30,7 +30,7 @@ ListCrossAccountAuthorizationsResult& ListCrossAccountAuthorizationsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("crossAccountAuthorizations"))
   {
-    Array<JsonView> crossAccountAuthorizationsJsonList = jsonValue.GetArray("crossAccountAuthorizations");
+    Aws::Utils::Array<JsonView> crossAccountAuthorizationsJsonList = jsonValue.GetArray("crossAccountAuthorizations");
     for(unsigned crossAccountAuthorizationsIndex = 0; crossAccountAuthorizationsIndex < crossAccountAuthorizationsJsonList.GetLength(); ++crossAccountAuthorizationsIndex)
     {
       m_crossAccountAuthorizations.push_back(crossAccountAuthorizationsJsonList[crossAccountAuthorizationsIndex].AsString());

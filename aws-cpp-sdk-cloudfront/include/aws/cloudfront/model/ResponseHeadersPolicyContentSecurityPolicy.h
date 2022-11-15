@@ -122,10 +122,10 @@ namespace Model
   private:
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
 
     Aws::String m_contentSecurityPolicy;
-    bool m_contentSecurityPolicyHasBeenSet;
+    bool m_contentSecurityPolicyHasBeenSet = false;
   };
 
 } // namespace Model

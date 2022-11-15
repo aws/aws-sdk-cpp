@@ -108,32 +108,44 @@ namespace Model
 
 
     /**
-     * <p>The IP version to use to control traffic within the mesh.</p>
+     * <p>The preferred IP version that this virtual node uses. Setting the IP
+     * preference on the virtual node only overrides the IP preference set for the mesh
+     * on this specific node.</p>
      */
     inline const IpPreference& GetIpPreference() const{ return m_ipPreference; }
 
     /**
-     * <p>The IP version to use to control traffic within the mesh.</p>
+     * <p>The preferred IP version that this virtual node uses. Setting the IP
+     * preference on the virtual node only overrides the IP preference set for the mesh
+     * on this specific node.</p>
      */
     inline bool IpPreferenceHasBeenSet() const { return m_ipPreferenceHasBeenSet; }
 
     /**
-     * <p>The IP version to use to control traffic within the mesh.</p>
+     * <p>The preferred IP version that this virtual node uses. Setting the IP
+     * preference on the virtual node only overrides the IP preference set for the mesh
+     * on this specific node.</p>
      */
     inline void SetIpPreference(const IpPreference& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = value; }
 
     /**
-     * <p>The IP version to use to control traffic within the mesh.</p>
+     * <p>The preferred IP version that this virtual node uses. Setting the IP
+     * preference on the virtual node only overrides the IP preference set for the mesh
+     * on this specific node.</p>
      */
     inline void SetIpPreference(IpPreference&& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = std::move(value); }
 
     /**
-     * <p>The IP version to use to control traffic within the mesh.</p>
+     * <p>The preferred IP version that this virtual node uses. Setting the IP
+     * preference on the virtual node only overrides the IP preference set for the mesh
+     * on this specific node.</p>
      */
     inline AwsCloudMapServiceDiscovery& WithIpPreference(const IpPreference& value) { SetIpPreference(value); return *this;}
 
     /**
-     * <p>The IP version to use to control traffic within the mesh.</p>
+     * <p>The preferred IP version that this virtual node uses. Setting the IP
+     * preference on the virtual node only overrides the IP preference set for the mesh
+     * on this specific node.</p>
      */
     inline AwsCloudMapServiceDiscovery& WithIpPreference(IpPreference&& value) { SetIpPreference(std::move(value)); return *this;}
 
@@ -222,16 +234,16 @@ namespace Model
   private:
 
     Aws::Vector<AwsCloudMapInstanceAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     IpPreference m_ipPreference;
-    bool m_ipPreferenceHasBeenSet;
+    bool m_ipPreferenceHasBeenSet = false;
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

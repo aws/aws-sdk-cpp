@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::Vector<Document> m_documentPages;
-    bool m_documentPagesHasBeenSet;
+    bool m_documentPagesHasBeenSet = false;
   };
 
 } // namespace Model

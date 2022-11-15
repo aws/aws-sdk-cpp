@@ -51,7 +51,7 @@ GeoMatchSet& GeoMatchSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GeoMatchConstraints"))
   {
-    Array<JsonView> geoMatchConstraintsJsonList = jsonValue.GetArray("GeoMatchConstraints");
+    Aws::Utils::Array<JsonView> geoMatchConstraintsJsonList = jsonValue.GetArray("GeoMatchConstraints");
     for(unsigned geoMatchConstraintsIndex = 0; geoMatchConstraintsIndex < geoMatchConstraintsJsonList.GetLength(); ++geoMatchConstraintsIndex)
     {
       m_geoMatchConstraints.push_back(geoMatchConstraintsJsonList[geoMatchConstraintsIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue GeoMatchSet::Jsonize() const
 
   if(m_geoMatchConstraintsHasBeenSet)
   {
-   Array<JsonValue> geoMatchConstraintsJsonList(m_geoMatchConstraints.size());
+   Aws::Utils::Array<JsonValue> geoMatchConstraintsJsonList(m_geoMatchConstraints.size());
    for(unsigned geoMatchConstraintsIndex = 0; geoMatchConstraintsIndex < geoMatchConstraintsJsonList.GetLength(); ++geoMatchConstraintsIndex)
    {
      geoMatchConstraintsJsonList[geoMatchConstraintsIndex].AsObject(m_geoMatchConstraints[geoMatchConstraintsIndex].Jsonize());

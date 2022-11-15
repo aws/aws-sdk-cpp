@@ -36,50 +36,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index you want to update query suggestions settings
-     * for.</p>
+     * <p> The identifier of the index with query suggestions you want to update.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index you want to update query suggestions settings
-     * for.</p>
+     * <p> The identifier of the index with query suggestions you want to update.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the index you want to update query suggestions settings
-     * for.</p>
+     * <p> The identifier of the index with query suggestions you want to update.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the index you want to update query suggestions settings
-     * for.</p>
+     * <p> The identifier of the index with query suggestions you want to update.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index you want to update query suggestions settings
-     * for.</p>
+     * <p> The identifier of the index with query suggestions you want to update.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index you want to update query suggestions settings
-     * for.</p>
+     * <p> The identifier of the index with query suggestions you want to update.</p>
      */
     inline UpdateQuerySuggestionsConfigRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index you want to update query suggestions settings
-     * for.</p>
+     * <p> The identifier of the index with query suggestions you want to update.</p>
      */
     inline UpdateQuerySuggestionsConfigRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index you want to update query suggestions settings
-     * for.</p>
+     * <p> The identifier of the index with query suggestions you want to update.</p>
      */
     inline UpdateQuerySuggestionsConfigRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
@@ -307,22 +299,22 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Mode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     int m_queryLogLookBackWindowInDays;
-    bool m_queryLogLookBackWindowInDaysHasBeenSet;
+    bool m_queryLogLookBackWindowInDaysHasBeenSet = false;
 
     bool m_includeQueriesWithoutUserInformation;
-    bool m_includeQueriesWithoutUserInformationHasBeenSet;
+    bool m_includeQueriesWithoutUserInformationHasBeenSet = false;
 
     int m_minimumNumberOfQueryingUsers;
-    bool m_minimumNumberOfQueryingUsersHasBeenSet;
+    bool m_minimumNumberOfQueryingUsersHasBeenSet = false;
 
     int m_minimumQueryCount;
-    bool m_minimumQueryCountHasBeenSet;
+    bool m_minimumQueryCountHasBeenSet = false;
   };
 
 } // namespace Model

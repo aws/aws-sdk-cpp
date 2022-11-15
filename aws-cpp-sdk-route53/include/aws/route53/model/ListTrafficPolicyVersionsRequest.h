@@ -271,13 +271,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_trafficPolicyVersionMarker;
-    bool m_trafficPolicyVersionMarkerHasBeenSet;
+    bool m_trafficPolicyVersionMarkerHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

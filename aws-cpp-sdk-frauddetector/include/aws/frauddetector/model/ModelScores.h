@@ -118,10 +118,10 @@ namespace Model
   private:
 
     ModelVersion m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, double> m_scores;
-    bool m_scoresHasBeenSet;
+    bool m_scoresHasBeenSet = false;
   };
 
 } // namespace Model

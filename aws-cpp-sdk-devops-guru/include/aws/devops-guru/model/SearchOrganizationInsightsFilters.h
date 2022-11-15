@@ -164,16 +164,16 @@ namespace Model
   private:
 
     Aws::Vector<InsightSeverity> m_severities;
-    bool m_severitiesHasBeenSet;
+    bool m_severitiesHasBeenSet = false;
 
     Aws::Vector<InsightStatus> m_statuses;
-    bool m_statusesHasBeenSet;
+    bool m_statusesHasBeenSet = false;
 
     ResourceCollection m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
+    bool m_resourceCollectionHasBeenSet = false;
 
     ServiceCollection m_serviceCollection;
-    bool m_serviceCollectionHasBeenSet;
+    bool m_serviceCollectionHasBeenSet = false;
   };
 
 } // namespace Model

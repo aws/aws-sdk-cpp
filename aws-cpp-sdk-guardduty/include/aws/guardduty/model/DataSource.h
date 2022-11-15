@@ -20,7 +20,8 @@ namespace Model
     CLOUD_TRAIL,
     DNS_LOGS,
     S3_LOGS,
-    KUBERNETES_AUDIT_LOGS
+    KUBERNETES_AUDIT_LOGS,
+    EC2_MALWARE_SCAN
   };
 
 namespace DataSourceMapper

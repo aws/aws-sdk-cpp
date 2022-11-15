@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The updated workload share invitation.</p>
+     * <p>The updated workload or custom lens share invitation.</p>
      */
     inline const ShareInvitation& GetShareInvitation() const{ return m_shareInvitation; }
 
     /**
-     * <p>The updated workload share invitation.</p>
+     * <p>The updated workload or custom lens share invitation.</p>
      */
     inline void SetShareInvitation(const ShareInvitation& value) { m_shareInvitation = value; }
 
     /**
-     * <p>The updated workload share invitation.</p>
+     * <p>The updated workload or custom lens share invitation.</p>
      */
     inline void SetShareInvitation(ShareInvitation&& value) { m_shareInvitation = std::move(value); }
 
     /**
-     * <p>The updated workload share invitation.</p>
+     * <p>The updated workload or custom lens share invitation.</p>
      */
     inline UpdateShareInvitationResult& WithShareInvitation(const ShareInvitation& value) { SetShareInvitation(value); return *this;}
 
     /**
-     * <p>The updated workload share invitation.</p>
+     * <p>The updated workload or custom lens share invitation.</p>
      */
     inline UpdateShareInvitationResult& WithShareInvitation(ShareInvitation&& value) { SetShareInvitation(std::move(value)); return *this;}
 

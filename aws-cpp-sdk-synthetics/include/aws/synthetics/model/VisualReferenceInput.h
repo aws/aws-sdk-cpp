@@ -27,10 +27,10 @@ namespace Model
 
   /**
    * <p>An object that specifies what screenshots to use as a baseline for visual
-   * monitoring by this canary, and optionally the parts of the screenshots to ignore
-   * during the visual monitoring comparison.</p> <p>Visual monitoring is supported
-   * only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For
-   * more information, see <a
+   * monitoring by this canary. It can optionally also specify parts of the
+   * screenshots to ignore during the visual monitoring comparison.</p> <p>Visual
+   * monitoring is supported only on canaries running the
+   * <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
    * Visual monitoring</a> and <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
@@ -195,10 +195,10 @@ namespace Model
   private:
 
     Aws::Vector<BaseScreenshot> m_baseScreenshots;
-    bool m_baseScreenshotsHasBeenSet;
+    bool m_baseScreenshotsHasBeenSet = false;
 
     Aws::String m_baseCanaryRunId;
-    bool m_baseCanaryRunIdHasBeenSet;
+    bool m_baseCanaryRunIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -384,31 +384,31 @@ namespace Model
   private:
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     FastLaunchResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     FastLaunchSnapshotConfigurationResponse m_snapshotConfiguration;
-    bool m_snapshotConfigurationHasBeenSet;
+    bool m_snapshotConfigurationHasBeenSet = false;
 
     FastLaunchLaunchTemplateSpecificationResponse m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     int m_maxParallelLaunches;
-    bool m_maxParallelLaunchesHasBeenSet;
+    bool m_maxParallelLaunchesHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     FastLaunchStateCode m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateTransitionReason;
-    bool m_stateTransitionReasonHasBeenSet;
+    bool m_stateTransitionReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_stateTransitionTime;
-    bool m_stateTransitionTimeHasBeenSet;
+    bool m_stateTransitionTimeHasBeenSet = false;
   };
 
 } // namespace Model

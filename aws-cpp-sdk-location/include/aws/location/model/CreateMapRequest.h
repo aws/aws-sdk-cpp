@@ -35,32 +35,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies the map style selected from an available data provider.</p>
+     * <p>Specifies the <code>MapConfiguration</code>, including the map style, for the
+     * map resource that you create. The map style defines the look of maps and the
+     * data provider for your map resource.</p>
      */
     inline const MapConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Specifies the map style selected from an available data provider.</p>
+     * <p>Specifies the <code>MapConfiguration</code>, including the map style, for the
+     * map resource that you create. The map style defines the look of maps and the
+     * data provider for your map resource.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>Specifies the map style selected from an available data provider.</p>
+     * <p>Specifies the <code>MapConfiguration</code>, including the map style, for the
+     * map resource that you create. The map style defines the look of maps and the
+     * data provider for your map resource.</p>
      */
     inline void SetConfiguration(const MapConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>Specifies the map style selected from an available data provider.</p>
+     * <p>Specifies the <code>MapConfiguration</code>, including the map style, for the
+     * map resource that you create. The map style defines the look of maps and the
+     * data provider for your map resource.</p>
      */
     inline void SetConfiguration(MapConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>Specifies the map style selected from an available data provider.</p>
+     * <p>Specifies the <code>MapConfiguration</code>, including the map style, for the
+     * map resource that you create. The map style defines the look of maps and the
+     * data provider for your map resource.</p>
      */
     inline CreateMapRequest& WithConfiguration(const MapConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies the map style selected from an available data provider.</p>
+     * <p>Specifies the <code>MapConfiguration</code>, including the map style, for the
+     * map resource that you create. The map style defines the look of maps and the
+     * data provider for your map resource.</p>
      */
     inline CreateMapRequest& WithConfiguration(MapConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
@@ -351,16 +363,16 @@ namespace Model
   private:
 
     MapConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_mapName;
-    bool m_mapNameHasBeenSet;
+    bool m_mapNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

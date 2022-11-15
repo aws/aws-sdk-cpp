@@ -143,13 +143,13 @@ namespace Model
   private:
 
     int m_dataTransferSubscriberFeePercent;
-    bool m_dataTransferSubscriberFeePercentHasBeenSet;
+    bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
 
     Aws::String m_entitlementArn;
-    bool m_entitlementArnHasBeenSet;
+    bool m_entitlementArnHasBeenSet = false;
 
     Aws::String m_entitlementName;
-    bool m_entitlementNameHasBeenSet;
+    bool m_entitlementNameHasBeenSet = false;
   };
 
 } // namespace Model

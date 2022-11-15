@@ -38,7 +38,7 @@ ListRecordsResult& ListRecordsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Records"))
   {
-    Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
+    Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
     for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
@@ -71,7 +71,7 @@ ListRecordsResult& ListRecordsResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("MergedDatasetNames"))
   {
-    Array<JsonView> mergedDatasetNamesJsonList = jsonValue.GetArray("MergedDatasetNames");
+    Aws::Utils::Array<JsonView> mergedDatasetNamesJsonList = jsonValue.GetArray("MergedDatasetNames");
     for(unsigned mergedDatasetNamesIndex = 0; mergedDatasetNamesIndex < mergedDatasetNamesJsonList.GetLength(); ++mergedDatasetNamesIndex)
     {
       m_mergedDatasetNames.push_back(mergedDatasetNamesJsonList[mergedDatasetNamesIndex].AsString());

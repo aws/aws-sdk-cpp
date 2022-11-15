@@ -119,10 +119,10 @@ namespace Model
   private:
 
     S3Location m_tempDirectory;
-    bool m_tempDirectoryHasBeenSet;
+    bool m_tempDirectoryHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
   };
 
 } // namespace Model

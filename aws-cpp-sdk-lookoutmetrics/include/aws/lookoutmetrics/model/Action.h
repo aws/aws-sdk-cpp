@@ -103,10 +103,10 @@ namespace Model
   private:
 
     SNSConfiguration m_sNSConfiguration;
-    bool m_sNSConfigurationHasBeenSet;
+    bool m_sNSConfigurationHasBeenSet = false;
 
     LambdaConfiguration m_lambdaConfiguration;
-    bool m_lambdaConfigurationHasBeenSet;
+    bool m_lambdaConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

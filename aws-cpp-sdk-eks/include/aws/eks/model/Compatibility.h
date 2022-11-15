@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_clusterVersion;
-    bool m_clusterVersionHasBeenSet;
+    bool m_clusterVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_platformVersions;
-    bool m_platformVersionsHasBeenSet;
+    bool m_platformVersionsHasBeenSet = false;
 
     bool m_defaultVersion;
-    bool m_defaultVersionHasBeenSet;
+    bool m_defaultVersionHasBeenSet = false;
   };
 
 } // namespace Model

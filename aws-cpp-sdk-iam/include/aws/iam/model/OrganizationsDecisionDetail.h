@@ -65,7 +65,7 @@ namespace Model
   private:
 
     bool m_allowedByOrganizations;
-    bool m_allowedByOrganizationsHasBeenSet;
+    bool m_allowedByOrganizationsHasBeenSet = false;
   };
 
 } // namespace Model

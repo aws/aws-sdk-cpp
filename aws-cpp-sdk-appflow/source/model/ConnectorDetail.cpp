@@ -127,7 +127,7 @@ ConnectorDetail& ConnectorDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("connectorModes"))
   {
-    Array<JsonView> connectorModesJsonList = jsonValue.GetArray("connectorModes");
+    Aws::Utils::Array<JsonView> connectorModesJsonList = jsonValue.GetArray("connectorModes");
     for(unsigned connectorModesIndex = 0; connectorModesIndex < connectorModesJsonList.GetLength(); ++connectorModesIndex)
     {
       m_connectorModes.push_back(connectorModesJsonList[connectorModesIndex].AsString());
@@ -201,7 +201,7 @@ JsonValue ConnectorDetail::Jsonize() const
 
   if(m_connectorModesHasBeenSet)
   {
-   Array<JsonValue> connectorModesJsonList(m_connectorModes.size());
+   Aws::Utils::Array<JsonValue> connectorModesJsonList(m_connectorModes.size());
    for(unsigned connectorModesIndex = 0; connectorModesIndex < connectorModesJsonList.GetLength(); ++connectorModesIndex)
    {
      connectorModesJsonList[connectorModesIndex].AsString(m_connectorModes[connectorModesIndex]);

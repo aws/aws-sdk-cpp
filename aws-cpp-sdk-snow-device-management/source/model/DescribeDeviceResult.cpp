@@ -38,7 +38,7 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("deviceCapacities"))
   {
-    Array<JsonView> deviceCapacitiesJsonList = jsonValue.GetArray("deviceCapacities");
+    Aws::Utils::Array<JsonView> deviceCapacitiesJsonList = jsonValue.GetArray("deviceCapacities");
     for(unsigned deviceCapacitiesIndex = 0; deviceCapacitiesIndex < deviceCapacitiesJsonList.GetLength(); ++deviceCapacitiesIndex)
     {
       m_deviceCapacities.push_back(deviceCapacitiesJsonList[deviceCapacitiesIndex].AsObject());
@@ -83,7 +83,7 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("physicalNetworkInterfaces"))
   {
-    Array<JsonView> physicalNetworkInterfacesJsonList = jsonValue.GetArray("physicalNetworkInterfaces");
+    Aws::Utils::Array<JsonView> physicalNetworkInterfacesJsonList = jsonValue.GetArray("physicalNetworkInterfaces");
     for(unsigned physicalNetworkInterfacesIndex = 0; physicalNetworkInterfacesIndex < physicalNetworkInterfacesJsonList.GetLength(); ++physicalNetworkInterfacesIndex)
     {
       m_physicalNetworkInterfaces.push_back(physicalNetworkInterfacesJsonList[physicalNetworkInterfacesIndex].AsObject());

@@ -125,7 +125,7 @@ CaseDetails& CaseDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ccEmailAddresses"))
   {
-    Array<JsonView> ccEmailAddressesJsonList = jsonValue.GetArray("ccEmailAddresses");
+    Aws::Utils::Array<JsonView> ccEmailAddressesJsonList = jsonValue.GetArray("ccEmailAddresses");
     for(unsigned ccEmailAddressesIndex = 0; ccEmailAddressesIndex < ccEmailAddressesJsonList.GetLength(); ++ccEmailAddressesIndex)
     {
       m_ccEmailAddresses.push_back(ccEmailAddressesJsonList[ccEmailAddressesIndex].AsString());
@@ -209,7 +209,7 @@ JsonValue CaseDetails::Jsonize() const
 
   if(m_ccEmailAddressesHasBeenSet)
   {
-   Array<JsonValue> ccEmailAddressesJsonList(m_ccEmailAddresses.size());
+   Aws::Utils::Array<JsonValue> ccEmailAddressesJsonList(m_ccEmailAddresses.size());
    for(unsigned ccEmailAddressesIndex = 0; ccEmailAddressesIndex < ccEmailAddressesJsonList.GetLength(); ++ccEmailAddressesIndex)
    {
      ccEmailAddressesJsonList[ccEmailAddressesIndex].AsString(m_ccEmailAddresses[ccEmailAddressesIndex]);

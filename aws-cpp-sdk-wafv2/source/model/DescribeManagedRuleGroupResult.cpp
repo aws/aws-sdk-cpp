@@ -50,7 +50,7 @@ DescribeManagedRuleGroupResult& DescribeManagedRuleGroupResult::operator =(const
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
@@ -65,7 +65,7 @@ DescribeManagedRuleGroupResult& DescribeManagedRuleGroupResult::operator =(const
 
   if(jsonValue.ValueExists("AvailableLabels"))
   {
-    Array<JsonView> availableLabelsJsonList = jsonValue.GetArray("AvailableLabels");
+    Aws::Utils::Array<JsonView> availableLabelsJsonList = jsonValue.GetArray("AvailableLabels");
     for(unsigned availableLabelsIndex = 0; availableLabelsIndex < availableLabelsJsonList.GetLength(); ++availableLabelsIndex)
     {
       m_availableLabels.push_back(availableLabelsJsonList[availableLabelsIndex].AsObject());
@@ -74,7 +74,7 @@ DescribeManagedRuleGroupResult& DescribeManagedRuleGroupResult::operator =(const
 
   if(jsonValue.ValueExists("ConsumedLabels"))
   {
-    Array<JsonView> consumedLabelsJsonList = jsonValue.GetArray("ConsumedLabels");
+    Aws::Utils::Array<JsonView> consumedLabelsJsonList = jsonValue.GetArray("ConsumedLabels");
     for(unsigned consumedLabelsIndex = 0; consumedLabelsIndex < consumedLabelsJsonList.GetLength(); ++consumedLabelsIndex)
     {
       m_consumedLabels.push_back(consumedLabelsJsonList[consumedLabelsIndex].AsObject());

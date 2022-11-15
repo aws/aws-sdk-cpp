@@ -407,22 +407,22 @@ namespace Model
   private:
 
     Aws::String m_existingImageName;
-    bool m_existingImageNameHasBeenSet;
+    bool m_existingImageNameHasBeenSet = false;
 
     Aws::String m_newImageName;
-    bool m_newImageNameHasBeenSet;
+    bool m_newImageNameHasBeenSet = false;
 
     Aws::String m_newImageDescription;
-    bool m_newImageDescriptionHasBeenSet;
+    bool m_newImageDescriptionHasBeenSet = false;
 
     Aws::String m_newImageDisplayName;
-    bool m_newImageDisplayNameHasBeenSet;
+    bool m_newImageDisplayNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_newImageTags;
-    bool m_newImageTagsHasBeenSet;
+    bool m_newImageTagsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

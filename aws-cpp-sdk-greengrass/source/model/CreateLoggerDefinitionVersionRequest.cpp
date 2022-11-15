@@ -26,7 +26,7 @@ Aws::String CreateLoggerDefinitionVersionRequest::SerializePayload() const
 
   if(m_loggersHasBeenSet)
   {
-   Array<JsonValue> loggersJsonList(m_loggers.size());
+   Aws::Utils::Array<JsonValue> loggersJsonList(m_loggers.size());
    for(unsigned loggersIndex = 0; loggersIndex < loggersJsonList.GetLength(); ++loggersIndex)
    {
      loggersJsonList[loggersIndex].AsObject(m_loggers[loggersIndex].Jsonize());

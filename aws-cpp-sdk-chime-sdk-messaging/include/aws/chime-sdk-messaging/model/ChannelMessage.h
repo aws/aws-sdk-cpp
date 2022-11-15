@@ -530,46 +530,90 @@ namespace Model
      */
     inline ChannelMessage& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline ChannelMessage& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline ChannelMessage& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline ChannelMessage& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     ChannelMessageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastEditedTimestamp;
-    bool m_lastEditedTimestampHasBeenSet;
+    bool m_lastEditedTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Identity m_sender;
-    bool m_senderHasBeenSet;
+    bool m_senderHasBeenSet = false;
 
     bool m_redacted;
-    bool m_redactedHasBeenSet;
+    bool m_redactedHasBeenSet = false;
 
     ChannelMessagePersistenceType m_persistence;
-    bool m_persistenceHasBeenSet;
+    bool m_persistenceHasBeenSet = false;
 
     ChannelMessageStatusStructure m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-    bool m_messageAttributesHasBeenSet;
+    bool m_messageAttributesHasBeenSet = false;
+
+    Aws::String m_subChannelId;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

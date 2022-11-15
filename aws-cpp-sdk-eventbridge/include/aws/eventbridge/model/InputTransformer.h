@@ -406,10 +406,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_inputPathsMap;
-    bool m_inputPathsMapHasBeenSet;
+    bool m_inputPathsMapHasBeenSet = false;
 
     Aws::String m_inputTemplate;
-    bool m_inputTemplateHasBeenSet;
+    bool m_inputTemplateHasBeenSet = false;
   };
 
 } // namespace Model

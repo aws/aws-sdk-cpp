@@ -335,22 +335,22 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_serverCertificateName;
-    bool m_serverCertificateNameHasBeenSet;
+    bool m_serverCertificateNameHasBeenSet = false;
 
     Aws::String m_serverCertificateId;
-    bool m_serverCertificateIdHasBeenSet;
+    bool m_serverCertificateIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_uploadDate;
-    bool m_uploadDateHasBeenSet;
+    bool m_uploadDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiration;
-    bool m_expirationHasBeenSet;
+    bool m_expirationHasBeenSet = false;
   };
 
 } // namespace Model

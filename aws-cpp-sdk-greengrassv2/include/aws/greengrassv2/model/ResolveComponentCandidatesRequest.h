@@ -108,10 +108,10 @@ namespace Model
   private:
 
     ComponentPlatform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::Vector<ComponentCandidate> m_componentCandidates;
-    bool m_componentCandidatesHasBeenSet;
+    bool m_componentCandidatesHasBeenSet = false;
   };
 
 } // namespace Model

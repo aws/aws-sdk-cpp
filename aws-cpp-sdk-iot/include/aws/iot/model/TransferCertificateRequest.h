@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     Aws::String m_targetAwsAccount;
-    bool m_targetAwsAccountHasBeenSet;
+    bool m_targetAwsAccountHasBeenSet = false;
 
     Aws::String m_transferMessage;
-    bool m_transferMessageHasBeenSet;
+    bool m_transferMessageHasBeenSet = false;
   };
 
 } // namespace Model

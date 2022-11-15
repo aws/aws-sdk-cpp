@@ -186,16 +186,16 @@ namespace Model
   private:
 
     ZeppelinMonitoringConfigurationUpdate m_monitoringConfigurationUpdate;
-    bool m_monitoringConfigurationUpdateHasBeenSet;
+    bool m_monitoringConfigurationUpdateHasBeenSet = false;
 
     CatalogConfigurationUpdate m_catalogConfigurationUpdate;
-    bool m_catalogConfigurationUpdateHasBeenSet;
+    bool m_catalogConfigurationUpdateHasBeenSet = false;
 
     DeployAsApplicationConfigurationUpdate m_deployAsApplicationConfigurationUpdate;
-    bool m_deployAsApplicationConfigurationUpdateHasBeenSet;
+    bool m_deployAsApplicationConfigurationUpdateHasBeenSet = false;
 
     Aws::Vector<CustomArtifactConfiguration> m_customArtifactsConfigurationUpdate;
-    bool m_customArtifactsConfigurationUpdateHasBeenSet;
+    bool m_customArtifactsConfigurationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

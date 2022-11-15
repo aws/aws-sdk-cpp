@@ -260,22 +260,22 @@ namespace Model
   private:
 
     DataReplicationError m_dataReplicationError;
-    bool m_dataReplicationErrorHasBeenSet;
+    bool m_dataReplicationErrorHasBeenSet = false;
 
     DataReplicationInitiation m_dataReplicationInitiation;
-    bool m_dataReplicationInitiationHasBeenSet;
+    bool m_dataReplicationInitiationHasBeenSet = false;
 
     DataReplicationState m_dataReplicationState;
-    bool m_dataReplicationStateHasBeenSet;
+    bool m_dataReplicationStateHasBeenSet = false;
 
     Aws::String m_etaDateTime;
-    bool m_etaDateTimeHasBeenSet;
+    bool m_etaDateTimeHasBeenSet = false;
 
     Aws::String m_lagDuration;
-    bool m_lagDurationHasBeenSet;
+    bool m_lagDurationHasBeenSet = false;
 
     Aws::Vector<DataReplicationInfoReplicatedDisk> m_replicatedDisks;
-    bool m_replicatedDisksHasBeenSet;
+    bool m_replicatedDisksHasBeenSet = false;
   };
 
 } // namespace Model

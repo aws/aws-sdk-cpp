@@ -30,7 +30,7 @@ ListBackupVaultsResult& ListBackupVaultsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BackupVaultList"))
   {
-    Array<JsonView> backupVaultListJsonList = jsonValue.GetArray("BackupVaultList");
+    Aws::Utils::Array<JsonView> backupVaultListJsonList = jsonValue.GetArray("BackupVaultList");
     for(unsigned backupVaultListIndex = 0; backupVaultListIndex < backupVaultListJsonList.GetLength(); ++backupVaultListIndex)
     {
       m_backupVaultList.push_back(backupVaultListJsonList[backupVaultListIndex].AsObject());

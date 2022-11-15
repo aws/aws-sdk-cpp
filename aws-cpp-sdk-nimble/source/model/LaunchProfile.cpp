@@ -97,7 +97,7 @@ LaunchProfile& LaunchProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ec2SubnetIds"))
   {
-    Array<JsonView> ec2SubnetIdsJsonList = jsonValue.GetArray("ec2SubnetIds");
+    Aws::Utils::Array<JsonView> ec2SubnetIdsJsonList = jsonValue.GetArray("ec2SubnetIds");
     for(unsigned ec2SubnetIdsIndex = 0; ec2SubnetIdsIndex < ec2SubnetIdsJsonList.GetLength(); ++ec2SubnetIdsIndex)
     {
       m_ec2SubnetIds.push_back(ec2SubnetIdsJsonList[ec2SubnetIdsIndex].AsString());
@@ -114,7 +114,7 @@ LaunchProfile& LaunchProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("launchProfileProtocolVersions"))
   {
-    Array<JsonView> launchProfileProtocolVersionsJsonList = jsonValue.GetArray("launchProfileProtocolVersions");
+    Aws::Utils::Array<JsonView> launchProfileProtocolVersionsJsonList = jsonValue.GetArray("launchProfileProtocolVersions");
     for(unsigned launchProfileProtocolVersionsIndex = 0; launchProfileProtocolVersionsIndex < launchProfileProtocolVersionsJsonList.GetLength(); ++launchProfileProtocolVersionsIndex)
     {
       m_launchProfileProtocolVersions.push_back(launchProfileProtocolVersionsJsonList[launchProfileProtocolVersionsIndex].AsString());
@@ -159,7 +159,7 @@ LaunchProfile& LaunchProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("studioComponentIds"))
   {
-    Array<JsonView> studioComponentIdsJsonList = jsonValue.GetArray("studioComponentIds");
+    Aws::Utils::Array<JsonView> studioComponentIdsJsonList = jsonValue.GetArray("studioComponentIds");
     for(unsigned studioComponentIdsIndex = 0; studioComponentIdsIndex < studioComponentIdsJsonList.GetLength(); ++studioComponentIdsIndex)
     {
       m_studioComponentIds.push_back(studioComponentIdsJsonList[studioComponentIdsIndex].AsString());
@@ -193,7 +193,7 @@ LaunchProfile& LaunchProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("validationResults"))
   {
-    Array<JsonView> validationResultsJsonList = jsonValue.GetArray("validationResults");
+    Aws::Utils::Array<JsonView> validationResultsJsonList = jsonValue.GetArray("validationResults");
     for(unsigned validationResultsIndex = 0; validationResultsIndex < validationResultsJsonList.GetLength(); ++validationResultsIndex)
     {
       m_validationResults.push_back(validationResultsJsonList[validationResultsIndex].AsObject());
@@ -216,7 +216,7 @@ JsonValue LaunchProfile::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_createdByHasBeenSet)
@@ -233,7 +233,7 @@ JsonValue LaunchProfile::Jsonize() const
 
   if(m_ec2SubnetIdsHasBeenSet)
   {
-   Array<JsonValue> ec2SubnetIdsJsonList(m_ec2SubnetIds.size());
+   Aws::Utils::Array<JsonValue> ec2SubnetIdsJsonList(m_ec2SubnetIds.size());
    for(unsigned ec2SubnetIdsIndex = 0; ec2SubnetIdsIndex < ec2SubnetIdsJsonList.GetLength(); ++ec2SubnetIdsIndex)
    {
      ec2SubnetIdsJsonList[ec2SubnetIdsIndex].AsString(m_ec2SubnetIds[ec2SubnetIdsIndex]);
@@ -250,7 +250,7 @@ JsonValue LaunchProfile::Jsonize() const
 
   if(m_launchProfileProtocolVersionsHasBeenSet)
   {
-   Array<JsonValue> launchProfileProtocolVersionsJsonList(m_launchProfileProtocolVersions.size());
+   Aws::Utils::Array<JsonValue> launchProfileProtocolVersionsJsonList(m_launchProfileProtocolVersions.size());
    for(unsigned launchProfileProtocolVersionsIndex = 0; launchProfileProtocolVersionsIndex < launchProfileProtocolVersionsJsonList.GetLength(); ++launchProfileProtocolVersionsIndex)
    {
      launchProfileProtocolVersionsJsonList[launchProfileProtocolVersionsIndex].AsString(m_launchProfileProtocolVersions[launchProfileProtocolVersionsIndex]);
@@ -289,7 +289,7 @@ JsonValue LaunchProfile::Jsonize() const
 
   if(m_studioComponentIdsHasBeenSet)
   {
-   Array<JsonValue> studioComponentIdsJsonList(m_studioComponentIds.size());
+   Aws::Utils::Array<JsonValue> studioComponentIdsJsonList(m_studioComponentIds.size());
    for(unsigned studioComponentIdsIndex = 0; studioComponentIdsIndex < studioComponentIdsJsonList.GetLength(); ++studioComponentIdsIndex)
    {
      studioComponentIdsJsonList[studioComponentIdsIndex].AsString(m_studioComponentIds[studioComponentIdsIndex]);
@@ -311,7 +311,7 @@ JsonValue LaunchProfile::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedByHasBeenSet)
@@ -322,7 +322,7 @@ JsonValue LaunchProfile::Jsonize() const
 
   if(m_validationResultsHasBeenSet)
   {
-   Array<JsonValue> validationResultsJsonList(m_validationResults.size());
+   Aws::Utils::Array<JsonValue> validationResultsJsonList(m_validationResults.size());
    for(unsigned validationResultsIndex = 0; validationResultsIndex < validationResultsJsonList.GetLength(); ++validationResultsIndex)
    {
      validationResultsJsonList[validationResultsIndex].AsObject(m_validationResults[validationResultsIndex].Jsonize());

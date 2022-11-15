@@ -183,50 +183,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline UpdateFindingsFilterRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline UpdateFindingsFilterRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline UpdateFindingsFilterRequest& WithId(const char* value) { SetId(value); return *this;}
 
@@ -384,25 +384,25 @@ namespace Model
   private:
 
     FindingsFilterAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     FindingCriteria m_findingCriteria;
-    bool m_findingCriteriaHasBeenSet;
+    bool m_findingCriteriaHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

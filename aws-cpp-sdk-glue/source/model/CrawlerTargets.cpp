@@ -43,7 +43,7 @@ CrawlerTargets& CrawlerTargets::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3Targets"))
   {
-    Array<JsonView> s3TargetsJsonList = jsonValue.GetArray("S3Targets");
+    Aws::Utils::Array<JsonView> s3TargetsJsonList = jsonValue.GetArray("S3Targets");
     for(unsigned s3TargetsIndex = 0; s3TargetsIndex < s3TargetsJsonList.GetLength(); ++s3TargetsIndex)
     {
       m_s3Targets.push_back(s3TargetsJsonList[s3TargetsIndex].AsObject());
@@ -53,7 +53,7 @@ CrawlerTargets& CrawlerTargets::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("JdbcTargets"))
   {
-    Array<JsonView> jdbcTargetsJsonList = jsonValue.GetArray("JdbcTargets");
+    Aws::Utils::Array<JsonView> jdbcTargetsJsonList = jsonValue.GetArray("JdbcTargets");
     for(unsigned jdbcTargetsIndex = 0; jdbcTargetsIndex < jdbcTargetsJsonList.GetLength(); ++jdbcTargetsIndex)
     {
       m_jdbcTargets.push_back(jdbcTargetsJsonList[jdbcTargetsIndex].AsObject());
@@ -63,7 +63,7 @@ CrawlerTargets& CrawlerTargets::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MongoDBTargets"))
   {
-    Array<JsonView> mongoDBTargetsJsonList = jsonValue.GetArray("MongoDBTargets");
+    Aws::Utils::Array<JsonView> mongoDBTargetsJsonList = jsonValue.GetArray("MongoDBTargets");
     for(unsigned mongoDBTargetsIndex = 0; mongoDBTargetsIndex < mongoDBTargetsJsonList.GetLength(); ++mongoDBTargetsIndex)
     {
       m_mongoDBTargets.push_back(mongoDBTargetsJsonList[mongoDBTargetsIndex].AsObject());
@@ -73,7 +73,7 @@ CrawlerTargets& CrawlerTargets::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DynamoDBTargets"))
   {
-    Array<JsonView> dynamoDBTargetsJsonList = jsonValue.GetArray("DynamoDBTargets");
+    Aws::Utils::Array<JsonView> dynamoDBTargetsJsonList = jsonValue.GetArray("DynamoDBTargets");
     for(unsigned dynamoDBTargetsIndex = 0; dynamoDBTargetsIndex < dynamoDBTargetsJsonList.GetLength(); ++dynamoDBTargetsIndex)
     {
       m_dynamoDBTargets.push_back(dynamoDBTargetsJsonList[dynamoDBTargetsIndex].AsObject());
@@ -83,7 +83,7 @@ CrawlerTargets& CrawlerTargets::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CatalogTargets"))
   {
-    Array<JsonView> catalogTargetsJsonList = jsonValue.GetArray("CatalogTargets");
+    Aws::Utils::Array<JsonView> catalogTargetsJsonList = jsonValue.GetArray("CatalogTargets");
     for(unsigned catalogTargetsIndex = 0; catalogTargetsIndex < catalogTargetsJsonList.GetLength(); ++catalogTargetsIndex)
     {
       m_catalogTargets.push_back(catalogTargetsJsonList[catalogTargetsIndex].AsObject());
@@ -93,7 +93,7 @@ CrawlerTargets& CrawlerTargets::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DeltaTargets"))
   {
-    Array<JsonView> deltaTargetsJsonList = jsonValue.GetArray("DeltaTargets");
+    Aws::Utils::Array<JsonView> deltaTargetsJsonList = jsonValue.GetArray("DeltaTargets");
     for(unsigned deltaTargetsIndex = 0; deltaTargetsIndex < deltaTargetsJsonList.GetLength(); ++deltaTargetsIndex)
     {
       m_deltaTargets.push_back(deltaTargetsJsonList[deltaTargetsIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue CrawlerTargets::Jsonize() const
 
   if(m_s3TargetsHasBeenSet)
   {
-   Array<JsonValue> s3TargetsJsonList(m_s3Targets.size());
+   Aws::Utils::Array<JsonValue> s3TargetsJsonList(m_s3Targets.size());
    for(unsigned s3TargetsIndex = 0; s3TargetsIndex < s3TargetsJsonList.GetLength(); ++s3TargetsIndex)
    {
      s3TargetsJsonList[s3TargetsIndex].AsObject(m_s3Targets[s3TargetsIndex].Jsonize());
@@ -121,7 +121,7 @@ JsonValue CrawlerTargets::Jsonize() const
 
   if(m_jdbcTargetsHasBeenSet)
   {
-   Array<JsonValue> jdbcTargetsJsonList(m_jdbcTargets.size());
+   Aws::Utils::Array<JsonValue> jdbcTargetsJsonList(m_jdbcTargets.size());
    for(unsigned jdbcTargetsIndex = 0; jdbcTargetsIndex < jdbcTargetsJsonList.GetLength(); ++jdbcTargetsIndex)
    {
      jdbcTargetsJsonList[jdbcTargetsIndex].AsObject(m_jdbcTargets[jdbcTargetsIndex].Jsonize());
@@ -132,7 +132,7 @@ JsonValue CrawlerTargets::Jsonize() const
 
   if(m_mongoDBTargetsHasBeenSet)
   {
-   Array<JsonValue> mongoDBTargetsJsonList(m_mongoDBTargets.size());
+   Aws::Utils::Array<JsonValue> mongoDBTargetsJsonList(m_mongoDBTargets.size());
    for(unsigned mongoDBTargetsIndex = 0; mongoDBTargetsIndex < mongoDBTargetsJsonList.GetLength(); ++mongoDBTargetsIndex)
    {
      mongoDBTargetsJsonList[mongoDBTargetsIndex].AsObject(m_mongoDBTargets[mongoDBTargetsIndex].Jsonize());
@@ -143,7 +143,7 @@ JsonValue CrawlerTargets::Jsonize() const
 
   if(m_dynamoDBTargetsHasBeenSet)
   {
-   Array<JsonValue> dynamoDBTargetsJsonList(m_dynamoDBTargets.size());
+   Aws::Utils::Array<JsonValue> dynamoDBTargetsJsonList(m_dynamoDBTargets.size());
    for(unsigned dynamoDBTargetsIndex = 0; dynamoDBTargetsIndex < dynamoDBTargetsJsonList.GetLength(); ++dynamoDBTargetsIndex)
    {
      dynamoDBTargetsJsonList[dynamoDBTargetsIndex].AsObject(m_dynamoDBTargets[dynamoDBTargetsIndex].Jsonize());
@@ -154,7 +154,7 @@ JsonValue CrawlerTargets::Jsonize() const
 
   if(m_catalogTargetsHasBeenSet)
   {
-   Array<JsonValue> catalogTargetsJsonList(m_catalogTargets.size());
+   Aws::Utils::Array<JsonValue> catalogTargetsJsonList(m_catalogTargets.size());
    for(unsigned catalogTargetsIndex = 0; catalogTargetsIndex < catalogTargetsJsonList.GetLength(); ++catalogTargetsIndex)
    {
      catalogTargetsJsonList[catalogTargetsIndex].AsObject(m_catalogTargets[catalogTargetsIndex].Jsonize());
@@ -165,7 +165,7 @@ JsonValue CrawlerTargets::Jsonize() const
 
   if(m_deltaTargetsHasBeenSet)
   {
-   Array<JsonValue> deltaTargetsJsonList(m_deltaTargets.size());
+   Aws::Utils::Array<JsonValue> deltaTargetsJsonList(m_deltaTargets.size());
    for(unsigned deltaTargetsIndex = 0; deltaTargetsIndex < deltaTargetsJsonList.GetLength(); ++deltaTargetsIndex)
    {
      deltaTargetsJsonList[deltaTargetsIndex].AsObject(m_deltaTargets[deltaTargetsIndex].Jsonize());

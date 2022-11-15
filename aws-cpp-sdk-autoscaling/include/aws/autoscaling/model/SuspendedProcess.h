@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_processName;
-    bool m_processNameHasBeenSet;
+    bool m_processNameHasBeenSet = false;
 
     Aws::String m_suspensionReason;
-    bool m_suspensionReasonHasBeenSet;
+    bool m_suspensionReasonHasBeenSet = false;
   };
 
 } // namespace Model

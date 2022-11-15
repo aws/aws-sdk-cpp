@@ -115,10 +115,10 @@ namespace Model
   private:
 
     TlsValidationContextFileTrust m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
 
     TlsValidationContextSdsTrust m_sds;
-    bool m_sdsHasBeenSet;
+    bool m_sdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A container for information about an identity provider for a user
-   * pool.</p><p><h3>See Also:</h3>   <a
+   * <p>A container for information about an IdP for a user pool.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ProviderUserIdentifierType">AWS
    * API Reference</a></p>
    */
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     Aws::String m_providerAttributeName;
-    bool m_providerAttributeNameHasBeenSet;
+    bool m_providerAttributeNameHasBeenSet = false;
 
     Aws::String m_providerAttributeValue;
-    bool m_providerAttributeValueHasBeenSet;
+    bool m_providerAttributeValueHasBeenSet = false;
   };
 
 } // namespace Model

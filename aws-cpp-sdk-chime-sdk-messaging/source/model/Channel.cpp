@@ -30,7 +30,8 @@ Channel::Channel() :
     m_createdTimestampHasBeenSet(false),
     m_lastMessageTimestampHasBeenSet(false),
     m_lastUpdatedTimestampHasBeenSet(false),
-    m_channelFlowArnHasBeenSet(false)
+    m_channelFlowArnHasBeenSet(false),
+    m_elasticChannelConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ Channel::Channel(JsonView jsonValue) :
     m_createdTimestampHasBeenSet(false),
     m_lastMessageTimestampHasBeenSet(false),
     m_lastUpdatedTimestampHasBeenSet(false),
-    m_channelFlowArnHasBeenSet(false)
+    m_channelFlowArnHasBeenSet(false),
+    m_elasticChannelConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +125,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_channelFlowArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ElasticChannelConfiguration"))
+  {
+    m_elasticChannelConfiguration = jsonValue.GetObject("ElasticChannelConfiguration");
+
+    m_elasticChannelConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -182,6 +191,12 @@ JsonValue Channel::Jsonize() const
   if(m_channelFlowArnHasBeenSet)
   {
    payload.WithString("ChannelFlowArn", m_channelFlowArn);
+
+  }
+
+  if(m_elasticChannelConfigurationHasBeenSet)
+  {
+   payload.WithObject("ElasticChannelConfiguration", m_elasticChannelConfiguration.Jsonize());
 
   }
 

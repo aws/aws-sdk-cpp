@@ -416,31 +416,31 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_effectiveDate;
-    bool m_effectiveDateHasBeenSet;
+    bool m_effectiveDateHasBeenSet = false;
 
     Aws::Vector<ReservedInstancesModificationResponse> m_modificationResults;
-    bool m_modificationResultsHasBeenSet;
+    bool m_modificationResultsHasBeenSet = false;
 
     Aws::Vector<ReservedInstancesId> m_reservedInstancesIds;
-    bool m_reservedInstancesIdsHasBeenSet;
+    bool m_reservedInstancesIdsHasBeenSet = false;
 
     Aws::String m_reservedInstancesModificationId;
-    bool m_reservedInstancesModificationIdHasBeenSet;
+    bool m_reservedInstancesModificationIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDate;
-    bool m_updateDateHasBeenSet;
+    bool m_updateDateHasBeenSet = false;
   };
 
 } // namespace Model

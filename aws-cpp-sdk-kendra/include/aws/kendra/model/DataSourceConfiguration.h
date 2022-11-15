@@ -20,6 +20,9 @@
 #include <aws/kendra/model/BoxConfiguration.h>
 #include <aws/kendra/model/QuipConfiguration.h>
 #include <aws/kendra/model/JiraConfiguration.h>
+#include <aws/kendra/model/GitHubConfiguration.h>
+#include <aws/kendra/model/AlfrescoConfiguration.h>
+#include <aws/kendra/model/TemplateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -588,52 +591,172 @@ namespace Model
      */
     inline DataSourceConfiguration& WithJiraConfiguration(JiraConfiguration&& value) { SetJiraConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline const GitHubConfiguration& GetGitHubConfiguration() const{ return m_gitHubConfiguration; }
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline bool GitHubConfigurationHasBeenSet() const { return m_gitHubConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline void SetGitHubConfiguration(const GitHubConfiguration& value) { m_gitHubConfigurationHasBeenSet = true; m_gitHubConfiguration = value; }
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline void SetGitHubConfiguration(GitHubConfiguration&& value) { m_gitHubConfigurationHasBeenSet = true; m_gitHubConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithGitHubConfiguration(const GitHubConfiguration& value) { SetGitHubConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithGitHubConfiguration(GitHubConfiguration&& value) { SetGitHubConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline const AlfrescoConfiguration& GetAlfrescoConfiguration() const{ return m_alfrescoConfiguration; }
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline bool AlfrescoConfigurationHasBeenSet() const { return m_alfrescoConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline void SetAlfrescoConfiguration(const AlfrescoConfiguration& value) { m_alfrescoConfigurationHasBeenSet = true; m_alfrescoConfiguration = value; }
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline void SetAlfrescoConfiguration(AlfrescoConfiguration&& value) { m_alfrescoConfigurationHasBeenSet = true; m_alfrescoConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithAlfrescoConfiguration(const AlfrescoConfiguration& value) { SetAlfrescoConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithAlfrescoConfiguration(AlfrescoConfiguration&& value) { SetAlfrescoConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline const TemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline void SetTemplateConfiguration(const TemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline void SetTemplateConfiguration(TemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithTemplateConfiguration(const TemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithTemplateConfiguration(TemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
-    bool m_s3ConfigurationHasBeenSet;
+    bool m_s3ConfigurationHasBeenSet = false;
 
     SharePointConfiguration m_sharePointConfiguration;
-    bool m_sharePointConfigurationHasBeenSet;
+    bool m_sharePointConfigurationHasBeenSet = false;
 
     DatabaseConfiguration m_databaseConfiguration;
-    bool m_databaseConfigurationHasBeenSet;
+    bool m_databaseConfigurationHasBeenSet = false;
 
     SalesforceConfiguration m_salesforceConfiguration;
-    bool m_salesforceConfigurationHasBeenSet;
+    bool m_salesforceConfigurationHasBeenSet = false;
 
     OneDriveConfiguration m_oneDriveConfiguration;
-    bool m_oneDriveConfigurationHasBeenSet;
+    bool m_oneDriveConfigurationHasBeenSet = false;
 
     ServiceNowConfiguration m_serviceNowConfiguration;
-    bool m_serviceNowConfigurationHasBeenSet;
+    bool m_serviceNowConfigurationHasBeenSet = false;
 
     ConfluenceConfiguration m_confluenceConfiguration;
-    bool m_confluenceConfigurationHasBeenSet;
+    bool m_confluenceConfigurationHasBeenSet = false;
 
     GoogleDriveConfiguration m_googleDriveConfiguration;
-    bool m_googleDriveConfigurationHasBeenSet;
+    bool m_googleDriveConfigurationHasBeenSet = false;
 
     WebCrawlerConfiguration m_webCrawlerConfiguration;
-    bool m_webCrawlerConfigurationHasBeenSet;
+    bool m_webCrawlerConfigurationHasBeenSet = false;
 
     WorkDocsConfiguration m_workDocsConfiguration;
-    bool m_workDocsConfigurationHasBeenSet;
+    bool m_workDocsConfigurationHasBeenSet = false;
 
     FsxConfiguration m_fsxConfiguration;
-    bool m_fsxConfigurationHasBeenSet;
+    bool m_fsxConfigurationHasBeenSet = false;
 
     SlackConfiguration m_slackConfiguration;
-    bool m_slackConfigurationHasBeenSet;
+    bool m_slackConfigurationHasBeenSet = false;
 
     BoxConfiguration m_boxConfiguration;
-    bool m_boxConfigurationHasBeenSet;
+    bool m_boxConfigurationHasBeenSet = false;
 
     QuipConfiguration m_quipConfiguration;
-    bool m_quipConfigurationHasBeenSet;
+    bool m_quipConfigurationHasBeenSet = false;
 
     JiraConfiguration m_jiraConfiguration;
-    bool m_jiraConfigurationHasBeenSet;
+    bool m_jiraConfigurationHasBeenSet = false;
+
+    GitHubConfiguration m_gitHubConfiguration;
+    bool m_gitHubConfigurationHasBeenSet = false;
+
+    AlfrescoConfiguration m_alfrescoConfiguration;
+    bool m_alfrescoConfigurationHasBeenSet = false;
+
+    TemplateConfiguration m_templateConfiguration;
+    bool m_templateConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

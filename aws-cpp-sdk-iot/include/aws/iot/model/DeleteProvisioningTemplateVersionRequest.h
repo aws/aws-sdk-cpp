@@ -33,73 +33,73 @@ namespace Model
 
 
     /**
-     * <p>The name of the fleet provisioning template version to delete.</p>
+     * <p>The name of the provisioning template version to delete.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p>The name of the fleet provisioning template version to delete.</p>
+     * <p>The name of the provisioning template version to delete.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
-     * <p>The name of the fleet provisioning template version to delete.</p>
+     * <p>The name of the provisioning template version to delete.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p>The name of the fleet provisioning template version to delete.</p>
+     * <p>The name of the provisioning template version to delete.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
-     * <p>The name of the fleet provisioning template version to delete.</p>
+     * <p>The name of the provisioning template version to delete.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
-     * <p>The name of the fleet provisioning template version to delete.</p>
+     * <p>The name of the provisioning template version to delete.</p>
      */
     inline DeleteProvisioningTemplateVersionRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the fleet provisioning template version to delete.</p>
+     * <p>The name of the provisioning template version to delete.</p>
      */
     inline DeleteProvisioningTemplateVersionRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the fleet provisioning template version to delete.</p>
+     * <p>The name of the provisioning template version to delete.</p>
      */
     inline DeleteProvisioningTemplateVersionRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
 
     /**
-     * <p>The fleet provisioning template version ID to delete.</p>
+     * <p>The provisioning template version ID to delete.</p>
      */
     inline int GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The fleet provisioning template version ID to delete.</p>
+     * <p>The provisioning template version ID to delete.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
-     * <p>The fleet provisioning template version ID to delete.</p>
+     * <p>The provisioning template version ID to delete.</p>
      */
     inline void SetVersionId(int value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>The fleet provisioning template version ID to delete.</p>
+     * <p>The provisioning template version ID to delete.</p>
      */
     inline DeleteProvisioningTemplateVersionRequest& WithVersionId(int value) { SetVersionId(value); return *this;}
 
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     int m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
   };
 
 } // namespace Model

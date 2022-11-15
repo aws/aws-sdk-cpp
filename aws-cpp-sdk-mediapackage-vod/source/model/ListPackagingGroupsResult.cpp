@@ -36,7 +36,7 @@ ListPackagingGroupsResult& ListPackagingGroupsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("packagingGroups"))
   {
-    Array<JsonView> packagingGroupsJsonList = jsonValue.GetArray("packagingGroups");
+    Aws::Utils::Array<JsonView> packagingGroupsJsonList = jsonValue.GetArray("packagingGroups");
     for(unsigned packagingGroupsIndex = 0; packagingGroupsIndex < packagingGroupsJsonList.GetLength(); ++packagingGroupsIndex)
     {
       m_packagingGroups.push_back(packagingGroupsJsonList[packagingGroupsIndex].AsObject());

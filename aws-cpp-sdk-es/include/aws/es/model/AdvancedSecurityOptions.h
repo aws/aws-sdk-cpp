@@ -171,19 +171,19 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_internalUserDatabaseEnabled;
-    bool m_internalUserDatabaseEnabledHasBeenSet;
+    bool m_internalUserDatabaseEnabledHasBeenSet = false;
 
     SAMLOptionsOutput m_sAMLOptions;
-    bool m_sAMLOptionsHasBeenSet;
+    bool m_sAMLOptionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_anonymousAuthDisableDate;
-    bool m_anonymousAuthDisableDateHasBeenSet;
+    bool m_anonymousAuthDisableDateHasBeenSet = false;
 
     bool m_anonymousAuthEnabled;
-    bool m_anonymousAuthEnabledHasBeenSet;
+    bool m_anonymousAuthEnabledHasBeenSet = false;
   };
 
 } // namespace Model

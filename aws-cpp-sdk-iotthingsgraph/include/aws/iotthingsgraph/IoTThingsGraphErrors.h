@@ -47,10 +47,7 @@ enum class IoTThingsGraphErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  LIMIT_EXCEEDED,
-  RESOURCE_ALREADY_EXISTS,
-  RESOURCE_IN_USE
+
 };
 
 class AWS_IOTTHINGSGRAPH_API IoTThingsGraphError : public Aws::Client::AWSError<IoTThingsGraphErrors>

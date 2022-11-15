@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_otaUpdateId;
-    bool m_otaUpdateIdHasBeenSet;
+    bool m_otaUpdateIdHasBeenSet = false;
 
     Aws::String m_otaUpdateArn;
-    bool m_otaUpdateArnHasBeenSet;
+    bool m_otaUpdateArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

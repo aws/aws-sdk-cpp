@@ -131,7 +131,7 @@ namespace Model
   private:
 
     Aws::Vector<SuppressionListReason> m_suppressedReasons;
-    bool m_suppressedReasonsHasBeenSet;
+    bool m_suppressedReasonsHasBeenSet = false;
   };
 
 } // namespace Model

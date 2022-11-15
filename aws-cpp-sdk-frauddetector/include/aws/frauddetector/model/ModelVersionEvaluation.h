@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_outputVariableName;
-    bool m_outputVariableNameHasBeenSet;
+    bool m_outputVariableNameHasBeenSet = false;
 
     Aws::String m_evaluationScore;
-    bool m_evaluationScoreHasBeenSet;
+    bool m_evaluationScoreHasBeenSet = false;
 
     PredictionExplanations m_predictionExplanations;
-    bool m_predictionExplanationsHasBeenSet;
+    bool m_predictionExplanationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,14 +23,18 @@ namespace Model
 DeploymentTargets::DeploymentTargets() : 
     m_accountsHasBeenSet(false),
     m_accountsUrlHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false)
+    m_organizationalUnitIdsHasBeenSet(false),
+    m_accountFilterType(AccountFilterType::NOT_SET),
+    m_accountFilterTypeHasBeenSet(false)
 {
 }
 
 DeploymentTargets::DeploymentTargets(const XmlNode& xmlNode) : 
     m_accountsHasBeenSet(false),
     m_accountsUrlHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false)
+    m_organizationalUnitIdsHasBeenSet(false),
+    m_accountFilterType(AccountFilterType::NOT_SET),
+    m_accountFilterTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -71,6 +75,12 @@ DeploymentTargets& DeploymentTargets::operator =(const XmlNode& xmlNode)
 
       m_organizationalUnitIdsHasBeenSet = true;
     }
+    XmlNode accountFilterTypeNode = resultNode.FirstChild("AccountFilterType");
+    if(!accountFilterTypeNode.IsNull())
+    {
+      m_accountFilterType = AccountFilterTypeMapper::GetAccountFilterTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accountFilterTypeNode.GetText()).c_str()).c_str());
+      m_accountFilterTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -101,6 +111,11 @@ void DeploymentTargets::OutputToStream(Aws::OStream& oStream, const char* locati
       }
   }
 
+  if(m_accountFilterTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AccountFilterType=" << AccountFilterTypeMapper::GetNameForAccountFilterType(m_accountFilterType) << "&";
+  }
+
 }
 
 void DeploymentTargets::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -124,6 +139,10 @@ void DeploymentTargets::OutputToStream(Aws::OStream& oStream, const char* locati
       {
         oStream << location << ".OrganizationalUnitIds.member." << organizationalUnitIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_accountFilterTypeHasBeenSet)
+  {
+      oStream << location << ".AccountFilterType=" << AccountFilterTypeMapper::GetNameForAccountFilterType(m_accountFilterType) << "&";
   }
 }
 

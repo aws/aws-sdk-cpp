@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_adminAccountId;
-    bool m_adminAccountIdHasBeenSet;
+    bool m_adminAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

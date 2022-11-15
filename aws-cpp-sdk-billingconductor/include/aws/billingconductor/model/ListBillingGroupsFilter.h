@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_arns;
-    bool m_arnsHasBeenSet;
+    bool m_arnsHasBeenSet = false;
 
     Aws::String m_pricingPlan;
-    bool m_pricingPlanHasBeenSet;
+    bool m_pricingPlanHasBeenSet = false;
   };
 
 } // namespace Model

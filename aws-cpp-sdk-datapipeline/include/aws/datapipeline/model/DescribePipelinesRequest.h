@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_pipelineIds;
-    bool m_pipelineIdsHasBeenSet;
+    bool m_pipelineIdsHasBeenSet = false;
   };
 
 } // namespace Model

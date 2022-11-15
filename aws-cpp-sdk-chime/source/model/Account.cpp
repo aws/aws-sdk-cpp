@@ -97,7 +97,7 @@ Account& Account::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedLicenses"))
   {
-    Array<JsonView> supportedLicensesJsonList = jsonValue.GetArray("SupportedLicenses");
+    Aws::Utils::Array<JsonView> supportedLicensesJsonList = jsonValue.GetArray("SupportedLicenses");
     for(unsigned supportedLicensesIndex = 0; supportedLicensesIndex < supportedLicensesJsonList.GetLength(); ++supportedLicensesIndex)
     {
       m_supportedLicenses.push_back(LicenseMapper::GetLicenseForName(supportedLicensesJsonList[supportedLicensesIndex].AsString()));
@@ -114,7 +114,7 @@ Account& Account::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SigninDelegateGroups"))
   {
-    Array<JsonView> signinDelegateGroupsJsonList = jsonValue.GetArray("SigninDelegateGroups");
+    Aws::Utils::Array<JsonView> signinDelegateGroupsJsonList = jsonValue.GetArray("SigninDelegateGroups");
     for(unsigned signinDelegateGroupsIndex = 0; signinDelegateGroupsIndex < signinDelegateGroupsJsonList.GetLength(); ++signinDelegateGroupsIndex)
     {
       m_signinDelegateGroups.push_back(signinDelegateGroupsJsonList[signinDelegateGroupsIndex].AsObject());
@@ -154,7 +154,7 @@ JsonValue Account::Jsonize() const
 
   if(m_createdTimestampHasBeenSet)
   {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_defaultLicenseHasBeenSet)
@@ -164,7 +164,7 @@ JsonValue Account::Jsonize() const
 
   if(m_supportedLicensesHasBeenSet)
   {
-   Array<JsonValue> supportedLicensesJsonList(m_supportedLicenses.size());
+   Aws::Utils::Array<JsonValue> supportedLicensesJsonList(m_supportedLicenses.size());
    for(unsigned supportedLicensesIndex = 0; supportedLicensesIndex < supportedLicensesJsonList.GetLength(); ++supportedLicensesIndex)
    {
      supportedLicensesJsonList[supportedLicensesIndex].AsString(LicenseMapper::GetNameForLicense(m_supportedLicenses[supportedLicensesIndex]));
@@ -180,7 +180,7 @@ JsonValue Account::Jsonize() const
 
   if(m_signinDelegateGroupsHasBeenSet)
   {
-   Array<JsonValue> signinDelegateGroupsJsonList(m_signinDelegateGroups.size());
+   Aws::Utils::Array<JsonValue> signinDelegateGroupsJsonList(m_signinDelegateGroups.size());
    for(unsigned signinDelegateGroupsIndex = 0; signinDelegateGroupsIndex < signinDelegateGroupsJsonList.GetLength(); ++signinDelegateGroupsIndex)
    {
      signinDelegateGroupsJsonList[signinDelegateGroupsIndex].AsObject(m_signinDelegateGroups[signinDelegateGroupsIndex].Jsonize());

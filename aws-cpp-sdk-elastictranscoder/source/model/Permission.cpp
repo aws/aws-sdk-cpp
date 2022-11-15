@@ -51,7 +51,7 @@ Permission& Permission::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Access"))
   {
-    Array<JsonView> accessJsonList = jsonValue.GetArray("Access");
+    Aws::Utils::Array<JsonView> accessJsonList = jsonValue.GetArray("Access");
     for(unsigned accessIndex = 0; accessIndex < accessJsonList.GetLength(); ++accessIndex)
     {
       m_access.push_back(accessJsonList[accessIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue Permission::Jsonize() const
 
   if(m_accessHasBeenSet)
   {
-   Array<JsonValue> accessJsonList(m_access.size());
+   Aws::Utils::Array<JsonValue> accessJsonList(m_access.size());
    for(unsigned accessIndex = 0; accessIndex < accessJsonList.GetLength(); ++accessIndex)
    {
      accessJsonList[accessIndex].AsString(m_access[accessIndex]);

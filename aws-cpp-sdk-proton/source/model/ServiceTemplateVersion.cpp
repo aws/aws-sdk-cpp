@@ -31,6 +31,7 @@ ServiceTemplateVersion::ServiceTemplateVersion() :
     m_status(TemplateVersionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_supportedComponentSourcesHasBeenSet(false),
     m_templateNameHasBeenSet(false)
 {
 }
@@ -48,6 +49,7 @@ ServiceTemplateVersion::ServiceTemplateVersion(JsonView jsonValue) :
     m_status(TemplateVersionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_supportedComponentSourcesHasBeenSet(false),
     m_templateNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -64,7 +66,7 @@ ServiceTemplateVersion& ServiceTemplateVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("compatibleEnvironmentTemplates"))
   {
-    Array<JsonView> compatibleEnvironmentTemplatesJsonList = jsonValue.GetArray("compatibleEnvironmentTemplates");
+    Aws::Utils::Array<JsonView> compatibleEnvironmentTemplatesJsonList = jsonValue.GetArray("compatibleEnvironmentTemplates");
     for(unsigned compatibleEnvironmentTemplatesIndex = 0; compatibleEnvironmentTemplatesIndex < compatibleEnvironmentTemplatesJsonList.GetLength(); ++compatibleEnvironmentTemplatesIndex)
     {
       m_compatibleEnvironmentTemplates.push_back(compatibleEnvironmentTemplatesJsonList[compatibleEnvironmentTemplatesIndex].AsObject());
@@ -135,6 +137,16 @@ ServiceTemplateVersion& ServiceTemplateVersion::operator =(JsonView jsonValue)
     m_statusMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("supportedComponentSources"))
+  {
+    Aws::Utils::Array<JsonView> supportedComponentSourcesJsonList = jsonValue.GetArray("supportedComponentSources");
+    for(unsigned supportedComponentSourcesIndex = 0; supportedComponentSourcesIndex < supportedComponentSourcesJsonList.GetLength(); ++supportedComponentSourcesIndex)
+    {
+      m_supportedComponentSources.push_back(ServiceTemplateSupportedComponentSourceTypeMapper::GetServiceTemplateSupportedComponentSourceTypeForName(supportedComponentSourcesJsonList[supportedComponentSourcesIndex].AsString()));
+    }
+    m_supportedComponentSourcesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
@@ -157,7 +169,7 @@ JsonValue ServiceTemplateVersion::Jsonize() const
 
   if(m_compatibleEnvironmentTemplatesHasBeenSet)
   {
-   Array<JsonValue> compatibleEnvironmentTemplatesJsonList(m_compatibleEnvironmentTemplates.size());
+   Aws::Utils::Array<JsonValue> compatibleEnvironmentTemplatesJsonList(m_compatibleEnvironmentTemplates.size());
    for(unsigned compatibleEnvironmentTemplatesIndex = 0; compatibleEnvironmentTemplatesIndex < compatibleEnvironmentTemplatesJsonList.GetLength(); ++compatibleEnvironmentTemplatesIndex)
    {
      compatibleEnvironmentTemplatesJsonList[compatibleEnvironmentTemplatesIndex].AsObject(m_compatibleEnvironmentTemplates[compatibleEnvironmentTemplatesIndex].Jsonize());
@@ -214,6 +226,17 @@ JsonValue ServiceTemplateVersion::Jsonize() const
   if(m_statusMessageHasBeenSet)
   {
    payload.WithString("statusMessage", m_statusMessage);
+
+  }
+
+  if(m_supportedComponentSourcesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> supportedComponentSourcesJsonList(m_supportedComponentSources.size());
+   for(unsigned supportedComponentSourcesIndex = 0; supportedComponentSourcesIndex < supportedComponentSourcesJsonList.GetLength(); ++supportedComponentSourcesIndex)
+   {
+     supportedComponentSourcesJsonList[supportedComponentSourcesIndex].AsString(ServiceTemplateSupportedComponentSourceTypeMapper::GetNameForServiceTemplateSupportedComponentSourceType(m_supportedComponentSources[supportedComponentSourcesIndex]));
+   }
+   payload.WithArray("supportedComponentSources", std::move(supportedComponentSourcesJsonList));
 
   }
 

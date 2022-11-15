@@ -51,7 +51,7 @@ RegexMatchSet& RegexMatchSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RegexMatchTuples"))
   {
-    Array<JsonView> regexMatchTuplesJsonList = jsonValue.GetArray("RegexMatchTuples");
+    Aws::Utils::Array<JsonView> regexMatchTuplesJsonList = jsonValue.GetArray("RegexMatchTuples");
     for(unsigned regexMatchTuplesIndex = 0; regexMatchTuplesIndex < regexMatchTuplesJsonList.GetLength(); ++regexMatchTuplesIndex)
     {
       m_regexMatchTuples.push_back(regexMatchTuplesJsonList[regexMatchTuplesIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue RegexMatchSet::Jsonize() const
 
   if(m_regexMatchTuplesHasBeenSet)
   {
-   Array<JsonValue> regexMatchTuplesJsonList(m_regexMatchTuples.size());
+   Aws::Utils::Array<JsonValue> regexMatchTuplesJsonList(m_regexMatchTuples.size());
    for(unsigned regexMatchTuplesIndex = 0; regexMatchTuplesIndex < regexMatchTuplesJsonList.GetLength(); ++regexMatchTuplesIndex)
    {
      regexMatchTuplesJsonList[regexMatchTuplesIndex].AsObject(m_regexMatchTuples[regexMatchTuplesIndex].Jsonize());

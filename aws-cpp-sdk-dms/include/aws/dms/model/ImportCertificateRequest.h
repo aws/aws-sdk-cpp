@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::String m_certificateIdentifier;
-    bool m_certificateIdentifierHasBeenSet;
+    bool m_certificateIdentifierHasBeenSet = false;
 
     Aws::String m_certificatePem;
-    bool m_certificatePemHasBeenSet;
+    bool m_certificatePemHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_certificateWallet;
-    bool m_certificateWalletHasBeenSet;
+    bool m_certificateWalletHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,8 @@ MaintenanceWindowTask::MaintenanceWindowTask() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
-    m_cutoffBehaviorHasBeenSet(false)
+    m_cutoffBehaviorHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ MaintenanceWindowTask::MaintenanceWindowTask(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
-    m_cutoffBehaviorHasBeenSet(false)
+    m_cutoffBehaviorHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,7 +95,7 @@ MaintenanceWindowTask& MaintenanceWindowTask::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
@@ -167,6 +169,13 @@ MaintenanceWindowTask& MaintenanceWindowTask::operator =(JsonView jsonValue)
     m_cutoffBehaviorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AlarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
+
+    m_alarmConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -199,7 +208,7 @@ JsonValue MaintenanceWindowTask::Jsonize() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
@@ -264,6 +273,12 @@ JsonValue MaintenanceWindowTask::Jsonize() const
   if(m_cutoffBehaviorHasBeenSet)
   {
    payload.WithString("CutoffBehavior", MaintenanceWindowTaskCutoffBehaviorMapper::GetNameForMaintenanceWindowTaskCutoffBehavior(m_cutoffBehavior));
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
+
   }
 
   return payload;

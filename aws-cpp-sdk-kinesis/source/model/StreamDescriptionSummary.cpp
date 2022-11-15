@@ -105,7 +105,7 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("EnhancedMonitoring"))
   {
-    Array<JsonView> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
+    Aws::Utils::Array<JsonView> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
     for(unsigned enhancedMonitoringIndex = 0; enhancedMonitoringIndex < enhancedMonitoringJsonList.GetLength(); ++enhancedMonitoringIndex)
     {
       m_enhancedMonitoring.push_back(enhancedMonitoringJsonList[enhancedMonitoringIndex].AsObject());
@@ -184,7 +184,7 @@ JsonValue StreamDescriptionSummary::Jsonize() const
 
   if(m_enhancedMonitoringHasBeenSet)
   {
-   Array<JsonValue> enhancedMonitoringJsonList(m_enhancedMonitoring.size());
+   Aws::Utils::Array<JsonValue> enhancedMonitoringJsonList(m_enhancedMonitoring.size());
    for(unsigned enhancedMonitoringIndex = 0; enhancedMonitoringIndex < enhancedMonitoringJsonList.GetLength(); ++enhancedMonitoringIndex)
    {
      enhancedMonitoringJsonList[enhancedMonitoringIndex].AsObject(m_enhancedMonitoring[enhancedMonitoringIndex].Jsonize());

@@ -10,6 +10,7 @@
 #include <aws/chime-sdk-messaging/model/ChannelMode.h>
 #include <aws/chime-sdk-messaging/model/ChannelPrivacy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime-sdk-messaging/model/ElasticChannelConfiguration.h>
 #include <aws/chime-sdk-messaging/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -376,31 +377,219 @@ namespace Model
      */
     inline CreateChannelRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline const Aws::String& GetChannelId() const{ return m_channelId; }
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline CreateChannelRequest& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline CreateChannelRequest& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the channel in the request.</p>
+     */
+    inline CreateChannelRequest& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetMemberArns() const{ return m_memberArns; }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline bool MemberArnsHasBeenSet() const { return m_memberArnsHasBeenSet; }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline void SetMemberArns(const Aws::Vector<Aws::String>& value) { m_memberArnsHasBeenSet = true; m_memberArns = value; }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline void SetMemberArns(Aws::Vector<Aws::String>&& value) { m_memberArnsHasBeenSet = true; m_memberArns = std::move(value); }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline CreateChannelRequest& WithMemberArns(const Aws::Vector<Aws::String>& value) { SetMemberArns(value); return *this;}
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline CreateChannelRequest& WithMemberArns(Aws::Vector<Aws::String>&& value) { SetMemberArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline CreateChannelRequest& AddMemberArns(const Aws::String& value) { m_memberArnsHasBeenSet = true; m_memberArns.push_back(value); return *this; }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline CreateChannelRequest& AddMemberArns(Aws::String&& value) { m_memberArnsHasBeenSet = true; m_memberArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ARNs of the channel members in the request.</p>
+     */
+    inline CreateChannelRequest& AddMemberArns(const char* value) { m_memberArnsHasBeenSet = true; m_memberArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetModeratorArns() const{ return m_moderatorArns; }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline bool ModeratorArnsHasBeenSet() const { return m_moderatorArnsHasBeenSet; }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline void SetModeratorArns(const Aws::Vector<Aws::String>& value) { m_moderatorArnsHasBeenSet = true; m_moderatorArns = value; }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline void SetModeratorArns(Aws::Vector<Aws::String>&& value) { m_moderatorArnsHasBeenSet = true; m_moderatorArns = std::move(value); }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline CreateChannelRequest& WithModeratorArns(const Aws::Vector<Aws::String>& value) { SetModeratorArns(value); return *this;}
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline CreateChannelRequest& WithModeratorArns(Aws::Vector<Aws::String>&& value) { SetModeratorArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline CreateChannelRequest& AddModeratorArns(const Aws::String& value) { m_moderatorArnsHasBeenSet = true; m_moderatorArns.push_back(value); return *this; }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline CreateChannelRequest& AddModeratorArns(Aws::String&& value) { m_moderatorArnsHasBeenSet = true; m_moderatorArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ARNs of the channel moderators in the request.</p>
+     */
+    inline CreateChannelRequest& AddModeratorArns(const char* value) { m_moderatorArnsHasBeenSet = true; m_moderatorArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline const ElasticChannelConfiguration& GetElasticChannelConfiguration() const{ return m_elasticChannelConfiguration; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline bool ElasticChannelConfigurationHasBeenSet() const { return m_elasticChannelConfigurationHasBeenSet; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline void SetElasticChannelConfiguration(const ElasticChannelConfiguration& value) { m_elasticChannelConfigurationHasBeenSet = true; m_elasticChannelConfiguration = value; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline void SetElasticChannelConfiguration(ElasticChannelConfiguration&& value) { m_elasticChannelConfigurationHasBeenSet = true; m_elasticChannelConfiguration = std::move(value); }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline CreateChannelRequest& WithElasticChannelConfiguration(const ElasticChannelConfiguration& value) { SetElasticChannelConfiguration(value); return *this;}
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline CreateChannelRequest& WithElasticChannelConfiguration(ElasticChannelConfiguration&& value) { SetElasticChannelConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appInstanceArn;
-    bool m_appInstanceArnHasBeenSet;
+    bool m_appInstanceArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ChannelMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     ChannelPrivacy m_privacy;
-    bool m_privacyHasBeenSet;
+    bool m_privacyHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_chimeBearer;
-    bool m_chimeBearerHasBeenSet;
+    bool m_chimeBearerHasBeenSet = false;
+
+    Aws::String m_channelId;
+    bool m_channelIdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_memberArns;
+    bool m_memberArnsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_moderatorArns;
+    bool m_moderatorArnsHasBeenSet = false;
+
+    ElasticChannelConfiguration m_elasticChannelConfiguration;
+    bool m_elasticChannelConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

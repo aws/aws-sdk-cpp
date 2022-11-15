@@ -313,25 +313,25 @@ namespace Model
   private:
 
     Aws::String m_auditTaskId;
-    bool m_auditTaskIdHasBeenSet;
+    bool m_auditTaskIdHasBeenSet = false;
 
     Aws::String m_findingId;
-    bool m_findingIdHasBeenSet;
+    bool m_findingIdHasBeenSet = false;
 
     AuditMitigationActionsTaskStatus m_taskStatus;
-    bool m_taskStatusHasBeenSet;
+    bool m_taskStatusHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

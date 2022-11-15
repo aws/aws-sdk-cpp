@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_alarmModelName;
-    bool m_alarmModelNameHasBeenSet;
+    bool m_alarmModelNameHasBeenSet = false;
 
     Aws::String m_keyValue;
-    bool m_keyValueHasBeenSet;
+    bool m_keyValueHasBeenSet = false;
   };
 
 } // namespace Model

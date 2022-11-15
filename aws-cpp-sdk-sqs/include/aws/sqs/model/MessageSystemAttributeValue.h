@@ -317,19 +317,19 @@ namespace Model
   private:
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_binaryValue;
-    bool m_binaryValueHasBeenSet;
+    bool m_binaryValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringListValues;
-    bool m_stringListValuesHasBeenSet;
+    bool m_stringListValuesHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::ByteBuffer> m_binaryListValues;
-    bool m_binaryListValuesHasBeenSet;
+    bool m_binaryListValuesHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
   };
 
 } // namespace Model

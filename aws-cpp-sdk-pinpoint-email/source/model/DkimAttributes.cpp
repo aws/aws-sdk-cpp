@@ -55,7 +55,7 @@ DkimAttributes& DkimAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tokens"))
   {
-    Array<JsonView> tokensJsonList = jsonValue.GetArray("Tokens");
+    Aws::Utils::Array<JsonView> tokensJsonList = jsonValue.GetArray("Tokens");
     for(unsigned tokensIndex = 0; tokensIndex < tokensJsonList.GetLength(); ++tokensIndex)
     {
       m_tokens.push_back(tokensJsonList[tokensIndex].AsString());
@@ -83,7 +83,7 @@ JsonValue DkimAttributes::Jsonize() const
 
   if(m_tokensHasBeenSet)
   {
-   Array<JsonValue> tokensJsonList(m_tokens.size());
+   Aws::Utils::Array<JsonValue> tokensJsonList(m_tokens.size());
    for(unsigned tokensIndex = 0; tokensIndex < tokensJsonList.GetLength(); ++tokensIndex)
    {
      tokensJsonList[tokensIndex].AsString(m_tokens[tokensIndex]);

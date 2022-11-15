@@ -92,10 +92,10 @@ namespace Model
   private:
 
     double m_quantile;
-    bool m_quantileHasBeenSet;
+    bool m_quantileHasBeenSet = false;
 
     double m_lossValue;
-    bool m_lossValueHasBeenSet;
+    bool m_lossValueHasBeenSet = false;
   };
 
 } // namespace Model

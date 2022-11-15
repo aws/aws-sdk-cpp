@@ -220,13 +220,13 @@ namespace Model
   private:
 
     InstanceFleetState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     InstanceFleetStateChangeReason m_stateChangeReason;
-    bool m_stateChangeReasonHasBeenSet;
+    bool m_stateChangeReasonHasBeenSet = false;
 
     InstanceFleetTimeline m_timeline;
-    bool m_timelineHasBeenSet;
+    bool m_timelineHasBeenSet = false;
   };
 
 } // namespace Model

@@ -60,7 +60,7 @@
   ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName});
 #else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
-#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("body") && $operation.arnEndpointMemberName.equals($memberName))
+#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("body") && $operation.arnEndpointMemberName.equals($memberName) && !$serviceModel.endpointRules))
   ${spaces}${metadata.classNamePrefix}ARN arn($CppViewHelper.computeMemberVariableName($operation.arnEndpointMemberName));
   ${spaces}if (arn && arn.Validate().IsSuccess())
   ${spaces}{
@@ -88,10 +88,10 @@
 #end
 #elseif($member.shape.timeStamp)
 #if($member.xmlAttribute)
-  ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName}.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape)));
+  ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape)));
 #else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
-  ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName}.ToGmtString(DateFormat::ISO_8601));
+  ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName}.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
 #end
 #elseif($member.shape.blob)
 #if($member.xmlAttribute)
@@ -131,7 +131,7 @@
 #elseif($member.shape.listMember.shape.string)
     ${spaces}${lowerCaseVarName}Node.SetText(item);
 #elseif($member.shape.listMember.shape.timeStamp)
-    ${spaces}${lowerCaseVarName}Node.SetText(item.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape.listMember.shape));
+    ${spaces}${lowerCaseVarName}Node.SetText(item.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape.listMember.shape));
 #elseif($member.shape.listMember.shape.blob)
     ${spaces}${lowerCaseVarName}Node.SetText(HashingUtils::Base64Encode(item));
 #elseif($member.shape.listMember.shape.structure)

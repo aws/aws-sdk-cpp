@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_datetimeTypeFieldName;
-    bool m_datetimeTypeFieldNameHasBeenSet;
+    bool m_datetimeTypeFieldNameHasBeenSet = false;
   };
 
 } // namespace Model

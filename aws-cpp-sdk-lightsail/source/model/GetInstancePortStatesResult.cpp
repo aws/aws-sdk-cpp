@@ -30,7 +30,7 @@ GetInstancePortStatesResult& GetInstancePortStatesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("portStates"))
   {
-    Array<JsonView> portStatesJsonList = jsonValue.GetArray("portStates");
+    Aws::Utils::Array<JsonView> portStatesJsonList = jsonValue.GetArray("portStates");
     for(unsigned portStatesIndex = 0; portStatesIndex < portStatesJsonList.GetLength(); ++portStatesIndex)
     {
       m_portStates.push_back(portStatesJsonList[portStatesIndex].AsObject());

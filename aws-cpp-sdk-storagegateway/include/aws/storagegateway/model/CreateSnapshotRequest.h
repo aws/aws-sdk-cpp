@@ -222,13 +222,13 @@ namespace Model
   private:
 
     Aws::String m_volumeARN;
-    bool m_volumeARNHasBeenSet;
+    bool m_volumeARNHasBeenSet = false;
 
     Aws::String m_snapshotDescription;
-    bool m_snapshotDescriptionHasBeenSet;
+    bool m_snapshotDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListQuickConnectsResult& ListQuickConnectsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("QuickConnectSummaryList"))
   {
-    Array<JsonView> quickConnectSummaryListJsonList = jsonValue.GetArray("QuickConnectSummaryList");
+    Aws::Utils::Array<JsonView> quickConnectSummaryListJsonList = jsonValue.GetArray("QuickConnectSummaryList");
     for(unsigned quickConnectSummaryListIndex = 0; quickConnectSummaryListIndex < quickConnectSummaryListJsonList.GetLength(); ++quickConnectSummaryListIndex)
     {
       m_quickConnectSummaryList.push_back(quickConnectSummaryListJsonList[quickConnectSummaryListIndex].AsObject());

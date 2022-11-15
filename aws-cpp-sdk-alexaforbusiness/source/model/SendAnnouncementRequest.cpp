@@ -28,7 +28,7 @@ Aws::String SendAnnouncementRequest::SerializePayload() const
 
   if(m_roomFiltersHasBeenSet)
   {
-   Array<JsonValue> roomFiltersJsonList(m_roomFilters.size());
+   Aws::Utils::Array<JsonValue> roomFiltersJsonList(m_roomFilters.size());
    for(unsigned roomFiltersIndex = 0; roomFiltersIndex < roomFiltersJsonList.GetLength(); ++roomFiltersIndex)
    {
      roomFiltersJsonList[roomFiltersIndex].AsObject(m_roomFilters[roomFiltersIndex].Jsonize());

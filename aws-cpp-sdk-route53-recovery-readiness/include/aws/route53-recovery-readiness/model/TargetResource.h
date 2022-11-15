@@ -103,10 +103,10 @@ namespace Model
   private:
 
     NLBResource m_nLBResource;
-    bool m_nLBResourceHasBeenSet;
+    bool m_nLBResourceHasBeenSet = false;
 
     R53ResourceRecord m_r53Resource;
-    bool m_r53ResourceHasBeenSet;
+    bool m_r53ResourceHasBeenSet = false;
   };
 
 } // namespace Model

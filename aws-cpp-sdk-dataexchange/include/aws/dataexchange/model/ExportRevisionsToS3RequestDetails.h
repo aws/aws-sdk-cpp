@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     ExportServerSideEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::Vector<RevisionDestinationEntry> m_revisionDestinations;
-    bool m_revisionDestinationsHasBeenSet;
+    bool m_revisionDestinationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -99,10 +99,10 @@ namespace Model
   private:
 
     ResourceType m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     SuggestionQuery m_suggestionQuery;
-    bool m_suggestionQueryHasBeenSet;
+    bool m_suggestionQueryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_groupOwner;
-    bool m_groupOwnerHasBeenSet;
+    bool m_groupOwnerHasBeenSet = false;
 
     Permission m_groupPermission;
-    bool m_groupPermissionHasBeenSet;
+    bool m_groupPermissionHasBeenSet = false;
   };
 
 } // namespace Model

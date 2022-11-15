@@ -37,49 +37,49 @@ namespace Model
 
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of
      * which contains a <code>Get</code> structure.</p>
      */
     inline const Aws::Vector<TransactGetItem>& GetTransactItems() const{ return m_transactItems; }
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of
      * which contains a <code>Get</code> structure.</p>
      */
     inline bool TransactItemsHasBeenSet() const { return m_transactItemsHasBeenSet; }
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of
      * which contains a <code>Get</code> structure.</p>
      */
     inline void SetTransactItems(const Aws::Vector<TransactGetItem>& value) { m_transactItemsHasBeenSet = true; m_transactItems = value; }
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of
      * which contains a <code>Get</code> structure.</p>
      */
     inline void SetTransactItems(Aws::Vector<TransactGetItem>&& value) { m_transactItemsHasBeenSet = true; m_transactItems = std::move(value); }
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of
      * which contains a <code>Get</code> structure.</p>
      */
     inline TransactGetItemsRequest& WithTransactItems(const Aws::Vector<TransactGetItem>& value) { SetTransactItems(value); return *this;}
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of
      * which contains a <code>Get</code> structure.</p>
      */
     inline TransactGetItemsRequest& WithTransactItems(Aws::Vector<TransactGetItem>&& value) { SetTransactItems(std::move(value)); return *this;}
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of
      * which contains a <code>Get</code> structure.</p>
      */
     inline TransactGetItemsRequest& AddTransactItems(const TransactGetItem& value) { m_transactItemsHasBeenSet = true; m_transactItems.push_back(value); return *this; }
 
     /**
-     * <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of
+     * <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of
      * which contains a <code>Get</code> structure.</p>
      */
     inline TransactGetItemsRequest& AddTransactItems(TransactGetItem&& value) { m_transactItemsHasBeenSet = true; m_transactItems.push_back(std::move(value)); return *this; }
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::Vector<TransactGetItem> m_transactItems;
-    bool m_transactItemsHasBeenSet;
+    bool m_transactItemsHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
   };
 
 } // namespace Model

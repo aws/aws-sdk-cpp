@@ -74,7 +74,7 @@ AssessmentControlSet& AssessmentControlSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("roles"))
   {
-    Array<JsonView> rolesJsonList = jsonValue.GetArray("roles");
+    Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("roles");
     for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
     {
       m_roles.push_back(rolesJsonList[rolesIndex].AsObject());
@@ -84,7 +84,7 @@ AssessmentControlSet& AssessmentControlSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("controls"))
   {
-    Array<JsonView> controlsJsonList = jsonValue.GetArray("controls");
+    Aws::Utils::Array<JsonView> controlsJsonList = jsonValue.GetArray("controls");
     for(unsigned controlsIndex = 0; controlsIndex < controlsJsonList.GetLength(); ++controlsIndex)
     {
       m_controls.push_back(controlsJsonList[controlsIndex].AsObject());
@@ -94,7 +94,7 @@ AssessmentControlSet& AssessmentControlSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("delegations"))
   {
-    Array<JsonView> delegationsJsonList = jsonValue.GetArray("delegations");
+    Aws::Utils::Array<JsonView> delegationsJsonList = jsonValue.GetArray("delegations");
     for(unsigned delegationsIndex = 0; delegationsIndex < delegationsJsonList.GetLength(); ++delegationsIndex)
     {
       m_delegations.push_back(delegationsJsonList[delegationsIndex].AsObject());
@@ -142,7 +142,7 @@ JsonValue AssessmentControlSet::Jsonize() const
 
   if(m_rolesHasBeenSet)
   {
-   Array<JsonValue> rolesJsonList(m_roles.size());
+   Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
    for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
    {
      rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());
@@ -153,7 +153,7 @@ JsonValue AssessmentControlSet::Jsonize() const
 
   if(m_controlsHasBeenSet)
   {
-   Array<JsonValue> controlsJsonList(m_controls.size());
+   Aws::Utils::Array<JsonValue> controlsJsonList(m_controls.size());
    for(unsigned controlsIndex = 0; controlsIndex < controlsJsonList.GetLength(); ++controlsIndex)
    {
      controlsJsonList[controlsIndex].AsObject(m_controls[controlsIndex].Jsonize());
@@ -164,7 +164,7 @@ JsonValue AssessmentControlSet::Jsonize() const
 
   if(m_delegationsHasBeenSet)
   {
-   Array<JsonValue> delegationsJsonList(m_delegations.size());
+   Aws::Utils::Array<JsonValue> delegationsJsonList(m_delegations.size());
    for(unsigned delegationsIndex = 0; delegationsIndex < delegationsJsonList.GetLength(); ++delegationsIndex)
    {
      delegationsJsonList[delegationsIndex].AsObject(m_delegations[delegationsIndex].Jsonize());

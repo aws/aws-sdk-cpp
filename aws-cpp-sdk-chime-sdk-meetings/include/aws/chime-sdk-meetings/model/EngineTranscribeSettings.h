@@ -644,46 +644,46 @@ namespace Model
   private:
 
     TranscribeLanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     TranscribeVocabularyFilterMethod m_vocabularyFilterMethod;
-    bool m_vocabularyFilterMethodHasBeenSet;
+    bool m_vocabularyFilterMethodHasBeenSet = false;
 
     Aws::String m_vocabularyFilterName;
-    bool m_vocabularyFilterNameHasBeenSet;
+    bool m_vocabularyFilterNameHasBeenSet = false;
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     TranscribeRegion m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     bool m_enablePartialResultsStabilization;
-    bool m_enablePartialResultsStabilizationHasBeenSet;
+    bool m_enablePartialResultsStabilizationHasBeenSet = false;
 
     TranscribePartialResultsStability m_partialResultsStability;
-    bool m_partialResultsStabilityHasBeenSet;
+    bool m_partialResultsStabilityHasBeenSet = false;
 
     TranscribeContentIdentificationType m_contentIdentificationType;
-    bool m_contentIdentificationTypeHasBeenSet;
+    bool m_contentIdentificationTypeHasBeenSet = false;
 
     TranscribeContentRedactionType m_contentRedactionType;
-    bool m_contentRedactionTypeHasBeenSet;
+    bool m_contentRedactionTypeHasBeenSet = false;
 
     Aws::String m_piiEntityTypes;
-    bool m_piiEntityTypesHasBeenSet;
+    bool m_piiEntityTypesHasBeenSet = false;
 
     Aws::String m_languageModelName;
-    bool m_languageModelNameHasBeenSet;
+    bool m_languageModelNameHasBeenSet = false;
 
     bool m_identifyLanguage;
-    bool m_identifyLanguageHasBeenSet;
+    bool m_identifyLanguageHasBeenSet = false;
 
     Aws::String m_languageOptions;
-    bool m_languageOptionsHasBeenSet;
+    bool m_languageOptionsHasBeenSet = false;
 
     TranscribeLanguageCode m_preferredLanguage;
-    bool m_preferredLanguageHasBeenSet;
+    bool m_preferredLanguageHasBeenSet = false;
   };
 
 } // namespace Model

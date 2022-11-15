@@ -7,6 +7,7 @@
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/ShieldRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/shield/model/InclusionProtectionGroupFilters.h>
 #include <utility>
 
 namespace Aws
@@ -199,13 +200,77 @@ namespace Model
      */
     inline ListProtectionGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>Narrows the set of protection groups that the call retrieves. You can
+     * retrieve a single protection group by its name and you can retrieve all
+     * protection groups that are configured with specific pattern or aggregation
+     * settings. You can provide up to one criteria per filter type. Shield Advanced
+     * returns the protection groups that exactly match all of the search criteria that
+     * you provide.</p>
+     */
+    inline const InclusionProtectionGroupFilters& GetInclusionFilters() const{ return m_inclusionFilters; }
+
+    /**
+     * <p>Narrows the set of protection groups that the call retrieves. You can
+     * retrieve a single protection group by its name and you can retrieve all
+     * protection groups that are configured with specific pattern or aggregation
+     * settings. You can provide up to one criteria per filter type. Shield Advanced
+     * returns the protection groups that exactly match all of the search criteria that
+     * you provide.</p>
+     */
+    inline bool InclusionFiltersHasBeenSet() const { return m_inclusionFiltersHasBeenSet; }
+
+    /**
+     * <p>Narrows the set of protection groups that the call retrieves. You can
+     * retrieve a single protection group by its name and you can retrieve all
+     * protection groups that are configured with specific pattern or aggregation
+     * settings. You can provide up to one criteria per filter type. Shield Advanced
+     * returns the protection groups that exactly match all of the search criteria that
+     * you provide.</p>
+     */
+    inline void SetInclusionFilters(const InclusionProtectionGroupFilters& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters = value; }
+
+    /**
+     * <p>Narrows the set of protection groups that the call retrieves. You can
+     * retrieve a single protection group by its name and you can retrieve all
+     * protection groups that are configured with specific pattern or aggregation
+     * settings. You can provide up to one criteria per filter type. Shield Advanced
+     * returns the protection groups that exactly match all of the search criteria that
+     * you provide.</p>
+     */
+    inline void SetInclusionFilters(InclusionProtectionGroupFilters&& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters = std::move(value); }
+
+    /**
+     * <p>Narrows the set of protection groups that the call retrieves. You can
+     * retrieve a single protection group by its name and you can retrieve all
+     * protection groups that are configured with specific pattern or aggregation
+     * settings. You can provide up to one criteria per filter type. Shield Advanced
+     * returns the protection groups that exactly match all of the search criteria that
+     * you provide.</p>
+     */
+    inline ListProtectionGroupsRequest& WithInclusionFilters(const InclusionProtectionGroupFilters& value) { SetInclusionFilters(value); return *this;}
+
+    /**
+     * <p>Narrows the set of protection groups that the call retrieves. You can
+     * retrieve a single protection group by its name and you can retrieve all
+     * protection groups that are configured with specific pattern or aggregation
+     * settings. You can provide up to one criteria per filter type. Shield Advanced
+     * returns the protection groups that exactly match all of the search criteria that
+     * you provide.</p>
+     */
+    inline ListProtectionGroupsRequest& WithInclusionFilters(InclusionProtectionGroupFilters&& value) { SetInclusionFilters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
+
+    InclusionProtectionGroupFilters m_inclusionFilters;
+    bool m_inclusionFiltersHasBeenSet = false;
   };
 
 } // namespace Model

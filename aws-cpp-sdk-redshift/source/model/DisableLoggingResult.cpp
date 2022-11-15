@@ -60,12 +60,12 @@ DisableLoggingResult& DisableLoggingResult::operator =(const Aws::AmazonWebServi
     XmlNode lastSuccessfulDeliveryTimeNode = resultNode.FirstChild("LastSuccessfulDeliveryTime");
     if(!lastSuccessfulDeliveryTimeNode.IsNull())
     {
-      m_lastSuccessfulDeliveryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastSuccessfulDeliveryTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastSuccessfulDeliveryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastSuccessfulDeliveryTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode lastFailureTimeNode = resultNode.FirstChild("LastFailureTime");
     if(!lastFailureTimeNode.IsNull())
     {
-      m_lastFailureTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastFailureTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastFailureTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastFailureTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode lastFailureMessageNode = resultNode.FirstChild("LastFailureMessage");
     if(!lastFailureMessageNode.IsNull())

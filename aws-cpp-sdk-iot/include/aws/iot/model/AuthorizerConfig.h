@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_defaultAuthorizerName;
-    bool m_defaultAuthorizerNameHasBeenSet;
+    bool m_defaultAuthorizerNameHasBeenSet = false;
 
     bool m_allowAuthorizerOverride;
-    bool m_allowAuthorizerOverrideHasBeenSet;
+    bool m_allowAuthorizerOverrideHasBeenSet = false;
   };
 
 } // namespace Model

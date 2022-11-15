@@ -7,6 +7,7 @@
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotdeviceadvisor/model/Protocol.h>
 #include <aws/iotdeviceadvisor/model/DeviceUnderTest.h>
 #include <utility>
 
@@ -143,6 +144,27 @@ namespace Model
 
 
     /**
+     * <p> Verifies if the test suite is a long duration test. </p>
+     */
+    inline bool GetIsLongDurationTest() const{ return m_isLongDurationTest; }
+
+    /**
+     * <p> Verifies if the test suite is a long duration test. </p>
+     */
+    inline bool IsLongDurationTestHasBeenSet() const { return m_isLongDurationTestHasBeenSet; }
+
+    /**
+     * <p> Verifies if the test suite is a long duration test. </p>
+     */
+    inline void SetIsLongDurationTest(bool value) { m_isLongDurationTestHasBeenSet = true; m_isLongDurationTest = value; }
+
+    /**
+     * <p> Verifies if the test suite is a long duration test. </p>
+     */
+    inline SuiteDefinitionConfiguration& WithIsLongDurationTest(bool value) { SetIsLongDurationTest(value); return *this;}
+
+
+    /**
      * <p>Gets test suite root group.</p>
      */
     inline const Aws::String& GetRootGroup() const{ return m_rootGroup; }
@@ -223,22 +245,59 @@ namespace Model
      */
     inline SuiteDefinitionConfiguration& WithDevicePermissionRoleArn(const char* value) { SetDevicePermissionRoleArn(value); return *this;}
 
+
+    /**
+     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     */
+    inline const Protocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     */
+    inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+
+    /**
+     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     */
+    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
+
+    /**
+     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     */
+    inline SuiteDefinitionConfiguration& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
+
+    /**
+     * <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+     */
+    inline SuiteDefinitionConfiguration& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_suiteDefinitionName;
-    bool m_suiteDefinitionNameHasBeenSet;
+    bool m_suiteDefinitionNameHasBeenSet = false;
 
     Aws::Vector<DeviceUnderTest> m_devices;
-    bool m_devicesHasBeenSet;
+    bool m_devicesHasBeenSet = false;
 
     bool m_intendedForQualification;
-    bool m_intendedForQualificationHasBeenSet;
+    bool m_intendedForQualificationHasBeenSet = false;
+
+    bool m_isLongDurationTest;
+    bool m_isLongDurationTestHasBeenSet = false;
 
     Aws::String m_rootGroup;
-    bool m_rootGroupHasBeenSet;
+    bool m_rootGroupHasBeenSet = false;
 
     Aws::String m_devicePermissionRoleArn;
-    bool m_devicePermissionRoleArnHasBeenSet;
+    bool m_devicePermissionRoleArnHasBeenSet = false;
+
+    Protocol m_protocol;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

@@ -114,38 +114,62 @@ namespace Model
 
 
     /**
-     * <p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+     * <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+     * <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+     * <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+     * <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
      */
     inline EBSOptions& WithIops(int value) { SetIops(value); return *this;}
+
+
+    /**
+     * <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
+     */
+    inline int GetThroughput() const{ return m_throughput; }
+
+    /**
+     * <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
+     */
+    inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
+
+    /**
+     * <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
+     */
+    inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
+
+    /**
+     * <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
+     */
+    inline EBSOptions& WithThroughput(int value) { SetThroughput(value); return *this;}
 
   private:
 
     bool m_eBSEnabled;
-    bool m_eBSEnabledHasBeenSet;
+    bool m_eBSEnabledHasBeenSet = false;
 
     VolumeType m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     int m_volumeSize;
-    bool m_volumeSizeHasBeenSet;
+    bool m_volumeSizeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
+
+    int m_throughput;
+    bool m_throughputHasBeenSet = false;
   };
 
 } // namespace Model

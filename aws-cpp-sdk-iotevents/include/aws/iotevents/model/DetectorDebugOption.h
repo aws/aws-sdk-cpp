@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     Aws::String m_keyValue;
-    bool m_keyValueHasBeenSet;
+    bool m_keyValueHasBeenSet = false;
   };
 
 } // namespace Model

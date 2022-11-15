@@ -60,7 +60,7 @@ GetComponentTypeResult& GetComponentTypeResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("extendsFrom"))
   {
-    Array<JsonView> extendsFromJsonList = jsonValue.GetArray("extendsFrom");
+    Aws::Utils::Array<JsonView> extendsFromJsonList = jsonValue.GetArray("extendsFrom");
     for(unsigned extendsFromIndex = 0; extendsFromIndex < extendsFromJsonList.GetLength(); ++extendsFromIndex)
     {
       m_extendsFrom.push_back(extendsFromJsonList[extendsFromIndex].AsString());

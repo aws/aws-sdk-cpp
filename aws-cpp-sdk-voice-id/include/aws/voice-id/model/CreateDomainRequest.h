@@ -88,42 +88,42 @@ namespace Model
 
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline CreateDomainRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline CreateDomainRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline CreateDomainRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -170,56 +170,56 @@ namespace Model
 
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS
-     * Key is used. </p>
+     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS
+     * key is used. </p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS
-     * Key is used. </p>
+     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS
+     * key is used. </p>
      */
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS
-     * Key is used. </p>
+     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS
+     * key is used. </p>
      */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS
-     * Key is used. </p>
+     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS
+     * key is used. </p>
      */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS
-     * Key is used. </p>
+     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS
+     * key is used. </p>
      */
     inline CreateDomainRequest& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS
-     * Key is used. </p>
+     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS
+     * key is used. </p>
      */
     inline CreateDomainRequest& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
 
@@ -267,19 +267,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-    bool m_serverSideEncryptionConfigurationHasBeenSet;
+    bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

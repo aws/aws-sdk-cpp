@@ -35,57 +35,57 @@ namespace Model
 
 
     /**
-     * <p>The name of the transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * <p>The name of the transcription job you want to delete. Job names are case
+     * sensitive.</p>
      */
     inline const Aws::String& GetTranscriptionJobName() const{ return m_transcriptionJobName; }
 
     /**
-     * <p>The name of the transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * <p>The name of the transcription job you want to delete. Job names are case
+     * sensitive.</p>
      */
     inline bool TranscriptionJobNameHasBeenSet() const { return m_transcriptionJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * <p>The name of the transcription job you want to delete. Job names are case
+     * sensitive.</p>
      */
     inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
 
     /**
-     * <p>The name of the transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * <p>The name of the transcription job you want to delete. Job names are case
+     * sensitive.</p>
      */
     inline void SetTranscriptionJobName(Aws::String&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::move(value); }
 
     /**
-     * <p>The name of the transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * <p>The name of the transcription job you want to delete. Job names are case
+     * sensitive.</p>
      */
     inline void SetTranscriptionJobName(const char* value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName.assign(value); }
 
     /**
-     * <p>The name of the transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * <p>The name of the transcription job you want to delete. Job names are case
+     * sensitive.</p>
      */
     inline DeleteTranscriptionJobRequest& WithTranscriptionJobName(const Aws::String& value) { SetTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>The name of the transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * <p>The name of the transcription job you want to delete. Job names are case
+     * sensitive.</p>
      */
     inline DeleteTranscriptionJobRequest& WithTranscriptionJobName(Aws::String&& value) { SetTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the transcription job you want to delete. Job names are
-     * case-sensitive.</p>
+     * <p>The name of the transcription job you want to delete. Job names are case
+     * sensitive.</p>
      */
     inline DeleteTranscriptionJobRequest& WithTranscriptionJobName(const char* value) { SetTranscriptionJobName(value); return *this;}
 
   private:
 
     Aws::String m_transcriptionJobName;
-    bool m_transcriptionJobNameHasBeenSet;
+    bool m_transcriptionJobNameHasBeenSet = false;
   };
 
 } // namespace Model

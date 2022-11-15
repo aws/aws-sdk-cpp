@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_topicName;
-    bool m_topicNameHasBeenSet;
+    bool m_topicNameHasBeenSet = false;
 
     SubscriptionStatus m_subscriptionStatus;
-    bool m_subscriptionStatusHasBeenSet;
+    bool m_subscriptionStatusHasBeenSet = false;
   };
 
 } // namespace Model

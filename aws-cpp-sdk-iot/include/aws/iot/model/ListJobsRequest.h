@@ -391,25 +391,25 @@ namespace Model
   private:
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     TargetSelection m_targetSelection;
-    bool m_targetSelectionHasBeenSet;
+    bool m_targetSelectionHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_thingGroupName;
-    bool m_thingGroupNameHasBeenSet;
+    bool m_thingGroupNameHasBeenSet = false;
 
     Aws::String m_thingGroupId;
-    bool m_thingGroupIdHasBeenSet;
+    bool m_thingGroupIdHasBeenSet = false;
 
     Aws::String m_namespaceId;
-    bool m_namespaceIdHasBeenSet;
+    bool m_namespaceIdHasBeenSet = false;
   };
 
 } // namespace Model

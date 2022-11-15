@@ -157,10 +157,10 @@ namespace Model
   private:
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
 
     ReferrerPolicyList m_referrerPolicy;
-    bool m_referrerPolicyHasBeenSet;
+    bool m_referrerPolicyHasBeenSet = false;
   };
 
 } // namespace Model

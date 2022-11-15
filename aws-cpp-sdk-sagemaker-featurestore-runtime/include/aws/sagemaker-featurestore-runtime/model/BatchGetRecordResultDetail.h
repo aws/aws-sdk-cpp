@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_recordIdentifierValueAsString;
-    bool m_recordIdentifierValueAsStringHasBeenSet;
+    bool m_recordIdentifierValueAsStringHasBeenSet = false;
 
     Aws::Vector<FeatureValue> m_record;
-    bool m_recordHasBeenSet;
+    bool m_recordHasBeenSet = false;
   };
 
 } // namespace Model

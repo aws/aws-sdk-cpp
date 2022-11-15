@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_channelFlowArn;
-    bool m_channelFlowArnHasBeenSet;
+    bool m_channelFlowArnHasBeenSet = false;
 
     Aws::Vector<Processor> m_processors;
-    bool m_processorsHasBeenSet;
+    bool m_processorsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

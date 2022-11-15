@@ -187,10 +187,10 @@ namespace Model
   private:
 
     Aws::String m_regexPatternSetId;
-    bool m_regexPatternSetIdHasBeenSet;
+    bool m_regexPatternSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

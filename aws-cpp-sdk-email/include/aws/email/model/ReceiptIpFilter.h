@@ -156,10 +156,10 @@ namespace Model
   private:
 
     ReceiptFilterPolicy m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
   };
 
 } // namespace Model

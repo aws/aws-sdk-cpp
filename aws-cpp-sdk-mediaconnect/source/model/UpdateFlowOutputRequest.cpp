@@ -45,7 +45,7 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const
 
   if(m_cidrAllowListHasBeenSet)
   {
-   Array<JsonValue> cidrAllowListJsonList(m_cidrAllowList.size());
+   Aws::Utils::Array<JsonValue> cidrAllowListJsonList(m_cidrAllowList.size());
    for(unsigned cidrAllowListIndex = 0; cidrAllowListIndex < cidrAllowListJsonList.GetLength(); ++cidrAllowListIndex)
    {
      cidrAllowListJsonList[cidrAllowListIndex].AsString(m_cidrAllowList[cidrAllowListIndex]);
@@ -80,7 +80,7 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const
 
   if(m_mediaStreamOutputConfigurationsHasBeenSet)
   {
-   Array<JsonValue> mediaStreamOutputConfigurationsJsonList(m_mediaStreamOutputConfigurations.size());
+   Aws::Utils::Array<JsonValue> mediaStreamOutputConfigurationsJsonList(m_mediaStreamOutputConfigurations.size());
    for(unsigned mediaStreamOutputConfigurationsIndex = 0; mediaStreamOutputConfigurationsIndex < mediaStreamOutputConfigurationsJsonList.GetLength(); ++mediaStreamOutputConfigurationsIndex)
    {
      mediaStreamOutputConfigurationsJsonList[mediaStreamOutputConfigurationsIndex].AsObject(m_mediaStreamOutputConfigurations[mediaStreamOutputConfigurationsIndex].Jsonize());

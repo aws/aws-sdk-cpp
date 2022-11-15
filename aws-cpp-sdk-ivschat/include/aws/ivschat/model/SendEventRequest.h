@@ -204,13 +204,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_eventName;
-    bool m_eventNameHasBeenSet;
+    bool m_eventNameHasBeenSet = false;
 
     Aws::String m_roomIdentifier;
-    bool m_roomIdentifierHasBeenSet;
+    bool m_roomIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

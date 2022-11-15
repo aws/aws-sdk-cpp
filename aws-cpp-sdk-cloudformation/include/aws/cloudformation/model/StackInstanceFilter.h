@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The status that stack instances are filtered by.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The filter to apply to stack instances</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackInstanceFilter">AWS
    * API Reference</a></p>
    */
@@ -115,10 +114,10 @@ namespace Model
   private:
 
     StackInstanceFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

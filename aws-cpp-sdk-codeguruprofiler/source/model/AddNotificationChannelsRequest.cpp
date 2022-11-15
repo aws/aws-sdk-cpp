@@ -24,7 +24,7 @@ Aws::String AddNotificationChannelsRequest::SerializePayload() const
 
   if(m_channelsHasBeenSet)
   {
-   Array<JsonValue> channelsJsonList(m_channels.size());
+   Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
    for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
    {
      channelsJsonList[channelsIndex].AsObject(m_channels[channelsIndex].Jsonize());

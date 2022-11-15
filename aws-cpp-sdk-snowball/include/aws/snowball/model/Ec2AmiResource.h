@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_amiId;
-    bool m_amiIdHasBeenSet;
+    bool m_amiIdHasBeenSet = false;
 
     Aws::String m_snowballAmiId;
-    bool m_snowballAmiIdHasBeenSet;
+    bool m_snowballAmiIdHasBeenSet = false;
   };
 
 } // namespace Model

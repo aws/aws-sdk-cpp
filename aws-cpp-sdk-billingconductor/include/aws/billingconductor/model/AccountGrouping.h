@@ -106,7 +106,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_linkedAccountIds;
-    bool m_linkedAccountIdsHasBeenSet;
+    bool m_linkedAccountIdsHasBeenSet = false;
   };
 
 } // namespace Model

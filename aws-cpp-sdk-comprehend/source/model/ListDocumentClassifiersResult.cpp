@@ -30,7 +30,7 @@ ListDocumentClassifiersResult& ListDocumentClassifiersResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DocumentClassifierPropertiesList"))
   {
-    Array<JsonView> documentClassifierPropertiesListJsonList = jsonValue.GetArray("DocumentClassifierPropertiesList");
+    Aws::Utils::Array<JsonView> documentClassifierPropertiesListJsonList = jsonValue.GetArray("DocumentClassifierPropertiesList");
     for(unsigned documentClassifierPropertiesListIndex = 0; documentClassifierPropertiesListIndex < documentClassifierPropertiesListJsonList.GetLength(); ++documentClassifierPropertiesListIndex)
     {
       m_documentClassifierPropertiesList.push_back(documentClassifierPropertiesListJsonList[documentClassifierPropertiesListIndex].AsObject());

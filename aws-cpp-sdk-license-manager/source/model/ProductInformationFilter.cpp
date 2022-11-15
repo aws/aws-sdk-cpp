@@ -44,7 +44,7 @@ ProductInformationFilter& ProductInformationFilter::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("ProductInformationFilterValue"))
   {
-    Array<JsonView> productInformationFilterValueJsonList = jsonValue.GetArray("ProductInformationFilterValue");
+    Aws::Utils::Array<JsonView> productInformationFilterValueJsonList = jsonValue.GetArray("ProductInformationFilterValue");
     for(unsigned productInformationFilterValueIndex = 0; productInformationFilterValueIndex < productInformationFilterValueJsonList.GetLength(); ++productInformationFilterValueIndex)
     {
       m_productInformationFilterValue.push_back(productInformationFilterValueJsonList[productInformationFilterValueIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue ProductInformationFilter::Jsonize() const
 
   if(m_productInformationFilterValueHasBeenSet)
   {
-   Array<JsonValue> productInformationFilterValueJsonList(m_productInformationFilterValue.size());
+   Aws::Utils::Array<JsonValue> productInformationFilterValueJsonList(m_productInformationFilterValue.size());
    for(unsigned productInformationFilterValueIndex = 0; productInformationFilterValueIndex < productInformationFilterValueJsonList.GetLength(); ++productInformationFilterValueIndex)
    {
      productInformationFilterValueJsonList[productInformationFilterValueIndex].AsString(m_productInformationFilterValue[productInformationFilterValueIndex]);

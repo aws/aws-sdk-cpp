@@ -29,7 +29,7 @@ Aws::String GetUsageStatisticsRequest::SerializePayload() const
 
   if(m_filterByHasBeenSet)
   {
-   Array<JsonValue> filterByJsonList(m_filterBy.size());
+   Aws::Utils::Array<JsonValue> filterByJsonList(m_filterBy.size());
    for(unsigned filterByIndex = 0; filterByIndex < filterByJsonList.GetLength(); ++filterByIndex)
    {
      filterByJsonList[filterByIndex].AsObject(m_filterBy[filterByIndex].Jsonize());

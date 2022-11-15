@@ -44,7 +44,7 @@ ExportFilter& ExportFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("values"))
   {
-    Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
+    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue ExportFilter::Jsonize() const
 
   if(m_valuesHasBeenSet)
   {
-   Array<JsonValue> valuesJsonList(m_values.size());
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
    {
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);

@@ -30,7 +30,7 @@ DescribeACLsResult& DescribeACLsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ACLs"))
   {
-    Array<JsonView> aCLsJsonList = jsonValue.GetArray("ACLs");
+    Aws::Utils::Array<JsonView> aCLsJsonList = jsonValue.GetArray("ACLs");
     for(unsigned aCLsIndex = 0; aCLsIndex < aCLsJsonList.GetLength(); ++aCLsIndex)
     {
       m_aCLs.push_back(aCLsJsonList[aCLsIndex].AsObject());

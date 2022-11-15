@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     KeyGroupConfig m_keyGroupConfig;
-    bool m_keyGroupConfigHasBeenSet;
+    bool m_keyGroupConfigHasBeenSet = false;
   };
 
 } // namespace Model

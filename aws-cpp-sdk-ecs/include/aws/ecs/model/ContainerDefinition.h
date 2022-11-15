@@ -665,11 +665,10 @@ namespace Model
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container,
-     * so you should not specify fewer than 6 MiB of memory for your containers.</p>
-     * <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of
-     * memory for a container, so you should not specify fewer than 4 MiB of memory for
-     * your containers.</p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline int GetMemory() const{ return m_memory; }
 
@@ -692,11 +691,10 @@ namespace Model
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container,
-     * so you should not specify fewer than 6 MiB of memory for your containers.</p>
-     * <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of
-     * memory for a container, so you should not specify fewer than 4 MiB of memory for
-     * your containers.</p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
@@ -719,11 +717,10 @@ namespace Model
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container,
-     * so you should not specify fewer than 6 MiB of memory for your containers.</p>
-     * <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of
-     * memory for a container, so you should not specify fewer than 4 MiB of memory for
-     * your containers.</p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
@@ -746,11 +743,10 @@ namespace Model
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container,
-     * so you should not specify fewer than 6 MiB of memory for your containers.</p>
-     * <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of
-     * memory for a container, so you should not specify fewer than 4 MiB of memory for
-     * your containers.</p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline ContainerDefinition& WithMemory(int value) { SetMemory(value); return *this;}
 
@@ -781,8 +777,10 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline int GetMemoryReservation() const{ return m_memoryReservation; }
 
@@ -812,8 +810,10 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline bool MemoryReservationHasBeenSet() const { return m_memoryReservationHasBeenSet; }
 
@@ -843,8 +843,10 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline void SetMemoryReservation(int value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = value; }
 
@@ -874,8 +876,10 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
-     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline ContainerDefinition& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
 
@@ -2274,12 +2278,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2298,12 +2303,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2322,12 +2328,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2346,12 +2353,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2370,12 +2378,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2394,12 +2403,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2418,12 +2428,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -2442,12 +2453,13 @@ namespace Model
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
-     * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
-     * launch type, the container instances require at least version 1.26.0 of the
-     * container agent to turn on container dependencies. However, we recommend using
-     * the latest container agent version. For information about checking your agent
-     * version and updating to the latest version, see <a
+     * contain multiple dependencies on other containers in a task definition. When a
+     * dependency is defined for container startup, for container shutdown it is
+     * reversed.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to turn on container
+     * dependencies. However, we recommend using the latest container agent version.
+     * For information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
@@ -4895,121 +4907,121 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     RepositoryCredentials m_repositoryCredentials;
-    bool m_repositoryCredentialsHasBeenSet;
+    bool m_repositoryCredentialsHasBeenSet = false;
 
     int m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     int m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     int m_memoryReservation;
-    bool m_memoryReservationHasBeenSet;
+    bool m_memoryReservationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_links;
-    bool m_linksHasBeenSet;
+    bool m_linksHasBeenSet = false;
 
     Aws::Vector<PortMapping> m_portMappings;
-    bool m_portMappingsHasBeenSet;
+    bool m_portMappingsHasBeenSet = false;
 
     bool m_essential;
-    bool m_essentialHasBeenSet;
+    bool m_essentialHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entryPoint;
-    bool m_entryPointHasBeenSet;
+    bool m_entryPointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::Vector<EnvironmentFile> m_environmentFiles;
-    bool m_environmentFilesHasBeenSet;
+    bool m_environmentFilesHasBeenSet = false;
 
     Aws::Vector<MountPoint> m_mountPoints;
-    bool m_mountPointsHasBeenSet;
+    bool m_mountPointsHasBeenSet = false;
 
     Aws::Vector<VolumeFrom> m_volumesFrom;
-    bool m_volumesFromHasBeenSet;
+    bool m_volumesFromHasBeenSet = false;
 
     LinuxParameters m_linuxParameters;
-    bool m_linuxParametersHasBeenSet;
+    bool m_linuxParametersHasBeenSet = false;
 
     Aws::Vector<Secret> m_secrets;
-    bool m_secretsHasBeenSet;
+    bool m_secretsHasBeenSet = false;
 
     Aws::Vector<ContainerDependency> m_dependsOn;
-    bool m_dependsOnHasBeenSet;
+    bool m_dependsOnHasBeenSet = false;
 
     int m_startTimeout;
-    bool m_startTimeoutHasBeenSet;
+    bool m_startTimeoutHasBeenSet = false;
 
     int m_stopTimeout;
-    bool m_stopTimeoutHasBeenSet;
+    bool m_stopTimeoutHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     Aws::String m_workingDirectory;
-    bool m_workingDirectoryHasBeenSet;
+    bool m_workingDirectoryHasBeenSet = false;
 
     bool m_disableNetworking;
-    bool m_disableNetworkingHasBeenSet;
+    bool m_disableNetworkingHasBeenSet = false;
 
     bool m_privileged;
-    bool m_privilegedHasBeenSet;
+    bool m_privilegedHasBeenSet = false;
 
     bool m_readonlyRootFilesystem;
-    bool m_readonlyRootFilesystemHasBeenSet;
+    bool m_readonlyRootFilesystemHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsServers;
-    bool m_dnsServersHasBeenSet;
+    bool m_dnsServersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsSearchDomains;
-    bool m_dnsSearchDomainsHasBeenSet;
+    bool m_dnsSearchDomainsHasBeenSet = false;
 
     Aws::Vector<HostEntry> m_extraHosts;
-    bool m_extraHostsHasBeenSet;
+    bool m_extraHostsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dockerSecurityOptions;
-    bool m_dockerSecurityOptionsHasBeenSet;
+    bool m_dockerSecurityOptionsHasBeenSet = false;
 
     bool m_interactive;
-    bool m_interactiveHasBeenSet;
+    bool m_interactiveHasBeenSet = false;
 
     bool m_pseudoTerminal;
-    bool m_pseudoTerminalHasBeenSet;
+    bool m_pseudoTerminalHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_dockerLabels;
-    bool m_dockerLabelsHasBeenSet;
+    bool m_dockerLabelsHasBeenSet = false;
 
     Aws::Vector<Ulimit> m_ulimits;
-    bool m_ulimitsHasBeenSet;
+    bool m_ulimitsHasBeenSet = false;
 
     LogConfiguration m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     HealthCheck m_healthCheck;
-    bool m_healthCheckHasBeenSet;
+    bool m_healthCheckHasBeenSet = false;
 
     Aws::Vector<SystemControl> m_systemControls;
-    bool m_systemControlsHasBeenSet;
+    bool m_systemControlsHasBeenSet = false;
 
     Aws::Vector<ResourceRequirement> m_resourceRequirements;
-    bool m_resourceRequirementsHasBeenSet;
+    bool m_resourceRequirementsHasBeenSet = false;
 
     FirelensConfiguration m_firelensConfiguration;
-    bool m_firelensConfigurationHasBeenSet;
+    bool m_firelensConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

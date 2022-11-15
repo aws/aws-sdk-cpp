@@ -270,16 +270,16 @@ namespace Model
   private:
 
     Aws::String m_keyARN;
-    bool m_keyARNHasBeenSet;
+    bool m_keyARNHasBeenSet = false;
 
     KeyType m_keyType;
-    bool m_keyTypeHasBeenSet;
+    bool m_keyTypeHasBeenSet = false;
 
     DeliveryStreamEncryptionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     FailureDescription m_failureDescription;
-    bool m_failureDescriptionHasBeenSet;
+    bool m_failureDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

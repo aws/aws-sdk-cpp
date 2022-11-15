@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides the identifier of the KMScustomer master key (CMK) used to encrypt
-   * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
-   * CMKs.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the identifier of the KMS key used to encrypt data indexed by Amazon
+   * Kendra. Amazon Kendra doesn't support asymmetric keys.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ServerSideEncryptionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -40,57 +40,57 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't
-     * support asymmetric CMKs.</p>
+     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
+     * keys.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't
-     * support asymmetric CMKs.</p>
+     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
+     * keys.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't
-     * support asymmetric CMKs.</p>
+     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
+     * keys.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't
-     * support asymmetric CMKs.</p>
+     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
+     * keys.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't
-     * support asymmetric CMKs.</p>
+     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
+     * keys.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't
-     * support asymmetric CMKs.</p>
+     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
+     * keys.</p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't
-     * support asymmetric CMKs.</p>
+     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
+     * keys.</p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't
-     * support asymmetric CMKs.</p>
+     * <p>The identifier of the KMS key. Amazon Kendra doesn't support asymmetric
+     * keys.</p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

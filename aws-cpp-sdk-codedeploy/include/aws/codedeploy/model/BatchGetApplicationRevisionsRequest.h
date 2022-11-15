@@ -41,49 +41,49 @@ namespace Model
 
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::Vector<RevisionLocation> m_revisions;
-    bool m_revisionsHasBeenSet;
+    bool m_revisionsHasBeenSet = false;
   };
 
 } // namespace Model

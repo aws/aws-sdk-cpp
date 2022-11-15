@@ -66,7 +66,7 @@ GetDeviceFleetReportResult& GetDeviceFleetReportResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("AgentVersions"))
   {
-    Array<JsonView> agentVersionsJsonList = jsonValue.GetArray("AgentVersions");
+    Aws::Utils::Array<JsonView> agentVersionsJsonList = jsonValue.GetArray("AgentVersions");
     for(unsigned agentVersionsIndex = 0; agentVersionsIndex < agentVersionsJsonList.GetLength(); ++agentVersionsIndex)
     {
       m_agentVersions.push_back(agentVersionsJsonList[agentVersionsIndex].AsObject());
@@ -75,7 +75,7 @@ GetDeviceFleetReportResult& GetDeviceFleetReportResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("ModelStats"))
   {
-    Array<JsonView> modelStatsJsonList = jsonValue.GetArray("ModelStats");
+    Aws::Utils::Array<JsonView> modelStatsJsonList = jsonValue.GetArray("ModelStats");
     for(unsigned modelStatsIndex = 0; modelStatsIndex < modelStatsJsonList.GetLength(); ++modelStatsIndex)
     {
       m_modelStats.push_back(modelStatsJsonList[modelStatsIndex].AsObject());

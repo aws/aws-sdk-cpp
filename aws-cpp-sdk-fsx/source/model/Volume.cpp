@@ -101,7 +101,7 @@ Volume& Volume::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -132,7 +132,7 @@ Volume& Volume::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdministrativeActions"))
   {
-    Array<JsonView> administrativeActionsJsonList = jsonValue.GetArray("AdministrativeActions");
+    Aws::Utils::Array<JsonView> administrativeActionsJsonList = jsonValue.GetArray("AdministrativeActions");
     for(unsigned administrativeActionsIndex = 0; administrativeActionsIndex < administrativeActionsJsonList.GetLength(); ++administrativeActionsIndex)
     {
       m_administrativeActions.push_back(administrativeActionsJsonList[administrativeActionsIndex].AsObject());
@@ -190,7 +190,7 @@ JsonValue Volume::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -218,7 +218,7 @@ JsonValue Volume::Jsonize() const
 
   if(m_administrativeActionsHasBeenSet)
   {
-   Array<JsonValue> administrativeActionsJsonList(m_administrativeActions.size());
+   Aws::Utils::Array<JsonValue> administrativeActionsJsonList(m_administrativeActions.size());
    for(unsigned administrativeActionsIndex = 0; administrativeActionsIndex < administrativeActionsJsonList.GetLength(); ++administrativeActionsIndex)
    {
      administrativeActionsJsonList[administrativeActionsIndex].AsObject(m_administrativeActions[administrativeActionsIndex].Jsonize());

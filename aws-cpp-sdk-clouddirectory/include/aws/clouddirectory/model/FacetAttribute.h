@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     FacetAttributeDefinition m_attributeDefinition;
-    bool m_attributeDefinitionHasBeenSet;
+    bool m_attributeDefinitionHasBeenSet = false;
 
     FacetAttributeReference m_attributeReference;
-    bool m_attributeReferenceHasBeenSet;
+    bool m_attributeReferenceHasBeenSet = false;
 
     RequiredAttributeBehavior m_requiredBehavior;
-    bool m_requiredBehaviorHasBeenSet;
+    bool m_requiredBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

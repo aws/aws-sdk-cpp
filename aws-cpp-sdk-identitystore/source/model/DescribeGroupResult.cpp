@@ -40,6 +40,27 @@ DescribeGroupResult& DescribeGroupResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("ExternalIds"))
+  {
+    Aws::Utils::Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
+    for(unsigned externalIdsIndex = 0; externalIdsIndex < externalIdsJsonList.GetLength(); ++externalIdsIndex)
+    {
+      m_externalIds.push_back(externalIdsJsonList[externalIdsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("IdentityStoreId"))
+  {
+    m_identityStoreId = jsonValue.GetString("IdentityStoreId");
+
+  }
+
 
 
   return *this;

@@ -21,7 +21,9 @@ UpdateStudioComponentRequest::UpdateStudioComponentRequest() :
     m_ec2SecurityGroupIdsHasBeenSet(false),
     m_initializationScriptsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_runtimeRoleArnHasBeenSet(false),
     m_scriptParametersHasBeenSet(false),
+    m_secureInitializationRoleArnHasBeenSet(false),
     m_studioComponentIdHasBeenSet(false),
     m_studioIdHasBeenSet(false),
     m_subtype(StudioComponentSubtype::NOT_SET),
@@ -49,7 +51,7 @@ Aws::String UpdateStudioComponentRequest::SerializePayload() const
 
   if(m_ec2SecurityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> ec2SecurityGroupIdsJsonList(m_ec2SecurityGroupIds.size());
+   Aws::Utils::Array<JsonValue> ec2SecurityGroupIdsJsonList(m_ec2SecurityGroupIds.size());
    for(unsigned ec2SecurityGroupIdsIndex = 0; ec2SecurityGroupIdsIndex < ec2SecurityGroupIdsJsonList.GetLength(); ++ec2SecurityGroupIdsIndex)
    {
      ec2SecurityGroupIdsJsonList[ec2SecurityGroupIdsIndex].AsString(m_ec2SecurityGroupIds[ec2SecurityGroupIdsIndex]);
@@ -60,7 +62,7 @@ Aws::String UpdateStudioComponentRequest::SerializePayload() const
 
   if(m_initializationScriptsHasBeenSet)
   {
-   Array<JsonValue> initializationScriptsJsonList(m_initializationScripts.size());
+   Aws::Utils::Array<JsonValue> initializationScriptsJsonList(m_initializationScripts.size());
    for(unsigned initializationScriptsIndex = 0; initializationScriptsIndex < initializationScriptsJsonList.GetLength(); ++initializationScriptsIndex)
    {
      initializationScriptsJsonList[initializationScriptsIndex].AsObject(m_initializationScripts[initializationScriptsIndex].Jsonize());
@@ -75,14 +77,26 @@ Aws::String UpdateStudioComponentRequest::SerializePayload() const
 
   }
 
+  if(m_runtimeRoleArnHasBeenSet)
+  {
+   payload.WithString("runtimeRoleArn", m_runtimeRoleArn);
+
+  }
+
   if(m_scriptParametersHasBeenSet)
   {
-   Array<JsonValue> scriptParametersJsonList(m_scriptParameters.size());
+   Aws::Utils::Array<JsonValue> scriptParametersJsonList(m_scriptParameters.size());
    for(unsigned scriptParametersIndex = 0; scriptParametersIndex < scriptParametersJsonList.GetLength(); ++scriptParametersIndex)
    {
      scriptParametersJsonList[scriptParametersIndex].AsObject(m_scriptParameters[scriptParametersIndex].Jsonize());
    }
    payload.WithArray("scriptParameters", std::move(scriptParametersJsonList));
+
+  }
+
+  if(m_secureInitializationRoleArnHasBeenSet)
+  {
+   payload.WithString("secureInitializationRoleArn", m_secureInitializationRoleArn);
 
   }
 

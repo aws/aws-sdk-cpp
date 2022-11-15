@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_userNamesToRemove;
-    bool m_userNamesToRemoveHasBeenSet;
+    bool m_userNamesToRemoveHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userNamesToAdd;
-    bool m_userNamesToAddHasBeenSet;
+    bool m_userNamesToAddHasBeenSet = false;
   };
 
 } // namespace Model

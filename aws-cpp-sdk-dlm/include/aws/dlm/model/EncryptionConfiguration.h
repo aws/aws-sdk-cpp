@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the encryption settings for shared snapshots that are copied across
-   * Regions.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[Event-based policies only]</b> Specifies the encryption settings for
+   * cross-Region snapshot copies created by event-based policies.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -130,10 +131,10 @@ namespace Model
   private:
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_cmkArn;
-    bool m_cmkArnHasBeenSet;
+    bool m_cmkArnHasBeenSet = false;
   };
 
 } // namespace Model

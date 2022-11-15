@@ -12,6 +12,7 @@ using namespace Aws::Utils;
 
 RestoreDBClusterToPointInTimeRequest::RestoreDBClusterToPointInTimeRequest() : 
     m_dBClusterIdentifierHasBeenSet(false),
+    m_restoreTypeHasBeenSet(false),
     m_sourceDBClusterIdentifierHasBeenSet(false),
     m_restoreToTimeHasBeenSet(false),
     m_useLatestRestorableTime(false),
@@ -37,6 +38,11 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
 
+  if(m_restoreTypeHasBeenSet)
+  {
+    ss << "RestoreType=" << StringUtils::URLEncode(m_restoreType.c_str()) << "&";
+  }
+
   if(m_sourceDBClusterIdentifierHasBeenSet)
   {
     ss << "SourceDBClusterIdentifier=" << StringUtils::URLEncode(m_sourceDBClusterIdentifier.c_str()) << "&";
@@ -44,7 +50,7 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
 
   if(m_restoreToTimeHasBeenSet)
   {
-    ss << "RestoreToTime=" << StringUtils::URLEncode(m_restoreToTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "RestoreToTime=" << StringUtils::URLEncode(m_restoreToTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_useLatestRestorableTimeHasBeenSet)

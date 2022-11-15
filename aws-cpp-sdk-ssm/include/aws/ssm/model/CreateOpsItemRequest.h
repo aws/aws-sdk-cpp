@@ -1034,49 +1034,49 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_opsItemType;
-    bool m_opsItemTypeHasBeenSet;
+    bool m_opsItemTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, OpsItemDataValue> m_operationalData;
-    bool m_operationalDataHasBeenSet;
+    bool m_operationalDataHasBeenSet = false;
 
     Aws::Vector<OpsItemNotification> m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::Vector<RelatedOpsItem> m_relatedOpsItems;
-    bool m_relatedOpsItemsHasBeenSet;
+    bool m_relatedOpsItemsHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::Utils::DateTime m_actualStartTime;
-    bool m_actualStartTimeHasBeenSet;
+    bool m_actualStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_actualEndTime;
-    bool m_actualEndTimeHasBeenSet;
+    bool m_actualEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_plannedStartTime;
-    bool m_plannedStartTimeHasBeenSet;
+    bool m_plannedStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_plannedEndTime;
-    bool m_plannedEndTimeHasBeenSet;
+    bool m_plannedEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_dataSourceIds;
-    bool m_dataSourceIdsHasBeenSet;
+    bool m_dataSourceIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_faqIds;
-    bool m_faqIdsHasBeenSet;
+    bool m_faqIdsHasBeenSet = false;
 
     bool m_directPutContent;
-    bool m_directPutContentHasBeenSet;
+    bool m_directPutContentHasBeenSet = false;
   };
 
 } // namespace Model

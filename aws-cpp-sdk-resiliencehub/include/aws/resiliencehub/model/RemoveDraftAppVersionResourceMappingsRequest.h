@@ -364,22 +364,22 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_appRegistryAppNames;
-    bool m_appRegistryAppNamesHasBeenSet;
+    bool m_appRegistryAppNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logicalStackNames;
-    bool m_logicalStackNamesHasBeenSet;
+    bool m_logicalStackNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceGroupNames;
-    bool m_resourceGroupNamesHasBeenSet;
+    bool m_resourceGroupNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceNames;
-    bool m_resourceNamesHasBeenSet;
+    bool m_resourceNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_terraformSourceNames;
-    bool m_terraformSourceNamesHasBeenSet;
+    bool m_terraformSourceNamesHasBeenSet = false;
   };
 
 } // namespace Model

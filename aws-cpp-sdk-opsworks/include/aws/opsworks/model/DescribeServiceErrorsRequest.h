@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_serviceErrorIds;
-    bool m_serviceErrorIdsHasBeenSet;
+    bool m_serviceErrorIdsHasBeenSet = false;
   };
 
 } // namespace Model

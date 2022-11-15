@@ -40,7 +40,7 @@ Aws::String AllowCustomRoutingTrafficRequest::SerializePayload() const
 
   if(m_destinationAddressesHasBeenSet)
   {
-   Array<JsonValue> destinationAddressesJsonList(m_destinationAddresses.size());
+   Aws::Utils::Array<JsonValue> destinationAddressesJsonList(m_destinationAddresses.size());
    for(unsigned destinationAddressesIndex = 0; destinationAddressesIndex < destinationAddressesJsonList.GetLength(); ++destinationAddressesIndex)
    {
      destinationAddressesJsonList[destinationAddressesIndex].AsString(m_destinationAddresses[destinationAddressesIndex]);
@@ -51,7 +51,7 @@ Aws::String AllowCustomRoutingTrafficRequest::SerializePayload() const
 
   if(m_destinationPortsHasBeenSet)
   {
-   Array<JsonValue> destinationPortsJsonList(m_destinationPorts.size());
+   Aws::Utils::Array<JsonValue> destinationPortsJsonList(m_destinationPorts.size());
    for(unsigned destinationPortsIndex = 0; destinationPortsIndex < destinationPortsJsonList.GetLength(); ++destinationPortsIndex)
    {
      destinationPortsJsonList[destinationPortsIndex].AsInteger(m_destinationPorts[destinationPortsIndex]);

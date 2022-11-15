@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<Issue> m_issues;
-    bool m_issuesHasBeenSet;
+    bool m_issuesHasBeenSet = false;
   };
 
 } // namespace Model

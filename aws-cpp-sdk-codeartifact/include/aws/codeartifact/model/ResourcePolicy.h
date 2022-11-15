@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> An AWS CodeArtifact resource policy that contains a resource ARN, document
+   * <p> An CodeArtifact resource policy that contains a resource ARN, document
    * details, and a revision. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ResourcePolicy">AWS
    * API Reference</a></p>
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     Aws::String m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
   };
 
 } // namespace Model

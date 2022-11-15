@@ -39,7 +39,7 @@ Scope& Scope::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComplianceResourceTypes"))
   {
-    Array<JsonView> complianceResourceTypesJsonList = jsonValue.GetArray("ComplianceResourceTypes");
+    Aws::Utils::Array<JsonView> complianceResourceTypesJsonList = jsonValue.GetArray("ComplianceResourceTypes");
     for(unsigned complianceResourceTypesIndex = 0; complianceResourceTypesIndex < complianceResourceTypesJsonList.GetLength(); ++complianceResourceTypesIndex)
     {
       m_complianceResourceTypes.push_back(complianceResourceTypesJsonList[complianceResourceTypesIndex].AsString());
@@ -77,7 +77,7 @@ JsonValue Scope::Jsonize() const
 
   if(m_complianceResourceTypesHasBeenSet)
   {
-   Array<JsonValue> complianceResourceTypesJsonList(m_complianceResourceTypes.size());
+   Aws::Utils::Array<JsonValue> complianceResourceTypesJsonList(m_complianceResourceTypes.size());
    for(unsigned complianceResourceTypesIndex = 0; complianceResourceTypesIndex < complianceResourceTypesJsonList.GetLength(); ++complianceResourceTypesIndex)
    {
      complianceResourceTypesJsonList[complianceResourceTypesIndex].AsString(m_complianceResourceTypes[complianceResourceTypesIndex]);

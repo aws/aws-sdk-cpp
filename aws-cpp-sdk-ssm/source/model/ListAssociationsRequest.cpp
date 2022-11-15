@@ -26,7 +26,7 @@ Aws::String ListAssociationsRequest::SerializePayload() const
 
   if(m_associationFilterListHasBeenSet)
   {
-   Array<JsonValue> associationFilterListJsonList(m_associationFilterList.size());
+   Aws::Utils::Array<JsonValue> associationFilterListJsonList(m_associationFilterList.size());
    for(unsigned associationFilterListIndex = 0; associationFilterListIndex < associationFilterListJsonList.GetLength(); ++associationFilterListIndex)
    {
      associationFilterListJsonList[associationFilterListIndex].AsObject(m_associationFilterList[associationFilterListIndex].Jsonize());

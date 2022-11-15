@@ -22,6 +22,8 @@ namespace Aws
 
         static const int Bayesian_HASH = HashingUtils::HashString("Bayesian");
         static const int Random_HASH = HashingUtils::HashString("Random");
+        static const int Hyperband_HASH = HashingUtils::HashString("Hyperband");
+        static const int Grid_HASH = HashingUtils::HashString("Grid");
 
 
         HyperParameterTuningJobStrategyType GetHyperParameterTuningJobStrategyTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == Random_HASH)
           {
             return HyperParameterTuningJobStrategyType::Random;
+          }
+          else if (hashCode == Hyperband_HASH)
+          {
+            return HyperParameterTuningJobStrategyType::Hyperband;
+          }
+          else if (hashCode == Grid_HASH)
+          {
+            return HyperParameterTuningJobStrategyType::Grid;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +63,10 @@ namespace Aws
             return "Bayesian";
           case HyperParameterTuningJobStrategyType::Random:
             return "Random";
+          case HyperParameterTuningJobStrategyType::Hyperband:
+            return "Hyperband";
+          case HyperParameterTuningJobStrategyType::Grid:
+            return "Grid";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

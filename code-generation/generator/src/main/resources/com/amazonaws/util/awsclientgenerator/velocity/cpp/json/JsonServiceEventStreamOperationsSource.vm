@@ -1,6 +1,6 @@
 void ${className}::${operation.name}Async(Model::${operation.request.shape.name}& request,
                 const ${operation.name}StreamReadyHandler& streamReadyHandler,
-                const ${operation.name}ResponseReceivedHandler& responseHandler,
+                const ${operation.name}ResponseReceivedHandler& handler,
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
@@ -11,7 +11,11 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
 #else
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.request.shape.signerName});
+#if($serviceModel.endpointRules)
+  JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName});
+#else
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName});
+#end
 #end
 
 #set($streamModelName = '')
@@ -29,16 +33,20 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
   auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
-  m_executor->Submit([this, uri, &request, responseHandler, handlerContext] () mutable {
-      JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+#if($serviceModel.endpointRules)
+  m_executor->Submit([this, &endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
+#else
+  m_executor->Submit([this, uri, &request, handler, handlerContext] () mutable {
+#end
+      JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {
-        responseHandler(this, request, ${operation.name}Outcome(NoResult()), handlerContext);
+        handler(this, request, ${operation.name}Outcome(NoResult()), handlerContext);
       }
       else
       {
         request.Get${streamModelNameWithFirstLetterCapitalized}()->Close();
-        responseHandler(this, request, ${operation.name}Outcome(outcome.GetError()), handlerContext);
+        handler(this, request, ${operation.name}Outcome(outcome.GetError()), handlerContext);
       }
       return ${operation.name}Outcome(NoResult());
   });

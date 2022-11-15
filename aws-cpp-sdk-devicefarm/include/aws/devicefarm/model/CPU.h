@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     Aws::String m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     double m_clock;
-    bool m_clockHasBeenSet;
+    bool m_clockHasBeenSet = false;
   };
 
 } // namespace Model

@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_ticketId;
-    bool m_ticketIdHasBeenSet;
+    bool m_ticketIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_playerIds;
-    bool m_playerIdsHasBeenSet;
+    bool m_playerIdsHasBeenSet = false;
 
     AcceptanceType m_acceptanceType;
-    bool m_acceptanceTypeHasBeenSet;
+    bool m_acceptanceTypeHasBeenSet = false;
   };
 
 } // namespace Model

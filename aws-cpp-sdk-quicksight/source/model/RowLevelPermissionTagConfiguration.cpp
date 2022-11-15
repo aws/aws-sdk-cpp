@@ -44,7 +44,7 @@ RowLevelPermissionTagConfiguration& RowLevelPermissionTagConfiguration::operator
 
   if(jsonValue.ValueExists("TagRules"))
   {
-    Array<JsonView> tagRulesJsonList = jsonValue.GetArray("TagRules");
+    Aws::Utils::Array<JsonView> tagRulesJsonList = jsonValue.GetArray("TagRules");
     for(unsigned tagRulesIndex = 0; tagRulesIndex < tagRulesJsonList.GetLength(); ++tagRulesIndex)
     {
       m_tagRules.push_back(tagRulesJsonList[tagRulesIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue RowLevelPermissionTagConfiguration::Jsonize() const
 
   if(m_tagRulesHasBeenSet)
   {
-   Array<JsonValue> tagRulesJsonList(m_tagRules.size());
+   Aws::Utils::Array<JsonValue> tagRulesJsonList(m_tagRules.size());
    for(unsigned tagRulesIndex = 0; tagRulesIndex < tagRulesJsonList.GetLength(); ++tagRulesIndex)
    {
      tagRulesJsonList[tagRulesIndex].AsObject(m_tagRules[tagRulesIndex].Jsonize());

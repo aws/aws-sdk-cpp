@@ -57,11 +57,11 @@ namespace Model
    * <ul> <li> <p>Container health checks require version 1.17.0 or greater of the
    * Amazon ECS container agent. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
-   * the Amazon ECS Container Agent</a>.</p> </li> <li> <p>Container health checks
-   * are supported for Fargate tasks if you're using platform version 1.1.0 or
-   * greater. For more information, see <a
+   * the Amazon ECS container agent</a>.</p> </li> <li> <p>Container health checks
+   * are supported for Fargate tasks if you're using platform version
+   * <code>1.1.0</code> or greater. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-   * Platform Versions</a>.</p> </li> <li> <p>Container health checks aren't
+   * platform versions</a>.</p> </li> <li> <p>Container health checks aren't
    * supported for tasks that are part of a service that's configured to use a
    * Classic Load Balancer.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HealthCheck">AWS API
@@ -78,11 +78,11 @@ namespace Model
 
     /**
      * <p>A string array representing the command that the container runs to determine
-     * if it is healthy. The string array must start with <code>CMD</code> to execute
-     * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. </p> <p> When you use the Amazon Web
-     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * if it is healthy. The string array must start with <code>CMD</code> to run the
+     * command arguments directly, or <code>CMD-SHELL</code> to run the command with
+     * the container's default shell. </p> <p> When you use the Amazon Web Services
+     * Management Console JSON panel, the Command Line Interface, or the APIs, enclose
+     * the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
      * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
      * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
      * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
@@ -96,11 +96,11 @@ namespace Model
 
     /**
      * <p>A string array representing the command that the container runs to determine
-     * if it is healthy. The string array must start with <code>CMD</code> to execute
-     * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. </p> <p> When you use the Amazon Web
-     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * if it is healthy. The string array must start with <code>CMD</code> to run the
+     * command arguments directly, or <code>CMD-SHELL</code> to run the command with
+     * the container's default shell. </p> <p> When you use the Amazon Web Services
+     * Management Console JSON panel, the Command Line Interface, or the APIs, enclose
+     * the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
      * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
      * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
      * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
@@ -114,11 +114,11 @@ namespace Model
 
     /**
      * <p>A string array representing the command that the container runs to determine
-     * if it is healthy. The string array must start with <code>CMD</code> to execute
-     * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. </p> <p> When you use the Amazon Web
-     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * if it is healthy. The string array must start with <code>CMD</code> to run the
+     * command arguments directly, or <code>CMD-SHELL</code> to run the command with
+     * the container's default shell. </p> <p> When you use the Amazon Web Services
+     * Management Console JSON panel, the Command Line Interface, or the APIs, enclose
+     * the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
      * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
      * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
      * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
@@ -132,11 +132,11 @@ namespace Model
 
     /**
      * <p>A string array representing the command that the container runs to determine
-     * if it is healthy. The string array must start with <code>CMD</code> to execute
-     * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. </p> <p> When you use the Amazon Web
-     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * if it is healthy. The string array must start with <code>CMD</code> to run the
+     * command arguments directly, or <code>CMD-SHELL</code> to run the command with
+     * the container's default shell. </p> <p> When you use the Amazon Web Services
+     * Management Console JSON panel, the Command Line Interface, or the APIs, enclose
+     * the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
      * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
      * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
      * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
@@ -150,11 +150,11 @@ namespace Model
 
     /**
      * <p>A string array representing the command that the container runs to determine
-     * if it is healthy. The string array must start with <code>CMD</code> to execute
-     * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. </p> <p> When you use the Amazon Web
-     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * if it is healthy. The string array must start with <code>CMD</code> to run the
+     * command arguments directly, or <code>CMD-SHELL</code> to run the command with
+     * the container's default shell. </p> <p> When you use the Amazon Web Services
+     * Management Console JSON panel, the Command Line Interface, or the APIs, enclose
+     * the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
      * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
      * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
      * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
@@ -168,11 +168,11 @@ namespace Model
 
     /**
      * <p>A string array representing the command that the container runs to determine
-     * if it is healthy. The string array must start with <code>CMD</code> to execute
-     * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. </p> <p> When you use the Amazon Web
-     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * if it is healthy. The string array must start with <code>CMD</code> to run the
+     * command arguments directly, or <code>CMD-SHELL</code> to run the command with
+     * the container's default shell. </p> <p> When you use the Amazon Web Services
+     * Management Console JSON panel, the Command Line Interface, or the APIs, enclose
+     * the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
      * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
      * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
      * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
@@ -186,11 +186,11 @@ namespace Model
 
     /**
      * <p>A string array representing the command that the container runs to determine
-     * if it is healthy. The string array must start with <code>CMD</code> to execute
-     * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. </p> <p> When you use the Amazon Web
-     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * if it is healthy. The string array must start with <code>CMD</code> to run the
+     * command arguments directly, or <code>CMD-SHELL</code> to run the command with
+     * the container's default shell. </p> <p> When you use the Amazon Web Services
+     * Management Console JSON panel, the Command Line Interface, or the APIs, enclose
+     * the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
      * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
      * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
      * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
@@ -204,11 +204,11 @@ namespace Model
 
     /**
      * <p>A string array representing the command that the container runs to determine
-     * if it is healthy. The string array must start with <code>CMD</code> to execute
-     * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. </p> <p> When you use the Amazon Web
-     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * if it is healthy. The string array must start with <code>CMD</code> to run the
+     * command arguments directly, or <code>CMD-SHELL</code> to run the command with
+     * the container's default shell. </p> <p> When you use the Amazon Web Services
+     * Management Console JSON panel, the Command Line Interface, or the APIs, enclose
+     * the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
      * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
      * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
      * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
@@ -222,11 +222,11 @@ namespace Model
 
     /**
      * <p>A string array representing the command that the container runs to determine
-     * if it is healthy. The string array must start with <code>CMD</code> to execute
-     * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. </p> <p> When you use the Amazon Web
-     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * if it is healthy. The string array must start with <code>CMD</code> to run the
+     * command arguments directly, or <code>CMD-SHELL</code> to run the command with
+     * the container's default shell. </p> <p> When you use the Amazon Web Services
+     * Management Console JSON panel, the Command Line Interface, or the APIs, enclose
+     * the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
      * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
      * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
      * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
@@ -365,19 +365,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     int m_retries;
-    bool m_retriesHasBeenSet;
+    bool m_retriesHasBeenSet = false;
 
     int m_startPeriod;
-    bool m_startPeriodHasBeenSet;
+    bool m_startPeriodHasBeenSet = false;
   };
 
 } // namespace Model

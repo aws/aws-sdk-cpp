@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_sourceLocationArn;
-    bool m_sourceLocationArnHasBeenSet;
+    bool m_sourceLocationArnHasBeenSet = false;
 
     Aws::String m_handler;
-    bool m_handlerHasBeenSet;
+    bool m_handlerHasBeenSet = false;
   };
 
 } // namespace Model

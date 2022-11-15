@@ -165,8 +165,8 @@ namespace Model
      * <p>The ID of the default version of the extension. The default version is used
      * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
-     * those provided by Amazon and published by third parties, CloudFormation returns
-     * <code>null</code>. For more information, see <a
+     * those provided by Amazon Web Services and published by third parties,
+     * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
      * <a>SetTypeDefaultVersion</a> </code>.</p>
@@ -177,8 +177,8 @@ namespace Model
      * <p>The ID of the default version of the extension. The default version is used
      * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
-     * those provided by Amazon and published by third parties, CloudFormation returns
-     * <code>null</code>. For more information, see <a
+     * those provided by Amazon Web Services and published by third parties,
+     * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
      * <a>SetTypeDefaultVersion</a> </code>.</p>
@@ -189,8 +189,8 @@ namespace Model
      * <p>The ID of the default version of the extension. The default version is used
      * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
-     * those provided by Amazon and published by third parties, CloudFormation returns
-     * <code>null</code>. For more information, see <a
+     * those provided by Amazon Web Services and published by third parties,
+     * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
      * <a>SetTypeDefaultVersion</a> </code>.</p>
@@ -201,8 +201,8 @@ namespace Model
      * <p>The ID of the default version of the extension. The default version is used
      * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
-     * those provided by Amazon and published by third parties, CloudFormation returns
-     * <code>null</code>. For more information, see <a
+     * those provided by Amazon Web Services and published by third parties,
+     * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
      * <a>SetTypeDefaultVersion</a> </code>.</p>
@@ -213,8 +213,8 @@ namespace Model
      * <p>The ID of the default version of the extension. The default version is used
      * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
-     * those provided by Amazon and published by third parties, CloudFormation returns
-     * <code>null</code>. For more information, see <a
+     * those provided by Amazon Web Services and published by third parties,
+     * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
      * <a>SetTypeDefaultVersion</a> </code>.</p>
@@ -225,8 +225,8 @@ namespace Model
      * <p>The ID of the default version of the extension. The default version is used
      * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
-     * those provided by Amazon and published by third parties, CloudFormation returns
-     * <code>null</code>. For more information, see <a
+     * those provided by Amazon Web Services and published by third parties,
+     * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
      * <a>SetTypeDefaultVersion</a> </code>.</p>
@@ -237,8 +237,8 @@ namespace Model
      * <p>The ID of the default version of the extension. The default version is used
      * when the extension version isn't specified.</p> <p>This applies only to private
      * extensions you have registered in your account. For public extensions, both
-     * those provided by Amazon and published by third parties, CloudFormation returns
-     * <code>null</code>. For more information, see <a
+     * those provided by Amazon Web Services and published by third parties,
+     * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      * <p>To set the default version of an extension, use <code>
      * <a>SetTypeDefaultVersion</a> </code>.</p>
@@ -249,8 +249,8 @@ namespace Model
     /**
      * <p>Whether the specified extension version is set as the default version.</p>
      * <p>This applies only to private extensions you have registered in your account,
-     * and extensions published by Amazon. For public third-party extensions, whether
-     * or not they are activated in your account, CloudFormation returns
+     * and extensions published by Amazon Web Services. For public third-party
+     * extensions, whether they are activated in your account, CloudFormation returns
      * <code>null</code>.</p>
      */
     inline bool GetIsDefaultVersion() const{ return m_isDefaultVersion; }
@@ -258,8 +258,8 @@ namespace Model
     /**
      * <p>Whether the specified extension version is set as the default version.</p>
      * <p>This applies only to private extensions you have registered in your account,
-     * and extensions published by Amazon. For public third-party extensions, whether
-     * or not they are activated in your account, CloudFormation returns
+     * and extensions published by Amazon Web Services. For public third-party
+     * extensions, whether they are activated in your account, CloudFormation returns
      * <code>null</code>.</p>
      */
     inline void SetIsDefaultVersion(bool value) { m_isDefaultVersion = value; }
@@ -267,8 +267,8 @@ namespace Model
     /**
      * <p>Whether the specified extension version is set as the default version.</p>
      * <p>This applies only to private extensions you have registered in your account,
-     * and extensions published by Amazon. For public third-party extensions, whether
-     * or not they are activated in your account, CloudFormation returns
+     * and extensions published by Amazon Web Services. For public third-party
+     * extensions, whether they are activated in your account, CloudFormation returns
      * <code>null</code>.</p>
      */
     inline DescribeTypeResult& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
@@ -279,7 +279,7 @@ namespace Model
      * extension test status of a specific extension version, you must specify
      * <code>VersionId</code>.</p> <p>This applies only to registered private extension
      * versions. CloudFormation doesn't return this information for public extensions,
-     * whether or not they are activated in your account.</p> <ul> <li> <p>
+     * whether they are activated in your account.</p> <ul> <li> <p>
      * <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An
      * extension must have a test status of <code>PASSED</code> before it can be
      * published. For more information, see <a
@@ -298,7 +298,7 @@ namespace Model
      * extension test status of a specific extension version, you must specify
      * <code>VersionId</code>.</p> <p>This applies only to registered private extension
      * versions. CloudFormation doesn't return this information for public extensions,
-     * whether or not they are activated in your account.</p> <ul> <li> <p>
+     * whether they are activated in your account.</p> <ul> <li> <p>
      * <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An
      * extension must have a test status of <code>PASSED</code> before it can be
      * published. For more information, see <a
@@ -317,7 +317,7 @@ namespace Model
      * extension test status of a specific extension version, you must specify
      * <code>VersionId</code>.</p> <p>This applies only to registered private extension
      * versions. CloudFormation doesn't return this information for public extensions,
-     * whether or not they are activated in your account.</p> <ul> <li> <p>
+     * whether they are activated in your account.</p> <ul> <li> <p>
      * <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An
      * extension must have a test status of <code>PASSED</code> before it can be
      * published. For more information, see <a
@@ -336,7 +336,7 @@ namespace Model
      * extension test status of a specific extension version, you must specify
      * <code>VersionId</code>.</p> <p>This applies only to registered private extension
      * versions. CloudFormation doesn't return this information for public extensions,
-     * whether or not they are activated in your account.</p> <ul> <li> <p>
+     * whether they are activated in your account.</p> <ul> <li> <p>
      * <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An
      * extension must have a test status of <code>PASSED</code> before it can be
      * published. For more information, see <a
@@ -355,7 +355,7 @@ namespace Model
      * extension test status of a specific extension version, you must specify
      * <code>VersionId</code>.</p> <p>This applies only to registered private extension
      * versions. CloudFormation doesn't return this information for public extensions,
-     * whether or not they are activated in your account.</p> <ul> <li> <p>
+     * whether they are activated in your account.</p> <ul> <li> <p>
      * <code>PASSED</code>: The extension has passed all its contract tests.</p> <p>An
      * extension must have a test status of <code>PASSED</code> before it can be
      * published. For more information, see <a
@@ -374,8 +374,8 @@ namespace Model
      * <p>The description of the test status. To return the extension test status of a
      * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
      * applies only to registered private extension versions. CloudFormation doesn't
-     * return this information for public extensions, whether or not they are activated
-     * in your account.</p>
+     * return this information for public extensions, whether they are activated in
+     * your account.</p>
      */
     inline const Aws::String& GetTypeTestsStatusDescription() const{ return m_typeTestsStatusDescription; }
 
@@ -383,8 +383,8 @@ namespace Model
      * <p>The description of the test status. To return the extension test status of a
      * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
      * applies only to registered private extension versions. CloudFormation doesn't
-     * return this information for public extensions, whether or not they are activated
-     * in your account.</p>
+     * return this information for public extensions, whether they are activated in
+     * your account.</p>
      */
     inline void SetTypeTestsStatusDescription(const Aws::String& value) { m_typeTestsStatusDescription = value; }
 
@@ -392,8 +392,8 @@ namespace Model
      * <p>The description of the test status. To return the extension test status of a
      * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
      * applies only to registered private extension versions. CloudFormation doesn't
-     * return this information for public extensions, whether or not they are activated
-     * in your account.</p>
+     * return this information for public extensions, whether they are activated in
+     * your account.</p>
      */
     inline void SetTypeTestsStatusDescription(Aws::String&& value) { m_typeTestsStatusDescription = std::move(value); }
 
@@ -401,8 +401,8 @@ namespace Model
      * <p>The description of the test status. To return the extension test status of a
      * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
      * applies only to registered private extension versions. CloudFormation doesn't
-     * return this information for public extensions, whether or not they are activated
-     * in your account.</p>
+     * return this information for public extensions, whether they are activated in
+     * your account.</p>
      */
     inline void SetTypeTestsStatusDescription(const char* value) { m_typeTestsStatusDescription.assign(value); }
 
@@ -410,8 +410,8 @@ namespace Model
      * <p>The description of the test status. To return the extension test status of a
      * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
      * applies only to registered private extension versions. CloudFormation doesn't
-     * return this information for public extensions, whether or not they are activated
-     * in your account.</p>
+     * return this information for public extensions, whether they are activated in
+     * your account.</p>
      */
     inline DescribeTypeResult& WithTypeTestsStatusDescription(const Aws::String& value) { SetTypeTestsStatusDescription(value); return *this;}
 
@@ -419,8 +419,8 @@ namespace Model
      * <p>The description of the test status. To return the extension test status of a
      * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
      * applies only to registered private extension versions. CloudFormation doesn't
-     * return this information for public extensions, whether or not they are activated
-     * in your account.</p>
+     * return this information for public extensions, whether they are activated in
+     * your account.</p>
      */
     inline DescribeTypeResult& WithTypeTestsStatusDescription(Aws::String&& value) { SetTypeTestsStatusDescription(std::move(value)); return *this;}
 
@@ -428,8 +428,8 @@ namespace Model
      * <p>The description of the test status. To return the extension test status of a
      * specific extension version, you must specify <code>VersionId</code>.</p> <p>This
      * applies only to registered private extension versions. CloudFormation doesn't
-     * return this information for public extensions, whether or not they are activated
-     * in your account.</p>
+     * return this information for public extensions, whether they are activated in
+     * your account.</p>
      */
     inline DescribeTypeResult& WithTypeTestsStatusDescription(const char* value) { SetTypeTestsStatusDescription(value); return *this;}
 
@@ -471,7 +471,7 @@ namespace Model
 
 
     /**
-     * <p>The schema that defines the extension.</p> <p>For more information on
+     * <p>The schema that defines the extension.</p> <p>For more information about
      * extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
@@ -479,7 +479,7 @@ namespace Model
     inline const Aws::String& GetSchema() const{ return m_schema; }
 
     /**
-     * <p>The schema that defines the extension.</p> <p>For more information on
+     * <p>The schema that defines the extension.</p> <p>For more information about
      * extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
@@ -487,7 +487,7 @@ namespace Model
     inline void SetSchema(const Aws::String& value) { m_schema = value; }
 
     /**
-     * <p>The schema that defines the extension.</p> <p>For more information on
+     * <p>The schema that defines the extension.</p> <p>For more information about
      * extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
@@ -495,7 +495,7 @@ namespace Model
     inline void SetSchema(Aws::String&& value) { m_schema = std::move(value); }
 
     /**
-     * <p>The schema that defines the extension.</p> <p>For more information on
+     * <p>The schema that defines the extension.</p> <p>For more information about
      * extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
@@ -503,7 +503,7 @@ namespace Model
     inline void SetSchema(const char* value) { m_schema.assign(value); }
 
     /**
-     * <p>The schema that defines the extension.</p> <p>For more information on
+     * <p>The schema that defines the extension.</p> <p>For more information about
      * extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
@@ -511,7 +511,7 @@ namespace Model
     inline DescribeTypeResult& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
 
     /**
-     * <p>The schema that defines the extension.</p> <p>For more information on
+     * <p>The schema that defines the extension.</p> <p>For more information about
      * extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
@@ -519,7 +519,7 @@ namespace Model
     inline DescribeTypeResult& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
-     * <p>The schema that defines the extension.</p> <p>For more information on
+     * <p>The schema that defines the extension.</p> <p>For more information about
      * extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
@@ -667,8 +667,9 @@ namespace Model
     /**
      * <p>Contains logging configuration information for private extensions. This
      * applies only to private extensions you have registered in your account. For
-     * public extensions, both those provided by Amazon and published by third parties,
-     * CloudFormation returns <code>null</code>. For more information, see <a
+     * public extensions, both those provided by Amazon Web Services and published by
+     * third parties, CloudFormation returns <code>null</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      */
     inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
@@ -676,8 +677,9 @@ namespace Model
     /**
      * <p>Contains logging configuration information for private extensions. This
      * applies only to private extensions you have registered in your account. For
-     * public extensions, both those provided by Amazon and published by third parties,
-     * CloudFormation returns <code>null</code>. For more information, see <a
+     * public extensions, both those provided by Amazon Web Services and published by
+     * third parties, CloudFormation returns <code>null</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      */
     inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfig = value; }
@@ -685,8 +687,9 @@ namespace Model
     /**
      * <p>Contains logging configuration information for private extensions. This
      * applies only to private extensions you have registered in your account. For
-     * public extensions, both those provided by Amazon and published by third parties,
-     * CloudFormation returns <code>null</code>. For more information, see <a
+     * public extensions, both those provided by Amazon Web Services and published by
+     * third parties, CloudFormation returns <code>null</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      */
     inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfig = std::move(value); }
@@ -694,8 +697,9 @@ namespace Model
     /**
      * <p>Contains logging configuration information for private extensions. This
      * applies only to private extensions you have registered in your account. For
-     * public extensions, both those provided by Amazon and published by third parties,
-     * CloudFormation returns <code>null</code>. For more information, see <a
+     * public extensions, both those provided by Amazon Web Services and published by
+     * third parties, CloudFormation returns <code>null</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      */
     inline DescribeTypeResult& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
@@ -703,8 +707,9 @@ namespace Model
     /**
      * <p>Contains logging configuration information for private extensions. This
      * applies only to private extensions you have registered in your account. For
-     * public extensions, both those provided by Amazon and published by third parties,
-     * CloudFormation returns <code>null</code>. For more information, see <a
+     * public extensions, both those provided by Amazon Web Services and published by
+     * third parties, CloudFormation returns <code>null</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      */
     inline DescribeTypeResult& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
@@ -758,7 +763,7 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * <p>If the registered extension calls any Amazon Web Services APIs, you must
      * create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
@@ -773,7 +778,7 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * <p>If the registered extension calls any Amazon Web Services APIs, you must
      * create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
@@ -788,7 +793,7 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * <p>If the registered extension calls any Amazon Web Services APIs, you must
      * create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
@@ -803,7 +808,7 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * <p>If the registered extension calls any Amazon Web Services APIs, you must
      * create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
@@ -818,7 +823,7 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * <p>If the registered extension calls any Amazon Web Services APIs, you must
      * create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
@@ -833,7 +838,7 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * <p>If the registered extension calls any Amazon Web Services APIs, you must
      * create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
@@ -848,7 +853,7 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * <p>If the registered extension calls any Amazon Web Services APIs, you must
      * create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
@@ -865,7 +870,8 @@ namespace Model
      * The extension is only visible and usable within the account in which it is
      * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
-     * publicly visible and usable within any Amazon account.</p> </li> </ul>
+     * publicly visible and usable within any Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline const Visibility& GetVisibility() const{ return m_visibility; }
 
@@ -875,7 +881,8 @@ namespace Model
      * The extension is only visible and usable within the account in which it is
      * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
-     * publicly visible and usable within any Amazon account.</p> </li> </ul>
+     * publicly visible and usable within any Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline void SetVisibility(const Visibility& value) { m_visibility = value; }
 
@@ -885,7 +892,8 @@ namespace Model
      * The extension is only visible and usable within the account in which it is
      * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
-     * publicly visible and usable within any Amazon account.</p> </li> </ul>
+     * publicly visible and usable within any Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline void SetVisibility(Visibility&& value) { m_visibility = std::move(value); }
 
@@ -895,7 +903,8 @@ namespace Model
      * The extension is only visible and usable within the account in which it is
      * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
-     * publicly visible and usable within any Amazon account.</p> </li> </ul>
+     * publicly visible and usable within any Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline DescribeTypeResult& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
 
@@ -905,7 +914,8 @@ namespace Model
      * The extension is only visible and usable within the account in which it is
      * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
-     * publicly visible and usable within any Amazon account.</p> </li> </ul>
+     * publicly visible and usable within any Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline DescribeTypeResult& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
 
@@ -1445,22 +1455,22 @@ namespace Model
 
 
     /**
-     * <p>Whether or not the extension is activated in the account and region.</p>
-     * <p>This only applies to public third-party extensions. For all other extensions,
+     * <p>Whether the extension is activated in the account and region.</p> <p>This
+     * only applies to public third-party extensions. For all other extensions,
      * CloudFormation returns <code>null</code>.</p>
      */
     inline bool GetIsActivated() const{ return m_isActivated; }
 
     /**
-     * <p>Whether or not the extension is activated in the account and region.</p>
-     * <p>This only applies to public third-party extensions. For all other extensions,
+     * <p>Whether the extension is activated in the account and region.</p> <p>This
+     * only applies to public third-party extensions. For all other extensions,
      * CloudFormation returns <code>null</code>.</p>
      */
     inline void SetIsActivated(bool value) { m_isActivated = value; }
 
     /**
-     * <p>Whether or not the extension is activated in the account and region.</p>
-     * <p>This only applies to public third-party extensions. For all other extensions,
+     * <p>Whether the extension is activated in the account and region.</p> <p>This
+     * only applies to public third-party extensions. For all other extensions,
      * CloudFormation returns <code>null</code>.</p>
      */
     inline DescribeTypeResult& WithIsActivated(bool value) { SetIsActivated(value); return *this;}

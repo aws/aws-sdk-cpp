@@ -33,7 +33,7 @@ PredictorExecutionDetails& PredictorExecutionDetails::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("PredictorExecutions"))
   {
-    Array<JsonView> predictorExecutionsJsonList = jsonValue.GetArray("PredictorExecutions");
+    Aws::Utils::Array<JsonView> predictorExecutionsJsonList = jsonValue.GetArray("PredictorExecutions");
     for(unsigned predictorExecutionsIndex = 0; predictorExecutionsIndex < predictorExecutionsJsonList.GetLength(); ++predictorExecutionsIndex)
     {
       m_predictorExecutions.push_back(predictorExecutionsJsonList[predictorExecutionsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue PredictorExecutionDetails::Jsonize() const
 
   if(m_predictorExecutionsHasBeenSet)
   {
-   Array<JsonValue> predictorExecutionsJsonList(m_predictorExecutions.size());
+   Aws::Utils::Array<JsonValue> predictorExecutionsJsonList(m_predictorExecutions.size());
    for(unsigned predictorExecutionsIndex = 0; predictorExecutionsIndex < predictorExecutionsJsonList.GetLength(); ++predictorExecutionsIndex)
    {
      predictorExecutionsJsonList[predictorExecutionsIndex].AsObject(m_predictorExecutions[predictorExecutionsIndex].Jsonize());

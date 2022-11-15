@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_solutionVersionArn;
-    bool m_solutionVersionArnHasBeenSet;
+    bool m_solutionVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

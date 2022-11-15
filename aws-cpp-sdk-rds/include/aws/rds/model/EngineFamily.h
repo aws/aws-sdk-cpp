@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     MYSQL,
-    POSTGRESQL
+    POSTGRESQL,
+    SQLSERVER
   };
 
 namespace EngineFamilyMapper

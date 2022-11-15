@@ -70,7 +70,7 @@ PortInfo& PortInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("cidrs"))
   {
-    Array<JsonView> cidrsJsonList = jsonValue.GetArray("cidrs");
+    Aws::Utils::Array<JsonView> cidrsJsonList = jsonValue.GetArray("cidrs");
     for(unsigned cidrsIndex = 0; cidrsIndex < cidrsJsonList.GetLength(); ++cidrsIndex)
     {
       m_cidrs.push_back(cidrsJsonList[cidrsIndex].AsString());
@@ -80,7 +80,7 @@ PortInfo& PortInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ipv6Cidrs"))
   {
-    Array<JsonView> ipv6CidrsJsonList = jsonValue.GetArray("ipv6Cidrs");
+    Aws::Utils::Array<JsonView> ipv6CidrsJsonList = jsonValue.GetArray("ipv6Cidrs");
     for(unsigned ipv6CidrsIndex = 0; ipv6CidrsIndex < ipv6CidrsJsonList.GetLength(); ++ipv6CidrsIndex)
     {
       m_ipv6Cidrs.push_back(ipv6CidrsJsonList[ipv6CidrsIndex].AsString());
@@ -90,7 +90,7 @@ PortInfo& PortInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("cidrListAliases"))
   {
-    Array<JsonView> cidrListAliasesJsonList = jsonValue.GetArray("cidrListAliases");
+    Aws::Utils::Array<JsonView> cidrListAliasesJsonList = jsonValue.GetArray("cidrListAliases");
     for(unsigned cidrListAliasesIndex = 0; cidrListAliasesIndex < cidrListAliasesJsonList.GetLength(); ++cidrListAliasesIndex)
     {
       m_cidrListAliases.push_back(cidrListAliasesJsonList[cidrListAliasesIndex].AsString());
@@ -124,7 +124,7 @@ JsonValue PortInfo::Jsonize() const
 
   if(m_cidrsHasBeenSet)
   {
-   Array<JsonValue> cidrsJsonList(m_cidrs.size());
+   Aws::Utils::Array<JsonValue> cidrsJsonList(m_cidrs.size());
    for(unsigned cidrsIndex = 0; cidrsIndex < cidrsJsonList.GetLength(); ++cidrsIndex)
    {
      cidrsJsonList[cidrsIndex].AsString(m_cidrs[cidrsIndex]);
@@ -135,7 +135,7 @@ JsonValue PortInfo::Jsonize() const
 
   if(m_ipv6CidrsHasBeenSet)
   {
-   Array<JsonValue> ipv6CidrsJsonList(m_ipv6Cidrs.size());
+   Aws::Utils::Array<JsonValue> ipv6CidrsJsonList(m_ipv6Cidrs.size());
    for(unsigned ipv6CidrsIndex = 0; ipv6CidrsIndex < ipv6CidrsJsonList.GetLength(); ++ipv6CidrsIndex)
    {
      ipv6CidrsJsonList[ipv6CidrsIndex].AsString(m_ipv6Cidrs[ipv6CidrsIndex]);
@@ -146,7 +146,7 @@ JsonValue PortInfo::Jsonize() const
 
   if(m_cidrListAliasesHasBeenSet)
   {
-   Array<JsonValue> cidrListAliasesJsonList(m_cidrListAliases.size());
+   Aws::Utils::Array<JsonValue> cidrListAliasesJsonList(m_cidrListAliases.size());
    for(unsigned cidrListAliasesIndex = 0; cidrListAliasesIndex < cidrListAliasesJsonList.GetLength(); ++cidrListAliasesIndex)
    {
      cidrListAliasesJsonList[cidrListAliasesIndex].AsString(m_cidrListAliases[cidrListAliasesIndex]);

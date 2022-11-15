@@ -113,10 +113,10 @@ namespace Model
   private:
 
     ClientPolicy m_clientPolicy;
-    bool m_clientPolicyHasBeenSet;
+    bool m_clientPolicyHasBeenSet = false;
 
     Aws::String m_virtualServiceName;
-    bool m_virtualServiceNameHasBeenSet;
+    bool m_virtualServiceNameHasBeenSet = false;
   };
 
 } // namespace Model

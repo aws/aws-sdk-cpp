@@ -24,10 +24,52 @@ namespace Http
 
 const char* SEPARATOR = "://";
 
+bool s_compliantRfc3986Encoding = false;
+void SetCompliantRfc3986Encoding(bool compliant) { s_compliantRfc3986Encoding = compliant; }
+
+Aws::String urlEncodeSegment(const Aws::String& segment)
+{
+    // consolidates legacy escaping logic into one local method
+    if (s_compliantRfc3986Encoding)
+    {
+        return StringUtils::URLEncode(segment.c_str());
+    }
+    else
+    {
+        Aws::StringStream ss;
+        ss << std::hex << std::uppercase;
+        for(unsigned char c : segment) // alnum results in UB if the value of c is not unsigned char & is not EOF
+        {
+            // RFC 3986 §2.3 unreserved characters
+            if (StringUtils::IsAlnum(c))
+            {
+                ss << c;
+                continue;
+            }
+            switch(c)
+            {
+                // §2.3 unreserved characters
+                // The path section of the URL allows unreserved characters to appear unescaped
+                case '-': case '_': case '.': case '~':
+                // RFC 3986 §2.2 Reserved characters
+                // NOTE: this implementation does not accurately implement the RFC on purpose to accommodate for
+                // discrepancies in the implementations of URL encoding between AWS services for legacy reasons.
+                case '$': case '&': case ',':
+                case ':': case '=': case '@':
+                    ss << c;
+                    break;
+                default:
+                    ss << '%' << std::setfill('0') << std::setw(2) << (int)c << std::setw(0);
+            }
+        }
+        return ss.str();
+    }
+}
+
 } // namespace Http
 } // namespace Aws
 
-URI::URI() : m_scheme(Scheme::HTTP), m_port(HTTP_DEFAULT_PORT)
+URI::URI() : m_scheme(Scheme::HTTP), m_port(HTTP_DEFAULT_PORT), m_pathHasTrailingSlash(false)
 {
 }
 
@@ -101,7 +143,7 @@ void URI::SetScheme(Scheme value)
 
 Aws::String URI::URLEncodePathRFC3986(const Aws::String& path)
 {
-    if(path.empty())
+    if (path.empty())
     {
         return path;
     }
@@ -113,34 +155,10 @@ Aws::String URI::URLEncodePathRFC3986(const Aws::String& path)
     // escape characters appearing in a URL path according to RFC 3986
     for (const auto& segment : pathParts)
     {
-        ss << '/';
-        for(unsigned char c : segment) // alnum results in UB if the value of c is not unsigned char & is not EOF
-        {
-            // §2.3 unreserved characters
-            if (StringUtils::IsAlnum(c))
-            {
-                ss << c;
-                continue;
-            }
-            switch(c)
-            {
-                // §2.3 unreserved characters
-                case '-': case '_': case '.': case '~':
-                // The path section of the URL allow reserved characters to appear unescaped
-                // RFC 3986 §2.2 Reserved characters
-                // NOTE: this implementation does not accurately implement the RFC on purpose to accommodate for
-                // discrepancies in the implementations of URL encoding between AWS services for legacy reasons.
-                case '$': case '&': case ',':
-                case ':': case '=': case '@':
-                    ss << c;
-                    break;
-                default:
-                    ss << '%' << std::setfill('0') << std::setw(2) << (int)((unsigned char)c) << std::setw(0);
-            }
-        }
+        ss << '/' << urlEncodeSegment(segment);
     }
 
-    //if the last character was also a slash, then add that back here.
+    // if the last character was also a slash, then add that back here.
     if (path.back() == '/')
     {
         ss << '/';
@@ -216,33 +234,10 @@ Aws::String URI::GetURLEncodedPathRFC3986() const
     ss << std::hex << std::uppercase;
 
     // escape characters appearing in a URL path according to RFC 3986
+    // (mostly; there is some non-standards legacy support that can be disabled)
     for (const auto& segment : m_pathSegments)
     {
-        ss << '/';
-        for(unsigned char c : segment) // alnum results in UB if the value of c is not unsigned char & is not EOF
-        {
-            // §2.3 unreserved characters
-            if (StringUtils::IsAlnum(c))
-            {
-                ss << c;
-                continue;
-            }
-            switch(c)
-            {
-                // §2.3 unreserved characters
-                case '-': case '_': case '.': case '~':
-                // The path section of the URL allow reserved characters to appear unescaped
-                // RFC 3986 §2.2 Reserved characters
-                // NOTE: this implementation does not accurately implement the RFC on purpose to accommodate for
-                // discrepancies in the implementations of URL encoding between AWS services for legacy reasons.
-                case '$': case '&': case ',':
-                case ':': case '=': case '@':
-                    ss << c;
-                    break;
-                default:
-                    ss << '%' << std::setfill('0') << std::setw(2) << (int)((unsigned char)c) << std::setw(0);
-            }
-        }
+        ss << '/' << urlEncodeSegment(segment);
     }
 
     if (m_pathSegments.empty() || m_pathHasTrailingSlash)
@@ -463,7 +458,7 @@ void URI::ExtractAndSetAuthority(const Aws::String& uri)
 
     size_t posEndOfAuthority=0;
     // are we extracting an ipv6 address?
-    if (uri.at(authorityStart) == '[')
+    if (uri.length() > authorityStart && uri.at(authorityStart) == '[')
     {
         posEndOfAuthority = uri.find(']', authorityStart);
         if (posEndOfAuthority == Aws::String::npos) {
@@ -504,7 +499,7 @@ void URI::ExtractAndSetPort(const Aws::String& uri)
 
     size_t portSearchStart = authorityStart;
     // are we extracting an ipv6 address?
-    if (uri.at(portSearchStart) == '[')
+    if (uri.length() > portSearchStart && uri.at(portSearchStart) == '[')
     {
         size_t posEndOfAuthority = uri.find(']', portSearchStart);
         if (posEndOfAuthority == Aws::String::npos) {

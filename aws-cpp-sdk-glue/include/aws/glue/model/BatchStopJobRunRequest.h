@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_jobRunIds;
-    bool m_jobRunIdsHasBeenSet;
+    bool m_jobRunIdsHasBeenSet = false;
   };
 
 } // namespace Model

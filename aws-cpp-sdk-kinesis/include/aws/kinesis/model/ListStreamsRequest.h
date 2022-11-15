@@ -106,10 +106,10 @@ namespace Model
   private:
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_exclusiveStartStreamName;
-    bool m_exclusiveStartStreamNameHasBeenSet;
+    bool m_exclusiveStartStreamNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -310,7 +310,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -319,7 +319,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -328,7 +328,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -337,7 +337,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -346,7 +346,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -355,7 +355,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -364,7 +364,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -373,7 +373,7 @@ namespace Model
     /**
      * <p>A name for the SSM document.</p>  <p>You can't use the following
      * strings as document name prefixes. These are reserved by Amazon Web Services for
-     * use as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li>
+     * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
      * </ul> 
      */
@@ -439,56 +439,56 @@ namespace Model
 
     /**
      * <p>An optional field specifying the version of the artifact you are creating
-     * with the document. For example, "Release 12, Update 6". This value is unique
+     * with the document. For example, <code>Release12.1</code>. This value is unique
      * across all versions of a document, and can't be changed.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
 
     /**
      * <p>An optional field specifying the version of the artifact you are creating
-     * with the document. For example, "Release 12, Update 6". This value is unique
+     * with the document. For example, <code>Release12.1</code>. This value is unique
      * across all versions of a document, and can't be changed.</p>
      */
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
 
     /**
      * <p>An optional field specifying the version of the artifact you are creating
-     * with the document. For example, "Release 12, Update 6". This value is unique
+     * with the document. For example, <code>Release12.1</code>. This value is unique
      * across all versions of a document, and can't be changed.</p>
      */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
 
     /**
      * <p>An optional field specifying the version of the artifact you are creating
-     * with the document. For example, "Release 12, Update 6". This value is unique
+     * with the document. For example, <code>Release12.1</code>. This value is unique
      * across all versions of a document, and can't be changed.</p>
      */
     inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
 
     /**
      * <p>An optional field specifying the version of the artifact you are creating
-     * with the document. For example, "Release 12, Update 6". This value is unique
+     * with the document. For example, <code>Release12.1</code>. This value is unique
      * across all versions of a document, and can't be changed.</p>
      */
     inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
 
     /**
      * <p>An optional field specifying the version of the artifact you are creating
-     * with the document. For example, "Release 12, Update 6". This value is unique
+     * with the document. For example, <code>Release12.1</code>. This value is unique
      * across all versions of a document, and can't be changed.</p>
      */
     inline CreateDocumentRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
 
     /**
      * <p>An optional field specifying the version of the artifact you are creating
-     * with the document. For example, "Release 12, Update 6". This value is unique
+     * with the document. For example, <code>Release12.1</code>. This value is unique
      * across all versions of a document, and can't be changed.</p>
      */
     inline CreateDocumentRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
 
     /**
      * <p>An optional field specifying the version of the artifact you are creating
-     * with the document. For example, "Release 12, Update 6". This value is unique
+     * with the document. For example, <code>Release12.1</code>. This value is unique
      * across all versions of a document, and can't be changed.</p>
      */
     inline CreateDocumentRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
@@ -778,34 +778,34 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::Vector<DocumentRequires> m_requires;
-    bool m_requiresHasBeenSet;
+    bool m_requiresHasBeenSet = false;
 
     Aws::Vector<AttachmentsSource> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     DocumentType m_documentType;
-    bool m_documentTypeHasBeenSet;
+    bool m_documentTypeHasBeenSet = false;
 
     DocumentFormat m_documentFormat;
-    bool m_documentFormatHasBeenSet;
+    bool m_documentFormatHasBeenSet = false;
 
     Aws::String m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

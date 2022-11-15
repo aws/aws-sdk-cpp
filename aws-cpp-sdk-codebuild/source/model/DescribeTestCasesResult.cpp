@@ -36,7 +36,7 @@ DescribeTestCasesResult& DescribeTestCasesResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("testCases"))
   {
-    Array<JsonView> testCasesJsonList = jsonValue.GetArray("testCases");
+    Aws::Utils::Array<JsonView> testCasesJsonList = jsonValue.GetArray("testCases");
     for(unsigned testCasesIndex = 0; testCasesIndex < testCasesJsonList.GetLength(); ++testCasesIndex)
     {
       m_testCases.push_back(testCasesJsonList[testCasesIndex].AsObject());

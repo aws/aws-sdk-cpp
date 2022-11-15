@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<AthenaIntegration> m_athenaIntegrations;
-    bool m_athenaIntegrationsHasBeenSet;
+    bool m_athenaIntegrationsHasBeenSet = false;
   };
 
 } // namespace Model

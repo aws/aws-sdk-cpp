@@ -35,7 +35,7 @@ ResourceRequestStatusFilter& ResourceRequestStatusFilter::operator =(JsonView js
 {
   if(jsonValue.ValueExists("Operations"))
   {
-    Array<JsonView> operationsJsonList = jsonValue.GetArray("Operations");
+    Aws::Utils::Array<JsonView> operationsJsonList = jsonValue.GetArray("Operations");
     for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
     {
       m_operations.push_back(OperationMapper::GetOperationForName(operationsJsonList[operationsIndex].AsString()));
@@ -45,7 +45,7 @@ ResourceRequestStatusFilter& ResourceRequestStatusFilter::operator =(JsonView js
 
   if(jsonValue.ValueExists("OperationStatuses"))
   {
-    Array<JsonView> operationStatusesJsonList = jsonValue.GetArray("OperationStatuses");
+    Aws::Utils::Array<JsonView> operationStatusesJsonList = jsonValue.GetArray("OperationStatuses");
     for(unsigned operationStatusesIndex = 0; operationStatusesIndex < operationStatusesJsonList.GetLength(); ++operationStatusesIndex)
     {
       m_operationStatuses.push_back(OperationStatusMapper::GetOperationStatusForName(operationStatusesJsonList[operationStatusesIndex].AsString()));
@@ -62,7 +62,7 @@ JsonValue ResourceRequestStatusFilter::Jsonize() const
 
   if(m_operationsHasBeenSet)
   {
-   Array<JsonValue> operationsJsonList(m_operations.size());
+   Aws::Utils::Array<JsonValue> operationsJsonList(m_operations.size());
    for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
    {
      operationsJsonList[operationsIndex].AsString(OperationMapper::GetNameForOperation(m_operations[operationsIndex]));
@@ -73,7 +73,7 @@ JsonValue ResourceRequestStatusFilter::Jsonize() const
 
   if(m_operationStatusesHasBeenSet)
   {
-   Array<JsonValue> operationStatusesJsonList(m_operationStatuses.size());
+   Aws::Utils::Array<JsonValue> operationStatusesJsonList(m_operationStatuses.size());
    for(unsigned operationStatusesIndex = 0; operationStatusesIndex < operationStatusesJsonList.GetLength(); ++operationStatusesIndex)
    {
      operationStatusesJsonList[operationStatusesIndex].AsString(OperationStatusMapper::GetNameForOperationStatus(m_operationStatuses[operationStatusesIndex]));

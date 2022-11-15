@@ -404,31 +404,31 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_givenName;
-    bool m_givenNameHasBeenSet;
+    bool m_givenNameHasBeenSet = false;
 
     Aws::String m_surname;
-    bool m_surnameHasBeenSet;
+    bool m_surnameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_timeZoneId;
-    bool m_timeZoneIdHasBeenSet;
+    bool m_timeZoneIdHasBeenSet = false;
 
     StorageRuleType m_storageRule;
-    bool m_storageRuleHasBeenSet;
+    bool m_storageRuleHasBeenSet = false;
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
   };
 
 } // namespace Model

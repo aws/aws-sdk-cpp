@@ -30,7 +30,7 @@ ListTableMetadataResult& ListTableMetadataResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TableMetadataList"))
   {
-    Array<JsonView> tableMetadataListJsonList = jsonValue.GetArray("TableMetadataList");
+    Aws::Utils::Array<JsonView> tableMetadataListJsonList = jsonValue.GetArray("TableMetadataList");
     for(unsigned tableMetadataListIndex = 0; tableMetadataListIndex < tableMetadataListJsonList.GetLength(); ++tableMetadataListIndex)
     {
       m_tableMetadataList.push_back(tableMetadataListJsonList[tableMetadataListIndex].AsObject());

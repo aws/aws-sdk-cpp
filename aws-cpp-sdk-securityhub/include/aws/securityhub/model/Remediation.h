@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Recommendation m_recommendation;
-    bool m_recommendationHasBeenSet;
+    bool m_recommendationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,8 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>Describes the status of a moving Elastic IP address.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Describes the status of a moving Elastic IP address.</p>  <p>We are
+   * retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+   * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+   * Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MovingAddressStatus">AWS
    * API Reference</a></p>
    */
@@ -121,10 +125,10 @@ namespace Model
   private:
 
     MoveStatus m_moveStatus;
-    bool m_moveStatusHasBeenSet;
+    bool m_moveStatusHasBeenSet = false;
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
   };
 
 } // namespace Model

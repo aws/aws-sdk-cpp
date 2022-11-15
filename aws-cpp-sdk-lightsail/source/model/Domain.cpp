@@ -27,7 +27,8 @@ Domain::Domain() :
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_domainEntriesHasBeenSet(false)
+    m_domainEntriesHasBeenSet(false),
+    m_registeredDomainDelegationInfoHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Domain::Domain(JsonView jsonValue) :
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_domainEntriesHasBeenSet(false)
+    m_domainEntriesHasBeenSet(false),
+    m_registeredDomainDelegationInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,7 +93,7 @@ Domain& Domain::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -101,12 +103,19 @@ Domain& Domain::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("domainEntries"))
   {
-    Array<JsonView> domainEntriesJsonList = jsonValue.GetArray("domainEntries");
+    Aws::Utils::Array<JsonView> domainEntriesJsonList = jsonValue.GetArray("domainEntries");
     for(unsigned domainEntriesIndex = 0; domainEntriesIndex < domainEntriesJsonList.GetLength(); ++domainEntriesIndex)
     {
       m_domainEntries.push_back(domainEntriesJsonList[domainEntriesIndex].AsObject());
     }
     m_domainEntriesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("registeredDomainDelegationInfo"))
+  {
+    m_registeredDomainDelegationInfo = jsonValue.GetObject("registeredDomainDelegationInfo");
+
+    m_registeredDomainDelegationInfoHasBeenSet = true;
   }
 
   return *this;
@@ -152,7 +161,7 @@ JsonValue Domain::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -163,12 +172,18 @@ JsonValue Domain::Jsonize() const
 
   if(m_domainEntriesHasBeenSet)
   {
-   Array<JsonValue> domainEntriesJsonList(m_domainEntries.size());
+   Aws::Utils::Array<JsonValue> domainEntriesJsonList(m_domainEntries.size());
    for(unsigned domainEntriesIndex = 0; domainEntriesIndex < domainEntriesJsonList.GetLength(); ++domainEntriesIndex)
    {
      domainEntriesJsonList[domainEntriesIndex].AsObject(m_domainEntries[domainEntriesIndex].Jsonize());
    }
    payload.WithArray("domainEntries", std::move(domainEntriesJsonList));
+
+  }
+
+  if(m_registeredDomainDelegationInfoHasBeenSet)
+  {
+   payload.WithObject("registeredDomainDelegationInfo", m_registeredDomainDelegationInfo.Jsonize());
 
   }
 

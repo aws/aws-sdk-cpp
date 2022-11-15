@@ -225,19 +225,19 @@ namespace Model
   private:
 
     ListInsightsStatusFilter m_statusFilter;
-    bool m_statusFilterHasBeenSet;
+    bool m_statusFilterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnitIds;
-    bool m_organizationalUnitIdsHasBeenSet;
+    bool m_organizationalUnitIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

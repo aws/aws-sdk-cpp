@@ -24,11 +24,13 @@ QueryExecution::QueryExecution() :
     m_statementType(StatementType::NOT_SET),
     m_statementTypeHasBeenSet(false),
     m_resultConfigurationHasBeenSet(false),
+    m_resultReuseConfigurationHasBeenSet(false),
     m_queryExecutionContextHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statisticsHasBeenSet(false),
     m_workGroupHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_executionParametersHasBeenSet(false)
 {
 }
 
@@ -38,11 +40,13 @@ QueryExecution::QueryExecution(JsonView jsonValue) :
     m_statementType(StatementType::NOT_SET),
     m_statementTypeHasBeenSet(false),
     m_resultConfigurationHasBeenSet(false),
+    m_resultReuseConfigurationHasBeenSet(false),
     m_queryExecutionContextHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statisticsHasBeenSet(false),
     m_workGroupHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_executionParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +79,13 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
     m_resultConfiguration = jsonValue.GetObject("ResultConfiguration");
 
     m_resultConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResultReuseConfiguration"))
+  {
+    m_resultReuseConfiguration = jsonValue.GetObject("ResultReuseConfiguration");
+
+    m_resultReuseConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("QueryExecutionContext"))
@@ -112,6 +123,16 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
     m_engineVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExecutionParameters"))
+  {
+    Aws::Utils::Array<JsonView> executionParametersJsonList = jsonValue.GetArray("ExecutionParameters");
+    for(unsigned executionParametersIndex = 0; executionParametersIndex < executionParametersJsonList.GetLength(); ++executionParametersIndex)
+    {
+      m_executionParameters.push_back(executionParametersJsonList[executionParametersIndex].AsString());
+    }
+    m_executionParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +163,12 @@ JsonValue QueryExecution::Jsonize() const
 
   }
 
+  if(m_resultReuseConfigurationHasBeenSet)
+  {
+   payload.WithObject("ResultReuseConfiguration", m_resultReuseConfiguration.Jsonize());
+
+  }
+
   if(m_queryExecutionContextHasBeenSet)
   {
    payload.WithObject("QueryExecutionContext", m_queryExecutionContext.Jsonize());
@@ -169,6 +196,17 @@ JsonValue QueryExecution::Jsonize() const
   if(m_engineVersionHasBeenSet)
   {
    payload.WithObject("EngineVersion", m_engineVersion.Jsonize());
+
+  }
+
+  if(m_executionParametersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> executionParametersJsonList(m_executionParameters.size());
+   for(unsigned executionParametersIndex = 0; executionParametersIndex < executionParametersJsonList.GetLength(); ++executionParametersIndex)
+   {
+     executionParametersJsonList[executionParametersIndex].AsString(m_executionParameters[executionParametersIndex]);
+   }
+   payload.WithArray("ExecutionParameters", std::move(executionParametersJsonList));
 
   }
 

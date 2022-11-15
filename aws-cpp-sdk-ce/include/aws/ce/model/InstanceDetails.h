@@ -229,19 +229,19 @@ namespace Model
   private:
 
     EC2InstanceDetails m_eC2InstanceDetails;
-    bool m_eC2InstanceDetailsHasBeenSet;
+    bool m_eC2InstanceDetailsHasBeenSet = false;
 
     RDSInstanceDetails m_rDSInstanceDetails;
-    bool m_rDSInstanceDetailsHasBeenSet;
+    bool m_rDSInstanceDetailsHasBeenSet = false;
 
     RedshiftInstanceDetails m_redshiftInstanceDetails;
-    bool m_redshiftInstanceDetailsHasBeenSet;
+    bool m_redshiftInstanceDetailsHasBeenSet = false;
 
     ElastiCacheInstanceDetails m_elastiCacheInstanceDetails;
-    bool m_elastiCacheInstanceDetailsHasBeenSet;
+    bool m_elastiCacheInstanceDetailsHasBeenSet = false;
 
     ESInstanceDetails m_eSInstanceDetails;
-    bool m_eSInstanceDetailsHasBeenSet;
+    bool m_eSInstanceDetailsHasBeenSet = false;
   };
 
 } // namespace Model

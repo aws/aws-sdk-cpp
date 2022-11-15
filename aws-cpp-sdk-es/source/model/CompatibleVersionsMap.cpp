@@ -42,7 +42,7 @@ CompatibleVersionsMap& CompatibleVersionsMap::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetVersions"))
   {
-    Array<JsonView> targetVersionsJsonList = jsonValue.GetArray("TargetVersions");
+    Aws::Utils::Array<JsonView> targetVersionsJsonList = jsonValue.GetArray("TargetVersions");
     for(unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex)
     {
       m_targetVersions.push_back(targetVersionsJsonList[targetVersionsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue CompatibleVersionsMap::Jsonize() const
 
   if(m_targetVersionsHasBeenSet)
   {
-   Array<JsonValue> targetVersionsJsonList(m_targetVersions.size());
+   Aws::Utils::Array<JsonValue> targetVersionsJsonList(m_targetVersions.size());
    for(unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex)
    {
      targetVersionsJsonList[targetVersionsIndex].AsString(m_targetVersions[targetVersionsIndex]);

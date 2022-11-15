@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     HierarchyGroupMatchType m_hierarchyGroupMatchType;
-    bool m_hierarchyGroupMatchTypeHasBeenSet;
+    bool m_hierarchyGroupMatchTypeHasBeenSet = false;
   };
 
 } // namespace Model

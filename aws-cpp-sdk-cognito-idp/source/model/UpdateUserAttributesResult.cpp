@@ -30,7 +30,7 @@ UpdateUserAttributesResult& UpdateUserAttributesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CodeDeliveryDetailsList"))
   {
-    Array<JsonView> codeDeliveryDetailsListJsonList = jsonValue.GetArray("CodeDeliveryDetailsList");
+    Aws::Utils::Array<JsonView> codeDeliveryDetailsListJsonList = jsonValue.GetArray("CodeDeliveryDetailsList");
     for(unsigned codeDeliveryDetailsListIndex = 0; codeDeliveryDetailsListIndex < codeDeliveryDetailsListJsonList.GetLength(); ++codeDeliveryDetailsListIndex)
     {
       m_codeDeliveryDetailsList.push_back(codeDeliveryDetailsListJsonList[codeDeliveryDetailsListIndex].AsObject());

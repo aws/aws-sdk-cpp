@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_journeyId;
-    bool m_journeyIdHasBeenSet;
+    bool m_journeyIdHasBeenSet = false;
 
     JourneyStateRequest m_journeyStateRequest;
-    bool m_journeyStateRequestHasBeenSet;
+    bool m_journeyStateRequestHasBeenSet = false;
   };
 
 } // namespace Model

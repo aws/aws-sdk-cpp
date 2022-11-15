@@ -193,16 +193,16 @@ namespace Model
   private:
 
     Aws::String m_pipelineExecutionArn;
-    bool m_pipelineExecutionArnHasBeenSet;
+    bool m_pipelineExecutionArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

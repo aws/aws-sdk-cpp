@@ -27,7 +27,8 @@ TransitGatewayPropagation::TransitGatewayPropagation() :
     m_resourceTypeHasBeenSet(false),
     m_transitGatewayRouteTableIdHasBeenSet(false),
     m_state(TransitGatewayPropagationState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_transitGatewayRouteTableAnnouncementIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ TransitGatewayPropagation::TransitGatewayPropagation(const XmlNode& xmlNode) :
     m_resourceTypeHasBeenSet(false),
     m_transitGatewayRouteTableIdHasBeenSet(false),
     m_state(TransitGatewayPropagationState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_transitGatewayRouteTableAnnouncementIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +81,12 @@ TransitGatewayPropagation& TransitGatewayPropagation::operator =(const XmlNode& 
       m_state = TransitGatewayPropagationStateMapper::GetTransitGatewayPropagationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
+    XmlNode transitGatewayRouteTableAnnouncementIdNode = resultNode.FirstChild("transitGatewayRouteTableAnnouncementId");
+    if(!transitGatewayRouteTableAnnouncementIdNode.IsNull())
+    {
+      m_transitGatewayRouteTableAnnouncementId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayRouteTableAnnouncementIdNode.GetText());
+      m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -111,6 +119,11 @@ void TransitGatewayPropagation::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".State=" << TransitGatewayPropagationStateMapper::GetNameForTransitGatewayPropagationState(m_state) << "&";
   }
 
+  if(m_transitGatewayRouteTableAnnouncementIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TransitGatewayRouteTableAnnouncementId=" << StringUtils::URLEncode(m_transitGatewayRouteTableAnnouncementId.c_str()) << "&";
+  }
+
 }
 
 void TransitGatewayPropagation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -134,6 +147,10 @@ void TransitGatewayPropagation::OutputToStream(Aws::OStream& oStream, const char
   if(m_stateHasBeenSet)
   {
       oStream << location << ".State=" << TransitGatewayPropagationStateMapper::GetNameForTransitGatewayPropagationState(m_state) << "&";
+  }
+  if(m_transitGatewayRouteTableAnnouncementIdHasBeenSet)
+  {
+      oStream << location << ".TransitGatewayRouteTableAnnouncementId=" << StringUtils::URLEncode(m_transitGatewayRouteTableAnnouncementId.c_str()) << "&";
   }
 }
 

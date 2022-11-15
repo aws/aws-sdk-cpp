@@ -44,7 +44,7 @@ GetAggregateDiscoveredResourceCountsResult& GetAggregateDiscoveredResourceCounts
 
   if(jsonValue.ValueExists("GroupedResourceCounts"))
   {
-    Array<JsonView> groupedResourceCountsJsonList = jsonValue.GetArray("GroupedResourceCounts");
+    Aws::Utils::Array<JsonView> groupedResourceCountsJsonList = jsonValue.GetArray("GroupedResourceCounts");
     for(unsigned groupedResourceCountsIndex = 0; groupedResourceCountsIndex < groupedResourceCountsJsonList.GetLength(); ++groupedResourceCountsIndex)
     {
       m_groupedResourceCounts.push_back(groupedResourceCountsJsonList[groupedResourceCountsIndex].AsObject());

@@ -128,10 +128,10 @@ namespace Model
   private:
 
     ServerSideEncryptionByDefault m_applyServerSideEncryptionByDefault;
-    bool m_applyServerSideEncryptionByDefaultHasBeenSet;
+    bool m_applyServerSideEncryptionByDefaultHasBeenSet = false;
 
     bool m_bucketKeyEnabled;
-    bool m_bucketKeyEnabledHasBeenSet;
+    bool m_bucketKeyEnabledHasBeenSet = false;
   };
 
 } // namespace Model

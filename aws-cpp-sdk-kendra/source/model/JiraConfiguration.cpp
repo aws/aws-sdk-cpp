@@ -84,7 +84,7 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Project"))
   {
-    Array<JsonView> projectJsonList = jsonValue.GetArray("Project");
+    Aws::Utils::Array<JsonView> projectJsonList = jsonValue.GetArray("Project");
     for(unsigned projectIndex = 0; projectIndex < projectJsonList.GetLength(); ++projectIndex)
     {
       m_project.push_back(projectJsonList[projectIndex].AsString());
@@ -94,7 +94,7 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IssueType"))
   {
-    Array<JsonView> issueTypeJsonList = jsonValue.GetArray("IssueType");
+    Aws::Utils::Array<JsonView> issueTypeJsonList = jsonValue.GetArray("IssueType");
     for(unsigned issueTypeIndex = 0; issueTypeIndex < issueTypeJsonList.GetLength(); ++issueTypeIndex)
     {
       m_issueType.push_back(issueTypeJsonList[issueTypeIndex].AsString());
@@ -104,7 +104,7 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Status"))
   {
-    Array<JsonView> statusJsonList = jsonValue.GetArray("Status");
+    Aws::Utils::Array<JsonView> statusJsonList = jsonValue.GetArray("Status");
     for(unsigned statusIndex = 0; statusIndex < statusJsonList.GetLength(); ++statusIndex)
     {
       m_status.push_back(statusJsonList[statusIndex].AsString());
@@ -114,7 +114,7 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IssueSubEntityFilter"))
   {
-    Array<JsonView> issueSubEntityFilterJsonList = jsonValue.GetArray("IssueSubEntityFilter");
+    Aws::Utils::Array<JsonView> issueSubEntityFilterJsonList = jsonValue.GetArray("IssueSubEntityFilter");
     for(unsigned issueSubEntityFilterIndex = 0; issueSubEntityFilterIndex < issueSubEntityFilterJsonList.GetLength(); ++issueSubEntityFilterIndex)
     {
       m_issueSubEntityFilter.push_back(IssueSubEntityMapper::GetIssueSubEntityForName(issueSubEntityFilterJsonList[issueSubEntityFilterIndex].AsString()));
@@ -124,7 +124,7 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttachmentFieldMappings"))
   {
-    Array<JsonView> attachmentFieldMappingsJsonList = jsonValue.GetArray("AttachmentFieldMappings");
+    Aws::Utils::Array<JsonView> attachmentFieldMappingsJsonList = jsonValue.GetArray("AttachmentFieldMappings");
     for(unsigned attachmentFieldMappingsIndex = 0; attachmentFieldMappingsIndex < attachmentFieldMappingsJsonList.GetLength(); ++attachmentFieldMappingsIndex)
     {
       m_attachmentFieldMappings.push_back(attachmentFieldMappingsJsonList[attachmentFieldMappingsIndex].AsObject());
@@ -134,7 +134,7 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CommentFieldMappings"))
   {
-    Array<JsonView> commentFieldMappingsJsonList = jsonValue.GetArray("CommentFieldMappings");
+    Aws::Utils::Array<JsonView> commentFieldMappingsJsonList = jsonValue.GetArray("CommentFieldMappings");
     for(unsigned commentFieldMappingsIndex = 0; commentFieldMappingsIndex < commentFieldMappingsJsonList.GetLength(); ++commentFieldMappingsIndex)
     {
       m_commentFieldMappings.push_back(commentFieldMappingsJsonList[commentFieldMappingsIndex].AsObject());
@@ -144,7 +144,7 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IssueFieldMappings"))
   {
-    Array<JsonView> issueFieldMappingsJsonList = jsonValue.GetArray("IssueFieldMappings");
+    Aws::Utils::Array<JsonView> issueFieldMappingsJsonList = jsonValue.GetArray("IssueFieldMappings");
     for(unsigned issueFieldMappingsIndex = 0; issueFieldMappingsIndex < issueFieldMappingsJsonList.GetLength(); ++issueFieldMappingsIndex)
     {
       m_issueFieldMappings.push_back(issueFieldMappingsJsonList[issueFieldMappingsIndex].AsObject());
@@ -154,7 +154,7 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProjectFieldMappings"))
   {
-    Array<JsonView> projectFieldMappingsJsonList = jsonValue.GetArray("ProjectFieldMappings");
+    Aws::Utils::Array<JsonView> projectFieldMappingsJsonList = jsonValue.GetArray("ProjectFieldMappings");
     for(unsigned projectFieldMappingsIndex = 0; projectFieldMappingsIndex < projectFieldMappingsJsonList.GetLength(); ++projectFieldMappingsIndex)
     {
       m_projectFieldMappings.push_back(projectFieldMappingsJsonList[projectFieldMappingsIndex].AsObject());
@@ -164,7 +164,7 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("WorkLogFieldMappings"))
   {
-    Array<JsonView> workLogFieldMappingsJsonList = jsonValue.GetArray("WorkLogFieldMappings");
+    Aws::Utils::Array<JsonView> workLogFieldMappingsJsonList = jsonValue.GetArray("WorkLogFieldMappings");
     for(unsigned workLogFieldMappingsIndex = 0; workLogFieldMappingsIndex < workLogFieldMappingsJsonList.GetLength(); ++workLogFieldMappingsIndex)
     {
       m_workLogFieldMappings.push_back(workLogFieldMappingsJsonList[workLogFieldMappingsIndex].AsObject());
@@ -174,7 +174,7 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
-    Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
+    Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
     for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
     {
       m_inclusionPatterns.push_back(inclusionPatternsJsonList[inclusionPatternsIndex].AsString());
@@ -184,7 +184,7 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
-    Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
+    Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
     for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
     {
       m_exclusionPatterns.push_back(exclusionPatternsJsonList[exclusionPatternsIndex].AsString());
@@ -226,7 +226,7 @@ JsonValue JiraConfiguration::Jsonize() const
 
   if(m_projectHasBeenSet)
   {
-   Array<JsonValue> projectJsonList(m_project.size());
+   Aws::Utils::Array<JsonValue> projectJsonList(m_project.size());
    for(unsigned projectIndex = 0; projectIndex < projectJsonList.GetLength(); ++projectIndex)
    {
      projectJsonList[projectIndex].AsString(m_project[projectIndex]);
@@ -237,7 +237,7 @@ JsonValue JiraConfiguration::Jsonize() const
 
   if(m_issueTypeHasBeenSet)
   {
-   Array<JsonValue> issueTypeJsonList(m_issueType.size());
+   Aws::Utils::Array<JsonValue> issueTypeJsonList(m_issueType.size());
    for(unsigned issueTypeIndex = 0; issueTypeIndex < issueTypeJsonList.GetLength(); ++issueTypeIndex)
    {
      issueTypeJsonList[issueTypeIndex].AsString(m_issueType[issueTypeIndex]);
@@ -248,7 +248,7 @@ JsonValue JiraConfiguration::Jsonize() const
 
   if(m_statusHasBeenSet)
   {
-   Array<JsonValue> statusJsonList(m_status.size());
+   Aws::Utils::Array<JsonValue> statusJsonList(m_status.size());
    for(unsigned statusIndex = 0; statusIndex < statusJsonList.GetLength(); ++statusIndex)
    {
      statusJsonList[statusIndex].AsString(m_status[statusIndex]);
@@ -259,7 +259,7 @@ JsonValue JiraConfiguration::Jsonize() const
 
   if(m_issueSubEntityFilterHasBeenSet)
   {
-   Array<JsonValue> issueSubEntityFilterJsonList(m_issueSubEntityFilter.size());
+   Aws::Utils::Array<JsonValue> issueSubEntityFilterJsonList(m_issueSubEntityFilter.size());
    for(unsigned issueSubEntityFilterIndex = 0; issueSubEntityFilterIndex < issueSubEntityFilterJsonList.GetLength(); ++issueSubEntityFilterIndex)
    {
      issueSubEntityFilterJsonList[issueSubEntityFilterIndex].AsString(IssueSubEntityMapper::GetNameForIssueSubEntity(m_issueSubEntityFilter[issueSubEntityFilterIndex]));
@@ -270,7 +270,7 @@ JsonValue JiraConfiguration::Jsonize() const
 
   if(m_attachmentFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> attachmentFieldMappingsJsonList(m_attachmentFieldMappings.size());
+   Aws::Utils::Array<JsonValue> attachmentFieldMappingsJsonList(m_attachmentFieldMappings.size());
    for(unsigned attachmentFieldMappingsIndex = 0; attachmentFieldMappingsIndex < attachmentFieldMappingsJsonList.GetLength(); ++attachmentFieldMappingsIndex)
    {
      attachmentFieldMappingsJsonList[attachmentFieldMappingsIndex].AsObject(m_attachmentFieldMappings[attachmentFieldMappingsIndex].Jsonize());
@@ -281,7 +281,7 @@ JsonValue JiraConfiguration::Jsonize() const
 
   if(m_commentFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> commentFieldMappingsJsonList(m_commentFieldMappings.size());
+   Aws::Utils::Array<JsonValue> commentFieldMappingsJsonList(m_commentFieldMappings.size());
    for(unsigned commentFieldMappingsIndex = 0; commentFieldMappingsIndex < commentFieldMappingsJsonList.GetLength(); ++commentFieldMappingsIndex)
    {
      commentFieldMappingsJsonList[commentFieldMappingsIndex].AsObject(m_commentFieldMappings[commentFieldMappingsIndex].Jsonize());
@@ -292,7 +292,7 @@ JsonValue JiraConfiguration::Jsonize() const
 
   if(m_issueFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> issueFieldMappingsJsonList(m_issueFieldMappings.size());
+   Aws::Utils::Array<JsonValue> issueFieldMappingsJsonList(m_issueFieldMappings.size());
    for(unsigned issueFieldMappingsIndex = 0; issueFieldMappingsIndex < issueFieldMappingsJsonList.GetLength(); ++issueFieldMappingsIndex)
    {
      issueFieldMappingsJsonList[issueFieldMappingsIndex].AsObject(m_issueFieldMappings[issueFieldMappingsIndex].Jsonize());
@@ -303,7 +303,7 @@ JsonValue JiraConfiguration::Jsonize() const
 
   if(m_projectFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> projectFieldMappingsJsonList(m_projectFieldMappings.size());
+   Aws::Utils::Array<JsonValue> projectFieldMappingsJsonList(m_projectFieldMappings.size());
    for(unsigned projectFieldMappingsIndex = 0; projectFieldMappingsIndex < projectFieldMappingsJsonList.GetLength(); ++projectFieldMappingsIndex)
    {
      projectFieldMappingsJsonList[projectFieldMappingsIndex].AsObject(m_projectFieldMappings[projectFieldMappingsIndex].Jsonize());
@@ -314,7 +314,7 @@ JsonValue JiraConfiguration::Jsonize() const
 
   if(m_workLogFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> workLogFieldMappingsJsonList(m_workLogFieldMappings.size());
+   Aws::Utils::Array<JsonValue> workLogFieldMappingsJsonList(m_workLogFieldMappings.size());
    for(unsigned workLogFieldMappingsIndex = 0; workLogFieldMappingsIndex < workLogFieldMappingsJsonList.GetLength(); ++workLogFieldMappingsIndex)
    {
      workLogFieldMappingsJsonList[workLogFieldMappingsIndex].AsObject(m_workLogFieldMappings[workLogFieldMappingsIndex].Jsonize());
@@ -325,7 +325,7 @@ JsonValue JiraConfiguration::Jsonize() const
 
   if(m_inclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
    for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
    {
      inclusionPatternsJsonList[inclusionPatternsIndex].AsString(m_inclusionPatterns[inclusionPatternsIndex]);
@@ -336,7 +336,7 @@ JsonValue JiraConfiguration::Jsonize() const
 
   if(m_exclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
    for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
    {
      exclusionPatternsJsonList[exclusionPatternsIndex].AsString(m_exclusionPatterns[exclusionPatternsIndex]);

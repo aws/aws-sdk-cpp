@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     APIName m_aPIName;
-    bool m_aPINameHasBeenSet;
+    bool m_aPINameHasBeenSet = false;
   };
 
 } // namespace Model

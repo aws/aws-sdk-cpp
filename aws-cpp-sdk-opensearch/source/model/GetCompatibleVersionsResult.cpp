@@ -30,7 +30,7 @@ GetCompatibleVersionsResult& GetCompatibleVersionsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CompatibleVersions"))
   {
-    Array<JsonView> compatibleVersionsJsonList = jsonValue.GetArray("CompatibleVersions");
+    Aws::Utils::Array<JsonView> compatibleVersionsJsonList = jsonValue.GetArray("CompatibleVersions");
     for(unsigned compatibleVersionsIndex = 0; compatibleVersionsIndex < compatibleVersionsJsonList.GetLength(); ++compatibleVersionsIndex)
     {
       m_compatibleVersions.push_back(compatibleVersionsJsonList[compatibleVersionsIndex].AsObject());

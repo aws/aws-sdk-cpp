@@ -149,13 +149,13 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     bool m_passwordResetRequired;
-    bool m_passwordResetRequiredHasBeenSet;
+    bool m_passwordResetRequiredHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ GetResourceShareAssociationsResult& GetResourceShareAssociationsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourceShareAssociations"))
   {
-    Array<JsonView> resourceShareAssociationsJsonList = jsonValue.GetArray("resourceShareAssociations");
+    Aws::Utils::Array<JsonView> resourceShareAssociationsJsonList = jsonValue.GetArray("resourceShareAssociations");
     for(unsigned resourceShareAssociationsIndex = 0; resourceShareAssociationsIndex < resourceShareAssociationsJsonList.GetLength(); ++resourceShareAssociationsIndex)
     {
       m_resourceShareAssociations.push_back(resourceShareAssociationsJsonList[resourceShareAssociationsIndex].AsObject());

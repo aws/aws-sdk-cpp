@@ -71,7 +71,7 @@ namespace Model
   private:
 
     MetricDefinition m_metricDefinition;
-    bool m_metricDefinitionHasBeenSet;
+    bool m_metricDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

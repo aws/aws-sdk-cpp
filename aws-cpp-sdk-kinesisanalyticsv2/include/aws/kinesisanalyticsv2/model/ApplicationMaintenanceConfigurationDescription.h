@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_applicationMaintenanceWindowStartTime;
-    bool m_applicationMaintenanceWindowStartTimeHasBeenSet;
+    bool m_applicationMaintenanceWindowStartTimeHasBeenSet = false;
 
     Aws::String m_applicationMaintenanceWindowEndTime;
-    bool m_applicationMaintenanceWindowEndTimeHasBeenSet;
+    bool m_applicationMaintenanceWindowEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

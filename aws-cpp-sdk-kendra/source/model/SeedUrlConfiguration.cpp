@@ -37,7 +37,7 @@ SeedUrlConfiguration& SeedUrlConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SeedUrls"))
   {
-    Array<JsonView> seedUrlsJsonList = jsonValue.GetArray("SeedUrls");
+    Aws::Utils::Array<JsonView> seedUrlsJsonList = jsonValue.GetArray("SeedUrls");
     for(unsigned seedUrlsIndex = 0; seedUrlsIndex < seedUrlsJsonList.GetLength(); ++seedUrlsIndex)
     {
       m_seedUrls.push_back(seedUrlsJsonList[seedUrlsIndex].AsString());
@@ -61,7 +61,7 @@ JsonValue SeedUrlConfiguration::Jsonize() const
 
   if(m_seedUrlsHasBeenSet)
   {
-   Array<JsonValue> seedUrlsJsonList(m_seedUrls.size());
+   Aws::Utils::Array<JsonValue> seedUrlsJsonList(m_seedUrls.size());
    for(unsigned seedUrlsIndex = 0; seedUrlsIndex < seedUrlsJsonList.GetLength(); ++seedUrlsIndex)
    {
      seedUrlsJsonList[seedUrlsIndex].AsString(m_seedUrls[seedUrlsIndex]);

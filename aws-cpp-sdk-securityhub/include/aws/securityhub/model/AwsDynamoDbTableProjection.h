@@ -95,52 +95,68 @@ namespace Model
 
 
     /**
-     * <p>The types of attributes that are projected into the index.</p>
+     * <p>The types of attributes that are projected into the index. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>ALL</code> </p> </li> <li> <p>
+     * <code>INCLUDE</code> </p> </li> <li> <p> <code>KEYS_ONLY</code> </p> </li> </ul>
      */
     inline const Aws::String& GetProjectionType() const{ return m_projectionType; }
 
     /**
-     * <p>The types of attributes that are projected into the index.</p>
+     * <p>The types of attributes that are projected into the index. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>ALL</code> </p> </li> <li> <p>
+     * <code>INCLUDE</code> </p> </li> <li> <p> <code>KEYS_ONLY</code> </p> </li> </ul>
      */
     inline bool ProjectionTypeHasBeenSet() const { return m_projectionTypeHasBeenSet; }
 
     /**
-     * <p>The types of attributes that are projected into the index.</p>
+     * <p>The types of attributes that are projected into the index. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>ALL</code> </p> </li> <li> <p>
+     * <code>INCLUDE</code> </p> </li> <li> <p> <code>KEYS_ONLY</code> </p> </li> </ul>
      */
     inline void SetProjectionType(const Aws::String& value) { m_projectionTypeHasBeenSet = true; m_projectionType = value; }
 
     /**
-     * <p>The types of attributes that are projected into the index.</p>
+     * <p>The types of attributes that are projected into the index. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>ALL</code> </p> </li> <li> <p>
+     * <code>INCLUDE</code> </p> </li> <li> <p> <code>KEYS_ONLY</code> </p> </li> </ul>
      */
     inline void SetProjectionType(Aws::String&& value) { m_projectionTypeHasBeenSet = true; m_projectionType = std::move(value); }
 
     /**
-     * <p>The types of attributes that are projected into the index.</p>
+     * <p>The types of attributes that are projected into the index. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>ALL</code> </p> </li> <li> <p>
+     * <code>INCLUDE</code> </p> </li> <li> <p> <code>KEYS_ONLY</code> </p> </li> </ul>
      */
     inline void SetProjectionType(const char* value) { m_projectionTypeHasBeenSet = true; m_projectionType.assign(value); }
 
     /**
-     * <p>The types of attributes that are projected into the index.</p>
+     * <p>The types of attributes that are projected into the index. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>ALL</code> </p> </li> <li> <p>
+     * <code>INCLUDE</code> </p> </li> <li> <p> <code>KEYS_ONLY</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableProjection& WithProjectionType(const Aws::String& value) { SetProjectionType(value); return *this;}
 
     /**
-     * <p>The types of attributes that are projected into the index.</p>
+     * <p>The types of attributes that are projected into the index. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>ALL</code> </p> </li> <li> <p>
+     * <code>INCLUDE</code> </p> </li> <li> <p> <code>KEYS_ONLY</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableProjection& WithProjectionType(Aws::String&& value) { SetProjectionType(std::move(value)); return *this;}
 
     /**
-     * <p>The types of attributes that are projected into the index.</p>
+     * <p>The types of attributes that are projected into the index. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>ALL</code> </p> </li> <li> <p>
+     * <code>INCLUDE</code> </p> </li> <li> <p> <code>KEYS_ONLY</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableProjection& WithProjectionType(const char* value) { SetProjectionType(value); return *this;}
 
   private:
 
     Aws::Vector<Aws::String> m_nonKeyAttributes;
-    bool m_nonKeyAttributesHasBeenSet;
+    bool m_nonKeyAttributesHasBeenSet = false;
 
     Aws::String m_projectionType;
-    bool m_projectionTypeHasBeenSet;
+    bool m_projectionTypeHasBeenSet = false;
   };
 
 } // namespace Model

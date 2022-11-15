@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The combination of Amazon Web Services service, linked account, Region, and
-   * usage type where a cost anomaly is observed. </p><p><h3>See Also:</h3>   <a
+   * <p>The combination of Amazon Web Service, linked account, Region, and usage type
+   * where a cost anomaly is observed. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RootCause">AWS API
    * Reference</a></p>
    */
@@ -39,50 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services service name that's associated with the cost anomaly.
-     * </p>
+     * <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
 
     /**
-     * <p>The Amazon Web Services service name that's associated with the cost anomaly.
-     * </p>
+     * <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
      */
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services service name that's associated with the cost anomaly.
-     * </p>
+     * <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
      */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /**
-     * <p>The Amazon Web Services service name that's associated with the cost anomaly.
-     * </p>
+     * <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
      */
     inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services service name that's associated with the cost anomaly.
-     * </p>
+     * <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
      */
     inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
 
     /**
-     * <p>The Amazon Web Services service name that's associated with the cost anomaly.
-     * </p>
+     * <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
      */
     inline RootCause& WithService(const Aws::String& value) { SetService(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services service name that's associated with the cost anomaly.
-     * </p>
+     * <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
      */
     inline RootCause& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services service name that's associated with the cost anomaly.
-     * </p>
+     * <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
      */
     inline RootCause& WithService(const char* value) { SetService(value); return *this;}
 
@@ -220,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_linkedAccount;
-    bool m_linkedAccountHasBeenSet;
+    bool m_linkedAccountHasBeenSet = false;
 
     Aws::String m_usageType;
-    bool m_usageTypeHasBeenSet;
+    bool m_usageTypeHasBeenSet = false;
   };
 
 } // namespace Model

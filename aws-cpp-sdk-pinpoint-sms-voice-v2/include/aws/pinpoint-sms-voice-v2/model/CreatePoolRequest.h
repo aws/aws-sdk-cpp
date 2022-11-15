@@ -320,22 +320,22 @@ namespace Model
   private:
 
     Aws::String m_originationIdentity;
-    bool m_originationIdentityHasBeenSet;
+    bool m_originationIdentityHasBeenSet = false;
 
     Aws::String m_isoCountryCode;
-    bool m_isoCountryCodeHasBeenSet;
+    bool m_isoCountryCodeHasBeenSet = false;
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     bool m_deletionProtectionEnabled;
-    bool m_deletionProtectionEnabledHasBeenSet;
+    bool m_deletionProtectionEnabledHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -318,25 +318,25 @@ namespace Model
   private:
 
     SqlApplicationConfiguration m_sqlApplicationConfiguration;
-    bool m_sqlApplicationConfigurationHasBeenSet;
+    bool m_sqlApplicationConfigurationHasBeenSet = false;
 
     FlinkApplicationConfiguration m_flinkApplicationConfiguration;
-    bool m_flinkApplicationConfigurationHasBeenSet;
+    bool m_flinkApplicationConfigurationHasBeenSet = false;
 
     EnvironmentProperties m_environmentProperties;
-    bool m_environmentPropertiesHasBeenSet;
+    bool m_environmentPropertiesHasBeenSet = false;
 
     ApplicationCodeConfiguration m_applicationCodeConfiguration;
-    bool m_applicationCodeConfigurationHasBeenSet;
+    bool m_applicationCodeConfigurationHasBeenSet = false;
 
     ApplicationSnapshotConfiguration m_applicationSnapshotConfiguration;
-    bool m_applicationSnapshotConfigurationHasBeenSet;
+    bool m_applicationSnapshotConfigurationHasBeenSet = false;
 
     Aws::Vector<VpcConfiguration> m_vpcConfigurations;
-    bool m_vpcConfigurationsHasBeenSet;
+    bool m_vpcConfigurationsHasBeenSet = false;
 
     ZeppelinApplicationConfiguration m_zeppelinApplicationConfiguration;
-    bool m_zeppelinApplicationConfigurationHasBeenSet;
+    bool m_zeppelinApplicationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -117,10 +117,10 @@ namespace Model
   private:
 
     TypedLinkSpecifier m_typedLinkSpecifier;
-    bool m_typedLinkSpecifierHasBeenSet;
+    bool m_typedLinkSpecifierHasBeenSet = false;
 
     Aws::Vector<LinkAttributeUpdate> m_attributeUpdates;
-    bool m_attributeUpdatesHasBeenSet;
+    bool m_attributeUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

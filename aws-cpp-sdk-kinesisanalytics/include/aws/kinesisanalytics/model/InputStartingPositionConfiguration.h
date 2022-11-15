@@ -113,7 +113,7 @@ namespace Model
   private:
 
     InputStartingPosition m_inputStartingPosition;
-    bool m_inputStartingPositionHasBeenSet;
+    bool m_inputStartingPositionHasBeenSet = false;
   };
 
 } // namespace Model

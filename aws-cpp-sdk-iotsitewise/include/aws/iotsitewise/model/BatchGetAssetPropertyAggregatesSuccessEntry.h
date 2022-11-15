@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     Aws::Vector<AggregatedValue> m_aggregatedValues;
-    bool m_aggregatedValuesHasBeenSet;
+    bool m_aggregatedValuesHasBeenSet = false;
   };
 
 } // namespace Model

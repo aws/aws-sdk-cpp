@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> Details on the modification recommendation.</p><p><h3>See Also:</h3>   <a
+   * <p>Details for the modification recommendation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ModifyRecommendationDetail">AWS
    * API Reference</a></p>
    */
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::Vector<TargetInstance> m_targetInstances;
-    bool m_targetInstancesHasBeenSet;
+    bool m_targetInstancesHasBeenSet = false;
   };
 
 } // namespace Model

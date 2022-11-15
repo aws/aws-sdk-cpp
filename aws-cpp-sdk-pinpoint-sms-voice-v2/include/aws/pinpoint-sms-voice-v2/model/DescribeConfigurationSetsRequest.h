@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_configurationSetNames;
-    bool m_configurationSetNamesHasBeenSet;
+    bool m_configurationSetNamesHasBeenSet = false;
 
     Aws::Vector<ConfigurationSetFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

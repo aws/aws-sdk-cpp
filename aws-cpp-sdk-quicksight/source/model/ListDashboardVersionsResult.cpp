@@ -32,7 +32,7 @@ ListDashboardVersionsResult& ListDashboardVersionsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DashboardVersionSummaryList"))
   {
-    Array<JsonView> dashboardVersionSummaryListJsonList = jsonValue.GetArray("DashboardVersionSummaryList");
+    Aws::Utils::Array<JsonView> dashboardVersionSummaryListJsonList = jsonValue.GetArray("DashboardVersionSummaryList");
     for(unsigned dashboardVersionSummaryListIndex = 0; dashboardVersionSummaryListIndex < dashboardVersionSummaryListJsonList.GetLength(); ++dashboardVersionSummaryListIndex)
     {
       m_dashboardVersionSummaryList.push_back(dashboardVersionSummaryListJsonList[dashboardVersionSummaryListIndex].AsObject());

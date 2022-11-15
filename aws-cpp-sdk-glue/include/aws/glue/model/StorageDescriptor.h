@@ -142,31 +142,58 @@ namespace Model
     inline StorageDescriptor& WithLocation(const char* value) { SetLocation(value); return *this;}
 
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetAdditionalLocations() const{ return m_additionalLocations; }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline bool AdditionalLocationsHasBeenSet() const { return m_additionalLocationsHasBeenSet; }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline void SetAdditionalLocations(const Aws::Vector<Aws::String>& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations = value; }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline void SetAdditionalLocations(Aws::Vector<Aws::String>&& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations = std::move(value); }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline StorageDescriptor& WithAdditionalLocations(const Aws::Vector<Aws::String>& value) { SetAdditionalLocations(value); return *this;}
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline StorageDescriptor& WithAdditionalLocations(Aws::Vector<Aws::String>&& value) { SetAdditionalLocations(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline StorageDescriptor& AddAdditionalLocations(const Aws::String& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline StorageDescriptor& AddAdditionalLocations(Aws::String&& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline StorageDescriptor& AddAdditionalLocations(const char* value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(value); return *this; }
 
 
@@ -614,46 +641,46 @@ namespace Model
   private:
 
     Aws::Vector<Column> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalLocations;
-    bool m_additionalLocationsHasBeenSet;
+    bool m_additionalLocationsHasBeenSet = false;
 
     Aws::String m_inputFormat;
-    bool m_inputFormatHasBeenSet;
+    bool m_inputFormatHasBeenSet = false;
 
     Aws::String m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
 
     bool m_compressed;
-    bool m_compressedHasBeenSet;
+    bool m_compressedHasBeenSet = false;
 
     int m_numberOfBuckets;
-    bool m_numberOfBucketsHasBeenSet;
+    bool m_numberOfBucketsHasBeenSet = false;
 
     SerDeInfo m_serdeInfo;
-    bool m_serdeInfoHasBeenSet;
+    bool m_serdeInfoHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_bucketColumns;
-    bool m_bucketColumnsHasBeenSet;
+    bool m_bucketColumnsHasBeenSet = false;
 
     Aws::Vector<Order> m_sortColumns;
-    bool m_sortColumnsHasBeenSet;
+    bool m_sortColumnsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     SkewedInfo m_skewedInfo;
-    bool m_skewedInfoHasBeenSet;
+    bool m_skewedInfoHasBeenSet = false;
 
     bool m_storedAsSubDirectories;
-    bool m_storedAsSubDirectoriesHasBeenSet;
+    bool m_storedAsSubDirectoriesHasBeenSet = false;
 
     SchemaReference m_schemaReference;
-    bool m_schemaReferenceHasBeenSet;
+    bool m_schemaReferenceHasBeenSet = false;
   };
 
 } // namespace Model

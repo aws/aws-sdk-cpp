@@ -52,7 +52,7 @@ GetDeliverabilityDashboardOptionsResult& GetDeliverabilityDashboardOptionsResult
 
   if(jsonValue.ValueExists("ActiveSubscribedDomains"))
   {
-    Array<JsonView> activeSubscribedDomainsJsonList = jsonValue.GetArray("ActiveSubscribedDomains");
+    Aws::Utils::Array<JsonView> activeSubscribedDomainsJsonList = jsonValue.GetArray("ActiveSubscribedDomains");
     for(unsigned activeSubscribedDomainsIndex = 0; activeSubscribedDomainsIndex < activeSubscribedDomainsJsonList.GetLength(); ++activeSubscribedDomainsIndex)
     {
       m_activeSubscribedDomains.push_back(activeSubscribedDomainsJsonList[activeSubscribedDomainsIndex].AsObject());
@@ -61,7 +61,7 @@ GetDeliverabilityDashboardOptionsResult& GetDeliverabilityDashboardOptionsResult
 
   if(jsonValue.ValueExists("PendingExpirationSubscribedDomains"))
   {
-    Array<JsonView> pendingExpirationSubscribedDomainsJsonList = jsonValue.GetArray("PendingExpirationSubscribedDomains");
+    Aws::Utils::Array<JsonView> pendingExpirationSubscribedDomainsJsonList = jsonValue.GetArray("PendingExpirationSubscribedDomains");
     for(unsigned pendingExpirationSubscribedDomainsIndex = 0; pendingExpirationSubscribedDomainsIndex < pendingExpirationSubscribedDomainsJsonList.GetLength(); ++pendingExpirationSubscribedDomainsIndex)
     {
       m_pendingExpirationSubscribedDomains.push_back(pendingExpirationSubscribedDomainsJsonList[pendingExpirationSubscribedDomainsIndex].AsObject());

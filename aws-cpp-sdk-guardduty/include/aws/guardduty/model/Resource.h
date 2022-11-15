@@ -11,6 +11,9 @@
 #include <aws/guardduty/model/EksClusterDetails.h>
 #include <aws/guardduty/model/KubernetesDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/model/EbsVolumeDetails.h>
+#include <aws/guardduty/model/EcsClusterDetails.h>
+#include <aws/guardduty/model/Container.h>
 #include <aws/guardduty/model/S3BucketDetail.h>
 #include <utility>
 
@@ -268,25 +271,115 @@ namespace Model
      */
     inline Resource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
+    /**
+     * <p>Contains list of scanned and skipped EBS volumes with details.</p>
+     */
+    inline const EbsVolumeDetails& GetEbsVolumeDetails() const{ return m_ebsVolumeDetails; }
+
+    /**
+     * <p>Contains list of scanned and skipped EBS volumes with details.</p>
+     */
+    inline bool EbsVolumeDetailsHasBeenSet() const { return m_ebsVolumeDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains list of scanned and skipped EBS volumes with details.</p>
+     */
+    inline void SetEbsVolumeDetails(const EbsVolumeDetails& value) { m_ebsVolumeDetailsHasBeenSet = true; m_ebsVolumeDetails = value; }
+
+    /**
+     * <p>Contains list of scanned and skipped EBS volumes with details.</p>
+     */
+    inline void SetEbsVolumeDetails(EbsVolumeDetails&& value) { m_ebsVolumeDetailsHasBeenSet = true; m_ebsVolumeDetails = std::move(value); }
+
+    /**
+     * <p>Contains list of scanned and skipped EBS volumes with details.</p>
+     */
+    inline Resource& WithEbsVolumeDetails(const EbsVolumeDetails& value) { SetEbsVolumeDetails(value); return *this;}
+
+    /**
+     * <p>Contains list of scanned and skipped EBS volumes with details.</p>
+     */
+    inline Resource& WithEbsVolumeDetails(EbsVolumeDetails&& value) { SetEbsVolumeDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains information about the details of the ECS Cluster.</p>
+     */
+    inline const EcsClusterDetails& GetEcsClusterDetails() const{ return m_ecsClusterDetails; }
+
+    /**
+     * <p>Contains information about the details of the ECS Cluster.</p>
+     */
+    inline bool EcsClusterDetailsHasBeenSet() const { return m_ecsClusterDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains information about the details of the ECS Cluster.</p>
+     */
+    inline void SetEcsClusterDetails(const EcsClusterDetails& value) { m_ecsClusterDetailsHasBeenSet = true; m_ecsClusterDetails = value; }
+
+    /**
+     * <p>Contains information about the details of the ECS Cluster.</p>
+     */
+    inline void SetEcsClusterDetails(EcsClusterDetails&& value) { m_ecsClusterDetailsHasBeenSet = true; m_ecsClusterDetails = std::move(value); }
+
+    /**
+     * <p>Contains information about the details of the ECS Cluster.</p>
+     */
+    inline Resource& WithEcsClusterDetails(const EcsClusterDetails& value) { SetEcsClusterDetails(value); return *this;}
+
+    /**
+     * <p>Contains information about the details of the ECS Cluster.</p>
+     */
+    inline Resource& WithEcsClusterDetails(EcsClusterDetails&& value) { SetEcsClusterDetails(std::move(value)); return *this;}
+
+
+    
+    inline const Container& GetContainerDetails() const{ return m_containerDetails; }
+
+    
+    inline bool ContainerDetailsHasBeenSet() const { return m_containerDetailsHasBeenSet; }
+
+    
+    inline void SetContainerDetails(const Container& value) { m_containerDetailsHasBeenSet = true; m_containerDetails = value; }
+
+    
+    inline void SetContainerDetails(Container&& value) { m_containerDetailsHasBeenSet = true; m_containerDetails = std::move(value); }
+
+    
+    inline Resource& WithContainerDetails(const Container& value) { SetContainerDetails(value); return *this;}
+
+    
+    inline Resource& WithContainerDetails(Container&& value) { SetContainerDetails(std::move(value)); return *this;}
+
   private:
 
     AccessKeyDetails m_accessKeyDetails;
-    bool m_accessKeyDetailsHasBeenSet;
+    bool m_accessKeyDetailsHasBeenSet = false;
 
     Aws::Vector<S3BucketDetail> m_s3BucketDetails;
-    bool m_s3BucketDetailsHasBeenSet;
+    bool m_s3BucketDetailsHasBeenSet = false;
 
     InstanceDetails m_instanceDetails;
-    bool m_instanceDetailsHasBeenSet;
+    bool m_instanceDetailsHasBeenSet = false;
 
     EksClusterDetails m_eksClusterDetails;
-    bool m_eksClusterDetailsHasBeenSet;
+    bool m_eksClusterDetailsHasBeenSet = false;
 
     KubernetesDetails m_kubernetesDetails;
-    bool m_kubernetesDetailsHasBeenSet;
+    bool m_kubernetesDetailsHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
+
+    EbsVolumeDetails m_ebsVolumeDetails;
+    bool m_ebsVolumeDetailsHasBeenSet = false;
+
+    EcsClusterDetails m_ecsClusterDetails;
+    bool m_ecsClusterDetailsHasBeenSet = false;
+
+    Container m_containerDetails;
+    bool m_containerDetailsHasBeenSet = false;
   };
 
 } // namespace Model

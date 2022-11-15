@@ -149,10 +149,10 @@ namespace Model
   private:
 
     int m_expirationInDays;
-    bool m_expirationInDaysHasBeenSet;
+    bool m_expirationInDaysHasBeenSet = false;
 
     S3GlacierJobTier m_glacierJobTier;
-    bool m_glacierJobTierHasBeenSet;
+    bool m_glacierJobTierHasBeenSet = false;
   };
 
 } // namespace Model

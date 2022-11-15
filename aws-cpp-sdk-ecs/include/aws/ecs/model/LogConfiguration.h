@@ -337,7 +337,7 @@ namespace Model
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Secret>& GetSecretOptions() const{ return m_secretOptions; }
@@ -345,7 +345,7 @@ namespace Model
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool SecretOptionsHasBeenSet() const { return m_secretOptionsHasBeenSet; }
@@ -353,7 +353,7 @@ namespace Model
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetSecretOptions(const Aws::Vector<Secret>& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = value; }
@@ -361,7 +361,7 @@ namespace Model
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetSecretOptions(Aws::Vector<Secret>&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = std::move(value); }
@@ -369,7 +369,7 @@ namespace Model
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline LogConfiguration& WithSecretOptions(const Aws::Vector<Secret>& value) { SetSecretOptions(value); return *this;}
@@ -377,7 +377,7 @@ namespace Model
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline LogConfiguration& WithSecretOptions(Aws::Vector<Secret>&& value) { SetSecretOptions(std::move(value)); return *this;}
@@ -385,7 +385,7 @@ namespace Model
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline LogConfiguration& AddSecretOptions(const Secret& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(value); return *this; }
@@ -393,7 +393,7 @@ namespace Model
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline LogConfiguration& AddSecretOptions(Secret&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(std::move(value)); return *this; }
@@ -401,13 +401,13 @@ namespace Model
   private:
 
     LogDriver m_logDriver;
-    bool m_logDriverHasBeenSet;
+    bool m_logDriverHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<Secret> m_secretOptions;
-    bool m_secretOptionsHasBeenSet;
+    bool m_secretOptionsHasBeenSet = false;
   };
 
 } // namespace Model

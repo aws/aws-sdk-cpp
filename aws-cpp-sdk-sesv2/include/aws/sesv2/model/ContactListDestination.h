@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_contactListName;
-    bool m_contactListNameHasBeenSet;
+    bool m_contactListNameHasBeenSet = false;
 
     ContactListImportAction m_contactListImportAction;
-    bool m_contactListImportActionHasBeenSet;
+    bool m_contactListImportActionHasBeenSet = false;
   };
 
 } // namespace Model

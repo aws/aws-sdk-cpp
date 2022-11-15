@@ -132,13 +132,13 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     bool m_autoEnable;
-    bool m_autoEnableHasBeenSet;
+    bool m_autoEnableHasBeenSet = false;
 
     OrganizationDataSourceConfigurations m_dataSources;
-    bool m_dataSourcesHasBeenSet;
+    bool m_dataSourcesHasBeenSet = false;
   };
 
 } // namespace Model

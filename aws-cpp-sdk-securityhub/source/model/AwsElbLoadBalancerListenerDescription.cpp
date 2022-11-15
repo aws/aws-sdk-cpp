@@ -42,7 +42,7 @@ AwsElbLoadBalancerListenerDescription& AwsElbLoadBalancerListenerDescription::op
 
   if(jsonValue.ValueExists("PolicyNames"))
   {
-    Array<JsonView> policyNamesJsonList = jsonValue.GetArray("PolicyNames");
+    Aws::Utils::Array<JsonView> policyNamesJsonList = jsonValue.GetArray("PolicyNames");
     for(unsigned policyNamesIndex = 0; policyNamesIndex < policyNamesJsonList.GetLength(); ++policyNamesIndex)
     {
       m_policyNames.push_back(policyNamesJsonList[policyNamesIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue AwsElbLoadBalancerListenerDescription::Jsonize() const
 
   if(m_policyNamesHasBeenSet)
   {
-   Array<JsonValue> policyNamesJsonList(m_policyNames.size());
+   Aws::Utils::Array<JsonValue> policyNamesJsonList(m_policyNames.size());
    for(unsigned policyNamesIndex = 0; policyNamesIndex < policyNamesJsonList.GetLength(); ++policyNamesIndex)
    {
      policyNamesJsonList[policyNamesIndex].AsString(m_policyNames[policyNamesIndex]);

@@ -94,7 +94,7 @@ namespace Model
   private:
 
     Aws::Vector<PutEventsRequestEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
   };
 
 } // namespace Model

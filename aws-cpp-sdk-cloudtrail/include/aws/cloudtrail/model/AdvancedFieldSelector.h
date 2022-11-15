@@ -46,13 +46,13 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -145,13 +145,13 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -244,13 +244,13 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -343,13 +343,13 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -442,13 +442,13 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -541,13 +541,13 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -640,13 +640,13 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -739,13 +739,13 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
      * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
-     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * to ﬁlter in or ���lter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -1182,25 +1182,25 @@ namespace Model
   private:
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_equals;
-    bool m_equalsHasBeenSet;
+    bool m_equalsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_startsWith;
-    bool m_startsWithHasBeenSet;
+    bool m_startsWithHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_endsWith;
-    bool m_endsWithHasBeenSet;
+    bool m_endsWithHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notEquals;
-    bool m_notEqualsHasBeenSet;
+    bool m_notEqualsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notStartsWith;
-    bool m_notStartsWithHasBeenSet;
+    bool m_notStartsWithHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notEndsWith;
-    bool m_notEndsWithHasBeenSet;
+    bool m_notEndsWithHasBeenSet = false;
   };
 
 } // namespace Model

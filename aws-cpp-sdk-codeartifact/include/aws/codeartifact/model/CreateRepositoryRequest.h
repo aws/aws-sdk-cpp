@@ -83,50 +83,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline CreateRepositoryRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline CreateRepositoryRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline CreateRepositoryRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
 
@@ -216,8 +216,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -226,8 +225,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -236,8 +234,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -246,8 +243,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -256,8 +252,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -266,8 +261,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -276,8 +270,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -286,8 +279,7 @@ namespace Model
     /**
      * <p> A list of upstream repositories to associate with the repository. The order
      * of the upstream repositories in the list determines their priority order when
-     * AWS CodeArtifact looks for a requested package version. For more information,
-     * see <a
+     * CodeArtifact looks for a requested package version. For more information, see <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
@@ -337,22 +329,22 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainOwner;
-    bool m_domainOwnerHasBeenSet;
+    bool m_domainOwnerHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<UpstreamRepository> m_upstreams;
-    bool m_upstreamsHasBeenSet;
+    bool m_upstreamsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

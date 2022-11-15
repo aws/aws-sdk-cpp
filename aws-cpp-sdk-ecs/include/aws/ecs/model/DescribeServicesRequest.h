@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_services;
-    bool m_servicesHasBeenSet;
+    bool m_servicesHasBeenSet = false;
 
     Aws::Vector<ServiceField> m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
   };
 
 } // namespace Model

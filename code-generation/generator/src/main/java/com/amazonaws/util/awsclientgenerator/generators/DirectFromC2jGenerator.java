@@ -6,15 +6,21 @@
 package com.amazonaws.util.awsclientgenerator.generators;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jServiceModel;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.PartitionsModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOption;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOptionModifier;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOptionJsonDeserializer;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOptionModifierJsonDeserializer;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.DefaultClientConfigs;
+
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointTestParamsDeserializer;
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointTests;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.OutputStream;
 
 
 public class DirectFromC2jGenerator {
@@ -25,15 +31,45 @@ public class DirectFromC2jGenerator {
        this.mainClientGenerator = mainClientGenerator;
     }
 
-    public File generateServiceSourceFromJson(String rawJson, String languageBinding, String serviceName, String namespace,
-                                              String licenseText, boolean generateStandalonePackage,
-                                              boolean enableVirtualOperations) throws Exception {
+    public ByteArrayOutputStream generateServiceSourceFromJson(String rawJson, String endpointRuleSet, String endpointRulesTests,
+                                                               String languageBinding, String serviceName, String namespace,
+                                                               String licenseText, boolean generateStandalonePackage,
+                                                               boolean enableVirtualOperations) throws Exception {
         GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(EndpointTests.EndpointTestParams.class, new EndpointTestParamsDeserializer());
         Gson gson = gsonBuilder.create();
 
         C2jServiceModel c2jServiceModel = gson.fromJson(rawJson, C2jServiceModel.class);
         c2jServiceModel.setServiceName(serviceName);
-        return mainClientGenerator.generateSourceFromC2jModel(c2jServiceModel, serviceName, languageBinding, namespace, licenseText, generateStandalonePackage, enableVirtualOperations);
+        c2jServiceModel.setEndpointRules(endpointRuleSet);
+        if (endpointRulesTests != null) {
+            EndpointTests endpointTestsModel = gson.fromJson(endpointRulesTests, EndpointTests.class);
+            c2jServiceModel.setEndpointTests(endpointTestsModel);
+        }
+        return mainClientGenerator.generateSourceFromC2jModel(c2jServiceModel, serviceName, languageBinding, namespace,
+                licenseText, generateStandalonePackage, enableVirtualOperations);
+    }
+
+    /**
+     * A function to generate C++ source for core partitions
+     *
+     * @param rawJson
+     * @param languageBinding
+     * @param serviceName, dummy argument for interoperability with service generator
+     * @param namespace
+     * @param licenseText
+     * @param generateStandalonePackage, dummy
+     * @param enableVirtualOperations, dummy
+     * @return C++ generated code
+     * @throws Exception
+     */
+    public ByteArrayOutputStream generatePartitionsSourceFromJson(String rawJson, String languageBinding, String serviceName,
+                                                                 String namespace, String licenseText,
+                                                                 boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
+        PartitionsModel partitionsBom = new PartitionsModel();
+        partitionsBom.setPartitionsBlob(rawJson);
+
+        return mainClientGenerator.generatePartitionsSourceFromStrBlob(partitionsBom, languageBinding, namespace, licenseText);
     }
 
     /**
@@ -49,9 +85,9 @@ public class DirectFromC2jGenerator {
      * @return C++ generated code
      * @throws Exception
      */
-    public File generateDefaultsSourceFromJson(String rawJson, String languageBinding, String serviceName,
-                                               String namespace, String licenseText,
-                                               boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
+    public ByteArrayOutputStream generateDefaultsSourceFromJson(String rawJson, String languageBinding, String serviceName,
+                                                                String namespace, String licenseText,
+                                                                boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
         DefaultClientConfigs clientConfigBom = parseRawJson(rawJson);
 
         return mainClientGenerator.generateDefaultsSourceFromModel(clientConfigBom, languageBinding, namespace, licenseText);
@@ -78,5 +114,28 @@ public class DirectFromC2jGenerator {
          */
         DefaultClientConfigs clientConfigBom = gson.fromJson(rawJson, DefaultClientConfigs.class);
         return clientConfigBom;
+    }
+
+    /**
+     * A function to generate C++ source for service client tests
+     *
+     * @throws Exception
+     */
+    public ByteArrayOutputStream generateServiceTestSourceFromModels(String rawJson, String endpointRuleSet, String endpointRulesTests,
+                                                         String languageBinding, String serviceName, String namespace,
+                                                         String licenseText) throws Exception {
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(EndpointTests.EndpointTestParams.class, new EndpointTestParamsDeserializer());
+        Gson gson = gsonBuilder.create();
+
+        C2jServiceModel c2jServiceModel = gson.fromJson(rawJson, C2jServiceModel.class);
+        c2jServiceModel.setServiceName(serviceName);
+        c2jServiceModel.setEndpointRules(endpointRuleSet);
+        if (endpointRulesTests != null) {
+            EndpointTests endpointTestsModel = gson.fromJson(endpointRulesTests, EndpointTests.class);
+            c2jServiceModel.setEndpointTests(endpointTestsModel);
+        }
+        return mainClientGenerator.generateTestSourceFromModel(c2jServiceModel, serviceName, languageBinding, namespace,
+                licenseText);
     }
 }

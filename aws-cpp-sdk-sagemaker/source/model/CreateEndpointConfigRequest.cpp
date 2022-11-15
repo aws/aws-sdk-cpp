@@ -18,7 +18,8 @@ CreateEndpointConfigRequest::CreateEndpointConfigRequest() :
     m_dataCaptureConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_asyncInferenceConfigHasBeenSet(false)
+    m_asyncInferenceConfigHasBeenSet(false),
+    m_explainerConfigHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,7 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
 
   if(m_productionVariantsHasBeenSet)
   {
-   Array<JsonValue> productionVariantsJsonList(m_productionVariants.size());
+   Aws::Utils::Array<JsonValue> productionVariantsJsonList(m_productionVariants.size());
    for(unsigned productionVariantsIndex = 0; productionVariantsIndex < productionVariantsJsonList.GetLength(); ++productionVariantsIndex)
    {
      productionVariantsJsonList[productionVariantsIndex].AsObject(m_productionVariants[productionVariantsIndex].Jsonize());
@@ -51,7 +52,7 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -69,6 +70,12 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
   if(m_asyncInferenceConfigHasBeenSet)
   {
    payload.WithObject("AsyncInferenceConfig", m_asyncInferenceConfig.Jsonize());
+
+  }
+
+  if(m_explainerConfigHasBeenSet)
+  {
+   payload.WithObject("ExplainerConfig", m_explainerConfig.Jsonize());
 
   }
 

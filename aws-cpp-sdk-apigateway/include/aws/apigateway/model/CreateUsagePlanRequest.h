@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline CreateUsagePlanRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline CreateUsagePlanRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline CreateUsagePlanRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -321,22 +321,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ApiStage> m_apiStages;
-    bool m_apiStagesHasBeenSet;
+    bool m_apiStagesHasBeenSet = false;
 
     ThrottleSettings m_throttle;
-    bool m_throttleHasBeenSet;
+    bool m_throttleHasBeenSet = false;
 
     QuotaSettings m_quota;
-    bool m_quotaHasBeenSet;
+    bool m_quotaHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -286,25 +286,25 @@ namespace Model
   private:
 
     Aws::String m_bundleName;
-    bool m_bundleNameHasBeenSet;
+    bool m_bundleNameHasBeenSet = false;
 
     Aws::String m_bundleDescription;
-    bool m_bundleDescriptionHasBeenSet;
+    bool m_bundleDescriptionHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     ComputeType m_computeType;
-    bool m_computeTypeHasBeenSet;
+    bool m_computeTypeHasBeenSet = false;
 
     UserStorage m_userStorage;
-    bool m_userStorageHasBeenSet;
+    bool m_userStorageHasBeenSet = false;
 
     RootStorage m_rootStorage;
-    bool m_rootStorageHasBeenSet;
+    bool m_rootStorageHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

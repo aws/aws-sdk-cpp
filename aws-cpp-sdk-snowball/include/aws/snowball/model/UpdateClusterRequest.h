@@ -433,31 +433,31 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     JobResource m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
-    bool m_onDeviceServiceConfigurationHasBeenSet;
+    bool m_onDeviceServiceConfigurationHasBeenSet = false;
 
     Aws::String m_addressId;
-    bool m_addressIdHasBeenSet;
+    bool m_addressIdHasBeenSet = false;
 
     ShippingOption m_shippingOption;
-    bool m_shippingOptionHasBeenSet;
+    bool m_shippingOptionHasBeenSet = false;
 
     Notification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     Aws::String m_forwardingAddressId;
-    bool m_forwardingAddressIdHasBeenSet;
+    bool m_forwardingAddressIdHasBeenSet = false;
   };
 
 } // namespace Model

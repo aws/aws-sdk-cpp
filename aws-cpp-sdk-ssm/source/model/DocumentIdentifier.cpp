@@ -102,7 +102,7 @@ DocumentIdentifier& DocumentIdentifier::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PlatformTypes"))
   {
-    Array<JsonView> platformTypesJsonList = jsonValue.GetArray("PlatformTypes");
+    Aws::Utils::Array<JsonView> platformTypesJsonList = jsonValue.GetArray("PlatformTypes");
     for(unsigned platformTypesIndex = 0; platformTypesIndex < platformTypesJsonList.GetLength(); ++platformTypesIndex)
     {
       m_platformTypes.push_back(PlatformTypeMapper::GetPlatformTypeForName(platformTypesJsonList[platformTypesIndex].AsString()));
@@ -147,7 +147,7 @@ DocumentIdentifier& DocumentIdentifier::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -157,7 +157,7 @@ DocumentIdentifier& DocumentIdentifier::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Requires"))
   {
-    Array<JsonView> requiresJsonList = jsonValue.GetArray("Requires");
+    Aws::Utils::Array<JsonView> requiresJsonList = jsonValue.GetArray("Requires");
     for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
     {
       m_requires.push_back(requiresJsonList[requiresIndex].AsObject());
@@ -217,7 +217,7 @@ JsonValue DocumentIdentifier::Jsonize() const
 
   if(m_platformTypesHasBeenSet)
   {
-   Array<JsonValue> platformTypesJsonList(m_platformTypes.size());
+   Aws::Utils::Array<JsonValue> platformTypesJsonList(m_platformTypes.size());
    for(unsigned platformTypesIndex = 0; platformTypesIndex < platformTypesJsonList.GetLength(); ++platformTypesIndex)
    {
      platformTypesJsonList[platformTypesIndex].AsString(PlatformTypeMapper::GetNameForPlatformType(m_platformTypes[platformTypesIndex]));
@@ -256,7 +256,7 @@ JsonValue DocumentIdentifier::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -267,7 +267,7 @@ JsonValue DocumentIdentifier::Jsonize() const
 
   if(m_requiresHasBeenSet)
   {
-   Array<JsonValue> requiresJsonList(m_requires.size());
+   Aws::Utils::Array<JsonValue> requiresJsonList(m_requires.size());
    for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
    {
      requiresJsonList[requiresIndex].AsObject(m_requires[requiresIndex].Jsonize());

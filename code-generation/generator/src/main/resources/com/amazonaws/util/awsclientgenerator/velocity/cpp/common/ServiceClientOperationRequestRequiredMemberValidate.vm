@@ -1,3 +1,25 @@
+#if($serviceModel.endpointRules)
+#if(!$operation.request.shape.hasEventStreamMembers())
+#if($operation.s3CrtSpecific)
+#if($operation.request)
+  if (!m_endpointProvider) {
+    return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
+  }
+#else
+  if (!m_endpointProvider) {
+    return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
+  }
+#end
+#else
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+#end
+#else##-#if(!$operation.request.shape.hasEventStreamMembers())
+  if (!m_endpointProvider) {
+    handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
+    return;
+  }
+#end##-#if(!$operation.request.shape.hasEventStreamMembers())
+#end
 #foreach($memberEntry in $operation.request.shape.members.entrySet())
 #if($memberEntry.value.validationNeeded && !$memberEntry.value.streaming && !$memberEntry.value.usedForPayload && !($operation.arnEndpointAllowed && $memberEntry.value.shape.name.equals($operation.accountIdMemberName)))
 #set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($memberEntry.key))
@@ -7,21 +29,21 @@
 #if(!$operation.request.shape.hasEventStreamMembers())
 #if($operation.s3CrtSpecific)
 #if($operation.request)
-    return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [${memberKeyWithFirstLetterCapitalized}]", false)), context);
+    return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [${memberKeyWithFirstLetterCapitalized}]", false)), handlerContext);
 #else
-    return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [${memberKeyWithFirstLetterCapitalized}]", false)), context);
+    return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [${memberKeyWithFirstLetterCapitalized}]", false)), handlerContext);
 #end
 #else
     return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [${memberKeyWithFirstLetterCapitalized}]", false));
 #end
 #else
-    responseHandler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [${memberKeyWithFirstLetterCapitalized}]", false)), handlerContext);
+    handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [${memberKeyWithFirstLetterCapitalized}]", false)), handlerContext);
     return;
 #end
   }
 #end
 #end
-#if($operation.arnEndpointAllowed && $operation.hasAccountIdMember)
+#if($operation.arnEndpointAllowed && $operation.hasAccountIdMember && !$serviceModel.endpointRules)
 #set($accountIdMemberWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($operation.accountIdMemberName))
   ${metadata.classNamePrefix}ARN arn(request.Get${CppViewHelper.capitalizeFirstChar($operation.arnEndpointMemberName)}());
   if (!arn && request.Get${accountIdMemberWithFirstLetterCapitalized}().empty())
@@ -29,10 +51,10 @@
 #if($operation.s3CrtSpecific)
 #if($operation.request)
       return handlder(this, request, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
-          "Account ID should be specified via either accountId field or an ARN", false)), context);
+          "Account ID should be specified via either accountId field or an ARN", false)), handlerContext);
 #else
       return handlder(this, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
-          "Account ID should be specified via either accountId field or an ARN", false)), context);
+          "Account ID should be specified via either accountId field or an ARN", false)), handlerContext);
 #end
 #else
       return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -44,14 +66,14 @@
 #if($operation.s3CrtSpecific)
 #if($operation.request)
       return handler(this, request, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false)), context);
+          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false)), handlerContext);
 #else
       return handler(this, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false)), context);
+          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false)), handlerContext);
 #end
 #else
       return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
           "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
 #end
   }
-#end
+#end##-#if($operation.arnEndpointAllowed && $operation.hasAccountIdMember && !$serviceModel.endpointRules)

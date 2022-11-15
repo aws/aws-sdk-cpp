@@ -28,10 +28,8 @@ namespace Model
 {
   /**
    * <p>Represents an integration response. The status code must map to an existing
-   * <a>MethodResponse</a>, and parameters and templates can be used to transform the
-   * back-end response.</p> <div class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
-   * an API</a> </div><p><h3>See Also:</h3>   <a
+   * MethodResponse, and parameters and templates can be used to transform the
+   * back-end response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/IntegrationResponse">AWS
    * API Reference</a></p>
    */
@@ -45,43 +43,43 @@ namespace Model
 
     /**
      * <p>Specifies the status code that is used to map the integration response to an
-     * existing <a>MethodResponse</a>.</p>
+     * existing MethodResponse.</p>
      */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
 
     /**
      * <p>Specifies the status code that is used to map the integration response to an
-     * existing <a>MethodResponse</a>.</p>
+     * existing MethodResponse.</p>
      */
     inline void SetStatusCode(const Aws::String& value) { m_statusCode = value; }
 
     /**
      * <p>Specifies the status code that is used to map the integration response to an
-     * existing <a>MethodResponse</a>.</p>
+     * existing MethodResponse.</p>
      */
     inline void SetStatusCode(Aws::String&& value) { m_statusCode = std::move(value); }
 
     /**
      * <p>Specifies the status code that is used to map the integration response to an
-     * existing <a>MethodResponse</a>.</p>
+     * existing MethodResponse.</p>
      */
     inline void SetStatusCode(const char* value) { m_statusCode.assign(value); }
 
     /**
      * <p>Specifies the status code that is used to map the integration response to an
-     * existing <a>MethodResponse</a>.</p>
+     * existing MethodResponse.</p>
      */
     inline PutIntegrationResponseResult& WithStatusCode(const Aws::String& value) { SetStatusCode(value); return *this;}
 
     /**
      * <p>Specifies the status code that is used to map the integration response to an
-     * existing <a>MethodResponse</a>.</p>
+     * existing MethodResponse.</p>
      */
     inline PutIntegrationResponseResult& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the status code that is used to map the integration response to an
-     * existing <a>MethodResponse</a>.</p>
+     * existing MethodResponse.</p>
      */
     inline PutIntegrationResponseResult& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
 
@@ -452,60 +450,45 @@ namespace Model
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
-     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
-     * Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
-     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
-     * property is not defined, the response payload will be passed through from the
-     * integration response to the method response without modification.</p>
+     * the following behaviors:</p> <p>If this property is not defined, the response
+     * payload will be passed through from the integration response to the method
+     * response without modification.</p>
      */
     inline const ContentHandlingStrategy& GetContentHandling() const{ return m_contentHandling; }
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
-     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
-     * Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
-     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
-     * property is not defined, the response payload will be passed through from the
-     * integration response to the method response without modification.</p>
+     * the following behaviors:</p> <p>If this property is not defined, the response
+     * payload will be passed through from the integration response to the method
+     * response without modification.</p>
      */
     inline void SetContentHandling(const ContentHandlingStrategy& value) { m_contentHandling = value; }
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
-     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
-     * Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
-     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
-     * property is not defined, the response payload will be passed through from the
-     * integration response to the method response without modification.</p>
+     * the following behaviors:</p> <p>If this property is not defined, the response
+     * payload will be passed through from the integration response to the method
+     * response without modification.</p>
      */
     inline void SetContentHandling(ContentHandlingStrategy&& value) { m_contentHandling = std::move(value); }
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
-     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
-     * Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
-     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
-     * property is not defined, the response payload will be passed through from the
-     * integration response to the method response without modification.</p>
+     * the following behaviors:</p> <p>If this property is not defined, the response
+     * payload will be passed through from the integration response to the method
+     * response without modification.</p>
      */
     inline PutIntegrationResponseResult& WithContentHandling(const ContentHandlingStrategy& value) { SetContentHandling(value); return *this;}
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
-     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
-     * Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
-     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
-     * property is not defined, the response payload will be passed through from the
-     * integration response to the method response without modification.</p>
+     * the following behaviors:</p> <p>If this property is not defined, the response
+     * payload will be passed through from the integration response to the method
+     * response without modification.</p>
      */
     inline PutIntegrationResponseResult& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(std::move(value)); return *this;}
 

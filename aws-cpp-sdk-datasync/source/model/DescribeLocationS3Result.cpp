@@ -56,7 +56,7 @@ DescribeLocationS3Result& DescribeLocationS3Result::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("AgentArns"))
   {
-    Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
+    Aws::Utils::Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
     for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
     {
       m_agentArns.push_back(agentArnsJsonList[agentArnsIndex].AsString());

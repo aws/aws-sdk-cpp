@@ -59,7 +59,9 @@ RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() :
     m_enableCustomerOwnedIpHasBeenSet(false),
     m_customIamInstanceProfileHasBeenSet(false),
     m_backupTargetHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+    m_networkTypeHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
 }
 
@@ -79,7 +81,7 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
 
   if(m_restoreTimeHasBeenSet)
   {
-    ss << "RestoreTime=" << StringUtils::URLEncode(m_restoreTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "RestoreTime=" << StringUtils::URLEncode(m_restoreTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_useLatestRestorableTimeHasBeenSet)
@@ -272,6 +274,11 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   if(m_networkTypeHasBeenSet)
   {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
+  if(m_storageThroughputHasBeenSet)
+  {
+    ss << "StorageThroughput=" << m_storageThroughput << "&";
   }
 
   ss << "Version=2014-10-31";

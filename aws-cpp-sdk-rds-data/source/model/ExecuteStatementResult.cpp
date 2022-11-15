@@ -30,27 +30,28 @@ ExecuteStatementResult::ExecuteStatementResult(const Aws::AmazonWebServiceResult
 ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("columnMetadata"))
+  if(jsonValue.ValueExists("records"))
   {
-    Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("columnMetadata");
-    for(unsigned columnMetadataIndex = 0; columnMetadataIndex < columnMetadataJsonList.GetLength(); ++columnMetadataIndex)
+    Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
+    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
-      m_columnMetadata.push_back(columnMetadataJsonList[columnMetadataIndex].AsObject());
+      Aws::Utils::Array<JsonView> fieldListJsonList = recordsJsonList[recordsIndex].AsArray();
+      Aws::Vector<Field> fieldListList;
+      fieldListList.reserve((size_t)fieldListJsonList.GetLength());
+      for(unsigned fieldListIndex = 0; fieldListIndex < fieldListJsonList.GetLength(); ++fieldListIndex)
+      {
+        fieldListList.push_back(fieldListJsonList[fieldListIndex].AsObject());
+      }
+      m_records.push_back(std::move(fieldListList));
     }
   }
 
-  if(jsonValue.ValueExists("formattedRecords"))
+  if(jsonValue.ValueExists("columnMetadata"))
   {
-    m_formattedRecords = jsonValue.GetString("formattedRecords");
-
-  }
-
-  if(jsonValue.ValueExists("generatedFields"))
-  {
-    Array<JsonView> generatedFieldsJsonList = jsonValue.GetArray("generatedFields");
-    for(unsigned generatedFieldsIndex = 0; generatedFieldsIndex < generatedFieldsJsonList.GetLength(); ++generatedFieldsIndex)
+    Aws::Utils::Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("columnMetadata");
+    for(unsigned columnMetadataIndex = 0; columnMetadataIndex < columnMetadataJsonList.GetLength(); ++columnMetadataIndex)
     {
-      m_generatedFields.push_back(generatedFieldsJsonList[generatedFieldsIndex].AsObject());
+      m_columnMetadata.push_back(columnMetadataJsonList[columnMetadataIndex].AsObject());
     }
   }
 
@@ -60,20 +61,19 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
 
   }
 
-  if(jsonValue.ValueExists("records"))
+  if(jsonValue.ValueExists("generatedFields"))
   {
-    Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
-    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
+    Aws::Utils::Array<JsonView> generatedFieldsJsonList = jsonValue.GetArray("generatedFields");
+    for(unsigned generatedFieldsIndex = 0; generatedFieldsIndex < generatedFieldsJsonList.GetLength(); ++generatedFieldsIndex)
     {
-      Array<JsonView> fieldListJsonList = recordsJsonList[recordsIndex].AsArray();
-      Aws::Vector<Field> fieldListList;
-      fieldListList.reserve((size_t)fieldListJsonList.GetLength());
-      for(unsigned fieldListIndex = 0; fieldListIndex < fieldListJsonList.GetLength(); ++fieldListIndex)
-      {
-        fieldListList.push_back(fieldListJsonList[fieldListIndex].AsObject());
-      }
-      m_records.push_back(std::move(fieldListList));
+      m_generatedFields.push_back(generatedFieldsJsonList[generatedFieldsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("formattedRecords"))
+  {
+    m_formattedRecords = jsonValue.GetString("formattedRecords");
+
   }
 
 

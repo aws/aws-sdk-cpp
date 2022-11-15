@@ -30,7 +30,7 @@ ListClosedWorkflowExecutionsResult& ListClosedWorkflowExecutionsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("executionInfos"))
   {
-    Array<JsonView> executionInfosJsonList = jsonValue.GetArray("executionInfos");
+    Aws::Utils::Array<JsonView> executionInfosJsonList = jsonValue.GetArray("executionInfos");
     for(unsigned executionInfosIndex = 0; executionInfosIndex < executionInfosJsonList.GetLength(); ++executionInfosIndex)
     {
       m_executionInfos.push_back(executionInfosJsonList[executionInfosIndex].AsObject());

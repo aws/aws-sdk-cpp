@@ -348,9 +348,12 @@ namespace Model
      * specified, or if its value is <code>NONE</code>, then nothing is returned. (This
      * setting is the default for <code>ReturnValues</code>.)</p> </li> <li> <p>
      * <code>ALL_OLD</code> - The content of the old item is returned.</p> </li> </ul>
-     *  <p>The <code>ReturnValues</code> parameter is used by several DynamoDB
-     * operations; however, <code>DeleteItem</code> does not recognize any values other
-     * than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>  <p>The <code>ReturnValues</code>
+     * parameter is used by several DynamoDB operations; however,
+     * <code>DeleteItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline const ReturnValue& GetReturnValues() const{ return m_returnValues; }
 
@@ -361,9 +364,12 @@ namespace Model
      * specified, or if its value is <code>NONE</code>, then nothing is returned. (This
      * setting is the default for <code>ReturnValues</code>.)</p> </li> <li> <p>
      * <code>ALL_OLD</code> - The content of the old item is returned.</p> </li> </ul>
-     *  <p>The <code>ReturnValues</code> parameter is used by several DynamoDB
-     * operations; however, <code>DeleteItem</code> does not recognize any values other
-     * than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>  <p>The <code>ReturnValues</code>
+     * parameter is used by several DynamoDB operations; however,
+     * <code>DeleteItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline bool ReturnValuesHasBeenSet() const { return m_returnValuesHasBeenSet; }
 
@@ -374,9 +380,12 @@ namespace Model
      * specified, or if its value is <code>NONE</code>, then nothing is returned. (This
      * setting is the default for <code>ReturnValues</code>.)</p> </li> <li> <p>
      * <code>ALL_OLD</code> - The content of the old item is returned.</p> </li> </ul>
-     *  <p>The <code>ReturnValues</code> parameter is used by several DynamoDB
-     * operations; however, <code>DeleteItem</code> does not recognize any values other
-     * than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>  <p>The <code>ReturnValues</code>
+     * parameter is used by several DynamoDB operations; however,
+     * <code>DeleteItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline void SetReturnValues(const ReturnValue& value) { m_returnValuesHasBeenSet = true; m_returnValues = value; }
 
@@ -387,9 +396,12 @@ namespace Model
      * specified, or if its value is <code>NONE</code>, then nothing is returned. (This
      * setting is the default for <code>ReturnValues</code>.)</p> </li> <li> <p>
      * <code>ALL_OLD</code> - The content of the old item is returned.</p> </li> </ul>
-     *  <p>The <code>ReturnValues</code> parameter is used by several DynamoDB
-     * operations; however, <code>DeleteItem</code> does not recognize any values other
-     * than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>  <p>The <code>ReturnValues</code>
+     * parameter is used by several DynamoDB operations; however,
+     * <code>DeleteItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline void SetReturnValues(ReturnValue&& value) { m_returnValuesHasBeenSet = true; m_returnValues = std::move(value); }
 
@@ -400,9 +412,12 @@ namespace Model
      * specified, or if its value is <code>NONE</code>, then nothing is returned. (This
      * setting is the default for <code>ReturnValues</code>.)</p> </li> <li> <p>
      * <code>ALL_OLD</code> - The content of the old item is returned.</p> </li> </ul>
-     *  <p>The <code>ReturnValues</code> parameter is used by several DynamoDB
-     * operations; however, <code>DeleteItem</code> does not recognize any values other
-     * than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>  <p>The <code>ReturnValues</code>
+     * parameter is used by several DynamoDB operations; however,
+     * <code>DeleteItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline DeleteItemRequest& WithReturnValues(const ReturnValue& value) { SetReturnValues(value); return *this;}
 
@@ -413,9 +428,12 @@ namespace Model
      * specified, or if its value is <code>NONE</code>, then nothing is returned. (This
      * setting is the default for <code>ReturnValues</code>.)</p> </li> <li> <p>
      * <code>ALL_OLD</code> - The content of the old item is returned.</p> </li> </ul>
-     *  <p>The <code>ReturnValues</code> parameter is used by several DynamoDB
-     * operations; however, <code>DeleteItem</code> does not recognize any values other
-     * than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>  <p>The <code>ReturnValues</code>
+     * parameter is used by several DynamoDB operations; however,
+     * <code>DeleteItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline DeleteItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(std::move(value)); return *this;}
 
@@ -1160,34 +1178,34 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Map<Aws::String, ExpectedAttributeValue> m_expected;
-    bool m_expectedHasBeenSet;
+    bool m_expectedHasBeenSet = false;
 
     ConditionalOperator m_conditionalOperator;
-    bool m_conditionalOperatorHasBeenSet;
+    bool m_conditionalOperatorHasBeenSet = false;
 
     ReturnValue m_returnValues;
-    bool m_returnValuesHasBeenSet;
+    bool m_returnValuesHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
 
     ReturnItemCollectionMetrics m_returnItemCollectionMetrics;
-    bool m_returnItemCollectionMetricsHasBeenSet;
+    bool m_returnItemCollectionMetricsHasBeenSet = false;
 
     Aws::String m_conditionExpression;
-    bool m_conditionExpressionHasBeenSet;
+    bool m_conditionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-    bool m_expressionAttributeNamesHasBeenSet;
+    bool m_expressionAttributeNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
-    bool m_expressionAttributeValuesHasBeenSet;
+    bool m_expressionAttributeValuesHasBeenSet = false;
   };
 
 } // namespace Model

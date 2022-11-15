@@ -30,7 +30,7 @@ ListVoiceConnectorGroupsResult& ListVoiceConnectorGroupsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VoiceConnectorGroups"))
   {
-    Array<JsonView> voiceConnectorGroupsJsonList = jsonValue.GetArray("VoiceConnectorGroups");
+    Aws::Utils::Array<JsonView> voiceConnectorGroupsJsonList = jsonValue.GetArray("VoiceConnectorGroups");
     for(unsigned voiceConnectorGroupsIndex = 0; voiceConnectorGroupsIndex < voiceConnectorGroupsJsonList.GetLength(); ++voiceConnectorGroupsIndex)
     {
       m_voiceConnectorGroups.push_back(voiceConnectorGroupsJsonList[voiceConnectorGroupsIndex].AsObject());

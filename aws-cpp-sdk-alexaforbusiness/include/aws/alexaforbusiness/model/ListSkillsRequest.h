@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_skillGroupArn;
-    bool m_skillGroupArnHasBeenSet;
+    bool m_skillGroupArnHasBeenSet = false;
 
     EnablementTypeFilter m_enablementType;
-    bool m_enablementTypeHasBeenSet;
+    bool m_enablementTypeHasBeenSet = false;
 
     SkillTypeFilter m_skillType;
-    bool m_skillTypeHasBeenSet;
+    bool m_skillTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

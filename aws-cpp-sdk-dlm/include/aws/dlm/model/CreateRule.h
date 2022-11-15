@@ -27,9 +27,12 @@ namespace Model
 {
 
   /**
-   * <p>Specifies when to create snapshots of EBS volumes.</p> <p>You must specify
-   * either a Cron expression or an interval, interval unit, and start time. You
-   * cannot specify both.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[Snapshot and AMI policies only]</b> Specifies when the policy should
+   * create snapshots or AMIs.</p>  <ul> <li> <p>You must specify either
+   * <b>CronExpression</b>, or <b>Interval</b>, <b>IntervalUnit</b>, and
+   * <b>Times</b>.</p> </li> <li> <p>If you need to specify an <a>ArchiveRule</a> for
+   * the schedule, then you must specify a creation frequency of at least 28
+   * days.</p> </li> </ul> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CreateRule">AWS API
    * Reference</a></p>
    */
@@ -43,80 +46,80 @@ namespace Model
 
 
     /**
-     * <p>Specifies the destination for snapshots created by the policy. To create
-     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
-     * To create snapshots on the same Outpost as the source resource, specify
-     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
-     * used by default.</p> <p>If the policy targets resources in an Amazon Web
-     * Services Region, then you must create snapshots in the same Region as the source
-     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
-     * create snapshots on the same Outpost as the source resource, or in the Region of
-     * that Outpost.</p>
+     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
+     * created by the policy. To create snapshots in the same Region as the source
+     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
+     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
+     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
+     * resources in an Amazon Web Services Region, then you must create snapshots in
+     * the same Region as the source resource. If the policy targets resources on an
+     * Outpost, then you can create snapshots on the same Outpost as the source
+     * resource, or in the Region of that Outpost.</p>
      */
     inline const LocationValues& GetLocation() const{ return m_location; }
 
     /**
-     * <p>Specifies the destination for snapshots created by the policy. To create
-     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
-     * To create snapshots on the same Outpost as the source resource, specify
-     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
-     * used by default.</p> <p>If the policy targets resources in an Amazon Web
-     * Services Region, then you must create snapshots in the same Region as the source
-     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
-     * create snapshots on the same Outpost as the source resource, or in the Region of
-     * that Outpost.</p>
+     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
+     * created by the policy. To create snapshots in the same Region as the source
+     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
+     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
+     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
+     * resources in an Amazon Web Services Region, then you must create snapshots in
+     * the same Region as the source resource. If the policy targets resources on an
+     * Outpost, then you can create snapshots on the same Outpost as the source
+     * resource, or in the Region of that Outpost.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>Specifies the destination for snapshots created by the policy. To create
-     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
-     * To create snapshots on the same Outpost as the source resource, specify
-     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
-     * used by default.</p> <p>If the policy targets resources in an Amazon Web
-     * Services Region, then you must create snapshots in the same Region as the source
-     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
-     * create snapshots on the same Outpost as the source resource, or in the Region of
-     * that Outpost.</p>
+     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
+     * created by the policy. To create snapshots in the same Region as the source
+     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
+     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
+     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
+     * resources in an Amazon Web Services Region, then you must create snapshots in
+     * the same Region as the source resource. If the policy targets resources on an
+     * Outpost, then you can create snapshots on the same Outpost as the source
+     * resource, or in the Region of that Outpost.</p>
      */
     inline void SetLocation(const LocationValues& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>Specifies the destination for snapshots created by the policy. To create
-     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
-     * To create snapshots on the same Outpost as the source resource, specify
-     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
-     * used by default.</p> <p>If the policy targets resources in an Amazon Web
-     * Services Region, then you must create snapshots in the same Region as the source
-     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
-     * create snapshots on the same Outpost as the source resource, or in the Region of
-     * that Outpost.</p>
+     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
+     * created by the policy. To create snapshots in the same Region as the source
+     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
+     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
+     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
+     * resources in an Amazon Web Services Region, then you must create snapshots in
+     * the same Region as the source resource. If the policy targets resources on an
+     * Outpost, then you can create snapshots on the same Outpost as the source
+     * resource, or in the Region of that Outpost.</p>
      */
     inline void SetLocation(LocationValues&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>Specifies the destination for snapshots created by the policy. To create
-     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
-     * To create snapshots on the same Outpost as the source resource, specify
-     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
-     * used by default.</p> <p>If the policy targets resources in an Amazon Web
-     * Services Region, then you must create snapshots in the same Region as the source
-     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
-     * create snapshots on the same Outpost as the source resource, or in the Region of
-     * that Outpost.</p>
+     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
+     * created by the policy. To create snapshots in the same Region as the source
+     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
+     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
+     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
+     * resources in an Amazon Web Services Region, then you must create snapshots in
+     * the same Region as the source resource. If the policy targets resources on an
+     * Outpost, then you can create snapshots on the same Outpost as the source
+     * resource, or in the Region of that Outpost.</p>
      */
     inline CreateRule& WithLocation(const LocationValues& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>Specifies the destination for snapshots created by the policy. To create
-     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
-     * To create snapshots on the same Outpost as the source resource, specify
-     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
-     * used by default.</p> <p>If the policy targets resources in an Amazon Web
-     * Services Region, then you must create snapshots in the same Region as the source
-     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
-     * create snapshots on the same Outpost as the source resource, or in the Region of
-     * that Outpost.</p>
+     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
+     * created by the policy. To create snapshots in the same Region as the source
+     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
+     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
+     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
+     * resources in an Amazon Web Services Region, then you must create snapshots in
+     * the same Region as the source resource. If the policy targets resources on an
+     * Outpost, then you can create snapshots on the same Outpost as the source
+     * resource, or in the Region of that Outpost.</p>
      */
     inline CreateRule& WithLocation(LocationValues&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -180,72 +183,72 @@ namespace Model
     /**
      * <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      * <p>The operation occurs within a one-hour window following the specified time.
-     * If you do not specify a time, Amazon DLM selects a time within the next 24
-     * hours.</p>
+     * If you do not specify a time, Amazon Data Lifecycle Manager selects a time
+     * within the next 24 hours.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTimes() const{ return m_times; }
 
     /**
      * <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      * <p>The operation occurs within a one-hour window following the specified time.
-     * If you do not specify a time, Amazon DLM selects a time within the next 24
-     * hours.</p>
+     * If you do not specify a time, Amazon Data Lifecycle Manager selects a time
+     * within the next 24 hours.</p>
      */
     inline bool TimesHasBeenSet() const { return m_timesHasBeenSet; }
 
     /**
      * <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      * <p>The operation occurs within a one-hour window following the specified time.
-     * If you do not specify a time, Amazon DLM selects a time within the next 24
-     * hours.</p>
+     * If you do not specify a time, Amazon Data Lifecycle Manager selects a time
+     * within the next 24 hours.</p>
      */
     inline void SetTimes(const Aws::Vector<Aws::String>& value) { m_timesHasBeenSet = true; m_times = value; }
 
     /**
      * <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      * <p>The operation occurs within a one-hour window following the specified time.
-     * If you do not specify a time, Amazon DLM selects a time within the next 24
-     * hours.</p>
+     * If you do not specify a time, Amazon Data Lifecycle Manager selects a time
+     * within the next 24 hours.</p>
      */
     inline void SetTimes(Aws::Vector<Aws::String>&& value) { m_timesHasBeenSet = true; m_times = std::move(value); }
 
     /**
      * <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      * <p>The operation occurs within a one-hour window following the specified time.
-     * If you do not specify a time, Amazon DLM selects a time within the next 24
-     * hours.</p>
+     * If you do not specify a time, Amazon Data Lifecycle Manager selects a time
+     * within the next 24 hours.</p>
      */
     inline CreateRule& WithTimes(const Aws::Vector<Aws::String>& value) { SetTimes(value); return *this;}
 
     /**
      * <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      * <p>The operation occurs within a one-hour window following the specified time.
-     * If you do not specify a time, Amazon DLM selects a time within the next 24
-     * hours.</p>
+     * If you do not specify a time, Amazon Data Lifecycle Manager selects a time
+     * within the next 24 hours.</p>
      */
     inline CreateRule& WithTimes(Aws::Vector<Aws::String>&& value) { SetTimes(std::move(value)); return *this;}
 
     /**
      * <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      * <p>The operation occurs within a one-hour window following the specified time.
-     * If you do not specify a time, Amazon DLM selects a time within the next 24
-     * hours.</p>
+     * If you do not specify a time, Amazon Data Lifecycle Manager selects a time
+     * within the next 24 hours.</p>
      */
     inline CreateRule& AddTimes(const Aws::String& value) { m_timesHasBeenSet = true; m_times.push_back(value); return *this; }
 
     /**
      * <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      * <p>The operation occurs within a one-hour window following the specified time.
-     * If you do not specify a time, Amazon DLM selects a time within the next 24
-     * hours.</p>
+     * If you do not specify a time, Amazon Data Lifecycle Manager selects a time
+     * within the next 24 hours.</p>
      */
     inline CreateRule& AddTimes(Aws::String&& value) { m_timesHasBeenSet = true; m_times.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      * <p>The operation occurs within a one-hour window following the specified time.
-     * If you do not specify a time, Amazon DLM selects a time within the next 24
-     * hours.</p>
+     * If you do not specify a time, Amazon Data Lifecycle Manager selects a time
+     * within the next 24 hours.</p>
      */
     inline CreateRule& AddTimes(const char* value) { m_timesHasBeenSet = true; m_times.push_back(value); return *this; }
 
@@ -317,19 +320,19 @@ namespace Model
   private:
 
     LocationValues m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     IntervalUnitValues m_intervalUnit;
-    bool m_intervalUnitHasBeenSet;
+    bool m_intervalUnitHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_times;
-    bool m_timesHasBeenSet;
+    bool m_timesHasBeenSet = false;
 
     Aws::String m_cronExpression;
-    bool m_cronExpressionHasBeenSet;
+    bool m_cronExpressionHasBeenSet = false;
   };
 
 } // namespace Model

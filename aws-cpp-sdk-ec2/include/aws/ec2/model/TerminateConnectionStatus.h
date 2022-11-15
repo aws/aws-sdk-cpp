@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     ClientVpnConnectionStatus m_previousStatus;
-    bool m_previousStatusHasBeenSet;
+    bool m_previousStatusHasBeenSet = false;
 
     ClientVpnConnectionStatus m_currentStatus;
-    bool m_currentStatusHasBeenSet;
+    bool m_currentStatusHasBeenSet = false;
   };
 
 } // namespace Model

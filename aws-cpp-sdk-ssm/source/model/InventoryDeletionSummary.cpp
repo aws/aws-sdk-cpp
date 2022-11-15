@@ -55,7 +55,7 @@ InventoryDeletionSummary& InventoryDeletionSummary::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("SummaryItems"))
   {
-    Array<JsonView> summaryItemsJsonList = jsonValue.GetArray("SummaryItems");
+    Aws::Utils::Array<JsonView> summaryItemsJsonList = jsonValue.GetArray("SummaryItems");
     for(unsigned summaryItemsIndex = 0; summaryItemsIndex < summaryItemsJsonList.GetLength(); ++summaryItemsIndex)
     {
       m_summaryItems.push_back(summaryItemsJsonList[summaryItemsIndex].AsObject());
@@ -84,7 +84,7 @@ JsonValue InventoryDeletionSummary::Jsonize() const
 
   if(m_summaryItemsHasBeenSet)
   {
-   Array<JsonValue> summaryItemsJsonList(m_summaryItems.size());
+   Aws::Utils::Array<JsonValue> summaryItemsJsonList(m_summaryItems.size());
    for(unsigned summaryItemsIndex = 0; summaryItemsIndex < summaryItemsJsonList.GetLength(); ++summaryItemsIndex)
    {
      summaryItemsJsonList[summaryItemsIndex].AsObject(m_summaryItems[summaryItemsIndex].Jsonize());

@@ -104,7 +104,7 @@ StackSetSummary& StackSetSummary::operator =(const XmlNode& xmlNode)
     XmlNode lastDriftCheckTimestampNode = resultNode.FirstChild("LastDriftCheckTimestamp");
     if(!lastDriftCheckTimestampNode.IsNull())
     {
-      m_lastDriftCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastDriftCheckTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastDriftCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastDriftCheckTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastDriftCheckTimestampHasBeenSet = true;
     }
     XmlNode managedExecutionNode = resultNode.FirstChild("ManagedExecution");
@@ -159,7 +159,7 @@ void StackSetSummary::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_lastDriftCheckTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_managedExecutionHasBeenSet)
@@ -205,7 +205,7 @@ void StackSetSummary::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_lastDriftCheckTimestampHasBeenSet)
   {
-      oStream << location << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_managedExecutionHasBeenSet)
   {

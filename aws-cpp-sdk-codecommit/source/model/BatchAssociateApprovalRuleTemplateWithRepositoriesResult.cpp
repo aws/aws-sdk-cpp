@@ -30,7 +30,7 @@ BatchAssociateApprovalRuleTemplateWithRepositoriesResult& BatchAssociateApproval
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("associatedRepositoryNames"))
   {
-    Array<JsonView> associatedRepositoryNamesJsonList = jsonValue.GetArray("associatedRepositoryNames");
+    Aws::Utils::Array<JsonView> associatedRepositoryNamesJsonList = jsonValue.GetArray("associatedRepositoryNames");
     for(unsigned associatedRepositoryNamesIndex = 0; associatedRepositoryNamesIndex < associatedRepositoryNamesJsonList.GetLength(); ++associatedRepositoryNamesIndex)
     {
       m_associatedRepositoryNames.push_back(associatedRepositoryNamesJsonList[associatedRepositoryNamesIndex].AsString());
@@ -39,7 +39,7 @@ BatchAssociateApprovalRuleTemplateWithRepositoriesResult& BatchAssociateApproval
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

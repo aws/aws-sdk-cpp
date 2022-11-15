@@ -76,7 +76,7 @@ namespace Model
   private:
 
     VariableType m_variable;
-    bool m_variableHasBeenSet;
+    bool m_variableHasBeenSet = false;
   };
 
 } // namespace Model

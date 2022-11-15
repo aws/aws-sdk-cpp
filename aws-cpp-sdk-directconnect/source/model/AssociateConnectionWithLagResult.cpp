@@ -136,7 +136,7 @@ AssociateConnectionWithLagResult& AssociateConnectionWithLagResult::operator =(c
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -169,7 +169,7 @@ AssociateConnectionWithLagResult& AssociateConnectionWithLagResult::operator =(c
 
   if(jsonValue.ValueExists("macSecKeys"))
   {
-    Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
+    Aws::Utils::Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
     for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
     {
       m_macSecKeys.push_back(macSecKeysJsonList[macSecKeysIndex].AsObject());

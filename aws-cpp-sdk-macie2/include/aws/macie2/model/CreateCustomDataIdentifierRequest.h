@@ -242,110 +242,114 @@ namespace Model
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. The array can contain as many as 50 keywords. Each keyword
+     * can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeywords() const{ return m_keywords; }
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. The array can contain as many as 50 keywords. Each keyword
+     * can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline bool KeywordsHasBeenSet() const { return m_keywordsHasBeenSet; }
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. The array can contain as many as 50 keywords. Each keyword
+     * can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(const Aws::Vector<Aws::String>& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. The array can contain as many as 50 keywords. Each keyword
+     * can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(Aws::Vector<Aws::String>&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. The array can contain as many as 50 keywords. Each keyword
+     * can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithKeywords(const Aws::Vector<Aws::String>& value) { SetKeywords(value); return *this;}
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. The array can contain as many as 50 keywords. Each keyword
+     * can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithKeywords(Aws::Vector<Aws::String>&& value) { SetKeywords(std::move(value)); return *this;}
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. The array can contain as many as 50 keywords. Each keyword
+     * can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(const Aws::String& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. The array can contain as many as 50 keywords. Each keyword
+     * can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. The array can contain as many as 50 keywords. Each keyword can contain
-     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. The array can contain as many as 50 keywords. Each keyword
+     * can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(const char* value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }
 
 
     /**
-     * <p>The maximum number of characters that can exist between text that matches the
-     * regular expression and the character sequences specified by the keywords array.
-     * Amazon Macie includes or excludes a result based on the proximity of a keyword
-     * to text that matches the regular expression. The distance can be 1-300
-     * characters. The default value is 50.</p>
+     * <p>The maximum number of characters that can exist between the end of at least
+     * one complete character sequence specified by the keywords array and the end of
+     * the text that matches the regex pattern. If a complete keyword precedes all the
+     * text that matches the pattern and the keyword is within the specified distance,
+     * Amazon Macie includes the result. The distance can be 1-300 characters. The
+     * default value is 50.</p>
      */
     inline int GetMaximumMatchDistance() const{ return m_maximumMatchDistance; }
 
     /**
-     * <p>The maximum number of characters that can exist between text that matches the
-     * regular expression and the character sequences specified by the keywords array.
-     * Amazon Macie includes or excludes a result based on the proximity of a keyword
-     * to text that matches the regular expression. The distance can be 1-300
-     * characters. The default value is 50.</p>
+     * <p>The maximum number of characters that can exist between the end of at least
+     * one complete character sequence specified by the keywords array and the end of
+     * the text that matches the regex pattern. If a complete keyword precedes all the
+     * text that matches the pattern and the keyword is within the specified distance,
+     * Amazon Macie includes the result. The distance can be 1-300 characters. The
+     * default value is 50.</p>
      */
     inline bool MaximumMatchDistanceHasBeenSet() const { return m_maximumMatchDistanceHasBeenSet; }
 
     /**
-     * <p>The maximum number of characters that can exist between text that matches the
-     * regular expression and the character sequences specified by the keywords array.
-     * Amazon Macie includes or excludes a result based on the proximity of a keyword
-     * to text that matches the regular expression. The distance can be 1-300
-     * characters. The default value is 50.</p>
+     * <p>The maximum number of characters that can exist between the end of at least
+     * one complete character sequence specified by the keywords array and the end of
+     * the text that matches the regex pattern. If a complete keyword precedes all the
+     * text that matches the pattern and the keyword is within the specified distance,
+     * Amazon Macie includes the result. The distance can be 1-300 characters. The
+     * default value is 50.</p>
      */
     inline void SetMaximumMatchDistance(int value) { m_maximumMatchDistanceHasBeenSet = true; m_maximumMatchDistance = value; }
 
     /**
-     * <p>The maximum number of characters that can exist between text that matches the
-     * regular expression and the character sequences specified by the keywords array.
-     * Amazon Macie includes or excludes a result based on the proximity of a keyword
-     * to text that matches the regular expression. The distance can be 1-300
-     * characters. The default value is 50.</p>
+     * <p>The maximum number of characters that can exist between the end of at least
+     * one complete character sequence specified by the keywords array and the end of
+     * the text that matches the regex pattern. If a complete keyword precedes all the
+     * text that matches the pattern and the keyword is within the specified distance,
+     * Amazon Macie includes the result. The distance can be 1-300 characters. The
+     * default value is 50.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithMaximumMatchDistance(int value) { SetMaximumMatchDistance(value); return *this;}
 
@@ -713,31 +717,31 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ignoreWords;
-    bool m_ignoreWordsHasBeenSet;
+    bool m_ignoreWordsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_keywords;
-    bool m_keywordsHasBeenSet;
+    bool m_keywordsHasBeenSet = false;
 
     int m_maximumMatchDistance;
-    bool m_maximumMatchDistanceHasBeenSet;
+    bool m_maximumMatchDistanceHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_regex;
-    bool m_regexHasBeenSet;
+    bool m_regexHasBeenSet = false;
 
     Aws::Vector<SeverityLevel> m_severityLevels;
-    bool m_severityLevelsHasBeenSet;
+    bool m_severityLevelsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

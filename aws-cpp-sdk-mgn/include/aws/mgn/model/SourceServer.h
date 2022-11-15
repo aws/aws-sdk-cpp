@@ -405,34 +405,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     DataReplicationInfo m_dataReplicationInfo;
-    bool m_dataReplicationInfoHasBeenSet;
+    bool m_dataReplicationInfoHasBeenSet = false;
 
     bool m_isArchived;
-    bool m_isArchivedHasBeenSet;
+    bool m_isArchivedHasBeenSet = false;
 
     LaunchedInstance m_launchedInstance;
-    bool m_launchedInstanceHasBeenSet;
+    bool m_launchedInstanceHasBeenSet = false;
 
     LifeCycle m_lifeCycle;
-    bool m_lifeCycleHasBeenSet;
+    bool m_lifeCycleHasBeenSet = false;
 
     ReplicationType m_replicationType;
-    bool m_replicationTypeHasBeenSet;
+    bool m_replicationTypeHasBeenSet = false;
 
     SourceProperties m_sourceProperties;
-    bool m_sourcePropertiesHasBeenSet;
+    bool m_sourcePropertiesHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vcenterClientID;
-    bool m_vcenterClientIDHasBeenSet;
+    bool m_vcenterClientIDHasBeenSet = false;
   };
 
 } // namespace Model

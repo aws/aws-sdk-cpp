@@ -48,7 +48,7 @@ InstanceStatusDetails& InstanceStatusDetails::operator =(const XmlNode& xmlNode)
     XmlNode impairedSinceNode = resultNode.FirstChild("impairedSince");
     if(!impairedSinceNode.IsNull())
     {
-      m_impairedSince = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(impairedSinceNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_impairedSince = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(impairedSinceNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_impairedSinceHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
@@ -72,7 +72,7 @@ void InstanceStatusDetails::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_impairedSinceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ImpairedSince=" << StringUtils::URLEncode(m_impairedSince.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ImpairedSince=" << StringUtils::URLEncode(m_impairedSince.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_nameHasBeenSet)
@@ -91,7 +91,7 @@ void InstanceStatusDetails::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_impairedSinceHasBeenSet)
   {
-      oStream << location << ".ImpairedSince=" << StringUtils::URLEncode(m_impairedSince.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ImpairedSince=" << StringUtils::URLEncode(m_impairedSince.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_nameHasBeenSet)
   {

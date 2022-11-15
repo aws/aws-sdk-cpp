@@ -355,31 +355,31 @@ namespace Model
   private:
 
     Aws::String m_apiDestinationArn;
-    bool m_apiDestinationArnHasBeenSet;
+    bool m_apiDestinationArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ApiDestinationState m_apiDestinationState;
-    bool m_apiDestinationStateHasBeenSet;
+    bool m_apiDestinationStateHasBeenSet = false;
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
 
     Aws::String m_invocationEndpoint;
-    bool m_invocationEndpointHasBeenSet;
+    bool m_invocationEndpointHasBeenSet = false;
 
     ApiDestinationHttpMethod m_httpMethod;
-    bool m_httpMethodHasBeenSet;
+    bool m_httpMethodHasBeenSet = false;
 
     int m_invocationRateLimitPerSecond;
-    bool m_invocationRateLimitPerSecondHasBeenSet;
+    bool m_invocationRateLimitPerSecondHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

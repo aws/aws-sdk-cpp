@@ -30,7 +30,7 @@ GetRelationalDatabaseBlueprintsResult& GetRelationalDatabaseBlueprintsResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("blueprints"))
   {
-    Array<JsonView> blueprintsJsonList = jsonValue.GetArray("blueprints");
+    Aws::Utils::Array<JsonView> blueprintsJsonList = jsonValue.GetArray("blueprints");
     for(unsigned blueprintsIndex = 0; blueprintsIndex < blueprintsJsonList.GetLength(); ++blueprintsIndex)
     {
       m_blueprints.push_back(blueprintsJsonList[blueprintsIndex].AsObject());

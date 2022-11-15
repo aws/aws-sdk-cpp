@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 StartResourceScanRequest::StartResourceScanRequest() : 
     m_analyzerArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+    m_resourceArnHasBeenSet(false),
+    m_resourceOwnerAccountHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String StartResourceScanRequest::SerializePayload() const
   if(m_resourceArnHasBeenSet)
   {
    payload.WithString("resourceArn", m_resourceArn);
+
+  }
+
+  if(m_resourceOwnerAccountHasBeenSet)
+  {
+   payload.WithString("resourceOwnerAccount", m_resourceOwnerAccount);
 
   }
 

@@ -37,65 +37,83 @@ namespace Model
 
 
     /**
-     * <p>A list containing the text of the input documents. The list can contain a
-     * maximum of 25 documents. Each document must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.</p>
+     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
+     * contain a maximum of 25 documents. The maximum size of each document is 5 KB.
+     * </p>  <p>Amazon Comprehend performs real-time sentiment analysis on the
+     * first 500 characters of the input text and ignores any additional text in the
+     * input.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetTextList() const{ return m_textList; }
 
     /**
-     * <p>A list containing the text of the input documents. The list can contain a
-     * maximum of 25 documents. Each document must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.</p>
+     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
+     * contain a maximum of 25 documents. The maximum size of each document is 5 KB.
+     * </p>  <p>Amazon Comprehend performs real-time sentiment analysis on the
+     * first 500 characters of the input text and ignores any additional text in the
+     * input.</p> 
      */
     inline bool TextListHasBeenSet() const { return m_textListHasBeenSet; }
 
     /**
-     * <p>A list containing the text of the input documents. The list can contain a
-     * maximum of 25 documents. Each document must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.</p>
+     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
+     * contain a maximum of 25 documents. The maximum size of each document is 5 KB.
+     * </p>  <p>Amazon Comprehend performs real-time sentiment analysis on the
+     * first 500 characters of the input text and ignores any additional text in the
+     * input.</p> 
      */
     inline void SetTextList(const Aws::Vector<Aws::String>& value) { m_textListHasBeenSet = true; m_textList = value; }
 
     /**
-     * <p>A list containing the text of the input documents. The list can contain a
-     * maximum of 25 documents. Each document must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.</p>
+     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
+     * contain a maximum of 25 documents. The maximum size of each document is 5 KB.
+     * </p>  <p>Amazon Comprehend performs real-time sentiment analysis on the
+     * first 500 characters of the input text and ignores any additional text in the
+     * input.</p> 
      */
     inline void SetTextList(Aws::Vector<Aws::String>&& value) { m_textListHasBeenSet = true; m_textList = std::move(value); }
 
     /**
-     * <p>A list containing the text of the input documents. The list can contain a
-     * maximum of 25 documents. Each document must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.</p>
+     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
+     * contain a maximum of 25 documents. The maximum size of each document is 5 KB.
+     * </p>  <p>Amazon Comprehend performs real-time sentiment analysis on the
+     * first 500 characters of the input text and ignores any additional text in the
+     * input.</p> 
      */
     inline BatchDetectSentimentRequest& WithTextList(const Aws::Vector<Aws::String>& value) { SetTextList(value); return *this;}
 
     /**
-     * <p>A list containing the text of the input documents. The list can contain a
-     * maximum of 25 documents. Each document must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.</p>
+     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
+     * contain a maximum of 25 documents. The maximum size of each document is 5 KB.
+     * </p>  <p>Amazon Comprehend performs real-time sentiment analysis on the
+     * first 500 characters of the input text and ignores any additional text in the
+     * input.</p> 
      */
     inline BatchDetectSentimentRequest& WithTextList(Aws::Vector<Aws::String>&& value) { SetTextList(std::move(value)); return *this;}
 
     /**
-     * <p>A list containing the text of the input documents. The list can contain a
-     * maximum of 25 documents. Each document must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.</p>
+     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
+     * contain a maximum of 25 documents. The maximum size of each document is 5 KB.
+     * </p>  <p>Amazon Comprehend performs real-time sentiment analysis on the
+     * first 500 characters of the input text and ignores any additional text in the
+     * input.</p> 
      */
     inline BatchDetectSentimentRequest& AddTextList(const Aws::String& value) { m_textListHasBeenSet = true; m_textList.push_back(value); return *this; }
 
     /**
-     * <p>A list containing the text of the input documents. The list can contain a
-     * maximum of 25 documents. Each document must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.</p>
+     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
+     * contain a maximum of 25 documents. The maximum size of each document is 5 KB.
+     * </p>  <p>Amazon Comprehend performs real-time sentiment analysis on the
+     * first 500 characters of the input text and ignores any additional text in the
+     * input.</p> 
      */
     inline BatchDetectSentimentRequest& AddTextList(Aws::String&& value) { m_textListHasBeenSet = true; m_textList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list containing the text of the input documents. The list can contain a
-     * maximum of 25 documents. Each document must contain fewer that 5,000 bytes of
-     * UTF-8 encoded characters.</p>
+     * <p>A list containing the UTF-8 encoded text of the input documents. The list can
+     * contain a maximum of 25 documents. The maximum size of each document is 5 KB.
+     * </p>  <p>Amazon Comprehend performs real-time sentiment analysis on the
+     * first 500 characters of the input text and ignores any additional text in the
+     * input.</p> 
      */
     inline BatchDetectSentimentRequest& AddTextList(const char* value) { m_textListHasBeenSet = true; m_textList.push_back(value); return *this; }
 
@@ -145,10 +163,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_textList;
-    bool m_textListHasBeenSet;
+    bool m_textListHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
   };
 
 } // namespace Model

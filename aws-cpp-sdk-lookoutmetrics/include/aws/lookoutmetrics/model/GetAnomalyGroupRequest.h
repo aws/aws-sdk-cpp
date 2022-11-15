@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_anomalyGroupId;
-    bool m_anomalyGroupIdHasBeenSet;
+    bool m_anomalyGroupIdHasBeenSet = false;
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
   };
 
 } // namespace Model

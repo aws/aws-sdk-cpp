@@ -273,22 +273,22 @@ namespace Model
   private:
 
     LogType m_logType;
-    bool m_logTypeHasBeenSet;
+    bool m_logTypeHasBeenSet = false;
 
     DestinationType m_destinationType;
-    bool m_destinationTypeHasBeenSet;
+    bool m_destinationTypeHasBeenSet = false;
 
     DestinationDetails m_destinationDetails;
-    bool m_destinationDetailsHasBeenSet;
+    bool m_destinationDetailsHasBeenSet = false;
 
     LogFormat m_logFormat;
-    bool m_logFormatHasBeenSet;
+    bool m_logFormatHasBeenSet = false;
 
     LogDeliveryConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

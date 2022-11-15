@@ -27,6 +27,7 @@ SourceServer::SourceServer() :
     m_recoveryInstanceIdHasBeenSet(false),
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
+    m_stagingAreaHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -40,6 +41,7 @@ SourceServer::SourceServer(JsonView jsonValue) :
     m_recoveryInstanceIdHasBeenSet(false),
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
+    m_stagingAreaHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -94,6 +96,13 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
     m_sourceServerID = jsonValue.GetString("sourceServerID");
 
     m_sourceServerIDHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stagingArea"))
+  {
+    m_stagingArea = jsonValue.GetObject("stagingArea");
+
+    m_stagingAreaHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -151,6 +160,12 @@ JsonValue SourceServer::Jsonize() const
   if(m_sourceServerIDHasBeenSet)
   {
    payload.WithString("sourceServerID", m_sourceServerID);
+
+  }
+
+  if(m_stagingAreaHasBeenSet)
+  {
+   payload.WithObject("stagingArea", m_stagingArea.Jsonize());
 
   }
 

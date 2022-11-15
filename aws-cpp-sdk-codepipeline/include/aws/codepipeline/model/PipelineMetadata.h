@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_pipelineArn;
-    bool m_pipelineArnHasBeenSet;
+    bool m_pipelineArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_updated;
-    bool m_updatedHasBeenSet;
+    bool m_updatedHasBeenSet = false;
   };
 
 } // namespace Model

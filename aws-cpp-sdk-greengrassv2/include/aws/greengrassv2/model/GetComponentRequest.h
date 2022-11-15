@@ -129,10 +129,10 @@ namespace Model
   private:
 
     RecipeOutputFormat m_recipeOutputFormat;
-    bool m_recipeOutputFormatHasBeenSet;
+    bool m_recipeOutputFormatHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

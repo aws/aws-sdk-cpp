@@ -403,28 +403,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     Aws::String m_meshOwner;
-    bool m_meshOwnerHasBeenSet;
+    bool m_meshOwnerHasBeenSet = false;
 
     Aws::String m_resourceOwner;
-    bool m_resourceOwnerHasBeenSet;
+    bool m_resourceOwnerHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_virtualGatewayName;
-    bool m_virtualGatewayNameHasBeenSet;
+    bool m_virtualGatewayNameHasBeenSet = false;
   };
 
 } // namespace Model

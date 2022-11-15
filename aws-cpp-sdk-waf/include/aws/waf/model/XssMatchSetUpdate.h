@@ -136,10 +136,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     XssMatchTuple m_xssMatchTuple;
-    bool m_xssMatchTupleHasBeenSet;
+    bool m_xssMatchTupleHasBeenSet = false;
   };
 
 } // namespace Model

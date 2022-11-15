@@ -169,16 +169,16 @@ namespace Model
   private:
 
     Scte35ArchiveAllowedFlag m_archiveAllowedFlag;
-    bool m_archiveAllowedFlagHasBeenSet;
+    bool m_archiveAllowedFlagHasBeenSet = false;
 
     Scte35DeviceRestrictions m_deviceRestrictions;
-    bool m_deviceRestrictionsHasBeenSet;
+    bool m_deviceRestrictionsHasBeenSet = false;
 
     Scte35NoRegionalBlackoutFlag m_noRegionalBlackoutFlag;
-    bool m_noRegionalBlackoutFlagHasBeenSet;
+    bool m_noRegionalBlackoutFlagHasBeenSet = false;
 
     Scte35WebDeliveryAllowedFlag m_webDeliveryAllowedFlag;
-    bool m_webDeliveryAllowedFlagHasBeenSet;
+    bool m_webDeliveryAllowedFlagHasBeenSet = false;
   };
 
 } // namespace Model

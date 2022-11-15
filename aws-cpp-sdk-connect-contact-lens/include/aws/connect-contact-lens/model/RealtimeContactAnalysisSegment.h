@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Transcript m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
 
     Categories m_categories;
-    bool m_categoriesHasBeenSet;
+    bool m_categoriesHasBeenSet = false;
   };
 
 } // namespace Model

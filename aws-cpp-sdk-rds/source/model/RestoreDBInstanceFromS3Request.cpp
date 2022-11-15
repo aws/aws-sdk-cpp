@@ -71,7 +71,9 @@ RestoreDBInstanceFromS3Request::RestoreDBInstanceFromS3Request() :
     m_deletionProtectionHasBeenSet(false),
     m_maxAllocatedStorage(0),
     m_maxAllocatedStorageHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+    m_networkTypeHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
 }
 
@@ -330,6 +332,11 @@ Aws::String RestoreDBInstanceFromS3Request::SerializePayload() const
   if(m_networkTypeHasBeenSet)
   {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
+  if(m_storageThroughputHasBeenSet)
+  {
+    ss << "StorageThroughput=" << m_storageThroughput << "&";
   }
 
   ss << "Version=2014-10-31";

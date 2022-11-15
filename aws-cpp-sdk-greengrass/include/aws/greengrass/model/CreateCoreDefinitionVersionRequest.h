@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_amznClientToken;
-    bool m_amznClientTokenHasBeenSet;
+    bool m_amznClientTokenHasBeenSet = false;
 
     Aws::String m_coreDefinitionId;
-    bool m_coreDefinitionIdHasBeenSet;
+    bool m_coreDefinitionIdHasBeenSet = false;
 
     Aws::Vector<Core> m_cores;
-    bool m_coresHasBeenSet;
+    bool m_coresHasBeenSet = false;
   };
 
 } // namespace Model

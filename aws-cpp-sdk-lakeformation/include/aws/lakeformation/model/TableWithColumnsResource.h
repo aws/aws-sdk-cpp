@@ -307,19 +307,19 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_columnNames;
-    bool m_columnNamesHasBeenSet;
+    bool m_columnNamesHasBeenSet = false;
 
     ColumnWildcard m_columnWildcard;
-    bool m_columnWildcardHasBeenSet;
+    bool m_columnWildcardHasBeenSet = false;
   };
 
 } // namespace Model

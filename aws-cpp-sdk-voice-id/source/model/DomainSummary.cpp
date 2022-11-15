@@ -27,6 +27,7 @@ DomainSummary::DomainSummary() :
     m_domainStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
+    m_serverSideEncryptionUpdateDetailsHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
 }
@@ -40,6 +41,7 @@ DomainSummary::DomainSummary(JsonView jsonValue) :
     m_domainStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
+    m_serverSideEncryptionUpdateDetailsHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -96,6 +98,13 @@ DomainSummary& DomainSummary::operator =(JsonView jsonValue)
     m_serverSideEncryptionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServerSideEncryptionUpdateDetails"))
+  {
+    m_serverSideEncryptionUpdateDetails = jsonValue.GetObject("ServerSideEncryptionUpdateDetails");
+
+    m_serverSideEncryptionUpdateDetailsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
@@ -147,6 +156,12 @@ JsonValue DomainSummary::Jsonize() const
   if(m_serverSideEncryptionConfigurationHasBeenSet)
   {
    payload.WithObject("ServerSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_serverSideEncryptionUpdateDetailsHasBeenSet)
+  {
+   payload.WithObject("ServerSideEncryptionUpdateDetails", m_serverSideEncryptionUpdateDetails.Jsonize());
 
   }
 

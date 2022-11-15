@@ -265,16 +265,16 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_branchFilter;
-    bool m_branchFilterHasBeenSet;
+    bool m_branchFilterHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
-    bool m_filterGroupsHasBeenSet;
+    bool m_filterGroupsHasBeenSet = false;
 
     WebhookBuildType m_buildType;
-    bool m_buildTypeHasBeenSet;
+    bool m_buildTypeHasBeenSet = false;
   };
 
 } // namespace Model

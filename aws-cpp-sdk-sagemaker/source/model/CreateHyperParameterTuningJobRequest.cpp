@@ -46,7 +46,7 @@ Aws::String CreateHyperParameterTuningJobRequest::SerializePayload() const
 
   if(m_trainingJobDefinitionsHasBeenSet)
   {
-   Array<JsonValue> trainingJobDefinitionsJsonList(m_trainingJobDefinitions.size());
+   Aws::Utils::Array<JsonValue> trainingJobDefinitionsJsonList(m_trainingJobDefinitions.size());
    for(unsigned trainingJobDefinitionsIndex = 0; trainingJobDefinitionsIndex < trainingJobDefinitionsJsonList.GetLength(); ++trainingJobDefinitionsIndex)
    {
      trainingJobDefinitionsJsonList[trainingJobDefinitionsIndex].AsObject(m_trainingJobDefinitions[trainingJobDefinitionsIndex].Jsonize());
@@ -63,7 +63,7 @@ Aws::String CreateHyperParameterTuningJobRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

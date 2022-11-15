@@ -23,7 +23,7 @@ Aws::String DescribePipelinesRequest::SerializePayload() const
 
   if(m_pipelineIdsHasBeenSet)
   {
-   Array<JsonValue> pipelineIdsJsonList(m_pipelineIds.size());
+   Aws::Utils::Array<JsonValue> pipelineIdsJsonList(m_pipelineIds.size());
    for(unsigned pipelineIdsIndex = 0; pipelineIdsIndex < pipelineIdsJsonList.GetLength(); ++pipelineIdsIndex)
    {
      pipelineIdsJsonList[pipelineIdsIndex].AsString(m_pipelineIds[pipelineIdsIndex]);

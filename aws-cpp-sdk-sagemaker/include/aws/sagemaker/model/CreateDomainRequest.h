@@ -546,34 +546,34 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     AuthMode m_authMode;
-    bool m_authModeHasBeenSet;
+    bool m_authModeHasBeenSet = false;
 
     UserSettings m_defaultUserSettings;
-    bool m_defaultUserSettingsHasBeenSet;
+    bool m_defaultUserSettingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     AppNetworkAccessType m_appNetworkAccessType;
-    bool m_appNetworkAccessTypeHasBeenSet;
+    bool m_appNetworkAccessTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     AppSecurityGroupManagement m_appSecurityGroupManagement;
-    bool m_appSecurityGroupManagementHasBeenSet;
+    bool m_appSecurityGroupManagementHasBeenSet = false;
 
     DomainSettings m_domainSettings;
-    bool m_domainSettingsHasBeenSet;
+    bool m_domainSettingsHasBeenSet = false;
   };
 
 } // namespace Model

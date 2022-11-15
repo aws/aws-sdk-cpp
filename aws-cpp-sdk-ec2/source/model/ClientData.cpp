@@ -54,7 +54,7 @@ ClientData& ClientData::operator =(const XmlNode& xmlNode)
     XmlNode uploadEndNode = resultNode.FirstChild("UploadEnd");
     if(!uploadEndNode.IsNull())
     {
-      m_uploadEnd = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadEndNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_uploadEnd = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadEndNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_uploadEndHasBeenSet = true;
     }
     XmlNode uploadSizeNode = resultNode.FirstChild("UploadSize");
@@ -66,7 +66,7 @@ ClientData& ClientData::operator =(const XmlNode& xmlNode)
     XmlNode uploadStartNode = resultNode.FirstChild("UploadStart");
     if(!uploadStartNode.IsNull())
     {
-      m_uploadStart = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadStartNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_uploadStart = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadStartNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_uploadStartHasBeenSet = true;
     }
   }
@@ -83,7 +83,7 @@ void ClientData::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_uploadEndHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UploadEnd=" << StringUtils::URLEncode(m_uploadEnd.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".UploadEnd=" << StringUtils::URLEncode(m_uploadEnd.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_uploadSizeHasBeenSet)
@@ -93,7 +93,7 @@ void ClientData::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_uploadStartHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UploadStart=" << StringUtils::URLEncode(m_uploadStart.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".UploadStart=" << StringUtils::URLEncode(m_uploadStart.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -106,7 +106,7 @@ void ClientData::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_uploadEndHasBeenSet)
   {
-      oStream << location << ".UploadEnd=" << StringUtils::URLEncode(m_uploadEnd.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".UploadEnd=" << StringUtils::URLEncode(m_uploadEnd.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_uploadSizeHasBeenSet)
   {
@@ -114,7 +114,7 @@ void ClientData::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_uploadStartHasBeenSet)
   {
-      oStream << location << ".UploadStart=" << StringUtils::URLEncode(m_uploadStart.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".UploadStart=" << StringUtils::URLEncode(m_uploadStart.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

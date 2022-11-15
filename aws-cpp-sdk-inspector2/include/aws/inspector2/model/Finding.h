@@ -7,6 +7,7 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/inspector2/model/FixAvailable.h>
 #include <aws/inspector2/model/InspectorScoreDetails.h>
 #include <aws/inspector2/model/NetworkReachabilityDetails.h>
 #include <aws/inspector2/model/PackageVulnerabilityDetails.h>
@@ -199,6 +200,55 @@ namespace Model
      * <p>The date and time that the finding was first observed.</p>
      */
     inline Finding& WithFirstObservedAt(Aws::Utils::DateTime&& value) { SetFirstObservedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline const FixAvailable& GetFixAvailable() const{ return m_fixAvailable; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline bool FixAvailableHasBeenSet() const { return m_fixAvailableHasBeenSet; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(const FixAvailable& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = value; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(FixAvailable&& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = std::move(value); }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline Finding& WithFixAvailable(const FixAvailable& value) { SetFixAvailable(value); return *this;}
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline Finding& WithFixAvailable(FixAvailable&& value) { SetFixAvailable(std::move(value)); return *this;}
 
 
     /**
@@ -585,52 +635,55 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_findingArn;
-    bool m_findingArnHasBeenSet;
+    bool m_findingArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstObservedAt;
-    bool m_firstObservedAtHasBeenSet;
+    bool m_firstObservedAtHasBeenSet = false;
+
+    FixAvailable m_fixAvailable;
+    bool m_fixAvailableHasBeenSet = false;
 
     double m_inspectorScore;
-    bool m_inspectorScoreHasBeenSet;
+    bool m_inspectorScoreHasBeenSet = false;
 
     InspectorScoreDetails m_inspectorScoreDetails;
-    bool m_inspectorScoreDetailsHasBeenSet;
+    bool m_inspectorScoreDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastObservedAt;
-    bool m_lastObservedAtHasBeenSet;
+    bool m_lastObservedAtHasBeenSet = false;
 
     NetworkReachabilityDetails m_networkReachabilityDetails;
-    bool m_networkReachabilityDetailsHasBeenSet;
+    bool m_networkReachabilityDetailsHasBeenSet = false;
 
     PackageVulnerabilityDetails m_packageVulnerabilityDetails;
-    bool m_packageVulnerabilityDetailsHasBeenSet;
+    bool m_packageVulnerabilityDetailsHasBeenSet = false;
 
     Remediation m_remediation;
-    bool m_remediationHasBeenSet;
+    bool m_remediationHasBeenSet = false;
 
     Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Severity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     FindingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     FindingType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

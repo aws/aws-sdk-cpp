@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::String m_executionArn;
-    bool m_executionArnHasBeenSet;
+    bool m_executionArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     bool m_reverseOrder;
-    bool m_reverseOrderHasBeenSet;
+    bool m_reverseOrderHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     bool m_includeExecutionData;
-    bool m_includeExecutionDataHasBeenSet;
+    bool m_includeExecutionDataHasBeenSet = false;
   };
 
 } // namespace Model

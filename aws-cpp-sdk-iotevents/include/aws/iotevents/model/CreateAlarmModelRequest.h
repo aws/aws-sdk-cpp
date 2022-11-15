@@ -470,34 +470,34 @@ namespace Model
   private:
 
     Aws::String m_alarmModelName;
-    bool m_alarmModelNameHasBeenSet;
+    bool m_alarmModelNameHasBeenSet = false;
 
     Aws::String m_alarmModelDescription;
-    bool m_alarmModelDescriptionHasBeenSet;
+    bool m_alarmModelDescriptionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     int m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     AlarmRule m_alarmRule;
-    bool m_alarmRuleHasBeenSet;
+    bool m_alarmRuleHasBeenSet = false;
 
     AlarmNotification m_alarmNotification;
-    bool m_alarmNotificationHasBeenSet;
+    bool m_alarmNotificationHasBeenSet = false;
 
     AlarmEventActions m_alarmEventActions;
-    bool m_alarmEventActionsHasBeenSet;
+    bool m_alarmEventActionsHasBeenSet = false;
 
     AlarmCapabilities m_alarmCapabilities;
-    bool m_alarmCapabilitiesHasBeenSet;
+    bool m_alarmCapabilitiesHasBeenSet = false;
   };
 
 } // namespace Model

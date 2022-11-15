@@ -122,10 +122,10 @@ namespace Model
   private:
 
     LanguageType m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::Vector<EnvironmentImage> m_images;
-    bool m_imagesHasBeenSet;
+    bool m_imagesHasBeenSet = false;
   };
 
 } // namespace Model

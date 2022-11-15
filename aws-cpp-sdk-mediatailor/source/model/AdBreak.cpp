@@ -24,7 +24,8 @@ AdBreak::AdBreak() :
     m_offsetMillis(0),
     m_offsetMillisHasBeenSet(false),
     m_slateHasBeenSet(false),
-    m_spliceInsertMessageHasBeenSet(false)
+    m_spliceInsertMessageHasBeenSet(false),
+    m_timeSignalMessageHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ AdBreak::AdBreak(JsonView jsonValue) :
     m_offsetMillis(0),
     m_offsetMillisHasBeenSet(false),
     m_slateHasBeenSet(false),
-    m_spliceInsertMessageHasBeenSet(false)
+    m_spliceInsertMessageHasBeenSet(false),
+    m_timeSignalMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +71,13 @@ AdBreak& AdBreak::operator =(JsonView jsonValue)
     m_spliceInsertMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimeSignalMessage"))
+  {
+    m_timeSignalMessage = jsonValue.GetObject("TimeSignalMessage");
+
+    m_timeSignalMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -96,6 +105,12 @@ JsonValue AdBreak::Jsonize() const
   if(m_spliceInsertMessageHasBeenSet)
   {
    payload.WithObject("SpliceInsertMessage", m_spliceInsertMessage.Jsonize());
+
+  }
+
+  if(m_timeSignalMessageHasBeenSet)
+  {
+   payload.WithObject("TimeSignalMessage", m_timeSignalMessage.Jsonize());
 
   }
 

@@ -469,7 +469,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 100.</p>
+     * 10000.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
@@ -478,7 +478,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 100.</p>
+     * 10000.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
@@ -487,7 +487,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 100.</p>
+     * 10000.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -496,7 +496,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 100.</p>
+     * 10000.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
@@ -568,31 +568,31 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     Aws::String m_availabilityZoneGroup;
-    bool m_availabilityZoneGroupHasBeenSet;
+    bool m_availabilityZoneGroupHasBeenSet = false;
 
     bool m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

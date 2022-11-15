@@ -77,7 +77,7 @@ namespace Model
   private:
 
     S3ExportingLocation m_s3Exporting;
-    bool m_s3ExportingHasBeenSet;
+    bool m_s3ExportingHasBeenSet = false;
   };
 
 } // namespace Model

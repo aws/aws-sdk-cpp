@@ -112,7 +112,7 @@ SnapshotTierStatus& SnapshotTierStatus::operator =(const XmlNode& xmlNode)
     XmlNode lastTieringStartTimeNode = resultNode.FirstChild("lastTieringStartTime");
     if(!lastTieringStartTimeNode.IsNull())
     {
-      m_lastTieringStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastTieringStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastTieringStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastTieringStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastTieringStartTimeHasBeenSet = true;
     }
     XmlNode lastTieringProgressNode = resultNode.FirstChild("lastTieringProgress");
@@ -136,13 +136,13 @@ SnapshotTierStatus& SnapshotTierStatus::operator =(const XmlNode& xmlNode)
     XmlNode archivalCompleteTimeNode = resultNode.FirstChild("archivalCompleteTime");
     if(!archivalCompleteTimeNode.IsNull())
     {
-      m_archivalCompleteTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(archivalCompleteTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_archivalCompleteTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(archivalCompleteTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_archivalCompleteTimeHasBeenSet = true;
     }
     XmlNode restoreExpiryTimeNode = resultNode.FirstChild("restoreExpiryTime");
     if(!restoreExpiryTimeNode.IsNull())
     {
-      m_restoreExpiryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreExpiryTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_restoreExpiryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreExpiryTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_restoreExpiryTimeHasBeenSet = true;
     }
   }
@@ -190,7 +190,7 @@ void SnapshotTierStatus::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_lastTieringStartTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastTieringStartTime=" << StringUtils::URLEncode(m_lastTieringStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastTieringStartTime=" << StringUtils::URLEncode(m_lastTieringStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_lastTieringProgressHasBeenSet)
@@ -210,12 +210,12 @@ void SnapshotTierStatus::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_archivalCompleteTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ArchivalCompleteTime=" << StringUtils::URLEncode(m_archivalCompleteTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ArchivalCompleteTime=" << StringUtils::URLEncode(m_archivalCompleteTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_restoreExpiryTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RestoreExpiryTime=" << StringUtils::URLEncode(m_restoreExpiryTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".RestoreExpiryTime=" << StringUtils::URLEncode(m_restoreExpiryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -254,7 +254,7 @@ void SnapshotTierStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_lastTieringStartTimeHasBeenSet)
   {
-      oStream << location << ".LastTieringStartTime=" << StringUtils::URLEncode(m_lastTieringStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastTieringStartTime=" << StringUtils::URLEncode(m_lastTieringStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_lastTieringProgressHasBeenSet)
   {
@@ -270,11 +270,11 @@ void SnapshotTierStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_archivalCompleteTimeHasBeenSet)
   {
-      oStream << location << ".ArchivalCompleteTime=" << StringUtils::URLEncode(m_archivalCompleteTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ArchivalCompleteTime=" << StringUtils::URLEncode(m_archivalCompleteTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_restoreExpiryTimeHasBeenSet)
   {
-      oStream << location << ".RestoreExpiryTime=" << StringUtils::URLEncode(m_restoreExpiryTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".RestoreExpiryTime=" << StringUtils::URLEncode(m_restoreExpiryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

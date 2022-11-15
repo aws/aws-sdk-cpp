@@ -92,10 +92,10 @@ namespace Model
   private:
 
     RetryableFailureType m_failureType;
-    bool m_failureTypeHasBeenSet;
+    bool m_failureTypeHasBeenSet = false;
 
     int m_numberOfRetries;
-    bool m_numberOfRetriesHasBeenSet;
+    bool m_numberOfRetriesHasBeenSet = false;
   };
 
 } // namespace Model

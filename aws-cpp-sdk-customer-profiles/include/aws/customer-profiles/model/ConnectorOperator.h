@@ -199,19 +199,19 @@ namespace Model
   private:
 
     MarketoConnectorOperator m_marketo;
-    bool m_marketoHasBeenSet;
+    bool m_marketoHasBeenSet = false;
 
     S3ConnectorOperator m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     SalesforceConnectorOperator m_salesforce;
-    bool m_salesforceHasBeenSet;
+    bool m_salesforceHasBeenSet = false;
 
     ServiceNowConnectorOperator m_serviceNow;
-    bool m_serviceNowHasBeenSet;
+    bool m_serviceNowHasBeenSet = false;
 
     ZendeskConnectorOperator m_zendesk;
-    bool m_zendeskHasBeenSet;
+    bool m_zendeskHasBeenSet = false;
   };
 
 } // namespace Model

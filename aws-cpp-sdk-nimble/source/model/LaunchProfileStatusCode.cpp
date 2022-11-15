@@ -33,6 +33,8 @@ namespace Aws
         static const int ENCRYPTION_KEY_ACCESS_DENIED_HASH = HashingUtils::HashString("ENCRYPTION_KEY_ACCESS_DENIED");
         static const int ENCRYPTION_KEY_NOT_FOUND_HASH = HashingUtils::HashString("ENCRYPTION_KEY_NOT_FOUND");
         static const int INVALID_SUBNETS_PROVIDED_HASH = HashingUtils::HashString("INVALID_SUBNETS_PROVIDED");
+        static const int INVALID_INSTANCE_TYPES_PROVIDED_HASH = HashingUtils::HashString("INVALID_INSTANCE_TYPES_PROVIDED");
+        static const int INVALID_SUBNETS_COMBINATION_HASH = HashingUtils::HashString("INVALID_SUBNETS_COMBINATION");
 
 
         LaunchProfileStatusCode GetLaunchProfileStatusCodeForName(const Aws::String& name)
@@ -90,6 +92,14 @@ namespace Aws
           {
             return LaunchProfileStatusCode::INVALID_SUBNETS_PROVIDED;
           }
+          else if (hashCode == INVALID_INSTANCE_TYPES_PROVIDED_HASH)
+          {
+            return LaunchProfileStatusCode::INVALID_INSTANCE_TYPES_PROVIDED;
+          }
+          else if (hashCode == INVALID_SUBNETS_COMBINATION_HASH)
+          {
+            return LaunchProfileStatusCode::INVALID_SUBNETS_COMBINATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -130,6 +140,10 @@ namespace Aws
             return "ENCRYPTION_KEY_NOT_FOUND";
           case LaunchProfileStatusCode::INVALID_SUBNETS_PROVIDED:
             return "INVALID_SUBNETS_PROVIDED";
+          case LaunchProfileStatusCode::INVALID_INSTANCE_TYPES_PROVIDED:
+            return "INVALID_INSTANCE_TYPES_PROVIDED";
+          case LaunchProfileStatusCode::INVALID_SUBNETS_COMBINATION:
+            return "INVALID_SUBNETS_COMBINATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

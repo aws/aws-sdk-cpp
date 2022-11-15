@@ -42,7 +42,7 @@ UnprocessableEntityException& UnprocessableEntityException::operator =(JsonView 
 
   if(jsonValue.ValueExists("validationErrors"))
   {
-    Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
+    Aws::Utils::Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
     for(unsigned validationErrorsIndex = 0; validationErrorsIndex < validationErrorsJsonList.GetLength(); ++validationErrorsIndex)
     {
       m_validationErrors.push_back(validationErrorsJsonList[validationErrorsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue UnprocessableEntityException::Jsonize() const
 
   if(m_validationErrorsHasBeenSet)
   {
-   Array<JsonValue> validationErrorsJsonList(m_validationErrors.size());
+   Aws::Utils::Array<JsonValue> validationErrorsJsonList(m_validationErrors.size());
    for(unsigned validationErrorsIndex = 0; validationErrorsIndex < validationErrorsJsonList.GetLength(); ++validationErrorsIndex)
    {
      validationErrorsJsonList[validationErrorsIndex].AsObject(m_validationErrors[validationErrorsIndex].Jsonize());

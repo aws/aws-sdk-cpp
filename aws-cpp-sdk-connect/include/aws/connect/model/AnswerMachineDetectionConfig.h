@@ -88,10 +88,10 @@ namespace Model
   private:
 
     bool m_enableAnswerMachineDetection;
-    bool m_enableAnswerMachineDetectionHasBeenSet;
+    bool m_enableAnswerMachineDetectionHasBeenSet = false;
 
     bool m_awaitAnswerMachinePrompt;
-    bool m_awaitAnswerMachinePromptHasBeenSet;
+    bool m_awaitAnswerMachinePromptHasBeenSet = false;
   };
 
 } // namespace Model

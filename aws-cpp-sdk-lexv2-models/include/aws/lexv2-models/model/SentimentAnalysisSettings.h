@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_detectSentiment;
-    bool m_detectSentimentHasBeenSet;
+    bool m_detectSentimentHasBeenSet = false;
   };
 
 } // namespace Model

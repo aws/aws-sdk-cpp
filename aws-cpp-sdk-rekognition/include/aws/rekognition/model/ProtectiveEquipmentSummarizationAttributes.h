@@ -171,10 +171,10 @@ namespace Model
   private:
 
     double m_minConfidence;
-    bool m_minConfidenceHasBeenSet;
+    bool m_minConfidenceHasBeenSet = false;
 
     Aws::Vector<ProtectiveEquipmentType> m_requiredEquipmentTypes;
-    bool m_requiredEquipmentTypesHasBeenSet;
+    bool m_requiredEquipmentTypesHasBeenSet = false;
   };
 
 } // namespace Model

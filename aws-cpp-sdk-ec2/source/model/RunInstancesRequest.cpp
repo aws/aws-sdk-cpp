@@ -58,7 +58,9 @@ RunInstancesRequest::RunInstancesRequest() :
     m_metadataOptionsHasBeenSet(false),
     m_enclaveOptionsHasBeenSet(false),
     m_privateDnsNameOptionsHasBeenSet(false),
-    m_maintenanceOptionsHasBeenSet(false)
+    m_maintenanceOptionsHasBeenSet(false),
+    m_disableApiStop(false),
+    m_disableApiStopHasBeenSet(false)
 {
 }
 
@@ -306,6 +308,11 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_maintenanceOptionsHasBeenSet)
   {
     m_maintenanceOptions.OutputToStream(ss, "MaintenanceOptions");
+  }
+
+  if(m_disableApiStopHasBeenSet)
+  {
+    ss << "DisableApiStop=" << std::boolalpha << m_disableApiStop << "&";
   }
 
   ss << "Version=2016-11-15";

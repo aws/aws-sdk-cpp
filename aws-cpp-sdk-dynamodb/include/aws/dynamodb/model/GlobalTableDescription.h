@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::Vector<ReplicaDescription> m_replicationGroup;
-    bool m_replicationGroupHasBeenSet;
+    bool m_replicationGroupHasBeenSet = false;
 
     Aws::String m_globalTableArn;
-    bool m_globalTableArnHasBeenSet;
+    bool m_globalTableArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     GlobalTableStatus m_globalTableStatus;
-    bool m_globalTableStatusHasBeenSet;
+    bool m_globalTableStatusHasBeenSet = false;
 
     Aws::String m_globalTableName;
-    bool m_globalTableNameHasBeenSet;
+    bool m_globalTableNameHasBeenSet = false;
   };
 
 } // namespace Model

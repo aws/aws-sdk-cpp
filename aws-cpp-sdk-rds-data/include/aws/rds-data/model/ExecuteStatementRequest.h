@@ -7,9 +7,9 @@
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/rds-data/RDSDataServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/rds-data/model/RecordsFormatType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds-data/model/ResultSetOptions.h>
+#include <aws/rds-data/model/RecordsFormatType.h>
 #include <aws/rds-data/model/SqlParameter.h>
 #include <utility>
 
@@ -38,6 +38,386 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "ExecuteStatement"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+     */
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+     */
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+     */
+    inline ExecuteStatementRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+     */
+    inline ExecuteStatementRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+     */
+    inline ExecuteStatementRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
+     */
+    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+
+    /**
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
+     */
+    inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
+     */
+    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
+
+    /**
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
+     */
+    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
+     */
+    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
+
+    /**
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
+     */
+    inline ExecuteStatementRequest& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
+     */
+    inline ExecuteStatementRequest& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
+     */
+    inline ExecuteStatementRequest& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+
+
+    /**
+     * <p>The SQL statement to run.</p>
+     */
+    inline const Aws::String& GetSql() const{ return m_sql; }
+
+    /**
+     * <p>The SQL statement to run.</p>
+     */
+    inline bool SqlHasBeenSet() const { return m_sqlHasBeenSet; }
+
+    /**
+     * <p>The SQL statement to run.</p>
+     */
+    inline void SetSql(const Aws::String& value) { m_sqlHasBeenSet = true; m_sql = value; }
+
+    /**
+     * <p>The SQL statement to run.</p>
+     */
+    inline void SetSql(Aws::String&& value) { m_sqlHasBeenSet = true; m_sql = std::move(value); }
+
+    /**
+     * <p>The SQL statement to run.</p>
+     */
+    inline void SetSql(const char* value) { m_sqlHasBeenSet = true; m_sql.assign(value); }
+
+    /**
+     * <p>The SQL statement to run.</p>
+     */
+    inline ExecuteStatementRequest& WithSql(const Aws::String& value) { SetSql(value); return *this;}
+
+    /**
+     * <p>The SQL statement to run.</p>
+     */
+    inline ExecuteStatementRequest& WithSql(Aws::String&& value) { SetSql(std::move(value)); return *this;}
+
+    /**
+     * <p>The SQL statement to run.</p>
+     */
+    inline ExecuteStatementRequest& WithSql(const char* value) { SetSql(value); return *this;}
+
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline const Aws::String& GetDatabase() const{ return m_database; }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline ExecuteStatementRequest& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline ExecuteStatementRequest& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline ExecuteStatementRequest& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+
+
+    /**
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
+     */
+    inline const Aws::String& GetSchema() const{ return m_schema; }
+
+    /**
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
+     */
+    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
+
+    /**
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
+     */
+    inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
+
+    /**
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
+     */
+    inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
+
+    /**
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
+     */
+    inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
+
+    /**
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
+     */
+    inline ExecuteStatementRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
+
+    /**
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
+     */
+    inline ExecuteStatementRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
+     */
+    inline ExecuteStatementRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
+
+
+    /**
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
+     */
+    inline const Aws::Vector<SqlParameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
+     */
+    inline void SetParameters(const Aws::Vector<SqlParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
+     */
+    inline void SetParameters(Aws::Vector<SqlParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
+     */
+    inline ExecuteStatementRequest& WithParameters(const Aws::Vector<SqlParameter>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
+     */
+    inline ExecuteStatementRequest& WithParameters(Aws::Vector<SqlParameter>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
+     */
+    inline ExecuteStatementRequest& AddParameters(const SqlParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
+     */
+    inline ExecuteStatementRequest& AddParameters(SqlParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The identifier of a transaction that was started by using the
+     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
+     */
+    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+
+    /**
+     * <p>The identifier of a transaction that was started by using the
+     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
+     */
+    inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of a transaction that was started by using the
+     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
+     */
+    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
+
+    /**
+     * <p>The identifier of a transaction that was started by using the
+     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
+     */
+    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
+
+    /**
+     * <p>The identifier of a transaction that was started by using the
+     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
+     */
+    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
+
+    /**
+     * <p>The identifier of a transaction that was started by using the
+     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
+     */
+    inline ExecuteStatementRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
+
+    /**
+     * <p>The identifier of a transaction that was started by using the
+     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
+     */
+    inline ExecuteStatementRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of a transaction that was started by using the
+     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
+     */
+    inline ExecuteStatementRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether to include metadata in the results.</p>
+     */
+    inline bool GetIncludeResultMetadata() const{ return m_includeResultMetadata; }
+
+    /**
+     * <p>A value that indicates whether to include metadata in the results.</p>
+     */
+    inline bool IncludeResultMetadataHasBeenSet() const { return m_includeResultMetadataHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to include metadata in the results.</p>
+     */
+    inline void SetIncludeResultMetadata(bool value) { m_includeResultMetadataHasBeenSet = true; m_includeResultMetadata = value; }
+
+    /**
+     * <p>A value that indicates whether to include metadata in the results.</p>
+     */
+    inline ExecuteStatementRequest& WithIncludeResultMetadata(bool value) { SetIncludeResultMetadata(value); return *this;}
 
 
     /**
@@ -82,44 +462,34 @@ namespace Model
 
 
     /**
-     * <p>The name of the database.</p>
+     * <p>Options that control how the result set is returned.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const ResultSetOptions& GetResultSetOptions() const{ return m_resultSetOptions; }
 
     /**
-     * <p>The name of the database.</p>
+     * <p>Options that control how the result set is returned.</p>
      */
-    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
+    inline bool ResultSetOptionsHasBeenSet() const { return m_resultSetOptionsHasBeenSet; }
 
     /**
-     * <p>The name of the database.</p>
+     * <p>Options that control how the result set is returned.</p>
      */
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
+    inline void SetResultSetOptions(const ResultSetOptions& value) { m_resultSetOptionsHasBeenSet = true; m_resultSetOptions = value; }
 
     /**
-     * <p>The name of the database.</p>
+     * <p>Options that control how the result set is returned.</p>
      */
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
+    inline void SetResultSetOptions(ResultSetOptions&& value) { m_resultSetOptionsHasBeenSet = true; m_resultSetOptions = std::move(value); }
 
     /**
-     * <p>The name of the database.</p>
+     * <p>Options that control how the result set is returned.</p>
      */
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
+    inline ExecuteStatementRequest& WithResultSetOptions(const ResultSetOptions& value) { SetResultSetOptions(value); return *this;}
 
     /**
-     * <p>The name of the database.</p>
+     * <p>Options that control how the result set is returned.</p>
      */
-    inline ExecuteStatementRequest& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline ExecuteStatementRequest& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline ExecuteStatementRequest& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    inline ExecuteStatementRequest& WithResultSetOptions(ResultSetOptions&& value) { SetResultSetOptions(std::move(value)); return *this;}
 
 
     /**
@@ -194,378 +564,40 @@ namespace Model
      */
     inline ExecuteStatementRequest& WithFormatRecordsAs(RecordsFormatType&& value) { SetFormatRecordsAs(std::move(value)); return *this;}
 
-
-    /**
-     * <p>A value that indicates whether to include metadata in the results.</p>
-     */
-    inline bool GetIncludeResultMetadata() const{ return m_includeResultMetadata; }
-
-    /**
-     * <p>A value that indicates whether to include metadata in the results.</p>
-     */
-    inline bool IncludeResultMetadataHasBeenSet() const { return m_includeResultMetadataHasBeenSet; }
-
-    /**
-     * <p>A value that indicates whether to include metadata in the results.</p>
-     */
-    inline void SetIncludeResultMetadata(bool value) { m_includeResultMetadataHasBeenSet = true; m_includeResultMetadata = value; }
-
-    /**
-     * <p>A value that indicates whether to include metadata in the results.</p>
-     */
-    inline ExecuteStatementRequest& WithIncludeResultMetadata(bool value) { SetIncludeResultMetadata(value); return *this;}
-
-
-    /**
-     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
-     * supported.</p> 
-     */
-    inline const Aws::Vector<SqlParameter>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
-     * supported.</p> 
-     */
-    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
-     * supported.</p> 
-     */
-    inline void SetParameters(const Aws::Vector<SqlParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
-     * supported.</p> 
-     */
-    inline void SetParameters(Aws::Vector<SqlParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
-     * supported.</p> 
-     */
-    inline ExecuteStatementRequest& WithParameters(const Aws::Vector<SqlParameter>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
-     * supported.</p> 
-     */
-    inline ExecuteStatementRequest& WithParameters(Aws::Vector<SqlParameter>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
-     * supported.</p> 
-     */
-    inline ExecuteStatementRequest& AddParameters(const SqlParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-
-    /**
-     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
-     * supported.</p> 
-     */
-    inline ExecuteStatementRequest& AddParameters(SqlParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-     */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-     */
-    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-     */
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-     */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-     */
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-     */
-    inline ExecuteStatementRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-     */
-    inline ExecuteStatementRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-     */
-    inline ExecuteStatementRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
-
-    /**
-     * <p>Options that control how the result set is returned.</p>
-     */
-    inline const ResultSetOptions& GetResultSetOptions() const{ return m_resultSetOptions; }
-
-    /**
-     * <p>Options that control how the result set is returned.</p>
-     */
-    inline bool ResultSetOptionsHasBeenSet() const { return m_resultSetOptionsHasBeenSet; }
-
-    /**
-     * <p>Options that control how the result set is returned.</p>
-     */
-    inline void SetResultSetOptions(const ResultSetOptions& value) { m_resultSetOptionsHasBeenSet = true; m_resultSetOptions = value; }
-
-    /**
-     * <p>Options that control how the result set is returned.</p>
-     */
-    inline void SetResultSetOptions(ResultSetOptions&& value) { m_resultSetOptionsHasBeenSet = true; m_resultSetOptions = std::move(value); }
-
-    /**
-     * <p>Options that control how the result set is returned.</p>
-     */
-    inline ExecuteStatementRequest& WithResultSetOptions(const ResultSetOptions& value) { SetResultSetOptions(value); return *this;}
-
-    /**
-     * <p>Options that control how the result set is returned.</p>
-     */
-    inline ExecuteStatementRequest& WithResultSetOptions(ResultSetOptions&& value) { SetResultSetOptions(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The name of the database schema.</p>  <p>Currently, the
-     * <code>schema</code> parameter isn't supported.</p> 
-     */
-    inline const Aws::String& GetSchema() const{ return m_schema; }
-
-    /**
-     * <p>The name of the database schema.</p>  <p>Currently, the
-     * <code>schema</code> parameter isn't supported.</p> 
-     */
-    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-
-    /**
-     * <p>The name of the database schema.</p>  <p>Currently, the
-     * <code>schema</code> parameter isn't supported.</p> 
-     */
-    inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
-
-    /**
-     * <p>The name of the database schema.</p>  <p>Currently, the
-     * <code>schema</code> parameter isn't supported.</p> 
-     */
-    inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-
-    /**
-     * <p>The name of the database schema.</p>  <p>Currently, the
-     * <code>schema</code> parameter isn't supported.</p> 
-     */
-    inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
-
-    /**
-     * <p>The name of the database schema.</p>  <p>Currently, the
-     * <code>schema</code> parameter isn't supported.</p> 
-     */
-    inline ExecuteStatementRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
-
-    /**
-     * <p>The name of the database schema.</p>  <p>Currently, the
-     * <code>schema</code> parameter isn't supported.</p> 
-     */
-    inline ExecuteStatementRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the database schema.</p>  <p>Currently, the
-     * <code>schema</code> parameter isn't supported.</p> 
-     */
-    inline ExecuteStatementRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
-
-
-    /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-     */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
-
-    /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-     */
-    inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-
-    /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-     */
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-
-    /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-     */
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-
-    /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-     */
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-
-    /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-     */
-    inline ExecuteStatementRequest& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-
-    /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-     */
-    inline ExecuteStatementRequest& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-     */
-    inline ExecuteStatementRequest& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
-
-
-    /**
-     * <p>The SQL statement to run.</p>
-     */
-    inline const Aws::String& GetSql() const{ return m_sql; }
-
-    /**
-     * <p>The SQL statement to run.</p>
-     */
-    inline bool SqlHasBeenSet() const { return m_sqlHasBeenSet; }
-
-    /**
-     * <p>The SQL statement to run.</p>
-     */
-    inline void SetSql(const Aws::String& value) { m_sqlHasBeenSet = true; m_sql = value; }
-
-    /**
-     * <p>The SQL statement to run.</p>
-     */
-    inline void SetSql(Aws::String&& value) { m_sqlHasBeenSet = true; m_sql = std::move(value); }
-
-    /**
-     * <p>The SQL statement to run.</p>
-     */
-    inline void SetSql(const char* value) { m_sqlHasBeenSet = true; m_sql.assign(value); }
-
-    /**
-     * <p>The SQL statement to run.</p>
-     */
-    inline ExecuteStatementRequest& WithSql(const Aws::String& value) { SetSql(value); return *this;}
-
-    /**
-     * <p>The SQL statement to run.</p>
-     */
-    inline ExecuteStatementRequest& WithSql(Aws::String&& value) { SetSql(std::move(value)); return *this;}
-
-    /**
-     * <p>The SQL statement to run.</p>
-     */
-    inline ExecuteStatementRequest& WithSql(const char* value) { SetSql(value); return *this;}
-
-
-    /**
-     * <p>The identifier of a transaction that was started by using the
-     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
-     * statement is not part of a transaction, don't set this parameter.</p>
-     */
-    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
-
-    /**
-     * <p>The identifier of a transaction that was started by using the
-     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
-     * statement is not part of a transaction, don't set this parameter.</p>
-     */
-    inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of a transaction that was started by using the
-     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
-     * statement is not part of a transaction, don't set this parameter.</p>
-     */
-    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
-
-    /**
-     * <p>The identifier of a transaction that was started by using the
-     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
-     * statement is not part of a transaction, don't set this parameter.</p>
-     */
-    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
-
-    /**
-     * <p>The identifier of a transaction that was started by using the
-     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
-     * statement is not part of a transaction, don't set this parameter.</p>
-     */
-    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
-
-    /**
-     * <p>The identifier of a transaction that was started by using the
-     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
-     * statement is not part of a transaction, don't set this parameter.</p>
-     */
-    inline ExecuteStatementRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-
-    /**
-     * <p>The identifier of a transaction that was started by using the
-     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
-     * statement is not part of a transaction, don't set this parameter.</p>
-     */
-    inline ExecuteStatementRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of a transaction that was started by using the
-     * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
-     * statement is not part of a transaction, don't set this parameter.</p>
-     */
-    inline ExecuteStatementRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
-
   private:
 
-    bool m_continueAfterTimeout;
-    bool m_continueAfterTimeoutHasBeenSet;
-
-    Aws::String m_database;
-    bool m_databaseHasBeenSet;
-
-    RecordsFormatType m_formatRecordsAs;
-    bool m_formatRecordsAsHasBeenSet;
-
-    bool m_includeResultMetadata;
-    bool m_includeResultMetadataHasBeenSet;
-
-    Aws::Vector<SqlParameter> m_parameters;
-    bool m_parametersHasBeenSet;
-
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
-
-    ResultSetOptions m_resultSetOptions;
-    bool m_resultSetOptionsHasBeenSet;
-
-    Aws::String m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     Aws::String m_sql;
-    bool m_sqlHasBeenSet;
+    bool m_sqlHasBeenSet = false;
+
+    Aws::String m_database;
+    bool m_databaseHasBeenSet = false;
+
+    Aws::String m_schema;
+    bool m_schemaHasBeenSet = false;
+
+    Aws::Vector<SqlParameter> m_parameters;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
+
+    bool m_includeResultMetadata;
+    bool m_includeResultMetadataHasBeenSet = false;
+
+    bool m_continueAfterTimeout;
+    bool m_continueAfterTimeoutHasBeenSet = false;
+
+    ResultSetOptions m_resultSetOptions;
+    bool m_resultSetOptionsHasBeenSet = false;
+
+    RecordsFormatType m_formatRecordsAs;
+    bool m_formatRecordsAsHasBeenSet = false;
   };
 
 } // namespace Model

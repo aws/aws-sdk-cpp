@@ -52,7 +52,7 @@ FieldTypeDetails& FieldTypeDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("filterOperators"))
   {
-    Array<JsonView> filterOperatorsJsonList = jsonValue.GetArray("filterOperators");
+    Aws::Utils::Array<JsonView> filterOperatorsJsonList = jsonValue.GetArray("filterOperators");
     for(unsigned filterOperatorsIndex = 0; filterOperatorsIndex < filterOperatorsJsonList.GetLength(); ++filterOperatorsIndex)
     {
       m_filterOperators.push_back(OperatorMapper::GetOperatorForName(filterOperatorsJsonList[filterOperatorsIndex].AsString()));
@@ -62,7 +62,7 @@ FieldTypeDetails& FieldTypeDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedValues"))
   {
-    Array<JsonView> supportedValuesJsonList = jsonValue.GetArray("supportedValues");
+    Aws::Utils::Array<JsonView> supportedValuesJsonList = jsonValue.GetArray("supportedValues");
     for(unsigned supportedValuesIndex = 0; supportedValuesIndex < supportedValuesJsonList.GetLength(); ++supportedValuesIndex)
     {
       m_supportedValues.push_back(supportedValuesJsonList[supportedValuesIndex].AsString());
@@ -113,7 +113,7 @@ JsonValue FieldTypeDetails::Jsonize() const
 
   if(m_filterOperatorsHasBeenSet)
   {
-   Array<JsonValue> filterOperatorsJsonList(m_filterOperators.size());
+   Aws::Utils::Array<JsonValue> filterOperatorsJsonList(m_filterOperators.size());
    for(unsigned filterOperatorsIndex = 0; filterOperatorsIndex < filterOperatorsJsonList.GetLength(); ++filterOperatorsIndex)
    {
      filterOperatorsJsonList[filterOperatorsIndex].AsString(OperatorMapper::GetNameForOperator(m_filterOperators[filterOperatorsIndex]));
@@ -124,7 +124,7 @@ JsonValue FieldTypeDetails::Jsonize() const
 
   if(m_supportedValuesHasBeenSet)
   {
-   Array<JsonValue> supportedValuesJsonList(m_supportedValues.size());
+   Aws::Utils::Array<JsonValue> supportedValuesJsonList(m_supportedValues.size());
    for(unsigned supportedValuesIndex = 0; supportedValuesIndex < supportedValuesJsonList.GetLength(); ++supportedValuesIndex)
    {
      supportedValuesJsonList[supportedValuesIndex].AsString(m_supportedValues[supportedValuesIndex]);

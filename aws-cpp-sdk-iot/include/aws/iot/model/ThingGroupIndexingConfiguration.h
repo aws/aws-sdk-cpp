@@ -178,13 +178,13 @@ namespace Model
   private:
 
     ThingGroupIndexingMode m_thingGroupIndexingMode;
-    bool m_thingGroupIndexingModeHasBeenSet;
+    bool m_thingGroupIndexingModeHasBeenSet = false;
 
     Aws::Vector<Field> m_managedFields;
-    bool m_managedFieldsHasBeenSet;
+    bool m_managedFieldsHasBeenSet = false;
 
     Aws::Vector<Field> m_customFields;
-    bool m_customFieldsHasBeenSet;
+    bool m_customFieldsHasBeenSet = false;
   };
 
 } // namespace Model

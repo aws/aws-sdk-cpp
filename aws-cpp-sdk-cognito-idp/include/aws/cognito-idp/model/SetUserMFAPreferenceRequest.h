@@ -68,86 +68,94 @@ namespace Model
 
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline const SoftwareTokenMfaSettingsType& GetSoftwareTokenMfaSettings() const{ return m_softwareTokenMfaSettings; }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline bool SoftwareTokenMfaSettingsHasBeenSet() const { return m_softwareTokenMfaSettingsHasBeenSet; }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline void SetSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = value; }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline void SetSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = std::move(value); }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline SetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { SetSoftwareTokenMfaSettings(value); return *this;}
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline SetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { SetSoftwareTokenMfaSettings(std::move(value)); return *this;}
 
 
     /**
-     * <p>The access token for the user.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose MFA
+     * preference you want to set.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>The access token for the user.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose MFA
+     * preference you want to set.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
-     * <p>The access token for the user.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose MFA
+     * preference you want to set.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p>The access token for the user.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose MFA
+     * preference you want to set.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p>The access token for the user.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose MFA
+     * preference you want to set.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
-     * <p>The access token for the user.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose MFA
+     * preference you want to set.</p>
      */
     inline SetUserMFAPreferenceRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>The access token for the user.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose MFA
+     * preference you want to set.</p>
      */
     inline SetUserMFAPreferenceRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>The access token for the user.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose MFA
+     * preference you want to set.</p>
      */
     inline SetUserMFAPreferenceRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
   private:
 
     SMSMfaSettingsType m_sMSMfaSettings;
-    bool m_sMSMfaSettingsHasBeenSet;
+    bool m_sMSMfaSettingsHasBeenSet = false;
 
     SoftwareTokenMfaSettingsType m_softwareTokenMfaSettings;
-    bool m_softwareTokenMfaSettingsHasBeenSet;
+    bool m_softwareTokenMfaSettingsHasBeenSet = false;
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
   };
 
 } // namespace Model

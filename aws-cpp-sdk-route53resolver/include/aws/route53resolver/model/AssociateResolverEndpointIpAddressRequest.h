@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_resolverEndpointId;
-    bool m_resolverEndpointIdHasBeenSet;
+    bool m_resolverEndpointIdHasBeenSet = false;
 
     IpAddressUpdate m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
   };
 
 } // namespace Model

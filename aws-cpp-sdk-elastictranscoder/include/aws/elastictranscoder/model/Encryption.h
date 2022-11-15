@@ -463,16 +463,16 @@ namespace Model
   private:
 
     Aws::String m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_keyMd5;
-    bool m_keyMd5HasBeenSet;
+    bool m_keyMd5HasBeenSet = false;
 
     Aws::String m_initializationVector;
-    bool m_initializationVectorHasBeenSet;
+    bool m_initializationVectorHasBeenSet = false;
   };
 
 } // namespace Model

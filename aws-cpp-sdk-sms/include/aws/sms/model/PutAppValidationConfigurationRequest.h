@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::Vector<AppValidationConfiguration> m_appValidationConfigurations;
-    bool m_appValidationConfigurationsHasBeenSet;
+    bool m_appValidationConfigurationsHasBeenSet = false;
 
     Aws::Vector<ServerGroupValidationConfiguration> m_serverGroupValidationConfigurations;
-    bool m_serverGroupValidationConfigurationsHasBeenSet;
+    bool m_serverGroupValidationConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

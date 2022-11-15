@@ -271,13 +271,13 @@ namespace Model
   private:
 
     ComplianceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_relatedRequirements;
-    bool m_relatedRequirementsHasBeenSet;
+    bool m_relatedRequirementsHasBeenSet = false;
 
     Aws::Vector<StatusReason> m_statusReasons;
-    bool m_statusReasonsHasBeenSet;
+    bool m_statusReasonsHasBeenSet = false;
   };
 
 } // namespace Model

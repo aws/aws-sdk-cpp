@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_simpleAddress;
-    bool m_simpleAddressHasBeenSet;
+    bool m_simpleAddressHasBeenSet = false;
   };
 
 } // namespace Model

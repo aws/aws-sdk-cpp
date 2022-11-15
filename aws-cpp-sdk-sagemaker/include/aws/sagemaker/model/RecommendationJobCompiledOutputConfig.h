@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_s3OutputUri;
-    bool m_s3OutputUriHasBeenSet;
+    bool m_s3OutputUriHasBeenSet = false;
   };
 
 } // namespace Model

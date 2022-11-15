@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user who you want to
+     * authenticate.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user who you want to
+     * authenticate.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user who you want to
+     * authenticate.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user who you want to
+     * authenticate.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user who you want to
+     * authenticate.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user who you want to
+     * authenticate.</p>
      */
     inline AuthenticationResultType& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user who you want to
+     * authenticate.</p>
      */
     inline AuthenticationResultType& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user who you want to
+     * authenticate.</p>
      */
     inline AuthenticationResultType& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
@@ -256,22 +264,22 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     int m_expiresIn;
-    bool m_expiresInHasBeenSet;
+    bool m_expiresInHasBeenSet = false;
 
     Aws::String m_tokenType;
-    bool m_tokenTypeHasBeenSet;
+    bool m_tokenTypeHasBeenSet = false;
 
     Aws::String m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
 
     Aws::String m_idToken;
-    bool m_idTokenHasBeenSet;
+    bool m_idTokenHasBeenSet = false;
 
     NewDeviceMetadataType m_newDeviceMetadata;
-    bool m_newDeviceMetadataHasBeenSet;
+    bool m_newDeviceMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -74,13 +74,13 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
     XmlNode validFromNode = resultNode.FirstChild("ValidFrom");
     if(!validFromNode.IsNull())
     {
-      m_validFrom = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validFromNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_validFrom = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validFromNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validFromHasBeenSet = true;
     }
     XmlNode validTillNode = resultNode.FirstChild("ValidTill");
     if(!validTillNode.IsNull())
     {
-      m_validTill = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validTillNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_validTill = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validTillNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validTillHasBeenSet = true;
     }
     XmlNode certificateArnNode = resultNode.FirstChild("CertificateArn");
@@ -98,7 +98,7 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
     XmlNode customerOverrideValidTillNode = resultNode.FirstChild("CustomerOverrideValidTill");
     if(!customerOverrideValidTillNode.IsNull())
     {
-      m_customerOverrideValidTill = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customerOverrideValidTillNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_customerOverrideValidTill = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customerOverrideValidTillNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_customerOverrideValidTillHasBeenSet = true;
     }
   }
@@ -125,12 +125,12 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_validFromHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_validTillHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ValidTill=" << StringUtils::URLEncode(m_validTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ValidTill=" << StringUtils::URLEncode(m_validTill.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_certificateArnHasBeenSet)
@@ -145,7 +145,7 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_customerOverrideValidTillHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CustomerOverrideValidTill=" << StringUtils::URLEncode(m_customerOverrideValidTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CustomerOverrideValidTill=" << StringUtils::URLEncode(m_customerOverrideValidTill.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -166,11 +166,11 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_validFromHasBeenSet)
   {
-      oStream << location << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_validTillHasBeenSet)
   {
-      oStream << location << ".ValidTill=" << StringUtils::URLEncode(m_validTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ValidTill=" << StringUtils::URLEncode(m_validTill.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_certificateArnHasBeenSet)
   {
@@ -182,7 +182,7 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_customerOverrideValidTillHasBeenSet)
   {
-      oStream << location << ".CustomerOverrideValidTill=" << StringUtils::URLEncode(m_customerOverrideValidTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CustomerOverrideValidTill=" << StringUtils::URLEncode(m_customerOverrideValidTill.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

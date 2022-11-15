@@ -240,13 +240,13 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_importUrl;
-    bool m_importUrlHasBeenSet;
+    bool m_importUrlHasBeenSet = false;
   };
 
 } // namespace Model

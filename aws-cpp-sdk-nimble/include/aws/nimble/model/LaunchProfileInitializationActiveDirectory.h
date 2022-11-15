@@ -343,25 +343,25 @@ namespace Model
   private:
 
     Aws::Vector<ActiveDirectoryComputerAttribute> m_computerAttributes;
-    bool m_computerAttributesHasBeenSet;
+    bool m_computerAttributesHasBeenSet = false;
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_directoryName;
-    bool m_directoryNameHasBeenSet;
+    bool m_directoryNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsIpAddresses;
-    bool m_dnsIpAddressesHasBeenSet;
+    bool m_dnsIpAddressesHasBeenSet = false;
 
     Aws::String m_organizationalUnitDistinguishedName;
-    bool m_organizationalUnitDistinguishedNameHasBeenSet;
+    bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
 
     Aws::String m_studioComponentId;
-    bool m_studioComponentIdHasBeenSet;
+    bool m_studioComponentIdHasBeenSet = false;
 
     Aws::String m_studioComponentName;
-    bool m_studioComponentNameHasBeenSet;
+    bool m_studioComponentNameHasBeenSet = false;
   };
 
 } // namespace Model

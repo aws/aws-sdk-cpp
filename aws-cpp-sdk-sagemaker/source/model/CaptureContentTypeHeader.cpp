@@ -35,7 +35,7 @@ CaptureContentTypeHeader& CaptureContentTypeHeader::operator =(JsonView jsonValu
 {
   if(jsonValue.ValueExists("CsvContentTypes"))
   {
-    Array<JsonView> csvContentTypesJsonList = jsonValue.GetArray("CsvContentTypes");
+    Aws::Utils::Array<JsonView> csvContentTypesJsonList = jsonValue.GetArray("CsvContentTypes");
     for(unsigned csvContentTypesIndex = 0; csvContentTypesIndex < csvContentTypesJsonList.GetLength(); ++csvContentTypesIndex)
     {
       m_csvContentTypes.push_back(csvContentTypesJsonList[csvContentTypesIndex].AsString());
@@ -45,7 +45,7 @@ CaptureContentTypeHeader& CaptureContentTypeHeader::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("JsonContentTypes"))
   {
-    Array<JsonView> jsonContentTypesJsonList = jsonValue.GetArray("JsonContentTypes");
+    Aws::Utils::Array<JsonView> jsonContentTypesJsonList = jsonValue.GetArray("JsonContentTypes");
     for(unsigned jsonContentTypesIndex = 0; jsonContentTypesIndex < jsonContentTypesJsonList.GetLength(); ++jsonContentTypesIndex)
     {
       m_jsonContentTypes.push_back(jsonContentTypesJsonList[jsonContentTypesIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue CaptureContentTypeHeader::Jsonize() const
 
   if(m_csvContentTypesHasBeenSet)
   {
-   Array<JsonValue> csvContentTypesJsonList(m_csvContentTypes.size());
+   Aws::Utils::Array<JsonValue> csvContentTypesJsonList(m_csvContentTypes.size());
    for(unsigned csvContentTypesIndex = 0; csvContentTypesIndex < csvContentTypesJsonList.GetLength(); ++csvContentTypesIndex)
    {
      csvContentTypesJsonList[csvContentTypesIndex].AsString(m_csvContentTypes[csvContentTypesIndex]);
@@ -73,7 +73,7 @@ JsonValue CaptureContentTypeHeader::Jsonize() const
 
   if(m_jsonContentTypesHasBeenSet)
   {
-   Array<JsonValue> jsonContentTypesJsonList(m_jsonContentTypes.size());
+   Aws::Utils::Array<JsonValue> jsonContentTypesJsonList(m_jsonContentTypes.size());
    for(unsigned jsonContentTypesIndex = 0; jsonContentTypesIndex < jsonContentTypesJsonList.GetLength(); ++jsonContentTypesIndex)
    {
      jsonContentTypesJsonList[jsonContentTypesIndex].AsString(m_jsonContentTypes[jsonContentTypesIndex]);

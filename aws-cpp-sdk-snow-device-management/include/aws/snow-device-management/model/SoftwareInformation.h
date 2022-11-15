@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_installState;
-    bool m_installStateHasBeenSet;
+    bool m_installStateHasBeenSet = false;
 
     Aws::String m_installedVersion;
-    bool m_installedVersionHasBeenSet;
+    bool m_installedVersionHasBeenSet = false;
 
     Aws::String m_installingVersion;
-    bool m_installingVersionHasBeenSet;
+    bool m_installingVersionHasBeenSet = false;
   };
 
 } // namespace Model

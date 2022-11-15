@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Vector<double>> m_lineString;
-    bool m_lineStringHasBeenSet;
+    bool m_lineStringHasBeenSet = false;
   };
 
 } // namespace Model

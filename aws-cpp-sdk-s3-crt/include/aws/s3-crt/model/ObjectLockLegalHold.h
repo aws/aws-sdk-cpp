@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ObjectLockLegalHoldStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

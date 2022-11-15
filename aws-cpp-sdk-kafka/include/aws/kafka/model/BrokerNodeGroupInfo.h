@@ -128,7 +128,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline const Aws::Vector<Aws::String>& GetClientSubnets() const{ return m_clientSubnets; }
@@ -138,7 +138,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline bool ClientSubnetsHasBeenSet() const { return m_clientSubnetsHasBeenSet; }
@@ -148,7 +148,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline void SetClientSubnets(const Aws::Vector<Aws::String>& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets = value; }
@@ -158,7 +158,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline void SetClientSubnets(Aws::Vector<Aws::String>&& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets = std::move(value); }
@@ -168,7 +168,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline BrokerNodeGroupInfo& WithClientSubnets(const Aws::Vector<Aws::String>& value) { SetClientSubnets(value); return *this;}
@@ -178,7 +178,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline BrokerNodeGroupInfo& WithClientSubnets(Aws::Vector<Aws::String>&& value) { SetClientSubnets(std::move(value)); return *this;}
@@ -188,7 +188,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline BrokerNodeGroupInfo& AddClientSubnets(const Aws::String& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets.push_back(value); return *this; }
@@ -198,7 +198,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline BrokerNodeGroupInfo& AddClientSubnets(Aws::String&& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets.push_back(std::move(value)); return *this; }
@@ -208,7 +208,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline BrokerNodeGroupInfo& AddClientSubnets(const char* value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets.push_back(value); return *this; }
@@ -488,22 +488,22 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
   private:
 
     BrokerAZDistribution m_brokerAZDistribution;
-    bool m_brokerAZDistributionHasBeenSet;
+    bool m_brokerAZDistributionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clientSubnets;
-    bool m_clientSubnetsHasBeenSet;
+    bool m_clientSubnetsHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     StorageInfo m_storageInfo;
-    bool m_storageInfoHasBeenSet;
+    bool m_storageInfoHasBeenSet = false;
 
     ConnectivityInfo m_connectivityInfo;
-    bool m_connectivityInfoHasBeenSet;
+    bool m_connectivityInfoHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
    * requests. The byte match statement provides the bytes to search for, the
    * location in requests that you want WAF to search, and other settings. The bytes
    * to search for are typically a string that corresponds with ASCII characters. In
-   * the WAF console and the developer guide, this is refered to as a string match
+   * the WAF console and the developer guide, this is called a string match
    * statement.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ByteMatchStatement">AWS
    * API Reference</a></p>
@@ -192,38 +192,32 @@ namespace Model
 
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline ByteMatchStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline ByteMatchStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
 
@@ -462,16 +456,16 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_searchString;
-    bool m_searchStringHasBeenSet;
+    bool m_searchStringHasBeenSet = false;
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
-    bool m_textTransformationsHasBeenSet;
+    bool m_textTransformationsHasBeenSet = false;
 
     PositionalConstraint m_positionalConstraint;
-    bool m_positionalConstraintHasBeenSet;
+    bool m_positionalConstraintHasBeenSet = false;
   };
 
 } // namespace Model

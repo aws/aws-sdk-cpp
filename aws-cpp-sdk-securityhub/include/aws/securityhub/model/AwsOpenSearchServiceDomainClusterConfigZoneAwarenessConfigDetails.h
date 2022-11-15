@@ -36,33 +36,33 @@ namespace Model
 
 
     /**
-     * <p>The number of Availability Zones that the domain uses. Valid values are 2 and
-     * 3. The default is 2.</p>
+     * <p>The number of Availability Zones that the domain uses. Valid values are
+     * <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
      */
     inline int GetAvailabilityZoneCount() const{ return m_availabilityZoneCount; }
 
     /**
-     * <p>The number of Availability Zones that the domain uses. Valid values are 2 and
-     * 3. The default is 2.</p>
+     * <p>The number of Availability Zones that the domain uses. Valid values are
+     * <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
      */
     inline bool AvailabilityZoneCountHasBeenSet() const { return m_availabilityZoneCountHasBeenSet; }
 
     /**
-     * <p>The number of Availability Zones that the domain uses. Valid values are 2 and
-     * 3. The default is 2.</p>
+     * <p>The number of Availability Zones that the domain uses. Valid values are
+     * <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
      */
     inline void SetAvailabilityZoneCount(int value) { m_availabilityZoneCountHasBeenSet = true; m_availabilityZoneCount = value; }
 
     /**
-     * <p>The number of Availability Zones that the domain uses. Valid values are 2 and
-     * 3. The default is 2.</p>
+     * <p>The number of Availability Zones that the domain uses. Valid values are
+     * <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
      */
     inline AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails& WithAvailabilityZoneCount(int value) { SetAvailabilityZoneCount(value); return *this;}
 
   private:
 
     int m_availabilityZoneCount;
-    bool m_availabilityZoneCountHasBeenSet;
+    bool m_availabilityZoneCountHasBeenSet = false;
   };
 
 } // namespace Model

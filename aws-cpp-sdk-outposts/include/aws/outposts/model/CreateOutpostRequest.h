@@ -85,82 +85,42 @@ namespace Model
 
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline const Aws::String& GetSiteId() const{ return m_siteId; }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline bool SiteIdHasBeenSet() const { return m_siteIdHasBeenSet; }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline void SetSiteId(const Aws::String& value) { m_siteIdHasBeenSet = true; m_siteId = value; }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline void SetSiteId(Aws::String&& value) { m_siteIdHasBeenSet = true; m_siteId = std::move(value); }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline void SetSiteId(const char* value) { m_siteIdHasBeenSet = true; m_siteId.assign(value); }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline CreateOutpostRequest& WithSiteId(const Aws::String& value) { SetSiteId(value); return *this;}
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline CreateOutpostRequest& WithSiteId(Aws::String&& value) { SetSiteId(std::move(value)); return *this;}
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline CreateOutpostRequest& WithSiteId(const char* value) { SetSiteId(value); return *this;}
 
@@ -314,25 +274,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_siteId;
-    bool m_siteIdHasBeenSet;
+    bool m_siteIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     SupportedHardwareType m_supportedHardwareType;
-    bool m_supportedHardwareTypeHasBeenSet;
+    bool m_supportedHardwareTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListEntitiesDetectionJobsResult& ListEntitiesDetectionJobsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EntitiesDetectionJobPropertiesList"))
   {
-    Array<JsonView> entitiesDetectionJobPropertiesListJsonList = jsonValue.GetArray("EntitiesDetectionJobPropertiesList");
+    Aws::Utils::Array<JsonView> entitiesDetectionJobPropertiesListJsonList = jsonValue.GetArray("EntitiesDetectionJobPropertiesList");
     for(unsigned entitiesDetectionJobPropertiesListIndex = 0; entitiesDetectionJobPropertiesListIndex < entitiesDetectionJobPropertiesListJsonList.GetLength(); ++entitiesDetectionJobPropertiesListIndex)
     {
       m_entitiesDetectionJobPropertiesList.push_back(entitiesDetectionJobPropertiesListJsonList[entitiesDetectionJobPropertiesListIndex].AsObject());

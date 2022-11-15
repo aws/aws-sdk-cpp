@@ -109,10 +109,10 @@ namespace Model
   private:
 
     ExportServerSideEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     AutoExportRevisionDestinationEntry m_revisionDestination;
-    bool m_revisionDestinationHasBeenSet;
+    bool m_revisionDestinationHasBeenSet = false;
   };
 
 } // namespace Model

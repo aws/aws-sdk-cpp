@@ -30,7 +30,9 @@ UpdateWorkloadRequest::UpdateWorkloadRequest() :
     m_industryHasBeenSet(false),
     m_notesHasBeenSet(false),
     m_improvementStatus(WorkloadImprovementStatus::NOT_SET),
-    m_improvementStatusHasBeenSet(false)
+    m_improvementStatusHasBeenSet(false),
+    m_discoveryConfigHasBeenSet(false),
+    m_applicationsHasBeenSet(false)
 {
 }
 
@@ -57,7 +59,7 @@ Aws::String UpdateWorkloadRequest::SerializePayload() const
 
   if(m_accountIdsHasBeenSet)
   {
-   Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
    {
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
@@ -68,7 +70,7 @@ Aws::String UpdateWorkloadRequest::SerializePayload() const
 
   if(m_awsRegionsHasBeenSet)
   {
-   Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
+   Aws::Utils::Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
    for(unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex)
    {
      awsRegionsJsonList[awsRegionsIndex].AsString(m_awsRegions[awsRegionsIndex]);
@@ -79,7 +81,7 @@ Aws::String UpdateWorkloadRequest::SerializePayload() const
 
   if(m_nonAwsRegionsHasBeenSet)
   {
-   Array<JsonValue> nonAwsRegionsJsonList(m_nonAwsRegions.size());
+   Aws::Utils::Array<JsonValue> nonAwsRegionsJsonList(m_nonAwsRegions.size());
    for(unsigned nonAwsRegionsIndex = 0; nonAwsRegionsIndex < nonAwsRegionsJsonList.GetLength(); ++nonAwsRegionsIndex)
    {
      nonAwsRegionsJsonList[nonAwsRegionsIndex].AsString(m_nonAwsRegions[nonAwsRegionsIndex]);
@@ -90,7 +92,7 @@ Aws::String UpdateWorkloadRequest::SerializePayload() const
 
   if(m_pillarPrioritiesHasBeenSet)
   {
-   Array<JsonValue> pillarPrioritiesJsonList(m_pillarPriorities.size());
+   Aws::Utils::Array<JsonValue> pillarPrioritiesJsonList(m_pillarPriorities.size());
    for(unsigned pillarPrioritiesIndex = 0; pillarPrioritiesIndex < pillarPrioritiesJsonList.GetLength(); ++pillarPrioritiesIndex)
    {
      pillarPrioritiesJsonList[pillarPrioritiesIndex].AsString(m_pillarPriorities[pillarPrioritiesIndex]);
@@ -138,6 +140,23 @@ Aws::String UpdateWorkloadRequest::SerializePayload() const
   if(m_improvementStatusHasBeenSet)
   {
    payload.WithString("ImprovementStatus", WorkloadImprovementStatusMapper::GetNameForWorkloadImprovementStatus(m_improvementStatus));
+  }
+
+  if(m_discoveryConfigHasBeenSet)
+  {
+   payload.WithObject("DiscoveryConfig", m_discoveryConfig.Jsonize());
+
+  }
+
+  if(m_applicationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> applicationsJsonList(m_applications.size());
+   for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
+   {
+     applicationsJsonList[applicationsIndex].AsString(m_applications[applicationsIndex]);
+   }
+   payload.WithArray("Applications", std::move(applicationsJsonList));
+
   }
 
   return payload.View().WriteReadable();

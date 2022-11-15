@@ -82,32 +82,32 @@ namespace Model
 
 
     /**
-     * <p>Configuration settings for the job.</p>
+     * <p>Configuration settings for a software update job.</p>
      */
     inline const DeviceJobConfig& GetDeviceJobConfig() const{ return m_deviceJobConfig; }
 
     /**
-     * <p>Configuration settings for the job.</p>
+     * <p>Configuration settings for a software update job.</p>
      */
     inline bool DeviceJobConfigHasBeenSet() const { return m_deviceJobConfigHasBeenSet; }
 
     /**
-     * <p>Configuration settings for the job.</p>
+     * <p>Configuration settings for a software update job.</p>
      */
     inline void SetDeviceJobConfig(const DeviceJobConfig& value) { m_deviceJobConfigHasBeenSet = true; m_deviceJobConfig = value; }
 
     /**
-     * <p>Configuration settings for the job.</p>
+     * <p>Configuration settings for a software update job.</p>
      */
     inline void SetDeviceJobConfig(DeviceJobConfig&& value) { m_deviceJobConfigHasBeenSet = true; m_deviceJobConfig = std::move(value); }
 
     /**
-     * <p>Configuration settings for the job.</p>
+     * <p>Configuration settings for a software update job.</p>
      */
     inline CreateJobForDevicesRequest& WithDeviceJobConfig(const DeviceJobConfig& value) { SetDeviceJobConfig(value); return *this;}
 
     /**
-     * <p>Configuration settings for the job.</p>
+     * <p>Configuration settings for a software update job.</p>
      */
     inline CreateJobForDevicesRequest& WithDeviceJobConfig(DeviceJobConfig&& value) { SetDeviceJobConfig(std::move(value)); return *this;}
 
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_deviceIds;
-    bool m_deviceIdsHasBeenSet;
+    bool m_deviceIdsHasBeenSet = false;
 
     DeviceJobConfig m_deviceJobConfig;
-    bool m_deviceJobConfigHasBeenSet;
+    bool m_deviceJobConfigHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
   };
 
 } // namespace Model

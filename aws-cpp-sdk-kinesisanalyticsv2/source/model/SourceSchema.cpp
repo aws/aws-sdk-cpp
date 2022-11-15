@@ -51,7 +51,7 @@ SourceSchema& SourceSchema::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RecordColumns"))
   {
-    Array<JsonView> recordColumnsJsonList = jsonValue.GetArray("RecordColumns");
+    Aws::Utils::Array<JsonView> recordColumnsJsonList = jsonValue.GetArray("RecordColumns");
     for(unsigned recordColumnsIndex = 0; recordColumnsIndex < recordColumnsJsonList.GetLength(); ++recordColumnsIndex)
     {
       m_recordColumns.push_back(recordColumnsJsonList[recordColumnsIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue SourceSchema::Jsonize() const
 
   if(m_recordColumnsHasBeenSet)
   {
-   Array<JsonValue> recordColumnsJsonList(m_recordColumns.size());
+   Aws::Utils::Array<JsonValue> recordColumnsJsonList(m_recordColumns.size());
    for(unsigned recordColumnsIndex = 0; recordColumnsIndex < recordColumnsJsonList.GetLength(); ++recordColumnsIndex)
    {
      recordColumnsJsonList[recordColumnsIndex].AsObject(m_recordColumns[recordColumnsIndex].Jsonize());

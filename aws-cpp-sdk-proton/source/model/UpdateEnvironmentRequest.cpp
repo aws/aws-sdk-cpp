@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateEnvironmentRequest::UpdateEnvironmentRequest() : 
+    m_codebuildRoleArnHasBeenSet(false),
+    m_componentRoleArnHasBeenSet(false),
     m_deploymentType(DeploymentUpdateType::NOT_SET),
     m_deploymentTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -29,6 +31,18 @@ UpdateEnvironmentRequest::UpdateEnvironmentRequest() :
 Aws::String UpdateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_codebuildRoleArnHasBeenSet)
+  {
+   payload.WithString("codebuildRoleArn", m_codebuildRoleArn);
+
+  }
+
+  if(m_componentRoleArnHasBeenSet)
+  {
+   payload.WithString("componentRoleArn", m_componentRoleArn);
+
+  }
 
   if(m_deploymentTypeHasBeenSet)
   {

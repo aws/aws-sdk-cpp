@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
   };
 
 } // namespace Model

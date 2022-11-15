@@ -193,6 +193,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe node configuration.</p>
+     */
+    inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe node configuration.</p>
+     */
+    inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe node configuration.</p>
+     */
+    inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe node configuration.</p>
+     */
+    inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe node configuration.</p>
+     */
+    inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe node configuration.</p>
+     */
+    inline DescribeNodeConfigurationOptionsRequest& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe node configuration.</p>
+     */
+    inline DescribeNodeConfigurationOptionsRequest& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe node configuration.</p>
+     */
+    inline DescribeNodeConfigurationOptionsRequest& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
+
+
+    /**
      * <p>The Amazon Web Services account used to create or copy the snapshot. Required
      * if you are restoring a snapshot you do not own, optional if you own the
      * snapshot.</p>
@@ -414,25 +463,28 @@ namespace Model
   private:
 
     ActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotIdentifier;
-    bool m_snapshotIdentifierHasBeenSet;
+    bool m_snapshotIdentifierHasBeenSet = false;
+
+    Aws::String m_snapshotArn;
+    bool m_snapshotArnHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::Vector<NodeConfigurationOptionsFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
   };
 
 } // namespace Model

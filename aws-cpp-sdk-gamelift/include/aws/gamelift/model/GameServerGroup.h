@@ -803,40 +803,40 @@ namespace Model
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
 
     Aws::String m_gameServerGroupArn;
-    bool m_gameServerGroupArnHasBeenSet;
+    bool m_gameServerGroupArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<InstanceDefinition> m_instanceDefinitions;
-    bool m_instanceDefinitionsHasBeenSet;
+    bool m_instanceDefinitionsHasBeenSet = false;
 
     BalancingStrategy m_balancingStrategy;
-    bool m_balancingStrategyHasBeenSet;
+    bool m_balancingStrategyHasBeenSet = false;
 
     GameServerProtectionPolicy m_gameServerProtectionPolicy;
-    bool m_gameServerProtectionPolicyHasBeenSet;
+    bool m_gameServerProtectionPolicyHasBeenSet = false;
 
     Aws::String m_autoScalingGroupArn;
-    bool m_autoScalingGroupArnHasBeenSet;
+    bool m_autoScalingGroupArnHasBeenSet = false;
 
     GameServerGroupStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::Vector<GameServerGroupAction> m_suspendedActions;
-    bool m_suspendedActionsHasBeenSet;
+    bool m_suspendedActionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

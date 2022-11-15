@@ -55,7 +55,7 @@ ContentRedaction& ContentRedaction::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PiiEntityTypes"))
   {
-    Array<JsonView> piiEntityTypesJsonList = jsonValue.GetArray("PiiEntityTypes");
+    Aws::Utils::Array<JsonView> piiEntityTypesJsonList = jsonValue.GetArray("PiiEntityTypes");
     for(unsigned piiEntityTypesIndex = 0; piiEntityTypesIndex < piiEntityTypesJsonList.GetLength(); ++piiEntityTypesIndex)
     {
       m_piiEntityTypes.push_back(PiiEntityTypeMapper::GetPiiEntityTypeForName(piiEntityTypesJsonList[piiEntityTypesIndex].AsString()));
@@ -82,7 +82,7 @@ JsonValue ContentRedaction::Jsonize() const
 
   if(m_piiEntityTypesHasBeenSet)
   {
-   Array<JsonValue> piiEntityTypesJsonList(m_piiEntityTypes.size());
+   Aws::Utils::Array<JsonValue> piiEntityTypesJsonList(m_piiEntityTypes.size());
    for(unsigned piiEntityTypesIndex = 0; piiEntityTypesIndex < piiEntityTypesJsonList.GetLength(); ++piiEntityTypesIndex)
    {
      piiEntityTypesJsonList[piiEntityTypesIndex].AsString(PiiEntityTypeMapper::GetNameForPiiEntityType(m_piiEntityTypes[piiEntityTypesIndex]));

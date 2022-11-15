@@ -80,7 +80,7 @@ ApplicationConfiguration& ApplicationConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("VpcConfigurations"))
   {
-    Array<JsonView> vpcConfigurationsJsonList = jsonValue.GetArray("VpcConfigurations");
+    Aws::Utils::Array<JsonView> vpcConfigurationsJsonList = jsonValue.GetArray("VpcConfigurations");
     for(unsigned vpcConfigurationsIndex = 0; vpcConfigurationsIndex < vpcConfigurationsJsonList.GetLength(); ++vpcConfigurationsIndex)
     {
       m_vpcConfigurations.push_back(vpcConfigurationsJsonList[vpcConfigurationsIndex].AsObject());
@@ -134,7 +134,7 @@ JsonValue ApplicationConfiguration::Jsonize() const
 
   if(m_vpcConfigurationsHasBeenSet)
   {
-   Array<JsonValue> vpcConfigurationsJsonList(m_vpcConfigurations.size());
+   Aws::Utils::Array<JsonValue> vpcConfigurationsJsonList(m_vpcConfigurations.size());
    for(unsigned vpcConfigurationsIndex = 0; vpcConfigurationsIndex < vpcConfigurationsJsonList.GetLength(); ++vpcConfigurationsIndex)
    {
      vpcConfigurationsJsonList[vpcConfigurationsIndex].AsObject(m_vpcConfigurations[vpcConfigurationsIndex].Jsonize());

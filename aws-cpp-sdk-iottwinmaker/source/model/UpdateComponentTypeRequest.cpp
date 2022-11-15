@@ -36,7 +36,7 @@ Aws::String UpdateComponentTypeRequest::SerializePayload() const
 
   if(m_extendsFromHasBeenSet)
   {
-   Array<JsonValue> extendsFromJsonList(m_extendsFrom.size());
+   Aws::Utils::Array<JsonValue> extendsFromJsonList(m_extendsFrom.size());
    for(unsigned extendsFromIndex = 0; extendsFromIndex < extendsFromJsonList.GetLength(); ++extendsFromIndex)
    {
      extendsFromJsonList[extendsFromIndex].AsString(m_extendsFrom[extendsFromIndex]);

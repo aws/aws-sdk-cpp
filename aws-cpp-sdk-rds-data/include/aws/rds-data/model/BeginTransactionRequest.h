@@ -37,47 +37,6 @@ namespace Model
 
 
     /**
-     * <p>The name of the database.</p>
-     */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline BeginTransactionRequest& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline BeginTransactionRequest& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline BeginTransactionRequest& WithDatabase(const char* value) { SetDatabase(value); return *this;}
-
-
-    /**
      * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
@@ -116,47 +75,6 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
      */
     inline BeginTransactionRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline const Aws::String& GetSchema() const{ return m_schema; }
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline BeginTransactionRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline BeginTransactionRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline BeginTransactionRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
 
 
     /**
@@ -199,19 +117,101 @@ namespace Model
      */
     inline BeginTransactionRequest& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline const Aws::String& GetDatabase() const{ return m_database; }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline BeginTransactionRequest& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline BeginTransactionRequest& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline BeginTransactionRequest& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline const Aws::String& GetSchema() const{ return m_schema; }
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline BeginTransactionRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline BeginTransactionRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline BeginTransactionRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
+
   private:
 
-    Aws::String m_database;
-    bool m_databaseHasBeenSet;
-
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
-
-    Aws::String m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
+
+    Aws::String m_database;
+    bool m_databaseHasBeenSet = false;
+
+    Aws::String m_schema;
+    bool m_schemaHasBeenSet = false;
   };
 
 } // namespace Model

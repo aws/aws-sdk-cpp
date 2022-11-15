@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_licenseConversionTaskId;
-    bool m_licenseConversionTaskIdHasBeenSet;
+    bool m_licenseConversionTaskIdHasBeenSet = false;
   };
 
 } // namespace Model

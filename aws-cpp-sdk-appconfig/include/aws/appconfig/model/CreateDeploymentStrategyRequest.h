@@ -139,26 +139,50 @@ namespace Model
 
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms
+     * after the configuration has been deployed to 100% of its targets, before
+     * considering the deployment to be complete. If an alarm is triggered during this
+     * time, AppConfig rolls back the deployment. You must configure permissions for
+     * AppConfig to roll back based on CloudWatch alarms. For more information, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring
+     * permissions for rollback based on Amazon CloudWatch alarms</a> in the
+     * <i>AppConfig User Guide</i>.</p>
      */
     inline int GetFinalBakeTimeInMinutes() const{ return m_finalBakeTimeInMinutes; }
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms
+     * after the configuration has been deployed to 100% of its targets, before
+     * considering the deployment to be complete. If an alarm is triggered during this
+     * time, AppConfig rolls back the deployment. You must configure permissions for
+     * AppConfig to roll back based on CloudWatch alarms. For more information, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring
+     * permissions for rollback based on Amazon CloudWatch alarms</a> in the
+     * <i>AppConfig User Guide</i>.</p>
      */
     inline bool FinalBakeTimeInMinutesHasBeenSet() const { return m_finalBakeTimeInMinutesHasBeenSet; }
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms
+     * after the configuration has been deployed to 100% of its targets, before
+     * considering the deployment to be complete. If an alarm is triggered during this
+     * time, AppConfig rolls back the deployment. You must configure permissions for
+     * AppConfig to roll back based on CloudWatch alarms. For more information, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring
+     * permissions for rollback based on Amazon CloudWatch alarms</a> in the
+     * <i>AppConfig User Guide</i>.</p>
      */
     inline void SetFinalBakeTimeInMinutes(int value) { m_finalBakeTimeInMinutesHasBeenSet = true; m_finalBakeTimeInMinutes = value; }
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms
+     * after the configuration has been deployed to 100% of its targets, before
+     * considering the deployment to be complete. If an alarm is triggered during this
+     * time, AppConfig rolls back the deployment. You must configure permissions for
+     * AppConfig to roll back based on CloudWatch alarms. For more information, see <a
+     * href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring
+     * permissions for rollback based on Amazon CloudWatch alarms</a> in the
+     * <i>AppConfig User Guide</i>.</p>
      */
     inline CreateDeploymentStrategyRequest& WithFinalBakeTimeInMinutes(int value) { SetFinalBakeTimeInMinutes(value); return *this;}
 
@@ -446,28 +470,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_deploymentDurationInMinutes;
-    bool m_deploymentDurationInMinutesHasBeenSet;
+    bool m_deploymentDurationInMinutesHasBeenSet = false;
 
     int m_finalBakeTimeInMinutes;
-    bool m_finalBakeTimeInMinutesHasBeenSet;
+    bool m_finalBakeTimeInMinutesHasBeenSet = false;
 
     double m_growthFactor;
-    bool m_growthFactorHasBeenSet;
+    bool m_growthFactorHasBeenSet = false;
 
     GrowthType m_growthType;
-    bool m_growthTypeHasBeenSet;
+    bool m_growthTypeHasBeenSet = false;
 
     ReplicateTo m_replicateTo;
-    bool m_replicateToHasBeenSet;
+    bool m_replicateToHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

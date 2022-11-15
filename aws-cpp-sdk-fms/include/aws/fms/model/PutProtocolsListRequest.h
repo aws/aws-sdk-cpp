@@ -110,10 +110,10 @@ namespace Model
   private:
 
     ProtocolsListData m_protocolsList;
-    bool m_protocolsListHasBeenSet;
+    bool m_protocolsListHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
   };
 
 } // namespace Model

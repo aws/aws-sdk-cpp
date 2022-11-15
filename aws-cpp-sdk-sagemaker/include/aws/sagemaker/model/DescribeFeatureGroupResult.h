@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/OfflineStoreConfig.h>
 #include <aws/sagemaker/model/FeatureGroupStatus.h>
 #include <aws/sagemaker/model/OfflineStoreStatus.h>
+#include <aws/sagemaker/model/LastUpdateStatus.h>
 #include <aws/sagemaker/model/FeatureDefinition.h>
 #include <utility>
 
@@ -300,6 +301,32 @@ namespace Model
 
 
     /**
+     * <p>A timestamp indicating when the feature group was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>A timestamp indicating when the feature group was last updated.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
+
+    /**
+     * <p>A timestamp indicating when the feature group was last updated.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>A timestamp indicating when the feature group was last updated.</p>
+     */
+    inline DescribeFeatureGroupResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>A timestamp indicating when the feature group was last updated.</p>
+     */
+    inline DescribeFeatureGroupResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The configuration for the <code>OnlineStore</code>.</p>
      */
     inline const OnlineStoreConfig& GetOnlineStoreConfig() const{ return m_onlineStoreConfig; }
@@ -474,6 +501,37 @@ namespace Model
 
 
     /**
+     * <p>A value indicating whether the update made to the feature group was
+     * successful.</p>
+     */
+    inline const LastUpdateStatus& GetLastUpdateStatus() const{ return m_lastUpdateStatus; }
+
+    /**
+     * <p>A value indicating whether the update made to the feature group was
+     * successful.</p>
+     */
+    inline void SetLastUpdateStatus(const LastUpdateStatus& value) { m_lastUpdateStatus = value; }
+
+    /**
+     * <p>A value indicating whether the update made to the feature group was
+     * successful.</p>
+     */
+    inline void SetLastUpdateStatus(LastUpdateStatus&& value) { m_lastUpdateStatus = std::move(value); }
+
+    /**
+     * <p>A value indicating whether the update made to the feature group was
+     * successful.</p>
+     */
+    inline DescribeFeatureGroupResult& WithLastUpdateStatus(const LastUpdateStatus& value) { SetLastUpdateStatus(value); return *this;}
+
+    /**
+     * <p>A value indicating whether the update made to the feature group was
+     * successful.</p>
+     */
+    inline DescribeFeatureGroupResult& WithLastUpdateStatus(LastUpdateStatus&& value) { SetLastUpdateStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the
      * <code>OfflineStore</code>. This is failure can occur because:</p> <ul> <li>
      * <p>The <code>FeatureGroup</code> could not be created in the
@@ -615,6 +673,22 @@ namespace Model
      */
     inline DescribeFeatureGroupResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The size of the <code>OnlineStore</code> in bytes.</p>
+     */
+    inline long long GetOnlineStoreTotalSizeBytes() const{ return m_onlineStoreTotalSizeBytes; }
+
+    /**
+     * <p>The size of the <code>OnlineStore</code> in bytes.</p>
+     */
+    inline void SetOnlineStoreTotalSizeBytes(long long value) { m_onlineStoreTotalSizeBytes = value; }
+
+    /**
+     * <p>The size of the <code>OnlineStore</code> in bytes.</p>
+     */
+    inline DescribeFeatureGroupResult& WithOnlineStoreTotalSizeBytes(long long value) { SetOnlineStoreTotalSizeBytes(value); return *this;}
+
   private:
 
     Aws::String m_featureGroupArn;
@@ -629,6 +703,8 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
 
+    Aws::Utils::DateTime m_lastModifiedTime;
+
     OnlineStoreConfig m_onlineStoreConfig;
 
     OfflineStoreConfig m_offlineStoreConfig;
@@ -639,11 +715,15 @@ namespace Model
 
     OfflineStoreStatus m_offlineStoreStatus;
 
+    LastUpdateStatus m_lastUpdateStatus;
+
     Aws::String m_failureReason;
 
     Aws::String m_description;
 
     Aws::String m_nextToken;
+
+    long long m_onlineStoreTotalSizeBytes;
   };
 
 } // namespace Model

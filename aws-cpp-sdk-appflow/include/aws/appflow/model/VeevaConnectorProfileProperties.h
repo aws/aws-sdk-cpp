@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_instanceUrl;
-    bool m_instanceUrlHasBeenSet;
+    bool m_instanceUrlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -673,40 +673,84 @@ namespace Model
      */
     inline StackInstance& WithLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastDriftCheckTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline const Aws::String& GetLastOperationId() const{ return m_lastOperationId; }
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline bool LastOperationIdHasBeenSet() const { return m_lastOperationIdHasBeenSet; }
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline void SetLastOperationId(const Aws::String& value) { m_lastOperationIdHasBeenSet = true; m_lastOperationId = value; }
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline void SetLastOperationId(Aws::String&& value) { m_lastOperationIdHasBeenSet = true; m_lastOperationId = std::move(value); }
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline void SetLastOperationId(const char* value) { m_lastOperationIdHasBeenSet = true; m_lastOperationId.assign(value); }
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline StackInstance& WithLastOperationId(const Aws::String& value) { SetLastOperationId(value); return *this;}
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline StackInstance& WithLastOperationId(Aws::String&& value) { SetLastOperationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline StackInstance& WithLastOperationId(const char* value) { SetLastOperationId(value); return *this;}
+
   private:
 
     Aws::String m_stackSetId;
-    bool m_stackSetIdHasBeenSet;
+    bool m_stackSetIdHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameterOverrides;
-    bool m_parameterOverridesHasBeenSet;
+    bool m_parameterOverridesHasBeenSet = false;
 
     StackInstanceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     StackInstanceComprehensiveStatus m_stackInstanceStatus;
-    bool m_stackInstanceStatusHasBeenSet;
+    bool m_stackInstanceStatusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_organizationalUnitId;
-    bool m_organizationalUnitIdHasBeenSet;
+    bool m_organizationalUnitIdHasBeenSet = false;
 
     StackDriftStatus m_driftStatus;
-    bool m_driftStatusHasBeenSet;
+    bool m_driftStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDriftCheckTimestamp;
-    bool m_lastDriftCheckTimestampHasBeenSet;
+    bool m_lastDriftCheckTimestampHasBeenSet = false;
+
+    Aws::String m_lastOperationId;
+    bool m_lastOperationIdHasBeenSet = false;
   };
 
 } // namespace Model

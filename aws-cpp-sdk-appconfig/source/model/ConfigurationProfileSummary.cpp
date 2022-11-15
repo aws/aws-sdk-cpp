@@ -71,7 +71,7 @@ ConfigurationProfileSummary& ConfigurationProfileSummary::operator =(JsonView js
 
   if(jsonValue.ValueExists("ValidatorTypes"))
   {
-    Array<JsonView> validatorTypesJsonList = jsonValue.GetArray("ValidatorTypes");
+    Aws::Utils::Array<JsonView> validatorTypesJsonList = jsonValue.GetArray("ValidatorTypes");
     for(unsigned validatorTypesIndex = 0; validatorTypesIndex < validatorTypesJsonList.GetLength(); ++validatorTypesIndex)
     {
       m_validatorTypes.push_back(ValidatorTypeMapper::GetValidatorTypeForName(validatorTypesJsonList[validatorTypesIndex].AsString()));
@@ -119,7 +119,7 @@ JsonValue ConfigurationProfileSummary::Jsonize() const
 
   if(m_validatorTypesHasBeenSet)
   {
-   Array<JsonValue> validatorTypesJsonList(m_validatorTypes.size());
+   Aws::Utils::Array<JsonValue> validatorTypesJsonList(m_validatorTypes.size());
    for(unsigned validatorTypesIndex = 0; validatorTypesIndex < validatorTypesJsonList.GetLength(); ++validatorTypesIndex)
    {
      validatorTypesJsonList[validatorTypesIndex].AsString(ValidatorTypeMapper::GetNameForValidatorType(m_validatorTypes[validatorTypesIndex]));

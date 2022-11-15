@@ -242,19 +242,19 @@ namespace Model
   private:
 
     Aws::Vector<QueryFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     TimeRange m_timeRange;
-    bool m_timeRangeHasBeenSet;
+    bool m_timeRangeHasBeenSet = false;
   };
 
 } // namespace Model

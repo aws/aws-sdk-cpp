@@ -874,73 +874,73 @@ namespace Model
 
 
     /**
-     * <p>Whether or not the extension is activated for this account and region.</p>
-     * <p>This applies only to third-party public extensions. Extensions published by
-     * Amazon are activated by default.</p>
+     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * applies only to third-party public extensions. Extensions published by Amazon
+     * are activated by default.</p>
      */
     inline bool GetIsActivated() const{ return m_isActivated; }
 
     /**
-     * <p>Whether or not the extension is activated for this account and region.</p>
-     * <p>This applies only to third-party public extensions. Extensions published by
-     * Amazon are activated by default.</p>
+     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * applies only to third-party public extensions. Extensions published by Amazon
+     * are activated by default.</p>
      */
     inline bool IsActivatedHasBeenSet() const { return m_isActivatedHasBeenSet; }
 
     /**
-     * <p>Whether or not the extension is activated for this account and region.</p>
-     * <p>This applies only to third-party public extensions. Extensions published by
-     * Amazon are activated by default.</p>
+     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * applies only to third-party public extensions. Extensions published by Amazon
+     * are activated by default.</p>
      */
     inline void SetIsActivated(bool value) { m_isActivatedHasBeenSet = true; m_isActivated = value; }
 
     /**
-     * <p>Whether or not the extension is activated for this account and region.</p>
-     * <p>This applies only to third-party public extensions. Extensions published by
-     * Amazon are activated by default.</p>
+     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * applies only to third-party public extensions. Extensions published by Amazon
+     * are activated by default.</p>
      */
     inline TypeSummary& WithIsActivated(bool value) { SetIsActivated(value); return *this;}
 
   private:
 
     RegistryType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_defaultVersionId;
-    bool m_defaultVersionIdHasBeenSet;
+    bool m_defaultVersionIdHasBeenSet = false;
 
     Aws::String m_typeArn;
-    bool m_typeArnHasBeenSet;
+    bool m_typeArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_publisherId;
-    bool m_publisherIdHasBeenSet;
+    bool m_publisherIdHasBeenSet = false;
 
     Aws::String m_originalTypeName;
-    bool m_originalTypeNameHasBeenSet;
+    bool m_originalTypeNameHasBeenSet = false;
 
     Aws::String m_publicVersionNumber;
-    bool m_publicVersionNumberHasBeenSet;
+    bool m_publicVersionNumberHasBeenSet = false;
 
     Aws::String m_latestPublicVersion;
-    bool m_latestPublicVersionHasBeenSet;
+    bool m_latestPublicVersionHasBeenSet = false;
 
     IdentityProvider m_publisherIdentity;
-    bool m_publisherIdentityHasBeenSet;
+    bool m_publisherIdentityHasBeenSet = false;
 
     Aws::String m_publisherName;
-    bool m_publisherNameHasBeenSet;
+    bool m_publisherNameHasBeenSet = false;
 
     bool m_isActivated;
-    bool m_isActivatedHasBeenSet;
+    bool m_isActivatedHasBeenSet = false;
   };
 
 } // namespace Model

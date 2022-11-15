@@ -288,62 +288,82 @@ namespace Model
     inline ApplicationInfo& WithRemarks(const char* value) { SetRemarks(value); return *this;}
 
 
-    
+    /**
+     * <p> Indicates whether auto-configuration is turned on for this application. </p>
+     */
     inline bool GetAutoConfigEnabled() const{ return m_autoConfigEnabled; }
 
-    
+    /**
+     * <p> Indicates whether auto-configuration is turned on for this application. </p>
+     */
     inline bool AutoConfigEnabledHasBeenSet() const { return m_autoConfigEnabledHasBeenSet; }
 
-    
+    /**
+     * <p> Indicates whether auto-configuration is turned on for this application. </p>
+     */
     inline void SetAutoConfigEnabled(bool value) { m_autoConfigEnabledHasBeenSet = true; m_autoConfigEnabled = value; }
 
-    
+    /**
+     * <p> Indicates whether auto-configuration is turned on for this application. </p>
+     */
     inline ApplicationInfo& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
 
 
-    
+    /**
+     * <p> The method used by Application Insights to onboard your resources. </p>
+     */
     inline const DiscoveryType& GetDiscoveryType() const{ return m_discoveryType; }
 
-    
+    /**
+     * <p> The method used by Application Insights to onboard your resources. </p>
+     */
     inline bool DiscoveryTypeHasBeenSet() const { return m_discoveryTypeHasBeenSet; }
 
-    
+    /**
+     * <p> The method used by Application Insights to onboard your resources. </p>
+     */
     inline void SetDiscoveryType(const DiscoveryType& value) { m_discoveryTypeHasBeenSet = true; m_discoveryType = value; }
 
-    
+    /**
+     * <p> The method used by Application Insights to onboard your resources. </p>
+     */
     inline void SetDiscoveryType(DiscoveryType&& value) { m_discoveryTypeHasBeenSet = true; m_discoveryType = std::move(value); }
 
-    
+    /**
+     * <p> The method used by Application Insights to onboard your resources. </p>
+     */
     inline ApplicationInfo& WithDiscoveryType(const DiscoveryType& value) { SetDiscoveryType(value); return *this;}
 
-    
+    /**
+     * <p> The method used by Application Insights to onboard your resources. </p>
+     */
     inline ApplicationInfo& WithDiscoveryType(DiscoveryType&& value) { SetDiscoveryType(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_lifeCycle;
-    bool m_lifeCycleHasBeenSet;
+    bool m_lifeCycleHasBeenSet = false;
 
     Aws::String m_opsItemSNSTopicArn;
-    bool m_opsItemSNSTopicArnHasBeenSet;
+    bool m_opsItemSNSTopicArnHasBeenSet = false;
 
     bool m_opsCenterEnabled;
-    bool m_opsCenterEnabledHasBeenSet;
+    bool m_opsCenterEnabledHasBeenSet = false;
 
     bool m_cWEMonitorEnabled;
-    bool m_cWEMonitorEnabledHasBeenSet;
+    bool m_cWEMonitorEnabledHasBeenSet = false;
 
     Aws::String m_remarks;
-    bool m_remarksHasBeenSet;
+    bool m_remarksHasBeenSet = false;
 
     bool m_autoConfigEnabled;
-    bool m_autoConfigEnabledHasBeenSet;
+    bool m_autoConfigEnabledHasBeenSet = false;
 
     DiscoveryType m_discoveryType;
-    bool m_discoveryTypeHasBeenSet;
+    bool m_discoveryTypeHasBeenSet = false;
   };
 
 } // namespace Model

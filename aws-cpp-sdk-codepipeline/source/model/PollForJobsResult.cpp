@@ -30,7 +30,7 @@ PollForJobsResult& PollForJobsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("jobs"))
   {
-    Array<JsonView> jobsJsonList = jsonValue.GetArray("jobs");
+    Aws::Utils::Array<JsonView> jobsJsonList = jsonValue.GetArray("jobs");
     for(unsigned jobsIndex = 0; jobsIndex < jobsJsonList.GetLength(); ++jobsIndex)
     {
       m_jobs.push_back(jobsJsonList[jobsIndex].AsObject());

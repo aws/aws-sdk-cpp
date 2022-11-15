@@ -32,7 +32,7 @@ DetectLabelsResult& DetectLabelsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Labels"))
   {
-    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
+    Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsObject());
@@ -48,6 +48,12 @@ DetectLabelsResult& DetectLabelsResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("LabelModelVersion"))
   {
     m_labelModelVersion = jsonValue.GetString("LabelModelVersion");
+
+  }
+
+  if(jsonValue.ValueExists("ImageProperties"))
+  {
+    m_imageProperties = jsonValue.GetObject("ImageProperties");
 
   }
 

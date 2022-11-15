@@ -84,7 +84,7 @@ WorkloadSummary& WorkloadSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Lenses"))
   {
-    Array<JsonView> lensesJsonList = jsonValue.GetArray("Lenses");
+    Aws::Utils::Array<JsonView> lensesJsonList = jsonValue.GetArray("Lenses");
     for(unsigned lensesIndex = 0; lensesIndex < lensesJsonList.GetLength(); ++lensesIndex)
     {
       m_lenses.push_back(lensesJsonList[lensesIndex].AsString());
@@ -147,7 +147,7 @@ JsonValue WorkloadSummary::Jsonize() const
 
   if(m_lensesHasBeenSet)
   {
-   Array<JsonValue> lensesJsonList(m_lenses.size());
+   Aws::Utils::Array<JsonValue> lensesJsonList(m_lenses.size());
    for(unsigned lensesIndex = 0; lensesIndex < lensesJsonList.GetLength(); ++lensesIndex)
    {
      lensesJsonList[lensesIndex].AsString(m_lenses[lensesIndex]);

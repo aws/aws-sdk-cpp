@@ -255,16 +255,16 @@ namespace Model
   private:
 
     Aws::String m_associatedWithJob;
-    bool m_associatedWithJobHasBeenSet;
+    bool m_associatedWithJobHasBeenSet = false;
 
     Aws::String m_managedDeviceArn;
-    bool m_managedDeviceArnHasBeenSet;
+    bool m_managedDeviceArnHasBeenSet = false;
 
     Aws::String m_managedDeviceId;
-    bool m_managedDeviceIdHasBeenSet;
+    bool m_managedDeviceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

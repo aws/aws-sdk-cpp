@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_dashboardName;
-    bool m_dashboardNameHasBeenSet;
+    bool m_dashboardNameHasBeenSet = false;
   };
 
 } // namespace Model

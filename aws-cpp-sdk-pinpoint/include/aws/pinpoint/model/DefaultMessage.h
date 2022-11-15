@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-    bool m_substitutionsHasBeenSet;
+    bool m_substitutionsHasBeenSet = false;
   };
 
 } // namespace Model

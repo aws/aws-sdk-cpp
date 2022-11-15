@@ -63,7 +63,7 @@ Aws::String CreateLagRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -74,7 +74,7 @@ Aws::String CreateLagRequest::SerializePayload() const
 
   if(m_childConnectionTagsHasBeenSet)
   {
-   Array<JsonValue> childConnectionTagsJsonList(m_childConnectionTags.size());
+   Aws::Utils::Array<JsonValue> childConnectionTagsJsonList(m_childConnectionTags.size());
    for(unsigned childConnectionTagsIndex = 0; childConnectionTagsIndex < childConnectionTagsJsonList.GetLength(); ++childConnectionTagsIndex)
    {
      childConnectionTagsJsonList[childConnectionTagsIndex].AsObject(m_childConnectionTags[childConnectionTagsIndex].Jsonize());

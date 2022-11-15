@@ -82,32 +82,32 @@ namespace Model
 
 
     /**
-     * <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+     * <p>The time when the blacklisting event occurred.</p>
      */
     inline const Aws::Utils::DateTime& GetListingTime() const{ return m_listingTime; }
 
     /**
-     * <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+     * <p>The time when the blacklisting event occurred.</p>
      */
     inline bool ListingTimeHasBeenSet() const { return m_listingTimeHasBeenSet; }
 
     /**
-     * <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+     * <p>The time when the blacklisting event occurred.</p>
      */
     inline void SetListingTime(const Aws::Utils::DateTime& value) { m_listingTimeHasBeenSet = true; m_listingTime = value; }
 
     /**
-     * <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+     * <p>The time when the blacklisting event occurred.</p>
      */
     inline void SetListingTime(Aws::Utils::DateTime&& value) { m_listingTimeHasBeenSet = true; m_listingTime = std::move(value); }
 
     /**
-     * <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+     * <p>The time when the blacklisting event occurred.</p>
      */
     inline BlacklistEntry& WithListingTime(const Aws::Utils::DateTime& value) { SetListingTime(value); return *this;}
 
     /**
-     * <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+     * <p>The time when the blacklisting event occurred.</p>
      */
     inline BlacklistEntry& WithListingTime(Aws::Utils::DateTime&& value) { SetListingTime(std::move(value)); return *this;}
 
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_rblName;
-    bool m_rblNameHasBeenSet;
+    bool m_rblNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_listingTime;
-    bool m_listingTimeHasBeenSet;
+    bool m_listingTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -184,10 +184,10 @@ namespace Model
   private:
 
     Aws::String m_globalClusterIdentifier;
-    bool m_globalClusterIdentifierHasBeenSet;
+    bool m_globalClusterIdentifierHasBeenSet = false;
 
     Aws::String m_targetDbClusterIdentifier;
-    bool m_targetDbClusterIdentifierHasBeenSet;
+    bool m_targetDbClusterIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

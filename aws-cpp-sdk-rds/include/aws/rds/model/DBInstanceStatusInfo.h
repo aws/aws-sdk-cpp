@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_statusType;
-    bool m_statusTypeHasBeenSet;
+    bool m_statusTypeHasBeenSet = false;
 
     bool m_normal;
-    bool m_normalHasBeenSet;
+    bool m_normalHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

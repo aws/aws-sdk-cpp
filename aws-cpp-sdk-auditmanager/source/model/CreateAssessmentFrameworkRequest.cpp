@@ -45,7 +45,7 @@ Aws::String CreateAssessmentFrameworkRequest::SerializePayload() const
 
   if(m_controlSetsHasBeenSet)
   {
-   Array<JsonValue> controlSetsJsonList(m_controlSets.size());
+   Aws::Utils::Array<JsonValue> controlSetsJsonList(m_controlSets.size());
    for(unsigned controlSetsIndex = 0; controlSetsIndex < controlSetsJsonList.GetLength(); ++controlSetsIndex)
    {
      controlSetsJsonList[controlSetsIndex].AsObject(m_controlSets[controlSetsIndex].Jsonize());

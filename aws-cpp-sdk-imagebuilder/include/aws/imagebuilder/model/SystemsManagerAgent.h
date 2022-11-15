@@ -71,7 +71,7 @@ namespace Model
   private:
 
     bool m_uninstallAfterBuild;
-    bool m_uninstallAfterBuildHasBeenSet;
+    bool m_uninstallAfterBuildHasBeenSet = false;
   };
 
 } // namespace Model

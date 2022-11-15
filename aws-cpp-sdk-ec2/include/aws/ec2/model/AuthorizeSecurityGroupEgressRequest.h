@@ -435,34 +435,34 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::Vector<IpPermission> m_ipPermissions;
-    bool m_ipPermissionsHasBeenSet;
+    bool m_ipPermissionsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::String m_cidrIp;
-    bool m_cidrIpHasBeenSet;
+    bool m_cidrIpHasBeenSet = false;
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     Aws::String m_ipProtocol;
-    bool m_ipProtocolHasBeenSet;
+    bool m_ipProtocolHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     Aws::String m_sourceSecurityGroupName;
-    bool m_sourceSecurityGroupNameHasBeenSet;
+    bool m_sourceSecurityGroupNameHasBeenSet = false;
 
     Aws::String m_sourceSecurityGroupOwnerId;
-    bool m_sourceSecurityGroupOwnerIdHasBeenSet;
+    bool m_sourceSecurityGroupOwnerIdHasBeenSet = false;
   };
 
 } // namespace Model

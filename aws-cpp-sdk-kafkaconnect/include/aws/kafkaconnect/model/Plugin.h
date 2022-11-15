@@ -71,7 +71,7 @@ namespace Model
   private:
 
     CustomPlugin m_customPlugin;
-    bool m_customPluginHasBeenSet;
+    bool m_customPluginHasBeenSet = false;
   };
 
 } // namespace Model

@@ -178,16 +178,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     Aws::Utils::DateTime m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     FreeTrialStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     FreeTrialType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

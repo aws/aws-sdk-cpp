@@ -70,7 +70,7 @@ namespace Model
   private:
 
     SchemaDefinition m_tabularSchemaConfig;
-    bool m_tabularSchemaConfigHasBeenSet;
+    bool m_tabularSchemaConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,7 +5,8 @@
 #define AWS_DISABLE_DEPRECATION
 #ifndef NO_SYMMETRIC_ENCRYPTION
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/Aws.h>
 #include <aws/core/utils/crypto/CryptoBuf.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -174,7 +175,7 @@ namespace
 
         SimpleEncryptionMaterialsWithGCMAAD encryptionMaterialsGood(SymmetricCipher::GenerateKey(32));
         auto outcomeGood = encryptionMaterialsGood.EncryptCEK(contentCryptoMaterial);
-        ASSERT_TRUE(outcomeGood.IsSuccess());
+        AWS_ASSERT_SUCCESS(outcomeGood);
     }
 
     TEST_F(SimpleEncryptionMaterialsWithGCMAADTest, DecryptWithMalformedFinalCEKTest)

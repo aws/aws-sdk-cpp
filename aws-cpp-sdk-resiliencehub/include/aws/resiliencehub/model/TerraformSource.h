@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_s3StateFileUrl;
-    bool m_s3StateFileUrlHasBeenSet;
+    bool m_s3StateFileUrlHasBeenSet = false;
   };
 
 } // namespace Model

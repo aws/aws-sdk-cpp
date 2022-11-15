@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::Vector<MessageGroup> m_messageGroups;
-    bool m_messageGroupsHasBeenSet;
+    bool m_messageGroupsHasBeenSet = false;
 
     bool m_allowInterrupt;
-    bool m_allowInterruptHasBeenSet;
+    bool m_allowInterruptHasBeenSet = false;
   };
 
 } // namespace Model

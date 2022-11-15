@@ -30,7 +30,7 @@ ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceTags"))
   {
-    Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
+    Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
     for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
     {
       m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());

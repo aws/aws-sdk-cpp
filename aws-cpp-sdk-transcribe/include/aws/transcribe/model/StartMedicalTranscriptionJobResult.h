@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p>A batch job submitted to transcribe medical speech to text.</p>
+     * <p>Provides detailed information about the current medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline const MedicalTranscriptionJob& GetMedicalTranscriptionJob() const{ return m_medicalTranscriptionJob; }
 
     /**
-     * <p>A batch job submitted to transcribe medical speech to text.</p>
+     * <p>Provides detailed information about the current medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline void SetMedicalTranscriptionJob(const MedicalTranscriptionJob& value) { m_medicalTranscriptionJob = value; }
 
     /**
-     * <p>A batch job submitted to transcribe medical speech to text.</p>
+     * <p>Provides detailed information about the current medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline void SetMedicalTranscriptionJob(MedicalTranscriptionJob&& value) { m_medicalTranscriptionJob = std::move(value); }
 
     /**
-     * <p>A batch job submitted to transcribe medical speech to text.</p>
+     * <p>Provides detailed information about the current medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline StartMedicalTranscriptionJobResult& WithMedicalTranscriptionJob(const MedicalTranscriptionJob& value) { SetMedicalTranscriptionJob(value); return *this;}
 
     /**
-     * <p>A batch job submitted to transcribe medical speech to text.</p>
+     * <p>Provides detailed information about the current medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline StartMedicalTranscriptionJobResult& WithMedicalTranscriptionJob(MedicalTranscriptionJob&& value) { SetMedicalTranscriptionJob(std::move(value)); return *this;}
 

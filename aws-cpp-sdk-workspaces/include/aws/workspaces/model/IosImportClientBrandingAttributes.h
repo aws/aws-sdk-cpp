@@ -43,52 +43,59 @@ namespace Model
 
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetLogo() const{ return m_logo; }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline bool LogoHasBeenSet() const { return m_logoHasBeenSet; }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline void SetLogo(const Aws::Utils::ByteBuffer& value) { m_logoHasBeenSet = true; m_logo = value; }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline void SetLogo(Aws::Utils::ByteBuffer&& value) { m_logoHasBeenSet = true; m_logo = std::move(value); }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline IosImportClientBrandingAttributes& WithLogo(const Aws::Utils::ByteBuffer& value) { SetLogo(value); return *this;}
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline IosImportClientBrandingAttributes& WithLogo(Aws::Utils::ByteBuffer&& value) { SetLogo(std::move(value)); return *this;}
 
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -97,8 +104,9 @@ namespace Model
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -107,8 +115,9 @@ namespace Model
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -117,8 +126,9 @@ namespace Model
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -127,8 +137,9 @@ namespace Model
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -137,8 +148,9 @@ namespace Model
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -148,8 +160,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -158,8 +171,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -168,8 +182,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -178,8 +193,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -188,8 +204,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -198,8 +215,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -413,116 +431,142 @@ namespace Model
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLoginMessage() const{ return m_loginMessage; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline bool LoginMessageHasBeenSet() const { return m_loginMessageHasBeenSet; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline void SetLoginMessage(const Aws::Map<Aws::String, Aws::String>& value) { m_loginMessageHasBeenSet = true; m_loginMessage = value; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline void SetLoginMessage(Aws::Map<Aws::String, Aws::String>&& value) { m_loginMessageHasBeenSet = true; m_loginMessage = std::move(value); }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& WithLoginMessage(const Aws::Map<Aws::String, Aws::String>& value) { SetLoginMessage(value); return *this;}
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& WithLoginMessage(Aws::Map<Aws::String, Aws::String>&& value) { SetLoginMessage(std::move(value)); return *this;}
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(const Aws::String& key, const Aws::String& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, value); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(Aws::String&& key, const Aws::String& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(const Aws::String& key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(Aws::String&& key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(const char* key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(Aws::String&& key, const char* value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(const char* key, const char* value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, value); return *this; }
 
   private:
 
     Aws::Utils::ByteBuffer m_logo;
-    bool m_logoHasBeenSet;
+    bool m_logoHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_logo2x;
-    bool m_logo2xHasBeenSet;
+    bool m_logo2xHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_logo3x;
-    bool m_logo3xHasBeenSet;
+    bool m_logo3xHasBeenSet = false;
 
     Aws::String m_supportEmail;
-    bool m_supportEmailHasBeenSet;
+    bool m_supportEmailHasBeenSet = false;
 
     Aws::String m_supportLink;
-    bool m_supportLinkHasBeenSet;
+    bool m_supportLinkHasBeenSet = false;
 
     Aws::String m_forgotPasswordLink;
-    bool m_forgotPasswordLinkHasBeenSet;
+    bool m_forgotPasswordLinkHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_loginMessage;
-    bool m_loginMessageHasBeenSet;
+    bool m_loginMessageHasBeenSet = false;
   };
 
 } // namespace Model

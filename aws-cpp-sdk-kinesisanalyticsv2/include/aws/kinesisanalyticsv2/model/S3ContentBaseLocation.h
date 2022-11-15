@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_bucketARN;
-    bool m_bucketARNHasBeenSet;
+    bool m_bucketARNHasBeenSet = false;
 
     Aws::String m_basePath;
-    bool m_basePathHasBeenSet;
+    bool m_basePathHasBeenSet = false;
   };
 
 } // namespace Model

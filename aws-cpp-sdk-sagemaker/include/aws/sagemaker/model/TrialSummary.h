@@ -255,22 +255,22 @@ namespace Model
   private:
 
     Aws::String m_trialArn;
-    bool m_trialArnHasBeenSet;
+    bool m_trialArnHasBeenSet = false;
 
     Aws::String m_trialName;
-    bool m_trialNameHasBeenSet;
+    bool m_trialNameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     TrialSource m_trialSource;
-    bool m_trialSourceHasBeenSet;
+    bool m_trialSourceHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

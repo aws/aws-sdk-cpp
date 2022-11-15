@@ -213,22 +213,22 @@ namespace Model
   private:
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_sourceField;
-    bool m_sourceFieldHasBeenSet;
+    bool m_sourceFieldHasBeenSet = false;
 
     bool m_returnEnabled;
-    bool m_returnEnabledHasBeenSet;
+    bool m_returnEnabledHasBeenSet = false;
 
     bool m_sortEnabled;
-    bool m_sortEnabledHasBeenSet;
+    bool m_sortEnabledHasBeenSet = false;
 
     bool m_highlightEnabled;
-    bool m_highlightEnabledHasBeenSet;
+    bool m_highlightEnabledHasBeenSet = false;
 
     Aws::String m_analysisScheme;
-    bool m_analysisSchemeHasBeenSet;
+    bool m_analysisSchemeHasBeenSet = false;
   };
 
 } // namespace Model

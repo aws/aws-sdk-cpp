@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     DateRangeUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

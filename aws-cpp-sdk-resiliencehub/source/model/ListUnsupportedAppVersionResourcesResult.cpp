@@ -42,7 +42,7 @@ ListUnsupportedAppVersionResourcesResult& ListUnsupportedAppVersionResourcesResu
 
   if(jsonValue.ValueExists("unsupportedResources"))
   {
-    Array<JsonView> unsupportedResourcesJsonList = jsonValue.GetArray("unsupportedResources");
+    Aws::Utils::Array<JsonView> unsupportedResourcesJsonList = jsonValue.GetArray("unsupportedResources");
     for(unsigned unsupportedResourcesIndex = 0; unsupportedResourcesIndex < unsupportedResourcesJsonList.GetLength(); ++unsupportedResourcesIndex)
     {
       m_unsupportedResources.push_back(unsupportedResourcesJsonList[unsupportedResourcesIndex].AsObject());

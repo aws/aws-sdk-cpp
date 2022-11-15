@@ -280,25 +280,25 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_agentStatusId;
-    bool m_agentStatusIdHasBeenSet;
+    bool m_agentStatusIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AgentStatusState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     int m_displayOrder;
-    bool m_displayOrderHasBeenSet;
+    bool m_displayOrderHasBeenSet = false;
 
     bool m_resetOrderNumber;
-    bool m_resetOrderNumberHasBeenSet;
+    bool m_resetOrderNumberHasBeenSet = false;
   };
 
 } // namespace Model

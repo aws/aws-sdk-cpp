@@ -17,9 +17,6 @@ namespace Model
 {
 
   /**
-   * <p>The request body for RevokeRevision.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevisionRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DATAEXCHANGE_API RevokeRevisionRequest : public DataExchangeRequest
   {
@@ -168,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_revocationComment;
-    bool m_revocationCommentHasBeenSet;
+    bool m_revocationCommentHasBeenSet = false;
   };
 
 } // namespace Model

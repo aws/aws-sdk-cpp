@@ -253,10 +253,10 @@ namespace Model
   private:
 
     PredefinedLoadMetricType m_predefinedMetricType;
-    bool m_predefinedMetricTypeHasBeenSet;
+    bool m_predefinedMetricTypeHasBeenSet = false;
 
     Aws::String m_resourceLabel;
-    bool m_resourceLabelHasBeenSet;
+    bool m_resourceLabelHasBeenSet = false;
   };
 
 } // namespace Model

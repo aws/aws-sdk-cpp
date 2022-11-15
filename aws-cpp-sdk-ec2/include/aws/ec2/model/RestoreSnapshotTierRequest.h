@@ -178,16 +178,16 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     int m_temporaryRestoreDays;
-    bool m_temporaryRestoreDaysHasBeenSet;
+    bool m_temporaryRestoreDaysHasBeenSet = false;
 
     bool m_permanentRestore;
-    bool m_permanentRestoreHasBeenSet;
+    bool m_permanentRestoreHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

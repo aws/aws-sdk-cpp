@@ -29,7 +29,7 @@ Aws::String GetDevicePositionHistoryRequest::SerializePayload() const
 
   if(m_endTimeExclusiveHasBeenSet)
   {
-   payload.WithString("EndTimeExclusive", m_endTimeExclusive.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("EndTimeExclusive", m_endTimeExclusive.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_maxResultsHasBeenSet)
@@ -46,7 +46,7 @@ Aws::String GetDevicePositionHistoryRequest::SerializePayload() const
 
   if(m_startTimeInclusiveHasBeenSet)
   {
-   payload.WithString("StartTimeInclusive", m_startTimeInclusive.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("StartTimeInclusive", m_startTimeInclusive.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload.View().WriteReadable();

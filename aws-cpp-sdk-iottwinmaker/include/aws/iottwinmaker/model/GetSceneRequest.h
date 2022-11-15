@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_sceneId;
-    bool m_sceneIdHasBeenSet;
+    bool m_sceneIdHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

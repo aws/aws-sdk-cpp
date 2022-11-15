@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_vectorType;
-    bool m_vectorTypeHasBeenSet;
+    bool m_vectorTypeHasBeenSet = false;
 
     Aws::Vector<SummarizedCounter> m_vectorCounters;
-    bool m_vectorCountersHasBeenSet;
+    bool m_vectorCountersHasBeenSet = false;
   };
 
 } // namespace Model

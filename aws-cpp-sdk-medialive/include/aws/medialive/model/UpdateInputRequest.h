@@ -479,28 +479,28 @@ Only specify sources for PULL type Inputs. Leave
   private:
 
     Aws::Vector<InputDestinationRequest> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::Vector<InputDeviceRequest> m_inputDevices;
-    bool m_inputDevicesHasBeenSet;
+    bool m_inputDevicesHasBeenSet = false;
 
     Aws::String m_inputId;
-    bool m_inputIdHasBeenSet;
+    bool m_inputIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputSecurityGroups;
-    bool m_inputSecurityGroupsHasBeenSet;
+    bool m_inputSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<MediaConnectFlowRequest> m_mediaConnectFlows;
-    bool m_mediaConnectFlowsHasBeenSet;
+    bool m_mediaConnectFlowsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<InputSourceRequest> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
   };
 
 } // namespace Model

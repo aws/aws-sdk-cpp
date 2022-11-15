@@ -39,7 +39,7 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sumByAccount"))
   {
-    Array<JsonView> sumByAccountJsonList = jsonValue.GetArray("sumByAccount");
+    Aws::Utils::Array<JsonView> sumByAccountJsonList = jsonValue.GetArray("sumByAccount");
     for(unsigned sumByAccountIndex = 0; sumByAccountIndex < sumByAccountJsonList.GetLength(); ++sumByAccountIndex)
     {
       m_sumByAccount.push_back(sumByAccountJsonList[sumByAccountIndex].AsObject());
@@ -49,7 +49,7 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("sumByDataSource"))
   {
-    Array<JsonView> sumByDataSourceJsonList = jsonValue.GetArray("sumByDataSource");
+    Aws::Utils::Array<JsonView> sumByDataSourceJsonList = jsonValue.GetArray("sumByDataSource");
     for(unsigned sumByDataSourceIndex = 0; sumByDataSourceIndex < sumByDataSourceJsonList.GetLength(); ++sumByDataSourceIndex)
     {
       m_sumByDataSource.push_back(sumByDataSourceJsonList[sumByDataSourceIndex].AsObject());
@@ -59,7 +59,7 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("sumByResource"))
   {
-    Array<JsonView> sumByResourceJsonList = jsonValue.GetArray("sumByResource");
+    Aws::Utils::Array<JsonView> sumByResourceJsonList = jsonValue.GetArray("sumByResource");
     for(unsigned sumByResourceIndex = 0; sumByResourceIndex < sumByResourceJsonList.GetLength(); ++sumByResourceIndex)
     {
       m_sumByResource.push_back(sumByResourceJsonList[sumByResourceIndex].AsObject());
@@ -69,7 +69,7 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("topResources"))
   {
-    Array<JsonView> topResourcesJsonList = jsonValue.GetArray("topResources");
+    Aws::Utils::Array<JsonView> topResourcesJsonList = jsonValue.GetArray("topResources");
     for(unsigned topResourcesIndex = 0; topResourcesIndex < topResourcesJsonList.GetLength(); ++topResourcesIndex)
     {
       m_topResources.push_back(topResourcesJsonList[topResourcesIndex].AsObject());
@@ -86,7 +86,7 @@ JsonValue UsageStatistics::Jsonize() const
 
   if(m_sumByAccountHasBeenSet)
   {
-   Array<JsonValue> sumByAccountJsonList(m_sumByAccount.size());
+   Aws::Utils::Array<JsonValue> sumByAccountJsonList(m_sumByAccount.size());
    for(unsigned sumByAccountIndex = 0; sumByAccountIndex < sumByAccountJsonList.GetLength(); ++sumByAccountIndex)
    {
      sumByAccountJsonList[sumByAccountIndex].AsObject(m_sumByAccount[sumByAccountIndex].Jsonize());
@@ -97,7 +97,7 @@ JsonValue UsageStatistics::Jsonize() const
 
   if(m_sumByDataSourceHasBeenSet)
   {
-   Array<JsonValue> sumByDataSourceJsonList(m_sumByDataSource.size());
+   Aws::Utils::Array<JsonValue> sumByDataSourceJsonList(m_sumByDataSource.size());
    for(unsigned sumByDataSourceIndex = 0; sumByDataSourceIndex < sumByDataSourceJsonList.GetLength(); ++sumByDataSourceIndex)
    {
      sumByDataSourceJsonList[sumByDataSourceIndex].AsObject(m_sumByDataSource[sumByDataSourceIndex].Jsonize());
@@ -108,7 +108,7 @@ JsonValue UsageStatistics::Jsonize() const
 
   if(m_sumByResourceHasBeenSet)
   {
-   Array<JsonValue> sumByResourceJsonList(m_sumByResource.size());
+   Aws::Utils::Array<JsonValue> sumByResourceJsonList(m_sumByResource.size());
    for(unsigned sumByResourceIndex = 0; sumByResourceIndex < sumByResourceJsonList.GetLength(); ++sumByResourceIndex)
    {
      sumByResourceJsonList[sumByResourceIndex].AsObject(m_sumByResource[sumByResourceIndex].Jsonize());
@@ -119,7 +119,7 @@ JsonValue UsageStatistics::Jsonize() const
 
   if(m_topResourcesHasBeenSet)
   {
-   Array<JsonValue> topResourcesJsonList(m_topResources.size());
+   Aws::Utils::Array<JsonValue> topResourcesJsonList(m_topResources.size());
    for(unsigned topResourcesIndex = 0; topResourcesIndex < topResourcesJsonList.GetLength(); ++topResourcesIndex)
    {
      topResourcesJsonList[topResourcesIndex].AsObject(m_topResources[topResourcesIndex].Jsonize());

@@ -26,10 +26,12 @@ namespace Model
 {
 
   /**
-   * <p>Provides a summary of the dataset import job properties used in the
-   * <a>ListDatasetImportJobs</a> operation. To get the complete set of properties,
-   * call the <a>DescribeDatasetImportJob</a> operation, and provide the
-   * <code>DatasetImportJobArn</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides a summary of the dataset import job properties used in the <a
+   * href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+   * operation. To get the complete set of properties, call the <a
+   * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
+   * operation, and provide the <code>DatasetImportJobArn</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DatasetImportJobSummary">AWS
    * API Reference</a></p>
    */
@@ -401,25 +403,25 @@ namespace Model
   private:
 
     Aws::String m_datasetImportJobArn;
-    bool m_datasetImportJobArnHasBeenSet;
+    bool m_datasetImportJobArnHasBeenSet = false;
 
     Aws::String m_datasetImportJobName;
-    bool m_datasetImportJobNameHasBeenSet;
+    bool m_datasetImportJobNameHasBeenSet = false;
 
     DataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

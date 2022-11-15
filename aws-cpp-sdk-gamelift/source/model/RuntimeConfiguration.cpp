@@ -41,7 +41,7 @@ RuntimeConfiguration& RuntimeConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ServerProcesses"))
   {
-    Array<JsonView> serverProcessesJsonList = jsonValue.GetArray("ServerProcesses");
+    Aws::Utils::Array<JsonView> serverProcessesJsonList = jsonValue.GetArray("ServerProcesses");
     for(unsigned serverProcessesIndex = 0; serverProcessesIndex < serverProcessesJsonList.GetLength(); ++serverProcessesIndex)
     {
       m_serverProcesses.push_back(serverProcessesJsonList[serverProcessesIndex].AsObject());
@@ -72,7 +72,7 @@ JsonValue RuntimeConfiguration::Jsonize() const
 
   if(m_serverProcessesHasBeenSet)
   {
-   Array<JsonValue> serverProcessesJsonList(m_serverProcesses.size());
+   Aws::Utils::Array<JsonValue> serverProcessesJsonList(m_serverProcesses.size());
    for(unsigned serverProcessesIndex = 0; serverProcessesIndex < serverProcessesJsonList.GetLength(); ++serverProcessesIndex)
    {
      serverProcessesJsonList[serverProcessesIndex].AsObject(m_serverProcesses[serverProcessesIndex].Jsonize());

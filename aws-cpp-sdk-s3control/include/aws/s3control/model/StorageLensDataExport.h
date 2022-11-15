@@ -121,10 +121,10 @@ namespace Model
   private:
 
     S3BucketDestination m_s3BucketDestination;
-    bool m_s3BucketDestinationHasBeenSet;
+    bool m_s3BucketDestinationHasBeenSet = false;
 
     CloudWatchMetrics m_cloudWatchMetrics;
-    bool m_cloudWatchMetricsHasBeenSet;
+    bool m_cloudWatchMetricsHasBeenSet = false;
   };
 
 } // namespace Model

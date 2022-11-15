@@ -151,19 +151,19 @@ namespace Model
   private:
 
     int m_openActivityTasks;
-    bool m_openActivityTasksHasBeenSet;
+    bool m_openActivityTasksHasBeenSet = false;
 
     int m_openDecisionTasks;
-    bool m_openDecisionTasksHasBeenSet;
+    bool m_openDecisionTasksHasBeenSet = false;
 
     int m_openTimers;
-    bool m_openTimersHasBeenSet;
+    bool m_openTimersHasBeenSet = false;
 
     int m_openChildWorkflowExecutions;
-    bool m_openChildWorkflowExecutionsHasBeenSet;
+    bool m_openChildWorkflowExecutionsHasBeenSet = false;
 
     int m_openLambdaFunctions;
-    bool m_openLambdaFunctionsHasBeenSet;
+    bool m_openLambdaFunctionsHasBeenSet = false;
   };
 
 } // namespace Model

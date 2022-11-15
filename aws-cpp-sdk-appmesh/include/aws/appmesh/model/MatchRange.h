@@ -82,10 +82,10 @@ namespace Model
   private:
 
     long long m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     long long m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
   };
 
 } // namespace Model

@@ -201,19 +201,55 @@ namespace Model
      */
     inline ElasticsearchSettings& WithErrorRetryDuration(int value) { SetErrorRetryDuration(value); return *this;}
 
+
+    /**
+     * <p>Set this option to <code>true</code> for DMS to migrate documentation using
+     * the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch
+     * cluster only support the _doc documentation type in versions 7. x and later. The
+     * default value is <code>false</code>.</p>
+     */
+    inline bool GetUseNewMappingType() const{ return m_useNewMappingType; }
+
+    /**
+     * <p>Set this option to <code>true</code> for DMS to migrate documentation using
+     * the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch
+     * cluster only support the _doc documentation type in versions 7. x and later. The
+     * default value is <code>false</code>.</p>
+     */
+    inline bool UseNewMappingTypeHasBeenSet() const { return m_useNewMappingTypeHasBeenSet; }
+
+    /**
+     * <p>Set this option to <code>true</code> for DMS to migrate documentation using
+     * the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch
+     * cluster only support the _doc documentation type in versions 7. x and later. The
+     * default value is <code>false</code>.</p>
+     */
+    inline void SetUseNewMappingType(bool value) { m_useNewMappingTypeHasBeenSet = true; m_useNewMappingType = value; }
+
+    /**
+     * <p>Set this option to <code>true</code> for DMS to migrate documentation using
+     * the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch
+     * cluster only support the _doc documentation type in versions 7. x and later. The
+     * default value is <code>false</code>.</p>
+     */
+    inline ElasticsearchSettings& WithUseNewMappingType(bool value) { SetUseNewMappingType(value); return *this;}
+
   private:
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     Aws::String m_endpointUri;
-    bool m_endpointUriHasBeenSet;
+    bool m_endpointUriHasBeenSet = false;
 
     int m_fullLoadErrorPercentage;
-    bool m_fullLoadErrorPercentageHasBeenSet;
+    bool m_fullLoadErrorPercentageHasBeenSet = false;
 
     int m_errorRetryDuration;
-    bool m_errorRetryDurationHasBeenSet;
+    bool m_errorRetryDurationHasBeenSet = false;
+
+    bool m_useNewMappingType;
+    bool m_useNewMappingTypeHasBeenSet = false;
   };
 
 } // namespace Model

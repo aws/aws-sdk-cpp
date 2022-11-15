@@ -178,10 +178,10 @@ namespace Model
   private:
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     ErrorCategory m_errorCategory;
-    bool m_errorCategoryHasBeenSet;
+    bool m_errorCategoryHasBeenSet = false;
   };
 
 } // namespace Model

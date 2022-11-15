@@ -121,38 +121,32 @@ namespace Model
 
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline const AppType& GetAppType() const{ return m_appType; }
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline bool AppTypeHasBeenSet() const { return m_appTypeHasBeenSet; }
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline void SetAppType(const AppType& value) { m_appTypeHasBeenSet = true; m_appType = value; }
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline void SetAppType(AppType&& value) { m_appTypeHasBeenSet = true; m_appType = std::move(value); }
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline CreateAppRequest& WithAppType(const AppType& value) { SetAppType(value); return *this;}
 
     /**
-     * <p>The type of app. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+     * <p>The type of app.</p>
      */
     inline CreateAppRequest& WithAppType(AppType&& value) { SetAppType(std::move(value)); return *this;}
 
@@ -249,59 +243,95 @@ namespace Model
 
     /**
      * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
-     * created on the instance.</p>
+     * created on the instance.</p>  <p>The value of <code>InstanceType</code>
+     * passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code>
+     * call overrides the value passed as part of the <code>ResourceSpec</code>
+     * configured for the user profile or the domain. If <code>InstanceType</code> is
+     * not specified in any of those three <code>ResourceSpec</code> values for a
+     * <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a
+     * request validation error.</p> 
      */
     inline const ResourceSpec& GetResourceSpec() const{ return m_resourceSpec; }
 
     /**
      * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
-     * created on the instance.</p>
+     * created on the instance.</p>  <p>The value of <code>InstanceType</code>
+     * passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code>
+     * call overrides the value passed as part of the <code>ResourceSpec</code>
+     * configured for the user profile or the domain. If <code>InstanceType</code> is
+     * not specified in any of those three <code>ResourceSpec</code> values for a
+     * <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a
+     * request validation error.</p> 
      */
     inline bool ResourceSpecHasBeenSet() const { return m_resourceSpecHasBeenSet; }
 
     /**
      * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
-     * created on the instance.</p>
+     * created on the instance.</p>  <p>The value of <code>InstanceType</code>
+     * passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code>
+     * call overrides the value passed as part of the <code>ResourceSpec</code>
+     * configured for the user profile or the domain. If <code>InstanceType</code> is
+     * not specified in any of those three <code>ResourceSpec</code> values for a
+     * <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a
+     * request validation error.</p> 
      */
     inline void SetResourceSpec(const ResourceSpec& value) { m_resourceSpecHasBeenSet = true; m_resourceSpec = value; }
 
     /**
      * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
-     * created on the instance.</p>
+     * created on the instance.</p>  <p>The value of <code>InstanceType</code>
+     * passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code>
+     * call overrides the value passed as part of the <code>ResourceSpec</code>
+     * configured for the user profile or the domain. If <code>InstanceType</code> is
+     * not specified in any of those three <code>ResourceSpec</code> values for a
+     * <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a
+     * request validation error.</p> 
      */
     inline void SetResourceSpec(ResourceSpec&& value) { m_resourceSpecHasBeenSet = true; m_resourceSpec = std::move(value); }
 
     /**
      * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
-     * created on the instance.</p>
+     * created on the instance.</p>  <p>The value of <code>InstanceType</code>
+     * passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code>
+     * call overrides the value passed as part of the <code>ResourceSpec</code>
+     * configured for the user profile or the domain. If <code>InstanceType</code> is
+     * not specified in any of those three <code>ResourceSpec</code> values for a
+     * <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a
+     * request validation error.</p> 
      */
     inline CreateAppRequest& WithResourceSpec(const ResourceSpec& value) { SetResourceSpec(value); return *this;}
 
     /**
      * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
-     * created on the instance.</p>
+     * created on the instance.</p>  <p>The value of <code>InstanceType</code>
+     * passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code>
+     * call overrides the value passed as part of the <code>ResourceSpec</code>
+     * configured for the user profile or the domain. If <code>InstanceType</code> is
+     * not specified in any of those three <code>ResourceSpec</code> values for a
+     * <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a
+     * request validation error.</p> 
      */
     inline CreateAppRequest& WithResourceSpec(ResourceSpec&& value) { SetResourceSpec(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_userProfileName;
-    bool m_userProfileNameHasBeenSet;
+    bool m_userProfileNameHasBeenSet = false;
 
     AppType m_appType;
-    bool m_appTypeHasBeenSet;
+    bool m_appTypeHasBeenSet = false;
 
     Aws::String m_appName;
-    bool m_appNameHasBeenSet;
+    bool m_appNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ResourceSpec m_resourceSpec;
-    bool m_resourceSpecHasBeenSet;
+    bool m_resourceSpecHasBeenSet = false;
   };
 
 } // namespace Model

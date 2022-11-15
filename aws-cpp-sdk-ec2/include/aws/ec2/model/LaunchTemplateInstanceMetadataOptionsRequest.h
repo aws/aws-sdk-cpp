@@ -29,7 +29,7 @@ namespace Model
   /**
    * <p>The metadata options for the instance. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-   * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+   * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateInstanceMetadataOptionsRequest">AWS
    * API Reference</a></p>
@@ -139,28 +139,28 @@ namespace Model
     /**
      * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
      * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: 1</p> <p>Possible values: Integers from 1 to 64</p>
+     * <p>Default: <code>1</code> </p> <p>Possible values: Integers from 1 to 64</p>
      */
     inline int GetHttpPutResponseHopLimit() const{ return m_httpPutResponseHopLimit; }
 
     /**
      * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
      * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: 1</p> <p>Possible values: Integers from 1 to 64</p>
+     * <p>Default: <code>1</code> </p> <p>Possible values: Integers from 1 to 64</p>
      */
     inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }
 
     /**
      * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
      * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: 1</p> <p>Possible values: Integers from 1 to 64</p>
+     * <p>Default: <code>1</code> </p> <p>Possible values: Integers from 1 to 64</p>
      */
     inline void SetHttpPutResponseHopLimit(int value) { m_httpPutResponseHopLimitHasBeenSet = true; m_httpPutResponseHopLimit = value; }
 
     /**
      * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
      * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: 1</p> <p>Possible values: Integers from 1 to 64</p>
+     * <p>Default: <code>1</code> </p> <p>Possible values: Integers from 1 to 64</p>
      */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpPutResponseHopLimit(int value) { SetHttpPutResponseHopLimit(value); return *this;}
 
@@ -314,19 +314,19 @@ namespace Model
   private:
 
     LaunchTemplateHttpTokensState m_httpTokens;
-    bool m_httpTokensHasBeenSet;
+    bool m_httpTokensHasBeenSet = false;
 
     int m_httpPutResponseHopLimit;
-    bool m_httpPutResponseHopLimitHasBeenSet;
+    bool m_httpPutResponseHopLimitHasBeenSet = false;
 
     LaunchTemplateInstanceMetadataEndpointState m_httpEndpoint;
-    bool m_httpEndpointHasBeenSet;
+    bool m_httpEndpointHasBeenSet = false;
 
     LaunchTemplateInstanceMetadataProtocolIpv6 m_httpProtocolIpv6;
-    bool m_httpProtocolIpv6HasBeenSet;
+    bool m_httpProtocolIpv6HasBeenSet = false;
 
     LaunchTemplateInstanceMetadataTagsState m_instanceMetadataTags;
-    bool m_instanceMetadataTagsHasBeenSet;
+    bool m_instanceMetadataTagsHasBeenSet = false;
   };
 
 } // namespace Model

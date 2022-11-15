@@ -143,22 +143,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline const Aws::Map<PropertyKey, Aws::String>& GetProvisionedProductProperties() const{ return m_provisionedProductProperties; }
 
@@ -170,22 +171,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline bool ProvisionedProductPropertiesHasBeenSet() const { return m_provisionedProductPropertiesHasBeenSet; }
 
@@ -197,22 +199,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline void SetProvisionedProductProperties(const Aws::Map<PropertyKey, Aws::String>& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties = value; }
 
@@ -224,22 +227,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline void SetProvisionedProductProperties(Aws::Map<PropertyKey, Aws::String>&& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties = std::move(value); }
 
@@ -251,22 +255,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline UpdateProvisionedProductPropertiesRequest& WithProvisionedProductProperties(const Aws::Map<PropertyKey, Aws::String>& value) { SetProvisionedProductProperties(value); return *this;}
 
@@ -278,22 +283,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline UpdateProvisionedProductPropertiesRequest& WithProvisionedProductProperties(Aws::Map<PropertyKey, Aws::String>&& value) { SetProvisionedProductProperties(std::move(value)); return *this;}
 
@@ -305,22 +311,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(const PropertyKey& key, const Aws::String& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(key, value); return *this; }
 
@@ -332,22 +339,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(PropertyKey&& key, const Aws::String& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(std::move(key), value); return *this; }
 
@@ -359,22 +367,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(const PropertyKey& key, Aws::String&& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(key, std::move(value)); return *this; }
 
@@ -386,22 +395,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(PropertyKey&& key, Aws::String&& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -413,22 +423,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(PropertyKey&& key, const char* value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(std::move(key), value); return *this; }
 
@@ -440,22 +451,23 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
-     * ARNs and role ARNs. The owner is the user that has permission to see, update,
-     * terminate, and execute service actions in the provisioned product.</p> <p>The
-     * administrator can change the owner of a provisioned product to another IAM user
-     * within the same account. Both end user owners and administrators can see
-     * ownership history of the provisioned product using the
-     * <code>ListRecordHistory</code> API. The new owner can describe all past records
-     * for the provisioned product using the <code>DescribeRecord</code> API. The
-     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
-     * the product's history from when he was an owner using
-     * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
-     * assigned to an end user, they can see and perform any action through the API or
-     * Service Catalog console such as update, terminate, and execute service actions.
-     * If an end user provisions a product and the owner is updated to someone else,
-     * they will no longer be able to see or perform any actions through API or the
-     * Service Catalog console on that provisioned product.</p>
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
+     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
+     * has permission to see, update, terminate, and execute service actions in the
+     * provisioned product.</p> <p>The administrator can change the owner of a
+     * provisioned product to another IAM or STS entity within the same account. Both
+     * end user owners and administrators can see ownership history of the provisioned
+     * product using the <code>ListRecordHistory</code> API. The new owner can describe
+     * all past records for the provisioned product using the
+     * <code>DescribeRecord</code> API. The previous owner can no longer use
+     * <code>DescribeRecord</code>, but can still see the product's history from when
+     * he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned
+     * product ownership is assigned to an end user, they can see and perform any
+     * action through the API or Service Catalog console such as update, terminate, and
+     * execute service actions. If an end user provisions a product and the owner is
+     * updated to someone else, they will no longer be able to see or perform any
+     * actions through API or the Service Catalog console on that provisioned
+     * product.</p>
      */
     inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(const PropertyKey& key, const char* value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(key, value); return *this; }
 
@@ -511,16 +523,16 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_provisionedProductId;
-    bool m_provisionedProductIdHasBeenSet;
+    bool m_provisionedProductIdHasBeenSet = false;
 
     Aws::Map<PropertyKey, Aws::String> m_provisionedProductProperties;
-    bool m_provisionedProductPropertiesHasBeenSet;
+    bool m_provisionedProductPropertiesHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

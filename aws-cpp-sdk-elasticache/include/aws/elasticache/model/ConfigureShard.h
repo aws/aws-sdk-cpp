@@ -303,16 +303,16 @@ namespace Model
   private:
 
     Aws::String m_nodeGroupId;
-    bool m_nodeGroupIdHasBeenSet;
+    bool m_nodeGroupIdHasBeenSet = false;
 
     int m_newReplicaCount;
-    bool m_newReplicaCountHasBeenSet;
+    bool m_newReplicaCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_preferredAvailabilityZones;
-    bool m_preferredAvailabilityZonesHasBeenSet;
+    bool m_preferredAvailabilityZonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_preferredOutpostArns;
-    bool m_preferredOutpostArnsHasBeenSet;
+    bool m_preferredOutpostArnsHasBeenSet = false;
   };
 
 } // namespace Model

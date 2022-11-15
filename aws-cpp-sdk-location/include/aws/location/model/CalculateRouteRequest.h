@@ -506,67 +506,73 @@ namespace Model
 
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
-     * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify also determines how you specify route preferences: </p> <ul> <li>
-     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
-     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * the speed of travel and road compatibility. You can choose <code>Car</code>,
+     * <code>Truck</code>, or <code>Walking</code> as options for the
+     * <code>TravelMode</code>.</p> <p>The <code>TravelMode</code> you specify also
+     * determines how you specify route preferences: </p> <ul> <li> <p>If traveling by
+     * <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li> <li>
+     * <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
+     * parameter.</p> </li> </ul> <p>Default Value: <code>Car</code> </p>
      */
     inline const TravelMode& GetTravelMode() const{ return m_travelMode; }
 
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
-     * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify also determines how you specify route preferences: </p> <ul> <li>
-     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
-     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * the speed of travel and road compatibility. You can choose <code>Car</code>,
+     * <code>Truck</code>, or <code>Walking</code> as options for the
+     * <code>TravelMode</code>.</p> <p>The <code>TravelMode</code> you specify also
+     * determines how you specify route preferences: </p> <ul> <li> <p>If traveling by
+     * <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li> <li>
+     * <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
+     * parameter.</p> </li> </ul> <p>Default Value: <code>Car</code> </p>
      */
     inline bool TravelModeHasBeenSet() const { return m_travelModeHasBeenSet; }
 
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
-     * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify also determines how you specify route preferences: </p> <ul> <li>
-     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
-     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * the speed of travel and road compatibility. You can choose <code>Car</code>,
+     * <code>Truck</code>, or <code>Walking</code> as options for the
+     * <code>TravelMode</code>.</p> <p>The <code>TravelMode</code> you specify also
+     * determines how you specify route preferences: </p> <ul> <li> <p>If traveling by
+     * <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li> <li>
+     * <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
+     * parameter.</p> </li> </ul> <p>Default Value: <code>Car</code> </p>
      */
     inline void SetTravelMode(const TravelMode& value) { m_travelModeHasBeenSet = true; m_travelMode = value; }
 
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
-     * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify also determines how you specify route preferences: </p> <ul> <li>
-     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
-     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * the speed of travel and road compatibility. You can choose <code>Car</code>,
+     * <code>Truck</code>, or <code>Walking</code> as options for the
+     * <code>TravelMode</code>.</p> <p>The <code>TravelMode</code> you specify also
+     * determines how you specify route preferences: </p> <ul> <li> <p>If traveling by
+     * <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li> <li>
+     * <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
+     * parameter.</p> </li> </ul> <p>Default Value: <code>Car</code> </p>
      */
     inline void SetTravelMode(TravelMode&& value) { m_travelModeHasBeenSet = true; m_travelMode = std::move(value); }
 
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
-     * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify also determines how you specify route preferences: </p> <ul> <li>
-     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
-     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * the speed of travel and road compatibility. You can choose <code>Car</code>,
+     * <code>Truck</code>, or <code>Walking</code> as options for the
+     * <code>TravelMode</code>.</p> <p>The <code>TravelMode</code> you specify also
+     * determines how you specify route preferences: </p> <ul> <li> <p>If traveling by
+     * <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li> <li>
+     * <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
+     * parameter.</p> </li> </ul> <p>Default Value: <code>Car</code> </p>
      */
     inline CalculateRouteRequest& WithTravelMode(const TravelMode& value) { SetTravelMode(value); return *this;}
 
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
-     * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify also determines how you specify route preferences: </p> <ul> <li>
-     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
-     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * the speed of travel and road compatibility. You can choose <code>Car</code>,
+     * <code>Truck</code>, or <code>Walking</code> as options for the
+     * <code>TravelMode</code>.</p> <p>The <code>TravelMode</code> you specify also
+     * determines how you specify route preferences: </p> <ul> <li> <p>If traveling by
+     * <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li> <li>
+     * <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
+     * parameter.</p> </li> </ul> <p>Default Value: <code>Car</code> </p>
      */
     inline CalculateRouteRequest& WithTravelMode(TravelMode&& value) { SetTravelMode(std::move(value)); return *this;}
 
@@ -759,37 +765,37 @@ namespace Model
   private:
 
     Aws::String m_calculatorName;
-    bool m_calculatorNameHasBeenSet;
+    bool m_calculatorNameHasBeenSet = false;
 
     CalculateRouteCarModeOptions m_carModeOptions;
-    bool m_carModeOptionsHasBeenSet;
+    bool m_carModeOptionsHasBeenSet = false;
 
     bool m_departNow;
-    bool m_departNowHasBeenSet;
+    bool m_departNowHasBeenSet = false;
 
     Aws::Vector<double> m_departurePosition;
-    bool m_departurePositionHasBeenSet;
+    bool m_departurePositionHasBeenSet = false;
 
     Aws::Utils::DateTime m_departureTime;
-    bool m_departureTimeHasBeenSet;
+    bool m_departureTimeHasBeenSet = false;
 
     Aws::Vector<double> m_destinationPosition;
-    bool m_destinationPositionHasBeenSet;
+    bool m_destinationPositionHasBeenSet = false;
 
     DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet;
+    bool m_distanceUnitHasBeenSet = false;
 
     bool m_includeLegGeometry;
-    bool m_includeLegGeometryHasBeenSet;
+    bool m_includeLegGeometryHasBeenSet = false;
 
     TravelMode m_travelMode;
-    bool m_travelModeHasBeenSet;
+    bool m_travelModeHasBeenSet = false;
 
     CalculateRouteTruckModeOptions m_truckModeOptions;
-    bool m_truckModeOptionsHasBeenSet;
+    bool m_truckModeOptionsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<double>> m_waypointPositions;
-    bool m_waypointPositionsHasBeenSet;
+    bool m_waypointPositionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ SlotDefaultValueSpec& SlotDefaultValueSpec::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("defaultValueList"))
   {
-    Array<JsonView> defaultValueListJsonList = jsonValue.GetArray("defaultValueList");
+    Aws::Utils::Array<JsonView> defaultValueListJsonList = jsonValue.GetArray("defaultValueList");
     for(unsigned defaultValueListIndex = 0; defaultValueListIndex < defaultValueListJsonList.GetLength(); ++defaultValueListIndex)
     {
       m_defaultValueList.push_back(defaultValueListJsonList[defaultValueListIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue SlotDefaultValueSpec::Jsonize() const
 
   if(m_defaultValueListHasBeenSet)
   {
-   Array<JsonValue> defaultValueListJsonList(m_defaultValueList.size());
+   Aws::Utils::Array<JsonValue> defaultValueListJsonList(m_defaultValueList.size());
    for(unsigned defaultValueListIndex = 0; defaultValueListIndex < defaultValueListJsonList.GetLength(); ++defaultValueListIndex)
    {
      defaultValueListJsonList[defaultValueListIndex].AsObject(m_defaultValueList[defaultValueListIndex].Jsonize());

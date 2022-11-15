@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_requestToken;
-    bool m_requestTokenHasBeenSet;
+    bool m_requestTokenHasBeenSet = false;
   };
 
 } // namespace Model

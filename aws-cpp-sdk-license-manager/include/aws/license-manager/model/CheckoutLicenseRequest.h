@@ -324,25 +324,25 @@ namespace Model
   private:
 
     Aws::String m_productSKU;
-    bool m_productSKUHasBeenSet;
+    bool m_productSKUHasBeenSet = false;
 
     CheckoutType m_checkoutType;
-    bool m_checkoutTypeHasBeenSet;
+    bool m_checkoutTypeHasBeenSet = false;
 
     Aws::String m_keyFingerprint;
-    bool m_keyFingerprintHasBeenSet;
+    bool m_keyFingerprintHasBeenSet = false;
 
     Aws::Vector<EntitlementData> m_entitlements;
-    bool m_entitlementsHasBeenSet;
+    bool m_entitlementsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_beneficiary;
-    bool m_beneficiaryHasBeenSet;
+    bool m_beneficiaryHasBeenSet = false;
 
     Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
+    bool m_nodeIdHasBeenSet = false;
   };
 
 } // namespace Model

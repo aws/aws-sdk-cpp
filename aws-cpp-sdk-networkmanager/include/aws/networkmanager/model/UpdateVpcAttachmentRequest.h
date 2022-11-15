@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addSubnetArns;
-    bool m_addSubnetArnsHasBeenSet;
+    bool m_addSubnetArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeSubnetArns;
-    bool m_removeSubnetArnsHasBeenSet;
+    bool m_removeSubnetArnsHasBeenSet = false;
 
     VpcOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

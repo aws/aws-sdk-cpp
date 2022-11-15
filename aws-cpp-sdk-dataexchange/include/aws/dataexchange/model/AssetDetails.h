@@ -134,13 +134,13 @@ namespace Model
   private:
 
     S3SnapshotAsset m_s3SnapshotAsset;
-    bool m_s3SnapshotAssetHasBeenSet;
+    bool m_s3SnapshotAssetHasBeenSet = false;
 
     RedshiftDataShareAsset m_redshiftDataShareAsset;
-    bool m_redshiftDataShareAssetHasBeenSet;
+    bool m_redshiftDataShareAssetHasBeenSet = false;
 
     ApiGatewayApiAsset m_apiGatewayApiAsset;
-    bool m_apiGatewayApiAssetHasBeenSet;
+    bool m_apiGatewayApiAssetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -286,19 +286,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     SipRuleTriggerType m_triggerType;
-    bool m_triggerTypeHasBeenSet;
+    bool m_triggerTypeHasBeenSet = false;
 
     Aws::String m_triggerValue;
-    bool m_triggerValueHasBeenSet;
+    bool m_triggerValueHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
 
     Aws::Vector<SipRuleTargetApplication> m_targetApplications;
-    bool m_targetApplicationsHasBeenSet;
+    bool m_targetApplicationsHasBeenSet = false;
   };
 
 } // namespace Model

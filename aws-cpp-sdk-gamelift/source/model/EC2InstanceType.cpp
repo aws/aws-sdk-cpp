@@ -102,6 +102,38 @@ namespace Aws
         static const int m5a_12xlarge_HASH = HashingUtils::HashString("m5a.12xlarge");
         static const int m5a_16xlarge_HASH = HashingUtils::HashString("m5a.16xlarge");
         static const int m5a_24xlarge_HASH = HashingUtils::HashString("m5a.24xlarge");
+        static const int c5d_large_HASH = HashingUtils::HashString("c5d.large");
+        static const int c5d_xlarge_HASH = HashingUtils::HashString("c5d.xlarge");
+        static const int c5d_2xlarge_HASH = HashingUtils::HashString("c5d.2xlarge");
+        static const int c5d_4xlarge_HASH = HashingUtils::HashString("c5d.4xlarge");
+        static const int c5d_9xlarge_HASH = HashingUtils::HashString("c5d.9xlarge");
+        static const int c5d_12xlarge_HASH = HashingUtils::HashString("c5d.12xlarge");
+        static const int c5d_18xlarge_HASH = HashingUtils::HashString("c5d.18xlarge");
+        static const int c5d_24xlarge_HASH = HashingUtils::HashString("c5d.24xlarge");
+        static const int c6a_large_HASH = HashingUtils::HashString("c6a.large");
+        static const int c6a_xlarge_HASH = HashingUtils::HashString("c6a.xlarge");
+        static const int c6a_2xlarge_HASH = HashingUtils::HashString("c6a.2xlarge");
+        static const int c6a_4xlarge_HASH = HashingUtils::HashString("c6a.4xlarge");
+        static const int c6a_8xlarge_HASH = HashingUtils::HashString("c6a.8xlarge");
+        static const int c6a_12xlarge_HASH = HashingUtils::HashString("c6a.12xlarge");
+        static const int c6a_16xlarge_HASH = HashingUtils::HashString("c6a.16xlarge");
+        static const int c6a_24xlarge_HASH = HashingUtils::HashString("c6a.24xlarge");
+        static const int c6i_large_HASH = HashingUtils::HashString("c6i.large");
+        static const int c6i_xlarge_HASH = HashingUtils::HashString("c6i.xlarge");
+        static const int c6i_2xlarge_HASH = HashingUtils::HashString("c6i.2xlarge");
+        static const int c6i_4xlarge_HASH = HashingUtils::HashString("c6i.4xlarge");
+        static const int c6i_8xlarge_HASH = HashingUtils::HashString("c6i.8xlarge");
+        static const int c6i_12xlarge_HASH = HashingUtils::HashString("c6i.12xlarge");
+        static const int c6i_16xlarge_HASH = HashingUtils::HashString("c6i.16xlarge");
+        static const int c6i_24xlarge_HASH = HashingUtils::HashString("c6i.24xlarge");
+        static const int r5d_large_HASH = HashingUtils::HashString("r5d.large");
+        static const int r5d_xlarge_HASH = HashingUtils::HashString("r5d.xlarge");
+        static const int r5d_2xlarge_HASH = HashingUtils::HashString("r5d.2xlarge");
+        static const int r5d_4xlarge_HASH = HashingUtils::HashString("r5d.4xlarge");
+        static const int r5d_8xlarge_HASH = HashingUtils::HashString("r5d.8xlarge");
+        static const int r5d_12xlarge_HASH = HashingUtils::HashString("r5d.12xlarge");
+        static const int r5d_16xlarge_HASH = HashingUtils::HashString("r5d.16xlarge");
+        static const int r5d_24xlarge_HASH = HashingUtils::HashString("r5d.24xlarge");
 
 
         EC2InstanceType GetEC2InstanceTypeForName(const Aws::String& name)
@@ -435,6 +467,134 @@ namespace Aws
           {
             return EC2InstanceType::m5a_24xlarge;
           }
+          else if (hashCode == c5d_large_HASH)
+          {
+            return EC2InstanceType::c5d_large;
+          }
+          else if (hashCode == c5d_xlarge_HASH)
+          {
+            return EC2InstanceType::c5d_xlarge;
+          }
+          else if (hashCode == c5d_2xlarge_HASH)
+          {
+            return EC2InstanceType::c5d_2xlarge;
+          }
+          else if (hashCode == c5d_4xlarge_HASH)
+          {
+            return EC2InstanceType::c5d_4xlarge;
+          }
+          else if (hashCode == c5d_9xlarge_HASH)
+          {
+            return EC2InstanceType::c5d_9xlarge;
+          }
+          else if (hashCode == c5d_12xlarge_HASH)
+          {
+            return EC2InstanceType::c5d_12xlarge;
+          }
+          else if (hashCode == c5d_18xlarge_HASH)
+          {
+            return EC2InstanceType::c5d_18xlarge;
+          }
+          else if (hashCode == c5d_24xlarge_HASH)
+          {
+            return EC2InstanceType::c5d_24xlarge;
+          }
+          else if (hashCode == c6a_large_HASH)
+          {
+            return EC2InstanceType::c6a_large;
+          }
+          else if (hashCode == c6a_xlarge_HASH)
+          {
+            return EC2InstanceType::c6a_xlarge;
+          }
+          else if (hashCode == c6a_2xlarge_HASH)
+          {
+            return EC2InstanceType::c6a_2xlarge;
+          }
+          else if (hashCode == c6a_4xlarge_HASH)
+          {
+            return EC2InstanceType::c6a_4xlarge;
+          }
+          else if (hashCode == c6a_8xlarge_HASH)
+          {
+            return EC2InstanceType::c6a_8xlarge;
+          }
+          else if (hashCode == c6a_12xlarge_HASH)
+          {
+            return EC2InstanceType::c6a_12xlarge;
+          }
+          else if (hashCode == c6a_16xlarge_HASH)
+          {
+            return EC2InstanceType::c6a_16xlarge;
+          }
+          else if (hashCode == c6a_24xlarge_HASH)
+          {
+            return EC2InstanceType::c6a_24xlarge;
+          }
+          else if (hashCode == c6i_large_HASH)
+          {
+            return EC2InstanceType::c6i_large;
+          }
+          else if (hashCode == c6i_xlarge_HASH)
+          {
+            return EC2InstanceType::c6i_xlarge;
+          }
+          else if (hashCode == c6i_2xlarge_HASH)
+          {
+            return EC2InstanceType::c6i_2xlarge;
+          }
+          else if (hashCode == c6i_4xlarge_HASH)
+          {
+            return EC2InstanceType::c6i_4xlarge;
+          }
+          else if (hashCode == c6i_8xlarge_HASH)
+          {
+            return EC2InstanceType::c6i_8xlarge;
+          }
+          else if (hashCode == c6i_12xlarge_HASH)
+          {
+            return EC2InstanceType::c6i_12xlarge;
+          }
+          else if (hashCode == c6i_16xlarge_HASH)
+          {
+            return EC2InstanceType::c6i_16xlarge;
+          }
+          else if (hashCode == c6i_24xlarge_HASH)
+          {
+            return EC2InstanceType::c6i_24xlarge;
+          }
+          else if (hashCode == r5d_large_HASH)
+          {
+            return EC2InstanceType::r5d_large;
+          }
+          else if (hashCode == r5d_xlarge_HASH)
+          {
+            return EC2InstanceType::r5d_xlarge;
+          }
+          else if (hashCode == r5d_2xlarge_HASH)
+          {
+            return EC2InstanceType::r5d_2xlarge;
+          }
+          else if (hashCode == r5d_4xlarge_HASH)
+          {
+            return EC2InstanceType::r5d_4xlarge;
+          }
+          else if (hashCode == r5d_8xlarge_HASH)
+          {
+            return EC2InstanceType::r5d_8xlarge;
+          }
+          else if (hashCode == r5d_12xlarge_HASH)
+          {
+            return EC2InstanceType::r5d_12xlarge;
+          }
+          else if (hashCode == r5d_16xlarge_HASH)
+          {
+            return EC2InstanceType::r5d_16xlarge;
+          }
+          else if (hashCode == r5d_24xlarge_HASH)
+          {
+            return EC2InstanceType::r5d_24xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -613,6 +773,70 @@ namespace Aws
             return "m5a.16xlarge";
           case EC2InstanceType::m5a_24xlarge:
             return "m5a.24xlarge";
+          case EC2InstanceType::c5d_large:
+            return "c5d.large";
+          case EC2InstanceType::c5d_xlarge:
+            return "c5d.xlarge";
+          case EC2InstanceType::c5d_2xlarge:
+            return "c5d.2xlarge";
+          case EC2InstanceType::c5d_4xlarge:
+            return "c5d.4xlarge";
+          case EC2InstanceType::c5d_9xlarge:
+            return "c5d.9xlarge";
+          case EC2InstanceType::c5d_12xlarge:
+            return "c5d.12xlarge";
+          case EC2InstanceType::c5d_18xlarge:
+            return "c5d.18xlarge";
+          case EC2InstanceType::c5d_24xlarge:
+            return "c5d.24xlarge";
+          case EC2InstanceType::c6a_large:
+            return "c6a.large";
+          case EC2InstanceType::c6a_xlarge:
+            return "c6a.xlarge";
+          case EC2InstanceType::c6a_2xlarge:
+            return "c6a.2xlarge";
+          case EC2InstanceType::c6a_4xlarge:
+            return "c6a.4xlarge";
+          case EC2InstanceType::c6a_8xlarge:
+            return "c6a.8xlarge";
+          case EC2InstanceType::c6a_12xlarge:
+            return "c6a.12xlarge";
+          case EC2InstanceType::c6a_16xlarge:
+            return "c6a.16xlarge";
+          case EC2InstanceType::c6a_24xlarge:
+            return "c6a.24xlarge";
+          case EC2InstanceType::c6i_large:
+            return "c6i.large";
+          case EC2InstanceType::c6i_xlarge:
+            return "c6i.xlarge";
+          case EC2InstanceType::c6i_2xlarge:
+            return "c6i.2xlarge";
+          case EC2InstanceType::c6i_4xlarge:
+            return "c6i.4xlarge";
+          case EC2InstanceType::c6i_8xlarge:
+            return "c6i.8xlarge";
+          case EC2InstanceType::c6i_12xlarge:
+            return "c6i.12xlarge";
+          case EC2InstanceType::c6i_16xlarge:
+            return "c6i.16xlarge";
+          case EC2InstanceType::c6i_24xlarge:
+            return "c6i.24xlarge";
+          case EC2InstanceType::r5d_large:
+            return "r5d.large";
+          case EC2InstanceType::r5d_xlarge:
+            return "r5d.xlarge";
+          case EC2InstanceType::r5d_2xlarge:
+            return "r5d.2xlarge";
+          case EC2InstanceType::r5d_4xlarge:
+            return "r5d.4xlarge";
+          case EC2InstanceType::r5d_8xlarge:
+            return "r5d.8xlarge";
+          case EC2InstanceType::r5d_12xlarge:
+            return "r5d.12xlarge";
+          case EC2InstanceType::r5d_16xlarge:
+            return "r5d.16xlarge";
+          case EC2InstanceType::r5d_24xlarge:
+            return "r5d.24xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

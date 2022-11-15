@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::Vector<AssociateClientDeviceWithCoreDeviceEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
 
     Aws::String m_coreDeviceThingName;
-    bool m_coreDeviceThingNameHasBeenSet;
+    bool m_coreDeviceThingNameHasBeenSet = false;
   };
 
 } // namespace Model

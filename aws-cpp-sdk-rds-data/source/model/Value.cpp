@@ -21,41 +21,41 @@ namespace Model
 {
 
 Value::Value() : 
-    m_arrayValuesHasBeenSet(false),
-    m_bigIntValue(0),
-    m_bigIntValueHasBeenSet(false),
-    m_bitValue(false),
-    m_bitValueHasBeenSet(false),
-    m_blobValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_intValue(0),
-    m_intValueHasBeenSet(false),
     m_isNull(false),
     m_isNullHasBeenSet(false),
+    m_bitValue(false),
+    m_bitValueHasBeenSet(false),
+    m_bigIntValue(0),
+    m_bigIntValueHasBeenSet(false),
+    m_intValue(0),
+    m_intValueHasBeenSet(false),
+    m_doubleValue(0.0),
+    m_doubleValueHasBeenSet(false),
     m_realValue(0.0),
     m_realValueHasBeenSet(false),
     m_stringValueHasBeenSet(false),
+    m_blobValueHasBeenSet(false),
+    m_arrayValuesHasBeenSet(false),
     m_structValueHasBeenSet(false)
 {
 }
 
 Value::Value(JsonView jsonValue) : 
-    m_arrayValuesHasBeenSet(false),
-    m_bigIntValue(0),
-    m_bigIntValueHasBeenSet(false),
-    m_bitValue(false),
-    m_bitValueHasBeenSet(false),
-    m_blobValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_intValue(0),
-    m_intValueHasBeenSet(false),
     m_isNull(false),
     m_isNullHasBeenSet(false),
+    m_bitValue(false),
+    m_bitValueHasBeenSet(false),
+    m_bigIntValue(0),
+    m_bigIntValueHasBeenSet(false),
+    m_intValue(0),
+    m_intValueHasBeenSet(false),
+    m_doubleValue(0.0),
+    m_doubleValueHasBeenSet(false),
     m_realValue(0.0),
     m_realValueHasBeenSet(false),
     m_stringValueHasBeenSet(false),
+    m_blobValueHasBeenSet(false),
+    m_arrayValuesHasBeenSet(false),
     m_structValueHasBeenSet(false)
 {
   *this = jsonValue;
@@ -70,21 +70,11 @@ Value& Value::WithStructValue(StructValue&& value) { SetStructValue(std::move(va
 
 Value& Value::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arrayValues"))
+  if(jsonValue.ValueExists("isNull"))
   {
-    Array<JsonView> arrayValuesJsonList = jsonValue.GetArray("arrayValues");
-    for(unsigned arrayValuesIndex = 0; arrayValuesIndex < arrayValuesJsonList.GetLength(); ++arrayValuesIndex)
-    {
-      m_arrayValues.push_back(arrayValuesJsonList[arrayValuesIndex].AsObject());
-    }
-    m_arrayValuesHasBeenSet = true;
-  }
+    m_isNull = jsonValue.GetBool("isNull");
 
-  if(jsonValue.ValueExists("bigIntValue"))
-  {
-    m_bigIntValue = jsonValue.GetInt64("bigIntValue");
-
-    m_bigIntValueHasBeenSet = true;
+    m_isNullHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("bitValue"))
@@ -94,17 +84,11 @@ Value& Value::operator =(JsonView jsonValue)
     m_bitValueHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("blobValue"))
+  if(jsonValue.ValueExists("bigIntValue"))
   {
-    m_blobValue = HashingUtils::Base64Decode(jsonValue.GetString("blobValue"));
-    m_blobValueHasBeenSet = true;
-  }
+    m_bigIntValue = jsonValue.GetInt64("bigIntValue");
 
-  if(jsonValue.ValueExists("doubleValue"))
-  {
-    m_doubleValue = jsonValue.GetDouble("doubleValue");
-
-    m_doubleValueHasBeenSet = true;
+    m_bigIntValueHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("intValue"))
@@ -114,11 +98,11 @@ Value& Value::operator =(JsonView jsonValue)
     m_intValueHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("isNull"))
+  if(jsonValue.ValueExists("doubleValue"))
   {
-    m_isNull = jsonValue.GetBool("isNull");
+    m_doubleValue = jsonValue.GetDouble("doubleValue");
 
-    m_isNullHasBeenSet = true;
+    m_doubleValueHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("realValue"))
@@ -135,6 +119,22 @@ Value& Value::operator =(JsonView jsonValue)
     m_stringValueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("blobValue"))
+  {
+    m_blobValue = HashingUtils::Base64Decode(jsonValue.GetString("blobValue"));
+    m_blobValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("arrayValues"))
+  {
+    Aws::Utils::Array<JsonView> arrayValuesJsonList = jsonValue.GetArray("arrayValues");
+    for(unsigned arrayValuesIndex = 0; arrayValuesIndex < arrayValuesJsonList.GetLength(); ++arrayValuesIndex)
+    {
+      m_arrayValues.push_back(arrayValuesJsonList[arrayValuesIndex].AsObject());
+    }
+    m_arrayValuesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("structValue"))
   {
     m_structValue = Aws::MakeShared<StructValue>("Value", jsonValue.GetObject("structValue"));
@@ -149,20 +149,9 @@ JsonValue Value::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arrayValuesHasBeenSet)
+  if(m_isNullHasBeenSet)
   {
-   Array<JsonValue> arrayValuesJsonList(m_arrayValues.size());
-   for(unsigned arrayValuesIndex = 0; arrayValuesIndex < arrayValuesJsonList.GetLength(); ++arrayValuesIndex)
-   {
-     arrayValuesJsonList[arrayValuesIndex].AsObject(m_arrayValues[arrayValuesIndex].Jsonize());
-   }
-   payload.WithArray("arrayValues", std::move(arrayValuesJsonList));
-
-  }
-
-  if(m_bigIntValueHasBeenSet)
-  {
-   payload.WithInt64("bigIntValue", m_bigIntValue);
+   payload.WithBool("isNull", m_isNull);
 
   }
 
@@ -172,14 +161,9 @@ JsonValue Value::Jsonize() const
 
   }
 
-  if(m_blobValueHasBeenSet)
+  if(m_bigIntValueHasBeenSet)
   {
-   payload.WithString("blobValue", HashingUtils::Base64Encode(m_blobValue));
-  }
-
-  if(m_doubleValueHasBeenSet)
-  {
-   payload.WithDouble("doubleValue", m_doubleValue);
+   payload.WithInt64("bigIntValue", m_bigIntValue);
 
   }
 
@@ -189,9 +173,9 @@ JsonValue Value::Jsonize() const
 
   }
 
-  if(m_isNullHasBeenSet)
+  if(m_doubleValueHasBeenSet)
   {
-   payload.WithBool("isNull", m_isNull);
+   payload.WithDouble("doubleValue", m_doubleValue);
 
   }
 
@@ -204,6 +188,22 @@ JsonValue Value::Jsonize() const
   if(m_stringValueHasBeenSet)
   {
    payload.WithString("stringValue", m_stringValue);
+
+  }
+
+  if(m_blobValueHasBeenSet)
+  {
+   payload.WithString("blobValue", HashingUtils::Base64Encode(m_blobValue));
+  }
+
+  if(m_arrayValuesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> arrayValuesJsonList(m_arrayValues.size());
+   for(unsigned arrayValuesIndex = 0; arrayValuesIndex < arrayValuesJsonList.GetLength(); ++arrayValuesIndex)
+   {
+     arrayValuesJsonList[arrayValuesIndex].AsObject(m_arrayValues[arrayValuesIndex].Jsonize());
+   }
+   payload.WithArray("arrayValues", std::move(arrayValuesJsonList));
 
   }
 

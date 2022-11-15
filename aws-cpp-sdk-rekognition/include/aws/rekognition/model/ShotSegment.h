@@ -84,10 +84,10 @@ namespace Model
   private:
 
     long long m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

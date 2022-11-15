@@ -120,11 +120,9 @@ namespace Model
      * <p>Lists the service instances to add and the existing service instances to
      * remain. Omit the existing service instances to delete from the list.
      * <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton
-     * Administrator Guide</a> or the <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-     * User Guide</a>.</p>
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::String& GetSpec() const{ return m_spec; }
 
@@ -132,11 +130,9 @@ namespace Model
      * <p>Lists the service instances to add and the existing service instances to
      * remain. Omit the existing service instances to delete from the list.
      * <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton
-     * Administrator Guide</a> or the <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-     * User Guide</a>.</p>
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
 
@@ -144,11 +140,9 @@ namespace Model
      * <p>Lists the service instances to add and the existing service instances to
      * remain. Omit the existing service instances to delete from the list.
      * <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton
-     * Administrator Guide</a> or the <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-     * User Guide</a>.</p>
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSpec(const Aws::String& value) { m_specHasBeenSet = true; m_spec = value; }
 
@@ -156,11 +150,9 @@ namespace Model
      * <p>Lists the service instances to add and the existing service instances to
      * remain. Omit the existing service instances to delete from the list.
      * <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton
-     * Administrator Guide</a> or the <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-     * User Guide</a>.</p>
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSpec(Aws::String&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
 
@@ -168,11 +160,9 @@ namespace Model
      * <p>Lists the service instances to add and the existing service instances to
      * remain. Omit the existing service instances to delete from the list.
      * <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton
-     * Administrator Guide</a> or the <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-     * User Guide</a>.</p>
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSpec(const char* value) { m_specHasBeenSet = true; m_spec.assign(value); }
 
@@ -180,11 +170,9 @@ namespace Model
      * <p>Lists the service instances to add and the existing service instances to
      * remain. Omit the existing service instances to delete from the list.
      * <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton
-     * Administrator Guide</a> or the <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-     * User Guide</a>.</p>
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline UpdateServiceRequest& WithSpec(const Aws::String& value) { SetSpec(value); return *this;}
 
@@ -192,11 +180,9 @@ namespace Model
      * <p>Lists the service instances to add and the existing service instances to
      * remain. Omit the existing service instances to delete from the list.
      * <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton
-     * Administrator Guide</a> or the <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-     * User Guide</a>.</p>
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline UpdateServiceRequest& WithSpec(Aws::String&& value) { SetSpec(std::move(value)); return *this;}
 
@@ -204,24 +190,22 @@ namespace Model
      * <p>Lists the service instances to add and the existing service instances to
      * remain. Omit the existing service instances to delete from the list.
      * <i>Don't</i> include edits to the existing service instances or pipeline. For
-     * more information, see <i>Edit a service</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton
-     * Administrator Guide</a> or the <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-     * User Guide</a>.</p>
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline UpdateServiceRequest& WithSpec(const char* value) { SetSpec(value); return *this;}
 
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
   };
 
 } // namespace Model

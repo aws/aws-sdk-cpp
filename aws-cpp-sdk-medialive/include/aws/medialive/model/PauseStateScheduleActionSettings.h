@@ -66,7 +66,7 @@ namespace Model
   private:
 
     Aws::Vector<PipelinePauseStateSettings> m_pipelines;
-    bool m_pipelinesHasBeenSet;
+    bool m_pipelinesHasBeenSet = false;
   };
 
 } // namespace Model

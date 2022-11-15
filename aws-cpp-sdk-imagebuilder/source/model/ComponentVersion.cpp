@@ -88,7 +88,7 @@ ComponentVersion& ComponentVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedOsVersions"))
   {
-    Array<JsonView> supportedOsVersionsJsonList = jsonValue.GetArray("supportedOsVersions");
+    Aws::Utils::Array<JsonView> supportedOsVersionsJsonList = jsonValue.GetArray("supportedOsVersions");
     for(unsigned supportedOsVersionsIndex = 0; supportedOsVersionsIndex < supportedOsVersionsJsonList.GetLength(); ++supportedOsVersionsIndex)
     {
       m_supportedOsVersions.push_back(supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString());
@@ -155,7 +155,7 @@ JsonValue ComponentVersion::Jsonize() const
 
   if(m_supportedOsVersionsHasBeenSet)
   {
-   Array<JsonValue> supportedOsVersionsJsonList(m_supportedOsVersions.size());
+   Aws::Utils::Array<JsonValue> supportedOsVersionsJsonList(m_supportedOsVersions.size());
    for(unsigned supportedOsVersionsIndex = 0; supportedOsVersionsIndex < supportedOsVersionsJsonList.GetLength(); ++supportedOsVersionsIndex)
    {
      supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString(m_supportedOsVersions[supportedOsVersionsIndex]);

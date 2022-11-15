@@ -182,10 +182,10 @@ namespace Model
   private:
 
     Aws::String m_kmsMasterKeyId;
-    bool m_kmsMasterKeyIdHasBeenSet;
+    bool m_kmsMasterKeyIdHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

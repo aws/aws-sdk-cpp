@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_gameName;
-    bool m_gameNameHasBeenSet;
+    bool m_gameNameHasBeenSet = false;
 
     ImportGameConfigurationSource m_importSource;
-    bool m_importSourceHasBeenSet;
+    bool m_importSourceHasBeenSet = false;
   };
 
 } // namespace Model

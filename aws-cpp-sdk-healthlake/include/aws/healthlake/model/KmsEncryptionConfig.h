@@ -128,10 +128,10 @@ namespace Model
   private:
 
     CmkType m_cmkType;
-    bool m_cmkTypeHasBeenSet;
+    bool m_cmkTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

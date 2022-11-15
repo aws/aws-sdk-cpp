@@ -39,45 +39,45 @@ namespace Model
 
 
     /**
-     * <p>Enum to denote whether the wireless gateway connection status event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless gateway connection status event topic is enabled
+     * or disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetWirelessGatewayEventTopic() const{ return m_wirelessGatewayEventTopic; }
 
     /**
-     * <p>Enum to denote whether the wireless gateway connection status event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless gateway connection status event topic is enabled
+     * or disabled.</p>
      */
     inline bool WirelessGatewayEventTopicHasBeenSet() const { return m_wirelessGatewayEventTopicHasBeenSet; }
 
     /**
-     * <p>Enum to denote whether the wireless gateway connection status event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless gateway connection status event topic is enabled
+     * or disabled.</p>
      */
     inline void SetWirelessGatewayEventTopic(const EventNotificationTopicStatus& value) { m_wirelessGatewayEventTopicHasBeenSet = true; m_wirelessGatewayEventTopic = value; }
 
     /**
-     * <p>Enum to denote whether the wireless gateway connection status event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless gateway connection status event topic is enabled
+     * or disabled.</p>
      */
     inline void SetWirelessGatewayEventTopic(EventNotificationTopicStatus&& value) { m_wirelessGatewayEventTopicHasBeenSet = true; m_wirelessGatewayEventTopic = std::move(value); }
 
     /**
-     * <p>Enum to denote whether the wireless gateway connection status event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless gateway connection status event topic is enabled
+     * or disabled.</p>
      */
     inline LoRaWANConnectionStatusResourceTypeEventConfiguration& WithWirelessGatewayEventTopic(const EventNotificationTopicStatus& value) { SetWirelessGatewayEventTopic(value); return *this;}
 
     /**
-     * <p>Enum to denote whether the wireless gateway connection status event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless gateway connection status event topic is enabled
+     * or disabled.</p>
      */
     inline LoRaWANConnectionStatusResourceTypeEventConfiguration& WithWirelessGatewayEventTopic(EventNotificationTopicStatus&& value) { SetWirelessGatewayEventTopic(std::move(value)); return *this;}
 
   private:
 
     EventNotificationTopicStatus m_wirelessGatewayEventTopic;
-    bool m_wirelessGatewayEventTopicHasBeenSet;
+    bool m_wirelessGatewayEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

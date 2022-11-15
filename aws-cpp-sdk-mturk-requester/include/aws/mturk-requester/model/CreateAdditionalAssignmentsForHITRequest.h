@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_hITId;
-    bool m_hITIdHasBeenSet;
+    bool m_hITIdHasBeenSet = false;
 
     int m_numberOfAdditionalAssignments;
-    bool m_numberOfAdditionalAssignmentsHasBeenSet;
+    bool m_numberOfAdditionalAssignmentsHasBeenSet = false;
 
     Aws::String m_uniqueRequestToken;
-    bool m_uniqueRequestTokenHasBeenSet;
+    bool m_uniqueRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

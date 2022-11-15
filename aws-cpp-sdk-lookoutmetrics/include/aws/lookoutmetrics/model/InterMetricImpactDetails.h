@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_anomalyGroupId;
-    bool m_anomalyGroupIdHasBeenSet;
+    bool m_anomalyGroupIdHasBeenSet = false;
 
     RelationshipType m_relationshipType;
-    bool m_relationshipTypeHasBeenSet;
+    bool m_relationshipTypeHasBeenSet = false;
 
     double m_contributionPercentage;
-    bool m_contributionPercentageHasBeenSet;
+    bool m_contributionPercentageHasBeenSet = false;
   };
 
 } // namespace Model

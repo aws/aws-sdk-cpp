@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AudioOnly_HASH = HashingUtils::HashString("AudioOnly");
         static const int AudioWithActiveSpeakerVideo_HASH = HashingUtils::HashString("AudioWithActiveSpeakerVideo");
+        static const int AudioWithCompositedVideo_HASH = HashingUtils::HashString("AudioWithCompositedVideo");
 
 
         AudioMuxType GetAudioMuxTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == AudioWithActiveSpeakerVideo_HASH)
           {
             return AudioMuxType::AudioWithActiveSpeakerVideo;
+          }
+          else if (hashCode == AudioWithCompositedVideo_HASH)
+          {
+            return AudioMuxType::AudioWithCompositedVideo;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "AudioOnly";
           case AudioMuxType::AudioWithActiveSpeakerVideo:
             return "AudioWithActiveSpeakerVideo";
+          case AudioMuxType::AudioWithCompositedVideo:
+            return "AudioWithCompositedVideo";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

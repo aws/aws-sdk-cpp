@@ -369,31 +369,31 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     BotType m_botType;
-    bool m_botTypeHasBeenSet;
+    bool m_botTypeHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTimestamp;
-    bool m_updatedTimestampHasBeenSet;
+    bool m_updatedTimestampHasBeenSet = false;
 
     Aws::String m_botEmail;
-    bool m_botEmailHasBeenSet;
+    bool m_botEmailHasBeenSet = false;
 
     Aws::String m_securityToken;
-    bool m_securityTokenHasBeenSet;
+    bool m_securityTokenHasBeenSet = false;
   };
 
 } // namespace Model

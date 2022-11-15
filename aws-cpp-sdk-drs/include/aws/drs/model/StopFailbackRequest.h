@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_recoveryInstanceID;
-    bool m_recoveryInstanceIDHasBeenSet;
+    bool m_recoveryInstanceIDHasBeenSet = false;
   };
 
 } // namespace Model

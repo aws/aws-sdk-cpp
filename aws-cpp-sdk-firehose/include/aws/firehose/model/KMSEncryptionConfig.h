@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_aWSKMSKeyARN;
-    bool m_aWSKMSKeyARNHasBeenSet;
+    bool m_aWSKMSKeyARNHasBeenSet = false;
   };
 
 } // namespace Model

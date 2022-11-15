@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_logStreamARN;
-    bool m_logStreamARNHasBeenSet;
+    bool m_logStreamARNHasBeenSet = false;
   };
 
 } // namespace Model

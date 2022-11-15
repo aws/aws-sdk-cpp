@@ -36,7 +36,7 @@ ListScramSecretsResult& ListScramSecretsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("secretArnList"))
   {
-    Array<JsonView> secretArnListJsonList = jsonValue.GetArray("secretArnList");
+    Aws::Utils::Array<JsonView> secretArnListJsonList = jsonValue.GetArray("secretArnList");
     for(unsigned secretArnListIndex = 0; secretArnListIndex < secretArnListJsonList.GetLength(); ++secretArnListIndex)
     {
       m_secretArnList.push_back(secretArnListJsonList[secretArnListIndex].AsString());

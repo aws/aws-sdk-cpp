@@ -10,6 +10,7 @@
 #include <aws/drs/model/LastLaunchResult.h>
 #include <aws/drs/model/LifeCycle.h>
 #include <aws/drs/model/SourceProperties.h>
+#include <aws/drs/model/StagingArea.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -250,6 +251,32 @@ namespace Model
 
 
     /**
+     * <p>The staging area of the source server.</p>
+     */
+    inline const StagingArea& GetStagingArea() const{ return m_stagingArea; }
+
+    /**
+     * <p>The staging area of the source server.</p>
+     */
+    inline void SetStagingArea(const StagingArea& value) { m_stagingArea = value; }
+
+    /**
+     * <p>The staging area of the source server.</p>
+     */
+    inline void SetStagingArea(StagingArea&& value) { m_stagingArea = std::move(value); }
+
+    /**
+     * <p>The staging area of the source server.</p>
+     */
+    inline DisconnectSourceServerResult& WithStagingArea(const StagingArea& value) { SetStagingArea(value); return *this;}
+
+    /**
+     * <p>The staging area of the source server.</p>
+     */
+    inline DisconnectSourceServerResult& WithStagingArea(StagingArea&& value) { SetStagingArea(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags associated with the Source Server.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -324,6 +351,8 @@ namespace Model
     SourceProperties m_sourceProperties;
 
     Aws::String m_sourceServerID;
+
+    StagingArea m_stagingArea;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
   };

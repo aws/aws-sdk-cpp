@@ -20,6 +20,8 @@ namespace Model
 
 EnvironmentAccountConnection::EnvironmentAccountConnection() : 
     m_arnHasBeenSet(false),
+    m_codebuildRoleArnHasBeenSet(false),
+    m_componentRoleArnHasBeenSet(false),
     m_environmentAccountIdHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -34,6 +36,8 @@ EnvironmentAccountConnection::EnvironmentAccountConnection() :
 
 EnvironmentAccountConnection::EnvironmentAccountConnection(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_codebuildRoleArnHasBeenSet(false),
+    m_componentRoleArnHasBeenSet(false),
     m_environmentAccountIdHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -54,6 +58,20 @@ EnvironmentAccountConnection& EnvironmentAccountConnection::operator =(JsonView 
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("codebuildRoleArn"))
+  {
+    m_codebuildRoleArn = jsonValue.GetString("codebuildRoleArn");
+
+    m_codebuildRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("componentRoleArn"))
+  {
+    m_componentRoleArn = jsonValue.GetString("componentRoleArn");
+
+    m_componentRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("environmentAccountId"))
@@ -122,6 +140,18 @@ JsonValue EnvironmentAccountConnection::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_codebuildRoleArnHasBeenSet)
+  {
+   payload.WithString("codebuildRoleArn", m_codebuildRoleArn);
+
+  }
+
+  if(m_componentRoleArnHasBeenSet)
+  {
+   payload.WithString("componentRoleArn", m_componentRoleArn);
 
   }
 

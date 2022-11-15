@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     Aws::String m_profileVersion;
-    bool m_profileVersionHasBeenSet;
+    bool m_profileVersionHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_effectiveTime;
-    bool m_effectiveTimeHasBeenSet;
+    bool m_effectiveTimeHasBeenSet = false;
   };
 
 } // namespace Model

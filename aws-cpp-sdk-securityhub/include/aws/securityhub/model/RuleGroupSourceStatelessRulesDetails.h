@@ -95,10 +95,10 @@ namespace Model
   private:
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     RuleGroupSourceStatelessRuleDefinition m_ruleDefinition;
-    bool m_ruleDefinitionHasBeenSet;
+    bool m_ruleDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

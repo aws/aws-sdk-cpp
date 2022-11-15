@@ -91,10 +91,10 @@ namespace Model
   private:
 
     UpdateResourceCollectionAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     UpdateResourceCollectionFilter m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
+    bool m_resourceCollectionHasBeenSet = false;
   };
 
 } // namespace Model

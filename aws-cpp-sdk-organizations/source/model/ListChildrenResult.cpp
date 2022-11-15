@@ -30,7 +30,7 @@ ListChildrenResult& ListChildrenResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Children"))
   {
-    Array<JsonView> childrenJsonList = jsonValue.GetArray("Children");
+    Aws::Utils::Array<JsonView> childrenJsonList = jsonValue.GetArray("Children");
     for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
     {
       m_children.push_back(childrenJsonList[childrenIndex].AsObject());

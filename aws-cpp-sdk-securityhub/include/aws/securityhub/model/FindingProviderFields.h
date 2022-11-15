@@ -252,19 +252,19 @@ namespace Model
   private:
 
     int m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     int m_criticality;
-    bool m_criticalityHasBeenSet;
+    bool m_criticalityHasBeenSet = false;
 
     Aws::Vector<RelatedFinding> m_relatedFindings;
-    bool m_relatedFindingsHasBeenSet;
+    bool m_relatedFindingsHasBeenSet = false;
 
     FindingProviderSeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
   };
 
 } // namespace Model

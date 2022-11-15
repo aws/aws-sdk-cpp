@@ -35,7 +35,7 @@ AwsDynamoDbTableProjection& AwsDynamoDbTableProjection::operator =(JsonView json
 {
   if(jsonValue.ValueExists("NonKeyAttributes"))
   {
-    Array<JsonView> nonKeyAttributesJsonList = jsonValue.GetArray("NonKeyAttributes");
+    Aws::Utils::Array<JsonView> nonKeyAttributesJsonList = jsonValue.GetArray("NonKeyAttributes");
     for(unsigned nonKeyAttributesIndex = 0; nonKeyAttributesIndex < nonKeyAttributesJsonList.GetLength(); ++nonKeyAttributesIndex)
     {
       m_nonKeyAttributes.push_back(nonKeyAttributesJsonList[nonKeyAttributesIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue AwsDynamoDbTableProjection::Jsonize() const
 
   if(m_nonKeyAttributesHasBeenSet)
   {
-   Array<JsonValue> nonKeyAttributesJsonList(m_nonKeyAttributes.size());
+   Aws::Utils::Array<JsonValue> nonKeyAttributesJsonList(m_nonKeyAttributes.size());
    for(unsigned nonKeyAttributesIndex = 0; nonKeyAttributesIndex < nonKeyAttributesJsonList.GetLength(); ++nonKeyAttributesIndex)
    {
      nonKeyAttributesJsonList[nonKeyAttributesIndex].AsString(m_nonKeyAttributes[nonKeyAttributesIndex]);

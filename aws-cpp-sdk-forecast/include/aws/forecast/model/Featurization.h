@@ -188,10 +188,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::Vector<FeaturizationMethod> m_featurizationPipeline;
-    bool m_featurizationPipelineHasBeenSet;
+    bool m_featurizationPipelineHasBeenSet = false;
   };
 
 } // namespace Model

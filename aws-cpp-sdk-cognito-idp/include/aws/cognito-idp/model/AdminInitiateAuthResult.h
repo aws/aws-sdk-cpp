@@ -66,10 +66,19 @@ namespace Model
      * <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be
      * enabled to use this flow.</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
      * For users who are required to change their passwords after successful first
-     * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any
-     * other required attributes.</p> </li> <li> <p> <code>MFA_SETUP</code>: For users
-     * who are required to set up an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters
+     * login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required
+     * attributes that Amazon Cognito returned in the <code>requiredAttributes</code>
+     * parameter. You can also set values for attributes that aren't required by your
+     * user pool and that your app client can write. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
+     *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
+     * modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
+     * users who are required to set up an MFA factor before they can sign in. The MFA
+     * types activated for the user pool will be listed in the challenge parameters
      * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
      * session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>, and use the session returned by
@@ -106,10 +115,19 @@ namespace Model
      * <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be
      * enabled to use this flow.</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
      * For users who are required to change their passwords after successful first
-     * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any
-     * other required attributes.</p> </li> <li> <p> <code>MFA_SETUP</code>: For users
-     * who are required to set up an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters
+     * login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required
+     * attributes that Amazon Cognito returned in the <code>requiredAttributes</code>
+     * parameter. You can also set values for attributes that aren't required by your
+     * user pool and that your app client can write. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
+     *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
+     * modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
+     * users who are required to set up an MFA factor before they can sign in. The MFA
+     * types activated for the user pool will be listed in the challenge parameters
      * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
      * session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>, and use the session returned by
@@ -146,10 +164,19 @@ namespace Model
      * <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be
      * enabled to use this flow.</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
      * For users who are required to change their passwords after successful first
-     * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any
-     * other required attributes.</p> </li> <li> <p> <code>MFA_SETUP</code>: For users
-     * who are required to set up an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters
+     * login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required
+     * attributes that Amazon Cognito returned in the <code>requiredAttributes</code>
+     * parameter. You can also set values for attributes that aren't required by your
+     * user pool and that your app client can write. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
+     *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
+     * modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
+     * users who are required to set up an MFA factor before they can sign in. The MFA
+     * types activated for the user pool will be listed in the challenge parameters
      * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
      * session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>, and use the session returned by
@@ -186,10 +213,19 @@ namespace Model
      * <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be
      * enabled to use this flow.</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
      * For users who are required to change their passwords after successful first
-     * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any
-     * other required attributes.</p> </li> <li> <p> <code>MFA_SETUP</code>: For users
-     * who are required to set up an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters
+     * login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required
+     * attributes that Amazon Cognito returned in the <code>requiredAttributes</code>
+     * parameter. You can also set values for attributes that aren't required by your
+     * user pool and that your app client can write. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
+     *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
+     * modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
+     * users who are required to set up an MFA factor before they can sign in. The MFA
+     * types activated for the user pool will be listed in the challenge parameters
      * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
      * session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>, and use the session returned by
@@ -226,10 +262,19 @@ namespace Model
      * <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be
      * enabled to use this flow.</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
      * For users who are required to change their passwords after successful first
-     * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any
-     * other required attributes.</p> </li> <li> <p> <code>MFA_SETUP</code>: For users
-     * who are required to set up an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters
+     * login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required
+     * attributes that Amazon Cognito returned in the <code>requiredAttributes</code>
+     * parameter. You can also set values for attributes that aren't required by your
+     * user pool and that your app client can write. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
+     *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
+     * modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
+     * users who are required to set up an MFA factor before they can sign in. The MFA
+     * types activated for the user pool will be listed in the challenge parameters
      * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
      * session returned here from <code>InitiateAuth</code> as an input to
      * <code>AssociateSoftwareToken</code>, and use the session returned by

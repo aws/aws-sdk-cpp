@@ -276,19 +276,19 @@ namespace Model
   private:
 
     Aws::String m_thingGroupName;
-    bool m_thingGroupNameHasBeenSet;
+    bool m_thingGroupNameHasBeenSet = false;
 
     Aws::String m_thingGroupId;
-    bool m_thingGroupIdHasBeenSet;
+    bool m_thingGroupIdHasBeenSet = false;
 
     Aws::String m_thingGroupDescription;
-    bool m_thingGroupDescriptionHasBeenSet;
+    bool m_thingGroupDescriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_parentGroupNames;
-    bool m_parentGroupNamesHasBeenSet;
+    bool m_parentGroupNamesHasBeenSet = false;
   };
 
 } // namespace Model

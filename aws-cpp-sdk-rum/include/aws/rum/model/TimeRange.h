@@ -84,10 +84,10 @@ namespace Model
   private:
 
     long long m_after;
-    bool m_afterHasBeenSet;
+    bool m_afterHasBeenSet = false;
 
     long long m_before;
-    bool m_beforeHasBeenSet;
+    bool m_beforeHasBeenSet = false;
   };
 
 } // namespace Model

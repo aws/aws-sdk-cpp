@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>An array of one ore more data repository association descriptions.</p>
+     * <p>An array of one or more data repository association descriptions.</p>
      */
     inline const Aws::Vector<DataRepositoryAssociation>& GetAssociations() const{ return m_associations; }
 
     /**
-     * <p>An array of one ore more data repository association descriptions.</p>
+     * <p>An array of one or more data repository association descriptions.</p>
      */
     inline void SetAssociations(const Aws::Vector<DataRepositoryAssociation>& value) { m_associations = value; }
 
     /**
-     * <p>An array of one ore more data repository association descriptions.</p>
+     * <p>An array of one or more data repository association descriptions.</p>
      */
     inline void SetAssociations(Aws::Vector<DataRepositoryAssociation>&& value) { m_associations = std::move(value); }
 
     /**
-     * <p>An array of one ore more data repository association descriptions.</p>
+     * <p>An array of one or more data repository association descriptions.</p>
      */
     inline DescribeDataRepositoryAssociationsResult& WithAssociations(const Aws::Vector<DataRepositoryAssociation>& value) { SetAssociations(value); return *this;}
 
     /**
-     * <p>An array of one ore more data repository association descriptions.</p>
+     * <p>An array of one or more data repository association descriptions.</p>
      */
     inline DescribeDataRepositoryAssociationsResult& WithAssociations(Aws::Vector<DataRepositoryAssociation>&& value) { SetAssociations(std::move(value)); return *this;}
 
     /**
-     * <p>An array of one ore more data repository association descriptions.</p>
+     * <p>An array of one or more data repository association descriptions.</p>
      */
     inline DescribeDataRepositoryAssociationsResult& AddAssociations(const DataRepositoryAssociation& value) { m_associations.push_back(value); return *this; }
 
     /**
-     * <p>An array of one ore more data repository association descriptions.</p>
+     * <p>An array of one or more data repository association descriptions.</p>
      */
     inline DescribeDataRepositoryAssociationsResult& AddAssociations(DataRepositoryAssociation&& value) { m_associations.push_back(std::move(value)); return *this; }
 

@@ -71,101 +71,146 @@ namespace Model
 
 
     /**
-     * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
-     * data repository task is processed. The default path is the file system root
-     * directory. The paths you provide need to be relative to the mount point of the
-     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <p>A list of paths for the data repository task to use when the task is
+     * processed. If a path that you provide isn't valid, the task fails.</p> <ul> <li>
+     * <p>For export tasks, the list contains paths on the Amazon FSx file system from
+     * which the files are exported to the Amazon S3 bucket. The default path is the
+     * file system root directory. The paths you provide need to be relative to the
+     * mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
      * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
-     * to export, then the path to provide is <code>path1</code>. If a path that you
-     * provide isn't valid, the task fails.</p>
+     * to export, then the path to provide is <code>path1</code>.</p> </li> <li> <p>For
+     * import tasks, the list contains paths in the Amazon S3 bucket from which POSIX
+     * metadata changes are imported to the Amazon FSx file system. The path can be an
+     * S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where
+     * <code>myPrefix</code> is optional).</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetPaths() const{ return m_paths; }
 
     /**
-     * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
-     * data repository task is processed. The default path is the file system root
-     * directory. The paths you provide need to be relative to the mount point of the
-     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <p>A list of paths for the data repository task to use when the task is
+     * processed. If a path that you provide isn't valid, the task fails.</p> <ul> <li>
+     * <p>For export tasks, the list contains paths on the Amazon FSx file system from
+     * which the files are exported to the Amazon S3 bucket. The default path is the
+     * file system root directory. The paths you provide need to be relative to the
+     * mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
      * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
-     * to export, then the path to provide is <code>path1</code>. If a path that you
-     * provide isn't valid, the task fails.</p>
+     * to export, then the path to provide is <code>path1</code>.</p> </li> <li> <p>For
+     * import tasks, the list contains paths in the Amazon S3 bucket from which POSIX
+     * metadata changes are imported to the Amazon FSx file system. The path can be an
+     * S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where
+     * <code>myPrefix</code> is optional).</p> </li> </ul>
      */
     inline bool PathsHasBeenSet() const { return m_pathsHasBeenSet; }
 
     /**
-     * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
-     * data repository task is processed. The default path is the file system root
-     * directory. The paths you provide need to be relative to the mount point of the
-     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <p>A list of paths for the data repository task to use when the task is
+     * processed. If a path that you provide isn't valid, the task fails.</p> <ul> <li>
+     * <p>For export tasks, the list contains paths on the Amazon FSx file system from
+     * which the files are exported to the Amazon S3 bucket. The default path is the
+     * file system root directory. The paths you provide need to be relative to the
+     * mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
      * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
-     * to export, then the path to provide is <code>path1</code>. If a path that you
-     * provide isn't valid, the task fails.</p>
+     * to export, then the path to provide is <code>path1</code>.</p> </li> <li> <p>For
+     * import tasks, the list contains paths in the Amazon S3 bucket from which POSIX
+     * metadata changes are imported to the Amazon FSx file system. The path can be an
+     * S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where
+     * <code>myPrefix</code> is optional).</p> </li> </ul>
      */
     inline void SetPaths(const Aws::Vector<Aws::String>& value) { m_pathsHasBeenSet = true; m_paths = value; }
 
     /**
-     * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
-     * data repository task is processed. The default path is the file system root
-     * directory. The paths you provide need to be relative to the mount point of the
-     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <p>A list of paths for the data repository task to use when the task is
+     * processed. If a path that you provide isn't valid, the task fails.</p> <ul> <li>
+     * <p>For export tasks, the list contains paths on the Amazon FSx file system from
+     * which the files are exported to the Amazon S3 bucket. The default path is the
+     * file system root directory. The paths you provide need to be relative to the
+     * mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
      * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
-     * to export, then the path to provide is <code>path1</code>. If a path that you
-     * provide isn't valid, the task fails.</p>
+     * to export, then the path to provide is <code>path1</code>.</p> </li> <li> <p>For
+     * import tasks, the list contains paths in the Amazon S3 bucket from which POSIX
+     * metadata changes are imported to the Amazon FSx file system. The path can be an
+     * S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where
+     * <code>myPrefix</code> is optional).</p> </li> </ul>
      */
     inline void SetPaths(Aws::Vector<Aws::String>&& value) { m_pathsHasBeenSet = true; m_paths = std::move(value); }
 
     /**
-     * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
-     * data repository task is processed. The default path is the file system root
-     * directory. The paths you provide need to be relative to the mount point of the
-     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <p>A list of paths for the data repository task to use when the task is
+     * processed. If a path that you provide isn't valid, the task fails.</p> <ul> <li>
+     * <p>For export tasks, the list contains paths on the Amazon FSx file system from
+     * which the files are exported to the Amazon S3 bucket. The default path is the
+     * file system root directory. The paths you provide need to be relative to the
+     * mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
      * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
-     * to export, then the path to provide is <code>path1</code>. If a path that you
-     * provide isn't valid, the task fails.</p>
+     * to export, then the path to provide is <code>path1</code>.</p> </li> <li> <p>For
+     * import tasks, the list contains paths in the Amazon S3 bucket from which POSIX
+     * metadata changes are imported to the Amazon FSx file system. The path can be an
+     * S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where
+     * <code>myPrefix</code> is optional).</p> </li> </ul>
      */
     inline CreateDataRepositoryTaskRequest& WithPaths(const Aws::Vector<Aws::String>& value) { SetPaths(value); return *this;}
 
     /**
-     * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
-     * data repository task is processed. The default path is the file system root
-     * directory. The paths you provide need to be relative to the mount point of the
-     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <p>A list of paths for the data repository task to use when the task is
+     * processed. If a path that you provide isn't valid, the task fails.</p> <ul> <li>
+     * <p>For export tasks, the list contains paths on the Amazon FSx file system from
+     * which the files are exported to the Amazon S3 bucket. The default path is the
+     * file system root directory. The paths you provide need to be relative to the
+     * mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
      * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
-     * to export, then the path to provide is <code>path1</code>. If a path that you
-     * provide isn't valid, the task fails.</p>
+     * to export, then the path to provide is <code>path1</code>.</p> </li> <li> <p>For
+     * import tasks, the list contains paths in the Amazon S3 bucket from which POSIX
+     * metadata changes are imported to the Amazon FSx file system. The path can be an
+     * S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where
+     * <code>myPrefix</code> is optional).</p> </li> </ul>
      */
     inline CreateDataRepositoryTaskRequest& WithPaths(Aws::Vector<Aws::String>&& value) { SetPaths(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
-     * data repository task is processed. The default path is the file system root
-     * directory. The paths you provide need to be relative to the mount point of the
-     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <p>A list of paths for the data repository task to use when the task is
+     * processed. If a path that you provide isn't valid, the task fails.</p> <ul> <li>
+     * <p>For export tasks, the list contains paths on the Amazon FSx file system from
+     * which the files are exported to the Amazon S3 bucket. The default path is the
+     * file system root directory. The paths you provide need to be relative to the
+     * mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
      * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
-     * to export, then the path to provide is <code>path1</code>. If a path that you
-     * provide isn't valid, the task fails.</p>
+     * to export, then the path to provide is <code>path1</code>.</p> </li> <li> <p>For
+     * import tasks, the list contains paths in the Amazon S3 bucket from which POSIX
+     * metadata changes are imported to the Amazon FSx file system. The path can be an
+     * S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where
+     * <code>myPrefix</code> is optional).</p> </li> </ul>
      */
     inline CreateDataRepositoryTaskRequest& AddPaths(const Aws::String& value) { m_pathsHasBeenSet = true; m_paths.push_back(value); return *this; }
 
     /**
-     * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
-     * data repository task is processed. The default path is the file system root
-     * directory. The paths you provide need to be relative to the mount point of the
-     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <p>A list of paths for the data repository task to use when the task is
+     * processed. If a path that you provide isn't valid, the task fails.</p> <ul> <li>
+     * <p>For export tasks, the list contains paths on the Amazon FSx file system from
+     * which the files are exported to the Amazon S3 bucket. The default path is the
+     * file system root directory. The paths you provide need to be relative to the
+     * mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
      * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
-     * to export, then the path to provide is <code>path1</code>. If a path that you
-     * provide isn't valid, the task fails.</p>
+     * to export, then the path to provide is <code>path1</code>.</p> </li> <li> <p>For
+     * import tasks, the list contains paths in the Amazon S3 bucket from which POSIX
+     * metadata changes are imported to the Amazon FSx file system. The path can be an
+     * S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where
+     * <code>myPrefix</code> is optional).</p> </li> </ul>
      */
     inline CreateDataRepositoryTaskRequest& AddPaths(Aws::String&& value) { m_pathsHasBeenSet = true; m_paths.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
-     * data repository task is processed. The default path is the file system root
-     * directory. The paths you provide need to be relative to the mount point of the
-     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <p>A list of paths for the data repository task to use when the task is
+     * processed. If a path that you provide isn't valid, the task fails.</p> <ul> <li>
+     * <p>For export tasks, the list contains paths on the Amazon FSx file system from
+     * which the files are exported to the Amazon S3 bucket. The default path is the
+     * file system root directory. The paths you provide need to be relative to the
+     * mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
      * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
-     * to export, then the path to provide is <code>path1</code>. If a path that you
-     * provide isn't valid, the task fails.</p>
+     * to export, then the path to provide is <code>path1</code>.</p> </li> <li> <p>For
+     * import tasks, the list contains paths in the Amazon S3 bucket from which POSIX
+     * metadata changes are imported to the Amazon FSx file system. The path can be an
+     * S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where
+     * <code>myPrefix</code> is optional).</p> </li> </ul>
      */
     inline CreateDataRepositoryTaskRequest& AddPaths(const char* value) { m_pathsHasBeenSet = true; m_paths.push_back(value); return *this; }
 
@@ -305,25 +350,57 @@ namespace Model
     
     inline CreateDataRepositoryTaskRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache
+     * <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the
+     * cache.</p>
+     */
+    inline long long GetCapacityToRelease() const{ return m_capacityToRelease; }
+
+    /**
+     * <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache
+     * <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the
+     * cache.</p>
+     */
+    inline bool CapacityToReleaseHasBeenSet() const { return m_capacityToReleaseHasBeenSet; }
+
+    /**
+     * <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache
+     * <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the
+     * cache.</p>
+     */
+    inline void SetCapacityToRelease(long long value) { m_capacityToReleaseHasBeenSet = true; m_capacityToRelease = value; }
+
+    /**
+     * <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache
+     * <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the
+     * cache.</p>
+     */
+    inline CreateDataRepositoryTaskRequest& WithCapacityToRelease(long long value) { SetCapacityToRelease(value); return *this;}
+
   private:
 
     DataRepositoryTaskType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_paths;
-    bool m_pathsHasBeenSet;
+    bool m_pathsHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     CompletionReport m_report;
-    bool m_reportHasBeenSet;
+    bool m_reportHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    long long m_capacityToRelease;
+    bool m_capacityToReleaseHasBeenSet = false;
   };
 
 } // namespace Model

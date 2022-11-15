@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<GlueStudioSchemaColumn> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
   };
 
 } // namespace Model

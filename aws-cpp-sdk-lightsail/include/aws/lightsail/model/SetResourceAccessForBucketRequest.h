@@ -190,13 +190,13 @@ namespace Model
   private:
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     ResourceBucketAccess m_access;
-    bool m_accessHasBeenSet;
+    bool m_accessHasBeenSet = false;
   };
 
 } // namespace Model

@@ -354,22 +354,34 @@ namespace Model
     inline GetIpamResourceCidrsRequest& WithResourceType(IpamResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline const RequestIpamResourceTag& GetResourceTag() const{ return m_resourceTag; }
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline bool ResourceTagHasBeenSet() const { return m_resourceTagHasBeenSet; }
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline void SetResourceTag(const RequestIpamResourceTag& value) { m_resourceTagHasBeenSet = true; m_resourceTag = value; }
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline void SetResourceTag(RequestIpamResourceTag&& value) { m_resourceTagHasBeenSet = true; m_resourceTag = std::move(value); }
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline GetIpamResourceCidrsRequest& WithResourceTag(const RequestIpamResourceTag& value) { SetResourceTag(value); return *this;}
 
-    
+    /**
+     * <p>The resource tag.</p>
+     */
     inline GetIpamResourceCidrsRequest& WithResourceTag(RequestIpamResourceTag&& value) { SetResourceTag(std::move(value)); return *this;}
 
 
@@ -416,34 +428,34 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_ipamScopeId;
-    bool m_ipamScopeIdHasBeenSet;
+    bool m_ipamScopeIdHasBeenSet = false;
 
     Aws::String m_ipamPoolId;
-    bool m_ipamPoolIdHasBeenSet;
+    bool m_ipamPoolIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     IpamResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     RequestIpamResourceTag m_resourceTag;
-    bool m_resourceTagHasBeenSet;
+    bool m_resourceTagHasBeenSet = false;
 
     Aws::String m_resourceOwner;
-    bool m_resourceOwnerHasBeenSet;
+    bool m_resourceOwnerHasBeenSet = false;
   };
 
 } // namespace Model

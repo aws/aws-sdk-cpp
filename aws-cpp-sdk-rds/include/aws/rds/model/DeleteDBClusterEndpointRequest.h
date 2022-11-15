@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_dBClusterEndpointIdentifier;
-    bool m_dBClusterEndpointIdentifierHasBeenSet;
+    bool m_dBClusterEndpointIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

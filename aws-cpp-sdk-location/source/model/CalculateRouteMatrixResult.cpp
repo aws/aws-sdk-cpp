@@ -30,10 +30,10 @@ CalculateRouteMatrixResult& CalculateRouteMatrixResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RouteMatrix"))
   {
-    Array<JsonView> routeMatrixJsonList = jsonValue.GetArray("RouteMatrix");
+    Aws::Utils::Array<JsonView> routeMatrixJsonList = jsonValue.GetArray("RouteMatrix");
     for(unsigned routeMatrixIndex = 0; routeMatrixIndex < routeMatrixJsonList.GetLength(); ++routeMatrixIndex)
     {
-      Array<JsonView> routeMatrixRowJsonList = routeMatrixJsonList[routeMatrixIndex].AsArray();
+      Aws::Utils::Array<JsonView> routeMatrixRowJsonList = routeMatrixJsonList[routeMatrixIndex].AsArray();
       Aws::Vector<RouteMatrixEntry> routeMatrixRowList;
       routeMatrixRowList.reserve((size_t)routeMatrixRowJsonList.GetLength());
       for(unsigned routeMatrixRowIndex = 0; routeMatrixRowIndex < routeMatrixRowJsonList.GetLength(); ++routeMatrixRowIndex)
@@ -46,10 +46,10 @@ CalculateRouteMatrixResult& CalculateRouteMatrixResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("SnappedDeparturePositions"))
   {
-    Array<JsonView> snappedDeparturePositionsJsonList = jsonValue.GetArray("SnappedDeparturePositions");
+    Aws::Utils::Array<JsonView> snappedDeparturePositionsJsonList = jsonValue.GetArray("SnappedDeparturePositions");
     for(unsigned snappedDeparturePositionsIndex = 0; snappedDeparturePositionsIndex < snappedDeparturePositionsJsonList.GetLength(); ++snappedDeparturePositionsIndex)
     {
-      Array<JsonView> positionJsonList = snappedDeparturePositionsJsonList[snappedDeparturePositionsIndex].AsArray();
+      Aws::Utils::Array<JsonView> positionJsonList = snappedDeparturePositionsJsonList[snappedDeparturePositionsIndex].AsArray();
       Aws::Vector<double> positionList;
       positionList.reserve((size_t)positionJsonList.GetLength());
       for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
@@ -62,10 +62,10 @@ CalculateRouteMatrixResult& CalculateRouteMatrixResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("SnappedDestinationPositions"))
   {
-    Array<JsonView> snappedDestinationPositionsJsonList = jsonValue.GetArray("SnappedDestinationPositions");
+    Aws::Utils::Array<JsonView> snappedDestinationPositionsJsonList = jsonValue.GetArray("SnappedDestinationPositions");
     for(unsigned snappedDestinationPositionsIndex = 0; snappedDestinationPositionsIndex < snappedDestinationPositionsJsonList.GetLength(); ++snappedDestinationPositionsIndex)
     {
-      Array<JsonView> positionJsonList = snappedDestinationPositionsJsonList[snappedDestinationPositionsIndex].AsArray();
+      Aws::Utils::Array<JsonView> positionJsonList = snappedDestinationPositionsJsonList[snappedDestinationPositionsIndex].AsArray();
       Aws::Vector<double> positionList;
       positionList.reserve((size_t)positionJsonList.GetLength());
       for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)

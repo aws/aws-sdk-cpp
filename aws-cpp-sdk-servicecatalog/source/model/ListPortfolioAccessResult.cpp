@@ -30,7 +30,7 @@ ListPortfolioAccessResult& ListPortfolioAccessResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountIds"))
   {
-    Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
+    Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
     for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
     {
       m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsString());

@@ -73,7 +73,7 @@ TokenData& TokenData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TokenProperties"))
   {
-    Array<JsonView> tokenPropertiesJsonList = jsonValue.GetArray("TokenProperties");
+    Aws::Utils::Array<JsonView> tokenPropertiesJsonList = jsonValue.GetArray("TokenProperties");
     for(unsigned tokenPropertiesIndex = 0; tokenPropertiesIndex < tokenPropertiesJsonList.GetLength(); ++tokenPropertiesIndex)
     {
       m_tokenProperties.push_back(tokenPropertiesJsonList[tokenPropertiesIndex].AsString());
@@ -83,7 +83,7 @@ TokenData& TokenData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RoleArns"))
   {
-    Array<JsonView> roleArnsJsonList = jsonValue.GetArray("RoleArns");
+    Aws::Utils::Array<JsonView> roleArnsJsonList = jsonValue.GetArray("RoleArns");
     for(unsigned roleArnsIndex = 0; roleArnsIndex < roleArnsJsonList.GetLength(); ++roleArnsIndex)
     {
       m_roleArns.push_back(roleArnsJsonList[roleArnsIndex].AsString());
@@ -131,7 +131,7 @@ JsonValue TokenData::Jsonize() const
 
   if(m_tokenPropertiesHasBeenSet)
   {
-   Array<JsonValue> tokenPropertiesJsonList(m_tokenProperties.size());
+   Aws::Utils::Array<JsonValue> tokenPropertiesJsonList(m_tokenProperties.size());
    for(unsigned tokenPropertiesIndex = 0; tokenPropertiesIndex < tokenPropertiesJsonList.GetLength(); ++tokenPropertiesIndex)
    {
      tokenPropertiesJsonList[tokenPropertiesIndex].AsString(m_tokenProperties[tokenPropertiesIndex]);
@@ -142,7 +142,7 @@ JsonValue TokenData::Jsonize() const
 
   if(m_roleArnsHasBeenSet)
   {
-   Array<JsonValue> roleArnsJsonList(m_roleArns.size());
+   Aws::Utils::Array<JsonValue> roleArnsJsonList(m_roleArns.size());
    for(unsigned roleArnsIndex = 0; roleArnsIndex < roleArnsJsonList.GetLength(); ++roleArnsIndex)
    {
      roleArnsJsonList[roleArnsIndex].AsString(m_roleArns[roleArnsIndex]);

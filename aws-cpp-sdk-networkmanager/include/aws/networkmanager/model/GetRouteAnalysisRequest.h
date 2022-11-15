@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_routeAnalysisId;
-    bool m_routeAnalysisIdHasBeenSet;
+    bool m_routeAnalysisIdHasBeenSet = false;
   };
 
 } // namespace Model

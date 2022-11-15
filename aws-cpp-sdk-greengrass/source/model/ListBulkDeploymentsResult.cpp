@@ -30,7 +30,7 @@ ListBulkDeploymentsResult& ListBulkDeploymentsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BulkDeployments"))
   {
-    Array<JsonView> bulkDeploymentsJsonList = jsonValue.GetArray("BulkDeployments");
+    Aws::Utils::Array<JsonView> bulkDeploymentsJsonList = jsonValue.GetArray("BulkDeployments");
     for(unsigned bulkDeploymentsIndex = 0; bulkDeploymentsIndex < bulkDeploymentsJsonList.GetLength(); ++bulkDeploymentsIndex)
     {
       m_bulkDeployments.push_back(bulkDeploymentsJsonList[bulkDeploymentsIndex].AsObject());

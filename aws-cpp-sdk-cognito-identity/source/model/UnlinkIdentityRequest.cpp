@@ -42,7 +42,7 @@ Aws::String UnlinkIdentityRequest::SerializePayload() const
 
   if(m_loginsToRemoveHasBeenSet)
   {
-   Array<JsonValue> loginsToRemoveJsonList(m_loginsToRemove.size());
+   Aws::Utils::Array<JsonValue> loginsToRemoveJsonList(m_loginsToRemove.size());
    for(unsigned loginsToRemoveIndex = 0; loginsToRemoveIndex < loginsToRemoveJsonList.GetLength(); ++loginsToRemoveIndex)
    {
      loginsToRemoveJsonList[loginsToRemoveIndex].AsString(m_loginsToRemove[loginsToRemoveIndex]);

@@ -24,8 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>The object used to call your custom language model to your transcription
-   * job.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the name of the custom language model that was included in the
+   * specified transcription job.</p> <p>Only use <code>ModelSettings</code> with the
+   * <code>LanguageModelName</code> sub-parameter if you're <b>not</b> using
+   * automatic language identification (<code/>). If using
+   * <code>LanguageIdSettings</code> in your request, this parameter contains a
+   * <code>LanguageModelName</code> sub-parameter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ModelSettings">AWS
    * API Reference</a></p>
    */
@@ -39,49 +43,89 @@ namespace Model
 
 
     /**
-     * <p>The name of your custom language model.</p>
+     * <p>The name of the custom language model you want to use when processing your
+     * transcription job. Note that language model names are case sensitive.</p> <p>The
+     * language of the specified language model must match the language code you
+     * specify in your transcription request. If the languages don't match, the
+     * language model isn't applied. There are no errors or warnings associated with a
+     * language mismatch.</p>
      */
     inline const Aws::String& GetLanguageModelName() const{ return m_languageModelName; }
 
     /**
-     * <p>The name of your custom language model.</p>
+     * <p>The name of the custom language model you want to use when processing your
+     * transcription job. Note that language model names are case sensitive.</p> <p>The
+     * language of the specified language model must match the language code you
+     * specify in your transcription request. If the languages don't match, the
+     * language model isn't applied. There are no errors or warnings associated with a
+     * language mismatch.</p>
      */
     inline bool LanguageModelNameHasBeenSet() const { return m_languageModelNameHasBeenSet; }
 
     /**
-     * <p>The name of your custom language model.</p>
+     * <p>The name of the custom language model you want to use when processing your
+     * transcription job. Note that language model names are case sensitive.</p> <p>The
+     * language of the specified language model must match the language code you
+     * specify in your transcription request. If the languages don't match, the
+     * language model isn't applied. There are no errors or warnings associated with a
+     * language mismatch.</p>
      */
     inline void SetLanguageModelName(const Aws::String& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = value; }
 
     /**
-     * <p>The name of your custom language model.</p>
+     * <p>The name of the custom language model you want to use when processing your
+     * transcription job. Note that language model names are case sensitive.</p> <p>The
+     * language of the specified language model must match the language code you
+     * specify in your transcription request. If the languages don't match, the
+     * language model isn't applied. There are no errors or warnings associated with a
+     * language mismatch.</p>
      */
     inline void SetLanguageModelName(Aws::String&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::move(value); }
 
     /**
-     * <p>The name of your custom language model.</p>
+     * <p>The name of the custom language model you want to use when processing your
+     * transcription job. Note that language model names are case sensitive.</p> <p>The
+     * language of the specified language model must match the language code you
+     * specify in your transcription request. If the languages don't match, the
+     * language model isn't applied. There are no errors or warnings associated with a
+     * language mismatch.</p>
      */
     inline void SetLanguageModelName(const char* value) { m_languageModelNameHasBeenSet = true; m_languageModelName.assign(value); }
 
     /**
-     * <p>The name of your custom language model.</p>
+     * <p>The name of the custom language model you want to use when processing your
+     * transcription job. Note that language model names are case sensitive.</p> <p>The
+     * language of the specified language model must match the language code you
+     * specify in your transcription request. If the languages don't match, the
+     * language model isn't applied. There are no errors or warnings associated with a
+     * language mismatch.</p>
      */
     inline ModelSettings& WithLanguageModelName(const Aws::String& value) { SetLanguageModelName(value); return *this;}
 
     /**
-     * <p>The name of your custom language model.</p>
+     * <p>The name of the custom language model you want to use when processing your
+     * transcription job. Note that language model names are case sensitive.</p> <p>The
+     * language of the specified language model must match the language code you
+     * specify in your transcription request. If the languages don't match, the
+     * language model isn't applied. There are no errors or warnings associated with a
+     * language mismatch.</p>
      */
     inline ModelSettings& WithLanguageModelName(Aws::String&& value) { SetLanguageModelName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of your custom language model.</p>
+     * <p>The name of the custom language model you want to use when processing your
+     * transcription job. Note that language model names are case sensitive.</p> <p>The
+     * language of the specified language model must match the language code you
+     * specify in your transcription request. If the languages don't match, the
+     * language model isn't applied. There are no errors or warnings associated with a
+     * language mismatch.</p>
      */
     inline ModelSettings& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}
 
   private:
 
     Aws::String m_languageModelName;
-    bool m_languageModelNameHasBeenSet;
+    bool m_languageModelNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -120,10 +120,10 @@ namespace Model
   private:
 
     S3DestinationAccessControl m_accessControl;
-    bool m_accessControlHasBeenSet;
+    bool m_accessControlHasBeenSet = false;
 
     S3EncryptionSettings m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
   };
 
 } // namespace Model

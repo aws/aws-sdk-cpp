@@ -88,10 +88,10 @@ namespace Model
   private:
 
     double m_estimatedMonthlySavings;
-    bool m_estimatedMonthlySavingsHasBeenSet;
+    bool m_estimatedMonthlySavingsHasBeenSet = false;
 
     double m_estimatedPercentMonthlySavings;
-    bool m_estimatedPercentMonthlySavingsHasBeenSet;
+    bool m_estimatedPercentMonthlySavingsHasBeenSet = false;
   };
 
 } // namespace Model

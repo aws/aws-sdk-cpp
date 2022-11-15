@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateClassificationJobRequest::CreateClassificationJobRequest() : 
+    m_allowListIdsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_customDataIdentifierIdsHasBeenSet(false),
@@ -37,6 +38,17 @@ Aws::String CreateClassificationJobRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_allowListIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowListIdsJsonList(m_allowListIds.size());
+   for(unsigned allowListIdsIndex = 0; allowListIdsIndex < allowListIdsJsonList.GetLength(); ++allowListIdsIndex)
+   {
+     allowListIdsJsonList[allowListIdsIndex].AsString(m_allowListIds[allowListIdsIndex]);
+   }
+   payload.WithArray("allowListIds", std::move(allowListIdsJsonList));
+
+  }
+
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
@@ -45,7 +57,7 @@ Aws::String CreateClassificationJobRequest::SerializePayload() const
 
   if(m_customDataIdentifierIdsHasBeenSet)
   {
-   Array<JsonValue> customDataIdentifierIdsJsonList(m_customDataIdentifierIds.size());
+   Aws::Utils::Array<JsonValue> customDataIdentifierIdsJsonList(m_customDataIdentifierIds.size());
    for(unsigned customDataIdentifierIdsIndex = 0; customDataIdentifierIdsIndex < customDataIdentifierIdsJsonList.GetLength(); ++customDataIdentifierIdsIndex)
    {
      customDataIdentifierIdsJsonList[customDataIdentifierIdsIndex].AsString(m_customDataIdentifierIds[customDataIdentifierIdsIndex]);
@@ -73,7 +85,7 @@ Aws::String CreateClassificationJobRequest::SerializePayload() const
 
   if(m_managedDataIdentifierIdsHasBeenSet)
   {
-   Array<JsonValue> managedDataIdentifierIdsJsonList(m_managedDataIdentifierIds.size());
+   Aws::Utils::Array<JsonValue> managedDataIdentifierIdsJsonList(m_managedDataIdentifierIds.size());
    for(unsigned managedDataIdentifierIdsIndex = 0; managedDataIdentifierIdsIndex < managedDataIdentifierIdsJsonList.GetLength(); ++managedDataIdentifierIdsIndex)
    {
      managedDataIdentifierIdsJsonList[managedDataIdentifierIdsIndex].AsString(m_managedDataIdentifierIds[managedDataIdentifierIdsIndex]);

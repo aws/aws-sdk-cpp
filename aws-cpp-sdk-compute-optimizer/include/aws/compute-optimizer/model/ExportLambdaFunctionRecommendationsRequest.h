@@ -389,22 +389,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionRecommendationFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<ExportableLambdaFunctionField> m_fieldsToExport;
-    bool m_fieldsToExportHasBeenSet;
+    bool m_fieldsToExportHasBeenSet = false;
 
     S3DestinationConfig m_s3DestinationConfig;
-    bool m_s3DestinationConfigHasBeenSet;
+    bool m_s3DestinationConfigHasBeenSet = false;
 
     FileFormat m_fileFormat;
-    bool m_fileFormatHasBeenSet;
+    bool m_fileFormatHasBeenSet = false;
 
     bool m_includeMemberAccounts;
-    bool m_includeMemberAccountsHasBeenSet;
+    bool m_includeMemberAccountsHasBeenSet = false;
   };
 
 } // namespace Model

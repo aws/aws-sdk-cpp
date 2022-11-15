@@ -33,7 +33,7 @@ RecommendationRelatedAnomalySourceDetail& RecommendationRelatedAnomalySourceDeta
 {
   if(jsonValue.ValueExists("CloudWatchMetrics"))
   {
-    Array<JsonView> cloudWatchMetricsJsonList = jsonValue.GetArray("CloudWatchMetrics");
+    Aws::Utils::Array<JsonView> cloudWatchMetricsJsonList = jsonValue.GetArray("CloudWatchMetrics");
     for(unsigned cloudWatchMetricsIndex = 0; cloudWatchMetricsIndex < cloudWatchMetricsJsonList.GetLength(); ++cloudWatchMetricsIndex)
     {
       m_cloudWatchMetrics.push_back(cloudWatchMetricsJsonList[cloudWatchMetricsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue RecommendationRelatedAnomalySourceDetail::Jsonize() const
 
   if(m_cloudWatchMetricsHasBeenSet)
   {
-   Array<JsonValue> cloudWatchMetricsJsonList(m_cloudWatchMetrics.size());
+   Aws::Utils::Array<JsonValue> cloudWatchMetricsJsonList(m_cloudWatchMetrics.size());
    for(unsigned cloudWatchMetricsIndex = 0; cloudWatchMetricsIndex < cloudWatchMetricsJsonList.GetLength(); ++cloudWatchMetricsIndex)
    {
      cloudWatchMetricsJsonList[cloudWatchMetricsIndex].AsObject(m_cloudWatchMetrics[cloudWatchMetricsIndex].Jsonize());

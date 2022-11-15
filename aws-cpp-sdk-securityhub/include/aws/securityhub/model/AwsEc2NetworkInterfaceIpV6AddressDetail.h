@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_ipV6Address;
-    bool m_ipV6AddressHasBeenSet;
+    bool m_ipV6AddressHasBeenSet = false;
   };
 
 } // namespace Model

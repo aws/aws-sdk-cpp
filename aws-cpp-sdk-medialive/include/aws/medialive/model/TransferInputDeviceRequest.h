@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_inputDeviceId;
-    bool m_inputDeviceIdHasBeenSet;
+    bool m_inputDeviceIdHasBeenSet = false;
 
     Aws::String m_targetCustomerId;
-    bool m_targetCustomerIdHasBeenSet;
+    bool m_targetCustomerIdHasBeenSet = false;
 
     Aws::String m_targetRegion;
-    bool m_targetRegionHasBeenSet;
+    bool m_targetRegionHasBeenSet = false;
 
     Aws::String m_transferMessage;
-    bool m_transferMessageHasBeenSet;
+    bool m_transferMessageHasBeenSet = false;
   };
 
 } // namespace Model

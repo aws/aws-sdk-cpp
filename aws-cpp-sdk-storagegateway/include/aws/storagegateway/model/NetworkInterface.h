@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_ipv4Address;
-    bool m_ipv4AddressHasBeenSet;
+    bool m_ipv4AddressHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
 
     Aws::String m_ipv6Address;
-    bool m_ipv6AddressHasBeenSet;
+    bool m_ipv6AddressHasBeenSet = false;
   };
 
 } // namespace Model

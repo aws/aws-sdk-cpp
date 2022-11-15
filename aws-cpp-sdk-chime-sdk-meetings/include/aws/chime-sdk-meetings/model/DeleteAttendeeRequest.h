@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_meetingId;
-    bool m_meetingIdHasBeenSet;
+    bool m_meetingIdHasBeenSet = false;
 
     Aws::String m_attendeeId;
-    bool m_attendeeIdHasBeenSet;
+    bool m_attendeeIdHasBeenSet = false;
   };
 
 } // namespace Model

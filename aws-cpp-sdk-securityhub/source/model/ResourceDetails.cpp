@@ -63,6 +63,7 @@ ResourceDetails::ResourceDetails() :
     m_awsRdsDbClusterSnapshotHasBeenSet(false),
     m_awsRdsDbClusterHasBeenSet(false),
     m_awsEcsClusterHasBeenSet(false),
+    m_awsEcsContainerHasBeenSet(false),
     m_awsEcsTaskDefinitionHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_otherHasBeenSet(false),
@@ -81,7 +82,22 @@ ResourceDetails::ResourceDetails() :
     m_awsNetworkFirewallFirewallPolicyHasBeenSet(false),
     m_awsNetworkFirewallFirewallHasBeenSet(false),
     m_awsNetworkFirewallRuleGroupHasBeenSet(false),
-    m_awsRdsDbSecurityGroupHasBeenSet(false)
+    m_awsRdsDbSecurityGroupHasBeenSet(false),
+    m_awsKinesisStreamHasBeenSet(false),
+    m_awsEc2TransitGatewayHasBeenSet(false),
+    m_awsEfsAccessPointHasBeenSet(false),
+    m_awsCloudFormationStackHasBeenSet(false),
+    m_awsCloudWatchAlarmHasBeenSet(false),
+    m_awsEc2VpcPeeringConnectionHasBeenSet(false),
+    m_awsWafRegionalRuleGroupHasBeenSet(false),
+    m_awsWafRegionalRuleHasBeenSet(false),
+    m_awsWafRegionalWebAclHasBeenSet(false),
+    m_awsWafRuleHasBeenSet(false),
+    m_awsWafRuleGroupHasBeenSet(false),
+    m_awsEcsTaskHasBeenSet(false),
+    m_awsBackupBackupVaultHasBeenSet(false),
+    m_awsBackupBackupPlanHasBeenSet(false),
+    m_awsBackupRecoveryPointHasBeenSet(false)
 {
 }
 
@@ -130,6 +146,7 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsRdsDbClusterSnapshotHasBeenSet(false),
     m_awsRdsDbClusterHasBeenSet(false),
     m_awsEcsClusterHasBeenSet(false),
+    m_awsEcsContainerHasBeenSet(false),
     m_awsEcsTaskDefinitionHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_otherHasBeenSet(false),
@@ -148,7 +165,22 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsNetworkFirewallFirewallPolicyHasBeenSet(false),
     m_awsNetworkFirewallFirewallHasBeenSet(false),
     m_awsNetworkFirewallRuleGroupHasBeenSet(false),
-    m_awsRdsDbSecurityGroupHasBeenSet(false)
+    m_awsRdsDbSecurityGroupHasBeenSet(false),
+    m_awsKinesisStreamHasBeenSet(false),
+    m_awsEc2TransitGatewayHasBeenSet(false),
+    m_awsEfsAccessPointHasBeenSet(false),
+    m_awsCloudFormationStackHasBeenSet(false),
+    m_awsCloudWatchAlarmHasBeenSet(false),
+    m_awsEc2VpcPeeringConnectionHasBeenSet(false),
+    m_awsWafRegionalRuleGroupHasBeenSet(false),
+    m_awsWafRegionalRuleHasBeenSet(false),
+    m_awsWafRegionalWebAclHasBeenSet(false),
+    m_awsWafRuleHasBeenSet(false),
+    m_awsWafRuleGroupHasBeenSet(false),
+    m_awsEcsTaskHasBeenSet(false),
+    m_awsBackupBackupVaultHasBeenSet(false),
+    m_awsBackupBackupPlanHasBeenSet(false),
+    m_awsBackupRecoveryPointHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -463,6 +495,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEcsClusterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsEcsContainer"))
+  {
+    m_awsEcsContainer = jsonValue.GetObject("AwsEcsContainer");
+
+    m_awsEcsContainerHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AwsEcsTaskDefinition"))
   {
     m_awsEcsTaskDefinition = jsonValue.GetObject("AwsEcsTaskDefinition");
@@ -597,6 +636,111 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsRdsDbSecurityGroup = jsonValue.GetObject("AwsRdsDbSecurityGroup");
 
     m_awsRdsDbSecurityGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsKinesisStream"))
+  {
+    m_awsKinesisStream = jsonValue.GetObject("AwsKinesisStream");
+
+    m_awsKinesisStreamHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2TransitGateway"))
+  {
+    m_awsEc2TransitGateway = jsonValue.GetObject("AwsEc2TransitGateway");
+
+    m_awsEc2TransitGatewayHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEfsAccessPoint"))
+  {
+    m_awsEfsAccessPoint = jsonValue.GetObject("AwsEfsAccessPoint");
+
+    m_awsEfsAccessPointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsCloudFormationStack"))
+  {
+    m_awsCloudFormationStack = jsonValue.GetObject("AwsCloudFormationStack");
+
+    m_awsCloudFormationStackHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsCloudWatchAlarm"))
+  {
+    m_awsCloudWatchAlarm = jsonValue.GetObject("AwsCloudWatchAlarm");
+
+    m_awsCloudWatchAlarmHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2VpcPeeringConnection"))
+  {
+    m_awsEc2VpcPeeringConnection = jsonValue.GetObject("AwsEc2VpcPeeringConnection");
+
+    m_awsEc2VpcPeeringConnectionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafRegionalRuleGroup"))
+  {
+    m_awsWafRegionalRuleGroup = jsonValue.GetObject("AwsWafRegionalRuleGroup");
+
+    m_awsWafRegionalRuleGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafRegionalRule"))
+  {
+    m_awsWafRegionalRule = jsonValue.GetObject("AwsWafRegionalRule");
+
+    m_awsWafRegionalRuleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafRegionalWebAcl"))
+  {
+    m_awsWafRegionalWebAcl = jsonValue.GetObject("AwsWafRegionalWebAcl");
+
+    m_awsWafRegionalWebAclHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafRule"))
+  {
+    m_awsWafRule = jsonValue.GetObject("AwsWafRule");
+
+    m_awsWafRuleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafRuleGroup"))
+  {
+    m_awsWafRuleGroup = jsonValue.GetObject("AwsWafRuleGroup");
+
+    m_awsWafRuleGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEcsTask"))
+  {
+    m_awsEcsTask = jsonValue.GetObject("AwsEcsTask");
+
+    m_awsEcsTaskHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsBackupBackupVault"))
+  {
+    m_awsBackupBackupVault = jsonValue.GetObject("AwsBackupBackupVault");
+
+    m_awsBackupBackupVaultHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsBackupBackupPlan"))
+  {
+    m_awsBackupBackupPlan = jsonValue.GetObject("AwsBackupBackupPlan");
+
+    m_awsBackupBackupPlanHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsBackupRecoveryPoint"))
+  {
+    m_awsBackupRecoveryPoint = jsonValue.GetObject("AwsBackupRecoveryPoint");
+
+    m_awsBackupRecoveryPointHasBeenSet = true;
   }
 
   return *this;
@@ -870,6 +1014,12 @@ JsonValue ResourceDetails::Jsonize() const
 
   }
 
+  if(m_awsEcsContainerHasBeenSet)
+  {
+   payload.WithObject("AwsEcsContainer", m_awsEcsContainer.Jsonize());
+
+  }
+
   if(m_awsEcsTaskDefinitionHasBeenSet)
   {
    payload.WithObject("AwsEcsTaskDefinition", m_awsEcsTaskDefinition.Jsonize());
@@ -986,6 +1136,96 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsRdsDbSecurityGroupHasBeenSet)
   {
    payload.WithObject("AwsRdsDbSecurityGroup", m_awsRdsDbSecurityGroup.Jsonize());
+
+  }
+
+  if(m_awsKinesisStreamHasBeenSet)
+  {
+   payload.WithObject("AwsKinesisStream", m_awsKinesisStream.Jsonize());
+
+  }
+
+  if(m_awsEc2TransitGatewayHasBeenSet)
+  {
+   payload.WithObject("AwsEc2TransitGateway", m_awsEc2TransitGateway.Jsonize());
+
+  }
+
+  if(m_awsEfsAccessPointHasBeenSet)
+  {
+   payload.WithObject("AwsEfsAccessPoint", m_awsEfsAccessPoint.Jsonize());
+
+  }
+
+  if(m_awsCloudFormationStackHasBeenSet)
+  {
+   payload.WithObject("AwsCloudFormationStack", m_awsCloudFormationStack.Jsonize());
+
+  }
+
+  if(m_awsCloudWatchAlarmHasBeenSet)
+  {
+   payload.WithObject("AwsCloudWatchAlarm", m_awsCloudWatchAlarm.Jsonize());
+
+  }
+
+  if(m_awsEc2VpcPeeringConnectionHasBeenSet)
+  {
+   payload.WithObject("AwsEc2VpcPeeringConnection", m_awsEc2VpcPeeringConnection.Jsonize());
+
+  }
+
+  if(m_awsWafRegionalRuleGroupHasBeenSet)
+  {
+   payload.WithObject("AwsWafRegionalRuleGroup", m_awsWafRegionalRuleGroup.Jsonize());
+
+  }
+
+  if(m_awsWafRegionalRuleHasBeenSet)
+  {
+   payload.WithObject("AwsWafRegionalRule", m_awsWafRegionalRule.Jsonize());
+
+  }
+
+  if(m_awsWafRegionalWebAclHasBeenSet)
+  {
+   payload.WithObject("AwsWafRegionalWebAcl", m_awsWafRegionalWebAcl.Jsonize());
+
+  }
+
+  if(m_awsWafRuleHasBeenSet)
+  {
+   payload.WithObject("AwsWafRule", m_awsWafRule.Jsonize());
+
+  }
+
+  if(m_awsWafRuleGroupHasBeenSet)
+  {
+   payload.WithObject("AwsWafRuleGroup", m_awsWafRuleGroup.Jsonize());
+
+  }
+
+  if(m_awsEcsTaskHasBeenSet)
+  {
+   payload.WithObject("AwsEcsTask", m_awsEcsTask.Jsonize());
+
+  }
+
+  if(m_awsBackupBackupVaultHasBeenSet)
+  {
+   payload.WithObject("AwsBackupBackupVault", m_awsBackupBackupVault.Jsonize());
+
+  }
+
+  if(m_awsBackupBackupPlanHasBeenSet)
+  {
+   payload.WithObject("AwsBackupBackupPlan", m_awsBackupBackupPlan.Jsonize());
+
+  }
+
+  if(m_awsBackupRecoveryPointHasBeenSet)
+  {
+   payload.WithObject("AwsBackupRecoveryPoint", m_awsBackupRecoveryPoint.Jsonize());
 
   }
 

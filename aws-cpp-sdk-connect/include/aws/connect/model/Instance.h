@@ -381,34 +381,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     DirectoryType m_identityManagementType;
-    bool m_identityManagementTypeHasBeenSet;
+    bool m_identityManagementTypeHasBeenSet = false;
 
     Aws::String m_instanceAlias;
-    bool m_instanceAliasHasBeenSet;
+    bool m_instanceAliasHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     InstanceStatus m_instanceStatus;
-    bool m_instanceStatusHasBeenSet;
+    bool m_instanceStatusHasBeenSet = false;
 
     InstanceStatusReason m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     bool m_inboundCallsEnabled;
-    bool m_inboundCallsEnabledHasBeenSet;
+    bool m_inboundCallsEnabledHasBeenSet = false;
 
     bool m_outboundCallsEnabled;
-    bool m_outboundCallsEnabledHasBeenSet;
+    bool m_outboundCallsEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_routingProfileId;
-    bool m_routingProfileIdHasBeenSet;
+    bool m_routingProfileIdHasBeenSet = false;
 
     Aws::Vector<RoutingProfileQueueConfig> m_queueConfigs;
-    bool m_queueConfigsHasBeenSet;
+    bool m_queueConfigsHasBeenSet = false;
   };
 
 } // namespace Model

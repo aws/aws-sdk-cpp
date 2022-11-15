@@ -122,49 +122,49 @@ namespace Model
 
 
     /**
-     * <p>An object that represents information about available add-on versions and
+     * <p>An object representing information about available add-on versions and
      * compatible Kubernetes versions.</p>
      */
     inline const Aws::Vector<AddonVersionInfo>& GetAddonVersions() const{ return m_addonVersions; }
 
     /**
-     * <p>An object that represents information about available add-on versions and
+     * <p>An object representing information about available add-on versions and
      * compatible Kubernetes versions.</p>
      */
     inline bool AddonVersionsHasBeenSet() const { return m_addonVersionsHasBeenSet; }
 
     /**
-     * <p>An object that represents information about available add-on versions and
+     * <p>An object representing information about available add-on versions and
      * compatible Kubernetes versions.</p>
      */
     inline void SetAddonVersions(const Aws::Vector<AddonVersionInfo>& value) { m_addonVersionsHasBeenSet = true; m_addonVersions = value; }
 
     /**
-     * <p>An object that represents information about available add-on versions and
+     * <p>An object representing information about available add-on versions and
      * compatible Kubernetes versions.</p>
      */
     inline void SetAddonVersions(Aws::Vector<AddonVersionInfo>&& value) { m_addonVersionsHasBeenSet = true; m_addonVersions = std::move(value); }
 
     /**
-     * <p>An object that represents information about available add-on versions and
+     * <p>An object representing information about available add-on versions and
      * compatible Kubernetes versions.</p>
      */
     inline AddonInfo& WithAddonVersions(const Aws::Vector<AddonVersionInfo>& value) { SetAddonVersions(value); return *this;}
 
     /**
-     * <p>An object that represents information about available add-on versions and
+     * <p>An object representing information about available add-on versions and
      * compatible Kubernetes versions.</p>
      */
     inline AddonInfo& WithAddonVersions(Aws::Vector<AddonVersionInfo>&& value) { SetAddonVersions(std::move(value)); return *this;}
 
     /**
-     * <p>An object that represents information about available add-on versions and
+     * <p>An object representing information about available add-on versions and
      * compatible Kubernetes versions.</p>
      */
     inline AddonInfo& AddAddonVersions(const AddonVersionInfo& value) { m_addonVersionsHasBeenSet = true; m_addonVersions.push_back(value); return *this; }
 
     /**
-     * <p>An object that represents information about available add-on versions and
+     * <p>An object representing information about available add-on versions and
      * compatible Kubernetes versions.</p>
      */
     inline AddonInfo& AddAddonVersions(AddonVersionInfo&& value) { m_addonVersionsHasBeenSet = true; m_addonVersions.push_back(std::move(value)); return *this; }
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<AddonVersionInfo> m_addonVersions;
-    bool m_addonVersionsHasBeenSet;
+    bool m_addonVersionsHasBeenSet = false;
   };
 
 } // namespace Model

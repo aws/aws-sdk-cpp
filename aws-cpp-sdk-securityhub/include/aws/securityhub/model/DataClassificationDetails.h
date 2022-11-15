@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_detailedResultsLocation;
-    bool m_detailedResultsLocationHasBeenSet;
+    bool m_detailedResultsLocationHasBeenSet = false;
 
     ClassificationResult m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
   };
 
 } // namespace Model

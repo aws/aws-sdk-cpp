@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userRules;
-    bool m_userRulesHasBeenSet;
+    bool m_userRulesHasBeenSet = false;
   };
 
 } // namespace Model

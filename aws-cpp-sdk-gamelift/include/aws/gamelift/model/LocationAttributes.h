@@ -165,13 +165,13 @@ namespace Model
   private:
 
     LocationState m_locationState;
-    bool m_locationStateHasBeenSet;
+    bool m_locationStateHasBeenSet = false;
 
     Aws::Vector<FleetAction> m_stoppedActions;
-    bool m_stoppedActionsHasBeenSet;
+    bool m_stoppedActionsHasBeenSet = false;
 
     LocationUpdateStatus m_updateStatus;
-    bool m_updateStatusHasBeenSet;
+    bool m_updateStatusHasBeenSet = false;
   };
 
 } // namespace Model

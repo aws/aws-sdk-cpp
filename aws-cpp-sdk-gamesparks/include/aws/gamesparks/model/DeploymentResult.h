@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ResultCode m_resultCode;
-    bool m_resultCodeHasBeenSet;
+    bool m_resultCodeHasBeenSet = false;
   };
 
 } // namespace Model

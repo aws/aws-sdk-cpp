@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     int m_desiredNumber;
-    bool m_desiredNumberHasBeenSet;
+    bool m_desiredNumberHasBeenSet = false;
   };
 
 } // namespace Model

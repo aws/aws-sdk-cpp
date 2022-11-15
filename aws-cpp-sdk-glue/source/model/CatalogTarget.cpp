@@ -21,14 +21,18 @@ namespace Model
 CatalogTarget::CatalogTarget() : 
     m_databaseNameHasBeenSet(false),
     m_tablesHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+    m_connectionNameHasBeenSet(false),
+    m_eventQueueArnHasBeenSet(false),
+    m_dlqEventQueueArnHasBeenSet(false)
 {
 }
 
 CatalogTarget::CatalogTarget(JsonView jsonValue) : 
     m_databaseNameHasBeenSet(false),
     m_tablesHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+    m_connectionNameHasBeenSet(false),
+    m_eventQueueArnHasBeenSet(false),
+    m_dlqEventQueueArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,7 +48,7 @@ CatalogTarget& CatalogTarget::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tables"))
   {
-    Array<JsonView> tablesJsonList = jsonValue.GetArray("Tables");
+    Aws::Utils::Array<JsonView> tablesJsonList = jsonValue.GetArray("Tables");
     for(unsigned tablesIndex = 0; tablesIndex < tablesJsonList.GetLength(); ++tablesIndex)
     {
       m_tables.push_back(tablesJsonList[tablesIndex].AsString());
@@ -57,6 +61,20 @@ CatalogTarget& CatalogTarget::operator =(JsonView jsonValue)
     m_connectionName = jsonValue.GetString("ConnectionName");
 
     m_connectionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventQueueArn"))
+  {
+    m_eventQueueArn = jsonValue.GetString("EventQueueArn");
+
+    m_eventQueueArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DlqEventQueueArn"))
+  {
+    m_dlqEventQueueArn = jsonValue.GetString("DlqEventQueueArn");
+
+    m_dlqEventQueueArnHasBeenSet = true;
   }
 
   return *this;
@@ -74,7 +92,7 @@ JsonValue CatalogTarget::Jsonize() const
 
   if(m_tablesHasBeenSet)
   {
-   Array<JsonValue> tablesJsonList(m_tables.size());
+   Aws::Utils::Array<JsonValue> tablesJsonList(m_tables.size());
    for(unsigned tablesIndex = 0; tablesIndex < tablesJsonList.GetLength(); ++tablesIndex)
    {
      tablesJsonList[tablesIndex].AsString(m_tables[tablesIndex]);
@@ -86,6 +104,18 @@ JsonValue CatalogTarget::Jsonize() const
   if(m_connectionNameHasBeenSet)
   {
    payload.WithString("ConnectionName", m_connectionName);
+
+  }
+
+  if(m_eventQueueArnHasBeenSet)
+  {
+   payload.WithString("EventQueueArn", m_eventQueueArn);
+
+  }
+
+  if(m_dlqEventQueueArnHasBeenSet)
+  {
+   payload.WithString("DlqEventQueueArn", m_dlqEventQueueArn);
 
   }
 

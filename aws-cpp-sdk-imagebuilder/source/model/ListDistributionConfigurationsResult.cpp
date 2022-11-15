@@ -36,7 +36,7 @@ ListDistributionConfigurationsResult& ListDistributionConfigurationsResult::oper
 
   if(jsonValue.ValueExists("distributionConfigurationSummaryList"))
   {
-    Array<JsonView> distributionConfigurationSummaryListJsonList = jsonValue.GetArray("distributionConfigurationSummaryList");
+    Aws::Utils::Array<JsonView> distributionConfigurationSummaryListJsonList = jsonValue.GetArray("distributionConfigurationSummaryList");
     for(unsigned distributionConfigurationSummaryListIndex = 0; distributionConfigurationSummaryListIndex < distributionConfigurationSummaryListJsonList.GetLength(); ++distributionConfigurationSummaryListIndex)
     {
       m_distributionConfigurationSummaryList.push_back(distributionConfigurationSummaryListJsonList[distributionConfigurationSummaryListIndex].AsObject());

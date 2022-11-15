@@ -386,31 +386,31 @@ Leave set to "normal" when input does not contain pre-mixed
   private:
 
     double m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     AacCodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     AacInputType m_inputType;
-    bool m_inputTypeHasBeenSet;
+    bool m_inputTypeHasBeenSet = false;
 
     AacProfile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     AacRateControlMode m_rateControlMode;
-    bool m_rateControlModeHasBeenSet;
+    bool m_rateControlModeHasBeenSet = false;
 
     AacRawFormat m_rawFormat;
-    bool m_rawFormatHasBeenSet;
+    bool m_rawFormatHasBeenSet = false;
 
     double m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     AacSpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     AacVbrQuality m_vbrQuality;
-    bool m_vbrQualityHasBeenSet;
+    bool m_vbrQualityHasBeenSet = false;
   };
 
 } // namespace Model

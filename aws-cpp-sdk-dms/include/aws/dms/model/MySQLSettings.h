@@ -261,42 +261,54 @@ namespace Model
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline const TargetDbType& GetTargetDbType() const{ return m_targetDbType; }
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline bool TargetDbTypeHasBeenSet() const { return m_targetDbTypeHasBeenSet; }
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline void SetTargetDbType(const TargetDbType& value) { m_targetDbTypeHasBeenSet = true; m_targetDbType = value; }
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline void SetTargetDbType(TargetDbType&& value) { m_targetDbTypeHasBeenSet = true; m_targetDbType = std::move(value); }
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline MySQLSettings& WithTargetDbType(const TargetDbType& value) { SetTargetDbType(value); return *this;}
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline MySQLSettings& WithTargetDbType(TargetDbType&& value) { SetTargetDbType(std::move(value)); return *this;}
@@ -789,46 +801,46 @@ namespace Model
   private:
 
     Aws::String m_afterConnectScript;
-    bool m_afterConnectScriptHasBeenSet;
+    bool m_afterConnectScriptHasBeenSet = false;
 
     bool m_cleanSourceMetadataOnMismatch;
-    bool m_cleanSourceMetadataOnMismatchHasBeenSet;
+    bool m_cleanSourceMetadataOnMismatchHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     int m_eventsPollInterval;
-    bool m_eventsPollIntervalHasBeenSet;
+    bool m_eventsPollIntervalHasBeenSet = false;
 
     TargetDbType m_targetDbType;
-    bool m_targetDbTypeHasBeenSet;
+    bool m_targetDbTypeHasBeenSet = false;
 
     int m_maxFileSize;
-    bool m_maxFileSizeHasBeenSet;
+    bool m_maxFileSizeHasBeenSet = false;
 
     int m_parallelLoadThreads;
-    bool m_parallelLoadThreadsHasBeenSet;
+    bool m_parallelLoadThreadsHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_serverTimezone;
-    bool m_serverTimezoneHasBeenSet;
+    bool m_serverTimezoneHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_secretsManagerAccessRoleArn;
-    bool m_secretsManagerAccessRoleArnHasBeenSet;
+    bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
     Aws::String m_secretsManagerSecretId;
-    bool m_secretsManagerSecretIdHasBeenSet;
+    bool m_secretsManagerSecretIdHasBeenSet = false;
   };
 
 } // namespace Model

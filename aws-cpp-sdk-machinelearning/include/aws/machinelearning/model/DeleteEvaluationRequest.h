@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_evaluationId;
-    bool m_evaluationIdHasBeenSet;
+    bool m_evaluationIdHasBeenSet = false;
   };
 
 } // namespace Model

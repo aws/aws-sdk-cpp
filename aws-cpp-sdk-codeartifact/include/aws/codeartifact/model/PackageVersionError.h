@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> An error associated with package. </p><p><h3>See Also:</h3>   <a
+   * <p>l An error associated with package. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageVersionError">AWS
    * API Reference</a></p>
    */
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     PackageVersionErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -48,7 +48,7 @@ GetResourceMetricsResult& GetResourceMetricsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("MetricList"))
   {
-    Array<JsonView> metricListJsonList = jsonValue.GetArray("MetricList");
+    Aws::Utils::Array<JsonView> metricListJsonList = jsonValue.GetArray("MetricList");
     for(unsigned metricListIndex = 0; metricListIndex < metricListJsonList.GetLength(); ++metricListIndex)
     {
       m_metricList.push_back(metricListJsonList[metricListIndex].AsObject());

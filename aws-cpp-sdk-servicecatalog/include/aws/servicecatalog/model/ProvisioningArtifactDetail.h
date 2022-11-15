@@ -166,55 +166,55 @@ namespace Model
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
-     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
-     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-     * </li> </ul>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
+     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
+     * and Amazon Web Services Resources</p> </li> </ul>
      */
     inline const ProvisioningArtifactType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
-     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
-     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-     * </li> </ul>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
+     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
+     * and Amazon Web Services Resources</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
-     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
-     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-     * </li> </ul>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
+     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
+     * and Amazon Web Services Resources</p> </li> </ul>
      */
     inline void SetType(const ProvisioningArtifactType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
-     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
-     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-     * </li> </ul>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
+     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
+     * and Amazon Web Services Resources</p> </li> </ul>
      */
     inline void SetType(ProvisioningArtifactType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
-     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
-     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-     * </li> </ul>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
+     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
+     * and Amazon Web Services Resources</p> </li> </ul>
      */
     inline ProvisioningArtifactDetail& WithType(const ProvisioningArtifactType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
-     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
-     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
-     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
-     * </li> </ul>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
+     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
+     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
+     * and Amazon Web Services Resources</p> </li> </ul>
      */
     inline ProvisioningArtifactDetail& WithType(ProvisioningArtifactType&& value) { SetType(std::move(value)); return *this;}
 
@@ -310,25 +310,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ProvisioningArtifactType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     ProvisioningArtifactGuidance m_guidance;
-    bool m_guidanceHasBeenSet;
+    bool m_guidanceHasBeenSet = false;
   };
 
 } // namespace Model

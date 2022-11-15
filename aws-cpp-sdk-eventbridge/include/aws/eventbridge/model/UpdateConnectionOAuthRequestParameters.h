@@ -197,16 +197,16 @@ namespace Model
   private:
 
     UpdateConnectionOAuthClientRequestParameters m_clientParameters;
-    bool m_clientParametersHasBeenSet;
+    bool m_clientParametersHasBeenSet = false;
 
     Aws::String m_authorizationEndpoint;
-    bool m_authorizationEndpointHasBeenSet;
+    bool m_authorizationEndpointHasBeenSet = false;
 
     ConnectionOAuthHttpMethod m_httpMethod;
-    bool m_httpMethodHasBeenSet;
+    bool m_httpMethodHasBeenSet = false;
 
     ConnectionHttpParameters m_oAuthHttpParameters;
-    bool m_oAuthHttpParametersHasBeenSet;
+    bool m_oAuthHttpParametersHasBeenSet = false;
   };
 
 } // namespace Model

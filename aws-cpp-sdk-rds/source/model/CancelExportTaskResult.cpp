@@ -19,13 +19,15 @@ using namespace Aws;
 
 CancelExportTaskResult::CancelExportTaskResult() : 
     m_percentProgress(0),
-    m_totalExtractedDataInGB(0)
+    m_totalExtractedDataInGB(0),
+    m_sourceType(ExportSourceType::NOT_SET)
 {
 }
 
 CancelExportTaskResult::CancelExportTaskResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_percentProgress(0),
-    m_totalExtractedDataInGB(0)
+    m_totalExtractedDataInGB(0),
+    m_sourceType(ExportSourceType::NOT_SET)
 {
   *this = result;
 }
@@ -66,17 +68,17 @@ CancelExportTaskResult& CancelExportTaskResult::operator =(const Aws::AmazonWebS
     XmlNode snapshotTimeNode = resultNode.FirstChild("SnapshotTime");
     if(!snapshotTimeNode.IsNull())
     {
-      m_snapshotTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_snapshotTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode taskStartTimeNode = resultNode.FirstChild("TaskStartTime");
     if(!taskStartTimeNode.IsNull())
     {
-      m_taskStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_taskStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode taskEndTimeNode = resultNode.FirstChild("TaskEndTime");
     if(!taskEndTimeNode.IsNull())
     {
-      m_taskEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskEndTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_taskEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskEndTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode s3BucketNode = resultNode.FirstChild("S3Bucket");
     if(!s3BucketNode.IsNull())
@@ -122,6 +124,11 @@ CancelExportTaskResult& CancelExportTaskResult::operator =(const Aws::AmazonWebS
     if(!warningMessageNode.IsNull())
     {
       m_warningMessage = Aws::Utils::Xml::DecodeEscapedXmlText(warningMessageNode.GetText());
+    }
+    XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
+    if(!sourceTypeNode.IsNull())
+    {
+      m_sourceType = ExportSourceTypeMapper::GetExportSourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()).c_str());
     }
   }
 

@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_eventName;
-    bool m_eventNameHasBeenSet;
+    bool m_eventNameHasBeenSet = false;
 
     Aws::String m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     Aws::Vector<Action> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::String m_nextState;
-    bool m_nextStateHasBeenSet;
+    bool m_nextStateHasBeenSet = false;
   };
 
 } // namespace Model

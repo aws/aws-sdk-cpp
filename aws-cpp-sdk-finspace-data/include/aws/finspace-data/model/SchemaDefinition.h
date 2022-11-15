@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::Vector<ColumnDefinition> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_primaryKeyColumns;
-    bool m_primaryKeyColumnsHasBeenSet;
+    bool m_primaryKeyColumnsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_claim;
-    bool m_claimHasBeenSet;
+    bool m_claimHasBeenSet = false;
 
     MappingRuleMatchType m_matchType;
-    bool m_matchTypeHasBeenSet;
+    bool m_matchTypeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
   };
 
 } // namespace Model

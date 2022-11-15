@@ -259,22 +259,22 @@ namespace Model
   private:
 
     Aws::String m_artifactArn;
-    bool m_artifactArnHasBeenSet;
+    bool m_artifactArnHasBeenSet = false;
 
     Aws::String m_artifactName;
-    bool m_artifactNameHasBeenSet;
+    bool m_artifactNameHasBeenSet = false;
 
     ArtifactSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_artifactType;
-    bool m_artifactTypeHasBeenSet;
+    bool m_artifactTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -257,19 +257,19 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     DatasetSchema m_datasetSchema;
-    bool m_datasetSchemaHasBeenSet;
+    bool m_datasetSchemaHasBeenSet = false;
 
     Aws::String m_serverSideKmsKeyId;
-    bool m_serverSideKmsKeyIdHasBeenSet;
+    bool m_serverSideKmsKeyIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

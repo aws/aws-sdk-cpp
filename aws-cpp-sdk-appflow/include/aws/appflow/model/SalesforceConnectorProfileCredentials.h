@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
 
     ConnectorOAuthRequest m_oAuthRequest;
-    bool m_oAuthRequestHasBeenSet;
+    bool m_oAuthRequestHasBeenSet = false;
 
     Aws::String m_clientCredentialsArn;
-    bool m_clientCredentialsArnHasBeenSet;
+    bool m_clientCredentialsArnHasBeenSet = false;
   };
 
 } // namespace Model

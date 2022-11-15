@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_diskName;
-    bool m_diskNameHasBeenSet;
+    bool m_diskNameHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     Aws::String m_diskPath;
-    bool m_diskPathHasBeenSet;
+    bool m_diskPathHasBeenSet = false;
   };
 
 } // namespace Model

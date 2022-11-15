@@ -83,38 +83,32 @@ namespace Model
 
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline RegexMatchStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline RegexMatchStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
 
@@ -202,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_regexString;
-    bool m_regexStringHasBeenSet;
+    bool m_regexStringHasBeenSet = false;
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
-    bool m_textTransformationsHasBeenSet;
+    bool m_textTransformationsHasBeenSet = false;
   };
 
 } // namespace Model

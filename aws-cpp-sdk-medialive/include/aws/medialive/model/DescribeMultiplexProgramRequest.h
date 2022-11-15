@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_multiplexId;
-    bool m_multiplexIdHasBeenSet;
+    bool m_multiplexIdHasBeenSet = false;
 
     Aws::String m_programName;
-    bool m_programNameHasBeenSet;
+    bool m_programNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -411,22 +411,22 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     Aws::String m_recordName;
-    bool m_recordNameHasBeenSet;
+    bool m_recordNameHasBeenSet = false;
 
     RRType m_recordType;
-    bool m_recordTypeHasBeenSet;
+    bool m_recordTypeHasBeenSet = false;
 
     Aws::String m_resolverIP;
-    bool m_resolverIPHasBeenSet;
+    bool m_resolverIPHasBeenSet = false;
 
     Aws::String m_eDNS0ClientSubnetIP;
-    bool m_eDNS0ClientSubnetIPHasBeenSet;
+    bool m_eDNS0ClientSubnetIPHasBeenSet = false;
 
     Aws::String m_eDNS0ClientSubnetMask;
-    bool m_eDNS0ClientSubnetMaskHasBeenSet;
+    bool m_eDNS0ClientSubnetMaskHasBeenSet = false;
   };
 
 } // namespace Model

@@ -94,22 +94,24 @@ namespace Model
      * <p> <code>fleetRequestChange</code> events:</p> <ul> <li> <p>
      * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and
      * Amazon EC2 is attempting to maintain the target number of running instances.</p>
-     * </li> <li> <p> <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and has no running instances. The EC2 Fleet or Spot Fleet will be
-     * deleted two days after its instances are terminated.</p> </li> <li> <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled
-     * and does not launch additional instances. Its existing instances continue to run
-     * until they are interrupted or terminated. The request remains in this state
-     * until all instances are interrupted or terminated.</p> </li> <li> <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and its instances are terminating. The request remains in this state
-     * until all instances are terminated.</p> </li> <li> <p> <code>expired</code> -
-     * The EC2 Fleet or Spot Fleet request has expired. If the request was created with
-     * <code>TerminateInstancesWithExpiration</code> set, a subsequent
-     * <code>terminated</code> event indicates that the instances are terminated.</p>
-     * </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet
-     * request is being modified. The request remains in this state until the
-     * modification is fully processed.</p> </li> <li> <p>
+     * </li> <li> <p> <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot
+     * Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and has
+     * no running instances. The EC2 Fleet or Spot Fleet will be deleted two days after
+     * its instances are terminated.</p> </li> <li> <p> <code>deleted_running</code>
+     * (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and does not launch additional
+     * instances. Its existing instances continue to run until they are interrupted or
+     * terminated. The request remains in this state until all instances are
+     * interrupted or terminated.</p> </li> <li> <p> <code>deleted_terminating</code>
+     * (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating.
+     * The request remains in this state until all instances are terminated.</p> </li>
+     * <li> <p> <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired.
+     * If the request was created with <code>TerminateInstancesWithExpiration</code>
+     * set, a subsequent <code>terminated</code> event indicates that the instances are
+     * terminated.</p> </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet
+     * or Spot Fleet request is being modified. The request remains in this state until
+     * the modification is fully processed.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
      * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
@@ -151,22 +153,24 @@ namespace Model
      * <p> <code>fleetRequestChange</code> events:</p> <ul> <li> <p>
      * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and
      * Amazon EC2 is attempting to maintain the target number of running instances.</p>
-     * </li> <li> <p> <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and has no running instances. The EC2 Fleet or Spot Fleet will be
-     * deleted two days after its instances are terminated.</p> </li> <li> <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled
-     * and does not launch additional instances. Its existing instances continue to run
-     * until they are interrupted or terminated. The request remains in this state
-     * until all instances are interrupted or terminated.</p> </li> <li> <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and its instances are terminating. The request remains in this state
-     * until all instances are terminated.</p> </li> <li> <p> <code>expired</code> -
-     * The EC2 Fleet or Spot Fleet request has expired. If the request was created with
-     * <code>TerminateInstancesWithExpiration</code> set, a subsequent
-     * <code>terminated</code> event indicates that the instances are terminated.</p>
-     * </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet
-     * request is being modified. The request remains in this state until the
-     * modification is fully processed.</p> </li> <li> <p>
+     * </li> <li> <p> <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot
+     * Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and has
+     * no running instances. The EC2 Fleet or Spot Fleet will be deleted two days after
+     * its instances are terminated.</p> </li> <li> <p> <code>deleted_running</code>
+     * (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and does not launch additional
+     * instances. Its existing instances continue to run until they are interrupted or
+     * terminated. The request remains in this state until all instances are
+     * interrupted or terminated.</p> </li> <li> <p> <code>deleted_terminating</code>
+     * (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating.
+     * The request remains in this state until all instances are terminated.</p> </li>
+     * <li> <p> <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired.
+     * If the request was created with <code>TerminateInstancesWithExpiration</code>
+     * set, a subsequent <code>terminated</code> event indicates that the instances are
+     * terminated.</p> </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet
+     * or Spot Fleet request is being modified. The request remains in this state until
+     * the modification is fully processed.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
      * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
@@ -208,22 +212,24 @@ namespace Model
      * <p> <code>fleetRequestChange</code> events:</p> <ul> <li> <p>
      * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and
      * Amazon EC2 is attempting to maintain the target number of running instances.</p>
-     * </li> <li> <p> <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and has no running instances. The EC2 Fleet or Spot Fleet will be
-     * deleted two days after its instances are terminated.</p> </li> <li> <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled
-     * and does not launch additional instances. Its existing instances continue to run
-     * until they are interrupted or terminated. The request remains in this state
-     * until all instances are interrupted or terminated.</p> </li> <li> <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and its instances are terminating. The request remains in this state
-     * until all instances are terminated.</p> </li> <li> <p> <code>expired</code> -
-     * The EC2 Fleet or Spot Fleet request has expired. If the request was created with
-     * <code>TerminateInstancesWithExpiration</code> set, a subsequent
-     * <code>terminated</code> event indicates that the instances are terminated.</p>
-     * </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet
-     * request is being modified. The request remains in this state until the
-     * modification is fully processed.</p> </li> <li> <p>
+     * </li> <li> <p> <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot
+     * Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and has
+     * no running instances. The EC2 Fleet or Spot Fleet will be deleted two days after
+     * its instances are terminated.</p> </li> <li> <p> <code>deleted_running</code>
+     * (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and does not launch additional
+     * instances. Its existing instances continue to run until they are interrupted or
+     * terminated. The request remains in this state until all instances are
+     * interrupted or terminated.</p> </li> <li> <p> <code>deleted_terminating</code>
+     * (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating.
+     * The request remains in this state until all instances are terminated.</p> </li>
+     * <li> <p> <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired.
+     * If the request was created with <code>TerminateInstancesWithExpiration</code>
+     * set, a subsequent <code>terminated</code> event indicates that the instances are
+     * terminated.</p> </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet
+     * or Spot Fleet request is being modified. The request remains in this state until
+     * the modification is fully processed.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
      * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
@@ -265,22 +271,24 @@ namespace Model
      * <p> <code>fleetRequestChange</code> events:</p> <ul> <li> <p>
      * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and
      * Amazon EC2 is attempting to maintain the target number of running instances.</p>
-     * </li> <li> <p> <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and has no running instances. The EC2 Fleet or Spot Fleet will be
-     * deleted two days after its instances are terminated.</p> </li> <li> <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled
-     * and does not launch additional instances. Its existing instances continue to run
-     * until they are interrupted or terminated. The request remains in this state
-     * until all instances are interrupted or terminated.</p> </li> <li> <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and its instances are terminating. The request remains in this state
-     * until all instances are terminated.</p> </li> <li> <p> <code>expired</code> -
-     * The EC2 Fleet or Spot Fleet request has expired. If the request was created with
-     * <code>TerminateInstancesWithExpiration</code> set, a subsequent
-     * <code>terminated</code> event indicates that the instances are terminated.</p>
-     * </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet
-     * request is being modified. The request remains in this state until the
-     * modification is fully processed.</p> </li> <li> <p>
+     * </li> <li> <p> <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot
+     * Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and has
+     * no running instances. The EC2 Fleet or Spot Fleet will be deleted two days after
+     * its instances are terminated.</p> </li> <li> <p> <code>deleted_running</code>
+     * (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and does not launch additional
+     * instances. Its existing instances continue to run until they are interrupted or
+     * terminated. The request remains in this state until all instances are
+     * interrupted or terminated.</p> </li> <li> <p> <code>deleted_terminating</code>
+     * (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating.
+     * The request remains in this state until all instances are terminated.</p> </li>
+     * <li> <p> <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired.
+     * If the request was created with <code>TerminateInstancesWithExpiration</code>
+     * set, a subsequent <code>terminated</code> event indicates that the instances are
+     * terminated.</p> </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet
+     * or Spot Fleet request is being modified. The request remains in this state until
+     * the modification is fully processed.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
      * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
@@ -322,22 +330,24 @@ namespace Model
      * <p> <code>fleetRequestChange</code> events:</p> <ul> <li> <p>
      * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and
      * Amazon EC2 is attempting to maintain the target number of running instances.</p>
-     * </li> <li> <p> <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and has no running instances. The EC2 Fleet or Spot Fleet will be
-     * deleted two days after its instances are terminated.</p> </li> <li> <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled
-     * and does not launch additional instances. Its existing instances continue to run
-     * until they are interrupted or terminated. The request remains in this state
-     * until all instances are interrupted or terminated.</p> </li> <li> <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and its instances are terminating. The request remains in this state
-     * until all instances are terminated.</p> </li> <li> <p> <code>expired</code> -
-     * The EC2 Fleet or Spot Fleet request has expired. If the request was created with
-     * <code>TerminateInstancesWithExpiration</code> set, a subsequent
-     * <code>terminated</code> event indicates that the instances are terminated.</p>
-     * </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet
-     * request is being modified. The request remains in this state until the
-     * modification is fully processed.</p> </li> <li> <p>
+     * </li> <li> <p> <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot
+     * Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and has
+     * no running instances. The EC2 Fleet or Spot Fleet will be deleted two days after
+     * its instances are terminated.</p> </li> <li> <p> <code>deleted_running</code>
+     * (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and does not launch additional
+     * instances. Its existing instances continue to run until they are interrupted or
+     * terminated. The request remains in this state until all instances are
+     * interrupted or terminated.</p> </li> <li> <p> <code>deleted_terminating</code>
+     * (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating.
+     * The request remains in this state until all instances are terminated.</p> </li>
+     * <li> <p> <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired.
+     * If the request was created with <code>TerminateInstancesWithExpiration</code>
+     * set, a subsequent <code>terminated</code> event indicates that the instances are
+     * terminated.</p> </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet
+     * or Spot Fleet request is being modified. The request remains in this state until
+     * the modification is fully processed.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
      * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
@@ -379,22 +389,24 @@ namespace Model
      * <p> <code>fleetRequestChange</code> events:</p> <ul> <li> <p>
      * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and
      * Amazon EC2 is attempting to maintain the target number of running instances.</p>
-     * </li> <li> <p> <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and has no running instances. The EC2 Fleet or Spot Fleet will be
-     * deleted two days after its instances are terminated.</p> </li> <li> <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled
-     * and does not launch additional instances. Its existing instances continue to run
-     * until they are interrupted or terminated. The request remains in this state
-     * until all instances are interrupted or terminated.</p> </li> <li> <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and its instances are terminating. The request remains in this state
-     * until all instances are terminated.</p> </li> <li> <p> <code>expired</code> -
-     * The EC2 Fleet or Spot Fleet request has expired. If the request was created with
-     * <code>TerminateInstancesWithExpiration</code> set, a subsequent
-     * <code>terminated</code> event indicates that the instances are terminated.</p>
-     * </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet
-     * request is being modified. The request remains in this state until the
-     * modification is fully processed.</p> </li> <li> <p>
+     * </li> <li> <p> <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot
+     * Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and has
+     * no running instances. The EC2 Fleet or Spot Fleet will be deleted two days after
+     * its instances are terminated.</p> </li> <li> <p> <code>deleted_running</code>
+     * (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and does not launch additional
+     * instances. Its existing instances continue to run until they are interrupted or
+     * terminated. The request remains in this state until all instances are
+     * interrupted or terminated.</p> </li> <li> <p> <code>deleted_terminating</code>
+     * (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating.
+     * The request remains in this state until all instances are terminated.</p> </li>
+     * <li> <p> <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired.
+     * If the request was created with <code>TerminateInstancesWithExpiration</code>
+     * set, a subsequent <code>terminated</code> event indicates that the instances are
+     * terminated.</p> </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet
+     * or Spot Fleet request is being modified. The request remains in this state until
+     * the modification is fully processed.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
      * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
@@ -436,22 +448,24 @@ namespace Model
      * <p> <code>fleetRequestChange</code> events:</p> <ul> <li> <p>
      * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and
      * Amazon EC2 is attempting to maintain the target number of running instances.</p>
-     * </li> <li> <p> <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and has no running instances. The EC2 Fleet or Spot Fleet will be
-     * deleted two days after its instances are terminated.</p> </li> <li> <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled
-     * and does not launch additional instances. Its existing instances continue to run
-     * until they are interrupted or terminated. The request remains in this state
-     * until all instances are interrupted or terminated.</p> </li> <li> <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and its instances are terminating. The request remains in this state
-     * until all instances are terminated.</p> </li> <li> <p> <code>expired</code> -
-     * The EC2 Fleet or Spot Fleet request has expired. If the request was created with
-     * <code>TerminateInstancesWithExpiration</code> set, a subsequent
-     * <code>terminated</code> event indicates that the instances are terminated.</p>
-     * </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet
-     * request is being modified. The request remains in this state until the
-     * modification is fully processed.</p> </li> <li> <p>
+     * </li> <li> <p> <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot
+     * Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and has
+     * no running instances. The EC2 Fleet or Spot Fleet will be deleted two days after
+     * its instances are terminated.</p> </li> <li> <p> <code>deleted_running</code>
+     * (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and does not launch additional
+     * instances. Its existing instances continue to run until they are interrupted or
+     * terminated. The request remains in this state until all instances are
+     * interrupted or terminated.</p> </li> <li> <p> <code>deleted_terminating</code>
+     * (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating.
+     * The request remains in this state until all instances are terminated.</p> </li>
+     * <li> <p> <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired.
+     * If the request was created with <code>TerminateInstancesWithExpiration</code>
+     * set, a subsequent <code>terminated</code> event indicates that the instances are
+     * terminated.</p> </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet
+     * or Spot Fleet request is being modified. The request remains in this state until
+     * the modification is fully processed.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
      * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
@@ -493,22 +507,24 @@ namespace Model
      * <p> <code>fleetRequestChange</code> events:</p> <ul> <li> <p>
      * <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and
      * Amazon EC2 is attempting to maintain the target number of running instances.</p>
-     * </li> <li> <p> <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and has no running instances. The EC2 Fleet or Spot Fleet will be
-     * deleted two days after its instances are terminated.</p> </li> <li> <p>
-     * <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled
-     * and does not launch additional instances. Its existing instances continue to run
-     * until they are interrupted or terminated. The request remains in this state
-     * until all instances are interrupted or terminated.</p> </li> <li> <p>
-     * <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is
-     * canceled and its instances are terminating. The request remains in this state
-     * until all instances are terminated.</p> </li> <li> <p> <code>expired</code> -
-     * The EC2 Fleet or Spot Fleet request has expired. If the request was created with
-     * <code>TerminateInstancesWithExpiration</code> set, a subsequent
-     * <code>terminated</code> event indicates that the instances are terminated.</p>
-     * </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet
-     * request is being modified. The request remains in this state until the
-     * modification is fully processed.</p> </li> <li> <p>
+     * </li> <li> <p> <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot
+     * Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and has
+     * no running instances. The EC2 Fleet or Spot Fleet will be deleted two days after
+     * its instances are terminated.</p> </li> <li> <p> <code>deleted_running</code>
+     * (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and does not launch additional
+     * instances. Its existing instances continue to run until they are interrupted or
+     * terminated. The request remains in this state until all instances are
+     * interrupted or terminated.</p> </li> <li> <p> <code>deleted_terminating</code>
+     * (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is
+     * deleted or the Spot Fleet request is canceled and its instances are terminating.
+     * The request remains in this state until all instances are terminated.</p> </li>
+     * <li> <p> <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired.
+     * If the request was created with <code>TerminateInstancesWithExpiration</code>
+     * set, a subsequent <code>terminated</code> event indicates that the instances are
+     * terminated.</p> </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet
+     * or Spot Fleet request is being modified. The request remains in this state until
+     * the modification is fully processed.</p> </li> <li> <p>
      * <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was
      * modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot
      * Fleet request is being evaluated and Amazon EC2 is preparing to launch the
@@ -588,13 +604,13 @@ namespace Model
   private:
 
     Aws::String m_eventDescription;
-    bool m_eventDescriptionHasBeenSet;
+    bool m_eventDescriptionHasBeenSet = false;
 
     Aws::String m_eventSubType;
-    bool m_eventSubTypeHasBeenSet;
+    bool m_eventSubTypeHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

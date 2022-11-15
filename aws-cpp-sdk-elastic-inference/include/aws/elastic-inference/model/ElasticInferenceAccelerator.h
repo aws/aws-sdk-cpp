@@ -252,19 +252,19 @@ namespace Model
   private:
 
     ElasticInferenceAcceleratorHealth m_acceleratorHealth;
-    bool m_acceleratorHealthHasBeenSet;
+    bool m_acceleratorHealthHasBeenSet = false;
 
     Aws::String m_acceleratorType;
-    bool m_acceleratorTypeHasBeenSet;
+    bool m_acceleratorTypeHasBeenSet = false;
 
     Aws::String m_acceleratorId;
-    bool m_acceleratorIdHasBeenSet;
+    bool m_acceleratorIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_attachedResource;
-    bool m_attachedResourceHasBeenSet;
+    bool m_attachedResourceHasBeenSet = false;
   };
 
 } // namespace Model

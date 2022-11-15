@@ -8,7 +8,9 @@
 #include <aws/appconfig/model/DeploymentEventType.h>
 #include <aws/appconfig/model/TriggeredBy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/appconfig/model/ActionInvocation.h>
 #include <utility>
 
 namespace Aws
@@ -186,6 +188,47 @@ namespace Model
 
 
     /**
+     * <p>The list of extensions that were invoked as part of the deployment.</p>
+     */
+    inline const Aws::Vector<ActionInvocation>& GetActionInvocations() const{ return m_actionInvocations; }
+
+    /**
+     * <p>The list of extensions that were invoked as part of the deployment.</p>
+     */
+    inline bool ActionInvocationsHasBeenSet() const { return m_actionInvocationsHasBeenSet; }
+
+    /**
+     * <p>The list of extensions that were invoked as part of the deployment.</p>
+     */
+    inline void SetActionInvocations(const Aws::Vector<ActionInvocation>& value) { m_actionInvocationsHasBeenSet = true; m_actionInvocations = value; }
+
+    /**
+     * <p>The list of extensions that were invoked as part of the deployment.</p>
+     */
+    inline void SetActionInvocations(Aws::Vector<ActionInvocation>&& value) { m_actionInvocationsHasBeenSet = true; m_actionInvocations = std::move(value); }
+
+    /**
+     * <p>The list of extensions that were invoked as part of the deployment.</p>
+     */
+    inline DeploymentEvent& WithActionInvocations(const Aws::Vector<ActionInvocation>& value) { SetActionInvocations(value); return *this;}
+
+    /**
+     * <p>The list of extensions that were invoked as part of the deployment.</p>
+     */
+    inline DeploymentEvent& WithActionInvocations(Aws::Vector<ActionInvocation>&& value) { SetActionInvocations(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of extensions that were invoked as part of the deployment.</p>
+     */
+    inline DeploymentEvent& AddActionInvocations(const ActionInvocation& value) { m_actionInvocationsHasBeenSet = true; m_actionInvocations.push_back(value); return *this; }
+
+    /**
+     * <p>The list of extensions that were invoked as part of the deployment.</p>
+     */
+    inline DeploymentEvent& AddActionInvocations(ActionInvocation&& value) { m_actionInvocationsHasBeenSet = true; m_actionInvocations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The date and time the event occurred.</p>
      */
     inline const Aws::Utils::DateTime& GetOccurredAt() const{ return m_occurredAt; }
@@ -218,16 +261,19 @@ namespace Model
   private:
 
     DeploymentEventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     TriggeredBy m_triggeredBy;
-    bool m_triggeredByHasBeenSet;
+    bool m_triggeredByHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<ActionInvocation> m_actionInvocations;
+    bool m_actionInvocationsHasBeenSet = false;
 
     Aws::Utils::DateTime m_occurredAt;
-    bool m_occurredAtHasBeenSet;
+    bool m_occurredAtHasBeenSet = false;
   };
 
 } // namespace Model

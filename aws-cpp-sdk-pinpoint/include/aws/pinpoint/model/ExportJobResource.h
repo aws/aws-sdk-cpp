@@ -255,16 +255,16 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_s3UrlPrefix;
-    bool m_s3UrlPrefixHasBeenSet;
+    bool m_s3UrlPrefixHasBeenSet = false;
 
     Aws::String m_segmentId;
-    bool m_segmentIdHasBeenSet;
+    bool m_segmentIdHasBeenSet = false;
 
     int m_segmentVersion;
-    bool m_segmentVersionHasBeenSet;
+    bool m_segmentVersionHasBeenSet = false;
   };
 
 } // namespace Model

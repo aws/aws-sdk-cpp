@@ -146,10 +146,10 @@ namespace Model
   private:
 
     OriginRequestPolicyCookieBehavior m_cookieBehavior;
-    bool m_cookieBehaviorHasBeenSet;
+    bool m_cookieBehaviorHasBeenSet = false;
 
     CookieNames m_cookies;
-    bool m_cookiesHasBeenSet;
+    bool m_cookiesHasBeenSet = false;
   };
 
 } // namespace Model

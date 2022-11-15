@@ -56,7 +56,7 @@ AwsCodeBuildProjectDetails& AwsCodeBuildProjectDetails::operator =(JsonView json
 
   if(jsonValue.ValueExists("Artifacts"))
   {
-    Array<JsonView> artifactsJsonList = jsonValue.GetArray("Artifacts");
+    Aws::Utils::Array<JsonView> artifactsJsonList = jsonValue.GetArray("Artifacts");
     for(unsigned artifactsIndex = 0; artifactsIndex < artifactsJsonList.GetLength(); ++artifactsIndex)
     {
       m_artifacts.push_back(artifactsJsonList[artifactsIndex].AsObject());
@@ -108,7 +108,7 @@ AwsCodeBuildProjectDetails& AwsCodeBuildProjectDetails::operator =(JsonView json
 
   if(jsonValue.ValueExists("SecondaryArtifacts"))
   {
-    Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("SecondaryArtifacts");
+    Aws::Utils::Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("SecondaryArtifacts");
     for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
     {
       m_secondaryArtifacts.push_back(secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject());
@@ -131,7 +131,7 @@ JsonValue AwsCodeBuildProjectDetails::Jsonize() const
 
   if(m_artifactsHasBeenSet)
   {
-   Array<JsonValue> artifactsJsonList(m_artifacts.size());
+   Aws::Utils::Array<JsonValue> artifactsJsonList(m_artifacts.size());
    for(unsigned artifactsIndex = 0; artifactsIndex < artifactsJsonList.GetLength(); ++artifactsIndex)
    {
      artifactsJsonList[artifactsIndex].AsObject(m_artifacts[artifactsIndex].Jsonize());
@@ -178,7 +178,7 @@ JsonValue AwsCodeBuildProjectDetails::Jsonize() const
 
   if(m_secondaryArtifactsHasBeenSet)
   {
-   Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
+   Aws::Utils::Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
    for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
    {
      secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject(m_secondaryArtifacts[secondaryArtifactsIndex].Jsonize());

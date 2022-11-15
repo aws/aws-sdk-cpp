@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     DocumentStatus m_documentStatus;
-    bool m_documentStatusHasBeenSet;
+    bool m_documentStatusHasBeenSet = false;
 
     Aws::String m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

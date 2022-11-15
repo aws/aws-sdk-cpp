@@ -180,16 +180,16 @@ namespace Model
   private:
 
     int m_rank;
-    bool m_rankHasBeenSet;
+    bool m_rankHasBeenSet = false;
 
     int m_memorySize;
-    bool m_memorySizeHasBeenSet;
+    bool m_memorySizeHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionMemoryProjectedMetric> m_projectedUtilizationMetrics;
-    bool m_projectedUtilizationMetricsHasBeenSet;
+    bool m_projectedUtilizationMetricsHasBeenSet = false;
 
     SavingsOpportunity m_savingsOpportunity;
-    bool m_savingsOpportunityHasBeenSet;
+    bool m_savingsOpportunityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<Behavior> m_behaviors;
-    bool m_behaviorsHasBeenSet;
+    bool m_behaviorsHasBeenSet = false;
   };
 
 } // namespace Model

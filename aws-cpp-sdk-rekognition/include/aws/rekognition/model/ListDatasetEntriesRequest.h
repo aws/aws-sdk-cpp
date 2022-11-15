@@ -379,25 +379,25 @@ namespace Model
   private:
 
     Aws::String m_datasetArn;
-    bool m_datasetArnHasBeenSet;
+    bool m_datasetArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containsLabels;
-    bool m_containsLabelsHasBeenSet;
+    bool m_containsLabelsHasBeenSet = false;
 
     bool m_labeled;
-    bool m_labeledHasBeenSet;
+    bool m_labeledHasBeenSet = false;
 
     Aws::String m_sourceRefContains;
-    bool m_sourceRefContainsHasBeenSet;
+    bool m_sourceRefContainsHasBeenSet = false;
 
     bool m_hasErrors;
-    bool m_hasErrorsHasBeenSet;
+    bool m_hasErrorsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_policyContent;
-    bool m_policyContentHasBeenSet;
+    bool m_policyContentHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     EffectivePolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
   };
 
 } // namespace Model

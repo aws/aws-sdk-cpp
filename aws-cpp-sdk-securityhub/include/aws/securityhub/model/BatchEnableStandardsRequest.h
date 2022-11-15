@@ -76,7 +76,7 @@ namespace Model
   private:
 
     Aws::Vector<StandardsSubscriptionRequest> m_standardsSubscriptionRequests;
-    bool m_standardsSubscriptionRequestsHasBeenSet;
+    bool m_standardsSubscriptionRequestsHasBeenSet = false;
   };
 
 } // namespace Model

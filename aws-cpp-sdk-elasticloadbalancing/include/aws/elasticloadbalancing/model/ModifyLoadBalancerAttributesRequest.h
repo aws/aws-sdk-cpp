@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     LoadBalancerAttributes m_loadBalancerAttributes;
-    bool m_loadBalancerAttributesHasBeenSet;
+    bool m_loadBalancerAttributesHasBeenSet = false;
   };
 
 } // namespace Model

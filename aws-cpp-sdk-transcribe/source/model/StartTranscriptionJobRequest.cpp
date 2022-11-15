@@ -31,6 +31,8 @@ StartTranscriptionJobRequest::StartTranscriptionJobRequest() :
     m_contentRedactionHasBeenSet(false),
     m_identifyLanguage(false),
     m_identifyLanguageHasBeenSet(false),
+    m_identifyMultipleLanguages(false),
+    m_identifyMultipleLanguagesHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_subtitlesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -129,9 +131,15 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
 
   }
 
+  if(m_identifyMultipleLanguagesHasBeenSet)
+  {
+   payload.WithBool("IdentifyMultipleLanguages", m_identifyMultipleLanguages);
+
+  }
+
   if(m_languageOptionsHasBeenSet)
   {
-   Array<JsonValue> languageOptionsJsonList(m_languageOptions.size());
+   Aws::Utils::Array<JsonValue> languageOptionsJsonList(m_languageOptions.size());
    for(unsigned languageOptionsIndex = 0; languageOptionsIndex < languageOptionsJsonList.GetLength(); ++languageOptionsIndex)
    {
      languageOptionsJsonList[languageOptionsIndex].AsString(LanguageCodeMapper::GetNameForLanguageCode(m_languageOptions[languageOptionsIndex]));
@@ -148,7 +156,7 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

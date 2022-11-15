@@ -51,7 +51,7 @@ LinuxParameters& LinuxParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("devices"))
   {
-    Array<JsonView> devicesJsonList = jsonValue.GetArray("devices");
+    Aws::Utils::Array<JsonView> devicesJsonList = jsonValue.GetArray("devices");
     for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
     {
       m_devices.push_back(devicesJsonList[devicesIndex].AsObject());
@@ -75,7 +75,7 @@ LinuxParameters& LinuxParameters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tmpfs"))
   {
-    Array<JsonView> tmpfsJsonList = jsonValue.GetArray("tmpfs");
+    Aws::Utils::Array<JsonView> tmpfsJsonList = jsonValue.GetArray("tmpfs");
     for(unsigned tmpfsIndex = 0; tmpfsIndex < tmpfsJsonList.GetLength(); ++tmpfsIndex)
     {
       m_tmpfs.push_back(tmpfsJsonList[tmpfsIndex].AsObject());
@@ -106,7 +106,7 @@ JsonValue LinuxParameters::Jsonize() const
 
   if(m_devicesHasBeenSet)
   {
-   Array<JsonValue> devicesJsonList(m_devices.size());
+   Aws::Utils::Array<JsonValue> devicesJsonList(m_devices.size());
    for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
    {
      devicesJsonList[devicesIndex].AsObject(m_devices[devicesIndex].Jsonize());
@@ -129,7 +129,7 @@ JsonValue LinuxParameters::Jsonize() const
 
   if(m_tmpfsHasBeenSet)
   {
-   Array<JsonValue> tmpfsJsonList(m_tmpfs.size());
+   Aws::Utils::Array<JsonValue> tmpfsJsonList(m_tmpfs.size());
    for(unsigned tmpfsIndex = 0; tmpfsIndex < tmpfsJsonList.GetLength(); ++tmpfsIndex)
    {
      tmpfsJsonList[tmpfsIndex].AsObject(m_tmpfs[tmpfsIndex].Jsonize());

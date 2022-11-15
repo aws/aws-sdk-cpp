@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_timeSeriesId;
-    bool m_timeSeriesIdHasBeenSet;
+    bool m_timeSeriesIdHasBeenSet = false;
 
     bool m_isAnomaly;
-    bool m_isAnomalyHasBeenSet;
+    bool m_isAnomalyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -230,19 +230,19 @@ namespace Model
   private:
 
     Aws::String m_baselineId;
-    bool m_baselineIdHasBeenSet;
+    bool m_baselineIdHasBeenSet = false;
 
     Aws::String m_baselineName;
-    bool m_baselineNameHasBeenSet;
+    bool m_baselineNameHasBeenSet = false;
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     Aws::String m_baselineDescription;
-    bool m_baselineDescriptionHasBeenSet;
+    bool m_baselineDescriptionHasBeenSet = false;
 
     bool m_defaultBaseline;
-    bool m_defaultBaselineHasBeenSet;
+    bool m_defaultBaselineHasBeenSet = false;
   };
 
 } // namespace Model

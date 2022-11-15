@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>The message that informs you about what the exception was.</p>
+     * <p>The unique identifier for the resource that couldn't be found.</p>
      */
     inline const ExceptionCause& GetExceptionCause() const{ return m_exceptionCause; }
 
     /**
-     * <p>The message that informs you about what the exception was.</p>
+     * <p>The unique identifier for the resource that couldn't be found.</p>
      */
     inline bool ExceptionCauseHasBeenSet() const { return m_exceptionCauseHasBeenSet; }
 
     /**
-     * <p>The message that informs you about what the exception was.</p>
+     * <p>The unique identifier for the resource that couldn't be found.</p>
      */
     inline void SetExceptionCause(const ExceptionCause& value) { m_exceptionCauseHasBeenSet = true; m_exceptionCause = value; }
 
     /**
-     * <p>The message that informs you about what the exception was.</p>
+     * <p>The unique identifier for the resource that couldn't be found.</p>
      */
     inline void SetExceptionCause(ExceptionCause&& value) { m_exceptionCauseHasBeenSet = true; m_exceptionCause = std::move(value); }
 
     /**
-     * <p>The message that informs you about what the exception was.</p>
+     * <p>The unique identifier for the resource that couldn't be found.</p>
      */
     inline ValidationException& WithExceptionCause(const ExceptionCause& value) { SetExceptionCause(value); return *this;}
 
     /**
-     * <p>The message that informs you about what the exception was.</p>
+     * <p>The unique identifier for the resource that couldn't be found.</p>
      */
     inline ValidationException& WithExceptionCause(ExceptionCause&& value) { SetExceptionCause(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ExceptionCause m_exceptionCause;
-    bool m_exceptionCauseHasBeenSet;
+    bool m_exceptionCauseHasBeenSet = false;
   };
 
 } // namespace Model

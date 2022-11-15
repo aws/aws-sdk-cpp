@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_objectIdentifier;
-    bool m_objectIdentifierHasBeenSet;
+    bool m_objectIdentifierHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_critical;
-    bool m_criticalHasBeenSet;
+    bool m_criticalHasBeenSet = false;
   };
 
 } // namespace Model

@@ -62,7 +62,7 @@ SubnetGroup& SubnetGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Subnets"))
   {
-    Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
+    Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
     for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
     {
       m_subnets.push_back(subnetsJsonList[subnetsIndex].AsObject());
@@ -104,7 +104,7 @@ JsonValue SubnetGroup::Jsonize() const
 
   if(m_subnetsHasBeenSet)
   {
-   Array<JsonValue> subnetsJsonList(m_subnets.size());
+   Aws::Utils::Array<JsonValue> subnetsJsonList(m_subnets.size());
    for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
    {
      subnetsJsonList[subnetsIndex].AsObject(m_subnets[subnetsIndex].Jsonize());

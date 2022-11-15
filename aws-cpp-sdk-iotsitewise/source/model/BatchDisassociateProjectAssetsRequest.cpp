@@ -26,7 +26,7 @@ Aws::String BatchDisassociateProjectAssetsRequest::SerializePayload() const
 
   if(m_assetIdsHasBeenSet)
   {
-   Array<JsonValue> assetIdsJsonList(m_assetIds.size());
+   Aws::Utils::Array<JsonValue> assetIdsJsonList(m_assetIds.size());
    for(unsigned assetIdsIndex = 0; assetIdsIndex < assetIdsJsonList.GetLength(); ++assetIdsIndex)
    {
      assetIdsJsonList[assetIdsIndex].AsString(m_assetIds[assetIdsIndex]);

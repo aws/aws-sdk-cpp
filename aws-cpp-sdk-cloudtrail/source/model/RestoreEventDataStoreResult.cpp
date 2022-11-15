@@ -58,7 +58,7 @@ RestoreEventDataStoreResult& RestoreEventDataStoreResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("AdvancedEventSelectors"))
   {
-    Array<JsonView> advancedEventSelectorsJsonList = jsonValue.GetArray("AdvancedEventSelectors");
+    Aws::Utils::Array<JsonView> advancedEventSelectorsJsonList = jsonValue.GetArray("AdvancedEventSelectors");
     for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
     {
       m_advancedEventSelectors.push_back(advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject());
@@ -98,6 +98,12 @@ RestoreEventDataStoreResult& RestoreEventDataStoreResult::operator =(const Aws::
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetDouble("UpdatedTimestamp");
+
+  }
+
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
 
   }
 

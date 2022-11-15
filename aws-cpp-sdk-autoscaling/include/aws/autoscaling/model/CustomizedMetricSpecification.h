@@ -29,7 +29,7 @@ namespace Model
   /**
    * <p>Represents a CloudWatch metric of your choosing for a target tracking scaling
    * policy to use with Amazon EC2 Auto Scaling.</p> <p>To create your customized
-   * metric specification:</p> <ul> <li> <p>Add values for each required parameter
+   * metric specification:</p> <ul> <li> <p>Add values for each required property
    * from CloudWatch. You can use an existing metric, or a new metric that you
    * create. To use your own metric, you must first publish the metric to CloudWatch.
    * For more information, see <a
@@ -330,19 +330,19 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::Vector<MetricDimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     MetricStatistic m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

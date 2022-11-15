@@ -170,10 +170,10 @@ namespace Model
   private:
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_secretArnList;
-    bool m_secretArnListHasBeenSet;
+    bool m_secretArnListHasBeenSet = false;
   };
 
 } // namespace Model

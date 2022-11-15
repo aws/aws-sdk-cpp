@@ -47,7 +47,8 @@ enum class AuditManagerErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  SERVICE_QUOTA_EXCEEDED
 };
 
 class AWS_AUDITMANAGER_API AuditManagerError : public Aws::Client::AWSError<AuditManagerErrors>

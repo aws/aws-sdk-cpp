@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_trustPolicy;
-    bool m_trustPolicyHasBeenSet;
+    bool m_trustPolicyHasBeenSet = false;
   };
 
 } // namespace Model

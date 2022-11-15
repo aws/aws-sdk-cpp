@@ -64,7 +64,7 @@ Aws::String CreateContainerRecipeRequest::SerializePayload() const
 
   if(m_componentsHasBeenSet)
   {
-   Array<JsonValue> componentsJsonList(m_components.size());
+   Aws::Utils::Array<JsonValue> componentsJsonList(m_components.size());
    for(unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex)
    {
      componentsJsonList[componentsIndex].AsObject(m_components[componentsIndex].Jsonize());

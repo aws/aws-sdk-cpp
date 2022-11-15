@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ExportToS3TaskSpecification m_exportToS3Task;
-    bool m_exportToS3TaskHasBeenSet;
+    bool m_exportToS3TaskHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     ExportEnvironment m_targetEnvironment;
-    bool m_targetEnvironmentHasBeenSet;
+    bool m_targetEnvironmentHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

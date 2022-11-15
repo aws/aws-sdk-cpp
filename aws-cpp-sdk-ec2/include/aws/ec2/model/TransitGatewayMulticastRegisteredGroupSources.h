@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayMulticastDomainId;
-    bool m_transitGatewayMulticastDomainIdHasBeenSet;
+    bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_registeredNetworkInterfaceIds;
-    bool m_registeredNetworkInterfaceIdsHasBeenSet;
+    bool m_registeredNetworkInterfaceIdsHasBeenSet = false;
 
     Aws::String m_groupIpAddress;
-    bool m_groupIpAddressHasBeenSet;
+    bool m_groupIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

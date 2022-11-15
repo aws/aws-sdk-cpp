@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_exportTaskId;
-    bool m_exportTaskIdHasBeenSet;
+    bool m_exportTaskIdHasBeenSet = false;
   };
 
 } // namespace Model

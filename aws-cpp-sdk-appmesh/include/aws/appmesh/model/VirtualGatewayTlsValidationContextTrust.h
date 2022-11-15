@@ -153,13 +153,13 @@ namespace Model
   private:
 
     VirtualGatewayTlsValidationContextAcmTrust m_acm;
-    bool m_acmHasBeenSet;
+    bool m_acmHasBeenSet = false;
 
     VirtualGatewayTlsValidationContextFileTrust m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
 
     VirtualGatewayTlsValidationContextSdsTrust m_sds;
-    bool m_sdsHasBeenSet;
+    bool m_sdsHasBeenSet = false;
   };
 
 } // namespace Model

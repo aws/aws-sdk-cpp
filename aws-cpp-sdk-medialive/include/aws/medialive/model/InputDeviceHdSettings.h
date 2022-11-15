@@ -267,28 +267,28 @@ namespace Model
   private:
 
     InputDeviceActiveInput m_activeInput;
-    bool m_activeInputHasBeenSet;
+    bool m_activeInputHasBeenSet = false;
 
     InputDeviceConfiguredInput m_configuredInput;
-    bool m_configuredInputHasBeenSet;
+    bool m_configuredInputHasBeenSet = false;
 
     InputDeviceState m_deviceState;
-    bool m_deviceStateHasBeenSet;
+    bool m_deviceStateHasBeenSet = false;
 
     double m_framerate;
-    bool m_framerateHasBeenSet;
+    bool m_framerateHasBeenSet = false;
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
 
     InputDeviceScanType m_scanType;
-    bool m_scanTypeHasBeenSet;
+    bool m_scanTypeHasBeenSet = false;
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

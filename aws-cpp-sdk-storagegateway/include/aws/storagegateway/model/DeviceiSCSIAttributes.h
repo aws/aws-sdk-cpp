@@ -171,16 +171,16 @@ namespace Model
   private:
 
     Aws::String m_targetARN;
-    bool m_targetARNHasBeenSet;
+    bool m_targetARNHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     int m_networkInterfacePort;
-    bool m_networkInterfacePortHasBeenSet;
+    bool m_networkInterfacePortHasBeenSet = false;
 
     bool m_chapEnabled;
-    bool m_chapEnabledHasBeenSet;
+    bool m_chapEnabledHasBeenSet = false;
   };
 
 } // namespace Model

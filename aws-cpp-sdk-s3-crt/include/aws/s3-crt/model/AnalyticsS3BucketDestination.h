@@ -227,16 +227,16 @@ namespace Model
   private:
 
     AnalyticsS3ExportFileFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_bucketAccountId;
-    bool m_bucketAccountIdHasBeenSet;
+    bool m_bucketAccountIdHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

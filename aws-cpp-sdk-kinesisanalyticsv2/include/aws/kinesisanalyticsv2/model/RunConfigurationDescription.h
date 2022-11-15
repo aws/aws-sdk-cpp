@@ -91,10 +91,10 @@ namespace Model
   private:
 
     ApplicationRestoreConfiguration m_applicationRestoreConfigurationDescription;
-    bool m_applicationRestoreConfigurationDescriptionHasBeenSet;
+    bool m_applicationRestoreConfigurationDescriptionHasBeenSet = false;
 
     FlinkRunConfiguration m_flinkRunConfigurationDescription;
-    bool m_flinkRunConfigurationDescriptionHasBeenSet;
+    bool m_flinkRunConfigurationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

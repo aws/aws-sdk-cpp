@@ -30,7 +30,7 @@ DescribeOrganizationConformancePacksResult& DescribeOrganizationConformancePacks
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OrganizationConformancePacks"))
   {
-    Array<JsonView> organizationConformancePacksJsonList = jsonValue.GetArray("OrganizationConformancePacks");
+    Aws::Utils::Array<JsonView> organizationConformancePacksJsonList = jsonValue.GetArray("OrganizationConformancePacks");
     for(unsigned organizationConformancePacksIndex = 0; organizationConformancePacksIndex < organizationConformancePacksJsonList.GetLength(); ++organizationConformancePacksIndex)
     {
       m_organizationConformancePacks.push_back(organizationConformancePacksJsonList[organizationConformancePacksIndex].AsObject());

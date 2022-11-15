@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     TOKEN_MISSING,
-    TOKEN_EXPIRED
+    TOKEN_EXPIRED,
+    TOKEN_INVALID,
+    TOKEN_DOMAIN_MISMATCH
   };
 
 namespace FailureReasonMapper

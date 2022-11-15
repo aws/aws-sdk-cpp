@@ -30,7 +30,7 @@ ListEnabledProductsForImportResult& ListEnabledProductsForImportResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProductSubscriptions"))
   {
-    Array<JsonView> productSubscriptionsJsonList = jsonValue.GetArray("ProductSubscriptions");
+    Aws::Utils::Array<JsonView> productSubscriptionsJsonList = jsonValue.GetArray("ProductSubscriptions");
     for(unsigned productSubscriptionsIndex = 0; productSubscriptionsIndex < productSubscriptionsJsonList.GetLength(); ++productSubscriptionsIndex)
     {
       m_productSubscriptions.push_back(productSubscriptionsJsonList[productSubscriptionsIndex].AsString());

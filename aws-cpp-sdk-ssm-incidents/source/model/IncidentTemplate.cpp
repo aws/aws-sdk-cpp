@@ -22,6 +22,7 @@ IncidentTemplate::IncidentTemplate() :
     m_dedupeStringHasBeenSet(false),
     m_impact(0),
     m_impactHasBeenSet(false),
+    m_incidentTagsHasBeenSet(false),
     m_notificationTargetsHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_titleHasBeenSet(false)
@@ -32,6 +33,7 @@ IncidentTemplate::IncidentTemplate(JsonView jsonValue) :
     m_dedupeStringHasBeenSet(false),
     m_impact(0),
     m_impactHasBeenSet(false),
+    m_incidentTagsHasBeenSet(false),
     m_notificationTargetsHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_titleHasBeenSet(false)
@@ -55,9 +57,19 @@ IncidentTemplate& IncidentTemplate::operator =(JsonView jsonValue)
     m_impactHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("incidentTags"))
+  {
+    Aws::Map<Aws::String, JsonView> incidentTagsJsonMap = jsonValue.GetObject("incidentTags").GetAllObjects();
+    for(auto& incidentTagsItem : incidentTagsJsonMap)
+    {
+      m_incidentTags[incidentTagsItem.first] = incidentTagsItem.second.AsString();
+    }
+    m_incidentTagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("notificationTargets"))
   {
-    Array<JsonView> notificationTargetsJsonList = jsonValue.GetArray("notificationTargets");
+    Aws::Utils::Array<JsonView> notificationTargetsJsonList = jsonValue.GetArray("notificationTargets");
     for(unsigned notificationTargetsIndex = 0; notificationTargetsIndex < notificationTargetsJsonList.GetLength(); ++notificationTargetsIndex)
     {
       m_notificationTargets.push_back(notificationTargetsJsonList[notificationTargetsIndex].AsObject());
@@ -98,9 +110,20 @@ JsonValue IncidentTemplate::Jsonize() const
 
   }
 
+  if(m_incidentTagsHasBeenSet)
+  {
+   JsonValue incidentTagsJsonMap;
+   for(auto& incidentTagsItem : m_incidentTags)
+   {
+     incidentTagsJsonMap.WithString(incidentTagsItem.first, incidentTagsItem.second);
+   }
+   payload.WithObject("incidentTags", std::move(incidentTagsJsonMap));
+
+  }
+
   if(m_notificationTargetsHasBeenSet)
   {
-   Array<JsonValue> notificationTargetsJsonList(m_notificationTargets.size());
+   Aws::Utils::Array<JsonValue> notificationTargetsJsonList(m_notificationTargets.size());
    for(unsigned notificationTargetsIndex = 0; notificationTargetsIndex < notificationTargetsJsonList.GetLength(); ++notificationTargetsIndex)
    {
      notificationTargetsJsonList[notificationTargetsIndex].AsObject(m_notificationTargets[notificationTargetsIndex].Jsonize());

@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::Vector<S3BucketDefinitionForJob> m_bucketDefinitions;
-    bool m_bucketDefinitionsHasBeenSet;
+    bool m_bucketDefinitionsHasBeenSet = false;
 
     Scoping m_scoping;
-    bool m_scopingHasBeenSet;
+    bool m_scopingHasBeenSet = false;
 
     S3BucketCriteriaForJob m_bucketCriteria;
-    bool m_bucketCriteriaHasBeenSet;
+    bool m_bucketCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

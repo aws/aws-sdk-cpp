@@ -36,7 +36,7 @@ ListSuggestedResiliencyPoliciesResult& ListSuggestedResiliencyPoliciesResult::op
 
   if(jsonValue.ValueExists("resiliencyPolicies"))
   {
-    Array<JsonView> resiliencyPoliciesJsonList = jsonValue.GetArray("resiliencyPolicies");
+    Aws::Utils::Array<JsonView> resiliencyPoliciesJsonList = jsonValue.GetArray("resiliencyPolicies");
     for(unsigned resiliencyPoliciesIndex = 0; resiliencyPoliciesIndex < resiliencyPoliciesJsonList.GetLength(); ++resiliencyPoliciesIndex)
     {
       m_resiliencyPolicies.push_back(resiliencyPoliciesJsonList[resiliencyPoliciesIndex].AsObject());

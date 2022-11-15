@@ -55,9 +55,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline const AuthFlowType& GetAuthFlow() const{ return m_authFlow; }
@@ -76,9 +76,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline bool AuthFlowHasBeenSet() const { return m_authFlowHasBeenSet; }
@@ -97,9 +97,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline void SetAuthFlow(const AuthFlowType& value) { m_authFlowHasBeenSet = true; m_authFlow = value; }
@@ -118,9 +118,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline void SetAuthFlow(AuthFlowType&& value) { m_authFlowHasBeenSet = true; m_authFlow = std::move(value); }
@@ -139,9 +139,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline InitiateAuthRequest& WithAuthFlow(const AuthFlowType& value) { SetAuthFlow(value); return *this;}
@@ -160,9 +160,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline InitiateAuthRequest& WithAuthFlow(AuthFlowType&& value) { SetAuthFlow(std::move(value)); return *this;}
@@ -875,103 +875,109 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline void SetAnalyticsMetadata(AnalyticsMetadataType&& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = std::move(value); }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline InitiateAuthRequest& WithAnalyticsMetadata(const AnalyticsMetadataType& value) { SetAnalyticsMetadata(value); return *this;}
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline InitiateAuthRequest& WithAnalyticsMetadata(AnalyticsMetadataType&& value) { SetAnalyticsMetadata(std::move(value)); return *this;}
 
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline bool UserContextDataHasBeenSet() const { return m_userContextDataHasBeenSet; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline void SetUserContextData(const UserContextDataType& value) { m_userContextDataHasBeenSet = true; m_userContextData = value; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline void SetUserContextData(UserContextDataType&& value) { m_userContextDataHasBeenSet = true; m_userContextData = std::move(value); }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline InitiateAuthRequest& WithUserContextData(const UserContextDataType& value) { SetUserContextData(value); return *this;}
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline InitiateAuthRequest& WithUserContextData(UserContextDataType&& value) { SetUserContextData(std::move(value)); return *this;}
 
   private:
 
     AuthFlowType m_authFlow;
-    bool m_authFlowHasBeenSet;
+    bool m_authFlowHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_authParameters;
-    bool m_authParametersHasBeenSet;
+    bool m_authParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientMetadata;
-    bool m_clientMetadataHasBeenSet;
+    bool m_clientMetadataHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     AnalyticsMetadataType m_analyticsMetadata;
-    bool m_analyticsMetadataHasBeenSet;
+    bool m_analyticsMetadataHasBeenSet = false;
 
     UserContextDataType m_userContextData;
-    bool m_userContextDataHasBeenSet;
+    bool m_userContextDataHasBeenSet = false;
   };
 
 } // namespace Model

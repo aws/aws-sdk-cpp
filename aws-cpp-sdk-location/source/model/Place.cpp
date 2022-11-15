@@ -31,7 +31,9 @@ Place::Place() :
     m_regionHasBeenSet(false),
     m_streetHasBeenSet(false),
     m_subRegionHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
+    m_timeZoneHasBeenSet(false),
+    m_unitNumberHasBeenSet(false),
+    m_unitTypeHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ Place::Place(JsonView jsonValue) :
     m_regionHasBeenSet(false),
     m_streetHasBeenSet(false),
     m_subRegionHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
+    m_timeZoneHasBeenSet(false),
+    m_unitNumberHasBeenSet(false),
+    m_unitTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +143,20 @@ Place& Place::operator =(JsonView jsonValue)
     m_timeZoneHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UnitNumber"))
+  {
+    m_unitNumber = jsonValue.GetString("UnitNumber");
+
+    m_unitNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UnitType"))
+  {
+    m_unitType = jsonValue.GetString("UnitType");
+
+    m_unitTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -215,6 +233,18 @@ JsonValue Place::Jsonize() const
   if(m_timeZoneHasBeenSet)
   {
    payload.WithObject("TimeZone", m_timeZone.Jsonize());
+
+  }
+
+  if(m_unitNumberHasBeenSet)
+  {
+   payload.WithString("UnitNumber", m_unitNumber);
+
+  }
+
+  if(m_unitTypeHasBeenSet)
+  {
+   payload.WithString("UnitType", m_unitType);
 
   }
 

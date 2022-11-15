@@ -749,8 +749,8 @@ namespace Model
     /**
      * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
-     * stacks</a>, termination protection is set on the root stack and cannot be
-     * changed directly on the nested stack. For more information, see <a
+     * stacks</a>, termination protection is set on the root stack and can't be changed
+     * directly on the nested stack. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
@@ -759,8 +759,8 @@ namespace Model
     /**
      * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
-     * stacks</a>, termination protection is set on the root stack and cannot be
-     * changed directly on the nested stack. For more information, see <a
+     * stacks</a>, termination protection is set on the root stack and can't be changed
+     * directly on the nested stack. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
@@ -769,8 +769,8 @@ namespace Model
     /**
      * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
-     * stacks</a>, termination protection is set on the root stack and cannot be
-     * changed directly on the nested stack. For more information, see <a
+     * stacks</a>, termination protection is set on the root stack and can't be changed
+     * directly on the nested stack. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
@@ -779,8 +779,8 @@ namespace Model
     /**
      * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
-     * stacks</a>, termination protection is set on the root stack and cannot be
-     * changed directly on the nested stack. For more information, see <a
+     * stacks</a>, termination protection is set on the root stack and can't be changed
+     * directly on the nested stack. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
@@ -934,7 +934,7 @@ namespace Model
 
 
     /**
-     * <p>Information on whether a stack's actual configuration differs, or has
+     * <p>Information about whether a stack's actual configuration differs, or has
      * <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
@@ -944,7 +944,7 @@ namespace Model
     inline const StackDriftInformation& GetDriftInformation() const{ return m_driftInformation; }
 
     /**
-     * <p>Information on whether a stack's actual configuration differs, or has
+     * <p>Information about whether a stack's actual configuration differs, or has
      * <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
@@ -954,7 +954,7 @@ namespace Model
     inline bool DriftInformationHasBeenSet() const { return m_driftInformationHasBeenSet; }
 
     /**
-     * <p>Information on whether a stack's actual configuration differs, or has
+     * <p>Information about whether a stack's actual configuration differs, or has
      * <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
@@ -964,7 +964,7 @@ namespace Model
     inline void SetDriftInformation(const StackDriftInformation& value) { m_driftInformationHasBeenSet = true; m_driftInformation = value; }
 
     /**
-     * <p>Information on whether a stack's actual configuration differs, or has
+     * <p>Information about whether a stack's actual configuration differs, or has
      * <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
@@ -974,7 +974,7 @@ namespace Model
     inline void SetDriftInformation(StackDriftInformation&& value) { m_driftInformationHasBeenSet = true; m_driftInformation = std::move(value); }
 
     /**
-     * <p>Information on whether a stack's actual configuration differs, or has
+     * <p>Information about whether a stack's actual configuration differs, or has
      * <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
@@ -984,7 +984,7 @@ namespace Model
     inline Stack& WithDriftInformation(const StackDriftInformation& value) { SetDriftInformation(value); return *this;}
 
     /**
-     * <p>Information on whether a stack's actual configuration differs, or has
+     * <p>Information about whether a stack's actual configuration differs, or has
      * <i>drifted</i>, from it's expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
@@ -996,70 +996,70 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_changeSetId;
-    bool m_changeSetIdHasBeenSet;
+    bool m_changeSetIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletionTime;
-    bool m_deletionTimeHasBeenSet;
+    bool m_deletionTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     RollbackConfiguration m_rollbackConfiguration;
-    bool m_rollbackConfigurationHasBeenSet;
+    bool m_rollbackConfigurationHasBeenSet = false;
 
     StackStatus m_stackStatus;
-    bool m_stackStatusHasBeenSet;
+    bool m_stackStatusHasBeenSet = false;
 
     Aws::String m_stackStatusReason;
-    bool m_stackStatusReasonHasBeenSet;
+    bool m_stackStatusReasonHasBeenSet = false;
 
     bool m_disableRollback;
-    bool m_disableRollbackHasBeenSet;
+    bool m_disableRollbackHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notificationARNs;
-    bool m_notificationARNsHasBeenSet;
+    bool m_notificationARNsHasBeenSet = false;
 
     int m_timeoutInMinutes;
-    bool m_timeoutInMinutesHasBeenSet;
+    bool m_timeoutInMinutesHasBeenSet = false;
 
     Aws::Vector<Capability> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::Vector<Output> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_enableTerminationProtection;
-    bool m_enableTerminationProtectionHasBeenSet;
+    bool m_enableTerminationProtectionHasBeenSet = false;
 
     Aws::String m_parentId;
-    bool m_parentIdHasBeenSet;
+    bool m_parentIdHasBeenSet = false;
 
     Aws::String m_rootId;
-    bool m_rootIdHasBeenSet;
+    bool m_rootIdHasBeenSet = false;
 
     StackDriftInformation m_driftInformation;
-    bool m_driftInformationHasBeenSet;
+    bool m_driftInformationHasBeenSet = false;
   };
 
 } // namespace Model

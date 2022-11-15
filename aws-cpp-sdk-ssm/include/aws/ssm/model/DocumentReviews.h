@@ -121,10 +121,10 @@ namespace Model
   private:
 
     DocumentReviewAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<DocumentReviewCommentSource> m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
   };
 
 } // namespace Model

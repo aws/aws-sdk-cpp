@@ -193,16 +193,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_budgetName;
-    bool m_budgetNameHasBeenSet;
+    bool m_budgetNameHasBeenSet = false;
 
     Notification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     Subscriber m_subscriber;
-    bool m_subscriberHasBeenSet;
+    bool m_subscriberHasBeenSet = false;
   };
 
 } // namespace Model

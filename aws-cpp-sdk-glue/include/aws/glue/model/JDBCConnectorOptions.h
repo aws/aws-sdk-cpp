@@ -475,28 +475,28 @@ namespace Model
   private:
 
     Aws::String m_filterPredicate;
-    bool m_filterPredicateHasBeenSet;
+    bool m_filterPredicateHasBeenSet = false;
 
     Aws::String m_partitionColumn;
-    bool m_partitionColumnHasBeenSet;
+    bool m_partitionColumnHasBeenSet = false;
 
     long long m_lowerBound;
-    bool m_lowerBoundHasBeenSet;
+    bool m_lowerBoundHasBeenSet = false;
 
     long long m_upperBound;
-    bool m_upperBoundHasBeenSet;
+    bool m_upperBoundHasBeenSet = false;
 
     long long m_numPartitions;
-    bool m_numPartitionsHasBeenSet;
+    bool m_numPartitionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_jobBookmarkKeys;
-    bool m_jobBookmarkKeysHasBeenSet;
+    bool m_jobBookmarkKeysHasBeenSet = false;
 
     Aws::String m_jobBookmarkKeysSortOrder;
-    bool m_jobBookmarkKeysSortOrderHasBeenSet;
+    bool m_jobBookmarkKeysSortOrderHasBeenSet = false;
 
     Aws::Map<JDBCDataType, GlueRecordType> m_dataTypeMapping;
-    bool m_dataTypeMappingHasBeenSet;
+    bool m_dataTypeMappingHasBeenSet = false;
   };
 
 } // namespace Model

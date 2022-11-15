@@ -33,62 +33,32 @@ namespace Model
 
 
     /**
-     * <p>An object that contains detailed information about your call analytics job.
-     * Returned fields include: <code>CallAnalyticsJobName</code>,
-     * <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     * <code>CompletionTime</code>, <code>CreationTime</code>,
-     * <code>DataAccessRoleArn</code>, <code>FailureReason</code>,
-     * <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>,
-     * <code>Media</code>, <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>,
-     * <code>Settings</code>, <code>StartTime</code>, and <code>Transcript</code>.</p>
+     * <p>Provides detailed information about the specified Call Analytics job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline const CallAnalyticsJob& GetCallAnalyticsJob() const{ return m_callAnalyticsJob; }
 
     /**
-     * <p>An object that contains detailed information about your call analytics job.
-     * Returned fields include: <code>CallAnalyticsJobName</code>,
-     * <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     * <code>CompletionTime</code>, <code>CreationTime</code>,
-     * <code>DataAccessRoleArn</code>, <code>FailureReason</code>,
-     * <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>,
-     * <code>Media</code>, <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>,
-     * <code>Settings</code>, <code>StartTime</code>, and <code>Transcript</code>.</p>
+     * <p>Provides detailed information about the specified Call Analytics job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline void SetCallAnalyticsJob(const CallAnalyticsJob& value) { m_callAnalyticsJob = value; }
 
     /**
-     * <p>An object that contains detailed information about your call analytics job.
-     * Returned fields include: <code>CallAnalyticsJobName</code>,
-     * <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     * <code>CompletionTime</code>, <code>CreationTime</code>,
-     * <code>DataAccessRoleArn</code>, <code>FailureReason</code>,
-     * <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>,
-     * <code>Media</code>, <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>,
-     * <code>Settings</code>, <code>StartTime</code>, and <code>Transcript</code>.</p>
+     * <p>Provides detailed information about the specified Call Analytics job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline void SetCallAnalyticsJob(CallAnalyticsJob&& value) { m_callAnalyticsJob = std::move(value); }
 
     /**
-     * <p>An object that contains detailed information about your call analytics job.
-     * Returned fields include: <code>CallAnalyticsJobName</code>,
-     * <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     * <code>CompletionTime</code>, <code>CreationTime</code>,
-     * <code>DataAccessRoleArn</code>, <code>FailureReason</code>,
-     * <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>,
-     * <code>Media</code>, <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>,
-     * <code>Settings</code>, <code>StartTime</code>, and <code>Transcript</code>.</p>
+     * <p>Provides detailed information about the specified Call Analytics job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline GetCallAnalyticsJobResult& WithCallAnalyticsJob(const CallAnalyticsJob& value) { SetCallAnalyticsJob(value); return *this;}
 
     /**
-     * <p>An object that contains detailed information about your call analytics job.
-     * Returned fields include: <code>CallAnalyticsJobName</code>,
-     * <code>CallAnalyticsJobStatus</code>, <code>ChannelDefinitions</code>,
-     * <code>CompletionTime</code>, <code>CreationTime</code>,
-     * <code>DataAccessRoleArn</code>, <code>FailureReason</code>,
-     * <code>IdentifiedLanguageScore</code>, <code>LanguageCode</code>,
-     * <code>Media</code>, <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>,
-     * <code>Settings</code>, <code>StartTime</code>, and <code>Transcript</code>.</p>
+     * <p>Provides detailed information about the specified Call Analytics job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline GetCallAnalyticsJobResult& WithCallAnalyticsJob(CallAnalyticsJob&& value) { SetCallAnalyticsJob(std::move(value)); return *this;}
 

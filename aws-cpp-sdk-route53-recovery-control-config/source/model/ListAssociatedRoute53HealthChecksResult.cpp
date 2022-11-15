@@ -30,7 +30,7 @@ ListAssociatedRoute53HealthChecksResult& ListAssociatedRoute53HealthChecksResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HealthCheckIds"))
   {
-    Array<JsonView> healthCheckIdsJsonList = jsonValue.GetArray("HealthCheckIds");
+    Aws::Utils::Array<JsonView> healthCheckIdsJsonList = jsonValue.GetArray("HealthCheckIds");
     for(unsigned healthCheckIdsIndex = 0; healthCheckIdsIndex < healthCheckIdsJsonList.GetLength(); ++healthCheckIdsIndex)
     {
       m_healthCheckIds.push_back(healthCheckIdsJsonList[healthCheckIdsIndex].AsString());

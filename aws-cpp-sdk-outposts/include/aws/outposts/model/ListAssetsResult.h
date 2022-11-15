@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p> Information about hardware assets. </p>
+     * <p>Information about the hardware assets.</p>
      */
     inline const Aws::Vector<AssetInfo>& GetAssets() const{ return m_assets; }
 
     /**
-     * <p> Information about hardware assets. </p>
+     * <p>Information about the hardware assets.</p>
      */
     inline void SetAssets(const Aws::Vector<AssetInfo>& value) { m_assets = value; }
 
     /**
-     * <p> Information about hardware assets. </p>
+     * <p>Information about the hardware assets.</p>
      */
     inline void SetAssets(Aws::Vector<AssetInfo>&& value) { m_assets = std::move(value); }
 
     /**
-     * <p> Information about hardware assets. </p>
+     * <p>Information about the hardware assets.</p>
      */
     inline ListAssetsResult& WithAssets(const Aws::Vector<AssetInfo>& value) { SetAssets(value); return *this;}
 
     /**
-     * <p> Information about hardware assets. </p>
+     * <p>Information about the hardware assets.</p>
      */
     inline ListAssetsResult& WithAssets(Aws::Vector<AssetInfo>&& value) { SetAssets(std::move(value)); return *this;}
 
     /**
-     * <p> Information about hardware assets. </p>
+     * <p>Information about the hardware assets.</p>
      */
     inline ListAssetsResult& AddAssets(const AssetInfo& value) { m_assets.push_back(value); return *this; }
 
     /**
-     * <p> Information about hardware assets. </p>
+     * <p>Information about the hardware assets.</p>
      */
     inline ListAssetsResult& AddAssets(AssetInfo&& value) { m_assets.push_back(std::move(value)); return *this; }
 

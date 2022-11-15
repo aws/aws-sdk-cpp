@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_botVersions;
-    bool m_botVersionsHasBeenSet;
+    bool m_botVersionsHasBeenSet = false;
 
     StatusType m_statusType;
-    bool m_statusTypeHasBeenSet;
+    bool m_statusTypeHasBeenSet = false;
   };
 
 } // namespace Model

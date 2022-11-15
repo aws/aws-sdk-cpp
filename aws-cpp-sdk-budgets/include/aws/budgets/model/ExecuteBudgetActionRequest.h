@@ -159,16 +159,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_budgetName;
-    bool m_budgetNameHasBeenSet;
+    bool m_budgetNameHasBeenSet = false;
 
     Aws::String m_actionId;
-    bool m_actionIdHasBeenSet;
+    bool m_actionIdHasBeenSet = false;
 
     ExecutionType m_executionType;
-    bool m_executionTypeHasBeenSet;
+    bool m_executionTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,49 +35,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon WorkMail organization for which to list the rules.</p>
+     * <p>The WorkMail organization for which to list the rules.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The Amazon WorkMail organization for which to list the rules.</p>
+     * <p>The WorkMail organization for which to list the rules.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
-     * <p>The Amazon WorkMail organization for which to list the rules.</p>
+     * <p>The WorkMail organization for which to list the rules.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The Amazon WorkMail organization for which to list the rules.</p>
+     * <p>The WorkMail organization for which to list the rules.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The Amazon WorkMail organization for which to list the rules.</p>
+     * <p>The WorkMail organization for which to list the rules.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The Amazon WorkMail organization for which to list the rules.</p>
+     * <p>The WorkMail organization for which to list the rules.</p>
      */
     inline ListMobileDeviceAccessRulesRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization for which to list the rules.</p>
+     * <p>The WorkMail organization for which to list the rules.</p>
      */
     inline ListMobileDeviceAccessRulesRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization for which to list the rules.</p>
+     * <p>The WorkMail organization for which to list the rules.</p>
      */
     inline ListMobileDeviceAccessRulesRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
   };
 
 } // namespace Model

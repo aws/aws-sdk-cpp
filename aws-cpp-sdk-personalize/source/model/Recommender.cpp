@@ -28,7 +28,8 @@ Recommender::Recommender() :
     m_lastUpdatedDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_latestRecommenderUpdateHasBeenSet(false)
+    m_latestRecommenderUpdateHasBeenSet(false),
+    m_modelMetricsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Recommender::Recommender(JsonView jsonValue) :
     m_lastUpdatedDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_latestRecommenderUpdateHasBeenSet(false)
+    m_latestRecommenderUpdateHasBeenSet(false),
+    m_modelMetricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +121,16 @@ Recommender& Recommender::operator =(JsonView jsonValue)
     m_latestRecommenderUpdateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("modelMetrics"))
+  {
+    Aws::Map<Aws::String, JsonView> modelMetricsJsonMap = jsonValue.GetObject("modelMetrics").GetAllObjects();
+    for(auto& modelMetricsItem : modelMetricsJsonMap)
+    {
+      m_modelMetrics[modelMetricsItem.first] = modelMetricsItem.second.AsDouble();
+    }
+    m_modelMetricsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -181,6 +193,17 @@ JsonValue Recommender::Jsonize() const
   if(m_latestRecommenderUpdateHasBeenSet)
   {
    payload.WithObject("latestRecommenderUpdate", m_latestRecommenderUpdate.Jsonize());
+
+  }
+
+  if(m_modelMetricsHasBeenSet)
+  {
+   JsonValue modelMetricsJsonMap;
+   for(auto& modelMetricsItem : m_modelMetrics)
+   {
+     modelMetricsJsonMap.WithDouble(modelMetricsItem.first, modelMetricsItem.second);
+   }
+   payload.WithObject("modelMetrics", std::move(modelMetricsJsonMap));
 
   }
 

@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Document m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
 
     double m_relevanceScore;
-    bool m_relevanceScoreHasBeenSet;
+    bool m_relevanceScoreHasBeenSet = false;
 
     Aws::String m_resultId;
-    bool m_resultIdHasBeenSet;
+    bool m_resultIdHasBeenSet = false;
   };
 
 } // namespace Model

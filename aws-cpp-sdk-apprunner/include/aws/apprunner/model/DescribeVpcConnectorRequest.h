@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_vpcConnectorArn;
-    bool m_vpcConnectorArnHasBeenSet;
+    bool m_vpcConnectorArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ DescribeStorageVirtualMachinesResult& DescribeStorageVirtualMachinesResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StorageVirtualMachines"))
   {
-    Array<JsonView> storageVirtualMachinesJsonList = jsonValue.GetArray("StorageVirtualMachines");
+    Aws::Utils::Array<JsonView> storageVirtualMachinesJsonList = jsonValue.GetArray("StorageVirtualMachines");
     for(unsigned storageVirtualMachinesIndex = 0; storageVirtualMachinesIndex < storageVirtualMachinesJsonList.GetLength(); ++storageVirtualMachinesIndex)
     {
       m_storageVirtualMachines.push_back(storageVirtualMachinesJsonList[storageVirtualMachinesIndex].AsObject());

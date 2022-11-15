@@ -205,13 +205,13 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     CustomDomainConfigType m_customDomainConfig;
-    bool m_customDomainConfigHasBeenSet;
+    bool m_customDomainConfigHasBeenSet = false;
   };
 
 } // namespace Model

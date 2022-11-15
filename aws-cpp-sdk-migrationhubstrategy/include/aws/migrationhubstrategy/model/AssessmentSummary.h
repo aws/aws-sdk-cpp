@@ -387,31 +387,31 @@ namespace Model
   private:
 
     S3Object m_antipatternReportS3Object;
-    bool m_antipatternReportS3ObjectHasBeenSet;
+    bool m_antipatternReportS3ObjectHasBeenSet = false;
 
     AntipatternReportStatus m_antipatternReportStatus;
-    bool m_antipatternReportStatusHasBeenSet;
+    bool m_antipatternReportStatusHasBeenSet = false;
 
     Aws::String m_antipatternReportStatusMessage;
-    bool m_antipatternReportStatusMessageHasBeenSet;
+    bool m_antipatternReportStatusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAnalyzedTimestamp;
-    bool m_lastAnalyzedTimestampHasBeenSet;
+    bool m_lastAnalyzedTimestampHasBeenSet = false;
 
     Aws::Vector<AntipatternSeveritySummary> m_listAntipatternSeveritySummary;
-    bool m_listAntipatternSeveritySummaryHasBeenSet;
+    bool m_listAntipatternSeveritySummaryHasBeenSet = false;
 
     Aws::Vector<StrategySummary> m_listApplicationComponentStrategySummary;
-    bool m_listApplicationComponentStrategySummaryHasBeenSet;
+    bool m_listApplicationComponentStrategySummaryHasBeenSet = false;
 
     Aws::Vector<ApplicationComponentSummary> m_listApplicationComponentSummary;
-    bool m_listApplicationComponentSummaryHasBeenSet;
+    bool m_listApplicationComponentSummaryHasBeenSet = false;
 
     Aws::Vector<StrategySummary> m_listServerStrategySummary;
-    bool m_listServerStrategySummaryHasBeenSet;
+    bool m_listServerStrategySummaryHasBeenSet = false;
 
     Aws::Vector<ServerSummary> m_listServerSummary;
-    bool m_listServerSummaryHasBeenSet;
+    bool m_listServerSummaryHasBeenSet = false;
   };
 
 } // namespace Model

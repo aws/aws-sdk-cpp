@@ -16,7 +16,8 @@ GetAccessControlEffectRequest::GetAccessControlEffectRequest() :
     m_organizationIdHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_impersonationRoleIdHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,12 @@ Aws::String GetAccessControlEffectRequest::SerializePayload() const
   if(m_userIdHasBeenSet)
   {
    payload.WithString("UserId", m_userId);
+
+  }
+
+  if(m_impersonationRoleIdHasBeenSet)
+  {
+   payload.WithString("ImpersonationRoleId", m_impersonationRoleId);
 
   }
 

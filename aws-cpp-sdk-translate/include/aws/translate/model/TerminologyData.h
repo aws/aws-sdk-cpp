@@ -26,8 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>The data associated with the custom terminology.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The data associated with the custom terminology. For information about the
+   * custom terminology file, see <a
+   * href="https://docs.aws.amazon.com/translate/latest/dg/creating-custom-terminology.html">
+   * Creating a Custom Terminology</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TerminologyData">AWS
    * API Reference</a></p>
    */
@@ -122,12 +124,11 @@ namespace Model
      * target languages. </p> </dd> <dt>MULTI</dt> <dd> <p>Any language in the
      * terminology resource can be the source language or a target language. A single
      * multi-directional terminology resource can be used for jobs that translate
-     * different language pairs. For example, if the terminology contains terms in
-     * English and Spanish, then it can be used for jobs that translate English to
-     * Spanish and jobs that translate Spanish to English.</p> </dd> </dl> <p>When you
-     * create a custom terminology resource without specifying the directionality, it
-     * behaves as uni-directional terminology, although this parameter will have a null
-     * value.</p>
+     * different language pairs. For example, if the terminology contains English and
+     * Spanish terms, it can be used for jobs that translate English to Spanish and
+     * Spanish to English.</p> </dd> </dl> <p>When you create a custom terminology
+     * resource without specifying the directionality, it behaves as uni-directional
+     * terminology, although this parameter will have a null value.</p>
      */
     inline const Directionality& GetDirectionality() const{ return m_directionality; }
 
@@ -139,12 +140,11 @@ namespace Model
      * target languages. </p> </dd> <dt>MULTI</dt> <dd> <p>Any language in the
      * terminology resource can be the source language or a target language. A single
      * multi-directional terminology resource can be used for jobs that translate
-     * different language pairs. For example, if the terminology contains terms in
-     * English and Spanish, then it can be used for jobs that translate English to
-     * Spanish and jobs that translate Spanish to English.</p> </dd> </dl> <p>When you
-     * create a custom terminology resource without specifying the directionality, it
-     * behaves as uni-directional terminology, although this parameter will have a null
-     * value.</p>
+     * different language pairs. For example, if the terminology contains English and
+     * Spanish terms, it can be used for jobs that translate English to Spanish and
+     * Spanish to English.</p> </dd> </dl> <p>When you create a custom terminology
+     * resource without specifying the directionality, it behaves as uni-directional
+     * terminology, although this parameter will have a null value.</p>
      */
     inline bool DirectionalityHasBeenSet() const { return m_directionalityHasBeenSet; }
 
@@ -156,12 +156,11 @@ namespace Model
      * target languages. </p> </dd> <dt>MULTI</dt> <dd> <p>Any language in the
      * terminology resource can be the source language or a target language. A single
      * multi-directional terminology resource can be used for jobs that translate
-     * different language pairs. For example, if the terminology contains terms in
-     * English and Spanish, then it can be used for jobs that translate English to
-     * Spanish and jobs that translate Spanish to English.</p> </dd> </dl> <p>When you
-     * create a custom terminology resource without specifying the directionality, it
-     * behaves as uni-directional terminology, although this parameter will have a null
-     * value.</p>
+     * different language pairs. For example, if the terminology contains English and
+     * Spanish terms, it can be used for jobs that translate English to Spanish and
+     * Spanish to English.</p> </dd> </dl> <p>When you create a custom terminology
+     * resource without specifying the directionality, it behaves as uni-directional
+     * terminology, although this parameter will have a null value.</p>
      */
     inline void SetDirectionality(const Directionality& value) { m_directionalityHasBeenSet = true; m_directionality = value; }
 
@@ -173,12 +172,11 @@ namespace Model
      * target languages. </p> </dd> <dt>MULTI</dt> <dd> <p>Any language in the
      * terminology resource can be the source language or a target language. A single
      * multi-directional terminology resource can be used for jobs that translate
-     * different language pairs. For example, if the terminology contains terms in
-     * English and Spanish, then it can be used for jobs that translate English to
-     * Spanish and jobs that translate Spanish to English.</p> </dd> </dl> <p>When you
-     * create a custom terminology resource without specifying the directionality, it
-     * behaves as uni-directional terminology, although this parameter will have a null
-     * value.</p>
+     * different language pairs. For example, if the terminology contains English and
+     * Spanish terms, it can be used for jobs that translate English to Spanish and
+     * Spanish to English.</p> </dd> </dl> <p>When you create a custom terminology
+     * resource without specifying the directionality, it behaves as uni-directional
+     * terminology, although this parameter will have a null value.</p>
      */
     inline void SetDirectionality(Directionality&& value) { m_directionalityHasBeenSet = true; m_directionality = std::move(value); }
 
@@ -190,12 +188,11 @@ namespace Model
      * target languages. </p> </dd> <dt>MULTI</dt> <dd> <p>Any language in the
      * terminology resource can be the source language or a target language. A single
      * multi-directional terminology resource can be used for jobs that translate
-     * different language pairs. For example, if the terminology contains terms in
-     * English and Spanish, then it can be used for jobs that translate English to
-     * Spanish and jobs that translate Spanish to English.</p> </dd> </dl> <p>When you
-     * create a custom terminology resource without specifying the directionality, it
-     * behaves as uni-directional terminology, although this parameter will have a null
-     * value.</p>
+     * different language pairs. For example, if the terminology contains English and
+     * Spanish terms, it can be used for jobs that translate English to Spanish and
+     * Spanish to English.</p> </dd> </dl> <p>When you create a custom terminology
+     * resource without specifying the directionality, it behaves as uni-directional
+     * terminology, although this parameter will have a null value.</p>
      */
     inline TerminologyData& WithDirectionality(const Directionality& value) { SetDirectionality(value); return *this;}
 
@@ -207,25 +204,24 @@ namespace Model
      * target languages. </p> </dd> <dt>MULTI</dt> <dd> <p>Any language in the
      * terminology resource can be the source language or a target language. A single
      * multi-directional terminology resource can be used for jobs that translate
-     * different language pairs. For example, if the terminology contains terms in
-     * English and Spanish, then it can be used for jobs that translate English to
-     * Spanish and jobs that translate Spanish to English.</p> </dd> </dl> <p>When you
-     * create a custom terminology resource without specifying the directionality, it
-     * behaves as uni-directional terminology, although this parameter will have a null
-     * value.</p>
+     * different language pairs. For example, if the terminology contains English and
+     * Spanish terms, it can be used for jobs that translate English to Spanish and
+     * Spanish to English.</p> </dd> </dl> <p>When you create a custom terminology
+     * resource without specifying the directionality, it behaves as uni-directional
+     * terminology, although this parameter will have a null value.</p>
      */
     inline TerminologyData& WithDirectionality(Directionality&& value) { SetDirectionality(std::move(value)); return *this;}
 
   private:
 
     Aws::Utils::CryptoBuffer m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
 
     TerminologyDataFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Directionality m_directionality;
-    bool m_directionalityHasBeenSet;
+    bool m_directionalityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -109,10 +109,10 @@ namespace Model
   private:
 
     InspectorEvent m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     Aws::Utils::DateTime m_subscribedAt;
-    bool m_subscribedAtHasBeenSet;
+    bool m_subscribedAtHasBeenSet = false;
   };
 
 } // namespace Model

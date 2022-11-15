@@ -469,22 +469,22 @@ namespace Model
   private:
 
     DataRepositoryLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_importPath;
-    bool m_importPathHasBeenSet;
+    bool m_importPathHasBeenSet = false;
 
     Aws::String m_exportPath;
-    bool m_exportPathHasBeenSet;
+    bool m_exportPathHasBeenSet = false;
 
     int m_importedFileChunkSize;
-    bool m_importedFileChunkSizeHasBeenSet;
+    bool m_importedFileChunkSizeHasBeenSet = false;
 
     AutoImportPolicyType m_autoImportPolicy;
-    bool m_autoImportPolicyHasBeenSet;
+    bool m_autoImportPolicyHasBeenSet = false;
 
     DataRepositoryFailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
   };
 
 } // namespace Model

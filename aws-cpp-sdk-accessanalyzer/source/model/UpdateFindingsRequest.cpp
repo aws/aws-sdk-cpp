@@ -14,12 +14,12 @@ using namespace Aws::Utils;
 
 UpdateFindingsRequest::UpdateFindingsRequest() : 
     m_analyzerArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true),
+    m_status(FindingStatusUpdate::NOT_SET),
+    m_statusHasBeenSet(false),
     m_idsHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
-    m_status(FindingStatusUpdate::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -33,15 +33,14 @@ Aws::String UpdateFindingsRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
-
+   payload.WithString("status", FindingStatusUpdateMapper::GetNameForFindingStatusUpdate(m_status));
   }
 
   if(m_idsHasBeenSet)
   {
-   Array<JsonValue> idsJsonList(m_ids.size());
+   Aws::Utils::Array<JsonValue> idsJsonList(m_ids.size());
    for(unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex)
    {
      idsJsonList[idsIndex].AsString(m_ids[idsIndex]);
@@ -56,9 +55,10 @@ Aws::String UpdateFindingsRequest::SerializePayload() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("status", FindingStatusUpdateMapper::GetNameForFindingStatusUpdate(m_status));
+   payload.WithString("clientToken", m_clientToken);
+
   }
 
   return payload.View().WriteReadable();

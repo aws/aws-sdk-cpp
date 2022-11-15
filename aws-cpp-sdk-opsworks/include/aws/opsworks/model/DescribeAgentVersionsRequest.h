@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     StackConfigurationManager m_configurationManager;
-    bool m_configurationManagerHasBeenSet;
+    bool m_configurationManagerHasBeenSet = false;
   };
 
 } // namespace Model

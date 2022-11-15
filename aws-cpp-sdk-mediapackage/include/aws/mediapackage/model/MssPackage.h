@@ -121,16 +121,16 @@ namespace Model
   private:
 
     MssEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     int m_manifestWindowSeconds;
-    bool m_manifestWindowSecondsHasBeenSet;
+    bool m_manifestWindowSecondsHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
   };
 
 } // namespace Model

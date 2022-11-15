@@ -30,7 +30,7 @@ DeleteRemediationExceptionsResult& DeleteRemediationExceptionsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedBatches"))
   {
-    Array<JsonView> failedBatchesJsonList = jsonValue.GetArray("FailedBatches");
+    Aws::Utils::Array<JsonView> failedBatchesJsonList = jsonValue.GetArray("FailedBatches");
     for(unsigned failedBatchesIndex = 0; failedBatchesIndex < failedBatchesJsonList.GetLength(); ++failedBatchesIndex)
     {
       m_failedBatches.push_back(failedBatchesJsonList[failedBatchesIndex].AsObject());

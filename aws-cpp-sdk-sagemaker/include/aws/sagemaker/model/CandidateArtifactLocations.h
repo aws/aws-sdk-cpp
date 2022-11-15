@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_explainability;
-    bool m_explainabilityHasBeenSet;
+    bool m_explainabilityHasBeenSet = false;
 
     Aws::String m_modelInsights;
-    bool m_modelInsightsHasBeenSet;
+    bool m_modelInsightsHasBeenSet = false;
   };
 
 } // namespace Model

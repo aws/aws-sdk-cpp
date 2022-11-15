@@ -172,10 +172,10 @@ namespace Model
   private:
 
     Aws::String m_modelDataUrl;
-    bool m_modelDataUrlHasBeenSet;
+    bool m_modelDataUrlHasBeenSet = false;
 
     Aws::String m_algorithmName;
-    bool m_algorithmNameHasBeenSet;
+    bool m_algorithmNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -71,7 +71,7 @@ namespace Model
   private:
 
     GrammarSlotTypeSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

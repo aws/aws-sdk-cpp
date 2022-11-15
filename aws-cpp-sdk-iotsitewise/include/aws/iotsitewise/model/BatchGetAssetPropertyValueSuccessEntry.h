@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     AssetPropertyValue m_assetPropertyValue;
-    bool m_assetPropertyValueHasBeenSet;
+    bool m_assetPropertyValueHasBeenSet = false;
   };
 
 } // namespace Model

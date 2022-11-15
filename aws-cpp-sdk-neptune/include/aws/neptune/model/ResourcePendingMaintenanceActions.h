@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::Vector<PendingMaintenanceAction> m_pendingMaintenanceActionDetails;
-    bool m_pendingMaintenanceActionDetailsHasBeenSet;
+    bool m_pendingMaintenanceActionDetailsHasBeenSet = false;
   };
 
 } // namespace Model

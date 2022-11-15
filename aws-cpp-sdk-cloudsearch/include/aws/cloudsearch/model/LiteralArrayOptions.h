@@ -189,19 +189,19 @@ namespace Model
   private:
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_sourceFields;
-    bool m_sourceFieldsHasBeenSet;
+    bool m_sourceFieldsHasBeenSet = false;
 
     bool m_facetEnabled;
-    bool m_facetEnabledHasBeenSet;
+    bool m_facetEnabledHasBeenSet = false;
 
     bool m_searchEnabled;
-    bool m_searchEnabledHasBeenSet;
+    bool m_searchEnabledHasBeenSet = false;
 
     bool m_returnEnabled;
-    bool m_returnEnabledHasBeenSet;
+    bool m_returnEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<Processor> m_processors;
-    bool m_processorsHasBeenSet;
+    bool m_processorsHasBeenSet = false;
   };
 
 } // namespace Model

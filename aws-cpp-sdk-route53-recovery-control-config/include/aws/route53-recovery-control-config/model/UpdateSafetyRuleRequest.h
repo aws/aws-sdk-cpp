@@ -102,10 +102,10 @@ namespace Model
   private:
 
     AssertionRuleUpdate m_assertionRuleUpdate;
-    bool m_assertionRuleUpdateHasBeenSet;
+    bool m_assertionRuleUpdateHasBeenSet = false;
 
     GatingRuleUpdate m_gatingRuleUpdate;
-    bool m_gatingRuleUpdateHasBeenSet;
+    bool m_gatingRuleUpdateHasBeenSet = false;
   };
 
 } // namespace Model

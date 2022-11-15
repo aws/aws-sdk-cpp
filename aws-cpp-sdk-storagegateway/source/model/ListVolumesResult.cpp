@@ -42,7 +42,7 @@ ListVolumesResult& ListVolumesResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("VolumeInfos"))
   {
-    Array<JsonView> volumeInfosJsonList = jsonValue.GetArray("VolumeInfos");
+    Aws::Utils::Array<JsonView> volumeInfosJsonList = jsonValue.GetArray("VolumeInfos");
     for(unsigned volumeInfosIndex = 0; volumeInfosIndex < volumeInfosJsonList.GetLength(); ++volumeInfosIndex)
     {
       m_volumeInfos.push_back(volumeInfosJsonList[volumeInfosIndex].AsObject());

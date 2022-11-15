@@ -68,25 +68,25 @@ namespace Model
 
 
     /**
-     * <p>Specifies the job timeout, in minutes, when the compute environment
+     * <p>Specifies the job timeout (in minutes) when the compute environment
      * infrastructure is updated. The default value is 30.</p>
      */
     inline long long GetJobExecutionTimeoutMinutes() const{ return m_jobExecutionTimeoutMinutes; }
 
     /**
-     * <p>Specifies the job timeout, in minutes, when the compute environment
+     * <p>Specifies the job timeout (in minutes) when the compute environment
      * infrastructure is updated. The default value is 30.</p>
      */
     inline bool JobExecutionTimeoutMinutesHasBeenSet() const { return m_jobExecutionTimeoutMinutesHasBeenSet; }
 
     /**
-     * <p>Specifies the job timeout, in minutes, when the compute environment
+     * <p>Specifies the job timeout (in minutes) when the compute environment
      * infrastructure is updated. The default value is 30.</p>
      */
     inline void SetJobExecutionTimeoutMinutes(long long value) { m_jobExecutionTimeoutMinutesHasBeenSet = true; m_jobExecutionTimeoutMinutes = value; }
 
     /**
-     * <p>Specifies the job timeout, in minutes, when the compute environment
+     * <p>Specifies the job timeout (in minutes) when the compute environment
      * infrastructure is updated. The default value is 30.</p>
      */
     inline UpdatePolicy& WithJobExecutionTimeoutMinutes(long long value) { SetJobExecutionTimeoutMinutes(value); return *this;}
@@ -94,10 +94,10 @@ namespace Model
   private:
 
     bool m_terminateJobsOnUpdate;
-    bool m_terminateJobsOnUpdateHasBeenSet;
+    bool m_terminateJobsOnUpdateHasBeenSet = false;
 
     long long m_jobExecutionTimeoutMinutes;
-    bool m_jobExecutionTimeoutMinutesHasBeenSet;
+    bool m_jobExecutionTimeoutMinutesHasBeenSet = false;
   };
 
 } // namespace Model

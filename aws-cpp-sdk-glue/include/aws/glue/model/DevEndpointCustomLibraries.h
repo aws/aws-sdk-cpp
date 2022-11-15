@@ -186,10 +186,10 @@ namespace Model
   private:
 
     Aws::String m_extraPythonLibsS3Path;
-    bool m_extraPythonLibsS3PathHasBeenSet;
+    bool m_extraPythonLibsS3PathHasBeenSet = false;
 
     Aws::String m_extraJarsS3Path;
-    bool m_extraJarsS3PathHasBeenSet;
+    bool m_extraJarsS3PathHasBeenSet = false;
   };
 
 } // namespace Model

@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::Vector<SchemaAttributeType> m_customAttributes;
-    bool m_customAttributesHasBeenSet;
+    bool m_customAttributesHasBeenSet = false;
   };
 
 } // namespace Model

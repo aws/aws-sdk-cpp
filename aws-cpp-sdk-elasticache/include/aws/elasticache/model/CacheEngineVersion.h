@@ -279,19 +279,19 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_cacheParameterGroupFamily;
-    bool m_cacheParameterGroupFamilyHasBeenSet;
+    bool m_cacheParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_cacheEngineDescription;
-    bool m_cacheEngineDescriptionHasBeenSet;
+    bool m_cacheEngineDescriptionHasBeenSet = false;
 
     Aws::String m_cacheEngineVersionDescription;
-    bool m_cacheEngineVersionDescriptionHasBeenSet;
+    bool m_cacheEngineVersionDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

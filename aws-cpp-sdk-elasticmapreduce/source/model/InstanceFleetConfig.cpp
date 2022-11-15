@@ -77,7 +77,7 @@ InstanceFleetConfig& InstanceFleetConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceTypeConfigs"))
   {
-    Array<JsonView> instanceTypeConfigsJsonList = jsonValue.GetArray("InstanceTypeConfigs");
+    Aws::Utils::Array<JsonView> instanceTypeConfigsJsonList = jsonValue.GetArray("InstanceTypeConfigs");
     for(unsigned instanceTypeConfigsIndex = 0; instanceTypeConfigsIndex < instanceTypeConfigsJsonList.GetLength(); ++instanceTypeConfigsIndex)
     {
       m_instanceTypeConfigs.push_back(instanceTypeConfigsJsonList[instanceTypeConfigsIndex].AsObject());
@@ -124,7 +124,7 @@ JsonValue InstanceFleetConfig::Jsonize() const
 
   if(m_instanceTypeConfigsHasBeenSet)
   {
-   Array<JsonValue> instanceTypeConfigsJsonList(m_instanceTypeConfigs.size());
+   Aws::Utils::Array<JsonValue> instanceTypeConfigsJsonList(m_instanceTypeConfigs.size());
    for(unsigned instanceTypeConfigsIndex = 0; instanceTypeConfigsIndex < instanceTypeConfigsJsonList.GetLength(); ++instanceTypeConfigsIndex)
    {
      instanceTypeConfigsJsonList[instanceTypeConfigsIndex].AsObject(m_instanceTypeConfigs[instanceTypeConfigsIndex].Jsonize());

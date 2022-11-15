@@ -36,7 +36,7 @@ ListDestinationsResult& ListDestinationsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("DestinationList"))
   {
-    Array<JsonView> destinationListJsonList = jsonValue.GetArray("DestinationList");
+    Aws::Utils::Array<JsonView> destinationListJsonList = jsonValue.GetArray("DestinationList");
     for(unsigned destinationListIndex = 0; destinationListIndex < destinationListJsonList.GetLength(); ++destinationListIndex)
     {
       m_destinationList.push_back(destinationListJsonList[destinationListIndex].AsObject());

@@ -84,7 +84,7 @@ FileSystemAssociationInfo& FileSystemAssociationInfo::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -108,7 +108,7 @@ FileSystemAssociationInfo& FileSystemAssociationInfo::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("FileSystemAssociationStatusDetails"))
   {
-    Array<JsonView> fileSystemAssociationStatusDetailsJsonList = jsonValue.GetArray("FileSystemAssociationStatusDetails");
+    Aws::Utils::Array<JsonView> fileSystemAssociationStatusDetailsJsonList = jsonValue.GetArray("FileSystemAssociationStatusDetails");
     for(unsigned fileSystemAssociationStatusDetailsIndex = 0; fileSystemAssociationStatusDetailsIndex < fileSystemAssociationStatusDetailsJsonList.GetLength(); ++fileSystemAssociationStatusDetailsIndex)
     {
       m_fileSystemAssociationStatusDetails.push_back(fileSystemAssociationStatusDetailsJsonList[fileSystemAssociationStatusDetailsIndex].AsObject());
@@ -155,7 +155,7 @@ JsonValue FileSystemAssociationInfo::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -178,7 +178,7 @@ JsonValue FileSystemAssociationInfo::Jsonize() const
 
   if(m_fileSystemAssociationStatusDetailsHasBeenSet)
   {
-   Array<JsonValue> fileSystemAssociationStatusDetailsJsonList(m_fileSystemAssociationStatusDetails.size());
+   Aws::Utils::Array<JsonValue> fileSystemAssociationStatusDetailsJsonList(m_fileSystemAssociationStatusDetails.size());
    for(unsigned fileSystemAssociationStatusDetailsIndex = 0; fileSystemAssociationStatusDetailsIndex < fileSystemAssociationStatusDetailsJsonList.GetLength(); ++fileSystemAssociationStatusDetailsIndex)
    {
      fileSystemAssociationStatusDetailsJsonList[fileSystemAssociationStatusDetailsIndex].AsObject(m_fileSystemAssociationStatusDetails[fileSystemAssociationStatusDetailsIndex].Jsonize());

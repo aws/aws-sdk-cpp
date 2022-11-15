@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_standardsControlArn;
-    bool m_standardsControlArnHasBeenSet;
+    bool m_standardsControlArnHasBeenSet = false;
 
     ControlStatus m_controlStatus;
-    bool m_controlStatusHasBeenSet;
+    bool m_controlStatusHasBeenSet = false;
 
     Aws::String m_disabledReason;
-    bool m_disabledReasonHasBeenSet;
+    bool m_disabledReasonHasBeenSet = false;
   };
 
 } // namespace Model

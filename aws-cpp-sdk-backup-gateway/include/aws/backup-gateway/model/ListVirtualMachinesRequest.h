@@ -35,6 +35,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual
+     * machine.</p>
+     */
+    inline const Aws::String& GetHypervisorArn() const{ return m_hypervisorArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual
+     * machine.</p>
+     */
+    inline bool HypervisorArnHasBeenSet() const { return m_hypervisorArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual
+     * machine.</p>
+     */
+    inline void SetHypervisorArn(const Aws::String& value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual
+     * machine.</p>
+     */
+    inline void SetHypervisorArn(Aws::String&& value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual
+     * machine.</p>
+     */
+    inline void SetHypervisorArn(const char* value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual
+     * machine.</p>
+     */
+    inline ListVirtualMachinesRequest& WithHypervisorArn(const Aws::String& value) { SetHypervisorArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual
+     * machine.</p>
+     */
+    inline ListVirtualMachinesRequest& WithHypervisorArn(Aws::String&& value) { SetHypervisorArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual
+     * machine.</p>
+     */
+    inline ListVirtualMachinesRequest& WithHypervisorArn(const char* value) { SetHypervisorArn(value); return *this;}
+
+
+    /**
      * <p>The maximum number of virtual machines to list.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -121,11 +170,14 @@ namespace Model
 
   private:
 
+    Aws::String m_hypervisorArn;
+    bool m_hypervisorArnHasBeenSet = false;
+
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

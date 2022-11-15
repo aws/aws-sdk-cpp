@@ -410,22 +410,22 @@ namespace Model
   private:
 
     PolicyScopeType m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     bool m_onlyAttached;
-    bool m_onlyAttachedHasBeenSet;
+    bool m_onlyAttachedHasBeenSet = false;
 
     Aws::String m_pathPrefix;
-    bool m_pathPrefixHasBeenSet;
+    bool m_pathPrefixHasBeenSet = false;
 
     PolicyUsageType m_policyUsageFilter;
-    bool m_policyUsageFilterHasBeenSet;
+    bool m_policyUsageFilterHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

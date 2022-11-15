@@ -305,22 +305,22 @@ namespace Model
   private:
 
     Aws::String m_executionArn;
-    bool m_executionArnHasBeenSet;
+    bool m_executionArnHasBeenSet = false;
 
     Aws::String m_stateMachineArn;
-    bool m_stateMachineArnHasBeenSet;
+    bool m_stateMachineArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_stopDate;
-    bool m_stopDateHasBeenSet;
+    bool m_stopDateHasBeenSet = false;
   };
 
 } // namespace Model

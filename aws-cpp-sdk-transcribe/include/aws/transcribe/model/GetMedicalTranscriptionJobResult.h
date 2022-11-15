@@ -33,67 +33,32 @@ namespace Model
 
 
     /**
-     * <p>An object that contains detailed information about your medical transcription
-     * job. Returned fields include: <code>CompletionTime</code>,
-     * <code>ContentIdentificationType</code>, <code>CreationTime</code>,
-     * <code>FailureReason</code>, <code>LanguageCode</code>, <code>Media</code>,
-     * <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>,
-     * <code>MedicalTranscriptionJobName</code>, <code>Settings</code>,
-     * <code>Specialty</code>, <code>StartTime</code>, <code>Tags</code>,
-     * <code>Transcript</code>, <code>TranscriptionJobStatus</code>, and
-     * <code>Type</code>.</p>
+     * <p>Provides detailed information about the specified medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline const MedicalTranscriptionJob& GetMedicalTranscriptionJob() const{ return m_medicalTranscriptionJob; }
 
     /**
-     * <p>An object that contains detailed information about your medical transcription
-     * job. Returned fields include: <code>CompletionTime</code>,
-     * <code>ContentIdentificationType</code>, <code>CreationTime</code>,
-     * <code>FailureReason</code>, <code>LanguageCode</code>, <code>Media</code>,
-     * <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>,
-     * <code>MedicalTranscriptionJobName</code>, <code>Settings</code>,
-     * <code>Specialty</code>, <code>StartTime</code>, <code>Tags</code>,
-     * <code>Transcript</code>, <code>TranscriptionJobStatus</code>, and
-     * <code>Type</code>.</p>
+     * <p>Provides detailed information about the specified medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline void SetMedicalTranscriptionJob(const MedicalTranscriptionJob& value) { m_medicalTranscriptionJob = value; }
 
     /**
-     * <p>An object that contains detailed information about your medical transcription
-     * job. Returned fields include: <code>CompletionTime</code>,
-     * <code>ContentIdentificationType</code>, <code>CreationTime</code>,
-     * <code>FailureReason</code>, <code>LanguageCode</code>, <code>Media</code>,
-     * <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>,
-     * <code>MedicalTranscriptionJobName</code>, <code>Settings</code>,
-     * <code>Specialty</code>, <code>StartTime</code>, <code>Tags</code>,
-     * <code>Transcript</code>, <code>TranscriptionJobStatus</code>, and
-     * <code>Type</code>.</p>
+     * <p>Provides detailed information about the specified medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline void SetMedicalTranscriptionJob(MedicalTranscriptionJob&& value) { m_medicalTranscriptionJob = std::move(value); }
 
     /**
-     * <p>An object that contains detailed information about your medical transcription
-     * job. Returned fields include: <code>CompletionTime</code>,
-     * <code>ContentIdentificationType</code>, <code>CreationTime</code>,
-     * <code>FailureReason</code>, <code>LanguageCode</code>, <code>Media</code>,
-     * <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>,
-     * <code>MedicalTranscriptionJobName</code>, <code>Settings</code>,
-     * <code>Specialty</code>, <code>StartTime</code>, <code>Tags</code>,
-     * <code>Transcript</code>, <code>TranscriptionJobStatus</code>, and
-     * <code>Type</code>.</p>
+     * <p>Provides detailed information about the specified medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline GetMedicalTranscriptionJobResult& WithMedicalTranscriptionJob(const MedicalTranscriptionJob& value) { SetMedicalTranscriptionJob(value); return *this;}
 
     /**
-     * <p>An object that contains detailed information about your medical transcription
-     * job. Returned fields include: <code>CompletionTime</code>,
-     * <code>ContentIdentificationType</code>, <code>CreationTime</code>,
-     * <code>FailureReason</code>, <code>LanguageCode</code>, <code>Media</code>,
-     * <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>,
-     * <code>MedicalTranscriptionJobName</code>, <code>Settings</code>,
-     * <code>Specialty</code>, <code>StartTime</code>, <code>Tags</code>,
-     * <code>Transcript</code>, <code>TranscriptionJobStatus</code>, and
-     * <code>Type</code>.</p>
+     * <p>Provides detailed information about the specified medical transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline GetMedicalTranscriptionJobResult& WithMedicalTranscriptionJob(MedicalTranscriptionJob&& value) { SetMedicalTranscriptionJob(std::move(value)); return *this;}
 

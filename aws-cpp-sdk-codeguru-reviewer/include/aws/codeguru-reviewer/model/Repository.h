@@ -26,10 +26,10 @@ namespace Model
 {
 
   /**
-   * <p> Information about an associated Amazon Web Services CodeCommit repository or
+   * <p>Information about an associated Amazon Web Services CodeCommit repository or
    * an associated repository that is managed by Amazon Web Services CodeStar
    * Connections (for example, Bitbucket). This <code>Repository</code> object is not
-   * used if your source code is in an associated GitHub repository. </p><p><h3>See
+   * used if your source code is in an associated GitHub repository.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/Repository">AWS
    * API Reference</a></p>
@@ -106,32 +106,32 @@ namespace Model
 
 
     /**
-     * <p> Information about a GitHub Enterprise Server repository. </p>
+     * <p>Information about a GitHub Enterprise Server repository.</p>
      */
     inline const ThirdPartySourceRepository& GetGitHubEnterpriseServer() const{ return m_gitHubEnterpriseServer; }
 
     /**
-     * <p> Information about a GitHub Enterprise Server repository. </p>
+     * <p>Information about a GitHub Enterprise Server repository.</p>
      */
     inline bool GitHubEnterpriseServerHasBeenSet() const { return m_gitHubEnterpriseServerHasBeenSet; }
 
     /**
-     * <p> Information about a GitHub Enterprise Server repository. </p>
+     * <p>Information about a GitHub Enterprise Server repository.</p>
      */
     inline void SetGitHubEnterpriseServer(const ThirdPartySourceRepository& value) { m_gitHubEnterpriseServerHasBeenSet = true; m_gitHubEnterpriseServer = value; }
 
     /**
-     * <p> Information about a GitHub Enterprise Server repository. </p>
+     * <p>Information about a GitHub Enterprise Server repository.</p>
      */
     inline void SetGitHubEnterpriseServer(ThirdPartySourceRepository&& value) { m_gitHubEnterpriseServerHasBeenSet = true; m_gitHubEnterpriseServer = std::move(value); }
 
     /**
-     * <p> Information about a GitHub Enterprise Server repository. </p>
+     * <p>Information about a GitHub Enterprise Server repository.</p>
      */
     inline Repository& WithGitHubEnterpriseServer(const ThirdPartySourceRepository& value) { SetGitHubEnterpriseServer(value); return *this;}
 
     /**
-     * <p> Information about a GitHub Enterprise Server repository. </p>
+     * <p>Information about a GitHub Enterprise Server repository.</p>
      */
     inline Repository& WithGitHubEnterpriseServer(ThirdPartySourceRepository&& value) { SetGitHubEnterpriseServer(std::move(value)); return *this;}
 
@@ -157,16 +157,16 @@ namespace Model
   private:
 
     CodeCommitRepository m_codeCommit;
-    bool m_codeCommitHasBeenSet;
+    bool m_codeCommitHasBeenSet = false;
 
     ThirdPartySourceRepository m_bitbucket;
-    bool m_bitbucketHasBeenSet;
+    bool m_bitbucketHasBeenSet = false;
 
     ThirdPartySourceRepository m_gitHubEnterpriseServer;
-    bool m_gitHubEnterpriseServerHasBeenSet;
+    bool m_gitHubEnterpriseServerHasBeenSet = false;
 
     S3Repository m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
   };
 
 } // namespace Model

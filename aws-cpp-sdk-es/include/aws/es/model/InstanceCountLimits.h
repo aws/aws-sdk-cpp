@@ -65,10 +65,10 @@ namespace Model
   private:
 
     int m_minimumInstanceCount;
-    bool m_minimumInstanceCountHasBeenSet;
+    bool m_minimumInstanceCountHasBeenSet = false;
 
     int m_maximumInstanceCount;
-    bool m_maximumInstanceCountHasBeenSet;
+    bool m_maximumInstanceCountHasBeenSet = false;
   };
 
 } // namespace Model

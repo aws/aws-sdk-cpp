@@ -125,32 +125,32 @@ namespace Model
 
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline const GeofenceGeometry& GetGeometry() const{ return m_geometry; }
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline void SetGeometry(const GeofenceGeometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline void SetGeometry(GeofenceGeometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline ListGeofenceResponseEntry& WithGeometry(const GeofenceGeometry& value) { SetGeometry(value); return *this;}
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline ListGeofenceResponseEntry& WithGeometry(GeofenceGeometry&& value) { SetGeometry(std::move(value)); return *this;}
 
@@ -297,19 +297,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_geofenceId;
-    bool m_geofenceIdHasBeenSet;
+    bool m_geofenceIdHasBeenSet = false;
 
     GeofenceGeometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_versionRequirement;
-    bool m_versionRequirementHasBeenSet;
+    bool m_versionRequirementHasBeenSet = false;
 
     ComponentDependencyType m_dependencyType;
-    bool m_dependencyTypeHasBeenSet;
+    bool m_dependencyTypeHasBeenSet = false;
   };
 
 } // namespace Model

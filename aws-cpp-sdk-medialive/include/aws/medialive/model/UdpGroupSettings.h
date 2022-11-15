@@ -159,13 +159,13 @@ namespace Model
   private:
 
     InputLossActionForUdpOut m_inputLossAction;
-    bool m_inputLossActionHasBeenSet;
+    bool m_inputLossActionHasBeenSet = false;
 
     UdpTimedMetadataId3Frame m_timedMetadataId3Frame;
-    bool m_timedMetadataId3FrameHasBeenSet;
+    bool m_timedMetadataId3FrameHasBeenSet = false;
 
     int m_timedMetadataId3Period;
-    bool m_timedMetadataId3PeriodHasBeenSet;
+    bool m_timedMetadataId3PeriodHasBeenSet = false;
   };
 
 } // namespace Model

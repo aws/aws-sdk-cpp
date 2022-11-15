@@ -507,25 +507,25 @@ namespace Model
   private:
 
     Aws::String m_defaultSubstitutions;
-    bool m_defaultSubstitutionsHasBeenSet;
+    bool m_defaultSubstitutionsHasBeenSet = false;
 
     Aws::String m_htmlPart;
-    bool m_htmlPartHasBeenSet;
+    bool m_htmlPartHasBeenSet = false;
 
     Aws::String m_recommenderId;
-    bool m_recommenderIdHasBeenSet;
+    bool m_recommenderIdHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_templateDescription;
-    bool m_templateDescriptionHasBeenSet;
+    bool m_templateDescriptionHasBeenSet = false;
 
     Aws::String m_textPart;
-    bool m_textPartHasBeenSet;
+    bool m_textPartHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,9 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>If specified, API Gateway performs two-way authentication between the client
-   * and the server. Clients must present a trusted certificate to access your custom
-   * domain name.</p><p><h3>See Also:</h3>   <a
+   * <p>The mutual TLS authentication configuration for a custom domain name. If
+   * specified, API Gateway performs two-way authentication between the client and
+   * the server. Clients must present a trusted certificate to access your
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/MutualTlsAuthentication">AWS
    * API Reference</a></p>
    */
@@ -245,13 +246,13 @@ namespace Model
   private:
 
     Aws::String m_truststoreUri;
-    bool m_truststoreUriHasBeenSet;
+    bool m_truststoreUriHasBeenSet = false;
 
     Aws::String m_truststoreVersion;
-    bool m_truststoreVersionHasBeenSet;
+    bool m_truststoreVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_truststoreWarnings;
-    bool m_truststoreWarningsHasBeenSet;
+    bool m_truststoreWarningsHasBeenSet = false;
   };
 
 } // namespace Model

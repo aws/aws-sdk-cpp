@@ -27,7 +27,11 @@ namespace Model
     GOBINARY,
     GOMOD,
     JAR,
-    OS
+    OS,
+    PIP,
+    PYTHONPKG,
+    NODEPKG,
+    POM
   };
 
 namespace PackageManagerMapper

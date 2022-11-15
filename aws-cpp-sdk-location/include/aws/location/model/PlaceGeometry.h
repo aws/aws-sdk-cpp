@@ -104,7 +104,7 @@ namespace Model
   private:
 
     Aws::Vector<double> m_point;
-    bool m_pointHasBeenSet;
+    bool m_pointHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,14 +37,14 @@ void ListHumanLoopsRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_creationTimeAfterHasBeenSet)
     {
-      ss << m_creationTimeAfter.ToGmtString(DateFormat::ISO_8601);
+      ss << m_creationTimeAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("CreationTimeAfter", ss.str());
       ss.str("");
     }
 
     if(m_creationTimeBeforeHasBeenSet)
     {
-      ss << m_creationTimeBefore.ToGmtString(DateFormat::ISO_8601);
+      ss << m_creationTimeBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("CreationTimeBefore", ss.str());
       ss.str("");
     }

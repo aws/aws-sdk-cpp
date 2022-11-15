@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_automaticallyAfterDays;
-    bool m_automaticallyAfterDaysHasBeenSet;
+    bool m_automaticallyAfterDaysHasBeenSet = false;
   };
 
 } // namespace Model

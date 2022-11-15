@@ -153,13 +153,13 @@ namespace Model
   private:
 
     BlueInstanceTerminationOption m_terminateBlueInstancesOnDeploymentSuccess;
-    bool m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet;
+    bool m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet = false;
 
     DeploymentReadyOption m_deploymentReadyOption;
-    bool m_deploymentReadyOptionHasBeenSet;
+    bool m_deploymentReadyOptionHasBeenSet = false;
 
     GreenFleetProvisioningOption m_greenFleetProvisioningOption;
-    bool m_greenFleetProvisioningOptionHasBeenSet;
+    bool m_greenFleetProvisioningOptionHasBeenSet = false;
   };
 
 } // namespace Model

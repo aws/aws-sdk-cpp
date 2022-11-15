@@ -90,7 +90,7 @@ namespace Model
   private:
 
     LaunchTemplateAutoRecoveryState m_autoRecovery;
-    bool m_autoRecoveryHasBeenSet;
+    bool m_autoRecoveryHasBeenSet = false;
   };
 
 } // namespace Model

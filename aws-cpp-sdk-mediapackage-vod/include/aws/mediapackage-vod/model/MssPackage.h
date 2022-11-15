@@ -123,13 +123,13 @@ namespace Model
   private:
 
     MssEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::Vector<MssManifest> m_mssManifests;
-    bool m_mssManifestsHasBeenSet;
+    bool m_mssManifestsHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
   };
 
 } // namespace Model

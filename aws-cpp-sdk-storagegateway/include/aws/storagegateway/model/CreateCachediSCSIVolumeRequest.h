@@ -608,34 +608,34 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     long long m_volumeSizeInBytes;
-    bool m_volumeSizeInBytesHasBeenSet;
+    bool m_volumeSizeInBytesHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_targetName;
-    bool m_targetNameHasBeenSet;
+    bool m_targetNameHasBeenSet = false;
 
     Aws::String m_sourceVolumeARN;
-    bool m_sourceVolumeARNHasBeenSet;
+    bool m_sourceVolumeARNHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_kMSEncrypted;
-    bool m_kMSEncryptedHasBeenSet;
+    bool m_kMSEncryptedHasBeenSet = false;
 
     Aws::String m_kMSKey;
-    bool m_kMSKeyHasBeenSet;
+    bool m_kMSKeyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

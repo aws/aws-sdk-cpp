@@ -133,13 +133,13 @@ namespace Model
   private:
 
     int m_availableCapacity;
-    bool m_availableCapacityHasBeenSet;
+    bool m_availableCapacityHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_totalCapacity;
-    bool m_totalCapacityHasBeenSet;
+    bool m_totalCapacityHasBeenSet = false;
   };
 
 } // namespace Model

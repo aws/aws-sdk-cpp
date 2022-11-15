@@ -121,10 +121,10 @@ namespace Model
   private:
 
     CloudWatchEncryptionMode m_cloudWatchEncryptionMode;
-    bool m_cloudWatchEncryptionModeHasBeenSet;
+    bool m_cloudWatchEncryptionModeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -41,7 +41,8 @@ ContainerService::ContainerService() :
     m_principalArnHasBeenSet(false),
     m_privateDomainNameHasBeenSet(false),
     m_publicDomainNamesHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_privateRegistryAccessHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ ContainerService::ContainerService(JsonView jsonValue) :
     m_principalArnHasBeenSet(false),
     m_privateDomainNameHasBeenSet(false),
     m_publicDomainNamesHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_privateRegistryAccessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,7 +114,7 @@ ContainerService& ContainerService::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -195,7 +197,7 @@ ContainerService& ContainerService::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> publicDomainNamesJsonMap = jsonValue.GetObject("publicDomainNames").GetAllObjects();
     for(auto& publicDomainNamesItem : publicDomainNamesJsonMap)
     {
-      Array<JsonView> containerServicePublicDomainsListJsonList = publicDomainNamesItem.second.AsArray();
+      Aws::Utils::Array<JsonView> containerServicePublicDomainsListJsonList = publicDomainNamesItem.second.AsArray();
       Aws::Vector<Aws::String> containerServicePublicDomainsListList;
       containerServicePublicDomainsListList.reserve((size_t)containerServicePublicDomainsListJsonList.GetLength());
       for(unsigned containerServicePublicDomainsListIndex = 0; containerServicePublicDomainsListIndex < containerServicePublicDomainsListJsonList.GetLength(); ++containerServicePublicDomainsListIndex)
@@ -212,6 +214,13 @@ ContainerService& ContainerService::operator =(JsonView jsonValue)
     m_url = jsonValue.GetString("url");
 
     m_urlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("privateRegistryAccess"))
+  {
+    m_privateRegistryAccess = jsonValue.GetObject("privateRegistryAccess");
+
+    m_privateRegistryAccessHasBeenSet = true;
   }
 
   return *this;
@@ -251,7 +260,7 @@ JsonValue ContainerService::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -323,7 +332,7 @@ JsonValue ContainerService::Jsonize() const
    JsonValue publicDomainNamesJsonMap;
    for(auto& publicDomainNamesItem : m_publicDomainNames)
    {
-     Array<JsonValue> containerServicePublicDomainsListJsonList(publicDomainNamesItem.second.size());
+     Aws::Utils::Array<JsonValue> containerServicePublicDomainsListJsonList(publicDomainNamesItem.second.size());
      for(unsigned containerServicePublicDomainsListIndex = 0; containerServicePublicDomainsListIndex < containerServicePublicDomainsListJsonList.GetLength(); ++containerServicePublicDomainsListIndex)
      {
        containerServicePublicDomainsListJsonList[containerServicePublicDomainsListIndex].AsString(publicDomainNamesItem.second[containerServicePublicDomainsListIndex]);
@@ -337,6 +346,12 @@ JsonValue ContainerService::Jsonize() const
   if(m_urlHasBeenSet)
   {
    payload.WithString("url", m_url);
+
+  }
+
+  if(m_privateRegistryAccessHasBeenSet)
+  {
+   payload.WithObject("privateRegistryAccess", m_privateRegistryAccess.Jsonize());
 
   }
 

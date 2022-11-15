@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_subnetIdList;
-    bool m_subnetIdListHasBeenSet;
+    bool m_subnetIdListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIdList;
-    bool m_securityGroupIdListHasBeenSet;
+    bool m_securityGroupIdListHasBeenSet = false;
   };
 
 } // namespace Model

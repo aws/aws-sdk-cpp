@@ -46,7 +46,7 @@ Aws::String CreateDiskRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -57,7 +57,7 @@ Aws::String CreateDiskRequest::SerializePayload() const
 
   if(m_addOnsHasBeenSet)
   {
-   Array<JsonValue> addOnsJsonList(m_addOns.size());
+   Aws::Utils::Array<JsonValue> addOnsJsonList(m_addOns.size());
    for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
    {
      addOnsJsonList[addOnsIndex].AsObject(m_addOns[addOnsIndex].Jsonize());

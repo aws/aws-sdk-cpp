@@ -39,11 +39,18 @@ DataType::DataType(JsonView jsonValue) :
   *this = jsonValue;
 }
 
+const DataType& DataType::GetNestedType() const{ return *m_nestedType; }
+bool DataType::NestedTypeHasBeenSet() const { return m_nestedTypeHasBeenSet; }
+void DataType::SetNestedType(const DataType& value) { m_nestedTypeHasBeenSet = true; m_nestedType = Aws::MakeShared<DataType>("DataType", value); }
+void DataType::SetNestedType(DataType&& value) { m_nestedTypeHasBeenSet = true; m_nestedType = Aws::MakeShared<DataType>("DataType", std::move(value)); }
+DataType& DataType::WithNestedType(const DataType& value) { SetNestedType(value); return *this;}
+DataType& DataType::WithNestedType(DataType&& value) { SetNestedType(std::move(value)); return *this;}
+
 DataType& DataType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("allowedValues"))
   {
-    Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
+    Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
     for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
     {
       m_allowedValues.push_back(allowedValuesJsonList[allowedValuesIndex].AsObject());
@@ -53,8 +60,7 @@ DataType& DataType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("nestedType"))
   {
-    m_nestedType.resize(1);
-    m_nestedType[0] = jsonValue.GetObject("nestedType");
+    m_nestedType = Aws::MakeShared<DataType>("DataType", jsonValue.GetObject("nestedType"));
 
     m_nestedTypeHasBeenSet = true;
   }
@@ -89,7 +95,7 @@ JsonValue DataType::Jsonize() const
 
   if(m_allowedValuesHasBeenSet)
   {
-   Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
+   Aws::Utils::Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
    for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
    {
      allowedValuesJsonList[allowedValuesIndex].AsObject(m_allowedValues[allowedValuesIndex].Jsonize());
@@ -100,7 +106,7 @@ JsonValue DataType::Jsonize() const
 
   if(m_nestedTypeHasBeenSet)
   {
-   payload.WithObject("nestedType", m_nestedType[0].Jsonize());
+   payload.WithObject("nestedType", m_nestedType->Jsonize());
 
   }
 

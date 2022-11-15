@@ -149,13 +149,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_deltaTables;
-    bool m_deltaTablesHasBeenSet;
+    bool m_deltaTablesHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     bool m_writeManifest;
-    bool m_writeManifestHasBeenSet;
+    bool m_writeManifestHasBeenSet = false;
   };
 
 } // namespace Model

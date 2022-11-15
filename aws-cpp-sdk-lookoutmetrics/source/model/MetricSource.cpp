@@ -23,7 +23,8 @@ MetricSource::MetricSource() :
     m_appFlowConfigHasBeenSet(false),
     m_cloudWatchConfigHasBeenSet(false),
     m_rDSSourceConfigHasBeenSet(false),
-    m_redshiftSourceConfigHasBeenSet(false)
+    m_redshiftSourceConfigHasBeenSet(false),
+    m_athenaSourceConfigHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ MetricSource::MetricSource(JsonView jsonValue) :
     m_appFlowConfigHasBeenSet(false),
     m_cloudWatchConfigHasBeenSet(false),
     m_rDSSourceConfigHasBeenSet(false),
-    m_redshiftSourceConfigHasBeenSet(false)
+    m_redshiftSourceConfigHasBeenSet(false),
+    m_athenaSourceConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ MetricSource& MetricSource::operator =(JsonView jsonValue)
     m_redshiftSourceConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AthenaSourceConfig"))
+  {
+    m_athenaSourceConfig = jsonValue.GetObject("AthenaSourceConfig");
+
+    m_athenaSourceConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue MetricSource::Jsonize() const
   if(m_redshiftSourceConfigHasBeenSet)
   {
    payload.WithObject("RedshiftSourceConfig", m_redshiftSourceConfig.Jsonize());
+
+  }
+
+  if(m_athenaSourceConfigHasBeenSet)
+  {
+   payload.WithObject("AthenaSourceConfig", m_athenaSourceConfig.Jsonize());
 
   }
 

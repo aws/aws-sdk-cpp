@@ -19,14 +19,16 @@ using namespace Aws;
 GetEmailIdentityResult::GetEmailIdentityResult() : 
     m_identityType(IdentityType::NOT_SET),
     m_feedbackForwardingStatus(false),
-    m_verifiedForSendingStatus(false)
+    m_verifiedForSendingStatus(false),
+    m_verificationStatus(VerificationStatus::NOT_SET)
 {
 }
 
 GetEmailIdentityResult::GetEmailIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_identityType(IdentityType::NOT_SET),
     m_feedbackForwardingStatus(false),
-    m_verifiedForSendingStatus(false)
+    m_verifiedForSendingStatus(false),
+    m_verificationStatus(VerificationStatus::NOT_SET)
 {
   *this = result;
 }
@@ -75,7 +77,7 @@ GetEmailIdentityResult& GetEmailIdentityResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -85,6 +87,12 @@ GetEmailIdentityResult& GetEmailIdentityResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ConfigurationSetName"))
   {
     m_configurationSetName = jsonValue.GetString("ConfigurationSetName");
+
+  }
+
+  if(jsonValue.ValueExists("VerificationStatus"))
+  {
+    m_verificationStatus = VerificationStatusMapper::GetVerificationStatusForName(jsonValue.GetString("VerificationStatus"));
 
   }
 

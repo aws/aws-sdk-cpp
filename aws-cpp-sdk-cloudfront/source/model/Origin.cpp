@@ -31,7 +31,8 @@ Origin::Origin() :
     m_connectionAttemptsHasBeenSet(false),
     m_connectionTimeout(0),
     m_connectionTimeoutHasBeenSet(false),
-    m_originShieldHasBeenSet(false)
+    m_originShieldHasBeenSet(false),
+    m_originAccessControlIdHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ Origin::Origin(const XmlNode& xmlNode) :
     m_connectionAttemptsHasBeenSet(false),
     m_connectionTimeout(0),
     m_connectionTimeoutHasBeenSet(false),
-    m_originShieldHasBeenSet(false)
+    m_originShieldHasBeenSet(false),
+    m_originAccessControlIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -110,6 +112,12 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
     {
       m_originShield = originShieldNode;
       m_originShieldHasBeenSet = true;
+    }
+    XmlNode originAccessControlIdNode = resultNode.FirstChild("OriginAccessControlId");
+    if(!originAccessControlIdNode.IsNull())
+    {
+      m_originAccessControlId = Aws::Utils::Xml::DecodeEscapedXmlText(originAccessControlIdNode.GetText());
+      m_originAccessControlIdHasBeenSet = true;
     }
   }
 
@@ -175,6 +183,12 @@ void Origin::AddToNode(XmlNode& parentNode) const
   {
    XmlNode originShieldNode = parentNode.CreateChildElement("OriginShield");
    m_originShield.AddToNode(originShieldNode);
+  }
+
+  if(m_originAccessControlIdHasBeenSet)
+  {
+   XmlNode originAccessControlIdNode = parentNode.CreateChildElement("OriginAccessControlId");
+   originAccessControlIdNode.SetText(m_originAccessControlId);
   }
 
 }

@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_evaluationStartDate;
-    bool m_evaluationStartDateHasBeenSet;
+    bool m_evaluationStartDateHasBeenSet = false;
 
     int m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
 
     Aws::Vector<ItemizedMetricStats> m_itemizedMetricStatsList;
-    bool m_itemizedMetricStatsListHasBeenSet;
+    bool m_itemizedMetricStatsListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -42,7 +42,7 @@ ResourceDataSyncAwsOrganizationsSource& ResourceDataSyncAwsOrganizationsSource::
 
   if(jsonValue.ValueExists("OrganizationalUnits"))
   {
-    Array<JsonView> organizationalUnitsJsonList = jsonValue.GetArray("OrganizationalUnits");
+    Aws::Utils::Array<JsonView> organizationalUnitsJsonList = jsonValue.GetArray("OrganizationalUnits");
     for(unsigned organizationalUnitsIndex = 0; organizationalUnitsIndex < organizationalUnitsJsonList.GetLength(); ++organizationalUnitsIndex)
     {
       m_organizationalUnits.push_back(organizationalUnitsJsonList[organizationalUnitsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue ResourceDataSyncAwsOrganizationsSource::Jsonize() const
 
   if(m_organizationalUnitsHasBeenSet)
   {
-   Array<JsonValue> organizationalUnitsJsonList(m_organizationalUnits.size());
+   Aws::Utils::Array<JsonValue> organizationalUnitsJsonList(m_organizationalUnits.size());
    for(unsigned organizationalUnitsIndex = 0; organizationalUnitsIndex < organizationalUnitsJsonList.GetLength(); ++organizationalUnitsIndex)
    {
      organizationalUnitsJsonList[organizationalUnitsIndex].AsObject(m_organizationalUnits[organizationalUnitsIndex].Jsonize());

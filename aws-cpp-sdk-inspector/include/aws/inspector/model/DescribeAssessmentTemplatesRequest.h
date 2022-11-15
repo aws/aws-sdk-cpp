@@ -65,7 +65,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_assessmentTemplateArns;
-    bool m_assessmentTemplateArnsHasBeenSet;
+    bool m_assessmentTemplateArnsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListAutoScalingConfigurationsResult& ListAutoScalingConfigurationsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AutoScalingConfigurationSummaryList"))
   {
-    Array<JsonView> autoScalingConfigurationSummaryListJsonList = jsonValue.GetArray("AutoScalingConfigurationSummaryList");
+    Aws::Utils::Array<JsonView> autoScalingConfigurationSummaryListJsonList = jsonValue.GetArray("AutoScalingConfigurationSummaryList");
     for(unsigned autoScalingConfigurationSummaryListIndex = 0; autoScalingConfigurationSummaryListIndex < autoScalingConfigurationSummaryListJsonList.GetLength(); ++autoScalingConfigurationSummaryListIndex)
     {
       m_autoScalingConfigurationSummaryList.push_back(autoScalingConfigurationSummaryListJsonList[autoScalingConfigurationSummaryListIndex].AsObject());

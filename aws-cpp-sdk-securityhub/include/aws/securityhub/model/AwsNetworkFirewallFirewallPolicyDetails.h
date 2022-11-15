@@ -236,19 +236,19 @@ namespace Model
   private:
 
     FirewallPolicyDetails m_firewallPolicy;
-    bool m_firewallPolicyHasBeenSet;
+    bool m_firewallPolicyHasBeenSet = false;
 
     Aws::String m_firewallPolicyArn;
-    bool m_firewallPolicyArnHasBeenSet;
+    bool m_firewallPolicyArnHasBeenSet = false;
 
     Aws::String m_firewallPolicyId;
-    bool m_firewallPolicyIdHasBeenSet;
+    bool m_firewallPolicyIdHasBeenSet = false;
 
     Aws::String m_firewallPolicyName;
-    bool m_firewallPolicyNameHasBeenSet;
+    bool m_firewallPolicyNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

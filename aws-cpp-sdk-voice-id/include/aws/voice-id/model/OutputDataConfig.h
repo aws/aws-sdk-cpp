@@ -39,57 +39,57 @@ namespace Model
 
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline OutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline OutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline OutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The S3 path of the folder to which Voice ID writes the job output file, which
-     * has a <code>*.out</code> extension. For example, if the input file name is
+     * <p>The S3 path of the folder where Voice ID writes the job output file. It has a
+     * <code>*.out</code> extension. For example, if the input file name is
      * <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
@@ -97,8 +97,8 @@ namespace Model
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
 
     /**
-     * <p>The S3 path of the folder to which Voice ID writes the job output file, which
-     * has a <code>*.out</code> extension. For example, if the input file name is
+     * <p>The S3 path of the folder where Voice ID writes the job output file. It has a
+     * <code>*.out</code> extension. For example, if the input file name is
      * <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
@@ -106,8 +106,8 @@ namespace Model
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
 
     /**
-     * <p>The S3 path of the folder to which Voice ID writes the job output file, which
-     * has a <code>*.out</code> extension. For example, if the input file name is
+     * <p>The S3 path of the folder where Voice ID writes the job output file. It has a
+     * <code>*.out</code> extension. For example, if the input file name is
      * <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
@@ -115,8 +115,8 @@ namespace Model
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
 
     /**
-     * <p>The S3 path of the folder to which Voice ID writes the job output file, which
-     * has a <code>*.out</code> extension. For example, if the input file name is
+     * <p>The S3 path of the folder where Voice ID writes the job output file. It has a
+     * <code>*.out</code> extension. For example, if the input file name is
      * <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
@@ -124,8 +124,8 @@ namespace Model
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
 
     /**
-     * <p>The S3 path of the folder to which Voice ID writes the job output file, which
-     * has a <code>*.out</code> extension. For example, if the input file name is
+     * <p>The S3 path of the folder where Voice ID writes the job output file. It has a
+     * <code>*.out</code> extension. For example, if the input file name is
      * <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
@@ -133,8 +133,8 @@ namespace Model
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
 
     /**
-     * <p>The S3 path of the folder to which Voice ID writes the job output file, which
-     * has a <code>*.out</code> extension. For example, if the input file name is
+     * <p>The S3 path of the folder where Voice ID writes the job output file. It has a
+     * <code>*.out</code> extension. For example, if the input file name is
      * <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
@@ -142,8 +142,8 @@ namespace Model
     inline OutputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
 
     /**
-     * <p>The S3 path of the folder to which Voice ID writes the job output file, which
-     * has a <code>*.out</code> extension. For example, if the input file name is
+     * <p>The S3 path of the folder where Voice ID writes the job output file. It has a
+     * <code>*.out</code> extension. For example, if the input file name is
      * <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
@@ -151,8 +151,8 @@ namespace Model
     inline OutputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 path of the folder to which Voice ID writes the job output file, which
-     * has a <code>*.out</code> extension. For example, if the input file name is
+     * <p>The S3 path of the folder where Voice ID writes the job output file. It has a
+     * <code>*.out</code> extension. For example, if the input file name is
      * <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

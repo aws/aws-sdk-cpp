@@ -21,14 +21,16 @@ namespace Model
 Instance::Instance() : 
     m_boundingBoxHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_dominantColorsHasBeenSet(false)
 {
 }
 
 Instance::Instance(JsonView jsonValue) : 
     m_boundingBoxHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_dominantColorsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,16 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_confidenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DominantColors"))
+  {
+    Aws::Utils::Array<JsonView> dominantColorsJsonList = jsonValue.GetArray("DominantColors");
+    for(unsigned dominantColorsIndex = 0; dominantColorsIndex < dominantColorsJsonList.GetLength(); ++dominantColorsIndex)
+    {
+      m_dominantColors.push_back(dominantColorsJsonList[dominantColorsIndex].AsObject());
+    }
+    m_dominantColorsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +77,17 @@ JsonValue Instance::Jsonize() const
   if(m_confidenceHasBeenSet)
   {
    payload.WithDouble("Confidence", m_confidence);
+
+  }
+
+  if(m_dominantColorsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dominantColorsJsonList(m_dominantColors.size());
+   for(unsigned dominantColorsIndex = 0; dominantColorsIndex < dominantColorsJsonList.GetLength(); ++dominantColorsIndex)
+   {
+     dominantColorsJsonList[dominantColorsIndex].AsObject(m_dominantColors[dominantColorsIndex].Jsonize());
+   }
+   payload.WithArray("DominantColors", std::move(dominantColorsJsonList));
 
   }
 

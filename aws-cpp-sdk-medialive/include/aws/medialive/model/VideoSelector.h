@@ -221,16 +221,16 @@ namespace Model
   private:
 
     VideoSelectorColorSpace m_colorSpace;
-    bool m_colorSpaceHasBeenSet;
+    bool m_colorSpaceHasBeenSet = false;
 
     VideoSelectorColorSpaceSettings m_colorSpaceSettings;
-    bool m_colorSpaceSettingsHasBeenSet;
+    bool m_colorSpaceSettingsHasBeenSet = false;
 
     VideoSelectorColorSpaceUsage m_colorSpaceUsage;
-    bool m_colorSpaceUsageHasBeenSet;
+    bool m_colorSpaceUsageHasBeenSet = false;
 
     VideoSelectorSettings m_selectorSettings;
-    bool m_selectorSettingsHasBeenSet;
+    bool m_selectorSettingsHasBeenSet = false;
   };
 
 } // namespace Model

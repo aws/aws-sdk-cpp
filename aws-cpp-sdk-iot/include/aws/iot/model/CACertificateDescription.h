@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/AutoRegistrationStatus.h>
 #include <aws/iot/model/CertificateValidity.h>
+#include <aws/iot/model/CertificateMode.h>
 #include <utility>
 
 namespace Aws
@@ -427,40 +428,98 @@ namespace Model
      */
     inline CACertificateDescription& WithValidity(CertificateValidity&& value) { SetValidity(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The mode of the CA. </p> <p>All the device certificates that are registered
+     * using this CA will be registered in the same mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate
+     * mode</a>.</p>
+     */
+    inline const CertificateMode& GetCertificateMode() const{ return m_certificateMode; }
+
+    /**
+     * <p>The mode of the CA. </p> <p>All the device certificates that are registered
+     * using this CA will be registered in the same mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate
+     * mode</a>.</p>
+     */
+    inline bool CertificateModeHasBeenSet() const { return m_certificateModeHasBeenSet; }
+
+    /**
+     * <p>The mode of the CA. </p> <p>All the device certificates that are registered
+     * using this CA will be registered in the same mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate
+     * mode</a>.</p>
+     */
+    inline void SetCertificateMode(const CertificateMode& value) { m_certificateModeHasBeenSet = true; m_certificateMode = value; }
+
+    /**
+     * <p>The mode of the CA. </p> <p>All the device certificates that are registered
+     * using this CA will be registered in the same mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate
+     * mode</a>.</p>
+     */
+    inline void SetCertificateMode(CertificateMode&& value) { m_certificateModeHasBeenSet = true; m_certificateMode = std::move(value); }
+
+    /**
+     * <p>The mode of the CA. </p> <p>All the device certificates that are registered
+     * using this CA will be registered in the same mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate
+     * mode</a>.</p>
+     */
+    inline CACertificateDescription& WithCertificateMode(const CertificateMode& value) { SetCertificateMode(value); return *this;}
+
+    /**
+     * <p>The mode of the CA. </p> <p>All the device certificates that are registered
+     * using this CA will be registered in the same mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate
+     * mode</a>.</p>
+     */
+    inline CACertificateDescription& WithCertificateMode(CertificateMode&& value) { SetCertificateMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     CACertificateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_certificatePem;
-    bool m_certificatePemHasBeenSet;
+    bool m_certificatePemHasBeenSet = false;
 
     Aws::String m_ownedBy;
-    bool m_ownedByHasBeenSet;
+    bool m_ownedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     AutoRegistrationStatus m_autoRegistrationStatus;
-    bool m_autoRegistrationStatusHasBeenSet;
+    bool m_autoRegistrationStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     int m_customerVersion;
-    bool m_customerVersionHasBeenSet;
+    bool m_customerVersionHasBeenSet = false;
 
     Aws::String m_generationId;
-    bool m_generationIdHasBeenSet;
+    bool m_generationIdHasBeenSet = false;
 
     CertificateValidity m_validity;
-    bool m_validityHasBeenSet;
+    bool m_validityHasBeenSet = false;
+
+    CertificateMode m_certificateMode;
+    bool m_certificateModeHasBeenSet = false;
   };
 
 } // namespace Model

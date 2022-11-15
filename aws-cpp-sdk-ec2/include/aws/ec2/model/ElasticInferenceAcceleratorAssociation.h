@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_elasticInferenceAcceleratorArn;
-    bool m_elasticInferenceAcceleratorArnHasBeenSet;
+    bool m_elasticInferenceAcceleratorArnHasBeenSet = false;
 
     Aws::String m_elasticInferenceAcceleratorAssociationId;
-    bool m_elasticInferenceAcceleratorAssociationIdHasBeenSet;
+    bool m_elasticInferenceAcceleratorAssociationIdHasBeenSet = false;
 
     Aws::String m_elasticInferenceAcceleratorAssociationState;
-    bool m_elasticInferenceAcceleratorAssociationStateHasBeenSet;
+    bool m_elasticInferenceAcceleratorAssociationStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_elasticInferenceAcceleratorAssociationTime;
-    bool m_elasticInferenceAcceleratorAssociationTimeHasBeenSet;
+    bool m_elasticInferenceAcceleratorAssociationTimeHasBeenSet = false;
   };
 
 } // namespace Model

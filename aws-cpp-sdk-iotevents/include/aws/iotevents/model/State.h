@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_stateName;
-    bool m_stateNameHasBeenSet;
+    bool m_stateNameHasBeenSet = false;
 
     OnInputLifecycle m_onInput;
-    bool m_onInputHasBeenSet;
+    bool m_onInputHasBeenSet = false;
 
     OnEnterLifecycle m_onEnter;
-    bool m_onEnterHasBeenSet;
+    bool m_onEnterHasBeenSet = false;
 
     OnExitLifecycle m_onExit;
-    bool m_onExitHasBeenSet;
+    bool m_onExitHasBeenSet = false;
   };
 
 } // namespace Model

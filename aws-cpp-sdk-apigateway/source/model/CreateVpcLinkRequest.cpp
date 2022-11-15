@@ -38,7 +38,7 @@ Aws::String CreateVpcLinkRequest::SerializePayload() const
 
   if(m_targetArnsHasBeenSet)
   {
-   Array<JsonValue> targetArnsJsonList(m_targetArns.size());
+   Aws::Utils::Array<JsonValue> targetArnsJsonList(m_targetArns.size());
    for(unsigned targetArnsIndex = 0; targetArnsIndex < targetArnsJsonList.GetLength(); ++targetArnsIndex)
    {
      targetArnsJsonList[targetArnsIndex].AsString(m_targetArns[targetArnsIndex]);

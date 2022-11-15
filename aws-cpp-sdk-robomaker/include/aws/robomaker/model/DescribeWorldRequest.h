@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_world;
-    bool m_worldHasBeenSet;
+    bool m_worldHasBeenSet = false;
   };
 
 } // namespace Model

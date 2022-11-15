@@ -35,7 +35,7 @@ ConversationLogSettings& ConversationLogSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("textLogSettings"))
   {
-    Array<JsonView> textLogSettingsJsonList = jsonValue.GetArray("textLogSettings");
+    Aws::Utils::Array<JsonView> textLogSettingsJsonList = jsonValue.GetArray("textLogSettings");
     for(unsigned textLogSettingsIndex = 0; textLogSettingsIndex < textLogSettingsJsonList.GetLength(); ++textLogSettingsIndex)
     {
       m_textLogSettings.push_back(textLogSettingsJsonList[textLogSettingsIndex].AsObject());
@@ -45,7 +45,7 @@ ConversationLogSettings& ConversationLogSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("audioLogSettings"))
   {
-    Array<JsonView> audioLogSettingsJsonList = jsonValue.GetArray("audioLogSettings");
+    Aws::Utils::Array<JsonView> audioLogSettingsJsonList = jsonValue.GetArray("audioLogSettings");
     for(unsigned audioLogSettingsIndex = 0; audioLogSettingsIndex < audioLogSettingsJsonList.GetLength(); ++audioLogSettingsIndex)
     {
       m_audioLogSettings.push_back(audioLogSettingsJsonList[audioLogSettingsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue ConversationLogSettings::Jsonize() const
 
   if(m_textLogSettingsHasBeenSet)
   {
-   Array<JsonValue> textLogSettingsJsonList(m_textLogSettings.size());
+   Aws::Utils::Array<JsonValue> textLogSettingsJsonList(m_textLogSettings.size());
    for(unsigned textLogSettingsIndex = 0; textLogSettingsIndex < textLogSettingsJsonList.GetLength(); ++textLogSettingsIndex)
    {
      textLogSettingsJsonList[textLogSettingsIndex].AsObject(m_textLogSettings[textLogSettingsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue ConversationLogSettings::Jsonize() const
 
   if(m_audioLogSettingsHasBeenSet)
   {
-   Array<JsonValue> audioLogSettingsJsonList(m_audioLogSettings.size());
+   Aws::Utils::Array<JsonValue> audioLogSettingsJsonList(m_audioLogSettings.size());
    for(unsigned audioLogSettingsIndex = 0; audioLogSettingsIndex < audioLogSettingsJsonList.GetLength(); ++audioLogSettingsIndex)
    {
      audioLogSettingsJsonList[audioLogSettingsIndex].AsObject(m_audioLogSettings[audioLogSettingsIndex].Jsonize());

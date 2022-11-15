@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_kmsKey;
-    bool m_kmsKeyHasBeenSet;
+    bool m_kmsKeyHasBeenSet = false;
 
     Aws::String m_delegatedAdminAccount;
-    bool m_delegatedAdminAccountHasBeenSet;
+    bool m_delegatedAdminAccountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     cloud_watch_logs,
-    s3
+    s3,
+    kinesis_data_firehose
   };
 
 namespace LogDestinationTypeMapper

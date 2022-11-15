@@ -323,28 +323,72 @@ namespace Model
      */
     inline Member& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
 
+
+    /**
+     * <p>The administrator account ID.</p>
+     */
+    inline const Aws::String& GetAdministratorId() const{ return m_administratorId; }
+
+    /**
+     * <p>The administrator account ID.</p>
+     */
+    inline bool AdministratorIdHasBeenSet() const { return m_administratorIdHasBeenSet; }
+
+    /**
+     * <p>The administrator account ID.</p>
+     */
+    inline void SetAdministratorId(const Aws::String& value) { m_administratorIdHasBeenSet = true; m_administratorId = value; }
+
+    /**
+     * <p>The administrator account ID.</p>
+     */
+    inline void SetAdministratorId(Aws::String&& value) { m_administratorIdHasBeenSet = true; m_administratorId = std::move(value); }
+
+    /**
+     * <p>The administrator account ID.</p>
+     */
+    inline void SetAdministratorId(const char* value) { m_administratorIdHasBeenSet = true; m_administratorId.assign(value); }
+
+    /**
+     * <p>The administrator account ID.</p>
+     */
+    inline Member& WithAdministratorId(const Aws::String& value) { SetAdministratorId(value); return *this;}
+
+    /**
+     * <p>The administrator account ID.</p>
+     */
+    inline Member& WithAdministratorId(Aws::String&& value) { SetAdministratorId(std::move(value)); return *this;}
+
+    /**
+     * <p>The administrator account ID.</p>
+     */
+    inline Member& WithAdministratorId(const char* value) { SetAdministratorId(value); return *this;}
+
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_masterId;
-    bool m_masterIdHasBeenSet;
+    bool m_masterIdHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_relationshipStatus;
-    bool m_relationshipStatusHasBeenSet;
+    bool m_relationshipStatusHasBeenSet = false;
 
     Aws::String m_invitedAt;
-    bool m_invitedAtHasBeenSet;
+    bool m_invitedAtHasBeenSet = false;
 
     Aws::String m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
+
+    Aws::String m_administratorId;
+    bool m_administratorIdHasBeenSet = false;
   };
 
 } // namespace Model

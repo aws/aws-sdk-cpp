@@ -105,13 +105,13 @@ namespace Model
   private:
 
     bool m_isEmpty;
-    bool m_isEmptyHasBeenSet;
+    bool m_isEmptyHasBeenSet = false;
 
     bool m_isNullString;
-    bool m_isNullStringHasBeenSet;
+    bool m_isNullStringHasBeenSet = false;
 
     bool m_isNegOne;
-    bool m_isNegOneHasBeenSet;
+    bool m_isNegOneHasBeenSet = false;
   };
 
 } // namespace Model

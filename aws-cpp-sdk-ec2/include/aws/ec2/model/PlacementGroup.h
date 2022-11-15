@@ -10,6 +10,7 @@
 #include <aws/ec2/model/PlacementGroupState.h>
 #include <aws/ec2/model/PlacementStrategy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/SpreadLevel.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -293,28 +294,68 @@ namespace Model
      */
     inline PlacementGroup& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
 
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline const SpreadLevel& GetSpreadLevel() const{ return m_spreadLevel; }
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline bool SpreadLevelHasBeenSet() const { return m_spreadLevelHasBeenSet; }
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline void SetSpreadLevel(const SpreadLevel& value) { m_spreadLevelHasBeenSet = true; m_spreadLevel = value; }
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline void SetSpreadLevel(SpreadLevel&& value) { m_spreadLevelHasBeenSet = true; m_spreadLevel = std::move(value); }
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline PlacementGroup& WithSpreadLevel(const SpreadLevel& value) { SetSpreadLevel(value); return *this;}
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline PlacementGroup& WithSpreadLevel(SpreadLevel&& value) { SetSpreadLevel(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     PlacementGroupState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     PlacementStrategy m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     int m_partitionCount;
-    bool m_partitionCountHasBeenSet;
+    bool m_partitionCountHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_groupArn;
-    bool m_groupArnHasBeenSet;
+    bool m_groupArnHasBeenSet = false;
+
+    SpreadLevel m_spreadLevel;
+    bool m_spreadLevelHasBeenSet = false;
   };
 
 } // namespace Model

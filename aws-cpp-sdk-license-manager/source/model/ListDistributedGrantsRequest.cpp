@@ -27,7 +27,7 @@ Aws::String ListDistributedGrantsRequest::SerializePayload() const
 
   if(m_grantArnsHasBeenSet)
   {
-   Array<JsonValue> grantArnsJsonList(m_grantArns.size());
+   Aws::Utils::Array<JsonValue> grantArnsJsonList(m_grantArns.size());
    for(unsigned grantArnsIndex = 0; grantArnsIndex < grantArnsJsonList.GetLength(); ++grantArnsIndex)
    {
      grantArnsJsonList[grantArnsIndex].AsString(m_grantArns[grantArnsIndex]);
@@ -38,7 +38,7 @@ Aws::String ListDistributedGrantsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

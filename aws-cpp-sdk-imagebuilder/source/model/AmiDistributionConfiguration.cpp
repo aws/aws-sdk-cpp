@@ -57,7 +57,7 @@ AmiDistributionConfiguration& AmiDistributionConfiguration::operator =(JsonView 
 
   if(jsonValue.ValueExists("targetAccountIds"))
   {
-    Array<JsonView> targetAccountIdsJsonList = jsonValue.GetArray("targetAccountIds");
+    Aws::Utils::Array<JsonView> targetAccountIdsJsonList = jsonValue.GetArray("targetAccountIds");
     for(unsigned targetAccountIdsIndex = 0; targetAccountIdsIndex < targetAccountIdsJsonList.GetLength(); ++targetAccountIdsIndex)
     {
       m_targetAccountIds.push_back(targetAccountIdsJsonList[targetAccountIdsIndex].AsString());
@@ -110,7 +110,7 @@ JsonValue AmiDistributionConfiguration::Jsonize() const
 
   if(m_targetAccountIdsHasBeenSet)
   {
-   Array<JsonValue> targetAccountIdsJsonList(m_targetAccountIds.size());
+   Aws::Utils::Array<JsonValue> targetAccountIdsJsonList(m_targetAccountIds.size());
    for(unsigned targetAccountIdsIndex = 0; targetAccountIdsIndex < targetAccountIdsJsonList.GetLength(); ++targetAccountIdsIndex)
    {
      targetAccountIdsJsonList[targetAccountIdsIndex].AsString(m_targetAccountIds[targetAccountIdsIndex]);

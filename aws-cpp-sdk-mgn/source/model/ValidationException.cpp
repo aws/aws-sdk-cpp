@@ -48,7 +48,7 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("fieldList"))
   {
-    Array<JsonView> fieldListJsonList = jsonValue.GetArray("fieldList");
+    Aws::Utils::Array<JsonView> fieldListJsonList = jsonValue.GetArray("fieldList");
     for(unsigned fieldListIndex = 0; fieldListIndex < fieldListJsonList.GetLength(); ++fieldListIndex)
     {
       m_fieldList.push_back(fieldListJsonList[fieldListIndex].AsObject());
@@ -85,7 +85,7 @@ JsonValue ValidationException::Jsonize() const
 
   if(m_fieldListHasBeenSet)
   {
-   Array<JsonValue> fieldListJsonList(m_fieldList.size());
+   Aws::Utils::Array<JsonValue> fieldListJsonList(m_fieldList.size());
    for(unsigned fieldListIndex = 0; fieldListIndex < fieldListJsonList.GetLength(); ++fieldListIndex)
    {
      fieldListJsonList[fieldListIndex].AsObject(m_fieldList[fieldListIndex].Jsonize());

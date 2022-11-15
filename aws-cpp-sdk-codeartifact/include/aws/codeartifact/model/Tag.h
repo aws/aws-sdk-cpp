@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>A tag is a key-value pair that can be used to manage, search for, or filter
-   * resources in AWS CodeArtifact.</p><p><h3>See Also:</h3>   <a
+   * resources in CodeArtifact.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/Tag">AWS
    * API Reference</a></p>
    */
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

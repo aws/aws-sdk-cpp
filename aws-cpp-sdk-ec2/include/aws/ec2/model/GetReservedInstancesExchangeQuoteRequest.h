@@ -172,13 +172,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_reservedInstanceIds;
-    bool m_reservedInstanceIdsHasBeenSet;
+    bool m_reservedInstanceIdsHasBeenSet = false;
 
     Aws::Vector<TargetConfigurationRequest> m_targetConfigurations;
-    bool m_targetConfigurationsHasBeenSet;
+    bool m_targetConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

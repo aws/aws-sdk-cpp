@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime-sdk-meetings/model/AttendeeCapabilities.h>
 #include <utility>
 
 namespace Aws
@@ -86,10 +87,44 @@ namespace Model
      */
     inline CreateAttendeeRequestItem& WithExternalUserId(const char* value) { SetExternalUserId(value); return *this;}
 
+
+    /**
+     * <p>A list of one or more capabilities.</p>
+     */
+    inline const AttendeeCapabilities& GetCapabilities() const{ return m_capabilities; }
+
+    /**
+     * <p>A list of one or more capabilities.</p>
+     */
+    inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
+
+    /**
+     * <p>A list of one or more capabilities.</p>
+     */
+    inline void SetCapabilities(const AttendeeCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
+
+    /**
+     * <p>A list of one or more capabilities.</p>
+     */
+    inline void SetCapabilities(AttendeeCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
+
+    /**
+     * <p>A list of one or more capabilities.</p>
+     */
+    inline CreateAttendeeRequestItem& WithCapabilities(const AttendeeCapabilities& value) { SetCapabilities(value); return *this;}
+
+    /**
+     * <p>A list of one or more capabilities.</p>
+     */
+    inline CreateAttendeeRequestItem& WithCapabilities(AttendeeCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_externalUserId;
-    bool m_externalUserIdHasBeenSet;
+    bool m_externalUserIdHasBeenSet = false;
+
+    AttendeeCapabilities m_capabilities;
+    bool m_capabilitiesHasBeenSet = false;
   };
 
 } // namespace Model

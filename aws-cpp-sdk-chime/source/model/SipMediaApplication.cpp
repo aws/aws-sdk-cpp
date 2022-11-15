@@ -64,7 +64,7 @@ SipMediaApplication& SipMediaApplication::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Endpoints"))
   {
-    Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
+    Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
     for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
     {
       m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsObject());
@@ -113,7 +113,7 @@ JsonValue SipMediaApplication::Jsonize() const
 
   if(m_endpointsHasBeenSet)
   {
-   Array<JsonValue> endpointsJsonList(m_endpoints.size());
+   Aws::Utils::Array<JsonValue> endpointsJsonList(m_endpoints.size());
    for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
    {
      endpointsJsonList[endpointsIndex].AsObject(m_endpoints[endpointsIndex].Jsonize());
@@ -124,12 +124,12 @@ JsonValue SipMediaApplication::Jsonize() const
 
   if(m_createdTimestampHasBeenSet)
   {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedTimestampHasBeenSet)
   {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

@@ -184,13 +184,13 @@ namespace Model
   private:
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     DeliveryStreamType m_deliveryStreamType;
-    bool m_deliveryStreamTypeHasBeenSet;
+    bool m_deliveryStreamTypeHasBeenSet = false;
 
     Aws::String m_exclusiveStartDeliveryStreamName;
-    bool m_exclusiveStartDeliveryStreamNameHasBeenSet;
+    bool m_exclusiveStartDeliveryStreamNameHasBeenSet = false;
   };
 
 } // namespace Model

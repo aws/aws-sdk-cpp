@@ -36,6 +36,9 @@ Transport::Transport() :
     m_senderIpAddressHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
+    m_sourceListenerAddressHasBeenSet(false),
+    m_sourceListenerPort(0),
+    m_sourceListenerPortHasBeenSet(false),
     m_streamIdHasBeenSet(false)
 {
 }
@@ -58,6 +61,9 @@ Transport::Transport(JsonView jsonValue) :
     m_senderIpAddressHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
+    m_sourceListenerAddressHasBeenSet(false),
+    m_sourceListenerPort(0),
+    m_sourceListenerPortHasBeenSet(false),
     m_streamIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -67,7 +73,7 @@ Transport& Transport::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cidrAllowList"))
   {
-    Array<JsonView> cidrAllowListJsonList = jsonValue.GetArray("cidrAllowList");
+    Aws::Utils::Array<JsonView> cidrAllowListJsonList = jsonValue.GetArray("cidrAllowList");
     for(unsigned cidrAllowListIndex = 0; cidrAllowListIndex < cidrAllowListJsonList.GetLength(); ++cidrAllowListIndex)
     {
       m_cidrAllowList.push_back(cidrAllowListJsonList[cidrAllowListIndex].AsString());
@@ -138,6 +144,20 @@ Transport& Transport::operator =(JsonView jsonValue)
     m_smoothingLatencyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sourceListenerAddress"))
+  {
+    m_sourceListenerAddress = jsonValue.GetString("sourceListenerAddress");
+
+    m_sourceListenerAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceListenerPort"))
+  {
+    m_sourceListenerPort = jsonValue.GetInteger("sourceListenerPort");
+
+    m_sourceListenerPortHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
@@ -154,7 +174,7 @@ JsonValue Transport::Jsonize() const
 
   if(m_cidrAllowListHasBeenSet)
   {
-   Array<JsonValue> cidrAllowListJsonList(m_cidrAllowList.size());
+   Aws::Utils::Array<JsonValue> cidrAllowListJsonList(m_cidrAllowList.size());
    for(unsigned cidrAllowListIndex = 0; cidrAllowListIndex < cidrAllowListJsonList.GetLength(); ++cidrAllowListIndex)
    {
      cidrAllowListJsonList[cidrAllowListIndex].AsString(m_cidrAllowList[cidrAllowListIndex]);
@@ -213,6 +233,18 @@ JsonValue Transport::Jsonize() const
   if(m_smoothingLatencyHasBeenSet)
   {
    payload.WithInteger("smoothingLatency", m_smoothingLatency);
+
+  }
+
+  if(m_sourceListenerAddressHasBeenSet)
+  {
+   payload.WithString("sourceListenerAddress", m_sourceListenerAddress);
+
+  }
+
+  if(m_sourceListenerPortHasBeenSet)
+  {
+   payload.WithInteger("sourceListenerPort", m_sourceListenerPort);
 
   }
 

@@ -269,9 +269,7 @@ namespace Model
      * <p/> <p>Contains a sequence of one or more X.509 extensions, each of which
      * consists of an object identifier (OID), a base64-encoded value, and the critical
      * flag. For more information, see the <a href="https://oidref.com/2.5.29">Global
-     * OID reference database.</a> </p>  <p>The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a>
-     * must not match the OID of a predefined extension.</p> 
+     * OID reference database.</a> </p>
      */
     inline const Aws::Vector<CustomExtension>& GetCustomExtensions() const{ return m_customExtensions; }
 
@@ -279,9 +277,7 @@ namespace Model
      * <p/> <p>Contains a sequence of one or more X.509 extensions, each of which
      * consists of an object identifier (OID), a base64-encoded value, and the critical
      * flag. For more information, see the <a href="https://oidref.com/2.5.29">Global
-     * OID reference database.</a> </p>  <p>The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a>
-     * must not match the OID of a predefined extension.</p> 
+     * OID reference database.</a> </p>
      */
     inline bool CustomExtensionsHasBeenSet() const { return m_customExtensionsHasBeenSet; }
 
@@ -289,9 +285,7 @@ namespace Model
      * <p/> <p>Contains a sequence of one or more X.509 extensions, each of which
      * consists of an object identifier (OID), a base64-encoded value, and the critical
      * flag. For more information, see the <a href="https://oidref.com/2.5.29">Global
-     * OID reference database.</a> </p>  <p>The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a>
-     * must not match the OID of a predefined extension.</p> 
+     * OID reference database.</a> </p>
      */
     inline void SetCustomExtensions(const Aws::Vector<CustomExtension>& value) { m_customExtensionsHasBeenSet = true; m_customExtensions = value; }
 
@@ -299,9 +293,7 @@ namespace Model
      * <p/> <p>Contains a sequence of one or more X.509 extensions, each of which
      * consists of an object identifier (OID), a base64-encoded value, and the critical
      * flag. For more information, see the <a href="https://oidref.com/2.5.29">Global
-     * OID reference database.</a> </p>  <p>The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a>
-     * must not match the OID of a predefined extension.</p> 
+     * OID reference database.</a> </p>
      */
     inline void SetCustomExtensions(Aws::Vector<CustomExtension>&& value) { m_customExtensionsHasBeenSet = true; m_customExtensions = std::move(value); }
 
@@ -309,9 +301,7 @@ namespace Model
      * <p/> <p>Contains a sequence of one or more X.509 extensions, each of which
      * consists of an object identifier (OID), a base64-encoded value, and the critical
      * flag. For more information, see the <a href="https://oidref.com/2.5.29">Global
-     * OID reference database.</a> </p>  <p>The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a>
-     * must not match the OID of a predefined extension.</p> 
+     * OID reference database.</a> </p>
      */
     inline Extensions& WithCustomExtensions(const Aws::Vector<CustomExtension>& value) { SetCustomExtensions(value); return *this;}
 
@@ -319,9 +309,7 @@ namespace Model
      * <p/> <p>Contains a sequence of one or more X.509 extensions, each of which
      * consists of an object identifier (OID), a base64-encoded value, and the critical
      * flag. For more information, see the <a href="https://oidref.com/2.5.29">Global
-     * OID reference database.</a> </p>  <p>The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a>
-     * must not match the OID of a predefined extension.</p> 
+     * OID reference database.</a> </p>
      */
     inline Extensions& WithCustomExtensions(Aws::Vector<CustomExtension>&& value) { SetCustomExtensions(std::move(value)); return *this;}
 
@@ -329,9 +317,7 @@ namespace Model
      * <p/> <p>Contains a sequence of one or more X.509 extensions, each of which
      * consists of an object identifier (OID), a base64-encoded value, and the critical
      * flag. For more information, see the <a href="https://oidref.com/2.5.29">Global
-     * OID reference database.</a> </p>  <p>The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a>
-     * must not match the OID of a predefined extension.</p> 
+     * OID reference database.</a> </p>
      */
     inline Extensions& AddCustomExtensions(const CustomExtension& value) { m_customExtensionsHasBeenSet = true; m_customExtensions.push_back(value); return *this; }
 
@@ -339,28 +325,26 @@ namespace Model
      * <p/> <p>Contains a sequence of one or more X.509 extensions, each of which
      * consists of an object identifier (OID), a base64-encoded value, and the critical
      * flag. For more information, see the <a href="https://oidref.com/2.5.29">Global
-     * OID reference database.</a> </p>  <p>The OID value of a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a>
-     * must not match the OID of a predefined extension.</p> 
+     * OID reference database.</a> </p>
      */
     inline Extensions& AddCustomExtensions(CustomExtension&& value) { m_customExtensionsHasBeenSet = true; m_customExtensions.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::Vector<PolicyInformation> m_certificatePolicies;
-    bool m_certificatePoliciesHasBeenSet;
+    bool m_certificatePoliciesHasBeenSet = false;
 
     Aws::Vector<ExtendedKeyUsage> m_extendedKeyUsage;
-    bool m_extendedKeyUsageHasBeenSet;
+    bool m_extendedKeyUsageHasBeenSet = false;
 
     KeyUsage m_keyUsage;
-    bool m_keyUsageHasBeenSet;
+    bool m_keyUsageHasBeenSet = false;
 
     Aws::Vector<GeneralName> m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     Aws::Vector<CustomExtension> m_customExtensions;
-    bool m_customExtensionsHasBeenSet;
+    bool m_customExtensionsHasBeenSet = false;
   };
 
 } // namespace Model

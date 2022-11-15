@@ -30,7 +30,7 @@ Aws::String DescribeEventTopicsRequest::SerializePayload() const
 
   if(m_topicNamesHasBeenSet)
   {
-   Array<JsonValue> topicNamesJsonList(m_topicNames.size());
+   Aws::Utils::Array<JsonValue> topicNamesJsonList(m_topicNames.size());
    for(unsigned topicNamesIndex = 0; topicNamesIndex < topicNamesJsonList.GetLength(); ++topicNamesIndex)
    {
      topicNamesJsonList[topicNamesIndex].AsString(m_topicNames[topicNamesIndex]);

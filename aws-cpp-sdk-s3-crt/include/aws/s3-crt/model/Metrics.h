@@ -109,10 +109,10 @@ namespace Model
   private:
 
     MetricsStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ReplicationTimeValue m_eventThreshold;
-    bool m_eventThresholdHasBeenSet;
+    bool m_eventThresholdHasBeenSet = false;
   };
 
 } // namespace Model

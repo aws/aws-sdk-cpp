@@ -115,10 +115,10 @@ namespace Model
   private:
 
     EncryptionAlgorithm m_encryptionAlgorithm;
-    bool m_encryptionAlgorithmHasBeenSet;
+    bool m_encryptionAlgorithmHasBeenSet = false;
 
     HashAlgorithm m_hashAlgorithm;
-    bool m_hashAlgorithmHasBeenSet;
+    bool m_hashAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

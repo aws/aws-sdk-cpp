@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     Aws::String m_detectorModelVersion;
-    bool m_detectorModelVersionHasBeenSet;
+    bool m_detectorModelVersionHasBeenSet = false;
   };
 
 } // namespace Model

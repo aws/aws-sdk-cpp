@@ -830,91 +830,107 @@ namespace Model
     inline Table& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline Table& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline Table& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline Table& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessTime;
-    bool m_lastAccessTimeHasBeenSet;
+    bool m_lastAccessTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAnalyzedTime;
-    bool m_lastAnalyzedTimeHasBeenSet;
+    bool m_lastAnalyzedTimeHasBeenSet = false;
 
     int m_retention;
-    bool m_retentionHasBeenSet;
+    bool m_retentionHasBeenSet = false;
 
     StorageDescriptor m_storageDescriptor;
-    bool m_storageDescriptorHasBeenSet;
+    bool m_storageDescriptorHasBeenSet = false;
 
     Aws::Vector<Column> m_partitionKeys;
-    bool m_partitionKeysHasBeenSet;
+    bool m_partitionKeysHasBeenSet = false;
 
     Aws::String m_viewOriginalText;
-    bool m_viewOriginalTextHasBeenSet;
+    bool m_viewOriginalTextHasBeenSet = false;
 
     Aws::String m_viewExpandedText;
-    bool m_viewExpandedTextHasBeenSet;
+    bool m_viewExpandedTextHasBeenSet = false;
 
     Aws::String m_tableType;
-    bool m_tableTypeHasBeenSet;
+    bool m_tableTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     bool m_isRegisteredWithLakeFormation;
-    bool m_isRegisteredWithLakeFormationHasBeenSet;
+    bool m_isRegisteredWithLakeFormationHasBeenSet = false;
 
     TableIdentifier m_targetTable;
-    bool m_targetTableHasBeenSet;
+    bool m_targetTableHasBeenSet = false;
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_datasetExportJobArn;
-    bool m_datasetExportJobArnHasBeenSet;
+    bool m_datasetExportJobArnHasBeenSet = false;
   };
 
 } // namespace Model

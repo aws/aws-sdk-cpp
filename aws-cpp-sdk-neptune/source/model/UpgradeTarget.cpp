@@ -27,7 +27,9 @@ UpgradeTarget::UpgradeTarget() :
     m_autoUpgrade(false),
     m_autoUpgradeHasBeenSet(false),
     m_isMajorVersionUpgrade(false),
-    m_isMajorVersionUpgradeHasBeenSet(false)
+    m_isMajorVersionUpgradeHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ UpgradeTarget::UpgradeTarget(const XmlNode& xmlNode) :
     m_autoUpgrade(false),
     m_autoUpgradeHasBeenSet(false),
     m_isMajorVersionUpgrade(false),
-    m_isMajorVersionUpgradeHasBeenSet(false)
+    m_isMajorVersionUpgradeHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +83,12 @@ UpgradeTarget& UpgradeTarget::operator =(const XmlNode& xmlNode)
       m_isMajorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isMajorVersionUpgradeNode.GetText()).c_str()).c_str());
       m_isMajorVersionUpgradeHasBeenSet = true;
     }
+    XmlNode supportsGlobalDatabasesNode = resultNode.FirstChild("SupportsGlobalDatabases");
+    if(!supportsGlobalDatabasesNode.IsNull())
+    {
+      m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
+      m_supportsGlobalDatabasesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -111,6 +121,11 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".IsMajorVersionUpgrade=" << std::boolalpha << m_isMajorVersionUpgrade << "&";
   }
 
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+
 }
 
 void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -134,6 +149,10 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_isMajorVersionUpgradeHasBeenSet)
   {
       oStream << location << ".IsMajorVersionUpgrade=" << std::boolalpha << m_isMajorVersionUpgrade << "&";
+  }
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
   }
 }
 

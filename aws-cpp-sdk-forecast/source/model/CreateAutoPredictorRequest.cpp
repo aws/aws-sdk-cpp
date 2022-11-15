@@ -26,7 +26,9 @@ CreateAutoPredictorRequest::CreateAutoPredictorRequest() :
     m_optimizationMetricHasBeenSet(false),
     m_explainPredictor(false),
     m_explainPredictorHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_monitorConfigHasBeenSet(false),
+    m_timeAlignmentBoundaryHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,7 @@ Aws::String CreateAutoPredictorRequest::SerializePayload() const
 
   if(m_forecastTypesHasBeenSet)
   {
-   Array<JsonValue> forecastTypesJsonList(m_forecastTypes.size());
+   Aws::Utils::Array<JsonValue> forecastTypesJsonList(m_forecastTypes.size());
    for(unsigned forecastTypesIndex = 0; forecastTypesIndex < forecastTypesJsonList.GetLength(); ++forecastTypesIndex)
    {
      forecastTypesJsonList[forecastTypesIndex].AsString(m_forecastTypes[forecastTypesIndex]);
@@ -59,7 +61,7 @@ Aws::String CreateAutoPredictorRequest::SerializePayload() const
 
   if(m_forecastDimensionsHasBeenSet)
   {
-   Array<JsonValue> forecastDimensionsJsonList(m_forecastDimensions.size());
+   Aws::Utils::Array<JsonValue> forecastDimensionsJsonList(m_forecastDimensions.size());
    for(unsigned forecastDimensionsIndex = 0; forecastDimensionsIndex < forecastDimensionsJsonList.GetLength(); ++forecastDimensionsIndex)
    {
      forecastDimensionsJsonList[forecastDimensionsIndex].AsString(m_forecastDimensions[forecastDimensionsIndex]);
@@ -105,12 +107,24 @@ Aws::String CreateAutoPredictorRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_monitorConfigHasBeenSet)
+  {
+   payload.WithObject("MonitorConfig", m_monitorConfig.Jsonize());
+
+  }
+
+  if(m_timeAlignmentBoundaryHasBeenSet)
+  {
+   payload.WithObject("TimeAlignmentBoundary", m_timeAlignmentBoundary.Jsonize());
 
   }
 

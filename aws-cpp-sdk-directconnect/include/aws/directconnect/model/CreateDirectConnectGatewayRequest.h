@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_directConnectGatewayName;
-    bool m_directConnectGatewayNameHasBeenSet;
+    bool m_directConnectGatewayNameHasBeenSet = false;
 
     long long m_amazonSideAsn;
-    bool m_amazonSideAsnHasBeenSet;
+    bool m_amazonSideAsnHasBeenSet = false;
   };
 
 } // namespace Model

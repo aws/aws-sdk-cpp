@@ -165,10 +165,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, IPSet> m_iPSets;
-    bool m_iPSetsHasBeenSet;
+    bool m_iPSetsHasBeenSet = false;
 
     Aws::Map<Aws::String, PortSet> m_portSets;
-    bool m_portSetsHasBeenSet;
+    bool m_portSetsHasBeenSet = false;
   };
 
 } // namespace Model

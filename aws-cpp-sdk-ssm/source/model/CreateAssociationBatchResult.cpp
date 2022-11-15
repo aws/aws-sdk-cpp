@@ -30,7 +30,7 @@ CreateAssociationBatchResult& CreateAssociationBatchResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Successful"))
   {
-    Array<JsonView> successfulJsonList = jsonValue.GetArray("Successful");
+    Aws::Utils::Array<JsonView> successfulJsonList = jsonValue.GetArray("Successful");
     for(unsigned successfulIndex = 0; successfulIndex < successfulJsonList.GetLength(); ++successfulIndex)
     {
       m_successful.push_back(successfulJsonList[successfulIndex].AsObject());
@@ -39,7 +39,7 @@ CreateAssociationBatchResult& CreateAssociationBatchResult::operator =(const Aws
 
   if(jsonValue.ValueExists("Failed"))
   {
-    Array<JsonView> failedJsonList = jsonValue.GetArray("Failed");
+    Aws::Utils::Array<JsonView> failedJsonList = jsonValue.GetArray("Failed");
     for(unsigned failedIndex = 0; failedIndex < failedJsonList.GetLength(); ++failedIndex)
     {
       m_failed.push_back(failedJsonList[failedIndex].AsObject());

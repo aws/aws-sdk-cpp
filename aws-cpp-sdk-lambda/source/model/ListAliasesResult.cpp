@@ -36,7 +36,7 @@ ListAliasesResult& ListAliasesResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("Aliases"))
   {
-    Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
+    Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
     for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
     {
       m_aliases.push_back(aliasesJsonList[aliasesIndex].AsObject());

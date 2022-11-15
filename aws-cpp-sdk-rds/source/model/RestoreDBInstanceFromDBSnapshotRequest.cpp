@@ -52,7 +52,10 @@ RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest()
     m_enableCustomerOwnedIpHasBeenSet(false),
     m_customIamInstanceProfileHasBeenSet(false),
     m_backupTargetHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+    m_networkTypeHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false),
+    m_dBClusterSnapshotIdentifierHasBeenSet(false)
 {
 }
 
@@ -240,6 +243,16 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   if(m_networkTypeHasBeenSet)
   {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
+  if(m_storageThroughputHasBeenSet)
+  {
+    ss << "StorageThroughput=" << m_storageThroughput << "&";
+  }
+
+  if(m_dBClusterSnapshotIdentifierHasBeenSet)
+  {
+    ss << "DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

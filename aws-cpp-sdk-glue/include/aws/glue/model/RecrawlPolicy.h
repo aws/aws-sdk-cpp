@@ -110,7 +110,7 @@ namespace Model
   private:
 
     RecrawlBehavior m_recrawlBehavior;
-    bool m_recrawlBehaviorHasBeenSet;
+    bool m_recrawlBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

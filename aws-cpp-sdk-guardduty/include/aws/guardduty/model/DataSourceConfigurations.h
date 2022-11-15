@@ -7,6 +7,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/S3LogsConfiguration.h>
 #include <aws/guardduty/model/KubernetesConfiguration.h>
+#include <aws/guardduty/model/MalwareProtectionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -100,13 +101,47 @@ namespace Model
      */
     inline DataSourceConfigurations& WithKubernetes(KubernetesConfiguration&& value) { SetKubernetes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline const MalwareProtectionConfiguration& GetMalwareProtection() const{ return m_malwareProtection; }
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline bool MalwareProtectionHasBeenSet() const { return m_malwareProtectionHasBeenSet; }
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline void SetMalwareProtection(const MalwareProtectionConfiguration& value) { m_malwareProtectionHasBeenSet = true; m_malwareProtection = value; }
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline void SetMalwareProtection(MalwareProtectionConfiguration&& value) { m_malwareProtectionHasBeenSet = true; m_malwareProtection = std::move(value); }
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline DataSourceConfigurations& WithMalwareProtection(const MalwareProtectionConfiguration& value) { SetMalwareProtection(value); return *this;}
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline DataSourceConfigurations& WithMalwareProtection(MalwareProtectionConfiguration&& value) { SetMalwareProtection(std::move(value)); return *this;}
+
   private:
 
     S3LogsConfiguration m_s3Logs;
-    bool m_s3LogsHasBeenSet;
+    bool m_s3LogsHasBeenSet = false;
 
     KubernetesConfiguration m_kubernetes;
-    bool m_kubernetesHasBeenSet;
+    bool m_kubernetesHasBeenSet = false;
+
+    MalwareProtectionConfiguration m_malwareProtection;
+    bool m_malwareProtectionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -73,7 +73,7 @@ ViolationDetail& ViolationDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResourceViolations"))
   {
-    Array<JsonView> resourceViolationsJsonList = jsonValue.GetArray("ResourceViolations");
+    Aws::Utils::Array<JsonView> resourceViolationsJsonList = jsonValue.GetArray("ResourceViolations");
     for(unsigned resourceViolationsIndex = 0; resourceViolationsIndex < resourceViolationsJsonList.GetLength(); ++resourceViolationsIndex)
     {
       m_resourceViolations.push_back(resourceViolationsJsonList[resourceViolationsIndex].AsObject());
@@ -83,7 +83,7 @@ ViolationDetail& ViolationDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResourceTags"))
   {
-    Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
+    Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
     for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
     {
       m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());
@@ -131,7 +131,7 @@ JsonValue ViolationDetail::Jsonize() const
 
   if(m_resourceViolationsHasBeenSet)
   {
-   Array<JsonValue> resourceViolationsJsonList(m_resourceViolations.size());
+   Aws::Utils::Array<JsonValue> resourceViolationsJsonList(m_resourceViolations.size());
    for(unsigned resourceViolationsIndex = 0; resourceViolationsIndex < resourceViolationsJsonList.GetLength(); ++resourceViolationsIndex)
    {
      resourceViolationsJsonList[resourceViolationsIndex].AsObject(m_resourceViolations[resourceViolationsIndex].Jsonize());
@@ -142,7 +142,7 @@ JsonValue ViolationDetail::Jsonize() const
 
   if(m_resourceTagsHasBeenSet)
   {
-   Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+   Aws::Utils::Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
    for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
    {
      resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());

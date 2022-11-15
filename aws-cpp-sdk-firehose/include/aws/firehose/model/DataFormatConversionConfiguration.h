@@ -202,16 +202,16 @@ namespace Model
   private:
 
     SchemaConfiguration m_schemaConfiguration;
-    bool m_schemaConfigurationHasBeenSet;
+    bool m_schemaConfigurationHasBeenSet = false;
 
     InputFormatConfiguration m_inputFormatConfiguration;
-    bool m_inputFormatConfigurationHasBeenSet;
+    bool m_inputFormatConfigurationHasBeenSet = false;
 
     OutputFormatConfiguration m_outputFormatConfiguration;
-    bool m_outputFormatConfigurationHasBeenSet;
+    bool m_outputFormatConfigurationHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,7 +81,7 @@ BatchGetAssetPropertyAggregatesEntry& BatchGetAssetPropertyAggregatesEntry::oper
 
   if(jsonValue.ValueExists("aggregateTypes"))
   {
-    Array<JsonView> aggregateTypesJsonList = jsonValue.GetArray("aggregateTypes");
+    Aws::Utils::Array<JsonView> aggregateTypesJsonList = jsonValue.GetArray("aggregateTypes");
     for(unsigned aggregateTypesIndex = 0; aggregateTypesIndex < aggregateTypesJsonList.GetLength(); ++aggregateTypesIndex)
     {
       m_aggregateTypes.push_back(AggregateTypeMapper::GetAggregateTypeForName(aggregateTypesJsonList[aggregateTypesIndex].AsString()));
@@ -112,7 +112,7 @@ BatchGetAssetPropertyAggregatesEntry& BatchGetAssetPropertyAggregatesEntry::oper
 
   if(jsonValue.ValueExists("qualities"))
   {
-    Array<JsonView> qualitiesJsonList = jsonValue.GetArray("qualities");
+    Aws::Utils::Array<JsonView> qualitiesJsonList = jsonValue.GetArray("qualities");
     for(unsigned qualitiesIndex = 0; qualitiesIndex < qualitiesJsonList.GetLength(); ++qualitiesIndex)
     {
       m_qualities.push_back(QualityMapper::GetQualityForName(qualitiesJsonList[qualitiesIndex].AsString()));
@@ -160,7 +160,7 @@ JsonValue BatchGetAssetPropertyAggregatesEntry::Jsonize() const
 
   if(m_aggregateTypesHasBeenSet)
   {
-   Array<JsonValue> aggregateTypesJsonList(m_aggregateTypes.size());
+   Aws::Utils::Array<JsonValue> aggregateTypesJsonList(m_aggregateTypes.size());
    for(unsigned aggregateTypesIndex = 0; aggregateTypesIndex < aggregateTypesJsonList.GetLength(); ++aggregateTypesIndex)
    {
      aggregateTypesJsonList[aggregateTypesIndex].AsString(AggregateTypeMapper::GetNameForAggregateType(m_aggregateTypes[aggregateTypesIndex]));
@@ -187,7 +187,7 @@ JsonValue BatchGetAssetPropertyAggregatesEntry::Jsonize() const
 
   if(m_qualitiesHasBeenSet)
   {
-   Array<JsonValue> qualitiesJsonList(m_qualities.size());
+   Aws::Utils::Array<JsonValue> qualitiesJsonList(m_qualities.size());
    for(unsigned qualitiesIndex = 0; qualitiesIndex < qualitiesJsonList.GetLength(); ++qualitiesIndex)
    {
      qualitiesJsonList[qualitiesIndex].AsString(QualityMapper::GetNameForQuality(m_qualities[qualitiesIndex]));

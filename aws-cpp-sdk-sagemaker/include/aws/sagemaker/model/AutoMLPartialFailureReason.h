@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_partialFailureMessage;
-    bool m_partialFailureMessageHasBeenSet;
+    bool m_partialFailureMessageHasBeenSet = false;
   };
 
 } // namespace Model

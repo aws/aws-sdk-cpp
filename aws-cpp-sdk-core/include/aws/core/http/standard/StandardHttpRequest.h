@@ -63,7 +63,7 @@ namespace Aws
                  */
                 virtual bool HasHeader(const char*) const override;
                 /**
-                 * Get size in bytes of the request when as it will be going accross the wire.
+                 * Get size in bytes of the request when as it will be going across the wire.
                  */
                 virtual int64_t GetSize() const override;
                 /**

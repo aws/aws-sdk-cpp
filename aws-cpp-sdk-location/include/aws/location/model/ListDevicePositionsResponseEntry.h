@@ -260,19 +260,19 @@ namespace Model
   private:
 
     PositionalAccuracy m_accuracy;
-    bool m_accuracyHasBeenSet;
+    bool m_accuracyHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::Vector<double> m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_positionProperties;
-    bool m_positionPropertiesHasBeenSet;
+    bool m_positionPropertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_sampleTime;
-    bool m_sampleTimeHasBeenSet;
+    bool m_sampleTimeHasBeenSet = false;
   };
 
 } // namespace Model

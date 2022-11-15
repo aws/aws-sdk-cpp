@@ -113,10 +113,10 @@ namespace Model
   private:
 
     PhoneNumberProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_e164PhoneNumbers;
-    bool m_e164PhoneNumbersHasBeenSet;
+    bool m_e164PhoneNumbersHasBeenSet = false;
   };
 
 } // namespace Model

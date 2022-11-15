@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p> A representation of the charge details associated with a percentage custom
-   * line item. </p><p><h3>See Also:</h3>   <a
+   * <p> A representation of the charge details that are associated with a percentage
+   * custom line item. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemPercentageChargeDetails">AWS
    * API Reference</a></p>
    */
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     double m_percentageValue;
-    bool m_percentageValueHasBeenSet;
+    bool m_percentageValueHasBeenSet = false;
   };
 
 } // namespace Model

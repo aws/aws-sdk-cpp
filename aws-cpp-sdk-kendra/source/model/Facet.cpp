@@ -46,7 +46,7 @@ Facet& Facet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Facets"))
   {
-    Array<JsonView> facetsJsonList = jsonValue.GetArray("Facets");
+    Aws::Utils::Array<JsonView> facetsJsonList = jsonValue.GetArray("Facets");
     for(unsigned facetsIndex = 0; facetsIndex < facetsJsonList.GetLength(); ++facetsIndex)
     {
       m_facets.push_back(facetsJsonList[facetsIndex].AsObject());
@@ -76,7 +76,7 @@ JsonValue Facet::Jsonize() const
 
   if(m_facetsHasBeenSet)
   {
-   Array<JsonValue> facetsJsonList(m_facets.size());
+   Aws::Utils::Array<JsonValue> facetsJsonList(m_facets.size());
    for(unsigned facetsIndex = 0; facetsIndex < facetsJsonList.GetLength(); ++facetsIndex)
    {
      facetsJsonList[facetsIndex].AsObject(m_facets[facetsIndex].Jsonize());

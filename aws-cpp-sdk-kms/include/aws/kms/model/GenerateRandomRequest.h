@@ -35,22 +35,22 @@ namespace Model
 
 
     /**
-     * <p>The length of the byte string.</p>
+     * <p>The length of the random byte string. This parameter is required.</p>
      */
     inline int GetNumberOfBytes() const{ return m_numberOfBytes; }
 
     /**
-     * <p>The length of the byte string.</p>
+     * <p>The length of the random byte string. This parameter is required.</p>
      */
     inline bool NumberOfBytesHasBeenSet() const { return m_numberOfBytesHasBeenSet; }
 
     /**
-     * <p>The length of the byte string.</p>
+     * <p>The length of the random byte string. This parameter is required.</p>
      */
     inline void SetNumberOfBytes(int value) { m_numberOfBytesHasBeenSet = true; m_numberOfBytes = value; }
 
     /**
-     * <p>The length of the byte string.</p>
+     * <p>The length of the random byte string. This parameter is required.</p>
      */
     inline GenerateRandomRequest& WithNumberOfBytes(int value) { SetNumberOfBytes(value); return *this;}
 
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     int m_numberOfBytes;
-    bool m_numberOfBytesHasBeenSet;
+    bool m_numberOfBytesHasBeenSet = false;
 
     Aws::String m_customKeyStoreId;
-    bool m_customKeyStoreIdHasBeenSet;
+    bool m_customKeyStoreIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ Aws::String UpdateConditionalForwarderRequest::SerializePayload() const
 
   if(m_dnsIpAddrsHasBeenSet)
   {
-   Array<JsonValue> dnsIpAddrsJsonList(m_dnsIpAddrs.size());
+   Aws::Utils::Array<JsonValue> dnsIpAddrsJsonList(m_dnsIpAddrs.size());
    for(unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex)
    {
      dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString(m_dnsIpAddrs[dnsIpAddrsIndex]);

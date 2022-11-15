@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline ListProvisioningTemplateVersionsRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline ListProvisioningTemplateVersionsRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline ListProvisioningTemplateVersionsRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

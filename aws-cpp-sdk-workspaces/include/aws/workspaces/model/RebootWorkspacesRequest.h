@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::Vector<RebootRequest> m_rebootWorkspaceRequests;
-    bool m_rebootWorkspaceRequestsHasBeenSet;
+    bool m_rebootWorkspaceRequestsHasBeenSet = false;
   };
 
 } // namespace Model

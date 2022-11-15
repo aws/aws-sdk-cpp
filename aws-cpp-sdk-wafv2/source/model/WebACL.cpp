@@ -34,7 +34,9 @@ WebACL::WebACL() :
     m_managedByFirewallManagerHasBeenSet(false),
     m_labelNamespaceHasBeenSet(false),
     m_customResponseBodiesHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false)
+    m_captchaConfigHasBeenSet(false),
+    m_challengeConfigHasBeenSet(false),
+    m_tokenDomainsHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ WebACL::WebACL(JsonView jsonValue) :
     m_managedByFirewallManagerHasBeenSet(false),
     m_labelNamespaceHasBeenSet(false),
     m_customResponseBodiesHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false)
+    m_captchaConfigHasBeenSet(false),
+    m_challengeConfigHasBeenSet(false),
+    m_tokenDomainsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,7 +102,7 @@ WebACL& WebACL::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
@@ -122,7 +126,7 @@ WebACL& WebACL::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PreProcessFirewallManagerRuleGroups"))
   {
-    Array<JsonView> preProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PreProcessFirewallManagerRuleGroups");
+    Aws::Utils::Array<JsonView> preProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PreProcessFirewallManagerRuleGroups");
     for(unsigned preProcessFirewallManagerRuleGroupsIndex = 0; preProcessFirewallManagerRuleGroupsIndex < preProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++preProcessFirewallManagerRuleGroupsIndex)
     {
       m_preProcessFirewallManagerRuleGroups.push_back(preProcessFirewallManagerRuleGroupsJsonList[preProcessFirewallManagerRuleGroupsIndex].AsObject());
@@ -132,7 +136,7 @@ WebACL& WebACL::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PostProcessFirewallManagerRuleGroups"))
   {
-    Array<JsonView> postProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PostProcessFirewallManagerRuleGroups");
+    Aws::Utils::Array<JsonView> postProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PostProcessFirewallManagerRuleGroups");
     for(unsigned postProcessFirewallManagerRuleGroupsIndex = 0; postProcessFirewallManagerRuleGroupsIndex < postProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++postProcessFirewallManagerRuleGroupsIndex)
     {
       m_postProcessFirewallManagerRuleGroups.push_back(postProcessFirewallManagerRuleGroupsJsonList[postProcessFirewallManagerRuleGroupsIndex].AsObject());
@@ -169,6 +173,23 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     m_captchaConfig = jsonValue.GetObject("CaptchaConfig");
 
     m_captchaConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ChallengeConfig"))
+  {
+    m_challengeConfig = jsonValue.GetObject("ChallengeConfig");
+
+    m_challengeConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TokenDomains"))
+  {
+    Aws::Utils::Array<JsonView> tokenDomainsJsonList = jsonValue.GetArray("TokenDomains");
+    for(unsigned tokenDomainsIndex = 0; tokenDomainsIndex < tokenDomainsJsonList.GetLength(); ++tokenDomainsIndex)
+    {
+      m_tokenDomains.push_back(tokenDomainsJsonList[tokenDomainsIndex].AsString());
+    }
+    m_tokenDomainsHasBeenSet = true;
   }
 
   return *this;
@@ -210,7 +231,7 @@ JsonValue WebACL::Jsonize() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
@@ -233,7 +254,7 @@ JsonValue WebACL::Jsonize() const
 
   if(m_preProcessFirewallManagerRuleGroupsHasBeenSet)
   {
-   Array<JsonValue> preProcessFirewallManagerRuleGroupsJsonList(m_preProcessFirewallManagerRuleGroups.size());
+   Aws::Utils::Array<JsonValue> preProcessFirewallManagerRuleGroupsJsonList(m_preProcessFirewallManagerRuleGroups.size());
    for(unsigned preProcessFirewallManagerRuleGroupsIndex = 0; preProcessFirewallManagerRuleGroupsIndex < preProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++preProcessFirewallManagerRuleGroupsIndex)
    {
      preProcessFirewallManagerRuleGroupsJsonList[preProcessFirewallManagerRuleGroupsIndex].AsObject(m_preProcessFirewallManagerRuleGroups[preProcessFirewallManagerRuleGroupsIndex].Jsonize());
@@ -244,7 +265,7 @@ JsonValue WebACL::Jsonize() const
 
   if(m_postProcessFirewallManagerRuleGroupsHasBeenSet)
   {
-   Array<JsonValue> postProcessFirewallManagerRuleGroupsJsonList(m_postProcessFirewallManagerRuleGroups.size());
+   Aws::Utils::Array<JsonValue> postProcessFirewallManagerRuleGroupsJsonList(m_postProcessFirewallManagerRuleGroups.size());
    for(unsigned postProcessFirewallManagerRuleGroupsIndex = 0; postProcessFirewallManagerRuleGroupsIndex < postProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++postProcessFirewallManagerRuleGroupsIndex)
    {
      postProcessFirewallManagerRuleGroupsJsonList[postProcessFirewallManagerRuleGroupsIndex].AsObject(m_postProcessFirewallManagerRuleGroups[postProcessFirewallManagerRuleGroupsIndex].Jsonize());
@@ -279,6 +300,23 @@ JsonValue WebACL::Jsonize() const
   if(m_captchaConfigHasBeenSet)
   {
    payload.WithObject("CaptchaConfig", m_captchaConfig.Jsonize());
+
+  }
+
+  if(m_challengeConfigHasBeenSet)
+  {
+   payload.WithObject("ChallengeConfig", m_challengeConfig.Jsonize());
+
+  }
+
+  if(m_tokenDomainsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tokenDomainsJsonList(m_tokenDomains.size());
+   for(unsigned tokenDomainsIndex = 0; tokenDomainsIndex < tokenDomainsJsonList.GetLength(); ++tokenDomainsIndex)
+   {
+     tokenDomainsJsonList[tokenDomainsIndex].AsString(m_tokenDomains[tokenDomainsIndex]);
+   }
+   payload.WithArray("TokenDomains", std::move(tokenDomainsJsonList));
 
   }
 

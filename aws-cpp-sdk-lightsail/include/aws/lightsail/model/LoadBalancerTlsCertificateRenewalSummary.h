@@ -237,10 +237,10 @@ namespace Model
   private:
 
     LoadBalancerTlsCertificateRenewalStatus m_renewalStatus;
-    bool m_renewalStatusHasBeenSet;
+    bool m_renewalStatusHasBeenSet = false;
 
     Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption> m_domainValidationOptions;
-    bool m_domainValidationOptionsHasBeenSet;
+    bool m_domainValidationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

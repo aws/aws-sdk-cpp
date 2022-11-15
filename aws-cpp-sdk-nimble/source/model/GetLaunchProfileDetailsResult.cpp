@@ -36,7 +36,7 @@ GetLaunchProfileDetailsResult& GetLaunchProfileDetailsResult::operator =(const A
 
   if(jsonValue.ValueExists("streamingImages"))
   {
-    Array<JsonView> streamingImagesJsonList = jsonValue.GetArray("streamingImages");
+    Aws::Utils::Array<JsonView> streamingImagesJsonList = jsonValue.GetArray("streamingImages");
     for(unsigned streamingImagesIndex = 0; streamingImagesIndex < streamingImagesJsonList.GetLength(); ++streamingImagesIndex)
     {
       m_streamingImages.push_back(streamingImagesJsonList[streamingImagesIndex].AsObject());
@@ -45,7 +45,7 @@ GetLaunchProfileDetailsResult& GetLaunchProfileDetailsResult::operator =(const A
 
   if(jsonValue.ValueExists("studioComponentSummaries"))
   {
-    Array<JsonView> studioComponentSummariesJsonList = jsonValue.GetArray("studioComponentSummaries");
+    Aws::Utils::Array<JsonView> studioComponentSummariesJsonList = jsonValue.GetArray("studioComponentSummaries");
     for(unsigned studioComponentSummariesIndex = 0; studioComponentSummariesIndex < studioComponentSummariesJsonList.GetLength(); ++studioComponentSummariesIndex)
     {
       m_studioComponentSummaries.push_back(studioComponentSummariesJsonList[studioComponentSummariesIndex].AsObject());

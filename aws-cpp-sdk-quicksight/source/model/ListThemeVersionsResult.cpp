@@ -32,7 +32,7 @@ ListThemeVersionsResult& ListThemeVersionsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ThemeVersionSummaryList"))
   {
-    Array<JsonView> themeVersionSummaryListJsonList = jsonValue.GetArray("ThemeVersionSummaryList");
+    Aws::Utils::Array<JsonView> themeVersionSummaryListJsonList = jsonValue.GetArray("ThemeVersionSummaryList");
     for(unsigned themeVersionSummaryListIndex = 0; themeVersionSummaryListIndex < themeVersionSummaryListJsonList.GetLength(); ++themeVersionSummaryListIndex)
     {
       m_themeVersionSummaryList.push_back(themeVersionSummaryListJsonList[themeVersionSummaryListIndex].AsObject());

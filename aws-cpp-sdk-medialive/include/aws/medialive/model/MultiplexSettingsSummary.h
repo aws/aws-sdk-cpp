@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_transportStreamBitrate;
-    bool m_transportStreamBitrateHasBeenSet;
+    bool m_transportStreamBitrateHasBeenSet = false;
   };
 
 } // namespace Model

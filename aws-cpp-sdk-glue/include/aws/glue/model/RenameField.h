@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetPath;
-    bool m_targetPathHasBeenSet;
+    bool m_targetPathHasBeenSet = false;
   };
 
 } // namespace Model

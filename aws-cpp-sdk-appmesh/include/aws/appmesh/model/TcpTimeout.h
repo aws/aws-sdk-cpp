@@ -76,7 +76,7 @@ namespace Model
   private:
 
     Duration m_idle;
-    bool m_idleHasBeenSet;
+    bool m_idleHasBeenSet = false;
   };
 
 } // namespace Model

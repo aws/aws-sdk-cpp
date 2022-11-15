@@ -36,7 +36,7 @@ ListInferenceSchedulersResult& ListInferenceSchedulersResult::operator =(const A
 
   if(jsonValue.ValueExists("InferenceSchedulerSummaries"))
   {
-    Array<JsonView> inferenceSchedulerSummariesJsonList = jsonValue.GetArray("InferenceSchedulerSummaries");
+    Aws::Utils::Array<JsonView> inferenceSchedulerSummariesJsonList = jsonValue.GetArray("InferenceSchedulerSummaries");
     for(unsigned inferenceSchedulerSummariesIndex = 0; inferenceSchedulerSummariesIndex < inferenceSchedulerSummariesJsonList.GetLength(); ++inferenceSchedulerSummariesIndex)
     {
       m_inferenceSchedulerSummaries.push_back(inferenceSchedulerSummariesJsonList[inferenceSchedulerSummariesIndex].AsObject());

@@ -39,7 +39,7 @@ CustomDocumentEnrichmentConfiguration& CustomDocumentEnrichmentConfiguration::op
 {
   if(jsonValue.ValueExists("InlineConfigurations"))
   {
-    Array<JsonView> inlineConfigurationsJsonList = jsonValue.GetArray("InlineConfigurations");
+    Aws::Utils::Array<JsonView> inlineConfigurationsJsonList = jsonValue.GetArray("InlineConfigurations");
     for(unsigned inlineConfigurationsIndex = 0; inlineConfigurationsIndex < inlineConfigurationsJsonList.GetLength(); ++inlineConfigurationsIndex)
     {
       m_inlineConfigurations.push_back(inlineConfigurationsJsonList[inlineConfigurationsIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue CustomDocumentEnrichmentConfiguration::Jsonize() const
 
   if(m_inlineConfigurationsHasBeenSet)
   {
-   Array<JsonValue> inlineConfigurationsJsonList(m_inlineConfigurations.size());
+   Aws::Utils::Array<JsonValue> inlineConfigurationsJsonList(m_inlineConfigurations.size());
    for(unsigned inlineConfigurationsIndex = 0; inlineConfigurationsIndex < inlineConfigurationsJsonList.GetLength(); ++inlineConfigurationsIndex)
    {
      inlineConfigurationsJsonList[inlineConfigurationsIndex].AsObject(m_inlineConfigurations[inlineConfigurationsIndex].Jsonize());

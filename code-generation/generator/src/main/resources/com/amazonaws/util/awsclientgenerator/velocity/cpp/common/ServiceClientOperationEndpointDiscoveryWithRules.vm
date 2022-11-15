@@ -1,0 +1,85 @@
+#if($serviceModel.endpointRules)
+#if($operation.hasEndpointDiscoveryTrait)
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
+  {
+#set($hasId=false)
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.endpointDiscoveryId)
+#set($hasId=true)
+#break
+#end
+#end
+#if($hasId)
+    Aws::String endpointKey = "${operation.name}.";
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.endpointDiscoveryId)
+    endpointKey += "${memberEntry.key}:" + request.Get${memberEntry.key}() + ".";
+#end
+#end
+#else
+    Aws::String endpointKey = "Shared";
+#end
+    Aws::String endpoint;
+    if (m_endpointsCache.Get(endpointKey, endpoint))
+    {
+      AWS_LOGSTREAM_TRACE("${operation.name}", "Making request to cached endpoint: " << endpoint);
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
+    }
+    else
+    {
+      AWS_LOGSTREAM_TRACE("${operation.name}", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+      ${metadata.endpointOperationName}Request endpointRequest;
+#if($hasId)
+      endpointRequest.WithOperation("${operation.name}");
+#end
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.endpointDiscoveryId)
+      endpointRequest.AddIdentifiers("${memberEntry.key}", request.Get${memberEntry.key}());
+#end
+#end
+      auto endpointOutcome = ${metadata.endpointOperationName}(endpointRequest);
+      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+      {
+        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
+        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+        AWS_LOGSTREAM_TRACE("${operation.name}", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
+      }
+      else
+      {
+#if($operation.requireEndpointDiscovery)
+        AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError());
+#if($operation.s3CrtSpecific)
+#if($operation.request)
+        return handler(this, request,
+            ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)),
+            handlerContext);
+#else
+        return handler(this,
+            ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)),
+            handlerContext);
+#end
+#else
+        return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
+#end
+#else
+        AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+#end
+      }
+    }
+  }
+#if($operation.requireEndpointDiscovery)
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "${operation.name}" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
+#end
+#end
+#end##-#if(!$serviceModel.endpointRules)

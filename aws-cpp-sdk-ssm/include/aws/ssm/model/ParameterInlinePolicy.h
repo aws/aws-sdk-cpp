@@ -202,13 +202,13 @@ namespace Model
   private:
 
     Aws::String m_policyText;
-    bool m_policyTextHasBeenSet;
+    bool m_policyTextHasBeenSet = false;
 
     Aws::String m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     Aws::String m_policyStatus;
-    bool m_policyStatusHasBeenSet;
+    bool m_policyStatusHasBeenSet = false;
   };
 
 } // namespace Model

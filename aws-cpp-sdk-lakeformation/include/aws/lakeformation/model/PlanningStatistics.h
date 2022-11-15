@@ -122,16 +122,16 @@ namespace Model
   private:
 
     long long m_estimatedDataToScanBytes;
-    bool m_estimatedDataToScanBytesHasBeenSet;
+    bool m_estimatedDataToScanBytesHasBeenSet = false;
 
     long long m_planningTimeMillis;
-    bool m_planningTimeMillisHasBeenSet;
+    bool m_planningTimeMillisHasBeenSet = false;
 
     long long m_queueTimeMillis;
-    bool m_queueTimeMillisHasBeenSet;
+    bool m_queueTimeMillisHasBeenSet = false;
 
     long long m_workUnitsGeneratedCount;
-    bool m_workUnitsGeneratedCountHasBeenSet;
+    bool m_workUnitsGeneratedCountHasBeenSet = false;
   };
 
 } // namespace Model

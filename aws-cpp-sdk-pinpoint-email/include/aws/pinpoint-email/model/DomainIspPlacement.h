@@ -189,19 +189,19 @@ namespace Model
   private:
 
     Aws::String m_ispName;
-    bool m_ispNameHasBeenSet;
+    bool m_ispNameHasBeenSet = false;
 
     long long m_inboxRawCount;
-    bool m_inboxRawCountHasBeenSet;
+    bool m_inboxRawCountHasBeenSet = false;
 
     long long m_spamRawCount;
-    bool m_spamRawCountHasBeenSet;
+    bool m_spamRawCountHasBeenSet = false;
 
     double m_inboxPercentage;
-    bool m_inboxPercentageHasBeenSet;
+    bool m_inboxPercentageHasBeenSet = false;
 
     double m_spamPercentage;
-    bool m_spamPercentageHasBeenSet;
+    bool m_spamPercentageHasBeenSet = false;
   };
 
 } // namespace Model

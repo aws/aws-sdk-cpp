@@ -36,7 +36,7 @@ ListUserSettingsResult& ListUserSettingsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("userSettings"))
   {
-    Array<JsonView> userSettingsJsonList = jsonValue.GetArray("userSettings");
+    Aws::Utils::Array<JsonView> userSettingsJsonList = jsonValue.GetArray("userSettings");
     for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
     {
       m_userSettings.push_back(userSettingsJsonList[userSettingsIndex].AsObject());

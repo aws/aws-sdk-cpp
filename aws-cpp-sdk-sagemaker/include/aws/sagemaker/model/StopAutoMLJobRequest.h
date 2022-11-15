@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_autoMLJobName;
-    bool m_autoMLJobNameHasBeenSet;
+    bool m_autoMLJobNameHasBeenSet = false;
   };
 
 } // namespace Model

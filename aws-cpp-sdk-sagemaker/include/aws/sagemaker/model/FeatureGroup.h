@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/OfflineStoreConfig.h>
 #include <aws/sagemaker/model/FeatureGroupStatus.h>
 #include <aws/sagemaker/model/OfflineStoreStatus.h>
+#include <aws/sagemaker/model/LastUpdateStatus.h>
 #include <aws/sagemaker/model/FeatureDefinition.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -389,6 +390,37 @@ namespace Model
     inline FeatureGroup& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
+    /**
+     * <p>A timestamp indicating the last time you updated the feature group.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>A timestamp indicating the last time you updated the feature group.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp indicating the last time you updated the feature group.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+
+    /**
+     * <p>A timestamp indicating the last time you updated the feature group.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>A timestamp indicating the last time you updated the feature group.</p>
+     */
+    inline FeatureGroup& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>A timestamp indicating the last time you updated the feature group.</p>
+     */
+    inline FeatureGroup& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
     
     inline const OnlineStoreConfig& GetOnlineStoreConfig() const{ return m_onlineStoreConfig; }
 
@@ -524,6 +556,43 @@ namespace Model
 
     
     inline FeatureGroup& WithOfflineStoreStatus(OfflineStoreStatus&& value) { SetOfflineStoreStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether the feature group was updated
+     * successfully.</p>
+     */
+    inline const LastUpdateStatus& GetLastUpdateStatus() const{ return m_lastUpdateStatus; }
+
+    /**
+     * <p>A value that indicates whether the feature group was updated
+     * successfully.</p>
+     */
+    inline bool LastUpdateStatusHasBeenSet() const { return m_lastUpdateStatusHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the feature group was updated
+     * successfully.</p>
+     */
+    inline void SetLastUpdateStatus(const LastUpdateStatus& value) { m_lastUpdateStatusHasBeenSet = true; m_lastUpdateStatus = value; }
+
+    /**
+     * <p>A value that indicates whether the feature group was updated
+     * successfully.</p>
+     */
+    inline void SetLastUpdateStatus(LastUpdateStatus&& value) { m_lastUpdateStatusHasBeenSet = true; m_lastUpdateStatus = std::move(value); }
+
+    /**
+     * <p>A value that indicates whether the feature group was updated
+     * successfully.</p>
+     */
+    inline FeatureGroup& WithLastUpdateStatus(const LastUpdateStatus& value) { SetLastUpdateStatus(value); return *this;}
+
+    /**
+     * <p>A value that indicates whether the feature group was updated
+     * successfully.</p>
+     */
+    inline FeatureGroup& WithLastUpdateStatus(LastUpdateStatus&& value) { SetLastUpdateStatus(std::move(value)); return *this;}
 
 
     /**
@@ -675,46 +744,52 @@ namespace Model
   private:
 
     Aws::String m_featureGroupArn;
-    bool m_featureGroupArnHasBeenSet;
+    bool m_featureGroupArnHasBeenSet = false;
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_recordIdentifierFeatureName;
-    bool m_recordIdentifierFeatureNameHasBeenSet;
+    bool m_recordIdentifierFeatureNameHasBeenSet = false;
 
     Aws::String m_eventTimeFeatureName;
-    bool m_eventTimeFeatureNameHasBeenSet;
+    bool m_eventTimeFeatureNameHasBeenSet = false;
 
     Aws::Vector<FeatureDefinition> m_featureDefinitions;
-    bool m_featureDefinitionsHasBeenSet;
+    bool m_featureDefinitionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     OnlineStoreConfig m_onlineStoreConfig;
-    bool m_onlineStoreConfigHasBeenSet;
+    bool m_onlineStoreConfigHasBeenSet = false;
 
     OfflineStoreConfig m_offlineStoreConfig;
-    bool m_offlineStoreConfigHasBeenSet;
+    bool m_offlineStoreConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     FeatureGroupStatus m_featureGroupStatus;
-    bool m_featureGroupStatusHasBeenSet;
+    bool m_featureGroupStatusHasBeenSet = false;
 
     OfflineStoreStatus m_offlineStoreStatus;
-    bool m_offlineStoreStatusHasBeenSet;
+    bool m_offlineStoreStatusHasBeenSet = false;
+
+    LastUpdateStatus m_lastUpdateStatus;
+    bool m_lastUpdateStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

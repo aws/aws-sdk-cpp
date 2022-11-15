@@ -1,0 +1,83 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#if($metadata.hasEndpointDiscoveryTrait || $metadata.hasEndpointTrait)
+#set($EndpointDiscoveryTraitSupported = "/*EndpointDiscoverySupported*/true")
+#else
+#set($EndpointDiscoveryTraitSupported = "/*EndpointDiscoverySupported*/false")
+#end
+#pragma once
+
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/core/client/GenericClientConfiguration.h>
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+\#include <aws/core/auth/signer/AWSAuthV4Signer.h>
+#end
+
+
+namespace ${rootNamespace}
+{
+    namespace ${serviceNamespace}
+    {
+#if($serviceModel.metadata.serviceId == "S3")
+        enum class US_EAST_1_REGIONAL_ENDPOINT_OPTION
+        {
+            NOT_SET,
+            LEGACY,   //stands for using global endpoint for us-east-1,
+            REGIONAL //stands for using regional endpoint for us-east-1
+        };
+
+#end
+        struct ${exportValue} ${metadata.classNamePrefix}ClientConfiguration : public Aws::Client::GenericClientConfiguration<${EndpointDiscoveryTraitSupported}>
+        {
+            using BaseClientConfigClass = Aws::Client::GenericClientConfiguration<${EndpointDiscoveryTraitSupported}>;
+
+            ${metadata.classNamePrefix}ClientConfiguration();
+
+            /**
+            * Create a configuration based on settings in the aws configuration file for the given profile name.
+            * The configuration file location can be set via the environment variable AWS_CONFIG_FILE
+            */
+            ${metadata.classNamePrefix}ClientConfiguration(const char* profileName);
+
+            /**
+            * Create a configuration with a predefined smart defaults
+            * @param useSmartDefaults, required to differentiate c-tors
+            * @param defaultMode, default mode to use
+            */
+            ${metadata.classNamePrefix}ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy");
+
+            /**
+            * Converting constructors for compatibility with a legacy code
+            */
+#set($classNamePrefix = $metadata.classNamePrefix)
+#set($clsPrefixWSpace = $classNamePrefix.replaceAll(".", " "))
+#set($earlyClose = $serviceModel.metadata.serviceId != "S3")
+            ${classNamePrefix}ClientConfiguration(const Client::ClientConfiguration& config#if($earlyClose));#else,
+#end
+#if($serviceModel.metadata.serviceId == "S3")
+            ${clsPrefixWSpace}                    Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
+            ${clsPrefixWSpace}                    bool iUseVirtualAddressing = true,
+            ${clsPrefixWSpace}                    US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption = US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
+#end
+
+#if($serviceModel.metadata.serviceId == "S3")
+            bool useVirtualAddressing = true;
+            US_EAST_1_REGIONAL_ENDPOINT_OPTION useUSEast1RegionalEndPointOption = US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET;
+            bool disableMultiRegionAccessPoints = false;
+#end
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+            bool useArnRegion = false;
+#if($metadata.signatureVersion.equals("s3") || $metadata.signatureVersion.equals("s3v4"))##Typically should be S3Control only
+            Client::AWSAuthV4Signer::PayloadSigningPolicy payloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent;
+#else
+            Client::AWSAuthV4Signer::PayloadSigningPolicy payloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::Never;
+#end
+#end
+        private:
+            void Load${serviceNamespace}SpecificConfig(const Aws::String& profileName);
+        };
+    }
+}

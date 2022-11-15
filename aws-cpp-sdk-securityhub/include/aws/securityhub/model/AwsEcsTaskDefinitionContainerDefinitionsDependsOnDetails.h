@@ -40,49 +40,73 @@ namespace Model
 
     /**
      * <p>The dependency condition of the dependent container. Indicates the required
-     * status of the dependent container before the current container can start.</p>
+     * status of the dependent container before the current container can start. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>COMPLETE</code> </p> </li> <li>
+     * <p> <code>HEALTHY</code> </p> </li> <li> <p> <code>SUCCESS</code> </p> </li>
+     * <li> <p> <code>START</code> </p> </li> </ul>
      */
     inline const Aws::String& GetCondition() const{ return m_condition; }
 
     /**
      * <p>The dependency condition of the dependent container. Indicates the required
-     * status of the dependent container before the current container can start.</p>
+     * status of the dependent container before the current container can start. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>COMPLETE</code> </p> </li> <li>
+     * <p> <code>HEALTHY</code> </p> </li> <li> <p> <code>SUCCESS</code> </p> </li>
+     * <li> <p> <code>START</code> </p> </li> </ul>
      */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
      * <p>The dependency condition of the dependent container. Indicates the required
-     * status of the dependent container before the current container can start.</p>
+     * status of the dependent container before the current container can start. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>COMPLETE</code> </p> </li> <li>
+     * <p> <code>HEALTHY</code> </p> </li> <li> <p> <code>SUCCESS</code> </p> </li>
+     * <li> <p> <code>START</code> </p> </li> </ul>
      */
     inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
     /**
      * <p>The dependency condition of the dependent container. Indicates the required
-     * status of the dependent container before the current container can start.</p>
+     * status of the dependent container before the current container can start. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>COMPLETE</code> </p> </li> <li>
+     * <p> <code>HEALTHY</code> </p> </li> <li> <p> <code>SUCCESS</code> </p> </li>
+     * <li> <p> <code>START</code> </p> </li> </ul>
      */
     inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
     /**
      * <p>The dependency condition of the dependent container. Indicates the required
-     * status of the dependent container before the current container can start.</p>
+     * status of the dependent container before the current container can start. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>COMPLETE</code> </p> </li> <li>
+     * <p> <code>HEALTHY</code> </p> </li> <li> <p> <code>SUCCESS</code> </p> </li>
+     * <li> <p> <code>START</code> </p> </li> </ul>
      */
     inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
 
     /**
      * <p>The dependency condition of the dependent container. Indicates the required
-     * status of the dependent container before the current container can start.</p>
+     * status of the dependent container before the current container can start. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>COMPLETE</code> </p> </li> <li>
+     * <p> <code>HEALTHY</code> </p> </li> <li> <p> <code>SUCCESS</code> </p> </li>
+     * <li> <p> <code>START</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
 
     /**
      * <p>The dependency condition of the dependent container. Indicates the required
-     * status of the dependent container before the current container can start.</p>
+     * status of the dependent container before the current container can start. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>COMPLETE</code> </p> </li> <li>
+     * <p> <code>HEALTHY</code> </p> </li> <li> <p> <code>SUCCESS</code> </p> </li>
+     * <li> <p> <code>START</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
 
     /**
      * <p>The dependency condition of the dependent container. Indicates the required
-     * status of the dependent container before the current container can start.</p>
+     * status of the dependent container before the current container can start. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>COMPLETE</code> </p> </li> <li>
+     * <p> <code>HEALTHY</code> </p> </li> <li> <p> <code>SUCCESS</code> </p> </li>
+     * <li> <p> <code>START</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails& WithCondition(const char* value) { SetCondition(value); return *this;}
 
@@ -130,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
   };
 
 } // namespace Model

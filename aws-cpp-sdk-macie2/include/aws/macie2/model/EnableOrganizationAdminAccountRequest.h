@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_adminAccountId;
-    bool m_adminAccountIdHasBeenSet;
+    bool m_adminAccountIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

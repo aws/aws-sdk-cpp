@@ -115,10 +115,10 @@ namespace Model
   private:
 
     BucketLevelPermissions m_bucketLevelPermissions;
-    bool m_bucketLevelPermissionsHasBeenSet;
+    bool m_bucketLevelPermissionsHasBeenSet = false;
 
     AccountLevelPermissions m_accountLevelPermissions;
-    bool m_accountLevelPermissionsHasBeenSet;
+    bool m_accountLevelPermissionsHasBeenSet = false;
   };
 
 } // namespace Model

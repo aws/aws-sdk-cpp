@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_bucketPrefix;
-    bool m_bucketPrefixHasBeenSet;
+    bool m_bucketPrefixHasBeenSet = false;
 
     S3OutputFormatConfig m_s3OutputFormatConfig;
-    bool m_s3OutputFormatConfigHasBeenSet;
+    bool m_s3OutputFormatConfigHasBeenSet = false;
   };
 
 } // namespace Model

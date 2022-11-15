@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/RegistrationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot/model/CertificateMode.h>
 #include <aws/iot/model/Tag.h>
 #include <utility>
 
@@ -87,42 +88,66 @@ namespace Model
 
 
     /**
-     * <p>The private key verification certificate.</p>
+     * <p>The private key verification certificate. If <code>certificateMode</code> is
+     * <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be
+     * empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided,
+     * the <code>verificationCertificate</code> field must not be empty. </p>
      */
     inline const Aws::String& GetVerificationCertificate() const{ return m_verificationCertificate; }
 
     /**
-     * <p>The private key verification certificate.</p>
+     * <p>The private key verification certificate. If <code>certificateMode</code> is
+     * <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be
+     * empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided,
+     * the <code>verificationCertificate</code> field must not be empty. </p>
      */
     inline bool VerificationCertificateHasBeenSet() const { return m_verificationCertificateHasBeenSet; }
 
     /**
-     * <p>The private key verification certificate.</p>
+     * <p>The private key verification certificate. If <code>certificateMode</code> is
+     * <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be
+     * empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided,
+     * the <code>verificationCertificate</code> field must not be empty. </p>
      */
     inline void SetVerificationCertificate(const Aws::String& value) { m_verificationCertificateHasBeenSet = true; m_verificationCertificate = value; }
 
     /**
-     * <p>The private key verification certificate.</p>
+     * <p>The private key verification certificate. If <code>certificateMode</code> is
+     * <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be
+     * empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided,
+     * the <code>verificationCertificate</code> field must not be empty. </p>
      */
     inline void SetVerificationCertificate(Aws::String&& value) { m_verificationCertificateHasBeenSet = true; m_verificationCertificate = std::move(value); }
 
     /**
-     * <p>The private key verification certificate.</p>
+     * <p>The private key verification certificate. If <code>certificateMode</code> is
+     * <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be
+     * empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided,
+     * the <code>verificationCertificate</code> field must not be empty. </p>
      */
     inline void SetVerificationCertificate(const char* value) { m_verificationCertificateHasBeenSet = true; m_verificationCertificate.assign(value); }
 
     /**
-     * <p>The private key verification certificate.</p>
+     * <p>The private key verification certificate. If <code>certificateMode</code> is
+     * <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be
+     * empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided,
+     * the <code>verificationCertificate</code> field must not be empty. </p>
      */
     inline RegisterCACertificateRequest& WithVerificationCertificate(const Aws::String& value) { SetVerificationCertificate(value); return *this;}
 
     /**
-     * <p>The private key verification certificate.</p>
+     * <p>The private key verification certificate. If <code>certificateMode</code> is
+     * <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be
+     * empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided,
+     * the <code>verificationCertificate</code> field must not be empty. </p>
      */
     inline RegisterCACertificateRequest& WithVerificationCertificate(Aws::String&& value) { SetVerificationCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>The private key verification certificate.</p>
+     * <p>The private key verification certificate. If <code>certificateMode</code> is
+     * <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be
+     * empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided,
+     * the <code>verificationCertificate</code> field must not be empty. </p>
      */
     inline RegisterCACertificateRequest& WithVerificationCertificate(const char* value) { SetVerificationCertificate(value); return *this;}
 
@@ -280,25 +305,119 @@ namespace Model
      */
     inline RegisterCACertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Describes the certificate mode in which the Certificate Authority (CA) will
+     * be registered. If the <code>verificationCertificate</code> field is not
+     * provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the
+     * <code>verificationCertificate</code> field is provided, set
+     * <code>certificateMode</code> to be <code>DEFAULT</code>. When
+     * <code>certificateMode</code> is not provided, it defaults to
+     * <code>DEFAULT</code>. All the device certificates that are registered using this
+     * CA will be registered in the same certificate mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">
+     * certificate mode</a>. </p>
+     */
+    inline const CertificateMode& GetCertificateMode() const{ return m_certificateMode; }
+
+    /**
+     * <p>Describes the certificate mode in which the Certificate Authority (CA) will
+     * be registered. If the <code>verificationCertificate</code> field is not
+     * provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the
+     * <code>verificationCertificate</code> field is provided, set
+     * <code>certificateMode</code> to be <code>DEFAULT</code>. When
+     * <code>certificateMode</code> is not provided, it defaults to
+     * <code>DEFAULT</code>. All the device certificates that are registered using this
+     * CA will be registered in the same certificate mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">
+     * certificate mode</a>. </p>
+     */
+    inline bool CertificateModeHasBeenSet() const { return m_certificateModeHasBeenSet; }
+
+    /**
+     * <p>Describes the certificate mode in which the Certificate Authority (CA) will
+     * be registered. If the <code>verificationCertificate</code> field is not
+     * provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the
+     * <code>verificationCertificate</code> field is provided, set
+     * <code>certificateMode</code> to be <code>DEFAULT</code>. When
+     * <code>certificateMode</code> is not provided, it defaults to
+     * <code>DEFAULT</code>. All the device certificates that are registered using this
+     * CA will be registered in the same certificate mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">
+     * certificate mode</a>. </p>
+     */
+    inline void SetCertificateMode(const CertificateMode& value) { m_certificateModeHasBeenSet = true; m_certificateMode = value; }
+
+    /**
+     * <p>Describes the certificate mode in which the Certificate Authority (CA) will
+     * be registered. If the <code>verificationCertificate</code> field is not
+     * provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the
+     * <code>verificationCertificate</code> field is provided, set
+     * <code>certificateMode</code> to be <code>DEFAULT</code>. When
+     * <code>certificateMode</code> is not provided, it defaults to
+     * <code>DEFAULT</code>. All the device certificates that are registered using this
+     * CA will be registered in the same certificate mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">
+     * certificate mode</a>. </p>
+     */
+    inline void SetCertificateMode(CertificateMode&& value) { m_certificateModeHasBeenSet = true; m_certificateMode = std::move(value); }
+
+    /**
+     * <p>Describes the certificate mode in which the Certificate Authority (CA) will
+     * be registered. If the <code>verificationCertificate</code> field is not
+     * provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the
+     * <code>verificationCertificate</code> field is provided, set
+     * <code>certificateMode</code> to be <code>DEFAULT</code>. When
+     * <code>certificateMode</code> is not provided, it defaults to
+     * <code>DEFAULT</code>. All the device certificates that are registered using this
+     * CA will be registered in the same certificate mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">
+     * certificate mode</a>. </p>
+     */
+    inline RegisterCACertificateRequest& WithCertificateMode(const CertificateMode& value) { SetCertificateMode(value); return *this;}
+
+    /**
+     * <p>Describes the certificate mode in which the Certificate Authority (CA) will
+     * be registered. If the <code>verificationCertificate</code> field is not
+     * provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the
+     * <code>verificationCertificate</code> field is provided, set
+     * <code>certificateMode</code> to be <code>DEFAULT</code>. When
+     * <code>certificateMode</code> is not provided, it defaults to
+     * <code>DEFAULT</code>. All the device certificates that are registered using this
+     * CA will be registered in the same certificate mode as the CA. For more
+     * information about certificate mode for device certificates, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">
+     * certificate mode</a>. </p>
+     */
+    inline RegisterCACertificateRequest& WithCertificateMode(CertificateMode&& value) { SetCertificateMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_caCertificate;
-    bool m_caCertificateHasBeenSet;
+    bool m_caCertificateHasBeenSet = false;
 
     Aws::String m_verificationCertificate;
-    bool m_verificationCertificateHasBeenSet;
+    bool m_verificationCertificateHasBeenSet = false;
 
     bool m_setAsActive;
-    bool m_setAsActiveHasBeenSet;
+    bool m_setAsActiveHasBeenSet = false;
 
     bool m_allowAutoRegistration;
-    bool m_allowAutoRegistrationHasBeenSet;
+    bool m_allowAutoRegistrationHasBeenSet = false;
 
     RegistrationConfig m_registrationConfig;
-    bool m_registrationConfigHasBeenSet;
+    bool m_registrationConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    CertificateMode m_certificateMode;
+    bool m_certificateModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -148,6 +148,27 @@ namespace Model
 
 
     /**
+     * <p>The port number to match on.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline HttpRouteMatch& WithPort(int value) { SetPort(value); return *this;}
+
+
+    /**
      * <p>Specifies the path to match requests with. This parameter must always start
      * with <code>/</code>, which by itself matches all requests to the virtual service
      * name. You can also match for path-based routing of requests. For example, if
@@ -308,22 +329,25 @@ namespace Model
   private:
 
     Aws::Vector<HttpRouteHeader> m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
 
     HttpMethod m_method;
-    bool m_methodHasBeenSet;
+    bool m_methodHasBeenSet = false;
 
     HttpPathMatch m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
+
+    int m_port;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::Vector<HttpQueryParameter> m_queryParameters;
-    bool m_queryParametersHasBeenSet;
+    bool m_queryParametersHasBeenSet = false;
 
     HttpScheme m_scheme;
-    bool m_schemeHasBeenSet;
+    bool m_schemeHasBeenSet = false;
   };
 
 } // namespace Model

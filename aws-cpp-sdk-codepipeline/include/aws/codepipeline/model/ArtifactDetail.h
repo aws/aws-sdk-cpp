@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     S3Location m_s3location;
-    bool m_s3locationHasBeenSet;
+    bool m_s3locationHasBeenSet = false;
   };
 
 } // namespace Model

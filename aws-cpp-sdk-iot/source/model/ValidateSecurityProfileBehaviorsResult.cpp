@@ -38,7 +38,7 @@ ValidateSecurityProfileBehaviorsResult& ValidateSecurityProfileBehaviorsResult::
 
   if(jsonValue.ValueExists("validationErrors"))
   {
-    Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
+    Aws::Utils::Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
     for(unsigned validationErrorsIndex = 0; validationErrorsIndex < validationErrorsJsonList.GetLength(); ++validationErrorsIndex)
     {
       m_validationErrors.push_back(validationErrorsJsonList[validationErrorsIndex].AsObject());

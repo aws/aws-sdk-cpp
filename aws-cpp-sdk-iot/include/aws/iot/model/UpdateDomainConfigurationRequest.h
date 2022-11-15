@@ -160,16 +160,16 @@ namespace Model
   private:
 
     Aws::String m_domainConfigurationName;
-    bool m_domainConfigurationNameHasBeenSet;
+    bool m_domainConfigurationNameHasBeenSet = false;
 
     AuthorizerConfig m_authorizerConfig;
-    bool m_authorizerConfigHasBeenSet;
+    bool m_authorizerConfigHasBeenSet = false;
 
     DomainConfigurationStatus m_domainConfigurationStatus;
-    bool m_domainConfigurationStatusHasBeenSet;
+    bool m_domainConfigurationStatusHasBeenSet = false;
 
     bool m_removeAuthorizerConfig;
-    bool m_removeAuthorizerConfigHasBeenSet;
+    bool m_removeAuthorizerConfigHasBeenSet = false;
   };
 
 } // namespace Model

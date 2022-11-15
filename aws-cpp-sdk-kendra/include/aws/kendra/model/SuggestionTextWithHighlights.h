@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::Vector<SuggestionHighlight> m_highlights;
-    bool m_highlightsHasBeenSet;
+    bool m_highlightsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -79,10 +79,10 @@ namespace Model
   private:
 
     int m_startCharOffset;
-    bool m_startCharOffsetHasBeenSet;
+    bool m_startCharOffsetHasBeenSet = false;
 
     int m_endCharOffset;
-    bool m_endCharOffsetHasBeenSet;
+    bool m_endCharOffsetHasBeenSet = false;
   };
 
 } // namespace Model

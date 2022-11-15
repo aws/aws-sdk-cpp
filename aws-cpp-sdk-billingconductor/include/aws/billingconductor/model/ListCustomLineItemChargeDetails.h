@@ -153,13 +153,13 @@ namespace Model
   private:
 
     ListCustomLineItemFlatChargeDetails m_flat;
-    bool m_flatHasBeenSet;
+    bool m_flatHasBeenSet = false;
 
     ListCustomLineItemPercentageChargeDetails m_percentage;
-    bool m_percentageHasBeenSet;
+    bool m_percentageHasBeenSet = false;
 
     CustomLineItemType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

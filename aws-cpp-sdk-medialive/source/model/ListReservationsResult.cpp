@@ -36,7 +36,7 @@ ListReservationsResult& ListReservationsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("reservations"))
   {
-    Array<JsonView> reservationsJsonList = jsonValue.GetArray("reservations");
+    Aws::Utils::Array<JsonView> reservationsJsonList = jsonValue.GetArray("reservations");
     for(unsigned reservationsIndex = 0; reservationsIndex < reservationsJsonList.GetLength(); ++reservationsIndex)
     {
       m_reservations.push_back(reservationsJsonList[reservationsIndex].AsObject());

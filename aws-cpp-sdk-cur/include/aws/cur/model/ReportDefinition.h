@@ -413,40 +413,40 @@ namespace Model
   private:
 
     Aws::String m_reportName;
-    bool m_reportNameHasBeenSet;
+    bool m_reportNameHasBeenSet = false;
 
     TimeUnit m_timeUnit;
-    bool m_timeUnitHasBeenSet;
+    bool m_timeUnitHasBeenSet = false;
 
     ReportFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     CompressionFormat m_compression;
-    bool m_compressionHasBeenSet;
+    bool m_compressionHasBeenSet = false;
 
     Aws::Vector<SchemaElement> m_additionalSchemaElements;
-    bool m_additionalSchemaElementsHasBeenSet;
+    bool m_additionalSchemaElementsHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
 
     AWSRegion m_s3Region;
-    bool m_s3RegionHasBeenSet;
+    bool m_s3RegionHasBeenSet = false;
 
     Aws::Vector<AdditionalArtifact> m_additionalArtifacts;
-    bool m_additionalArtifactsHasBeenSet;
+    bool m_additionalArtifactsHasBeenSet = false;
 
     bool m_refreshClosedReports;
-    bool m_refreshClosedReportsHasBeenSet;
+    bool m_refreshClosedReportsHasBeenSet = false;
 
     ReportVersioning m_reportVersioning;
-    bool m_reportVersioningHasBeenSet;
+    bool m_reportVersioningHasBeenSet = false;
 
     Aws::String m_billingViewArn;
-    bool m_billingViewArnHasBeenSet;
+    bool m_billingViewArnHasBeenSet = false;
   };
 
 } // namespace Model

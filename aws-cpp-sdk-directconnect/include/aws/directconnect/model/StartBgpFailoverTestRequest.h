@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_bgpPeers;
-    bool m_bgpPeersHasBeenSet;
+    bool m_bgpPeersHasBeenSet = false;
 
     int m_testDurationInMinutes;
-    bool m_testDurationInMinutesHasBeenSet;
+    bool m_testDurationInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

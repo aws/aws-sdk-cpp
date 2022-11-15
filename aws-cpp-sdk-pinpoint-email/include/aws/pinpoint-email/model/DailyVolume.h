@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     VolumeStatistics m_volumeStatistics;
-    bool m_volumeStatisticsHasBeenSet;
+    bool m_volumeStatisticsHasBeenSet = false;
 
     Aws::Vector<DomainIspPlacement> m_domainIspPlacements;
-    bool m_domainIspPlacementsHasBeenSet;
+    bool m_domainIspPlacementsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -114,7 +114,7 @@ namespace Model
   private:
 
     Aws::Vector<Principal> m_principalList;
-    bool m_principalListHasBeenSet;
+    bool m_principalListHasBeenSet = false;
   };
 
 } // namespace Model

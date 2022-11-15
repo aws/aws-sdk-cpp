@@ -84,10 +84,10 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_rowFilterExpression;
-    bool m_rowFilterExpressionHasBeenSet;
+    bool m_rowFilterExpressionHasBeenSet = false;
   };
 
 } // namespace Model

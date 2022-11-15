@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_sharedAccountId;
-    bool m_sharedAccountIdHasBeenSet;
+    bool m_sharedAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -126,13 +126,13 @@ namespace Model
   private:
 
     int m_dataRetentionInHours;
-    bool m_dataRetentionInHoursHasBeenSet;
+    bool m_dataRetentionInHoursHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
 
     Aws::Vector<StreamingNotificationTarget> m_streamingNotificationTargets;
-    bool m_streamingNotificationTargetsHasBeenSet;
+    bool m_streamingNotificationTargetsHasBeenSet = false;
   };
 
 } // namespace Model

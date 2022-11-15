@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_attackId;
-    bool m_attackIdHasBeenSet;
+    bool m_attackIdHasBeenSet = false;
   };
 
 } // namespace Model

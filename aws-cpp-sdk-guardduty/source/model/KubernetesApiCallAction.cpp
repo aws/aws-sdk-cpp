@@ -61,7 +61,7 @@ KubernetesApiCallAction& KubernetesApiCallAction::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("sourceIps"))
   {
-    Array<JsonView> sourceIpsJsonList = jsonValue.GetArray("sourceIps");
+    Aws::Utils::Array<JsonView> sourceIpsJsonList = jsonValue.GetArray("sourceIps");
     for(unsigned sourceIpsIndex = 0; sourceIpsIndex < sourceIpsJsonList.GetLength(); ++sourceIpsIndex)
     {
       m_sourceIps.push_back(sourceIpsJsonList[sourceIpsIndex].AsString());
@@ -118,7 +118,7 @@ JsonValue KubernetesApiCallAction::Jsonize() const
 
   if(m_sourceIpsHasBeenSet)
   {
-   Array<JsonValue> sourceIpsJsonList(m_sourceIps.size());
+   Aws::Utils::Array<JsonValue> sourceIpsJsonList(m_sourceIps.size());
    for(unsigned sourceIpsIndex = 0; sourceIpsIndex < sourceIpsJsonList.GetLength(); ++sourceIpsIndex)
    {
      sourceIpsJsonList[sourceIpsIndex].AsString(m_sourceIps[sourceIpsIndex]);

@@ -30,7 +30,7 @@ ListControlDomainInsightsByAssessmentResult& ListControlDomainInsightsByAssessme
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("controlDomainInsights"))
   {
-    Array<JsonView> controlDomainInsightsJsonList = jsonValue.GetArray("controlDomainInsights");
+    Aws::Utils::Array<JsonView> controlDomainInsightsJsonList = jsonValue.GetArray("controlDomainInsights");
     for(unsigned controlDomainInsightsIndex = 0; controlDomainInsightsIndex < controlDomainInsightsJsonList.GetLength(); ++controlDomainInsightsIndex)
     {
       m_controlDomainInsights.push_back(controlDomainInsightsJsonList[controlDomainInsightsIndex].AsObject());

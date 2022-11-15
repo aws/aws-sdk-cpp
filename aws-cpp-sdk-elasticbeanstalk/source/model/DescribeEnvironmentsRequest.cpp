@@ -67,7 +67,7 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
 
   if(m_includedDeletedBackToHasBeenSet)
   {
-    ss << "IncludedDeletedBackTo=" << StringUtils::URLEncode(m_includedDeletedBackTo.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "IncludedDeletedBackTo=" << StringUtils::URLEncode(m_includedDeletedBackTo.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_maxRecordsHasBeenSet)

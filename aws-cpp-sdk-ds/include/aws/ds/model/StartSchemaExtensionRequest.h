@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     bool m_createSnapshotBeforeSchemaExtension;
-    bool m_createSnapshotBeforeSchemaExtensionHasBeenSet;
+    bool m_createSnapshotBeforeSchemaExtensionHasBeenSet = false;
 
     Aws::String m_ldifContent;
-    bool m_ldifContentHasBeenSet;
+    bool m_ldifContentHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

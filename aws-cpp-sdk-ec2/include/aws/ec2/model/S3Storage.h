@@ -284,19 +284,19 @@ namespace Model
   private:
 
     Aws::String m_aWSAccessKeyId;
-    bool m_aWSAccessKeyIdHasBeenSet;
+    bool m_aWSAccessKeyIdHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_uploadPolicy;
-    bool m_uploadPolicyHasBeenSet;
+    bool m_uploadPolicyHasBeenSet = false;
 
     Aws::String m_uploadPolicySignature;
-    bool m_uploadPolicySignatureHasBeenSet;
+    bool m_uploadPolicySignatureHasBeenSet = false;
   };
 
 } // namespace Model

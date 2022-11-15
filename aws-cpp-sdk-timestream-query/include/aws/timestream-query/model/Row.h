@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<Datum> m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

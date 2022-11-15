@@ -30,7 +30,7 @@ DescribeScalingActivitiesResult& DescribeScalingActivitiesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScalingActivities"))
   {
-    Array<JsonView> scalingActivitiesJsonList = jsonValue.GetArray("ScalingActivities");
+    Aws::Utils::Array<JsonView> scalingActivitiesJsonList = jsonValue.GetArray("ScalingActivities");
     for(unsigned scalingActivitiesIndex = 0; scalingActivitiesIndex < scalingActivitiesJsonList.GetLength(); ++scalingActivitiesIndex)
     {
       m_scalingActivities.push_back(scalingActivitiesJsonList[scalingActivitiesIndex].AsObject());

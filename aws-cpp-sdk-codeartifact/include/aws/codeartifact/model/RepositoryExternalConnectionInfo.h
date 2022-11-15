@@ -87,7 +87,7 @@ namespace Model
      * Manager (npm) package. </p> </li> <li> <p> <code>pypi</code>: A Python Package
      * Index (PyPI) package. </p> </li> <li> <p> <code>maven</code>: A Maven package
      * that contains compiled code in a distributable format, such as a JAR file. </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>nuget</code>: A NuGet package. </p> </li> </ul>
      */
     inline const PackageFormat& GetPackageFormat() const{ return m_packageFormat; }
 
@@ -97,7 +97,7 @@ namespace Model
      * Manager (npm) package. </p> </li> <li> <p> <code>pypi</code>: A Python Package
      * Index (PyPI) package. </p> </li> <li> <p> <code>maven</code>: A Maven package
      * that contains compiled code in a distributable format, such as a JAR file. </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>nuget</code>: A NuGet package. </p> </li> </ul>
      */
     inline bool PackageFormatHasBeenSet() const { return m_packageFormatHasBeenSet; }
 
@@ -107,7 +107,7 @@ namespace Model
      * Manager (npm) package. </p> </li> <li> <p> <code>pypi</code>: A Python Package
      * Index (PyPI) package. </p> </li> <li> <p> <code>maven</code>: A Maven package
      * that contains compiled code in a distributable format, such as a JAR file. </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>nuget</code>: A NuGet package. </p> </li> </ul>
      */
     inline void SetPackageFormat(const PackageFormat& value) { m_packageFormatHasBeenSet = true; m_packageFormat = value; }
 
@@ -117,7 +117,7 @@ namespace Model
      * Manager (npm) package. </p> </li> <li> <p> <code>pypi</code>: A Python Package
      * Index (PyPI) package. </p> </li> <li> <p> <code>maven</code>: A Maven package
      * that contains compiled code in a distributable format, such as a JAR file. </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>nuget</code>: A NuGet package. </p> </li> </ul>
      */
     inline void SetPackageFormat(PackageFormat&& value) { m_packageFormatHasBeenSet = true; m_packageFormat = std::move(value); }
 
@@ -127,7 +127,7 @@ namespace Model
      * Manager (npm) package. </p> </li> <li> <p> <code>pypi</code>: A Python Package
      * Index (PyPI) package. </p> </li> <li> <p> <code>maven</code>: A Maven package
      * that contains compiled code in a distributable format, such as a JAR file. </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>nuget</code>: A NuGet package. </p> </li> </ul>
      */
     inline RepositoryExternalConnectionInfo& WithPackageFormat(const PackageFormat& value) { SetPackageFormat(value); return *this;}
 
@@ -137,7 +137,7 @@ namespace Model
      * Manager (npm) package. </p> </li> <li> <p> <code>pypi</code>: A Python Package
      * Index (PyPI) package. </p> </li> <li> <p> <code>maven</code>: A Maven package
      * that contains compiled code in a distributable format, such as a JAR file. </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>nuget</code>: A NuGet package. </p> </li> </ul>
      */
     inline RepositoryExternalConnectionInfo& WithPackageFormat(PackageFormat&& value) { SetPackageFormat(std::move(value)); return *this;}
 
@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_externalConnectionName;
-    bool m_externalConnectionNameHasBeenSet;
+    bool m_externalConnectionNameHasBeenSet = false;
 
     PackageFormat m_packageFormat;
-    bool m_packageFormatHasBeenSet;
+    bool m_packageFormatHasBeenSet = false;
 
     ExternalConnectionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -41,7 +41,7 @@ OpsItemLimitExceededException& OpsItemLimitExceededException::operator =(JsonVie
 {
   if(jsonValue.ValueExists("ResourceTypes"))
   {
-    Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
+    Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
     for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
     {
       m_resourceTypes.push_back(resourceTypesJsonList[resourceTypesIndex].AsString());
@@ -79,7 +79,7 @@ JsonValue OpsItemLimitExceededException::Jsonize() const
 
   if(m_resourceTypesHasBeenSet)
   {
-   Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
+   Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
    for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
    {
      resourceTypesJsonList[resourceTypesIndex].AsString(m_resourceTypes[resourceTypesIndex]);

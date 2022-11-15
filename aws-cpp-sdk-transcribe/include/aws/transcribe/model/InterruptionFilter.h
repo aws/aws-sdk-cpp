@@ -26,9 +26,14 @@ namespace Model
 {
 
   /**
-   * <p>An object that enables you to configure your category to be applied to call
-   * analytics jobs where either the customer or agent was interrupted.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Flag the presence or absence of interruptions in your Call Analytics
+   * transcription output.</p> <p>Rules using <code>InterruptionFilter</code> are
+   * designed to match:</p> <ul> <li> <p>Instances where an agent interrupts a
+   * customer</p> </li> <li> <p>Instances where a customer interrupts an agent</p>
+   * </li> <li> <p>Either participant interrupting the other</p> </li> <li> <p>A lack
+   * of interruptions</p> </li> </ul> <p>See <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule
+   * criteria</a> for usage examples.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/InterruptionFilter">AWS
    * API Reference</a></p>
    */
@@ -42,207 +47,181 @@ namespace Model
 
 
     /**
-     * <p>The duration of the interruption.</p>
+     * <p>Specify the duration of the interruptions in milliseconds. For example, you
+     * can flag speech that contains more than 10000 milliseconds of interruptions.</p>
      */
     inline long long GetThreshold() const{ return m_threshold; }
 
     /**
-     * <p>The duration of the interruption.</p>
+     * <p>Specify the duration of the interruptions in milliseconds. For example, you
+     * can flag speech that contains more than 10000 milliseconds of interruptions.</p>
      */
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
 
     /**
-     * <p>The duration of the interruption.</p>
+     * <p>Specify the duration of the interruptions in milliseconds. For example, you
+     * can flag speech that contains more than 10000 milliseconds of interruptions.</p>
      */
     inline void SetThreshold(long long value) { m_thresholdHasBeenSet = true; m_threshold = value; }
 
     /**
-     * <p>The duration of the interruption.</p>
+     * <p>Specify the duration of the interruptions in milliseconds. For example, you
+     * can flag speech that contains more than 10000 milliseconds of interruptions.</p>
      */
     inline InterruptionFilter& WithThreshold(long long value) { SetThreshold(value); return *this;}
 
 
     /**
-     * <p>Indicates whether the caller or customer was interrupting.</p>
+     * <p>Specify the interrupter you want to flag. Omitting this parameter is
+     * equivalent to specifying both participants.</p>
      */
     inline const ParticipantRole& GetParticipantRole() const{ return m_participantRole; }
 
     /**
-     * <p>Indicates whether the caller or customer was interrupting.</p>
+     * <p>Specify the interrupter you want to flag. Omitting this parameter is
+     * equivalent to specifying both participants.</p>
      */
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }
 
     /**
-     * <p>Indicates whether the caller or customer was interrupting.</p>
+     * <p>Specify the interrupter you want to flag. Omitting this parameter is
+     * equivalent to specifying both participants.</p>
      */
     inline void SetParticipantRole(const ParticipantRole& value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
 
     /**
-     * <p>Indicates whether the caller or customer was interrupting.</p>
+     * <p>Specify the interrupter you want to flag. Omitting this parameter is
+     * equivalent to specifying both participants.</p>
      */
     inline void SetParticipantRole(ParticipantRole&& value) { m_participantRoleHasBeenSet = true; m_participantRole = std::move(value); }
 
     /**
-     * <p>Indicates whether the caller or customer was interrupting.</p>
+     * <p>Specify the interrupter you want to flag. Omitting this parameter is
+     * equivalent to specifying both participants.</p>
      */
     inline InterruptionFilter& WithParticipantRole(const ParticipantRole& value) { SetParticipantRole(value); return *this;}
 
     /**
-     * <p>Indicates whether the caller or customer was interrupting.</p>
+     * <p>Specify the interrupter you want to flag. Omitting this parameter is
+     * equivalent to specifying both participants.</p>
      */
     inline InterruptionFilter& WithParticipantRole(ParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
 
 
     /**
-     * <p>An object you can use to specify a time range (in milliseconds) for when
-     * you'd want to find the interruption. For example, you could search for an
-     * interruption between the 30,000 millisecond mark and the 45,000 millisecond
-     * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds.</p>
+     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline const AbsoluteTimeRange& GetAbsoluteTimeRange() const{ return m_absoluteTimeRange; }
 
     /**
-     * <p>An object you can use to specify a time range (in milliseconds) for when
-     * you'd want to find the interruption. For example, you could search for an
-     * interruption between the 30,000 millisecond mark and the 45,000 millisecond
-     * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds.</p>
+     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline bool AbsoluteTimeRangeHasBeenSet() const { return m_absoluteTimeRangeHasBeenSet; }
 
     /**
-     * <p>An object you can use to specify a time range (in milliseconds) for when
-     * you'd want to find the interruption. For example, you could search for an
-     * interruption between the 30,000 millisecond mark and the 45,000 millisecond
-     * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds.</p>
+     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline void SetAbsoluteTimeRange(const AbsoluteTimeRange& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = value; }
 
     /**
-     * <p>An object you can use to specify a time range (in milliseconds) for when
-     * you'd want to find the interruption. For example, you could search for an
-     * interruption between the 30,000 millisecond mark and the 45,000 millisecond
-     * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds.</p>
+     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline void SetAbsoluteTimeRange(AbsoluteTimeRange&& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = std::move(value); }
 
     /**
-     * <p>An object you can use to specify a time range (in milliseconds) for when
-     * you'd want to find the interruption. For example, you could search for an
-     * interruption between the 30,000 millisecond mark and the 45,000 millisecond
-     * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds.</p>
+     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline InterruptionFilter& WithAbsoluteTimeRange(const AbsoluteTimeRange& value) { SetAbsoluteTimeRange(value); return *this;}
 
     /**
-     * <p>An object you can use to specify a time range (in milliseconds) for when
-     * you'd want to find the interruption. For example, you could search for an
-     * interruption between the 30,000 millisecond mark and the 45,000 millisecond
-     * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds.</p>
+     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline InterruptionFilter& WithAbsoluteTimeRange(AbsoluteTimeRange&& value) { SetAbsoluteTimeRange(std::move(value)); return *this;}
 
 
     /**
-     * <p>An object that allows percentages to specify the proportion of the call where
-     * there was a interruption. For example, you can specify the first half of the
-     * call. You can also specify the period of time between halfway through to
-     * three-quarters of the way through the call. Because the length of conversation
-     * can vary between calls, you can apply relative time ranges across all calls.</p>
+     * <p>Allows you to specify a time range (in percentage) in your media file, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline const RelativeTimeRange& GetRelativeTimeRange() const{ return m_relativeTimeRange; }
 
     /**
-     * <p>An object that allows percentages to specify the proportion of the call where
-     * there was a interruption. For example, you can specify the first half of the
-     * call. You can also specify the period of time between halfway through to
-     * three-quarters of the way through the call. Because the length of conversation
-     * can vary between calls, you can apply relative time ranges across all calls.</p>
+     * <p>Allows you to specify a time range (in percentage) in your media file, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline bool RelativeTimeRangeHasBeenSet() const { return m_relativeTimeRangeHasBeenSet; }
 
     /**
-     * <p>An object that allows percentages to specify the proportion of the call where
-     * there was a interruption. For example, you can specify the first half of the
-     * call. You can also specify the period of time between halfway through to
-     * three-quarters of the way through the call. Because the length of conversation
-     * can vary between calls, you can apply relative time ranges across all calls.</p>
+     * <p>Allows you to specify a time range (in percentage) in your media file, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline void SetRelativeTimeRange(const RelativeTimeRange& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = value; }
 
     /**
-     * <p>An object that allows percentages to specify the proportion of the call where
-     * there was a interruption. For example, you can specify the first half of the
-     * call. You can also specify the period of time between halfway through to
-     * three-quarters of the way through the call. Because the length of conversation
-     * can vary between calls, you can apply relative time ranges across all calls.</p>
+     * <p>Allows you to specify a time range (in percentage) in your media file, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline void SetRelativeTimeRange(RelativeTimeRange&& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = std::move(value); }
 
     /**
-     * <p>An object that allows percentages to specify the proportion of the call where
-     * there was a interruption. For example, you can specify the first half of the
-     * call. You can also specify the period of time between halfway through to
-     * three-quarters of the way through the call. Because the length of conversation
-     * can vary between calls, you can apply relative time ranges across all calls.</p>
+     * <p>Allows you to specify a time range (in percentage) in your media file, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline InterruptionFilter& WithRelativeTimeRange(const RelativeTimeRange& value) { SetRelativeTimeRange(value); return *this;}
 
     /**
-     * <p>An object that allows percentages to specify the proportion of the call where
-     * there was a interruption. For example, you can specify the first half of the
-     * call. You can also specify the period of time between halfway through to
-     * three-quarters of the way through the call. Because the length of conversation
-     * can vary between calls, you can apply relative time ranges across all calls.</p>
+     * <p>Allows you to specify a time range (in percentage) in your media file, during
+     * which you want to search for an interruption. See for more detail.</p>
      */
     inline InterruptionFilter& WithRelativeTimeRange(RelativeTimeRange&& value) { SetRelativeTimeRange(std::move(value)); return *this;}
 
 
     /**
-     * <p>Set to <code>TRUE</code> to look for a time period where there was no
-     * interruption.</p>
+     * <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions.
+     * Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
      */
     inline bool GetNegate() const{ return m_negate; }
 
     /**
-     * <p>Set to <code>TRUE</code> to look for a time period where there was no
-     * interruption.</p>
+     * <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions.
+     * Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
      */
     inline bool NegateHasBeenSet() const { return m_negateHasBeenSet; }
 
     /**
-     * <p>Set to <code>TRUE</code> to look for a time period where there was no
-     * interruption.</p>
+     * <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions.
+     * Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
      */
     inline void SetNegate(bool value) { m_negateHasBeenSet = true; m_negate = value; }
 
     /**
-     * <p>Set to <code>TRUE</code> to look for a time period where there was no
-     * interruption.</p>
+     * <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions.
+     * Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
      */
     inline InterruptionFilter& WithNegate(bool value) { SetNegate(value); return *this;}
 
   private:
 
     long long m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     ParticipantRole m_participantRole;
-    bool m_participantRoleHasBeenSet;
+    bool m_participantRoleHasBeenSet = false;
 
     AbsoluteTimeRange m_absoluteTimeRange;
-    bool m_absoluteTimeRangeHasBeenSet;
+    bool m_absoluteTimeRangeHasBeenSet = false;
 
     RelativeTimeRange m_relativeTimeRange;
-    bool m_relativeTimeRangeHasBeenSet;
+    bool m_relativeTimeRangeHasBeenSet = false;
 
     bool m_negate;
-    bool m_negateHasBeenSet;
+    bool m_negateHasBeenSet = false;
   };
 
 } // namespace Model

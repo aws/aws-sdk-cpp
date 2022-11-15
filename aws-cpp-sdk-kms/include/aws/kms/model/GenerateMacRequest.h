@@ -316,16 +316,16 @@ namespace Model
   private:
 
     Aws::Utils::CryptoBuffer m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     MacAlgorithmSpec m_macAlgorithm;
-    bool m_macAlgorithmHasBeenSet;
+    bool m_macAlgorithmHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
-    bool m_grantTokensHasBeenSet;
+    bool m_grantTokensHasBeenSet = false;
   };
 
 } // namespace Model

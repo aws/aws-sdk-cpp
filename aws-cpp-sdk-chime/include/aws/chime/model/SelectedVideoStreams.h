@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_attendeeIds;
-    bool m_attendeeIdsHasBeenSet;
+    bool m_attendeeIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_externalUserIds;
-    bool m_externalUserIdsHasBeenSet;
+    bool m_externalUserIdsHasBeenSet = false;
   };
 
 } // namespace Model

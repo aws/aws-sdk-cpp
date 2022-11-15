@@ -31,7 +31,7 @@ Aws::String DescribeContainerInstancesRequest::SerializePayload() const
 
   if(m_containerInstancesHasBeenSet)
   {
-   Array<JsonValue> containerInstancesJsonList(m_containerInstances.size());
+   Aws::Utils::Array<JsonValue> containerInstancesJsonList(m_containerInstances.size());
    for(unsigned containerInstancesIndex = 0; containerInstancesIndex < containerInstancesJsonList.GetLength(); ++containerInstancesIndex)
    {
      containerInstancesJsonList[containerInstancesIndex].AsString(m_containerInstances[containerInstancesIndex]);
@@ -42,7 +42,7 @@ Aws::String DescribeContainerInstancesRequest::SerializePayload() const
 
   if(m_includeHasBeenSet)
   {
-   Array<JsonValue> includeJsonList(m_include.size());
+   Aws::Utils::Array<JsonValue> includeJsonList(m_include.size());
    for(unsigned includeIndex = 0; includeIndex < includeJsonList.GetLength(); ++includeIndex)
    {
      includeJsonList[includeIndex].AsString(ContainerInstanceFieldMapper::GetNameForContainerInstanceField(m_include[includeIndex]));

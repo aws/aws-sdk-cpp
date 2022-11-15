@@ -30,7 +30,7 @@ DescribeLogStreamsResult& DescribeLogStreamsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("logStreams"))
   {
-    Array<JsonView> logStreamsJsonList = jsonValue.GetArray("logStreams");
+    Aws::Utils::Array<JsonView> logStreamsJsonList = jsonValue.GetArray("logStreams");
     for(unsigned logStreamsIndex = 0; logStreamsIndex < logStreamsJsonList.GetLength(); ++logStreamsIndex)
     {
       m_logStreams.push_back(logStreamsJsonList[logStreamsIndex].AsObject());

@@ -286,16 +286,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_userIds;
-    bool m_userIdsHasBeenSet;
+    bool m_userIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userGroups;
-    bool m_userGroupsHasBeenSet;
+    bool m_userGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationArns;
-    bool m_organizationArnsHasBeenSet;
+    bool m_organizationArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnitArns;
-    bool m_organizationalUnitArnsHasBeenSet;
+    bool m_organizationalUnitArnsHasBeenSet = false;
   };
 
 } // namespace Model

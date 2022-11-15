@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_archiveName;
-    bool m_archiveNameHasBeenSet;
+    bool m_archiveNameHasBeenSet = false;
   };
 
 } // namespace Model

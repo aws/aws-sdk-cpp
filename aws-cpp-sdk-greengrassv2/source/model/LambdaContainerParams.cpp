@@ -57,7 +57,7 @@ LambdaContainerParams& LambdaContainerParams::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("volumes"))
   {
-    Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
+    Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
     for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
     {
       m_volumes.push_back(volumesJsonList[volumesIndex].AsObject());
@@ -67,7 +67,7 @@ LambdaContainerParams& LambdaContainerParams::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("devices"))
   {
-    Array<JsonView> devicesJsonList = jsonValue.GetArray("devices");
+    Aws::Utils::Array<JsonView> devicesJsonList = jsonValue.GetArray("devices");
     for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
     {
       m_devices.push_back(devicesJsonList[devicesIndex].AsObject());
@@ -96,7 +96,7 @@ JsonValue LambdaContainerParams::Jsonize() const
 
   if(m_volumesHasBeenSet)
   {
-   Array<JsonValue> volumesJsonList(m_volumes.size());
+   Aws::Utils::Array<JsonValue> volumesJsonList(m_volumes.size());
    for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
    {
      volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());
@@ -107,7 +107,7 @@ JsonValue LambdaContainerParams::Jsonize() const
 
   if(m_devicesHasBeenSet)
   {
-   Array<JsonValue> devicesJsonList(m_devices.size());
+   Aws::Utils::Array<JsonValue> devicesJsonList(m_devices.size());
    for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
    {
      devicesJsonList[devicesIndex].AsObject(m_devices[devicesIndex].Jsonize());

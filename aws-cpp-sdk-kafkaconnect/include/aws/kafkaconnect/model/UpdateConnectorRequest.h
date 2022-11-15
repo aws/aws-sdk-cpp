@@ -154,13 +154,13 @@ namespace Model
   private:
 
     CapacityUpdate m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
 
     Aws::String m_connectorArn;
-    bool m_connectorArnHasBeenSet;
+    bool m_connectorArnHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
   };
 
 } // namespace Model

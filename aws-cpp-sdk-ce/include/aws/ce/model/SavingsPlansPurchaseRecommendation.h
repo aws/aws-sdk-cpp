@@ -169,111 +169,111 @@ namespace Model
 
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline const PaymentOption& GetPaymentOption() const{ return m_paymentOption; }
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithPaymentOption(const PaymentOption& value) { SetPaymentOption(value); return *this;}
 
     /**
-     * <p>The payment option used to generate the recommendation.</p>
+     * <p>The payment option that's used to generate the recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
 
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline const LookbackPeriodInDays& GetLookbackPeriodInDays() const{ return m_lookbackPeriodInDays; }
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(const LookbackPeriodInDays& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(LookbackPeriodInDays&& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = std::move(value); }
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithLookbackPeriodInDays(const LookbackPeriodInDays& value) { SetLookbackPeriodInDays(value); return *this;}
 
     /**
-     * <p>The lookback period in days, used to generate the recommendation.</p>
+     * <p>The lookback period in days that's used to generate the recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithLookbackPeriodInDays(LookbackPeriodInDays&& value) { SetLookbackPeriodInDays(std::move(value)); return *this;}
 
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline const Aws::Vector<SavingsPlansPurchaseRecommendationDetail>& GetSavingsPlansPurchaseRecommendationDetails() const{ return m_savingsPlansPurchaseRecommendationDetails; }
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline bool SavingsPlansPurchaseRecommendationDetailsHasBeenSet() const { return m_savingsPlansPurchaseRecommendationDetailsHasBeenSet; }
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline void SetSavingsPlansPurchaseRecommendationDetails(const Aws::Vector<SavingsPlansPurchaseRecommendationDetail>& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails = value; }
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline void SetSavingsPlansPurchaseRecommendationDetails(Aws::Vector<SavingsPlansPurchaseRecommendationDetail>&& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails = std::move(value); }
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithSavingsPlansPurchaseRecommendationDetails(const Aws::Vector<SavingsPlansPurchaseRecommendationDetail>& value) { SetSavingsPlansPurchaseRecommendationDetails(value); return *this;}
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithSavingsPlansPurchaseRecommendationDetails(Aws::Vector<SavingsPlansPurchaseRecommendationDetail>&& value) { SetSavingsPlansPurchaseRecommendationDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& AddSavingsPlansPurchaseRecommendationDetails(const SavingsPlansPurchaseRecommendationDetail& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails.push_back(value); return *this; }
 
     /**
-     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * <p>Details for the Savings Plans that we recommend that you purchase to cover
      * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& AddSavingsPlansPurchaseRecommendationDetails(SavingsPlansPurchaseRecommendationDetail&& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails.push_back(std::move(value)); return *this; }
@@ -312,25 +312,25 @@ namespace Model
   private:
 
     AccountScope m_accountScope;
-    bool m_accountScopeHasBeenSet;
+    bool m_accountScopeHasBeenSet = false;
 
     SupportedSavingsPlansType m_savingsPlansType;
-    bool m_savingsPlansTypeHasBeenSet;
+    bool m_savingsPlansTypeHasBeenSet = false;
 
     TermInYears m_termInYears;
-    bool m_termInYearsHasBeenSet;
+    bool m_termInYearsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     LookbackPeriodInDays m_lookbackPeriodInDays;
-    bool m_lookbackPeriodInDaysHasBeenSet;
+    bool m_lookbackPeriodInDaysHasBeenSet = false;
 
     Aws::Vector<SavingsPlansPurchaseRecommendationDetail> m_savingsPlansPurchaseRecommendationDetails;
-    bool m_savingsPlansPurchaseRecommendationDetailsHasBeenSet;
+    bool m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = false;
 
     SavingsPlansPurchaseRecommendationSummary m_savingsPlansPurchaseRecommendationSummary;
-    bool m_savingsPlansPurchaseRecommendationSummaryHasBeenSet;
+    bool m_savingsPlansPurchaseRecommendationSummaryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     TypedAttributeValueRange m_range;
-    bool m_rangeHasBeenSet;
+    bool m_rangeHasBeenSet = false;
   };
 
 } // namespace Model

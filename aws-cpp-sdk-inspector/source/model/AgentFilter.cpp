@@ -35,7 +35,7 @@ AgentFilter& AgentFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("agentHealths"))
   {
-    Array<JsonView> agentHealthsJsonList = jsonValue.GetArray("agentHealths");
+    Aws::Utils::Array<JsonView> agentHealthsJsonList = jsonValue.GetArray("agentHealths");
     for(unsigned agentHealthsIndex = 0; agentHealthsIndex < agentHealthsJsonList.GetLength(); ++agentHealthsIndex)
     {
       m_agentHealths.push_back(AgentHealthMapper::GetAgentHealthForName(agentHealthsJsonList[agentHealthsIndex].AsString()));
@@ -45,7 +45,7 @@ AgentFilter& AgentFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("agentHealthCodes"))
   {
-    Array<JsonView> agentHealthCodesJsonList = jsonValue.GetArray("agentHealthCodes");
+    Aws::Utils::Array<JsonView> agentHealthCodesJsonList = jsonValue.GetArray("agentHealthCodes");
     for(unsigned agentHealthCodesIndex = 0; agentHealthCodesIndex < agentHealthCodesJsonList.GetLength(); ++agentHealthCodesIndex)
     {
       m_agentHealthCodes.push_back(AgentHealthCodeMapper::GetAgentHealthCodeForName(agentHealthCodesJsonList[agentHealthCodesIndex].AsString()));
@@ -62,7 +62,7 @@ JsonValue AgentFilter::Jsonize() const
 
   if(m_agentHealthsHasBeenSet)
   {
-   Array<JsonValue> agentHealthsJsonList(m_agentHealths.size());
+   Aws::Utils::Array<JsonValue> agentHealthsJsonList(m_agentHealths.size());
    for(unsigned agentHealthsIndex = 0; agentHealthsIndex < agentHealthsJsonList.GetLength(); ++agentHealthsIndex)
    {
      agentHealthsJsonList[agentHealthsIndex].AsString(AgentHealthMapper::GetNameForAgentHealth(m_agentHealths[agentHealthsIndex]));
@@ -73,7 +73,7 @@ JsonValue AgentFilter::Jsonize() const
 
   if(m_agentHealthCodesHasBeenSet)
   {
-   Array<JsonValue> agentHealthCodesJsonList(m_agentHealthCodes.size());
+   Aws::Utils::Array<JsonValue> agentHealthCodesJsonList(m_agentHealthCodes.size());
    for(unsigned agentHealthCodesIndex = 0; agentHealthCodesIndex < agentHealthCodesJsonList.GetLength(); ++agentHealthCodesIndex)
    {
      agentHealthCodesJsonList[agentHealthCodesIndex].AsString(AgentHealthCodeMapper::GetNameForAgentHealthCode(m_agentHealthCodes[agentHealthCodesIndex]));

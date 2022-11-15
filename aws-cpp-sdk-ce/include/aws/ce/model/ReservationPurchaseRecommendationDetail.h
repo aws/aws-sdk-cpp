@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The account that this RI recommendation is for.</p>
+     * <p>The account that this Reserved Instance (RI) recommendation is for.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The account that this RI recommendation is for.</p>
+     * <p>The account that this Reserved Instance (RI) recommendation is for.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The account that this RI recommendation is for.</p>
+     * <p>The account that this Reserved Instance (RI) recommendation is for.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The account that this RI recommendation is for.</p>
+     * <p>The account that this Reserved Instance (RI) recommendation is for.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The account that this RI recommendation is for.</p>
+     * <p>The account that this Reserved Instance (RI) recommendation is for.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The account that this RI recommendation is for.</p>
+     * <p>The account that this Reserved Instance (RI) recommendation is for.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The account that this RI recommendation is for.</p>
+     * <p>The account that this Reserved Instance (RI) recommendation is for.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The account that this RI recommendation is for.</p>
+     * <p>The account that this Reserved Instance (RI) recommendation is for.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -706,98 +706,98 @@ namespace Model
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month.</p>
+     * might save you in a month.</p>
      */
     inline const Aws::String& GetEstimatedMonthlySavingsAmount() const{ return m_estimatedMonthlySavingsAmount; }
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month.</p>
+     * might save you in a month.</p>
      */
     inline bool EstimatedMonthlySavingsAmountHasBeenSet() const { return m_estimatedMonthlySavingsAmountHasBeenSet; }
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month.</p>
+     * might save you in a month.</p>
      */
     inline void SetEstimatedMonthlySavingsAmount(const Aws::String& value) { m_estimatedMonthlySavingsAmountHasBeenSet = true; m_estimatedMonthlySavingsAmount = value; }
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month.</p>
+     * might save you in a month.</p>
      */
     inline void SetEstimatedMonthlySavingsAmount(Aws::String&& value) { m_estimatedMonthlySavingsAmountHasBeenSet = true; m_estimatedMonthlySavingsAmount = std::move(value); }
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month.</p>
+     * might save you in a month.</p>
      */
     inline void SetEstimatedMonthlySavingsAmount(const char* value) { m_estimatedMonthlySavingsAmountHasBeenSet = true; m_estimatedMonthlySavingsAmount.assign(value); }
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month.</p>
+     * might save you in a month.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsAmount(const Aws::String& value) { SetEstimatedMonthlySavingsAmount(value); return *this;}
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month.</p>
+     * might save you in a month.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsAmount(Aws::String&& value) { SetEstimatedMonthlySavingsAmount(std::move(value)); return *this;}
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month.</p>
+     * might save you in a month.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsAmount(const char* value) { SetEstimatedMonthlySavingsAmount(value); return *this;}
 
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month, as a percentage of your overall costs.</p>
+     * might save you in a month, as a percentage of your overall costs.</p>
      */
     inline const Aws::String& GetEstimatedMonthlySavingsPercentage() const{ return m_estimatedMonthlySavingsPercentage; }
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month, as a percentage of your overall costs.</p>
+     * might save you in a month, as a percentage of your overall costs.</p>
      */
     inline bool EstimatedMonthlySavingsPercentageHasBeenSet() const { return m_estimatedMonthlySavingsPercentageHasBeenSet; }
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month, as a percentage of your overall costs.</p>
+     * might save you in a month, as a percentage of your overall costs.</p>
      */
     inline void SetEstimatedMonthlySavingsPercentage(const Aws::String& value) { m_estimatedMonthlySavingsPercentageHasBeenSet = true; m_estimatedMonthlySavingsPercentage = value; }
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month, as a percentage of your overall costs.</p>
+     * might save you in a month, as a percentage of your overall costs.</p>
      */
     inline void SetEstimatedMonthlySavingsPercentage(Aws::String&& value) { m_estimatedMonthlySavingsPercentageHasBeenSet = true; m_estimatedMonthlySavingsPercentage = std::move(value); }
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month, as a percentage of your overall costs.</p>
+     * might save you in a month, as a percentage of your overall costs.</p>
      */
     inline void SetEstimatedMonthlySavingsPercentage(const char* value) { m_estimatedMonthlySavingsPercentageHasBeenSet = true; m_estimatedMonthlySavingsPercentage.assign(value); }
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month, as a percentage of your overall costs.</p>
+     * might save you in a month, as a percentage of your overall costs.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsPercentage(const Aws::String& value) { SetEstimatedMonthlySavingsPercentage(value); return *this;}
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month, as a percentage of your overall costs.</p>
+     * might save you in a month, as a percentage of your overall costs.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsPercentage(Aws::String&& value) { SetEstimatedMonthlySavingsPercentage(std::move(value)); return *this;}
 
     /**
      * <p>How much Amazon Web Services estimates that this specific recommendation
-     * could save you in a month, as a percentage of your overall costs.</p>
+     * might save you in a month, as a percentage of your overall costs.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsPercentage(const char* value) { SetEstimatedMonthlySavingsPercentage(value); return *this;}
 
@@ -852,50 +852,50 @@ namespace Model
 
 
     /**
-     * <p>How much Amazon Web Services estimates that you would have spent for all
-     * usage during the specified historical period if you had a reservation.</p>
+     * <p>How much Amazon Web Services estimates that you might spend for all usage
+     * during the specified historical period if you had a reservation.</p>
      */
     inline const Aws::String& GetEstimatedReservationCostForLookbackPeriod() const{ return m_estimatedReservationCostForLookbackPeriod; }
 
     /**
-     * <p>How much Amazon Web Services estimates that you would have spent for all
-     * usage during the specified historical period if you had a reservation.</p>
+     * <p>How much Amazon Web Services estimates that you might spend for all usage
+     * during the specified historical period if you had a reservation.</p>
      */
     inline bool EstimatedReservationCostForLookbackPeriodHasBeenSet() const { return m_estimatedReservationCostForLookbackPeriodHasBeenSet; }
 
     /**
-     * <p>How much Amazon Web Services estimates that you would have spent for all
-     * usage during the specified historical period if you had a reservation.</p>
+     * <p>How much Amazon Web Services estimates that you might spend for all usage
+     * during the specified historical period if you had a reservation.</p>
      */
     inline void SetEstimatedReservationCostForLookbackPeriod(const Aws::String& value) { m_estimatedReservationCostForLookbackPeriodHasBeenSet = true; m_estimatedReservationCostForLookbackPeriod = value; }
 
     /**
-     * <p>How much Amazon Web Services estimates that you would have spent for all
-     * usage during the specified historical period if you had a reservation.</p>
+     * <p>How much Amazon Web Services estimates that you might spend for all usage
+     * during the specified historical period if you had a reservation.</p>
      */
     inline void SetEstimatedReservationCostForLookbackPeriod(Aws::String&& value) { m_estimatedReservationCostForLookbackPeriodHasBeenSet = true; m_estimatedReservationCostForLookbackPeriod = std::move(value); }
 
     /**
-     * <p>How much Amazon Web Services estimates that you would have spent for all
-     * usage during the specified historical period if you had a reservation.</p>
+     * <p>How much Amazon Web Services estimates that you might spend for all usage
+     * during the specified historical period if you had a reservation.</p>
      */
     inline void SetEstimatedReservationCostForLookbackPeriod(const char* value) { m_estimatedReservationCostForLookbackPeriodHasBeenSet = true; m_estimatedReservationCostForLookbackPeriod.assign(value); }
 
     /**
-     * <p>How much Amazon Web Services estimates that you would have spent for all
-     * usage during the specified historical period if you had a reservation.</p>
+     * <p>How much Amazon Web Services estimates that you might spend for all usage
+     * during the specified historical period if you had a reservation.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedReservationCostForLookbackPeriod(const Aws::String& value) { SetEstimatedReservationCostForLookbackPeriod(value); return *this;}
 
     /**
-     * <p>How much Amazon Web Services estimates that you would have spent for all
-     * usage during the specified historical period if you had a reservation.</p>
+     * <p>How much Amazon Web Services estimates that you might spend for all usage
+     * during the specified historical period if you had a reservation.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedReservationCostForLookbackPeriod(Aws::String&& value) { SetEstimatedReservationCostForLookbackPeriod(std::move(value)); return *this;}
 
     /**
-     * <p>How much Amazon Web Services estimates that you would have spent for all
-     * usage during the specified historical period if you had a reservation.</p>
+     * <p>How much Amazon Web Services estimates that you might spend for all usage
+     * during the specified historical period if you had a reservation.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedReservationCostForLookbackPeriod(const char* value) { SetEstimatedReservationCostForLookbackPeriod(value); return *this;}
 
@@ -984,61 +984,61 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     InstanceDetails m_instanceDetails;
-    bool m_instanceDetailsHasBeenSet;
+    bool m_instanceDetailsHasBeenSet = false;
 
     Aws::String m_recommendedNumberOfInstancesToPurchase;
-    bool m_recommendedNumberOfInstancesToPurchaseHasBeenSet;
+    bool m_recommendedNumberOfInstancesToPurchaseHasBeenSet = false;
 
     Aws::String m_recommendedNormalizedUnitsToPurchase;
-    bool m_recommendedNormalizedUnitsToPurchaseHasBeenSet;
+    bool m_recommendedNormalizedUnitsToPurchaseHasBeenSet = false;
 
     Aws::String m_minimumNumberOfInstancesUsedPerHour;
-    bool m_minimumNumberOfInstancesUsedPerHourHasBeenSet;
+    bool m_minimumNumberOfInstancesUsedPerHourHasBeenSet = false;
 
     Aws::String m_minimumNormalizedUnitsUsedPerHour;
-    bool m_minimumNormalizedUnitsUsedPerHourHasBeenSet;
+    bool m_minimumNormalizedUnitsUsedPerHourHasBeenSet = false;
 
     Aws::String m_maximumNumberOfInstancesUsedPerHour;
-    bool m_maximumNumberOfInstancesUsedPerHourHasBeenSet;
+    bool m_maximumNumberOfInstancesUsedPerHourHasBeenSet = false;
 
     Aws::String m_maximumNormalizedUnitsUsedPerHour;
-    bool m_maximumNormalizedUnitsUsedPerHourHasBeenSet;
+    bool m_maximumNormalizedUnitsUsedPerHourHasBeenSet = false;
 
     Aws::String m_averageNumberOfInstancesUsedPerHour;
-    bool m_averageNumberOfInstancesUsedPerHourHasBeenSet;
+    bool m_averageNumberOfInstancesUsedPerHourHasBeenSet = false;
 
     Aws::String m_averageNormalizedUnitsUsedPerHour;
-    bool m_averageNormalizedUnitsUsedPerHourHasBeenSet;
+    bool m_averageNormalizedUnitsUsedPerHourHasBeenSet = false;
 
     Aws::String m_averageUtilization;
-    bool m_averageUtilizationHasBeenSet;
+    bool m_averageUtilizationHasBeenSet = false;
 
     Aws::String m_estimatedBreakEvenInMonths;
-    bool m_estimatedBreakEvenInMonthsHasBeenSet;
+    bool m_estimatedBreakEvenInMonthsHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     Aws::String m_estimatedMonthlySavingsAmount;
-    bool m_estimatedMonthlySavingsAmountHasBeenSet;
+    bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
 
     Aws::String m_estimatedMonthlySavingsPercentage;
-    bool m_estimatedMonthlySavingsPercentageHasBeenSet;
+    bool m_estimatedMonthlySavingsPercentageHasBeenSet = false;
 
     Aws::String m_estimatedMonthlyOnDemandCost;
-    bool m_estimatedMonthlyOnDemandCostHasBeenSet;
+    bool m_estimatedMonthlyOnDemandCostHasBeenSet = false;
 
     Aws::String m_estimatedReservationCostForLookbackPeriod;
-    bool m_estimatedReservationCostForLookbackPeriodHasBeenSet;
+    bool m_estimatedReservationCostForLookbackPeriodHasBeenSet = false;
 
     Aws::String m_upfrontCost;
-    bool m_upfrontCostHasBeenSet;
+    bool m_upfrontCostHasBeenSet = false;
 
     Aws::String m_recurringStandardMonthlyCost;
-    bool m_recurringStandardMonthlyCostHasBeenSet;
+    bool m_recurringStandardMonthlyCostHasBeenSet = false;
   };
 
 } // namespace Model

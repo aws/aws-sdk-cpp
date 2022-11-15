@@ -71,7 +71,7 @@ DocumentClassifierInputDataConfig& DocumentClassifierInputDataConfig::operator =
 
   if(jsonValue.ValueExists("AugmentedManifests"))
   {
-    Array<JsonView> augmentedManifestsJsonList = jsonValue.GetArray("AugmentedManifests");
+    Aws::Utils::Array<JsonView> augmentedManifestsJsonList = jsonValue.GetArray("AugmentedManifests");
     for(unsigned augmentedManifestsIndex = 0; augmentedManifestsIndex < augmentedManifestsJsonList.GetLength(); ++augmentedManifestsIndex)
     {
       m_augmentedManifests.push_back(augmentedManifestsJsonList[augmentedManifestsIndex].AsObject());
@@ -111,7 +111,7 @@ JsonValue DocumentClassifierInputDataConfig::Jsonize() const
 
   if(m_augmentedManifestsHasBeenSet)
   {
-   Array<JsonValue> augmentedManifestsJsonList(m_augmentedManifests.size());
+   Aws::Utils::Array<JsonValue> augmentedManifestsJsonList(m_augmentedManifests.size());
    for(unsigned augmentedManifestsIndex = 0; augmentedManifestsIndex < augmentedManifestsJsonList.GetLength(); ++augmentedManifestsIndex)
    {
      augmentedManifestsJsonList[augmentedManifestsIndex].AsObject(m_augmentedManifests[augmentedManifestsIndex].Jsonize());

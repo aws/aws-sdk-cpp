@@ -37,57 +37,81 @@ namespace Model
 
 
     /**
-     * <p>A unique name, chosen by you, for your call analytics category. For example,
-     * <code>sentiment-positive-last30seconds</code>.</p>
+     * <p>A unique name, chosen by you, for your Call Analytics category. It's helpful
+     * to use a detailed naming system that will make sense to you in the future. For
+     * example, it's better to use <code>sentiment-positive-last30seconds</code> for a
+     * category over a generic name like <code>test-category</code>.</p> <p>Category
+     * names are case sensitive.</p>
      */
     inline const Aws::String& GetCategoryName() const{ return m_categoryName; }
 
     /**
-     * <p>A unique name, chosen by you, for your call analytics category. For example,
-     * <code>sentiment-positive-last30seconds</code>.</p>
+     * <p>A unique name, chosen by you, for your Call Analytics category. It's helpful
+     * to use a detailed naming system that will make sense to you in the future. For
+     * example, it's better to use <code>sentiment-positive-last30seconds</code> for a
+     * category over a generic name like <code>test-category</code>.</p> <p>Category
+     * names are case sensitive.</p>
      */
     inline bool CategoryNameHasBeenSet() const { return m_categoryNameHasBeenSet; }
 
     /**
-     * <p>A unique name, chosen by you, for your call analytics category. For example,
-     * <code>sentiment-positive-last30seconds</code>.</p>
+     * <p>A unique name, chosen by you, for your Call Analytics category. It's helpful
+     * to use a detailed naming system that will make sense to you in the future. For
+     * example, it's better to use <code>sentiment-positive-last30seconds</code> for a
+     * category over a generic name like <code>test-category</code>.</p> <p>Category
+     * names are case sensitive.</p>
      */
     inline void SetCategoryName(const Aws::String& value) { m_categoryNameHasBeenSet = true; m_categoryName = value; }
 
     /**
-     * <p>A unique name, chosen by you, for your call analytics category. For example,
-     * <code>sentiment-positive-last30seconds</code>.</p>
+     * <p>A unique name, chosen by you, for your Call Analytics category. It's helpful
+     * to use a detailed naming system that will make sense to you in the future. For
+     * example, it's better to use <code>sentiment-positive-last30seconds</code> for a
+     * category over a generic name like <code>test-category</code>.</p> <p>Category
+     * names are case sensitive.</p>
      */
     inline void SetCategoryName(Aws::String&& value) { m_categoryNameHasBeenSet = true; m_categoryName = std::move(value); }
 
     /**
-     * <p>A unique name, chosen by you, for your call analytics category. For example,
-     * <code>sentiment-positive-last30seconds</code>.</p>
+     * <p>A unique name, chosen by you, for your Call Analytics category. It's helpful
+     * to use a detailed naming system that will make sense to you in the future. For
+     * example, it's better to use <code>sentiment-positive-last30seconds</code> for a
+     * category over a generic name like <code>test-category</code>.</p> <p>Category
+     * names are case sensitive.</p>
      */
     inline void SetCategoryName(const char* value) { m_categoryNameHasBeenSet = true; m_categoryName.assign(value); }
 
     /**
-     * <p>A unique name, chosen by you, for your call analytics category. For example,
-     * <code>sentiment-positive-last30seconds</code>.</p>
+     * <p>A unique name, chosen by you, for your Call Analytics category. It's helpful
+     * to use a detailed naming system that will make sense to you in the future. For
+     * example, it's better to use <code>sentiment-positive-last30seconds</code> for a
+     * category over a generic name like <code>test-category</code>.</p> <p>Category
+     * names are case sensitive.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& WithCategoryName(const Aws::String& value) { SetCategoryName(value); return *this;}
 
     /**
-     * <p>A unique name, chosen by you, for your call analytics category. For example,
-     * <code>sentiment-positive-last30seconds</code>.</p>
+     * <p>A unique name, chosen by you, for your Call Analytics category. It's helpful
+     * to use a detailed naming system that will make sense to you in the future. For
+     * example, it's better to use <code>sentiment-positive-last30seconds</code> for a
+     * category over a generic name like <code>test-category</code>.</p> <p>Category
+     * names are case sensitive.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& WithCategoryName(Aws::String&& value) { SetCategoryName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique name, chosen by you, for your call analytics category. For example,
-     * <code>sentiment-positive-last30seconds</code>.</p>
+     * <p>A unique name, chosen by you, for your Call Analytics category. It's helpful
+     * to use a detailed naming system that will make sense to you in the future. For
+     * example, it's better to use <code>sentiment-positive-last30seconds</code> for a
+     * category over a generic name like <code>test-category</code>.</p> <p>Category
+     * names are case sensitive.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& WithCategoryName(const char* value) { SetCategoryName(value); return *this;}
 
 
     /**
-     * <p>Rules make up a call analytics category. When creating a call analytics
-     * category, you must create between 1 and 20 rules for your category. For each
+     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
+     * category, you must create between 1 and 20 rules for that category. For each
      * rule, you specify a filter you want applied to the attributes of a call. For
      * example, you can choose a sentiment filter that detects if a customer's
      * sentiment was positive during the last 30 seconds of the call.</p>
@@ -95,8 +119,8 @@ namespace Model
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
     /**
-     * <p>Rules make up a call analytics category. When creating a call analytics
-     * category, you must create between 1 and 20 rules for your category. For each
+     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
+     * category, you must create between 1 and 20 rules for that category. For each
      * rule, you specify a filter you want applied to the attributes of a call. For
      * example, you can choose a sentiment filter that detects if a customer's
      * sentiment was positive during the last 30 seconds of the call.</p>
@@ -104,8 +128,8 @@ namespace Model
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
-     * <p>Rules make up a call analytics category. When creating a call analytics
-     * category, you must create between 1 and 20 rules for your category. For each
+     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
+     * category, you must create between 1 and 20 rules for that category. For each
      * rule, you specify a filter you want applied to the attributes of a call. For
      * example, you can choose a sentiment filter that detects if a customer's
      * sentiment was positive during the last 30 seconds of the call.</p>
@@ -113,8 +137,8 @@ namespace Model
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
-     * <p>Rules make up a call analytics category. When creating a call analytics
-     * category, you must create between 1 and 20 rules for your category. For each
+     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
+     * category, you must create between 1 and 20 rules for that category. For each
      * rule, you specify a filter you want applied to the attributes of a call. For
      * example, you can choose a sentiment filter that detects if a customer's
      * sentiment was positive during the last 30 seconds of the call.</p>
@@ -122,8 +146,8 @@ namespace Model
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
-     * <p>Rules make up a call analytics category. When creating a call analytics
-     * category, you must create between 1 and 20 rules for your category. For each
+     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
+     * category, you must create between 1 and 20 rules for that category. For each
      * rule, you specify a filter you want applied to the attributes of a call. For
      * example, you can choose a sentiment filter that detects if a customer's
      * sentiment was positive during the last 30 seconds of the call.</p>
@@ -131,8 +155,8 @@ namespace Model
     inline CreateCallAnalyticsCategoryRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
 
     /**
-     * <p>Rules make up a call analytics category. When creating a call analytics
-     * category, you must create between 1 and 20 rules for your category. For each
+     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
+     * category, you must create between 1 and 20 rules for that category. For each
      * rule, you specify a filter you want applied to the attributes of a call. For
      * example, you can choose a sentiment filter that detects if a customer's
      * sentiment was positive during the last 30 seconds of the call.</p>
@@ -140,8 +164,8 @@ namespace Model
     inline CreateCallAnalyticsCategoryRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * <p>Rules make up a call analytics category. When creating a call analytics
-     * category, you must create between 1 and 20 rules for your category. For each
+     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
+     * category, you must create between 1 and 20 rules for that category. For each
      * rule, you specify a filter you want applied to the attributes of a call. For
      * example, you can choose a sentiment filter that detects if a customer's
      * sentiment was positive during the last 30 seconds of the call.</p>
@@ -149,8 +173,8 @@ namespace Model
     inline CreateCallAnalyticsCategoryRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
-     * <p>Rules make up a call analytics category. When creating a call analytics
-     * category, you must create between 1 and 20 rules for your category. For each
+     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
+     * category, you must create between 1 and 20 rules for that category. For each
      * rule, you specify a filter you want applied to the attributes of a call. For
      * example, you can choose a sentiment filter that detects if a customer's
      * sentiment was positive during the last 30 seconds of the call.</p>
@@ -160,10 +184,10 @@ namespace Model
   private:
 
     Aws::String m_categoryName;
-    bool m_categoryNameHasBeenSet;
+    bool m_categoryNameHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

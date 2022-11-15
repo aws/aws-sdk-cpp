@@ -19,12 +19,14 @@ namespace Model
 {
 
 PredictionExplanations::PredictionExplanations() : 
-    m_variableImpactExplanationsHasBeenSet(false)
+    m_variableImpactExplanationsHasBeenSet(false),
+    m_aggregatedVariablesImpactExplanationsHasBeenSet(false)
 {
 }
 
 PredictionExplanations::PredictionExplanations(JsonView jsonValue) : 
-    m_variableImpactExplanationsHasBeenSet(false)
+    m_variableImpactExplanationsHasBeenSet(false),
+    m_aggregatedVariablesImpactExplanationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -33,12 +35,22 @@ PredictionExplanations& PredictionExplanations::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("variableImpactExplanations"))
   {
-    Array<JsonView> variableImpactExplanationsJsonList = jsonValue.GetArray("variableImpactExplanations");
+    Aws::Utils::Array<JsonView> variableImpactExplanationsJsonList = jsonValue.GetArray("variableImpactExplanations");
     for(unsigned variableImpactExplanationsIndex = 0; variableImpactExplanationsIndex < variableImpactExplanationsJsonList.GetLength(); ++variableImpactExplanationsIndex)
     {
       m_variableImpactExplanations.push_back(variableImpactExplanationsJsonList[variableImpactExplanationsIndex].AsObject());
     }
     m_variableImpactExplanationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("aggregatedVariablesImpactExplanations"))
+  {
+    Aws::Utils::Array<JsonView> aggregatedVariablesImpactExplanationsJsonList = jsonValue.GetArray("aggregatedVariablesImpactExplanations");
+    for(unsigned aggregatedVariablesImpactExplanationsIndex = 0; aggregatedVariablesImpactExplanationsIndex < aggregatedVariablesImpactExplanationsJsonList.GetLength(); ++aggregatedVariablesImpactExplanationsIndex)
+    {
+      m_aggregatedVariablesImpactExplanations.push_back(aggregatedVariablesImpactExplanationsJsonList[aggregatedVariablesImpactExplanationsIndex].AsObject());
+    }
+    m_aggregatedVariablesImpactExplanationsHasBeenSet = true;
   }
 
   return *this;
@@ -50,12 +62,23 @@ JsonValue PredictionExplanations::Jsonize() const
 
   if(m_variableImpactExplanationsHasBeenSet)
   {
-   Array<JsonValue> variableImpactExplanationsJsonList(m_variableImpactExplanations.size());
+   Aws::Utils::Array<JsonValue> variableImpactExplanationsJsonList(m_variableImpactExplanations.size());
    for(unsigned variableImpactExplanationsIndex = 0; variableImpactExplanationsIndex < variableImpactExplanationsJsonList.GetLength(); ++variableImpactExplanationsIndex)
    {
      variableImpactExplanationsJsonList[variableImpactExplanationsIndex].AsObject(m_variableImpactExplanations[variableImpactExplanationsIndex].Jsonize());
    }
    payload.WithArray("variableImpactExplanations", std::move(variableImpactExplanationsJsonList));
+
+  }
+
+  if(m_aggregatedVariablesImpactExplanationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> aggregatedVariablesImpactExplanationsJsonList(m_aggregatedVariablesImpactExplanations.size());
+   for(unsigned aggregatedVariablesImpactExplanationsIndex = 0; aggregatedVariablesImpactExplanationsIndex < aggregatedVariablesImpactExplanationsJsonList.GetLength(); ++aggregatedVariablesImpactExplanationsIndex)
+   {
+     aggregatedVariablesImpactExplanationsJsonList[aggregatedVariablesImpactExplanationsIndex].AsObject(m_aggregatedVariablesImpactExplanations[aggregatedVariablesImpactExplanationsIndex].Jsonize());
+   }
+   payload.WithArray("aggregatedVariablesImpactExplanations", std::move(aggregatedVariablesImpactExplanationsJsonList));
 
   }
 

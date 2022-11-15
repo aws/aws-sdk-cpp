@@ -323,25 +323,25 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     UsageLimitFeatureType m_featureType;
-    bool m_featureTypeHasBeenSet;
+    bool m_featureTypeHasBeenSet = false;
 
     UsageLimitLimitType m_limitType;
-    bool m_limitTypeHasBeenSet;
+    bool m_limitTypeHasBeenSet = false;
 
     long long m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     UsageLimitPeriod m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     UsageLimitBreachAction m_breachAction;
-    bool m_breachActionHasBeenSet;
+    bool m_breachActionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_serverGroupId;
-    bool m_serverGroupIdHasBeenSet;
+    bool m_serverGroupIdHasBeenSet = false;
 
     int m_launchOrder;
-    bool m_launchOrderHasBeenSet;
+    bool m_launchOrderHasBeenSet = false;
 
     Aws::Vector<ServerLaunchConfiguration> m_serverLaunchConfigurations;
-    bool m_serverLaunchConfigurationsHasBeenSet;
+    bool m_serverLaunchConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

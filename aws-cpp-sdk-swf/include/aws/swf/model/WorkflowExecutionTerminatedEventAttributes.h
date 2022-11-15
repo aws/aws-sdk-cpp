@@ -246,16 +246,16 @@ namespace Model
   private:
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     ChildPolicy m_childPolicy;
-    bool m_childPolicyHasBeenSet;
+    bool m_childPolicyHasBeenSet = false;
 
     WorkflowExecutionTerminatedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ ListComponentsResult& ListComponentsResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("componentVersionList"))
   {
-    Array<JsonView> componentVersionListJsonList = jsonValue.GetArray("componentVersionList");
+    Aws::Utils::Array<JsonView> componentVersionListJsonList = jsonValue.GetArray("componentVersionList");
     for(unsigned componentVersionListIndex = 0; componentVersionListIndex < componentVersionListJsonList.GetLength(); ++componentVersionListIndex)
     {
       m_componentVersionList.push_back(componentVersionListJsonList[componentVersionListIndex].AsObject());

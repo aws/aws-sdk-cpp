@@ -61,7 +61,7 @@ Aws::String GetDimensionValuesRequest::SerializePayload() const
 
   if(m_sortByHasBeenSet)
   {
-   Array<JsonValue> sortByJsonList(m_sortBy.size());
+   Aws::Utils::Array<JsonValue> sortByJsonList(m_sortBy.size());
    for(unsigned sortByIndex = 0; sortByIndex < sortByJsonList.GetLength(); ++sortByIndex)
    {
      sortByJsonList[sortByIndex].AsObject(m_sortBy[sortByIndex].Jsonize());

@@ -45,7 +45,7 @@ ItemCollectionMetrics& ItemCollectionMetrics::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SizeEstimateRangeGB"))
   {
-    Array<JsonView> sizeEstimateRangeGBJsonList = jsonValue.GetArray("SizeEstimateRangeGB");
+    Aws::Utils::Array<JsonView> sizeEstimateRangeGBJsonList = jsonValue.GetArray("SizeEstimateRangeGB");
     for(unsigned sizeEstimateRangeGBIndex = 0; sizeEstimateRangeGBIndex < sizeEstimateRangeGBJsonList.GetLength(); ++sizeEstimateRangeGBIndex)
     {
       m_sizeEstimateRangeGB.push_back(sizeEstimateRangeGBJsonList[sizeEstimateRangeGBIndex].AsDouble());
@@ -73,7 +73,7 @@ JsonValue ItemCollectionMetrics::Jsonize() const
 
   if(m_sizeEstimateRangeGBHasBeenSet)
   {
-   Array<JsonValue> sizeEstimateRangeGBJsonList(m_sizeEstimateRangeGB.size());
+   Aws::Utils::Array<JsonValue> sizeEstimateRangeGBJsonList(m_sizeEstimateRangeGB.size());
    for(unsigned sizeEstimateRangeGBIndex = 0; sizeEstimateRangeGBIndex < sizeEstimateRangeGBJsonList.GetLength(); ++sizeEstimateRangeGBIndex)
    {
      sizeEstimateRangeGBJsonList[sizeEstimateRangeGBIndex].AsDouble(m_sizeEstimateRangeGB[sizeEstimateRangeGBIndex]);

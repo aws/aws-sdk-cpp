@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_recommenderArn;
-    bool m_recommenderArnHasBeenSet;
+    bool m_recommenderArnHasBeenSet = false;
   };
 
 } // namespace Model

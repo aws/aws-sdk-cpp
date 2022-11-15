@@ -21,7 +21,8 @@ CreateSlotTypeRequest::CreateSlotTypeRequest() :
     m_botIdHasBeenSet(false),
     m_botVersionHasBeenSet(false),
     m_localeIdHasBeenSet(false),
-    m_externalSourceSettingHasBeenSet(false)
+    m_externalSourceSettingHasBeenSet(false),
+    m_compositeSlotTypeSettingHasBeenSet(false)
 {
 }
 
@@ -43,7 +44,7 @@ Aws::String CreateSlotTypeRequest::SerializePayload() const
 
   if(m_slotTypeValuesHasBeenSet)
   {
-   Array<JsonValue> slotTypeValuesJsonList(m_slotTypeValues.size());
+   Aws::Utils::Array<JsonValue> slotTypeValuesJsonList(m_slotTypeValues.size());
    for(unsigned slotTypeValuesIndex = 0; slotTypeValuesIndex < slotTypeValuesJsonList.GetLength(); ++slotTypeValuesIndex)
    {
      slotTypeValuesJsonList[slotTypeValuesIndex].AsObject(m_slotTypeValues[slotTypeValuesIndex].Jsonize());
@@ -67,6 +68,12 @@ Aws::String CreateSlotTypeRequest::SerializePayload() const
   if(m_externalSourceSettingHasBeenSet)
   {
    payload.WithObject("externalSourceSetting", m_externalSourceSetting.Jsonize());
+
+  }
+
+  if(m_compositeSlotTypeSettingHasBeenSet)
+  {
+   payload.WithObject("compositeSlotTypeSetting", m_compositeSlotTypeSetting.Jsonize());
 
   }
 

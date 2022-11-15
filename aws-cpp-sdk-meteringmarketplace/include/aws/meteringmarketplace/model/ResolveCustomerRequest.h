@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_registrationToken;
-    bool m_registrationTokenHasBeenSet;
+    bool m_registrationTokenHasBeenSet = false;
   };
 
 } // namespace Model

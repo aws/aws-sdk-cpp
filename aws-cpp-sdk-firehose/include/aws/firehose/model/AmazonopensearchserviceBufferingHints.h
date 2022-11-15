@@ -58,10 +58,10 @@ namespace Model
   private:
 
     int m_intervalInSeconds;
-    bool m_intervalInSecondsHasBeenSet;
+    bool m_intervalInSecondsHasBeenSet = false;
 
     int m_sizeInMBs;
-    bool m_sizeInMBsHasBeenSet;
+    bool m_sizeInMBsHasBeenSet = false;
   };
 
 } // namespace Model

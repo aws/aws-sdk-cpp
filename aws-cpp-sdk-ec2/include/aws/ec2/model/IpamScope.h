@@ -34,8 +34,9 @@ namespace Model
    * intended for all public IP address space. Scopes enable you to reuse IP
    * addresses across multiple unconnected networks without causing IP address
    * overlap or conflict.</p> <p>For more information, see <a
-   * href="/vpc/latest/ipam/how-it-works-ipam.html">How IPAM works</a> in the
-   * <i>Amazon VPC IPAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/vpc/latest/ipam/how-it-works-ipam.html">How
+   * IPAM works</a> in the <i>Amazon VPC IPAM User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpamScope">AWS API
    * Reference</a></p>
    */
@@ -475,37 +476,37 @@ namespace Model
   private:
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_ipamScopeId;
-    bool m_ipamScopeIdHasBeenSet;
+    bool m_ipamScopeIdHasBeenSet = false;
 
     Aws::String m_ipamScopeArn;
-    bool m_ipamScopeArnHasBeenSet;
+    bool m_ipamScopeArnHasBeenSet = false;
 
     Aws::String m_ipamArn;
-    bool m_ipamArnHasBeenSet;
+    bool m_ipamArnHasBeenSet = false;
 
     Aws::String m_ipamRegion;
-    bool m_ipamRegionHasBeenSet;
+    bool m_ipamRegionHasBeenSet = false;
 
     IpamScopeType m_ipamScopeType;
-    bool m_ipamScopeTypeHasBeenSet;
+    bool m_ipamScopeTypeHasBeenSet = false;
 
     bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
+    bool m_isDefaultHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_poolCount;
-    bool m_poolCountHasBeenSet;
+    bool m_poolCountHasBeenSet = false;
 
     IpamScopeState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

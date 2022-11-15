@@ -102,7 +102,7 @@ Aws::String CreateHITRequest::SerializePayload() const
 
   if(m_qualificationRequirementsHasBeenSet)
   {
-   Array<JsonValue> qualificationRequirementsJsonList(m_qualificationRequirements.size());
+   Aws::Utils::Array<JsonValue> qualificationRequirementsJsonList(m_qualificationRequirements.size());
    for(unsigned qualificationRequirementsIndex = 0; qualificationRequirementsIndex < qualificationRequirementsJsonList.GetLength(); ++qualificationRequirementsIndex)
    {
      qualificationRequirementsJsonList[qualificationRequirementsIndex].AsObject(m_qualificationRequirements[qualificationRequirementsIndex].Jsonize());
@@ -137,7 +137,7 @@ Aws::String CreateHITRequest::SerializePayload() const
 
   if(m_hITLayoutParametersHasBeenSet)
   {
-   Array<JsonValue> hITLayoutParametersJsonList(m_hITLayoutParameters.size());
+   Aws::Utils::Array<JsonValue> hITLayoutParametersJsonList(m_hITLayoutParameters.size());
    for(unsigned hITLayoutParametersIndex = 0; hITLayoutParametersIndex < hITLayoutParametersJsonList.GetLength(); ++hITLayoutParametersIndex)
    {
      hITLayoutParametersJsonList[hITLayoutParametersIndex].AsObject(m_hITLayoutParameters[hITLayoutParametersIndex].Jsonize());

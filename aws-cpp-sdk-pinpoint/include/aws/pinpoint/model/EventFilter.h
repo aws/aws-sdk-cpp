@@ -133,10 +133,10 @@ namespace Model
   private:
 
     EventDimensions m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     FilterType m_filterType;
-    bool m_filterTypeHasBeenSet;
+    bool m_filterTypeHasBeenSet = false;
   };
 
 } // namespace Model

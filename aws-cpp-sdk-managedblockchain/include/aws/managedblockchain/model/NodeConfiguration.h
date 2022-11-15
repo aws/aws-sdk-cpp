@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     NodeLogPublishingConfiguration m_logPublishingConfiguration;
-    bool m_logPublishingConfigurationHasBeenSet;
+    bool m_logPublishingConfigurationHasBeenSet = false;
 
     StateDBType m_stateDB;
-    bool m_stateDBHasBeenSet;
+    bool m_stateDBHasBeenSet = false;
   };
 
 } // namespace Model

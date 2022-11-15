@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     Aws::Vector<Record> m_records;
-    bool m_recordsHasBeenSet;
+    bool m_recordsHasBeenSet = false;
   };
 
 } // namespace Model

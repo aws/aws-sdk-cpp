@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_destinationPath;
-    bool m_destinationPathHasBeenSet;
+    bool m_destinationPathHasBeenSet = false;
 
     ResourceDownloadOwnerSetting m_ownerSetting;
-    bool m_ownerSettingHasBeenSet;
+    bool m_ownerSettingHasBeenSet = false;
 
     Aws::String m_sageMakerJobArn;
-    bool m_sageMakerJobArnHasBeenSet;
+    bool m_sageMakerJobArnHasBeenSet = false;
   };
 
 } // namespace Model

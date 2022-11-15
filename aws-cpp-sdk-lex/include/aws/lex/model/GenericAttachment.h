@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_subTitle;
-    bool m_subTitleHasBeenSet;
+    bool m_subTitleHasBeenSet = false;
 
     Aws::String m_attachmentLinkUrl;
-    bool m_attachmentLinkUrlHasBeenSet;
+    bool m_attachmentLinkUrlHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     Aws::Vector<Button> m_buttons;
-    bool m_buttonsHasBeenSet;
+    bool m_buttonsHasBeenSet = false;
   };
 
 } // namespace Model

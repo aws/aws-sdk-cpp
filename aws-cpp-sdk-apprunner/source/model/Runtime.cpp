@@ -25,6 +25,11 @@ namespace Aws
         static const int NODEJS_14_HASH = HashingUtils::HashString("NODEJS_14");
         static const int CORRETTO_8_HASH = HashingUtils::HashString("CORRETTO_8");
         static const int CORRETTO_11_HASH = HashingUtils::HashString("CORRETTO_11");
+        static const int NODEJS_16_HASH = HashingUtils::HashString("NODEJS_16");
+        static const int GO_1_HASH = HashingUtils::HashString("GO_1");
+        static const int DOTNET_6_HASH = HashingUtils::HashString("DOTNET_6");
+        static const int PHP_81_HASH = HashingUtils::HashString("PHP_81");
+        static const int RUBY_31_HASH = HashingUtils::HashString("RUBY_31");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -50,6 +55,26 @@ namespace Aws
           {
             return Runtime::CORRETTO_11;
           }
+          else if (hashCode == NODEJS_16_HASH)
+          {
+            return Runtime::NODEJS_16;
+          }
+          else if (hashCode == GO_1_HASH)
+          {
+            return Runtime::GO_1;
+          }
+          else if (hashCode == DOTNET_6_HASH)
+          {
+            return Runtime::DOTNET_6;
+          }
+          else if (hashCode == PHP_81_HASH)
+          {
+            return Runtime::PHP_81;
+          }
+          else if (hashCode == RUBY_31_HASH)
+          {
+            return Runtime::RUBY_31;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +99,16 @@ namespace Aws
             return "CORRETTO_8";
           case Runtime::CORRETTO_11:
             return "CORRETTO_11";
+          case Runtime::NODEJS_16:
+            return "NODEJS_16";
+          case Runtime::GO_1:
+            return "GO_1";
+          case Runtime::DOTNET_6:
+            return "DOTNET_6";
+          case Runtime::PHP_81:
+            return "PHP_81";
+          case Runtime::RUBY_31:
+            return "RUBY_31";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

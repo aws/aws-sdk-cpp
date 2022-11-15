@@ -35,7 +35,7 @@ Aws::String CreateCloudFormationChangeSetRequest::SerializePayload() const
 
   if(m_capabilitiesHasBeenSet)
   {
-   Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
+   Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
    for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
    {
      capabilitiesJsonList[capabilitiesIndex].AsString(m_capabilities[capabilitiesIndex]);
@@ -64,7 +64,7 @@ Aws::String CreateCloudFormationChangeSetRequest::SerializePayload() const
 
   if(m_notificationArnsHasBeenSet)
   {
-   Array<JsonValue> notificationArnsJsonList(m_notificationArns.size());
+   Aws::Utils::Array<JsonValue> notificationArnsJsonList(m_notificationArns.size());
    for(unsigned notificationArnsIndex = 0; notificationArnsIndex < notificationArnsJsonList.GetLength(); ++notificationArnsIndex)
    {
      notificationArnsJsonList[notificationArnsIndex].AsString(m_notificationArns[notificationArnsIndex]);
@@ -75,7 +75,7 @@ Aws::String CreateCloudFormationChangeSetRequest::SerializePayload() const
 
   if(m_parameterOverridesHasBeenSet)
   {
-   Array<JsonValue> parameterOverridesJsonList(m_parameterOverrides.size());
+   Aws::Utils::Array<JsonValue> parameterOverridesJsonList(m_parameterOverrides.size());
    for(unsigned parameterOverridesIndex = 0; parameterOverridesIndex < parameterOverridesJsonList.GetLength(); ++parameterOverridesIndex)
    {
      parameterOverridesJsonList[parameterOverridesIndex].AsObject(m_parameterOverrides[parameterOverridesIndex].Jsonize());
@@ -86,7 +86,7 @@ Aws::String CreateCloudFormationChangeSetRequest::SerializePayload() const
 
   if(m_resourceTypesHasBeenSet)
   {
-   Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
+   Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
    for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
    {
      resourceTypesJsonList[resourceTypesIndex].AsString(m_resourceTypes[resourceTypesIndex]);
@@ -115,7 +115,7 @@ Aws::String CreateCloudFormationChangeSetRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>A list of tag key value pairs that are associated with the response. </p>
+     * <p>A list of tag key value pairs that are associated with the resource. </p>
      */
     inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
 
     /**
-     * <p>A list of tag key value pairs that are associated with the response. </p>
+     * <p>A list of tag key value pairs that are associated with the resource. </p>
      */
     inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTags = value; }
 
     /**
-     * <p>A list of tag key value pairs that are associated with the response. </p>
+     * <p>A list of tag key value pairs that are associated with the resource. </p>
      */
     inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTags = std::move(value); }
 
     /**
-     * <p>A list of tag key value pairs that are associated with the response. </p>
+     * <p>A list of tag key value pairs that are associated with the resource. </p>
      */
     inline ListTagsForResourceResult& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
 
     /**
-     * <p>A list of tag key value pairs that are associated with the response. </p>
+     * <p>A list of tag key value pairs that are associated with the resource. </p>
      */
     inline ListTagsForResourceResult& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tag key value pairs that are associated with the response. </p>
+     * <p>A list of tag key value pairs that are associated with the resource. </p>
      */
     inline ListTagsForResourceResult& AddResourceTags(const ResourceTag& value) { m_resourceTags.push_back(value); return *this; }
 
     /**
-     * <p>A list of tag key value pairs that are associated with the response. </p>
+     * <p>A list of tag key value pairs that are associated with the resource. </p>
      */
     inline ListTagsForResourceResult& AddResourceTags(ResourceTag&& value) { m_resourceTags.push_back(std::move(value)); return *this; }
 

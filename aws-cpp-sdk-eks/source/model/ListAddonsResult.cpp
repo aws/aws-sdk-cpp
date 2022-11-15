@@ -30,7 +30,7 @@ ListAddonsResult& ListAddonsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("addons"))
   {
-    Array<JsonView> addonsJsonList = jsonValue.GetArray("addons");
+    Aws::Utils::Array<JsonView> addonsJsonList = jsonValue.GetArray("addons");
     for(unsigned addonsIndex = 0; addonsIndex < addonsJsonList.GetLength(); ++addonsIndex)
     {
       m_addons.push_back(addonsJsonList[addonsIndex].AsString());

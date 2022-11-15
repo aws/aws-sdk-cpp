@@ -17,9 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <code> <a>StartServiceSoftwareUpdate</a>
-   * </code> operation. Specifies the name of the domain to schedule a service
-   * software update for. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the request parameters to the
+   * <code>StartServiceSoftwareUpdate</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartServiceSoftwareUpdateRequest">AWS
    * API Reference</a></p>
    */
@@ -88,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
   };
 
 } // namespace Model

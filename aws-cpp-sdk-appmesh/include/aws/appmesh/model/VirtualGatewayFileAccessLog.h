@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/appmesh/model/LoggingFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -35,6 +36,43 @@ namespace Model
     VirtualGatewayFileAccessLog(Aws::Utils::Json::JsonView jsonValue);
     VirtualGatewayFileAccessLog& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The specified format for the virtual gateway access logs. It can be either
+     * <code>json_format</code> or <code>text_format</code>.</p>
+     */
+    inline const LoggingFormat& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The specified format for the virtual gateway access logs. It can be either
+     * <code>json_format</code> or <code>text_format</code>.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>The specified format for the virtual gateway access logs. It can be either
+     * <code>json_format</code> or <code>text_format</code>.</p>
+     */
+    inline void SetFormat(const LoggingFormat& value) { m_formatHasBeenSet = true; m_format = value; }
+
+    /**
+     * <p>The specified format for the virtual gateway access logs. It can be either
+     * <code>json_format</code> or <code>text_format</code>.</p>
+     */
+    inline void SetFormat(LoggingFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
+
+    /**
+     * <p>The specified format for the virtual gateway access logs. It can be either
+     * <code>json_format</code> or <code>text_format</code>.</p>
+     */
+    inline VirtualGatewayFileAccessLog& WithFormat(const LoggingFormat& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>The specified format for the virtual gateway access logs. It can be either
+     * <code>json_format</code> or <code>text_format</code>.</p>
+     */
+    inline VirtualGatewayFileAccessLog& WithFormat(LoggingFormat&& value) { SetFormat(std::move(value)); return *this;}
 
 
     /**
@@ -111,8 +149,11 @@ namespace Model
 
   private:
 
+    LoggingFormat m_format;
+    bool m_formatHasBeenSet = false;
+
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

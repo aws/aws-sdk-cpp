@@ -209,10 +209,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Notifications m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
   };
 
 } // namespace Model

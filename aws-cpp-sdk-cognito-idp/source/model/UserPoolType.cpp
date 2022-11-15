@@ -22,6 +22,8 @@ UserPoolType::UserPoolType() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_policiesHasBeenSet(false),
+    m_deletionProtection(DeletionProtectionType::NOT_SET),
+    m_deletionProtectionHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
@@ -36,6 +38,7 @@ UserPoolType::UserPoolType() :
     m_emailVerificationSubjectHasBeenSet(false),
     m_verificationMessageTemplateHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
+    m_userAttributeUpdateSettingsHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
@@ -60,6 +63,8 @@ UserPoolType::UserPoolType(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_policiesHasBeenSet(false),
+    m_deletionProtection(DeletionProtectionType::NOT_SET),
+    m_deletionProtectionHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
@@ -74,6 +79,7 @@ UserPoolType::UserPoolType(JsonView jsonValue) :
     m_emailVerificationSubjectHasBeenSet(false),
     m_verificationMessageTemplateHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
+    m_userAttributeUpdateSettingsHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
@@ -118,6 +124,13 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     m_policiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeletionProtection"))
+  {
+    m_deletionProtection = DeletionProtectionTypeMapper::GetDeletionProtectionTypeForName(jsonValue.GetString("DeletionProtection"));
+
+    m_deletionProtectionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LambdaConfig"))
   {
     m_lambdaConfig = jsonValue.GetObject("LambdaConfig");
@@ -148,7 +161,7 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SchemaAttributes"))
   {
-    Array<JsonView> schemaAttributesJsonList = jsonValue.GetArray("SchemaAttributes");
+    Aws::Utils::Array<JsonView> schemaAttributesJsonList = jsonValue.GetArray("SchemaAttributes");
     for(unsigned schemaAttributesIndex = 0; schemaAttributesIndex < schemaAttributesJsonList.GetLength(); ++schemaAttributesIndex)
     {
       m_schemaAttributes.push_back(schemaAttributesJsonList[schemaAttributesIndex].AsObject());
@@ -158,7 +171,7 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AutoVerifiedAttributes"))
   {
-    Array<JsonView> autoVerifiedAttributesJsonList = jsonValue.GetArray("AutoVerifiedAttributes");
+    Aws::Utils::Array<JsonView> autoVerifiedAttributesJsonList = jsonValue.GetArray("AutoVerifiedAttributes");
     for(unsigned autoVerifiedAttributesIndex = 0; autoVerifiedAttributesIndex < autoVerifiedAttributesJsonList.GetLength(); ++autoVerifiedAttributesIndex)
     {
       m_autoVerifiedAttributes.push_back(VerifiedAttributeTypeMapper::GetVerifiedAttributeTypeForName(autoVerifiedAttributesJsonList[autoVerifiedAttributesIndex].AsString()));
@@ -168,7 +181,7 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AliasAttributes"))
   {
-    Array<JsonView> aliasAttributesJsonList = jsonValue.GetArray("AliasAttributes");
+    Aws::Utils::Array<JsonView> aliasAttributesJsonList = jsonValue.GetArray("AliasAttributes");
     for(unsigned aliasAttributesIndex = 0; aliasAttributesIndex < aliasAttributesJsonList.GetLength(); ++aliasAttributesIndex)
     {
       m_aliasAttributes.push_back(AliasAttributeTypeMapper::GetAliasAttributeTypeForName(aliasAttributesJsonList[aliasAttributesIndex].AsString()));
@@ -178,7 +191,7 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("UsernameAttributes"))
   {
-    Array<JsonView> usernameAttributesJsonList = jsonValue.GetArray("UsernameAttributes");
+    Aws::Utils::Array<JsonView> usernameAttributesJsonList = jsonValue.GetArray("UsernameAttributes");
     for(unsigned usernameAttributesIndex = 0; usernameAttributesIndex < usernameAttributesJsonList.GetLength(); ++usernameAttributesIndex)
     {
       m_usernameAttributes.push_back(UsernameAttributeTypeMapper::GetUsernameAttributeTypeForName(usernameAttributesJsonList[usernameAttributesIndex].AsString()));
@@ -219,6 +232,13 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     m_smsAuthenticationMessage = jsonValue.GetString("SmsAuthenticationMessage");
 
     m_smsAuthenticationMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UserAttributeUpdateSettings"))
+  {
+    m_userAttributeUpdateSettings = jsonValue.GetObject("UserAttributeUpdateSettings");
+
+    m_userAttributeUpdateSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MfaConfiguration"))
@@ -354,6 +374,11 @@ JsonValue UserPoolType::Jsonize() const
 
   }
 
+  if(m_deletionProtectionHasBeenSet)
+  {
+   payload.WithString("DeletionProtection", DeletionProtectionTypeMapper::GetNameForDeletionProtectionType(m_deletionProtection));
+  }
+
   if(m_lambdaConfigHasBeenSet)
   {
    payload.WithObject("LambdaConfig", m_lambdaConfig.Jsonize());
@@ -377,7 +402,7 @@ JsonValue UserPoolType::Jsonize() const
 
   if(m_schemaAttributesHasBeenSet)
   {
-   Array<JsonValue> schemaAttributesJsonList(m_schemaAttributes.size());
+   Aws::Utils::Array<JsonValue> schemaAttributesJsonList(m_schemaAttributes.size());
    for(unsigned schemaAttributesIndex = 0; schemaAttributesIndex < schemaAttributesJsonList.GetLength(); ++schemaAttributesIndex)
    {
      schemaAttributesJsonList[schemaAttributesIndex].AsObject(m_schemaAttributes[schemaAttributesIndex].Jsonize());
@@ -388,7 +413,7 @@ JsonValue UserPoolType::Jsonize() const
 
   if(m_autoVerifiedAttributesHasBeenSet)
   {
-   Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
+   Aws::Utils::Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
    for(unsigned autoVerifiedAttributesIndex = 0; autoVerifiedAttributesIndex < autoVerifiedAttributesJsonList.GetLength(); ++autoVerifiedAttributesIndex)
    {
      autoVerifiedAttributesJsonList[autoVerifiedAttributesIndex].AsString(VerifiedAttributeTypeMapper::GetNameForVerifiedAttributeType(m_autoVerifiedAttributes[autoVerifiedAttributesIndex]));
@@ -399,7 +424,7 @@ JsonValue UserPoolType::Jsonize() const
 
   if(m_aliasAttributesHasBeenSet)
   {
-   Array<JsonValue> aliasAttributesJsonList(m_aliasAttributes.size());
+   Aws::Utils::Array<JsonValue> aliasAttributesJsonList(m_aliasAttributes.size());
    for(unsigned aliasAttributesIndex = 0; aliasAttributesIndex < aliasAttributesJsonList.GetLength(); ++aliasAttributesIndex)
    {
      aliasAttributesJsonList[aliasAttributesIndex].AsString(AliasAttributeTypeMapper::GetNameForAliasAttributeType(m_aliasAttributes[aliasAttributesIndex]));
@@ -410,7 +435,7 @@ JsonValue UserPoolType::Jsonize() const
 
   if(m_usernameAttributesHasBeenSet)
   {
-   Array<JsonValue> usernameAttributesJsonList(m_usernameAttributes.size());
+   Aws::Utils::Array<JsonValue> usernameAttributesJsonList(m_usernameAttributes.size());
    for(unsigned usernameAttributesIndex = 0; usernameAttributesIndex < usernameAttributesJsonList.GetLength(); ++usernameAttributesIndex)
    {
      usernameAttributesJsonList[usernameAttributesIndex].AsString(UsernameAttributeTypeMapper::GetNameForUsernameAttributeType(m_usernameAttributes[usernameAttributesIndex]));
@@ -446,6 +471,12 @@ JsonValue UserPoolType::Jsonize() const
   if(m_smsAuthenticationMessageHasBeenSet)
   {
    payload.WithString("SmsAuthenticationMessage", m_smsAuthenticationMessage);
+
+  }
+
+  if(m_userAttributeUpdateSettingsHasBeenSet)
+  {
+   payload.WithObject("UserAttributeUpdateSettings", m_userAttributeUpdateSettings.Jsonize());
 
   }
 

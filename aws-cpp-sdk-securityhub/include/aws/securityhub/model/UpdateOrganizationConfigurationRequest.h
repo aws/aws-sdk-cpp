@@ -134,10 +134,10 @@ namespace Model
   private:
 
     bool m_autoEnable;
-    bool m_autoEnableHasBeenSet;
+    bool m_autoEnableHasBeenSet = false;
 
     AutoEnableStandards m_autoEnableStandards;
-    bool m_autoEnableStandardsHasBeenSet;
+    bool m_autoEnableStandardsHasBeenSet = false;
   };
 
 } // namespace Model

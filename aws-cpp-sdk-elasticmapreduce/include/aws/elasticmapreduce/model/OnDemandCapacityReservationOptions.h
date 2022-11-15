@@ -243,13 +243,13 @@ namespace Model
   private:
 
     OnDemandCapacityReservationUsageStrategy m_usageStrategy;
-    bool m_usageStrategyHasBeenSet;
+    bool m_usageStrategyHasBeenSet = false;
 
     OnDemandCapacityReservationPreference m_capacityReservationPreference;
-    bool m_capacityReservationPreferenceHasBeenSet;
+    bool m_capacityReservationPreferenceHasBeenSet = false;
 
     Aws::String m_capacityReservationResourceGroupArn;
-    bool m_capacityReservationResourceGroupArnHasBeenSet;
+    bool m_capacityReservationResourceGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

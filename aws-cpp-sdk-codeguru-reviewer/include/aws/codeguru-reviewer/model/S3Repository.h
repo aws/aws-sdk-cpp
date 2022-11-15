@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> Information about a repository in an S3 bucket. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Information about a repository in an S3 bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/S3Repository">AWS
    * API Reference</a></p>
    */
@@ -39,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p> The name of the repository in the S3 bucket. </p>
+     * <p>The name of the repository in the S3 bucket.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the repository in the S3 bucket. </p>
+     * <p>The name of the repository in the S3 bucket.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name of the repository in the S3 bucket. </p>
+     * <p>The name of the repository in the S3 bucket.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the repository in the S3 bucket. </p>
+     * <p>The name of the repository in the S3 bucket.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name of the repository in the S3 bucket. </p>
+     * <p>The name of the repository in the S3 bucket.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the repository in the S3 bucket. </p>
+     * <p>The name of the repository in the S3 bucket.</p>
      */
     inline S3Repository& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the repository in the S3 bucket. </p>
+     * <p>The name of the repository in the S3 bucket.</p>
      */
     inline S3Repository& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the repository in the S3 bucket. </p>
+     * <p>The name of the repository in the S3 bucket.</p>
      */
     inline S3Repository& WithName(const char* value) { SetName(value); return *this;}
 
@@ -130,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
   };
 
 } // namespace Model

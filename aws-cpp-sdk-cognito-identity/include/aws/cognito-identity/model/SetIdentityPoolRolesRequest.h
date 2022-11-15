@@ -284,13 +284,13 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_roles;
-    bool m_rolesHasBeenSet;
+    bool m_rolesHasBeenSet = false;
 
     Aws::Map<Aws::String, RoleMapping> m_roleMappings;
-    bool m_roleMappingsHasBeenSet;
+    bool m_roleMappingsHasBeenSet = false;
   };
 
 } // namespace Model

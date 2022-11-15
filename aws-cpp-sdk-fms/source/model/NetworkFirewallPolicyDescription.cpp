@@ -23,7 +23,9 @@ NetworkFirewallPolicyDescription::NetworkFirewallPolicyDescription() :
     m_statelessDefaultActionsHasBeenSet(false),
     m_statelessFragmentDefaultActionsHasBeenSet(false),
     m_statelessCustomActionsHasBeenSet(false),
-    m_statefulRuleGroupsHasBeenSet(false)
+    m_statefulRuleGroupsHasBeenSet(false),
+    m_statefulDefaultActionsHasBeenSet(false),
+    m_statefulEngineOptionsHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ NetworkFirewallPolicyDescription::NetworkFirewallPolicyDescription(JsonView json
     m_statelessDefaultActionsHasBeenSet(false),
     m_statelessFragmentDefaultActionsHasBeenSet(false),
     m_statelessCustomActionsHasBeenSet(false),
-    m_statefulRuleGroupsHasBeenSet(false)
+    m_statefulRuleGroupsHasBeenSet(false),
+    m_statefulDefaultActionsHasBeenSet(false),
+    m_statefulEngineOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -41,7 +45,7 @@ NetworkFirewallPolicyDescription& NetworkFirewallPolicyDescription::operator =(J
 {
   if(jsonValue.ValueExists("StatelessRuleGroups"))
   {
-    Array<JsonView> statelessRuleGroupsJsonList = jsonValue.GetArray("StatelessRuleGroups");
+    Aws::Utils::Array<JsonView> statelessRuleGroupsJsonList = jsonValue.GetArray("StatelessRuleGroups");
     for(unsigned statelessRuleGroupsIndex = 0; statelessRuleGroupsIndex < statelessRuleGroupsJsonList.GetLength(); ++statelessRuleGroupsIndex)
     {
       m_statelessRuleGroups.push_back(statelessRuleGroupsJsonList[statelessRuleGroupsIndex].AsObject());
@@ -51,7 +55,7 @@ NetworkFirewallPolicyDescription& NetworkFirewallPolicyDescription::operator =(J
 
   if(jsonValue.ValueExists("StatelessDefaultActions"))
   {
-    Array<JsonView> statelessDefaultActionsJsonList = jsonValue.GetArray("StatelessDefaultActions");
+    Aws::Utils::Array<JsonView> statelessDefaultActionsJsonList = jsonValue.GetArray("StatelessDefaultActions");
     for(unsigned statelessDefaultActionsIndex = 0; statelessDefaultActionsIndex < statelessDefaultActionsJsonList.GetLength(); ++statelessDefaultActionsIndex)
     {
       m_statelessDefaultActions.push_back(statelessDefaultActionsJsonList[statelessDefaultActionsIndex].AsString());
@@ -61,7 +65,7 @@ NetworkFirewallPolicyDescription& NetworkFirewallPolicyDescription::operator =(J
 
   if(jsonValue.ValueExists("StatelessFragmentDefaultActions"))
   {
-    Array<JsonView> statelessFragmentDefaultActionsJsonList = jsonValue.GetArray("StatelessFragmentDefaultActions");
+    Aws::Utils::Array<JsonView> statelessFragmentDefaultActionsJsonList = jsonValue.GetArray("StatelessFragmentDefaultActions");
     for(unsigned statelessFragmentDefaultActionsIndex = 0; statelessFragmentDefaultActionsIndex < statelessFragmentDefaultActionsJsonList.GetLength(); ++statelessFragmentDefaultActionsIndex)
     {
       m_statelessFragmentDefaultActions.push_back(statelessFragmentDefaultActionsJsonList[statelessFragmentDefaultActionsIndex].AsString());
@@ -71,7 +75,7 @@ NetworkFirewallPolicyDescription& NetworkFirewallPolicyDescription::operator =(J
 
   if(jsonValue.ValueExists("StatelessCustomActions"))
   {
-    Array<JsonView> statelessCustomActionsJsonList = jsonValue.GetArray("StatelessCustomActions");
+    Aws::Utils::Array<JsonView> statelessCustomActionsJsonList = jsonValue.GetArray("StatelessCustomActions");
     for(unsigned statelessCustomActionsIndex = 0; statelessCustomActionsIndex < statelessCustomActionsJsonList.GetLength(); ++statelessCustomActionsIndex)
     {
       m_statelessCustomActions.push_back(statelessCustomActionsJsonList[statelessCustomActionsIndex].AsString());
@@ -81,12 +85,29 @@ NetworkFirewallPolicyDescription& NetworkFirewallPolicyDescription::operator =(J
 
   if(jsonValue.ValueExists("StatefulRuleGroups"))
   {
-    Array<JsonView> statefulRuleGroupsJsonList = jsonValue.GetArray("StatefulRuleGroups");
+    Aws::Utils::Array<JsonView> statefulRuleGroupsJsonList = jsonValue.GetArray("StatefulRuleGroups");
     for(unsigned statefulRuleGroupsIndex = 0; statefulRuleGroupsIndex < statefulRuleGroupsJsonList.GetLength(); ++statefulRuleGroupsIndex)
     {
       m_statefulRuleGroups.push_back(statefulRuleGroupsJsonList[statefulRuleGroupsIndex].AsObject());
     }
     m_statefulRuleGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatefulDefaultActions"))
+  {
+    Aws::Utils::Array<JsonView> statefulDefaultActionsJsonList = jsonValue.GetArray("StatefulDefaultActions");
+    for(unsigned statefulDefaultActionsIndex = 0; statefulDefaultActionsIndex < statefulDefaultActionsJsonList.GetLength(); ++statefulDefaultActionsIndex)
+    {
+      m_statefulDefaultActions.push_back(statefulDefaultActionsJsonList[statefulDefaultActionsIndex].AsString());
+    }
+    m_statefulDefaultActionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatefulEngineOptions"))
+  {
+    m_statefulEngineOptions = jsonValue.GetObject("StatefulEngineOptions");
+
+    m_statefulEngineOptionsHasBeenSet = true;
   }
 
   return *this;
@@ -98,7 +119,7 @@ JsonValue NetworkFirewallPolicyDescription::Jsonize() const
 
   if(m_statelessRuleGroupsHasBeenSet)
   {
-   Array<JsonValue> statelessRuleGroupsJsonList(m_statelessRuleGroups.size());
+   Aws::Utils::Array<JsonValue> statelessRuleGroupsJsonList(m_statelessRuleGroups.size());
    for(unsigned statelessRuleGroupsIndex = 0; statelessRuleGroupsIndex < statelessRuleGroupsJsonList.GetLength(); ++statelessRuleGroupsIndex)
    {
      statelessRuleGroupsJsonList[statelessRuleGroupsIndex].AsObject(m_statelessRuleGroups[statelessRuleGroupsIndex].Jsonize());
@@ -109,7 +130,7 @@ JsonValue NetworkFirewallPolicyDescription::Jsonize() const
 
   if(m_statelessDefaultActionsHasBeenSet)
   {
-   Array<JsonValue> statelessDefaultActionsJsonList(m_statelessDefaultActions.size());
+   Aws::Utils::Array<JsonValue> statelessDefaultActionsJsonList(m_statelessDefaultActions.size());
    for(unsigned statelessDefaultActionsIndex = 0; statelessDefaultActionsIndex < statelessDefaultActionsJsonList.GetLength(); ++statelessDefaultActionsIndex)
    {
      statelessDefaultActionsJsonList[statelessDefaultActionsIndex].AsString(m_statelessDefaultActions[statelessDefaultActionsIndex]);
@@ -120,7 +141,7 @@ JsonValue NetworkFirewallPolicyDescription::Jsonize() const
 
   if(m_statelessFragmentDefaultActionsHasBeenSet)
   {
-   Array<JsonValue> statelessFragmentDefaultActionsJsonList(m_statelessFragmentDefaultActions.size());
+   Aws::Utils::Array<JsonValue> statelessFragmentDefaultActionsJsonList(m_statelessFragmentDefaultActions.size());
    for(unsigned statelessFragmentDefaultActionsIndex = 0; statelessFragmentDefaultActionsIndex < statelessFragmentDefaultActionsJsonList.GetLength(); ++statelessFragmentDefaultActionsIndex)
    {
      statelessFragmentDefaultActionsJsonList[statelessFragmentDefaultActionsIndex].AsString(m_statelessFragmentDefaultActions[statelessFragmentDefaultActionsIndex]);
@@ -131,7 +152,7 @@ JsonValue NetworkFirewallPolicyDescription::Jsonize() const
 
   if(m_statelessCustomActionsHasBeenSet)
   {
-   Array<JsonValue> statelessCustomActionsJsonList(m_statelessCustomActions.size());
+   Aws::Utils::Array<JsonValue> statelessCustomActionsJsonList(m_statelessCustomActions.size());
    for(unsigned statelessCustomActionsIndex = 0; statelessCustomActionsIndex < statelessCustomActionsJsonList.GetLength(); ++statelessCustomActionsIndex)
    {
      statelessCustomActionsJsonList[statelessCustomActionsIndex].AsString(m_statelessCustomActions[statelessCustomActionsIndex]);
@@ -142,12 +163,29 @@ JsonValue NetworkFirewallPolicyDescription::Jsonize() const
 
   if(m_statefulRuleGroupsHasBeenSet)
   {
-   Array<JsonValue> statefulRuleGroupsJsonList(m_statefulRuleGroups.size());
+   Aws::Utils::Array<JsonValue> statefulRuleGroupsJsonList(m_statefulRuleGroups.size());
    for(unsigned statefulRuleGroupsIndex = 0; statefulRuleGroupsIndex < statefulRuleGroupsJsonList.GetLength(); ++statefulRuleGroupsIndex)
    {
      statefulRuleGroupsJsonList[statefulRuleGroupsIndex].AsObject(m_statefulRuleGroups[statefulRuleGroupsIndex].Jsonize());
    }
    payload.WithArray("StatefulRuleGroups", std::move(statefulRuleGroupsJsonList));
+
+  }
+
+  if(m_statefulDefaultActionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> statefulDefaultActionsJsonList(m_statefulDefaultActions.size());
+   for(unsigned statefulDefaultActionsIndex = 0; statefulDefaultActionsIndex < statefulDefaultActionsJsonList.GetLength(); ++statefulDefaultActionsIndex)
+   {
+     statefulDefaultActionsJsonList[statefulDefaultActionsIndex].AsString(m_statefulDefaultActions[statefulDefaultActionsIndex]);
+   }
+   payload.WithArray("StatefulDefaultActions", std::move(statefulDefaultActionsJsonList));
+
+  }
+
+  if(m_statefulEngineOptionsHasBeenSet)
+  {
+   payload.WithObject("StatefulEngineOptions", m_statefulEngineOptions.Jsonize());
 
   }
 

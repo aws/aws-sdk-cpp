@@ -244,10 +244,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_entityTypes;
-    bool m_entityTypesHasBeenSet;
+    bool m_entityTypesHasBeenSet = false;
 
     Aws::Vector<AllowedStatistics> m_allowedStatistics;
-    bool m_allowedStatisticsHasBeenSet;
+    bool m_allowedStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

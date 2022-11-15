@@ -683,40 +683,40 @@ namespace Model
   private:
 
     Aws::String m_caseId;
-    bool m_caseIdHasBeenSet;
+    bool m_caseIdHasBeenSet = false;
 
     Aws::String m_displayId;
-    bool m_displayIdHasBeenSet;
+    bool m_displayIdHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_categoryCode;
-    bool m_categoryCodeHasBeenSet;
+    bool m_categoryCodeHasBeenSet = false;
 
     Aws::String m_severityCode;
-    bool m_severityCodeHasBeenSet;
+    bool m_severityCodeHasBeenSet = false;
 
     Aws::String m_submittedBy;
-    bool m_submittedByHasBeenSet;
+    bool m_submittedByHasBeenSet = false;
 
     Aws::String m_timeCreated;
-    bool m_timeCreatedHasBeenSet;
+    bool m_timeCreatedHasBeenSet = false;
 
     RecentCaseCommunications m_recentCommunications;
-    bool m_recentCommunicationsHasBeenSet;
+    bool m_recentCommunicationsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ccEmailAddresses;
-    bool m_ccEmailAddressesHasBeenSet;
+    bool m_ccEmailAddressesHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
   };
 
 } // namespace Model

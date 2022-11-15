@@ -133,91 +133,91 @@ namespace Model
 
 
     /**
-     * <p> Specifies the maximum number of sensors for which to retrieve statistics.
+     * <p>Specifies the maximum number of sensors for which to retrieve statistics.
      * </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p> Specifies the maximum number of sensors for which to retrieve statistics.
+     * <p>Specifies the maximum number of sensors for which to retrieve statistics.
      * </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p> Specifies the maximum number of sensors for which to retrieve statistics.
+     * <p>Specifies the maximum number of sensors for which to retrieve statistics.
      * </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p> Specifies the maximum number of sensors for which to retrieve statistics.
+     * <p>Specifies the maximum number of sensors for which to retrieve statistics.
      * </p>
      */
     inline ListSensorStatisticsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of
-     * sensor statistics. </p>
+     * <p>An opaque pagination token indicating where to continue the listing of sensor
+     * statistics. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of
-     * sensor statistics. </p>
+     * <p>An opaque pagination token indicating where to continue the listing of sensor
+     * statistics. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of
-     * sensor statistics. </p>
+     * <p>An opaque pagination token indicating where to continue the listing of sensor
+     * statistics. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of
-     * sensor statistics. </p>
+     * <p>An opaque pagination token indicating where to continue the listing of sensor
+     * statistics. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of
-     * sensor statistics. </p>
+     * <p>An opaque pagination token indicating where to continue the listing of sensor
+     * statistics. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of
-     * sensor statistics. </p>
+     * <p>An opaque pagination token indicating where to continue the listing of sensor
+     * statistics. </p>
      */
     inline ListSensorStatisticsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of
-     * sensor statistics. </p>
+     * <p>An opaque pagination token indicating where to continue the listing of sensor
+     * statistics. </p>
      */
     inline ListSensorStatisticsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of
-     * sensor statistics. </p>
+     * <p>An opaque pagination token indicating where to continue the listing of sensor
+     * statistics. </p>
      */
     inline ListSensorStatisticsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::String m_ingestionJobId;
-    bool m_ingestionJobIdHasBeenSet;
+    bool m_ingestionJobIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

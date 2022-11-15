@@ -106,7 +106,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_listenerArns;
-    bool m_listenerArnsHasBeenSet;
+    bool m_listenerArnsHasBeenSet = false;
   };
 
 } // namespace Model

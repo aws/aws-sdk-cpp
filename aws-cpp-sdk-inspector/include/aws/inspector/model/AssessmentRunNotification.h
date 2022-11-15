@@ -243,22 +243,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     InspectorEvent m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     bool m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     AssessmentRunNotificationSnsStatusCode m_snsPublishStatusCode;
-    bool m_snsPublishStatusCodeHasBeenSet;
+    bool m_snsPublishStatusCodeHasBeenSet = false;
   };
 
 } // namespace Model

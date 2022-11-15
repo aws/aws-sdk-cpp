@@ -428,19 +428,19 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
-    bool m_grantTokensHasBeenSet;
+    bool m_grantTokensHasBeenSet = false;
 
     SigningAlgorithmSpec m_signingAlgorithm;
-    bool m_signingAlgorithmHasBeenSet;
+    bool m_signingAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

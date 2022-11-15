@@ -19,30 +19,20 @@ namespace Model
 {
 
 KmsKeyConfiguration::KmsKeyConfiguration() : 
-    m_grantsHasBeenSet(false),
-    m_keyPoliciesHasBeenSet(false)
+    m_keyPoliciesHasBeenSet(false),
+    m_grantsHasBeenSet(false)
 {
 }
 
 KmsKeyConfiguration::KmsKeyConfiguration(JsonView jsonValue) : 
-    m_grantsHasBeenSet(false),
-    m_keyPoliciesHasBeenSet(false)
+    m_keyPoliciesHasBeenSet(false),
+    m_grantsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 KmsKeyConfiguration& KmsKeyConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("grants"))
-  {
-    Array<JsonView> grantsJsonList = jsonValue.GetArray("grants");
-    for(unsigned grantsIndex = 0; grantsIndex < grantsJsonList.GetLength(); ++grantsIndex)
-    {
-      m_grants.push_back(grantsJsonList[grantsIndex].AsObject());
-    }
-    m_grantsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("keyPolicies"))
   {
     Aws::Map<Aws::String, JsonView> keyPoliciesJsonMap = jsonValue.GetObject("keyPolicies").GetAllObjects();
@@ -53,23 +43,22 @@ KmsKeyConfiguration& KmsKeyConfiguration::operator =(JsonView jsonValue)
     m_keyPoliciesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("grants"))
+  {
+    Aws::Utils::Array<JsonView> grantsJsonList = jsonValue.GetArray("grants");
+    for(unsigned grantsIndex = 0; grantsIndex < grantsJsonList.GetLength(); ++grantsIndex)
+    {
+      m_grants.push_back(grantsJsonList[grantsIndex].AsObject());
+    }
+    m_grantsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue KmsKeyConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_grantsHasBeenSet)
-  {
-   Array<JsonValue> grantsJsonList(m_grants.size());
-   for(unsigned grantsIndex = 0; grantsIndex < grantsJsonList.GetLength(); ++grantsIndex)
-   {
-     grantsJsonList[grantsIndex].AsObject(m_grants[grantsIndex].Jsonize());
-   }
-   payload.WithArray("grants", std::move(grantsJsonList));
-
-  }
 
   if(m_keyPoliciesHasBeenSet)
   {
@@ -79,6 +68,17 @@ JsonValue KmsKeyConfiguration::Jsonize() const
      keyPoliciesJsonMap.WithString(keyPoliciesItem.first, keyPoliciesItem.second);
    }
    payload.WithObject("keyPolicies", std::move(keyPoliciesJsonMap));
+
+  }
+
+  if(m_grantsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> grantsJsonList(m_grants.size());
+   for(unsigned grantsIndex = 0; grantsIndex < grantsJsonList.GetLength(); ++grantsIndex)
+   {
+     grantsJsonList[grantsIndex].AsObject(m_grants[grantsIndex].Jsonize());
+   }
+   payload.WithArray("grants", std::move(grantsJsonList));
 
   }
 

@@ -138,13 +138,13 @@ namespace Model
   private:
 
     bool m_invert;
-    bool m_invertHasBeenSet;
+    bool m_invertHasBeenSet = false;
 
     HeaderMatchMethod m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

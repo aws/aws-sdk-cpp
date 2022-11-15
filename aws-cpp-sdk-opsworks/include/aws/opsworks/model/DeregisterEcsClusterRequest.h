@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_ecsClusterArn;
-    bool m_ecsClusterArnHasBeenSet;
+    bool m_ecsClusterArnHasBeenSet = false;
   };
 
 } // namespace Model

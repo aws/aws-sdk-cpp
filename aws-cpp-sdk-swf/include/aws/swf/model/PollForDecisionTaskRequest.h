@@ -395,22 +395,22 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     TaskList m_taskList;
-    bool m_taskListHasBeenSet;
+    bool m_taskListHasBeenSet = false;
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
 
     int m_maximumPageSize;
-    bool m_maximumPageSizeHasBeenSet;
+    bool m_maximumPageSizeHasBeenSet = false;
 
     bool m_reverseOrder;
-    bool m_reverseOrderHasBeenSet;
+    bool m_reverseOrderHasBeenSet = false;
   };
 
 } // namespace Model

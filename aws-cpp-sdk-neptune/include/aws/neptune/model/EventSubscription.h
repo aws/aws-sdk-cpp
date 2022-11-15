@@ -495,34 +495,34 @@ namespace Model
   private:
 
     Aws::String m_customerAwsId;
-    bool m_customerAwsIdHasBeenSet;
+    bool m_customerAwsIdHasBeenSet = false;
 
     Aws::String m_custSubscriptionId;
-    bool m_custSubscriptionIdHasBeenSet;
+    bool m_custSubscriptionIdHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_subscriptionCreationTime;
-    bool m_subscriptionCreationTimeHasBeenSet;
+    bool m_subscriptionCreationTimeHasBeenSet = false;
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceIdsList;
-    bool m_sourceIdsListHasBeenSet;
+    bool m_sourceIdsListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventCategoriesList;
-    bool m_eventCategoriesListHasBeenSet;
+    bool m_eventCategoriesListHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_eventSubscriptionArn;
-    bool m_eventSubscriptionArnHasBeenSet;
+    bool m_eventSubscriptionArnHasBeenSet = false;
   };
 
 } // namespace Model

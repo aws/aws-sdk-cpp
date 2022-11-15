@@ -34,42 +34,50 @@ namespace Model
 
 
     /**
-     * <p>Information about the AWS accounts with access to the portfolio.</p>
+     * <p>Information about the Amazon Web Services accounts with access to the
+     * portfolio.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * <p>Information about the AWS accounts with access to the portfolio.</p>
+     * <p>Information about the Amazon Web Services accounts with access to the
+     * portfolio.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIds = value; }
 
     /**
-     * <p>Information about the AWS accounts with access to the portfolio.</p>
+     * <p>Information about the Amazon Web Services accounts with access to the
+     * portfolio.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIds = std::move(value); }
 
     /**
-     * <p>Information about the AWS accounts with access to the portfolio.</p>
+     * <p>Information about the Amazon Web Services accounts with access to the
+     * portfolio.</p>
      */
     inline ListPortfolioAccessResult& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * <p>Information about the AWS accounts with access to the portfolio.</p>
+     * <p>Information about the Amazon Web Services accounts with access to the
+     * portfolio.</p>
      */
     inline ListPortfolioAccessResult& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the AWS accounts with access to the portfolio.</p>
+     * <p>Information about the Amazon Web Services accounts with access to the
+     * portfolio.</p>
      */
     inline ListPortfolioAccessResult& AddAccountIds(const Aws::String& value) { m_accountIds.push_back(value); return *this; }
 
     /**
-     * <p>Information about the AWS accounts with access to the portfolio.</p>
+     * <p>Information about the Amazon Web Services accounts with access to the
+     * portfolio.</p>
      */
     inline ListPortfolioAccessResult& AddAccountIds(Aws::String&& value) { m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Information about the AWS accounts with access to the portfolio.</p>
+     * <p>Information about the Amazon Web Services accounts with access to the
+     * portfolio.</p>
      */
     inline ListPortfolioAccessResult& AddAccountIds(const char* value) { m_accountIds.push_back(value); return *this; }
 

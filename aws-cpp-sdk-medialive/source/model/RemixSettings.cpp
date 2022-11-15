@@ -41,7 +41,7 @@ RemixSettings& RemixSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("channelMappings"))
   {
-    Array<JsonView> channelMappingsJsonList = jsonValue.GetArray("channelMappings");
+    Aws::Utils::Array<JsonView> channelMappingsJsonList = jsonValue.GetArray("channelMappings");
     for(unsigned channelMappingsIndex = 0; channelMappingsIndex < channelMappingsJsonList.GetLength(); ++channelMappingsIndex)
     {
       m_channelMappings.push_back(channelMappingsJsonList[channelMappingsIndex].AsObject());
@@ -72,7 +72,7 @@ JsonValue RemixSettings::Jsonize() const
 
   if(m_channelMappingsHasBeenSet)
   {
-   Array<JsonValue> channelMappingsJsonList(m_channelMappings.size());
+   Aws::Utils::Array<JsonValue> channelMappingsJsonList(m_channelMappings.size());
    for(unsigned channelMappingsIndex = 0; channelMappingsIndex < channelMappingsJsonList.GetLength(); ++channelMappingsIndex)
    {
      channelMappingsJsonList[channelMappingsIndex].AsObject(m_channelMappings[channelMappingsIndex].Jsonize());

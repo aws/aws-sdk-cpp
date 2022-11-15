@@ -33,7 +33,7 @@ AuthenticationConfiguration& AuthenticationConfiguration::operator =(JsonView js
 {
   if(jsonValue.ValueExists("BasicAuthentication"))
   {
-    Array<JsonView> basicAuthenticationJsonList = jsonValue.GetArray("BasicAuthentication");
+    Aws::Utils::Array<JsonView> basicAuthenticationJsonList = jsonValue.GetArray("BasicAuthentication");
     for(unsigned basicAuthenticationIndex = 0; basicAuthenticationIndex < basicAuthenticationJsonList.GetLength(); ++basicAuthenticationIndex)
     {
       m_basicAuthentication.push_back(basicAuthenticationJsonList[basicAuthenticationIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue AuthenticationConfiguration::Jsonize() const
 
   if(m_basicAuthenticationHasBeenSet)
   {
-   Array<JsonValue> basicAuthenticationJsonList(m_basicAuthentication.size());
+   Aws::Utils::Array<JsonValue> basicAuthenticationJsonList(m_basicAuthentication.size());
    for(unsigned basicAuthenticationIndex = 0; basicAuthenticationIndex < basicAuthenticationJsonList.GetLength(); ++basicAuthenticationIndex)
    {
      basicAuthenticationJsonList[basicAuthenticationIndex].AsObject(m_basicAuthentication[basicAuthenticationIndex].Jsonize());

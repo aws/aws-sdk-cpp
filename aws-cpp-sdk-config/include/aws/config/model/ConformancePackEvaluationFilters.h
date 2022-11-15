@@ -244,16 +244,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_configRuleNames;
-    bool m_configRuleNamesHasBeenSet;
+    bool m_configRuleNamesHasBeenSet = false;
 
     ConformancePackComplianceType m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
   };
 
 } // namespace Model

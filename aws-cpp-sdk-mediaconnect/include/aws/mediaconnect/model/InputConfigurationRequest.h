@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_inputPort;
-    bool m_inputPortHasBeenSet;
+    bool m_inputPortHasBeenSet = false;
 
     InterfaceRequest m_interface;
-    bool m_interfaceHasBeenSet;
+    bool m_interfaceHasBeenSet = false;
   };
 
 } // namespace Model

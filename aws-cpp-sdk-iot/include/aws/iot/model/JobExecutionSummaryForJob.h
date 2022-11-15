@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_thingArn;
-    bool m_thingArnHasBeenSet;
+    bool m_thingArnHasBeenSet = false;
 
     JobExecutionSummary m_jobExecutionSummary;
-    bool m_jobExecutionSummaryHasBeenSet;
+    bool m_jobExecutionSummaryHasBeenSet = false;
   };
 
 } // namespace Model

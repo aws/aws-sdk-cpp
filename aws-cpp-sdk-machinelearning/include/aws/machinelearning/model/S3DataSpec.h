@@ -828,16 +828,16 @@ namespace Model
   private:
 
     Aws::String m_dataLocationS3;
-    bool m_dataLocationS3HasBeenSet;
+    bool m_dataLocationS3HasBeenSet = false;
 
     Aws::String m_dataRearrangement;
-    bool m_dataRearrangementHasBeenSet;
+    bool m_dataRearrangementHasBeenSet = false;
 
     Aws::String m_dataSchema;
-    bool m_dataSchemaHasBeenSet;
+    bool m_dataSchemaHasBeenSet = false;
 
     Aws::String m_dataSchemaLocationS3;
-    bool m_dataSchemaLocationS3HasBeenSet;
+    bool m_dataSchemaLocationS3HasBeenSet = false;
   };
 
 } // namespace Model

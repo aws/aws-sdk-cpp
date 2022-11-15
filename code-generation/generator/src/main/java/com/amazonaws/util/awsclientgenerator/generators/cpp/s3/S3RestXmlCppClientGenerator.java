@@ -12,12 +12,13 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMe
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
+import com.google.common.collect.ImmutableSet;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -27,6 +28,11 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     private static Set<String> opsThatDoNotSupportArnEndpoint = new HashSet<>();
     private static Set<String> opsThatDoNotSupportFutureInS3CRT = new HashSet<>();
     private static Set<String> bucketLocationConstraints = new HashSet<>();
+    private Set<String> functionsWithEmbeddedErrors = ImmutableSet.of(
+            "CompleteMultipartUploadRequest",
+            "CopyObjectRequest",
+            "UploadPartCopyRequest"
+    );
 
     static {
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
@@ -100,12 +106,20 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
                     operationEntry.setSupportsChunkedEncoding(true);
                 });
 
-
-
         serviceModel.getOperations().values().stream()
-                .filter(operationEntry ->
-                        serviceModel.getMetadata().getNamespace().equals("S3Crt") && opsThatDoNotSupportFutureInS3CRT.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setS3CrtSpecific(true));
+                .filter(operationEntry -> operationEntry.getName().equals("WriteGetObjectResponse"))
+                .forEach(operationEntry -> {
+                    operationEntry.setRequiresServiceNameOverride(true);
+                    operationEntry.setServiceNameOverride("s3-object-lambda");
+                    operationEntry.setSupportsChunkedEncoding(true);
+                });
+
+
+        if (serviceModel.getMetadata().getNamespace().equals("S3Crt")) {
+            serviceModel.getOperations().values().stream()
+                    .filter(operationEntry -> opsThatDoNotSupportFutureInS3CRT.contains(operationEntry.getName()))
+                    .forEach(operationEntry -> operationEntry.setS3CrtSpecific(true));
+        }
 
         Shape locationConstraints = serviceModel.getShapes().get("BucketLocationConstraint");
 
@@ -122,6 +136,11 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         if (indexOfComplete != -1) {
             replicationStatus.getEnumValues().set(indexOfComplete, "COMPLETED");
         }
+
+        // Some S3 operations have embedded errors, and we need to search for errors in the response.
+        serviceModel.getShapes().values().stream()
+                .filter(shape -> functionsWithEmbeddedErrors.contains(shape.getName()))
+                .forEach(shape -> shape.setEmbeddedErrors(true));
 
         // Customized Log Information
         Shape logTagKeyShape = new Shape();
@@ -227,8 +246,15 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     protected SdkFileEntry generateClientSourceFile(final ServiceModel serviceModel) throws Exception {
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientSource.vm");
 
+        Map<String, String> templateOverride = new HashMap<>();
+        if ("S3-CRT".equalsIgnoreCase(serviceModel.getMetadata().getProjectName())) {
+            templateOverride.put("ServiceClientSourceInit_template",
+                    "/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtServiceClientSourceInit.vm");
+        }
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
+        context.put("TemplateOverride", templateOverride);
+
 
         String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
 

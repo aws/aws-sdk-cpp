@@ -118,7 +118,7 @@ StandardsControl& StandardsControl::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RelatedRequirements"))
   {
-    Array<JsonView> relatedRequirementsJsonList = jsonValue.GetArray("RelatedRequirements");
+    Aws::Utils::Array<JsonView> relatedRequirementsJsonList = jsonValue.GetArray("RelatedRequirements");
     for(unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength(); ++relatedRequirementsIndex)
     {
       m_relatedRequirements.push_back(relatedRequirementsJsonList[relatedRequirementsIndex].AsString());
@@ -152,7 +152,7 @@ JsonValue StandardsControl::Jsonize() const
 
   if(m_controlStatusUpdatedAtHasBeenSet)
   {
-   payload.WithString("ControlStatusUpdatedAt", m_controlStatusUpdatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("ControlStatusUpdatedAt", m_controlStatusUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_controlIdHasBeenSet)
@@ -186,7 +186,7 @@ JsonValue StandardsControl::Jsonize() const
 
   if(m_relatedRequirementsHasBeenSet)
   {
-   Array<JsonValue> relatedRequirementsJsonList(m_relatedRequirements.size());
+   Aws::Utils::Array<JsonValue> relatedRequirementsJsonList(m_relatedRequirements.size());
    for(unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength(); ++relatedRequirementsIndex)
    {
      relatedRequirementsJsonList[relatedRequirementsIndex].AsString(m_relatedRequirements[relatedRequirementsIndex]);

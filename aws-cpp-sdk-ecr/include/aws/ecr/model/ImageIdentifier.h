@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
 
     Aws::String m_imageTag;
-    bool m_imageTagHasBeenSet;
+    bool m_imageTagHasBeenSet = false;
   };
 
 } // namespace Model

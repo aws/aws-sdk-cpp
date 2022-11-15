@@ -82,7 +82,7 @@ Component& Component::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("children"))
   {
-    Array<JsonView> childrenJsonList = jsonValue.GetArray("children");
+    Aws::Utils::Array<JsonView> childrenJsonList = jsonValue.GetArray("children");
     for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
     {
       m_children.push_back(childrenJsonList[childrenIndex].AsObject());
@@ -204,7 +204,7 @@ Component& Component::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("variants"))
   {
-    Array<JsonView> variantsJsonList = jsonValue.GetArray("variants");
+    Aws::Utils::Array<JsonView> variantsJsonList = jsonValue.GetArray("variants");
     for(unsigned variantsIndex = 0; variantsIndex < variantsJsonList.GetLength(); ++variantsIndex)
     {
       m_variants.push_back(variantsJsonList[variantsIndex].AsObject());
@@ -238,7 +238,7 @@ JsonValue Component::Jsonize() const
 
   if(m_childrenHasBeenSet)
   {
-   Array<JsonValue> childrenJsonList(m_children.size());
+   Aws::Utils::Array<JsonValue> childrenJsonList(m_children.size());
    for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
    {
      childrenJsonList[childrenIndex].AsObject(m_children[childrenIndex].Jsonize());
@@ -266,7 +266,7 @@ JsonValue Component::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_environmentNameHasBeenSet)
@@ -294,7 +294,7 @@ JsonValue Component::Jsonize() const
 
   if(m_modifiedAtHasBeenSet)
   {
-   payload.WithString("modifiedAt", m_modifiedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("modifiedAt", m_modifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_nameHasBeenSet)
@@ -355,7 +355,7 @@ JsonValue Component::Jsonize() const
 
   if(m_variantsHasBeenSet)
   {
-   Array<JsonValue> variantsJsonList(m_variants.size());
+   Aws::Utils::Array<JsonValue> variantsJsonList(m_variants.size());
    for(unsigned variantsIndex = 0; variantsIndex < variantsJsonList.GetLength(); ++variantsIndex)
    {
      variantsJsonList[variantsIndex].AsObject(m_variants[variantsIndex].Jsonize());

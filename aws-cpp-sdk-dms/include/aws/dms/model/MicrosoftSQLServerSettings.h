@@ -760,49 +760,81 @@ namespace Model
      */
     inline MicrosoftSQLServerSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
 
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline bool GetTrimSpaceInChar() const{ return m_trimSpaceInChar; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline bool TrimSpaceInCharHasBeenSet() const { return m_trimSpaceInCharHasBeenSet; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline void SetTrimSpaceInChar(bool value) { m_trimSpaceInCharHasBeenSet = true; m_trimSpaceInChar = value; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline MicrosoftSQLServerSettings& WithTrimSpaceInChar(bool value) { SetTrimSpaceInChar(value); return *this;}
+
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     int m_bcpPacketSize;
-    bool m_bcpPacketSizeHasBeenSet;
+    bool m_bcpPacketSizeHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_controlTablesFileGroup;
-    bool m_controlTablesFileGroupHasBeenSet;
+    bool m_controlTablesFileGroupHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     bool m_querySingleAlwaysOnNode;
-    bool m_querySingleAlwaysOnNodeHasBeenSet;
+    bool m_querySingleAlwaysOnNodeHasBeenSet = false;
 
     bool m_readBackupOnly;
-    bool m_readBackupOnlyHasBeenSet;
+    bool m_readBackupOnlyHasBeenSet = false;
 
     SafeguardPolicy m_safeguardPolicy;
-    bool m_safeguardPolicyHasBeenSet;
+    bool m_safeguardPolicyHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     bool m_useBcpFullLoad;
-    bool m_useBcpFullLoadHasBeenSet;
+    bool m_useBcpFullLoadHasBeenSet = false;
 
     bool m_useThirdPartyBackupDevice;
-    bool m_useThirdPartyBackupDeviceHasBeenSet;
+    bool m_useThirdPartyBackupDeviceHasBeenSet = false;
 
     Aws::String m_secretsManagerAccessRoleArn;
-    bool m_secretsManagerAccessRoleArnHasBeenSet;
+    bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
     Aws::String m_secretsManagerSecretId;
-    bool m_secretsManagerSecretIdHasBeenSet;
+    bool m_secretsManagerSecretIdHasBeenSet = false;
+
+    bool m_trimSpaceInChar;
+    bool m_trimSpaceInCharHasBeenSet = false;
   };
 
 } // namespace Model

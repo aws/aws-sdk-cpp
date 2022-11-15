@@ -30,7 +30,7 @@ ListRuleNamesByTargetResult& ListRuleNamesByTargetResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RuleNames"))
   {
-    Array<JsonView> ruleNamesJsonList = jsonValue.GetArray("RuleNames");
+    Aws::Utils::Array<JsonView> ruleNamesJsonList = jsonValue.GetArray("RuleNames");
     for(unsigned ruleNamesIndex = 0; ruleNamesIndex < ruleNamesJsonList.GetLength(); ++ruleNamesIndex)
     {
       m_ruleNames.push_back(ruleNamesJsonList[ruleNamesIndex].AsString());

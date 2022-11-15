@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Duration m_idle;
-    bool m_idleHasBeenSet;
+    bool m_idleHasBeenSet = false;
 
     Duration m_perRequest;
-    bool m_perRequestHasBeenSet;
+    bool m_perRequestHasBeenSet = false;
   };
 
 } // namespace Model

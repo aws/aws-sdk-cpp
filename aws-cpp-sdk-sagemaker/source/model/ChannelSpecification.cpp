@@ -66,7 +66,7 @@ ChannelSpecification& ChannelSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedContentTypes"))
   {
-    Array<JsonView> supportedContentTypesJsonList = jsonValue.GetArray("SupportedContentTypes");
+    Aws::Utils::Array<JsonView> supportedContentTypesJsonList = jsonValue.GetArray("SupportedContentTypes");
     for(unsigned supportedContentTypesIndex = 0; supportedContentTypesIndex < supportedContentTypesJsonList.GetLength(); ++supportedContentTypesIndex)
     {
       m_supportedContentTypes.push_back(supportedContentTypesJsonList[supportedContentTypesIndex].AsString());
@@ -76,7 +76,7 @@ ChannelSpecification& ChannelSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedCompressionTypes"))
   {
-    Array<JsonView> supportedCompressionTypesJsonList = jsonValue.GetArray("SupportedCompressionTypes");
+    Aws::Utils::Array<JsonView> supportedCompressionTypesJsonList = jsonValue.GetArray("SupportedCompressionTypes");
     for(unsigned supportedCompressionTypesIndex = 0; supportedCompressionTypesIndex < supportedCompressionTypesJsonList.GetLength(); ++supportedCompressionTypesIndex)
     {
       m_supportedCompressionTypes.push_back(CompressionTypeMapper::GetCompressionTypeForName(supportedCompressionTypesJsonList[supportedCompressionTypesIndex].AsString()));
@@ -86,7 +86,7 @@ ChannelSpecification& ChannelSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SupportedInputModes"))
   {
-    Array<JsonView> supportedInputModesJsonList = jsonValue.GetArray("SupportedInputModes");
+    Aws::Utils::Array<JsonView> supportedInputModesJsonList = jsonValue.GetArray("SupportedInputModes");
     for(unsigned supportedInputModesIndex = 0; supportedInputModesIndex < supportedInputModesJsonList.GetLength(); ++supportedInputModesIndex)
     {
       m_supportedInputModes.push_back(TrainingInputModeMapper::GetTrainingInputModeForName(supportedInputModesJsonList[supportedInputModesIndex].AsString()));
@@ -121,7 +121,7 @@ JsonValue ChannelSpecification::Jsonize() const
 
   if(m_supportedContentTypesHasBeenSet)
   {
-   Array<JsonValue> supportedContentTypesJsonList(m_supportedContentTypes.size());
+   Aws::Utils::Array<JsonValue> supportedContentTypesJsonList(m_supportedContentTypes.size());
    for(unsigned supportedContentTypesIndex = 0; supportedContentTypesIndex < supportedContentTypesJsonList.GetLength(); ++supportedContentTypesIndex)
    {
      supportedContentTypesJsonList[supportedContentTypesIndex].AsString(m_supportedContentTypes[supportedContentTypesIndex]);
@@ -132,7 +132,7 @@ JsonValue ChannelSpecification::Jsonize() const
 
   if(m_supportedCompressionTypesHasBeenSet)
   {
-   Array<JsonValue> supportedCompressionTypesJsonList(m_supportedCompressionTypes.size());
+   Aws::Utils::Array<JsonValue> supportedCompressionTypesJsonList(m_supportedCompressionTypes.size());
    for(unsigned supportedCompressionTypesIndex = 0; supportedCompressionTypesIndex < supportedCompressionTypesJsonList.GetLength(); ++supportedCompressionTypesIndex)
    {
      supportedCompressionTypesJsonList[supportedCompressionTypesIndex].AsString(CompressionTypeMapper::GetNameForCompressionType(m_supportedCompressionTypes[supportedCompressionTypesIndex]));
@@ -143,7 +143,7 @@ JsonValue ChannelSpecification::Jsonize() const
 
   if(m_supportedInputModesHasBeenSet)
   {
-   Array<JsonValue> supportedInputModesJsonList(m_supportedInputModes.size());
+   Aws::Utils::Array<JsonValue> supportedInputModesJsonList(m_supportedInputModes.size());
    for(unsigned supportedInputModesIndex = 0; supportedInputModesIndex < supportedInputModesJsonList.GetLength(); ++supportedInputModesIndex)
    {
      supportedInputModesJsonList[supportedInputModesIndex].AsString(TrainingInputModeMapper::GetNameForTrainingInputMode(m_supportedInputModes[supportedInputModesIndex]));

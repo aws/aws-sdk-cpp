@@ -111,40 +111,40 @@ namespace Model
 
 
     /**
-     * The maximum allowed duration for the pre-roll ad avail. AWS Elemental
+     * <p>The maximum allowed duration for the pre-roll ad avail. AWS Elemental
      * MediaTailor won't play pre-roll ads to exceed this duration, regardless of the
-     * total duration of ads that the ADS returns.
+     * total duration of ads that the ADS returns.</p>
      */
     inline int GetMaxDurationSeconds() const{ return m_maxDurationSeconds; }
 
     /**
-     * The maximum allowed duration for the pre-roll ad avail. AWS Elemental
+     * <p>The maximum allowed duration for the pre-roll ad avail. AWS Elemental
      * MediaTailor won't play pre-roll ads to exceed this duration, regardless of the
-     * total duration of ads that the ADS returns.
+     * total duration of ads that the ADS returns.</p>
      */
     inline bool MaxDurationSecondsHasBeenSet() const { return m_maxDurationSecondsHasBeenSet; }
 
     /**
-     * The maximum allowed duration for the pre-roll ad avail. AWS Elemental
+     * <p>The maximum allowed duration for the pre-roll ad avail. AWS Elemental
      * MediaTailor won't play pre-roll ads to exceed this duration, regardless of the
-     * total duration of ads that the ADS returns.
+     * total duration of ads that the ADS returns.</p>
      */
     inline void SetMaxDurationSeconds(int value) { m_maxDurationSecondsHasBeenSet = true; m_maxDurationSeconds = value; }
 
     /**
-     * The maximum allowed duration for the pre-roll ad avail. AWS Elemental
+     * <p>The maximum allowed duration for the pre-roll ad avail. AWS Elemental
      * MediaTailor won't play pre-roll ads to exceed this duration, regardless of the
-     * total duration of ads that the ADS returns.
+     * total duration of ads that the ADS returns.</p>
      */
     inline LivePreRollConfiguration& WithMaxDurationSeconds(int value) { SetMaxDurationSeconds(value); return *this;}
 
   private:
 
     Aws::String m_adDecisionServerUrl;
-    bool m_adDecisionServerUrlHasBeenSet;
+    bool m_adDecisionServerUrlHasBeenSet = false;
 
     int m_maxDurationSeconds;
-    bool m_maxDurationSecondsHasBeenSet;
+    bool m_maxDurationSecondsHasBeenSet = false;
   };
 
 } // namespace Model

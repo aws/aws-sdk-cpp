@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_outboundEventsHTTPSEndpoint;
-    bool m_outboundEventsHTTPSEndpointHasBeenSet;
+    bool m_outboundEventsHTTPSEndpointHasBeenSet = false;
 
     Aws::String m_lambdaFunctionArn;
-    bool m_lambdaFunctionArnHasBeenSet;
+    bool m_lambdaFunctionArnHasBeenSet = false;
   };
 
 } // namespace Model

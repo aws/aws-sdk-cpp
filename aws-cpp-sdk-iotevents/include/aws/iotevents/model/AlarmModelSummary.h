@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_alarmModelDescription;
-    bool m_alarmModelDescriptionHasBeenSet;
+    bool m_alarmModelDescriptionHasBeenSet = false;
 
     Aws::String m_alarmModelName;
-    bool m_alarmModelNameHasBeenSet;
+    bool m_alarmModelNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_fleetName;
-    bool m_fleetNameHasBeenSet;
+    bool m_fleetNameHasBeenSet = false;
 
     Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet;
+    bool m_applicationArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -44,7 +44,7 @@ Aws::String BatchDeletePartitionRequest::SerializePayload() const
 
   if(m_partitionsToDeleteHasBeenSet)
   {
-   Array<JsonValue> partitionsToDeleteJsonList(m_partitionsToDelete.size());
+   Aws::Utils::Array<JsonValue> partitionsToDeleteJsonList(m_partitionsToDelete.size());
    for(unsigned partitionsToDeleteIndex = 0; partitionsToDeleteIndex < partitionsToDeleteJsonList.GetLength(); ++partitionsToDeleteIndex)
    {
      partitionsToDeleteJsonList[partitionsToDeleteIndex].AsObject(m_partitionsToDelete[partitionsToDeleteIndex].Jsonize());

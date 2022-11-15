@@ -107,6 +107,12 @@ GetDeploymentResult& GetDeploymentResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("parentTargetArn"))
+  {
+    m_parentTargetArn = jsonValue.GetString("parentTargetArn");
+
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();

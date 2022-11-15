@@ -44,6 +44,17 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        if (BucketHasBeenSet()) {
+            parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+        }
+
+        return parameters;
+    }
+
+
     /**
      * <p>The canned ACL to apply to the bucket.</p>
      */
@@ -462,37 +473,37 @@ namespace Model
   private:
 
     BucketCannedACL m_aCL;
-    bool m_aCLHasBeenSet;
+    bool m_aCLHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     CreateBucketConfiguration m_createBucketConfiguration;
-    bool m_createBucketConfigurationHasBeenSet;
+    bool m_createBucketConfigurationHasBeenSet = false;
 
     Aws::String m_grantFullControl;
-    bool m_grantFullControlHasBeenSet;
+    bool m_grantFullControlHasBeenSet = false;
 
     Aws::String m_grantRead;
-    bool m_grantReadHasBeenSet;
+    bool m_grantReadHasBeenSet = false;
 
     Aws::String m_grantReadACP;
-    bool m_grantReadACPHasBeenSet;
+    bool m_grantReadACPHasBeenSet = false;
 
     Aws::String m_grantWrite;
-    bool m_grantWriteHasBeenSet;
+    bool m_grantWriteHasBeenSet = false;
 
     Aws::String m_grantWriteACP;
-    bool m_grantWriteACPHasBeenSet;
+    bool m_grantWriteACPHasBeenSet = false;
 
     bool m_objectLockEnabledForBucket;
-    bool m_objectLockEnabledForBucketHasBeenSet;
+    bool m_objectLockEnabledForBucketHasBeenSet = false;
 
     ObjectOwnership m_objectOwnership;
-    bool m_objectOwnershipHasBeenSet;
+    bool m_objectOwnershipHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

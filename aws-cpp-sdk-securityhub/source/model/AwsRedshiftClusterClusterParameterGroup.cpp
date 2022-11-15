@@ -37,7 +37,7 @@ AwsRedshiftClusterClusterParameterGroup& AwsRedshiftClusterClusterParameterGroup
 {
   if(jsonValue.ValueExists("ClusterParameterStatusList"))
   {
-    Array<JsonView> clusterParameterStatusListJsonList = jsonValue.GetArray("ClusterParameterStatusList");
+    Aws::Utils::Array<JsonView> clusterParameterStatusListJsonList = jsonValue.GetArray("ClusterParameterStatusList");
     for(unsigned clusterParameterStatusListIndex = 0; clusterParameterStatusListIndex < clusterParameterStatusListJsonList.GetLength(); ++clusterParameterStatusListIndex)
     {
       m_clusterParameterStatusList.push_back(clusterParameterStatusListJsonList[clusterParameterStatusListIndex].AsObject());
@@ -68,7 +68,7 @@ JsonValue AwsRedshiftClusterClusterParameterGroup::Jsonize() const
 
   if(m_clusterParameterStatusListHasBeenSet)
   {
-   Array<JsonValue> clusterParameterStatusListJsonList(m_clusterParameterStatusList.size());
+   Aws::Utils::Array<JsonValue> clusterParameterStatusListJsonList(m_clusterParameterStatusList.size());
    for(unsigned clusterParameterStatusListIndex = 0; clusterParameterStatusListIndex < clusterParameterStatusListJsonList.GetLength(); ++clusterParameterStatusListIndex)
    {
      clusterParameterStatusListJsonList[clusterParameterStatusListIndex].AsObject(m_clusterParameterStatusList[clusterParameterStatusListIndex].Jsonize());

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_copyJobId;
-    bool m_copyJobIdHasBeenSet;
+    bool m_copyJobIdHasBeenSet = false;
   };
 
 } // namespace Model

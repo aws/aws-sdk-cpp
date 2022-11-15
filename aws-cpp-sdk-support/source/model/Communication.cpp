@@ -69,7 +69,7 @@ Communication& Communication::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("attachmentSet"))
   {
-    Array<JsonView> attachmentSetJsonList = jsonValue.GetArray("attachmentSet");
+    Aws::Utils::Array<JsonView> attachmentSetJsonList = jsonValue.GetArray("attachmentSet");
     for(unsigned attachmentSetIndex = 0; attachmentSetIndex < attachmentSetJsonList.GetLength(); ++attachmentSetIndex)
     {
       m_attachmentSet.push_back(attachmentSetJsonList[attachmentSetIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue Communication::Jsonize() const
 
   if(m_attachmentSetHasBeenSet)
   {
-   Array<JsonValue> attachmentSetJsonList(m_attachmentSet.size());
+   Aws::Utils::Array<JsonValue> attachmentSetJsonList(m_attachmentSet.size());
    for(unsigned attachmentSetIndex = 0; attachmentSetIndex < attachmentSetJsonList.GetLength(); ++attachmentSetIndex)
    {
      attachmentSetJsonList[attachmentSetIndex].AsObject(m_attachmentSet[attachmentSetIndex].Jsonize());

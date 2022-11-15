@@ -217,13 +217,13 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     bool m_bypassPolicyLockoutSafetyCheck;
-    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet;
+    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
   };
 
 } // namespace Model

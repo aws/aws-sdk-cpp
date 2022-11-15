@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_confirmationUrl;
-    bool m_confirmationUrlHasBeenSet;
+    bool m_confirmationUrlHasBeenSet = false;
   };
 
 } // namespace Model

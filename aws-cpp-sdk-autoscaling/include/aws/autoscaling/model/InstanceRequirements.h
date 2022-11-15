@@ -18,6 +18,7 @@
 #include <aws/autoscaling/model/BaselineEbsBandwidthMbpsRequest.h>
 #include <aws/autoscaling/model/AcceleratorCountRequest.h>
 #include <aws/autoscaling/model/AcceleratorTotalMemoryMiBRequest.h>
+#include <aws/autoscaling/model/NetworkBandwidthGbpsRequest.h>
 #include <aws/autoscaling/model/CpuManufacturer.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/InstanceGeneration.h>
@@ -42,15 +43,31 @@ namespace Model
 {
 
   /**
-   * <p>When you specify multiple parameters, you get instance types that satisfy all
-   * of the specified parameters. If you specify multiple values for a parameter, you
-   * get instance types that satisfy any of the specified values.</p> <p>Represents
-   * requirements for the types of instances that can be launched. You must specify
-   * <code>VCpuCount</code> and <code>MemoryMiB</code>, but all other parameters are
-   * optional. For more information, see <a
+   * <p>The attributes for the instance types for a mixed instances policy. Amazon
+   * EC2 Auto Scaling uses your specified requirements to identify instance types.
+   * Then, it uses your On-Demand and Spot allocation strategies to launch instances
+   * from these instance types.</p> <p>When you specify multiple attributes, you get
+   * instance types that satisfy all of the specified attributes. If you specify
+   * multiple values for an attribute, you get instance types that satisfy any of the
+   * specified values.</p> <p>To limit the list of instance types from which Amazon
+   * EC2 Auto Scaling can identify matching instance types, you can use one of the
+   * following parameters, but not both in the same request:</p> <ul> <li> <p>
+   * <code>AllowedInstanceTypes</code> - The instance types to include in the list.
+   * All other instance types are ignored, even if they match your specified
+   * attributes.</p> </li> <li> <p> <code>ExcludedInstanceTypes</code> - The instance
+   * types to exclude from the list, even if they match your specified
+   * attributes.</p> </li> </ul>  <p>You must specify <code>VCpuCount</code>
+   * and <code>MemoryMiB</code>. All other attributes are optional. Any unspecified
+   * optional attribute is set to its default.</p>  <p>For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
    * an Auto Scaling group using attribute-based instance type selection</a> in the
-   * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * <i>Amazon EC2 Auto Scaling User Guide</i>. For help determining which instance
+   * types match your attributes before you apply them to your Auto Scaling group,
+   * see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-get-instance-types-from-instance-requirements">Preview
+   * instance types with specified attributes</a> in the <i>Amazon EC2 User Guide for
+   * Linux Instances</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceRequirements">AWS
    * API Reference</a></p>
    */
@@ -240,146 +257,173 @@ namespace Model
 
     /**
      * <p>The minimum and maximum amount of memory per vCPU for an instance type, in
-     * GiB.</p> <p>Default: No minimum or maximum</p>
+     * GiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline const MemoryGiBPerVCpuRequest& GetMemoryGiBPerVCpu() const{ return m_memoryGiBPerVCpu; }
 
     /**
      * <p>The minimum and maximum amount of memory per vCPU for an instance type, in
-     * GiB.</p> <p>Default: No minimum or maximum</p>
+     * GiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline bool MemoryGiBPerVCpuHasBeenSet() const { return m_memoryGiBPerVCpuHasBeenSet; }
 
     /**
      * <p>The minimum and maximum amount of memory per vCPU for an instance type, in
-     * GiB.</p> <p>Default: No minimum or maximum</p>
+     * GiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline void SetMemoryGiBPerVCpu(const MemoryGiBPerVCpuRequest& value) { m_memoryGiBPerVCpuHasBeenSet = true; m_memoryGiBPerVCpu = value; }
 
     /**
      * <p>The minimum and maximum amount of memory per vCPU for an instance type, in
-     * GiB.</p> <p>Default: No minimum or maximum</p>
+     * GiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline void SetMemoryGiBPerVCpu(MemoryGiBPerVCpuRequest&& value) { m_memoryGiBPerVCpuHasBeenSet = true; m_memoryGiBPerVCpu = std::move(value); }
 
     /**
      * <p>The minimum and maximum amount of memory per vCPU for an instance type, in
-     * GiB.</p> <p>Default: No minimum or maximum</p>
+     * GiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithMemoryGiBPerVCpu(const MemoryGiBPerVCpuRequest& value) { SetMemoryGiBPerVCpu(value); return *this;}
 
     /**
      * <p>The minimum and maximum amount of memory per vCPU for an instance type, in
-     * GiB.</p> <p>Default: No minimum or maximum</p>
+     * GiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithMemoryGiBPerVCpu(MemoryGiBPerVCpuRequest&& value) { SetMemoryGiBPerVCpu(std::move(value)); return *this;}
 
 
     /**
-     * <p>Lists which instance types to exclude. You can use strings with one or more
-     * wild cards, represented by an asterisk (<code>*</code>). The following are
-     * examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>. </p> <p>For example, if you specify <code>c5*</code>, you are
-     * excluding the entire C5 instance family, which includes all C5a and C5n instance
-     * types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance
-     * types, but not the M5n instance types.</p> <p>Default: No excluded instance
-     * types</p>
+     * <p>The instance types to exclude. You can use strings with one or more wild
+     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>. </p> <p>For example, if you specify
+     * <code>c5*</code>, you are excluding the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n
+     * instance types.</p>  <p>If you specify <code>ExcludedInstanceTypes</code>,
+     * you can't specify <code>AllowedInstanceTypes</code>.</p>  <p>Default: No
+     * excluded instance types</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludedInstanceTypes() const{ return m_excludedInstanceTypes; }
 
     /**
-     * <p>Lists which instance types to exclude. You can use strings with one or more
-     * wild cards, represented by an asterisk (<code>*</code>). The following are
-     * examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>. </p> <p>For example, if you specify <code>c5*</code>, you are
-     * excluding the entire C5 instance family, which includes all C5a and C5n instance
-     * types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance
-     * types, but not the M5n instance types.</p> <p>Default: No excluded instance
-     * types</p>
+     * <p>The instance types to exclude. You can use strings with one or more wild
+     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>. </p> <p>For example, if you specify
+     * <code>c5*</code>, you are excluding the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n
+     * instance types.</p>  <p>If you specify <code>ExcludedInstanceTypes</code>,
+     * you can't specify <code>AllowedInstanceTypes</code>.</p>  <p>Default: No
+     * excluded instance types</p>
      */
     inline bool ExcludedInstanceTypesHasBeenSet() const { return m_excludedInstanceTypesHasBeenSet; }
 
     /**
-     * <p>Lists which instance types to exclude. You can use strings with one or more
-     * wild cards, represented by an asterisk (<code>*</code>). The following are
-     * examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>. </p> <p>For example, if you specify <code>c5*</code>, you are
-     * excluding the entire C5 instance family, which includes all C5a and C5n instance
-     * types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance
-     * types, but not the M5n instance types.</p> <p>Default: No excluded instance
-     * types</p>
+     * <p>The instance types to exclude. You can use strings with one or more wild
+     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>. </p> <p>For example, if you specify
+     * <code>c5*</code>, you are excluding the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n
+     * instance types.</p>  <p>If you specify <code>ExcludedInstanceTypes</code>,
+     * you can't specify <code>AllowedInstanceTypes</code>.</p>  <p>Default: No
+     * excluded instance types</p>
      */
     inline void SetExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = value; }
 
     /**
-     * <p>Lists which instance types to exclude. You can use strings with one or more
-     * wild cards, represented by an asterisk (<code>*</code>). The following are
-     * examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>. </p> <p>For example, if you specify <code>c5*</code>, you are
-     * excluding the entire C5 instance family, which includes all C5a and C5n instance
-     * types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance
-     * types, but not the M5n instance types.</p> <p>Default: No excluded instance
-     * types</p>
+     * <p>The instance types to exclude. You can use strings with one or more wild
+     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>. </p> <p>For example, if you specify
+     * <code>c5*</code>, you are excluding the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n
+     * instance types.</p>  <p>If you specify <code>ExcludedInstanceTypes</code>,
+     * you can't specify <code>AllowedInstanceTypes</code>.</p>  <p>Default: No
+     * excluded instance types</p>
      */
     inline void SetExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = std::move(value); }
 
     /**
-     * <p>Lists which instance types to exclude. You can use strings with one or more
-     * wild cards, represented by an asterisk (<code>*</code>). The following are
-     * examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>. </p> <p>For example, if you specify <code>c5*</code>, you are
-     * excluding the entire C5 instance family, which includes all C5a and C5n instance
-     * types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance
-     * types, but not the M5n instance types.</p> <p>Default: No excluded instance
-     * types</p>
+     * <p>The instance types to exclude. You can use strings with one or more wild
+     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>. </p> <p>For example, if you specify
+     * <code>c5*</code>, you are excluding the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n
+     * instance types.</p>  <p>If you specify <code>ExcludedInstanceTypes</code>,
+     * you can't specify <code>AllowedInstanceTypes</code>.</p>  <p>Default: No
+     * excluded instance types</p>
      */
     inline InstanceRequirements& WithExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetExcludedInstanceTypes(value); return *this;}
 
     /**
-     * <p>Lists which instance types to exclude. You can use strings with one or more
-     * wild cards, represented by an asterisk (<code>*</code>). The following are
-     * examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>. </p> <p>For example, if you specify <code>c5*</code>, you are
-     * excluding the entire C5 instance family, which includes all C5a and C5n instance
-     * types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance
-     * types, but not the M5n instance types.</p> <p>Default: No excluded instance
-     * types</p>
+     * <p>The instance types to exclude. You can use strings with one or more wild
+     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>. </p> <p>For example, if you specify
+     * <code>c5*</code>, you are excluding the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n
+     * instance types.</p>  <p>If you specify <code>ExcludedInstanceTypes</code>,
+     * you can't specify <code>AllowedInstanceTypes</code>.</p>  <p>Default: No
+     * excluded instance types</p>
      */
     inline InstanceRequirements& WithExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetExcludedInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>Lists which instance types to exclude. You can use strings with one or more
-     * wild cards, represented by an asterisk (<code>*</code>). The following are
-     * examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>. </p> <p>For example, if you specify <code>c5*</code>, you are
-     * excluding the entire C5 instance family, which includes all C5a and C5n instance
-     * types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance
-     * types, but not the M5n instance types.</p> <p>Default: No excluded instance
-     * types</p>
+     * <p>The instance types to exclude. You can use strings with one or more wild
+     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>. </p> <p>For example, if you specify
+     * <code>c5*</code>, you are excluding the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n
+     * instance types.</p>  <p>If you specify <code>ExcludedInstanceTypes</code>,
+     * you can't specify <code>AllowedInstanceTypes</code>.</p>  <p>Default: No
+     * excluded instance types</p>
      */
     inline InstanceRequirements& AddExcludedInstanceTypes(const Aws::String& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>Lists which instance types to exclude. You can use strings with one or more
-     * wild cards, represented by an asterisk (<code>*</code>). The following are
-     * examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>. </p> <p>For example, if you specify <code>c5*</code>, you are
-     * excluding the entire C5 instance family, which includes all C5a and C5n instance
-     * types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance
-     * types, but not the M5n instance types.</p> <p>Default: No excluded instance
-     * types</p>
+     * <p>The instance types to exclude. You can use strings with one or more wild
+     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>. </p> <p>For example, if you specify
+     * <code>c5*</code>, you are excluding the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n
+     * instance types.</p>  <p>If you specify <code>ExcludedInstanceTypes</code>,
+     * you can't specify <code>AllowedInstanceTypes</code>.</p>  <p>Default: No
+     * excluded instance types</p>
      */
     inline InstanceRequirements& AddExcludedInstanceTypes(Aws::String&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Lists which instance types to exclude. You can use strings with one or more
-     * wild cards, represented by an asterisk (<code>*</code>). The following are
-     * examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>. </p> <p>For example, if you specify <code>c5*</code>, you are
-     * excluding the entire C5 instance family, which includes all C5a and C5n instance
-     * types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance
-     * types, but not the M5n instance types.</p> <p>Default: No excluded instance
-     * types</p>
+     * <p>The instance types to exclude. You can use strings with one or more wild
+     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>. </p> <p>For example, if you specify
+     * <code>c5*</code>, you are excluding the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n
+     * instance types.</p>  <p>If you specify <code>ExcludedInstanceTypes</code>,
+     * you can't specify <code>AllowedInstanceTypes</code>.</p>  <p>Default: No
+     * excluded instance types</p>
      */
     inline InstanceRequirements& AddExcludedInstanceTypes(const char* value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
 
@@ -499,61 +543,61 @@ namespace Model
 
     /**
      * <p>The price protection threshold for Spot Instances. This is the maximum you’ll
-     * pay for a Spot Instance, expressed as a percentage higher than the cheapest M,
-     * C, or R instance type with your specified attributes. When Amazon EC2 Auto
-     * Scaling selects instance types with your attributes, we will exclude instance
-     * types whose price is higher than your threshold. The parameter accepts an
-     * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
-     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>100</code> </p>
+     * pay for a Spot Instance, expressed as a percentage higher than the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>100</code> </p>
      */
     inline int GetSpotMaxPricePercentageOverLowestPrice() const{ return m_spotMaxPricePercentageOverLowestPrice; }
 
     /**
      * <p>The price protection threshold for Spot Instances. This is the maximum you’ll
-     * pay for a Spot Instance, expressed as a percentage higher than the cheapest M,
-     * C, or R instance type with your specified attributes. When Amazon EC2 Auto
-     * Scaling selects instance types with your attributes, we will exclude instance
-     * types whose price is higher than your threshold. The parameter accepts an
-     * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
-     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>100</code> </p>
+     * pay for a Spot Instance, expressed as a percentage higher than the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>100</code> </p>
      */
     inline bool SpotMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_spotMaxPricePercentageOverLowestPriceHasBeenSet; }
 
     /**
      * <p>The price protection threshold for Spot Instances. This is the maximum you’ll
-     * pay for a Spot Instance, expressed as a percentage higher than the cheapest M,
-     * C, or R instance type with your specified attributes. When Amazon EC2 Auto
-     * Scaling selects instance types with your attributes, we will exclude instance
-     * types whose price is higher than your threshold. The parameter accepts an
-     * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
-     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>100</code> </p>
+     * pay for a Spot Instance, expressed as a percentage higher than the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>100</code> </p>
      */
     inline void SetSpotMaxPricePercentageOverLowestPrice(int value) { m_spotMaxPricePercentageOverLowestPriceHasBeenSet = true; m_spotMaxPricePercentageOverLowestPrice = value; }
 
     /**
      * <p>The price protection threshold for Spot Instances. This is the maximum you’ll
-     * pay for a Spot Instance, expressed as a percentage higher than the cheapest M,
-     * C, or R instance type with your specified attributes. When Amazon EC2 Auto
-     * Scaling selects instance types with your attributes, we will exclude instance
-     * types whose price is higher than your threshold. The parameter accepts an
-     * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
-     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>100</code> </p>
+     * pay for a Spot Instance, expressed as a percentage higher than the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>100</code> </p>
      */
     inline InstanceRequirements& WithSpotMaxPricePercentageOverLowestPrice(int value) { SetSpotMaxPricePercentageOverLowestPrice(value); return *this;}
 
@@ -561,60 +605,60 @@ namespace Model
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
      * you’ll pay for an On-Demand Instance, expressed as a percentage higher than the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     * instance types whose price is higher than your threshold. The parameter accepts
-     * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
-     * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>20</code> </p>
+     * least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>20</code> </p>
      */
     inline int GetOnDemandMaxPricePercentageOverLowestPrice() const{ return m_onDemandMaxPricePercentageOverLowestPrice; }
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
      * you’ll pay for an On-Demand Instance, expressed as a percentage higher than the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     * instance types whose price is higher than your threshold. The parameter accepts
-     * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
-     * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>20</code> </p>
+     * least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>20</code> </p>
      */
     inline bool OnDemandMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet; }
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
      * you’ll pay for an On-Demand Instance, expressed as a percentage higher than the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     * instance types whose price is higher than your threshold. The parameter accepts
-     * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
-     * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>20</code> </p>
+     * least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>20</code> </p>
      */
     inline void SetOnDemandMaxPricePercentageOverLowestPrice(int value) { m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = true; m_onDemandMaxPricePercentageOverLowestPrice = value; }
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
      * you’ll pay for an On-Demand Instance, expressed as a percentage higher than the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     * instance types whose price is higher than your threshold. The parameter accepts
-     * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
-     * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>20</code> </p>
+     * least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>20</code> </p>
      */
     inline InstanceRequirements& WithOnDemandMaxPricePercentageOverLowestPrice(int value) { SetOnDemandMaxPricePercentageOverLowestPrice(value); return *this;}
 
@@ -738,37 +782,37 @@ namespace Model
 
     /**
      * <p>The minimum and maximum number of network interfaces for an instance
-     * type.</p> <p>Default: No minimum or maximum</p>
+     * type.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline const NetworkInterfaceCountRequest& GetNetworkInterfaceCount() const{ return m_networkInterfaceCount; }
 
     /**
      * <p>The minimum and maximum number of network interfaces for an instance
-     * type.</p> <p>Default: No minimum or maximum</p>
+     * type.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline bool NetworkInterfaceCountHasBeenSet() const { return m_networkInterfaceCountHasBeenSet; }
 
     /**
      * <p>The minimum and maximum number of network interfaces for an instance
-     * type.</p> <p>Default: No minimum or maximum</p>
+     * type.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline void SetNetworkInterfaceCount(const NetworkInterfaceCountRequest& value) { m_networkInterfaceCountHasBeenSet = true; m_networkInterfaceCount = value; }
 
     /**
      * <p>The minimum and maximum number of network interfaces for an instance
-     * type.</p> <p>Default: No minimum or maximum</p>
+     * type.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline void SetNetworkInterfaceCount(NetworkInterfaceCountRequest&& value) { m_networkInterfaceCountHasBeenSet = true; m_networkInterfaceCount = std::move(value); }
 
     /**
      * <p>The minimum and maximum number of network interfaces for an instance
-     * type.</p> <p>Default: No minimum or maximum</p>
+     * type.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithNetworkInterfaceCount(const NetworkInterfaceCountRequest& value) { SetNetworkInterfaceCount(value); return *this;}
 
     /**
      * <p>The minimum and maximum number of network interfaces for an instance
-     * type.</p> <p>Default: No minimum or maximum</p>
+     * type.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithNetworkInterfaceCount(NetworkInterfaceCountRequest&& value) { SetNetworkInterfaceCount(std::move(value)); return *this;}
 
@@ -832,7 +876,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline const Aws::Vector<LocalStorageType>& GetLocalStorageTypes() const{ return m_localStorageTypes; }
 
@@ -840,7 +884,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline bool LocalStorageTypesHasBeenSet() const { return m_localStorageTypesHasBeenSet; }
 
@@ -848,7 +892,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline void SetLocalStorageTypes(const Aws::Vector<LocalStorageType>& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes = value; }
 
@@ -856,7 +900,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline void SetLocalStorageTypes(Aws::Vector<LocalStorageType>&& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes = std::move(value); }
 
@@ -864,7 +908,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline InstanceRequirements& WithLocalStorageTypes(const Aws::Vector<LocalStorageType>& value) { SetLocalStorageTypes(value); return *this;}
 
@@ -872,7 +916,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline InstanceRequirements& WithLocalStorageTypes(Aws::Vector<LocalStorageType>&& value) { SetLocalStorageTypes(std::move(value)); return *this;}
 
@@ -880,7 +924,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline InstanceRequirements& AddLocalStorageTypes(const LocalStorageType& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes.push_back(value); return *this; }
 
@@ -888,44 +932,44 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline InstanceRequirements& AddLocalStorageTypes(LocalStorageType&& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The minimum and maximum total local storage size for an instance type, in
-     * GB.</p> <p>Default: No minimum or maximum</p>
+     * GB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline const TotalLocalStorageGBRequest& GetTotalLocalStorageGB() const{ return m_totalLocalStorageGB; }
 
     /**
      * <p>The minimum and maximum total local storage size for an instance type, in
-     * GB.</p> <p>Default: No minimum or maximum</p>
+     * GB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline bool TotalLocalStorageGBHasBeenSet() const { return m_totalLocalStorageGBHasBeenSet; }
 
     /**
      * <p>The minimum and maximum total local storage size for an instance type, in
-     * GB.</p> <p>Default: No minimum or maximum</p>
+     * GB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline void SetTotalLocalStorageGB(const TotalLocalStorageGBRequest& value) { m_totalLocalStorageGBHasBeenSet = true; m_totalLocalStorageGB = value; }
 
     /**
      * <p>The minimum and maximum total local storage size for an instance type, in
-     * GB.</p> <p>Default: No minimum or maximum</p>
+     * GB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline void SetTotalLocalStorageGB(TotalLocalStorageGBRequest&& value) { m_totalLocalStorageGBHasBeenSet = true; m_totalLocalStorageGB = std::move(value); }
 
     /**
      * <p>The minimum and maximum total local storage size for an instance type, in
-     * GB.</p> <p>Default: No minimum or maximum</p>
+     * GB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithTotalLocalStorageGB(const TotalLocalStorageGBRequest& value) { SetTotalLocalStorageGB(value); return *this;}
 
     /**
      * <p>The minimum and maximum total local storage size for an instance type, in
-     * GB.</p> <p>Default: No minimum or maximum</p>
+     * GB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithTotalLocalStorageGB(TotalLocalStorageGBRequest&& value) { SetTotalLocalStorageGB(std::move(value)); return *this;}
 
@@ -935,7 +979,7 @@ namespace Model
      * in Mbps. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
      * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Default: No minimum or maximum</p>
+     * Instances</i>.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline const BaselineEbsBandwidthMbpsRequest& GetBaselineEbsBandwidthMbps() const{ return m_baselineEbsBandwidthMbps; }
 
@@ -944,7 +988,7 @@ namespace Model
      * in Mbps. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
      * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Default: No minimum or maximum</p>
+     * Instances</i>.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline bool BaselineEbsBandwidthMbpsHasBeenSet() const { return m_baselineEbsBandwidthMbpsHasBeenSet; }
 
@@ -953,7 +997,7 @@ namespace Model
      * in Mbps. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
      * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Default: No minimum or maximum</p>
+     * Instances</i>.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline void SetBaselineEbsBandwidthMbps(const BaselineEbsBandwidthMbpsRequest& value) { m_baselineEbsBandwidthMbpsHasBeenSet = true; m_baselineEbsBandwidthMbps = value; }
 
@@ -962,7 +1006,7 @@ namespace Model
      * in Mbps. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
      * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Default: No minimum or maximum</p>
+     * Instances</i>.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline void SetBaselineEbsBandwidthMbps(BaselineEbsBandwidthMbpsRequest&& value) { m_baselineEbsBandwidthMbpsHasBeenSet = true; m_baselineEbsBandwidthMbps = std::move(value); }
 
@@ -971,7 +1015,7 @@ namespace Model
      * in Mbps. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
      * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Default: No minimum or maximum</p>
+     * Instances</i>.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithBaselineEbsBandwidthMbps(const BaselineEbsBandwidthMbpsRequest& value) { SetBaselineEbsBandwidthMbps(value); return *this;}
 
@@ -980,7 +1024,7 @@ namespace Model
      * in Mbps. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
      * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Default: No minimum or maximum</p>
+     * Instances</i>.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithBaselineEbsBandwidthMbps(BaselineEbsBandwidthMbpsRequest&& value) { SetBaselineEbsBandwidthMbps(std::move(value)); return *this;}
 
@@ -1070,7 +1114,7 @@ namespace Model
      * <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web
      * Services Inferentia chips) for an instance type.</p> <p>To exclude
      * accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
-     * <p>Default: No minimum or maximum</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline const AcceleratorCountRequest& GetAcceleratorCount() const{ return m_acceleratorCount; }
 
@@ -1078,7 +1122,7 @@ namespace Model
      * <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web
      * Services Inferentia chips) for an instance type.</p> <p>To exclude
      * accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
-     * <p>Default: No minimum or maximum</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline bool AcceleratorCountHasBeenSet() const { return m_acceleratorCountHasBeenSet; }
 
@@ -1086,7 +1130,7 @@ namespace Model
      * <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web
      * Services Inferentia chips) for an instance type.</p> <p>To exclude
      * accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
-     * <p>Default: No minimum or maximum</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline void SetAcceleratorCount(const AcceleratorCountRequest& value) { m_acceleratorCountHasBeenSet = true; m_acceleratorCount = value; }
 
@@ -1094,7 +1138,7 @@ namespace Model
      * <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web
      * Services Inferentia chips) for an instance type.</p> <p>To exclude
      * accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
-     * <p>Default: No minimum or maximum</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline void SetAcceleratorCount(AcceleratorCountRequest&& value) { m_acceleratorCountHasBeenSet = true; m_acceleratorCount = std::move(value); }
 
@@ -1102,7 +1146,7 @@ namespace Model
      * <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web
      * Services Inferentia chips) for an instance type.</p> <p>To exclude
      * accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
-     * <p>Default: No minimum or maximum</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithAcceleratorCount(const AcceleratorCountRequest& value) { SetAcceleratorCount(value); return *this;}
 
@@ -1110,7 +1154,7 @@ namespace Model
      * <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web
      * Services Inferentia chips) for an instance type.</p> <p>To exclude
      * accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
-     * <p>Default: No minimum or maximum</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithAcceleratorCount(AcceleratorCountRequest&& value) { SetAcceleratorCount(std::move(value)); return *this;}
 
@@ -1319,104 +1363,301 @@ namespace Model
 
     /**
      * <p>The minimum and maximum total memory size for the accelerators on an instance
-     * type, in MiB.</p> <p>Default: No minimum or maximum</p>
+     * type, in MiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline const AcceleratorTotalMemoryMiBRequest& GetAcceleratorTotalMemoryMiB() const{ return m_acceleratorTotalMemoryMiB; }
 
     /**
      * <p>The minimum and maximum total memory size for the accelerators on an instance
-     * type, in MiB.</p> <p>Default: No minimum or maximum</p>
+     * type, in MiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline bool AcceleratorTotalMemoryMiBHasBeenSet() const { return m_acceleratorTotalMemoryMiBHasBeenSet; }
 
     /**
      * <p>The minimum and maximum total memory size for the accelerators on an instance
-     * type, in MiB.</p> <p>Default: No minimum or maximum</p>
+     * type, in MiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline void SetAcceleratorTotalMemoryMiB(const AcceleratorTotalMemoryMiBRequest& value) { m_acceleratorTotalMemoryMiBHasBeenSet = true; m_acceleratorTotalMemoryMiB = value; }
 
     /**
      * <p>The minimum and maximum total memory size for the accelerators on an instance
-     * type, in MiB.</p> <p>Default: No minimum or maximum</p>
+     * type, in MiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline void SetAcceleratorTotalMemoryMiB(AcceleratorTotalMemoryMiBRequest&& value) { m_acceleratorTotalMemoryMiBHasBeenSet = true; m_acceleratorTotalMemoryMiB = std::move(value); }
 
     /**
      * <p>The minimum and maximum total memory size for the accelerators on an instance
-     * type, in MiB.</p> <p>Default: No minimum or maximum</p>
+     * type, in MiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithAcceleratorTotalMemoryMiB(const AcceleratorTotalMemoryMiBRequest& value) { SetAcceleratorTotalMemoryMiB(value); return *this;}
 
     /**
      * <p>The minimum and maximum total memory size for the accelerators on an instance
-     * type, in MiB.</p> <p>Default: No minimum or maximum</p>
+     * type, in MiB.</p> <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirements& WithAcceleratorTotalMemoryMiB(AcceleratorTotalMemoryMiBRequest&& value) { SetAcceleratorTotalMemoryMiB(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline const NetworkBandwidthGbpsRequest& GetNetworkBandwidthGbps() const{ return m_networkBandwidthGbps; }
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline bool NetworkBandwidthGbpsHasBeenSet() const { return m_networkBandwidthGbpsHasBeenSet; }
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline void SetNetworkBandwidthGbps(const NetworkBandwidthGbpsRequest& value) { m_networkBandwidthGbpsHasBeenSet = true; m_networkBandwidthGbps = value; }
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline void SetNetworkBandwidthGbps(NetworkBandwidthGbpsRequest&& value) { m_networkBandwidthGbpsHasBeenSet = true; m_networkBandwidthGbps = std::move(value); }
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline InstanceRequirements& WithNetworkBandwidthGbps(const NetworkBandwidthGbpsRequest& value) { SetNetworkBandwidthGbps(value); return *this;}
+
+    /**
+     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
+     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     */
+    inline InstanceRequirements& WithNetworkBandwidthGbps(NetworkBandwidthGbpsRequest&& value) { SetNetworkBandwidthGbps(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     * family, which includes all C5a and C5n instance types. If you specify
+     * <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance
+     * types, but not the M5n instance types.</p>  <p>If you specify
+     * <code>AllowedInstanceTypes</code>, you can't specify
+     * <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowedInstanceTypes() const{ return m_allowedInstanceTypes; }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     * family, which includes all C5a and C5n instance types. If you specify
+     * <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance
+     * types, but not the M5n instance types.</p>  <p>If you specify
+     * <code>AllowedInstanceTypes</code>, you can't specify
+     * <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline bool AllowedInstanceTypesHasBeenSet() const { return m_allowedInstanceTypesHasBeenSet; }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     * family, which includes all C5a and C5n instance types. If you specify
+     * <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance
+     * types, but not the M5n instance types.</p>  <p>If you specify
+     * <code>AllowedInstanceTypes</code>, you can't specify
+     * <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline void SetAllowedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes = value; }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     * family, which includes all C5a and C5n instance types. If you specify
+     * <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance
+     * types, but not the M5n instance types.</p>  <p>If you specify
+     * <code>AllowedInstanceTypes</code>, you can't specify
+     * <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline void SetAllowedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes = std::move(value); }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     * family, which includes all C5a and C5n instance types. If you specify
+     * <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance
+     * types, but not the M5n instance types.</p>  <p>If you specify
+     * <code>AllowedInstanceTypes</code>, you can't specify
+     * <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline InstanceRequirements& WithAllowedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetAllowedInstanceTypes(value); return *this;}
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     * family, which includes all C5a and C5n instance types. If you specify
+     * <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance
+     * types, but not the M5n instance types.</p>  <p>If you specify
+     * <code>AllowedInstanceTypes</code>, you can't specify
+     * <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline InstanceRequirements& WithAllowedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetAllowedInstanceTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     * family, which includes all C5a and C5n instance types. If you specify
+     * <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance
+     * types, but not the M5n instance types.</p>  <p>If you specify
+     * <code>AllowedInstanceTypes</code>, you can't specify
+     * <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline InstanceRequirements& AddAllowedInstanceTypes(const Aws::String& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     * family, which includes all C5a and C5n instance types. If you specify
+     * <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance
+     * types, but not the M5n instance types.</p>  <p>If you specify
+     * <code>AllowedInstanceTypes</code>, you can't specify
+     * <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline InstanceRequirements& AddAllowedInstanceTypes(Aws::String&& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The instance types to apply your specified attributes against. All other
+     * instance types are ignored, even if they match your specified attributes.</p>
+     * <p>You can use strings with one or more wild cards, represented by an asterisk
+     * (<code>*</code>), to allow an instance type, size, or generation. The following
+     * are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+     * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
+     * <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     * family, which includes all C5a and C5n instance types. If you specify
+     * <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance
+     * types, but not the M5n instance types.</p>  <p>If you specify
+     * <code>AllowedInstanceTypes</code>, you can't specify
+     * <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
+     * types</p>
+     */
+    inline InstanceRequirements& AddAllowedInstanceTypes(const char* value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(value); return *this; }
 
   private:
 
     VCpuCountRequest m_vCpuCount;
-    bool m_vCpuCountHasBeenSet;
+    bool m_vCpuCountHasBeenSet = false;
 
     MemoryMiBRequest m_memoryMiB;
-    bool m_memoryMiBHasBeenSet;
+    bool m_memoryMiBHasBeenSet = false;
 
     Aws::Vector<CpuManufacturer> m_cpuManufacturers;
-    bool m_cpuManufacturersHasBeenSet;
+    bool m_cpuManufacturersHasBeenSet = false;
 
     MemoryGiBPerVCpuRequest m_memoryGiBPerVCpu;
-    bool m_memoryGiBPerVCpuHasBeenSet;
+    bool m_memoryGiBPerVCpuHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedInstanceTypes;
-    bool m_excludedInstanceTypesHasBeenSet;
+    bool m_excludedInstanceTypesHasBeenSet = false;
 
     Aws::Vector<InstanceGeneration> m_instanceGenerations;
-    bool m_instanceGenerationsHasBeenSet;
+    bool m_instanceGenerationsHasBeenSet = false;
 
     int m_spotMaxPricePercentageOverLowestPrice;
-    bool m_spotMaxPricePercentageOverLowestPriceHasBeenSet;
+    bool m_spotMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
     int m_onDemandMaxPricePercentageOverLowestPrice;
-    bool m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet;
+    bool m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
     BareMetal m_bareMetal;
-    bool m_bareMetalHasBeenSet;
+    bool m_bareMetalHasBeenSet = false;
 
     BurstablePerformance m_burstablePerformance;
-    bool m_burstablePerformanceHasBeenSet;
+    bool m_burstablePerformanceHasBeenSet = false;
 
     bool m_requireHibernateSupport;
-    bool m_requireHibernateSupportHasBeenSet;
+    bool m_requireHibernateSupportHasBeenSet = false;
 
     NetworkInterfaceCountRequest m_networkInterfaceCount;
-    bool m_networkInterfaceCountHasBeenSet;
+    bool m_networkInterfaceCountHasBeenSet = false;
 
     LocalStorage m_localStorage;
-    bool m_localStorageHasBeenSet;
+    bool m_localStorageHasBeenSet = false;
 
     Aws::Vector<LocalStorageType> m_localStorageTypes;
-    bool m_localStorageTypesHasBeenSet;
+    bool m_localStorageTypesHasBeenSet = false;
 
     TotalLocalStorageGBRequest m_totalLocalStorageGB;
-    bool m_totalLocalStorageGBHasBeenSet;
+    bool m_totalLocalStorageGBHasBeenSet = false;
 
     BaselineEbsBandwidthMbpsRequest m_baselineEbsBandwidthMbps;
-    bool m_baselineEbsBandwidthMbpsHasBeenSet;
+    bool m_baselineEbsBandwidthMbpsHasBeenSet = false;
 
     Aws::Vector<AcceleratorType> m_acceleratorTypes;
-    bool m_acceleratorTypesHasBeenSet;
+    bool m_acceleratorTypesHasBeenSet = false;
 
     AcceleratorCountRequest m_acceleratorCount;
-    bool m_acceleratorCountHasBeenSet;
+    bool m_acceleratorCountHasBeenSet = false;
 
     Aws::Vector<AcceleratorManufacturer> m_acceleratorManufacturers;
-    bool m_acceleratorManufacturersHasBeenSet;
+    bool m_acceleratorManufacturersHasBeenSet = false;
 
     Aws::Vector<AcceleratorName> m_acceleratorNames;
-    bool m_acceleratorNamesHasBeenSet;
+    bool m_acceleratorNamesHasBeenSet = false;
 
     AcceleratorTotalMemoryMiBRequest m_acceleratorTotalMemoryMiB;
-    bool m_acceleratorTotalMemoryMiBHasBeenSet;
+    bool m_acceleratorTotalMemoryMiBHasBeenSet = false;
+
+    NetworkBandwidthGbpsRequest m_networkBandwidthGbps;
+    bool m_networkBandwidthGbpsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_allowedInstanceTypes;
+    bool m_allowedInstanceTypesHasBeenSet = false;
   };
 
 } // namespace Model

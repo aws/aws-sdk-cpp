@@ -73,7 +73,7 @@ namespace Model
   private:
 
     ResourceStatusValue m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

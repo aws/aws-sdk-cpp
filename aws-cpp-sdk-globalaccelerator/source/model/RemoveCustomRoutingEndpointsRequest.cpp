@@ -24,7 +24,7 @@ Aws::String RemoveCustomRoutingEndpointsRequest::SerializePayload() const
 
   if(m_endpointIdsHasBeenSet)
   {
-   Array<JsonValue> endpointIdsJsonList(m_endpointIds.size());
+   Aws::Utils::Array<JsonValue> endpointIdsJsonList(m_endpointIds.size());
    for(unsigned endpointIdsIndex = 0; endpointIdsIndex < endpointIdsJsonList.GetLength(); ++endpointIdsIndex)
    {
      endpointIdsJsonList[endpointIdsIndex].AsString(m_endpointIds[endpointIdsIndex]);

@@ -183,16 +183,16 @@ namespace Model
   private:
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     bool m_ruleDisabled;
-    bool m_ruleDisabledHasBeenSet;
+    bool m_ruleDisabledHasBeenSet = false;
   };
 
 } // namespace Model

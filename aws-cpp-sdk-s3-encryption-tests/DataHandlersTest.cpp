@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,7 +31,9 @@ class MockS3Client : public Aws::S3::S3Client
 {
 public:
     MockS3Client(Aws::Client::ClientConfiguration clientConfiguration = Aws::Client::ClientConfiguration()) :
-        S3Client(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
+        S3Client(Aws::Auth::AWSCredentials("", ""),
+                 Aws::MakeShared<Aws::S3::Endpoint::S3EndpointProvider>(ALLOCATION_TAG),
+                         clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
     {
     }
 
@@ -134,10 +136,10 @@ namespace
         handler.PopulateRequest(request, contentCryptoMaterial);
         auto metadata = request.GetMetadata();
         ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
-        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]), contentCryptoMaterial.GetFinalCEK());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]), static_cast<ByteBuffer>(contentCryptoMaterial.GetFinalCEK()));
 
         ASSERT_NE(metadata.find(IV_HEADER), metadata.end());
-        ASSERT_EQ(HashingUtils::Base64Decode(metadata[IV_HEADER]), contentCryptoMaterial.GetIV());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[IV_HEADER]), static_cast<ByteBuffer>(contentCryptoMaterial.GetIV()));
 
         ASSERT_NE(metadata.find(CONTENT_CRYPTO_SCHEME_HEADER), metadata.end());
         ASSERT_STREQ(metadata[CONTENT_CRYPTO_SCHEME_HEADER].c_str(), ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme()).c_str());
@@ -176,10 +178,10 @@ namespace
         auto metadata = result.GetMetadata();
 
         ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
-        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]), readContentCryptoMaterial.GetFinalCEK());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]), static_cast<ByteBuffer>(readContentCryptoMaterial.GetFinalCEK()));
 
         ASSERT_NE(metadata.find(IV_HEADER), metadata.end());
-        ASSERT_EQ(HashingUtils::Base64Decode(metadata[IV_HEADER]), readContentCryptoMaterial.GetIV());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[IV_HEADER]), static_cast<ByteBuffer>(readContentCryptoMaterial.GetIV()));
 
         ASSERT_NE(metadata.find(CONTENT_CRYPTO_SCHEME_HEADER), metadata.end());
         ASSERT_STREQ(metadata[CONTENT_CRYPTO_SCHEME_HEADER].c_str(), ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(readContentCryptoMaterial.GetContentCryptoScheme()).c_str());
@@ -206,10 +208,10 @@ namespace
         auto metadata = request.GetMetadata();
 
         ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
-        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]), contentCryptoMaterial.GetFinalCEK());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]), static_cast<ByteBuffer>(contentCryptoMaterial.GetFinalCEK()));
 
         ASSERT_NE(metadata.find(IV_HEADER), metadata.end());
-        ASSERT_EQ(HashingUtils::Base64Decode(metadata[IV_HEADER]), contentCryptoMaterial.GetIV());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[IV_HEADER]), static_cast<ByteBuffer>(contentCryptoMaterial.GetIV()));
 
         ASSERT_NE(metadata.find(CONTENT_CRYPTO_SCHEME_HEADER), metadata.end());
         ASSERT_STREQ(metadata[CONTENT_CRYPTO_SCHEME_HEADER].c_str(), ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme()).c_str());
@@ -283,10 +285,10 @@ namespace
         Aws::Map<Aws::String, Aws::String> cryptoContentMap = handler.DeserializeMap(jsonString);
 
         ASSERT_NE(cryptoContentMap.find(CONTENT_KEY_HEADER), cryptoContentMap.end());
-        ASSERT_EQ(HashingUtils::Base64Decode(cryptoContentMap[CONTENT_KEY_HEADER]), contentCryptoMaterial.GetFinalCEK());
+        ASSERT_EQ(HashingUtils::Base64Decode(cryptoContentMap[CONTENT_KEY_HEADER]), static_cast<ByteBuffer>(contentCryptoMaterial.GetFinalCEK()));
 
         ASSERT_NE(cryptoContentMap.find(IV_HEADER), cryptoContentMap.end());
-        ASSERT_EQ(HashingUtils::Base64Decode(cryptoContentMap[IV_HEADER]), contentCryptoMaterial.GetIV());
+        ASSERT_EQ(HashingUtils::Base64Decode(cryptoContentMap[IV_HEADER]), static_cast<ByteBuffer>(contentCryptoMaterial.GetIV()));
 
         ASSERT_NE(cryptoContentMap.find(CONTENT_CRYPTO_SCHEME_HEADER), cryptoContentMap.end());
         ASSERT_STREQ(cryptoContentMap[CONTENT_CRYPTO_SCHEME_HEADER].c_str(), ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme()).c_str());

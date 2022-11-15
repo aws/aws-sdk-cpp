@@ -67,9 +67,11 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebSer
 #elseif($memberEntry.value.shape.enum)
     ${memberVarName} = ${memberEntry.value.shape.name}Mapper::Get${memberEntry.value.shape.name}ForName(${varName}Iter->second);
 #elseif($memberEntry.value.shape.timeStamp)
-    ${memberVarName} = DateTime(${varName}Iter->second.c_str(), DateFormat::$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape));
+    ${memberVarName} = DateTime(${varName}Iter->second.c_str(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape));
 #elseif($memberEntry.value.shape.primitive)
      ${memberVarName} = ${CppViewHelper.computeXmlConversionMethodName($memberEntry.value.shape)}(${varName}Iter->second.c_str());
+#elseif($metadata.awsQueryCompatible && $memberEntry.value.shape.structure && $memberEntry.value.shape.name == 'ResponseMetadata')
+     m_responseMetadata.SetRequestId(${varName}Iter->second);
 #end
   }
 

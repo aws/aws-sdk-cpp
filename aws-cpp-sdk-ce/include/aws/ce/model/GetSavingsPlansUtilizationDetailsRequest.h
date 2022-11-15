@@ -297,85 +297,85 @@ namespace Model
 
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
      * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
      * <code>NetSavings</code> </p> </li> <li> <p>
      * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
-     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
      * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
      * <code>NetSavings</code> </p> </li> <li> <p>
      * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
-     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
      * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
      * <code>NetSavings</code> </p> </li> <li> <p>
      * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
-     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
      * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
      * <code>NetSavings</code> </p> </li> <li> <p>
      * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
-     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
      * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
      * <code>NetSavings</code> </p> </li> <li> <p>
      * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
-     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline GetSavingsPlansUtilizationDetailsRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>UtilizationPercentage</code> </p> </li> <li> <p>
      * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
      * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
      * <code>NetSavings</code> </p> </li> <li> <p>
      * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
-     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline GetSavingsPlansUtilizationDetailsRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}
@@ -383,22 +383,22 @@ namespace Model
   private:
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::Vector<SavingsPlansDataType> m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     SortDefinition m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
   };
 
 } // namespace Model

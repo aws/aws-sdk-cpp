@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::String m_keyPairId;
-    bool m_keyPairIdHasBeenSet;
+    bool m_keyPairIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

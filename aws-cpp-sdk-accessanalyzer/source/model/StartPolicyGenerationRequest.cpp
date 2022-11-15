@@ -13,10 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartPolicyGenerationRequest::StartPolicyGenerationRequest() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true),
+    m_policyGenerationDetailsHasBeenSet(false),
     m_cloudTrailDetailsHasBeenSet(false),
-    m_policyGenerationDetailsHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -24,9 +24,9 @@ Aws::String StartPolicyGenerationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_policyGenerationDetailsHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithObject("policyGenerationDetails", m_policyGenerationDetails.Jsonize());
 
   }
 
@@ -36,9 +36,9 @@ Aws::String StartPolicyGenerationRequest::SerializePayload() const
 
   }
 
-  if(m_policyGenerationDetailsHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithObject("policyGenerationDetails", m_policyGenerationDetails.Jsonize());
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

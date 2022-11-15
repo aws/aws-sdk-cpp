@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::Vector<TargetGroup> m_targetGroups;
-    bool m_targetGroupsHasBeenSet;
+    bool m_targetGroupsHasBeenSet = false;
   };
 
 } // namespace Model

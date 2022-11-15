@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Container> m_containers;
-    bool m_containersHasBeenSet;
+    bool m_containersHasBeenSet = false;
 
     EndpointRequest m_publicEndpoint;
-    bool m_publicEndpointHasBeenSet;
+    bool m_publicEndpointHasBeenSet = false;
   };
 
 } // namespace Model

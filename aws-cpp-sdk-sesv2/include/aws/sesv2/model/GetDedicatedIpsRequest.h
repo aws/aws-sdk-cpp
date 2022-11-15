@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_poolName;
-    bool m_poolNameHasBeenSet;
+    bool m_poolNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -105,7 +105,7 @@ namespace Model
   private:
 
     LastRunErrorStatusCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

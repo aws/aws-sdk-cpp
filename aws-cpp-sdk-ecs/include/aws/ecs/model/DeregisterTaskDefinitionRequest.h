@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

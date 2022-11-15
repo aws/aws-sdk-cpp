@@ -113,7 +113,7 @@ DetectMitigationActionsTaskSummary& DetectMitigationActionsTaskSummary::operator
 
   if(jsonValue.ValueExists("actionsDefinition"))
   {
-    Array<JsonView> actionsDefinitionJsonList = jsonValue.GetArray("actionsDefinition");
+    Aws::Utils::Array<JsonView> actionsDefinitionJsonList = jsonValue.GetArray("actionsDefinition");
     for(unsigned actionsDefinitionIndex = 0; actionsDefinitionIndex < actionsDefinitionJsonList.GetLength(); ++actionsDefinitionIndex)
     {
       m_actionsDefinition.push_back(actionsDefinitionJsonList[actionsDefinitionIndex].AsObject());
@@ -182,7 +182,7 @@ JsonValue DetectMitigationActionsTaskSummary::Jsonize() const
 
   if(m_actionsDefinitionHasBeenSet)
   {
-   Array<JsonValue> actionsDefinitionJsonList(m_actionsDefinition.size());
+   Aws::Utils::Array<JsonValue> actionsDefinitionJsonList(m_actionsDefinition.size());
    for(unsigned actionsDefinitionIndex = 0; actionsDefinitionIndex < actionsDefinitionJsonList.GetLength(); ++actionsDefinitionIndex)
    {
      actionsDefinitionJsonList[actionsDefinitionIndex].AsObject(m_actionsDefinition[actionsDefinitionIndex].Jsonize());

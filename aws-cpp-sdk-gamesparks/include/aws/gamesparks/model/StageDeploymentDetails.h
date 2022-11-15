@@ -281,25 +281,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     DeploymentAction m_deploymentAction;
-    bool m_deploymentActionHasBeenSet;
+    bool m_deploymentActionHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     DeploymentResult m_deploymentResult;
-    bool m_deploymentResultHasBeenSet;
+    bool m_deploymentResultHasBeenSet = false;
 
     DeploymentState m_deploymentState;
-    bool m_deploymentStateHasBeenSet;
+    bool m_deploymentStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
   };
 
 } // namespace Model

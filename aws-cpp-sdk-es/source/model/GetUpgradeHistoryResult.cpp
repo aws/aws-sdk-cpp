@@ -30,7 +30,7 @@ GetUpgradeHistoryResult& GetUpgradeHistoryResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UpgradeHistories"))
   {
-    Array<JsonView> upgradeHistoriesJsonList = jsonValue.GetArray("UpgradeHistories");
+    Aws::Utils::Array<JsonView> upgradeHistoriesJsonList = jsonValue.GetArray("UpgradeHistories");
     for(unsigned upgradeHistoriesIndex = 0; upgradeHistoriesIndex < upgradeHistoriesJsonList.GetLength(); ++upgradeHistoriesIndex)
     {
       m_upgradeHistories.push_back(upgradeHistoriesJsonList[upgradeHistoriesIndex].AsObject());

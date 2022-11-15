@@ -144,13 +144,13 @@ namespace Model
   private:
 
     ProductionVariantInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_inferenceSpecificationName;
-    bool m_inferenceSpecificationNameHasBeenSet;
+    bool m_inferenceSpecificationNameHasBeenSet = false;
 
     EnvironmentParameterRanges m_environmentParameterRanges;
-    bool m_environmentParameterRangesHasBeenSet;
+    bool m_environmentParameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

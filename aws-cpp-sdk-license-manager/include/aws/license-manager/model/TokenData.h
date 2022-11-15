@@ -353,25 +353,25 @@ namespace Model
   private:
 
     Aws::String m_tokenId;
-    bool m_tokenIdHasBeenSet;
+    bool m_tokenIdHasBeenSet = false;
 
     Aws::String m_tokenType;
-    bool m_tokenTypeHasBeenSet;
+    bool m_tokenTypeHasBeenSet = false;
 
     Aws::String m_licenseArn;
-    bool m_licenseArnHasBeenSet;
+    bool m_licenseArnHasBeenSet = false;
 
     Aws::String m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tokenProperties;
-    bool m_tokenPropertiesHasBeenSet;
+    bool m_tokenPropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_roleArns;
-    bool m_roleArnsHasBeenSet;
+    bool m_roleArnsHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

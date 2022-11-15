@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     bool m_terminateEnvByForce;
-    bool m_terminateEnvByForceHasBeenSet;
+    bool m_terminateEnvByForceHasBeenSet = false;
   };
 
 } // namespace Model

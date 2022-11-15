@@ -32,6 +32,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         c2jMetadata.setServiceFullName("Amazon AWS Service Abbr Full Name");
         c2jMetadata.setSignatureVersion("v4");
         c2jMetadata.setTargetPrefix("ServiceAbbr.");
+        c2jMetadata.setServiceId("ServiceAbbr");
         c2jMetadata.setUid("service-9089-34-54");
         c2jMetadata.setTimestampFormat("iso8601");
 
@@ -55,7 +56,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         assertEquals(c2jMetadata.getEndpointPrefix(), metadata.getEndpointPrefix());
         assertEquals(c2jMetadata.getJsonVersion(), metadata.getJsonVersion());
         assertEquals(c2jMetadata.getProtocol(), metadata.getProtocol());
-        assertEquals("ServiceAbbrFullName", metadata.getNamespace());
+        assertEquals("ServiceAbbr", metadata.getNamespace());
         assertEquals(c2jMetadata.getServiceFullName(), metadata.getServiceFullName());
         assertEquals(c2jMetadata.getSignatureVersion(), metadata.getSignatureVersion());
         assertEquals(c2jMetadata.getTargetPrefix(), metadata.getTargetPrefix());

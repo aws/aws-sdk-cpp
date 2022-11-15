@@ -27,7 +27,7 @@ Aws::String DescribeExportTasksRequest::SerializePayload() const
 
   if(m_exportIdsHasBeenSet)
   {
-   Array<JsonValue> exportIdsJsonList(m_exportIds.size());
+   Aws::Utils::Array<JsonValue> exportIdsJsonList(m_exportIds.size());
    for(unsigned exportIdsIndex = 0; exportIdsIndex < exportIdsJsonList.GetLength(); ++exportIdsIndex)
    {
      exportIdsJsonList[exportIdsIndex].AsString(m_exportIds[exportIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribeExportTasksRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

@@ -135,10 +135,10 @@ namespace Model
   private:
 
     ServiceActionSummary m_serviceActionSummary;
-    bool m_serviceActionSummaryHasBeenSet;
+    bool m_serviceActionSummaryHasBeenSet = false;
 
     Aws::Map<ServiceActionDefinitionKey, Aws::String> m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
   };
 
 } // namespace Model

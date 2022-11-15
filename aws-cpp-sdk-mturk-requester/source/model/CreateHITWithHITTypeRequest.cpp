@@ -88,7 +88,7 @@ Aws::String CreateHITWithHITTypeRequest::SerializePayload() const
 
   if(m_hITLayoutParametersHasBeenSet)
   {
-   Array<JsonValue> hITLayoutParametersJsonList(m_hITLayoutParameters.size());
+   Aws::Utils::Array<JsonValue> hITLayoutParametersJsonList(m_hITLayoutParameters.size());
    for(unsigned hITLayoutParametersIndex = 0; hITLayoutParametersIndex < hITLayoutParametersJsonList.GetLength(); ++hITLayoutParametersIndex)
    {
      hITLayoutParametersJsonList[hITLayoutParametersIndex].AsObject(m_hITLayoutParameters[hITLayoutParametersIndex].Jsonize());

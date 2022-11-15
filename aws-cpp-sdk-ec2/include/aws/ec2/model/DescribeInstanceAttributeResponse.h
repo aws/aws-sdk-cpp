@@ -551,6 +551,37 @@ namespace Model
     inline DescribeInstanceAttributeResponse& WithUserData(AttributeValue&& value) { SetUserData(std::move(value)); return *this;}
 
 
+    /**
+     * <p>To enable the instance for Amazon Web Services Stop Protection, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline const AttributeBooleanValue& GetDisableApiStop() const{ return m_disableApiStop; }
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Stop Protection, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline void SetDisableApiStop(const AttributeBooleanValue& value) { m_disableApiStop = value; }
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Stop Protection, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline void SetDisableApiStop(AttributeBooleanValue&& value) { m_disableApiStop = std::move(value); }
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Stop Protection, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithDisableApiStop(const AttributeBooleanValue& value) { SetDisableApiStop(value); return *this;}
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Stop Protection, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithDisableApiStop(AttributeBooleanValue&& value) { SetDisableApiStop(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -599,6 +630,8 @@ namespace Model
     AttributeValue m_sriovNetSupport;
 
     AttributeValue m_userData;
+
+    AttributeBooleanValue m_disableApiStop;
 
     ResponseMetadata m_responseMetadata;
   };

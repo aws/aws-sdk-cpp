@@ -508,34 +508,34 @@ namespace Model
   private:
 
     Aws::String m_bgpPeerId;
-    bool m_bgpPeerIdHasBeenSet;
+    bool m_bgpPeerIdHasBeenSet = false;
 
     int m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     Aws::String m_authKey;
-    bool m_authKeyHasBeenSet;
+    bool m_authKeyHasBeenSet = false;
 
     AddressFamily m_addressFamily;
-    bool m_addressFamilyHasBeenSet;
+    bool m_addressFamilyHasBeenSet = false;
 
     Aws::String m_amazonAddress;
-    bool m_amazonAddressHasBeenSet;
+    bool m_amazonAddressHasBeenSet = false;
 
     Aws::String m_customerAddress;
-    bool m_customerAddressHasBeenSet;
+    bool m_customerAddressHasBeenSet = false;
 
     BGPPeerState m_bgpPeerState;
-    bool m_bgpPeerStateHasBeenSet;
+    bool m_bgpPeerStateHasBeenSet = false;
 
     BGPStatus m_bgpStatus;
-    bool m_bgpStatusHasBeenSet;
+    bool m_bgpStatusHasBeenSet = false;
 
     Aws::String m_awsDeviceV2;
-    bool m_awsDeviceV2HasBeenSet;
+    bool m_awsDeviceV2HasBeenSet = false;
 
     Aws::String m_awsLogicalDeviceId;
-    bool m_awsLogicalDeviceIdHasBeenSet;
+    bool m_awsLogicalDeviceIdHasBeenSet = false;
   };
 
 } // namespace Model

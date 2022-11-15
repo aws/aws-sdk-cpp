@@ -80,7 +80,7 @@ ContactData& ContactData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PhoneNumbers"))
   {
-    Array<JsonView> phoneNumbersJsonList = jsonValue.GetArray("PhoneNumbers");
+    Aws::Utils::Array<JsonView> phoneNumbersJsonList = jsonValue.GetArray("PhoneNumbers");
     for(unsigned phoneNumbersIndex = 0; phoneNumbersIndex < phoneNumbersJsonList.GetLength(); ++phoneNumbersIndex)
     {
       m_phoneNumbers.push_back(phoneNumbersJsonList[phoneNumbersIndex].AsObject());
@@ -90,7 +90,7 @@ ContactData& ContactData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SipAddresses"))
   {
-    Array<JsonView> sipAddressesJsonList = jsonValue.GetArray("SipAddresses");
+    Aws::Utils::Array<JsonView> sipAddressesJsonList = jsonValue.GetArray("SipAddresses");
     for(unsigned sipAddressesIndex = 0; sipAddressesIndex < sipAddressesJsonList.GetLength(); ++sipAddressesIndex)
     {
       m_sipAddresses.push_back(sipAddressesJsonList[sipAddressesIndex].AsObject());
@@ -137,7 +137,7 @@ JsonValue ContactData::Jsonize() const
 
   if(m_phoneNumbersHasBeenSet)
   {
-   Array<JsonValue> phoneNumbersJsonList(m_phoneNumbers.size());
+   Aws::Utils::Array<JsonValue> phoneNumbersJsonList(m_phoneNumbers.size());
    for(unsigned phoneNumbersIndex = 0; phoneNumbersIndex < phoneNumbersJsonList.GetLength(); ++phoneNumbersIndex)
    {
      phoneNumbersJsonList[phoneNumbersIndex].AsObject(m_phoneNumbers[phoneNumbersIndex].Jsonize());
@@ -148,7 +148,7 @@ JsonValue ContactData::Jsonize() const
 
   if(m_sipAddressesHasBeenSet)
   {
-   Array<JsonValue> sipAddressesJsonList(m_sipAddresses.size());
+   Aws::Utils::Array<JsonValue> sipAddressesJsonList(m_sipAddresses.size());
    for(unsigned sipAddressesIndex = 0; sipAddressesIndex < sipAddressesJsonList.GetLength(); ++sipAddressesIndex)
    {
      sipAddressesJsonList[sipAddressesIndex].AsObject(m_sipAddresses[sipAddressesIndex].Jsonize());

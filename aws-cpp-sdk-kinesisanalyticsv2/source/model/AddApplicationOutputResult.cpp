@@ -44,7 +44,7 @@ AddApplicationOutputResult& AddApplicationOutputResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("OutputDescriptions"))
   {
-    Array<JsonView> outputDescriptionsJsonList = jsonValue.GetArray("OutputDescriptions");
+    Aws::Utils::Array<JsonView> outputDescriptionsJsonList = jsonValue.GetArray("OutputDescriptions");
     for(unsigned outputDescriptionsIndex = 0; outputDescriptionsIndex < outputDescriptionsJsonList.GetLength(); ++outputDescriptionsIndex)
     {
       m_outputDescriptions.push_back(outputDescriptionsJsonList[outputDescriptionsIndex].AsObject());

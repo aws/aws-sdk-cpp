@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
+#include <aws/iotwireless/model/ParticipatingGateways.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,10 +49,50 @@ namespace Model
     
     inline LoRaWANSendDataToDevice& WithFPort(int value) { SetFPort(value); return *this;}
 
+
+    /**
+     * <p>Choose the gateways that you want to use for the downlink data traffic when
+     * the wireless device is running in class B or class C mode.</p>
+     */
+    inline const ParticipatingGateways& GetParticipatingGateways() const{ return m_participatingGateways; }
+
+    /**
+     * <p>Choose the gateways that you want to use for the downlink data traffic when
+     * the wireless device is running in class B or class C mode.</p>
+     */
+    inline bool ParticipatingGatewaysHasBeenSet() const { return m_participatingGatewaysHasBeenSet; }
+
+    /**
+     * <p>Choose the gateways that you want to use for the downlink data traffic when
+     * the wireless device is running in class B or class C mode.</p>
+     */
+    inline void SetParticipatingGateways(const ParticipatingGateways& value) { m_participatingGatewaysHasBeenSet = true; m_participatingGateways = value; }
+
+    /**
+     * <p>Choose the gateways that you want to use for the downlink data traffic when
+     * the wireless device is running in class B or class C mode.</p>
+     */
+    inline void SetParticipatingGateways(ParticipatingGateways&& value) { m_participatingGatewaysHasBeenSet = true; m_participatingGateways = std::move(value); }
+
+    /**
+     * <p>Choose the gateways that you want to use for the downlink data traffic when
+     * the wireless device is running in class B or class C mode.</p>
+     */
+    inline LoRaWANSendDataToDevice& WithParticipatingGateways(const ParticipatingGateways& value) { SetParticipatingGateways(value); return *this;}
+
+    /**
+     * <p>Choose the gateways that you want to use for the downlink data traffic when
+     * the wireless device is running in class B or class C mode.</p>
+     */
+    inline LoRaWANSendDataToDevice& WithParticipatingGateways(ParticipatingGateways&& value) { SetParticipatingGateways(std::move(value)); return *this;}
+
   private:
 
     int m_fPort;
-    bool m_fPortHasBeenSet;
+    bool m_fPortHasBeenSet = false;
+
+    ParticipatingGateways m_participatingGateways;
+    bool m_participatingGatewaysHasBeenSet = false;
   };
 
 } // namespace Model

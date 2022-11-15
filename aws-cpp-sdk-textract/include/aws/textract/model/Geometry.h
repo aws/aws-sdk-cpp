@@ -129,10 +129,10 @@ namespace Model
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     Aws::Vector<Point> m_polygon;
-    bool m_polygonHasBeenSet;
+    bool m_polygonHasBeenSet = false;
   };
 
 } // namespace Model

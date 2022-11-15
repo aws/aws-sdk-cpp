@@ -36,37 +36,44 @@ namespace Model
 
 
     /**
-     * <p>The instance refreshes for the specified group.</p>
+     * <p>The instance refreshes for the specified group, sorted by creation timestamp
+     * in descending order.</p>
      */
     inline const Aws::Vector<InstanceRefresh>& GetInstanceRefreshes() const{ return m_instanceRefreshes; }
 
     /**
-     * <p>The instance refreshes for the specified group.</p>
+     * <p>The instance refreshes for the specified group, sorted by creation timestamp
+     * in descending order.</p>
      */
     inline void SetInstanceRefreshes(const Aws::Vector<InstanceRefresh>& value) { m_instanceRefreshes = value; }
 
     /**
-     * <p>The instance refreshes for the specified group.</p>
+     * <p>The instance refreshes for the specified group, sorted by creation timestamp
+     * in descending order.</p>
      */
     inline void SetInstanceRefreshes(Aws::Vector<InstanceRefresh>&& value) { m_instanceRefreshes = std::move(value); }
 
     /**
-     * <p>The instance refreshes for the specified group.</p>
+     * <p>The instance refreshes for the specified group, sorted by creation timestamp
+     * in descending order.</p>
      */
     inline DescribeInstanceRefreshesResult& WithInstanceRefreshes(const Aws::Vector<InstanceRefresh>& value) { SetInstanceRefreshes(value); return *this;}
 
     /**
-     * <p>The instance refreshes for the specified group.</p>
+     * <p>The instance refreshes for the specified group, sorted by creation timestamp
+     * in descending order.</p>
      */
     inline DescribeInstanceRefreshesResult& WithInstanceRefreshes(Aws::Vector<InstanceRefresh>&& value) { SetInstanceRefreshes(std::move(value)); return *this;}
 
     /**
-     * <p>The instance refreshes for the specified group.</p>
+     * <p>The instance refreshes for the specified group, sorted by creation timestamp
+     * in descending order.</p>
      */
     inline DescribeInstanceRefreshesResult& AddInstanceRefreshes(const InstanceRefresh& value) { m_instanceRefreshes.push_back(value); return *this; }
 
     /**
-     * <p>The instance refreshes for the specified group.</p>
+     * <p>The instance refreshes for the specified group, sorted by creation timestamp
+     * in descending order.</p>
      */
     inline DescribeInstanceRefreshesResult& AddInstanceRefreshes(InstanceRefresh&& value) { m_instanceRefreshes.push_back(std::move(value)); return *this; }
 

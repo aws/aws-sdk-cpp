@@ -420,31 +420,31 @@ namespace Model
   private:
 
     WorkflowExecution m_execution;
-    bool m_executionHasBeenSet;
+    bool m_executionHasBeenSet = false;
 
     WorkflowType m_workflowType;
-    bool m_workflowTypeHasBeenSet;
+    bool m_workflowTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTimestamp;
-    bool m_startTimestampHasBeenSet;
+    bool m_startTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_closeTimestamp;
-    bool m_closeTimestampHasBeenSet;
+    bool m_closeTimestampHasBeenSet = false;
 
     ExecutionStatus m_executionStatus;
-    bool m_executionStatusHasBeenSet;
+    bool m_executionStatusHasBeenSet = false;
 
     CloseStatus m_closeStatus;
-    bool m_closeStatusHasBeenSet;
+    bool m_closeStatusHasBeenSet = false;
 
     WorkflowExecution m_parent;
-    bool m_parentHasBeenSet;
+    bool m_parentHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
 
     bool m_cancelRequested;
-    bool m_cancelRequestedHasBeenSet;
+    bool m_cancelRequestedHasBeenSet = false;
   };
 
 } // namespace Model

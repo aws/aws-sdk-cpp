@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SmartCard_HASH = HashingUtils::HashString("SmartCard");
+        static const int SmartCardOrPassword_HASH = HashingUtils::HashString("SmartCardOrPassword");
 
 
         ClientAuthenticationType GetClientAuthenticationTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SmartCard_HASH)
           {
             return ClientAuthenticationType::SmartCard;
+          }
+          else if (hashCode == SmartCardOrPassword_HASH)
+          {
+            return ClientAuthenticationType::SmartCardOrPassword;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ClientAuthenticationType::SmartCard:
             return "SmartCard";
+          case ClientAuthenticationType::SmartCardOrPassword:
+            return "SmartCardOrPassword";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

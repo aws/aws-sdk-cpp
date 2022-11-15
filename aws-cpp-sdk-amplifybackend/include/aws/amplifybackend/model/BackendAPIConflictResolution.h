@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ResolutionStrategy m_resolutionStrategy;
-    bool m_resolutionStrategyHasBeenSet;
+    bool m_resolutionStrategyHasBeenSet = false;
   };
 
 } // namespace Model

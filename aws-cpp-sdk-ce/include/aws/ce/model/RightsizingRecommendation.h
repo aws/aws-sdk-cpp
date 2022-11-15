@@ -209,57 +209,57 @@ namespace Model
 
 
     /**
-     * <p> The list of possible reasons why the recommendation is generated such as
-     * under or over utilization of specific metrics (for example, CPU, Memory,
+     * <p>The list of possible reasons why the recommendation is generated, such as
+     * under- or over-utilization of specific metrics (for example, CPU, Memory,
      * Network). </p>
      */
     inline const Aws::Vector<FindingReasonCode>& GetFindingReasonCodes() const{ return m_findingReasonCodes; }
 
     /**
-     * <p> The list of possible reasons why the recommendation is generated such as
-     * under or over utilization of specific metrics (for example, CPU, Memory,
+     * <p>The list of possible reasons why the recommendation is generated, such as
+     * under- or over-utilization of specific metrics (for example, CPU, Memory,
      * Network). </p>
      */
     inline bool FindingReasonCodesHasBeenSet() const { return m_findingReasonCodesHasBeenSet; }
 
     /**
-     * <p> The list of possible reasons why the recommendation is generated such as
-     * under or over utilization of specific metrics (for example, CPU, Memory,
+     * <p>The list of possible reasons why the recommendation is generated, such as
+     * under- or over-utilization of specific metrics (for example, CPU, Memory,
      * Network). </p>
      */
     inline void SetFindingReasonCodes(const Aws::Vector<FindingReasonCode>& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = value; }
 
     /**
-     * <p> The list of possible reasons why the recommendation is generated such as
-     * under or over utilization of specific metrics (for example, CPU, Memory,
+     * <p>The list of possible reasons why the recommendation is generated, such as
+     * under- or over-utilization of specific metrics (for example, CPU, Memory,
      * Network). </p>
      */
     inline void SetFindingReasonCodes(Aws::Vector<FindingReasonCode>&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = std::move(value); }
 
     /**
-     * <p> The list of possible reasons why the recommendation is generated such as
-     * under or over utilization of specific metrics (for example, CPU, Memory,
+     * <p>The list of possible reasons why the recommendation is generated, such as
+     * under- or over-utilization of specific metrics (for example, CPU, Memory,
      * Network). </p>
      */
     inline RightsizingRecommendation& WithFindingReasonCodes(const Aws::Vector<FindingReasonCode>& value) { SetFindingReasonCodes(value); return *this;}
 
     /**
-     * <p> The list of possible reasons why the recommendation is generated such as
-     * under or over utilization of specific metrics (for example, CPU, Memory,
+     * <p>The list of possible reasons why the recommendation is generated, such as
+     * under- or over-utilization of specific metrics (for example, CPU, Memory,
      * Network). </p>
      */
     inline RightsizingRecommendation& WithFindingReasonCodes(Aws::Vector<FindingReasonCode>&& value) { SetFindingReasonCodes(std::move(value)); return *this;}
 
     /**
-     * <p> The list of possible reasons why the recommendation is generated such as
-     * under or over utilization of specific metrics (for example, CPU, Memory,
+     * <p>The list of possible reasons why the recommendation is generated, such as
+     * under- or over-utilization of specific metrics (for example, CPU, Memory,
      * Network). </p>
      */
     inline RightsizingRecommendation& AddFindingReasonCodes(const FindingReasonCode& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(value); return *this; }
 
     /**
-     * <p> The list of possible reasons why the recommendation is generated such as
-     * under or over utilization of specific metrics (for example, CPU, Memory,
+     * <p>The list of possible reasons why the recommendation is generated, such as
+     * under- or over-utilization of specific metrics (for example, CPU, Memory,
      * Network). </p>
      */
     inline RightsizingRecommendation& AddFindingReasonCodes(FindingReasonCode&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(std::move(value)); return *this; }
@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     CurrentInstance m_currentInstance;
-    bool m_currentInstanceHasBeenSet;
+    bool m_currentInstanceHasBeenSet = false;
 
     RightsizingType m_rightsizingType;
-    bool m_rightsizingTypeHasBeenSet;
+    bool m_rightsizingTypeHasBeenSet = false;
 
     ModifyRecommendationDetail m_modifyRecommendationDetail;
-    bool m_modifyRecommendationDetailHasBeenSet;
+    bool m_modifyRecommendationDetailHasBeenSet = false;
 
     TerminateRecommendationDetail m_terminateRecommendationDetail;
-    bool m_terminateRecommendationDetailHasBeenSet;
+    bool m_terminateRecommendationDetailHasBeenSet = false;
 
     Aws::Vector<FindingReasonCode> m_findingReasonCodes;
-    bool m_findingReasonCodesHasBeenSet;
+    bool m_findingReasonCodesHasBeenSet = false;
   };
 
 } // namespace Model

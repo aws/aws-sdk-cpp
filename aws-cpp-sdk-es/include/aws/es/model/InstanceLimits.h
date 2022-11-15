@@ -59,7 +59,7 @@ namespace Model
   private:
 
     InstanceCountLimits m_instanceCountLimits;
-    bool m_instanceCountLimitsHasBeenSet;
+    bool m_instanceCountLimitsHasBeenSet = false;
   };
 
 } // namespace Model

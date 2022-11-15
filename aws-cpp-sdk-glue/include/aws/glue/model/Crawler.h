@@ -775,102 +775,102 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const{ return m_lakeFormationConfiguration; }
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline bool LakeFormationConfigurationHasBeenSet() const { return m_lakeFormationConfigurationHasBeenSet; }
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline void SetLakeFormationConfiguration(const LakeFormationConfiguration& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = value; }
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline void SetLakeFormationConfiguration(LakeFormationConfiguration&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::move(value); }
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline Crawler& WithLakeFormationConfiguration(const LakeFormationConfiguration& value) { SetLakeFormationConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline Crawler& WithLakeFormationConfiguration(LakeFormationConfiguration&& value) { SetLakeFormationConfiguration(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     CrawlerTargets m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_classifiers;
-    bool m_classifiersHasBeenSet;
+    bool m_classifiersHasBeenSet = false;
 
     RecrawlPolicy m_recrawlPolicy;
-    bool m_recrawlPolicyHasBeenSet;
+    bool m_recrawlPolicyHasBeenSet = false;
 
     SchemaChangePolicy m_schemaChangePolicy;
-    bool m_schemaChangePolicyHasBeenSet;
+    bool m_schemaChangePolicyHasBeenSet = false;
 
     LineageConfiguration m_lineageConfiguration;
-    bool m_lineageConfigurationHasBeenSet;
+    bool m_lineageConfigurationHasBeenSet = false;
 
     CrawlerState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_tablePrefix;
-    bool m_tablePrefixHasBeenSet;
+    bool m_tablePrefixHasBeenSet = false;
 
     Schedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     long long m_crawlElapsedTime;
-    bool m_crawlElapsedTimeHasBeenSet;
+    bool m_crawlElapsedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     LastCrawlInfo m_lastCrawl;
-    bool m_lastCrawlHasBeenSet;
+    bool m_lastCrawlHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_crawlerSecurityConfiguration;
-    bool m_crawlerSecurityConfigurationHasBeenSet;
+    bool m_crawlerSecurityConfigurationHasBeenSet = false;
 
     LakeFormationConfiguration m_lakeFormationConfiguration;
-    bool m_lakeFormationConfigurationHasBeenSet;
+    bool m_lakeFormationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

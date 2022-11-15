@@ -210,16 +210,16 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     ChannelType m_channelType;
-    bool m_channelTypeHasBeenSet;
+    bool m_channelTypeHasBeenSet = false;
 
     SingleMasterConfiguration m_singleMasterConfiguration;
-    bool m_singleMasterConfigurationHasBeenSet;
+    bool m_singleMasterConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

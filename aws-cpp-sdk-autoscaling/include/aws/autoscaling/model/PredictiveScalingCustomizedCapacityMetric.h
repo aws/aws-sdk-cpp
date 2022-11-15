@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::Vector<MetricDataQuery> m_metricDataQueries;
-    bool m_metricDataQueriesHasBeenSet;
+    bool m_metricDataQueriesHasBeenSet = false;
   };
 
 } // namespace Model

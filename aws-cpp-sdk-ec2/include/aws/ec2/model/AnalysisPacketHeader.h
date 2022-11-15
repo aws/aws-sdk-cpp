@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_destinationAddresses;
-    bool m_destinationAddressesHasBeenSet;
+    bool m_destinationAddressesHasBeenSet = false;
 
     Aws::Vector<PortRange> m_destinationPortRanges;
-    bool m_destinationPortRangesHasBeenSet;
+    bool m_destinationPortRangesHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceAddresses;
-    bool m_sourceAddressesHasBeenSet;
+    bool m_sourceAddressesHasBeenSet = false;
 
     Aws::Vector<PortRange> m_sourcePortRanges;
-    bool m_sourcePortRangesHasBeenSet;
+    bool m_sourcePortRangesHasBeenSet = false;
   };
 
 } // namespace Model

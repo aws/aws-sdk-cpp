@@ -34,44 +34,44 @@ namespace Model
 
 
     /**
-     * <p>The cluster identifier. This parameter is not returned when connecting to a
-     * serverless endpoint. </p>
+     * <p>The cluster identifier. This element is not returned when connecting to a
+     * serverless workgroup. </p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
     /**
-     * <p>The cluster identifier. This parameter is not returned when connecting to a
-     * serverless endpoint. </p>
+     * <p>The cluster identifier. This element is not returned when connecting to a
+     * serverless workgroup. </p>
      */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
 
     /**
-     * <p>The cluster identifier. This parameter is not returned when connecting to a
-     * serverless endpoint. </p>
+     * <p>The cluster identifier. This element is not returned when connecting to a
+     * serverless workgroup. </p>
      */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifier = std::move(value); }
 
     /**
-     * <p>The cluster identifier. This parameter is not returned when connecting to a
-     * serverless endpoint. </p>
+     * <p>The cluster identifier. This element is not returned when connecting to a
+     * serverless workgroup. </p>
      */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
 
     /**
-     * <p>The cluster identifier. This parameter is not returned when connecting to a
-     * serverless endpoint. </p>
+     * <p>The cluster identifier. This element is not returned when connecting to a
+     * serverless workgroup. </p>
      */
     inline BatchExecuteStatementResult& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The cluster identifier. This parameter is not returned when connecting to a
-     * serverless endpoint. </p>
+     * <p>The cluster identifier. This element is not returned when connecting to a
+     * serverless workgroup. </p>
      */
     inline BatchExecuteStatementResult& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The cluster identifier. This parameter is not returned when connecting to a
-     * serverless endpoint. </p>
+     * <p>The cluster identifier. This element is not returned when connecting to a
+     * serverless workgroup. </p>
      */
     inline BatchExecuteStatementResult& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
@@ -259,6 +259,49 @@ namespace Model
      */
     inline BatchExecuteStatementResult& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
+
+    /**
+     * <p>The serverless workgroup name. This element is not returned when connecting
+     * to a provisioned cluster.</p>
+     */
+    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
+
+    /**
+     * <p>The serverless workgroup name. This element is not returned when connecting
+     * to a provisioned cluster.</p>
+     */
+    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupName = value; }
+
+    /**
+     * <p>The serverless workgroup name. This element is not returned when connecting
+     * to a provisioned cluster.</p>
+     */
+    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupName = std::move(value); }
+
+    /**
+     * <p>The serverless workgroup name. This element is not returned when connecting
+     * to a provisioned cluster.</p>
+     */
+    inline void SetWorkgroupName(const char* value) { m_workgroupName.assign(value); }
+
+    /**
+     * <p>The serverless workgroup name. This element is not returned when connecting
+     * to a provisioned cluster.</p>
+     */
+    inline BatchExecuteStatementResult& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
+
+    /**
+     * <p>The serverless workgroup name. This element is not returned when connecting
+     * to a provisioned cluster.</p>
+     */
+    inline BatchExecuteStatementResult& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The serverless workgroup name. This element is not returned when connecting
+     * to a provisioned cluster.</p>
+     */
+    inline BatchExecuteStatementResult& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -272,6 +315,8 @@ namespace Model
     Aws::String m_id;
 
     Aws::String m_secretArn;
+
+    Aws::String m_workgroupName;
   };
 
 } // namespace Model

@@ -301,19 +301,19 @@ namespace Model
   private:
 
     Aws::String m_entityName;
-    bool m_entityNameHasBeenSet;
+    bool m_entityNameHasBeenSet = false;
 
     ErrorHandlingConfig m_errorHandlingConfig;
-    bool m_errorHandlingConfigHasBeenSet;
+    bool m_errorHandlingConfigHasBeenSet = false;
 
     WriteOperationType m_writeOperationType;
-    bool m_writeOperationTypeHasBeenSet;
+    bool m_writeOperationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_idFieldNames;
-    bool m_idFieldNamesHasBeenSet;
+    bool m_idFieldNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customProperties;
-    bool m_customPropertiesHasBeenSet;
+    bool m_customPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

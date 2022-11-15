@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_contactChannelId;
-    bool m_contactChannelIdHasBeenSet;
+    bool m_contactChannelIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ContactChannelAddress m_deliveryAddress;
-    bool m_deliveryAddressHasBeenSet;
+    bool m_deliveryAddressHasBeenSet = false;
   };
 
 } // namespace Model

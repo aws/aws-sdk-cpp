@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::Map<Aws::String, Section> m_sections;
-    bool m_sectionsHasBeenSet;
+    bool m_sectionsHasBeenSet = false;
   };
 
 } // namespace Model

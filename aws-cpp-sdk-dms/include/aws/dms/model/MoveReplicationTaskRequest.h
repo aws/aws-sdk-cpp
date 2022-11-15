@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     Aws::String m_targetReplicationInstanceArn;
-    bool m_targetReplicationInstanceArnHasBeenSet;
+    bool m_targetReplicationInstanceArnHasBeenSet = false;
   };
 
 } // namespace Model

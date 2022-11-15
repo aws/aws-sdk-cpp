@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_directConnectGatewayId;
-    bool m_directConnectGatewayIdHasBeenSet;
+    bool m_directConnectGatewayIdHasBeenSet = false;
 
     Aws::String m_newDirectConnectGatewayName;
-    bool m_newDirectConnectGatewayNameHasBeenSet;
+    bool m_newDirectConnectGatewayNameHasBeenSet = false;
   };
 
 } // namespace Model

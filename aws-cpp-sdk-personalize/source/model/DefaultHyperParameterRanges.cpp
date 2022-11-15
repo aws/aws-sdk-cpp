@@ -37,7 +37,7 @@ DefaultHyperParameterRanges& DefaultHyperParameterRanges::operator =(JsonView js
 {
   if(jsonValue.ValueExists("integerHyperParameterRanges"))
   {
-    Array<JsonView> integerHyperParameterRangesJsonList = jsonValue.GetArray("integerHyperParameterRanges");
+    Aws::Utils::Array<JsonView> integerHyperParameterRangesJsonList = jsonValue.GetArray("integerHyperParameterRanges");
     for(unsigned integerHyperParameterRangesIndex = 0; integerHyperParameterRangesIndex < integerHyperParameterRangesJsonList.GetLength(); ++integerHyperParameterRangesIndex)
     {
       m_integerHyperParameterRanges.push_back(integerHyperParameterRangesJsonList[integerHyperParameterRangesIndex].AsObject());
@@ -47,7 +47,7 @@ DefaultHyperParameterRanges& DefaultHyperParameterRanges::operator =(JsonView js
 
   if(jsonValue.ValueExists("continuousHyperParameterRanges"))
   {
-    Array<JsonView> continuousHyperParameterRangesJsonList = jsonValue.GetArray("continuousHyperParameterRanges");
+    Aws::Utils::Array<JsonView> continuousHyperParameterRangesJsonList = jsonValue.GetArray("continuousHyperParameterRanges");
     for(unsigned continuousHyperParameterRangesIndex = 0; continuousHyperParameterRangesIndex < continuousHyperParameterRangesJsonList.GetLength(); ++continuousHyperParameterRangesIndex)
     {
       m_continuousHyperParameterRanges.push_back(continuousHyperParameterRangesJsonList[continuousHyperParameterRangesIndex].AsObject());
@@ -57,7 +57,7 @@ DefaultHyperParameterRanges& DefaultHyperParameterRanges::operator =(JsonView js
 
   if(jsonValue.ValueExists("categoricalHyperParameterRanges"))
   {
-    Array<JsonView> categoricalHyperParameterRangesJsonList = jsonValue.GetArray("categoricalHyperParameterRanges");
+    Aws::Utils::Array<JsonView> categoricalHyperParameterRangesJsonList = jsonValue.GetArray("categoricalHyperParameterRanges");
     for(unsigned categoricalHyperParameterRangesIndex = 0; categoricalHyperParameterRangesIndex < categoricalHyperParameterRangesJsonList.GetLength(); ++categoricalHyperParameterRangesIndex)
     {
       m_categoricalHyperParameterRanges.push_back(categoricalHyperParameterRangesJsonList[categoricalHyperParameterRangesIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue DefaultHyperParameterRanges::Jsonize() const
 
   if(m_integerHyperParameterRangesHasBeenSet)
   {
-   Array<JsonValue> integerHyperParameterRangesJsonList(m_integerHyperParameterRanges.size());
+   Aws::Utils::Array<JsonValue> integerHyperParameterRangesJsonList(m_integerHyperParameterRanges.size());
    for(unsigned integerHyperParameterRangesIndex = 0; integerHyperParameterRangesIndex < integerHyperParameterRangesJsonList.GetLength(); ++integerHyperParameterRangesIndex)
    {
      integerHyperParameterRangesJsonList[integerHyperParameterRangesIndex].AsObject(m_integerHyperParameterRanges[integerHyperParameterRangesIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue DefaultHyperParameterRanges::Jsonize() const
 
   if(m_continuousHyperParameterRangesHasBeenSet)
   {
-   Array<JsonValue> continuousHyperParameterRangesJsonList(m_continuousHyperParameterRanges.size());
+   Aws::Utils::Array<JsonValue> continuousHyperParameterRangesJsonList(m_continuousHyperParameterRanges.size());
    for(unsigned continuousHyperParameterRangesIndex = 0; continuousHyperParameterRangesIndex < continuousHyperParameterRangesJsonList.GetLength(); ++continuousHyperParameterRangesIndex)
    {
      continuousHyperParameterRangesJsonList[continuousHyperParameterRangesIndex].AsObject(m_continuousHyperParameterRanges[continuousHyperParameterRangesIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue DefaultHyperParameterRanges::Jsonize() const
 
   if(m_categoricalHyperParameterRangesHasBeenSet)
   {
-   Array<JsonValue> categoricalHyperParameterRangesJsonList(m_categoricalHyperParameterRanges.size());
+   Aws::Utils::Array<JsonValue> categoricalHyperParameterRangesJsonList(m_categoricalHyperParameterRanges.size());
    for(unsigned categoricalHyperParameterRangesIndex = 0; categoricalHyperParameterRangesIndex < categoricalHyperParameterRangesJsonList.GetLength(); ++categoricalHyperParameterRangesIndex)
    {
      categoricalHyperParameterRangesJsonList[categoricalHyperParameterRangesIndex].AsObject(m_categoricalHyperParameterRanges[categoricalHyperParameterRangesIndex].Jsonize());

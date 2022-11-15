@@ -97,10 +97,10 @@ namespace Model
   private:
 
     IoTJobExponentialRolloutRate m_exponentialRate;
-    bool m_exponentialRateHasBeenSet;
+    bool m_exponentialRateHasBeenSet = false;
 
     int m_maximumPerMinute;
-    bool m_maximumPerMinuteHasBeenSet;
+    bool m_maximumPerMinuteHasBeenSet = false;
   };
 
 } // namespace Model

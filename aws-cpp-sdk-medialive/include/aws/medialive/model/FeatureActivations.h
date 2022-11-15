@@ -94,7 +94,7 @@ If you disable the feature on an
   private:
 
     FeatureActivationsInputPrepareScheduleActions m_inputPrepareScheduleActions;
-    bool m_inputPrepareScheduleActionsHasBeenSet;
+    bool m_inputPrepareScheduleActionsHasBeenSet = false;
   };
 
 } // namespace Model

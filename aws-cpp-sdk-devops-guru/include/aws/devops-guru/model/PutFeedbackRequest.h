@@ -71,7 +71,7 @@ namespace Model
   private:
 
     InsightFeedback m_insightFeedback;
-    bool m_insightFeedbackHasBeenSet;
+    bool m_insightFeedbackHasBeenSet = false;
   };
 
 } // namespace Model

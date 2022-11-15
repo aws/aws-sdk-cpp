@@ -237,22 +237,22 @@ namespace Model
   private:
 
     VirtualNodeConnectionPool m_connectionPool;
-    bool m_connectionPoolHasBeenSet;
+    bool m_connectionPoolHasBeenSet = false;
 
     HealthCheckPolicy m_healthCheck;
-    bool m_healthCheckHasBeenSet;
+    bool m_healthCheckHasBeenSet = false;
 
     OutlierDetection m_outlierDetection;
-    bool m_outlierDetectionHasBeenSet;
+    bool m_outlierDetectionHasBeenSet = false;
 
     PortMapping m_portMapping;
-    bool m_portMappingHasBeenSet;
+    bool m_portMappingHasBeenSet = false;
 
     ListenerTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     ListenerTls m_tls;
-    bool m_tlsHasBeenSet;
+    bool m_tlsHasBeenSet = false;
   };
 
 } // namespace Model

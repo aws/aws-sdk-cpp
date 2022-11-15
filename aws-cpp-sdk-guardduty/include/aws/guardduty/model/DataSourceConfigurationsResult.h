@@ -10,6 +10,7 @@
 #include <aws/guardduty/model/FlowLogsConfigurationResult.h>
 #include <aws/guardduty/model/S3LogsConfigurationResult.h>
 #include <aws/guardduty/model/KubernetesConfigurationResult.h>
+#include <aws/guardduty/model/MalwareProtectionConfigurationResult.h>
 #include <utility>
 
 namespace Aws
@@ -226,22 +227,56 @@ namespace Model
      */
     inline DataSourceConfigurationsResult& WithKubernetes(KubernetesConfigurationResult&& value) { SetKubernetes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the configuration of Malware Protection data sources.</p>
+     */
+    inline const MalwareProtectionConfigurationResult& GetMalwareProtection() const{ return m_malwareProtection; }
+
+    /**
+     * <p>Describes the configuration of Malware Protection data sources.</p>
+     */
+    inline bool MalwareProtectionHasBeenSet() const { return m_malwareProtectionHasBeenSet; }
+
+    /**
+     * <p>Describes the configuration of Malware Protection data sources.</p>
+     */
+    inline void SetMalwareProtection(const MalwareProtectionConfigurationResult& value) { m_malwareProtectionHasBeenSet = true; m_malwareProtection = value; }
+
+    /**
+     * <p>Describes the configuration of Malware Protection data sources.</p>
+     */
+    inline void SetMalwareProtection(MalwareProtectionConfigurationResult&& value) { m_malwareProtectionHasBeenSet = true; m_malwareProtection = std::move(value); }
+
+    /**
+     * <p>Describes the configuration of Malware Protection data sources.</p>
+     */
+    inline DataSourceConfigurationsResult& WithMalwareProtection(const MalwareProtectionConfigurationResult& value) { SetMalwareProtection(value); return *this;}
+
+    /**
+     * <p>Describes the configuration of Malware Protection data sources.</p>
+     */
+    inline DataSourceConfigurationsResult& WithMalwareProtection(MalwareProtectionConfigurationResult&& value) { SetMalwareProtection(std::move(value)); return *this;}
+
   private:
 
     CloudTrailConfigurationResult m_cloudTrail;
-    bool m_cloudTrailHasBeenSet;
+    bool m_cloudTrailHasBeenSet = false;
 
     DNSLogsConfigurationResult m_dNSLogs;
-    bool m_dNSLogsHasBeenSet;
+    bool m_dNSLogsHasBeenSet = false;
 
     FlowLogsConfigurationResult m_flowLogs;
-    bool m_flowLogsHasBeenSet;
+    bool m_flowLogsHasBeenSet = false;
 
     S3LogsConfigurationResult m_s3Logs;
-    bool m_s3LogsHasBeenSet;
+    bool m_s3LogsHasBeenSet = false;
 
     KubernetesConfigurationResult m_kubernetes;
-    bool m_kubernetesHasBeenSet;
+    bool m_kubernetesHasBeenSet = false;
+
+    MalwareProtectionConfigurationResult m_malwareProtection;
+    bool m_malwareProtectionHasBeenSet = false;
   };
 
 } // namespace Model

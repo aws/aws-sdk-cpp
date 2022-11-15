@@ -144,6 +144,27 @@ namespace Model
 
 
     /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline bool GetIncludeIframeOnlyStream() const{ return m_includeIframeOnlyStream; }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline bool IncludeIframeOnlyStreamHasBeenSet() const { return m_includeIframeOnlyStreamHasBeenSet; }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline void SetIncludeIframeOnlyStream(bool value) { m_includeIframeOnlyStreamHasBeenSet = true; m_includeIframeOnlyStream = value; }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline DashPackage& WithIncludeIframeOnlyStream(bool value) { SetIncludeIframeOnlyStream(value); return *this;}
+
+
+    /**
      * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
      * over HTTP (DASH)
 Media Presentation Description (MPD) will be partitioned into
@@ -344,22 +365,25 @@ rounded to the
   private:
 
     Aws::Vector<DashManifest> m_dashManifests;
-    bool m_dashManifestsHasBeenSet;
+    bool m_dashManifestsHasBeenSet = false;
 
     DashEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     bool m_includeEncoderConfigurationInSegments;
-    bool m_includeEncoderConfigurationInSegmentsHasBeenSet;
+    bool m_includeEncoderConfigurationInSegmentsHasBeenSet = false;
+
+    bool m_includeIframeOnlyStream;
+    bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     Aws::Vector<__PeriodTriggersElement> m_periodTriggers;
-    bool m_periodTriggersHasBeenSet;
+    bool m_periodTriggersHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
 
     SegmentTemplateFormat m_segmentTemplateFormat;
-    bool m_segmentTemplateFormatHasBeenSet;
+    bool m_segmentTemplateFormatHasBeenSet = false;
   };
 
 } // namespace Model

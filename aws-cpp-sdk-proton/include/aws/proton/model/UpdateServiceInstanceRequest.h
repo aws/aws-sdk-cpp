@@ -36,15 +36,14 @@ namespace Model
 
 
     /**
-     * <p>The deployment type.</p> <p>There are four modes for updating a service
-     * instance. The <code>deploymentType</code> field defines the mode.</p> <dl> <dt/>
-     * <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i>
-     * occur. Only the requested metadata parameters are updated.</p> </dd> <dt/> <dd>
-     * <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the service instance is
-     * deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include major or minor version parameters
-     * when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-     * <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
+     * <p>The deployment type. It defines the mode for updating a service instance, as
+     * follows:</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a
+     * deployment <i>doesn't</i> occur. Only the requested metadata parameters are
+     * updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this
+     * mode, the service instance is deployed and updated with the new spec that you
+     * provide. Only requested parameters are updated. <i>Don’t</i> include major or
+     * minor version parameters when you use this deployment type.</p> </dd> <dt/> <dd>
+     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
      * deployed and updated with the published, recommended (latest) minor version of
      * the current major version in use, by default. You can also specify a different
      * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
@@ -57,15 +56,14 @@ namespace Model
     inline const DeploymentUpdateType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * <p>The deployment type.</p> <p>There are four modes for updating a service
-     * instance. The <code>deploymentType</code> field defines the mode.</p> <dl> <dt/>
-     * <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i>
-     * occur. Only the requested metadata parameters are updated.</p> </dd> <dt/> <dd>
-     * <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the service instance is
-     * deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include major or minor version parameters
-     * when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-     * <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
+     * <p>The deployment type. It defines the mode for updating a service instance, as
+     * follows:</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a
+     * deployment <i>doesn't</i> occur. Only the requested metadata parameters are
+     * updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this
+     * mode, the service instance is deployed and updated with the new spec that you
+     * provide. Only requested parameters are updated. <i>Don’t</i> include major or
+     * minor version parameters when you use this deployment type.</p> </dd> <dt/> <dd>
+     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
      * deployed and updated with the published, recommended (latest) minor version of
      * the current major version in use, by default. You can also specify a different
      * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
@@ -78,15 +76,14 @@ namespace Model
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
-     * <p>The deployment type.</p> <p>There are four modes for updating a service
-     * instance. The <code>deploymentType</code> field defines the mode.</p> <dl> <dt/>
-     * <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i>
-     * occur. Only the requested metadata parameters are updated.</p> </dd> <dt/> <dd>
-     * <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the service instance is
-     * deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include major or minor version parameters
-     * when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-     * <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
+     * <p>The deployment type. It defines the mode for updating a service instance, as
+     * follows:</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a
+     * deployment <i>doesn't</i> occur. Only the requested metadata parameters are
+     * updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this
+     * mode, the service instance is deployed and updated with the new spec that you
+     * provide. Only requested parameters are updated. <i>Don’t</i> include major or
+     * minor version parameters when you use this deployment type.</p> </dd> <dt/> <dd>
+     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
      * deployed and updated with the published, recommended (latest) minor version of
      * the current major version in use, by default. You can also specify a different
      * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
@@ -99,15 +96,14 @@ namespace Model
     inline void SetDeploymentType(const DeploymentUpdateType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * <p>The deployment type.</p> <p>There are four modes for updating a service
-     * instance. The <code>deploymentType</code> field defines the mode.</p> <dl> <dt/>
-     * <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i>
-     * occur. Only the requested metadata parameters are updated.</p> </dd> <dt/> <dd>
-     * <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the service instance is
-     * deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include major or minor version parameters
-     * when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-     * <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
+     * <p>The deployment type. It defines the mode for updating a service instance, as
+     * follows:</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a
+     * deployment <i>doesn't</i> occur. Only the requested metadata parameters are
+     * updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this
+     * mode, the service instance is deployed and updated with the new spec that you
+     * provide. Only requested parameters are updated. <i>Don’t</i> include major or
+     * minor version parameters when you use this deployment type.</p> </dd> <dt/> <dd>
+     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
      * deployed and updated with the published, recommended (latest) minor version of
      * the current major version in use, by default. You can also specify a different
      * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
@@ -120,15 +116,14 @@ namespace Model
     inline void SetDeploymentType(DeploymentUpdateType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * <p>The deployment type.</p> <p>There are four modes for updating a service
-     * instance. The <code>deploymentType</code> field defines the mode.</p> <dl> <dt/>
-     * <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i>
-     * occur. Only the requested metadata parameters are updated.</p> </dd> <dt/> <dd>
-     * <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the service instance is
-     * deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include major or minor version parameters
-     * when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-     * <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
+     * <p>The deployment type. It defines the mode for updating a service instance, as
+     * follows:</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a
+     * deployment <i>doesn't</i> occur. Only the requested metadata parameters are
+     * updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this
+     * mode, the service instance is deployed and updated with the new spec that you
+     * provide. Only requested parameters are updated. <i>Don’t</i> include major or
+     * minor version parameters when you use this deployment type.</p> </dd> <dt/> <dd>
+     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
      * deployed and updated with the published, recommended (latest) minor version of
      * the current major version in use, by default. You can also specify a different
      * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
@@ -141,15 +136,14 @@ namespace Model
     inline UpdateServiceInstanceRequest& WithDeploymentType(const DeploymentUpdateType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * <p>The deployment type.</p> <p>There are four modes for updating a service
-     * instance. The <code>deploymentType</code> field defines the mode.</p> <dl> <dt/>
-     * <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i>
-     * occur. Only the requested metadata parameters are updated.</p> </dd> <dt/> <dd>
-     * <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the service instance is
-     * deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include major or minor version parameters
-     * when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-     * <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
+     * <p>The deployment type. It defines the mode for updating a service instance, as
+     * follows:</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a
+     * deployment <i>doesn't</i> occur. Only the requested metadata parameters are
+     * updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this
+     * mode, the service instance is deployed and updated with the new spec that you
+     * provide. Only requested parameters are updated. <i>Don’t</i> include major or
+     * minor version parameters when you use this deployment type.</p> </dd> <dt/> <dd>
+     * <p> <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
      * deployed and updated with the published, recommended (latest) minor version of
      * the current major version in use, by default. You can also specify a different
      * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
@@ -369,22 +363,22 @@ namespace Model
   private:
 
     DeploymentUpdateType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     Aws::String m_templateMajorVersion;
-    bool m_templateMajorVersionHasBeenSet;
+    bool m_templateMajorVersionHasBeenSet = false;
 
     Aws::String m_templateMinorVersion;
-    bool m_templateMinorVersionHasBeenSet;
+    bool m_templateMinorVersionHasBeenSet = false;
   };
 
 } // namespace Model

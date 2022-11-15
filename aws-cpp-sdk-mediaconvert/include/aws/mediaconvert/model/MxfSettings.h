@@ -212,13 +212,13 @@ namespace Model
   private:
 
     MxfAfdSignaling m_afdSignaling;
-    bool m_afdSignalingHasBeenSet;
+    bool m_afdSignalingHasBeenSet = false;
 
     MxfProfile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     MxfXavcProfileSettings m_xavcProfileSettings;
-    bool m_xavcProfileSettingsHasBeenSet;
+    bool m_xavcProfileSettingsHasBeenSet = false;
   };
 
 } // namespace Model

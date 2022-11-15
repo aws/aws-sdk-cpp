@@ -178,10 +178,10 @@ namespace Model
   private:
 
     Aws::String m_formula;
-    bool m_formulaHasBeenSet;
+    bool m_formulaHasBeenSet = false;
 
     Aws::String m_contextRowId;
-    bool m_contextRowIdHasBeenSet;
+    bool m_contextRowIdHasBeenSet = false;
   };
 
 } // namespace Model

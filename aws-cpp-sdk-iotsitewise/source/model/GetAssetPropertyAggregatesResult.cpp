@@ -30,7 +30,7 @@ GetAssetPropertyAggregatesResult& GetAssetPropertyAggregatesResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("aggregatedValues"))
   {
-    Array<JsonView> aggregatedValuesJsonList = jsonValue.GetArray("aggregatedValues");
+    Aws::Utils::Array<JsonView> aggregatedValuesJsonList = jsonValue.GetArray("aggregatedValues");
     for(unsigned aggregatedValuesIndex = 0; aggregatedValuesIndex < aggregatedValuesJsonList.GetLength(); ++aggregatedValuesIndex)
     {
       m_aggregatedValues.push_back(aggregatedValuesJsonList[aggregatedValuesIndex].AsObject());

@@ -36,8 +36,8 @@ namespace Model
    * <code>http-request-method</code>, <code>host-header</code>,
    * <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also
    * optionally include one or more of each of the following conditions:
-   * <code>http-header</code> and <code>query-string</code>.</p><p><h3>See Also:</h3>
-   * <a
+   * <code>http-header</code> and <code>query-string</code>. Note that the value for
+   * a condition cannot be empty.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RuleCondition">AWS
    * API Reference</a></p>
    */
@@ -556,28 +556,28 @@ namespace Model
   private:
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     HostHeaderConditionConfig m_hostHeaderConfig;
-    bool m_hostHeaderConfigHasBeenSet;
+    bool m_hostHeaderConfigHasBeenSet = false;
 
     PathPatternConditionConfig m_pathPatternConfig;
-    bool m_pathPatternConfigHasBeenSet;
+    bool m_pathPatternConfigHasBeenSet = false;
 
     HttpHeaderConditionConfig m_httpHeaderConfig;
-    bool m_httpHeaderConfigHasBeenSet;
+    bool m_httpHeaderConfigHasBeenSet = false;
 
     QueryStringConditionConfig m_queryStringConfig;
-    bool m_queryStringConfigHasBeenSet;
+    bool m_queryStringConfigHasBeenSet = false;
 
     HttpRequestMethodConditionConfig m_httpRequestMethodConfig;
-    bool m_httpRequestMethodConfigHasBeenSet;
+    bool m_httpRequestMethodConfigHasBeenSet = false;
 
     SourceIpConditionConfig m_sourceIpConfig;
-    bool m_sourceIpConfigHasBeenSet;
+    bool m_sourceIpConfigHasBeenSet = false;
   };
 
 } // namespace Model

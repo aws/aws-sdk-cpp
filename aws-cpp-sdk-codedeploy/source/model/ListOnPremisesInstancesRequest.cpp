@@ -31,7 +31,7 @@ Aws::String ListOnPremisesInstancesRequest::SerializePayload() const
 
   if(m_tagFiltersHasBeenSet)
   {
-   Array<JsonValue> tagFiltersJsonList(m_tagFilters.size());
+   Aws::Utils::Array<JsonValue> tagFiltersJsonList(m_tagFilters.size());
    for(unsigned tagFiltersIndex = 0; tagFiltersIndex < tagFiltersJsonList.GetLength(); ++tagFiltersIndex)
    {
      tagFiltersJsonList[tagFiltersIndex].AsObject(m_tagFilters[tagFiltersIndex].Jsonize());

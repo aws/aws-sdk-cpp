@@ -171,16 +171,16 @@ namespace Model
   private:
 
     int m_beginOffset;
-    bool m_beginOffsetHasBeenSet;
+    bool m_beginOffsetHasBeenSet = false;
 
     int m_endOffset;
-    bool m_endOffsetHasBeenSet;
+    bool m_endOffsetHasBeenSet = false;
 
     Aws::String m_term;
-    bool m_termHasBeenSet;
+    bool m_termHasBeenSet = false;
 
     Aws::String m_correctedTerm;
-    bool m_correctedTermHasBeenSet;
+    bool m_correctedTermHasBeenSet = false;
   };
 
 } // namespace Model

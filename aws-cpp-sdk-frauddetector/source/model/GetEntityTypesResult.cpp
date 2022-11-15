@@ -30,7 +30,7 @@ GetEntityTypesResult& GetEntityTypesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("entityTypes"))
   {
-    Array<JsonView> entityTypesJsonList = jsonValue.GetArray("entityTypes");
+    Aws::Utils::Array<JsonView> entityTypesJsonList = jsonValue.GetArray("entityTypes");
     for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
     {
       m_entityTypes.push_back(entityTypesJsonList[entityTypesIndex].AsObject());

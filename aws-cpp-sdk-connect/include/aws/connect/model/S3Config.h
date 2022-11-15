@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_bucketPrefix;
-    bool m_bucketPrefixHasBeenSet;
+    bool m_bucketPrefixHasBeenSet = false;
 
     EncryptionConfig m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet;
+    bool m_encryptionConfigHasBeenSet = false;
   };
 
 } // namespace Model

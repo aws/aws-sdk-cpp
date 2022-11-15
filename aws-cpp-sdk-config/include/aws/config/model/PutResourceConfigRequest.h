@@ -281,89 +281,128 @@ namespace Model
 
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline PutResourceConfigRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline PutResourceConfigRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline PutResourceConfigRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline PutResourceConfigRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline PutResourceConfigRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline PutResourceConfigRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline PutResourceConfigRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline PutResourceConfigRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags associated with the resource.</p>
+     * <p>Tags associated with the resource.</p>  <p>This field is not to be
+     * confused with the Amazon Web Services-wide tag feature for Amazon Web Services
+     * resources. Tags for <code>PutResourceConfig</code> are tags that you supply for
+     * the configuration items of your custom resources.</p> 
      */
     inline PutResourceConfigRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_schemaVersionId;
-    bool m_schemaVersionIdHasBeenSet;
+    bool m_schemaVersionIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

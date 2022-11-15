@@ -488,37 +488,89 @@ namespace Model
      */
     inline AnalysisRouteTableRoute& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
+
+    /**
+     * <p>The state. The following are the possible values:</p> <ul> <li> <p>active</p>
+     * </li> <li> <p>blackhole</p> </li> </ul>
+     */
+    inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state. The following are the possible values:</p> <ul> <li> <p>active</p>
+     * </li> <li> <p>blackhole</p> </li> </ul>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state. The following are the possible values:</p> <ul> <li> <p>active</p>
+     * </li> <li> <p>blackhole</p> </li> </ul>
+     */
+    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The state. The following are the possible values:</p> <ul> <li> <p>active</p>
+     * </li> <li> <p>blackhole</p> </li> </ul>
+     */
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The state. The following are the possible values:</p> <ul> <li> <p>active</p>
+     * </li> <li> <p>blackhole</p> </li> </ul>
+     */
+    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
+
+    /**
+     * <p>The state. The following are the possible values:</p> <ul> <li> <p>active</p>
+     * </li> <li> <p>blackhole</p> </li> </ul>
+     */
+    inline AnalysisRouteTableRoute& WithState(const Aws::String& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The state. The following are the possible values:</p> <ul> <li> <p>active</p>
+     * </li> <li> <p>blackhole</p> </li> </ul>
+     */
+    inline AnalysisRouteTableRoute& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
+
+    /**
+     * <p>The state. The following are the possible values:</p> <ul> <li> <p>active</p>
+     * </li> <li> <p>blackhole</p> </li> </ul>
+     */
+    inline AnalysisRouteTableRoute& WithState(const char* value) { SetState(value); return *this;}
+
   private:
 
     Aws::String m_destinationCidr;
-    bool m_destinationCidrHasBeenSet;
+    bool m_destinationCidrHasBeenSet = false;
 
     Aws::String m_destinationPrefixListId;
-    bool m_destinationPrefixListIdHasBeenSet;
+    bool m_destinationPrefixListIdHasBeenSet = false;
 
     Aws::String m_egressOnlyInternetGatewayId;
-    bool m_egressOnlyInternetGatewayIdHasBeenSet;
+    bool m_egressOnlyInternetGatewayIdHasBeenSet = false;
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_natGatewayId;
-    bool m_natGatewayIdHasBeenSet;
+    bool m_natGatewayIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
+
+    Aws::String m_state;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

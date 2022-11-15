@@ -395,34 +395,34 @@ namespace Model
   private:
 
     Aws::String m_jobDefinitionName;
-    bool m_jobDefinitionNameHasBeenSet;
+    bool m_jobDefinitionNameHasBeenSet = false;
 
     ModelExplainabilityBaselineConfig m_modelExplainabilityBaselineConfig;
-    bool m_modelExplainabilityBaselineConfigHasBeenSet;
+    bool m_modelExplainabilityBaselineConfigHasBeenSet = false;
 
     ModelExplainabilityAppSpecification m_modelExplainabilityAppSpecification;
-    bool m_modelExplainabilityAppSpecificationHasBeenSet;
+    bool m_modelExplainabilityAppSpecificationHasBeenSet = false;
 
     ModelExplainabilityJobInput m_modelExplainabilityJobInput;
-    bool m_modelExplainabilityJobInputHasBeenSet;
+    bool m_modelExplainabilityJobInputHasBeenSet = false;
 
     MonitoringOutputConfig m_modelExplainabilityJobOutputConfig;
-    bool m_modelExplainabilityJobOutputConfigHasBeenSet;
+    bool m_modelExplainabilityJobOutputConfigHasBeenSet = false;
 
     MonitoringResources m_jobResources;
-    bool m_jobResourcesHasBeenSet;
+    bool m_jobResourcesHasBeenSet = false;
 
     MonitoringNetworkConfig m_networkConfig;
-    bool m_networkConfigHasBeenSet;
+    bool m_networkConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     MonitoringStoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

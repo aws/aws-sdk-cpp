@@ -32,7 +32,7 @@ Aws::String StartRecoveryRequest::SerializePayload() const
 
   if(m_sourceServersHasBeenSet)
   {
-   Array<JsonValue> sourceServersJsonList(m_sourceServers.size());
+   Aws::Utils::Array<JsonValue> sourceServersJsonList(m_sourceServers.size());
    for(unsigned sourceServersIndex = 0; sourceServersIndex < sourceServersJsonList.GetLength(); ++sourceServersIndex)
    {
      sourceServersJsonList[sourceServersIndex].AsObject(m_sourceServers[sourceServersIndex].Jsonize());

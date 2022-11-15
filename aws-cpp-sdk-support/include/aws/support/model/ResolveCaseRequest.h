@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_caseId;
-    bool m_caseIdHasBeenSet;
+    bool m_caseIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ ListPackageImportJobsResult& ListPackageImportJobsResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("PackageImportJobs"))
   {
-    Array<JsonView> packageImportJobsJsonList = jsonValue.GetArray("PackageImportJobs");
+    Aws::Utils::Array<JsonView> packageImportJobsJsonList = jsonValue.GetArray("PackageImportJobs");
     for(unsigned packageImportJobsIndex = 0; packageImportJobsIndex < packageImportJobsJsonList.GetLength(); ++packageImportJobsIndex)
     {
       m_packageImportJobs.push_back(packageImportJobsJsonList[packageImportJobsIndex].AsObject());

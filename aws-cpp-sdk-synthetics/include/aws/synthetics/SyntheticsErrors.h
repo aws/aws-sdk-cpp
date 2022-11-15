@@ -47,9 +47,13 @@ enum class SyntheticsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
   INTERNAL_SERVER,
-  REQUEST_ENTITY_TOO_LARGE
+  NOT_FOUND,
+  REQUEST_ENTITY_TOO_LARGE,
+  SERVICE_QUOTA_EXCEEDED,
+  TOO_MANY_REQUESTS
 };
 
 class AWS_SYNTHETICS_API SyntheticsError : public Aws::Client::AWSError<SyntheticsErrors>

@@ -189,10 +189,11 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
-     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> 
+     * <p>The <code>UPDATE</code> states apply when you call the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.</p>  <p>The <code>Status</code> of the dataset group must be
+     * <code>ACTIVE</code> before you can use the dataset group to create a
+     * predictor.</p> 
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -203,10 +204,11 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
-     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> 
+     * <p>The <code>UPDATE</code> states apply when you call the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.</p>  <p>The <code>Status</code> of the dataset group must be
+     * <code>ACTIVE</code> before you can use the dataset group to create a
+     * predictor.</p> 
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
@@ -217,10 +219,11 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
-     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> 
+     * <p>The <code>UPDATE</code> states apply when you call the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.</p>  <p>The <code>Status</code> of the dataset group must be
+     * <code>ACTIVE</code> before you can use the dataset group to create a
+     * predictor.</p> 
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
@@ -231,10 +234,11 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
-     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> 
+     * <p>The <code>UPDATE</code> states apply when you call the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.</p>  <p>The <code>Status</code> of the dataset group must be
+     * <code>ACTIVE</code> before you can use the dataset group to create a
+     * predictor.</p> 
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
@@ -245,10 +249,11 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
-     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> 
+     * <p>The <code>UPDATE</code> states apply when you call the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.</p>  <p>The <code>Status</code> of the dataset group must be
+     * <code>ACTIVE</code> before you can use the dataset group to create a
+     * predictor.</p> 
      */
     inline DescribeDatasetGroupResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -259,10 +264,11 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
-     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> 
+     * <p>The <code>UPDATE</code> states apply when you call the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.</p>  <p>The <code>Status</code> of the dataset group must be
+     * <code>ACTIVE</code> before you can use the dataset group to create a
+     * predictor.</p> 
      */
     inline DescribeDatasetGroupResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -273,10 +279,11 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
-     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> 
+     * <p>The <code>UPDATE</code> states apply when you call the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation.</p>  <p>The <code>Status</code> of the dataset group must be
+     * <code>ACTIVE</code> before you can use the dataset group to create a
+     * predictor.</p> 
      */
     inline DescribeDatasetGroupResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -308,40 +315,45 @@ namespace Model
 
 
     /**
-     * <p>When the dataset group was created or last updated from a call to the
-     * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
+     * <p>When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated,
      * <code>LastModificationTime</code> is the current time of the
      * <code>DescribeDatasetGroup</code> call.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
-     * <p>When the dataset group was created or last updated from a call to the
-     * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
+     * <p>When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated,
      * <code>LastModificationTime</code> is the current time of the
      * <code>DescribeDatasetGroup</code> call.</p>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
 
     /**
-     * <p>When the dataset group was created or last updated from a call to the
-     * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
+     * <p>When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated,
      * <code>LastModificationTime</code> is the current time of the
      * <code>DescribeDatasetGroup</code> call.</p>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
 
     /**
-     * <p>When the dataset group was created or last updated from a call to the
-     * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
+     * <p>When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated,
      * <code>LastModificationTime</code> is the current time of the
      * <code>DescribeDatasetGroup</code> call.</p>
      */
     inline DescribeDatasetGroupResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
-     * <p>When the dataset group was created or last updated from a call to the
-     * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
+     * <p>When the dataset group was created or last updated from a call to the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+     * operation. While the dataset group is being updated,
      * <code>LastModificationTime</code> is the current time of the
      * <code>DescribeDatasetGroup</code> call.</p>
      */

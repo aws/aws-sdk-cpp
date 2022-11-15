@@ -118,10 +118,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_capacityReservationFleetIds;
-    bool m_capacityReservationFleetIdsHasBeenSet;
+    bool m_capacityReservationFleetIdsHasBeenSet = false;
   };
 
 } // namespace Model

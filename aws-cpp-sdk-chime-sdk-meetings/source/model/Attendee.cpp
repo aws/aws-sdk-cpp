@@ -21,14 +21,16 @@ namespace Model
 Attendee::Attendee() : 
     m_externalUserIdHasBeenSet(false),
     m_attendeeIdHasBeenSet(false),
-    m_joinTokenHasBeenSet(false)
+    m_joinTokenHasBeenSet(false),
+    m_capabilitiesHasBeenSet(false)
 {
 }
 
 Attendee::Attendee(JsonView jsonValue) : 
     m_externalUserIdHasBeenSet(false),
     m_attendeeIdHasBeenSet(false),
-    m_joinTokenHasBeenSet(false)
+    m_joinTokenHasBeenSet(false),
+    m_capabilitiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ Attendee& Attendee::operator =(JsonView jsonValue)
     m_joinTokenHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Capabilities"))
+  {
+    m_capabilities = jsonValue.GetObject("Capabilities");
+
+    m_capabilitiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue Attendee::Jsonize() const
   if(m_joinTokenHasBeenSet)
   {
    payload.WithString("JoinToken", m_joinToken);
+
+  }
+
+  if(m_capabilitiesHasBeenSet)
+  {
+   payload.WithObject("Capabilities", m_capabilities.Jsonize());
 
   }
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration definining the action to take when a duplicate fraudster is
+   * <p>The configuration defining the action to take when a duplicate fraudster is
    * detected, and the similarity threshold to use for detecting a duplicate
    * fraudster during a batch fraudster registration job.</p><p><h3>See Also:</h3>  
    * <a
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     DuplicateRegistrationAction m_duplicateRegistrationAction;
-    bool m_duplicateRegistrationActionHasBeenSet;
+    bool m_duplicateRegistrationActionHasBeenSet = false;
 
     int m_fraudsterSimilarityThreshold;
-    bool m_fraudsterSimilarityThresholdHasBeenSet;
+    bool m_fraudsterSimilarityThresholdHasBeenSet = false;
   };
 
 } // namespace Model

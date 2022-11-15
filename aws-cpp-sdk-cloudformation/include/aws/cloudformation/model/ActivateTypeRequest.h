@@ -83,56 +83,56 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline const Aws::String& GetPublicTypeArn() const{ return m_publicTypeArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline bool PublicTypeArnHasBeenSet() const { return m_publicTypeArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline void SetPublicTypeArn(const Aws::String& value) { m_publicTypeArnHasBeenSet = true; m_publicTypeArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline void SetPublicTypeArn(Aws::String&& value) { m_publicTypeArnHasBeenSet = true; m_publicTypeArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline void SetPublicTypeArn(const char* value) { m_publicTypeArnHasBeenSet = true; m_publicTypeArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline ActivateTypeRequest& WithPublicTypeArn(const Aws::String& value) { SetPublicTypeArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline ActivateTypeRequest& WithPublicTypeArn(Aws::String&& value) { SetPublicTypeArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
@@ -535,34 +535,34 @@ namespace Model
   private:
 
     ThirdPartyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_publicTypeArn;
-    bool m_publicTypeArnHasBeenSet;
+    bool m_publicTypeArnHasBeenSet = false;
 
     Aws::String m_publisherId;
-    bool m_publisherIdHasBeenSet;
+    bool m_publisherIdHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_typeNameAlias;
-    bool m_typeNameAliasHasBeenSet;
+    bool m_typeNameAliasHasBeenSet = false;
 
     bool m_autoUpdate;
-    bool m_autoUpdateHasBeenSet;
+    bool m_autoUpdateHasBeenSet = false;
 
     LoggingConfig m_loggingConfig;
-    bool m_loggingConfigHasBeenSet;
+    bool m_loggingConfigHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     VersionBump m_versionBump;
-    bool m_versionBumpHasBeenSet;
+    bool m_versionBumpHasBeenSet = false;
 
     long long m_majorVersion;
-    bool m_majorVersionHasBeenSet;
+    bool m_majorVersionHasBeenSet = false;
   };
 
 } // namespace Model

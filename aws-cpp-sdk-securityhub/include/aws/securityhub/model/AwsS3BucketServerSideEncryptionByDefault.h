@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
+     * <p>Server-side encryption algorithm to use for the default encryption. Valid
+     * values are <code>aws: kms</code> or <code>AES256</code>.</p>
      */
     inline const Aws::String& GetSSEAlgorithm() const{ return m_sSEAlgorithm; }
 
     /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
+     * <p>Server-side encryption algorithm to use for the default encryption. Valid
+     * values are <code>aws: kms</code> or <code>AES256</code>.</p>
      */
     inline bool SSEAlgorithmHasBeenSet() const { return m_sSEAlgorithmHasBeenSet; }
 
     /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
+     * <p>Server-side encryption algorithm to use for the default encryption. Valid
+     * values are <code>aws: kms</code> or <code>AES256</code>.</p>
      */
     inline void SetSSEAlgorithm(const Aws::String& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = value; }
 
     /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
+     * <p>Server-side encryption algorithm to use for the default encryption. Valid
+     * values are <code>aws: kms</code> or <code>AES256</code>.</p>
      */
     inline void SetSSEAlgorithm(Aws::String&& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = std::move(value); }
 
     /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
+     * <p>Server-side encryption algorithm to use for the default encryption. Valid
+     * values are <code>aws: kms</code> or <code>AES256</code>.</p>
      */
     inline void SetSSEAlgorithm(const char* value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm.assign(value); }
 
     /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
+     * <p>Server-side encryption algorithm to use for the default encryption. Valid
+     * values are <code>aws: kms</code> or <code>AES256</code>.</p>
      */
     inline AwsS3BucketServerSideEncryptionByDefault& WithSSEAlgorithm(const Aws::String& value) { SetSSEAlgorithm(value); return *this;}
 
     /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
+     * <p>Server-side encryption algorithm to use for the default encryption. Valid
+     * values are <code>aws: kms</code> or <code>AES256</code>.</p>
      */
     inline AwsS3BucketServerSideEncryptionByDefault& WithSSEAlgorithm(Aws::String&& value) { SetSSEAlgorithm(std::move(value)); return *this;}
 
     /**
-     * <p>Server-side encryption algorithm to use for the default encryption.</p>
+     * <p>Server-side encryption algorithm to use for the default encryption. Valid
+     * values are <code>aws: kms</code> or <code>AES256</code>.</p>
      */
     inline AwsS3BucketServerSideEncryptionByDefault& WithSSEAlgorithm(const char* value) { SetSSEAlgorithm(value); return *this;}
 
@@ -122,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_sSEAlgorithm;
-    bool m_sSEAlgorithmHasBeenSet;
+    bool m_sSEAlgorithmHasBeenSet = false;
 
     Aws::String m_kMSMasterKeyID;
-    bool m_kMSMasterKeyIDHasBeenSet;
+    bool m_kMSMasterKeyIDHasBeenSet = false;
   };
 
 } // namespace Model

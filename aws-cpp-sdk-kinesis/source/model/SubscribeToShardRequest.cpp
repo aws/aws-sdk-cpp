@@ -16,7 +16,7 @@ SubscribeToShardRequest::SubscribeToShardRequest() :
     m_consumerARNHasBeenSet(false),
     m_shardIdHasBeenSet(false),
     m_startingPositionHasBeenSet(false),
-    m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
+    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
 

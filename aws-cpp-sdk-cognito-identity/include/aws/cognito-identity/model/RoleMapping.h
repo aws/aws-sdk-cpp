@@ -182,13 +182,13 @@ namespace Model
   private:
 
     RoleMappingType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     AmbiguousRoleResolutionType m_ambiguousRoleResolution;
-    bool m_ambiguousRoleResolutionHasBeenSet;
+    bool m_ambiguousRoleResolutionHasBeenSet = false;
 
     RulesConfigurationType m_rulesConfiguration;
-    bool m_rulesConfigurationHasBeenSet;
+    bool m_rulesConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

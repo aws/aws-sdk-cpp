@@ -26,7 +26,9 @@ ResourceIdentifier::ResourceIdentifier() :
     m_policyVersionIdentifierHasBeenSet(false),
     m_accountHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
-    m_roleAliasArnHasBeenSet(false)
+    m_roleAliasArnHasBeenSet(false),
+    m_issuerCertificateIdentifierHasBeenSet(false),
+    m_deviceCertificateArnHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ ResourceIdentifier::ResourceIdentifier(JsonView jsonValue) :
     m_policyVersionIdentifierHasBeenSet(false),
     m_accountHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
-    m_roleAliasArnHasBeenSet(false)
+    m_roleAliasArnHasBeenSet(false),
+    m_issuerCertificateIdentifierHasBeenSet(false),
+    m_deviceCertificateArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +105,20 @@ ResourceIdentifier& ResourceIdentifier::operator =(JsonView jsonValue)
     m_roleAliasArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("issuerCertificateIdentifier"))
+  {
+    m_issuerCertificateIdentifier = jsonValue.GetObject("issuerCertificateIdentifier");
+
+    m_issuerCertificateIdentifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deviceCertificateArn"))
+  {
+    m_deviceCertificateArn = jsonValue.GetString("deviceCertificateArn");
+
+    m_deviceCertificateArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +171,18 @@ JsonValue ResourceIdentifier::Jsonize() const
   if(m_roleAliasArnHasBeenSet)
   {
    payload.WithString("roleAliasArn", m_roleAliasArn);
+
+  }
+
+  if(m_issuerCertificateIdentifierHasBeenSet)
+  {
+   payload.WithObject("issuerCertificateIdentifier", m_issuerCertificateIdentifier.Jsonize());
+
+  }
+
+  if(m_deviceCertificateArnHasBeenSet)
+  {
+   payload.WithString("deviceCertificateArn", m_deviceCertificateArn);
 
   }
 

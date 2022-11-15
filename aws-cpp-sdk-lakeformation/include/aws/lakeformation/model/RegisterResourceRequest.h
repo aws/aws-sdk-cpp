@@ -78,7 +78,7 @@ namespace Model
      * registering this role with the Data Catalog. A service-linked role is a unique
      * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
      * information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
      * Service-Linked Roles for Lake Formation</a>.</p>
      */
     inline bool GetUseServiceLinkedRole() const{ return m_useServiceLinkedRole; }
@@ -88,7 +88,7 @@ namespace Model
      * registering this role with the Data Catalog. A service-linked role is a unique
      * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
      * information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
      * Service-Linked Roles for Lake Formation</a>.</p>
      */
     inline bool UseServiceLinkedRoleHasBeenSet() const { return m_useServiceLinkedRoleHasBeenSet; }
@@ -98,7 +98,7 @@ namespace Model
      * registering this role with the Data Catalog. A service-linked role is a unique
      * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
      * information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
      * Service-Linked Roles for Lake Formation</a>.</p>
      */
     inline void SetUseServiceLinkedRole(bool value) { m_useServiceLinkedRoleHasBeenSet = true; m_useServiceLinkedRole = value; }
@@ -108,7 +108,7 @@ namespace Model
      * registering this role with the Data Catalog. A service-linked role is a unique
      * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
      * information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
      * Service-Linked Roles for Lake Formation</a>.</p>
      */
     inline RegisterResourceRequest& WithUseServiceLinkedRole(bool value) { SetUseServiceLinkedRole(value); return *this;}
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     bool m_useServiceLinkedRole;
-    bool m_useServiceLinkedRoleHasBeenSet;
+    bool m_useServiceLinkedRoleHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

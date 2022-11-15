@@ -65,7 +65,7 @@ namespace Model
   private:
 
     Aws::String m_syncName;
-    bool m_syncNameHasBeenSet;
+    bool m_syncNameHasBeenSet = false;
   };
 
 } // namespace Model

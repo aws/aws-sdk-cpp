@@ -503,31 +503,31 @@ namespace Model
   private:
 
     Aws::String m_productArn;
-    bool m_productArnHasBeenSet;
+    bool m_productArnHasBeenSet = false;
 
     Aws::String m_productName;
-    bool m_productNameHasBeenSet;
+    bool m_productNameHasBeenSet = false;
 
     Aws::String m_companyName;
-    bool m_companyNameHasBeenSet;
+    bool m_companyNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_categories;
-    bool m_categoriesHasBeenSet;
+    bool m_categoriesHasBeenSet = false;
 
     Aws::Vector<IntegrationType> m_integrationTypes;
-    bool m_integrationTypesHasBeenSet;
+    bool m_integrationTypesHasBeenSet = false;
 
     Aws::String m_marketplaceUrl;
-    bool m_marketplaceUrlHasBeenSet;
+    bool m_marketplaceUrlHasBeenSet = false;
 
     Aws::String m_activationUrl;
-    bool m_activationUrlHasBeenSet;
+    bool m_activationUrlHasBeenSet = false;
 
     Aws::String m_productSubscriptionResourcePolicy;
-    bool m_productSubscriptionResourcePolicyHasBeenSet;
+    bool m_productSubscriptionResourcePolicyHasBeenSet = false;
   };
 
 } // namespace Model

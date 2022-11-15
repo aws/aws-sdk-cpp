@@ -42,7 +42,7 @@ Container& Container::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("imageUris"))
   {
-    Array<JsonView> imageUrisJsonList = jsonValue.GetArray("imageUris");
+    Aws::Utils::Array<JsonView> imageUrisJsonList = jsonValue.GetArray("imageUris");
     for(unsigned imageUrisIndex = 0; imageUrisIndex < imageUrisJsonList.GetLength(); ++imageUrisIndex)
     {
       m_imageUris.push_back(imageUrisJsonList[imageUrisIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue Container::Jsonize() const
 
   if(m_imageUrisHasBeenSet)
   {
-   Array<JsonValue> imageUrisJsonList(m_imageUris.size());
+   Aws::Utils::Array<JsonValue> imageUrisJsonList(m_imageUris.size());
    for(unsigned imageUrisIndex = 0; imageUrisIndex < imageUrisJsonList.GetLength(); ++imageUrisIndex)
    {
      imageUrisJsonList[imageUrisIndex].AsString(m_imageUris[imageUrisIndex]);

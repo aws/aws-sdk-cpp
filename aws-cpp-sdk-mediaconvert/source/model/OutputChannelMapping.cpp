@@ -35,7 +35,7 @@ OutputChannelMapping& OutputChannelMapping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("inputChannels"))
   {
-    Array<JsonView> inputChannelsJsonList = jsonValue.GetArray("inputChannels");
+    Aws::Utils::Array<JsonView> inputChannelsJsonList = jsonValue.GetArray("inputChannels");
     for(unsigned inputChannelsIndex = 0; inputChannelsIndex < inputChannelsJsonList.GetLength(); ++inputChannelsIndex)
     {
       m_inputChannels.push_back(inputChannelsJsonList[inputChannelsIndex].AsInteger());
@@ -45,7 +45,7 @@ OutputChannelMapping& OutputChannelMapping::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inputChannelsFineTune"))
   {
-    Array<JsonView> inputChannelsFineTuneJsonList = jsonValue.GetArray("inputChannelsFineTune");
+    Aws::Utils::Array<JsonView> inputChannelsFineTuneJsonList = jsonValue.GetArray("inputChannelsFineTune");
     for(unsigned inputChannelsFineTuneIndex = 0; inputChannelsFineTuneIndex < inputChannelsFineTuneJsonList.GetLength(); ++inputChannelsFineTuneIndex)
     {
       m_inputChannelsFineTune.push_back(inputChannelsFineTuneJsonList[inputChannelsFineTuneIndex].AsDouble());
@@ -62,7 +62,7 @@ JsonValue OutputChannelMapping::Jsonize() const
 
   if(m_inputChannelsHasBeenSet)
   {
-   Array<JsonValue> inputChannelsJsonList(m_inputChannels.size());
+   Aws::Utils::Array<JsonValue> inputChannelsJsonList(m_inputChannels.size());
    for(unsigned inputChannelsIndex = 0; inputChannelsIndex < inputChannelsJsonList.GetLength(); ++inputChannelsIndex)
    {
      inputChannelsJsonList[inputChannelsIndex].AsInteger(m_inputChannels[inputChannelsIndex]);
@@ -73,7 +73,7 @@ JsonValue OutputChannelMapping::Jsonize() const
 
   if(m_inputChannelsFineTuneHasBeenSet)
   {
-   Array<JsonValue> inputChannelsFineTuneJsonList(m_inputChannelsFineTune.size());
+   Aws::Utils::Array<JsonValue> inputChannelsFineTuneJsonList(m_inputChannelsFineTune.size());
    for(unsigned inputChannelsFineTuneIndex = 0; inputChannelsFineTuneIndex < inputChannelsFineTuneJsonList.GetLength(); ++inputChannelsFineTuneIndex)
    {
      inputChannelsFineTuneJsonList[inputChannelsFineTuneIndex].AsDouble(m_inputChannelsFineTune[inputChannelsFineTuneIndex]);

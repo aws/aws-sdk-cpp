@@ -130,13 +130,13 @@ namespace Model
   private:
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     int m_maxDepth;
-    bool m_maxDepthHasBeenSet;
+    bool m_maxDepthHasBeenSet = false;
 
     double m_minStorageBytesPercentage;
-    bool m_minStorageBytesPercentageHasBeenSet;
+    bool m_minStorageBytesPercentageHasBeenSet = false;
   };
 
 } // namespace Model

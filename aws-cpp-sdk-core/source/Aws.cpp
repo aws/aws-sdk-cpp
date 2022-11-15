@@ -136,6 +136,7 @@ namespace Aws
 
         Aws::Http::SetInitCleanupCurlFlag(options.httpOptions.initAndCleanupCurl);
         Aws::Http::SetInstallSigPipeHandlerFlag(options.httpOptions.installSigPipeHandler);
+        Aws::Http::SetCompliantRfc3986Encoding(options.httpOptions.compliantRfc3986Encoding);
         Aws::Http::InitHttp();
         Aws::InitializeEnumOverflowContainer();
         cJSON_AS4CPP_Hooks hooks;
@@ -149,7 +150,6 @@ namespace Aws
 
     void ShutdownAPI(const SDKOptions& options)
     {
-        Aws::Monitoring::CleanupMonitoring();
         Aws::Internal::CleanupEC2MetadataClient();
         Aws::Net::CleanupNetwork();
         Aws::CleanupEnumOverflowContainer();
@@ -158,14 +158,13 @@ namespace Aws
 
         Aws::Config::CleanupConfigAndCredentialsCacheManager();
 
-        if(options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
+        Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
+        Aws::CleanupCrt();
+        if (options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
             Aws::Utils::Logging::ShutdownCRTLogging();
             Aws::Utils::Logging::ShutdownAWSLogging();
         }
-
-        Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
-        Aws::CleanupCrt();
 #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)
         {

@@ -30,7 +30,7 @@ GetRateBasedRuleManagedKeysResult& GetRateBasedRuleManagedKeysResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ManagedKeys"))
   {
-    Array<JsonView> managedKeysJsonList = jsonValue.GetArray("ManagedKeys");
+    Aws::Utils::Array<JsonView> managedKeysJsonList = jsonValue.GetArray("ManagedKeys");
     for(unsigned managedKeysIndex = 0; managedKeysIndex < managedKeysJsonList.GetLength(); ++managedKeysIndex)
     {
       m_managedKeys.push_back(managedKeysJsonList[managedKeysIndex].AsString());

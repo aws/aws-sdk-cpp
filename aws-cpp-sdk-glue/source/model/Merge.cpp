@@ -46,7 +46,7 @@ Merge& Merge::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
@@ -63,10 +63,10 @@ Merge& Merge::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PrimaryKeys"))
   {
-    Array<JsonView> primaryKeysJsonList = jsonValue.GetArray("PrimaryKeys");
+    Aws::Utils::Array<JsonView> primaryKeysJsonList = jsonValue.GetArray("PrimaryKeys");
     for(unsigned primaryKeysIndex = 0; primaryKeysIndex < primaryKeysJsonList.GetLength(); ++primaryKeysIndex)
     {
-      Array<JsonView> enclosedInStringPropertiesJsonList = primaryKeysJsonList[primaryKeysIndex].AsArray();
+      Aws::Utils::Array<JsonView> enclosedInStringPropertiesJsonList = primaryKeysJsonList[primaryKeysIndex].AsArray();
       Aws::Vector<Aws::String> enclosedInStringPropertiesList;
       enclosedInStringPropertiesList.reserve((size_t)enclosedInStringPropertiesJsonList.GetLength());
       for(unsigned enclosedInStringPropertiesIndex = 0; enclosedInStringPropertiesIndex < enclosedInStringPropertiesJsonList.GetLength(); ++enclosedInStringPropertiesIndex)
@@ -93,7 +93,7 @@ JsonValue Merge::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
@@ -110,10 +110,10 @@ JsonValue Merge::Jsonize() const
 
   if(m_primaryKeysHasBeenSet)
   {
-   Array<JsonValue> primaryKeysJsonList(m_primaryKeys.size());
+   Aws::Utils::Array<JsonValue> primaryKeysJsonList(m_primaryKeys.size());
    for(unsigned primaryKeysIndex = 0; primaryKeysIndex < primaryKeysJsonList.GetLength(); ++primaryKeysIndex)
    {
-     Array<JsonValue> enclosedInStringPropertiesJsonList(m_primaryKeys[primaryKeysIndex].size());
+     Aws::Utils::Array<JsonValue> enclosedInStringPropertiesJsonList(m_primaryKeys[primaryKeysIndex].size());
      for(unsigned enclosedInStringPropertiesIndex = 0; enclosedInStringPropertiesIndex < enclosedInStringPropertiesJsonList.GetLength(); ++enclosedInStringPropertiesIndex)
      {
        enclosedInStringPropertiesJsonList[enclosedInStringPropertiesIndex].AsString(m_primaryKeys[primaryKeysIndex][enclosedInStringPropertiesIndex]);

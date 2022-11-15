@@ -82,7 +82,7 @@ namespace Model
   private:
 
     F4vMoovPlacement m_moovPlacement;
-    bool m_moovPlacementHasBeenSet;
+    bool m_moovPlacementHasBeenSet = false;
   };
 
 } // namespace Model

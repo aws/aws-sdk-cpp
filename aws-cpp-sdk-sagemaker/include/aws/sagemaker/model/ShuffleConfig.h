@@ -72,7 +72,7 @@ namespace Model
   private:
 
     long long m_seed;
-    bool m_seedHasBeenSet;
+    bool m_seedHasBeenSet = false;
   };
 
 } // namespace Model

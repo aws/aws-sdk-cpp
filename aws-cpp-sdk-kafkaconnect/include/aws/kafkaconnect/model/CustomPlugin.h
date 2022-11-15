@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_customPluginArn;
-    bool m_customPluginArnHasBeenSet;
+    bool m_customPluginArnHasBeenSet = false;
 
     long long m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
   };
 
 } // namespace Model

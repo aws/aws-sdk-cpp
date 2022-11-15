@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Frequency m_anomalyDetectorFrequency;
-    bool m_anomalyDetectorFrequencyHasBeenSet;
+    bool m_anomalyDetectorFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -60,7 +60,7 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ResourceIds"))
   {
-    Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("ResourceIds");
+    Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("ResourceIds");
     for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
     {
       m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsString());
@@ -95,7 +95,7 @@ JsonValue ResourceNotFoundException::Jsonize() const
 
   if(m_resourceIdsHasBeenSet)
   {
-   Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
    {
      resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);

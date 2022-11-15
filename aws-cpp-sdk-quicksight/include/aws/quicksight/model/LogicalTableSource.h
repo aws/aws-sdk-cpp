@@ -155,13 +155,13 @@ namespace Model
   private:
 
     JoinInstruction m_joinInstruction;
-    bool m_joinInstructionHasBeenSet;
+    bool m_joinInstructionHasBeenSet = false;
 
     Aws::String m_physicalTableId;
-    bool m_physicalTableIdHasBeenSet;
+    bool m_physicalTableIdHasBeenSet = false;
 
     Aws::String m_dataSetArn;
-    bool m_dataSetArnHasBeenSet;
+    bool m_dataSetArnHasBeenSet = false;
   };
 
 } // namespace Model

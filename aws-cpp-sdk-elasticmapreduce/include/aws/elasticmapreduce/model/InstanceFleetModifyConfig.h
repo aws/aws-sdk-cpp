@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Aws::String m_instanceFleetId;
-    bool m_instanceFleetIdHasBeenSet;
+    bool m_instanceFleetIdHasBeenSet = false;
 
     int m_targetOnDemandCapacity;
-    bool m_targetOnDemandCapacityHasBeenSet;
+    bool m_targetOnDemandCapacityHasBeenSet = false;
 
     int m_targetSpotCapacity;
-    bool m_targetSpotCapacityHasBeenSet;
+    bool m_targetSpotCapacityHasBeenSet = false;
   };
 
 } // namespace Model

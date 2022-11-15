@@ -36,10 +36,10 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ParsedInputRecords"))
   {
-    Array<JsonView> parsedInputRecordsJsonList = jsonValue.GetArray("ParsedInputRecords");
+    Aws::Utils::Array<JsonView> parsedInputRecordsJsonList = jsonValue.GetArray("ParsedInputRecords");
     for(unsigned parsedInputRecordsIndex = 0; parsedInputRecordsIndex < parsedInputRecordsJsonList.GetLength(); ++parsedInputRecordsIndex)
     {
-      Array<JsonView> parsedInputRecordJsonList = parsedInputRecordsJsonList[parsedInputRecordsIndex].AsArray();
+      Aws::Utils::Array<JsonView> parsedInputRecordJsonList = parsedInputRecordsJsonList[parsedInputRecordsIndex].AsArray();
       Aws::Vector<Aws::String> parsedInputRecordList;
       parsedInputRecordList.reserve((size_t)parsedInputRecordJsonList.GetLength());
       for(unsigned parsedInputRecordIndex = 0; parsedInputRecordIndex < parsedInputRecordJsonList.GetLength(); ++parsedInputRecordIndex)
@@ -52,7 +52,7 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ProcessedInputRecords"))
   {
-    Array<JsonView> processedInputRecordsJsonList = jsonValue.GetArray("ProcessedInputRecords");
+    Aws::Utils::Array<JsonView> processedInputRecordsJsonList = jsonValue.GetArray("ProcessedInputRecords");
     for(unsigned processedInputRecordsIndex = 0; processedInputRecordsIndex < processedInputRecordsJsonList.GetLength(); ++processedInputRecordsIndex)
     {
       m_processedInputRecords.push_back(processedInputRecordsJsonList[processedInputRecordsIndex].AsString());
@@ -61,7 +61,7 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("RawInputRecords"))
   {
-    Array<JsonView> rawInputRecordsJsonList = jsonValue.GetArray("RawInputRecords");
+    Aws::Utils::Array<JsonView> rawInputRecordsJsonList = jsonValue.GetArray("RawInputRecords");
     for(unsigned rawInputRecordsIndex = 0; rawInputRecordsIndex < rawInputRecordsJsonList.GetLength(); ++rawInputRecordsIndex)
     {
       m_rawInputRecords.push_back(rawInputRecordsJsonList[rawInputRecordsIndex].AsString());

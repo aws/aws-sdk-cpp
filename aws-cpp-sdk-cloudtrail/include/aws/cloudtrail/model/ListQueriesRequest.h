@@ -284,22 +284,22 @@ namespace Model
   private:
 
     Aws::String m_eventDataStore;
-    bool m_eventDataStoreHasBeenSet;
+    bool m_eventDataStoreHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     QueryStatus m_queryStatus;
-    bool m_queryStatusHasBeenSet;
+    bool m_queryStatusHasBeenSet = false;
   };
 
 } // namespace Model

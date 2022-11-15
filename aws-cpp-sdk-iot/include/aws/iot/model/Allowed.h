@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Policy> m_policies;
-    bool m_policiesHasBeenSet;
+    bool m_policiesHasBeenSet = false;
   };
 
 } // namespace Model

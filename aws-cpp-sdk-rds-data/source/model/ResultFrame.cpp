@@ -19,35 +19,35 @@ namespace Model
 {
 
 ResultFrame::ResultFrame() : 
-    m_recordsHasBeenSet(false),
-    m_resultSetMetadataHasBeenSet(false)
+    m_resultSetMetadataHasBeenSet(false),
+    m_recordsHasBeenSet(false)
 {
 }
 
 ResultFrame::ResultFrame(JsonView jsonValue) : 
-    m_recordsHasBeenSet(false),
-    m_resultSetMetadataHasBeenSet(false)
+    m_resultSetMetadataHasBeenSet(false),
+    m_recordsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ResultFrame& ResultFrame::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("records"))
-  {
-    Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
-    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
-    {
-      m_records.push_back(recordsJsonList[recordsIndex].AsObject());
-    }
-    m_recordsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("resultSetMetadata"))
   {
     m_resultSetMetadata = jsonValue.GetObject("resultSetMetadata");
 
     m_resultSetMetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("records"))
+  {
+    Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
+    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
+    {
+      m_records.push_back(recordsJsonList[recordsIndex].AsObject());
+    }
+    m_recordsHasBeenSet = true;
   }
 
   return *this;
@@ -57,20 +57,20 @@ JsonValue ResultFrame::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_resultSetMetadataHasBeenSet)
+  {
+   payload.WithObject("resultSetMetadata", m_resultSetMetadata.Jsonize());
+
+  }
+
   if(m_recordsHasBeenSet)
   {
-   Array<JsonValue> recordsJsonList(m_records.size());
+   Aws::Utils::Array<JsonValue> recordsJsonList(m_records.size());
    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
    {
      recordsJsonList[recordsIndex].AsObject(m_records[recordsIndex].Jsonize());
    }
    payload.WithArray("records", std::move(recordsJsonList));
-
-  }
-
-  if(m_resultSetMetadataHasBeenSet)
-  {
-   payload.WithObject("resultSetMetadata", m_resultSetMetadata.Jsonize());
 
   }
 

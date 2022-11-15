@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_originalDiskPath;
-    bool m_originalDiskPathHasBeenSet;
+    bool m_originalDiskPathHasBeenSet = false;
 
     Aws::String m_newDiskName;
-    bool m_newDiskNameHasBeenSet;
+    bool m_newDiskNameHasBeenSet = false;
   };
 
 } // namespace Model

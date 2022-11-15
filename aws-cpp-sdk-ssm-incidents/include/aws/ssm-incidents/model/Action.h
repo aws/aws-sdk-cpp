@@ -77,7 +77,7 @@ namespace Model
   private:
 
     SsmAutomation m_ssmAutomation;
-    bool m_ssmAutomationHasBeenSet;
+    bool m_ssmAutomationHasBeenSet = false;
   };
 
 } // namespace Model

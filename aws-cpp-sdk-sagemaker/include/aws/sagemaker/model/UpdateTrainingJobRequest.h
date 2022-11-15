@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ProfilerConfigForUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/ResourceConfigForUpdate.h>
 #include <aws/sagemaker/model/ProfilerRuleConfiguration.h>
 #include <utility>
 
@@ -171,16 +172,56 @@ namespace Model
      */
     inline UpdateTrainingJobRequest& AddProfilerRuleConfigurations(ProfilerRuleConfiguration&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The training job <code>ResourceConfig</code> to update warm pool retention
+     * length.</p>
+     */
+    inline const ResourceConfigForUpdate& GetResourceConfig() const{ return m_resourceConfig; }
+
+    /**
+     * <p>The training job <code>ResourceConfig</code> to update warm pool retention
+     * length.</p>
+     */
+    inline bool ResourceConfigHasBeenSet() const { return m_resourceConfigHasBeenSet; }
+
+    /**
+     * <p>The training job <code>ResourceConfig</code> to update warm pool retention
+     * length.</p>
+     */
+    inline void SetResourceConfig(const ResourceConfigForUpdate& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = value; }
+
+    /**
+     * <p>The training job <code>ResourceConfig</code> to update warm pool retention
+     * length.</p>
+     */
+    inline void SetResourceConfig(ResourceConfigForUpdate&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::move(value); }
+
+    /**
+     * <p>The training job <code>ResourceConfig</code> to update warm pool retention
+     * length.</p>
+     */
+    inline UpdateTrainingJobRequest& WithResourceConfig(const ResourceConfigForUpdate& value) { SetResourceConfig(value); return *this;}
+
+    /**
+     * <p>The training job <code>ResourceConfig</code> to update warm pool retention
+     * length.</p>
+     */
+    inline UpdateTrainingJobRequest& WithResourceConfig(ResourceConfigForUpdate&& value) { SetResourceConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
-    bool m_trainingJobNameHasBeenSet;
+    bool m_trainingJobNameHasBeenSet = false;
 
     ProfilerConfigForUpdate m_profilerConfig;
-    bool m_profilerConfigHasBeenSet;
+    bool m_profilerConfigHasBeenSet = false;
 
     Aws::Vector<ProfilerRuleConfiguration> m_profilerRuleConfigurations;
-    bool m_profilerRuleConfigurationsHasBeenSet;
+    bool m_profilerRuleConfigurationsHasBeenSet = false;
+
+    ResourceConfigForUpdate m_resourceConfig;
+    bool m_resourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

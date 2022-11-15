@@ -250,19 +250,19 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_registryArn;
-    bool m_registryArnHasBeenSet;
+    bool m_registryArnHasBeenSet = false;
 
     Aws::String m_registryUri;
-    bool m_registryUriHasBeenSet;
+    bool m_registryUriHasBeenSet = false;
 
     bool m_verified;
-    bool m_verifiedHasBeenSet;
+    bool m_verifiedHasBeenSet = false;
 
     Aws::Vector<RegistryAlias> m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
   };
 
 } // namespace Model

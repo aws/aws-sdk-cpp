@@ -150,19 +150,19 @@ namespace Model
   private:
 
     long long m_executionTimeInMillis;
-    bool m_executionTimeInMillisHasBeenSet;
+    bool m_executionTimeInMillisHasBeenSet = false;
 
     long long m_dataWrites;
-    bool m_dataWritesHasBeenSet;
+    bool m_dataWritesHasBeenSet = false;
 
     long long m_bytesMetered;
-    bool m_bytesMeteredHasBeenSet;
+    bool m_bytesMeteredHasBeenSet = false;
 
     long long m_recordsIngested;
-    bool m_recordsIngestedHasBeenSet;
+    bool m_recordsIngestedHasBeenSet = false;
 
     long long m_queryResultRows;
-    bool m_queryResultRowsHasBeenSet;
+    bool m_queryResultRowsHasBeenSet = false;
   };
 
 } // namespace Model

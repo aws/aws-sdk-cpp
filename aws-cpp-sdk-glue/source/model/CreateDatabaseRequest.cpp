@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 CreateDatabaseRequest::CreateDatabaseRequest() : 
     m_catalogIdHasBeenSet(false),
-    m_databaseInputHasBeenSet(false)
+    m_databaseInputHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,17 @@ Aws::String CreateDatabaseRequest::SerializePayload() const
   if(m_databaseInputHasBeenSet)
   {
    payload.WithObject("DatabaseInput", m_databaseInput.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

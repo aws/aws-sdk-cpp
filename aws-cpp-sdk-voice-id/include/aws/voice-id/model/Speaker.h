@@ -194,6 +194,49 @@ namespace Model
 
 
     /**
+     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * re-enrollment or a successful authentication. This timestamp is accurate to one
+     * hour.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastAccessedAt() const{ return m_lastAccessedAt; }
+
+    /**
+     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * re-enrollment or a successful authentication. This timestamp is accurate to one
+     * hour.</p>
+     */
+    inline bool LastAccessedAtHasBeenSet() const { return m_lastAccessedAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * re-enrollment or a successful authentication. This timestamp is accurate to one
+     * hour.</p>
+     */
+    inline void SetLastAccessedAt(const Aws::Utils::DateTime& value) { m_lastAccessedAtHasBeenSet = true; m_lastAccessedAt = value; }
+
+    /**
+     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * re-enrollment or a successful authentication. This timestamp is accurate to one
+     * hour.</p>
+     */
+    inline void SetLastAccessedAt(Aws::Utils::DateTime&& value) { m_lastAccessedAtHasBeenSet = true; m_lastAccessedAt = std::move(value); }
+
+    /**
+     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * re-enrollment or a successful authentication. This timestamp is accurate to one
+     * hour.</p>
+     */
+    inline Speaker& WithLastAccessedAt(const Aws::Utils::DateTime& value) { SetLastAccessedAt(value); return *this;}
+
+    /**
+     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * re-enrollment or a successful authentication. This timestamp is accurate to one
+     * hour.</p>
+     */
+    inline Speaker& WithLastAccessedAt(Aws::Utils::DateTime&& value) { SetLastAccessedAt(std::move(value)); return *this;}
+
+
+    /**
      * <p>The current status of the speaker.</p>
      */
     inline const SpeakerStatus& GetStatus() const{ return m_status; }
@@ -257,22 +300,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_customerSpeakerId;
-    bool m_customerSpeakerIdHasBeenSet;
+    bool m_customerSpeakerIdHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_generatedSpeakerId;
-    bool m_generatedSpeakerIdHasBeenSet;
+    bool m_generatedSpeakerIdHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastAccessedAt;
+    bool m_lastAccessedAtHasBeenSet = false;
 
     SpeakerStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

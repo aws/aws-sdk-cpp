@@ -30,7 +30,7 @@ Aws::String TestMetricFilterRequest::SerializePayload() const
 
   if(m_logEventMessagesHasBeenSet)
   {
-   Array<JsonValue> logEventMessagesJsonList(m_logEventMessages.size());
+   Aws::Utils::Array<JsonValue> logEventMessagesJsonList(m_logEventMessages.size());
    for(unsigned logEventMessagesIndex = 0; logEventMessagesIndex < logEventMessagesJsonList.GetLength(); ++logEventMessagesIndex)
    {
      logEventMessagesJsonList[logEventMessagesIndex].AsString(m_logEventMessages[logEventMessagesIndex]);

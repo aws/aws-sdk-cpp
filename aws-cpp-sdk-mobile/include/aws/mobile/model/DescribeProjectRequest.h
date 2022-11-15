@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
 
     bool m_syncFromResources;
-    bool m_syncFromResourcesHasBeenSet;
+    bool m_syncFromResourcesHasBeenSet = false;
   };
 
 } // namespace Model

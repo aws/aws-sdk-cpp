@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+   * Settings for quality-defined variable bitrate encoding with the AV1 codec. Use
    * these settings only when you set QVBR for Rate control mode
    * (RateControlMode).<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Av1QvbrSettings">AWS
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     int m_qvbrQualityLevel;
-    bool m_qvbrQualityLevelHasBeenSet;
+    bool m_qvbrQualityLevelHasBeenSet = false;
 
     double m_qvbrQualityLevelFineTune;
-    bool m_qvbrQualityLevelFineTuneHasBeenSet;
+    bool m_qvbrQualityLevelFineTuneHasBeenSet = false;
   };
 
 } // namespace Model

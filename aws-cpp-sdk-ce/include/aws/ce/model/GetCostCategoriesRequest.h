@@ -39,82 +39,82 @@ namespace Model
 
 
     /**
-     * <p>The value that you want to search the filter values for.</p> <p>If you do not
-     * specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used
-     * to filter Cost Category names that match the <code>SearchString</code> pattern.
-     * If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code>
-     * will be used to filter Cost Category values that match the
-     * <code>SearchString</code> pattern.</p>
+     * <p>The value that you want to search the filter values for.</p> <p>If you don't
+     * specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to
+     * filter Cost Category names that match the <code>SearchString</code> pattern. If
+     * you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used
+     * to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.</p>
      */
     inline const Aws::String& GetSearchString() const{ return m_searchString; }
 
     /**
-     * <p>The value that you want to search the filter values for.</p> <p>If you do not
-     * specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used
-     * to filter Cost Category names that match the <code>SearchString</code> pattern.
-     * If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code>
-     * will be used to filter Cost Category values that match the
-     * <code>SearchString</code> pattern.</p>
+     * <p>The value that you want to search the filter values for.</p> <p>If you don't
+     * specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to
+     * filter Cost Category names that match the <code>SearchString</code> pattern. If
+     * you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used
+     * to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.</p>
      */
     inline bool SearchStringHasBeenSet() const { return m_searchStringHasBeenSet; }
 
     /**
-     * <p>The value that you want to search the filter values for.</p> <p>If you do not
-     * specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used
-     * to filter Cost Category names that match the <code>SearchString</code> pattern.
-     * If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code>
-     * will be used to filter Cost Category values that match the
-     * <code>SearchString</code> pattern.</p>
+     * <p>The value that you want to search the filter values for.</p> <p>If you don't
+     * specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to
+     * filter Cost Category names that match the <code>SearchString</code> pattern. If
+     * you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used
+     * to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.</p>
      */
     inline void SetSearchString(const Aws::String& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
 
     /**
-     * <p>The value that you want to search the filter values for.</p> <p>If you do not
-     * specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used
-     * to filter Cost Category names that match the <code>SearchString</code> pattern.
-     * If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code>
-     * will be used to filter Cost Category values that match the
-     * <code>SearchString</code> pattern.</p>
+     * <p>The value that you want to search the filter values for.</p> <p>If you don't
+     * specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to
+     * filter Cost Category names that match the <code>SearchString</code> pattern. If
+     * you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used
+     * to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.</p>
      */
     inline void SetSearchString(Aws::String&& value) { m_searchStringHasBeenSet = true; m_searchString = std::move(value); }
 
     /**
-     * <p>The value that you want to search the filter values for.</p> <p>If you do not
-     * specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used
-     * to filter Cost Category names that match the <code>SearchString</code> pattern.
-     * If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code>
-     * will be used to filter Cost Category values that match the
-     * <code>SearchString</code> pattern.</p>
+     * <p>The value that you want to search the filter values for.</p> <p>If you don't
+     * specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to
+     * filter Cost Category names that match the <code>SearchString</code> pattern. If
+     * you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used
+     * to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.</p>
      */
     inline void SetSearchString(const char* value) { m_searchStringHasBeenSet = true; m_searchString.assign(value); }
 
     /**
-     * <p>The value that you want to search the filter values for.</p> <p>If you do not
-     * specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used
-     * to filter Cost Category names that match the <code>SearchString</code> pattern.
-     * If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code>
-     * will be used to filter Cost Category values that match the
-     * <code>SearchString</code> pattern.</p>
+     * <p>The value that you want to search the filter values for.</p> <p>If you don't
+     * specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to
+     * filter Cost Category names that match the <code>SearchString</code> pattern. If
+     * you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used
+     * to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.</p>
      */
     inline GetCostCategoriesRequest& WithSearchString(const Aws::String& value) { SetSearchString(value); return *this;}
 
     /**
-     * <p>The value that you want to search the filter values for.</p> <p>If you do not
-     * specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used
-     * to filter Cost Category names that match the <code>SearchString</code> pattern.
-     * If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code>
-     * will be used to filter Cost Category values that match the
-     * <code>SearchString</code> pattern.</p>
+     * <p>The value that you want to search the filter values for.</p> <p>If you don't
+     * specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to
+     * filter Cost Category names that match the <code>SearchString</code> pattern. If
+     * you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used
+     * to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.</p>
      */
     inline GetCostCategoriesRequest& WithSearchString(Aws::String&& value) { SetSearchString(std::move(value)); return *this;}
 
     /**
-     * <p>The value that you want to search the filter values for.</p> <p>If you do not
-     * specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used
-     * to filter Cost Category names that match the <code>SearchString</code> pattern.
-     * If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code>
-     * will be used to filter Cost Category values that match the
-     * <code>SearchString</code> pattern.</p>
+     * <p>The value that you want to search the filter values for.</p> <p>If you don't
+     * specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to
+     * filter Cost Category names that match the <code>SearchString</code> pattern. If
+     * you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used
+     * to filter Cost Category values that match the <code>SearchString</code>
+     * pattern.</p>
      */
     inline GetCostCategoriesRequest& WithSearchString(const char* value) { SetSearchString(value); return *this;}
 
@@ -183,219 +183,227 @@ namespace Model
 
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
-     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <p>The value that you sort the data by.</p> <p>The key represents the cost and
+     * usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported key values
+     * for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use the <code>SortBy</code> value, the
+     * <code>NextPageToken</code> and <code>SearchString</code> key values aren't
+     * supported.</p>
      */
     inline const Aws::Vector<SortDefinition>& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
-     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <p>The value that you sort the data by.</p> <p>The key represents the cost and
+     * usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported key values
+     * for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use the <code>SortBy</code> value, the
+     * <code>NextPageToken</code> and <code>SearchString</code> key values aren't
+     * supported.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
-     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <p>The value that you sort the data by.</p> <p>The key represents the cost and
+     * usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported key values
+     * for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use the <code>SortBy</code> value, the
+     * <code>NextPageToken</code> and <code>SearchString</code> key values aren't
+     * supported.</p>
      */
     inline void SetSortBy(const Aws::Vector<SortDefinition>& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
-     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <p>The value that you sort the data by.</p> <p>The key represents the cost and
+     * usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported key values
+     * for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use the <code>SortBy</code> value, the
+     * <code>NextPageToken</code> and <code>SearchString</code> key values aren't
+     * supported.</p>
      */
     inline void SetSortBy(Aws::Vector<SortDefinition>&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
-     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <p>The value that you sort the data by.</p> <p>The key represents the cost and
+     * usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported key values
+     * for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use the <code>SortBy</code> value, the
+     * <code>NextPageToken</code> and <code>SearchString</code> key values aren't
+     * supported.</p>
      */
     inline GetCostCategoriesRequest& WithSortBy(const Aws::Vector<SortDefinition>& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
-     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <p>The value that you sort the data by.</p> <p>The key represents the cost and
+     * usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported key values
+     * for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use the <code>SortBy</code> value, the
+     * <code>NextPageToken</code> and <code>SearchString</code> key values aren't
+     * supported.</p>
      */
     inline GetCostCategoriesRequest& WithSortBy(Aws::Vector<SortDefinition>&& value) { SetSortBy(std::move(value)); return *this;}
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
-     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <p>The value that you sort the data by.</p> <p>The key represents the cost and
+     * usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported key values
+     * for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use the <code>SortBy</code> value, the
+     * <code>NextPageToken</code> and <code>SearchString</code> key values aren't
+     * supported.</p>
      */
     inline GetCostCategoriesRequest& AddSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(value); return *this; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The key represents cost
-     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <p>The value that you sort the data by.</p> <p>The key represents the cost and
+     * usage metrics. The following values are supported:</p> <ul> <li> <p>
      * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
      * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
      * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
      * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
-     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
-     * <code>DESCENDING</code>.</p> <p>When using <code>SortBy</code>,
-     * <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported key values
+     * for the <code>SortOrder</code> value are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use the <code>SortBy</code> value, the
+     * <code>NextPageToken</code> and <code>SearchString</code> key values aren't
+     * supported.</p>
      */
     inline GetCostCategoriesRequest& AddSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>This field is only used when <code>SortBy</code> is provided in the
-     * request.</p> <p>The maximum number of objects that to be returned for this
-     * request. If <code>MaxResults</code> is not specified with <code>SortBy</code>,
-     * the request will return 1000 results as the default value for this
+     * <p>This field is only used when the <code>SortBy</code> value is provided in the
+     * request.</p> <p>The maximum number of objects that are returned for this
+     * request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code>
+     * value, the request returns 1000 results as the default value for this
      * parameter.</p> <p>For <code>GetCostCategories</code>, MaxResults has an upper
-     * limit of 1000.</p>
+     * quota of 1000.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>This field is only used when <code>SortBy</code> is provided in the
-     * request.</p> <p>The maximum number of objects that to be returned for this
-     * request. If <code>MaxResults</code> is not specified with <code>SortBy</code>,
-     * the request will return 1000 results as the default value for this
+     * <p>This field is only used when the <code>SortBy</code> value is provided in the
+     * request.</p> <p>The maximum number of objects that are returned for this
+     * request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code>
+     * value, the request returns 1000 results as the default value for this
      * parameter.</p> <p>For <code>GetCostCategories</code>, MaxResults has an upper
-     * limit of 1000.</p>
+     * quota of 1000.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>This field is only used when <code>SortBy</code> is provided in the
-     * request.</p> <p>The maximum number of objects that to be returned for this
-     * request. If <code>MaxResults</code> is not specified with <code>SortBy</code>,
-     * the request will return 1000 results as the default value for this
+     * <p>This field is only used when the <code>SortBy</code> value is provided in the
+     * request.</p> <p>The maximum number of objects that are returned for this
+     * request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code>
+     * value, the request returns 1000 results as the default value for this
      * parameter.</p> <p>For <code>GetCostCategories</code>, MaxResults has an upper
-     * limit of 1000.</p>
+     * quota of 1000.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>This field is only used when <code>SortBy</code> is provided in the
-     * request.</p> <p>The maximum number of objects that to be returned for this
-     * request. If <code>MaxResults</code> is not specified with <code>SortBy</code>,
-     * the request will return 1000 results as the default value for this
+     * <p>This field is only used when the <code>SortBy</code> value is provided in the
+     * request.</p> <p>The maximum number of objects that are returned for this
+     * request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code>
+     * value, the request returns 1000 results as the default value for this
      * parameter.</p> <p>For <code>GetCostCategories</code>, MaxResults has an upper
-     * limit of 1000.</p>
+     * quota of 1000.</p>
      */
     inline GetCostCategoriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
-     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the previous
      * call in your next request.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
-     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the previous
      * call in your next request.</p>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
-     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the previous
      * call in your next request.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
-     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the previous
      * call in your next request.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
-     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the previous
      * call in your next request.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
-     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the previous
      * call in your next request.</p>
      */
     inline GetCostCategoriesRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
-     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the previous
      * call in your next request.</p>
      */
     inline GetCostCategoriesRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
-     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the previous
      * call in your next request.</p>
      */
     inline GetCostCategoriesRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
@@ -403,25 +411,25 @@ namespace Model
   private:
 
     Aws::String m_searchString;
-    bool m_searchStringHasBeenSet;
+    bool m_searchStringHasBeenSet = false;
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     Aws::String m_costCategoryName;
-    bool m_costCategoryNameHasBeenSet;
+    bool m_costCategoryNameHasBeenSet = false;
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::Vector<SortDefinition> m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
   };
 
 } // namespace Model

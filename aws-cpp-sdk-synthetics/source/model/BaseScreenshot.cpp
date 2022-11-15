@@ -42,7 +42,7 @@ BaseScreenshot& BaseScreenshot::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IgnoreCoordinates"))
   {
-    Array<JsonView> ignoreCoordinatesJsonList = jsonValue.GetArray("IgnoreCoordinates");
+    Aws::Utils::Array<JsonView> ignoreCoordinatesJsonList = jsonValue.GetArray("IgnoreCoordinates");
     for(unsigned ignoreCoordinatesIndex = 0; ignoreCoordinatesIndex < ignoreCoordinatesJsonList.GetLength(); ++ignoreCoordinatesIndex)
     {
       m_ignoreCoordinates.push_back(ignoreCoordinatesJsonList[ignoreCoordinatesIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue BaseScreenshot::Jsonize() const
 
   if(m_ignoreCoordinatesHasBeenSet)
   {
-   Array<JsonValue> ignoreCoordinatesJsonList(m_ignoreCoordinates.size());
+   Aws::Utils::Array<JsonValue> ignoreCoordinatesJsonList(m_ignoreCoordinates.size());
    for(unsigned ignoreCoordinatesIndex = 0; ignoreCoordinatesIndex < ignoreCoordinatesJsonList.GetLength(); ++ignoreCoordinatesIndex)
    {
      ignoreCoordinatesJsonList[ignoreCoordinatesIndex].AsString(m_ignoreCoordinates[ignoreCoordinatesIndex]);

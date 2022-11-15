@@ -76,6 +76,12 @@ DescribeForecastExportJobResult& DescribeForecastExportJobResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("Format"))
+  {
+    m_format = jsonValue.GetString("Format");
+
+  }
+
 
 
   return *this;

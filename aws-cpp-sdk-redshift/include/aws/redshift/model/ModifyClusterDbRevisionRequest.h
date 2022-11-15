@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_revisionTarget;
-    bool m_revisionTargetHasBeenSet;
+    bool m_revisionTargetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     FunctionConfig m_functionConfig;
-    bool m_functionConfigHasBeenSet;
+    bool m_functionConfigHasBeenSet = false;
 
     FunctionMetadata m_functionMetadata;
-    bool m_functionMetadataHasBeenSet;
+    bool m_functionMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -68,53 +68,77 @@ namespace Model
     inline Bias& WithReport(MetricsSource&& value) { SetReport(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The pre-training bias report for a model.</p>
+     */
     inline const MetricsSource& GetPreTrainingReport() const{ return m_preTrainingReport; }
 
-    
+    /**
+     * <p>The pre-training bias report for a model.</p>
+     */
     inline bool PreTrainingReportHasBeenSet() const { return m_preTrainingReportHasBeenSet; }
 
-    
+    /**
+     * <p>The pre-training bias report for a model.</p>
+     */
     inline void SetPreTrainingReport(const MetricsSource& value) { m_preTrainingReportHasBeenSet = true; m_preTrainingReport = value; }
 
-    
+    /**
+     * <p>The pre-training bias report for a model.</p>
+     */
     inline void SetPreTrainingReport(MetricsSource&& value) { m_preTrainingReportHasBeenSet = true; m_preTrainingReport = std::move(value); }
 
-    
+    /**
+     * <p>The pre-training bias report for a model.</p>
+     */
     inline Bias& WithPreTrainingReport(const MetricsSource& value) { SetPreTrainingReport(value); return *this;}
 
-    
+    /**
+     * <p>The pre-training bias report for a model.</p>
+     */
     inline Bias& WithPreTrainingReport(MetricsSource&& value) { SetPreTrainingReport(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The post-training bias report for a model.</p>
+     */
     inline const MetricsSource& GetPostTrainingReport() const{ return m_postTrainingReport; }
 
-    
+    /**
+     * <p>The post-training bias report for a model.</p>
+     */
     inline bool PostTrainingReportHasBeenSet() const { return m_postTrainingReportHasBeenSet; }
 
-    
+    /**
+     * <p>The post-training bias report for a model.</p>
+     */
     inline void SetPostTrainingReport(const MetricsSource& value) { m_postTrainingReportHasBeenSet = true; m_postTrainingReport = value; }
 
-    
+    /**
+     * <p>The post-training bias report for a model.</p>
+     */
     inline void SetPostTrainingReport(MetricsSource&& value) { m_postTrainingReportHasBeenSet = true; m_postTrainingReport = std::move(value); }
 
-    
+    /**
+     * <p>The post-training bias report for a model.</p>
+     */
     inline Bias& WithPostTrainingReport(const MetricsSource& value) { SetPostTrainingReport(value); return *this;}
 
-    
+    /**
+     * <p>The post-training bias report for a model.</p>
+     */
     inline Bias& WithPostTrainingReport(MetricsSource&& value) { SetPostTrainingReport(std::move(value)); return *this;}
 
   private:
 
     MetricsSource m_report;
-    bool m_reportHasBeenSet;
+    bool m_reportHasBeenSet = false;
 
     MetricsSource m_preTrainingReport;
-    bool m_preTrainingReportHasBeenSet;
+    bool m_preTrainingReportHasBeenSet = false;
 
     MetricsSource m_postTrainingReport;
-    bool m_postTrainingReportHasBeenSet;
+    bool m_postTrainingReportHasBeenSet = false;
   };
 
 } // namespace Model

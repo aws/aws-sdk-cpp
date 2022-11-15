@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_remoteDomainName;
-    bool m_remoteDomainNameHasBeenSet;
+    bool m_remoteDomainNameHasBeenSet = false;
   };
 
 } // namespace Model

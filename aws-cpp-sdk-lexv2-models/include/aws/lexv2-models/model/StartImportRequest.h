@@ -238,16 +238,16 @@ namespace Model
   private:
 
     Aws::String m_importId;
-    bool m_importIdHasBeenSet;
+    bool m_importIdHasBeenSet = false;
 
     ImportResourceSpecification m_resourceSpecification;
-    bool m_resourceSpecificationHasBeenSet;
+    bool m_resourceSpecificationHasBeenSet = false;
 
     MergeStrategy m_mergeStrategy;
-    bool m_mergeStrategyHasBeenSet;
+    bool m_mergeStrategyHasBeenSet = false;
 
     Aws::String m_filePassword;
-    bool m_filePasswordHasBeenSet;
+    bool m_filePasswordHasBeenSet = false;
   };
 
 } // namespace Model

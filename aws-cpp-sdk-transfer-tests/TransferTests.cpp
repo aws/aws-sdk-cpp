@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/ProxyConfig.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/DeleteObjectsRequest.h>
@@ -627,7 +628,7 @@ protected:
         }
 
         auto createBucketOutcome = m_s3Client->CreateBucket(createBucket);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
 
         ASSERT_TRUE(WaitForBucketToPropagate(GetTestBucketName()));
 
@@ -1348,7 +1349,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     ListMultipartUploadsRequest listMultipartRequest;
     listMultipartRequest.WithBucket(GetTestBucketName());
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
-    EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(listMultipartOutcome);
     ASSERT_EQ(1u, listMultipartOutcome.GetResult().GetUploads().size());
 
     HeadObjectRequest headObjectRequest;
@@ -1379,7 +1380,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
 
     listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
-    EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(listMultipartOutcome);
     ASSERT_EQ(0u, listMultipartOutcome.GetResult().GetUploads().size());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), CANCEL_FILE_KEY));
@@ -1452,7 +1453,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     listMultipartRequest.WithBucket(GetTestBucketName());
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
-    EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(listMultipartOutcome);
     // S3 has eventual consistency, even thought we called AbortMultiPartUpload and get successful return,
     // following call of listMultiPartUpload will not gurantee to return 0.
     size_t retries = 0;
@@ -1460,7 +1461,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     {
         std::this_thread::sleep_for(std::chrono::seconds(1));
         listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
-        EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+        AWS_EXPECT_SUCCESS(listMultipartOutcome);
     }
     ASSERT_EQ(0u, listMultipartOutcome.GetResult().GetUploads().size());
 
@@ -1618,7 +1619,7 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadWithMetadataTest)
     headObjectRequest.SetKey(RandomFileName);
 
     HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
-    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(headObjectOutcome);
 
     Aws::Map<Aws::String, Aws::String> headObjectMetadata = headObjectOutcome.GetResult().GetMetadata();
     ASSERT_EQ(metadata.size(), headObjectMetadata.size());
@@ -1670,7 +1671,7 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     headObjectRequest.SetKey(RandomFileName);
 
     HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
-    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(headObjectOutcome);
 
     Aws::Map<Aws::String, Aws::String> headObjectMetadata = headObjectOutcome.GetResult().GetMetadata();
     ASSERT_EQ(metadata.size(), headObjectMetadata.size());
@@ -1852,7 +1853,7 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadWithComputeContentMd5Test)
     headObjectRequest.SetKey(RandomFileName);
 
     HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
-    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(headObjectOutcome);
 
     VerifyUploadedFile(*transferManager,
                        testFilePath,
@@ -1913,7 +1914,7 @@ TEST_F(TransferTests, MultipartUploadWithComputeContentMd5Test)
     headObjectRequest.SetKey(RandomFileName);
 
     HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
-    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(headObjectOutcome);
 
     VerifyUploadedFile(*transferManager,
                        testFilePath,
@@ -1980,4 +1981,83 @@ TEST_F(TransferTests, TransferManager_TemplatesTest)
                        "text/plain",
                        Aws::Map<Aws::String, Aws::String>());
 }
+
+class TestHelperTransferManager : public Aws::Transfer::TransferManager
+{
+public:
+    static bool MakePublicIsWithinParentDirectory(Aws::String parentDirectory, Aws::String filePath)
+    {
+        return Aws::Transfer::TransferManager::IsWithinParentDirectory(parentDirectory, filePath);
+    }
+
+    struct TestCaseEntry
+    {
+        Aws::String parentDir;
+        Aws::String filePath;
+
+        bool expectedIsWithinParentDirectory;
+    };
+};
+
+TEST_F(TransferTests, TransferManager_TestRelativePrefix)
+{
+
+    static const std::vector<TestHelperTransferManager::TestCaseEntry> TEST_CASES =
+            {
+                {R"(C:/temp/)", R"(C:/temp/filename.bmp)", true},
+                {R"(C:/temp)", R"(C:/temp/filename.bmp)", true},
+                {R"(C:/temp/)", R"(C:/temp/../temp-1/filename.bmp)", false},
+                {R"(C:/temp/)", R"(C:/temp/temp/filename..bmp)", true},
+                {R"(C:/temp/)", R"(C:/temp/temp/filename/..bmp)", true},
+                {R"(C:/temp/)", R"(C:/temp/temp/filename/../bmp)", true},
+                {R"(C:/temp/)", R"(C:/temp/../temp-1/filename..bmp)", false},
+                {R"(C:/temp/)", R"(C:/temp/../temp/temp-1/filename..bmp)", false},
+                {R"(C:/)", R"(C:/..../foo.txt)", true},
+                {R"(C:/)", R"(C:/./foo.txt)", true},
+                {R"(C:/)", R"(C:/.../foo.txt)", true},
+                {R"(C:/)", R"(C:/.../../foo.txt)", true},
+                {R"(C:/)", R"(C:/.../.../../../foo.txt)", true},
+                {R"(C:/)", R"(C:/...////./foo.txt)", true},
+                {R"(C:/)", R"(C:////../test)", false},
+
+                {R"(/home/user/my-intended-directory)", R"(/home/user/my-intended-directory/foo.txt)", true},
+                {R"(/home/user/my-intended-directory/)", R"(/home/user/my-intended-directory/foo.txt)", true},
+                {R"(/home/user/my-intended-directory/)", R"(/home/user/my-intended-directory//////foo.txt)", true},
+                {R"(/home/user/)", R"(/home/user/down/../down/../down/../foo.txt)", true},
+                {R"(/home/user/my-intended-directory)", R"(/home/user/my-intended-directory/../my-intended-directory-2/foo.txt)", false},
+                {R"(/home/user/)", R"(/home/user/../../root/foo.txt)", false},
+                {R"(/home/user)", R"(/home/user/../../root/foo.txt)", false},
+
+                {R"(/home/user/)", R"(/home/user/.. )", true},
+                {R"(/home/user/)", R"(/home/user/ .. )", true},
+                {R"(/home/user/)", R"(/home/user/ ..)", true},
+                {R"(/home/user/)", R"(/home/user/./foo)", true},
+                {R"(/home/user)", R"(/home/user/./foo)", true},
+                {R"(/home/user/)", R"(/home/user/./././././foo)", true},
+                {R"(/home/user/)", R"(/home/user/./././.././foo)", false},
+
+                {R"(./)", R"(./foo)", true},
+                {R"(./)", R"(./..foo)", true},
+                {R"(./)", R"(./../foo)", false},
+                {R"(./)", R"(./.../foo)", true},
+                {R"(./)", R"(./.../../foo)", true},
+                {R"(./)", R"(.//.../../foo)", true},
+                {R"(./)", R"(.////../test)", false}
+            };
+
+    for(const TestHelperTransferManager::TestCaseEntry& TC_ENTRY : TEST_CASES)
+    {
+        char delimiter[] = { Aws::FileSystem::PATH_DELIM, 0 };
+        Aws::String osNormalizedParentDir = TC_ENTRY.parentDir;
+        Aws::Utils::StringUtils::Replace(osNormalizedParentDir, "/", delimiter);
+        Aws::String osNormalizedFilePath = TC_ENTRY.filePath;
+        Aws::Utils::StringUtils::Replace(osNormalizedFilePath, "/", delimiter);
+
+        bool actualResult = TestHelperTransferManager::MakePublicIsWithinParentDirectory(osNormalizedParentDir, osNormalizedFilePath);
+
+        ASSERT_EQ(TC_ENTRY.expectedIsWithinParentDirectory, actualResult)
+            << (TC_ENTRY.expectedIsWithinParentDirectory ? "EXPECTED \"" : "NOT EXPECTED \"") << osNormalizedFilePath << "\" to be found in \"" << osNormalizedParentDir << "\"";
+    }
+}
+
 }

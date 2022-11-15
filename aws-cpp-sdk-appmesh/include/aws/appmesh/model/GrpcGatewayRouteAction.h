@@ -109,10 +109,10 @@ namespace Model
   private:
 
     GrpcGatewayRouteRewrite m_rewrite;
-    bool m_rewriteHasBeenSet;
+    bool m_rewriteHasBeenSet = false;
 
     GatewayRouteTarget m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
   };
 
 } // namespace Model

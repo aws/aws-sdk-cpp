@@ -604,34 +604,34 @@ namespace Model
   private:
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_archiveId;
-    bool m_archiveIdHasBeenSet;
+    bool m_archiveIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_sNSTopic;
-    bool m_sNSTopicHasBeenSet;
+    bool m_sNSTopicHasBeenSet = false;
 
     Aws::String m_retrievalByteRange;
-    bool m_retrievalByteRangeHasBeenSet;
+    bool m_retrievalByteRangeHasBeenSet = false;
 
     Aws::String m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
 
     InventoryRetrievalJobInput m_inventoryRetrievalParameters;
-    bool m_inventoryRetrievalParametersHasBeenSet;
+    bool m_inventoryRetrievalParametersHasBeenSet = false;
 
     SelectParameters m_selectParameters;
-    bool m_selectParametersHasBeenSet;
+    bool m_selectParametersHasBeenSet = false;
 
     OutputLocation m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
   };
 
 } // namespace Model

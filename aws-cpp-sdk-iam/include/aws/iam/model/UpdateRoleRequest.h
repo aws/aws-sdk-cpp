@@ -121,7 +121,7 @@ namespace Model
     /**
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
-     * maximum of one hour is applied. This setting can have a value from 1 hour to 12
+     * value of one hour is applied. This setting can have a value from 1 hour to 12
      * hours.</p> <p>Anyone who assumes the role from the CLI or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
@@ -140,7 +140,7 @@ namespace Model
     /**
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
-     * maximum of one hour is applied. This setting can have a value from 1 hour to 12
+     * value of one hour is applied. This setting can have a value from 1 hour to 12
      * hours.</p> <p>Anyone who assumes the role from the CLI or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
@@ -159,7 +159,7 @@ namespace Model
     /**
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
-     * maximum of one hour is applied. This setting can have a value from 1 hour to 12
+     * value of one hour is applied. This setting can have a value from 1 hour to 12
      * hours.</p> <p>Anyone who assumes the role from the CLI or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
@@ -178,7 +178,7 @@ namespace Model
     /**
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
-     * maximum of one hour is applied. This setting can have a value from 1 hour to 12
+     * value of one hour is applied. This setting can have a value from 1 hour to 12
      * hours.</p> <p>Anyone who assumes the role from the CLI or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_maxSessionDuration;
-    bool m_maxSessionDurationHasBeenSet;
+    bool m_maxSessionDurationHasBeenSet = false;
   };
 
 } // namespace Model

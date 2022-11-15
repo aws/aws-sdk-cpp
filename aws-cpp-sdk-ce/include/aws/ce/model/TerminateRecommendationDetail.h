@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_estimatedMonthlySavings;
-    bool m_estimatedMonthlySavingsHasBeenSet;
+    bool m_estimatedMonthlySavingsHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
   };
 
 } // namespace Model

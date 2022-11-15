@@ -65,7 +65,7 @@ namespace Model
   private:
 
     bool m_autoEnableControls;
-    bool m_autoEnableControlsHasBeenSet;
+    bool m_autoEnableControlsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_antennaUplinkConfigArn;
-    bool m_antennaUplinkConfigArnHasBeenSet;
+    bool m_antennaUplinkConfigArnHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

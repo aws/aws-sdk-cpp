@@ -30,7 +30,7 @@ BatchGetJobsResult& BatchGetJobsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Jobs"))
   {
-    Array<JsonView> jobsJsonList = jsonValue.GetArray("Jobs");
+    Aws::Utils::Array<JsonView> jobsJsonList = jsonValue.GetArray("Jobs");
     for(unsigned jobsIndex = 0; jobsIndex < jobsJsonList.GetLength(); ++jobsIndex)
     {
       m_jobs.push_back(jobsJsonList[jobsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetJobsResult& BatchGetJobsResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("JobsNotFound"))
   {
-    Array<JsonView> jobsNotFoundJsonList = jsonValue.GetArray("JobsNotFound");
+    Aws::Utils::Array<JsonView> jobsNotFoundJsonList = jsonValue.GetArray("JobsNotFound");
     for(unsigned jobsNotFoundIndex = 0; jobsNotFoundIndex < jobsNotFoundJsonList.GetLength(); ++jobsNotFoundIndex)
     {
       m_jobsNotFound.push_back(jobsNotFoundJsonList[jobsNotFoundIndex].AsString());

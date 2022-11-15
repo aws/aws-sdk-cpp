@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_ruleSetName;
-    bool m_ruleSetNameHasBeenSet;
+    bool m_ruleSetNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ruleNames;
-    bool m_ruleNamesHasBeenSet;
+    bool m_ruleNamesHasBeenSet = false;
   };
 
 } // namespace Model

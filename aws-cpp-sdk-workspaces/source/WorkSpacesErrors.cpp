@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/workspaces/WorkSpacesErrors.h>
 #include <aws/workspaces/model/ResourceNotFoundException.h>
+#include <aws/workspaces/model/OperationNotSupportedException.h>
 #include <aws/workspaces/model/ResourceUnavailableException.h>
 
 using namespace Aws::Client;
@@ -22,6 +23,12 @@ template<> AWS_WORKSPACES_API ResourceNotFoundException WorkSpacesError::GetMode
 {
   assert(this->GetErrorType() == WorkSpacesErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_WORKSPACES_API OperationNotSupportedException WorkSpacesError::GetModeledError()
+{
+  assert(this->GetErrorType() == WorkSpacesErrors::OPERATION_NOT_SUPPORTED);
+  return OperationNotSupportedException(this->GetJsonPayload().View());
 }
 
 template<> AWS_WORKSPACES_API ResourceUnavailableException WorkSpacesError::GetModeledError()

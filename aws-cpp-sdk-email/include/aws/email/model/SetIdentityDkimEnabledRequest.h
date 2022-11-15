@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     bool m_dkimEnabled;
-    bool m_dkimEnabledHasBeenSet;
+    bool m_dkimEnabledHasBeenSet = false;
   };
 
 } // namespace Model

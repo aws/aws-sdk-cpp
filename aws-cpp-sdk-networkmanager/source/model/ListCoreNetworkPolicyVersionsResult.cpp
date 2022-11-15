@@ -30,7 +30,7 @@ ListCoreNetworkPolicyVersionsResult& ListCoreNetworkPolicyVersionsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CoreNetworkPolicyVersions"))
   {
-    Array<JsonView> coreNetworkPolicyVersionsJsonList = jsonValue.GetArray("CoreNetworkPolicyVersions");
+    Aws::Utils::Array<JsonView> coreNetworkPolicyVersionsJsonList = jsonValue.GetArray("CoreNetworkPolicyVersions");
     for(unsigned coreNetworkPolicyVersionsIndex = 0; coreNetworkPolicyVersionsIndex < coreNetworkPolicyVersionsJsonList.GetLength(); ++coreNetworkPolicyVersionsIndex)
     {
       m_coreNetworkPolicyVersions.push_back(coreNetworkPolicyVersionsJsonList[coreNetworkPolicyVersionsIndex].AsObject());

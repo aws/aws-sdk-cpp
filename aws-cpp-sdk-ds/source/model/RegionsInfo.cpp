@@ -42,7 +42,7 @@ RegionsInfo& RegionsInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalRegions"))
   {
-    Array<JsonView> additionalRegionsJsonList = jsonValue.GetArray("AdditionalRegions");
+    Aws::Utils::Array<JsonView> additionalRegionsJsonList = jsonValue.GetArray("AdditionalRegions");
     for(unsigned additionalRegionsIndex = 0; additionalRegionsIndex < additionalRegionsJsonList.GetLength(); ++additionalRegionsIndex)
     {
       m_additionalRegions.push_back(additionalRegionsJsonList[additionalRegionsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue RegionsInfo::Jsonize() const
 
   if(m_additionalRegionsHasBeenSet)
   {
-   Array<JsonValue> additionalRegionsJsonList(m_additionalRegions.size());
+   Aws::Utils::Array<JsonValue> additionalRegionsJsonList(m_additionalRegions.size());
    for(unsigned additionalRegionsIndex = 0; additionalRegionsIndex < additionalRegionsJsonList.GetLength(); ++additionalRegionsIndex)
    {
      additionalRegionsJsonList[additionalRegionsIndex].AsString(m_additionalRegions[additionalRegionsIndex]);

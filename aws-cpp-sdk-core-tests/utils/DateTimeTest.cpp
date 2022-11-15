@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/utils/DateTime.h>
 
 using namespace Aws::Utils;
@@ -108,6 +108,38 @@ TEST(DateTimeTest, TestISO_8601ParsingMSPrecision)
     ASSERT_EQ("2002-10-02T08:05:09Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
 
     ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601));
+}
+
+TEST(DateTimeTest, TestISO_8601ParsingNSPrecision)
+{
+    const char* gmtDateStr = "2002-10-02T08:05:09.123456789Z";
+    const char* utcOffsetVersion = "2002-10-02T08:05:09.123456789+00:00";
+    DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
+    ASSERT_TRUE(gmtDate.WasParseSuccessful());
+    ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
+    ASSERT_EQ(02, gmtDate.GetDay());
+    ASSERT_EQ(Month::October, gmtDate.GetMonth());
+    ASSERT_EQ(2002, gmtDate.GetYear());
+    ASSERT_EQ(8, gmtDate.GetHour());
+    ASSERT_EQ(5, gmtDate.GetMinute());
+    ASSERT_EQ(9, gmtDate.GetSecond());
+    ASSERT_EQ("2002-10-02T08:05:09Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
+
+    ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601));
+}
+
+TEST(DateTimeTest, TestISO_8601ParsingTooLowPrecision)
+{
+    const char* gmtDateStr = "2002-10-02T08:05:09.12Z";
+    DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
+    ASSERT_FALSE(gmtDate.WasParseSuccessful());
+}
+
+TEST(DateTimeTest, TestISO_8601ParsingTooHighPrecision)
+{
+    const char* gmtDateStr = "2002-10-02T08:05:09.1234567890Z";
+    DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
+    ASSERT_FALSE(gmtDate.WasParseSuccessful());
 }
 
 TEST(DateTimeTest, TestISO_8601BasicParsingMSPrecision)

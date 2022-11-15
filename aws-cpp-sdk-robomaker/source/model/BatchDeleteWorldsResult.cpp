@@ -30,7 +30,7 @@ BatchDeleteWorldsResult& BatchDeleteWorldsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("unprocessedWorlds"))
   {
-    Array<JsonView> unprocessedWorldsJsonList = jsonValue.GetArray("unprocessedWorlds");
+    Aws::Utils::Array<JsonView> unprocessedWorldsJsonList = jsonValue.GetArray("unprocessedWorlds");
     for(unsigned unprocessedWorldsIndex = 0; unprocessedWorldsIndex < unprocessedWorldsJsonList.GetLength(); ++unprocessedWorldsIndex)
     {
       m_unprocessedWorlds.push_back(unprocessedWorldsJsonList[unprocessedWorldsIndex].AsString());

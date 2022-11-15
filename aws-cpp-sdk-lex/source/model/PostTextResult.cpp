@@ -46,7 +46,7 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   if(jsonValue.ValueExists("alternativeIntents"))
   {
-    Array<JsonView> alternativeIntentsJsonList = jsonValue.GetArray("alternativeIntents");
+    Aws::Utils::Array<JsonView> alternativeIntentsJsonList = jsonValue.GetArray("alternativeIntents");
     for(unsigned alternativeIntentsIndex = 0; alternativeIntentsIndex < alternativeIntentsJsonList.GetLength(); ++alternativeIntentsIndex)
     {
       m_alternativeIntents.push_back(alternativeIntentsJsonList[alternativeIntentsIndex].AsObject());
@@ -121,7 +121,7 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   if(jsonValue.ValueExists("activeContexts"))
   {
-    Array<JsonView> activeContextsJsonList = jsonValue.GetArray("activeContexts");
+    Aws::Utils::Array<JsonView> activeContextsJsonList = jsonValue.GetArray("activeContexts");
     for(unsigned activeContextsIndex = 0; activeContextsIndex < activeContextsJsonList.GetLength(); ++activeContextsIndex)
     {
       m_activeContexts.push_back(activeContextsJsonList[activeContextsIndex].AsObject());

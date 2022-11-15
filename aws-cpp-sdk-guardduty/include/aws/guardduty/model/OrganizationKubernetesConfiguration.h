@@ -77,7 +77,7 @@ namespace Model
   private:
 
     OrganizationKubernetesAuditLogsConfiguration m_auditLogs;
-    bool m_auditLogsHasBeenSet;
+    bool m_auditLogsHasBeenSet = false;
   };
 
 } // namespace Model

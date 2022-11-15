@@ -39,6 +39,9 @@ SetSourceRequest::SetSourceRequest() :
     m_senderControlPort(0),
     m_senderControlPortHasBeenSet(false),
     m_senderIpAddressHasBeenSet(false),
+    m_sourceListenerAddressHasBeenSet(false),
+    m_sourceListenerPort(0),
+    m_sourceListenerPortHasBeenSet(false),
     m_streamIdHasBeenSet(false),
     m_vpcInterfaceNameHasBeenSet(false),
     m_whitelistCidrHasBeenSet(false)
@@ -66,6 +69,9 @@ SetSourceRequest::SetSourceRequest(JsonView jsonValue) :
     m_senderControlPort(0),
     m_senderControlPortHasBeenSet(false),
     m_senderIpAddressHasBeenSet(false),
+    m_sourceListenerAddressHasBeenSet(false),
+    m_sourceListenerPort(0),
+    m_sourceListenerPortHasBeenSet(false),
     m_streamIdHasBeenSet(false),
     m_vpcInterfaceNameHasBeenSet(false),
     m_whitelistCidrHasBeenSet(false)
@@ -126,7 +132,7 @@ SetSourceRequest& SetSourceRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("mediaStreamSourceConfigurations"))
   {
-    Array<JsonView> mediaStreamSourceConfigurationsJsonList = jsonValue.GetArray("mediaStreamSourceConfigurations");
+    Aws::Utils::Array<JsonView> mediaStreamSourceConfigurationsJsonList = jsonValue.GetArray("mediaStreamSourceConfigurations");
     for(unsigned mediaStreamSourceConfigurationsIndex = 0; mediaStreamSourceConfigurationsIndex < mediaStreamSourceConfigurationsJsonList.GetLength(); ++mediaStreamSourceConfigurationsIndex)
     {
       m_mediaStreamSourceConfigurations.push_back(mediaStreamSourceConfigurationsJsonList[mediaStreamSourceConfigurationsIndex].AsObject());
@@ -167,6 +173,20 @@ SetSourceRequest& SetSourceRequest::operator =(JsonView jsonValue)
     m_senderIpAddress = jsonValue.GetString("senderIpAddress");
 
     m_senderIpAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceListenerAddress"))
+  {
+    m_sourceListenerAddress = jsonValue.GetString("sourceListenerAddress");
+
+    m_sourceListenerAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceListenerPort"))
+  {
+    m_sourceListenerPort = jsonValue.GetInteger("sourceListenerPort");
+
+    m_sourceListenerPortHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("streamId"))
@@ -241,7 +261,7 @@ JsonValue SetSourceRequest::Jsonize() const
 
   if(m_mediaStreamSourceConfigurationsHasBeenSet)
   {
-   Array<JsonValue> mediaStreamSourceConfigurationsJsonList(m_mediaStreamSourceConfigurations.size());
+   Aws::Utils::Array<JsonValue> mediaStreamSourceConfigurationsJsonList(m_mediaStreamSourceConfigurations.size());
    for(unsigned mediaStreamSourceConfigurationsIndex = 0; mediaStreamSourceConfigurationsIndex < mediaStreamSourceConfigurationsJsonList.GetLength(); ++mediaStreamSourceConfigurationsIndex)
    {
      mediaStreamSourceConfigurationsJsonList[mediaStreamSourceConfigurationsIndex].AsObject(m_mediaStreamSourceConfigurations[mediaStreamSourceConfigurationsIndex].Jsonize());
@@ -276,6 +296,18 @@ JsonValue SetSourceRequest::Jsonize() const
   if(m_senderIpAddressHasBeenSet)
   {
    payload.WithString("senderIpAddress", m_senderIpAddress);
+
+  }
+
+  if(m_sourceListenerAddressHasBeenSet)
+  {
+   payload.WithString("sourceListenerAddress", m_sourceListenerAddress);
+
+  }
+
+  if(m_sourceListenerPortHasBeenSet)
+  {
+   payload.WithInteger("sourceListenerPort", m_sourceListenerPort);
 
   }
 

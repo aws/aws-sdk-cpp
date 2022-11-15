@@ -35,42 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose software
+     * token you want to generate.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose software
+     * token you want to generate.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose software
+     * token you want to generate.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose software
+     * token you want to generate.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose software
+     * token you want to generate.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose software
+     * token you want to generate.</p>
      */
     inline AssociateSoftwareTokenRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose software
+     * token you want to generate.</p>
      */
     inline AssociateSoftwareTokenRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>The access token.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose software
+     * token you want to generate.</p>
      */
     inline AssociateSoftwareTokenRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
@@ -134,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_session;
-    bool m_sessionHasBeenSet;
+    bool m_sessionHasBeenSet = false;
   };
 
 } // namespace Model

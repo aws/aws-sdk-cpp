@@ -195,30 +195,34 @@ namespace Model
 
 
     /**
-     * <p>The end time of the range for the request, expreswatchlogsdocused as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.</p>
+     * <p>The end time of the range for the request, expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * this time are not exported.</p> <p>You must specify a time that is not earlier
+     * than when this log group was created.</p>
      */
     inline long long GetTo() const{ return m_to; }
 
     /**
-     * <p>The end time of the range for the request, expreswatchlogsdocused as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.</p>
+     * <p>The end time of the range for the request, expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * this time are not exported.</p> <p>You must specify a time that is not earlier
+     * than when this log group was created.</p>
      */
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
 
     /**
-     * <p>The end time of the range for the request, expreswatchlogsdocused as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.</p>
+     * <p>The end time of the range for the request, expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * this time are not exported.</p> <p>You must specify a time that is not earlier
+     * than when this log group was created.</p>
      */
     inline void SetTo(long long value) { m_toHasBeenSet = true; m_to = value; }
 
     /**
-     * <p>The end time of the range for the request, expreswatchlogsdocused as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.</p>
+     * <p>The end time of the range for the request, expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * this time are not exported.</p> <p>You must specify a time that is not earlier
+     * than when this log group was created.</p>
      */
     inline CreateExportTaskRequest& WithTo(long long value) { SetTo(value); return *this;}
 
@@ -323,25 +327,25 @@ namespace Model
   private:
 
     Aws::String m_taskName;
-    bool m_taskNameHasBeenSet;
+    bool m_taskNameHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_logStreamNamePrefix;
-    bool m_logStreamNamePrefixHasBeenSet;
+    bool m_logStreamNamePrefixHasBeenSet = false;
 
     long long m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     long long m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_destinationPrefix;
-    bool m_destinationPrefixHasBeenSet;
+    bool m_destinationPrefixHasBeenSet = false;
   };
 
 } // namespace Model

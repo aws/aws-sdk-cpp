@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_safetyRuleArn;
-    bool m_safetyRuleArnHasBeenSet;
+    bool m_safetyRuleArnHasBeenSet = false;
 
     int m_waitPeriodMs;
-    bool m_waitPeriodMsHasBeenSet;
+    bool m_waitPeriodMsHasBeenSet = false;
   };
 
 } // namespace Model

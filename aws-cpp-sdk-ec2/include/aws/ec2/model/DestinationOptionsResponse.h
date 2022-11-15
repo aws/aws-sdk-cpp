@@ -119,13 +119,13 @@ namespace Model
   private:
 
     DestinationFileFormat m_fileFormat;
-    bool m_fileFormatHasBeenSet;
+    bool m_fileFormatHasBeenSet = false;
 
     bool m_hiveCompatiblePartitions;
-    bool m_hiveCompatiblePartitionsHasBeenSet;
+    bool m_hiveCompatiblePartitionsHasBeenSet = false;
 
     bool m_perHourPartition;
-    bool m_perHourPartitionHasBeenSet;
+    bool m_perHourPartitionHasBeenSet = false;
   };
 
 } // namespace Model

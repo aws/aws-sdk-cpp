@@ -51,7 +51,7 @@ ChannelFlowSummary& ChannelFlowSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Processors"))
   {
-    Array<JsonView> processorsJsonList = jsonValue.GetArray("Processors");
+    Aws::Utils::Array<JsonView> processorsJsonList = jsonValue.GetArray("Processors");
     for(unsigned processorsIndex = 0; processorsIndex < processorsJsonList.GetLength(); ++processorsIndex)
     {
       m_processors.push_back(processorsJsonList[processorsIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue ChannelFlowSummary::Jsonize() const
 
   if(m_processorsHasBeenSet)
   {
-   Array<JsonValue> processorsJsonList(m_processors.size());
+   Aws::Utils::Array<JsonValue> processorsJsonList(m_processors.size());
    for(unsigned processorsIndex = 0; processorsIndex < processorsJsonList.GetLength(); ++processorsIndex)
    {
      processorsJsonList[processorsIndex].AsObject(m_processors[processorsIndex].Jsonize());
