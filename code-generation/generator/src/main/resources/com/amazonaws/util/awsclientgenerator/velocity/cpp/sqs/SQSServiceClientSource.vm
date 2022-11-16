@@ -9,6 +9,7 @@
 \#include <aws/core/auth/AWSAuthSigner.h>
 \#include <aws/core/client/CoreErrors.h>
 \#include <aws/core/client/RetryStrategy.h>
+\#include <aws/core/client/AWSAsyncOperationTemplate.h>
 \#include <aws/core/http/HttpClient.h>
 \#include <aws/core/http/HttpResponse.h>
 \#include <aws/core/http/HttpClientFactory.h>
@@ -53,24 +54,8 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #end
 }
 
-${operation.name}OutcomeCallable ${className}::${operation.name}Callable(const ${operation.request.shape.name}& request) const
-{
-#if($operation.result.shape.hasEventStreamMembers())
-  return MakeCallableStreamingOperation(ALLOCATION_TAG, &${className}::${operation.name}, this, request, m_executor.get());
-#else
-  return MakeCallableOperation(ALLOCATION_TAG, &${className}::${operation.name}, this, request, m_executor.get());
-#end
-}
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationOutcomeCallable.vm")
 
-void ${className}::${operation.name}Async(const ${operation.request.shape.name}& request,
-      const ${operation.name}ResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-#if($operation.result.shape.hasEventStreamMembers())
-  MakeAsyncStreamingOperation(&${className}::${operation.name}, this, request, handler, handlerContext, m_executor.get());
-#else
-  MakeAsyncOperation(&${className}::${operation.name}, this, request, handler, handlerContext, m_executor.get());
-#end
-}
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationAsync.vm")
 
 #end

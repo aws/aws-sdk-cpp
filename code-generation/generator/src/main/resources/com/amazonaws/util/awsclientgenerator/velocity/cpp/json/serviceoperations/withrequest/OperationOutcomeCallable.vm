@@ -1,8 +1,0 @@
-${operation.name}OutcomeCallable ${className}::${operation.name}Callable(${constText}${operation.request.shape.name}& request) const
-{
-#if($operation.result.shape.hasEventStreamMembers())
-  return MakeCallableStreamingOperation(ALLOCATION_TAG, &${className}::${operation.name}, this, request, m_executor.get());
-#else
-  return MakeCallableOperation(ALLOCATION_TAG, &${className}::${operation.name}, this, request, m_executor.get());
-#end
-}

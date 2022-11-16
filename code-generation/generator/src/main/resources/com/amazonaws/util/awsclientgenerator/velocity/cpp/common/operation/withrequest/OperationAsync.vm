@@ -1,0 +1,19 @@
+#if($operation.result.shape.hasEventStreamMembers())
+#set($constText = "")
+#else
+#set($constText = "const ")
+#end
+void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+#set($regularBlockingOperation = "&" + ${className} + "::" + ${operation.name})
+#if($operation.name.endsWith("Async") || $operation.name.endsWith("Callable"))
+  typedef ${operation.name}Outcome (${className}::*RegularBlockingOperation)(${constText}${operation.request.shape.name}&) const;
+  RegularBlockingOperation regularBlockingOperation = &${className}::${operation.name};
+#set($regularBlockingOperation = "regularBlockingOperation")
+#end
+#if($operation.result.shape.hasEventStreamMembers())
+  MakeAsyncStreamingOperation(${regularBlockingOperation}, this, request, handler, context, m_executor.get());
+#else
+  MakeAsyncOperation(${regularBlockingOperation}, this, request, handler, context, m_executor.get());
+#end
+}
