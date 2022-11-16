@@ -71,7 +71,7 @@ public class Shape {
     }
 
     public boolean isTimeStamp() {
-        return "timestamp".equals(type.toLowerCase());
+        return "timestamp".equals(type.toLowerCase()) || "sensitive_timestamp".equals(type.toLowerCase());
     }
 
     public boolean isEnum() {
