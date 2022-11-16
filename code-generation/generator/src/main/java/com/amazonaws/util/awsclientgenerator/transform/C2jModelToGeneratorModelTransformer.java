@@ -531,6 +531,7 @@ public class C2jModelToGeneratorModelTransformer {
             operation.setSignerName("Aws::Auth::NULL_SIGNER");
         }
 
+
         operation.setStaticContextParams(c2jOperation.getStaticContextParams());
 
         // input

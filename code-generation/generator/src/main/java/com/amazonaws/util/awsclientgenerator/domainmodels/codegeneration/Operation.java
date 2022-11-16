@@ -5,6 +5,7 @@
 
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointParameterValue;
 import lombok.Data;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class Operation {
     private boolean supportsChunkedEncoding;
 
     // Endpoint Rule static context parameters
-    private Map<String, Map<String, String>> staticContextParams;
+    private Map<String, Map<String, EndpointParameterValue>> staticContextParams;
 
     // ARN supports.
     private boolean arnEndpointAllowed;
