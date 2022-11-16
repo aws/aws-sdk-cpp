@@ -22,6 +22,7 @@ static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int CONNECTOR_FAILURE_HASH = HashingUtils::HashString("ConnectorFailureException");
+static const int QUERY_TIMEOUT_HASH = HashingUtils::HashString("QueryTimeoutException");
 static const int CONNECTOR_TIMEOUT_HASH = HashingUtils::HashString("ConnectorTimeoutException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 
@@ -45,6 +46,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONNECTOR_FAILURE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::CONNECTOR_FAILURE), false);
+  }
+  else if (hashCode == QUERY_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::QUERY_TIMEOUT), false);
   }
   else if (hashCode == CONNECTOR_TIMEOUT_HASH)
   {

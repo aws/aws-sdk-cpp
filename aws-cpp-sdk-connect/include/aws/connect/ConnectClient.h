@@ -2180,6 +2180,25 @@ namespace Connect
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of
+         * the user specified by <i>userId</i> will be set to silent monitoring mode on the
+         * contact.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MonitorContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MonitorContactOutcome MonitorContact(const Model::MonitorContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for MonitorContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::MonitorContactOutcomeCallable MonitorContactCallable(const Model::MonitorContactRequest& request) const;
+
+        /**
+         * An Async wrapper for MonitorContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void MonitorContactAsync(const Model::MonitorContactRequest& request, const MonitorContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes the current status of a user or agent in Amazon Connect. If the agent
          * is currently handling a contact, this sets the agent's next status.</p> <p>For
          * more information, see <a

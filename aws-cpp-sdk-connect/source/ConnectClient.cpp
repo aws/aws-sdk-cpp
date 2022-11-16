@@ -127,6 +127,7 @@
 #include <aws/connect/model/ListUseCasesRequest.h>
 #include <aws/connect/model/ListUserHierarchyGroupsRequest.h>
 #include <aws/connect/model/ListUsersRequest.h>
+#include <aws/connect/model/MonitorContactRequest.h>
 #include <aws/connect/model/PutUserStatusRequest.h>
 #include <aws/connect/model/ReleasePhoneNumberRequest.h>
 #include <aws/connect/model/ReplicateInstanceRequest.h>
@@ -3903,6 +3904,31 @@ void ConnectClient::ListUsersAsync(const ListUsersRequest& request, const ListUs
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListUsers(request), context);
+    } );
+}
+
+MonitorContactOutcome ConnectClient::MonitorContact(const MonitorContactRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, MonitorContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, MonitorContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/contact/monitor");
+  return MonitorContactOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+MonitorContactOutcomeCallable ConnectClient::MonitorContactCallable(const MonitorContactRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< MonitorContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->MonitorContact(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::MonitorContactAsync(const MonitorContactRequest& request, const MonitorContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, MonitorContact(request), context);
     } );
 }
 

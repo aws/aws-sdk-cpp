@@ -10,6 +10,7 @@
 #include <aws/ssm-incidents/model/ChatChannel.h>
 #include <aws/ssm-incidents/model/IncidentTemplate.h>
 #include <aws/ssm-incidents/model/Action.h>
+#include <aws/ssm-incidents/model/Integration.h>
 #include <utility>
 
 namespace Aws
@@ -253,6 +254,49 @@ namespace Model
 
 
     /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline const Aws::Vector<Integration>& GetIntegrations() const{ return m_integrations; }
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline void SetIntegrations(const Aws::Vector<Integration>& value) { m_integrations = value; }
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline void SetIntegrations(Aws::Vector<Integration>&& value) { m_integrations = std::move(value); }
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline GetResponsePlanResult& WithIntegrations(const Aws::Vector<Integration>& value) { SetIntegrations(value); return *this;}
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline GetResponsePlanResult& WithIntegrations(Aws::Vector<Integration>&& value) { SetIntegrations(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline GetResponsePlanResult& AddIntegrations(const Integration& value) { m_integrations.push_back(value); return *this; }
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline GetResponsePlanResult& AddIntegrations(Integration&& value) { m_integrations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The short format name of the response plan. The name can't contain
      * spaces.</p>
      */
@@ -307,6 +351,8 @@ namespace Model
     Aws::Vector<Aws::String> m_engagements;
 
     IncidentTemplate m_incidentTemplate;
+
+    Aws::Vector<Integration> m_integrations;
 
     Aws::String m_name;
   };

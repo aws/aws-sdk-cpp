@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     password,
-    no_password
+    no_password,
+    iam
   };
 
 namespace AuthenticationTypeMapper

@@ -34,7 +34,8 @@ PricingRuleListElement::PricingRuleListElement() :
     m_creationTime(0),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_billingEntityHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ PricingRuleListElement::PricingRuleListElement(JsonView jsonValue) :
     m_creationTime(0),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_billingEntityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +133,13 @@ PricingRuleListElement& PricingRuleListElement::operator =(JsonView jsonValue)
     m_lastModifiedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BillingEntity"))
+  {
+    m_billingEntity = jsonValue.GetString("BillingEntity");
+
+    m_billingEntityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +202,12 @@ JsonValue PricingRuleListElement::Jsonize() const
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithInt64("LastModifiedTime", m_lastModifiedTime);
+
+  }
+
+  if(m_billingEntityHasBeenSet)
+  {
+   payload.WithString("BillingEntity", m_billingEntity);
 
   }
 

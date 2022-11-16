@@ -17,16 +17,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetComponentTypeResult::GetComponentTypeResult() : 
+    m_isSingleton(false),
     m_isAbstract(false),
-    m_isSchemaInitialized(false),
-    m_isSingleton(false)
+    m_isSchemaInitialized(false)
 {
 }
 
 GetComponentTypeResult::GetComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_isSingleton(false),
     m_isAbstract(false),
-    m_isSchemaInitialized(false),
-    m_isSingleton(false)
+    m_isSchemaInitialized(false)
 {
   *this = result;
 }
@@ -34,9 +34,15 @@ GetComponentTypeResult::GetComponentTypeResult(const Aws::AmazonWebServiceResult
 GetComponentTypeResult& GetComponentTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
+  if(jsonValue.ValueExists("workspaceId"))
   {
-    m_arn = jsonValue.GetString("arn");
+    m_workspaceId = jsonValue.GetString("workspaceId");
+
+  }
+
+  if(jsonValue.ValueExists("isSingleton"))
+  {
+    m_isSingleton = jsonValue.GetBool("isSingleton");
 
   }
 
@@ -46,16 +52,19 @@ GetComponentTypeResult& GetComponentTypeResult::operator =(const Aws::AmazonWebS
 
   }
 
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
-    m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
-  }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
 
+  }
+
+  if(jsonValue.ValueExists("propertyDefinitions"))
+  {
+    Aws::Map<Aws::String, JsonView> propertyDefinitionsJsonMap = jsonValue.GetObject("propertyDefinitions").GetAllObjects();
+    for(auto& propertyDefinitionsItem : propertyDefinitionsJsonMap)
+    {
+      m_propertyDefinitions[propertyDefinitionsItem.first] = propertyDefinitionsItem.second.AsObject();
+    }
   }
 
   if(jsonValue.ValueExists("extendsFrom"))
@@ -76,6 +85,24 @@ GetComponentTypeResult& GetComponentTypeResult::operator =(const Aws::AmazonWebS
     }
   }
 
+  if(jsonValue.ValueExists("creationDateTime"))
+  {
+    m_creationDateTime = jsonValue.GetDouble("creationDateTime");
+
+  }
+
+  if(jsonValue.ValueExists("updateDateTime"))
+  {
+    m_updateDateTime = jsonValue.GetDouble("updateDateTime");
+
+  }
+
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+  }
+
   if(jsonValue.ValueExists("isAbstract"))
   {
     m_isAbstract = jsonValue.GetBool("isAbstract");
@@ -88,37 +115,19 @@ GetComponentTypeResult& GetComponentTypeResult::operator =(const Aws::AmazonWebS
 
   }
 
-  if(jsonValue.ValueExists("isSingleton"))
-  {
-    m_isSingleton = jsonValue.GetBool("isSingleton");
-
-  }
-
-  if(jsonValue.ValueExists("propertyDefinitions"))
-  {
-    Aws::Map<Aws::String, JsonView> propertyDefinitionsJsonMap = jsonValue.GetObject("propertyDefinitions").GetAllObjects();
-    for(auto& propertyDefinitionsItem : propertyDefinitionsJsonMap)
-    {
-      m_propertyDefinitions[propertyDefinitionsItem.first] = propertyDefinitionsItem.second.AsObject();
-    }
-  }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
 
   }
 
-  if(jsonValue.ValueExists("updateDateTime"))
+  if(jsonValue.ValueExists("propertyGroups"))
   {
-    m_updateDateTime = jsonValue.GetDouble("updateDateTime");
-
-  }
-
-  if(jsonValue.ValueExists("workspaceId"))
-  {
-    m_workspaceId = jsonValue.GetString("workspaceId");
-
+    Aws::Map<Aws::String, JsonView> propertyGroupsJsonMap = jsonValue.GetObject("propertyGroups").GetAllObjects();
+    for(auto& propertyGroupsItem : propertyGroupsJsonMap)
+    {
+      m_propertyGroups[propertyGroupsItem.first] = propertyGroupsItem.second.AsObject();
+    }
   }
 
 

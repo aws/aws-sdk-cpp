@@ -136,19 +136,22 @@ namespace Batch
          * Amazon ECS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
          * an Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p>  <p>Batch doesn't automatically upgrade the AMIs
-         * in a compute environment after it's created. For example, it also doesn't update
-         * the AMIs in your compute environment when a newer version of the Amazon ECS
-         * optimized AMI is available. You're responsible for the management of the guest
-         * operating system. This includes any updates and security patches. You're also
-         * responsible for any additional application software or utilities that you
-         * install on the compute resources. There are two ways to use a new AMI for your
-         * Batch jobs. The original method is to complete these steps:</p> <ol> <li>
-         * <p>Create a new compute environment with the new AMI.</p> </li> <li> <p>Add the
-         * compute environment to an existing job queue.</p> </li> <li> <p>Remove the
-         * earlier compute environment from your job queue.</p> </li> <li> <p>Delete the
-         * earlier compute environment.</p> </li> </ol> <p>In April 2022, Batch added
-         * enhanced support for updating compute environments. For more information, see <a
+         * Developer Guide</i>.</p>  <p>To create a compute environment that uses EKS
+         * resources, the caller must have permissions to call
+         * <code>eks:DescribeCluster</code>.</p>   <p>Batch doesn't
+         * automatically upgrade the AMIs in a compute environment after it's created. For
+         * example, it also doesn't update the AMIs in your compute environment when a
+         * newer version of the Amazon ECS optimized AMI is available. You're responsible
+         * for the management of the guest operating system. This includes any updates and
+         * security patches. You're also responsible for any additional application
+         * software or utilities that you install on the compute resources. There are two
+         * ways to use a new AMI for your Batch jobs. The original method is to complete
+         * these steps:</p> <ol> <li> <p>Create a new compute environment with the new
+         * AMI.</p> </li> <li> <p>Add the compute environment to an existing job queue.</p>
+         * </li> <li> <p>Remove the earlier compute environment from your job queue.</p>
+         * </li> <li> <p>Delete the earlier compute environment.</p> </li> </ol> <p>In
+         * April 2022, Batch added enhanced support for updating compute environments. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
          * compute environments</a>. To use the enhanced updating of compute environments
          * to update AMIs, follow these rules:</p> <ul> <li> <p>Either don't set the

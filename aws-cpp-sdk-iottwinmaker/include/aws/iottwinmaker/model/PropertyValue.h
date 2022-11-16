@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iottwinmaker/model/DataValue.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,37 @@ namespace Model
     PropertyValue(Aws::Utils::Json::JsonView jsonValue);
     PropertyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>An object that specifies a value for a time series property.</p>
+     */
+    inline const DataValue& GetValue() const{ return m_value; }
+
+    /**
+     * <p>An object that specifies a value for a time series property.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>An object that specifies a value for a time series property.</p>
+     */
+    inline void SetValue(const DataValue& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /**
+     * <p>An object that specifies a value for a time series property.</p>
+     */
+    inline void SetValue(DataValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
+
+    /**
+     * <p>An object that specifies a value for a time series property.</p>
+     */
+    inline PropertyValue& WithValue(const DataValue& value) { SetValue(value); return *this;}
+
+    /**
+     * <p>An object that specifies a value for a time series property.</p>
+     */
+    inline PropertyValue& WithValue(DataValue&& value) { SetValue(std::move(value)); return *this;}
 
 
     /**
@@ -159,44 +190,13 @@ namespace Model
      */
     inline PropertyValue& WithTime(const char* value) { SetTime(value); return *this;}
 
-
-    /**
-     * <p>An object that specifies a value for a time series property.</p>
-     */
-    inline const DataValue& GetValue() const{ return m_value; }
-
-    /**
-     * <p>An object that specifies a value for a time series property.</p>
-     */
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>An object that specifies a value for a time series property.</p>
-     */
-    inline void SetValue(const DataValue& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>An object that specifies a value for a time series property.</p>
-     */
-    inline void SetValue(DataValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>An object that specifies a value for a time series property.</p>
-     */
-    inline PropertyValue& WithValue(const DataValue& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>An object that specifies a value for a time series property.</p>
-     */
-    inline PropertyValue& WithValue(DataValue&& value) { SetValue(std::move(value)); return *this;}
-
   private:
-
-    Aws::String m_time;
-    bool m_timeHasBeenSet = false;
 
     DataValue m_value;
     bool m_valueHasBeenSet = false;
+
+    Aws::String m_time;
+    bool m_timeHasBeenSet = false;
   };
 
 } // namespace Model

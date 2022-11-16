@@ -28,15 +28,15 @@ GetWorkspaceResult::GetWorkspaceResult(const Aws::AmazonWebServiceResult<JsonVal
 GetWorkspaceResult& GetWorkspaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
+  if(jsonValue.ValueExists("workspaceId"))
   {
-    m_arn = jsonValue.GetString("arn");
+    m_workspaceId = jsonValue.GetString("workspaceId");
 
   }
 
-  if(jsonValue.ValueExists("creationDateTime"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_creationDateTime = jsonValue.GetDouble("creationDateTime");
+    m_arn = jsonValue.GetString("arn");
 
   }
 
@@ -46,27 +46,27 @@ GetWorkspaceResult& GetWorkspaceResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
-  if(jsonValue.ValueExists("role"))
-  {
-    m_role = jsonValue.GetString("role");
-
-  }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetString("s3Location");
 
   }
 
-  if(jsonValue.ValueExists("updateDateTime"))
+  if(jsonValue.ValueExists("role"))
   {
-    m_updateDateTime = jsonValue.GetDouble("updateDateTime");
+    m_role = jsonValue.GetString("role");
 
   }
 
-  if(jsonValue.ValueExists("workspaceId"))
+  if(jsonValue.ValueExists("creationDateTime"))
   {
-    m_workspaceId = jsonValue.GetString("workspaceId");
+    m_creationDateTime = jsonValue.GetDouble("creationDateTime");
+
+  }
+
+  if(jsonValue.ValueExists("updateDateTime"))
+  {
+    m_updateDateTime = jsonValue.GetDouble("updateDateTime");
 
   }
 

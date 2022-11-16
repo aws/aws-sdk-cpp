@@ -70,6 +70,15 @@ GetResponsePlanResult& GetResponsePlanResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("integrations"))
+  {
+    Aws::Utils::Array<JsonView> integrationsJsonList = jsonValue.GetArray("integrations");
+    for(unsigned integrationsIndex = 0; integrationsIndex < integrationsJsonList.GetLength(); ++integrationsIndex)
+    {
+      m_integrations.push_back(integrationsJsonList[integrationsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");

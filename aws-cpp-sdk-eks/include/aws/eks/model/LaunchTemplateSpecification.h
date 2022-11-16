@@ -106,74 +106,50 @@ namespace Model
 
 
     /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, Amazon EKS
-     * uses the latest version of the launch template.</p> <p>If the value is
-     * <code>$Default</code>, Amazon EKS uses the default version of the launch
-     * template.</p> <p>Default: The default version of the launch template.</p>
+     * <p>The version number of the launch template to use. If no version is specified,
+     * then the template's default version is used.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, Amazon EKS
-     * uses the latest version of the launch template.</p> <p>If the value is
-     * <code>$Default</code>, Amazon EKS uses the default version of the launch
-     * template.</p> <p>Default: The default version of the launch template.</p>
+     * <p>The version number of the launch template to use. If no version is specified,
+     * then the template's default version is used.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, Amazon EKS
-     * uses the latest version of the launch template.</p> <p>If the value is
-     * <code>$Default</code>, Amazon EKS uses the default version of the launch
-     * template.</p> <p>Default: The default version of the launch template.</p>
+     * <p>The version number of the launch template to use. If no version is specified,
+     * then the template's default version is used.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, Amazon EKS
-     * uses the latest version of the launch template.</p> <p>If the value is
-     * <code>$Default</code>, Amazon EKS uses the default version of the launch
-     * template.</p> <p>Default: The default version of the launch template.</p>
+     * <p>The version number of the launch template to use. If no version is specified,
+     * then the template's default version is used.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, Amazon EKS
-     * uses the latest version of the launch template.</p> <p>If the value is
-     * <code>$Default</code>, Amazon EKS uses the default version of the launch
-     * template.</p> <p>Default: The default version of the launch template.</p>
+     * <p>The version number of the launch template to use. If no version is specified,
+     * then the template's default version is used.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, Amazon EKS
-     * uses the latest version of the launch template.</p> <p>If the value is
-     * <code>$Default</code>, Amazon EKS uses the default version of the launch
-     * template.</p> <p>Default: The default version of the launch template.</p>
+     * <p>The version number of the launch template to use. If no version is specified,
+     * then the template's default version is used.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, Amazon EKS
-     * uses the latest version of the launch template.</p> <p>If the value is
-     * <code>$Default</code>, Amazon EKS uses the default version of the launch
-     * template.</p> <p>Default: The default version of the launch template.</p>
+     * <p>The version number of the launch template to use. If no version is specified,
+     * then the template's default version is used.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The launch template version number, <code>$Latest</code>, or
-     * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, Amazon EKS
-     * uses the latest version of the launch template.</p> <p>If the value is
-     * <code>$Default</code>, Amazon EKS uses the default version of the launch
-     * template.</p> <p>Default: The default version of the launch template.</p>
+     * <p>The version number of the launch template to use. If no version is specified,
+     * then the template's default version is used.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const char* value) { SetVersion(value); return *this;}
 

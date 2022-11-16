@@ -25,7 +25,8 @@ CreatePricingRuleRequest::CreatePricingRuleRequest() :
     m_modifierPercentage(0.0),
     m_modifierPercentageHasBeenSet(false),
     m_serviceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_billingEntityHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,12 @@ Aws::String CreatePricingRuleRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_billingEntityHasBeenSet)
+  {
+   payload.WithString("BillingEntity", m_billingEntity);
 
   }
 

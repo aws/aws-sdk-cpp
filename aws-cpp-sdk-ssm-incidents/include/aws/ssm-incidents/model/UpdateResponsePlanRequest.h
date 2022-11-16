@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm-incidents/model/Action.h>
 #include <aws/ssm-incidents/model/NotificationTargetItem.h>
+#include <aws/ssm-incidents/model/Integration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -657,6 +658,47 @@ namespace Model
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateTitle(const char* value) { SetIncidentTemplateTitle(value); return *this;}
 
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline const Aws::Vector<Integration>& GetIntegrations() const{ return m_integrations; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline bool IntegrationsHasBeenSet() const { return m_integrationsHasBeenSet; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline void SetIntegrations(const Aws::Vector<Integration>& value) { m_integrationsHasBeenSet = true; m_integrations = value; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline void SetIntegrations(Aws::Vector<Integration>&& value) { m_integrationsHasBeenSet = true; m_integrations = std::move(value); }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline UpdateResponsePlanRequest& WithIntegrations(const Aws::Vector<Integration>& value) { SetIntegrations(value); return *this;}
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline UpdateResponsePlanRequest& WithIntegrations(Aws::Vector<Integration>&& value) { SetIntegrations(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline UpdateResponsePlanRequest& AddIntegrations(const Integration& value) { m_integrationsHasBeenSet = true; m_integrations.push_back(value); return *this; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline UpdateResponsePlanRequest& AddIntegrations(Integration&& value) { m_integrationsHasBeenSet = true; m_integrations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Action> m_actions;
@@ -694,6 +736,9 @@ namespace Model
 
     Aws::String m_incidentTemplateTitle;
     bool m_incidentTemplateTitleHasBeenSet = false;
+
+    Aws::Vector<Integration> m_integrations;
+    bool m_integrationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,47 +33,6 @@ namespace Model
 
 
     /**
-     * <p>The ID of the scene to delete.</p>
-     */
-    inline const Aws::String& GetSceneId() const{ return m_sceneId; }
-
-    /**
-     * <p>The ID of the scene to delete.</p>
-     */
-    inline bool SceneIdHasBeenSet() const { return m_sceneIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the scene to delete.</p>
-     */
-    inline void SetSceneId(const Aws::String& value) { m_sceneIdHasBeenSet = true; m_sceneId = value; }
-
-    /**
-     * <p>The ID of the scene to delete.</p>
-     */
-    inline void SetSceneId(Aws::String&& value) { m_sceneIdHasBeenSet = true; m_sceneId = std::move(value); }
-
-    /**
-     * <p>The ID of the scene to delete.</p>
-     */
-    inline void SetSceneId(const char* value) { m_sceneIdHasBeenSet = true; m_sceneId.assign(value); }
-
-    /**
-     * <p>The ID of the scene to delete.</p>
-     */
-    inline DeleteSceneRequest& WithSceneId(const Aws::String& value) { SetSceneId(value); return *this;}
-
-    /**
-     * <p>The ID of the scene to delete.</p>
-     */
-    inline DeleteSceneRequest& WithSceneId(Aws::String&& value) { SetSceneId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the scene to delete.</p>
-     */
-    inline DeleteSceneRequest& WithSceneId(const char* value) { SetSceneId(value); return *this;}
-
-
-    /**
      * <p>The ID of the workspace.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
@@ -113,13 +72,54 @@ namespace Model
      */
     inline DeleteSceneRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
-  private:
 
-    Aws::String m_sceneId;
-    bool m_sceneIdHasBeenSet = false;
+    /**
+     * <p>The ID of the scene to delete.</p>
+     */
+    inline const Aws::String& GetSceneId() const{ return m_sceneId; }
+
+    /**
+     * <p>The ID of the scene to delete.</p>
+     */
+    inline bool SceneIdHasBeenSet() const { return m_sceneIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the scene to delete.</p>
+     */
+    inline void SetSceneId(const Aws::String& value) { m_sceneIdHasBeenSet = true; m_sceneId = value; }
+
+    /**
+     * <p>The ID of the scene to delete.</p>
+     */
+    inline void SetSceneId(Aws::String&& value) { m_sceneIdHasBeenSet = true; m_sceneId = std::move(value); }
+
+    /**
+     * <p>The ID of the scene to delete.</p>
+     */
+    inline void SetSceneId(const char* value) { m_sceneIdHasBeenSet = true; m_sceneId.assign(value); }
+
+    /**
+     * <p>The ID of the scene to delete.</p>
+     */
+    inline DeleteSceneRequest& WithSceneId(const Aws::String& value) { SetSceneId(value); return *this;}
+
+    /**
+     * <p>The ID of the scene to delete.</p>
+     */
+    inline DeleteSceneRequest& WithSceneId(Aws::String&& value) { SetSceneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the scene to delete.</p>
+     */
+    inline DeleteSceneRequest& WithSceneId(const char* value) { SetSceneId(value); return *this;}
+
+  private:
 
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet = false;
+
+    Aws::String m_sceneId;
+    bool m_sceneIdHasBeenSet = false;
   };
 
 } // namespace Model

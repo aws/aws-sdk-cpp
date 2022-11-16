@@ -34,6 +34,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+
+
+    /**
      * <p>The description of the workspace.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -72,47 +113,6 @@ namespace Model
      * <p>The description of the workspace.</p>
      */
     inline CreateWorkspaceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * <p>The ARN of the execution role associated with the workspace.</p>
-     */
-    inline const Aws::String& GetRole() const{ return m_role; }
-
-    /**
-     * <p>The ARN of the execution role associated with the workspace.</p>
-     */
-    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-
-    /**
-     * <p>The ARN of the execution role associated with the workspace.</p>
-     */
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-
-    /**
-     * <p>The ARN of the execution role associated with the workspace.</p>
-     */
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-
-    /**
-     * <p>The ARN of the execution role associated with the workspace.</p>
-     */
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-
-    /**
-     * <p>The ARN of the execution role associated with the workspace.</p>
-     */
-    inline CreateWorkspaceRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-
-    /**
-     * <p>The ARN of the execution role associated with the workspace.</p>
-     */
-    inline CreateWorkspaceRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the execution role associated with the workspace.</p>
-     */
-    inline CreateWorkspaceRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
 
     /**
@@ -162,6 +162,47 @@ namespace Model
      * stored.</p>
      */
     inline CreateWorkspaceRequest& WithS3Location(const char* value) { SetS3Location(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the execution role associated with the workspace.</p>
+     */
+    inline const Aws::String& GetRole() const{ return m_role; }
+
+    /**
+     * <p>The ARN of the execution role associated with the workspace.</p>
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+
+    /**
+     * <p>The ARN of the execution role associated with the workspace.</p>
+     */
+    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
+
+    /**
+     * <p>The ARN of the execution role associated with the workspace.</p>
+     */
+    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
+
+    /**
+     * <p>The ARN of the execution role associated with the workspace.</p>
+     */
+    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
+
+    /**
+     * <p>The ARN of the execution role associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
+
+    /**
+     * <p>The ARN of the execution role associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the execution role associated with the workspace.</p>
+     */
+    inline CreateWorkspaceRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
 
     /**
@@ -229,63 +270,22 @@ namespace Model
      */
     inline CreateWorkspaceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline CreateWorkspaceRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline CreateWorkspaceRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline CreateWorkspaceRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
   private:
+
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_role;
-    bool m_roleHasBeenSet = false;
-
     Aws::String m_s3Location;
     bool m_s3LocationHasBeenSet = false;
 
+    Aws::String m_role;
+    bool m_roleHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

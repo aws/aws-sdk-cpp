@@ -19,31 +19,24 @@ namespace Model
 {
 
 FunctionRequest::FunctionRequest() : 
-    m_implementedByHasBeenSet(false),
     m_requiredPropertiesHasBeenSet(false),
     m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_implementedByHasBeenSet(false)
 {
 }
 
 FunctionRequest::FunctionRequest(JsonView jsonValue) : 
-    m_implementedByHasBeenSet(false),
     m_requiredPropertiesHasBeenSet(false),
     m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_implementedByHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 FunctionRequest& FunctionRequest::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("implementedBy"))
-  {
-    m_implementedBy = jsonValue.GetObject("implementedBy");
-
-    m_implementedByHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("requiredProperties"))
   {
     Aws::Utils::Array<JsonView> requiredPropertiesJsonList = jsonValue.GetArray("requiredProperties");
@@ -61,18 +54,19 @@ FunctionRequest& FunctionRequest::operator =(JsonView jsonValue)
     m_scopeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("implementedBy"))
+  {
+    m_implementedBy = jsonValue.GetObject("implementedBy");
+
+    m_implementedByHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue FunctionRequest::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_implementedByHasBeenSet)
-  {
-   payload.WithObject("implementedBy", m_implementedBy.Jsonize());
-
-  }
 
   if(m_requiredPropertiesHasBeenSet)
   {
@@ -88,6 +82,12 @@ JsonValue FunctionRequest::Jsonize() const
   if(m_scopeHasBeenSet)
   {
    payload.WithString("scope", ScopeMapper::GetNameForScope(m_scope));
+  }
+
+  if(m_implementedByHasBeenSet)
+  {
+   payload.WithObject("implementedBy", m_implementedBy.Jsonize());
+
   }
 
   return payload;

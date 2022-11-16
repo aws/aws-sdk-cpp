@@ -393,6 +393,55 @@ namespace Model
      */
     inline CreatePricingRuleRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline const Aws::String& GetBillingEntity() const{ return m_billingEntity; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline bool BillingEntityHasBeenSet() const { return m_billingEntityHasBeenSet; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const Aws::String& value) { m_billingEntityHasBeenSet = true; m_billingEntity = value; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(Aws::String&& value) { m_billingEntityHasBeenSet = true; m_billingEntity = std::move(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const char* value) { m_billingEntityHasBeenSet = true; m_billingEntity.assign(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline CreatePricingRuleRequest& WithBillingEntity(const Aws::String& value) { SetBillingEntity(value); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline CreatePricingRuleRequest& WithBillingEntity(Aws::String&& value) { SetBillingEntity(std::move(value)); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline CreatePricingRuleRequest& WithBillingEntity(const char* value) { SetBillingEntity(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -418,6 +467,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_billingEntity;
+    bool m_billingEntityHasBeenSet = false;
   };
 
 } // namespace Model

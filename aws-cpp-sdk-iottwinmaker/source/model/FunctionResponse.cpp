@@ -19,42 +19,28 @@ namespace Model
 {
 
 FunctionResponse::FunctionResponse() : 
-    m_implementedByHasBeenSet(false),
-    m_isInherited(false),
-    m_isInheritedHasBeenSet(false),
     m_requiredPropertiesHasBeenSet(false),
     m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_implementedByHasBeenSet(false),
+    m_isInherited(false),
+    m_isInheritedHasBeenSet(false)
 {
 }
 
 FunctionResponse::FunctionResponse(JsonView jsonValue) : 
-    m_implementedByHasBeenSet(false),
-    m_isInherited(false),
-    m_isInheritedHasBeenSet(false),
     m_requiredPropertiesHasBeenSet(false),
     m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_implementedByHasBeenSet(false),
+    m_isInherited(false),
+    m_isInheritedHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 FunctionResponse& FunctionResponse::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("implementedBy"))
-  {
-    m_implementedBy = jsonValue.GetObject("implementedBy");
-
-    m_implementedByHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("isInherited"))
-  {
-    m_isInherited = jsonValue.GetBool("isInherited");
-
-    m_isInheritedHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("requiredProperties"))
   {
     Aws::Utils::Array<JsonView> requiredPropertiesJsonList = jsonValue.GetArray("requiredProperties");
@@ -72,24 +58,26 @@ FunctionResponse& FunctionResponse::operator =(JsonView jsonValue)
     m_scopeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("implementedBy"))
+  {
+    m_implementedBy = jsonValue.GetObject("implementedBy");
+
+    m_implementedByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("isInherited"))
+  {
+    m_isInherited = jsonValue.GetBool("isInherited");
+
+    m_isInheritedHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue FunctionResponse::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_implementedByHasBeenSet)
-  {
-   payload.WithObject("implementedBy", m_implementedBy.Jsonize());
-
-  }
-
-  if(m_isInheritedHasBeenSet)
-  {
-   payload.WithBool("isInherited", m_isInherited);
-
-  }
 
   if(m_requiredPropertiesHasBeenSet)
   {
@@ -105,6 +93,18 @@ JsonValue FunctionResponse::Jsonize() const
   if(m_scopeHasBeenSet)
   {
    payload.WithString("scope", ScopeMapper::GetNameForScope(m_scope));
+  }
+
+  if(m_implementedByHasBeenSet)
+  {
+   payload.WithObject("implementedBy", m_implementedBy.Jsonize());
+
+  }
+
+  if(m_isInheritedHasBeenSet)
+  {
+   payload.WithBool("isInherited", m_isInherited);
+
   }
 
   return payload;

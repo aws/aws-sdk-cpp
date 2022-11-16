@@ -79,13 +79,18 @@ namespace Model
      * 3072</dt> <dd> <p> <code>VCPU</code> = 0.5, or 1</p> </dd> <dt>value = 4096</dt>
      * <dd> <p> <code>VCPU</code> = 0.5, 1, or 2</p> </dd> <dt>value = 5120, 6144, or
      * 7168</dt> <dd> <p> <code>VCPU</code> = 1 or 2</p> </dd> <dt>value = 8192</dt>
-     * <dd> <p> <code>VCPU</code> = 1, 2, or 4</p> </dd> <dt>value = 9216, 10240,
-     * 11264, 12288, 13312, 14336, 15360, or 16384</dt> <dd> <p> <code>VCPU</code> = 2
-     * or 4</p> </dd> <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552,
-     * 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt> <dd> <p>
-     * <code>VCPU</code> = 4</p> </dd> </dl> </dd> <dt>type="VCPU"</dt> <dd> <p>The
-     * number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
+     * <dd> <p> <code>VCPU</code> = 1, 2, 4, or 8</p> </dd> <dt>value = 9216, 10240,
+     * 11264, 12288, 13312, 14336, or 15360</dt> <dd> <p> <code>VCPU</code> = 2 or
+     * 4</p> </dd> <dt>value = 16384</dt> <dd> <p> <code>VCPU</code> = 2, 4, or 8</p>
+     * </dd> <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648,
+     * 29696, or 30720</dt> <dd> <p> <code>VCPU</code> = 4</p> </dd> <dt>value = 20480,
+     * 24576, or 28672</dt> <dd> <p> <code>VCPU</code> = 4 or 8</p> </dd> <dt>value =
+     * 36864, 45056, 53248, or 61440</dt> <dd> <p> <code>VCPU</code> = 8</p> </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt> <dd> <p> <code>VCPU</code> = 8 or
+     * 16</p> </dd> <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or
+     * 122880</dt> <dd> <p> <code>VCPU</code> = 16</p> </dd> </dl> </dd>
+     * <dt>type="VCPU"</dt> <dd> <p>The number of vCPUs reserved for the container.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -93,19 +98,27 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs that are running on
-     * Fargate resources, then <code>value</code> must match one of the supported
-     * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
-     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
-     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
-     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
-     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
-     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
-     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
-     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
-     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
-     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>The default for the Fargate
+     * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
+     * Fargate quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> <p>For jobs
+     * that are running on Fargate resources, then <code>value</code> must match one of
+     * the supported values and the <code>MEMORY</code> values must be one of the
+     * values supported for that <code>VCPU</code> value. The supported values are
+     * 0.25, 0.5, 1, 2, 4, 8, and 16</p> <dl> <dt>value = 0.25</dt> <dd> <p>
+     * <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p>
+     * <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd> <dt>value = 1</dt>
+     * <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+     * </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168,
+     * 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> </dd>
+     * <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264,
+     * 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528,
+     * 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> </dd> <dt>value =
+     * 8</dt> <dd> <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864,
+     * 40960, 45056, 49152, 53248, 57344, or 61440 </p> </dd> <dt>value = 16</dt> <dd>
+     * <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920,
+     * 90112, 98304, 106496, 114688, or 122880 </p> </dd> </dl> </dd> </dl>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -148,13 +161,18 @@ namespace Model
      * 3072</dt> <dd> <p> <code>VCPU</code> = 0.5, or 1</p> </dd> <dt>value = 4096</dt>
      * <dd> <p> <code>VCPU</code> = 0.5, 1, or 2</p> </dd> <dt>value = 5120, 6144, or
      * 7168</dt> <dd> <p> <code>VCPU</code> = 1 or 2</p> </dd> <dt>value = 8192</dt>
-     * <dd> <p> <code>VCPU</code> = 1, 2, or 4</p> </dd> <dt>value = 9216, 10240,
-     * 11264, 12288, 13312, 14336, 15360, or 16384</dt> <dd> <p> <code>VCPU</code> = 2
-     * or 4</p> </dd> <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552,
-     * 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt> <dd> <p>
-     * <code>VCPU</code> = 4</p> </dd> </dl> </dd> <dt>type="VCPU"</dt> <dd> <p>The
-     * number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
+     * <dd> <p> <code>VCPU</code> = 1, 2, 4, or 8</p> </dd> <dt>value = 9216, 10240,
+     * 11264, 12288, 13312, 14336, or 15360</dt> <dd> <p> <code>VCPU</code> = 2 or
+     * 4</p> </dd> <dt>value = 16384</dt> <dd> <p> <code>VCPU</code> = 2, 4, or 8</p>
+     * </dd> <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648,
+     * 29696, or 30720</dt> <dd> <p> <code>VCPU</code> = 4</p> </dd> <dt>value = 20480,
+     * 24576, or 28672</dt> <dd> <p> <code>VCPU</code> = 4 or 8</p> </dd> <dt>value =
+     * 36864, 45056, 53248, or 61440</dt> <dd> <p> <code>VCPU</code> = 8</p> </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt> <dd> <p> <code>VCPU</code> = 8 or
+     * 16</p> </dd> <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or
+     * 122880</dt> <dd> <p> <code>VCPU</code> = 16</p> </dd> </dl> </dd>
+     * <dt>type="VCPU"</dt> <dd> <p>The number of vCPUs reserved for the container.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -162,19 +180,27 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs that are running on
-     * Fargate resources, then <code>value</code> must match one of the supported
-     * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
-     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
-     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
-     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
-     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
-     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
-     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
-     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
-     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
-     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>The default for the Fargate
+     * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
+     * Fargate quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> <p>For jobs
+     * that are running on Fargate resources, then <code>value</code> must match one of
+     * the supported values and the <code>MEMORY</code> values must be one of the
+     * values supported for that <code>VCPU</code> value. The supported values are
+     * 0.25, 0.5, 1, 2, 4, 8, and 16</p> <dl> <dt>value = 0.25</dt> <dd> <p>
+     * <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p>
+     * <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd> <dt>value = 1</dt>
+     * <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+     * </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168,
+     * 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> </dd>
+     * <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264,
+     * 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528,
+     * 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> </dd> <dt>value =
+     * 8</dt> <dd> <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864,
+     * 40960, 45056, 49152, 53248, 57344, or 61440 </p> </dd> <dt>value = 16</dt> <dd>
+     * <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920,
+     * 90112, 98304, 106496, 114688, or 122880 </p> </dd> </dl> </dd> </dl>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
@@ -217,13 +243,18 @@ namespace Model
      * 3072</dt> <dd> <p> <code>VCPU</code> = 0.5, or 1</p> </dd> <dt>value = 4096</dt>
      * <dd> <p> <code>VCPU</code> = 0.5, 1, or 2</p> </dd> <dt>value = 5120, 6144, or
      * 7168</dt> <dd> <p> <code>VCPU</code> = 1 or 2</p> </dd> <dt>value = 8192</dt>
-     * <dd> <p> <code>VCPU</code> = 1, 2, or 4</p> </dd> <dt>value = 9216, 10240,
-     * 11264, 12288, 13312, 14336, 15360, or 16384</dt> <dd> <p> <code>VCPU</code> = 2
-     * or 4</p> </dd> <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552,
-     * 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt> <dd> <p>
-     * <code>VCPU</code> = 4</p> </dd> </dl> </dd> <dt>type="VCPU"</dt> <dd> <p>The
-     * number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
+     * <dd> <p> <code>VCPU</code> = 1, 2, 4, or 8</p> </dd> <dt>value = 9216, 10240,
+     * 11264, 12288, 13312, 14336, or 15360</dt> <dd> <p> <code>VCPU</code> = 2 or
+     * 4</p> </dd> <dt>value = 16384</dt> <dd> <p> <code>VCPU</code> = 2, 4, or 8</p>
+     * </dd> <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648,
+     * 29696, or 30720</dt> <dd> <p> <code>VCPU</code> = 4</p> </dd> <dt>value = 20480,
+     * 24576, or 28672</dt> <dd> <p> <code>VCPU</code> = 4 or 8</p> </dd> <dt>value =
+     * 36864, 45056, 53248, or 61440</dt> <dd> <p> <code>VCPU</code> = 8</p> </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt> <dd> <p> <code>VCPU</code> = 8 or
+     * 16</p> </dd> <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or
+     * 122880</dt> <dd> <p> <code>VCPU</code> = 16</p> </dd> </dl> </dd>
+     * <dt>type="VCPU"</dt> <dd> <p>The number of vCPUs reserved for the container.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -231,19 +262,27 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs that are running on
-     * Fargate resources, then <code>value</code> must match one of the supported
-     * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
-     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
-     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
-     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
-     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
-     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
-     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
-     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
-     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
-     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>The default for the Fargate
+     * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
+     * Fargate quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> <p>For jobs
+     * that are running on Fargate resources, then <code>value</code> must match one of
+     * the supported values and the <code>MEMORY</code> values must be one of the
+     * values supported for that <code>VCPU</code> value. The supported values are
+     * 0.25, 0.5, 1, 2, 4, 8, and 16</p> <dl> <dt>value = 0.25</dt> <dd> <p>
+     * <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p>
+     * <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd> <dt>value = 1</dt>
+     * <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+     * </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168,
+     * 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> </dd>
+     * <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264,
+     * 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528,
+     * 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> </dd> <dt>value =
+     * 8</dt> <dd> <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864,
+     * 40960, 45056, 49152, 53248, 57344, or 61440 </p> </dd> <dt>value = 16</dt> <dd>
+     * <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920,
+     * 90112, 98304, 106496, 114688, or 122880 </p> </dd> </dl> </dd> </dl>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -286,13 +325,18 @@ namespace Model
      * 3072</dt> <dd> <p> <code>VCPU</code> = 0.5, or 1</p> </dd> <dt>value = 4096</dt>
      * <dd> <p> <code>VCPU</code> = 0.5, 1, or 2</p> </dd> <dt>value = 5120, 6144, or
      * 7168</dt> <dd> <p> <code>VCPU</code> = 1 or 2</p> </dd> <dt>value = 8192</dt>
-     * <dd> <p> <code>VCPU</code> = 1, 2, or 4</p> </dd> <dt>value = 9216, 10240,
-     * 11264, 12288, 13312, 14336, 15360, or 16384</dt> <dd> <p> <code>VCPU</code> = 2
-     * or 4</p> </dd> <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552,
-     * 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt> <dd> <p>
-     * <code>VCPU</code> = 4</p> </dd> </dl> </dd> <dt>type="VCPU"</dt> <dd> <p>The
-     * number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
+     * <dd> <p> <code>VCPU</code> = 1, 2, 4, or 8</p> </dd> <dt>value = 9216, 10240,
+     * 11264, 12288, 13312, 14336, or 15360</dt> <dd> <p> <code>VCPU</code> = 2 or
+     * 4</p> </dd> <dt>value = 16384</dt> <dd> <p> <code>VCPU</code> = 2, 4, or 8</p>
+     * </dd> <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648,
+     * 29696, or 30720</dt> <dd> <p> <code>VCPU</code> = 4</p> </dd> <dt>value = 20480,
+     * 24576, or 28672</dt> <dd> <p> <code>VCPU</code> = 4 or 8</p> </dd> <dt>value =
+     * 36864, 45056, 53248, or 61440</dt> <dd> <p> <code>VCPU</code> = 8</p> </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt> <dd> <p> <code>VCPU</code> = 8 or
+     * 16</p> </dd> <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or
+     * 122880</dt> <dd> <p> <code>VCPU</code> = 16</p> </dd> </dl> </dd>
+     * <dt>type="VCPU"</dt> <dd> <p>The number of vCPUs reserved for the container.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -300,19 +344,27 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs that are running on
-     * Fargate resources, then <code>value</code> must match one of the supported
-     * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
-     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
-     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
-     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
-     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
-     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
-     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
-     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
-     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
-     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>The default for the Fargate
+     * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
+     * Fargate quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> <p>For jobs
+     * that are running on Fargate resources, then <code>value</code> must match one of
+     * the supported values and the <code>MEMORY</code> values must be one of the
+     * values supported for that <code>VCPU</code> value. The supported values are
+     * 0.25, 0.5, 1, 2, 4, 8, and 16</p> <dl> <dt>value = 0.25</dt> <dd> <p>
+     * <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p>
+     * <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd> <dt>value = 1</dt>
+     * <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+     * </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168,
+     * 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> </dd>
+     * <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264,
+     * 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528,
+     * 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> </dd> <dt>value =
+     * 8</dt> <dd> <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864,
+     * 40960, 45056, 49152, 53248, 57344, or 61440 </p> </dd> <dt>value = 16</dt> <dd>
+     * <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920,
+     * 90112, 98304, 106496, 114688, or 122880 </p> </dd> </dl> </dd> </dl>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -355,13 +407,18 @@ namespace Model
      * 3072</dt> <dd> <p> <code>VCPU</code> = 0.5, or 1</p> </dd> <dt>value = 4096</dt>
      * <dd> <p> <code>VCPU</code> = 0.5, 1, or 2</p> </dd> <dt>value = 5120, 6144, or
      * 7168</dt> <dd> <p> <code>VCPU</code> = 1 or 2</p> </dd> <dt>value = 8192</dt>
-     * <dd> <p> <code>VCPU</code> = 1, 2, or 4</p> </dd> <dt>value = 9216, 10240,
-     * 11264, 12288, 13312, 14336, 15360, or 16384</dt> <dd> <p> <code>VCPU</code> = 2
-     * or 4</p> </dd> <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552,
-     * 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt> <dd> <p>
-     * <code>VCPU</code> = 4</p> </dd> </dl> </dd> <dt>type="VCPU"</dt> <dd> <p>The
-     * number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
+     * <dd> <p> <code>VCPU</code> = 1, 2, 4, or 8</p> </dd> <dt>value = 9216, 10240,
+     * 11264, 12288, 13312, 14336, or 15360</dt> <dd> <p> <code>VCPU</code> = 2 or
+     * 4</p> </dd> <dt>value = 16384</dt> <dd> <p> <code>VCPU</code> = 2, 4, or 8</p>
+     * </dd> <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648,
+     * 29696, or 30720</dt> <dd> <p> <code>VCPU</code> = 4</p> </dd> <dt>value = 20480,
+     * 24576, or 28672</dt> <dd> <p> <code>VCPU</code> = 4 or 8</p> </dd> <dt>value =
+     * 36864, 45056, 53248, or 61440</dt> <dd> <p> <code>VCPU</code> = 8</p> </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt> <dd> <p> <code>VCPU</code> = 8 or
+     * 16</p> </dd> <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or
+     * 122880</dt> <dd> <p> <code>VCPU</code> = 16</p> </dd> </dl> </dd>
+     * <dt>type="VCPU"</dt> <dd> <p>The number of vCPUs reserved for the container.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -369,19 +426,27 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs that are running on
-     * Fargate resources, then <code>value</code> must match one of the supported
-     * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
-     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
-     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
-     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
-     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
-     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
-     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
-     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
-     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
-     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>The default for the Fargate
+     * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
+     * Fargate quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> <p>For jobs
+     * that are running on Fargate resources, then <code>value</code> must match one of
+     * the supported values and the <code>MEMORY</code> values must be one of the
+     * values supported for that <code>VCPU</code> value. The supported values are
+     * 0.25, 0.5, 1, 2, 4, 8, and 16</p> <dl> <dt>value = 0.25</dt> <dd> <p>
+     * <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p>
+     * <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd> <dt>value = 1</dt>
+     * <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+     * </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168,
+     * 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> </dd>
+     * <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264,
+     * 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528,
+     * 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> </dd> <dt>value =
+     * 8</dt> <dd> <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864,
+     * 40960, 45056, 49152, 53248, 57344, or 61440 </p> </dd> <dt>value = 16</dt> <dd>
+     * <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920,
+     * 90112, 98304, 106496, 114688, or 122880 </p> </dd> </dl> </dd> </dl>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -424,13 +489,18 @@ namespace Model
      * 3072</dt> <dd> <p> <code>VCPU</code> = 0.5, or 1</p> </dd> <dt>value = 4096</dt>
      * <dd> <p> <code>VCPU</code> = 0.5, 1, or 2</p> </dd> <dt>value = 5120, 6144, or
      * 7168</dt> <dd> <p> <code>VCPU</code> = 1 or 2</p> </dd> <dt>value = 8192</dt>
-     * <dd> <p> <code>VCPU</code> = 1, 2, or 4</p> </dd> <dt>value = 9216, 10240,
-     * 11264, 12288, 13312, 14336, 15360, or 16384</dt> <dd> <p> <code>VCPU</code> = 2
-     * or 4</p> </dd> <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552,
-     * 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt> <dd> <p>
-     * <code>VCPU</code> = 4</p> </dd> </dl> </dd> <dt>type="VCPU"</dt> <dd> <p>The
-     * number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
+     * <dd> <p> <code>VCPU</code> = 1, 2, 4, or 8</p> </dd> <dt>value = 9216, 10240,
+     * 11264, 12288, 13312, 14336, or 15360</dt> <dd> <p> <code>VCPU</code> = 2 or
+     * 4</p> </dd> <dt>value = 16384</dt> <dd> <p> <code>VCPU</code> = 2, 4, or 8</p>
+     * </dd> <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648,
+     * 29696, or 30720</dt> <dd> <p> <code>VCPU</code> = 4</p> </dd> <dt>value = 20480,
+     * 24576, or 28672</dt> <dd> <p> <code>VCPU</code> = 4 or 8</p> </dd> <dt>value =
+     * 36864, 45056, 53248, or 61440</dt> <dd> <p> <code>VCPU</code> = 8</p> </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt> <dd> <p> <code>VCPU</code> = 8 or
+     * 16</p> </dd> <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or
+     * 122880</dt> <dd> <p> <code>VCPU</code> = 16</p> </dd> </dl> </dd>
+     * <dt>type="VCPU"</dt> <dd> <p>The number of vCPUs reserved for the container.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -438,19 +508,27 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs that are running on
-     * Fargate resources, then <code>value</code> must match one of the supported
-     * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
-     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
-     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
-     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
-     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
-     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
-     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
-     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
-     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
-     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>The default for the Fargate
+     * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
+     * Fargate quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> <p>For jobs
+     * that are running on Fargate resources, then <code>value</code> must match one of
+     * the supported values and the <code>MEMORY</code> values must be one of the
+     * values supported for that <code>VCPU</code> value. The supported values are
+     * 0.25, 0.5, 1, 2, 4, 8, and 16</p> <dl> <dt>value = 0.25</dt> <dd> <p>
+     * <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p>
+     * <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd> <dt>value = 1</dt>
+     * <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+     * </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168,
+     * 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> </dd>
+     * <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264,
+     * 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528,
+     * 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> </dd> <dt>value =
+     * 8</dt> <dd> <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864,
+     * 40960, 45056, 49152, 53248, 57344, or 61440 </p> </dd> <dt>value = 16</dt> <dd>
+     * <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920,
+     * 90112, 98304, 106496, 114688, or 122880 </p> </dd> </dl> </dd> </dl>
      */
     inline ResourceRequirement& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -493,13 +571,18 @@ namespace Model
      * 3072</dt> <dd> <p> <code>VCPU</code> = 0.5, or 1</p> </dd> <dt>value = 4096</dt>
      * <dd> <p> <code>VCPU</code> = 0.5, 1, or 2</p> </dd> <dt>value = 5120, 6144, or
      * 7168</dt> <dd> <p> <code>VCPU</code> = 1 or 2</p> </dd> <dt>value = 8192</dt>
-     * <dd> <p> <code>VCPU</code> = 1, 2, or 4</p> </dd> <dt>value = 9216, 10240,
-     * 11264, 12288, 13312, 14336, 15360, or 16384</dt> <dd> <p> <code>VCPU</code> = 2
-     * or 4</p> </dd> <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552,
-     * 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt> <dd> <p>
-     * <code>VCPU</code> = 4</p> </dd> </dl> </dd> <dt>type="VCPU"</dt> <dd> <p>The
-     * number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
+     * <dd> <p> <code>VCPU</code> = 1, 2, 4, or 8</p> </dd> <dt>value = 9216, 10240,
+     * 11264, 12288, 13312, 14336, or 15360</dt> <dd> <p> <code>VCPU</code> = 2 or
+     * 4</p> </dd> <dt>value = 16384</dt> <dd> <p> <code>VCPU</code> = 2, 4, or 8</p>
+     * </dd> <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648,
+     * 29696, or 30720</dt> <dd> <p> <code>VCPU</code> = 4</p> </dd> <dt>value = 20480,
+     * 24576, or 28672</dt> <dd> <p> <code>VCPU</code> = 4 or 8</p> </dd> <dt>value =
+     * 36864, 45056, 53248, or 61440</dt> <dd> <p> <code>VCPU</code> = 8</p> </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt> <dd> <p> <code>VCPU</code> = 8 or
+     * 16</p> </dd> <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or
+     * 122880</dt> <dd> <p> <code>VCPU</code> = 16</p> </dd> </dl> </dd>
+     * <dt>type="VCPU"</dt> <dd> <p>The number of vCPUs reserved for the container.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -507,19 +590,27 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs that are running on
-     * Fargate resources, then <code>value</code> must match one of the supported
-     * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
-     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
-     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
-     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
-     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
-     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
-     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
-     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
-     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
-     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>The default for the Fargate
+     * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
+     * Fargate quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> <p>For jobs
+     * that are running on Fargate resources, then <code>value</code> must match one of
+     * the supported values and the <code>MEMORY</code> values must be one of the
+     * values supported for that <code>VCPU</code> value. The supported values are
+     * 0.25, 0.5, 1, 2, 4, 8, and 16</p> <dl> <dt>value = 0.25</dt> <dd> <p>
+     * <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p>
+     * <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd> <dt>value = 1</dt>
+     * <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+     * </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168,
+     * 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> </dd>
+     * <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264,
+     * 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528,
+     * 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> </dd> <dt>value =
+     * 8</dt> <dd> <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864,
+     * 40960, 45056, 49152, 53248, 57344, or 61440 </p> </dd> <dt>value = 16</dt> <dd>
+     * <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920,
+     * 90112, 98304, 106496, 114688, or 122880 </p> </dd> </dl> </dd> </dl>
      */
     inline ResourceRequirement& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
@@ -562,13 +653,18 @@ namespace Model
      * 3072</dt> <dd> <p> <code>VCPU</code> = 0.5, or 1</p> </dd> <dt>value = 4096</dt>
      * <dd> <p> <code>VCPU</code> = 0.5, 1, or 2</p> </dd> <dt>value = 5120, 6144, or
      * 7168</dt> <dd> <p> <code>VCPU</code> = 1 or 2</p> </dd> <dt>value = 8192</dt>
-     * <dd> <p> <code>VCPU</code> = 1, 2, or 4</p> </dd> <dt>value = 9216, 10240,
-     * 11264, 12288, 13312, 14336, 15360, or 16384</dt> <dd> <p> <code>VCPU</code> = 2
-     * or 4</p> </dd> <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552,
-     * 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt> <dd> <p>
-     * <code>VCPU</code> = 4</p> </dd> </dl> </dd> <dt>type="VCPU"</dt> <dd> <p>The
-     * number of vCPUs reserved for the container. This parameter maps to
-     * <code>CpuShares</code> in the <a
+     * <dd> <p> <code>VCPU</code> = 1, 2, 4, or 8</p> </dd> <dt>value = 9216, 10240,
+     * 11264, 12288, 13312, 14336, or 15360</dt> <dd> <p> <code>VCPU</code> = 2 or
+     * 4</p> </dd> <dt>value = 16384</dt> <dd> <p> <code>VCPU</code> = 2, 4, or 8</p>
+     * </dd> <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648,
+     * 29696, or 30720</dt> <dd> <p> <code>VCPU</code> = 4</p> </dd> <dt>value = 20480,
+     * 24576, or 28672</dt> <dd> <p> <code>VCPU</code> = 4 or 8</p> </dd> <dt>value =
+     * 36864, 45056, 53248, or 61440</dt> <dd> <p> <code>VCPU</code> = 8</p> </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt> <dd> <p> <code>VCPU</code> = 8 or
+     * 16</p> </dd> <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or
+     * 122880</dt> <dd> <p> <code>VCPU</code> = 16</p> </dd> </dl> </dd>
+     * <dt>type="VCPU"</dt> <dd> <p>The number of vCPUs reserved for the container.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -576,19 +672,27 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs that are running on
-     * Fargate resources, then <code>value</code> must match one of the supported
-     * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
-     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
-     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
-     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
-     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
-     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
-     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
-     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
-     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
-     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>The default for the Fargate
+     * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
+     * Fargate quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> <p>For jobs
+     * that are running on Fargate resources, then <code>value</code> must match one of
+     * the supported values and the <code>MEMORY</code> values must be one of the
+     * values supported for that <code>VCPU</code> value. The supported values are
+     * 0.25, 0.5, 1, 2, 4, 8, and 16</p> <dl> <dt>value = 0.25</dt> <dd> <p>
+     * <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p>
+     * <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd> <dt>value = 1</dt>
+     * <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
+     * </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168,
+     * 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> </dd>
+     * <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264,
+     * 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528,
+     * 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> </dd> <dt>value =
+     * 8</dt> <dd> <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864,
+     * 40960, 45056, 49152, 53248, 57344, or 61440 </p> </dd> <dt>value = 16</dt> <dd>
+     * <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920,
+     * 90112, 98304, 106496, 114688, or 122880 </p> </dd> </dl> </dd> </dl>
      */
     inline ResourceRequirement& WithValue(const char* value) { SetValue(value); return *this;}
 

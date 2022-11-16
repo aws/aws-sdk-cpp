@@ -13,11 +13,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListEntitiesRequest::ListEntitiesRequest() : 
+    m_workspaceIdHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_nextTokenHasBeenSet(false)
 {
 }
 

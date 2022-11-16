@@ -494,66 +494,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The IAM service role that's associated with the environment account
+     * connection.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The IAM service role that's associated with the environment account
+     * connection.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The IAM service role that's associated with the environment account
+     * connection.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The IAM service role that's associated with the environment account
+     * connection.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The IAM service role that's associated with the environment account
+     * connection.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The IAM service role that's associated with the environment account
+     * connection.</p>
      */
     inline EnvironmentAccountConnection& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The IAM service role that's associated with the environment account
+     * connection.</p>
      */
     inline EnvironmentAccountConnection& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM service role in the environment
-     * account. Proton uses this role to provision infrastructure resources using
-     * Amazon Web Services-managed provisioning and CloudFormation in the associated
-     * environment account.</p>
+     * <p>The IAM service role that's associated with the environment account
+     * connection.</p>
      */
     inline EnvironmentAccountConnection& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

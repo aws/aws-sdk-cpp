@@ -20,16 +20,16 @@ namespace Model
 
 EntityPropertyReference::EntityPropertyReference() : 
     m_componentNameHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
     m_externalIdPropertyHasBeenSet(false),
+    m_entityIdHasBeenSet(false),
     m_propertyNameHasBeenSet(false)
 {
 }
 
 EntityPropertyReference::EntityPropertyReference(JsonView jsonValue) : 
     m_componentNameHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
     m_externalIdPropertyHasBeenSet(false),
+    m_entityIdHasBeenSet(false),
     m_propertyNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -44,13 +44,6 @@ EntityPropertyReference& EntityPropertyReference::operator =(JsonView jsonValue)
     m_componentNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("entityId"))
-  {
-    m_entityId = jsonValue.GetString("entityId");
-
-    m_entityIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("externalIdProperty"))
   {
     Aws::Map<Aws::String, JsonView> externalIdPropertyJsonMap = jsonValue.GetObject("externalIdProperty").GetAllObjects();
@@ -59,6 +52,13 @@ EntityPropertyReference& EntityPropertyReference::operator =(JsonView jsonValue)
       m_externalIdProperty[externalIdPropertyItem.first] = externalIdPropertyItem.second.AsString();
     }
     m_externalIdPropertyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("entityId"))
+  {
+    m_entityId = jsonValue.GetString("entityId");
+
+    m_entityIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("propertyName"))
@@ -81,12 +81,6 @@ JsonValue EntityPropertyReference::Jsonize() const
 
   }
 
-  if(m_entityIdHasBeenSet)
-  {
-   payload.WithString("entityId", m_entityId);
-
-  }
-
   if(m_externalIdPropertyHasBeenSet)
   {
    JsonValue externalIdPropertyJsonMap;
@@ -95,6 +89,12 @@ JsonValue EntityPropertyReference::Jsonize() const
      externalIdPropertyJsonMap.WithString(externalIdPropertyItem.first, externalIdPropertyItem.second);
    }
    payload.WithObject("externalIdProperty", std::move(externalIdPropertyJsonMap));
+
+  }
+
+  if(m_entityIdHasBeenSet)
+  {
+   payload.WithString("entityId", m_entityId);
 
   }
 

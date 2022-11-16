@@ -67,9 +67,47 @@ namespace Model
      */
     inline CreateOpsItemResult& WithOpsItemId(const char* value) { SetOpsItemId(value); return *this;}
 
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline const Aws::String& GetOpsItemArn() const{ return m_opsItemArn; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(const Aws::String& value) { m_opsItemArn = value; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(Aws::String&& value) { m_opsItemArn = std::move(value); }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(const char* value) { m_opsItemArn.assign(value); }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline CreateOpsItemResult& WithOpsItemArn(const Aws::String& value) { SetOpsItemArn(value); return *this;}
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline CreateOpsItemResult& WithOpsItemArn(Aws::String&& value) { SetOpsItemArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline CreateOpsItemResult& WithOpsItemArn(const char* value) { SetOpsItemArn(value); return *this;}
+
   private:
 
     Aws::String m_opsItemId;
+
+    Aws::String m_opsItemArn;
   };
 
 } // namespace Model

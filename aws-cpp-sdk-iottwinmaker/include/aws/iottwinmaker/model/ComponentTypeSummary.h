@@ -154,6 +154,37 @@ namespace Model
 
 
     /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
+
+    /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = value; }
+
+    /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline void SetUpdateDateTime(Aws::Utils::DateTime&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline ComponentTypeSummary& WithUpdateDateTime(const Aws::Utils::DateTime& value) { SetUpdateDateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline ComponentTypeSummary& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The description of the component type.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -224,37 +255,6 @@ namespace Model
      */
     inline ComponentTypeSummary& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The date and time when the component type was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
-
-    /**
-     * <p>The date and time when the component type was last updated.</p>
-     */
-    inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time when the component type was last updated.</p>
-     */
-    inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = value; }
-
-    /**
-     * <p>The date and time when the component type was last updated.</p>
-     */
-    inline void SetUpdateDateTime(Aws::Utils::DateTime&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time when the component type was last updated.</p>
-     */
-    inline ComponentTypeSummary& WithUpdateDateTime(const Aws::Utils::DateTime& value) { SetUpdateDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time when the component type was last updated.</p>
-     */
-    inline ComponentTypeSummary& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_arn;
@@ -266,14 +266,14 @@ namespace Model
     Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet = false;
 
+    Aws::Utils::DateTime m_updateDateTime;
+    bool m_updateDateTimeHasBeenSet = false;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
     Status m_status;
     bool m_statusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_updateDateTime;
-    bool m_updateDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

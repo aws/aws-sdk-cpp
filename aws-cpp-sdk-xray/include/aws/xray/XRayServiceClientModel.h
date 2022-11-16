@@ -22,6 +22,7 @@
 #include <aws/xray/model/CreateGroupResult.h>
 #include <aws/xray/model/CreateSamplingRuleResult.h>
 #include <aws/xray/model/DeleteGroupResult.h>
+#include <aws/xray/model/DeleteResourcePolicyResult.h>
 #include <aws/xray/model/DeleteSamplingRuleResult.h>
 #include <aws/xray/model/GetEncryptionConfigResult.h>
 #include <aws/xray/model/GetGroupResult.h>
@@ -37,8 +38,10 @@
 #include <aws/xray/model/GetTimeSeriesServiceStatisticsResult.h>
 #include <aws/xray/model/GetTraceGraphResult.h>
 #include <aws/xray/model/GetTraceSummariesResult.h>
+#include <aws/xray/model/ListResourcePoliciesResult.h>
 #include <aws/xray/model/ListTagsForResourceResult.h>
 #include <aws/xray/model/PutEncryptionConfigResult.h>
+#include <aws/xray/model/PutResourcePolicyResult.h>
 #include <aws/xray/model/PutTelemetryRecordsResult.h>
 #include <aws/xray/model/PutTraceSegmentsResult.h>
 #include <aws/xray/model/TagResourceResult.h>
@@ -89,6 +92,7 @@ namespace Aws
       class CreateGroupRequest;
       class CreateSamplingRuleRequest;
       class DeleteGroupRequest;
+      class DeleteResourcePolicyRequest;
       class DeleteSamplingRuleRequest;
       class GetEncryptionConfigRequest;
       class GetGroupRequest;
@@ -104,8 +108,10 @@ namespace Aws
       class GetTimeSeriesServiceStatisticsRequest;
       class GetTraceGraphRequest;
       class GetTraceSummariesRequest;
+      class ListResourcePoliciesRequest;
       class ListTagsForResourceRequest;
       class PutEncryptionConfigRequest;
+      class PutResourcePolicyRequest;
       class PutTelemetryRecordsRequest;
       class PutTraceSegmentsRequest;
       class TagResourceRequest;
@@ -119,6 +125,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateGroupResult, XRayError> CreateGroupOutcome;
       typedef Aws::Utils::Outcome<CreateSamplingRuleResult, XRayError> CreateSamplingRuleOutcome;
       typedef Aws::Utils::Outcome<DeleteGroupResult, XRayError> DeleteGroupOutcome;
+      typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, XRayError> DeleteResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<DeleteSamplingRuleResult, XRayError> DeleteSamplingRuleOutcome;
       typedef Aws::Utils::Outcome<GetEncryptionConfigResult, XRayError> GetEncryptionConfigOutcome;
       typedef Aws::Utils::Outcome<GetGroupResult, XRayError> GetGroupOutcome;
@@ -134,8 +141,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetTimeSeriesServiceStatisticsResult, XRayError> GetTimeSeriesServiceStatisticsOutcome;
       typedef Aws::Utils::Outcome<GetTraceGraphResult, XRayError> GetTraceGraphOutcome;
       typedef Aws::Utils::Outcome<GetTraceSummariesResult, XRayError> GetTraceSummariesOutcome;
+      typedef Aws::Utils::Outcome<ListResourcePoliciesResult, XRayError> ListResourcePoliciesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, XRayError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutEncryptionConfigResult, XRayError> PutEncryptionConfigOutcome;
+      typedef Aws::Utils::Outcome<PutResourcePolicyResult, XRayError> PutResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<PutTelemetryRecordsResult, XRayError> PutTelemetryRecordsOutcome;
       typedef Aws::Utils::Outcome<PutTraceSegmentsResult, XRayError> PutTraceSegmentsOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, XRayError> TagResourceOutcome;
@@ -149,6 +158,7 @@ namespace Aws
       typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
       typedef std::future<CreateSamplingRuleOutcome> CreateSamplingRuleOutcomeCallable;
       typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
+      typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
       typedef std::future<DeleteSamplingRuleOutcome> DeleteSamplingRuleOutcomeCallable;
       typedef std::future<GetEncryptionConfigOutcome> GetEncryptionConfigOutcomeCallable;
       typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
@@ -164,8 +174,10 @@ namespace Aws
       typedef std::future<GetTimeSeriesServiceStatisticsOutcome> GetTimeSeriesServiceStatisticsOutcomeCallable;
       typedef std::future<GetTraceGraphOutcome> GetTraceGraphOutcomeCallable;
       typedef std::future<GetTraceSummariesOutcome> GetTraceSummariesOutcomeCallable;
+      typedef std::future<ListResourcePoliciesOutcome> ListResourcePoliciesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutEncryptionConfigOutcome> PutEncryptionConfigOutcomeCallable;
+      typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
       typedef std::future<PutTelemetryRecordsOutcome> PutTelemetryRecordsOutcomeCallable;
       typedef std::future<PutTraceSegmentsOutcome> PutTraceSegmentsOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -182,6 +194,7 @@ namespace Aws
     typedef std::function<void(const XRayClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::CreateSamplingRuleRequest&, const Model::CreateSamplingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSamplingRuleResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::DeleteSamplingRuleRequest&, const Model::DeleteSamplingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSamplingRuleResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetEncryptionConfigRequest&, const Model::GetEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEncryptionConfigResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
@@ -197,8 +210,10 @@ namespace Aws
     typedef std::function<void(const XRayClient*, const Model::GetTimeSeriesServiceStatisticsRequest&, const Model::GetTimeSeriesServiceStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTimeSeriesServiceStatisticsResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetTraceGraphRequest&, const Model::GetTraceGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTraceGraphResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetTraceSummariesRequest&, const Model::GetTraceSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTraceSummariesResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::ListResourcePoliciesRequest&, const Model::ListResourcePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcePoliciesResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::PutEncryptionConfigRequest&, const Model::PutEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEncryptionConfigResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::PutTelemetryRecordsRequest&, const Model::PutTelemetryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTelemetryRecordsResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::PutTraceSegmentsRequest&, const Model::PutTraceSegmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTraceSegmentsResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

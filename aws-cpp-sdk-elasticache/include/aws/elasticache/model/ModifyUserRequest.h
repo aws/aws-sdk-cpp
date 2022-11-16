@@ -8,6 +8,7 @@
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticache/model/AuthenticationMode.h>
 #include <utility>
 
 namespace Aws
@@ -226,6 +227,37 @@ namespace Model
      */
     inline ModifyUserRequest& WithNoPasswordRequired(bool value) { SetNoPasswordRequired(value); return *this;}
 
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline const AuthenticationMode& GetAuthenticationMode() const{ return m_authenticationMode; }
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline bool AuthenticationModeHasBeenSet() const { return m_authenticationModeHasBeenSet; }
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline void SetAuthenticationMode(const AuthenticationMode& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = value; }
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline void SetAuthenticationMode(AuthenticationMode&& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = std::move(value); }
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline ModifyUserRequest& WithAuthenticationMode(const AuthenticationMode& value) { SetAuthenticationMode(value); return *this;}
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline ModifyUserRequest& WithAuthenticationMode(AuthenticationMode&& value) { SetAuthenticationMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_userId;
@@ -242,6 +274,9 @@ namespace Model
 
     bool m_noPasswordRequired;
     bool m_noPasswordRequiredHasBeenSet = false;
+
+    AuthenticationMode m_authenticationMode;
+    bool m_authenticationModeHasBeenSet = false;
   };
 
 } // namespace Model

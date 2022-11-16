@@ -27,8 +27,10 @@
 #include <aws/iottwinmaker/model/DeleteEntityResult.h>
 #include <aws/iottwinmaker/model/DeleteSceneResult.h>
 #include <aws/iottwinmaker/model/DeleteWorkspaceResult.h>
+#include <aws/iottwinmaker/model/ExecuteQueryResult.h>
 #include <aws/iottwinmaker/model/GetComponentTypeResult.h>
 #include <aws/iottwinmaker/model/GetEntityResult.h>
+#include <aws/iottwinmaker/model/GetPricingPlanResult.h>
 #include <aws/iottwinmaker/model/GetPropertyValueResult.h>
 #include <aws/iottwinmaker/model/GetPropertyValueHistoryResult.h>
 #include <aws/iottwinmaker/model/GetSceneResult.h>
@@ -42,6 +44,7 @@
 #include <aws/iottwinmaker/model/UntagResourceResult.h>
 #include <aws/iottwinmaker/model/UpdateComponentTypeResult.h>
 #include <aws/iottwinmaker/model/UpdateEntityResult.h>
+#include <aws/iottwinmaker/model/UpdatePricingPlanResult.h>
 #include <aws/iottwinmaker/model/UpdateSceneResult.h>
 #include <aws/iottwinmaker/model/UpdateWorkspaceResult.h>
 /* End of service model headers required in IoTTwinMakerClient header */
@@ -93,8 +96,10 @@ namespace Aws
       class DeleteEntityRequest;
       class DeleteSceneRequest;
       class DeleteWorkspaceRequest;
+      class ExecuteQueryRequest;
       class GetComponentTypeRequest;
       class GetEntityRequest;
+      class GetPricingPlanRequest;
       class GetPropertyValueRequest;
       class GetPropertyValueHistoryRequest;
       class GetSceneRequest;
@@ -108,6 +113,7 @@ namespace Aws
       class UntagResourceRequest;
       class UpdateComponentTypeRequest;
       class UpdateEntityRequest;
+      class UpdatePricingPlanRequest;
       class UpdateSceneRequest;
       class UpdateWorkspaceRequest;
       /* End of service model forward declarations required in IoTTwinMakerClient header */
@@ -122,8 +128,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteEntityResult, IoTTwinMakerError> DeleteEntityOutcome;
       typedef Aws::Utils::Outcome<DeleteSceneResult, IoTTwinMakerError> DeleteSceneOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkspaceResult, IoTTwinMakerError> DeleteWorkspaceOutcome;
+      typedef Aws::Utils::Outcome<ExecuteQueryResult, IoTTwinMakerError> ExecuteQueryOutcome;
       typedef Aws::Utils::Outcome<GetComponentTypeResult, IoTTwinMakerError> GetComponentTypeOutcome;
       typedef Aws::Utils::Outcome<GetEntityResult, IoTTwinMakerError> GetEntityOutcome;
+      typedef Aws::Utils::Outcome<GetPricingPlanResult, IoTTwinMakerError> GetPricingPlanOutcome;
       typedef Aws::Utils::Outcome<GetPropertyValueResult, IoTTwinMakerError> GetPropertyValueOutcome;
       typedef Aws::Utils::Outcome<GetPropertyValueHistoryResult, IoTTwinMakerError> GetPropertyValueHistoryOutcome;
       typedef Aws::Utils::Outcome<GetSceneResult, IoTTwinMakerError> GetSceneOutcome;
@@ -137,6 +145,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UntagResourceResult, IoTTwinMakerError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateComponentTypeResult, IoTTwinMakerError> UpdateComponentTypeOutcome;
       typedef Aws::Utils::Outcome<UpdateEntityResult, IoTTwinMakerError> UpdateEntityOutcome;
+      typedef Aws::Utils::Outcome<UpdatePricingPlanResult, IoTTwinMakerError> UpdatePricingPlanOutcome;
       typedef Aws::Utils::Outcome<UpdateSceneResult, IoTTwinMakerError> UpdateSceneOutcome;
       typedef Aws::Utils::Outcome<UpdateWorkspaceResult, IoTTwinMakerError> UpdateWorkspaceOutcome;
       /* End of service model Outcome class definitions */
@@ -151,8 +160,10 @@ namespace Aws
       typedef std::future<DeleteEntityOutcome> DeleteEntityOutcomeCallable;
       typedef std::future<DeleteSceneOutcome> DeleteSceneOutcomeCallable;
       typedef std::future<DeleteWorkspaceOutcome> DeleteWorkspaceOutcomeCallable;
+      typedef std::future<ExecuteQueryOutcome> ExecuteQueryOutcomeCallable;
       typedef std::future<GetComponentTypeOutcome> GetComponentTypeOutcomeCallable;
       typedef std::future<GetEntityOutcome> GetEntityOutcomeCallable;
+      typedef std::future<GetPricingPlanOutcome> GetPricingPlanOutcomeCallable;
       typedef std::future<GetPropertyValueOutcome> GetPropertyValueOutcomeCallable;
       typedef std::future<GetPropertyValueHistoryOutcome> GetPropertyValueHistoryOutcomeCallable;
       typedef std::future<GetSceneOutcome> GetSceneOutcomeCallable;
@@ -166,6 +177,7 @@ namespace Aws
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateComponentTypeOutcome> UpdateComponentTypeOutcomeCallable;
       typedef std::future<UpdateEntityOutcome> UpdateEntityOutcomeCallable;
+      typedef std::future<UpdatePricingPlanOutcome> UpdatePricingPlanOutcomeCallable;
       typedef std::future<UpdateSceneOutcome> UpdateSceneOutcomeCallable;
       typedef std::future<UpdateWorkspaceOutcome> UpdateWorkspaceOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -183,8 +195,10 @@ namespace Aws
     typedef std::function<void(const IoTTwinMakerClient*, const Model::DeleteEntityRequest&, const Model::DeleteEntityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEntityResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::DeleteSceneRequest&, const Model::DeleteSceneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSceneResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::DeleteWorkspaceRequest&, const Model::DeleteWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceResponseReceivedHandler;
+    typedef std::function<void(const IoTTwinMakerClient*, const Model::ExecuteQueryRequest&, const Model::ExecuteQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteQueryResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetComponentTypeRequest&, const Model::GetComponentTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentTypeResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetEntityRequest&, const Model::GetEntityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEntityResponseReceivedHandler;
+    typedef std::function<void(const IoTTwinMakerClient*, const Model::GetPricingPlanRequest&, const Model::GetPricingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPricingPlanResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetPropertyValueRequest&, const Model::GetPropertyValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPropertyValueResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetPropertyValueHistoryRequest&, const Model::GetPropertyValueHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPropertyValueHistoryResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::GetSceneRequest&, const Model::GetSceneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSceneResponseReceivedHandler;
@@ -198,6 +212,7 @@ namespace Aws
     typedef std::function<void(const IoTTwinMakerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::UpdateComponentTypeRequest&, const Model::UpdateComponentTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComponentTypeResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::UpdateEntityRequest&, const Model::UpdateEntityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEntityResponseReceivedHandler;
+    typedef std::function<void(const IoTTwinMakerClient*, const Model::UpdatePricingPlanRequest&, const Model::UpdatePricingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePricingPlanResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::UpdateSceneRequest&, const Model::UpdateSceneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSceneResponseReceivedHandler;
     typedef std::function<void(const IoTTwinMakerClient*, const Model::UpdateWorkspaceRequest&, const Model::UpdateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceResponseReceivedHandler;
     /* End of service model async handlers definitions */

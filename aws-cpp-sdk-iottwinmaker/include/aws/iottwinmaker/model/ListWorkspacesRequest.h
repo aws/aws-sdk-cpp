@@ -33,22 +33,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline ListWorkspacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

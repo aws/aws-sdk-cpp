@@ -185,32 +185,50 @@ namespace Model
 
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline const RoutingProfileSearchCriteria& GetSearchCriteria() const{ return m_searchCriteria; }
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline bool SearchCriteriaHasBeenSet() const { return m_searchCriteriaHasBeenSet; }
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline void SetSearchCriteria(const RoutingProfileSearchCriteria& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = value; }
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline void SetSearchCriteria(RoutingProfileSearchCriteria&& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = std::move(value); }
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline SearchRoutingProfilesRequest& WithSearchCriteria(const RoutingProfileSearchCriteria& value) { SetSearchCriteria(value); return *this;}
 
     /**
-     * <p>The search criteria to be used to return routing profiles.</p>
+     * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will throw invalid results. </p> 
      */
     inline SearchRoutingProfilesRequest& WithSearchCriteria(RoutingProfileSearchCriteria&& value) { SetSearchCriteria(std::move(value)); return *this;}
 

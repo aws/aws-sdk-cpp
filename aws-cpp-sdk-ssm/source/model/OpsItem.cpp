@@ -41,7 +41,8 @@ OpsItem::OpsItem() :
     m_actualStartTimeHasBeenSet(false),
     m_actualEndTimeHasBeenSet(false),
     m_plannedStartTimeHasBeenSet(false),
-    m_plannedEndTimeHasBeenSet(false)
+    m_plannedEndTimeHasBeenSet(false),
+    m_opsItemArnHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ OpsItem::OpsItem(JsonView jsonValue) :
     m_actualStartTimeHasBeenSet(false),
     m_actualEndTimeHasBeenSet(false),
     m_plannedStartTimeHasBeenSet(false),
-    m_plannedEndTimeHasBeenSet(false)
+    m_plannedEndTimeHasBeenSet(false),
+    m_opsItemArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -231,6 +233,13 @@ OpsItem& OpsItem::operator =(JsonView jsonValue)
     m_plannedEndTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OpsItemArn"))
+  {
+    m_opsItemArn = jsonValue.GetString("OpsItemArn");
+
+    m_opsItemArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -370,6 +379,12 @@ JsonValue OpsItem::Jsonize() const
   if(m_plannedEndTimeHasBeenSet)
   {
    payload.WithDouble("PlannedEndTime", m_plannedEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_opsItemArnHasBeenSet)
+  {
+   payload.WithString("OpsItemArn", m_opsItemArn);
+
   }
 
   return payload;

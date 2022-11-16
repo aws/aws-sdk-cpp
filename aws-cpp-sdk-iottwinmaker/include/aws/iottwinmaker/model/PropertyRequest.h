@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/iottwinmaker/model/PropertyDefinitionRequest.h>
-#include <aws/iottwinmaker/model/PropertyUpdateType.h>
 #include <aws/iottwinmaker/model/DataValue.h>
+#include <aws/iottwinmaker/model/PropertyUpdateType.h>
 #include <utility>
 
 namespace Aws
@@ -72,37 +72,6 @@ namespace Model
 
 
     /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline const PropertyUpdateType& GetUpdateType() const{ return m_updateType; }
-
-    /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
-
-    /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline void SetUpdateType(const PropertyUpdateType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
-
-    /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline void SetUpdateType(PropertyUpdateType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
-
-    /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline PropertyRequest& WithUpdateType(const PropertyUpdateType& value) { SetUpdateType(value); return *this;}
-
-    /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline PropertyRequest& WithUpdateType(PropertyUpdateType&& value) { SetUpdateType(std::move(value)); return *this;}
-
-
-    /**
      * <p>The value of the property.</p>
      */
     inline const DataValue& GetValue() const{ return m_value; }
@@ -132,16 +101,47 @@ namespace Model
      */
     inline PropertyRequest& WithValue(DataValue&& value) { SetValue(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline const PropertyUpdateType& GetUpdateType() const{ return m_updateType; }
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline void SetUpdateType(const PropertyUpdateType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline void SetUpdateType(PropertyUpdateType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline PropertyRequest& WithUpdateType(const PropertyUpdateType& value) { SetUpdateType(value); return *this;}
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline PropertyRequest& WithUpdateType(PropertyUpdateType&& value) { SetUpdateType(std::move(value)); return *this;}
+
   private:
 
     PropertyDefinitionRequest m_definition;
     bool m_definitionHasBeenSet = false;
 
-    PropertyUpdateType m_updateType;
-    bool m_updateTypeHasBeenSet = false;
-
     DataValue m_value;
     bool m_valueHasBeenSet = false;
+
+    PropertyUpdateType m_updateType;
+    bool m_updateTypeHasBeenSet = false;
   };
 
 } // namespace Model

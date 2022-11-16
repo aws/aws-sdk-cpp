@@ -41,6 +41,7 @@
 #include <aws/ssm/model/DeleteParametersResult.h>
 #include <aws/ssm/model/DeletePatchBaselineResult.h>
 #include <aws/ssm/model/DeleteResourceDataSyncResult.h>
+#include <aws/ssm/model/DeleteResourcePolicyResult.h>
 #include <aws/ssm/model/DeregisterManagedInstanceResult.h>
 #include <aws/ssm/model/DeregisterPatchBaselineForPatchGroupResult.h>
 #include <aws/ssm/model/DeregisterTargetFromMaintenanceWindowResult.h>
@@ -101,6 +102,7 @@
 #include <aws/ssm/model/GetParametersByPathResult.h>
 #include <aws/ssm/model/GetPatchBaselineResult.h>
 #include <aws/ssm/model/GetPatchBaselineForPatchGroupResult.h>
+#include <aws/ssm/model/GetResourcePoliciesResult.h>
 #include <aws/ssm/model/GetServiceSettingResult.h>
 #include <aws/ssm/model/LabelParameterVersionResult.h>
 #include <aws/ssm/model/ListAssociationVersionsResult.h>
@@ -123,6 +125,7 @@
 #include <aws/ssm/model/PutComplianceItemsResult.h>
 #include <aws/ssm/model/PutInventoryResult.h>
 #include <aws/ssm/model/PutParameterResult.h>
+#include <aws/ssm/model/PutResourcePolicyResult.h>
 #include <aws/ssm/model/RegisterDefaultPatchBaselineResult.h>
 #include <aws/ssm/model/RegisterPatchBaselineForPatchGroupResult.h>
 #include <aws/ssm/model/RegisterTargetWithMaintenanceWindowResult.h>
@@ -216,6 +219,7 @@ namespace Aws
       class DeleteParametersRequest;
       class DeletePatchBaselineRequest;
       class DeleteResourceDataSyncRequest;
+      class DeleteResourcePolicyRequest;
       class DeregisterManagedInstanceRequest;
       class DeregisterPatchBaselineForPatchGroupRequest;
       class DeregisterTargetFromMaintenanceWindowRequest;
@@ -276,6 +280,7 @@ namespace Aws
       class GetParametersByPathRequest;
       class GetPatchBaselineRequest;
       class GetPatchBaselineForPatchGroupRequest;
+      class GetResourcePoliciesRequest;
       class GetServiceSettingRequest;
       class LabelParameterVersionRequest;
       class ListAssociationVersionsRequest;
@@ -298,6 +303,7 @@ namespace Aws
       class PutComplianceItemsRequest;
       class PutInventoryRequest;
       class PutParameterRequest;
+      class PutResourcePolicyRequest;
       class RegisterDefaultPatchBaselineRequest;
       class RegisterPatchBaselineForPatchGroupRequest;
       class RegisterTargetWithMaintenanceWindowRequest;
@@ -354,6 +360,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteParametersResult, SSMError> DeleteParametersOutcome;
       typedef Aws::Utils::Outcome<DeletePatchBaselineResult, SSMError> DeletePatchBaselineOutcome;
       typedef Aws::Utils::Outcome<DeleteResourceDataSyncResult, SSMError> DeleteResourceDataSyncOutcome;
+      typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, SSMError> DeleteResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<DeregisterManagedInstanceResult, SSMError> DeregisterManagedInstanceOutcome;
       typedef Aws::Utils::Outcome<DeregisterPatchBaselineForPatchGroupResult, SSMError> DeregisterPatchBaselineForPatchGroupOutcome;
       typedef Aws::Utils::Outcome<DeregisterTargetFromMaintenanceWindowResult, SSMError> DeregisterTargetFromMaintenanceWindowOutcome;
@@ -414,6 +421,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetParametersByPathResult, SSMError> GetParametersByPathOutcome;
       typedef Aws::Utils::Outcome<GetPatchBaselineResult, SSMError> GetPatchBaselineOutcome;
       typedef Aws::Utils::Outcome<GetPatchBaselineForPatchGroupResult, SSMError> GetPatchBaselineForPatchGroupOutcome;
+      typedef Aws::Utils::Outcome<GetResourcePoliciesResult, SSMError> GetResourcePoliciesOutcome;
       typedef Aws::Utils::Outcome<GetServiceSettingResult, SSMError> GetServiceSettingOutcome;
       typedef Aws::Utils::Outcome<LabelParameterVersionResult, SSMError> LabelParameterVersionOutcome;
       typedef Aws::Utils::Outcome<ListAssociationVersionsResult, SSMError> ListAssociationVersionsOutcome;
@@ -436,6 +444,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutComplianceItemsResult, SSMError> PutComplianceItemsOutcome;
       typedef Aws::Utils::Outcome<PutInventoryResult, SSMError> PutInventoryOutcome;
       typedef Aws::Utils::Outcome<PutParameterResult, SSMError> PutParameterOutcome;
+      typedef Aws::Utils::Outcome<PutResourcePolicyResult, SSMError> PutResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<RegisterDefaultPatchBaselineResult, SSMError> RegisterDefaultPatchBaselineOutcome;
       typedef Aws::Utils::Outcome<RegisterPatchBaselineForPatchGroupResult, SSMError> RegisterPatchBaselineForPatchGroupOutcome;
       typedef Aws::Utils::Outcome<RegisterTargetWithMaintenanceWindowResult, SSMError> RegisterTargetWithMaintenanceWindowOutcome;
@@ -492,6 +501,7 @@ namespace Aws
       typedef std::future<DeleteParametersOutcome> DeleteParametersOutcomeCallable;
       typedef std::future<DeletePatchBaselineOutcome> DeletePatchBaselineOutcomeCallable;
       typedef std::future<DeleteResourceDataSyncOutcome> DeleteResourceDataSyncOutcomeCallable;
+      typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
       typedef std::future<DeregisterManagedInstanceOutcome> DeregisterManagedInstanceOutcomeCallable;
       typedef std::future<DeregisterPatchBaselineForPatchGroupOutcome> DeregisterPatchBaselineForPatchGroupOutcomeCallable;
       typedef std::future<DeregisterTargetFromMaintenanceWindowOutcome> DeregisterTargetFromMaintenanceWindowOutcomeCallable;
@@ -552,6 +562,7 @@ namespace Aws
       typedef std::future<GetParametersByPathOutcome> GetParametersByPathOutcomeCallable;
       typedef std::future<GetPatchBaselineOutcome> GetPatchBaselineOutcomeCallable;
       typedef std::future<GetPatchBaselineForPatchGroupOutcome> GetPatchBaselineForPatchGroupOutcomeCallable;
+      typedef std::future<GetResourcePoliciesOutcome> GetResourcePoliciesOutcomeCallable;
       typedef std::future<GetServiceSettingOutcome> GetServiceSettingOutcomeCallable;
       typedef std::future<LabelParameterVersionOutcome> LabelParameterVersionOutcomeCallable;
       typedef std::future<ListAssociationVersionsOutcome> ListAssociationVersionsOutcomeCallable;
@@ -574,6 +585,7 @@ namespace Aws
       typedef std::future<PutComplianceItemsOutcome> PutComplianceItemsOutcomeCallable;
       typedef std::future<PutInventoryOutcome> PutInventoryOutcomeCallable;
       typedef std::future<PutParameterOutcome> PutParameterOutcomeCallable;
+      typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
       typedef std::future<RegisterDefaultPatchBaselineOutcome> RegisterDefaultPatchBaselineOutcomeCallable;
       typedef std::future<RegisterPatchBaselineForPatchGroupOutcome> RegisterPatchBaselineForPatchGroupOutcomeCallable;
       typedef std::future<RegisterTargetWithMaintenanceWindowOutcome> RegisterTargetWithMaintenanceWindowOutcomeCallable;
@@ -633,6 +645,7 @@ namespace Aws
     typedef std::function<void(const SSMClient*, const Model::DeleteParametersRequest&, const Model::DeleteParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteParametersResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeletePatchBaselineRequest&, const Model::DeletePatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePatchBaselineResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteResourceDataSyncRequest&, const Model::DeleteResourceDataSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceDataSyncResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeregisterManagedInstanceRequest&, const Model::DeregisterManagedInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterManagedInstanceResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeregisterPatchBaselineForPatchGroupRequest&, const Model::DeregisterPatchBaselineForPatchGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterPatchBaselineForPatchGroupResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeregisterTargetFromMaintenanceWindowRequest&, const Model::DeregisterTargetFromMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTargetFromMaintenanceWindowResponseReceivedHandler;
@@ -693,6 +706,7 @@ namespace Aws
     typedef std::function<void(const SSMClient*, const Model::GetParametersByPathRequest&, const Model::GetParametersByPathOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParametersByPathResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetPatchBaselineRequest&, const Model::GetPatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPatchBaselineResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetPatchBaselineForPatchGroupRequest&, const Model::GetPatchBaselineForPatchGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPatchBaselineForPatchGroupResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::GetResourcePoliciesRequest&, const Model::GetResourcePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePoliciesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetServiceSettingRequest&, const Model::GetServiceSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceSettingResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::LabelParameterVersionRequest&, const Model::LabelParameterVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LabelParameterVersionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListAssociationVersionsRequest&, const Model::ListAssociationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociationVersionsResponseReceivedHandler;
@@ -715,6 +729,7 @@ namespace Aws
     typedef std::function<void(const SSMClient*, const Model::PutComplianceItemsRequest&, const Model::PutComplianceItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutComplianceItemsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::PutInventoryRequest&, const Model::PutInventoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInventoryResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::PutParameterRequest&, const Model::PutParameterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutParameterResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::RegisterDefaultPatchBaselineRequest&, const Model::RegisterDefaultPatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDefaultPatchBaselineResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::RegisterPatchBaselineForPatchGroupRequest&, const Model::RegisterPatchBaselineForPatchGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterPatchBaselineForPatchGroupResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::RegisterTargetWithMaintenanceWindowRequest&, const Model::RegisterTargetWithMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTargetWithMaintenanceWindowResponseReceivedHandler;

@@ -133,7 +133,10 @@ namespace Model
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
      * modifies this value between the minimum and maximum values based on job queue
      * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
+     * support changing the desired number of vCPUs of an existing compute environment.
+     * Don't specify this parameter for compute environments using Amazon EKS
+     * clusters.</p> 
      */
     inline int GetDesiredvCpus() const{ return m_desiredvCpus; }
 
@@ -141,7 +144,10 @@ namespace Model
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
      * modifies this value between the minimum and maximum values based on job queue
      * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
+     * support changing the desired number of vCPUs of an existing compute environment.
+     * Don't specify this parameter for compute environments using Amazon EKS
+     * clusters.</p> 
      */
     inline bool DesiredvCpusHasBeenSet() const { return m_desiredvCpusHasBeenSet; }
 
@@ -149,7 +155,10 @@ namespace Model
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
      * modifies this value between the minimum and maximum values based on job queue
      * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
+     * support changing the desired number of vCPUs of an existing compute environment.
+     * Don't specify this parameter for compute environments using Amazon EKS
+     * clusters.</p> 
      */
     inline void SetDesiredvCpus(int value) { m_desiredvCpusHasBeenSet = true; m_desiredvCpus = value; }
 
@@ -157,7 +166,10 @@ namespace Model
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
      * modifies this value between the minimum and maximum values based on job queue
      * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
+     * support changing the desired number of vCPUs of an existing compute environment.
+     * Don't specify this parameter for compute environments using Amazon EKS
+     * clusters.</p> 
      */
     inline ComputeResourceUpdate& WithDesiredvCpus(int value) { SetDesiredvCpus(value); return *this;}
 

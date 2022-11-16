@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-incidents/model/PagerDutyIncidentDetail.h>
 #include <utility>
 
 namespace Aws
@@ -136,6 +137,37 @@ namespace Model
 
 
     /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline const PagerDutyIncidentDetail& GetPagerDutyIncidentDetail() const{ return m_pagerDutyIncidentDetail; }
+
+    /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline bool PagerDutyIncidentDetailHasBeenSet() const { return m_pagerDutyIncidentDetailHasBeenSet; }
+
+    /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline void SetPagerDutyIncidentDetail(const PagerDutyIncidentDetail& value) { m_pagerDutyIncidentDetailHasBeenSet = true; m_pagerDutyIncidentDetail = value; }
+
+    /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline void SetPagerDutyIncidentDetail(PagerDutyIncidentDetail&& value) { m_pagerDutyIncidentDetailHasBeenSet = true; m_pagerDutyIncidentDetail = std::move(value); }
+
+    /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline ItemValue& WithPagerDutyIncidentDetail(const PagerDutyIncidentDetail& value) { SetPagerDutyIncidentDetail(value); return *this;}
+
+    /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline ItemValue& WithPagerDutyIncidentDetail(PagerDutyIncidentDetail&& value) { SetPagerDutyIncidentDetail(std::move(value)); return *this;}
+
+
+    /**
      * <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
@@ -182,6 +214,9 @@ namespace Model
 
     Aws::String m_metricDefinition;
     bool m_metricDefinitionHasBeenSet = false;
+
+    PagerDutyIncidentDetail m_pagerDutyIncidentDetail;
+    bool m_pagerDutyIncidentDetailHasBeenSet = false;
 
     Aws::String m_url;
     bool m_urlHasBeenSet = false;

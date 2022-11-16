@@ -92,6 +92,12 @@ UpdatePricingRuleResult& UpdatePricingRuleResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("BillingEntity"))
+  {
+    m_billingEntity = jsonValue.GetString("BillingEntity");
+
+  }
+
 
 
   return *this;

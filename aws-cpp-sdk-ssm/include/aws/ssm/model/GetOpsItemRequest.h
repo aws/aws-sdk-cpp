@@ -74,10 +74,54 @@ namespace Model
      */
     inline GetOpsItemRequest& WithOpsItemId(const char* value) { SetOpsItemId(value); return *this;}
 
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline const Aws::String& GetOpsItemArn() const{ return m_opsItemArn; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline bool OpsItemArnHasBeenSet() const { return m_opsItemArnHasBeenSet; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(const Aws::String& value) { m_opsItemArnHasBeenSet = true; m_opsItemArn = value; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(Aws::String&& value) { m_opsItemArnHasBeenSet = true; m_opsItemArn = std::move(value); }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(const char* value) { m_opsItemArnHasBeenSet = true; m_opsItemArn.assign(value); }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline GetOpsItemRequest& WithOpsItemArn(const Aws::String& value) { SetOpsItemArn(value); return *this;}
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline GetOpsItemRequest& WithOpsItemArn(Aws::String&& value) { SetOpsItemArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline GetOpsItemRequest& WithOpsItemArn(const char* value) { SetOpsItemArn(value); return *this;}
+
   private:
 
     Aws::String m_opsItemId;
     bool m_opsItemIdHasBeenSet = false;
+
+    Aws::String m_opsItemArn;
+    bool m_opsItemArnHasBeenSet = false;
   };
 
 } // namespace Model

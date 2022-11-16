@@ -19,38 +19,38 @@ namespace Model
 {
 
 WorkspaceSummary::WorkspaceSummary() : 
+    m_workspaceIdHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_creationDateTimeHasBeenSet(false),
+    m_updateDateTimeHasBeenSet(false)
 {
 }
 
 WorkspaceSummary::WorkspaceSummary(JsonView jsonValue) : 
+    m_workspaceIdHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_creationDateTimeHasBeenSet(false),
+    m_updateDateTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("workspaceId"))
+  {
+    m_workspaceId = jsonValue.GetString("workspaceId");
+
+    m_workspaceIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
-    m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
-    m_creationDateTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -60,18 +60,18 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("creationDateTime"))
+  {
+    m_creationDateTime = jsonValue.GetDouble("creationDateTime");
+
+    m_creationDateTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("updateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("updateDateTime");
 
     m_updateDateTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("workspaceId"))
-  {
-    m_workspaceId = jsonValue.GetString("workspaceId");
-
-    m_workspaceIdHasBeenSet = true;
   }
 
   return *this;
@@ -81,15 +81,16 @@ JsonValue WorkspaceSummary::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_workspaceIdHasBeenSet)
+  {
+   payload.WithString("workspaceId", m_workspaceId);
+
+  }
+
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
 
-  }
-
-  if(m_creationDateTimeHasBeenSet)
-  {
-   payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
   if(m_descriptionHasBeenSet)
@@ -98,15 +99,14 @@ JsonValue WorkspaceSummary::Jsonize() const
 
   }
 
+  if(m_creationDateTimeHasBeenSet)
+  {
+   payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
+  }
+
   if(m_updateDateTimeHasBeenSet)
   {
    payload.WithDouble("updateDateTime", m_updateDateTime.SecondsWithMSPrecision());
-  }
-
-  if(m_workspaceIdHasBeenSet)
-  {
-   payload.WithString("workspaceId", m_workspaceId);
-
   }
 
   return payload;

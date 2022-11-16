@@ -99,6 +99,7 @@
 #include <aws/connect/model/ListUseCasesResult.h>
 #include <aws/connect/model/ListUserHierarchyGroupsResult.h>
 #include <aws/connect/model/ListUsersResult.h>
+#include <aws/connect/model/MonitorContactResult.h>
 #include <aws/connect/model/PutUserStatusResult.h>
 #include <aws/connect/model/ReplicateInstanceResult.h>
 #include <aws/connect/model/ResumeContactRecordingResult.h>
@@ -273,6 +274,7 @@ namespace Aws
       class ListUseCasesRequest;
       class ListUserHierarchyGroupsRequest;
       class ListUsersRequest;
+      class MonitorContactRequest;
       class PutUserStatusRequest;
       class ReleasePhoneNumberRequest;
       class ReplicateInstanceRequest;
@@ -438,6 +440,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListUseCasesResult, ConnectError> ListUseCasesOutcome;
       typedef Aws::Utils::Outcome<ListUserHierarchyGroupsResult, ConnectError> ListUserHierarchyGroupsOutcome;
       typedef Aws::Utils::Outcome<ListUsersResult, ConnectError> ListUsersOutcome;
+      typedef Aws::Utils::Outcome<MonitorContactResult, ConnectError> MonitorContactOutcome;
       typedef Aws::Utils::Outcome<PutUserStatusResult, ConnectError> PutUserStatusOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> ReleasePhoneNumberOutcome;
       typedef Aws::Utils::Outcome<ReplicateInstanceResult, ConnectError> ReplicateInstanceOutcome;
@@ -603,6 +606,7 @@ namespace Aws
       typedef std::future<ListUseCasesOutcome> ListUseCasesOutcomeCallable;
       typedef std::future<ListUserHierarchyGroupsOutcome> ListUserHierarchyGroupsOutcomeCallable;
       typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+      typedef std::future<MonitorContactOutcome> MonitorContactOutcomeCallable;
       typedef std::future<PutUserStatusOutcome> PutUserStatusOutcomeCallable;
       typedef std::future<ReleasePhoneNumberOutcome> ReleasePhoneNumberOutcomeCallable;
       typedef std::future<ReplicateInstanceOutcome> ReplicateInstanceOutcomeCallable;
@@ -771,6 +775,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::ListUseCasesRequest&, const Model::ListUseCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUseCasesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUserHierarchyGroupsRequest&, const Model::ListUserHierarchyGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserHierarchyGroupsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::MonitorContactRequest&, const Model::MonitorContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MonitorContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::PutUserStatusRequest&, const Model::PutUserStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutUserStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ReleasePhoneNumberRequest&, const Model::ReleasePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleasePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ReplicateInstanceRequest&, const Model::ReplicateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplicateInstanceResponseReceivedHandler;

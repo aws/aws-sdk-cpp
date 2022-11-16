@@ -233,6 +233,24 @@ namespace IoTTwinMaker
         virtual void DeleteWorkspaceAsync(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Run queries to access information from your knowledge graph of entities
+         * within individual workspaces.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExecuteQueryOutcome ExecuteQuery(const Model::ExecuteQueryRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExecuteQuery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExecuteQueryOutcomeCallable ExecuteQueryCallable(const Model::ExecuteQueryRequest& request) const;
+
+        /**
+         * An Async wrapper for ExecuteQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExecuteQueryAsync(const Model::ExecuteQueryRequest& request, const ExecuteQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves information about a component type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetComponentType">AWS
          * API Reference</a></p>
@@ -265,6 +283,23 @@ namespace IoTTwinMaker
          * An Async wrapper for GetEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEntityAsync(const Model::GetEntityRequest& request, const GetEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the pricing plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPricingPlanOutcome GetPricingPlan(const Model::GetPricingPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPricingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPricingPlanOutcomeCallable GetPricingPlanCallable(const Model::GetPricingPlanRequest& request) const;
+
+        /**
+         * An Async wrapper for GetPricingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPricingPlanAsync(const Model::GetPricingPlanRequest& request, const GetPricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the property values for a component, component type, entity, or
@@ -494,6 +529,23 @@ namespace IoTTwinMaker
          * An Async wrapper for UpdateEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateEntityAsync(const Model::UpdateEntityRequest& request, const UpdateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Update the pricing plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePricingPlanOutcome UpdatePricingPlan(const Model::UpdatePricingPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePricingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePricingPlanOutcomeCallable UpdatePricingPlanCallable(const Model::UpdatePricingPlanRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdatePricingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePricingPlanAsync(const Model::UpdatePricingPlanRequest& request, const UpdatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a scene.</p><p><h3>See Also:</h3>   <a
