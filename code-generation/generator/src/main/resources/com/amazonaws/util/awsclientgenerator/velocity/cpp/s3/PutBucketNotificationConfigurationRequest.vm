@@ -80,3 +80,4 @@ Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeader
   return headers;
 }
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")

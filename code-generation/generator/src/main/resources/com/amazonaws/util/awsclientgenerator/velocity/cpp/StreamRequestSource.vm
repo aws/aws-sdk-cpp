@@ -64,4 +64,5 @@ Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeader
 
 }
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")
