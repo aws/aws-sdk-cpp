@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetEntityRequest::GetEntityRequest() : 
-    m_entityIdHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_workspaceIdHasBeenSet(false),
+    m_entityIdHasBeenSet(false)
 {
 }
 

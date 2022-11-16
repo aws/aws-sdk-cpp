@@ -38,6 +38,7 @@ namespace Aws
         static const int HandlerInternalFailure_HASH = HashingUtils::HashString("HandlerInternalFailure");
         static const int NonCompliant_HASH = HashingUtils::HashString("NonCompliant");
         static const int Unknown_HASH = HashingUtils::HashString("Unknown");
+        static const int UnsupportedTarget_HASH = HashingUtils::HashString("UnsupportedTarget");
 
 
         HandlerErrorCode GetHandlerErrorCodeForName(const Aws::String& name)
@@ -115,6 +116,10 @@ namespace Aws
           {
             return HandlerErrorCode::Unknown;
           }
+          else if (hashCode == UnsupportedTarget_HASH)
+          {
+            return HandlerErrorCode::UnsupportedTarget;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -165,6 +170,8 @@ namespace Aws
             return "NonCompliant";
           case HandlerErrorCode::Unknown:
             return "Unknown";
+          case HandlerErrorCode::UnsupportedTarget:
+            return "UnsupportedTarget";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

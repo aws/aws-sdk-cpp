@@ -33,22 +33,67 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The ARN of the resource.</p>
+     */
+    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline ListTagsForResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline ListTagsForResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline ListTagsForResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline ListTagsForResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -93,57 +138,16 @@ namespace Model
      */
     inline ListTagsForResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>The ARN of the resource.</p>
-     */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-
-    /**
-     * <p>The ARN of the resource.</p>
-     */
-    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-
-    /**
-     * <p>The ARN of the resource.</p>
-     */
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-
-    /**
-     * <p>The ARN of the resource.</p>
-     */
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the resource.</p>
-     */
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-
-    /**
-     * <p>The ARN of the resource.</p>
-     */
-    inline ListTagsForResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the resource.</p>
-     */
-    inline ListTagsForResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the resource.</p>
-     */
-    inline ListTagsForResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
-
   private:
+
+    Aws::String m_resourceARN;
+    bool m_resourceARNHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet = false;
   };
 
 } // namespace Model

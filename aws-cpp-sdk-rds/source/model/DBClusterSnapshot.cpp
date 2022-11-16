@@ -47,7 +47,8 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_sourceDBClusterSnapshotArnHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_dBSystemIdHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) :
     m_sourceDBClusterSnapshotArnHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_dBSystemIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -233,6 +235,12 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
 
       m_tagListHasBeenSet = true;
     }
+    XmlNode dBSystemIdNode = resultNode.FirstChild("DBSystemId");
+    if(!dBSystemIdNode.IsNull())
+    {
+      m_dBSystemId = Aws::Utils::Xml::DecodeEscapedXmlText(dBSystemIdNode.GetText());
+      m_dBSystemIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -360,6 +368,11 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
       }
   }
 
+  if(m_dBSystemIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
+  }
+
 }
 
 void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -461,6 +474,10 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
         tagListSs << location <<  ".Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
+  }
+  if(m_dBSystemIdHasBeenSet)
+  {
+      oStream << location << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
   }
 }
 

@@ -30,6 +30,12 @@ UpdateComponentTypeResult::UpdateComponentTypeResult(const Aws::AmazonWebService
 UpdateComponentTypeResult& UpdateComponentTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("workspaceId"))
+  {
+    m_workspaceId = jsonValue.GetString("workspaceId");
+
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -45,12 +51,6 @@ UpdateComponentTypeResult& UpdateComponentTypeResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
-  }
-
-  if(jsonValue.ValueExists("workspaceId"))
-  {
-    m_workspaceId = jsonValue.GetString("workspaceId");
 
   }
 

@@ -33,47 +33,6 @@ namespace Model
 
 
     /**
-     * <p>The ID of the component type.</p>
-     */
-    inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline bool ComponentTypeIdHasBeenSet() const { return m_componentTypeIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline void SetComponentTypeId(const Aws::String& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = value; }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline void SetComponentTypeId(Aws::String&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::move(value); }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline void SetComponentTypeId(const char* value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId.assign(value); }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline GetComponentTypeRequest& WithComponentTypeId(const Aws::String& value) { SetComponentTypeId(value); return *this;}
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline GetComponentTypeRequest& WithComponentTypeId(Aws::String&& value) { SetComponentTypeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline GetComponentTypeRequest& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
-
-
-    /**
      * <p>The ID of the workspace that contains the component type.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
@@ -113,13 +72,54 @@ namespace Model
      */
     inline GetComponentTypeRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
-  private:
 
-    Aws::String m_componentTypeId;
-    bool m_componentTypeIdHasBeenSet = false;
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline bool ComponentTypeIdHasBeenSet() const { return m_componentTypeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline void SetComponentTypeId(const Aws::String& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = value; }
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline void SetComponentTypeId(Aws::String&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::move(value); }
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline void SetComponentTypeId(const char* value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId.assign(value); }
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline GetComponentTypeRequest& WithComponentTypeId(const Aws::String& value) { SetComponentTypeId(value); return *this;}
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline GetComponentTypeRequest& WithComponentTypeId(Aws::String&& value) { SetComponentTypeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline GetComponentTypeRequest& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
+
+  private:
 
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet = false;
+
+    Aws::String m_componentTypeId;
+    bool m_componentTypeIdHasBeenSet = false;
   };
 
 } // namespace Model

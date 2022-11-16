@@ -19,31 +19,33 @@ namespace Model
 {
 
 ComponentUpdateRequest::ComponentUpdateRequest() : 
-    m_componentTypeIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_propertyUpdatesHasBeenSet(false),
     m_updateType(ComponentUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false)
+    m_updateTypeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_componentTypeIdHasBeenSet(false),
+    m_propertyUpdatesHasBeenSet(false),
+    m_propertyGroupUpdatesHasBeenSet(false)
 {
 }
 
 ComponentUpdateRequest::ComponentUpdateRequest(JsonView jsonValue) : 
-    m_componentTypeIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_propertyUpdatesHasBeenSet(false),
     m_updateType(ComponentUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false)
+    m_updateTypeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_componentTypeIdHasBeenSet(false),
+    m_propertyUpdatesHasBeenSet(false),
+    m_propertyGroupUpdatesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ComponentUpdateRequest& ComponentUpdateRequest::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("componentTypeId"))
+  if(jsonValue.ValueExists("updateType"))
   {
-    m_componentTypeId = jsonValue.GetString("componentTypeId");
+    m_updateType = ComponentUpdateTypeMapper::GetComponentUpdateTypeForName(jsonValue.GetString("updateType"));
 
-    m_componentTypeIdHasBeenSet = true;
+    m_updateTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -51,6 +53,13 @@ ComponentUpdateRequest& ComponentUpdateRequest::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("componentTypeId"))
+  {
+    m_componentTypeId = jsonValue.GetString("componentTypeId");
+
+    m_componentTypeIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("propertyUpdates"))
@@ -63,11 +72,14 @@ ComponentUpdateRequest& ComponentUpdateRequest::operator =(JsonView jsonValue)
     m_propertyUpdatesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updateType"))
+  if(jsonValue.ValueExists("propertyGroupUpdates"))
   {
-    m_updateType = ComponentUpdateTypeMapper::GetComponentUpdateTypeForName(jsonValue.GetString("updateType"));
-
-    m_updateTypeHasBeenSet = true;
+    Aws::Map<Aws::String, JsonView> propertyGroupUpdatesJsonMap = jsonValue.GetObject("propertyGroupUpdates").GetAllObjects();
+    for(auto& propertyGroupUpdatesItem : propertyGroupUpdatesJsonMap)
+    {
+      m_propertyGroupUpdates[propertyGroupUpdatesItem.first] = propertyGroupUpdatesItem.second.AsObject();
+    }
+    m_propertyGroupUpdatesHasBeenSet = true;
   }
 
   return *this;
@@ -77,15 +89,20 @@ JsonValue ComponentUpdateRequest::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_componentTypeIdHasBeenSet)
+  if(m_updateTypeHasBeenSet)
   {
-   payload.WithString("componentTypeId", m_componentTypeId);
-
+   payload.WithString("updateType", ComponentUpdateTypeMapper::GetNameForComponentUpdateType(m_updateType));
   }
 
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_componentTypeIdHasBeenSet)
+  {
+   payload.WithString("componentTypeId", m_componentTypeId);
 
   }
 
@@ -100,9 +117,15 @@ JsonValue ComponentUpdateRequest::Jsonize() const
 
   }
 
-  if(m_updateTypeHasBeenSet)
+  if(m_propertyGroupUpdatesHasBeenSet)
   {
-   payload.WithString("updateType", ComponentUpdateTypeMapper::GetNameForComponentUpdateType(m_updateType));
+   JsonValue propertyGroupUpdatesJsonMap;
+   for(auto& propertyGroupUpdatesItem : m_propertyGroupUpdates)
+   {
+     propertyGroupUpdatesJsonMap.WithObject(propertyGroupUpdatesItem.first, propertyGroupUpdatesItem.second.Jsonize());
+   }
+   payload.WithObject("propertyGroupUpdates", std::move(propertyGroupUpdatesJsonMap));
+
   }
 
   return payload;

@@ -155,43 +155,61 @@ namespace Model
 
     /**
      * <p>The search criteria to be used to return security profiles. </p> 
-     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
-     * </p> 
+     * <p>The <code>name</code> field support "contains" queries with a minimum of 2
+     * characters and maximum of 25 characters. Any queries with character lengths
+     * outside of this range will throw invalid results.</p>   <p>The
+     * currently supported value for <code>FieldName</code>: <code>name</code> </p>
+     * 
      */
     inline const SecurityProfileSearchCriteria& GetSearchCriteria() const{ return m_searchCriteria; }
 
     /**
      * <p>The search criteria to be used to return security profiles. </p> 
-     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
-     * </p> 
+     * <p>The <code>name</code> field support "contains" queries with a minimum of 2
+     * characters and maximum of 25 characters. Any queries with character lengths
+     * outside of this range will throw invalid results.</p>   <p>The
+     * currently supported value for <code>FieldName</code>: <code>name</code> </p>
+     * 
      */
     inline bool SearchCriteriaHasBeenSet() const { return m_searchCriteriaHasBeenSet; }
 
     /**
      * <p>The search criteria to be used to return security profiles. </p> 
-     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
-     * </p> 
+     * <p>The <code>name</code> field support "contains" queries with a minimum of 2
+     * characters and maximum of 25 characters. Any queries with character lengths
+     * outside of this range will throw invalid results.</p>   <p>The
+     * currently supported value for <code>FieldName</code>: <code>name</code> </p>
+     * 
      */
     inline void SetSearchCriteria(const SecurityProfileSearchCriteria& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = value; }
 
     /**
      * <p>The search criteria to be used to return security profiles. </p> 
-     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
-     * </p> 
+     * <p>The <code>name</code> field support "contains" queries with a minimum of 2
+     * characters and maximum of 25 characters. Any queries with character lengths
+     * outside of this range will throw invalid results.</p>   <p>The
+     * currently supported value for <code>FieldName</code>: <code>name</code> </p>
+     * 
      */
     inline void SetSearchCriteria(SecurityProfileSearchCriteria&& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = std::move(value); }
 
     /**
      * <p>The search criteria to be used to return security profiles. </p> 
-     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
-     * </p> 
+     * <p>The <code>name</code> field support "contains" queries with a minimum of 2
+     * characters and maximum of 25 characters. Any queries with character lengths
+     * outside of this range will throw invalid results.</p>   <p>The
+     * currently supported value for <code>FieldName</code>: <code>name</code> </p>
+     * 
      */
     inline SearchSecurityProfilesRequest& WithSearchCriteria(const SecurityProfileSearchCriteria& value) { SetSearchCriteria(value); return *this;}
 
     /**
      * <p>The search criteria to be used to return security profiles. </p> 
-     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
-     * </p> 
+     * <p>The <code>name</code> field support "contains" queries with a minimum of 2
+     * characters and maximum of 25 characters. Any queries with character lengths
+     * outside of this range will throw invalid results.</p>   <p>The
+     * currently supported value for <code>FieldName</code>: <code>name</code> </p>
+     * 
      */
     inline SearchSecurityProfilesRequest& WithSearchCriteria(SecurityProfileSearchCriteria&& value) { SetSearchCriteria(std::move(value)); return *this;}
 

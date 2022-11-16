@@ -23,15 +23,15 @@ DataValue::DataValue() :
     m_booleanValueHasBeenSet(false),
     m_doubleValue(0.0),
     m_doubleValueHasBeenSet(false),
-    m_expressionHasBeenSet(false),
     m_integerValue(0),
     m_integerValueHasBeenSet(false),
-    m_listValueHasBeenSet(false),
     m_longValue(0),
     m_longValueHasBeenSet(false),
+    m_stringValueHasBeenSet(false),
+    m_listValueHasBeenSet(false),
     m_mapValueHasBeenSet(false),
     m_relationshipValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
+    m_expressionHasBeenSet(false)
 {
 }
 
@@ -40,15 +40,15 @@ DataValue::DataValue(JsonView jsonValue) :
     m_booleanValueHasBeenSet(false),
     m_doubleValue(0.0),
     m_doubleValueHasBeenSet(false),
-    m_expressionHasBeenSet(false),
     m_integerValue(0),
     m_integerValueHasBeenSet(false),
-    m_listValueHasBeenSet(false),
     m_longValue(0),
     m_longValueHasBeenSet(false),
+    m_stringValueHasBeenSet(false),
+    m_listValueHasBeenSet(false),
     m_mapValueHasBeenSet(false),
     m_relationshipValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
+    m_expressionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,18 +69,25 @@ DataValue& DataValue::operator =(JsonView jsonValue)
     m_doubleValueHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("expression"))
-  {
-    m_expression = jsonValue.GetString("expression");
-
-    m_expressionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("integerValue"))
   {
     m_integerValue = jsonValue.GetInteger("integerValue");
 
     m_integerValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("longValue"))
+  {
+    m_longValue = jsonValue.GetInt64("longValue");
+
+    m_longValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stringValue"))
+  {
+    m_stringValue = jsonValue.GetString("stringValue");
+
+    m_stringValueHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("listValue"))
@@ -91,13 +98,6 @@ DataValue& DataValue::operator =(JsonView jsonValue)
       m_listValue.push_back(listValueJsonList[listValueIndex].AsObject());
     }
     m_listValueHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("longValue"))
-  {
-    m_longValue = jsonValue.GetInt64("longValue");
-
-    m_longValueHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("mapValue"))
@@ -117,11 +117,11 @@ DataValue& DataValue::operator =(JsonView jsonValue)
     m_relationshipValueHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("stringValue"))
+  if(jsonValue.ValueExists("expression"))
   {
-    m_stringValue = jsonValue.GetString("stringValue");
+    m_expression = jsonValue.GetString("expression");
 
-    m_stringValueHasBeenSet = true;
+    m_expressionHasBeenSet = true;
   }
 
   return *this;
@@ -143,15 +143,21 @@ JsonValue DataValue::Jsonize() const
 
   }
 
-  if(m_expressionHasBeenSet)
-  {
-   payload.WithString("expression", m_expression);
-
-  }
-
   if(m_integerValueHasBeenSet)
   {
    payload.WithInteger("integerValue", m_integerValue);
+
+  }
+
+  if(m_longValueHasBeenSet)
+  {
+   payload.WithInt64("longValue", m_longValue);
+
+  }
+
+  if(m_stringValueHasBeenSet)
+  {
+   payload.WithString("stringValue", m_stringValue);
 
   }
 
@@ -163,12 +169,6 @@ JsonValue DataValue::Jsonize() const
      listValueJsonList[listValueIndex].AsObject(m_listValue[listValueIndex].Jsonize());
    }
    payload.WithArray("listValue", std::move(listValueJsonList));
-
-  }
-
-  if(m_longValueHasBeenSet)
-  {
-   payload.WithInt64("longValue", m_longValue);
 
   }
 
@@ -189,9 +189,9 @@ JsonValue DataValue::Jsonize() const
 
   }
 
-  if(m_stringValueHasBeenSet)
+  if(m_expressionHasBeenSet)
   {
-   payload.WithString("stringValue", m_stringValue);
+   payload.WithString("expression", m_expression);
 
   }
 

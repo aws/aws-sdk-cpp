@@ -16,7 +16,8 @@ ModifyUserRequest::ModifyUserRequest() :
     m_appendAccessStringHasBeenSet(false),
     m_passwordsHasBeenSet(false),
     m_noPasswordRequired(false),
-    m_noPasswordRequiredHasBeenSet(false)
+    m_noPasswordRequiredHasBeenSet(false),
+    m_authenticationModeHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,11 @@ Aws::String ModifyUserRequest::SerializePayload() const
   if(m_noPasswordRequiredHasBeenSet)
   {
     ss << "NoPasswordRequired=" << std::boolalpha << m_noPasswordRequired << "&";
+  }
+
+  if(m_authenticationModeHasBeenSet)
+  {
+    m_authenticationMode.OutputToStream(ss, "AuthenticationMode");
   }
 
   ss << "Version=2015-02-02";

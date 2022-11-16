@@ -29,7 +29,8 @@ UpdateOpsItemRequest::UpdateOpsItemRequest() :
     m_actualStartTimeHasBeenSet(false),
     m_actualEndTimeHasBeenSet(false),
     m_plannedStartTimeHasBeenSet(false),
-    m_plannedEndTimeHasBeenSet(false)
+    m_plannedEndTimeHasBeenSet(false),
+    m_opsItemArnHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,12 @@ Aws::String UpdateOpsItemRequest::SerializePayload() const
   if(m_plannedEndTimeHasBeenSet)
   {
    payload.WithDouble("PlannedEndTime", m_plannedEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_opsItemArnHasBeenSet)
+  {
+   payload.WithString("OpsItemArn", m_opsItemArn);
+
   }
 
   return payload.View().WriteReadable();

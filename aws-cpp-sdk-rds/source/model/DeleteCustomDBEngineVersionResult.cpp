@@ -226,6 +226,11 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator =
     {
       m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
     }
+    XmlNode customDBEngineVersionManifestNode = resultNode.FirstChild("CustomDBEngineVersionManifest");
+    if(!customDBEngineVersionManifestNode.IsNull())
+    {
+      m_customDBEngineVersionManifest = Aws::Utils::Xml::DecodeEscapedXmlText(customDBEngineVersionManifestNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

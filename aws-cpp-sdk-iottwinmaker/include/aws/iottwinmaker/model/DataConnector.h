@@ -38,31 +38,6 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that specifies whether the data connector is native to IoT
-     * TwinMaker.</p>
-     */
-    inline bool GetIsNative() const{ return m_isNative; }
-
-    /**
-     * <p>A Boolean value that specifies whether the data connector is native to IoT
-     * TwinMaker.</p>
-     */
-    inline bool IsNativeHasBeenSet() const { return m_isNativeHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that specifies whether the data connector is native to IoT
-     * TwinMaker.</p>
-     */
-    inline void SetIsNative(bool value) { m_isNativeHasBeenSet = true; m_isNative = value; }
-
-    /**
-     * <p>A Boolean value that specifies whether the data connector is native to IoT
-     * TwinMaker.</p>
-     */
-    inline DataConnector& WithIsNative(bool value) { SetIsNative(value); return *this;}
-
-
-    /**
      * <p>The Lambda function associated with this data connector.</p>
      */
     inline const LambdaFunction& GetLambda() const{ return m_lambda; }
@@ -92,13 +67,38 @@ namespace Model
      */
     inline DataConnector& WithLambda(LambdaFunction&& value) { SetLambda(std::move(value)); return *this;}
 
-  private:
 
-    bool m_isNative;
-    bool m_isNativeHasBeenSet = false;
+    /**
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
+     * TwinMaker.</p>
+     */
+    inline bool GetIsNative() const{ return m_isNative; }
+
+    /**
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
+     * TwinMaker.</p>
+     */
+    inline bool IsNativeHasBeenSet() const { return m_isNativeHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
+     * TwinMaker.</p>
+     */
+    inline void SetIsNative(bool value) { m_isNativeHasBeenSet = true; m_isNative = value; }
+
+    /**
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
+     * TwinMaker.</p>
+     */
+    inline DataConnector& WithIsNative(bool value) { SetIsNative(value); return *this;}
+
+  private:
 
     LambdaFunction m_lambda;
     bool m_lambdaHasBeenSet = false;
+
+    bool m_isNative;
+    bool m_isNativeHasBeenSet = false;
   };
 
 } // namespace Model

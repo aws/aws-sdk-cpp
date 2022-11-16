@@ -19,22 +19,22 @@ namespace Model
 {
 
 DataType::DataType() : 
-    m_allowedValuesHasBeenSet(false),
-    m_nestedTypeHasBeenSet(false),
-    m_relationshipHasBeenSet(false),
     m_type(Type::NOT_SET),
     m_typeHasBeenSet(false),
-    m_unitOfMeasureHasBeenSet(false)
+    m_nestedTypeHasBeenSet(false),
+    m_allowedValuesHasBeenSet(false),
+    m_unitOfMeasureHasBeenSet(false),
+    m_relationshipHasBeenSet(false)
 {
 }
 
 DataType::DataType(JsonView jsonValue) : 
-    m_allowedValuesHasBeenSet(false),
-    m_nestedTypeHasBeenSet(false),
-    m_relationshipHasBeenSet(false),
     m_type(Type::NOT_SET),
     m_typeHasBeenSet(false),
-    m_unitOfMeasureHasBeenSet(false)
+    m_nestedTypeHasBeenSet(false),
+    m_allowedValuesHasBeenSet(false),
+    m_unitOfMeasureHasBeenSet(false),
+    m_relationshipHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +48,20 @@ DataType& DataType::WithNestedType(DataType&& value) { SetNestedType(std::move(v
 
 DataType& DataType::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("nestedType"))
+  {
+    m_nestedType = Aws::MakeShared<DataType>("DataType", jsonValue.GetObject("nestedType"));
+
+    m_nestedTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("allowedValues"))
   {
     Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
@@ -58,11 +72,11 @@ DataType& DataType::operator =(JsonView jsonValue)
     m_allowedValuesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("nestedType"))
+  if(jsonValue.ValueExists("unitOfMeasure"))
   {
-    m_nestedType = Aws::MakeShared<DataType>("DataType", jsonValue.GetObject("nestedType"));
+    m_unitOfMeasure = jsonValue.GetString("unitOfMeasure");
 
-    m_nestedTypeHasBeenSet = true;
+    m_unitOfMeasureHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("relationship"))
@@ -72,26 +86,23 @@ DataType& DataType::operator =(JsonView jsonValue)
     m_relationshipHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
-
-    m_typeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("unitOfMeasure"))
-  {
-    m_unitOfMeasure = jsonValue.GetString("unitOfMeasure");
-
-    m_unitOfMeasureHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue DataType::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", TypeMapper::GetNameForType(m_type));
+  }
+
+  if(m_nestedTypeHasBeenSet)
+  {
+   payload.WithObject("nestedType", m_nestedType->Jsonize());
+
+  }
 
   if(m_allowedValuesHasBeenSet)
   {
@@ -104,26 +115,15 @@ JsonValue DataType::Jsonize() const
 
   }
 
-  if(m_nestedTypeHasBeenSet)
+  if(m_unitOfMeasureHasBeenSet)
   {
-   payload.WithObject("nestedType", m_nestedType->Jsonize());
+   payload.WithString("unitOfMeasure", m_unitOfMeasure);
 
   }
 
   if(m_relationshipHasBeenSet)
   {
    payload.WithObject("relationship", m_relationship.Jsonize());
-
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", TypeMapper::GetNameForType(m_type));
-  }
-
-  if(m_unitOfMeasureHasBeenSet)
-  {
-   payload.WithString("unitOfMeasure", m_unitOfMeasure);
 
   }
 

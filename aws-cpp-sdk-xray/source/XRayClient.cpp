@@ -25,6 +25,7 @@
 #include <aws/xray/model/CreateGroupRequest.h>
 #include <aws/xray/model/CreateSamplingRuleRequest.h>
 #include <aws/xray/model/DeleteGroupRequest.h>
+#include <aws/xray/model/DeleteResourcePolicyRequest.h>
 #include <aws/xray/model/DeleteSamplingRuleRequest.h>
 #include <aws/xray/model/GetEncryptionConfigRequest.h>
 #include <aws/xray/model/GetGroupRequest.h>
@@ -40,8 +41,10 @@
 #include <aws/xray/model/GetTimeSeriesServiceStatisticsRequest.h>
 #include <aws/xray/model/GetTraceGraphRequest.h>
 #include <aws/xray/model/GetTraceSummariesRequest.h>
+#include <aws/xray/model/ListResourcePoliciesRequest.h>
 #include <aws/xray/model/ListTagsForResourceRequest.h>
 #include <aws/xray/model/PutEncryptionConfigRequest.h>
+#include <aws/xray/model/PutResourcePolicyRequest.h>
 #include <aws/xray/model/PutTelemetryRecordsRequest.h>
 #include <aws/xray/model/PutTraceSegmentsRequest.h>
 #include <aws/xray/model/TagResourceRequest.h>
@@ -273,6 +276,31 @@ void XRayClient::DeleteGroupAsync(const DeleteGroupRequest& request, const Delet
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteGroup(request), context);
+    } );
+}
+
+DeleteResourcePolicyOutcome XRayClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteResourcePolicy");
+  return DeleteResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteResourcePolicyOutcomeCallable XRayClient::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void XRayClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteResourcePolicy(request), context);
     } );
 }
 
@@ -651,6 +679,31 @@ void XRayClient::GetTraceSummariesAsync(const GetTraceSummariesRequest& request,
     } );
 }
 
+ListResourcePoliciesOutcome XRayClient::ListResourcePolicies(const ListResourcePoliciesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourcePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourcePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListResourcePolicies");
+  return ListResourcePoliciesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListResourcePoliciesOutcomeCallable XRayClient::ListResourcePoliciesCallable(const ListResourcePoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourcePoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourcePolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void XRayClient::ListResourcePoliciesAsync(const ListResourcePoliciesRequest& request, const ListResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResourcePolicies(request), context);
+    } );
+}
+
 ListTagsForResourceOutcome XRayClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -698,6 +751,31 @@ void XRayClient::PutEncryptionConfigAsync(const PutEncryptionConfigRequest& requ
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutEncryptionConfig(request), context);
+    } );
+}
+
+PutResourcePolicyOutcome XRayClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/PutResourcePolicy");
+  return PutResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutResourcePolicyOutcomeCallable XRayClient::PutResourcePolicyCallable(const PutResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void XRayClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutResourcePolicy(request), context);
     } );
 }
 

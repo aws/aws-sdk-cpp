@@ -310,6 +310,49 @@ namespace Model
      */
     inline UpdatePricingRuleResult& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline const Aws::String& GetBillingEntity() const{ return m_billingEntity; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const Aws::String& value) { m_billingEntity = value; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(Aws::String&& value) { m_billingEntity = std::move(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const char* value) { m_billingEntity.assign(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline UpdatePricingRuleResult& WithBillingEntity(const Aws::String& value) { SetBillingEntity(value); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline UpdatePricingRuleResult& WithBillingEntity(Aws::String&& value) { SetBillingEntity(std::move(value)); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline UpdatePricingRuleResult& WithBillingEntity(const char* value) { SetBillingEntity(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -329,6 +372,8 @@ namespace Model
     long long m_associatedPricingPlanCount;
 
     long long m_lastModifiedTime;
+
+    Aws::String m_billingEntity;
   };
 
 } // namespace Model

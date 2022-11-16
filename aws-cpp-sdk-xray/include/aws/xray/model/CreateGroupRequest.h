@@ -129,7 +129,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */
@@ -139,7 +139,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */
@@ -149,7 +149,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */
@@ -159,7 +159,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */
@@ -169,7 +169,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */
@@ -179,7 +179,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */

@@ -370,6 +370,55 @@ namespace Model
      */
     inline PricingRuleListElement& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline const Aws::String& GetBillingEntity() const{ return m_billingEntity; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline bool BillingEntityHasBeenSet() const { return m_billingEntityHasBeenSet; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const Aws::String& value) { m_billingEntityHasBeenSet = true; m_billingEntity = value; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(Aws::String&& value) { m_billingEntityHasBeenSet = true; m_billingEntity = std::move(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const char* value) { m_billingEntityHasBeenSet = true; m_billingEntity.assign(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline PricingRuleListElement& WithBillingEntity(const Aws::String& value) { SetBillingEntity(value); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline PricingRuleListElement& WithBillingEntity(Aws::String&& value) { SetBillingEntity(std::move(value)); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline PricingRuleListElement& WithBillingEntity(const char* value) { SetBillingEntity(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -401,6 +450,9 @@ namespace Model
 
     long long m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet = false;
+
+    Aws::String m_billingEntity;
+    bool m_billingEntityHasBeenSet = false;
   };
 
 } // namespace Model

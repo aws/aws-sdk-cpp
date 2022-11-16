@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetComponentTypeRequest::GetComponentTypeRequest() : 
-    m_componentTypeIdHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_workspaceIdHasBeenSet(false),
+    m_componentTypeIdHasBeenSet(false)
 {
 }
 

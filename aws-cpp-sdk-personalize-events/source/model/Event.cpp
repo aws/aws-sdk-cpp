@@ -27,7 +27,8 @@ Event::Event() :
     m_propertiesHasBeenSet(false),
     m_sentAtHasBeenSet(false),
     m_recommendationIdHasBeenSet(false),
-    m_impressionHasBeenSet(false)
+    m_impressionHasBeenSet(false),
+    m_metricAttributionHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Event::Event(JsonView jsonValue) :
     m_propertiesHasBeenSet(false),
     m_sentAtHasBeenSet(false),
     m_recommendationIdHasBeenSet(false),
-    m_impressionHasBeenSet(false)
+    m_impressionHasBeenSet(false),
+    m_metricAttributionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +108,13 @@ Event& Event::operator =(JsonView jsonValue)
     m_impressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("metricAttribution"))
+  {
+    m_metricAttribution = jsonValue.GetObject("metricAttribution");
+
+    m_metricAttributionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -162,6 +171,12 @@ JsonValue Event::Jsonize() const
      impressionJsonList[impressionIndex].AsString(m_impression[impressionIndex]);
    }
    payload.WithArray("impression", std::move(impressionJsonList));
+
+  }
+
+  if(m_metricAttributionHasBeenSet)
+  {
+   payload.WithObject("metricAttribution", m_metricAttribution.Jsonize());
 
   }
 

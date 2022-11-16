@@ -12,6 +12,7 @@
 #include <aws/ssm-incidents/model/IncidentTemplate.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm-incidents/model/Action.h>
+#include <aws/ssm-incidents/model/Integration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -295,6 +296,47 @@ namespace Model
 
 
     /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline const Aws::Vector<Integration>& GetIntegrations() const{ return m_integrations; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline bool IntegrationsHasBeenSet() const { return m_integrationsHasBeenSet; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline void SetIntegrations(const Aws::Vector<Integration>& value) { m_integrationsHasBeenSet = true; m_integrations = value; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline void SetIntegrations(Aws::Vector<Integration>&& value) { m_integrationsHasBeenSet = true; m_integrations = std::move(value); }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline CreateResponsePlanRequest& WithIntegrations(const Aws::Vector<Integration>& value) { SetIntegrations(value); return *this;}
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline CreateResponsePlanRequest& WithIntegrations(Aws::Vector<Integration>&& value) { SetIntegrations(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline CreateResponsePlanRequest& AddIntegrations(const Integration& value) { m_integrationsHasBeenSet = true; m_integrations.push_back(value); return *this; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline CreateResponsePlanRequest& AddIntegrations(Integration&& value) { m_integrationsHasBeenSet = true; m_integrations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The short format name of the response plan. Can't include spaces.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -419,6 +461,9 @@ namespace Model
 
     IncidentTemplate m_incidentTemplate;
     bool m_incidentTemplateHasBeenSet = false;
+
+    Aws::Vector<Integration> m_integrations;
+    bool m_integrationsHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

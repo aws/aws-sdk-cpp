@@ -28,12 +28,6 @@ GetPropertyValueHistoryResult::GetPropertyValueHistoryResult(const Aws::AmazonWe
 GetPropertyValueHistoryResult& GetPropertyValueHistoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("propertyValues"))
   {
     Aws::Utils::Array<JsonView> propertyValuesJsonList = jsonValue.GetArray("propertyValues");
@@ -41,6 +35,12 @@ GetPropertyValueHistoryResult& GetPropertyValueHistoryResult::operator =(const A
     {
       m_propertyValues.push_back(propertyValuesJsonList[propertyValuesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

@@ -19,34 +19,34 @@ namespace Model
 {
 
 Status::Status() : 
-    m_errorHasBeenSet(false),
     m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
 Status::Status(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
     m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Status& Status::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("error"))
-  {
-    m_error = jsonValue.GetObject("error");
-
-    m_errorHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
 
     m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("error"))
+  {
+    m_error = jsonValue.GetObject("error");
+
+    m_errorHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +56,15 @@ JsonValue Status::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("state", StateMapper::GetNameForState(m_state));
+  }
+
   if(m_errorHasBeenSet)
   {
    payload.WithObject("error", m_error.Jsonize());
 
-  }
-
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", StateMapper::GetNameForState(m_state));
   }
 
   return payload;

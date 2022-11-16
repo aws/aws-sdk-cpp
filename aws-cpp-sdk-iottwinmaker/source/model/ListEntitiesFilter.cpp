@@ -19,22 +19,29 @@ namespace Model
 {
 
 ListEntitiesFilter::ListEntitiesFilter() : 
+    m_parentEntityIdHasBeenSet(false),
     m_componentTypeIdHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_parentEntityIdHasBeenSet(false)
+    m_externalIdHasBeenSet(false)
 {
 }
 
 ListEntitiesFilter::ListEntitiesFilter(JsonView jsonValue) : 
+    m_parentEntityIdHasBeenSet(false),
     m_componentTypeIdHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_parentEntityIdHasBeenSet(false)
+    m_externalIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ListEntitiesFilter& ListEntitiesFilter::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("parentEntityId"))
+  {
+    m_parentEntityId = jsonValue.GetString("parentEntityId");
+
+    m_parentEntityIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("componentTypeId"))
   {
     m_componentTypeId = jsonValue.GetString("componentTypeId");
@@ -49,19 +56,18 @@ ListEntitiesFilter& ListEntitiesFilter::operator =(JsonView jsonValue)
     m_externalIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("parentEntityId"))
-  {
-    m_parentEntityId = jsonValue.GetString("parentEntityId");
-
-    m_parentEntityIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue ListEntitiesFilter::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_parentEntityIdHasBeenSet)
+  {
+   payload.WithString("parentEntityId", m_parentEntityId);
+
+  }
 
   if(m_componentTypeIdHasBeenSet)
   {
@@ -72,12 +78,6 @@ JsonValue ListEntitiesFilter::Jsonize() const
   if(m_externalIdHasBeenSet)
   {
    payload.WithString("externalId", m_externalId);
-
-  }
-
-  if(m_parentEntityIdHasBeenSet)
-  {
-   payload.WithString("parentEntityId", m_parentEntityId);
 
   }
 

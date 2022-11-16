@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
-#include <aws/iottwinmaker/model/State.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iottwinmaker/model/State.h>
 #include <utility>
 
 namespace Aws
@@ -34,32 +34,6 @@ namespace Model
 
 
     /**
-     * <p>The current state of the entity update.</p>
-     */
-    inline const State& GetState() const{ return m_state; }
-
-    /**
-     * <p>The current state of the entity update.</p>
-     */
-    inline void SetState(const State& value) { m_state = value; }
-
-    /**
-     * <p>The current state of the entity update.</p>
-     */
-    inline void SetState(State&& value) { m_state = std::move(value); }
-
-    /**
-     * <p>The current state of the entity update.</p>
-     */
-    inline UpdateEntityResult& WithState(const State& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The current state of the entity update.</p>
-     */
-    inline UpdateEntityResult& WithState(State&& value) { SetState(std::move(value)); return *this;}
-
-
-    /**
      * <p>The date and time when the entity was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
@@ -84,11 +58,37 @@ namespace Model
      */
     inline UpdateEntityResult& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The current state of the entity update.</p>
+     */
+    inline const State& GetState() const{ return m_state; }
+
+    /**
+     * <p>The current state of the entity update.</p>
+     */
+    inline void SetState(const State& value) { m_state = value; }
+
+    /**
+     * <p>The current state of the entity update.</p>
+     */
+    inline void SetState(State&& value) { m_state = std::move(value); }
+
+    /**
+     * <p>The current state of the entity update.</p>
+     */
+    inline UpdateEntityResult& WithState(const State& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The current state of the entity update.</p>
+     */
+    inline UpdateEntityResult& WithState(State&& value) { SetState(std::move(value)); return *this;}
+
   private:
 
-    State m_state;
-
     Aws::Utils::DateTime m_updateDateTime;
+
+    State m_state;
   };
 
 } // namespace Model

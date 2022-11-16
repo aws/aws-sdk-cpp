@@ -26,6 +26,7 @@ namespace Aws
         static const int TEST_TREATMENT_PROCEDURE_HASH = HashingUtils::HashString("TEST_TREATMENT_PROCEDURE");
         static const int ANATOMY_HASH = HashingUtils::HashString("ANATOMY");
         static const int TIME_EXPRESSION_HASH = HashingUtils::HashString("TIME_EXPRESSION");
+        static const int BEHAVIORAL_ENVIRONMENTAL_SOCIAL_HASH = HashingUtils::HashString("BEHAVIORAL_ENVIRONMENTAL_SOCIAL");
 
 
         EntityType GetEntityTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return EntityType::TIME_EXPRESSION;
           }
+          else if (hashCode == BEHAVIORAL_ENVIRONMENTAL_SOCIAL_HASH)
+          {
+            return EntityType::BEHAVIORAL_ENVIRONMENTAL_SOCIAL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "ANATOMY";
           case EntityType::TIME_EXPRESSION:
             return "TIME_EXPRESSION";
+          case EntityType::BEHAVIORAL_ENVIRONMENTAL_SOCIAL:
+            return "BEHAVIORAL_ENVIRONMENTAL_SOCIAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

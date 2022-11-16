@@ -33,47 +33,6 @@ namespace Model
 
 
     /**
-     * <p>The ID of the entity.</p>
-     */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline GetEntityRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline GetEntityRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline GetEntityRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
-
-
-    /**
      * <p>The ID of the workspace.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
@@ -113,13 +72,54 @@ namespace Model
      */
     inline GetEntityRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
-  private:
 
-    Aws::String m_entityId;
-    bool m_entityIdHasBeenSet = false;
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline GetEntityRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline GetEntityRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline GetEntityRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+
+  private:
 
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet = false;
+
+    Aws::String m_entityId;
+    bool m_entityIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,12 +13,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateEntityRequest::UpdateEntityRequest() : 
-    m_componentUpdatesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_workspaceIdHasBeenSet(false),
     m_entityIdHasBeenSet(false),
     m_entityNameHasBeenSet(false),
-    m_parentEntityUpdateHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_componentUpdatesHasBeenSet(false),
+    m_parentEntityUpdateHasBeenSet(false)
 {
 }
 
@@ -26,14 +26,9 @@ Aws::String UpdateEntityRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_componentUpdatesHasBeenSet)
+  if(m_entityNameHasBeenSet)
   {
-   JsonValue componentUpdatesJsonMap;
-   for(auto& componentUpdatesItem : m_componentUpdates)
-   {
-     componentUpdatesJsonMap.WithObject(componentUpdatesItem.first, componentUpdatesItem.second.Jsonize());
-   }
-   payload.WithObject("componentUpdates", std::move(componentUpdatesJsonMap));
+   payload.WithString("entityName", m_entityName);
 
   }
 
@@ -43,9 +38,14 @@ Aws::String UpdateEntityRequest::SerializePayload() const
 
   }
 
-  if(m_entityNameHasBeenSet)
+  if(m_componentUpdatesHasBeenSet)
   {
-   payload.WithString("entityName", m_entityName);
+   JsonValue componentUpdatesJsonMap;
+   for(auto& componentUpdatesItem : m_componentUpdates)
+   {
+     componentUpdatesJsonMap.WithObject(componentUpdatesItem.first, componentUpdatesItem.second.Jsonize());
+   }
+   payload.WithObject("componentUpdates", std::move(componentUpdatesJsonMap));
 
   }
 

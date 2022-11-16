@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/iottwinmaker/IoTTwinMakerRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iottwinmaker/model/ListEntitiesFilter.h>
 #include <utility>
 
@@ -32,6 +32,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "ListEntities"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline ListEntitiesRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline ListEntitiesRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workspace.</p>
+     */
+    inline ListEntitiesRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
 
     /**
@@ -84,22 +125,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to display.</p>
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
      */
     inline ListEntitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -144,48 +189,10 @@ namespace Model
      */
     inline ListEntitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline ListEntitiesRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline ListEntitiesRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace.</p>
-     */
-    inline ListEntitiesRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
   private:
+
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::Vector<ListEntitiesFilter> m_filters;
     bool m_filtersHasBeenSet = false;
@@ -195,9 +202,6 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

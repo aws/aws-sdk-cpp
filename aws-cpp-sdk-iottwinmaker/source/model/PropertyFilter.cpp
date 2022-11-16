@@ -19,15 +19,15 @@ namespace Model
 {
 
 PropertyFilter::PropertyFilter() : 
-    m_operatorHasBeenSet(false),
     m_propertyNameHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 PropertyFilter::PropertyFilter(JsonView jsonValue) : 
-    m_operatorHasBeenSet(false),
     m_propertyNameHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
@@ -35,18 +35,18 @@ PropertyFilter::PropertyFilter(JsonView jsonValue) :
 
 PropertyFilter& PropertyFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("operator"))
-  {
-    m_operator = jsonValue.GetString("operator");
-
-    m_operatorHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("propertyName"))
   {
     m_propertyName = jsonValue.GetString("propertyName");
 
     m_propertyNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("operator"))
+  {
+    m_operator = jsonValue.GetString("operator");
+
+    m_operatorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("value"))
@@ -63,15 +63,15 @@ JsonValue PropertyFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_operatorHasBeenSet)
-  {
-   payload.WithString("operator", m_operator);
-
-  }
-
   if(m_propertyNameHasBeenSet)
   {
    payload.WithString("propertyName", m_propertyName);
+
+  }
+
+  if(m_operatorHasBeenSet)
+  {
+   payload.WithString("operator", m_operator);
 
   }
 

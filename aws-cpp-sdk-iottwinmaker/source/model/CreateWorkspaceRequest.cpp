@@ -13,11 +13,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateWorkspaceRequest::CreateWorkspaceRequest() : 
+    m_workspaceIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_roleHasBeenSet(false),
     m_s3LocationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_roleHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -31,15 +31,15 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const
 
   }
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("role", m_role);
-
-  }
-
   if(m_s3LocationHasBeenSet)
   {
    payload.WithString("s3Location", m_s3Location);
+
+  }
+
+  if(m_roleHasBeenSet)
+  {
+   payload.WithString("role", m_role);
 
   }
 

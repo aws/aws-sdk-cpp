@@ -13,9 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateWorkspaceRequest::UpdateWorkspaceRequest() : 
+    m_workspaceIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_roleHasBeenSet(false)
 {
 }
 

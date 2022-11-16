@@ -978,6 +978,47 @@ namespace Model
      */
     inline UpdateOpsItemRequest& WithPlannedEndTime(Aws::Utils::DateTime&& value) { SetPlannedEndTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline const Aws::String& GetOpsItemArn() const{ return m_opsItemArn; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline bool OpsItemArnHasBeenSet() const { return m_opsItemArnHasBeenSet; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(const Aws::String& value) { m_opsItemArnHasBeenSet = true; m_opsItemArn = value; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(Aws::String&& value) { m_opsItemArnHasBeenSet = true; m_opsItemArn = std::move(value); }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(const char* value) { m_opsItemArnHasBeenSet = true; m_opsItemArn.assign(value); }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline UpdateOpsItemRequest& WithOpsItemArn(const Aws::String& value) { SetOpsItemArn(value); return *this;}
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline UpdateOpsItemRequest& WithOpsItemArn(Aws::String&& value) { SetOpsItemArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline UpdateOpsItemRequest& WithOpsItemArn(const char* value) { SetOpsItemArn(value); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -1024,6 +1065,9 @@ namespace Model
 
     Aws::Utils::DateTime m_plannedEndTime;
     bool m_plannedEndTimeHasBeenSet = false;
+
+    Aws::String m_opsItemArn;
+    bool m_opsItemArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,8 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>The search criteria to be used to return routing profiles.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The search criteria to be used to return routing profiles.</p>  <p>The
+   * <code>name</code> and <code>description</code> fields support "contains" queries
+   * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+   * character lengths outside of this range will throw invalid results. </p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingProfileSearchCriteria">AWS
    * API Reference</a></p>
    */

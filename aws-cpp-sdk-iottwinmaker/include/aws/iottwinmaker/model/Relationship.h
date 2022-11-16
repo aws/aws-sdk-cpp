@@ -39,47 +39,6 @@ namespace Model
 
 
     /**
-     * <p>The type of the relationship.</p>
-     */
-    inline const Aws::String& GetRelationshipType() const{ return m_relationshipType; }
-
-    /**
-     * <p>The type of the relationship.</p>
-     */
-    inline bool RelationshipTypeHasBeenSet() const { return m_relationshipTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the relationship.</p>
-     */
-    inline void SetRelationshipType(const Aws::String& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = value; }
-
-    /**
-     * <p>The type of the relationship.</p>
-     */
-    inline void SetRelationshipType(Aws::String&& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = std::move(value); }
-
-    /**
-     * <p>The type of the relationship.</p>
-     */
-    inline void SetRelationshipType(const char* value) { m_relationshipTypeHasBeenSet = true; m_relationshipType.assign(value); }
-
-    /**
-     * <p>The type of the relationship.</p>
-     */
-    inline Relationship& WithRelationshipType(const Aws::String& value) { SetRelationshipType(value); return *this;}
-
-    /**
-     * <p>The type of the relationship.</p>
-     */
-    inline Relationship& WithRelationshipType(Aws::String&& value) { SetRelationshipType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of the relationship.</p>
-     */
-    inline Relationship& WithRelationshipType(const char* value) { SetRelationshipType(value); return *this;}
-
-
-    /**
      * <p>The ID of the target component type associated with this relationship.</p>
      */
     inline const Aws::String& GetTargetComponentTypeId() const{ return m_targetComponentTypeId; }
@@ -119,13 +78,54 @@ namespace Model
      */
     inline Relationship& WithTargetComponentTypeId(const char* value) { SetTargetComponentTypeId(value); return *this;}
 
-  private:
 
-    Aws::String m_relationshipType;
-    bool m_relationshipTypeHasBeenSet = false;
+    /**
+     * <p>The type of the relationship.</p>
+     */
+    inline const Aws::String& GetRelationshipType() const{ return m_relationshipType; }
+
+    /**
+     * <p>The type of the relationship.</p>
+     */
+    inline bool RelationshipTypeHasBeenSet() const { return m_relationshipTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the relationship.</p>
+     */
+    inline void SetRelationshipType(const Aws::String& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = value; }
+
+    /**
+     * <p>The type of the relationship.</p>
+     */
+    inline void SetRelationshipType(Aws::String&& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = std::move(value); }
+
+    /**
+     * <p>The type of the relationship.</p>
+     */
+    inline void SetRelationshipType(const char* value) { m_relationshipTypeHasBeenSet = true; m_relationshipType.assign(value); }
+
+    /**
+     * <p>The type of the relationship.</p>
+     */
+    inline Relationship& WithRelationshipType(const Aws::String& value) { SetRelationshipType(value); return *this;}
+
+    /**
+     * <p>The type of the relationship.</p>
+     */
+    inline Relationship& WithRelationshipType(Aws::String&& value) { SetRelationshipType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of the relationship.</p>
+     */
+    inline Relationship& WithRelationshipType(const char* value) { SetRelationshipType(value); return *this;}
+
+  private:
 
     Aws::String m_targetComponentTypeId;
     bool m_targetComponentTypeIdHasBeenSet = false;
+
+    Aws::String m_relationshipType;
+    bool m_relationshipTypeHasBeenSet = false;
   };
 
 } // namespace Model

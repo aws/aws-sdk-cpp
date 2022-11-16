@@ -40,47 +40,6 @@ namespace Model
 
 
     /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline const Aws::String& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline void SetOperator(const Aws::String& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline void SetOperator(Aws::String&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline void SetOperator(const char* value) { m_operatorHasBeenSet = true; m_operator.assign(value); }
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline PropertyFilter& WithOperator(const Aws::String& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline PropertyFilter& WithOperator(Aws::String&& value) { SetOperator(std::move(value)); return *this;}
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline PropertyFilter& WithOperator(const char* value) { SetOperator(value); return *this;}
-
-
-    /**
      * <p>The property name associated with this property filter.</p>
      */
     inline const Aws::String& GetPropertyName() const{ return m_propertyName; }
@@ -122,6 +81,47 @@ namespace Model
 
 
     /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline const Aws::String& GetOperator() const{ return m_operator; }
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline void SetOperator(const Aws::String& value) { m_operatorHasBeenSet = true; m_operator = value; }
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline void SetOperator(Aws::String&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline void SetOperator(const char* value) { m_operatorHasBeenSet = true; m_operator.assign(value); }
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline PropertyFilter& WithOperator(const Aws::String& value) { SetOperator(value); return *this;}
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline PropertyFilter& WithOperator(Aws::String&& value) { SetOperator(std::move(value)); return *this;}
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline PropertyFilter& WithOperator(const char* value) { SetOperator(value); return *this;}
+
+
+    /**
      * <p>The value associated with this property filter.</p>
      */
     inline const DataValue& GetValue() const{ return m_value; }
@@ -153,11 +153,11 @@ namespace Model
 
   private:
 
-    Aws::String m_operator;
-    bool m_operatorHasBeenSet = false;
-
     Aws::String m_propertyName;
     bool m_propertyNameHasBeenSet = false;
+
+    Aws::String m_operator;
+    bool m_operatorHasBeenSet = false;
 
     DataValue m_value;
     bool m_valueHasBeenSet = false;

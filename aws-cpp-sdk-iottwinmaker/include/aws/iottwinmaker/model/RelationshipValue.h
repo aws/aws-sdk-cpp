@@ -39,47 +39,6 @@ namespace Model
 
 
     /**
-     * <p>The name of the target component associated with the relationship value.</p>
-     */
-    inline const Aws::String& GetTargetComponentName() const{ return m_targetComponentName; }
-
-    /**
-     * <p>The name of the target component associated with the relationship value.</p>
-     */
-    inline bool TargetComponentNameHasBeenSet() const { return m_targetComponentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the target component associated with the relationship value.</p>
-     */
-    inline void SetTargetComponentName(const Aws::String& value) { m_targetComponentNameHasBeenSet = true; m_targetComponentName = value; }
-
-    /**
-     * <p>The name of the target component associated with the relationship value.</p>
-     */
-    inline void SetTargetComponentName(Aws::String&& value) { m_targetComponentNameHasBeenSet = true; m_targetComponentName = std::move(value); }
-
-    /**
-     * <p>The name of the target component associated with the relationship value.</p>
-     */
-    inline void SetTargetComponentName(const char* value) { m_targetComponentNameHasBeenSet = true; m_targetComponentName.assign(value); }
-
-    /**
-     * <p>The name of the target component associated with the relationship value.</p>
-     */
-    inline RelationshipValue& WithTargetComponentName(const Aws::String& value) { SetTargetComponentName(value); return *this;}
-
-    /**
-     * <p>The name of the target component associated with the relationship value.</p>
-     */
-    inline RelationshipValue& WithTargetComponentName(Aws::String&& value) { SetTargetComponentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the target component associated with the relationship value.</p>
-     */
-    inline RelationshipValue& WithTargetComponentName(const char* value) { SetTargetComponentName(value); return *this;}
-
-
-    /**
      * <p>The ID of the target entity associated with this relationship value.</p>
      */
     inline const Aws::String& GetTargetEntityId() const{ return m_targetEntityId; }
@@ -119,13 +78,54 @@ namespace Model
      */
     inline RelationshipValue& WithTargetEntityId(const char* value) { SetTargetEntityId(value); return *this;}
 
-  private:
 
-    Aws::String m_targetComponentName;
-    bool m_targetComponentNameHasBeenSet = false;
+    /**
+     * <p>The name of the target component associated with the relationship value.</p>
+     */
+    inline const Aws::String& GetTargetComponentName() const{ return m_targetComponentName; }
+
+    /**
+     * <p>The name of the target component associated with the relationship value.</p>
+     */
+    inline bool TargetComponentNameHasBeenSet() const { return m_targetComponentNameHasBeenSet; }
+
+    /**
+     * <p>The name of the target component associated with the relationship value.</p>
+     */
+    inline void SetTargetComponentName(const Aws::String& value) { m_targetComponentNameHasBeenSet = true; m_targetComponentName = value; }
+
+    /**
+     * <p>The name of the target component associated with the relationship value.</p>
+     */
+    inline void SetTargetComponentName(Aws::String&& value) { m_targetComponentNameHasBeenSet = true; m_targetComponentName = std::move(value); }
+
+    /**
+     * <p>The name of the target component associated with the relationship value.</p>
+     */
+    inline void SetTargetComponentName(const char* value) { m_targetComponentNameHasBeenSet = true; m_targetComponentName.assign(value); }
+
+    /**
+     * <p>The name of the target component associated with the relationship value.</p>
+     */
+    inline RelationshipValue& WithTargetComponentName(const Aws::String& value) { SetTargetComponentName(value); return *this;}
+
+    /**
+     * <p>The name of the target component associated with the relationship value.</p>
+     */
+    inline RelationshipValue& WithTargetComponentName(Aws::String&& value) { SetTargetComponentName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the target component associated with the relationship value.</p>
+     */
+    inline RelationshipValue& WithTargetComponentName(const char* value) { SetTargetComponentName(value); return *this;}
+
+  private:
 
     Aws::String m_targetEntityId;
     bool m_targetEntityIdHasBeenSet = false;
+
+    Aws::String m_targetComponentName;
+    bool m_targetComponentNameHasBeenSet = false;
   };
 
 } // namespace Model

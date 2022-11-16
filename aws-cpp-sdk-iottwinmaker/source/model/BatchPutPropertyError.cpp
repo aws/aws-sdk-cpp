@@ -19,29 +19,22 @@ namespace Model
 {
 
 BatchPutPropertyError::BatchPutPropertyError() : 
-    m_entryHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+    m_errorMessageHasBeenSet(false),
+    m_entryHasBeenSet(false)
 {
 }
 
 BatchPutPropertyError::BatchPutPropertyError(JsonView jsonValue) : 
-    m_entryHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+    m_errorMessageHasBeenSet(false),
+    m_entryHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 BatchPutPropertyError& BatchPutPropertyError::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("entry"))
-  {
-    m_entry = jsonValue.GetObject("entry");
-
-    m_entryHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
@@ -56,18 +49,19 @@ BatchPutPropertyError& BatchPutPropertyError::operator =(JsonView jsonValue)
     m_errorMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("entry"))
+  {
+    m_entry = jsonValue.GetObject("entry");
+
+    m_entryHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue BatchPutPropertyError::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_entryHasBeenSet)
-  {
-   payload.WithObject("entry", m_entry.Jsonize());
-
-  }
 
   if(m_errorCodeHasBeenSet)
   {
@@ -78,6 +72,12 @@ JsonValue BatchPutPropertyError::Jsonize() const
   if(m_errorMessageHasBeenSet)
   {
    payload.WithString("errorMessage", m_errorMessage);
+
+  }
+
+  if(m_entryHasBeenSet)
+  {
+   payload.WithObject("entry", m_entry.Jsonize());
 
   }
 

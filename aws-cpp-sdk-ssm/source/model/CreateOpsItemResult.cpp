@@ -34,6 +34,12 @@ CreateOpsItemResult& CreateOpsItemResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("OpsItemArn"))
+  {
+    m_opsItemArn = jsonValue.GetString("OpsItemArn");
+
+  }
+
 
 
   return *this;

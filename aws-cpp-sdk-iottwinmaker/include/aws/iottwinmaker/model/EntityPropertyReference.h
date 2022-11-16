@@ -81,47 +81,6 @@ namespace Model
 
 
     /**
-     * <p>The ID of the entity.</p>
-     */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline EntityPropertyReference& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline EntityPropertyReference& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline EntityPropertyReference& WithEntityId(const char* value) { SetEntityId(value); return *this;}
-
-
-    /**
      * <p>A mapping of external IDs to property names. External IDs uniquely identify
      * properties from external data stores.</p>
      */
@@ -201,6 +160,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the entity.</p>
+     */
+    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline EntityPropertyReference& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline EntityPropertyReference& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline EntityPropertyReference& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+
+
+    /**
      * <p>The name of the property.</p>
      */
     inline const Aws::String& GetPropertyName() const{ return m_propertyName; }
@@ -245,11 +245,11 @@ namespace Model
     Aws::String m_componentName;
     bool m_componentNameHasBeenSet = false;
 
-    Aws::String m_entityId;
-    bool m_entityIdHasBeenSet = false;
-
     Aws::Map<Aws::String, Aws::String> m_externalIdProperty;
     bool m_externalIdPropertyHasBeenSet = false;
+
+    Aws::String m_entityId;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_propertyName;
     bool m_propertyNameHasBeenSet = false;

@@ -13,10 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListScenesRequest::ListScenesRequest() : 
+    m_workspaceIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_nextTokenHasBeenSet(false)
 {
 }
 

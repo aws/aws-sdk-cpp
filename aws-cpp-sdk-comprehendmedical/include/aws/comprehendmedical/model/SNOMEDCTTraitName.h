@@ -19,7 +19,12 @@ namespace Model
     NEGATION,
     DIAGNOSIS,
     SIGN,
-    SYMPTOM
+    SYMPTOM,
+    PERTAINS_TO_FAMILY,
+    HYPOTHETICAL,
+    LOW_CONFIDENCE,
+    PAST_HISTORY,
+    FUTURE
   };
 
 namespace SNOMEDCTTraitNameMapper

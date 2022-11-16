@@ -20,21 +20,23 @@ namespace Model
 
 ComponentResponse::ComponentResponse() : 
     m_componentNameHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_definedInHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_componentTypeIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_definedInHasBeenSet(false),
     m_propertiesHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_propertyGroupsHasBeenSet(false)
 {
 }
 
 ComponentResponse::ComponentResponse(JsonView jsonValue) : 
     m_componentNameHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_definedInHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_componentTypeIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_definedInHasBeenSet(false),
     m_propertiesHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_propertyGroupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ ComponentResponse& ComponentResponse::operator =(JsonView jsonValue)
     m_componentNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("componentTypeId"))
   {
     m_componentTypeId = jsonValue.GetString("componentTypeId");
@@ -55,18 +64,18 @@ ComponentResponse& ComponentResponse::operator =(JsonView jsonValue)
     m_componentTypeIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = jsonValue.GetObject("status");
+
+    m_statusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("definedIn"))
   {
     m_definedIn = jsonValue.GetString("definedIn");
 
     m_definedInHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("properties"))
@@ -79,11 +88,14 @@ ComponentResponse& ComponentResponse::operator =(JsonView jsonValue)
     m_propertiesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("propertyGroups"))
   {
-    m_status = jsonValue.GetObject("status");
-
-    m_statusHasBeenSet = true;
+    Aws::Map<Aws::String, JsonView> propertyGroupsJsonMap = jsonValue.GetObject("propertyGroups").GetAllObjects();
+    for(auto& propertyGroupsItem : propertyGroupsJsonMap)
+    {
+      m_propertyGroups[propertyGroupsItem.first] = propertyGroupsItem.second.AsObject();
+    }
+    m_propertyGroupsHasBeenSet = true;
   }
 
   return *this;
@@ -99,21 +111,27 @@ JsonValue ComponentResponse::Jsonize() const
 
   }
 
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
   if(m_componentTypeIdHasBeenSet)
   {
    payload.WithString("componentTypeId", m_componentTypeId);
 
   }
 
-  if(m_definedInHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("definedIn", m_definedIn);
+   payload.WithObject("status", m_status.Jsonize());
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_definedInHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("definedIn", m_definedIn);
 
   }
 
@@ -128,9 +146,14 @@ JsonValue ComponentResponse::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_propertyGroupsHasBeenSet)
   {
-   payload.WithObject("status", m_status.Jsonize());
+   JsonValue propertyGroupsJsonMap;
+   for(auto& propertyGroupsItem : m_propertyGroups)
+   {
+     propertyGroupsJsonMap.WithObject(propertyGroupsItem.first, propertyGroupsItem.second.Jsonize());
+   }
+   payload.WithObject("propertyGroups", std::move(propertyGroupsJsonMap));
 
   }
 

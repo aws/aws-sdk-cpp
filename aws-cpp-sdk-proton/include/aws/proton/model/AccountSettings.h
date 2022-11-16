@@ -146,57 +146,65 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service role that Proton uses for
-     * provisioning pipelines. Proton assumes this role for Amazon Web Services-managed
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
      * provisioning.</p>
      */
     inline const Aws::String& GetPipelineServiceRoleArn() const{ return m_pipelineServiceRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service role that Proton uses for
-     * provisioning pipelines. Proton assumes this role for Amazon Web Services-managed
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
      * provisioning.</p>
      */
     inline bool PipelineServiceRoleArnHasBeenSet() const { return m_pipelineServiceRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service role that Proton uses for
-     * provisioning pipelines. Proton assumes this role for Amazon Web Services-managed
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
      * provisioning.</p>
      */
     inline void SetPipelineServiceRoleArn(const Aws::String& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service role that Proton uses for
-     * provisioning pipelines. Proton assumes this role for Amazon Web Services-managed
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
      * provisioning.</p>
      */
     inline void SetPipelineServiceRoleArn(Aws::String&& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service role that Proton uses for
-     * provisioning pipelines. Proton assumes this role for Amazon Web Services-managed
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
      * provisioning.</p>
      */
     inline void SetPipelineServiceRoleArn(const char* value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service role that Proton uses for
-     * provisioning pipelines. Proton assumes this role for Amazon Web Services-managed
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
      * provisioning.</p>
      */
     inline AccountSettings& WithPipelineServiceRoleArn(const Aws::String& value) { SetPipelineServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service role that Proton uses for
-     * provisioning pipelines. Proton assumes this role for Amazon Web Services-managed
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
      * provisioning.</p>
      */
     inline AccountSettings& WithPipelineServiceRoleArn(Aws::String&& value) { SetPipelineServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service role that Proton uses for
-     * provisioning pipelines. Proton assumes this role for Amazon Web Services-managed
+     * <p>The Amazon Resource Name (ARN) of the service role you want to use for
+     * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
+     * provisioning, and by customer-owned automation for self-managed
      * provisioning.</p>
      */
     inline AccountSettings& WithPipelineServiceRoleArn(const char* value) { SetPipelineServiceRoleArn(value); return *this;}

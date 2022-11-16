@@ -18,7 +18,8 @@ CreateUserRequest::CreateUserRequest() :
     m_accessStringHasBeenSet(false),
     m_noPasswordRequired(false),
     m_noPasswordRequiredHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_authenticationModeHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,11 @@ Aws::String CreateUserRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_authenticationModeHasBeenSet)
+  {
+    m_authenticationMode.OutputToStream(ss, "AuthenticationMode");
   }
 
   ss << "Version=2015-02-02";

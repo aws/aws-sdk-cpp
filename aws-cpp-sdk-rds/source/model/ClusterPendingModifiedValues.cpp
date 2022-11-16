@@ -26,7 +26,13 @@ ClusterPendingModifiedValues::ClusterPendingModifiedValues() :
     m_masterUserPasswordHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_backupRetentionPeriod(0),
+    m_backupRetentionPeriodHasBeenSet(false),
+    m_allocatedStorage(0),
+    m_allocatedStorageHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false)
 {
 }
 
@@ -36,7 +42,13 @@ ClusterPendingModifiedValues::ClusterPendingModifiedValues(const XmlNode& xmlNod
     m_masterUserPasswordHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_backupRetentionPeriod(0),
+    m_backupRetentionPeriodHasBeenSet(false),
+    m_allocatedStorage(0),
+    m_allocatedStorageHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -77,6 +89,24 @@ ClusterPendingModifiedValues& ClusterPendingModifiedValues::operator =(const Xml
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
     }
+    XmlNode backupRetentionPeriodNode = resultNode.FirstChild("BackupRetentionPeriod");
+    if(!backupRetentionPeriodNode.IsNull())
+    {
+      m_backupRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(backupRetentionPeriodNode.GetText()).c_str()).c_str());
+      m_backupRetentionPeriodHasBeenSet = true;
+    }
+    XmlNode allocatedStorageNode = resultNode.FirstChild("AllocatedStorage");
+    if(!allocatedStorageNode.IsNull())
+    {
+      m_allocatedStorage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocatedStorageNode.GetText()).c_str()).c_str());
+      m_allocatedStorageHasBeenSet = true;
+    }
+    XmlNode iopsNode = resultNode.FirstChild("Iops");
+    if(!iopsNode.IsNull())
+    {
+      m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iopsNode.GetText()).c_str()).c_str());
+      m_iopsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -111,6 +141,21 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
 
+  if(m_backupRetentionPeriodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
+  }
+
+  if(m_allocatedStorageHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AllocatedStorage=" << m_allocatedStorage << "&";
+  }
+
+  if(m_iopsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
+  }
+
 }
 
 void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -136,6 +181,18 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
+  }
+  if(m_backupRetentionPeriodHasBeenSet)
+  {
+      oStream << location << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
+  }
+  if(m_allocatedStorageHasBeenSet)
+  {
+      oStream << location << ".AllocatedStorage=" << m_allocatedStorage << "&";
+  }
+  if(m_iopsHasBeenSet)
+  {
+      oStream << location << ".Iops=" << m_iops << "&";
   }
 }
 

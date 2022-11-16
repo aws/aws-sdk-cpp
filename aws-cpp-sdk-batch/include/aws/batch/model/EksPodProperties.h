@@ -208,7 +208,7 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline const Aws::String& GetDnsPolicy() const{ return m_dnsPolicy; }
 
@@ -222,7 +222,7 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline bool DnsPolicyHasBeenSet() const { return m_dnsPolicyHasBeenSet; }
 
@@ -236,7 +236,7 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline void SetDnsPolicy(const Aws::String& value) { m_dnsPolicyHasBeenSet = true; m_dnsPolicy = value; }
 
@@ -250,7 +250,7 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline void SetDnsPolicy(Aws::String&& value) { m_dnsPolicyHasBeenSet = true; m_dnsPolicy = std::move(value); }
 
@@ -264,7 +264,7 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline void SetDnsPolicy(const char* value) { m_dnsPolicyHasBeenSet = true; m_dnsPolicy.assign(value); }
 
@@ -278,7 +278,7 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline EksPodProperties& WithDnsPolicy(const Aws::String& value) { SetDnsPolicy(value); return *this;}
 
@@ -292,7 +292,7 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline EksPodProperties& WithDnsPolicy(Aws::String&& value) { SetDnsPolicy(std::move(value)); return *this;}
 
@@ -306,7 +306,7 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
      * DNS policy</a> in the <i>Kubernetes documentation</i>.</p> <p>Valid values:
      * <code>Default</code> | <code>ClusterFirst</code> |
-     * <code>ClusterFirstWithHostNet</code> | <code>None</code> </p>
+     * <code>ClusterFirstWithHostNet</code> </p>
      */
     inline EksPodProperties& WithDnsPolicy(const char* value) { SetDnsPolicy(value); return *this;}
 

@@ -35,6 +35,42 @@ namespace Model
 
 
     /**
+     * <p>The ID of the entity.</p>
+     */
+    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(const Aws::String& value) { m_entityId = value; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(Aws::String&& value) { m_entityId = std::move(value); }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(const char* value) { m_entityId.assign(value); }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline CreateEntityResult& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline CreateEntityResult& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline CreateEntityResult& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+
+
+    /**
      * <p>The ARN of the entity.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -97,42 +133,6 @@ namespace Model
 
 
     /**
-     * <p>The ID of the entity.</p>
-     */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(const Aws::String& value) { m_entityId = value; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(Aws::String&& value) { m_entityId = std::move(value); }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(const char* value) { m_entityId.assign(value); }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline CreateEntityResult& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline CreateEntityResult& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline CreateEntityResult& WithEntityId(const char* value) { SetEntityId(value); return *this;}
-
-
-    /**
      * <p>The current state of the entity.</p>
      */
     inline const State& GetState() const{ return m_state; }
@@ -159,11 +159,11 @@ namespace Model
 
   private:
 
+    Aws::String m_entityId;
+
     Aws::String m_arn;
 
     Aws::Utils::DateTime m_creationDateTime;
-
-    Aws::String m_entityId;
 
     State m_state;
   };

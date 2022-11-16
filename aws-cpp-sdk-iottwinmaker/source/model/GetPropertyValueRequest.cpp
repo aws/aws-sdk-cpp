@@ -17,7 +17,12 @@ GetPropertyValueRequest::GetPropertyValueRequest() :
     m_componentTypeIdHasBeenSet(false),
     m_entityIdHasBeenSet(false),
     m_selectedPropertiesHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_workspaceIdHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_propertyGroupNameHasBeenSet(false),
+    m_tabularConditionsHasBeenSet(false)
 {
 }
 
@@ -51,6 +56,30 @@ Aws::String GetPropertyValueRequest::SerializePayload() const
      selectedPropertiesJsonList[selectedPropertiesIndex].AsString(m_selectedProperties[selectedPropertiesIndex]);
    }
    payload.WithArray("selectedProperties", std::move(selectedPropertiesJsonList));
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("maxResults", m_maxResults);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_propertyGroupNameHasBeenSet)
+  {
+   payload.WithString("propertyGroupName", m_propertyGroupName);
+
+  }
+
+  if(m_tabularConditionsHasBeenSet)
+  {
+   payload.WithObject("tabularConditions", m_tabularConditions.Jsonize());
 
   }
 

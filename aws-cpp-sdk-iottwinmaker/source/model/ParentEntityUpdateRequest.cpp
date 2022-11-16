@@ -19,34 +19,34 @@ namespace Model
 {
 
 ParentEntityUpdateRequest::ParentEntityUpdateRequest() : 
-    m_parentEntityIdHasBeenSet(false),
     m_updateType(ParentEntityUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false)
+    m_updateTypeHasBeenSet(false),
+    m_parentEntityIdHasBeenSet(false)
 {
 }
 
 ParentEntityUpdateRequest::ParentEntityUpdateRequest(JsonView jsonValue) : 
-    m_parentEntityIdHasBeenSet(false),
     m_updateType(ParentEntityUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false)
+    m_updateTypeHasBeenSet(false),
+    m_parentEntityIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ParentEntityUpdateRequest& ParentEntityUpdateRequest::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("parentEntityId"))
-  {
-    m_parentEntityId = jsonValue.GetString("parentEntityId");
-
-    m_parentEntityIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("updateType"))
   {
     m_updateType = ParentEntityUpdateTypeMapper::GetParentEntityUpdateTypeForName(jsonValue.GetString("updateType"));
 
     m_updateTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("parentEntityId"))
+  {
+    m_parentEntityId = jsonValue.GetString("parentEntityId");
+
+    m_parentEntityIdHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +56,15 @@ JsonValue ParentEntityUpdateRequest::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_updateTypeHasBeenSet)
+  {
+   payload.WithString("updateType", ParentEntityUpdateTypeMapper::GetNameForParentEntityUpdateType(m_updateType));
+  }
+
   if(m_parentEntityIdHasBeenSet)
   {
    payload.WithString("parentEntityId", m_parentEntityId);
 
-  }
-
-  if(m_updateTypeHasBeenSet)
-  {
-   payload.WithString("updateType", ParentEntityUpdateTypeMapper::GetNameForParentEntityUpdateType(m_updateType));
   }
 
   return payload;

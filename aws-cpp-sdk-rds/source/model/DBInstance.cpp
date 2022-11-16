@@ -121,7 +121,8 @@ DBInstance::DBInstance() :
     m_activityStreamPolicyStatus(ActivityStreamPolicyStatus::NOT_SET),
     m_activityStreamPolicyStatusHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_dBSystemIdHasBeenSet(false)
 {
 }
 
@@ -226,7 +227,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_activityStreamPolicyStatus(ActivityStreamPolicyStatus::NOT_SET),
     m_activityStreamPolicyStatusHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_dBSystemIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -777,6 +779,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
       m_storageThroughputHasBeenSet = true;
     }
+    XmlNode dBSystemIdNode = resultNode.FirstChild("DBSystemId");
+    if(!dBSystemIdNode.IsNull())
+    {
+      m_dBSystemId = Aws::Utils::Xml::DecodeEscapedXmlText(dBSystemIdNode.GetText());
+      m_dBSystemIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1249,6 +1257,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 
+  if(m_dBSystemIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1640,6 +1653,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_storageThroughputHasBeenSet)
   {
       oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+  if(m_dBSystemIdHasBeenSet)
+  {
+      oStream << location << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
   }
 }
 

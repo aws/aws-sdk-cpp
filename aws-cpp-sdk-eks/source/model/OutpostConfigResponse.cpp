@@ -20,13 +20,15 @@ namespace Model
 
 OutpostConfigResponse::OutpostConfigResponse() : 
     m_outpostArnsHasBeenSet(false),
-    m_controlPlaneInstanceTypeHasBeenSet(false)
+    m_controlPlaneInstanceTypeHasBeenSet(false),
+    m_controlPlanePlacementHasBeenSet(false)
 {
 }
 
 OutpostConfigResponse::OutpostConfigResponse(JsonView jsonValue) : 
     m_outpostArnsHasBeenSet(false),
-    m_controlPlaneInstanceTypeHasBeenSet(false)
+    m_controlPlaneInstanceTypeHasBeenSet(false),
+    m_controlPlanePlacementHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ OutpostConfigResponse& OutpostConfigResponse::operator =(JsonView jsonValue)
     m_controlPlaneInstanceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("controlPlanePlacement"))
+  {
+    m_controlPlanePlacement = jsonValue.GetObject("controlPlanePlacement");
+
+    m_controlPlanePlacementHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +80,12 @@ JsonValue OutpostConfigResponse::Jsonize() const
   if(m_controlPlaneInstanceTypeHasBeenSet)
   {
    payload.WithString("controlPlaneInstanceType", m_controlPlaneInstanceType);
+
+  }
+
+  if(m_controlPlanePlacementHasBeenSet)
+  {
+   payload.WithObject("controlPlanePlacement", m_controlPlanePlacement.Jsonize());
 
   }
 

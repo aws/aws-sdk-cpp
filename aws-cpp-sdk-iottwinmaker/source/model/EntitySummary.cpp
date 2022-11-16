@@ -19,29 +19,29 @@ namespace Model
 {
 
 EntitySummary::EntitySummary() : 
-    m_arnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_entityIdHasBeenSet(false),
     m_entityNameHasBeenSet(false),
-    m_hasChildEntities(false),
-    m_hasChildEntitiesHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_parentEntityIdHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_hasChildEntities(false),
+    m_hasChildEntitiesHasBeenSet(false),
+    m_creationDateTimeHasBeenSet(false),
     m_updateDateTimeHasBeenSet(false)
 {
 }
 
 EntitySummary::EntitySummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_entityIdHasBeenSet(false),
     m_entityNameHasBeenSet(false),
-    m_hasChildEntities(false),
-    m_hasChildEntitiesHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_parentEntityIdHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_hasChildEntities(false),
+    m_hasChildEntitiesHasBeenSet(false),
+    m_creationDateTimeHasBeenSet(false),
     m_updateDateTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -49,27 +49,6 @@ EntitySummary::EntitySummary(JsonView jsonValue) :
 
 EntitySummary& EntitySummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-
-    m_arnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
-    m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
-    m_creationDateTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
@@ -84,11 +63,11 @@ EntitySummary& EntitySummary::operator =(JsonView jsonValue)
     m_entityNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("hasChildEntities"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_hasChildEntities = jsonValue.GetBool("hasChildEntities");
+    m_arn = jsonValue.GetString("arn");
 
-    m_hasChildEntitiesHasBeenSet = true;
+    m_arnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("parentEntityId"))
@@ -105,6 +84,27 @@ EntitySummary& EntitySummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hasChildEntities"))
+  {
+    m_hasChildEntities = jsonValue.GetBool("hasChildEntities");
+
+    m_hasChildEntitiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("creationDateTime"))
+  {
+    m_creationDateTime = jsonValue.GetDouble("creationDateTime");
+
+    m_creationDateTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("updateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("updateDateTime");
@@ -119,23 +119,6 @@ JsonValue EntitySummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_creationDateTimeHasBeenSet)
-  {
-   payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_entityIdHasBeenSet)
   {
    payload.WithString("entityId", m_entityId);
@@ -148,9 +131,9 @@ JsonValue EntitySummary::Jsonize() const
 
   }
 
-  if(m_hasChildEntitiesHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithBool("hasChildEntities", m_hasChildEntities);
+   payload.WithString("arn", m_arn);
 
   }
 
@@ -164,6 +147,23 @@ JsonValue EntitySummary::Jsonize() const
   {
    payload.WithObject("status", m_status.Jsonize());
 
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_hasChildEntitiesHasBeenSet)
+  {
+   payload.WithBool("hasChildEntities", m_hasChildEntities);
+
+  }
+
+  if(m_creationDateTimeHasBeenSet)
+  {
+   payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
   if(m_updateDateTimeHasBeenSet)

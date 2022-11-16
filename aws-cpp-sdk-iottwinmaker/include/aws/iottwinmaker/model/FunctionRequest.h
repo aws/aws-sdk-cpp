@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
-#include <aws/iottwinmaker/model/DataConnector.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iottwinmaker/model/Scope.h>
+#include <aws/iottwinmaker/model/DataConnector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -38,37 +38,6 @@ namespace Model
     FunctionRequest(Aws::Utils::Json::JsonView jsonValue);
     FunctionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline const DataConnector& GetImplementedBy() const{ return m_implementedBy; }
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline bool ImplementedByHasBeenSet() const { return m_implementedByHasBeenSet; }
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline void SetImplementedBy(const DataConnector& value) { m_implementedByHasBeenSet = true; m_implementedBy = value; }
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline void SetImplementedBy(DataConnector&& value) { m_implementedByHasBeenSet = true; m_implementedBy = std::move(value); }
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline FunctionRequest& WithImplementedBy(const DataConnector& value) { SetImplementedBy(value); return *this;}
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline FunctionRequest& WithImplementedBy(DataConnector&& value) { SetImplementedBy(std::move(value)); return *this;}
 
 
     /**
@@ -147,16 +116,47 @@ namespace Model
      */
     inline FunctionRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
-  private:
 
-    DataConnector m_implementedBy;
-    bool m_implementedByHasBeenSet = false;
+    /**
+     * <p>The data connector.</p>
+     */
+    inline const DataConnector& GetImplementedBy() const{ return m_implementedBy; }
+
+    /**
+     * <p>The data connector.</p>
+     */
+    inline bool ImplementedByHasBeenSet() const { return m_implementedByHasBeenSet; }
+
+    /**
+     * <p>The data connector.</p>
+     */
+    inline void SetImplementedBy(const DataConnector& value) { m_implementedByHasBeenSet = true; m_implementedBy = value; }
+
+    /**
+     * <p>The data connector.</p>
+     */
+    inline void SetImplementedBy(DataConnector&& value) { m_implementedByHasBeenSet = true; m_implementedBy = std::move(value); }
+
+    /**
+     * <p>The data connector.</p>
+     */
+    inline FunctionRequest& WithImplementedBy(const DataConnector& value) { SetImplementedBy(value); return *this;}
+
+    /**
+     * <p>The data connector.</p>
+     */
+    inline FunctionRequest& WithImplementedBy(DataConnector&& value) { SetImplementedBy(std::move(value)); return *this;}
+
+  private:
 
     Aws::Vector<Aws::String> m_requiredProperties;
     bool m_requiredPropertiesHasBeenSet = false;
 
     Scope m_scope;
     bool m_scopeHasBeenSet = false;
+
+    DataConnector m_implementedBy;
+    bool m_implementedByHasBeenSet = false;
   };
 
 } // namespace Model
