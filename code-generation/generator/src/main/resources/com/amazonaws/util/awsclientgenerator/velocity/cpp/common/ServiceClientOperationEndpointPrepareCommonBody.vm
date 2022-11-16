@@ -195,6 +195,11 @@
   if (request.SourceRegionHasBeenSet() && !request.PreSignedUrlHasBeenSet())
   {
     Aws::Endpoint::EndpointParameters endpointParameters;
+#if($operation.staticContextParams)
+#foreach($staticParamPair in $operation.staticContextParams.entrySet())
+    parameters.emplace_back(Aws::String("${staticParamPair.key}"), ${staticParamPair.value.get("value").getValue()});
+#end
+#end
     endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", request.GetSourceRegion()));
     ResolveEndpointOutcome presignedEndpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
     AWS_OPERATION_CHECK_SUCCESS(presignedEndpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, presignedEndpointResolutionOutcome.GetError().GetMessage());

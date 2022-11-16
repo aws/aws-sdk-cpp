@@ -1,0 +1,27 @@
+##This is a template generating property bag for from Shape's contextParam for CRT Endpoint Rules engine in Request's CPP
+#if($operation.request.shape.hasContextParam() || $operation.staticContextParams)
+
+${typeInfo.className}::EndpointParameters ${typeInfo.className}::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+#if($operation.staticContextParams)
+    // Static context parameters
+#foreach($staticParamPair in $operation.staticContextParams.entrySet())
+    parameters.emplace_back(Aws::String("${staticParamPair.key}"), ${staticParamPair.value.get("value").getValue()}, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+#end
+#end
+#if($operation.request.shape.hasContextParam())
+    // Operation context parameters
+#foreach($member in $shape.members.entrySet())
+##TODO: Handle cases with nested contextParams (i.e. contextParams within Shape within Shape (etc) within RequestShape).
+#if($member.value.contextParam)
+#set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($member.key))
+    if (${memberKeyWithFirstLetterCapitalized}HasBeenSet()) {
+        parameters.emplace_back(Aws::String("$member.value.contextParam.get("name")"), this->Get${memberKeyWithFirstLetterCapitalized}(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+#end
+#end##foreach($member in $shape.members.entrySet())
+#end
+    return parameters;
+}
+#end

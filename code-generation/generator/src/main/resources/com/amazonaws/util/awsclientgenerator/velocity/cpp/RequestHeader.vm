@@ -133,14 +133,7 @@ namespace Model
 
   public:
 #end
-#if($serviceModel.endpointRules && $operation.request.shape.hasContextParam())
-
-    EndpointParameters GetEndpointContextParams() const override
-    {
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamBody.vm")
-    }
-
-#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDeclaration.vm")
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
   };
