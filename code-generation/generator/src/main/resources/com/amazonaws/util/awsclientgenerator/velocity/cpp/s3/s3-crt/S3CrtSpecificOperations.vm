@@ -252,9 +252,9 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   userData->asyncCallerContext = handlerContext;
 #if($serviceModel.endpointRules)
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
-  if (userData != NULL &&
-    userData->request != NULL &&
-    userData->request->GetContentBody() != NULL &&
+  if (userData != nullptr &&
+    userData->request != nullptr &&
+    userData->request->GetContentBody() != nullptr &&
     userData->request->GetContentBody()->fail())
   {
 #if($operation.name == "PutObject")

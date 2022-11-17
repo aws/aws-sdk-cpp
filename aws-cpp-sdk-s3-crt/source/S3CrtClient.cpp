@@ -520,9 +520,9 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   userData->getResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET);
-  if (userData != NULL &&
-    userData->request != NULL &&
-    userData->request->GetContentBody() != NULL &&
+  if (userData != nullptr &&
+    userData->request != nullptr &&
+    userData->request->GetContentBody() != nullptr &&
     userData->request->GetContentBody()->fail())
   {
     return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Output stream in bad state", false)), handlerContext);
@@ -607,9 +607,9 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   userData->putResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
-  if (userData != NULL &&
-    userData->request != NULL &&
-    userData->request->GetContentBody() != NULL &&
+  if (userData != nullptr &&
+    userData->request != nullptr &&
+    userData->request->GetContentBody() != nullptr &&
     userData->request->GetContentBody()->fail())
   {
     return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Input stream in bad state", false)), handlerContext);
