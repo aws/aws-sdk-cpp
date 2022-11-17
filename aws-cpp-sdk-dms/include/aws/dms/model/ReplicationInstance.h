@@ -925,6 +925,52 @@ namespace Model
 
 
     /**
+     * <p>One or more IPv6 addresses for the replication instance.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetReplicationInstanceIpv6Addresses() const{ return m_replicationInstanceIpv6Addresses; }
+
+    /**
+     * <p>One or more IPv6 addresses for the replication instance.</p>
+     */
+    inline bool ReplicationInstanceIpv6AddressesHasBeenSet() const { return m_replicationInstanceIpv6AddressesHasBeenSet; }
+
+    /**
+     * <p>One or more IPv6 addresses for the replication instance.</p>
+     */
+    inline void SetReplicationInstanceIpv6Addresses(const Aws::Vector<Aws::String>& value) { m_replicationInstanceIpv6AddressesHasBeenSet = true; m_replicationInstanceIpv6Addresses = value; }
+
+    /**
+     * <p>One or more IPv6 addresses for the replication instance.</p>
+     */
+    inline void SetReplicationInstanceIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_replicationInstanceIpv6AddressesHasBeenSet = true; m_replicationInstanceIpv6Addresses = std::move(value); }
+
+    /**
+     * <p>One or more IPv6 addresses for the replication instance.</p>
+     */
+    inline ReplicationInstance& WithReplicationInstanceIpv6Addresses(const Aws::Vector<Aws::String>& value) { SetReplicationInstanceIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>One or more IPv6 addresses for the replication instance.</p>
+     */
+    inline ReplicationInstance& WithReplicationInstanceIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetReplicationInstanceIpv6Addresses(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more IPv6 addresses for the replication instance.</p>
+     */
+    inline ReplicationInstance& AddReplicationInstanceIpv6Addresses(const Aws::String& value) { m_replicationInstanceIpv6AddressesHasBeenSet = true; m_replicationInstanceIpv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>One or more IPv6 addresses for the replication instance.</p>
+     */
+    inline ReplicationInstance& AddReplicationInstanceIpv6Addresses(Aws::String&& value) { m_replicationInstanceIpv6AddressesHasBeenSet = true; m_replicationInstanceIpv6Addresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more IPv6 addresses for the replication instance.</p>
+     */
+    inline ReplicationInstance& AddReplicationInstanceIpv6Addresses(const char* value) { m_replicationInstanceIpv6AddressesHasBeenSet = true; m_replicationInstanceIpv6Addresses.push_back(value); return *this; }
+
+
+    /**
      * <p> Specifies the accessibility options for the replication instance. A value of
      * <code>true</code> represents an instance with a public IP address. A value of
      * <code>false</code> represents an instance with a private IP address. The default
@@ -1091,6 +1137,63 @@ namespace Model
      */
     inline ReplicationInstance& WithDnsNameServers(const char* value) { SetDnsNameServers(value); return *this;}
 
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline ReplicationInstance& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline ReplicationInstance& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline ReplicationInstance& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+
   private:
 
     Aws::String m_replicationInstanceIdentifier;
@@ -1144,6 +1247,9 @@ namespace Model
     Aws::Vector<Aws::String> m_replicationInstancePrivateIpAddresses;
     bool m_replicationInstancePrivateIpAddressesHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_replicationInstanceIpv6Addresses;
+    bool m_replicationInstanceIpv6AddressesHasBeenSet = false;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet = false;
 
@@ -1155,6 +1261,9 @@ namespace Model
 
     Aws::String m_dnsNameServers;
     bool m_dnsNameServersHasBeenSet = false;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

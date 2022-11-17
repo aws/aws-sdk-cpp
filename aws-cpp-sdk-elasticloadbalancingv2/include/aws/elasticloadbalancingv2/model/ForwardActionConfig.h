@@ -42,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline const Aws::Vector<TargetGroupTuple>& GetTargetGroups() const{ return m_targetGroups; }
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline bool TargetGroupsHasBeenSet() const { return m_targetGroupsHasBeenSet; }
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline void SetTargetGroups(const Aws::Vector<TargetGroupTuple>& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = value; }
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline void SetTargetGroups(Aws::Vector<TargetGroupTuple>&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::move(value); }
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline ForwardActionConfig& WithTargetGroups(const Aws::Vector<TargetGroupTuple>& value) { SetTargetGroups(value); return *this;}
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline ForwardActionConfig& WithTargetGroups(Aws::Vector<TargetGroupTuple>&& value) { SetTargetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline ForwardActionConfig& AddTargetGroups(const TargetGroupTuple& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(value); return *this; }
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline ForwardActionConfig& AddTargetGroups(TargetGroupTuple&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(std::move(value)); return *this; }
 

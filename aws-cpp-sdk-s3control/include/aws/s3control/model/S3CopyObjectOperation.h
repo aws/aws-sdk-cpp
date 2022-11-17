@@ -54,57 +54,65 @@ namespace Model
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline const Aws::String& GetTargetResource() const{ return m_targetResource; }
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline bool TargetResourceHasBeenSet() const { return m_targetResourceHasBeenSet; }
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline void SetTargetResource(const Aws::String& value) { m_targetResourceHasBeenSet = true; m_targetResource = value; }
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline void SetTargetResource(Aws::String&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::move(value); }
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline void SetTargetResource(const char* value) { m_targetResourceHasBeenSet = true; m_targetResource.assign(value); }
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetResource(const Aws::String& value) { SetTargetResource(value); return *this;}
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetResource(Aws::String&& value) { SetTargetResource(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetResource(const char* value) { SetTargetResource(value); return *this;}
 

@@ -31,7 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about a function's configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about an Lambda function's configuration.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsLambdaFunctionDetails">AWS
    * API Reference</a></p>
    */
@@ -743,6 +744,118 @@ namespace Model
      */
     inline AwsLambdaFunctionDetails& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetArchitectures() const{ return m_architectures; }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline void SetArchitectures(const Aws::Vector<Aws::String>& value) { m_architecturesHasBeenSet = true; m_architectures = value; }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline void SetArchitectures(Aws::Vector<Aws::String>&& value) { m_architecturesHasBeenSet = true; m_architectures = std::move(value); }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline AwsLambdaFunctionDetails& WithArchitectures(const Aws::Vector<Aws::String>& value) { SetArchitectures(value); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline AwsLambdaFunctionDetails& WithArchitectures(Aws::Vector<Aws::String>&& value) { SetArchitectures(std::move(value)); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline AwsLambdaFunctionDetails& AddArchitectures(const Aws::String& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline AwsLambdaFunctionDetails& AddArchitectures(Aws::String&& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline AwsLambdaFunctionDetails& AddArchitectures(const char* value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
+
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline const Aws::String& GetPackageType() const{ return m_packageType; }
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline void SetPackageType(const Aws::String& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline void SetPackageType(Aws::String&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline void SetPackageType(const char* value) { m_packageTypeHasBeenSet = true; m_packageType.assign(value); }
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline AwsLambdaFunctionDetails& WithPackageType(const Aws::String& value) { SetPackageType(value); return *this;}
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline AwsLambdaFunctionDetails& WithPackageType(Aws::String&& value) { SetPackageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline AwsLambdaFunctionDetails& WithPackageType(const char* value) { SetPackageType(value); return *this;}
+
   private:
 
     AwsLambdaFunctionCode m_code;
@@ -798,6 +911,12 @@ namespace Model
 
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_architectures;
+    bool m_architecturesHasBeenSet = false;
+
+    Aws::String m_packageType;
+    bool m_packageTypeHasBeenSet = false;
   };
 
 } // namespace Model

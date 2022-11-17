@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog-appregistry/model/ResourceType.h>
+#include <aws/servicecatalog-appregistry/model/ResourceDetails.h>
 #include <utility>
 
 namespace Aws
@@ -126,6 +128,74 @@ namespace Model
      */
     inline ResourceInfo& WithArn(const char* value) { SetArn(value); return *this;}
 
+
+    /**
+     * <p> Provides information about the Service Catalog App Registry resource type.
+     * </p>
+     */
+    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p> Provides information about the Service Catalog App Registry resource type.
+     * </p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p> Provides information about the Service Catalog App Registry resource type.
+     * </p>
+     */
+    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+
+    /**
+     * <p> Provides information about the Service Catalog App Registry resource type.
+     * </p>
+     */
+    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
+
+    /**
+     * <p> Provides information about the Service Catalog App Registry resource type.
+     * </p>
+     */
+    inline ResourceInfo& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
+
+    /**
+     * <p> Provides information about the Service Catalog App Registry resource type.
+     * </p>
+     */
+    inline ResourceInfo& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The details related to the resource. </p>
+     */
+    inline const ResourceDetails& GetResourceDetails() const{ return m_resourceDetails; }
+
+    /**
+     * <p> The details related to the resource. </p>
+     */
+    inline bool ResourceDetailsHasBeenSet() const { return m_resourceDetailsHasBeenSet; }
+
+    /**
+     * <p> The details related to the resource. </p>
+     */
+    inline void SetResourceDetails(const ResourceDetails& value) { m_resourceDetailsHasBeenSet = true; m_resourceDetails = value; }
+
+    /**
+     * <p> The details related to the resource. </p>
+     */
+    inline void SetResourceDetails(ResourceDetails&& value) { m_resourceDetailsHasBeenSet = true; m_resourceDetails = std::move(value); }
+
+    /**
+     * <p> The details related to the resource. </p>
+     */
+    inline ResourceInfo& WithResourceDetails(const ResourceDetails& value) { SetResourceDetails(value); return *this;}
+
+    /**
+     * <p> The details related to the resource. </p>
+     */
+    inline ResourceInfo& WithResourceDetails(ResourceDetails&& value) { SetResourceDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -133,6 +203,12 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    ResourceType m_resourceType;
+    bool m_resourceTypeHasBeenSet = false;
+
+    ResourceDetails m_resourceDetails;
+    bool m_resourceDetailsHasBeenSet = false;
   };
 
 } // namespace Model

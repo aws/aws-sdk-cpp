@@ -313,64 +313,73 @@ namespace Model
 
     /**
      * <p>The IDs of the resources to monitor. For example, if the resource type is
-     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of
-     * 1000 resources</p>
+     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of 25
+     * for transit gateway resource types. Maximum of 1000 for the other resource
+     * types.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
 
     /**
      * <p>The IDs of the resources to monitor. For example, if the resource type is
-     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of
-     * 1000 resources</p>
+     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of 25
+     * for transit gateway resource types. Maximum of 1000 for the other resource
+     * types.</p>
      */
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the resources to monitor. For example, if the resource type is
-     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of
-     * 1000 resources</p>
+     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of 25
+     * for transit gateway resource types. Maximum of 1000 for the other resource
+     * types.</p>
      */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
     /**
      * <p>The IDs of the resources to monitor. For example, if the resource type is
-     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of
-     * 1000 resources</p>
+     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of 25
+     * for transit gateway resource types. Maximum of 1000 for the other resource
+     * types.</p>
      */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
     /**
      * <p>The IDs of the resources to monitor. For example, if the resource type is
-     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of
-     * 1000 resources</p>
+     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of 25
+     * for transit gateway resource types. Maximum of 1000 for the other resource
+     * types.</p>
      */
     inline CreateFlowLogsRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
 
     /**
      * <p>The IDs of the resources to monitor. For example, if the resource type is
-     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of
-     * 1000 resources</p>
+     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of 25
+     * for transit gateway resource types. Maximum of 1000 for the other resource
+     * types.</p>
      */
     inline CreateFlowLogsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the resources to monitor. For example, if the resource type is
-     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of
-     * 1000 resources</p>
+     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of 25
+     * for transit gateway resource types. Maximum of 1000 for the other resource
+     * types.</p>
      */
     inline CreateFlowLogsRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
     /**
      * <p>The IDs of the resources to monitor. For example, if the resource type is
-     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of
-     * 1000 resources</p>
+     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of 25
+     * for transit gateway resource types. Maximum of 1000 for the other resource
+     * types.</p>
      */
     inline CreateFlowLogsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the resources to monitor. For example, if the resource type is
-     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of
-     * 1000 resources</p>
+     * <code>VPC</code>, specify the IDs of the VPCs.</p> <p>Constraints: Maximum of 25
+     * for transit gateway resource types. Maximum of 1000 for the other resource
+     * types.</p>
      */
     inline CreateFlowLogsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
@@ -408,37 +417,43 @@ namespace Model
 
     /**
      * <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all
-     * traffic).</p>
+     * traffic). This parameter is not supported for transit gateway resource types. It
+     * is required for the other resource types.</p>
      */
     inline const TrafficType& GetTrafficType() const{ return m_trafficType; }
 
     /**
      * <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all
-     * traffic).</p>
+     * traffic). This parameter is not supported for transit gateway resource types. It
+     * is required for the other resource types.</p>
      */
     inline bool TrafficTypeHasBeenSet() const { return m_trafficTypeHasBeenSet; }
 
     /**
      * <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all
-     * traffic).</p>
+     * traffic). This parameter is not supported for transit gateway resource types. It
+     * is required for the other resource types.</p>
      */
     inline void SetTrafficType(const TrafficType& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
 
     /**
      * <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all
-     * traffic).</p>
+     * traffic). This parameter is not supported for transit gateway resource types. It
+     * is required for the other resource types.</p>
      */
     inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = std::move(value); }
 
     /**
      * <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all
-     * traffic).</p>
+     * traffic). This parameter is not supported for transit gateway resource types. It
+     * is required for the other resource types.</p>
      */
     inline CreateFlowLogsRequest& WithTrafficType(const TrafficType& value) { SetTrafficType(value); return *this;}
 
     /**
      * <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all
-     * traffic).</p>
+     * traffic). This parameter is not supported for transit gateway resource types. It
+     * is required for the other resource types.</p>
      */
     inline CreateFlowLogsRequest& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
 
@@ -627,12 +642,14 @@ namespace Model
 
     /**
      * <p>The fields to include in the flow log record. List the fields in the order in
-     * which they should appear. For more information about the available fields, see
-     * <a
+     * which they should appear. If you omit this parameter, the flow log is created
+     * using the default format. If you specify this parameter, you must include at
+     * least one field. For more information about the available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * log records</a>. If you omit this parameter, the flow log is created using the
-     * default format. If you specify this parameter, you must include at least one
-     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * log records</a> in the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
+     * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the CLI, surround this parameter value with single
      * quotes on Linux or double quotes on Windows.</p>
      */
@@ -640,12 +657,14 @@ namespace Model
 
     /**
      * <p>The fields to include in the flow log record. List the fields in the order in
-     * which they should appear. For more information about the available fields, see
-     * <a
+     * which they should appear. If you omit this parameter, the flow log is created
+     * using the default format. If you specify this parameter, you must include at
+     * least one field. For more information about the available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * log records</a>. If you omit this parameter, the flow log is created using the
-     * default format. If you specify this parameter, you must include at least one
-     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * log records</a> in the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
+     * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the CLI, surround this parameter value with single
      * quotes on Linux or double quotes on Windows.</p>
      */
@@ -653,12 +672,14 @@ namespace Model
 
     /**
      * <p>The fields to include in the flow log record. List the fields in the order in
-     * which they should appear. For more information about the available fields, see
-     * <a
+     * which they should appear. If you omit this parameter, the flow log is created
+     * using the default format. If you specify this parameter, you must include at
+     * least one field. For more information about the available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * log records</a>. If you omit this parameter, the flow log is created using the
-     * default format. If you specify this parameter, you must include at least one
-     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * log records</a> in the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
+     * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the CLI, surround this parameter value with single
      * quotes on Linux or double quotes on Windows.</p>
      */
@@ -666,12 +687,14 @@ namespace Model
 
     /**
      * <p>The fields to include in the flow log record. List the fields in the order in
-     * which they should appear. For more information about the available fields, see
-     * <a
+     * which they should appear. If you omit this parameter, the flow log is created
+     * using the default format. If you specify this parameter, you must include at
+     * least one field. For more information about the available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * log records</a>. If you omit this parameter, the flow log is created using the
-     * default format. If you specify this parameter, you must include at least one
-     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * log records</a> in the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
+     * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the CLI, surround this parameter value with single
      * quotes on Linux or double quotes on Windows.</p>
      */
@@ -679,12 +702,14 @@ namespace Model
 
     /**
      * <p>The fields to include in the flow log record. List the fields in the order in
-     * which they should appear. For more information about the available fields, see
-     * <a
+     * which they should appear. If you omit this parameter, the flow log is created
+     * using the default format. If you specify this parameter, you must include at
+     * least one field. For more information about the available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * log records</a>. If you omit this parameter, the flow log is created using the
-     * default format. If you specify this parameter, you must include at least one
-     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * log records</a> in the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
+     * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the CLI, surround this parameter value with single
      * quotes on Linux or double quotes on Windows.</p>
      */
@@ -692,12 +717,14 @@ namespace Model
 
     /**
      * <p>The fields to include in the flow log record. List the fields in the order in
-     * which they should appear. For more information about the available fields, see
-     * <a
+     * which they should appear. If you omit this parameter, the flow log is created
+     * using the default format. If you specify this parameter, you must include at
+     * least one field. For more information about the available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * log records</a>. If you omit this parameter, the flow log is created using the
-     * default format. If you specify this parameter, you must include at least one
-     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * log records</a> in the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
+     * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the CLI, surround this parameter value with single
      * quotes on Linux or double quotes on Windows.</p>
      */
@@ -705,12 +732,14 @@ namespace Model
 
     /**
      * <p>The fields to include in the flow log record. List the fields in the order in
-     * which they should appear. For more information about the available fields, see
-     * <a
+     * which they should appear. If you omit this parameter, the flow log is created
+     * using the default format. If you specify this parameter, you must include at
+     * least one field. For more information about the available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * log records</a>. If you omit this parameter, the flow log is created using the
-     * default format. If you specify this parameter, you must include at least one
-     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * log records</a> in the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
+     * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the CLI, surround this parameter value with single
      * quotes on Linux or double quotes on Windows.</p>
      */
@@ -718,12 +747,14 @@ namespace Model
 
     /**
      * <p>The fields to include in the flow log record. List the fields in the order in
-     * which they should appear. For more information about the available fields, see
-     * <a
+     * which they should appear. If you omit this parameter, the flow log is created
+     * using the default format. If you specify this parameter, you must include at
+     * least one field. For more information about the available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * log records</a>. If you omit this parameter, the flow log is created using the
-     * default format. If you specify this parameter, you must include at least one
-     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * log records</a> in the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
+     * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
+     * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the CLI, surround this parameter value with single
      * quotes on Linux or double quotes on Windows.</p>
      */
@@ -773,8 +804,9 @@ namespace Model
 
     /**
      * <p>The maximum interval of time during which a flow of packets is captured and
-     * aggregated into a flow log record. You can specify 60 seconds (1 minute) or 600
-     * seconds (10 minutes).</p> <p>When a network interface is attached to a <a
+     * aggregated into a flow log record. The possible values are 60 seconds (1 minute)
+     * or 600 seconds (10 minutes). This parameter must be 60 seconds for transit
+     * gateway resource types.</p> <p>When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instance</a>, the aggregation interval is always 60 seconds or less, regardless
      * of the value that you specify.</p> <p>Default: 600</p>
@@ -783,8 +815,9 @@ namespace Model
 
     /**
      * <p>The maximum interval of time during which a flow of packets is captured and
-     * aggregated into a flow log record. You can specify 60 seconds (1 minute) or 600
-     * seconds (10 minutes).</p> <p>When a network interface is attached to a <a
+     * aggregated into a flow log record. The possible values are 60 seconds (1 minute)
+     * or 600 seconds (10 minutes). This parameter must be 60 seconds for transit
+     * gateway resource types.</p> <p>When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instance</a>, the aggregation interval is always 60 seconds or less, regardless
      * of the value that you specify.</p> <p>Default: 600</p>
@@ -793,8 +826,9 @@ namespace Model
 
     /**
      * <p>The maximum interval of time during which a flow of packets is captured and
-     * aggregated into a flow log record. You can specify 60 seconds (1 minute) or 600
-     * seconds (10 minutes).</p> <p>When a network interface is attached to a <a
+     * aggregated into a flow log record. The possible values are 60 seconds (1 minute)
+     * or 600 seconds (10 minutes). This parameter must be 60 seconds for transit
+     * gateway resource types.</p> <p>When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instance</a>, the aggregation interval is always 60 seconds or less, regardless
      * of the value that you specify.</p> <p>Default: 600</p>
@@ -803,8 +837,9 @@ namespace Model
 
     /**
      * <p>The maximum interval of time during which a flow of packets is captured and
-     * aggregated into a flow log record. You can specify 60 seconds (1 minute) or 600
-     * seconds (10 minutes).</p> <p>When a network interface is attached to a <a
+     * aggregated into a flow log record. The possible values are 60 seconds (1 minute)
+     * or 600 seconds (10 minutes). This parameter must be 60 seconds for transit
+     * gateway resource types.</p> <p>When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instance</a>, the aggregation interval is always 60 seconds or less, regardless
      * of the value that you specify.</p> <p>Default: 600</p>

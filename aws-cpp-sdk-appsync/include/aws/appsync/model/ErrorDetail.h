@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the list of errors generated when attempting to evaluate a mapping
-   * template.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the list of errors generated. When using JavaScript, this will apply
+   * to the request or response function evaluation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ErrorDetail">AWS
    * API Reference</a></p>
    */

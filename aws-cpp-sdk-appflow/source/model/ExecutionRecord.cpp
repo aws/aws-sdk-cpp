@@ -26,7 +26,8 @@ ExecutionRecord::ExecutionRecord() :
     m_startedAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_dataPullStartTimeHasBeenSet(false),
-    m_dataPullEndTimeHasBeenSet(false)
+    m_dataPullEndTimeHasBeenSet(false),
+    m_metadataCatalogDetailsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ ExecutionRecord::ExecutionRecord(JsonView jsonValue) :
     m_startedAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_dataPullStartTimeHasBeenSet(false),
-    m_dataPullEndTimeHasBeenSet(false)
+    m_dataPullEndTimeHasBeenSet(false),
+    m_metadataCatalogDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +96,16 @@ ExecutionRecord& ExecutionRecord::operator =(JsonView jsonValue)
     m_dataPullEndTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("metadataCatalogDetails"))
+  {
+    Aws::Utils::Array<JsonView> metadataCatalogDetailsJsonList = jsonValue.GetArray("metadataCatalogDetails");
+    for(unsigned metadataCatalogDetailsIndex = 0; metadataCatalogDetailsIndex < metadataCatalogDetailsJsonList.GetLength(); ++metadataCatalogDetailsIndex)
+    {
+      m_metadataCatalogDetails.push_back(metadataCatalogDetailsJsonList[metadataCatalogDetailsIndex].AsObject());
+    }
+    m_metadataCatalogDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,6 +148,17 @@ JsonValue ExecutionRecord::Jsonize() const
   if(m_dataPullEndTimeHasBeenSet)
   {
    payload.WithDouble("dataPullEndTime", m_dataPullEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_metadataCatalogDetailsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> metadataCatalogDetailsJsonList(m_metadataCatalogDetails.size());
+   for(unsigned metadataCatalogDetailsIndex = 0; metadataCatalogDetailsIndex < metadataCatalogDetailsJsonList.GetLength(); ++metadataCatalogDetailsIndex)
+   {
+     metadataCatalogDetailsJsonList[metadataCatalogDetailsIndex].AsObject(m_metadataCatalogDetails[metadataCatalogDetailsIndex].Jsonize());
+   }
+   payload.WithArray("metadataCatalogDetails", std::move(metadataCatalogDetailsJsonList));
+
   }
 
   return payload;

@@ -10,6 +10,7 @@
 #include <aws/workspaces/model/WorkspaceProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/ModificationState.h>
+#include <aws/workspaces/model/RelatedWorkspaceProperties.h>
 #include <utility>
 
 namespace Aws
@@ -677,6 +678,55 @@ namespace Model
      */
     inline Workspace& AddModificationStates(ModificationState&& value) { m_modificationStatesHasBeenSet = true; m_modificationStates.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline const Aws::Vector<RelatedWorkspaceProperties>& GetRelatedWorkspaces() const{ return m_relatedWorkspaces; }
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline bool RelatedWorkspacesHasBeenSet() const { return m_relatedWorkspacesHasBeenSet; }
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline void SetRelatedWorkspaces(const Aws::Vector<RelatedWorkspaceProperties>& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces = value; }
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline void SetRelatedWorkspaces(Aws::Vector<RelatedWorkspaceProperties>&& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces = std::move(value); }
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline Workspace& WithRelatedWorkspaces(const Aws::Vector<RelatedWorkspaceProperties>& value) { SetRelatedWorkspaces(value); return *this;}
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline Workspace& WithRelatedWorkspaces(Aws::Vector<RelatedWorkspaceProperties>&& value) { SetRelatedWorkspaces(std::move(value)); return *this;}
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline Workspace& AddRelatedWorkspaces(const RelatedWorkspaceProperties& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces.push_back(value); return *this; }
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline Workspace& AddRelatedWorkspaces(RelatedWorkspaceProperties&& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_workspaceId;
@@ -723,6 +773,9 @@ namespace Model
 
     Aws::Vector<ModificationState> m_modificationStates;
     bool m_modificationStatesHasBeenSet = false;
+
+    Aws::Vector<RelatedWorkspaceProperties> m_relatedWorkspaces;
+    bool m_relatedWorkspacesHasBeenSet = false;
   };
 
 } // namespace Model

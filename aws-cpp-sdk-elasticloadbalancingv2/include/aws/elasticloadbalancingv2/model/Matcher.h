@@ -43,81 +43,97 @@ namespace Model
 
     /**
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
-     * and the default value is 200. You can specify multiple values (for example,
+     * with the default value being 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p> <p>Note
-     * that when using shorthand syntax, some values such as commas need to be
-     * escaped.</p>
+     * Load Balancers, you can specify values between 200 and 599, with the default
+     * value being 200-399. You can specify multiple values (for example, "200,202") or
+     * a range of values (for example, "200-299").</p> <p>For Gateway Load Balancers,
+     * this must be "200–399".</p> <p>Note that when using shorthand syntax, some
+     * values such as commas need to be escaped.</p>
      */
     inline const Aws::String& GetHttpCode() const{ return m_httpCode; }
 
     /**
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
-     * and the default value is 200. You can specify multiple values (for example,
+     * with the default value being 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p> <p>Note
-     * that when using shorthand syntax, some values such as commas need to be
-     * escaped.</p>
+     * Load Balancers, you can specify values between 200 and 599, with the default
+     * value being 200-399. You can specify multiple values (for example, "200,202") or
+     * a range of values (for example, "200-299").</p> <p>For Gateway Load Balancers,
+     * this must be "200–399".</p> <p>Note that when using shorthand syntax, some
+     * values such as commas need to be escaped.</p>
      */
     inline bool HttpCodeHasBeenSet() const { return m_httpCodeHasBeenSet; }
 
     /**
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
-     * and the default value is 200. You can specify multiple values (for example,
+     * with the default value being 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p> <p>Note
-     * that when using shorthand syntax, some values such as commas need to be
-     * escaped.</p>
+     * Load Balancers, you can specify values between 200 and 599, with the default
+     * value being 200-399. You can specify multiple values (for example, "200,202") or
+     * a range of values (for example, "200-299").</p> <p>For Gateway Load Balancers,
+     * this must be "200–399".</p> <p>Note that when using shorthand syntax, some
+     * values such as commas need to be escaped.</p>
      */
     inline void SetHttpCode(const Aws::String& value) { m_httpCodeHasBeenSet = true; m_httpCode = value; }
 
     /**
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
-     * and the default value is 200. You can specify multiple values (for example,
+     * with the default value being 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p> <p>Note
-     * that when using shorthand syntax, some values such as commas need to be
-     * escaped.</p>
+     * Load Balancers, you can specify values between 200 and 599, with the default
+     * value being 200-399. You can specify multiple values (for example, "200,202") or
+     * a range of values (for example, "200-299").</p> <p>For Gateway Load Balancers,
+     * this must be "200–399".</p> <p>Note that when using shorthand syntax, some
+     * values such as commas need to be escaped.</p>
      */
     inline void SetHttpCode(Aws::String&& value) { m_httpCodeHasBeenSet = true; m_httpCode = std::move(value); }
 
     /**
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
-     * and the default value is 200. You can specify multiple values (for example,
+     * with the default value being 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p> <p>Note
-     * that when using shorthand syntax, some values such as commas need to be
-     * escaped.</p>
+     * Load Balancers, you can specify values between 200 and 599, with the default
+     * value being 200-399. You can specify multiple values (for example, "200,202") or
+     * a range of values (for example, "200-299").</p> <p>For Gateway Load Balancers,
+     * this must be "200–399".</p> <p>Note that when using shorthand syntax, some
+     * values such as commas need to be escaped.</p>
      */
     inline void SetHttpCode(const char* value) { m_httpCodeHasBeenSet = true; m_httpCode.assign(value); }
 
     /**
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
-     * and the default value is 200. You can specify multiple values (for example,
+     * with the default value being 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p> <p>Note
-     * that when using shorthand syntax, some values such as commas need to be
-     * escaped.</p>
+     * Load Balancers, you can specify values between 200 and 599, with the default
+     * value being 200-399. You can specify multiple values (for example, "200,202") or
+     * a range of values (for example, "200-299").</p> <p>For Gateway Load Balancers,
+     * this must be "200–399".</p> <p>Note that when using shorthand syntax, some
+     * values such as commas need to be escaped.</p>
      */
     inline Matcher& WithHttpCode(const Aws::String& value) { SetHttpCode(value); return *this;}
 
     /**
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
-     * and the default value is 200. You can specify multiple values (for example,
+     * with the default value being 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p> <p>Note
-     * that when using shorthand syntax, some values such as commas need to be
-     * escaped.</p>
+     * Load Balancers, you can specify values between 200 and 599, with the default
+     * value being 200-399. You can specify multiple values (for example, "200,202") or
+     * a range of values (for example, "200-299").</p> <p>For Gateway Load Balancers,
+     * this must be "200–399".</p> <p>Note that when using shorthand syntax, some
+     * values such as commas need to be escaped.</p>
      */
     inline Matcher& WithHttpCode(Aws::String&& value) { SetHttpCode(std::move(value)); return *this;}
 
     /**
      * <p>For Application Load Balancers, you can specify values between 200 and 499,
-     * and the default value is 200. You can specify multiple values (for example,
+     * with the default value being 200. You can specify multiple values (for example,
      * "200,202") or a range of values (for example, "200-299").</p> <p>For Network
-     * Load Balancers and Gateway Load Balancers, this must be "200–399".</p> <p>Note
-     * that when using shorthand syntax, some values such as commas need to be
-     * escaped.</p>
+     * Load Balancers, you can specify values between 200 and 599, with the default
+     * value being 200-399. You can specify multiple values (for example, "200,202") or
+     * a range of values (for example, "200-299").</p> <p>For Gateway Load Balancers,
+     * this must be "200–399".</p> <p>Note that when using shorthand syntax, some
+     * values such as commas need to be escaped.</p>
      */
     inline Matcher& WithHttpCode(const char* value) { SetHttpCode(value); return *this;}
 

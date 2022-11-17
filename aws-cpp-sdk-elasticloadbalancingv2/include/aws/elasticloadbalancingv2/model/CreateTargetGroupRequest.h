@@ -557,189 +557,207 @@ namespace Model
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is HTTP or HTTPS, the default is
-     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
-     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
-     * target group protocol is GENEVE, the default is 10 seconds. If the target type
-     * is <code>lambda</code>, the default is 35 seconds.</p>
+     * individual target. The range is 5-300. If the target group protocol is TCP, TLS,
+     * UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group
+     * protocol is GENEVE, the default is 10 seconds. If the target type is
+     * <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is HTTP or HTTPS, the default is
-     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
-     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
-     * target group protocol is GENEVE, the default is 10 seconds. If the target type
-     * is <code>lambda</code>, the default is 35 seconds.</p>
+     * individual target. The range is 5-300. If the target group protocol is TCP, TLS,
+     * UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group
+     * protocol is GENEVE, the default is 10 seconds. If the target type is
+     * <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is HTTP or HTTPS, the default is
-     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
-     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
-     * target group protocol is GENEVE, the default is 10 seconds. If the target type
-     * is <code>lambda</code>, the default is 35 seconds.</p>
+     * individual target. The range is 5-300. If the target group protocol is TCP, TLS,
+     * UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group
+     * protocol is GENEVE, the default is 10 seconds. If the target type is
+     * <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is HTTP or HTTPS, the default is
-     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
-     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
-     * target group protocol is GENEVE, the default is 10 seconds. If the target type
-     * is <code>lambda</code>, the default is 35 seconds.</p>
+     * individual target. The range is 5-300. If the target group protocol is TCP, TLS,
+     * UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group
+     * protocol is GENEVE, the default is 10 seconds. If the target type is
+     * <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 
 
     /**
      * <p>The amount of time, in seconds, during which no response from a target means
-     * a failed health check. For target groups with a protocol of HTTP, HTTPS, or
-     * GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or
-     * TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP
-     * and HTTPS health checks. If the target type is <code>lambda</code>, the default
-     * is 30 seconds.</p>
+     * a failed health check. The range is 2–120 seconds. For target groups with a
+     * protocol of HTTP, the default is 6 seconds. For target groups with a protocol of
+     * TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol
+     * of GENEVE, the default is 5 seconds. If the target type is <code>lambda</code>,
+     * the default is 30 seconds.</p>
      */
     inline int GetHealthCheckTimeoutSeconds() const{ return m_healthCheckTimeoutSeconds; }
 
     /**
      * <p>The amount of time, in seconds, during which no response from a target means
-     * a failed health check. For target groups with a protocol of HTTP, HTTPS, or
-     * GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or
-     * TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP
-     * and HTTPS health checks. If the target type is <code>lambda</code>, the default
-     * is 30 seconds.</p>
+     * a failed health check. The range is 2–120 seconds. For target groups with a
+     * protocol of HTTP, the default is 6 seconds. For target groups with a protocol of
+     * TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol
+     * of GENEVE, the default is 5 seconds. If the target type is <code>lambda</code>,
+     * the default is 30 seconds.</p>
      */
     inline bool HealthCheckTimeoutSecondsHasBeenSet() const { return m_healthCheckTimeoutSecondsHasBeenSet; }
 
     /**
      * <p>The amount of time, in seconds, during which no response from a target means
-     * a failed health check. For target groups with a protocol of HTTP, HTTPS, or
-     * GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or
-     * TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP
-     * and HTTPS health checks. If the target type is <code>lambda</code>, the default
-     * is 30 seconds.</p>
+     * a failed health check. The range is 2–120 seconds. For target groups with a
+     * protocol of HTTP, the default is 6 seconds. For target groups with a protocol of
+     * TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol
+     * of GENEVE, the default is 5 seconds. If the target type is <code>lambda</code>,
+     * the default is 30 seconds.</p>
      */
     inline void SetHealthCheckTimeoutSeconds(int value) { m_healthCheckTimeoutSecondsHasBeenSet = true; m_healthCheckTimeoutSeconds = value; }
 
     /**
      * <p>The amount of time, in seconds, during which no response from a target means
-     * a failed health check. For target groups with a protocol of HTTP, HTTPS, or
-     * GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or
-     * TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP
-     * and HTTPS health checks. If the target type is <code>lambda</code>, the default
-     * is 30 seconds.</p>
+     * a failed health check. The range is 2–120 seconds. For target groups with a
+     * protocol of HTTP, the default is 6 seconds. For target groups with a protocol of
+     * TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol
+     * of GENEVE, the default is 5 seconds. If the target type is <code>lambda</code>,
+     * the default is 30 seconds.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckTimeoutSeconds(int value) { SetHealthCheckTimeoutSeconds(value); return *this;}
 
 
     /**
-     * <p>The number of consecutive health checks successes required before considering
-     * an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS,
-     * the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the
-     * default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
+     * <p>The number of consecutive health check successes required before considering
+     * a target healthy. The range is 2-10. If the target group protocol is TCP,
+     * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * the default is 5.</p>
      */
     inline int GetHealthyThresholdCount() const{ return m_healthyThresholdCount; }
 
     /**
-     * <p>The number of consecutive health checks successes required before considering
-     * an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS,
-     * the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the
-     * default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
+     * <p>The number of consecutive health check successes required before considering
+     * a target healthy. The range is 2-10. If the target group protocol is TCP,
+     * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * the default is 5.</p>
      */
     inline bool HealthyThresholdCountHasBeenSet() const { return m_healthyThresholdCountHasBeenSet; }
 
     /**
-     * <p>The number of consecutive health checks successes required before considering
-     * an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS,
-     * the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the
-     * default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
+     * <p>The number of consecutive health check successes required before considering
+     * a target healthy. The range is 2-10. If the target group protocol is TCP,
+     * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * the default is 5.</p>
      */
     inline void SetHealthyThresholdCount(int value) { m_healthyThresholdCountHasBeenSet = true; m_healthyThresholdCount = value; }
 
     /**
-     * <p>The number of consecutive health checks successes required before considering
-     * an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS,
-     * the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the
-     * default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
+     * <p>The number of consecutive health check successes required before considering
+     * a target healthy. The range is 2-10. If the target group protocol is TCP,
+     * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * the default is 5.</p>
      */
     inline CreateTargetGroupRequest& WithHealthyThresholdCount(int value) { SetHealthyThresholdCount(value); return *this;}
 
 
     /**
      * <p>The number of consecutive health check failures required before considering a
-     * target unhealthy. If the target group protocol is HTTP or HTTPS, the default is
-     * 2. If the target group protocol is TCP or TLS, this value must be the same as
-     * the healthy threshold count. If the target group protocol is GENEVE, the default
-     * is 3. If the target type is <code>lambda</code>, the default is 2.</p>
+     * target unhealthy. The range is 2-10. If the target group protocol is TCP,
+     * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * the default is 5.</p>
      */
     inline int GetUnhealthyThresholdCount() const{ return m_unhealthyThresholdCount; }
 
     /**
      * <p>The number of consecutive health check failures required before considering a
-     * target unhealthy. If the target group protocol is HTTP or HTTPS, the default is
-     * 2. If the target group protocol is TCP or TLS, this value must be the same as
-     * the healthy threshold count. If the target group protocol is GENEVE, the default
-     * is 3. If the target type is <code>lambda</code>, the default is 2.</p>
+     * target unhealthy. The range is 2-10. If the target group protocol is TCP,
+     * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * the default is 5.</p>
      */
     inline bool UnhealthyThresholdCountHasBeenSet() const { return m_unhealthyThresholdCountHasBeenSet; }
 
     /**
      * <p>The number of consecutive health check failures required before considering a
-     * target unhealthy. If the target group protocol is HTTP or HTTPS, the default is
-     * 2. If the target group protocol is TCP or TLS, this value must be the same as
-     * the healthy threshold count. If the target group protocol is GENEVE, the default
-     * is 3. If the target type is <code>lambda</code>, the default is 2.</p>
+     * target unhealthy. The range is 2-10. If the target group protocol is TCP,
+     * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * the default is 5.</p>
      */
     inline void SetUnhealthyThresholdCount(int value) { m_unhealthyThresholdCountHasBeenSet = true; m_unhealthyThresholdCount = value; }
 
     /**
      * <p>The number of consecutive health check failures required before considering a
-     * target unhealthy. If the target group protocol is HTTP or HTTPS, the default is
-     * 2. If the target group protocol is TCP or TLS, this value must be the same as
-     * the healthy threshold count. If the target group protocol is GENEVE, the default
-     * is 3. If the target type is <code>lambda</code>, the default is 2.</p>
+     * target unhealthy. The range is 2-10. If the target group protocol is TCP,
+     * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * the default is 5.</p>
      */
     inline CreateTargetGroupRequest& WithUnhealthyThresholdCount(int value) { SetUnhealthyThresholdCount(value); return *this;}
 
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline CreateTargetGroupRequest& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target. For target groups with a protocol of TCP,
+     * TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of
+     * HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     * GENEVE, the range is 200-399.</p>
      */
     inline CreateTargetGroupRequest& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
 

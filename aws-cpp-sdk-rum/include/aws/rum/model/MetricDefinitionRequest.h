@@ -99,8 +99,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDimensionKeys() const{ return m_dimensionKeys; }
 
@@ -114,8 +114,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline bool DimensionKeysHasBeenSet() const { return m_dimensionKeysHasBeenSet; }
 
@@ -129,8 +129,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline void SetDimensionKeys(const Aws::Map<Aws::String, Aws::String>& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys = value; }
 
@@ -144,8 +144,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline void SetDimensionKeys(Aws::Map<Aws::String, Aws::String>&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys = std::move(value); }
 
@@ -159,8 +159,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& WithDimensionKeys(const Aws::Map<Aws::String, Aws::String>& value) { SetDimensionKeys(value); return *this;}
 
@@ -174,8 +174,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& WithDimensionKeys(Aws::Map<Aws::String, Aws::String>&& value) { SetDimensionKeys(std::move(value)); return *this;}
 
@@ -189,8 +189,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(const Aws::String& key, const Aws::String& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, value); return *this; }
 
@@ -204,8 +204,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(Aws::String&& key, const Aws::String& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(std::move(key), value); return *this; }
 
@@ -219,8 +219,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(const Aws::String& key, Aws::String&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, std::move(value)); return *this; }
 
@@ -234,8 +234,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(Aws::String&& key, Aws::String&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -249,8 +249,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(const char* key, Aws::String&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, std::move(value)); return *this; }
 
@@ -264,8 +264,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(Aws::String&& key, const char* value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(std::move(key), value); return *this; }
 
@@ -279,8 +279,8 @@ namespace Model
      * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
      * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
      * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-     * included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+     * </ul> <p> All dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(const char* key, const char* value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, value); return *this; }
 

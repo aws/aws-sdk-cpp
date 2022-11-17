@@ -387,6 +387,28 @@ namespace Personalize
         virtual void CreateFilterAsync(const Model::CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a metric attribution. A metric attribution creates reports on the
+         * data that you import into Amazon Personalize. Depending on how you imported the
+         * data, you can view reports in Amazon CloudWatch or Amazon S3. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+         * impact of recommendations</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMetricAttributionOutcome CreateMetricAttribution(const Model::CreateMetricAttributionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMetricAttribution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMetricAttributionOutcomeCallable CreateMetricAttributionCallable(const Model::CreateMetricAttributionRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateMetricAttribution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMetricAttributionAsync(const Model::CreateMetricAttributionRequest& request, const CreateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a recommender with the recipe (a Domain dataset group use case) you
          * specify. You create recommenders for a Domain dataset group and specify the
          * recommender's Amazon Resource Name (ARN) when you make a <a
@@ -677,6 +699,23 @@ namespace Personalize
         virtual void DeleteFilterAsync(const Model::DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a metric attribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMetricAttributionOutcome DeleteMetricAttribution(const Model::DeleteMetricAttributionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMetricAttribution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMetricAttributionOutcomeCallable DeleteMetricAttributionCallable(const Model::DeleteMetricAttributionRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteMetricAttribution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMetricAttributionAsync(const Model::DeleteMetricAttributionRequest& request, const DeleteMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deactivates and removes a recommender. A deleted recommender can no longer be
          * specified in a <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
@@ -951,6 +990,23 @@ namespace Personalize
          * An Async wrapper for DescribeFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeFilterAsync(const Model::DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes a metric attribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMetricAttributionOutcome DescribeMetricAttribution(const Model::DescribeMetricAttributionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMetricAttribution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMetricAttributionOutcomeCallable DescribeMetricAttributionCallable(const Model::DescribeMetricAttributionRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeMetricAttribution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMetricAttributionAsync(const Model::DescribeMetricAttributionRequest& request, const DescribeMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a recipe.</p> <p>A recipe contains three items:</p> <ul> <li> <p>An
@@ -1273,6 +1329,40 @@ namespace Personalize
         virtual void ListFiltersAsync(const Model::ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the metrics for the metric attribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMetricAttributionMetricsOutcome ListMetricAttributionMetrics(const Model::ListMetricAttributionMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMetricAttributionMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMetricAttributionMetricsOutcomeCallable ListMetricAttributionMetricsCallable(const Model::ListMetricAttributionMetricsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListMetricAttributionMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMetricAttributionMetricsAsync(const Model::ListMetricAttributionMetricsRequest& request, const ListMetricAttributionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists metric attributions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMetricAttributionsOutcome ListMetricAttributions(const Model::ListMetricAttributionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMetricAttributions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMetricAttributionsOutcomeCallable ListMetricAttributionsCallable(const Model::ListMetricAttributionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListMetricAttributions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMetricAttributionsAsync(const Model::ListMetricAttributionsRequest& request, const ListMetricAttributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of available recipes. The response provides the properties for
          * each recipe, including the recipe's Amazon Resource Name (ARN).</p><p><h3>See
          * Also:</h3>   <a
@@ -1519,6 +1609,23 @@ namespace Personalize
          * An Async wrapper for UpdateCampaign that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateCampaignAsync(const Model::UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a metric attribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMetricAttributionOutcome UpdateMetricAttribution(const Model::UpdateMetricAttributionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMetricAttribution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMetricAttributionOutcomeCallable UpdateMetricAttributionCallable(const Model::UpdateMetricAttributionRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateMetricAttribution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMetricAttributionAsync(const Model::UpdateMetricAttributionRequest& request, const UpdateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the recommender to modify the recommender

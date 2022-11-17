@@ -165,32 +165,56 @@ namespace Model
 
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline const Platform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline CreateAppRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p> The platform or framework for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline CreateAppRequest& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
 

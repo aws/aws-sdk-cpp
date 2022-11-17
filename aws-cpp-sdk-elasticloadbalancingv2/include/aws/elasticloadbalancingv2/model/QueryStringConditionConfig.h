@@ -45,11 +45,11 @@ namespace Model
 
 
     /**
-     * <p>One or more key/value pairs or values to find in the query string. The
-     * maximum size of each string is 128 characters. The comparison is case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character). To search for a literal
-     * '*' or '?' character in a query string, you must escape these characters in
+     * <p>The key/value pairs or values to find in the query string. The maximum size
+     * of each string is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     * character in a query string, you must escape these characters in
      * <code>Values</code> using a '\' character.</p> <p>If you specify multiple
      * key/value pairs or values, the condition is satisfied if one of them is found in
      * the query string.</p>
@@ -57,11 +57,11 @@ namespace Model
     inline const Aws::Vector<QueryStringKeyValuePair>& GetValues() const{ return m_values; }
 
     /**
-     * <p>One or more key/value pairs or values to find in the query string. The
-     * maximum size of each string is 128 characters. The comparison is case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character). To search for a literal
-     * '*' or '?' character in a query string, you must escape these characters in
+     * <p>The key/value pairs or values to find in the query string. The maximum size
+     * of each string is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     * character in a query string, you must escape these characters in
      * <code>Values</code> using a '\' character.</p> <p>If you specify multiple
      * key/value pairs or values, the condition is satisfied if one of them is found in
      * the query string.</p>
@@ -69,11 +69,11 @@ namespace Model
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * <p>One or more key/value pairs or values to find in the query string. The
-     * maximum size of each string is 128 characters. The comparison is case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character). To search for a literal
-     * '*' or '?' character in a query string, you must escape these characters in
+     * <p>The key/value pairs or values to find in the query string. The maximum size
+     * of each string is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     * character in a query string, you must escape these characters in
      * <code>Values</code> using a '\' character.</p> <p>If you specify multiple
      * key/value pairs or values, the condition is satisfied if one of them is found in
      * the query string.</p>
@@ -81,11 +81,11 @@ namespace Model
     inline void SetValues(const Aws::Vector<QueryStringKeyValuePair>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>One or more key/value pairs or values to find in the query string. The
-     * maximum size of each string is 128 characters. The comparison is case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character). To search for a literal
-     * '*' or '?' character in a query string, you must escape these characters in
+     * <p>The key/value pairs or values to find in the query string. The maximum size
+     * of each string is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     * character in a query string, you must escape these characters in
      * <code>Values</code> using a '\' character.</p> <p>If you specify multiple
      * key/value pairs or values, the condition is satisfied if one of them is found in
      * the query string.</p>
@@ -93,11 +93,11 @@ namespace Model
     inline void SetValues(Aws::Vector<QueryStringKeyValuePair>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>One or more key/value pairs or values to find in the query string. The
-     * maximum size of each string is 128 characters. The comparison is case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character). To search for a literal
-     * '*' or '?' character in a query string, you must escape these characters in
+     * <p>The key/value pairs or values to find in the query string. The maximum size
+     * of each string is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     * character in a query string, you must escape these characters in
      * <code>Values</code> using a '\' character.</p> <p>If you specify multiple
      * key/value pairs or values, the condition is satisfied if one of them is found in
      * the query string.</p>
@@ -105,11 +105,11 @@ namespace Model
     inline QueryStringConditionConfig& WithValues(const Aws::Vector<QueryStringKeyValuePair>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>One or more key/value pairs or values to find in the query string. The
-     * maximum size of each string is 128 characters. The comparison is case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character). To search for a literal
-     * '*' or '?' character in a query string, you must escape these characters in
+     * <p>The key/value pairs or values to find in the query string. The maximum size
+     * of each string is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     * character in a query string, you must escape these characters in
      * <code>Values</code> using a '\' character.</p> <p>If you specify multiple
      * key/value pairs or values, the condition is satisfied if one of them is found in
      * the query string.</p>
@@ -117,11 +117,11 @@ namespace Model
     inline QueryStringConditionConfig& WithValues(Aws::Vector<QueryStringKeyValuePair>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>One or more key/value pairs or values to find in the query string. The
-     * maximum size of each string is 128 characters. The comparison is case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character). To search for a literal
-     * '*' or '?' character in a query string, you must escape these characters in
+     * <p>The key/value pairs or values to find in the query string. The maximum size
+     * of each string is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     * character in a query string, you must escape these characters in
      * <code>Values</code> using a '\' character.</p> <p>If you specify multiple
      * key/value pairs or values, the condition is satisfied if one of them is found in
      * the query string.</p>
@@ -129,11 +129,11 @@ namespace Model
     inline QueryStringConditionConfig& AddValues(const QueryStringKeyValuePair& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>One or more key/value pairs or values to find in the query string. The
-     * maximum size of each string is 128 characters. The comparison is case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character). To search for a literal
-     * '*' or '?' character in a query string, you must escape these characters in
+     * <p>The key/value pairs or values to find in the query string. The maximum size
+     * of each string is 128 characters. The comparison is case insensitive. The
+     * following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character). To search for a literal '*' or '?'
+     * character in a query string, you must escape these characters in
      * <code>Values</code> using a '\' character.</p> <p>If you specify multiple
      * key/value pairs or values, the condition is satisfied if one of them is found in
      * the query string.</p>

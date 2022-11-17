@@ -321,6 +321,55 @@ namespace Model
      */
     inline CreateNatGatewayRequest& WithConnectivityType(ConnectivityType&& value) { SetConnectivityType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline CreateNatGatewayRequest& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline CreateNatGatewayRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline CreateNatGatewayRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+
   private:
 
     Aws::String m_allocationId;
@@ -340,6 +389,9 @@ namespace Model
 
     ConnectivityType m_connectivityType;
     bool m_connectivityTypeHasBeenSet = false;
+
+    Aws::String m_privateIpAddress;
+    bool m_privateIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

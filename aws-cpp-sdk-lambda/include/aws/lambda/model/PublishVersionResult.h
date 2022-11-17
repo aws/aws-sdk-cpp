@@ -487,35 +487,35 @@ namespace Model
     /**
      * <p>The function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.</p>
+     * variables</a>. Omitted from CloudTrail logs.</p>
      */
     inline const EnvironmentResponse& GetEnvironment() const{ return m_environment; }
 
     /**
      * <p>The function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.</p>
+     * variables</a>. Omitted from CloudTrail logs.</p>
      */
     inline void SetEnvironment(const EnvironmentResponse& value) { m_environment = value; }
 
     /**
      * <p>The function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.</p>
+     * variables</a>. Omitted from CloudTrail logs.</p>
      */
     inline void SetEnvironment(EnvironmentResponse&& value) { m_environment = std::move(value); }
 
     /**
      * <p>The function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.</p>
+     * variables</a>. Omitted from CloudTrail logs.</p>
      */
     inline PublishVersionResult& WithEnvironment(const EnvironmentResponse& value) { SetEnvironment(value); return *this;}
 
     /**
      * <p>The function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.</p>
+     * variables</a>. Omitted from CloudTrail logs.</p>
      */
     inline PublishVersionResult& WithEnvironment(EnvironmentResponse&& value) { SetEnvironment(std::move(value)); return *this;}
 

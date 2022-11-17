@@ -38,6 +38,7 @@
 #include <aws/servicecatalog-appregistry/model/ListAttributeGroupsRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListAttributeGroupsForApplicationRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListTagsForResourceRequest.h>
+#include <aws/servicecatalog-appregistry/model/PutConfigurationRequest.h>
 #include <aws/servicecatalog-appregistry/model/SyncResourceRequest.h>
 #include <aws/servicecatalog-appregistry/model/TagResourceRequest.h>
 #include <aws/servicecatalog-appregistry/model/UntagResourceRequest.h>
@@ -553,6 +554,32 @@ void AppRegistryClient::GetAttributeGroupAsync(const GetAttributeGroupRequest& r
     } );
 }
 
+GetConfigurationOutcome AppRegistryClient::GetConfiguration() const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  static const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+  return GetConfigurationOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "GetConfiguration"));
+}
+
+GetConfigurationOutcomeCallable AppRegistryClient::GetConfigurationCallable() const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetConfigurationOutcome() > >(ALLOCATION_TAG, [this](){ return this->GetConfiguration(); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRegistryClient::GetConfigurationAsync(const GetConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, handler, context]()
+    {
+      handler(this, GetConfiguration(), context);
+    } );
+}
+
 ListApplicationsOutcome AppRegistryClient::ListApplications(const ListApplicationsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -727,6 +754,31 @@ void AppRegistryClient::ListTagsForResourceAsync(const ListTagsForResourceReques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListTagsForResource(request), context);
+    } );
+}
+
+PutConfigurationOutcome AppRegistryClient::PutConfiguration(const PutConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+  return PutConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutConfigurationOutcomeCallable AppRegistryClient::PutConfigurationCallable(const PutConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRegistryClient::PutConfigurationAsync(const PutConfigurationRequest& request, const PutConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutConfiguration(request), context);
     } );
 }
 

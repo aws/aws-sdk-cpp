@@ -123,38 +123,38 @@ namespace Model
 
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline const S3SetObjectAclOperation& GetS3PutObjectAcl() const{ return m_s3PutObjectAcl; }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline bool S3PutObjectAclHasBeenSet() const { return m_s3PutObjectAclHasBeenSet; }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline void SetS3PutObjectAcl(const S3SetObjectAclOperation& value) { m_s3PutObjectAclHasBeenSet = true; m_s3PutObjectAcl = value; }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline void SetS3PutObjectAcl(S3SetObjectAclOperation&& value) { m_s3PutObjectAclHasBeenSet = true; m_s3PutObjectAcl = std::move(value); }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline JobOperation& WithS3PutObjectAcl(const S3SetObjectAclOperation& value) { SetS3PutObjectAcl(value); return *this;}
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline JobOperation& WithS3PutObjectAcl(S3SetObjectAclOperation&& value) { SetS3PutObjectAcl(std::move(value)); return *this;}
 

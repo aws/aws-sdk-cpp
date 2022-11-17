@@ -208,6 +208,63 @@ namespace Model
      */
     inline ReplicationPendingModifiedValues& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline ReplicationPendingModifiedValues& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline ReplicationPendingModifiedValues& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline ReplicationPendingModifiedValues& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+
   private:
 
     Aws::String m_replicationInstanceClass;
@@ -221,6 +278,9 @@ namespace Model
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,13 +20,19 @@ namespace Model
 
 ResourceInfo::ResourceInfo() : 
     m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_resourceType(ResourceType::NOT_SET),
+    m_resourceTypeHasBeenSet(false),
+    m_resourceDetailsHasBeenSet(false)
 {
 }
 
 ResourceInfo::ResourceInfo(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_resourceType(ResourceType::NOT_SET),
+    m_resourceTypeHasBeenSet(false),
+    m_resourceDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +53,20 @@ ResourceInfo& ResourceInfo::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resourceType"))
+  {
+    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
+
+    m_resourceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceDetails"))
+  {
+    m_resourceDetails = jsonValue.GetObject("resourceDetails");
+
+    m_resourceDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +83,17 @@ JsonValue ResourceInfo::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if(m_resourceDetailsHasBeenSet)
+  {
+   payload.WithObject("resourceDetails", m_resourceDetails.Jsonize());
 
   }
 
