@@ -59,7 +59,7 @@
 #set($clientConfigurationNamespace = "Client")
 #set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)")
 #set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
-#set($hasEventStreamInputOperation = $serviceModel.hasEventStreamOperationRequestShapes())
+#set($hasEventStreamInputOperation = $serviceModel.hasStreamingRequestShapes())
 #set($signerToMake = "AWSAuthV4Signer")
 #if($serviceModel.hasOnlyBearerAuth())
     #set($signerToMake = "Aws::Auth::BearerTokenAuthSignerProvider")
