@@ -24,7 +24,8 @@ ReplicationPendingModifiedValues::ReplicationPendingModifiedValues() :
     m_allocatedStorageHasBeenSet(false),
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ ReplicationPendingModifiedValues::ReplicationPendingModifiedValues(JsonView json
     m_allocatedStorageHasBeenSet(false),
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +71,13 @@ ReplicationPendingModifiedValues& ReplicationPendingModifiedValues::operator =(J
     m_engineVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkType"))
+  {
+    m_networkType = jsonValue.GetString("NetworkType");
+
+    m_networkTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +106,12 @@ JsonValue ReplicationPendingModifiedValues::Jsonize() const
   if(m_engineVersionHasBeenSet)
   {
    payload.WithString("EngineVersion", m_engineVersion);
+
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", m_networkType);
 
   }
 

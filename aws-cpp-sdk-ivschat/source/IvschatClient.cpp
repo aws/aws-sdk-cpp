@@ -22,16 +22,21 @@
 #include <aws/ivschat/IvschatErrorMarshaller.h>
 #include <aws/ivschat/IvschatEndpointProvider.h>
 #include <aws/ivschat/model/CreateChatTokenRequest.h>
+#include <aws/ivschat/model/CreateLoggingConfigurationRequest.h>
 #include <aws/ivschat/model/CreateRoomRequest.h>
+#include <aws/ivschat/model/DeleteLoggingConfigurationRequest.h>
 #include <aws/ivschat/model/DeleteMessageRequest.h>
 #include <aws/ivschat/model/DeleteRoomRequest.h>
 #include <aws/ivschat/model/DisconnectUserRequest.h>
+#include <aws/ivschat/model/GetLoggingConfigurationRequest.h>
 #include <aws/ivschat/model/GetRoomRequest.h>
+#include <aws/ivschat/model/ListLoggingConfigurationsRequest.h>
 #include <aws/ivschat/model/ListRoomsRequest.h>
 #include <aws/ivschat/model/ListTagsForResourceRequest.h>
 #include <aws/ivschat/model/SendEventRequest.h>
 #include <aws/ivschat/model/TagResourceRequest.h>
 #include <aws/ivschat/model/UntagResourceRequest.h>
+#include <aws/ivschat/model/UpdateLoggingConfigurationRequest.h>
 #include <aws/ivschat/model/UpdateRoomRequest.h>
 
 using namespace Aws;
@@ -186,6 +191,31 @@ void IvschatClient::CreateChatTokenAsync(const CreateChatTokenRequest& request, 
     } );
 }
 
+CreateLoggingConfigurationOutcome IvschatClient::CreateLoggingConfiguration(const CreateLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/CreateLoggingConfiguration");
+  return CreateLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLoggingConfigurationOutcomeCallable IvschatClient::CreateLoggingConfigurationCallable(const CreateLoggingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLoggingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IvschatClient::CreateLoggingConfigurationAsync(const CreateLoggingConfigurationRequest& request, const CreateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLoggingConfiguration(request), context);
+    } );
+}
+
 CreateRoomOutcome IvschatClient::CreateRoom(const CreateRoomRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRoom, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -208,6 +238,31 @@ void IvschatClient::CreateRoomAsync(const CreateRoomRequest& request, const Crea
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateRoom(request), context);
+    } );
+}
+
+DeleteLoggingConfigurationOutcome IvschatClient::DeleteLoggingConfiguration(const DeleteLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLoggingConfiguration");
+  return DeleteLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteLoggingConfigurationOutcomeCallable IvschatClient::DeleteLoggingConfigurationCallable(const DeleteLoggingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLoggingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IvschatClient::DeleteLoggingConfigurationAsync(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLoggingConfiguration(request), context);
     } );
 }
 
@@ -286,6 +341,31 @@ void IvschatClient::DisconnectUserAsync(const DisconnectUserRequest& request, co
     } );
 }
 
+GetLoggingConfigurationOutcome IvschatClient::GetLoggingConfiguration(const GetLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/GetLoggingConfiguration");
+  return GetLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLoggingConfigurationOutcomeCallable IvschatClient::GetLoggingConfigurationCallable(const GetLoggingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLoggingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IvschatClient::GetLoggingConfigurationAsync(const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLoggingConfiguration(request), context);
+    } );
+}
+
 GetRoomOutcome IvschatClient::GetRoom(const GetRoomRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRoom, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -308,6 +388,31 @@ void IvschatClient::GetRoomAsync(const GetRoomRequest& request, const GetRoomRes
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetRoom(request), context);
+    } );
+}
+
+ListLoggingConfigurationsOutcome IvschatClient::ListLoggingConfigurations(const ListLoggingConfigurationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLoggingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLoggingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListLoggingConfigurations");
+  return ListLoggingConfigurationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLoggingConfigurationsOutcomeCallable IvschatClient::ListLoggingConfigurationsCallable(const ListLoggingConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLoggingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLoggingConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IvschatClient::ListLoggingConfigurationsAsync(const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLoggingConfigurations(request), context);
     } );
 }
 
@@ -456,6 +561,31 @@ void IvschatClient::UntagResourceAsync(const UntagResourceRequest& request, cons
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UntagResource(request), context);
+    } );
+}
+
+UpdateLoggingConfigurationOutcome IvschatClient::UpdateLoggingConfiguration(const UpdateLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLoggingConfiguration");
+  return UpdateLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLoggingConfigurationOutcomeCallable IvschatClient::UpdateLoggingConfigurationCallable(const UpdateLoggingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLoggingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IvschatClient::UpdateLoggingConfigurationAsync(const UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateLoggingConfiguration(request), context);
     } );
 }
 

@@ -22,13 +22,19 @@ namespace Model
 
 BucketLevel::BucketLevel() : 
     m_activityMetricsHasBeenSet(false),
-    m_prefixLevelHasBeenSet(false)
+    m_prefixLevelHasBeenSet(false),
+    m_advancedCostOptimizationMetricsHasBeenSet(false),
+    m_advancedDataProtectionMetricsHasBeenSet(false),
+    m_detailedStatusCodesMetricsHasBeenSet(false)
 {
 }
 
 BucketLevel::BucketLevel(const XmlNode& xmlNode) : 
     m_activityMetricsHasBeenSet(false),
-    m_prefixLevelHasBeenSet(false)
+    m_prefixLevelHasBeenSet(false),
+    m_advancedCostOptimizationMetricsHasBeenSet(false),
+    m_advancedDataProtectionMetricsHasBeenSet(false),
+    m_detailedStatusCodesMetricsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,6 +57,24 @@ BucketLevel& BucketLevel::operator =(const XmlNode& xmlNode)
       m_prefixLevel = prefixLevelNode;
       m_prefixLevelHasBeenSet = true;
     }
+    XmlNode advancedCostOptimizationMetricsNode = resultNode.FirstChild("AdvancedCostOptimizationMetrics");
+    if(!advancedCostOptimizationMetricsNode.IsNull())
+    {
+      m_advancedCostOptimizationMetrics = advancedCostOptimizationMetricsNode;
+      m_advancedCostOptimizationMetricsHasBeenSet = true;
+    }
+    XmlNode advancedDataProtectionMetricsNode = resultNode.FirstChild("AdvancedDataProtectionMetrics");
+    if(!advancedDataProtectionMetricsNode.IsNull())
+    {
+      m_advancedDataProtectionMetrics = advancedDataProtectionMetricsNode;
+      m_advancedDataProtectionMetricsHasBeenSet = true;
+    }
+    XmlNode detailedStatusCodesMetricsNode = resultNode.FirstChild("DetailedStatusCodesMetrics");
+    if(!detailedStatusCodesMetricsNode.IsNull())
+    {
+      m_detailedStatusCodesMetrics = detailedStatusCodesMetricsNode;
+      m_detailedStatusCodesMetricsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -69,6 +93,24 @@ void BucketLevel::AddToNode(XmlNode& parentNode) const
   {
    XmlNode prefixLevelNode = parentNode.CreateChildElement("PrefixLevel");
    m_prefixLevel.AddToNode(prefixLevelNode);
+  }
+
+  if(m_advancedCostOptimizationMetricsHasBeenSet)
+  {
+   XmlNode advancedCostOptimizationMetricsNode = parentNode.CreateChildElement("AdvancedCostOptimizationMetrics");
+   m_advancedCostOptimizationMetrics.AddToNode(advancedCostOptimizationMetricsNode);
+  }
+
+  if(m_advancedDataProtectionMetricsHasBeenSet)
+  {
+   XmlNode advancedDataProtectionMetricsNode = parentNode.CreateChildElement("AdvancedDataProtectionMetrics");
+   m_advancedDataProtectionMetrics.AddToNode(advancedDataProtectionMetricsNode);
+  }
+
+  if(m_detailedStatusCodesMetricsHasBeenSet)
+  {
+   XmlNode detailedStatusCodesMetricsNode = parentNode.CreateChildElement("DetailedStatusCodesMetrics");
+   m_detailedStatusCodesMetrics.AddToNode(detailedStatusCodesMetricsNode);
   }
 
 }

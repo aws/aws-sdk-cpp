@@ -23,7 +23,8 @@ ReplicationSubnetGroup::ReplicationSubnetGroup() :
     m_replicationSubnetGroupDescriptionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetGroupStatusHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+    m_subnetsHasBeenSet(false),
+    m_supportedNetworkTypesHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ ReplicationSubnetGroup::ReplicationSubnetGroup(JsonView jsonValue) :
     m_replicationSubnetGroupDescriptionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetGroupStatusHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+    m_subnetsHasBeenSet(false),
+    m_supportedNetworkTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,16 @@ ReplicationSubnetGroup& ReplicationSubnetGroup::operator =(JsonView jsonValue)
     m_subnetsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SupportedNetworkTypes"))
+  {
+    Aws::Utils::Array<JsonView> supportedNetworkTypesJsonList = jsonValue.GetArray("SupportedNetworkTypes");
+    for(unsigned supportedNetworkTypesIndex = 0; supportedNetworkTypesIndex < supportedNetworkTypesJsonList.GetLength(); ++supportedNetworkTypesIndex)
+    {
+      m_supportedNetworkTypes.push_back(supportedNetworkTypesJsonList[supportedNetworkTypesIndex].AsString());
+    }
+    m_supportedNetworkTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +128,17 @@ JsonValue ReplicationSubnetGroup::Jsonize() const
      subnetsJsonList[subnetsIndex].AsObject(m_subnets[subnetsIndex].Jsonize());
    }
    payload.WithArray("Subnets", std::move(subnetsJsonList));
+
+  }
+
+  if(m_supportedNetworkTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> supportedNetworkTypesJsonList(m_supportedNetworkTypes.size());
+   for(unsigned supportedNetworkTypesIndex = 0; supportedNetworkTypesIndex < supportedNetworkTypesJsonList.GetLength(); ++supportedNetworkTypesIndex)
+   {
+     supportedNetworkTypesJsonList[supportedNetworkTypesIndex].AsString(m_supportedNetworkTypes[supportedNetworkTypesIndex]);
+   }
+   payload.WithArray("SupportedNetworkTypes", std::move(supportedNetworkTypesJsonList));
 
   }
 

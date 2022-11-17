@@ -92,7 +92,9 @@ namespace Model
     Laura,
     Elin,
     Ida,
-    Suvi
+    Suvi,
+    Ola,
+    Hala
   };
 
 namespace VoiceIdMapper

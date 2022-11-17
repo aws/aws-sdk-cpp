@@ -83,11 +83,14 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
-     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
-     * call of analyze document. Comes with an alias and ID for ease of locating in a
-     * response. Also contains location and confidence score.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * of a signature detected on a document page. Can be returned as part of a
+     * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
+     * asked during the call of AnalyzeDocument. Contains an alias and an ID that
+     * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
+     * to a question asked during the call of analyze document. Comes with an alias and
+     * ID for ease of locating in a response. Also contains location and confidence
+     * score.</p> </li> </ul>
      */
     inline const BlockType& GetBlockType() const{ return m_blockType; }
 
@@ -116,11 +119,14 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
-     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
-     * call of analyze document. Comes with an alias and ID for ease of locating in a
-     * response. Also contains location and confidence score.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * of a signature detected on a document page. Can be returned as part of a
+     * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
+     * asked during the call of AnalyzeDocument. Contains an alias and an ID that
+     * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
+     * to a question asked during the call of analyze document. Comes with an alias and
+     * ID for ease of locating in a response. Also contains location and confidence
+     * score.</p> </li> </ul>
      */
     inline bool BlockTypeHasBeenSet() const { return m_blockTypeHasBeenSet; }
 
@@ -149,11 +155,14 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
-     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
-     * call of analyze document. Comes with an alias and ID for ease of locating in a
-     * response. Also contains location and confidence score.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * of a signature detected on a document page. Can be returned as part of a
+     * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
+     * asked during the call of AnalyzeDocument. Contains an alias and an ID that
+     * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
+     * to a question asked during the call of analyze document. Comes with an alias and
+     * ID for ease of locating in a response. Also contains location and confidence
+     * score.</p> </li> </ul>
      */
     inline void SetBlockType(const BlockType& value) { m_blockTypeHasBeenSet = true; m_blockType = value; }
 
@@ -182,11 +191,14 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
-     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
-     * call of analyze document. Comes with an alias and ID for ease of locating in a
-     * response. Also contains location and confidence score.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * of a signature detected on a document page. Can be returned as part of a
+     * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
+     * asked during the call of AnalyzeDocument. Contains an alias and an ID that
+     * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
+     * to a question asked during the call of analyze document. Comes with an alias and
+     * ID for ease of locating in a response. Also contains location and confidence
+     * score.</p> </li> </ul>
      */
     inline void SetBlockType(BlockType&& value) { m_blockTypeHasBeenSet = true; m_blockType = std::move(value); }
 
@@ -215,11 +227,14 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
-     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
-     * call of analyze document. Comes with an alias and ID for ease of locating in a
-     * response. Also contains location and confidence score.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * of a signature detected on a document page. Can be returned as part of a
+     * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
+     * asked during the call of AnalyzeDocument. Contains an alias and an ID that
+     * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
+     * to a question asked during the call of analyze document. Comes with an alias and
+     * ID for ease of locating in a response. Also contains location and confidence
+     * score.</p> </li> </ul>
      */
     inline Block& WithBlockType(const BlockType& value) { SetBlockType(value); return *this;}
 
@@ -248,11 +263,14 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
-     * AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p>
-     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
-     * call of analyze document. Comes with an alias and ID for ease of locating in a
-     * response. Also contains location and confidence score.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * of a signature detected on a document page. Can be returned as part of a
+     * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
+     * asked during the call of AnalyzeDocument. Contains an alias and an ID that
+     * attaches it to its answer.</p> </li> <li> <p> <i>QUERY_RESULT</i> - A response
+     * to a question asked during the call of analyze document. Comes with an alias and
+     * ID for ease of locating in a response. Also contains location and confidence
+     * score.</p> </li> </ul>
      */
     inline Block& WithBlockType(BlockType&& value) { SetBlockType(std::move(value)); return *this;}
 

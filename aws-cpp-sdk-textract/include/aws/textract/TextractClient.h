@@ -88,19 +88,23 @@ namespace Textract
          * <p>Lines and words of text. A LINE <code>Block</code> object contains one or
          * more WORD <code>Block</code> objects. All lines and words that are detected in
          * the document are returned (including text that doesn't have a relationship with
-         * the value of <code>FeatureTypes</code>). </p> </li> <li> <p>Query. A QUERY Block
-         * object contains the query text, alias and link to the associated Query results
-         * block object.</p> </li> <li> <p>Query Result. A QUERY_RESULT Block object
-         * contains the answer to the query and an ID that connects it to the query asked.
-         * This Block also contains a confidence score.</p> </li> </ul> <p>Selection
-         * elements such as check boxes and option buttons (radio buttons) can be detected
-         * in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object
-         * contains information about a selection element, including the selection
-         * status.</p> <p>You can choose which type of analysis to perform by specifying
-         * the <code>FeatureTypes</code> list. </p> <p>The output is returned in a list of
-         * <code>Block</code> objects.</p> <p> <code>AnalyzeDocument</code> is a
-         * synchronous operation. To analyze documents asynchronously, use
-         * <a>StartDocumentAnalysis</a>.</p> <p>For more information, see <a
+         * the value of <code>FeatureTypes</code>). </p> </li> <li> <p>Signatures. A
+         * SIGNATURE <code>Block</code> object contains the location information of a
+         * signature in a document. If used in conjunction with forms or tables, a
+         * signature can be given a Key-Value pairing or be detected in the cell of a
+         * table.</p> </li> <li> <p>Query. A QUERY Block object contains the query text,
+         * alias and link to the associated Query results block object.</p> </li> <li>
+         * <p>Query Result. A QUERY_RESULT Block object contains the answer to the query
+         * and an ID that connects it to the query asked. This Block also contains a
+         * confidence score.</p> </li> </ul> <p>Selection elements such as check boxes and
+         * option buttons (radio buttons) can be detected in form data and in tables. A
+         * SELECTION_ELEMENT <code>Block</code> object contains information about a
+         * selection element, including the selection status.</p> <p>You can choose which
+         * type of analysis to perform by specifying the <code>FeatureTypes</code> list.
+         * </p> <p>The output is returned in a list of <code>Block</code> objects.</p> <p>
+         * <code>AnalyzeDocument</code> is a synchronous operation. To analyze documents
+         * asynchronously, use <a>StartDocumentAnalysis</a>.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
          * Text Analysis</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeDocument">AWS

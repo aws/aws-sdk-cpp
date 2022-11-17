@@ -31,7 +31,9 @@ Resolver::Resolver() :
     m_syncConfigHasBeenSet(false),
     m_cachingConfigHasBeenSet(false),
     m_maxBatchSize(0),
-    m_maxBatchSizeHasBeenSet(false)
+    m_maxBatchSizeHasBeenSet(false),
+    m_runtimeHasBeenSet(false),
+    m_codeHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ Resolver::Resolver(JsonView jsonValue) :
     m_syncConfigHasBeenSet(false),
     m_cachingConfigHasBeenSet(false),
     m_maxBatchSize(0),
-    m_maxBatchSizeHasBeenSet(false)
+    m_maxBatchSizeHasBeenSet(false),
+    m_runtimeHasBeenSet(false),
+    m_codeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -132,6 +136,20 @@ Resolver& Resolver::operator =(JsonView jsonValue)
     m_maxBatchSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("runtime"))
+  {
+    m_runtime = jsonValue.GetObject("runtime");
+
+    m_runtimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("code"))
+  {
+    m_code = jsonValue.GetString("code");
+
+    m_codeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -201,6 +219,18 @@ JsonValue Resolver::Jsonize() const
   if(m_maxBatchSizeHasBeenSet)
   {
    payload.WithInteger("maxBatchSize", m_maxBatchSize);
+
+  }
+
+  if(m_runtimeHasBeenSet)
+  {
+   payload.WithObject("runtime", m_runtime.Jsonize());
+
+  }
+
+  if(m_codeHasBeenSet)
+  {
+   payload.WithString("code", m_code);
 
   }
 

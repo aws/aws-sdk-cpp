@@ -27,6 +27,7 @@
 #include <aws/personalize/model/CreateDatasetImportJobResult.h>
 #include <aws/personalize/model/CreateEventTrackerResult.h>
 #include <aws/personalize/model/CreateFilterResult.h>
+#include <aws/personalize/model/CreateMetricAttributionResult.h>
 #include <aws/personalize/model/CreateRecommenderResult.h>
 #include <aws/personalize/model/CreateSchemaResult.h>
 #include <aws/personalize/model/CreateSolutionResult.h>
@@ -42,6 +43,7 @@
 #include <aws/personalize/model/DescribeEventTrackerResult.h>
 #include <aws/personalize/model/DescribeFeatureTransformationResult.h>
 #include <aws/personalize/model/DescribeFilterResult.h>
+#include <aws/personalize/model/DescribeMetricAttributionResult.h>
 #include <aws/personalize/model/DescribeRecipeResult.h>
 #include <aws/personalize/model/DescribeRecommenderResult.h>
 #include <aws/personalize/model/DescribeSchemaResult.h>
@@ -57,6 +59,8 @@
 #include <aws/personalize/model/ListDatasetsResult.h>
 #include <aws/personalize/model/ListEventTrackersResult.h>
 #include <aws/personalize/model/ListFiltersResult.h>
+#include <aws/personalize/model/ListMetricAttributionMetricsResult.h>
+#include <aws/personalize/model/ListMetricAttributionsResult.h>
 #include <aws/personalize/model/ListRecipesResult.h>
 #include <aws/personalize/model/ListRecommendersResult.h>
 #include <aws/personalize/model/ListSchemasResult.h>
@@ -68,6 +72,7 @@
 #include <aws/personalize/model/TagResourceResult.h>
 #include <aws/personalize/model/UntagResourceResult.h>
 #include <aws/personalize/model/UpdateCampaignResult.h>
+#include <aws/personalize/model/UpdateMetricAttributionResult.h>
 #include <aws/personalize/model/UpdateRecommenderResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in PersonalizeClient header */
@@ -119,6 +124,7 @@ namespace Aws
       class CreateDatasetImportJobRequest;
       class CreateEventTrackerRequest;
       class CreateFilterRequest;
+      class CreateMetricAttributionRequest;
       class CreateRecommenderRequest;
       class CreateSchemaRequest;
       class CreateSolutionRequest;
@@ -128,6 +134,7 @@ namespace Aws
       class DeleteDatasetGroupRequest;
       class DeleteEventTrackerRequest;
       class DeleteFilterRequest;
+      class DeleteMetricAttributionRequest;
       class DeleteRecommenderRequest;
       class DeleteSchemaRequest;
       class DeleteSolutionRequest;
@@ -142,6 +149,7 @@ namespace Aws
       class DescribeEventTrackerRequest;
       class DescribeFeatureTransformationRequest;
       class DescribeFilterRequest;
+      class DescribeMetricAttributionRequest;
       class DescribeRecipeRequest;
       class DescribeRecommenderRequest;
       class DescribeSchemaRequest;
@@ -157,6 +165,8 @@ namespace Aws
       class ListDatasetsRequest;
       class ListEventTrackersRequest;
       class ListFiltersRequest;
+      class ListMetricAttributionMetricsRequest;
+      class ListMetricAttributionsRequest;
       class ListRecipesRequest;
       class ListRecommendersRequest;
       class ListSchemasRequest;
@@ -169,6 +179,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateCampaignRequest;
+      class UpdateMetricAttributionRequest;
       class UpdateRecommenderRequest;
       /* End of service model forward declarations required in PersonalizeClient header */
 
@@ -182,6 +193,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateDatasetImportJobResult, PersonalizeError> CreateDatasetImportJobOutcome;
       typedef Aws::Utils::Outcome<CreateEventTrackerResult, PersonalizeError> CreateEventTrackerOutcome;
       typedef Aws::Utils::Outcome<CreateFilterResult, PersonalizeError> CreateFilterOutcome;
+      typedef Aws::Utils::Outcome<CreateMetricAttributionResult, PersonalizeError> CreateMetricAttributionOutcome;
       typedef Aws::Utils::Outcome<CreateRecommenderResult, PersonalizeError> CreateRecommenderOutcome;
       typedef Aws::Utils::Outcome<CreateSchemaResult, PersonalizeError> CreateSchemaOutcome;
       typedef Aws::Utils::Outcome<CreateSolutionResult, PersonalizeError> CreateSolutionOutcome;
@@ -191,6 +203,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteDatasetGroupOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteEventTrackerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteFilterOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteMetricAttributionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteRecommenderOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteSchemaOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteSolutionOutcome;
@@ -205,6 +218,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeEventTrackerResult, PersonalizeError> DescribeEventTrackerOutcome;
       typedef Aws::Utils::Outcome<DescribeFeatureTransformationResult, PersonalizeError> DescribeFeatureTransformationOutcome;
       typedef Aws::Utils::Outcome<DescribeFilterResult, PersonalizeError> DescribeFilterOutcome;
+      typedef Aws::Utils::Outcome<DescribeMetricAttributionResult, PersonalizeError> DescribeMetricAttributionOutcome;
       typedef Aws::Utils::Outcome<DescribeRecipeResult, PersonalizeError> DescribeRecipeOutcome;
       typedef Aws::Utils::Outcome<DescribeRecommenderResult, PersonalizeError> DescribeRecommenderOutcome;
       typedef Aws::Utils::Outcome<DescribeSchemaResult, PersonalizeError> DescribeSchemaOutcome;
@@ -220,6 +234,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListDatasetsResult, PersonalizeError> ListDatasetsOutcome;
       typedef Aws::Utils::Outcome<ListEventTrackersResult, PersonalizeError> ListEventTrackersOutcome;
       typedef Aws::Utils::Outcome<ListFiltersResult, PersonalizeError> ListFiltersOutcome;
+      typedef Aws::Utils::Outcome<ListMetricAttributionMetricsResult, PersonalizeError> ListMetricAttributionMetricsOutcome;
+      typedef Aws::Utils::Outcome<ListMetricAttributionsResult, PersonalizeError> ListMetricAttributionsOutcome;
       typedef Aws::Utils::Outcome<ListRecipesResult, PersonalizeError> ListRecipesOutcome;
       typedef Aws::Utils::Outcome<ListRecommendersResult, PersonalizeError> ListRecommendersOutcome;
       typedef Aws::Utils::Outcome<ListSchemasResult, PersonalizeError> ListSchemasOutcome;
@@ -232,6 +248,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, PersonalizeError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, PersonalizeError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateCampaignResult, PersonalizeError> UpdateCampaignOutcome;
+      typedef Aws::Utils::Outcome<UpdateMetricAttributionResult, PersonalizeError> UpdateMetricAttributionOutcome;
       typedef Aws::Utils::Outcome<UpdateRecommenderResult, PersonalizeError> UpdateRecommenderOutcome;
       /* End of service model Outcome class definitions */
 
@@ -245,6 +262,7 @@ namespace Aws
       typedef std::future<CreateDatasetImportJobOutcome> CreateDatasetImportJobOutcomeCallable;
       typedef std::future<CreateEventTrackerOutcome> CreateEventTrackerOutcomeCallable;
       typedef std::future<CreateFilterOutcome> CreateFilterOutcomeCallable;
+      typedef std::future<CreateMetricAttributionOutcome> CreateMetricAttributionOutcomeCallable;
       typedef std::future<CreateRecommenderOutcome> CreateRecommenderOutcomeCallable;
       typedef std::future<CreateSchemaOutcome> CreateSchemaOutcomeCallable;
       typedef std::future<CreateSolutionOutcome> CreateSolutionOutcomeCallable;
@@ -254,6 +272,7 @@ namespace Aws
       typedef std::future<DeleteDatasetGroupOutcome> DeleteDatasetGroupOutcomeCallable;
       typedef std::future<DeleteEventTrackerOutcome> DeleteEventTrackerOutcomeCallable;
       typedef std::future<DeleteFilterOutcome> DeleteFilterOutcomeCallable;
+      typedef std::future<DeleteMetricAttributionOutcome> DeleteMetricAttributionOutcomeCallable;
       typedef std::future<DeleteRecommenderOutcome> DeleteRecommenderOutcomeCallable;
       typedef std::future<DeleteSchemaOutcome> DeleteSchemaOutcomeCallable;
       typedef std::future<DeleteSolutionOutcome> DeleteSolutionOutcomeCallable;
@@ -268,6 +287,7 @@ namespace Aws
       typedef std::future<DescribeEventTrackerOutcome> DescribeEventTrackerOutcomeCallable;
       typedef std::future<DescribeFeatureTransformationOutcome> DescribeFeatureTransformationOutcomeCallable;
       typedef std::future<DescribeFilterOutcome> DescribeFilterOutcomeCallable;
+      typedef std::future<DescribeMetricAttributionOutcome> DescribeMetricAttributionOutcomeCallable;
       typedef std::future<DescribeRecipeOutcome> DescribeRecipeOutcomeCallable;
       typedef std::future<DescribeRecommenderOutcome> DescribeRecommenderOutcomeCallable;
       typedef std::future<DescribeSchemaOutcome> DescribeSchemaOutcomeCallable;
@@ -283,6 +303,8 @@ namespace Aws
       typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
       typedef std::future<ListEventTrackersOutcome> ListEventTrackersOutcomeCallable;
       typedef std::future<ListFiltersOutcome> ListFiltersOutcomeCallable;
+      typedef std::future<ListMetricAttributionMetricsOutcome> ListMetricAttributionMetricsOutcomeCallable;
+      typedef std::future<ListMetricAttributionsOutcome> ListMetricAttributionsOutcomeCallable;
       typedef std::future<ListRecipesOutcome> ListRecipesOutcomeCallable;
       typedef std::future<ListRecommendersOutcome> ListRecommendersOutcomeCallable;
       typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
@@ -295,6 +317,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateCampaignOutcome> UpdateCampaignOutcomeCallable;
+      typedef std::future<UpdateMetricAttributionOutcome> UpdateMetricAttributionOutcomeCallable;
       typedef std::future<UpdateRecommenderOutcome> UpdateRecommenderOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -311,6 +334,7 @@ namespace Aws
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetImportJobRequest&, const Model::CreateDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetImportJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateEventTrackerRequest&, const Model::CreateEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventTrackerResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateFilterRequest&, const Model::CreateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFilterResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::CreateMetricAttributionRequest&, const Model::CreateMetricAttributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMetricAttributionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateRecommenderRequest&, const Model::CreateRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRecommenderResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateSchemaRequest&, const Model::CreateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSchemaResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateSolutionRequest&, const Model::CreateSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSolutionResponseReceivedHandler;
@@ -320,6 +344,7 @@ namespace Aws
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteDatasetGroupRequest&, const Model::DeleteDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetGroupResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteEventTrackerRequest&, const Model::DeleteEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventTrackerResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteFilterRequest&, const Model::DeleteFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFilterResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::DeleteMetricAttributionRequest&, const Model::DeleteMetricAttributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMetricAttributionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteRecommenderRequest&, const Model::DeleteRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecommenderResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteSchemaRequest&, const Model::DeleteSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteSolutionRequest&, const Model::DeleteSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSolutionResponseReceivedHandler;
@@ -334,6 +359,7 @@ namespace Aws
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeEventTrackerRequest&, const Model::DescribeEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventTrackerResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeFeatureTransformationRequest&, const Model::DescribeFeatureTransformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFeatureTransformationResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeFilterRequest&, const Model::DescribeFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFilterResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::DescribeMetricAttributionRequest&, const Model::DescribeMetricAttributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMetricAttributionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeRecipeRequest&, const Model::DescribeRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecipeResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeRecommenderRequest&, const Model::DescribeRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecommenderResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeSchemaRequest&, const Model::DescribeSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSchemaResponseReceivedHandler;
@@ -349,6 +375,8 @@ namespace Aws
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListEventTrackersRequest&, const Model::ListEventTrackersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventTrackersResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListFiltersRequest&, const Model::ListFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFiltersResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::ListMetricAttributionMetricsRequest&, const Model::ListMetricAttributionMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricAttributionMetricsResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::ListMetricAttributionsRequest&, const Model::ListMetricAttributionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricAttributionsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListRecipesRequest&, const Model::ListRecipesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecipesResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListRecommendersRequest&, const Model::ListRecommendersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendersResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemasResponseReceivedHandler;
@@ -361,6 +389,7 @@ namespace Aws
     typedef std::function<void(const PersonalizeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::UpdateCampaignRequest&, const Model::UpdateCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCampaignResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::UpdateMetricAttributionRequest&, const Model::UpdateMetricAttributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMetricAttributionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::UpdateRecommenderRequest&, const Model::UpdateRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRecommenderResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Personalize

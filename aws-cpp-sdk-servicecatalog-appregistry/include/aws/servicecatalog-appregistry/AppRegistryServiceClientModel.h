@@ -29,6 +29,7 @@
 #include <aws/servicecatalog-appregistry/model/GetApplicationResult.h>
 #include <aws/servicecatalog-appregistry/model/GetAssociatedResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/GetAttributeGroupResult.h>
+#include <aws/servicecatalog-appregistry/model/GetConfigurationResult.h>
 #include <aws/servicecatalog-appregistry/model/ListApplicationsResult.h>
 #include <aws/servicecatalog-appregistry/model/ListAssociatedAttributeGroupsResult.h>
 #include <aws/servicecatalog-appregistry/model/ListAssociatedResourcesResult.h>
@@ -40,6 +41,7 @@
 #include <aws/servicecatalog-appregistry/model/UntagResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/UpdateApplicationResult.h>
 #include <aws/servicecatalog-appregistry/model/UpdateAttributeGroupResult.h>
+#include <aws/core/NoResult.h>
 /* End of service model headers required in AppRegistryClient header */
 
 namespace Aws
@@ -97,6 +99,7 @@ namespace Aws
       class ListAttributeGroupsRequest;
       class ListAttributeGroupsForApplicationRequest;
       class ListTagsForResourceRequest;
+      class PutConfigurationRequest;
       class SyncResourceRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -116,12 +119,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetApplicationResult, AppRegistryError> GetApplicationOutcome;
       typedef Aws::Utils::Outcome<GetAssociatedResourceResult, AppRegistryError> GetAssociatedResourceOutcome;
       typedef Aws::Utils::Outcome<GetAttributeGroupResult, AppRegistryError> GetAttributeGroupOutcome;
+      typedef Aws::Utils::Outcome<GetConfigurationResult, AppRegistryError> GetConfigurationOutcome;
       typedef Aws::Utils::Outcome<ListApplicationsResult, AppRegistryError> ListApplicationsOutcome;
       typedef Aws::Utils::Outcome<ListAssociatedAttributeGroupsResult, AppRegistryError> ListAssociatedAttributeGroupsOutcome;
       typedef Aws::Utils::Outcome<ListAssociatedResourcesResult, AppRegistryError> ListAssociatedResourcesOutcome;
       typedef Aws::Utils::Outcome<ListAttributeGroupsResult, AppRegistryError> ListAttributeGroupsOutcome;
       typedef Aws::Utils::Outcome<ListAttributeGroupsForApplicationResult, AppRegistryError> ListAttributeGroupsForApplicationOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppRegistryError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, AppRegistryError> PutConfigurationOutcome;
       typedef Aws::Utils::Outcome<SyncResourceResult, AppRegistryError> SyncResourceOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, AppRegistryError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, AppRegistryError> UntagResourceOutcome;
@@ -141,12 +146,14 @@ namespace Aws
       typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
       typedef std::future<GetAssociatedResourceOutcome> GetAssociatedResourceOutcomeCallable;
       typedef std::future<GetAttributeGroupOutcome> GetAttributeGroupOutcomeCallable;
+      typedef std::future<GetConfigurationOutcome> GetConfigurationOutcomeCallable;
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
       typedef std::future<ListAssociatedAttributeGroupsOutcome> ListAssociatedAttributeGroupsOutcomeCallable;
       typedef std::future<ListAssociatedResourcesOutcome> ListAssociatedResourcesOutcomeCallable;
       typedef std::future<ListAttributeGroupsOutcome> ListAttributeGroupsOutcomeCallable;
       typedef std::future<ListAttributeGroupsForApplicationOutcome> ListAttributeGroupsForApplicationOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<PutConfigurationOutcome> PutConfigurationOutcomeCallable;
       typedef std::future<SyncResourceOutcome> SyncResourceOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -169,12 +176,14 @@ namespace Aws
     typedef std::function<void(const AppRegistryClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::GetAssociatedResourceRequest&, const Model::GetAssociatedResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociatedResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::GetAttributeGroupRequest&, const Model::GetAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttributeGroupResponseReceivedHandler;
+    typedef std::function<void(const AppRegistryClient*, const Model::GetConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListAssociatedAttributeGroupsRequest&, const Model::ListAssociatedAttributeGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedAttributeGroupsResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListAssociatedResourcesRequest&, const Model::ListAssociatedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedResourcesResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListAttributeGroupsRequest&, const Model::ListAttributeGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttributeGroupsResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListAttributeGroupsForApplicationRequest&, const Model::ListAttributeGroupsForApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttributeGroupsForApplicationResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const AppRegistryClient*, const Model::PutConfigurationRequest&, const Model::PutConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::SyncResourceRequest&, const Model::SyncResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SyncResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

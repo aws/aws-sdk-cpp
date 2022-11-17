@@ -31,7 +31,8 @@ CreateReplicationInstanceRequest::CreateReplicationInstanceRequest() :
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_dnsNameServersHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
+    m_resourceIdentifierHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,12 @@ Aws::String CreateReplicationInstanceRequest::SerializePayload() const
   if(m_resourceIdentifierHasBeenSet)
   {
    payload.WithString("ResourceIdentifier", m_resourceIdentifier);
+
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", m_networkType);
 
   }
 

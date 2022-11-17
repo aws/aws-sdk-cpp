@@ -21,6 +21,7 @@ namespace Model
 AppMonitor::AppMonitor() : 
     m_appMonitorConfigurationHasBeenSet(false),
     m_createdHasBeenSet(false),
+    m_customEventsHasBeenSet(false),
     m_dataStorageHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -35,6 +36,7 @@ AppMonitor::AppMonitor() :
 AppMonitor::AppMonitor(JsonView jsonValue) : 
     m_appMonitorConfigurationHasBeenSet(false),
     m_createdHasBeenSet(false),
+    m_customEventsHasBeenSet(false),
     m_dataStorageHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -61,6 +63,13 @@ AppMonitor& AppMonitor::operator =(JsonView jsonValue)
     m_created = jsonValue.GetString("Created");
 
     m_createdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomEvents"))
+  {
+    m_customEvents = jsonValue.GetObject("CustomEvents");
+
+    m_customEventsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DataStorage"))
@@ -131,6 +140,12 @@ JsonValue AppMonitor::Jsonize() const
   if(m_createdHasBeenSet)
   {
    payload.WithString("Created", m_created);
+
+  }
+
+  if(m_customEventsHasBeenSet)
+  {
+   payload.WithObject("CustomEvents", m_customEvents.Jsonize());
 
   }
 

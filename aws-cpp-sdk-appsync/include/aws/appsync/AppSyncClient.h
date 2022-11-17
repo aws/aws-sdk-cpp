@@ -389,6 +389,29 @@ namespace AppSync
         virtual void DisassociateApiAsync(const Model::DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Evaluates the given code and returns the response. The code definition
+         * requirements depend on the specified runtime. For <code>APPSYNC_JS</code>
+         * runtimes, the code defines the request and response functions. The request
+         * function takes the incoming request after a GraphQL operation is parsed and
+         * converts it into a request configuration for the selected data source operation.
+         * The response function interprets responses from the data source and maps it to
+         * the shape of the GraphQL field output type. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EvaluateCodeOutcome EvaluateCode(const Model::EvaluateCodeRequest& request) const;
+
+        /**
+         * A Callable wrapper for EvaluateCode that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EvaluateCodeOutcomeCallable EvaluateCodeCallable(const Model::EvaluateCodeRequest& request) const;
+
+        /**
+         * An Async wrapper for EvaluateCode that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EvaluateCodeAsync(const Model::EvaluateCodeRequest& request, const EvaluateCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Evaluates a given template and returns the response. The mapping template can
          * be a request or response template.</p> <p>Request templates take the incoming
          * request after a GraphQL operation is parsed and convert it into a request

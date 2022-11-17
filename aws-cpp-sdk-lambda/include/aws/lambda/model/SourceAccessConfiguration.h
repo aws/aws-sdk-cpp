@@ -47,26 +47,28 @@ namespace Model
      * stores your broker credentials.</p> </li> <li> <p> <code>BASIC_AUTH</code> -
      * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for
      * SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects
-     * to these subnets to fetch data from your self-managed Apache Kafka cluster.</p>
-     * </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to
-     * manage access to your self-managed Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
-     * used for SASL SCRAM-256 authentication of your self-managed Apache Kafka
-     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
-     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
-     * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
-     * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source. This property cannot be specified in an
-     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache
-     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
-     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
-     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
-     * The Secrets Manager ARN of your secret key containing the root CA certificate
-     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
-     * </ul>
+     * <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated
+     * with your VPC. Lambda connects to these subnets to fetch data from your
+     * self-managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security
+     * group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your
+     * RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This
+     * property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+     * <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed
+     * Apache Kafka) The Secrets Manager ARN of your secret key containing the
+     * certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
+     * password (optional) used for mutual TLS authentication of your MSK/Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> -
+     * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key
+     * containing the root CA certificate (X.509 PEM) used for TLS encryption of your
+     * Apache Kafka brokers. </p> </li> </ul>
      */
     inline const SourceAccessType& GetType() const{ return m_type; }
 
@@ -77,26 +79,28 @@ namespace Model
      * stores your broker credentials.</p> </li> <li> <p> <code>BASIC_AUTH</code> -
      * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for
      * SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects
-     * to these subnets to fetch data from your self-managed Apache Kafka cluster.</p>
-     * </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to
-     * manage access to your self-managed Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
-     * used for SASL SCRAM-256 authentication of your self-managed Apache Kafka
-     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
-     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
-     * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
-     * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source. This property cannot be specified in an
-     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache
-     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
-     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
-     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
-     * The Secrets Manager ARN of your secret key containing the root CA certificate
-     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
-     * </ul>
+     * <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated
+     * with your VPC. Lambda connects to these subnets to fetch data from your
+     * self-managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security
+     * group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your
+     * RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This
+     * property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+     * <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed
+     * Apache Kafka) The Secrets Manager ARN of your secret key containing the
+     * certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
+     * password (optional) used for mutual TLS authentication of your MSK/Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> -
+     * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key
+     * containing the root CA certificate (X.509 PEM) used for TLS encryption of your
+     * Apache Kafka brokers. </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -107,26 +111,28 @@ namespace Model
      * stores your broker credentials.</p> </li> <li> <p> <code>BASIC_AUTH</code> -
      * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for
      * SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects
-     * to these subnets to fetch data from your self-managed Apache Kafka cluster.</p>
-     * </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to
-     * manage access to your self-managed Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
-     * used for SASL SCRAM-256 authentication of your self-managed Apache Kafka
-     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
-     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
-     * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
-     * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source. This property cannot be specified in an
-     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache
-     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
-     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
-     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
-     * The Secrets Manager ARN of your secret key containing the root CA certificate
-     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
-     * </ul>
+     * <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated
+     * with your VPC. Lambda connects to these subnets to fetch data from your
+     * self-managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security
+     * group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your
+     * RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This
+     * property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+     * <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed
+     * Apache Kafka) The Secrets Manager ARN of your secret key containing the
+     * certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
+     * password (optional) used for mutual TLS authentication of your MSK/Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> -
+     * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key
+     * containing the root CA certificate (X.509 PEM) used for TLS encryption of your
+     * Apache Kafka brokers. </p> </li> </ul>
      */
     inline void SetType(const SourceAccessType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -137,26 +143,28 @@ namespace Model
      * stores your broker credentials.</p> </li> <li> <p> <code>BASIC_AUTH</code> -
      * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for
      * SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects
-     * to these subnets to fetch data from your self-managed Apache Kafka cluster.</p>
-     * </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to
-     * manage access to your self-managed Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
-     * used for SASL SCRAM-256 authentication of your self-managed Apache Kafka
-     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
-     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
-     * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
-     * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source. This property cannot be specified in an
-     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache
-     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
-     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
-     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
-     * The Secrets Manager ARN of your secret key containing the root CA certificate
-     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
-     * </ul>
+     * <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated
+     * with your VPC. Lambda connects to these subnets to fetch data from your
+     * self-managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security
+     * group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your
+     * RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This
+     * property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+     * <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed
+     * Apache Kafka) The Secrets Manager ARN of your secret key containing the
+     * certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
+     * password (optional) used for mutual TLS authentication of your MSK/Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> -
+     * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key
+     * containing the root CA certificate (X.509 PEM) used for TLS encryption of your
+     * Apache Kafka brokers. </p> </li> </ul>
      */
     inline void SetType(SourceAccessType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -167,26 +175,28 @@ namespace Model
      * stores your broker credentials.</p> </li> <li> <p> <code>BASIC_AUTH</code> -
      * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for
      * SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects
-     * to these subnets to fetch data from your self-managed Apache Kafka cluster.</p>
-     * </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to
-     * manage access to your self-managed Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
-     * used for SASL SCRAM-256 authentication of your self-managed Apache Kafka
-     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
-     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
-     * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
-     * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source. This property cannot be specified in an
-     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache
-     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
-     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
-     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
-     * The Secrets Manager ARN of your secret key containing the root CA certificate
-     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
-     * </ul>
+     * <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated
+     * with your VPC. Lambda connects to these subnets to fetch data from your
+     * self-managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security
+     * group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your
+     * RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This
+     * property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+     * <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed
+     * Apache Kafka) The Secrets Manager ARN of your secret key containing the
+     * certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
+     * password (optional) used for mutual TLS authentication of your MSK/Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> -
+     * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key
+     * containing the root CA certificate (X.509 PEM) used for TLS encryption of your
+     * Apache Kafka brokers. </p> </li> </ul>
      */
     inline SourceAccessConfiguration& WithType(const SourceAccessType& value) { SetType(value); return *this;}
 
@@ -197,26 +207,28 @@ namespace Model
      * stores your broker credentials.</p> </li> <li> <p> <code>BASIC_AUTH</code> -
      * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for
      * SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects
-     * to these subnets to fetch data from your self-managed Apache Kafka cluster.</p>
-     * </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to
-     * manage access to your self-managed Apache Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
-     * used for SASL SCRAM-256 authentication of your self-managed Apache Kafka
-     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
-     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
-     * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
-     * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source. This property cannot be specified in an
-     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
-     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache
-     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
-     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
-     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
-     * The Secrets Manager ARN of your secret key containing the root CA certificate
-     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
-     * </ul>
+     * <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated
+     * with your VPC. Lambda connects to these subnets to fetch data from your
+     * self-managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security
+     * group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The
+     * Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of
+     * your self-managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your
+     * RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This
+     * property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+     * <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed
+     * Apache Kafka) The Secrets Manager ARN of your secret key containing the
+     * certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key
+     * password (optional) used for mutual TLS authentication of your MSK/Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> -
+     * (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key
+     * containing the root CA certificate (X.509 PEM) used for TLS encryption of your
+     * Apache Kafka brokers. </p> </li> </ul>
      */
     inline SourceAccessConfiguration& WithType(SourceAccessType&& value) { SetType(std::move(value)); return *this;}
 

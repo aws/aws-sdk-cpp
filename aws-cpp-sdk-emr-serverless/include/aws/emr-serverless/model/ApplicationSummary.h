@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/emr-serverless/model/ApplicationState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/emr-serverless/model/Architecture.h>
 #include <utility>
 
 namespace Aws
@@ -378,6 +379,37 @@ namespace Model
      */
     inline ApplicationSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline const Architecture& GetArchitecture() const{ return m_architecture; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline ApplicationSummary& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline ApplicationSummary& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -406,6 +438,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
+
+    Architecture m_architecture;
+    bool m_architectureHasBeenSet = false;
   };
 
 } // namespace Model

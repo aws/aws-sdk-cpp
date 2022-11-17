@@ -50,6 +50,15 @@ UpdateRoomResult& UpdateRoomResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("loggingConfigurationIdentifiers"))
+  {
+    Aws::Utils::Array<JsonView> loggingConfigurationIdentifiersJsonList = jsonValue.GetArray("loggingConfigurationIdentifiers");
+    for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
+    {
+      m_loggingConfigurationIdentifiers.push_back(loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("maximumMessageLength"))
   {
     m_maximumMessageLength = jsonValue.GetInteger("maximumMessageLength");

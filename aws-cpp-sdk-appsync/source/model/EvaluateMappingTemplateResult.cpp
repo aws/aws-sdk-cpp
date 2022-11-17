@@ -40,6 +40,15 @@ EvaluateMappingTemplateResult& EvaluateMappingTemplateResult::operator =(const A
 
   }
 
+  if(jsonValue.ValueExists("logs"))
+  {
+    Aws::Utils::Array<JsonView> logsJsonList = jsonValue.GetArray("logs");
+    for(unsigned logsIndex = 0; logsIndex < logsJsonList.GetLength(); ++logsIndex)
+    {
+      m_logs.push_back(logsJsonList[logsIndex].AsString());
+    }
+  }
+
 
 
   return *this;

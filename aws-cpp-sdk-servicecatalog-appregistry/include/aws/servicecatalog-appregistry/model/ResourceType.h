@@ -16,7 +16,8 @@ namespace Model
   enum class ResourceType
   {
     NOT_SET,
-    CFN_STACK
+    CFN_STACK,
+    RESOURCE_TAG_VALUE
   };
 
 namespace ResourceTypeMapper

@@ -7,6 +7,7 @@
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/ivschat/IvschatRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivschat/model/MessageReviewHandler.h>
 #include <utility>
 
@@ -72,6 +73,52 @@ namespace Model
      * <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
      */
     inline UpdateRoomRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLoggingConfigurationIdentifiers() const{ return m_loggingConfigurationIdentifiers; }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline bool LoggingConfigurationIdentifiersHasBeenSet() const { return m_loggingConfigurationIdentifiersHasBeenSet; }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline void SetLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers = value; }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline void SetLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers = std::move(value); }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline UpdateRoomRequest& WithLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { SetLoggingConfigurationIdentifiers(value); return *this;}
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline UpdateRoomRequest& WithLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { SetLoggingConfigurationIdentifiers(std::move(value)); return *this;}
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline UpdateRoomRequest& AddLoggingConfigurationIdentifiers(const Aws::String& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(value); return *this; }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline UpdateRoomRequest& AddLoggingConfigurationIdentifiers(Aws::String&& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Array of logging-configuration identifiers attached to the room.</p>
+     */
+    inline UpdateRoomRequest& AddLoggingConfigurationIdentifiers(const char* value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(value); return *this; }
 
 
     /**
@@ -215,6 +262,9 @@ namespace Model
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_loggingConfigurationIdentifiers;
+    bool m_loggingConfigurationIdentifiersHasBeenSet = false;
 
     int m_maximumMessageLength;
     bool m_maximumMessageLengthHasBeenSet = false;

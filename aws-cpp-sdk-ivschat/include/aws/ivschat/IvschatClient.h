@@ -29,14 +29,16 @@ namespace ivschat
    * Amazon IVS Chat API. We refer to these as <i>applications</i>.</p> </li> <li>
    * <p>You create front-end client applications (browser and Android/iOS apps) using
    * the Amazon IVS Chat Messaging API. We refer to these as <i>clients</i>. </p>
-   * </li> </ul> <p> <b>Resources</b> </p> <p>The following resource is part of
-   * Amazon IVS Chat:</p> <ul> <li> <p> <b>Room</b> — The central Amazon IVS Chat
-   * resource through which clients connect to and exchange chat messages. See the
-   * Room endpoints for more information.</p> </li> </ul> <p> <b>Tagging</b> </p>
-   * <p>A <i>tag</i> is a metadata label that you assign to an AWS resource. A tag
-   * comprises a <i>key</i> and a <i>value</i>, both set by you. For example, you
-   * might set a tag as <code>topic:nature</code> to label a particular video
-   * category. See <a
+   * </li> </ul> <p> <b>Resources</b> </p> <p>The following resources are part of
+   * Amazon IVS Chat:</p> <ul> <li> <p> <b>LoggingConfiguration</b> — A configuration
+   * that allows customers to store and record sent messages in a chat room. See the
+   * Logging Configuration endpoints for more information.</p> </li> <li> <p>
+   * <b>Room</b> — The central Amazon IVS Chat resource through which clients connect
+   * to and exchange chat messages. See the Room endpoints for more information.</p>
+   * </li> </ul> <p> <b>Tagging</b> </p> <p>A <i>tag</i> is a metadata label that you
+   * assign to an AWS resource. A tag comprises a <i>key</i> and a <i>value</i>, both
+   * set by you. For example, you might set a tag as <code>topic:nature</code> to
+   * label a particular video category. See <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
    * AWS Resources</a> for more information, including restrictions that apply to
    * tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
@@ -95,15 +97,25 @@ namespace ivschat
    * application’s business logic to send events to clients of a room; e.g., to
    * notify clients to change the way the chat UI is rendered.</p> </li> </ul> <p>
    * <b>Chat Token Endpoint</b> </p> <ul> <li> <p> <a>CreateChatToken</a> — Creates
-   * an encrypted token that is used to establish an individual WebSocket connection
-   * to a room. The token is valid for one minute, and a connection (session)
-   * established with the token is valid for the specified duration.</p> </li> </ul>
-   * <p> <b>Room Endpoints</b> </p> <ul> <li> <p> <a>CreateRoom</a> — Creates a room
-   * that allows clients to connect and pass messages.</p> </li> <li> <p>
-   * <a>DeleteRoom</a> — Deletes the specified room.</p> </li> <li> <p>
-   * <a>GetRoom</a> — Gets the specified room.</p> </li> <li> <p> <a>ListRooms</a> —
-   * Gets summary information about all your rooms in the AWS region where the API
-   * request is processed. </p> </li> <li> <p> <a>UpdateRoom</a> — Updates a room’s
+   * an encrypted token that is used by a chat participant to establish an individual
+   * WebSocket chat connection to a room. When the token is used to connect to chat,
+   * the connection is valid for the session duration specified in the request. The
+   * token becomes invalid at the token-expiration timestamp included in the
+   * response.</p> </li> </ul> <p> <b>Room Endpoints</b> </p> <ul> <li> <p>
+   * <a>CreateRoom</a> — Creates a room that allows clients to connect and pass
+   * messages.</p> </li> <li> <p> <a>DeleteRoom</a> — Deletes the specified room.</p>
+   * </li> <li> <p> <a>GetRoom</a> — Gets the specified room.</p> </li> <li> <p>
+   * <a>ListRooms</a> — Gets summary information about all your rooms in the AWS
+   * region where the API request is processed. </p> </li> <li> <p> <a>UpdateRoom</a>
+   * — Updates a room’s configuration.</p> </li> </ul> <p> <b>Logging Configuration
+   * Endpoints</b> </p> <ul> <li> <p> <a>CreateLoggingConfiguration</a> — Creates a
+   * logging configuration that allows clients to store and record sent messages.</p>
+   * </li> <li> <p> <a>DeleteLoggingConfiguration</a> — Deletes the specified logging
+   * configuration.</p> </li> <li> <p> <a>GetLoggingConfiguration</a> — Gets the
+   * specified logging configuration.</p> </li> <li> <p>
+   * <a>ListLoggingConfigurations</a> — Gets summary information about all your
+   * logging configurations in the AWS region where the API request is processed.</p>
+   * </li> <li> <p> <a>UpdateLoggingConfiguration</a> — Updates a specified logging
    * configuration.</p> </li> </ul> <p> <b>Tags Endpoints</b> </p> <ul> <li> <p>
    * <a>ListTagsForResource</a> — Gets information about AWS tags for the specified
    * ARN.</p> </li> <li> <p> <a>TagResource</a> — Adds or updates tags for the AWS
@@ -171,11 +183,19 @@ namespace ivschat
 
 
         /**
-         * <p>Creates an encrypted token that is used to establish an individual WebSocket
-         * connection to a room. The token is valid for one minute, and a connection
-         * (session) established with the token is valid for the specified duration.</p>
-         * <p>Encryption keys are owned by Amazon IVS Chat and never used directly by your
-         * application.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an encrypted token that is used by a chat participant to establish an
+         * individual WebSocket chat connection to a room. When the token is used to
+         * connect to chat, the connection is valid for the session duration specified in
+         * the request. The token becomes invalid at the token-expiration timestamp
+         * included in the response.</p> <p>Use the <code>capabilities</code> field to
+         * permit an end user to send messages or moderate a room.</p> <p>The
+         * <code>attributes</code> field securely attaches structured data to the chat
+         * session; the data is included within each message sent by the end user and
+         * received by other participants in the room. Common use cases for attributes
+         * include passing end-user profile data like an icon, display name, colors,
+         * badges, and other display features.</p> <p>Encryption keys are owned by Amazon
+         * IVS Chat and never used directly by your application.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateChatToken">AWS
          * API Reference</a></p>
          */
@@ -190,6 +210,24 @@ namespace ivschat
          * An Async wrapper for CreateChatToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateChatTokenAsync(const Model::CreateChatTokenRequest& request, const CreateChatTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a logging configuration that allows clients to store and record sent
+         * messages.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLoggingConfigurationOutcome CreateLoggingConfiguration(const Model::CreateLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLoggingConfigurationOutcomeCallable CreateLoggingConfigurationCallable(const Model::CreateLoggingConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLoggingConfigurationAsync(const Model::CreateLoggingConfigurationRequest& request, const CreateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a room that allows clients to connect and pass
@@ -208,6 +246,23 @@ namespace ivschat
          * An Async wrapper for CreateRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateRoomAsync(const Model::CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified logging configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLoggingConfigurationOutcome DeleteLoggingConfiguration(const Model::DeleteLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLoggingConfigurationOutcomeCallable DeleteLoggingConfigurationCallable(const Model::DeleteLoggingConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLoggingConfigurationAsync(const Model::DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends an event to a specific room which directs clients to delete a specific
@@ -271,6 +326,23 @@ namespace ivschat
         virtual void DisconnectUserAsync(const Model::DisconnectUserRequest& request, const DisconnectUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the specified logging configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLoggingConfigurationOutcome GetLoggingConfiguration(const Model::GetLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLoggingConfigurationOutcomeCallable GetLoggingConfigurationCallable(const Model::GetLoggingConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for GetLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLoggingConfigurationAsync(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the specified room.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetRoom">AWS API
          * Reference</a></p>
@@ -286,6 +358,24 @@ namespace ivschat
          * An Async wrapper for GetRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRoomAsync(const Model::GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets summary information about all your logging configurations in the AWS
+         * region where the API request is processed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLoggingConfigurationsOutcome ListLoggingConfigurations(const Model::ListLoggingConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLoggingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLoggingConfigurationsOutcomeCallable ListLoggingConfigurationsCallable(const Model::ListLoggingConfigurationsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListLoggingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLoggingConfigurationsAsync(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets summary information about all your rooms in the AWS region where the API
@@ -378,6 +468,23 @@ namespace ivschat
          * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a specified logging configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLoggingConfigurationOutcome UpdateLoggingConfiguration(const Model::UpdateLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLoggingConfigurationOutcomeCallable UpdateLoggingConfigurationCallable(const Model::UpdateLoggingConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLoggingConfigurationAsync(const Model::UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a room’s configuration.</p><p><h3>See Also:</h3>   <a

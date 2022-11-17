@@ -39,6 +39,7 @@
 #include <aws/appsync/model/DeleteResolverRequest.h>
 #include <aws/appsync/model/DeleteTypeRequest.h>
 #include <aws/appsync/model/DisassociateApiRequest.h>
+#include <aws/appsync/model/EvaluateCodeRequest.h>
 #include <aws/appsync/model/EvaluateMappingTemplateRequest.h>
 #include <aws/appsync/model/FlushApiCacheRequest.h>
 #include <aws/appsync/model/GetApiAssociationRequest.h>
@@ -800,6 +801,31 @@ void AppSyncClient::DisassociateApiAsync(const DisassociateApiRequest& request, 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DisassociateApi(request), context);
+    } );
+}
+
+EvaluateCodeOutcome AppSyncClient::EvaluateCode(const EvaluateCodeRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, EvaluateCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EvaluateCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/dataplane-evaluatecode");
+  return EvaluateCodeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+EvaluateCodeOutcomeCallable AppSyncClient::EvaluateCodeCallable(const EvaluateCodeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EvaluateCodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EvaluateCode(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::EvaluateCodeAsync(const EvaluateCodeRequest& request, const EvaluateCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EvaluateCode(request), context);
     } );
 }
 

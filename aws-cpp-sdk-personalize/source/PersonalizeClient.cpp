@@ -30,6 +30,7 @@
 #include <aws/personalize/model/CreateDatasetImportJobRequest.h>
 #include <aws/personalize/model/CreateEventTrackerRequest.h>
 #include <aws/personalize/model/CreateFilterRequest.h>
+#include <aws/personalize/model/CreateMetricAttributionRequest.h>
 #include <aws/personalize/model/CreateRecommenderRequest.h>
 #include <aws/personalize/model/CreateSchemaRequest.h>
 #include <aws/personalize/model/CreateSolutionRequest.h>
@@ -39,6 +40,7 @@
 #include <aws/personalize/model/DeleteDatasetGroupRequest.h>
 #include <aws/personalize/model/DeleteEventTrackerRequest.h>
 #include <aws/personalize/model/DeleteFilterRequest.h>
+#include <aws/personalize/model/DeleteMetricAttributionRequest.h>
 #include <aws/personalize/model/DeleteRecommenderRequest.h>
 #include <aws/personalize/model/DeleteSchemaRequest.h>
 #include <aws/personalize/model/DeleteSolutionRequest.h>
@@ -53,6 +55,7 @@
 #include <aws/personalize/model/DescribeEventTrackerRequest.h>
 #include <aws/personalize/model/DescribeFeatureTransformationRequest.h>
 #include <aws/personalize/model/DescribeFilterRequest.h>
+#include <aws/personalize/model/DescribeMetricAttributionRequest.h>
 #include <aws/personalize/model/DescribeRecipeRequest.h>
 #include <aws/personalize/model/DescribeRecommenderRequest.h>
 #include <aws/personalize/model/DescribeSchemaRequest.h>
@@ -68,6 +71,8 @@
 #include <aws/personalize/model/ListDatasetsRequest.h>
 #include <aws/personalize/model/ListEventTrackersRequest.h>
 #include <aws/personalize/model/ListFiltersRequest.h>
+#include <aws/personalize/model/ListMetricAttributionMetricsRequest.h>
+#include <aws/personalize/model/ListMetricAttributionsRequest.h>
 #include <aws/personalize/model/ListRecipesRequest.h>
 #include <aws/personalize/model/ListRecommendersRequest.h>
 #include <aws/personalize/model/ListSchemasRequest.h>
@@ -80,6 +85,7 @@
 #include <aws/personalize/model/TagResourceRequest.h>
 #include <aws/personalize/model/UntagResourceRequest.h>
 #include <aws/personalize/model/UpdateCampaignRequest.h>
+#include <aws/personalize/model/UpdateMetricAttributionRequest.h>
 #include <aws/personalize/model/UpdateRecommenderRequest.h>
 
 using namespace Aws;
@@ -425,6 +431,30 @@ void PersonalizeClient::CreateFilterAsync(const CreateFilterRequest& request, co
     } );
 }
 
+CreateMetricAttributionOutcome PersonalizeClient::CreateMetricAttribution(const CreateMetricAttributionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMetricAttribution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMetricAttribution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateMetricAttributionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateMetricAttributionOutcomeCallable PersonalizeClient::CreateMetricAttributionCallable(const CreateMetricAttributionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMetricAttributionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMetricAttribution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::CreateMetricAttributionAsync(const CreateMetricAttributionRequest& request, const CreateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMetricAttribution(request), context);
+    } );
+}
+
 CreateRecommenderOutcome PersonalizeClient::CreateRecommender(const CreateRecommenderRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRecommender, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -638,6 +668,30 @@ void PersonalizeClient::DeleteFilterAsync(const DeleteFilterRequest& request, co
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteFilter(request), context);
+    } );
+}
+
+DeleteMetricAttributionOutcome PersonalizeClient::DeleteMetricAttribution(const DeleteMetricAttributionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMetricAttribution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMetricAttribution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteMetricAttributionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteMetricAttributionOutcomeCallable PersonalizeClient::DeleteMetricAttributionCallable(const DeleteMetricAttributionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMetricAttributionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMetricAttribution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::DeleteMetricAttributionAsync(const DeleteMetricAttributionRequest& request, const DeleteMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMetricAttribution(request), context);
     } );
 }
 
@@ -974,6 +1028,30 @@ void PersonalizeClient::DescribeFilterAsync(const DescribeFilterRequest& request
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeFilter(request), context);
+    } );
+}
+
+DescribeMetricAttributionOutcome PersonalizeClient::DescribeMetricAttribution(const DescribeMetricAttributionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMetricAttribution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMetricAttribution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeMetricAttributionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeMetricAttributionOutcomeCallable PersonalizeClient::DescribeMetricAttributionCallable(const DescribeMetricAttributionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMetricAttributionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMetricAttribution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::DescribeMetricAttributionAsync(const DescribeMetricAttributionRequest& request, const DescribeMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeMetricAttribution(request), context);
     } );
 }
 
@@ -1337,6 +1415,54 @@ void PersonalizeClient::ListFiltersAsync(const ListFiltersRequest& request, cons
     } );
 }
 
+ListMetricAttributionMetricsOutcome PersonalizeClient::ListMetricAttributionMetrics(const ListMetricAttributionMetricsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMetricAttributionMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMetricAttributionMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListMetricAttributionMetricsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMetricAttributionMetricsOutcomeCallable PersonalizeClient::ListMetricAttributionMetricsCallable(const ListMetricAttributionMetricsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMetricAttributionMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMetricAttributionMetrics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::ListMetricAttributionMetricsAsync(const ListMetricAttributionMetricsRequest& request, const ListMetricAttributionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMetricAttributionMetrics(request), context);
+    } );
+}
+
+ListMetricAttributionsOutcome PersonalizeClient::ListMetricAttributions(const ListMetricAttributionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMetricAttributions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMetricAttributions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListMetricAttributionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMetricAttributionsOutcomeCallable PersonalizeClient::ListMetricAttributionsCallable(const ListMetricAttributionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMetricAttributionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMetricAttributions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::ListMetricAttributionsAsync(const ListMetricAttributionsRequest& request, const ListMetricAttributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMetricAttributions(request), context);
+    } );
+}
+
 ListRecipesOutcome PersonalizeClient::ListRecipes(const ListRecipesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecipes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1622,6 +1748,30 @@ void PersonalizeClient::UpdateCampaignAsync(const UpdateCampaignRequest& request
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateCampaign(request), context);
+    } );
+}
+
+UpdateMetricAttributionOutcome PersonalizeClient::UpdateMetricAttribution(const UpdateMetricAttributionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMetricAttribution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMetricAttribution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateMetricAttributionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateMetricAttributionOutcomeCallable PersonalizeClient::UpdateMetricAttributionCallable(const UpdateMetricAttributionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMetricAttributionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMetricAttribution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::UpdateMetricAttributionAsync(const UpdateMetricAttributionRequest& request, const UpdateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMetricAttribution(request), context);
     } );
 }
 

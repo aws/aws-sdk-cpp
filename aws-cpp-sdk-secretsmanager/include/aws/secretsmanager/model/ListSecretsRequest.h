@@ -169,32 +169,32 @@ namespace Model
 
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline ListSecretsRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline ListSecretsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
 

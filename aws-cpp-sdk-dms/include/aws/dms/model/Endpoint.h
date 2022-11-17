@@ -158,11 +158,12 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
      * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
      * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
@@ -170,11 +171,12 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
      * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
      * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
@@ -182,11 +184,12 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
      * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
      * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
@@ -194,11 +197,12 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
      * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
      * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
@@ -206,11 +210,12 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
      * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
      * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
@@ -218,11 +223,12 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
      * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
      * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline Endpoint& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
@@ -230,11 +236,12 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
      * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
      * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline Endpoint& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
@@ -242,68 +249,69 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
      * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
      * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline Endpoint& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
 
     /**
      * <p>The expanded name for the engine name. For example, if the
-     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
-     * Aurora MySQL."</p>
+     * <code>EngineName</code> parameter is "aurora", this value would be "Amazon
+     * Aurora MySQL".</p>
      */
     inline const Aws::String& GetEngineDisplayName() const{ return m_engineDisplayName; }
 
     /**
      * <p>The expanded name for the engine name. For example, if the
-     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
-     * Aurora MySQL."</p>
+     * <code>EngineName</code> parameter is "aurora", this value would be "Amazon
+     * Aurora MySQL".</p>
      */
     inline bool EngineDisplayNameHasBeenSet() const { return m_engineDisplayNameHasBeenSet; }
 
     /**
      * <p>The expanded name for the engine name. For example, if the
-     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
-     * Aurora MySQL."</p>
+     * <code>EngineName</code> parameter is "aurora", this value would be "Amazon
+     * Aurora MySQL".</p>
      */
     inline void SetEngineDisplayName(const Aws::String& value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName = value; }
 
     /**
      * <p>The expanded name for the engine name. For example, if the
-     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
-     * Aurora MySQL."</p>
+     * <code>EngineName</code> parameter is "aurora", this value would be "Amazon
+     * Aurora MySQL".</p>
      */
     inline void SetEngineDisplayName(Aws::String&& value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName = std::move(value); }
 
     /**
      * <p>The expanded name for the engine name. For example, if the
-     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
-     * Aurora MySQL."</p>
+     * <code>EngineName</code> parameter is "aurora", this value would be "Amazon
+     * Aurora MySQL".</p>
      */
     inline void SetEngineDisplayName(const char* value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName.assign(value); }
 
     /**
      * <p>The expanded name for the engine name. For example, if the
-     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
-     * Aurora MySQL."</p>
+     * <code>EngineName</code> parameter is "aurora", this value would be "Amazon
+     * Aurora MySQL".</p>
      */
     inline Endpoint& WithEngineDisplayName(const Aws::String& value) { SetEngineDisplayName(value); return *this;}
 
     /**
      * <p>The expanded name for the engine name. For example, if the
-     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
-     * Aurora MySQL."</p>
+     * <code>EngineName</code> parameter is "aurora", this value would be "Amazon
+     * Aurora MySQL".</p>
      */
     inline Endpoint& WithEngineDisplayName(Aws::String&& value) { SetEngineDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>The expanded name for the engine name. For example, if the
-     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
-     * Aurora MySQL."</p>
+     * <code>EngineName</code> parameter is "aurora", this value would be "Amazon
+     * Aurora MySQL".</p>
      */
     inline Endpoint& WithEngineDisplayName(const char* value) { SetEngineDisplayName(value); return *this;}
 

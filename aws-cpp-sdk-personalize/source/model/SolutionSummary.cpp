@@ -23,7 +23,8 @@ SolutionSummary::SolutionSummary() :
     m_solutionArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_recipeArnHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ SolutionSummary::SolutionSummary(JsonView jsonValue) :
     m_solutionArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_recipeArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ SolutionSummary& SolutionSummary::operator =(JsonView jsonValue)
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("recipeArn"))
+  {
+    m_recipeArn = jsonValue.GetString("recipeArn");
+
+    m_recipeArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -107,6 +116,12 @@ JsonValue SolutionSummary::Jsonize() const
   if(m_lastUpdatedDateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_recipeArnHasBeenSet)
+  {
+   payload.WithString("recipeArn", m_recipeArn);
+
   }
 
   return payload;

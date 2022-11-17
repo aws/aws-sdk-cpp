@@ -20,7 +20,8 @@ CreateFlowRequest::CreateFlowRequest() :
     m_sourceFlowConfigHasBeenSet(false),
     m_destinationFlowConfigListHasBeenSet(false),
     m_tasksHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_metadataCatalogConfigHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,12 @@ Aws::String CreateFlowRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_metadataCatalogConfigHasBeenSet)
+  {
+   payload.WithObject("metadataCatalogConfig", m_metadataCatalogConfig.Jsonize());
 
   }
 

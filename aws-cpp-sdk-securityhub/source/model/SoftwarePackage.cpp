@@ -27,7 +27,9 @@ SoftwarePackage::SoftwarePackage() :
     m_packageManagerHasBeenSet(false),
     m_filePathHasBeenSet(false),
     m_fixedInVersionHasBeenSet(false),
-    m_remediationHasBeenSet(false)
+    m_remediationHasBeenSet(false),
+    m_sourceLayerHashHasBeenSet(false),
+    m_sourceLayerArnHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ SoftwarePackage::SoftwarePackage(JsonView jsonValue) :
     m_packageManagerHasBeenSet(false),
     m_filePathHasBeenSet(false),
     m_fixedInVersionHasBeenSet(false),
-    m_remediationHasBeenSet(false)
+    m_remediationHasBeenSet(false),
+    m_sourceLayerHashHasBeenSet(false),
+    m_sourceLayerArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +114,20 @@ SoftwarePackage& SoftwarePackage::operator =(JsonView jsonValue)
     m_remediationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceLayerHash"))
+  {
+    m_sourceLayerHash = jsonValue.GetString("SourceLayerHash");
+
+    m_sourceLayerHashHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceLayerArn"))
+  {
+    m_sourceLayerArn = jsonValue.GetString("SourceLayerArn");
+
+    m_sourceLayerArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +186,18 @@ JsonValue SoftwarePackage::Jsonize() const
   if(m_remediationHasBeenSet)
   {
    payload.WithString("Remediation", m_remediation);
+
+  }
+
+  if(m_sourceLayerHashHasBeenSet)
+  {
+   payload.WithString("SourceLayerHash", m_sourceLayerHash);
+
+  }
+
+  if(m_sourceLayerArnHasBeenSet)
+  {
+   payload.WithString("SourceLayerArn", m_sourceLayerArn);
 
   }
 

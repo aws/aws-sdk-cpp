@@ -6,15 +6,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/appsync/AppSyncErrors.h>
+#include <aws/appsync/model/BadRequestException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::AppSync;
+using namespace Aws::AppSync::Model;
 
 namespace Aws
 {
 namespace AppSync
 {
+template<> AWS_APPSYNC_API BadRequestException AppSyncError::GetModeledError()
+{
+  assert(this->GetErrorType() == AppSyncErrors::BAD_REQUEST);
+  return BadRequestException(this->GetJsonPayload().View());
+}
+
 namespace AppSyncErrorMapper
 {
 

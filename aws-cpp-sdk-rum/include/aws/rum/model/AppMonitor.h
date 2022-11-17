@@ -7,6 +7,7 @@
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
 #include <aws/rum/model/AppMonitorConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rum/model/CustomEvents.h>
 #include <aws/rum/model/DataStorage.h>
 #include <aws/rum/model/StateEnum.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -120,6 +121,55 @@ namespace Model
      * <p>The date and time that this app monitor was created.</p>
      */
     inline AppMonitor& WithCreated(const char* value) { SetCreated(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events.</p> <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline const CustomEvents& GetCustomEvents() const{ return m_customEvents; }
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events.</p> <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline bool CustomEventsHasBeenSet() const { return m_customEventsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events.</p> <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline void SetCustomEvents(const CustomEvents& value) { m_customEventsHasBeenSet = true; m_customEvents = value; }
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events.</p> <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline void SetCustomEvents(CustomEvents&& value) { m_customEventsHasBeenSet = true; m_customEvents = std::move(value); }
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events.</p> <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline AppMonitor& WithCustomEvents(const CustomEvents& value) { SetCustomEvents(value); return *this;}
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events.</p> <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline AppMonitor& WithCustomEvents(CustomEvents&& value) { SetCustomEvents(std::move(value)); return *this;}
 
 
     /**
@@ -442,6 +492,9 @@ namespace Model
 
     Aws::String m_created;
     bool m_createdHasBeenSet = false;
+
+    CustomEvents m_customEvents;
+    bool m_customEventsHasBeenSet = false;
 
     DataStorage m_dataStorage;
     bool m_dataStorageHasBeenSet = false;

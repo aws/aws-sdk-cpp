@@ -47,6 +47,7 @@ namespace Aws
         static const int ruby2_7_HASH = HashingUtils::HashString("ruby2.7");
         static const int provided_HASH = HashingUtils::HashString("provided");
         static const int provided_al2_HASH = HashingUtils::HashString("provided.al2");
+        static const int nodejs18_x_HASH = HashingUtils::HashString("nodejs18.x");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -160,6 +161,10 @@ namespace Aws
           {
             return Runtime::provided_al2;
           }
+          else if (hashCode == nodejs18_x_HASH)
+          {
+            return Runtime::nodejs18_x;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -228,6 +233,8 @@ namespace Aws
             return "provided";
           case Runtime::provided_al2:
             return "provided.al2";
+          case Runtime::nodejs18_x:
+            return "nodejs18.x";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -19,6 +19,7 @@ namespace Model
 {
 
 SolutionVersion::SolutionVersion() : 
+    m_nameHasBeenSet(false),
     m_solutionVersionArnHasBeenSet(false),
     m_solutionArnHasBeenSet(false),
     m_performHPO(false),
@@ -42,6 +43,7 @@ SolutionVersion::SolutionVersion() :
 }
 
 SolutionVersion::SolutionVersion(JsonView jsonValue) : 
+    m_nameHasBeenSet(false),
     m_solutionVersionArnHasBeenSet(false),
     m_solutionArnHasBeenSet(false),
     m_performHPO(false),
@@ -67,6 +69,13 @@ SolutionVersion::SolutionVersion(JsonView jsonValue) :
 
 SolutionVersion& SolutionVersion::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("solutionVersionArn"))
   {
     m_solutionVersionArn = jsonValue.GetString("solutionVersionArn");
@@ -178,6 +187,12 @@ SolutionVersion& SolutionVersion::operator =(JsonView jsonValue)
 JsonValue SolutionVersion::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_solutionVersionArnHasBeenSet)
   {

@@ -12,6 +12,7 @@
 #include <aws/emr-serverless/model/AutoStartConfig.h>
 #include <aws/emr-serverless/model/AutoStopConfig.h>
 #include <aws/emr-serverless/model/NetworkConfiguration.h>
+#include <aws/emr-serverless/model/Architecture.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -331,6 +332,37 @@ namespace Model
     
     inline UpdateApplicationRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline const Architecture& GetArchitecture() const{ return m_architecture; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline UpdateApplicationRequest& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline UpdateApplicationRequest& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -353,6 +385,9 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet = false;
+
+    Architecture m_architecture;
+    bool m_architectureHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,7 +19,8 @@ CreateNatGatewayRequest::CreateNatGatewayRequest() :
     m_subnetIdHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_connectivityType(ConnectivityType::NOT_SET),
-    m_connectivityTypeHasBeenSet(false)
+    m_connectivityTypeHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,11 @@ Aws::String CreateNatGatewayRequest::SerializePayload() const
   if(m_connectivityTypeHasBeenSet)
   {
     ss << "ConnectivityType=" << ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType) << "&";
+  }
+
+  if(m_privateIpAddressHasBeenSet)
+  {
+    ss << "PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

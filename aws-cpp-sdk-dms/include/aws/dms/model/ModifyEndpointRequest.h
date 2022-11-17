@@ -201,106 +201,106 @@ namespace Model
 
 
     /**
-     * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
-     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
-     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
-     * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
-     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
-     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
-     * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
-     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
-     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
-     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
-     * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
-     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 

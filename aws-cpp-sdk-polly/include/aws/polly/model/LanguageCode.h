@@ -49,7 +49,8 @@ namespace Model
     en_ZA,
     ca_ES,
     de_AT,
-    yue_CN
+    yue_CN,
+    ar_AE
   };
 
 namespace LanguageCodeMapper

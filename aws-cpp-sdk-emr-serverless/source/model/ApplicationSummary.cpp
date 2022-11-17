@@ -28,7 +28,9 @@ ApplicationSummary::ApplicationSummary() :
     m_stateHasBeenSet(false),
     m_stateDetailsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_architecture(Architecture::NOT_SET),
+    m_architectureHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ ApplicationSummary::ApplicationSummary(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_stateDetailsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_architecture(Architecture::NOT_SET),
+    m_architectureHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +116,13 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("architecture"))
+  {
+    m_architecture = ArchitectureMapper::GetArchitectureForName(jsonValue.GetString("architecture"));
+
+    m_architectureHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +179,11 @@ JsonValue ApplicationSummary::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_architectureHasBeenSet)
+  {
+   payload.WithString("architecture", ArchitectureMapper::GetNameForArchitecture(m_architecture));
   }
 
   return payload;

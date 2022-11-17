@@ -33,6 +33,47 @@ namespace Model
 
 
     /**
+     * <p>Logging-configuration identifier.</p>
+     */
+    inline const Aws::String& GetLoggingConfigurationIdentifier() const{ return m_loggingConfigurationIdentifier; }
+
+    /**
+     * <p>Logging-configuration identifier.</p>
+     */
+    inline bool LoggingConfigurationIdentifierHasBeenSet() const { return m_loggingConfigurationIdentifierHasBeenSet; }
+
+    /**
+     * <p>Logging-configuration identifier.</p>
+     */
+    inline void SetLoggingConfigurationIdentifier(const Aws::String& value) { m_loggingConfigurationIdentifierHasBeenSet = true; m_loggingConfigurationIdentifier = value; }
+
+    /**
+     * <p>Logging-configuration identifier.</p>
+     */
+    inline void SetLoggingConfigurationIdentifier(Aws::String&& value) { m_loggingConfigurationIdentifierHasBeenSet = true; m_loggingConfigurationIdentifier = std::move(value); }
+
+    /**
+     * <p>Logging-configuration identifier.</p>
+     */
+    inline void SetLoggingConfigurationIdentifier(const char* value) { m_loggingConfigurationIdentifierHasBeenSet = true; m_loggingConfigurationIdentifier.assign(value); }
+
+    /**
+     * <p>Logging-configuration identifier.</p>
+     */
+    inline ListRoomsRequest& WithLoggingConfigurationIdentifier(const Aws::String& value) { SetLoggingConfigurationIdentifier(value); return *this;}
+
+    /**
+     * <p>Logging-configuration identifier.</p>
+     */
+    inline ListRoomsRequest& WithLoggingConfigurationIdentifier(Aws::String&& value) { SetLoggingConfigurationIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>Logging-configuration identifier.</p>
+     */
+    inline ListRoomsRequest& WithLoggingConfigurationIdentifier(const char* value) { SetLoggingConfigurationIdentifier(value); return *this;}
+
+
+    /**
      * <p>Maximum number of rooms to return. Default: 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -184,6 +225,9 @@ namespace Model
     inline ListRoomsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
+    Aws::String m_loggingConfigurationIdentifier;
+    bool m_loggingConfigurationIdentifierHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;

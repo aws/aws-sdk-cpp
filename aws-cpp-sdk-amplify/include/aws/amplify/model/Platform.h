@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     WEB,
-    WEB_DYNAMIC
+    WEB_DYNAMIC,
+    WEB_COMPUTE
   };
 
 namespace PlatformMapper

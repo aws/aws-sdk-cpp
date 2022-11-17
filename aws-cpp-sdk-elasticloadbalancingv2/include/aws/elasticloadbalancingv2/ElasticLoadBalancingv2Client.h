@@ -669,9 +669,7 @@ namespace ElasticLoadBalancingv2
 
         /**
          * <p>Modifies the health checks used when evaluating the health state of the
-         * targets in the specified target group.</p> <p>If the protocol of the target
-         * group is TCP, TLS, UDP, or TCP_UDP, you can't modify the health check protocol,
-         * interval, timeout, or success codes.</p><p><h3>See Also:</h3>   <a
+         * targets in the specified target group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup">AWS
          * API Reference</a></p>
          */

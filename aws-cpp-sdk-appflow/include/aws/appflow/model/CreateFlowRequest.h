@@ -11,6 +11,7 @@
 #include <aws/appflow/model/SourceFlowConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/appflow/model/MetadataCatalogConfig.h>
 #include <aws/appflow/model/DestinationFlowConfig.h>
 #include <aws/appflow/model/Task.h>
 #include <utility>
@@ -424,6 +425,49 @@ namespace Model
      */
     inline CreateFlowRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline const MetadataCatalogConfig& GetMetadataCatalogConfig() const{ return m_metadataCatalogConfig; }
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline bool MetadataCatalogConfigHasBeenSet() const { return m_metadataCatalogConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline void SetMetadataCatalogConfig(const MetadataCatalogConfig& value) { m_metadataCatalogConfigHasBeenSet = true; m_metadataCatalogConfig = value; }
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline void SetMetadataCatalogConfig(MetadataCatalogConfig&& value) { m_metadataCatalogConfigHasBeenSet = true; m_metadataCatalogConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline CreateFlowRequest& WithMetadataCatalogConfig(const MetadataCatalogConfig& value) { SetMetadataCatalogConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline CreateFlowRequest& WithMetadataCatalogConfig(MetadataCatalogConfig&& value) { SetMetadataCatalogConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_flowName;
@@ -449,6 +493,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    MetadataCatalogConfig m_metadataCatalogConfig;
+    bool m_metadataCatalogConfigHasBeenSet = false;
   };
 
 } // namespace Model

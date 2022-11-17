@@ -19,7 +19,9 @@ CreateDatasetImportJobRequest::CreateDatasetImportJobRequest() :
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_importMode(ImportMode::NOT_SET),
-    m_importModeHasBeenSet(false)
+    m_importModeHasBeenSet(false),
+    m_publishAttributionMetricsToS3(false),
+    m_publishAttributionMetricsToS3HasBeenSet(false)
 {
 }
 
@@ -65,6 +67,12 @@ Aws::String CreateDatasetImportJobRequest::SerializePayload() const
   if(m_importModeHasBeenSet)
   {
    payload.WithString("importMode", ImportModeMapper::GetNameForImportMode(m_importMode));
+  }
+
+  if(m_publishAttributionMetricsToS3HasBeenSet)
+  {
+   payload.WithBool("publishAttributionMetricsToS3", m_publishAttributionMetricsToS3);
+
   }
 
   return payload.View().WriteReadable();

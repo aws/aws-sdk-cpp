@@ -20,13 +20,17 @@ namespace Model
 
 AggregationConfig::AggregationConfig() : 
     m_aggregationType(AggregationType::NOT_SET),
-    m_aggregationTypeHasBeenSet(false)
+    m_aggregationTypeHasBeenSet(false),
+    m_targetFileSize(0),
+    m_targetFileSizeHasBeenSet(false)
 {
 }
 
 AggregationConfig::AggregationConfig(JsonView jsonValue) : 
     m_aggregationType(AggregationType::NOT_SET),
-    m_aggregationTypeHasBeenSet(false)
+    m_aggregationTypeHasBeenSet(false),
+    m_targetFileSize(0),
+    m_targetFileSizeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ AggregationConfig& AggregationConfig::operator =(JsonView jsonValue)
     m_aggregationTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("targetFileSize"))
+  {
+    m_targetFileSize = jsonValue.GetInt64("targetFileSize");
+
+    m_targetFileSizeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,12 @@ JsonValue AggregationConfig::Jsonize() const
   if(m_aggregationTypeHasBeenSet)
   {
    payload.WithString("aggregationType", AggregationTypeMapper::GetNameForAggregationType(m_aggregationType));
+  }
+
+  if(m_targetFileSizeHasBeenSet)
+  {
+   payload.WithInt64("targetFileSize", m_targetFileSize);
+
   }
 
   return payload;
