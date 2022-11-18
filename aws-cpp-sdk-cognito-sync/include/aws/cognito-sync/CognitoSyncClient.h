@@ -7,8 +7,10 @@
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cognito-sync/CognitoSyncServiceClientModel.h>
+#include <aws/cognito-sync/CognitoSyncLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -92,6 +94,47 @@ namespace CognitoSync
         virtual ~CognitoSyncClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Initiates a bulk publish of all existing datasets for an Identity Pool to the
          * configured stream. Customers are limited to one successful bulk publish per 24
@@ -104,15 +147,6 @@ namespace CognitoSync
          */
         virtual Model::BulkPublishOutcome BulkPublish(const Model::BulkPublishRequest& request) const;
 
-        /**
-         * A Callable wrapper for BulkPublish that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BulkPublishOutcomeCallable BulkPublishCallable(const Model::BulkPublishRequest& request) const;
-
-        /**
-         * An Async wrapper for BulkPublish that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BulkPublishAsync(const Model::BulkPublishRequest& request, const BulkPublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specific dataset. The dataset will be deleted permanently, and
@@ -126,15 +160,6 @@ namespace CognitoSync
          */
         virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets meta data about a dataset by identity and dataset name. With Amazon
@@ -148,15 +173,6 @@ namespace CognitoSync
          */
         virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatasetAsync(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets usage details (for example, data storage) about a particular identity
@@ -168,15 +184,6 @@ namespace CognitoSync
          */
         virtual Model::DescribeIdentityPoolUsageOutcome DescribeIdentityPoolUsage(const Model::DescribeIdentityPoolUsageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIdentityPoolUsage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIdentityPoolUsageOutcomeCallable DescribeIdentityPoolUsageCallable(const Model::DescribeIdentityPoolUsageRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIdentityPoolUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIdentityPoolUsageAsync(const Model::DescribeIdentityPoolUsageRequest& request, const DescribeIdentityPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets usage information for an identity, including number of datasets and data
@@ -187,15 +194,6 @@ namespace CognitoSync
          */
         virtual Model::DescribeIdentityUsageOutcome DescribeIdentityUsage(const Model::DescribeIdentityUsageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIdentityUsage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIdentityUsageOutcomeCallable DescribeIdentityUsageCallable(const Model::DescribeIdentityUsageRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIdentityUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIdentityUsageAsync(const Model::DescribeIdentityUsageRequest& request, const DescribeIdentityUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the status of the last BulkPublish operation for an identity
@@ -207,15 +205,6 @@ namespace CognitoSync
          */
         virtual Model::GetBulkPublishDetailsOutcome GetBulkPublishDetails(const Model::GetBulkPublishDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBulkPublishDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBulkPublishDetailsOutcomeCallable GetBulkPublishDetailsCallable(const Model::GetBulkPublishDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBulkPublishDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBulkPublishDetailsAsync(const Model::GetBulkPublishDetailsRequest& request, const GetBulkPublishDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the events and the corresponding Lambda functions associated with an
@@ -227,15 +216,6 @@ namespace CognitoSync
          */
         virtual Model::GetCognitoEventsOutcome GetCognitoEvents(const Model::GetCognitoEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCognitoEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCognitoEventsOutcomeCallable GetCognitoEventsCallable(const Model::GetCognitoEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCognitoEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCognitoEventsAsync(const Model::GetCognitoEventsRequest& request, const GetCognitoEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the configuration settings of an identity pool.</p><p>This API can only
@@ -247,15 +227,6 @@ namespace CognitoSync
          */
         virtual Model::GetIdentityPoolConfigurationOutcome GetIdentityPoolConfiguration(const Model::GetIdentityPoolConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIdentityPoolConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIdentityPoolConfigurationOutcomeCallable GetIdentityPoolConfigurationCallable(const Model::GetIdentityPoolConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIdentityPoolConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIdentityPoolConfigurationAsync(const Model::GetIdentityPoolConfigurationRequest& request, const GetIdentityPoolConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists datasets for an identity. With Amazon Cognito Sync, each identity has
@@ -269,15 +240,6 @@ namespace CognitoSync
          */
         virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const Model::ListDatasetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetsAsync(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of identity pools registered with Cognito.</p>
@@ -289,15 +251,6 @@ namespace CognitoSync
          */
         virtual Model::ListIdentityPoolUsageOutcome ListIdentityPoolUsage(const Model::ListIdentityPoolUsageRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIdentityPoolUsage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIdentityPoolUsageOutcomeCallable ListIdentityPoolUsageCallable(const Model::ListIdentityPoolUsageRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIdentityPoolUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIdentityPoolUsageAsync(const Model::ListIdentityPoolUsageRequest& request, const ListIdentityPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets paginated records, optionally changed after a particular sync count for
@@ -312,15 +265,6 @@ namespace CognitoSync
          */
         virtual Model::ListRecordsOutcome ListRecords(const Model::ListRecordsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRecords that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRecordsOutcomeCallable ListRecordsCallable(const Model::ListRecordsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRecordsAsync(const Model::ListRecordsRequest& request, const ListRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a device to receive push sync notifications.</p><p>This API can
@@ -331,15 +275,6 @@ namespace CognitoSync
          */
         virtual Model::RegisterDeviceOutcome RegisterDevice(const Model::RegisterDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterDeviceOutcomeCallable RegisterDeviceCallable(const Model::RegisterDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterDeviceAsync(const Model::RegisterDeviceRequest& request, const RegisterDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the AWS Lambda function for a given event type for an identity pool.
@@ -353,15 +288,6 @@ namespace CognitoSync
          */
         virtual Model::SetCognitoEventsOutcome SetCognitoEvents(const Model::SetCognitoEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetCognitoEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetCognitoEventsOutcomeCallable SetCognitoEventsCallable(const Model::SetCognitoEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for SetCognitoEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetCognitoEventsAsync(const Model::SetCognitoEventsRequest& request, const SetCognitoEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the necessary configuration for push sync.</p><p>This API can only be
@@ -372,15 +298,6 @@ namespace CognitoSync
          */
         virtual Model::SetIdentityPoolConfigurationOutcome SetIdentityPoolConfiguration(const Model::SetIdentityPoolConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetIdentityPoolConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetIdentityPoolConfigurationOutcomeCallable SetIdentityPoolConfigurationCallable(const Model::SetIdentityPoolConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for SetIdentityPoolConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetIdentityPoolConfigurationAsync(const Model::SetIdentityPoolConfigurationRequest& request, const SetIdentityPoolConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Subscribes to receive notifications when a dataset is modified by another
@@ -392,15 +309,6 @@ namespace CognitoSync
          */
         virtual Model::SubscribeToDatasetOutcome SubscribeToDataset(const Model::SubscribeToDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for SubscribeToDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SubscribeToDatasetOutcomeCallable SubscribeToDatasetCallable(const Model::SubscribeToDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for SubscribeToDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SubscribeToDatasetAsync(const Model::SubscribeToDatasetRequest& request, const SubscribeToDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Unsubscribes from receiving notifications when a dataset is modified by
@@ -412,15 +320,6 @@ namespace CognitoSync
          */
         virtual Model::UnsubscribeFromDatasetOutcome UnsubscribeFromDataset(const Model::UnsubscribeFromDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnsubscribeFromDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnsubscribeFromDatasetOutcomeCallable UnsubscribeFromDatasetCallable(const Model::UnsubscribeFromDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for UnsubscribeFromDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnsubscribeFromDatasetAsync(const Model::UnsubscribeFromDatasetRequest& request, const UnsubscribeFromDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Posts updates to records and adds and deletes records for a dataset and
@@ -441,15 +340,6 @@ namespace CognitoSync
          */
         virtual Model::UpdateRecordsOutcome UpdateRecords(const Model::UpdateRecordsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRecords that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRecordsOutcomeCallable UpdateRecordsCallable(const Model::UpdateRecordsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRecordsAsync(const Model::UpdateRecordsRequest& request, const UpdateRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

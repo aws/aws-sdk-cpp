@@ -7,8 +7,10 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cognito-idp/CognitoIdentityProviderServiceClientModel.h>
+#include <aws/cognito-idp/CognitoIdentityProviderLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -79,6 +81,47 @@ namespace CognitoIdentityProvider
         virtual ~CognitoIdentityProviderClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds additional user attributes to the user pool schema.</p><p><h3>See
          * Also:</h3>   <a
@@ -87,15 +130,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AddCustomAttributesOutcome AddCustomAttributes(const Model::AddCustomAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddCustomAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddCustomAttributesOutcomeCallable AddCustomAttributesCallable(const Model::AddCustomAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for AddCustomAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddCustomAttributesAsync(const Model::AddCustomAttributesRequest& request, const AddCustomAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified user to the specified group.</p> <p>Calling this action
@@ -105,15 +139,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminAddUserToGroupOutcome AdminAddUserToGroup(const Model::AdminAddUserToGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminAddUserToGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminAddUserToGroupOutcomeCallable AdminAddUserToGroupCallable(const Model::AdminAddUserToGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminAddUserToGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminAddUserToGroupAsync(const Model::AdminAddUserToGroupRequest& request, const AdminAddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Confirms user registration as an admin without using a confirmation code.
@@ -124,15 +149,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminConfirmSignUpOutcome AdminConfirmSignUp(const Model::AdminConfirmSignUpRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminConfirmSignUp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminConfirmSignUpOutcomeCallable AdminConfirmSignUpCallable(const Model::AdminConfirmSignUpRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminConfirmSignUp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminConfirmSignUpAsync(const Model::AdminConfirmSignUpRequest& request, const AdminConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new user in the specified user pool.</p> <p>If
@@ -167,15 +183,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminCreateUserOutcome AdminCreateUser(const Model::AdminCreateUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminCreateUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminCreateUserOutcomeCallable AdminCreateUserCallable(const Model::AdminCreateUserRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminCreateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminCreateUserAsync(const Model::AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a user as an administrator. Works on any user.</p> <p>Calling this
@@ -185,15 +192,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminDeleteUserOutcome AdminDeleteUser(const Model::AdminDeleteUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminDeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminDeleteUserOutcomeCallable AdminDeleteUserCallable(const Model::AdminDeleteUserRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminDeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminDeleteUserAsync(const Model::AdminDeleteUserRequest& request, const AdminDeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the user attributes in a user pool as an administrator. Works on any
@@ -204,15 +202,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminDeleteUserAttributesOutcome AdminDeleteUserAttributes(const Model::AdminDeleteUserAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminDeleteUserAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminDeleteUserAttributesOutcomeCallable AdminDeleteUserAttributesCallable(const Model::AdminDeleteUserAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminDeleteUserAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminDeleteUserAttributesAsync(const Model::AdminDeleteUserAttributesRequest& request, const AdminDeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Prevents the user from signing in with the specified external (SAML or
@@ -248,15 +237,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminDisableProviderForUserOutcome AdminDisableProviderForUser(const Model::AdminDisableProviderForUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminDisableProviderForUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminDisableProviderForUserOutcomeCallable AdminDisableProviderForUserCallable(const Model::AdminDisableProviderForUserRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminDisableProviderForUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminDisableProviderForUserAsync(const Model::AdminDisableProviderForUserRequest& request, const AdminDisableProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deactivates a user and revokes all access tokens for the user. A deactivated
@@ -270,15 +250,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminDisableUserOutcome AdminDisableUser(const Model::AdminDisableUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminDisableUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminDisableUserOutcomeCallable AdminDisableUserCallable(const Model::AdminDisableUserRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminDisableUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminDisableUserAsync(const Model::AdminDisableUserRequest& request, const AdminDisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the specified user as an administrator. Works on any user.</p>
@@ -289,15 +260,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminEnableUserOutcome AdminEnableUser(const Model::AdminEnableUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminEnableUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminEnableUserOutcomeCallable AdminEnableUserCallable(const Model::AdminEnableUserRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminEnableUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminEnableUserAsync(const Model::AdminEnableUserRequest& request, const AdminEnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Forgets the device, as an administrator.</p> <p>Calling this action requires
@@ -307,15 +269,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminForgetDeviceOutcome AdminForgetDevice(const Model::AdminForgetDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminForgetDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminForgetDeviceOutcomeCallable AdminForgetDeviceCallable(const Model::AdminForgetDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminForgetDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminForgetDeviceAsync(const Model::AdminForgetDeviceRequest& request, const AdminForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the device, as an administrator.</p> <p>Calling this action requires
@@ -325,15 +278,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminGetDeviceOutcome AdminGetDevice(const Model::AdminGetDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminGetDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminGetDeviceOutcomeCallable AdminGetDeviceCallable(const Model::AdminGetDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminGetDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminGetDeviceAsync(const Model::AdminGetDeviceRequest& request, const AdminGetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified user by user name in a user pool as an administrator.
@@ -344,15 +288,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminGetUserOutcome AdminGetUser(const Model::AdminGetUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminGetUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminGetUserOutcomeCallable AdminGetUserCallable(const Model::AdminGetUserRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminGetUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminGetUserAsync(const Model::AdminGetUserRequest& request, const AdminGetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates the authentication flow, as an administrator.</p>  <p>This
@@ -379,15 +314,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminInitiateAuthOutcome AdminInitiateAuth(const Model::AdminInitiateAuthRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminInitiateAuth that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminInitiateAuthOutcomeCallable AdminInitiateAuthCallable(const Model::AdminInitiateAuthRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminInitiateAuth that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminInitiateAuthAsync(const Model::AdminInitiateAuthRequest& request, const AdminInitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Links an existing user account in a user pool (<code>DestinationUser</code>)
@@ -410,15 +336,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminLinkProviderForUserOutcome AdminLinkProviderForUser(const Model::AdminLinkProviderForUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminLinkProviderForUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminLinkProviderForUserOutcomeCallable AdminLinkProviderForUserCallable(const Model::AdminLinkProviderForUserRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminLinkProviderForUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminLinkProviderForUserAsync(const Model::AdminLinkProviderForUserRequest& request, const AdminLinkProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists devices, as an administrator.</p> <p>Calling this action requires
@@ -428,15 +345,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminListDevicesOutcome AdminListDevices(const Model::AdminListDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminListDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminListDevicesOutcomeCallable AdminListDevicesCallable(const Model::AdminListDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminListDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminListDevicesAsync(const Model::AdminListDevicesRequest& request, const AdminListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the groups that the user belongs to.</p> <p>Calling this action
@@ -446,15 +354,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminListGroupsForUserOutcome AdminListGroupsForUser(const Model::AdminListGroupsForUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminListGroupsForUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminListGroupsForUserOutcomeCallable AdminListGroupsForUserCallable(const Model::AdminListGroupsForUserRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminListGroupsForUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminListGroupsForUserAsync(const Model::AdminListGroupsForUserRequest& request, const AdminListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A history of user activity and any risks detected as part of Amazon Cognito
@@ -464,15 +363,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminListUserAuthEventsOutcome AdminListUserAuthEvents(const Model::AdminListUserAuthEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminListUserAuthEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminListUserAuthEventsOutcomeCallable AdminListUserAuthEventsCallable(const Model::AdminListUserAuthEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminListUserAuthEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminListUserAuthEventsAsync(const Model::AdminListUserAuthEventsRequest& request, const AdminListUserAuthEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified user from the specified group.</p> <p>Calling this
@@ -482,15 +372,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminRemoveUserFromGroupOutcome AdminRemoveUserFromGroup(const Model::AdminRemoveUserFromGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminRemoveUserFromGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminRemoveUserFromGroupOutcomeCallable AdminRemoveUserFromGroupCallable(const Model::AdminRemoveUserFromGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminRemoveUserFromGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminRemoveUserFromGroupAsync(const Model::AdminRemoveUserFromGroupRequest& request, const AdminRemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets the specified user's password in a user pool as an administrator.
@@ -525,15 +406,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminResetUserPasswordOutcome AdminResetUserPassword(const Model::AdminResetUserPasswordRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminResetUserPassword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminResetUserPasswordOutcomeCallable AdminResetUserPasswordCallable(const Model::AdminResetUserPasswordRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminResetUserPassword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminResetUserPasswordAsync(const Model::AdminResetUserPasswordRequest& request, const AdminResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Responds to an authentication challenge, as an administrator.</p> 
@@ -560,15 +432,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminRespondToAuthChallengeOutcome AdminRespondToAuthChallenge(const Model::AdminRespondToAuthChallengeRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminRespondToAuthChallenge that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminRespondToAuthChallengeOutcomeCallable AdminRespondToAuthChallengeCallable(const Model::AdminRespondToAuthChallengeRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminRespondToAuthChallenge that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminRespondToAuthChallengeAsync(const Model::AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The user's multi-factor authentication (MFA) preference, including which MFA
@@ -582,15 +445,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminSetUserMFAPreferenceOutcome AdminSetUserMFAPreference(const Model::AdminSetUserMFAPreferenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminSetUserMFAPreference that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminSetUserMFAPreferenceOutcomeCallable AdminSetUserMFAPreferenceCallable(const Model::AdminSetUserMFAPreferenceRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminSetUserMFAPreference that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminSetUserMFAPreferenceAsync(const Model::AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the specified user's password in a user pool as an administrator. Works
@@ -607,15 +461,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminSetUserPasswordOutcome AdminSetUserPassword(const Model::AdminSetUserPasswordRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminSetUserPassword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminSetUserPasswordOutcomeCallable AdminSetUserPasswordCallable(const Model::AdminSetUserPasswordRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminSetUserPassword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminSetUserPasswordAsync(const Model::AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <i>This action is no longer supported.</i> You can use it to configure only
@@ -628,15 +473,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminSetUserSettingsOutcome AdminSetUserSettings(const Model::AdminSetUserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminSetUserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminSetUserSettingsOutcomeCallable AdminSetUserSettingsCallable(const Model::AdminSetUserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminSetUserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminSetUserSettingsAsync(const Model::AdminSetUserSettingsRequest& request, const AdminSetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides feedback for an authentication event indicating if it was from a
@@ -648,15 +484,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminUpdateAuthEventFeedbackOutcome AdminUpdateAuthEventFeedback(const Model::AdminUpdateAuthEventFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminUpdateAuthEventFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminUpdateAuthEventFeedbackOutcomeCallable AdminUpdateAuthEventFeedbackCallable(const Model::AdminUpdateAuthEventFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminUpdateAuthEventFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminUpdateAuthEventFeedbackAsync(const Model::AdminUpdateAuthEventFeedbackRequest& request, const AdminUpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the device status as an administrator.</p> <p>Calling this action
@@ -666,15 +493,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminUpdateDeviceStatusOutcome AdminUpdateDeviceStatus(const Model::AdminUpdateDeviceStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminUpdateDeviceStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminUpdateDeviceStatusOutcomeCallable AdminUpdateDeviceStatusCallable(const Model::AdminUpdateDeviceStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminUpdateDeviceStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminUpdateDeviceStatusAsync(const Model::AdminUpdateDeviceStatusRequest& request, const AdminUpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified user's attributes, including developer attributes, as
@@ -704,15 +522,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminUpdateUserAttributesOutcome AdminUpdateUserAttributes(const Model::AdminUpdateUserAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminUpdateUserAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminUpdateUserAttributesOutcomeCallable AdminUpdateUserAttributesCallable(const Model::AdminUpdateUserAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminUpdateUserAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminUpdateUserAttributesAsync(const Model::AdminUpdateUserAttributesRequest& request, const AdminUpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Signs out a user from all devices. You must sign
@@ -728,15 +537,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AdminUserGlobalSignOutOutcome AdminUserGlobalSignOut(const Model::AdminUserGlobalSignOutRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdminUserGlobalSignOut that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdminUserGlobalSignOutOutcomeCallable AdminUserGlobalSignOutCallable(const Model::AdminUserGlobalSignOutRequest& request) const;
-
-        /**
-         * An Async wrapper for AdminUserGlobalSignOut that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdminUserGlobalSignOutAsync(const Model::AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Begins setup of time-based one-time password (TOTP) multi-factor
@@ -761,15 +561,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::AssociateSoftwareTokenOutcome AssociateSoftwareToken(const Model::AssociateSoftwareTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateSoftwareToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateSoftwareTokenOutcomeCallable AssociateSoftwareTokenCallable(const Model::AssociateSoftwareTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateSoftwareToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateSoftwareTokenAsync(const Model::AssociateSoftwareTokenRequest& request, const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the password for a specified user in a user pool.</p><p><h3>See
@@ -779,15 +570,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ChangePasswordOutcome ChangePassword(const Model::ChangePasswordRequest& request) const;
 
-        /**
-         * A Callable wrapper for ChangePassword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ChangePasswordOutcomeCallable ChangePasswordCallable(const Model::ChangePasswordRequest& request) const;
-
-        /**
-         * An Async wrapper for ChangePassword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ChangePasswordAsync(const Model::ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Confirms tracking of the device. This API call is the call that begins device
@@ -797,15 +579,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ConfirmDeviceOutcome ConfirmDevice(const Model::ConfirmDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfirmDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfirmDeviceOutcomeCallable ConfirmDeviceCallable(const Model::ConfirmDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfirmDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfirmDeviceAsync(const Model::ConfirmDeviceRequest& request, const ConfirmDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows a user to enter a confirmation code to reset a forgotten
@@ -815,15 +588,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ConfirmForgotPasswordOutcome ConfirmForgotPassword(const Model::ConfirmForgotPasswordRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfirmForgotPassword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfirmForgotPasswordOutcomeCallable ConfirmForgotPasswordCallable(const Model::ConfirmForgotPasswordRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfirmForgotPassword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfirmForgotPasswordAsync(const Model::ConfirmForgotPasswordRequest& request, const ConfirmForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Confirms registration of a new user.</p><p><h3>See Also:</h3>   <a
@@ -832,15 +596,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ConfirmSignUpOutcome ConfirmSignUp(const Model::ConfirmSignUpRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfirmSignUp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfirmSignUpOutcomeCallable ConfirmSignUpCallable(const Model::ConfirmSignUpRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfirmSignUp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfirmSignUpAsync(const Model::ConfirmSignUpRequest& request, const ConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new group in the specified user pool.</p> <p>Calling this action
@@ -850,15 +605,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an IdP for a user pool.</p><p><h3>See Also:</h3>   <a
@@ -867,15 +613,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::CreateIdentityProviderOutcome CreateIdentityProvider(const Model::CreateIdentityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIdentityProviderOutcomeCallable CreateIdentityProviderCallable(const Model::CreateIdentityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIdentityProviderAsync(const Model::CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new OAuth2.0 resource server and defines custom scopes within
@@ -885,15 +622,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::CreateResourceServerOutcome CreateResourceServer(const Model::CreateResourceServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateResourceServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateResourceServerOutcomeCallable CreateResourceServerCallable(const Model::CreateResourceServerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateResourceServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateResourceServerAsync(const Model::CreateResourceServerRequest& request, const CreateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the user import job.</p><p><h3>See Also:</h3>   <a
@@ -902,15 +630,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::CreateUserImportJobOutcome CreateUserImportJob(const Model::CreateUserImportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUserImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserImportJobOutcomeCallable CreateUserImportJobCallable(const Model::CreateUserImportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUserImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserImportJobAsync(const Model::CreateUserImportJobRequest& request, const CreateUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon Cognito user pool and sets the password policy for the
@@ -936,15 +655,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::CreateUserPoolOutcome CreateUserPool(const Model::CreateUserPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUserPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserPoolOutcomeCallable CreateUserPoolCallable(const Model::CreateUserPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUserPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserPoolAsync(const Model::CreateUserPoolRequest& request, const CreateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the user pool client.</p> <p>When you create a new user pool client,
@@ -957,15 +667,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::CreateUserPoolClientOutcome CreateUserPoolClient(const Model::CreateUserPoolClientRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUserPoolClient that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserPoolClientOutcomeCallable CreateUserPoolClientCallable(const Model::CreateUserPoolClientRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUserPoolClient that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserPoolClientAsync(const Model::CreateUserPoolClientRequest& request, const CreateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new domain for a user pool.</p><p><h3>See Also:</h3>   <a
@@ -974,15 +675,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::CreateUserPoolDomainOutcome CreateUserPoolDomain(const Model::CreateUserPoolDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUserPoolDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserPoolDomainOutcomeCallable CreateUserPoolDomainCallable(const Model::CreateUserPoolDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUserPoolDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserPoolDomainAsync(const Model::CreateUserPoolDomainRequest& request, const CreateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a group.</p> <p>Calling this action requires developer
@@ -992,15 +684,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an IdP for a user pool.</p><p><h3>See Also:</h3>   <a
@@ -1009,15 +692,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DeleteIdentityProviderOutcome DeleteIdentityProvider(const Model::DeleteIdentityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIdentityProviderOutcomeCallable DeleteIdentityProviderCallable(const Model::DeleteIdentityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIdentityProviderAsync(const Model::DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a resource server.</p><p><h3>See Also:</h3>   <a
@@ -1026,15 +700,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DeleteResourceServerOutcome DeleteResourceServer(const Model::DeleteResourceServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourceServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourceServerOutcomeCallable DeleteResourceServerCallable(const Model::DeleteResourceServerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourceServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourceServerAsync(const Model::DeleteResourceServerRequest& request, const DeleteResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows a user to delete himself or herself.</p><p><h3>See Also:</h3>   <a
@@ -1043,15 +708,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the attributes for a user.</p><p><h3>See Also:</h3>   <a
@@ -1060,15 +716,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DeleteUserAttributesOutcome DeleteUserAttributes(const Model::DeleteUserAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserAttributesOutcomeCallable DeleteUserAttributesCallable(const Model::DeleteUserAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserAttributesAsync(const Model::DeleteUserAttributesRequest& request, const DeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Amazon Cognito user pool.</p><p><h3>See Also:</h3>   <a
@@ -1077,15 +724,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DeleteUserPoolOutcome DeleteUserPool(const Model::DeleteUserPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserPoolOutcomeCallable DeleteUserPoolCallable(const Model::DeleteUserPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserPoolAsync(const Model::DeleteUserPoolRequest& request, const DeleteUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows the developer to delete the user pool client.</p><p><h3>See Also:</h3>
@@ -1095,15 +733,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DeleteUserPoolClientOutcome DeleteUserPoolClient(const Model::DeleteUserPoolClientRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserPoolClient that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserPoolClientOutcomeCallable DeleteUserPoolClientCallable(const Model::DeleteUserPoolClientRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserPoolClient that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserPoolClientAsync(const Model::DeleteUserPoolClientRequest& request, const DeleteUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a domain for a user pool.</p><p><h3>See Also:</h3>   <a
@@ -1112,15 +741,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DeleteUserPoolDomainOutcome DeleteUserPoolDomain(const Model::DeleteUserPoolDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserPoolDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserPoolDomainOutcomeCallable DeleteUserPoolDomainCallable(const Model::DeleteUserPoolDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserPoolDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserPoolDomainAsync(const Model::DeleteUserPoolDomainRequest& request, const DeleteUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specific IdP.</p><p><h3>See Also:</h3>   <a
@@ -1129,15 +749,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DescribeIdentityProviderOutcome DescribeIdentityProvider(const Model::DescribeIdentityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIdentityProviderOutcomeCallable DescribeIdentityProviderCallable(const Model::DescribeIdentityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIdentityProviderAsync(const Model::DescribeIdentityProviderRequest& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a resource server.</p><p><h3>See Also:</h3>   <a
@@ -1146,15 +757,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DescribeResourceServerOutcome DescribeResourceServer(const Model::DescribeResourceServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeResourceServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeResourceServerOutcomeCallable DescribeResourceServerCallable(const Model::DescribeResourceServerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeResourceServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeResourceServerAsync(const Model::DescribeResourceServerRequest& request, const DescribeResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the risk configuration.</p><p><h3>See Also:</h3>   <a
@@ -1163,15 +765,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DescribeRiskConfigurationOutcome DescribeRiskConfiguration(const Model::DescribeRiskConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRiskConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRiskConfigurationOutcomeCallable DescribeRiskConfigurationCallable(const Model::DescribeRiskConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRiskConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRiskConfigurationAsync(const Model::DescribeRiskConfigurationRequest& request, const DescribeRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the user import job.</p><p><h3>See Also:</h3>   <a
@@ -1180,15 +773,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DescribeUserImportJobOutcome DescribeUserImportJob(const Model::DescribeUserImportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUserImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUserImportJobOutcomeCallable DescribeUserImportJobCallable(const Model::DescribeUserImportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUserImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUserImportJobAsync(const Model::DescribeUserImportJobRequest& request, const DescribeUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the configuration information and metadata of the specified user
@@ -1198,15 +782,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DescribeUserPoolOutcome DescribeUserPool(const Model::DescribeUserPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUserPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUserPoolOutcomeCallable DescribeUserPoolCallable(const Model::DescribeUserPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUserPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUserPoolAsync(const Model::DescribeUserPoolRequest& request, const DescribeUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Client method for returning the configuration information and metadata of the
@@ -1216,15 +791,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DescribeUserPoolClientOutcome DescribeUserPoolClient(const Model::DescribeUserPoolClientRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUserPoolClient that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUserPoolClientOutcomeCallable DescribeUserPoolClientCallable(const Model::DescribeUserPoolClientRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUserPoolClient that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUserPoolClientAsync(const Model::DescribeUserPoolClientRequest& request, const DescribeUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a domain.</p><p><h3>See Also:</h3>   <a
@@ -1233,15 +799,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::DescribeUserPoolDomainOutcome DescribeUserPoolDomain(const Model::DescribeUserPoolDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUserPoolDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUserPoolDomainOutcomeCallable DescribeUserPoolDomainCallable(const Model::DescribeUserPoolDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUserPoolDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUserPoolDomainAsync(const Model::DescribeUserPoolDomainRequest& request, const DescribeUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Forgets the specified device.</p><p><h3>See Also:</h3>   <a
@@ -1250,15 +807,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ForgetDeviceOutcome ForgetDevice(const Model::ForgetDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ForgetDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ForgetDeviceOutcomeCallable ForgetDeviceCallable(const Model::ForgetDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for ForgetDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ForgetDeviceAsync(const Model::ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Calling this API causes a message to be sent to the end user with a
@@ -1294,15 +842,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ForgotPasswordOutcome ForgotPassword(const Model::ForgotPasswordRequest& request) const;
 
-        /**
-         * A Callable wrapper for ForgotPassword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ForgotPasswordOutcomeCallable ForgotPasswordCallable(const Model::ForgotPasswordRequest& request) const;
-
-        /**
-         * An Async wrapper for ForgotPassword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ForgotPasswordAsync(const Model::ForgotPasswordRequest& request, const ForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the header information for the comma-separated value (CSV) file to be
@@ -1312,15 +851,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::GetCSVHeaderOutcome GetCSVHeader(const Model::GetCSVHeaderRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCSVHeader that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCSVHeaderOutcomeCallable GetCSVHeaderCallable(const Model::GetCSVHeaderRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCSVHeader that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCSVHeaderAsync(const Model::GetCSVHeaderRequest& request, const GetCSVHeaderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the device.</p><p><h3>See Also:</h3>   <a
@@ -1329,15 +859,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::GetDeviceOutcome GetDevice(const Model::GetDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeviceOutcomeCallable GetDeviceCallable(const Model::GetDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeviceAsync(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a group.</p> <p>Calling this action requires developer
@@ -1347,15 +868,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified IdP.</p><p><h3>See Also:</h3>   <a
@@ -1364,15 +876,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::GetIdentityProviderByIdentifierOutcome GetIdentityProviderByIdentifier(const Model::GetIdentityProviderByIdentifierRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIdentityProviderByIdentifier that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIdentityProviderByIdentifierOutcomeCallable GetIdentityProviderByIdentifierCallable(const Model::GetIdentityProviderByIdentifierRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIdentityProviderByIdentifier that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIdentityProviderByIdentifierAsync(const Model::GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This method takes a user pool ID, and returns the signing certificate. The
@@ -1385,15 +888,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::GetSigningCertificateOutcome GetSigningCertificate(const Model::GetSigningCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSigningCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSigningCertificateOutcomeCallable GetSigningCertificateCallable(const Model::GetSigningCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSigningCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSigningCertificateAsync(const Model::GetSigningCertificateRequest& request, const GetSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the user interface (UI) Customization information for a particular app
@@ -1407,15 +901,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::GetUICustomizationOutcome GetUICustomization(const Model::GetUICustomizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUICustomization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUICustomizationOutcomeCallable GetUICustomizationCallable(const Model::GetUICustomizationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUICustomization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUICustomizationAsync(const Model::GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the user attributes and metadata for a user.</p><p><h3>See Also:</h3>  
@@ -1425,15 +910,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::GetUserOutcome GetUser(const Model::GetUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUserOutcomeCallable GetUserCallable(const Model::GetUserRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUserAsync(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a user attribute verification code for the specified attribute
@@ -1460,15 +936,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::GetUserAttributeVerificationCodeOutcome GetUserAttributeVerificationCode(const Model::GetUserAttributeVerificationCodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUserAttributeVerificationCode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUserAttributeVerificationCodeOutcomeCallable GetUserAttributeVerificationCodeCallable(const Model::GetUserAttributeVerificationCodeRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUserAttributeVerificationCode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUserAttributeVerificationCodeAsync(const Model::GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the user pool multi-factor authentication (MFA)
@@ -1478,15 +945,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::GetUserPoolMfaConfigOutcome GetUserPoolMfaConfig(const Model::GetUserPoolMfaConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUserPoolMfaConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUserPoolMfaConfigOutcomeCallable GetUserPoolMfaConfigCallable(const Model::GetUserPoolMfaConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUserPoolMfaConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUserPoolMfaConfigAsync(const Model::GetUserPoolMfaConfigRequest& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Signs out users from all devices. It also invalidates all refresh tokens that
@@ -1498,15 +956,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::GlobalSignOutOutcome GlobalSignOut(const Model::GlobalSignOutRequest& request) const;
 
-        /**
-         * A Callable wrapper for GlobalSignOut that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GlobalSignOutOutcomeCallable GlobalSignOutCallable(const Model::GlobalSignOutRequest& request) const;
-
-        /**
-         * An Async wrapper for GlobalSignOut that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GlobalSignOutAsync(const Model::GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates sign-in for a user in the Amazon Cognito user directory. You can't
@@ -1536,15 +985,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::InitiateAuthOutcome InitiateAuth(const Model::InitiateAuthRequest& request) const;
 
-        /**
-         * A Callable wrapper for InitiateAuth that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InitiateAuthOutcomeCallable InitiateAuthCallable(const Model::InitiateAuthRequest& request) const;
-
-        /**
-         * An Async wrapper for InitiateAuth that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InitiateAuthAsync(const Model::InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the sign-in devices that Amazon Cognito has registered to the current
@@ -1554,15 +994,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDevicesOutcomeCallable ListDevicesCallable(const Model::ListDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the groups associated with a user pool.</p> <p>Calling this action
@@ -1572,15 +1003,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGroupsOutcomeCallable ListGroupsCallable(const Model::ListGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about all IdPs for a user pool.</p><p><h3>See Also:</h3>  
@@ -1590,15 +1012,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ListIdentityProvidersOutcome ListIdentityProviders(const Model::ListIdentityProvidersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIdentityProviders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIdentityProvidersOutcomeCallable ListIdentityProvidersCallable(const Model::ListIdentityProvidersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIdentityProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIdentityProvidersAsync(const Model::ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the resource servers for a user pool.</p><p><h3>See Also:</h3>   <a
@@ -1607,15 +1020,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ListResourceServersOutcome ListResourceServers(const Model::ListResourceServersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourceServers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourceServersOutcomeCallable ListResourceServersCallable(const Model::ListResourceServersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourceServers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourceServersAsync(const Model::ListResourceServersRequest& request, const ListResourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that are assigned to an Amazon Cognito user pool.</p> <p>A tag
@@ -1628,15 +1032,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the user import jobs.</p><p><h3>See Also:</h3>   <a
@@ -1645,15 +1040,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ListUserImportJobsOutcome ListUserImportJobs(const Model::ListUserImportJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUserImportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUserImportJobsOutcomeCallable ListUserImportJobsCallable(const Model::ListUserImportJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUserImportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUserImportJobsAsync(const Model::ListUserImportJobsRequest& request, const ListUserImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the clients that have been created for the specified user
@@ -1663,15 +1049,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ListUserPoolClientsOutcome ListUserPoolClients(const Model::ListUserPoolClientsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUserPoolClients that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUserPoolClientsOutcomeCallable ListUserPoolClientsCallable(const Model::ListUserPoolClientsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUserPoolClients that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUserPoolClientsAsync(const Model::ListUserPoolClientsRequest& request, const ListUserPoolClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the user pools associated with an Amazon Web Services
@@ -1681,15 +1058,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ListUserPoolsOutcome ListUserPools(const Model::ListUserPoolsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUserPools that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUserPoolsOutcomeCallable ListUserPoolsCallable(const Model::ListUserPoolsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUserPools that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUserPoolsAsync(const Model::ListUserPoolsRequest& request, const ListUserPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the users in the Amazon Cognito user pool.</p><p><h3>See Also:</h3>  
@@ -1699,15 +1067,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the users in the specified group.</p> <p>Calling this action requires
@@ -1717,15 +1076,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ListUsersInGroupOutcome ListUsersInGroup(const Model::ListUsersInGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUsersInGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUsersInGroupOutcomeCallable ListUsersInGroupCallable(const Model::ListUsersInGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUsersInGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUsersInGroupAsync(const Model::ListUsersInGroupRequest& request, const ListUsersInGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resends the confirmation (for confirmation of registration) to a specific
@@ -1751,15 +1101,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::ResendConfirmationCodeOutcome ResendConfirmationCode(const Model::ResendConfirmationCodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResendConfirmationCode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResendConfirmationCodeOutcomeCallable ResendConfirmationCodeCallable(const Model::ResendConfirmationCodeRequest& request) const;
-
-        /**
-         * An Async wrapper for ResendConfirmationCode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResendConfirmationCodeAsync(const Model::ResendConfirmationCodeRequest& request, const ResendConfirmationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Responds to the authentication challenge.</p>  <p>This action might
@@ -1785,15 +1126,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::RespondToAuthChallengeOutcome RespondToAuthChallenge(const Model::RespondToAuthChallengeRequest& request) const;
 
-        /**
-         * A Callable wrapper for RespondToAuthChallenge that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RespondToAuthChallengeOutcomeCallable RespondToAuthChallengeCallable(const Model::RespondToAuthChallengeRequest& request) const;
-
-        /**
-         * An Async wrapper for RespondToAuthChallenge that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RespondToAuthChallengeAsync(const Model::RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes all of the access tokens generated by, and at the same time as, the
@@ -1805,15 +1137,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::RevokeTokenOutcome RevokeToken(const Model::RevokeTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeTokenOutcomeCallable RevokeTokenCallable(const Model::RevokeTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeTokenAsync(const Model::RevokeTokenRequest& request, const RevokeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures actions on detected risks. To delete the risk configuration for
@@ -1826,15 +1149,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::SetRiskConfigurationOutcome SetRiskConfiguration(const Model::SetRiskConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetRiskConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetRiskConfigurationOutcomeCallable SetRiskConfigurationCallable(const Model::SetRiskConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for SetRiskConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetRiskConfigurationAsync(const Model::SetRiskConfigurationRequest& request, const SetRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the user interface (UI) customization information for a user pool's
@@ -1852,15 +1166,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::SetUICustomizationOutcome SetUICustomization(const Model::SetUICustomizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetUICustomization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetUICustomizationOutcomeCallable SetUICustomizationCallable(const Model::SetUICustomizationRequest& request) const;
-
-        /**
-         * An Async wrapper for SetUICustomization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetUICustomizationAsync(const Model::SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Set the user's multi-factor authentication (MFA) method preference, including
@@ -1878,15 +1183,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::SetUserMFAPreferenceOutcome SetUserMFAPreference(const Model::SetUserMFAPreferenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetUserMFAPreference that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetUserMFAPreferenceOutcomeCallable SetUserMFAPreferenceCallable(const Model::SetUserMFAPreferenceRequest& request) const;
-
-        /**
-         * An Async wrapper for SetUserMFAPreference that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetUserMFAPreferenceAsync(const Model::SetUserMFAPreferenceRequest& request, const SetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the user pool multi-factor authentication (MFA) configuration.</p>
@@ -1912,15 +1208,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::SetUserPoolMfaConfigOutcome SetUserPoolMfaConfig(const Model::SetUserPoolMfaConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetUserPoolMfaConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetUserPoolMfaConfigOutcomeCallable SetUserPoolMfaConfigCallable(const Model::SetUserPoolMfaConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for SetUserPoolMfaConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetUserPoolMfaConfigAsync(const Model::SetUserPoolMfaConfigRequest& request, const SetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <i>This action is no longer supported.</i> You can use it to configure only
@@ -1933,15 +1220,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::SetUserSettingsOutcome SetUserSettings(const Model::SetUserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetUserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetUserSettingsOutcomeCallable SetUserSettingsCallable(const Model::SetUserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for SetUserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetUserSettingsAsync(const Model::SetUserSettingsRequest& request, const SetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers the user in the specified user pool and creates a user name,
@@ -1967,15 +1245,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::SignUpOutcome SignUp(const Model::SignUpRequest& request) const;
 
-        /**
-         * A Callable wrapper for SignUp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SignUpOutcomeCallable SignUpCallable(const Model::SignUpRequest& request) const;
-
-        /**
-         * An Async wrapper for SignUp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SignUpAsync(const Model::SignUpRequest& request, const SignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the user import.</p><p><h3>See Also:</h3>   <a
@@ -1984,15 +1253,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::StartUserImportJobOutcome StartUserImportJob(const Model::StartUserImportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartUserImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartUserImportJobOutcomeCallable StartUserImportJobCallable(const Model::StartUserImportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartUserImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartUserImportJobAsync(const Model::StartUserImportJobRequest& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops the user import job.</p><p><h3>See Also:</h3>   <a
@@ -2001,15 +1261,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::StopUserImportJobOutcome StopUserImportJob(const Model::StopUserImportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopUserImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopUserImportJobOutcomeCallable StopUserImportJobCallable(const Model::StopUserImportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopUserImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopUserImportJobAsync(const Model::StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns a set of tags to an Amazon Cognito user pool. A tag is a label that
@@ -2031,15 +1282,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from an Amazon Cognito user pool. You can use this
@@ -2049,15 +1291,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides the feedback for an authentication event, whether it was from a
@@ -2069,15 +1302,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::UpdateAuthEventFeedbackOutcome UpdateAuthEventFeedback(const Model::UpdateAuthEventFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAuthEventFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAuthEventFeedbackOutcomeCallable UpdateAuthEventFeedbackCallable(const Model::UpdateAuthEventFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAuthEventFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAuthEventFeedbackAsync(const Model::UpdateAuthEventFeedbackRequest& request, const UpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the device status.</p><p><h3>See Also:</h3>   <a
@@ -2086,15 +1310,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::UpdateDeviceStatusOutcome UpdateDeviceStatus(const Model::UpdateDeviceStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDeviceStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDeviceStatusOutcomeCallable UpdateDeviceStatusCallable(const Model::UpdateDeviceStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDeviceStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDeviceStatusAsync(const Model::UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
@@ -2104,15 +1319,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates IdP information for a user pool.</p><p><h3>See Also:</h3>   <a
@@ -2121,15 +1327,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::UpdateIdentityProviderOutcome UpdateIdentityProvider(const Model::UpdateIdentityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateIdentityProviderOutcomeCallable UpdateIdentityProviderCallable(const Model::UpdateIdentityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateIdentityProviderAsync(const Model::UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the name and scopes of resource server. All other fields are
@@ -2140,15 +1337,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::UpdateResourceServerOutcome UpdateResourceServer(const Model::UpdateResourceServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateResourceServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateResourceServerOutcomeCallable UpdateResourceServerCallable(const Model::UpdateResourceServerRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateResourceServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateResourceServerAsync(const Model::UpdateResourceServerRequest& request, const UpdateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows a user to update a specific attribute (one at a time).</p> 
@@ -2174,15 +1362,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::UpdateUserAttributesOutcome UpdateUserAttributes(const Model::UpdateUserAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUserAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserAttributesOutcomeCallable UpdateUserAttributesCallable(const Model::UpdateUserAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUserAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserAttributesAsync(const Model::UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified user pool with the specified attributes. You can get a
@@ -2211,15 +1390,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::UpdateUserPoolOutcome UpdateUserPool(const Model::UpdateUserPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUserPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserPoolOutcomeCallable UpdateUserPoolCallable(const Model::UpdateUserPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUserPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserPoolAsync(const Model::UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified user pool app client with the specified attributes. You
@@ -2236,15 +1406,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::UpdateUserPoolClientOutcome UpdateUserPoolClient(const Model::UpdateUserPoolClientRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUserPoolClient that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserPoolClientOutcomeCallable UpdateUserPoolClientCallable(const Model::UpdateUserPoolClientRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUserPoolClient that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserPoolClientAsync(const Model::UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the Secure Sockets Layer (SSL) certificate for the custom domain for
@@ -2273,15 +1434,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::UpdateUserPoolDomainOutcome UpdateUserPoolDomain(const Model::UpdateUserPoolDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUserPoolDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserPoolDomainOutcomeCallable UpdateUserPoolDomainCallable(const Model::UpdateUserPoolDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUserPoolDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserPoolDomainAsync(const Model::UpdateUserPoolDomainRequest& request, const UpdateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this API to register a user's entered time-based one-time password (TOTP)
@@ -2293,15 +1445,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::VerifySoftwareTokenOutcome VerifySoftwareToken(const Model::VerifySoftwareTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for VerifySoftwareToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::VerifySoftwareTokenOutcomeCallable VerifySoftwareTokenCallable(const Model::VerifySoftwareTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for VerifySoftwareToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void VerifySoftwareTokenAsync(const Model::VerifySoftwareTokenRequest& request, const VerifySoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Verifies the specified user attributes in the user pool.</p> <p> If your user
@@ -2315,15 +1458,6 @@ namespace CognitoIdentityProvider
          */
         virtual Model::VerifyUserAttributeOutcome VerifyUserAttribute(const Model::VerifyUserAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for VerifyUserAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::VerifyUserAttributeOutcomeCallable VerifyUserAttributeCallable(const Model::VerifyUserAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for VerifyUserAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void VerifyUserAttributeAsync(const Model::VerifyUserAttributeRequest& request, const VerifyUserAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

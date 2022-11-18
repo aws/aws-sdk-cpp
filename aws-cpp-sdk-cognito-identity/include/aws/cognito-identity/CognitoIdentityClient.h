@@ -7,8 +7,10 @@
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cognito-identity/CognitoIdentityServiceClientModel.h>
+#include <aws/cognito-identity/CognitoIdentityLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -88,6 +90,47 @@ namespace CognitoIdentity
         virtual ~CognitoIdentityClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a new identity pool. The identity pool is a store of user identity
          * information that is specific to your AWS account. The keys for
@@ -103,15 +146,6 @@ namespace CognitoIdentity
          */
         virtual Model::CreateIdentityPoolOutcome CreateIdentityPool(const Model::CreateIdentityPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIdentityPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIdentityPoolOutcomeCallable CreateIdentityPoolCallable(const Model::CreateIdentityPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIdentityPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIdentityPoolAsync(const Model::CreateIdentityPoolRequest& request, const CreateIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes identities from an identity pool. You can specify a list of 1-60
@@ -122,15 +156,6 @@ namespace CognitoIdentity
          */
         virtual Model::DeleteIdentitiesOutcome DeleteIdentities(const Model::DeleteIdentitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIdentities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIdentitiesOutcomeCallable DeleteIdentitiesCallable(const Model::DeleteIdentitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIdentities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIdentitiesAsync(const Model::DeleteIdentitiesRequest& request, const DeleteIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an identity pool. Once a pool is deleted, users will not be able to
@@ -141,15 +166,6 @@ namespace CognitoIdentity
          */
         virtual Model::DeleteIdentityPoolOutcome DeleteIdentityPool(const Model::DeleteIdentityPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIdentityPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIdentityPoolOutcomeCallable DeleteIdentityPoolCallable(const Model::DeleteIdentityPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIdentityPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIdentityPoolAsync(const Model::DeleteIdentityPoolRequest& request, const DeleteIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata related to the given identity, including when the identity
@@ -160,15 +176,6 @@ namespace CognitoIdentity
          */
         virtual Model::DescribeIdentityOutcome DescribeIdentity(const Model::DescribeIdentityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIdentity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIdentityOutcomeCallable DescribeIdentityCallable(const Model::DescribeIdentityRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIdentity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIdentityAsync(const Model::DescribeIdentityRequest& request, const DescribeIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets details about a particular identity pool, including the pool name, ID
@@ -179,15 +186,6 @@ namespace CognitoIdentity
          */
         virtual Model::DescribeIdentityPoolOutcome DescribeIdentityPool(const Model::DescribeIdentityPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIdentityPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIdentityPoolOutcomeCallable DescribeIdentityPoolCallable(const Model::DescribeIdentityPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIdentityPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIdentityPoolAsync(const Model::DescribeIdentityPoolRequest& request, const DescribeIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns credentials for the provided identity ID. Any provided logins will be
@@ -200,15 +198,6 @@ namespace CognitoIdentity
          */
         virtual Model::GetCredentialsForIdentityOutcome GetCredentialsForIdentity(const Model::GetCredentialsForIdentityRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCredentialsForIdentity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCredentialsForIdentityOutcomeCallable GetCredentialsForIdentityCallable(const Model::GetCredentialsForIdentityRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCredentialsForIdentity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCredentialsForIdentityAsync(const Model::GetCredentialsForIdentityRequest& request, const GetCredentialsForIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create
@@ -219,15 +208,6 @@ namespace CognitoIdentity
          */
         virtual Model::GetIdOutcome GetId(const Model::GetIdRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetId that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIdOutcomeCallable GetIdCallable(const Model::GetIdRequest& request) const;
-
-        /**
-         * An Async wrapper for GetId that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIdAsync(const Model::GetIdRequest& request, const GetIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the roles for an identity pool.</p> <p>You must use AWS Developer
@@ -237,15 +217,6 @@ namespace CognitoIdentity
          */
         virtual Model::GetIdentityPoolRolesOutcome GetIdentityPoolRoles(const Model::GetIdentityPoolRolesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIdentityPoolRoles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIdentityPoolRolesOutcomeCallable GetIdentityPoolRolesCallable(const Model::GetIdentityPoolRolesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIdentityPoolRoles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIdentityPoolRolesAsync(const Model::GetIdentityPoolRolesRequest& request, const GetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is
@@ -258,15 +229,6 @@ namespace CognitoIdentity
          */
         virtual Model::GetOpenIdTokenOutcome GetOpenIdToken(const Model::GetOpenIdTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOpenIdToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOpenIdTokenOutcomeCallable GetOpenIdTokenCallable(const Model::GetOpenIdTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOpenIdToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOpenIdTokenAsync(const Model::GetOpenIdTokenRequest& request, const GetOpenIdTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID
@@ -288,15 +250,6 @@ namespace CognitoIdentity
          */
         virtual Model::GetOpenIdTokenForDeveloperIdentityOutcome GetOpenIdTokenForDeveloperIdentity(const Model::GetOpenIdTokenForDeveloperIdentityRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOpenIdTokenForDeveloperIdentity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOpenIdTokenForDeveloperIdentityOutcomeCallable GetOpenIdTokenForDeveloperIdentityCallable(const Model::GetOpenIdTokenForDeveloperIdentityRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOpenIdTokenForDeveloperIdentity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOpenIdTokenForDeveloperIdentityAsync(const Model::GetOpenIdTokenForDeveloperIdentityRequest& request, const GetOpenIdTokenForDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between
@@ -306,15 +259,6 @@ namespace CognitoIdentity
          */
         virtual Model::GetPrincipalTagAttributeMapOutcome GetPrincipalTagAttributeMap(const Model::GetPrincipalTagAttributeMapRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPrincipalTagAttributeMap that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPrincipalTagAttributeMapOutcomeCallable GetPrincipalTagAttributeMapCallable(const Model::GetPrincipalTagAttributeMapRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPrincipalTagAttributeMap that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPrincipalTagAttributeMapAsync(const Model::GetPrincipalTagAttributeMapRequest& request, const GetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the identities in an identity pool.</p> <p>You must use AWS Developer
@@ -324,15 +268,6 @@ namespace CognitoIdentity
          */
         virtual Model::ListIdentitiesOutcome ListIdentities(const Model::ListIdentitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIdentities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIdentitiesOutcomeCallable ListIdentitiesCallable(const Model::ListIdentitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIdentities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIdentitiesAsync(const Model::ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the Cognito identity pools registered for your account.</p>
@@ -343,15 +278,6 @@ namespace CognitoIdentity
          */
         virtual Model::ListIdentityPoolsOutcome ListIdentityPools(const Model::ListIdentityPoolsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIdentityPools that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIdentityPoolsOutcomeCallable ListIdentityPoolsCallable(const Model::ListIdentityPoolsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIdentityPools that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIdentityPoolsAsync(const Model::ListIdentityPoolsRequest& request, const ListIdentityPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that are assigned to an Amazon Cognito identity pool.</p> <p>A
@@ -364,15 +290,6 @@ namespace CognitoIdentity
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the <code>IdentityID</code> associated with a
@@ -398,15 +315,6 @@ namespace CognitoIdentity
          */
         virtual Model::LookupDeveloperIdentityOutcome LookupDeveloperIdentity(const Model::LookupDeveloperIdentityRequest& request) const;
 
-        /**
-         * A Callable wrapper for LookupDeveloperIdentity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::LookupDeveloperIdentityOutcomeCallable LookupDeveloperIdentityCallable(const Model::LookupDeveloperIdentityRequest& request) const;
-
-        /**
-         * An Async wrapper for LookupDeveloperIdentity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void LookupDeveloperIdentityAsync(const Model::LookupDeveloperIdentityRequest& request, const LookupDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Merges two users having different <code>IdentityId</code>s, existing in the
@@ -427,15 +335,6 @@ namespace CognitoIdentity
          */
         virtual Model::MergeDeveloperIdentitiesOutcome MergeDeveloperIdentities(const Model::MergeDeveloperIdentitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for MergeDeveloperIdentities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MergeDeveloperIdentitiesOutcomeCallable MergeDeveloperIdentitiesCallable(const Model::MergeDeveloperIdentitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for MergeDeveloperIdentities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MergeDeveloperIdentitiesAsync(const Model::MergeDeveloperIdentitiesRequest& request, const MergeDeveloperIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the roles for an identity pool. These roles are used when making calls
@@ -446,15 +345,6 @@ namespace CognitoIdentity
          */
         virtual Model::SetIdentityPoolRolesOutcome SetIdentityPoolRoles(const Model::SetIdentityPoolRolesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetIdentityPoolRoles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetIdentityPoolRolesOutcomeCallable SetIdentityPoolRolesCallable(const Model::SetIdentityPoolRolesRequest& request) const;
-
-        /**
-         * An Async wrapper for SetIdentityPoolRoles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetIdentityPoolRolesAsync(const Model::SetIdentityPoolRolesRequest& request, const SetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>You can use this operation to use default (username and clientID) attribute
@@ -464,15 +354,6 @@ namespace CognitoIdentity
          */
         virtual Model::SetPrincipalTagAttributeMapOutcome SetPrincipalTagAttributeMap(const Model::SetPrincipalTagAttributeMapRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetPrincipalTagAttributeMap that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetPrincipalTagAttributeMapOutcomeCallable SetPrincipalTagAttributeMapCallable(const Model::SetPrincipalTagAttributeMapRequest& request) const;
-
-        /**
-         * An Async wrapper for SetPrincipalTagAttributeMap that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetPrincipalTagAttributeMapAsync(const Model::SetPrincipalTagAttributeMapRequest& request, const SetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is
@@ -495,15 +376,6 @@ namespace CognitoIdentity
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity.
@@ -517,15 +389,6 @@ namespace CognitoIdentity
          */
         virtual Model::UnlinkDeveloperIdentityOutcome UnlinkDeveloperIdentity(const Model::UnlinkDeveloperIdentityRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnlinkDeveloperIdentity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnlinkDeveloperIdentityOutcomeCallable UnlinkDeveloperIdentityCallable(const Model::UnlinkDeveloperIdentityRequest& request) const;
-
-        /**
-         * An Async wrapper for UnlinkDeveloperIdentity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnlinkDeveloperIdentityAsync(const Model::UnlinkDeveloperIdentityRequest& request, const UnlinkDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Unlinks a federated identity from an existing account. Unlinked logins will
@@ -537,15 +400,6 @@ namespace CognitoIdentity
          */
         virtual Model::UnlinkIdentityOutcome UnlinkIdentity(const Model::UnlinkIdentityRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnlinkIdentity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnlinkIdentityOutcomeCallable UnlinkIdentityCallable(const Model::UnlinkIdentityRequest& request) const;
-
-        /**
-         * An Async wrapper for UnlinkIdentity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnlinkIdentityAsync(const Model::UnlinkIdentityRequest& request, const UnlinkIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the specified Amazon Cognito identity pool.
@@ -556,15 +410,6 @@ namespace CognitoIdentity
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an identity pool.</p> <p>You must use AWS Developer credentials to
@@ -574,15 +419,6 @@ namespace CognitoIdentity
          */
         virtual Model::UpdateIdentityPoolOutcome UpdateIdentityPool(const Model::UpdateIdentityPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateIdentityPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateIdentityPoolOutcomeCallable UpdateIdentityPoolCallable(const Model::UpdateIdentityPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateIdentityPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateIdentityPoolAsync(const Model::UpdateIdentityPoolRequest& request, const UpdateIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -182,21 +183,8 @@ BulkPublishOutcome CognitoSyncClient::BulkPublish(const BulkPublishRequest& requ
   return BulkPublishOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-BulkPublishOutcomeCallable CognitoSyncClient::BulkPublishCallable(const BulkPublishRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< BulkPublishOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BulkPublish(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::BulkPublishAsync(const BulkPublishRequest& request, const BulkPublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BulkPublish(request), context);
-    } );
-}
+
 
 DeleteDatasetOutcome CognitoSyncClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
@@ -227,21 +215,8 @@ DeleteDatasetOutcome CognitoSyncClient::DeleteDataset(const DeleteDatasetRequest
   return DeleteDatasetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
-DeleteDatasetOutcomeCallable CognitoSyncClient::DeleteDatasetCallable(const DeleteDatasetRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDataset(request), context);
-    } );
-}
+
 
 DescribeDatasetOutcome CognitoSyncClient::DescribeDataset(const DescribeDatasetRequest& request) const
 {
@@ -272,21 +247,8 @@ DescribeDatasetOutcome CognitoSyncClient::DescribeDataset(const DescribeDatasetR
   return DescribeDatasetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
-DescribeDatasetOutcomeCallable CognitoSyncClient::DescribeDatasetCallable(const DescribeDatasetRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDataset(request), context);
-    } );
-}
+
 
 DescribeIdentityPoolUsageOutcome CognitoSyncClient::DescribeIdentityPoolUsage(const DescribeIdentityPoolUsageRequest& request) const
 {
@@ -303,21 +265,8 @@ DescribeIdentityPoolUsageOutcome CognitoSyncClient::DescribeIdentityPoolUsage(co
   return DescribeIdentityPoolUsageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
-DescribeIdentityPoolUsageOutcomeCallable CognitoSyncClient::DescribeIdentityPoolUsageCallable(const DescribeIdentityPoolUsageRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DescribeIdentityPoolUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIdentityPoolUsage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::DescribeIdentityPoolUsageAsync(const DescribeIdentityPoolUsageRequest& request, const DescribeIdentityPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeIdentityPoolUsage(request), context);
-    } );
-}
+
 
 DescribeIdentityUsageOutcome CognitoSyncClient::DescribeIdentityUsage(const DescribeIdentityUsageRequest& request) const
 {
@@ -341,21 +290,8 @@ DescribeIdentityUsageOutcome CognitoSyncClient::DescribeIdentityUsage(const Desc
   return DescribeIdentityUsageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
-DescribeIdentityUsageOutcomeCallable CognitoSyncClient::DescribeIdentityUsageCallable(const DescribeIdentityUsageRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DescribeIdentityUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIdentityUsage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::DescribeIdentityUsageAsync(const DescribeIdentityUsageRequest& request, const DescribeIdentityUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeIdentityUsage(request), context);
-    } );
-}
+
 
 GetBulkPublishDetailsOutcome CognitoSyncClient::GetBulkPublishDetails(const GetBulkPublishDetailsRequest& request) const
 {
@@ -373,21 +309,8 @@ GetBulkPublishDetailsOutcome CognitoSyncClient::GetBulkPublishDetails(const GetB
   return GetBulkPublishDetailsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-GetBulkPublishDetailsOutcomeCallable CognitoSyncClient::GetBulkPublishDetailsCallable(const GetBulkPublishDetailsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetBulkPublishDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBulkPublishDetails(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::GetBulkPublishDetailsAsync(const GetBulkPublishDetailsRequest& request, const GetBulkPublishDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBulkPublishDetails(request), context);
-    } );
-}
+
 
 GetCognitoEventsOutcome CognitoSyncClient::GetCognitoEvents(const GetCognitoEventsRequest& request) const
 {
@@ -405,21 +328,8 @@ GetCognitoEventsOutcome CognitoSyncClient::GetCognitoEvents(const GetCognitoEven
   return GetCognitoEventsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
-GetCognitoEventsOutcomeCallable CognitoSyncClient::GetCognitoEventsCallable(const GetCognitoEventsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetCognitoEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCognitoEvents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::GetCognitoEventsAsync(const GetCognitoEventsRequest& request, const GetCognitoEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCognitoEvents(request), context);
-    } );
-}
+
 
 GetIdentityPoolConfigurationOutcome CognitoSyncClient::GetIdentityPoolConfiguration(const GetIdentityPoolConfigurationRequest& request) const
 {
@@ -437,21 +347,8 @@ GetIdentityPoolConfigurationOutcome CognitoSyncClient::GetIdentityPoolConfigurat
   return GetIdentityPoolConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
-GetIdentityPoolConfigurationOutcomeCallable CognitoSyncClient::GetIdentityPoolConfigurationCallable(const GetIdentityPoolConfigurationRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetIdentityPoolConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIdentityPoolConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::GetIdentityPoolConfigurationAsync(const GetIdentityPoolConfigurationRequest& request, const GetIdentityPoolConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetIdentityPoolConfiguration(request), context);
-    } );
-}
+
 
 ListDatasetsOutcome CognitoSyncClient::ListDatasets(const ListDatasetsRequest& request) const
 {
@@ -476,21 +373,8 @@ ListDatasetsOutcome CognitoSyncClient::ListDatasets(const ListDatasetsRequest& r
   return ListDatasetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
-ListDatasetsOutcomeCallable CognitoSyncClient::ListDatasetsCallable(const ListDatasetsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatasets(request), context);
-    } );
-}
+
 
 ListIdentityPoolUsageOutcome CognitoSyncClient::ListIdentityPoolUsage(const ListIdentityPoolUsageRequest& request) const
 {
@@ -501,21 +385,8 @@ ListIdentityPoolUsageOutcome CognitoSyncClient::ListIdentityPoolUsage(const List
   return ListIdentityPoolUsageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
-ListIdentityPoolUsageOutcomeCallable CognitoSyncClient::ListIdentityPoolUsageCallable(const ListIdentityPoolUsageRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListIdentityPoolUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIdentityPoolUsage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::ListIdentityPoolUsageAsync(const ListIdentityPoolUsageRequest& request, const ListIdentityPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListIdentityPoolUsage(request), context);
-    } );
-}
+
 
 ListRecordsOutcome CognitoSyncClient::ListRecords(const ListRecordsRequest& request) const
 {
@@ -547,21 +418,8 @@ ListRecordsOutcome CognitoSyncClient::ListRecords(const ListRecordsRequest& requ
   return ListRecordsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
-ListRecordsOutcomeCallable CognitoSyncClient::ListRecordsCallable(const ListRecordsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListRecordsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecords(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::ListRecordsAsync(const ListRecordsRequest& request, const ListRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRecords(request), context);
-    } );
-}
+
 
 RegisterDeviceOutcome CognitoSyncClient::RegisterDevice(const RegisterDeviceRequest& request) const
 {
@@ -586,21 +444,8 @@ RegisterDeviceOutcome CognitoSyncClient::RegisterDevice(const RegisterDeviceRequ
   return RegisterDeviceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-RegisterDeviceOutcomeCallable CognitoSyncClient::RegisterDeviceCallable(const RegisterDeviceRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< RegisterDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::RegisterDeviceAsync(const RegisterDeviceRequest& request, const RegisterDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterDevice(request), context);
-    } );
-}
+
 
 SetCognitoEventsOutcome CognitoSyncClient::SetCognitoEvents(const SetCognitoEventsRequest& request) const
 {
@@ -618,21 +463,8 @@ SetCognitoEventsOutcome CognitoSyncClient::SetCognitoEvents(const SetCognitoEven
   return SetCognitoEventsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-SetCognitoEventsOutcomeCallable CognitoSyncClient::SetCognitoEventsCallable(const SetCognitoEventsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< SetCognitoEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetCognitoEvents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::SetCognitoEventsAsync(const SetCognitoEventsRequest& request, const SetCognitoEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetCognitoEvents(request), context);
-    } );
-}
+
 
 SetIdentityPoolConfigurationOutcome CognitoSyncClient::SetIdentityPoolConfiguration(const SetIdentityPoolConfigurationRequest& request) const
 {
@@ -650,21 +482,8 @@ SetIdentityPoolConfigurationOutcome CognitoSyncClient::SetIdentityPoolConfigurat
   return SetIdentityPoolConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-SetIdentityPoolConfigurationOutcomeCallable CognitoSyncClient::SetIdentityPoolConfigurationCallable(const SetIdentityPoolConfigurationRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< SetIdentityPoolConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetIdentityPoolConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::SetIdentityPoolConfigurationAsync(const SetIdentityPoolConfigurationRequest& request, const SetIdentityPoolConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetIdentityPoolConfiguration(request), context);
-    } );
-}
+
 
 SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeToDatasetRequest& request) const
 {
@@ -702,21 +521,8 @@ SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeT
   return SubscribeToDatasetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-SubscribeToDatasetOutcomeCallable CognitoSyncClient::SubscribeToDatasetCallable(const SubscribeToDatasetRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< SubscribeToDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SubscribeToDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::SubscribeToDatasetAsync(const SubscribeToDatasetRequest& request, const SubscribeToDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SubscribeToDataset(request), context);
-    } );
-}
+
 
 UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const UnsubscribeFromDatasetRequest& request) const
 {
@@ -754,21 +560,8 @@ UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const Un
   return UnsubscribeFromDatasetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
-UnsubscribeFromDatasetOutcomeCallable CognitoSyncClient::UnsubscribeFromDatasetCallable(const UnsubscribeFromDatasetRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< UnsubscribeFromDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnsubscribeFromDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::UnsubscribeFromDatasetAsync(const UnsubscribeFromDatasetRequest& request, const UnsubscribeFromDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UnsubscribeFromDataset(request), context);
-    } );
-}
+
 
 UpdateRecordsOutcome CognitoSyncClient::UpdateRecords(const UpdateRecordsRequest& request) const
 {
@@ -799,19 +592,6 @@ UpdateRecordsOutcome CognitoSyncClient::UpdateRecords(const UpdateRecordsRequest
   return UpdateRecordsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-UpdateRecordsOutcomeCallable CognitoSyncClient::UpdateRecordsCallable(const UpdateRecordsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRecordsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRecords(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void CognitoSyncClient::UpdateRecordsAsync(const UpdateRecordsRequest& request, const UpdateRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRecords(request), context);
-    } );
-}
+
 
