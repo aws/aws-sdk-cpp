@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -182,18 +183,12 @@ BatchCheckLayerAvailabilityOutcome ECRPublicClient::BatchCheckLayerAvailability(
 
 BatchCheckLayerAvailabilityOutcomeCallable ECRPublicClient::BatchCheckLayerAvailabilityCallable(const BatchCheckLayerAvailabilityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchCheckLayerAvailabilityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchCheckLayerAvailability(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchCheckLayerAvailability, request, m_executor.get());
 }
 
 void ECRPublicClient::BatchCheckLayerAvailabilityAsync(const BatchCheckLayerAvailabilityRequest& request, const BatchCheckLayerAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchCheckLayerAvailability(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchCheckLayerAvailability, request, handler, context, m_executor.get());
 }
 
 BatchDeleteImageOutcome ECRPublicClient::BatchDeleteImage(const BatchDeleteImageRequest& request) const
@@ -206,18 +201,12 @@ BatchDeleteImageOutcome ECRPublicClient::BatchDeleteImage(const BatchDeleteImage
 
 BatchDeleteImageOutcomeCallable ECRPublicClient::BatchDeleteImageCallable(const BatchDeleteImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDeleteImage, request, m_executor.get());
 }
 
 void ECRPublicClient::BatchDeleteImageAsync(const BatchDeleteImageRequest& request, const BatchDeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDeleteImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDeleteImage, request, handler, context, m_executor.get());
 }
 
 CompleteLayerUploadOutcome ECRPublicClient::CompleteLayerUpload(const CompleteLayerUploadRequest& request) const
@@ -230,18 +219,12 @@ CompleteLayerUploadOutcome ECRPublicClient::CompleteLayerUpload(const CompleteLa
 
 CompleteLayerUploadOutcomeCallable ECRPublicClient::CompleteLayerUploadCallable(const CompleteLayerUploadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CompleteLayerUploadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CompleteLayerUpload(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CompleteLayerUpload, request, m_executor.get());
 }
 
 void ECRPublicClient::CompleteLayerUploadAsync(const CompleteLayerUploadRequest& request, const CompleteLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CompleteLayerUpload(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CompleteLayerUpload, request, handler, context, m_executor.get());
 }
 
 CreateRepositoryOutcome ECRPublicClient::CreateRepository(const CreateRepositoryRequest& request) const
@@ -254,18 +237,12 @@ CreateRepositoryOutcome ECRPublicClient::CreateRepository(const CreateRepository
 
 CreateRepositoryOutcomeCallable ECRPublicClient::CreateRepositoryCallable(const CreateRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRepository(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRepository, request, m_executor.get());
 }
 
 void ECRPublicClient::CreateRepositoryAsync(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRepository(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRepository, request, handler, context, m_executor.get());
 }
 
 DeleteRepositoryOutcome ECRPublicClient::DeleteRepository(const DeleteRepositoryRequest& request) const
@@ -278,18 +255,12 @@ DeleteRepositoryOutcome ECRPublicClient::DeleteRepository(const DeleteRepository
 
 DeleteRepositoryOutcomeCallable ECRPublicClient::DeleteRepositoryCallable(const DeleteRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRepository(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRepository, request, m_executor.get());
 }
 
 void ECRPublicClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRepository(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRepository, request, handler, context, m_executor.get());
 }
 
 DeleteRepositoryPolicyOutcome ECRPublicClient::DeleteRepositoryPolicy(const DeleteRepositoryPolicyRequest& request) const
@@ -302,18 +273,12 @@ DeleteRepositoryPolicyOutcome ECRPublicClient::DeleteRepositoryPolicy(const Dele
 
 DeleteRepositoryPolicyOutcomeCallable ECRPublicClient::DeleteRepositoryPolicyCallable(const DeleteRepositoryPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRepositoryPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRepositoryPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRepositoryPolicy, request, m_executor.get());
 }
 
 void ECRPublicClient::DeleteRepositoryPolicyAsync(const DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRepositoryPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRepositoryPolicy, request, handler, context, m_executor.get());
 }
 
 DescribeImageTagsOutcome ECRPublicClient::DescribeImageTags(const DescribeImageTagsRequest& request) const
@@ -326,18 +291,12 @@ DescribeImageTagsOutcome ECRPublicClient::DescribeImageTags(const DescribeImageT
 
 DescribeImageTagsOutcomeCallable ECRPublicClient::DescribeImageTagsCallable(const DescribeImageTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeImageTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImageTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeImageTags, request, m_executor.get());
 }
 
 void ECRPublicClient::DescribeImageTagsAsync(const DescribeImageTagsRequest& request, const DescribeImageTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeImageTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeImageTags, request, handler, context, m_executor.get());
 }
 
 DescribeImagesOutcome ECRPublicClient::DescribeImages(const DescribeImagesRequest& request) const
@@ -350,18 +309,12 @@ DescribeImagesOutcome ECRPublicClient::DescribeImages(const DescribeImagesReques
 
 DescribeImagesOutcomeCallable ECRPublicClient::DescribeImagesCallable(const DescribeImagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeImagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeImages, request, m_executor.get());
 }
 
 void ECRPublicClient::DescribeImagesAsync(const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeImages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeImages, request, handler, context, m_executor.get());
 }
 
 DescribeRegistriesOutcome ECRPublicClient::DescribeRegistries(const DescribeRegistriesRequest& request) const
@@ -374,18 +327,12 @@ DescribeRegistriesOutcome ECRPublicClient::DescribeRegistries(const DescribeRegi
 
 DescribeRegistriesOutcomeCallable ECRPublicClient::DescribeRegistriesCallable(const DescribeRegistriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRegistriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRegistries(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRegistries, request, m_executor.get());
 }
 
 void ECRPublicClient::DescribeRegistriesAsync(const DescribeRegistriesRequest& request, const DescribeRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRegistries(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRegistries, request, handler, context, m_executor.get());
 }
 
 DescribeRepositoriesOutcome ECRPublicClient::DescribeRepositories(const DescribeRepositoriesRequest& request) const
@@ -398,18 +345,12 @@ DescribeRepositoriesOutcome ECRPublicClient::DescribeRepositories(const Describe
 
 DescribeRepositoriesOutcomeCallable ECRPublicClient::DescribeRepositoriesCallable(const DescribeRepositoriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRepositoriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRepositories(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRepositories, request, m_executor.get());
 }
 
 void ECRPublicClient::DescribeRepositoriesAsync(const DescribeRepositoriesRequest& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRepositories(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRepositories, request, handler, context, m_executor.get());
 }
 
 GetAuthorizationTokenOutcome ECRPublicClient::GetAuthorizationToken(const GetAuthorizationTokenRequest& request) const
@@ -422,18 +363,12 @@ GetAuthorizationTokenOutcome ECRPublicClient::GetAuthorizationToken(const GetAut
 
 GetAuthorizationTokenOutcomeCallable ECRPublicClient::GetAuthorizationTokenCallable(const GetAuthorizationTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAuthorizationTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAuthorizationToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAuthorizationToken, request, m_executor.get());
 }
 
 void ECRPublicClient::GetAuthorizationTokenAsync(const GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAuthorizationToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAuthorizationToken, request, handler, context, m_executor.get());
 }
 
 GetRegistryCatalogDataOutcome ECRPublicClient::GetRegistryCatalogData(const GetRegistryCatalogDataRequest& request) const
@@ -446,18 +381,12 @@ GetRegistryCatalogDataOutcome ECRPublicClient::GetRegistryCatalogData(const GetR
 
 GetRegistryCatalogDataOutcomeCallable ECRPublicClient::GetRegistryCatalogDataCallable(const GetRegistryCatalogDataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRegistryCatalogDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRegistryCatalogData(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRegistryCatalogData, request, m_executor.get());
 }
 
 void ECRPublicClient::GetRegistryCatalogDataAsync(const GetRegistryCatalogDataRequest& request, const GetRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRegistryCatalogData(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRegistryCatalogData, request, handler, context, m_executor.get());
 }
 
 GetRepositoryCatalogDataOutcome ECRPublicClient::GetRepositoryCatalogData(const GetRepositoryCatalogDataRequest& request) const
@@ -470,18 +399,12 @@ GetRepositoryCatalogDataOutcome ECRPublicClient::GetRepositoryCatalogData(const 
 
 GetRepositoryCatalogDataOutcomeCallable ECRPublicClient::GetRepositoryCatalogDataCallable(const GetRepositoryCatalogDataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRepositoryCatalogDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRepositoryCatalogData(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRepositoryCatalogData, request, m_executor.get());
 }
 
 void ECRPublicClient::GetRepositoryCatalogDataAsync(const GetRepositoryCatalogDataRequest& request, const GetRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRepositoryCatalogData(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRepositoryCatalogData, request, handler, context, m_executor.get());
 }
 
 GetRepositoryPolicyOutcome ECRPublicClient::GetRepositoryPolicy(const GetRepositoryPolicyRequest& request) const
@@ -494,18 +417,12 @@ GetRepositoryPolicyOutcome ECRPublicClient::GetRepositoryPolicy(const GetReposit
 
 GetRepositoryPolicyOutcomeCallable ECRPublicClient::GetRepositoryPolicyCallable(const GetRepositoryPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRepositoryPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRepositoryPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRepositoryPolicy, request, m_executor.get());
 }
 
 void ECRPublicClient::GetRepositoryPolicyAsync(const GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRepositoryPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRepositoryPolicy, request, handler, context, m_executor.get());
 }
 
 InitiateLayerUploadOutcome ECRPublicClient::InitiateLayerUpload(const InitiateLayerUploadRequest& request) const
@@ -518,18 +435,12 @@ InitiateLayerUploadOutcome ECRPublicClient::InitiateLayerUpload(const InitiateLa
 
 InitiateLayerUploadOutcomeCallable ECRPublicClient::InitiateLayerUploadCallable(const InitiateLayerUploadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InitiateLayerUploadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InitiateLayerUpload(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(InitiateLayerUpload, request, m_executor.get());
 }
 
 void ECRPublicClient::InitiateLayerUploadAsync(const InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, InitiateLayerUpload(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(InitiateLayerUpload, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ECRPublicClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -542,18 +453,12 @@ ListTagsForResourceOutcome ECRPublicClient::ListTagsForResource(const ListTagsFo
 
 ListTagsForResourceOutcomeCallable ECRPublicClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ECRPublicClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutImageOutcome ECRPublicClient::PutImage(const PutImageRequest& request) const
@@ -566,18 +471,12 @@ PutImageOutcome ECRPublicClient::PutImage(const PutImageRequest& request) const
 
 PutImageOutcomeCallable ECRPublicClient::PutImageCallable(const PutImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutImage, request, m_executor.get());
 }
 
 void ECRPublicClient::PutImageAsync(const PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutImage, request, handler, context, m_executor.get());
 }
 
 PutRegistryCatalogDataOutcome ECRPublicClient::PutRegistryCatalogData(const PutRegistryCatalogDataRequest& request) const
@@ -590,18 +489,12 @@ PutRegistryCatalogDataOutcome ECRPublicClient::PutRegistryCatalogData(const PutR
 
 PutRegistryCatalogDataOutcomeCallable ECRPublicClient::PutRegistryCatalogDataCallable(const PutRegistryCatalogDataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutRegistryCatalogDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRegistryCatalogData(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutRegistryCatalogData, request, m_executor.get());
 }
 
 void ECRPublicClient::PutRegistryCatalogDataAsync(const PutRegistryCatalogDataRequest& request, const PutRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutRegistryCatalogData(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutRegistryCatalogData, request, handler, context, m_executor.get());
 }
 
 PutRepositoryCatalogDataOutcome ECRPublicClient::PutRepositoryCatalogData(const PutRepositoryCatalogDataRequest& request) const
@@ -614,18 +507,12 @@ PutRepositoryCatalogDataOutcome ECRPublicClient::PutRepositoryCatalogData(const 
 
 PutRepositoryCatalogDataOutcomeCallable ECRPublicClient::PutRepositoryCatalogDataCallable(const PutRepositoryCatalogDataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutRepositoryCatalogDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRepositoryCatalogData(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutRepositoryCatalogData, request, m_executor.get());
 }
 
 void ECRPublicClient::PutRepositoryCatalogDataAsync(const PutRepositoryCatalogDataRequest& request, const PutRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutRepositoryCatalogData(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutRepositoryCatalogData, request, handler, context, m_executor.get());
 }
 
 SetRepositoryPolicyOutcome ECRPublicClient::SetRepositoryPolicy(const SetRepositoryPolicyRequest& request) const
@@ -638,18 +525,12 @@ SetRepositoryPolicyOutcome ECRPublicClient::SetRepositoryPolicy(const SetReposit
 
 SetRepositoryPolicyOutcomeCallable ECRPublicClient::SetRepositoryPolicyCallable(const SetRepositoryPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetRepositoryPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetRepositoryPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SetRepositoryPolicy, request, m_executor.get());
 }
 
 void ECRPublicClient::SetRepositoryPolicyAsync(const SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetRepositoryPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SetRepositoryPolicy, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ECRPublicClient::TagResource(const TagResourceRequest& request) const
@@ -662,18 +543,12 @@ TagResourceOutcome ECRPublicClient::TagResource(const TagResourceRequest& reques
 
 TagResourceOutcomeCallable ECRPublicClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ECRPublicClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ECRPublicClient::UntagResource(const UntagResourceRequest& request) const
@@ -686,18 +561,12 @@ UntagResourceOutcome ECRPublicClient::UntagResource(const UntagResourceRequest& 
 
 UntagResourceOutcomeCallable ECRPublicClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ECRPublicClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UploadLayerPartOutcome ECRPublicClient::UploadLayerPart(const UploadLayerPartRequest& request) const
@@ -710,17 +579,11 @@ UploadLayerPartOutcome ECRPublicClient::UploadLayerPart(const UploadLayerPartReq
 
 UploadLayerPartOutcomeCallable ECRPublicClient::UploadLayerPartCallable(const UploadLayerPartRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UploadLayerPartOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UploadLayerPart(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UploadLayerPart, request, m_executor.get());
 }
 
 void ECRPublicClient::UploadLayerPartAsync(const UploadLayerPartRequest& request, const UploadLayerPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UploadLayerPart(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UploadLayerPart, request, handler, context, m_executor.get());
 }
 

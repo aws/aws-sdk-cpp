@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -226,18 +227,12 @@ BatchCreateVariableOutcome FraudDetectorClient::BatchCreateVariable(const BatchC
 
 BatchCreateVariableOutcomeCallable FraudDetectorClient::BatchCreateVariableCallable(const BatchCreateVariableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchCreateVariableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchCreateVariable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchCreateVariable, request, m_executor.get());
 }
 
 void FraudDetectorClient::BatchCreateVariableAsync(const BatchCreateVariableRequest& request, const BatchCreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchCreateVariable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchCreateVariable, request, handler, context, m_executor.get());
 }
 
 BatchGetVariableOutcome FraudDetectorClient::BatchGetVariable(const BatchGetVariableRequest& request) const
@@ -250,18 +245,12 @@ BatchGetVariableOutcome FraudDetectorClient::BatchGetVariable(const BatchGetVari
 
 BatchGetVariableOutcomeCallable FraudDetectorClient::BatchGetVariableCallable(const BatchGetVariableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetVariableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetVariable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetVariable, request, m_executor.get());
 }
 
 void FraudDetectorClient::BatchGetVariableAsync(const BatchGetVariableRequest& request, const BatchGetVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetVariable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetVariable, request, handler, context, m_executor.get());
 }
 
 CancelBatchImportJobOutcome FraudDetectorClient::CancelBatchImportJob(const CancelBatchImportJobRequest& request) const
@@ -274,18 +263,12 @@ CancelBatchImportJobOutcome FraudDetectorClient::CancelBatchImportJob(const Canc
 
 CancelBatchImportJobOutcomeCallable FraudDetectorClient::CancelBatchImportJobCallable(const CancelBatchImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelBatchImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelBatchImportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelBatchImportJob, request, m_executor.get());
 }
 
 void FraudDetectorClient::CancelBatchImportJobAsync(const CancelBatchImportJobRequest& request, const CancelBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelBatchImportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelBatchImportJob, request, handler, context, m_executor.get());
 }
 
 CancelBatchPredictionJobOutcome FraudDetectorClient::CancelBatchPredictionJob(const CancelBatchPredictionJobRequest& request) const
@@ -298,18 +281,12 @@ CancelBatchPredictionJobOutcome FraudDetectorClient::CancelBatchPredictionJob(co
 
 CancelBatchPredictionJobOutcomeCallable FraudDetectorClient::CancelBatchPredictionJobCallable(const CancelBatchPredictionJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelBatchPredictionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelBatchPredictionJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelBatchPredictionJob, request, m_executor.get());
 }
 
 void FraudDetectorClient::CancelBatchPredictionJobAsync(const CancelBatchPredictionJobRequest& request, const CancelBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelBatchPredictionJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelBatchPredictionJob, request, handler, context, m_executor.get());
 }
 
 CreateBatchImportJobOutcome FraudDetectorClient::CreateBatchImportJob(const CreateBatchImportJobRequest& request) const
@@ -322,18 +299,12 @@ CreateBatchImportJobOutcome FraudDetectorClient::CreateBatchImportJob(const Crea
 
 CreateBatchImportJobOutcomeCallable FraudDetectorClient::CreateBatchImportJobCallable(const CreateBatchImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBatchImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBatchImportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBatchImportJob, request, m_executor.get());
 }
 
 void FraudDetectorClient::CreateBatchImportJobAsync(const CreateBatchImportJobRequest& request, const CreateBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBatchImportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBatchImportJob, request, handler, context, m_executor.get());
 }
 
 CreateBatchPredictionJobOutcome FraudDetectorClient::CreateBatchPredictionJob(const CreateBatchPredictionJobRequest& request) const
@@ -346,18 +317,12 @@ CreateBatchPredictionJobOutcome FraudDetectorClient::CreateBatchPredictionJob(co
 
 CreateBatchPredictionJobOutcomeCallable FraudDetectorClient::CreateBatchPredictionJobCallable(const CreateBatchPredictionJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBatchPredictionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBatchPredictionJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBatchPredictionJob, request, m_executor.get());
 }
 
 void FraudDetectorClient::CreateBatchPredictionJobAsync(const CreateBatchPredictionJobRequest& request, const CreateBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBatchPredictionJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBatchPredictionJob, request, handler, context, m_executor.get());
 }
 
 CreateDetectorVersionOutcome FraudDetectorClient::CreateDetectorVersion(const CreateDetectorVersionRequest& request) const
@@ -370,18 +335,12 @@ CreateDetectorVersionOutcome FraudDetectorClient::CreateDetectorVersion(const Cr
 
 CreateDetectorVersionOutcomeCallable FraudDetectorClient::CreateDetectorVersionCallable(const CreateDetectorVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDetectorVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDetectorVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDetectorVersion, request, m_executor.get());
 }
 
 void FraudDetectorClient::CreateDetectorVersionAsync(const CreateDetectorVersionRequest& request, const CreateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDetectorVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDetectorVersion, request, handler, context, m_executor.get());
 }
 
 CreateModelOutcome FraudDetectorClient::CreateModel(const CreateModelRequest& request) const
@@ -394,18 +353,12 @@ CreateModelOutcome FraudDetectorClient::CreateModel(const CreateModelRequest& re
 
 CreateModelOutcomeCallable FraudDetectorClient::CreateModelCallable(const CreateModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateModel, request, m_executor.get());
 }
 
 void FraudDetectorClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateModel, request, handler, context, m_executor.get());
 }
 
 CreateModelVersionOutcome FraudDetectorClient::CreateModelVersion(const CreateModelVersionRequest& request) const
@@ -418,18 +371,12 @@ CreateModelVersionOutcome FraudDetectorClient::CreateModelVersion(const CreateMo
 
 CreateModelVersionOutcomeCallable FraudDetectorClient::CreateModelVersionCallable(const CreateModelVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModelVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateModelVersion, request, m_executor.get());
 }
 
 void FraudDetectorClient::CreateModelVersionAsync(const CreateModelVersionRequest& request, const CreateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateModelVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateModelVersion, request, handler, context, m_executor.get());
 }
 
 CreateRuleOutcome FraudDetectorClient::CreateRule(const CreateRuleRequest& request) const
@@ -442,18 +389,12 @@ CreateRuleOutcome FraudDetectorClient::CreateRule(const CreateRuleRequest& reque
 
 CreateRuleOutcomeCallable FraudDetectorClient::CreateRuleCallable(const CreateRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRule, request, m_executor.get());
 }
 
 void FraudDetectorClient::CreateRuleAsync(const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRule, request, handler, context, m_executor.get());
 }
 
 CreateVariableOutcome FraudDetectorClient::CreateVariable(const CreateVariableRequest& request) const
@@ -466,18 +407,12 @@ CreateVariableOutcome FraudDetectorClient::CreateVariable(const CreateVariableRe
 
 CreateVariableOutcomeCallable FraudDetectorClient::CreateVariableCallable(const CreateVariableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateVariableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVariable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateVariable, request, m_executor.get());
 }
 
 void FraudDetectorClient::CreateVariableAsync(const CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateVariable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateVariable, request, handler, context, m_executor.get());
 }
 
 DeleteBatchImportJobOutcome FraudDetectorClient::DeleteBatchImportJob(const DeleteBatchImportJobRequest& request) const
@@ -490,18 +425,12 @@ DeleteBatchImportJobOutcome FraudDetectorClient::DeleteBatchImportJob(const Dele
 
 DeleteBatchImportJobOutcomeCallable FraudDetectorClient::DeleteBatchImportJobCallable(const DeleteBatchImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBatchImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBatchImportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBatchImportJob, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteBatchImportJobAsync(const DeleteBatchImportJobRequest& request, const DeleteBatchImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBatchImportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBatchImportJob, request, handler, context, m_executor.get());
 }
 
 DeleteBatchPredictionJobOutcome FraudDetectorClient::DeleteBatchPredictionJob(const DeleteBatchPredictionJobRequest& request) const
@@ -514,18 +443,12 @@ DeleteBatchPredictionJobOutcome FraudDetectorClient::DeleteBatchPredictionJob(co
 
 DeleteBatchPredictionJobOutcomeCallable FraudDetectorClient::DeleteBatchPredictionJobCallable(const DeleteBatchPredictionJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBatchPredictionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBatchPredictionJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBatchPredictionJob, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteBatchPredictionJobAsync(const DeleteBatchPredictionJobRequest& request, const DeleteBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBatchPredictionJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBatchPredictionJob, request, handler, context, m_executor.get());
 }
 
 DeleteDetectorOutcome FraudDetectorClient::DeleteDetector(const DeleteDetectorRequest& request) const
@@ -538,18 +461,12 @@ DeleteDetectorOutcome FraudDetectorClient::DeleteDetector(const DeleteDetectorRe
 
 DeleteDetectorOutcomeCallable FraudDetectorClient::DeleteDetectorCallable(const DeleteDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDetector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDetector, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteDetectorAsync(const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDetector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDetector, request, handler, context, m_executor.get());
 }
 
 DeleteDetectorVersionOutcome FraudDetectorClient::DeleteDetectorVersion(const DeleteDetectorVersionRequest& request) const
@@ -562,18 +479,12 @@ DeleteDetectorVersionOutcome FraudDetectorClient::DeleteDetectorVersion(const De
 
 DeleteDetectorVersionOutcomeCallable FraudDetectorClient::DeleteDetectorVersionCallable(const DeleteDetectorVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDetectorVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDetectorVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDetectorVersion, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteDetectorVersionAsync(const DeleteDetectorVersionRequest& request, const DeleteDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDetectorVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDetectorVersion, request, handler, context, m_executor.get());
 }
 
 DeleteEntityTypeOutcome FraudDetectorClient::DeleteEntityType(const DeleteEntityTypeRequest& request) const
@@ -586,18 +497,12 @@ DeleteEntityTypeOutcome FraudDetectorClient::DeleteEntityType(const DeleteEntity
 
 DeleteEntityTypeOutcomeCallable FraudDetectorClient::DeleteEntityTypeCallable(const DeleteEntityTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEntityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEntityType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEntityType, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteEntityTypeAsync(const DeleteEntityTypeRequest& request, const DeleteEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEntityType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEntityType, request, handler, context, m_executor.get());
 }
 
 DeleteEventOutcome FraudDetectorClient::DeleteEvent(const DeleteEventRequest& request) const
@@ -610,18 +515,12 @@ DeleteEventOutcome FraudDetectorClient::DeleteEvent(const DeleteEventRequest& re
 
 DeleteEventOutcomeCallable FraudDetectorClient::DeleteEventCallable(const DeleteEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEvent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEvent, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteEventAsync(const DeleteEventRequest& request, const DeleteEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEvent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEvent, request, handler, context, m_executor.get());
 }
 
 DeleteEventTypeOutcome FraudDetectorClient::DeleteEventType(const DeleteEventTypeRequest& request) const
@@ -634,18 +533,12 @@ DeleteEventTypeOutcome FraudDetectorClient::DeleteEventType(const DeleteEventTyp
 
 DeleteEventTypeOutcomeCallable FraudDetectorClient::DeleteEventTypeCallable(const DeleteEventTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEventTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEventType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEventType, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteEventTypeAsync(const DeleteEventTypeRequest& request, const DeleteEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEventType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEventType, request, handler, context, m_executor.get());
 }
 
 DeleteEventsByEventTypeOutcome FraudDetectorClient::DeleteEventsByEventType(const DeleteEventsByEventTypeRequest& request) const
@@ -658,18 +551,12 @@ DeleteEventsByEventTypeOutcome FraudDetectorClient::DeleteEventsByEventType(cons
 
 DeleteEventsByEventTypeOutcomeCallable FraudDetectorClient::DeleteEventsByEventTypeCallable(const DeleteEventsByEventTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEventsByEventTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEventsByEventType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEventsByEventType, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteEventsByEventTypeAsync(const DeleteEventsByEventTypeRequest& request, const DeleteEventsByEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEventsByEventType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEventsByEventType, request, handler, context, m_executor.get());
 }
 
 DeleteExternalModelOutcome FraudDetectorClient::DeleteExternalModel(const DeleteExternalModelRequest& request) const
@@ -682,18 +569,12 @@ DeleteExternalModelOutcome FraudDetectorClient::DeleteExternalModel(const Delete
 
 DeleteExternalModelOutcomeCallable FraudDetectorClient::DeleteExternalModelCallable(const DeleteExternalModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteExternalModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExternalModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteExternalModel, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteExternalModelAsync(const DeleteExternalModelRequest& request, const DeleteExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteExternalModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteExternalModel, request, handler, context, m_executor.get());
 }
 
 DeleteLabelOutcome FraudDetectorClient::DeleteLabel(const DeleteLabelRequest& request) const
@@ -706,18 +587,12 @@ DeleteLabelOutcome FraudDetectorClient::DeleteLabel(const DeleteLabelRequest& re
 
 DeleteLabelOutcomeCallable FraudDetectorClient::DeleteLabelCallable(const DeleteLabelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLabel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLabel, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteLabelAsync(const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLabel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLabel, request, handler, context, m_executor.get());
 }
 
 DeleteModelOutcome FraudDetectorClient::DeleteModel(const DeleteModelRequest& request) const
@@ -730,18 +605,12 @@ DeleteModelOutcome FraudDetectorClient::DeleteModel(const DeleteModelRequest& re
 
 DeleteModelOutcomeCallable FraudDetectorClient::DeleteModelCallable(const DeleteModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteModel, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteModel, request, handler, context, m_executor.get());
 }
 
 DeleteModelVersionOutcome FraudDetectorClient::DeleteModelVersion(const DeleteModelVersionRequest& request) const
@@ -754,18 +623,12 @@ DeleteModelVersionOutcome FraudDetectorClient::DeleteModelVersion(const DeleteMo
 
 DeleteModelVersionOutcomeCallable FraudDetectorClient::DeleteModelVersionCallable(const DeleteModelVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModelVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteModelVersion, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteModelVersionAsync(const DeleteModelVersionRequest& request, const DeleteModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteModelVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteModelVersion, request, handler, context, m_executor.get());
 }
 
 DeleteOutcomeOutcome FraudDetectorClient::DeleteOutcome(const DeleteOutcomeRequest& request) const
@@ -778,18 +641,12 @@ DeleteOutcomeOutcome FraudDetectorClient::DeleteOutcome(const DeleteOutcomeReque
 
 DeleteOutcomeOutcomeCallable FraudDetectorClient::DeleteOutcomeCallable(const DeleteOutcomeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteOutcomeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOutcome(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteOutcome, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteOutcomeAsync(const DeleteOutcomeRequest& request, const DeleteOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteOutcome(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteOutcome, request, handler, context, m_executor.get());
 }
 
 DeleteRuleOutcome FraudDetectorClient::DeleteRule(const DeleteRuleRequest& request) const
@@ -802,18 +659,12 @@ DeleteRuleOutcome FraudDetectorClient::DeleteRule(const DeleteRuleRequest& reque
 
 DeleteRuleOutcomeCallable FraudDetectorClient::DeleteRuleCallable(const DeleteRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRule, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRule, request, handler, context, m_executor.get());
 }
 
 DeleteVariableOutcome FraudDetectorClient::DeleteVariable(const DeleteVariableRequest& request) const
@@ -826,18 +677,12 @@ DeleteVariableOutcome FraudDetectorClient::DeleteVariable(const DeleteVariableRe
 
 DeleteVariableOutcomeCallable FraudDetectorClient::DeleteVariableCallable(const DeleteVariableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteVariableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVariable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteVariable, request, m_executor.get());
 }
 
 void FraudDetectorClient::DeleteVariableAsync(const DeleteVariableRequest& request, const DeleteVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteVariable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteVariable, request, handler, context, m_executor.get());
 }
 
 DescribeDetectorOutcome FraudDetectorClient::DescribeDetector(const DescribeDetectorRequest& request) const
@@ -850,18 +695,12 @@ DescribeDetectorOutcome FraudDetectorClient::DescribeDetector(const DescribeDete
 
 DescribeDetectorOutcomeCallable FraudDetectorClient::DescribeDetectorCallable(const DescribeDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDetector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDetector, request, m_executor.get());
 }
 
 void FraudDetectorClient::DescribeDetectorAsync(const DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDetector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDetector, request, handler, context, m_executor.get());
 }
 
 DescribeModelVersionsOutcome FraudDetectorClient::DescribeModelVersions(const DescribeModelVersionsRequest& request) const
@@ -874,18 +713,12 @@ DescribeModelVersionsOutcome FraudDetectorClient::DescribeModelVersions(const De
 
 DescribeModelVersionsOutcomeCallable FraudDetectorClient::DescribeModelVersionsCallable(const DescribeModelVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModelVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeModelVersions, request, m_executor.get());
 }
 
 void FraudDetectorClient::DescribeModelVersionsAsync(const DescribeModelVersionsRequest& request, const DescribeModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeModelVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeModelVersions, request, handler, context, m_executor.get());
 }
 
 GetBatchImportJobsOutcome FraudDetectorClient::GetBatchImportJobs(const GetBatchImportJobsRequest& request) const
@@ -898,18 +731,12 @@ GetBatchImportJobsOutcome FraudDetectorClient::GetBatchImportJobs(const GetBatch
 
 GetBatchImportJobsOutcomeCallable FraudDetectorClient::GetBatchImportJobsCallable(const GetBatchImportJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBatchImportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBatchImportJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBatchImportJobs, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetBatchImportJobsAsync(const GetBatchImportJobsRequest& request, const GetBatchImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBatchImportJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBatchImportJobs, request, handler, context, m_executor.get());
 }
 
 GetBatchPredictionJobsOutcome FraudDetectorClient::GetBatchPredictionJobs(const GetBatchPredictionJobsRequest& request) const
@@ -922,18 +749,12 @@ GetBatchPredictionJobsOutcome FraudDetectorClient::GetBatchPredictionJobs(const 
 
 GetBatchPredictionJobsOutcomeCallable FraudDetectorClient::GetBatchPredictionJobsCallable(const GetBatchPredictionJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBatchPredictionJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBatchPredictionJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBatchPredictionJobs, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetBatchPredictionJobsAsync(const GetBatchPredictionJobsRequest& request, const GetBatchPredictionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBatchPredictionJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBatchPredictionJobs, request, handler, context, m_executor.get());
 }
 
 GetDeleteEventsByEventTypeStatusOutcome FraudDetectorClient::GetDeleteEventsByEventTypeStatus(const GetDeleteEventsByEventTypeStatusRequest& request) const
@@ -946,18 +767,12 @@ GetDeleteEventsByEventTypeStatusOutcome FraudDetectorClient::GetDeleteEventsByEv
 
 GetDeleteEventsByEventTypeStatusOutcomeCallable FraudDetectorClient::GetDeleteEventsByEventTypeStatusCallable(const GetDeleteEventsByEventTypeStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeleteEventsByEventTypeStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeleteEventsByEventTypeStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDeleteEventsByEventTypeStatus, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetDeleteEventsByEventTypeStatusAsync(const GetDeleteEventsByEventTypeStatusRequest& request, const GetDeleteEventsByEventTypeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDeleteEventsByEventTypeStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDeleteEventsByEventTypeStatus, request, handler, context, m_executor.get());
 }
 
 GetDetectorVersionOutcome FraudDetectorClient::GetDetectorVersion(const GetDetectorVersionRequest& request) const
@@ -970,18 +785,12 @@ GetDetectorVersionOutcome FraudDetectorClient::GetDetectorVersion(const GetDetec
 
 GetDetectorVersionOutcomeCallable FraudDetectorClient::GetDetectorVersionCallable(const GetDetectorVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDetectorVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDetectorVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDetectorVersion, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetDetectorVersionAsync(const GetDetectorVersionRequest& request, const GetDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDetectorVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDetectorVersion, request, handler, context, m_executor.get());
 }
 
 GetDetectorsOutcome FraudDetectorClient::GetDetectors(const GetDetectorsRequest& request) const
@@ -994,18 +803,12 @@ GetDetectorsOutcome FraudDetectorClient::GetDetectors(const GetDetectorsRequest&
 
 GetDetectorsOutcomeCallable FraudDetectorClient::GetDetectorsCallable(const GetDetectorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDetectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDetectors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDetectors, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetDetectorsAsync(const GetDetectorsRequest& request, const GetDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDetectors(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDetectors, request, handler, context, m_executor.get());
 }
 
 GetEntityTypesOutcome FraudDetectorClient::GetEntityTypes(const GetEntityTypesRequest& request) const
@@ -1018,18 +821,12 @@ GetEntityTypesOutcome FraudDetectorClient::GetEntityTypes(const GetEntityTypesRe
 
 GetEntityTypesOutcomeCallable FraudDetectorClient::GetEntityTypesCallable(const GetEntityTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEntityTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEntityTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEntityTypes, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetEntityTypesAsync(const GetEntityTypesRequest& request, const GetEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEntityTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEntityTypes, request, handler, context, m_executor.get());
 }
 
 GetEventOutcome FraudDetectorClient::GetEvent(const GetEventRequest& request) const
@@ -1042,18 +839,12 @@ GetEventOutcome FraudDetectorClient::GetEvent(const GetEventRequest& request) co
 
 GetEventOutcomeCallable FraudDetectorClient::GetEventCallable(const GetEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEvent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEvent, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetEventAsync(const GetEventRequest& request, const GetEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEvent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEvent, request, handler, context, m_executor.get());
 }
 
 GetEventPredictionOutcome FraudDetectorClient::GetEventPrediction(const GetEventPredictionRequest& request) const
@@ -1066,18 +857,12 @@ GetEventPredictionOutcome FraudDetectorClient::GetEventPrediction(const GetEvent
 
 GetEventPredictionOutcomeCallable FraudDetectorClient::GetEventPredictionCallable(const GetEventPredictionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEventPredictionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEventPrediction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEventPrediction, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetEventPredictionAsync(const GetEventPredictionRequest& request, const GetEventPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEventPrediction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEventPrediction, request, handler, context, m_executor.get());
 }
 
 GetEventPredictionMetadataOutcome FraudDetectorClient::GetEventPredictionMetadata(const GetEventPredictionMetadataRequest& request) const
@@ -1090,18 +875,12 @@ GetEventPredictionMetadataOutcome FraudDetectorClient::GetEventPredictionMetadat
 
 GetEventPredictionMetadataOutcomeCallable FraudDetectorClient::GetEventPredictionMetadataCallable(const GetEventPredictionMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEventPredictionMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEventPredictionMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEventPredictionMetadata, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetEventPredictionMetadataAsync(const GetEventPredictionMetadataRequest& request, const GetEventPredictionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEventPredictionMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEventPredictionMetadata, request, handler, context, m_executor.get());
 }
 
 GetEventTypesOutcome FraudDetectorClient::GetEventTypes(const GetEventTypesRequest& request) const
@@ -1114,18 +893,12 @@ GetEventTypesOutcome FraudDetectorClient::GetEventTypes(const GetEventTypesReque
 
 GetEventTypesOutcomeCallable FraudDetectorClient::GetEventTypesCallable(const GetEventTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEventTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEventTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEventTypes, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetEventTypesAsync(const GetEventTypesRequest& request, const GetEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEventTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEventTypes, request, handler, context, m_executor.get());
 }
 
 GetExternalModelsOutcome FraudDetectorClient::GetExternalModels(const GetExternalModelsRequest& request) const
@@ -1138,18 +911,12 @@ GetExternalModelsOutcome FraudDetectorClient::GetExternalModels(const GetExterna
 
 GetExternalModelsOutcomeCallable FraudDetectorClient::GetExternalModelsCallable(const GetExternalModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExternalModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExternalModels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetExternalModels, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetExternalModelsAsync(const GetExternalModelsRequest& request, const GetExternalModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetExternalModels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetExternalModels, request, handler, context, m_executor.get());
 }
 
 GetKMSEncryptionKeyOutcome FraudDetectorClient::GetKMSEncryptionKey() const
@@ -1187,18 +954,12 @@ GetLabelsOutcome FraudDetectorClient::GetLabels(const GetLabelsRequest& request)
 
 GetLabelsOutcomeCallable FraudDetectorClient::GetLabelsCallable(const GetLabelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLabelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLabels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLabels, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetLabelsAsync(const GetLabelsRequest& request, const GetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLabels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLabels, request, handler, context, m_executor.get());
 }
 
 GetModelVersionOutcome FraudDetectorClient::GetModelVersion(const GetModelVersionRequest& request) const
@@ -1211,18 +972,12 @@ GetModelVersionOutcome FraudDetectorClient::GetModelVersion(const GetModelVersio
 
 GetModelVersionOutcomeCallable FraudDetectorClient::GetModelVersionCallable(const GetModelVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetModelVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetModelVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetModelVersion, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetModelVersionAsync(const GetModelVersionRequest& request, const GetModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetModelVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetModelVersion, request, handler, context, m_executor.get());
 }
 
 GetModelsOutcome FraudDetectorClient::GetModels(const GetModelsRequest& request) const
@@ -1235,18 +990,12 @@ GetModelsOutcome FraudDetectorClient::GetModels(const GetModelsRequest& request)
 
 GetModelsOutcomeCallable FraudDetectorClient::GetModelsCallable(const GetModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetModels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetModels, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetModelsAsync(const GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetModels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetModels, request, handler, context, m_executor.get());
 }
 
 GetOutcomesOutcome FraudDetectorClient::GetOutcomes(const GetOutcomesRequest& request) const
@@ -1259,18 +1008,12 @@ GetOutcomesOutcome FraudDetectorClient::GetOutcomes(const GetOutcomesRequest& re
 
 GetOutcomesOutcomeCallable FraudDetectorClient::GetOutcomesCallable(const GetOutcomesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetOutcomesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOutcomes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetOutcomes, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetOutcomesAsync(const GetOutcomesRequest& request, const GetOutcomesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetOutcomes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetOutcomes, request, handler, context, m_executor.get());
 }
 
 GetRulesOutcome FraudDetectorClient::GetRules(const GetRulesRequest& request) const
@@ -1283,18 +1026,12 @@ GetRulesOutcome FraudDetectorClient::GetRules(const GetRulesRequest& request) co
 
 GetRulesOutcomeCallable FraudDetectorClient::GetRulesCallable(const GetRulesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRules(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRules, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetRulesAsync(const GetRulesRequest& request, const GetRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRules(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRules, request, handler, context, m_executor.get());
 }
 
 GetVariablesOutcome FraudDetectorClient::GetVariables(const GetVariablesRequest& request) const
@@ -1307,18 +1044,12 @@ GetVariablesOutcome FraudDetectorClient::GetVariables(const GetVariablesRequest&
 
 GetVariablesOutcomeCallable FraudDetectorClient::GetVariablesCallable(const GetVariablesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetVariablesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVariables(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetVariables, request, m_executor.get());
 }
 
 void FraudDetectorClient::GetVariablesAsync(const GetVariablesRequest& request, const GetVariablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetVariables(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetVariables, request, handler, context, m_executor.get());
 }
 
 ListEventPredictionsOutcome FraudDetectorClient::ListEventPredictions(const ListEventPredictionsRequest& request) const
@@ -1331,18 +1062,12 @@ ListEventPredictionsOutcome FraudDetectorClient::ListEventPredictions(const List
 
 ListEventPredictionsOutcomeCallable FraudDetectorClient::ListEventPredictionsCallable(const ListEventPredictionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEventPredictionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventPredictions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEventPredictions, request, m_executor.get());
 }
 
 void FraudDetectorClient::ListEventPredictionsAsync(const ListEventPredictionsRequest& request, const ListEventPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEventPredictions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEventPredictions, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome FraudDetectorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1355,18 +1080,12 @@ ListTagsForResourceOutcome FraudDetectorClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable FraudDetectorClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void FraudDetectorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutDetectorOutcome FraudDetectorClient::PutDetector(const PutDetectorRequest& request) const
@@ -1379,18 +1098,12 @@ PutDetectorOutcome FraudDetectorClient::PutDetector(const PutDetectorRequest& re
 
 PutDetectorOutcomeCallable FraudDetectorClient::PutDetectorCallable(const PutDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutDetector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutDetector, request, m_executor.get());
 }
 
 void FraudDetectorClient::PutDetectorAsync(const PutDetectorRequest& request, const PutDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutDetector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutDetector, request, handler, context, m_executor.get());
 }
 
 PutEntityTypeOutcome FraudDetectorClient::PutEntityType(const PutEntityTypeRequest& request) const
@@ -1403,18 +1116,12 @@ PutEntityTypeOutcome FraudDetectorClient::PutEntityType(const PutEntityTypeReque
 
 PutEntityTypeOutcomeCallable FraudDetectorClient::PutEntityTypeCallable(const PutEntityTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutEntityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutEntityType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutEntityType, request, m_executor.get());
 }
 
 void FraudDetectorClient::PutEntityTypeAsync(const PutEntityTypeRequest& request, const PutEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutEntityType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutEntityType, request, handler, context, m_executor.get());
 }
 
 PutEventTypeOutcome FraudDetectorClient::PutEventType(const PutEventTypeRequest& request) const
@@ -1427,18 +1134,12 @@ PutEventTypeOutcome FraudDetectorClient::PutEventType(const PutEventTypeRequest&
 
 PutEventTypeOutcomeCallable FraudDetectorClient::PutEventTypeCallable(const PutEventTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutEventTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutEventType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutEventType, request, m_executor.get());
 }
 
 void FraudDetectorClient::PutEventTypeAsync(const PutEventTypeRequest& request, const PutEventTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutEventType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutEventType, request, handler, context, m_executor.get());
 }
 
 PutExternalModelOutcome FraudDetectorClient::PutExternalModel(const PutExternalModelRequest& request) const
@@ -1451,18 +1152,12 @@ PutExternalModelOutcome FraudDetectorClient::PutExternalModel(const PutExternalM
 
 PutExternalModelOutcomeCallable FraudDetectorClient::PutExternalModelCallable(const PutExternalModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutExternalModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutExternalModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutExternalModel, request, m_executor.get());
 }
 
 void FraudDetectorClient::PutExternalModelAsync(const PutExternalModelRequest& request, const PutExternalModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutExternalModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutExternalModel, request, handler, context, m_executor.get());
 }
 
 PutKMSEncryptionKeyOutcome FraudDetectorClient::PutKMSEncryptionKey(const PutKMSEncryptionKeyRequest& request) const
@@ -1475,18 +1170,12 @@ PutKMSEncryptionKeyOutcome FraudDetectorClient::PutKMSEncryptionKey(const PutKMS
 
 PutKMSEncryptionKeyOutcomeCallable FraudDetectorClient::PutKMSEncryptionKeyCallable(const PutKMSEncryptionKeyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutKMSEncryptionKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutKMSEncryptionKey(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutKMSEncryptionKey, request, m_executor.get());
 }
 
 void FraudDetectorClient::PutKMSEncryptionKeyAsync(const PutKMSEncryptionKeyRequest& request, const PutKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutKMSEncryptionKey(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutKMSEncryptionKey, request, handler, context, m_executor.get());
 }
 
 PutLabelOutcome FraudDetectorClient::PutLabel(const PutLabelRequest& request) const
@@ -1499,18 +1188,12 @@ PutLabelOutcome FraudDetectorClient::PutLabel(const PutLabelRequest& request) co
 
 PutLabelOutcomeCallable FraudDetectorClient::PutLabelCallable(const PutLabelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutLabel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutLabel, request, m_executor.get());
 }
 
 void FraudDetectorClient::PutLabelAsync(const PutLabelRequest& request, const PutLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutLabel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutLabel, request, handler, context, m_executor.get());
 }
 
 PutOutcomeOutcome FraudDetectorClient::PutOutcome(const PutOutcomeRequest& request) const
@@ -1523,18 +1206,12 @@ PutOutcomeOutcome FraudDetectorClient::PutOutcome(const PutOutcomeRequest& reque
 
 PutOutcomeOutcomeCallable FraudDetectorClient::PutOutcomeCallable(const PutOutcomeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutOutcomeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutOutcome(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutOutcome, request, m_executor.get());
 }
 
 void FraudDetectorClient::PutOutcomeAsync(const PutOutcomeRequest& request, const PutOutcomeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutOutcome(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutOutcome, request, handler, context, m_executor.get());
 }
 
 SendEventOutcome FraudDetectorClient::SendEvent(const SendEventRequest& request) const
@@ -1547,18 +1224,12 @@ SendEventOutcome FraudDetectorClient::SendEvent(const SendEventRequest& request)
 
 SendEventOutcomeCallable FraudDetectorClient::SendEventCallable(const SendEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendEvent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendEvent, request, m_executor.get());
 }
 
 void FraudDetectorClient::SendEventAsync(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendEvent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendEvent, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome FraudDetectorClient::TagResource(const TagResourceRequest& request) const
@@ -1571,18 +1242,12 @@ TagResourceOutcome FraudDetectorClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable FraudDetectorClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void FraudDetectorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome FraudDetectorClient::UntagResource(const UntagResourceRequest& request) const
@@ -1595,18 +1260,12 @@ UntagResourceOutcome FraudDetectorClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable FraudDetectorClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void FraudDetectorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateDetectorVersionOutcome FraudDetectorClient::UpdateDetectorVersion(const UpdateDetectorVersionRequest& request) const
@@ -1619,18 +1278,12 @@ UpdateDetectorVersionOutcome FraudDetectorClient::UpdateDetectorVersion(const Up
 
 UpdateDetectorVersionOutcomeCallable FraudDetectorClient::UpdateDetectorVersionCallable(const UpdateDetectorVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDetectorVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDetectorVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDetectorVersion, request, m_executor.get());
 }
 
 void FraudDetectorClient::UpdateDetectorVersionAsync(const UpdateDetectorVersionRequest& request, const UpdateDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDetectorVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDetectorVersion, request, handler, context, m_executor.get());
 }
 
 UpdateDetectorVersionMetadataOutcome FraudDetectorClient::UpdateDetectorVersionMetadata(const UpdateDetectorVersionMetadataRequest& request) const
@@ -1643,18 +1296,12 @@ UpdateDetectorVersionMetadataOutcome FraudDetectorClient::UpdateDetectorVersionM
 
 UpdateDetectorVersionMetadataOutcomeCallable FraudDetectorClient::UpdateDetectorVersionMetadataCallable(const UpdateDetectorVersionMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDetectorVersionMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDetectorVersionMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDetectorVersionMetadata, request, m_executor.get());
 }
 
 void FraudDetectorClient::UpdateDetectorVersionMetadataAsync(const UpdateDetectorVersionMetadataRequest& request, const UpdateDetectorVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDetectorVersionMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDetectorVersionMetadata, request, handler, context, m_executor.get());
 }
 
 UpdateDetectorVersionStatusOutcome FraudDetectorClient::UpdateDetectorVersionStatus(const UpdateDetectorVersionStatusRequest& request) const
@@ -1667,18 +1314,12 @@ UpdateDetectorVersionStatusOutcome FraudDetectorClient::UpdateDetectorVersionSta
 
 UpdateDetectorVersionStatusOutcomeCallable FraudDetectorClient::UpdateDetectorVersionStatusCallable(const UpdateDetectorVersionStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDetectorVersionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDetectorVersionStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDetectorVersionStatus, request, m_executor.get());
 }
 
 void FraudDetectorClient::UpdateDetectorVersionStatusAsync(const UpdateDetectorVersionStatusRequest& request, const UpdateDetectorVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDetectorVersionStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDetectorVersionStatus, request, handler, context, m_executor.get());
 }
 
 UpdateEventLabelOutcome FraudDetectorClient::UpdateEventLabel(const UpdateEventLabelRequest& request) const
@@ -1691,18 +1332,12 @@ UpdateEventLabelOutcome FraudDetectorClient::UpdateEventLabel(const UpdateEventL
 
 UpdateEventLabelOutcomeCallable FraudDetectorClient::UpdateEventLabelCallable(const UpdateEventLabelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEventLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEventLabel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateEventLabel, request, m_executor.get());
 }
 
 void FraudDetectorClient::UpdateEventLabelAsync(const UpdateEventLabelRequest& request, const UpdateEventLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateEventLabel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateEventLabel, request, handler, context, m_executor.get());
 }
 
 UpdateModelOutcome FraudDetectorClient::UpdateModel(const UpdateModelRequest& request) const
@@ -1715,18 +1350,12 @@ UpdateModelOutcome FraudDetectorClient::UpdateModel(const UpdateModelRequest& re
 
 UpdateModelOutcomeCallable FraudDetectorClient::UpdateModelCallable(const UpdateModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateModel, request, m_executor.get());
 }
 
 void FraudDetectorClient::UpdateModelAsync(const UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateModel, request, handler, context, m_executor.get());
 }
 
 UpdateModelVersionOutcome FraudDetectorClient::UpdateModelVersion(const UpdateModelVersionRequest& request) const
@@ -1739,18 +1368,12 @@ UpdateModelVersionOutcome FraudDetectorClient::UpdateModelVersion(const UpdateMo
 
 UpdateModelVersionOutcomeCallable FraudDetectorClient::UpdateModelVersionCallable(const UpdateModelVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateModelVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateModelVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateModelVersion, request, m_executor.get());
 }
 
 void FraudDetectorClient::UpdateModelVersionAsync(const UpdateModelVersionRequest& request, const UpdateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateModelVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateModelVersion, request, handler, context, m_executor.get());
 }
 
 UpdateModelVersionStatusOutcome FraudDetectorClient::UpdateModelVersionStatus(const UpdateModelVersionStatusRequest& request) const
@@ -1763,18 +1386,12 @@ UpdateModelVersionStatusOutcome FraudDetectorClient::UpdateModelVersionStatus(co
 
 UpdateModelVersionStatusOutcomeCallable FraudDetectorClient::UpdateModelVersionStatusCallable(const UpdateModelVersionStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateModelVersionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateModelVersionStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateModelVersionStatus, request, m_executor.get());
 }
 
 void FraudDetectorClient::UpdateModelVersionStatusAsync(const UpdateModelVersionStatusRequest& request, const UpdateModelVersionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateModelVersionStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateModelVersionStatus, request, handler, context, m_executor.get());
 }
 
 UpdateRuleMetadataOutcome FraudDetectorClient::UpdateRuleMetadata(const UpdateRuleMetadataRequest& request) const
@@ -1787,18 +1404,12 @@ UpdateRuleMetadataOutcome FraudDetectorClient::UpdateRuleMetadata(const UpdateRu
 
 UpdateRuleMetadataOutcomeCallable FraudDetectorClient::UpdateRuleMetadataCallable(const UpdateRuleMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRuleMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRuleMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRuleMetadata, request, m_executor.get());
 }
 
 void FraudDetectorClient::UpdateRuleMetadataAsync(const UpdateRuleMetadataRequest& request, const UpdateRuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRuleMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRuleMetadata, request, handler, context, m_executor.get());
 }
 
 UpdateRuleVersionOutcome FraudDetectorClient::UpdateRuleVersion(const UpdateRuleVersionRequest& request) const
@@ -1811,18 +1422,12 @@ UpdateRuleVersionOutcome FraudDetectorClient::UpdateRuleVersion(const UpdateRule
 
 UpdateRuleVersionOutcomeCallable FraudDetectorClient::UpdateRuleVersionCallable(const UpdateRuleVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRuleVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRuleVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRuleVersion, request, m_executor.get());
 }
 
 void FraudDetectorClient::UpdateRuleVersionAsync(const UpdateRuleVersionRequest& request, const UpdateRuleVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRuleVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRuleVersion, request, handler, context, m_executor.get());
 }
 
 UpdateVariableOutcome FraudDetectorClient::UpdateVariable(const UpdateVariableRequest& request) const
@@ -1835,17 +1440,11 @@ UpdateVariableOutcome FraudDetectorClient::UpdateVariable(const UpdateVariableRe
 
 UpdateVariableOutcomeCallable FraudDetectorClient::UpdateVariableCallable(const UpdateVariableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateVariableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVariable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateVariable, request, m_executor.get());
 }
 
 void FraudDetectorClient::UpdateVariableAsync(const UpdateVariableRequest& request, const UpdateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateVariable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateVariable, request, handler, context, m_executor.get());
 }
 

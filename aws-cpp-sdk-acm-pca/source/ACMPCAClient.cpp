@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -182,18 +183,12 @@ CreateCertificateAuthorityOutcome ACMPCAClient::CreateCertificateAuthority(const
 
 CreateCertificateAuthorityOutcomeCallable ACMPCAClient::CreateCertificateAuthorityCallable(const CreateCertificateAuthorityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCertificateAuthorityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCertificateAuthority(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCertificateAuthority, request, m_executor.get());
 }
 
 void ACMPCAClient::CreateCertificateAuthorityAsync(const CreateCertificateAuthorityRequest& request, const CreateCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCertificateAuthority(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCertificateAuthority, request, handler, context, m_executor.get());
 }
 
 CreateCertificateAuthorityAuditReportOutcome ACMPCAClient::CreateCertificateAuthorityAuditReport(const CreateCertificateAuthorityAuditReportRequest& request) const
@@ -206,18 +201,12 @@ CreateCertificateAuthorityAuditReportOutcome ACMPCAClient::CreateCertificateAuth
 
 CreateCertificateAuthorityAuditReportOutcomeCallable ACMPCAClient::CreateCertificateAuthorityAuditReportCallable(const CreateCertificateAuthorityAuditReportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCertificateAuthorityAuditReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCertificateAuthorityAuditReport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCertificateAuthorityAuditReport, request, m_executor.get());
 }
 
 void ACMPCAClient::CreateCertificateAuthorityAuditReportAsync(const CreateCertificateAuthorityAuditReportRequest& request, const CreateCertificateAuthorityAuditReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCertificateAuthorityAuditReport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCertificateAuthorityAuditReport, request, handler, context, m_executor.get());
 }
 
 CreatePermissionOutcome ACMPCAClient::CreatePermission(const CreatePermissionRequest& request) const
@@ -230,18 +219,12 @@ CreatePermissionOutcome ACMPCAClient::CreatePermission(const CreatePermissionReq
 
 CreatePermissionOutcomeCallable ACMPCAClient::CreatePermissionCallable(const CreatePermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePermission, request, m_executor.get());
 }
 
 void ACMPCAClient::CreatePermissionAsync(const CreatePermissionRequest& request, const CreatePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePermission(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePermission, request, handler, context, m_executor.get());
 }
 
 DeleteCertificateAuthorityOutcome ACMPCAClient::DeleteCertificateAuthority(const DeleteCertificateAuthorityRequest& request) const
@@ -254,18 +237,12 @@ DeleteCertificateAuthorityOutcome ACMPCAClient::DeleteCertificateAuthority(const
 
 DeleteCertificateAuthorityOutcomeCallable ACMPCAClient::DeleteCertificateAuthorityCallable(const DeleteCertificateAuthorityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCertificateAuthorityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCertificateAuthority(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCertificateAuthority, request, m_executor.get());
 }
 
 void ACMPCAClient::DeleteCertificateAuthorityAsync(const DeleteCertificateAuthorityRequest& request, const DeleteCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCertificateAuthority(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCertificateAuthority, request, handler, context, m_executor.get());
 }
 
 DeletePermissionOutcome ACMPCAClient::DeletePermission(const DeletePermissionRequest& request) const
@@ -278,18 +255,12 @@ DeletePermissionOutcome ACMPCAClient::DeletePermission(const DeletePermissionReq
 
 DeletePermissionOutcomeCallable ACMPCAClient::DeletePermissionCallable(const DeletePermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePermission, request, m_executor.get());
 }
 
 void ACMPCAClient::DeletePermissionAsync(const DeletePermissionRequest& request, const DeletePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePermission(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePermission, request, handler, context, m_executor.get());
 }
 
 DeletePolicyOutcome ACMPCAClient::DeletePolicy(const DeletePolicyRequest& request) const
@@ -302,18 +273,12 @@ DeletePolicyOutcome ACMPCAClient::DeletePolicy(const DeletePolicyRequest& reques
 
 DeletePolicyOutcomeCallable ACMPCAClient::DeletePolicyCallable(const DeletePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePolicy, request, m_executor.get());
 }
 
 void ACMPCAClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePolicy, request, handler, context, m_executor.get());
 }
 
 DescribeCertificateAuthorityOutcome ACMPCAClient::DescribeCertificateAuthority(const DescribeCertificateAuthorityRequest& request) const
@@ -326,18 +291,12 @@ DescribeCertificateAuthorityOutcome ACMPCAClient::DescribeCertificateAuthority(c
 
 DescribeCertificateAuthorityOutcomeCallable ACMPCAClient::DescribeCertificateAuthorityCallable(const DescribeCertificateAuthorityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCertificateAuthorityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCertificateAuthority(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCertificateAuthority, request, m_executor.get());
 }
 
 void ACMPCAClient::DescribeCertificateAuthorityAsync(const DescribeCertificateAuthorityRequest& request, const DescribeCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCertificateAuthority(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCertificateAuthority, request, handler, context, m_executor.get());
 }
 
 DescribeCertificateAuthorityAuditReportOutcome ACMPCAClient::DescribeCertificateAuthorityAuditReport(const DescribeCertificateAuthorityAuditReportRequest& request) const
@@ -350,18 +309,12 @@ DescribeCertificateAuthorityAuditReportOutcome ACMPCAClient::DescribeCertificate
 
 DescribeCertificateAuthorityAuditReportOutcomeCallable ACMPCAClient::DescribeCertificateAuthorityAuditReportCallable(const DescribeCertificateAuthorityAuditReportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCertificateAuthorityAuditReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCertificateAuthorityAuditReport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCertificateAuthorityAuditReport, request, m_executor.get());
 }
 
 void ACMPCAClient::DescribeCertificateAuthorityAuditReportAsync(const DescribeCertificateAuthorityAuditReportRequest& request, const DescribeCertificateAuthorityAuditReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCertificateAuthorityAuditReport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCertificateAuthorityAuditReport, request, handler, context, m_executor.get());
 }
 
 GetCertificateOutcome ACMPCAClient::GetCertificate(const GetCertificateRequest& request) const
@@ -374,18 +327,12 @@ GetCertificateOutcome ACMPCAClient::GetCertificate(const GetCertificateRequest& 
 
 GetCertificateOutcomeCallable ACMPCAClient::GetCertificateCallable(const GetCertificateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCertificate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCertificate, request, m_executor.get());
 }
 
 void ACMPCAClient::GetCertificateAsync(const GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCertificate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCertificate, request, handler, context, m_executor.get());
 }
 
 GetCertificateAuthorityCertificateOutcome ACMPCAClient::GetCertificateAuthorityCertificate(const GetCertificateAuthorityCertificateRequest& request) const
@@ -398,18 +345,12 @@ GetCertificateAuthorityCertificateOutcome ACMPCAClient::GetCertificateAuthorityC
 
 GetCertificateAuthorityCertificateOutcomeCallable ACMPCAClient::GetCertificateAuthorityCertificateCallable(const GetCertificateAuthorityCertificateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCertificateAuthorityCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCertificateAuthorityCertificate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCertificateAuthorityCertificate, request, m_executor.get());
 }
 
 void ACMPCAClient::GetCertificateAuthorityCertificateAsync(const GetCertificateAuthorityCertificateRequest& request, const GetCertificateAuthorityCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCertificateAuthorityCertificate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCertificateAuthorityCertificate, request, handler, context, m_executor.get());
 }
 
 GetCertificateAuthorityCsrOutcome ACMPCAClient::GetCertificateAuthorityCsr(const GetCertificateAuthorityCsrRequest& request) const
@@ -422,18 +363,12 @@ GetCertificateAuthorityCsrOutcome ACMPCAClient::GetCertificateAuthorityCsr(const
 
 GetCertificateAuthorityCsrOutcomeCallable ACMPCAClient::GetCertificateAuthorityCsrCallable(const GetCertificateAuthorityCsrRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCertificateAuthorityCsrOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCertificateAuthorityCsr(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCertificateAuthorityCsr, request, m_executor.get());
 }
 
 void ACMPCAClient::GetCertificateAuthorityCsrAsync(const GetCertificateAuthorityCsrRequest& request, const GetCertificateAuthorityCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCertificateAuthorityCsr(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCertificateAuthorityCsr, request, handler, context, m_executor.get());
 }
 
 GetPolicyOutcome ACMPCAClient::GetPolicy(const GetPolicyRequest& request) const
@@ -446,18 +381,12 @@ GetPolicyOutcome ACMPCAClient::GetPolicy(const GetPolicyRequest& request) const
 
 GetPolicyOutcomeCallable ACMPCAClient::GetPolicyCallable(const GetPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPolicy, request, m_executor.get());
 }
 
 void ACMPCAClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPolicy, request, handler, context, m_executor.get());
 }
 
 ImportCertificateAuthorityCertificateOutcome ACMPCAClient::ImportCertificateAuthorityCertificate(const ImportCertificateAuthorityCertificateRequest& request) const
@@ -470,18 +399,12 @@ ImportCertificateAuthorityCertificateOutcome ACMPCAClient::ImportCertificateAuth
 
 ImportCertificateAuthorityCertificateOutcomeCallable ACMPCAClient::ImportCertificateAuthorityCertificateCallable(const ImportCertificateAuthorityCertificateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportCertificateAuthorityCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportCertificateAuthorityCertificate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportCertificateAuthorityCertificate, request, m_executor.get());
 }
 
 void ACMPCAClient::ImportCertificateAuthorityCertificateAsync(const ImportCertificateAuthorityCertificateRequest& request, const ImportCertificateAuthorityCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportCertificateAuthorityCertificate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportCertificateAuthorityCertificate, request, handler, context, m_executor.get());
 }
 
 IssueCertificateOutcome ACMPCAClient::IssueCertificate(const IssueCertificateRequest& request) const
@@ -494,18 +417,12 @@ IssueCertificateOutcome ACMPCAClient::IssueCertificate(const IssueCertificateReq
 
 IssueCertificateOutcomeCallable ACMPCAClient::IssueCertificateCallable(const IssueCertificateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< IssueCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->IssueCertificate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(IssueCertificate, request, m_executor.get());
 }
 
 void ACMPCAClient::IssueCertificateAsync(const IssueCertificateRequest& request, const IssueCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, IssueCertificate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(IssueCertificate, request, handler, context, m_executor.get());
 }
 
 ListCertificateAuthoritiesOutcome ACMPCAClient::ListCertificateAuthorities(const ListCertificateAuthoritiesRequest& request) const
@@ -518,18 +435,12 @@ ListCertificateAuthoritiesOutcome ACMPCAClient::ListCertificateAuthorities(const
 
 ListCertificateAuthoritiesOutcomeCallable ACMPCAClient::ListCertificateAuthoritiesCallable(const ListCertificateAuthoritiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCertificateAuthoritiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCertificateAuthorities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCertificateAuthorities, request, m_executor.get());
 }
 
 void ACMPCAClient::ListCertificateAuthoritiesAsync(const ListCertificateAuthoritiesRequest& request, const ListCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCertificateAuthorities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCertificateAuthorities, request, handler, context, m_executor.get());
 }
 
 ListPermissionsOutcome ACMPCAClient::ListPermissions(const ListPermissionsRequest& request) const
@@ -542,18 +453,12 @@ ListPermissionsOutcome ACMPCAClient::ListPermissions(const ListPermissionsReques
 
 ListPermissionsOutcomeCallable ACMPCAClient::ListPermissionsCallable(const ListPermissionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPermissions, request, m_executor.get());
 }
 
 void ACMPCAClient::ListPermissionsAsync(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPermissions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPermissions, request, handler, context, m_executor.get());
 }
 
 ListTagsOutcome ACMPCAClient::ListTags(const ListTagsRequest& request) const
@@ -566,18 +471,12 @@ ListTagsOutcome ACMPCAClient::ListTags(const ListTagsRequest& request) const
 
 ListTagsOutcomeCallable ACMPCAClient::ListTagsCallable(const ListTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTags, request, m_executor.get());
 }
 
 void ACMPCAClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTags, request, handler, context, m_executor.get());
 }
 
 PutPolicyOutcome ACMPCAClient::PutPolicy(const PutPolicyRequest& request) const
@@ -590,18 +489,12 @@ PutPolicyOutcome ACMPCAClient::PutPolicy(const PutPolicyRequest& request) const
 
 PutPolicyOutcomeCallable ACMPCAClient::PutPolicyCallable(const PutPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutPolicy, request, m_executor.get());
 }
 
 void ACMPCAClient::PutPolicyAsync(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutPolicy, request, handler, context, m_executor.get());
 }
 
 RestoreCertificateAuthorityOutcome ACMPCAClient::RestoreCertificateAuthority(const RestoreCertificateAuthorityRequest& request) const
@@ -614,18 +507,12 @@ RestoreCertificateAuthorityOutcome ACMPCAClient::RestoreCertificateAuthority(con
 
 RestoreCertificateAuthorityOutcomeCallable ACMPCAClient::RestoreCertificateAuthorityCallable(const RestoreCertificateAuthorityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RestoreCertificateAuthorityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreCertificateAuthority(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RestoreCertificateAuthority, request, m_executor.get());
 }
 
 void ACMPCAClient::RestoreCertificateAuthorityAsync(const RestoreCertificateAuthorityRequest& request, const RestoreCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RestoreCertificateAuthority(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RestoreCertificateAuthority, request, handler, context, m_executor.get());
 }
 
 RevokeCertificateOutcome ACMPCAClient::RevokeCertificate(const RevokeCertificateRequest& request) const
@@ -638,18 +525,12 @@ RevokeCertificateOutcome ACMPCAClient::RevokeCertificate(const RevokeCertificate
 
 RevokeCertificateOutcomeCallable ACMPCAClient::RevokeCertificateCallable(const RevokeCertificateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RevokeCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeCertificate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RevokeCertificate, request, m_executor.get());
 }
 
 void ACMPCAClient::RevokeCertificateAsync(const RevokeCertificateRequest& request, const RevokeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RevokeCertificate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RevokeCertificate, request, handler, context, m_executor.get());
 }
 
 TagCertificateAuthorityOutcome ACMPCAClient::TagCertificateAuthority(const TagCertificateAuthorityRequest& request) const
@@ -662,18 +543,12 @@ TagCertificateAuthorityOutcome ACMPCAClient::TagCertificateAuthority(const TagCe
 
 TagCertificateAuthorityOutcomeCallable ACMPCAClient::TagCertificateAuthorityCallable(const TagCertificateAuthorityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagCertificateAuthorityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagCertificateAuthority(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagCertificateAuthority, request, m_executor.get());
 }
 
 void ACMPCAClient::TagCertificateAuthorityAsync(const TagCertificateAuthorityRequest& request, const TagCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagCertificateAuthority(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagCertificateAuthority, request, handler, context, m_executor.get());
 }
 
 UntagCertificateAuthorityOutcome ACMPCAClient::UntagCertificateAuthority(const UntagCertificateAuthorityRequest& request) const
@@ -686,18 +561,12 @@ UntagCertificateAuthorityOutcome ACMPCAClient::UntagCertificateAuthority(const U
 
 UntagCertificateAuthorityOutcomeCallable ACMPCAClient::UntagCertificateAuthorityCallable(const UntagCertificateAuthorityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagCertificateAuthorityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagCertificateAuthority(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagCertificateAuthority, request, m_executor.get());
 }
 
 void ACMPCAClient::UntagCertificateAuthorityAsync(const UntagCertificateAuthorityRequest& request, const UntagCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagCertificateAuthority(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagCertificateAuthority, request, handler, context, m_executor.get());
 }
 
 UpdateCertificateAuthorityOutcome ACMPCAClient::UpdateCertificateAuthority(const UpdateCertificateAuthorityRequest& request) const
@@ -710,17 +579,11 @@ UpdateCertificateAuthorityOutcome ACMPCAClient::UpdateCertificateAuthority(const
 
 UpdateCertificateAuthorityOutcomeCallable ACMPCAClient::UpdateCertificateAuthorityCallable(const UpdateCertificateAuthorityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCertificateAuthorityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCertificateAuthority(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCertificateAuthority, request, m_executor.get());
 }
 
 void ACMPCAClient::UpdateCertificateAuthorityAsync(const UpdateCertificateAuthorityRequest& request, const UpdateCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCertificateAuthority(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCertificateAuthority, request, handler, context, m_executor.get());
 }
 

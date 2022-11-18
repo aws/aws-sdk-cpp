@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -203,18 +204,12 @@ BatchAssociateScramSecretOutcome KafkaClient::BatchAssociateScramSecret(const Ba
 
 BatchAssociateScramSecretOutcomeCallable KafkaClient::BatchAssociateScramSecretCallable(const BatchAssociateScramSecretRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchAssociateScramSecretOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchAssociateScramSecret(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchAssociateScramSecret, request, m_executor.get());
 }
 
 void KafkaClient::BatchAssociateScramSecretAsync(const BatchAssociateScramSecretRequest& request, const BatchAssociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchAssociateScramSecret(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchAssociateScramSecret, request, handler, context, m_executor.get());
 }
 
 CreateClusterOutcome KafkaClient::CreateCluster(const CreateClusterRequest& request) const
@@ -228,18 +223,12 @@ CreateClusterOutcome KafkaClient::CreateCluster(const CreateClusterRequest& requ
 
 CreateClusterOutcomeCallable KafkaClient::CreateClusterCallable(const CreateClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCluster(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCluster, request, m_executor.get());
 }
 
 void KafkaClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCluster(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCluster, request, handler, context, m_executor.get());
 }
 
 CreateClusterV2Outcome KafkaClient::CreateClusterV2(const CreateClusterV2Request& request) const
@@ -253,18 +242,12 @@ CreateClusterV2Outcome KafkaClient::CreateClusterV2(const CreateClusterV2Request
 
 CreateClusterV2OutcomeCallable KafkaClient::CreateClusterV2Callable(const CreateClusterV2Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateClusterV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateClusterV2(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateClusterV2, request, m_executor.get());
 }
 
 void KafkaClient::CreateClusterV2Async(const CreateClusterV2Request& request, const CreateClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateClusterV2(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateClusterV2, request, handler, context, m_executor.get());
 }
 
 CreateConfigurationOutcome KafkaClient::CreateConfiguration(const CreateConfigurationRequest& request) const
@@ -278,18 +261,12 @@ CreateConfigurationOutcome KafkaClient::CreateConfiguration(const CreateConfigur
 
 CreateConfigurationOutcomeCallable KafkaClient::CreateConfigurationCallable(const CreateConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateConfiguration, request, m_executor.get());
 }
 
 void KafkaClient::CreateConfigurationAsync(const CreateConfigurationRequest& request, const CreateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteClusterOutcome KafkaClient::DeleteCluster(const DeleteClusterRequest& request) const
@@ -309,18 +286,12 @@ DeleteClusterOutcome KafkaClient::DeleteCluster(const DeleteClusterRequest& requ
 
 DeleteClusterOutcomeCallable KafkaClient::DeleteClusterCallable(const DeleteClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCluster(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCluster, request, m_executor.get());
 }
 
 void KafkaClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCluster(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCluster, request, handler, context, m_executor.get());
 }
 
 DeleteConfigurationOutcome KafkaClient::DeleteConfiguration(const DeleteConfigurationRequest& request) const
@@ -340,18 +311,12 @@ DeleteConfigurationOutcome KafkaClient::DeleteConfiguration(const DeleteConfigur
 
 DeleteConfigurationOutcomeCallable KafkaClient::DeleteConfigurationCallable(const DeleteConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteConfiguration, request, m_executor.get());
 }
 
 void KafkaClient::DeleteConfigurationAsync(const DeleteConfigurationRequest& request, const DeleteConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteConfiguration, request, handler, context, m_executor.get());
 }
 
 DescribeClusterOutcome KafkaClient::DescribeCluster(const DescribeClusterRequest& request) const
@@ -371,18 +336,12 @@ DescribeClusterOutcome KafkaClient::DescribeCluster(const DescribeClusterRequest
 
 DescribeClusterOutcomeCallable KafkaClient::DescribeClusterCallable(const DescribeClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCluster(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCluster, request, m_executor.get());
 }
 
 void KafkaClient::DescribeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCluster(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCluster, request, handler, context, m_executor.get());
 }
 
 DescribeClusterV2Outcome KafkaClient::DescribeClusterV2(const DescribeClusterV2Request& request) const
@@ -402,18 +361,12 @@ DescribeClusterV2Outcome KafkaClient::DescribeClusterV2(const DescribeClusterV2R
 
 DescribeClusterV2OutcomeCallable KafkaClient::DescribeClusterV2Callable(const DescribeClusterV2Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeClusterV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeClusterV2(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeClusterV2, request, m_executor.get());
 }
 
 void KafkaClient::DescribeClusterV2Async(const DescribeClusterV2Request& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeClusterV2(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeClusterV2, request, handler, context, m_executor.get());
 }
 
 DescribeClusterOperationOutcome KafkaClient::DescribeClusterOperation(const DescribeClusterOperationRequest& request) const
@@ -433,18 +386,12 @@ DescribeClusterOperationOutcome KafkaClient::DescribeClusterOperation(const Desc
 
 DescribeClusterOperationOutcomeCallable KafkaClient::DescribeClusterOperationCallable(const DescribeClusterOperationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeClusterOperationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeClusterOperation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeClusterOperation, request, m_executor.get());
 }
 
 void KafkaClient::DescribeClusterOperationAsync(const DescribeClusterOperationRequest& request, const DescribeClusterOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeClusterOperation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeClusterOperation, request, handler, context, m_executor.get());
 }
 
 DescribeConfigurationOutcome KafkaClient::DescribeConfiguration(const DescribeConfigurationRequest& request) const
@@ -464,18 +411,12 @@ DescribeConfigurationOutcome KafkaClient::DescribeConfiguration(const DescribeCo
 
 DescribeConfigurationOutcomeCallable KafkaClient::DescribeConfigurationCallable(const DescribeConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeConfiguration, request, m_executor.get());
 }
 
 void KafkaClient::DescribeConfigurationAsync(const DescribeConfigurationRequest& request, const DescribeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeConfiguration, request, handler, context, m_executor.get());
 }
 
 DescribeConfigurationRevisionOutcome KafkaClient::DescribeConfigurationRevision(const DescribeConfigurationRevisionRequest& request) const
@@ -502,18 +443,12 @@ DescribeConfigurationRevisionOutcome KafkaClient::DescribeConfigurationRevision(
 
 DescribeConfigurationRevisionOutcomeCallable KafkaClient::DescribeConfigurationRevisionCallable(const DescribeConfigurationRevisionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeConfigurationRevisionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConfigurationRevision(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeConfigurationRevision, request, m_executor.get());
 }
 
 void KafkaClient::DescribeConfigurationRevisionAsync(const DescribeConfigurationRevisionRequest& request, const DescribeConfigurationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeConfigurationRevision(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeConfigurationRevision, request, handler, context, m_executor.get());
 }
 
 BatchDisassociateScramSecretOutcome KafkaClient::BatchDisassociateScramSecret(const BatchDisassociateScramSecretRequest& request) const
@@ -534,18 +469,12 @@ BatchDisassociateScramSecretOutcome KafkaClient::BatchDisassociateScramSecret(co
 
 BatchDisassociateScramSecretOutcomeCallable KafkaClient::BatchDisassociateScramSecretCallable(const BatchDisassociateScramSecretRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDisassociateScramSecretOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDisassociateScramSecret(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDisassociateScramSecret, request, m_executor.get());
 }
 
 void KafkaClient::BatchDisassociateScramSecretAsync(const BatchDisassociateScramSecretRequest& request, const BatchDisassociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDisassociateScramSecret(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDisassociateScramSecret, request, handler, context, m_executor.get());
 }
 
 GetBootstrapBrokersOutcome KafkaClient::GetBootstrapBrokers(const GetBootstrapBrokersRequest& request) const
@@ -566,18 +495,12 @@ GetBootstrapBrokersOutcome KafkaClient::GetBootstrapBrokers(const GetBootstrapBr
 
 GetBootstrapBrokersOutcomeCallable KafkaClient::GetBootstrapBrokersCallable(const GetBootstrapBrokersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBootstrapBrokersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBootstrapBrokers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBootstrapBrokers, request, m_executor.get());
 }
 
 void KafkaClient::GetBootstrapBrokersAsync(const GetBootstrapBrokersRequest& request, const GetBootstrapBrokersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBootstrapBrokers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBootstrapBrokers, request, handler, context, m_executor.get());
 }
 
 GetCompatibleKafkaVersionsOutcome KafkaClient::GetCompatibleKafkaVersions(const GetCompatibleKafkaVersionsRequest& request) const
@@ -591,18 +514,12 @@ GetCompatibleKafkaVersionsOutcome KafkaClient::GetCompatibleKafkaVersions(const 
 
 GetCompatibleKafkaVersionsOutcomeCallable KafkaClient::GetCompatibleKafkaVersionsCallable(const GetCompatibleKafkaVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCompatibleKafkaVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCompatibleKafkaVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCompatibleKafkaVersions, request, m_executor.get());
 }
 
 void KafkaClient::GetCompatibleKafkaVersionsAsync(const GetCompatibleKafkaVersionsRequest& request, const GetCompatibleKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCompatibleKafkaVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCompatibleKafkaVersions, request, handler, context, m_executor.get());
 }
 
 ListClusterOperationsOutcome KafkaClient::ListClusterOperations(const ListClusterOperationsRequest& request) const
@@ -623,18 +540,12 @@ ListClusterOperationsOutcome KafkaClient::ListClusterOperations(const ListCluste
 
 ListClusterOperationsOutcomeCallable KafkaClient::ListClusterOperationsCallable(const ListClusterOperationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListClusterOperationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListClusterOperations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListClusterOperations, request, m_executor.get());
 }
 
 void KafkaClient::ListClusterOperationsAsync(const ListClusterOperationsRequest& request, const ListClusterOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListClusterOperations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListClusterOperations, request, handler, context, m_executor.get());
 }
 
 ListClustersOutcome KafkaClient::ListClusters(const ListClustersRequest& request) const
@@ -648,18 +559,12 @@ ListClustersOutcome KafkaClient::ListClusters(const ListClustersRequest& request
 
 ListClustersOutcomeCallable KafkaClient::ListClustersCallable(const ListClustersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListClustersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListClusters(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListClusters, request, m_executor.get());
 }
 
 void KafkaClient::ListClustersAsync(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListClusters(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListClusters, request, handler, context, m_executor.get());
 }
 
 ListClustersV2Outcome KafkaClient::ListClustersV2(const ListClustersV2Request& request) const
@@ -673,18 +578,12 @@ ListClustersV2Outcome KafkaClient::ListClustersV2(const ListClustersV2Request& r
 
 ListClustersV2OutcomeCallable KafkaClient::ListClustersV2Callable(const ListClustersV2Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListClustersV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListClustersV2(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListClustersV2, request, m_executor.get());
 }
 
 void KafkaClient::ListClustersV2Async(const ListClustersV2Request& request, const ListClustersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListClustersV2(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListClustersV2, request, handler, context, m_executor.get());
 }
 
 ListConfigurationRevisionsOutcome KafkaClient::ListConfigurationRevisions(const ListConfigurationRevisionsRequest& request) const
@@ -705,18 +604,12 @@ ListConfigurationRevisionsOutcome KafkaClient::ListConfigurationRevisions(const 
 
 ListConfigurationRevisionsOutcomeCallable KafkaClient::ListConfigurationRevisionsCallable(const ListConfigurationRevisionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConfigurationRevisionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConfigurationRevisions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListConfigurationRevisions, request, m_executor.get());
 }
 
 void KafkaClient::ListConfigurationRevisionsAsync(const ListConfigurationRevisionsRequest& request, const ListConfigurationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListConfigurationRevisions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListConfigurationRevisions, request, handler, context, m_executor.get());
 }
 
 ListConfigurationsOutcome KafkaClient::ListConfigurations(const ListConfigurationsRequest& request) const
@@ -730,18 +623,12 @@ ListConfigurationsOutcome KafkaClient::ListConfigurations(const ListConfiguratio
 
 ListConfigurationsOutcomeCallable KafkaClient::ListConfigurationsCallable(const ListConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListConfigurations, request, m_executor.get());
 }
 
 void KafkaClient::ListConfigurationsAsync(const ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListConfigurations, request, handler, context, m_executor.get());
 }
 
 ListKafkaVersionsOutcome KafkaClient::ListKafkaVersions(const ListKafkaVersionsRequest& request) const
@@ -755,18 +642,12 @@ ListKafkaVersionsOutcome KafkaClient::ListKafkaVersions(const ListKafkaVersionsR
 
 ListKafkaVersionsOutcomeCallable KafkaClient::ListKafkaVersionsCallable(const ListKafkaVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListKafkaVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListKafkaVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListKafkaVersions, request, m_executor.get());
 }
 
 void KafkaClient::ListKafkaVersionsAsync(const ListKafkaVersionsRequest& request, const ListKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListKafkaVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListKafkaVersions, request, handler, context, m_executor.get());
 }
 
 ListNodesOutcome KafkaClient::ListNodes(const ListNodesRequest& request) const
@@ -787,18 +668,12 @@ ListNodesOutcome KafkaClient::ListNodes(const ListNodesRequest& request) const
 
 ListNodesOutcomeCallable KafkaClient::ListNodesCallable(const ListNodesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNodesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNodes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNodes, request, m_executor.get());
 }
 
 void KafkaClient::ListNodesAsync(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNodes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNodes, request, handler, context, m_executor.get());
 }
 
 ListScramSecretsOutcome KafkaClient::ListScramSecrets(const ListScramSecretsRequest& request) const
@@ -819,18 +694,12 @@ ListScramSecretsOutcome KafkaClient::ListScramSecrets(const ListScramSecretsRequ
 
 ListScramSecretsOutcomeCallable KafkaClient::ListScramSecretsCallable(const ListScramSecretsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListScramSecretsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListScramSecrets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListScramSecrets, request, m_executor.get());
 }
 
 void KafkaClient::ListScramSecretsAsync(const ListScramSecretsRequest& request, const ListScramSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListScramSecrets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListScramSecrets, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome KafkaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -850,18 +719,12 @@ ListTagsForResourceOutcome KafkaClient::ListTagsForResource(const ListTagsForRes
 
 ListTagsForResourceOutcomeCallable KafkaClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void KafkaClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 RebootBrokerOutcome KafkaClient::RebootBroker(const RebootBrokerRequest& request) const
@@ -882,18 +745,12 @@ RebootBrokerOutcome KafkaClient::RebootBroker(const RebootBrokerRequest& request
 
 RebootBrokerOutcomeCallable KafkaClient::RebootBrokerCallable(const RebootBrokerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RebootBrokerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RebootBroker(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RebootBroker, request, m_executor.get());
 }
 
 void KafkaClient::RebootBrokerAsync(const RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RebootBroker(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RebootBroker, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome KafkaClient::TagResource(const TagResourceRequest& request) const
@@ -913,18 +770,12 @@ TagResourceOutcome KafkaClient::TagResource(const TagResourceRequest& request) c
 
 TagResourceOutcomeCallable KafkaClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void KafkaClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome KafkaClient::UntagResource(const UntagResourceRequest& request) const
@@ -949,18 +800,12 @@ UntagResourceOutcome KafkaClient::UntagResource(const UntagResourceRequest& requ
 
 UntagResourceOutcomeCallable KafkaClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void KafkaClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateBrokerCountOutcome KafkaClient::UpdateBrokerCount(const UpdateBrokerCountRequest& request) const
@@ -981,18 +826,12 @@ UpdateBrokerCountOutcome KafkaClient::UpdateBrokerCount(const UpdateBrokerCountR
 
 UpdateBrokerCountOutcomeCallable KafkaClient::UpdateBrokerCountCallable(const UpdateBrokerCountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBrokerCountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBrokerCount(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBrokerCount, request, m_executor.get());
 }
 
 void KafkaClient::UpdateBrokerCountAsync(const UpdateBrokerCountRequest& request, const UpdateBrokerCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBrokerCount(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBrokerCount, request, handler, context, m_executor.get());
 }
 
 UpdateBrokerTypeOutcome KafkaClient::UpdateBrokerType(const UpdateBrokerTypeRequest& request) const
@@ -1013,18 +852,12 @@ UpdateBrokerTypeOutcome KafkaClient::UpdateBrokerType(const UpdateBrokerTypeRequ
 
 UpdateBrokerTypeOutcomeCallable KafkaClient::UpdateBrokerTypeCallable(const UpdateBrokerTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBrokerTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBrokerType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBrokerType, request, m_executor.get());
 }
 
 void KafkaClient::UpdateBrokerTypeAsync(const UpdateBrokerTypeRequest& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBrokerType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBrokerType, request, handler, context, m_executor.get());
 }
 
 UpdateBrokerStorageOutcome KafkaClient::UpdateBrokerStorage(const UpdateBrokerStorageRequest& request) const
@@ -1045,18 +878,12 @@ UpdateBrokerStorageOutcome KafkaClient::UpdateBrokerStorage(const UpdateBrokerSt
 
 UpdateBrokerStorageOutcomeCallable KafkaClient::UpdateBrokerStorageCallable(const UpdateBrokerStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBrokerStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBrokerStorage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBrokerStorage, request, m_executor.get());
 }
 
 void KafkaClient::UpdateBrokerStorageAsync(const UpdateBrokerStorageRequest& request, const UpdateBrokerStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBrokerStorage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBrokerStorage, request, handler, context, m_executor.get());
 }
 
 UpdateConfigurationOutcome KafkaClient::UpdateConfiguration(const UpdateConfigurationRequest& request) const
@@ -1076,18 +903,12 @@ UpdateConfigurationOutcome KafkaClient::UpdateConfiguration(const UpdateConfigur
 
 UpdateConfigurationOutcomeCallable KafkaClient::UpdateConfigurationCallable(const UpdateConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateConfiguration, request, m_executor.get());
 }
 
 void KafkaClient::UpdateConfigurationAsync(const UpdateConfigurationRequest& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateConnectivityOutcome KafkaClient::UpdateConnectivity(const UpdateConnectivityRequest& request) const
@@ -1108,18 +929,12 @@ UpdateConnectivityOutcome KafkaClient::UpdateConnectivity(const UpdateConnectivi
 
 UpdateConnectivityOutcomeCallable KafkaClient::UpdateConnectivityCallable(const UpdateConnectivityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectivityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnectivity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateConnectivity, request, m_executor.get());
 }
 
 void KafkaClient::UpdateConnectivityAsync(const UpdateConnectivityRequest& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateConnectivity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateConnectivity, request, handler, context, m_executor.get());
 }
 
 UpdateClusterConfigurationOutcome KafkaClient::UpdateClusterConfiguration(const UpdateClusterConfigurationRequest& request) const
@@ -1140,18 +955,12 @@ UpdateClusterConfigurationOutcome KafkaClient::UpdateClusterConfiguration(const 
 
 UpdateClusterConfigurationOutcomeCallable KafkaClient::UpdateClusterConfigurationCallable(const UpdateClusterConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateClusterConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateClusterConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateClusterConfiguration, request, m_executor.get());
 }
 
 void KafkaClient::UpdateClusterConfigurationAsync(const UpdateClusterConfigurationRequest& request, const UpdateClusterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateClusterConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateClusterConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateClusterKafkaVersionOutcome KafkaClient::UpdateClusterKafkaVersion(const UpdateClusterKafkaVersionRequest& request) const
@@ -1172,18 +981,12 @@ UpdateClusterKafkaVersionOutcome KafkaClient::UpdateClusterKafkaVersion(const Up
 
 UpdateClusterKafkaVersionOutcomeCallable KafkaClient::UpdateClusterKafkaVersionCallable(const UpdateClusterKafkaVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateClusterKafkaVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateClusterKafkaVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateClusterKafkaVersion, request, m_executor.get());
 }
 
 void KafkaClient::UpdateClusterKafkaVersionAsync(const UpdateClusterKafkaVersionRequest& request, const UpdateClusterKafkaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateClusterKafkaVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateClusterKafkaVersion, request, handler, context, m_executor.get());
 }
 
 UpdateMonitoringOutcome KafkaClient::UpdateMonitoring(const UpdateMonitoringRequest& request) const
@@ -1204,18 +1007,12 @@ UpdateMonitoringOutcome KafkaClient::UpdateMonitoring(const UpdateMonitoringRequ
 
 UpdateMonitoringOutcomeCallable KafkaClient::UpdateMonitoringCallable(const UpdateMonitoringRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMonitoringOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMonitoring(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateMonitoring, request, m_executor.get());
 }
 
 void KafkaClient::UpdateMonitoringAsync(const UpdateMonitoringRequest& request, const UpdateMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateMonitoring(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateMonitoring, request, handler, context, m_executor.get());
 }
 
 UpdateSecurityOutcome KafkaClient::UpdateSecurity(const UpdateSecurityRequest& request) const
@@ -1236,18 +1033,12 @@ UpdateSecurityOutcome KafkaClient::UpdateSecurity(const UpdateSecurityRequest& r
 
 UpdateSecurityOutcomeCallable KafkaClient::UpdateSecurityCallable(const UpdateSecurityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSecurityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSecurity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSecurity, request, m_executor.get());
 }
 
 void KafkaClient::UpdateSecurityAsync(const UpdateSecurityRequest& request, const UpdateSecurityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSecurity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSecurity, request, handler, context, m_executor.get());
 }
 
 UpdateStorageOutcome KafkaClient::UpdateStorage(const UpdateStorageRequest& request) const
@@ -1268,17 +1059,11 @@ UpdateStorageOutcome KafkaClient::UpdateStorage(const UpdateStorageRequest& requ
 
 UpdateStorageOutcomeCallable KafkaClient::UpdateStorageCallable(const UpdateStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStorage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateStorage, request, m_executor.get());
 }
 
 void KafkaClient::UpdateStorageAsync(const UpdateStorageRequest& request, const UpdateStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateStorage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateStorage, request, handler, context, m_executor.get());
 }
 

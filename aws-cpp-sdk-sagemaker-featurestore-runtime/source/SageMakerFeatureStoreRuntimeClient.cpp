@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -164,18 +165,12 @@ BatchGetRecordOutcome SageMakerFeatureStoreRuntimeClient::BatchGetRecord(const B
 
 BatchGetRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::BatchGetRecordCallable(const BatchGetRecordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetRecord(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetRecord, request, m_executor.get());
 }
 
 void SageMakerFeatureStoreRuntimeClient::BatchGetRecordAsync(const BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetRecord(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetRecord, request, handler, context, m_executor.get());
 }
 
 DeleteRecordOutcome SageMakerFeatureStoreRuntimeClient::DeleteRecord(const DeleteRecordRequest& request) const
@@ -205,18 +200,12 @@ DeleteRecordOutcome SageMakerFeatureStoreRuntimeClient::DeleteRecord(const Delet
 
 DeleteRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::DeleteRecordCallable(const DeleteRecordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecord(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRecord, request, m_executor.get());
 }
 
 void SageMakerFeatureStoreRuntimeClient::DeleteRecordAsync(const DeleteRecordRequest& request, const DeleteRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRecord(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRecord, request, handler, context, m_executor.get());
 }
 
 GetRecordOutcome SageMakerFeatureStoreRuntimeClient::GetRecord(const GetRecordRequest& request) const
@@ -241,18 +230,12 @@ GetRecordOutcome SageMakerFeatureStoreRuntimeClient::GetRecord(const GetRecordRe
 
 GetRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::GetRecordCallable(const GetRecordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecord(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRecord, request, m_executor.get());
 }
 
 void SageMakerFeatureStoreRuntimeClient::GetRecordAsync(const GetRecordRequest& request, const GetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRecord(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRecord, request, handler, context, m_executor.get());
 }
 
 PutRecordOutcome SageMakerFeatureStoreRuntimeClient::PutRecord(const PutRecordRequest& request) const
@@ -272,17 +255,11 @@ PutRecordOutcome SageMakerFeatureStoreRuntimeClient::PutRecord(const PutRecordRe
 
 PutRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::PutRecordCallable(const PutRecordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRecord(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutRecord, request, m_executor.get());
 }
 
 void SageMakerFeatureStoreRuntimeClient::PutRecordAsync(const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutRecord(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutRecord, request, handler, context, m_executor.get());
 }
 

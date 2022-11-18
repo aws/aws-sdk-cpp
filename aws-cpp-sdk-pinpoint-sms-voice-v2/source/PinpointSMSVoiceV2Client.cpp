@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -202,18 +203,12 @@ AssociateOriginationIdentityOutcome PinpointSMSVoiceV2Client::AssociateOriginati
 
 AssociateOriginationIdentityOutcomeCallable PinpointSMSVoiceV2Client::AssociateOriginationIdentityCallable(const AssociateOriginationIdentityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateOriginationIdentityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateOriginationIdentity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateOriginationIdentity, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::AssociateOriginationIdentityAsync(const AssociateOriginationIdentityRequest& request, const AssociateOriginationIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateOriginationIdentity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateOriginationIdentity, request, handler, context, m_executor.get());
 }
 
 CreateConfigurationSetOutcome PinpointSMSVoiceV2Client::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
@@ -226,18 +221,12 @@ CreateConfigurationSetOutcome PinpointSMSVoiceV2Client::CreateConfigurationSet(c
 
 CreateConfigurationSetOutcomeCallable PinpointSMSVoiceV2Client::CreateConfigurationSetCallable(const CreateConfigurationSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConfigurationSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConfigurationSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateConfigurationSet, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::CreateConfigurationSetAsync(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateConfigurationSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateConfigurationSet, request, handler, context, m_executor.get());
 }
 
 CreateEventDestinationOutcome PinpointSMSVoiceV2Client::CreateEventDestination(const CreateEventDestinationRequest& request) const
@@ -250,18 +239,12 @@ CreateEventDestinationOutcome PinpointSMSVoiceV2Client::CreateEventDestination(c
 
 CreateEventDestinationOutcomeCallable PinpointSMSVoiceV2Client::CreateEventDestinationCallable(const CreateEventDestinationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEventDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEventDestination(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEventDestination, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::CreateEventDestinationAsync(const CreateEventDestinationRequest& request, const CreateEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEventDestination(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEventDestination, request, handler, context, m_executor.get());
 }
 
 CreateOptOutListOutcome PinpointSMSVoiceV2Client::CreateOptOutList(const CreateOptOutListRequest& request) const
@@ -274,18 +257,12 @@ CreateOptOutListOutcome PinpointSMSVoiceV2Client::CreateOptOutList(const CreateO
 
 CreateOptOutListOutcomeCallable PinpointSMSVoiceV2Client::CreateOptOutListCallable(const CreateOptOutListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateOptOutListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateOptOutList(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateOptOutList, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::CreateOptOutListAsync(const CreateOptOutListRequest& request, const CreateOptOutListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateOptOutList(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateOptOutList, request, handler, context, m_executor.get());
 }
 
 CreatePoolOutcome PinpointSMSVoiceV2Client::CreatePool(const CreatePoolRequest& request) const
@@ -298,18 +275,12 @@ CreatePoolOutcome PinpointSMSVoiceV2Client::CreatePool(const CreatePoolRequest& 
 
 CreatePoolOutcomeCallable PinpointSMSVoiceV2Client::CreatePoolCallable(const CreatePoolRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePool(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePool, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::CreatePoolAsync(const CreatePoolRequest& request, const CreatePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePool(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePool, request, handler, context, m_executor.get());
 }
 
 DeleteConfigurationSetOutcome PinpointSMSVoiceV2Client::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
@@ -322,18 +293,12 @@ DeleteConfigurationSetOutcome PinpointSMSVoiceV2Client::DeleteConfigurationSet(c
 
 DeleteConfigurationSetOutcomeCallable PinpointSMSVoiceV2Client::DeleteConfigurationSetCallable(const DeleteConfigurationSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigurationSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConfigurationSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteConfigurationSet, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DeleteConfigurationSetAsync(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteConfigurationSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteConfigurationSet, request, handler, context, m_executor.get());
 }
 
 DeleteDefaultMessageTypeOutcome PinpointSMSVoiceV2Client::DeleteDefaultMessageType(const DeleteDefaultMessageTypeRequest& request) const
@@ -346,18 +311,12 @@ DeleteDefaultMessageTypeOutcome PinpointSMSVoiceV2Client::DeleteDefaultMessageTy
 
 DeleteDefaultMessageTypeOutcomeCallable PinpointSMSVoiceV2Client::DeleteDefaultMessageTypeCallable(const DeleteDefaultMessageTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDefaultMessageTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDefaultMessageType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDefaultMessageType, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DeleteDefaultMessageTypeAsync(const DeleteDefaultMessageTypeRequest& request, const DeleteDefaultMessageTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDefaultMessageType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDefaultMessageType, request, handler, context, m_executor.get());
 }
 
 DeleteDefaultSenderIdOutcome PinpointSMSVoiceV2Client::DeleteDefaultSenderId(const DeleteDefaultSenderIdRequest& request) const
@@ -370,18 +329,12 @@ DeleteDefaultSenderIdOutcome PinpointSMSVoiceV2Client::DeleteDefaultSenderId(con
 
 DeleteDefaultSenderIdOutcomeCallable PinpointSMSVoiceV2Client::DeleteDefaultSenderIdCallable(const DeleteDefaultSenderIdRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDefaultSenderIdOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDefaultSenderId(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDefaultSenderId, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DeleteDefaultSenderIdAsync(const DeleteDefaultSenderIdRequest& request, const DeleteDefaultSenderIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDefaultSenderId(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDefaultSenderId, request, handler, context, m_executor.get());
 }
 
 DeleteEventDestinationOutcome PinpointSMSVoiceV2Client::DeleteEventDestination(const DeleteEventDestinationRequest& request) const
@@ -394,18 +347,12 @@ DeleteEventDestinationOutcome PinpointSMSVoiceV2Client::DeleteEventDestination(c
 
 DeleteEventDestinationOutcomeCallable PinpointSMSVoiceV2Client::DeleteEventDestinationCallable(const DeleteEventDestinationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEventDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEventDestination(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEventDestination, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DeleteEventDestinationAsync(const DeleteEventDestinationRequest& request, const DeleteEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEventDestination(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEventDestination, request, handler, context, m_executor.get());
 }
 
 DeleteKeywordOutcome PinpointSMSVoiceV2Client::DeleteKeyword(const DeleteKeywordRequest& request) const
@@ -418,18 +365,12 @@ DeleteKeywordOutcome PinpointSMSVoiceV2Client::DeleteKeyword(const DeleteKeyword
 
 DeleteKeywordOutcomeCallable PinpointSMSVoiceV2Client::DeleteKeywordCallable(const DeleteKeywordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteKeywordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteKeyword(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteKeyword, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DeleteKeywordAsync(const DeleteKeywordRequest& request, const DeleteKeywordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteKeyword(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteKeyword, request, handler, context, m_executor.get());
 }
 
 DeleteOptOutListOutcome PinpointSMSVoiceV2Client::DeleteOptOutList(const DeleteOptOutListRequest& request) const
@@ -442,18 +383,12 @@ DeleteOptOutListOutcome PinpointSMSVoiceV2Client::DeleteOptOutList(const DeleteO
 
 DeleteOptOutListOutcomeCallable PinpointSMSVoiceV2Client::DeleteOptOutListCallable(const DeleteOptOutListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteOptOutListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOptOutList(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteOptOutList, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DeleteOptOutListAsync(const DeleteOptOutListRequest& request, const DeleteOptOutListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteOptOutList(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteOptOutList, request, handler, context, m_executor.get());
 }
 
 DeleteOptedOutNumberOutcome PinpointSMSVoiceV2Client::DeleteOptedOutNumber(const DeleteOptedOutNumberRequest& request) const
@@ -466,18 +401,12 @@ DeleteOptedOutNumberOutcome PinpointSMSVoiceV2Client::DeleteOptedOutNumber(const
 
 DeleteOptedOutNumberOutcomeCallable PinpointSMSVoiceV2Client::DeleteOptedOutNumberCallable(const DeleteOptedOutNumberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteOptedOutNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOptedOutNumber(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteOptedOutNumber, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DeleteOptedOutNumberAsync(const DeleteOptedOutNumberRequest& request, const DeleteOptedOutNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteOptedOutNumber(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteOptedOutNumber, request, handler, context, m_executor.get());
 }
 
 DeletePoolOutcome PinpointSMSVoiceV2Client::DeletePool(const DeletePoolRequest& request) const
@@ -490,18 +419,12 @@ DeletePoolOutcome PinpointSMSVoiceV2Client::DeletePool(const DeletePoolRequest& 
 
 DeletePoolOutcomeCallable PinpointSMSVoiceV2Client::DeletePoolCallable(const DeletePoolRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePool(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePool, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DeletePoolAsync(const DeletePoolRequest& request, const DeletePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePool(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePool, request, handler, context, m_executor.get());
 }
 
 DeleteTextMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::DeleteTextMessageSpendLimitOverride(const DeleteTextMessageSpendLimitOverrideRequest& request) const
@@ -514,18 +437,12 @@ DeleteTextMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::DeleteTextM
 
 DeleteTextMessageSpendLimitOverrideOutcomeCallable PinpointSMSVoiceV2Client::DeleteTextMessageSpendLimitOverrideCallable(const DeleteTextMessageSpendLimitOverrideRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTextMessageSpendLimitOverrideOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTextMessageSpendLimitOverride(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTextMessageSpendLimitOverride, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DeleteTextMessageSpendLimitOverrideAsync(const DeleteTextMessageSpendLimitOverrideRequest& request, const DeleteTextMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTextMessageSpendLimitOverride(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTextMessageSpendLimitOverride, request, handler, context, m_executor.get());
 }
 
 DeleteVoiceMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::DeleteVoiceMessageSpendLimitOverride(const DeleteVoiceMessageSpendLimitOverrideRequest& request) const
@@ -538,18 +455,12 @@ DeleteVoiceMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::DeleteVoic
 
 DeleteVoiceMessageSpendLimitOverrideOutcomeCallable PinpointSMSVoiceV2Client::DeleteVoiceMessageSpendLimitOverrideCallable(const DeleteVoiceMessageSpendLimitOverrideRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteVoiceMessageSpendLimitOverrideOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVoiceMessageSpendLimitOverride(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteVoiceMessageSpendLimitOverride, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DeleteVoiceMessageSpendLimitOverrideAsync(const DeleteVoiceMessageSpendLimitOverrideRequest& request, const DeleteVoiceMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteVoiceMessageSpendLimitOverride(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteVoiceMessageSpendLimitOverride, request, handler, context, m_executor.get());
 }
 
 DescribeAccountAttributesOutcome PinpointSMSVoiceV2Client::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const
@@ -562,18 +473,12 @@ DescribeAccountAttributesOutcome PinpointSMSVoiceV2Client::DescribeAccountAttrib
 
 DescribeAccountAttributesOutcomeCallable PinpointSMSVoiceV2Client::DescribeAccountAttributesCallable(const DescribeAccountAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAccountAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccountAttributes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAccountAttributes, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAccountAttributes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAccountAttributes, request, handler, context, m_executor.get());
 }
 
 DescribeAccountLimitsOutcome PinpointSMSVoiceV2Client::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
@@ -586,18 +491,12 @@ DescribeAccountLimitsOutcome PinpointSMSVoiceV2Client::DescribeAccountLimits(con
 
 DescribeAccountLimitsOutcomeCallable PinpointSMSVoiceV2Client::DescribeAccountLimitsCallable(const DescribeAccountLimitsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAccountLimitsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccountLimits(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAccountLimits, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DescribeAccountLimitsAsync(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAccountLimits(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAccountLimits, request, handler, context, m_executor.get());
 }
 
 DescribeConfigurationSetsOutcome PinpointSMSVoiceV2Client::DescribeConfigurationSets(const DescribeConfigurationSetsRequest& request) const
@@ -610,18 +509,12 @@ DescribeConfigurationSetsOutcome PinpointSMSVoiceV2Client::DescribeConfiguration
 
 DescribeConfigurationSetsOutcomeCallable PinpointSMSVoiceV2Client::DescribeConfigurationSetsCallable(const DescribeConfigurationSetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeConfigurationSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConfigurationSets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeConfigurationSets, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DescribeConfigurationSetsAsync(const DescribeConfigurationSetsRequest& request, const DescribeConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeConfigurationSets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeConfigurationSets, request, handler, context, m_executor.get());
 }
 
 DescribeKeywordsOutcome PinpointSMSVoiceV2Client::DescribeKeywords(const DescribeKeywordsRequest& request) const
@@ -634,18 +527,12 @@ DescribeKeywordsOutcome PinpointSMSVoiceV2Client::DescribeKeywords(const Describ
 
 DescribeKeywordsOutcomeCallable PinpointSMSVoiceV2Client::DescribeKeywordsCallable(const DescribeKeywordsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeKeywordsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeKeywords(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeKeywords, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DescribeKeywordsAsync(const DescribeKeywordsRequest& request, const DescribeKeywordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeKeywords(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeKeywords, request, handler, context, m_executor.get());
 }
 
 DescribeOptOutListsOutcome PinpointSMSVoiceV2Client::DescribeOptOutLists(const DescribeOptOutListsRequest& request) const
@@ -658,18 +545,12 @@ DescribeOptOutListsOutcome PinpointSMSVoiceV2Client::DescribeOptOutLists(const D
 
 DescribeOptOutListsOutcomeCallable PinpointSMSVoiceV2Client::DescribeOptOutListsCallable(const DescribeOptOutListsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeOptOutListsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOptOutLists(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeOptOutLists, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DescribeOptOutListsAsync(const DescribeOptOutListsRequest& request, const DescribeOptOutListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeOptOutLists(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeOptOutLists, request, handler, context, m_executor.get());
 }
 
 DescribeOptedOutNumbersOutcome PinpointSMSVoiceV2Client::DescribeOptedOutNumbers(const DescribeOptedOutNumbersRequest& request) const
@@ -682,18 +563,12 @@ DescribeOptedOutNumbersOutcome PinpointSMSVoiceV2Client::DescribeOptedOutNumbers
 
 DescribeOptedOutNumbersOutcomeCallable PinpointSMSVoiceV2Client::DescribeOptedOutNumbersCallable(const DescribeOptedOutNumbersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeOptedOutNumbersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOptedOutNumbers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeOptedOutNumbers, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DescribeOptedOutNumbersAsync(const DescribeOptedOutNumbersRequest& request, const DescribeOptedOutNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeOptedOutNumbers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeOptedOutNumbers, request, handler, context, m_executor.get());
 }
 
 DescribePhoneNumbersOutcome PinpointSMSVoiceV2Client::DescribePhoneNumbers(const DescribePhoneNumbersRequest& request) const
@@ -706,18 +581,12 @@ DescribePhoneNumbersOutcome PinpointSMSVoiceV2Client::DescribePhoneNumbers(const
 
 DescribePhoneNumbersOutcomeCallable PinpointSMSVoiceV2Client::DescribePhoneNumbersCallable(const DescribePhoneNumbersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePhoneNumbersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePhoneNumbers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribePhoneNumbers, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DescribePhoneNumbersAsync(const DescribePhoneNumbersRequest& request, const DescribePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribePhoneNumbers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribePhoneNumbers, request, handler, context, m_executor.get());
 }
 
 DescribePoolsOutcome PinpointSMSVoiceV2Client::DescribePools(const DescribePoolsRequest& request) const
@@ -730,18 +599,12 @@ DescribePoolsOutcome PinpointSMSVoiceV2Client::DescribePools(const DescribePools
 
 DescribePoolsOutcomeCallable PinpointSMSVoiceV2Client::DescribePoolsCallable(const DescribePoolsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePoolsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePools(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribePools, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DescribePoolsAsync(const DescribePoolsRequest& request, const DescribePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribePools(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribePools, request, handler, context, m_executor.get());
 }
 
 DescribeSenderIdsOutcome PinpointSMSVoiceV2Client::DescribeSenderIds(const DescribeSenderIdsRequest& request) const
@@ -754,18 +617,12 @@ DescribeSenderIdsOutcome PinpointSMSVoiceV2Client::DescribeSenderIds(const Descr
 
 DescribeSenderIdsOutcomeCallable PinpointSMSVoiceV2Client::DescribeSenderIdsCallable(const DescribeSenderIdsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSenderIdsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSenderIds(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSenderIds, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DescribeSenderIdsAsync(const DescribeSenderIdsRequest& request, const DescribeSenderIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSenderIds(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSenderIds, request, handler, context, m_executor.get());
 }
 
 DescribeSpendLimitsOutcome PinpointSMSVoiceV2Client::DescribeSpendLimits(const DescribeSpendLimitsRequest& request) const
@@ -778,18 +635,12 @@ DescribeSpendLimitsOutcome PinpointSMSVoiceV2Client::DescribeSpendLimits(const D
 
 DescribeSpendLimitsOutcomeCallable PinpointSMSVoiceV2Client::DescribeSpendLimitsCallable(const DescribeSpendLimitsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSpendLimitsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSpendLimits(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSpendLimits, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DescribeSpendLimitsAsync(const DescribeSpendLimitsRequest& request, const DescribeSpendLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSpendLimits(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSpendLimits, request, handler, context, m_executor.get());
 }
 
 DisassociateOriginationIdentityOutcome PinpointSMSVoiceV2Client::DisassociateOriginationIdentity(const DisassociateOriginationIdentityRequest& request) const
@@ -802,18 +653,12 @@ DisassociateOriginationIdentityOutcome PinpointSMSVoiceV2Client::DisassociateOri
 
 DisassociateOriginationIdentityOutcomeCallable PinpointSMSVoiceV2Client::DisassociateOriginationIdentityCallable(const DisassociateOriginationIdentityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateOriginationIdentityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateOriginationIdentity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateOriginationIdentity, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::DisassociateOriginationIdentityAsync(const DisassociateOriginationIdentityRequest& request, const DisassociateOriginationIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateOriginationIdentity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateOriginationIdentity, request, handler, context, m_executor.get());
 }
 
 ListPoolOriginationIdentitiesOutcome PinpointSMSVoiceV2Client::ListPoolOriginationIdentities(const ListPoolOriginationIdentitiesRequest& request) const
@@ -826,18 +671,12 @@ ListPoolOriginationIdentitiesOutcome PinpointSMSVoiceV2Client::ListPoolOriginati
 
 ListPoolOriginationIdentitiesOutcomeCallable PinpointSMSVoiceV2Client::ListPoolOriginationIdentitiesCallable(const ListPoolOriginationIdentitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPoolOriginationIdentitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPoolOriginationIdentities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPoolOriginationIdentities, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::ListPoolOriginationIdentitiesAsync(const ListPoolOriginationIdentitiesRequest& request, const ListPoolOriginationIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPoolOriginationIdentities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPoolOriginationIdentities, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome PinpointSMSVoiceV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -850,18 +689,12 @@ ListTagsForResourceOutcome PinpointSMSVoiceV2Client::ListTagsForResource(const L
 
 ListTagsForResourceOutcomeCallable PinpointSMSVoiceV2Client::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutKeywordOutcome PinpointSMSVoiceV2Client::PutKeyword(const PutKeywordRequest& request) const
@@ -874,18 +707,12 @@ PutKeywordOutcome PinpointSMSVoiceV2Client::PutKeyword(const PutKeywordRequest& 
 
 PutKeywordOutcomeCallable PinpointSMSVoiceV2Client::PutKeywordCallable(const PutKeywordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutKeywordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutKeyword(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutKeyword, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::PutKeywordAsync(const PutKeywordRequest& request, const PutKeywordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutKeyword(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutKeyword, request, handler, context, m_executor.get());
 }
 
 PutOptedOutNumberOutcome PinpointSMSVoiceV2Client::PutOptedOutNumber(const PutOptedOutNumberRequest& request) const
@@ -898,18 +725,12 @@ PutOptedOutNumberOutcome PinpointSMSVoiceV2Client::PutOptedOutNumber(const PutOp
 
 PutOptedOutNumberOutcomeCallable PinpointSMSVoiceV2Client::PutOptedOutNumberCallable(const PutOptedOutNumberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutOptedOutNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutOptedOutNumber(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutOptedOutNumber, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::PutOptedOutNumberAsync(const PutOptedOutNumberRequest& request, const PutOptedOutNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutOptedOutNumber(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutOptedOutNumber, request, handler, context, m_executor.get());
 }
 
 ReleasePhoneNumberOutcome PinpointSMSVoiceV2Client::ReleasePhoneNumber(const ReleasePhoneNumberRequest& request) const
@@ -922,18 +743,12 @@ ReleasePhoneNumberOutcome PinpointSMSVoiceV2Client::ReleasePhoneNumber(const Rel
 
 ReleasePhoneNumberOutcomeCallable PinpointSMSVoiceV2Client::ReleasePhoneNumberCallable(const ReleasePhoneNumberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ReleasePhoneNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReleasePhoneNumber(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ReleasePhoneNumber, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::ReleasePhoneNumberAsync(const ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ReleasePhoneNumber(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ReleasePhoneNumber, request, handler, context, m_executor.get());
 }
 
 RequestPhoneNumberOutcome PinpointSMSVoiceV2Client::RequestPhoneNumber(const RequestPhoneNumberRequest& request) const
@@ -946,18 +761,12 @@ RequestPhoneNumberOutcome PinpointSMSVoiceV2Client::RequestPhoneNumber(const Req
 
 RequestPhoneNumberOutcomeCallable PinpointSMSVoiceV2Client::RequestPhoneNumberCallable(const RequestPhoneNumberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RequestPhoneNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RequestPhoneNumber(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RequestPhoneNumber, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::RequestPhoneNumberAsync(const RequestPhoneNumberRequest& request, const RequestPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RequestPhoneNumber(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RequestPhoneNumber, request, handler, context, m_executor.get());
 }
 
 SendTextMessageOutcome PinpointSMSVoiceV2Client::SendTextMessage(const SendTextMessageRequest& request) const
@@ -970,18 +779,12 @@ SendTextMessageOutcome PinpointSMSVoiceV2Client::SendTextMessage(const SendTextM
 
 SendTextMessageOutcomeCallable PinpointSMSVoiceV2Client::SendTextMessageCallable(const SendTextMessageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendTextMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendTextMessage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendTextMessage, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::SendTextMessageAsync(const SendTextMessageRequest& request, const SendTextMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendTextMessage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendTextMessage, request, handler, context, m_executor.get());
 }
 
 SendVoiceMessageOutcome PinpointSMSVoiceV2Client::SendVoiceMessage(const SendVoiceMessageRequest& request) const
@@ -994,18 +797,12 @@ SendVoiceMessageOutcome PinpointSMSVoiceV2Client::SendVoiceMessage(const SendVoi
 
 SendVoiceMessageOutcomeCallable PinpointSMSVoiceV2Client::SendVoiceMessageCallable(const SendVoiceMessageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendVoiceMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendVoiceMessage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendVoiceMessage, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::SendVoiceMessageAsync(const SendVoiceMessageRequest& request, const SendVoiceMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendVoiceMessage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendVoiceMessage, request, handler, context, m_executor.get());
 }
 
 SetDefaultMessageTypeOutcome PinpointSMSVoiceV2Client::SetDefaultMessageType(const SetDefaultMessageTypeRequest& request) const
@@ -1018,18 +815,12 @@ SetDefaultMessageTypeOutcome PinpointSMSVoiceV2Client::SetDefaultMessageType(con
 
 SetDefaultMessageTypeOutcomeCallable PinpointSMSVoiceV2Client::SetDefaultMessageTypeCallable(const SetDefaultMessageTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetDefaultMessageTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetDefaultMessageType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SetDefaultMessageType, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::SetDefaultMessageTypeAsync(const SetDefaultMessageTypeRequest& request, const SetDefaultMessageTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetDefaultMessageType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SetDefaultMessageType, request, handler, context, m_executor.get());
 }
 
 SetDefaultSenderIdOutcome PinpointSMSVoiceV2Client::SetDefaultSenderId(const SetDefaultSenderIdRequest& request) const
@@ -1042,18 +833,12 @@ SetDefaultSenderIdOutcome PinpointSMSVoiceV2Client::SetDefaultSenderId(const Set
 
 SetDefaultSenderIdOutcomeCallable PinpointSMSVoiceV2Client::SetDefaultSenderIdCallable(const SetDefaultSenderIdRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetDefaultSenderIdOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetDefaultSenderId(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SetDefaultSenderId, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::SetDefaultSenderIdAsync(const SetDefaultSenderIdRequest& request, const SetDefaultSenderIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetDefaultSenderId(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SetDefaultSenderId, request, handler, context, m_executor.get());
 }
 
 SetTextMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetTextMessageSpendLimitOverride(const SetTextMessageSpendLimitOverrideRequest& request) const
@@ -1066,18 +851,12 @@ SetTextMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetTextMessage
 
 SetTextMessageSpendLimitOverrideOutcomeCallable PinpointSMSVoiceV2Client::SetTextMessageSpendLimitOverrideCallable(const SetTextMessageSpendLimitOverrideRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetTextMessageSpendLimitOverrideOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetTextMessageSpendLimitOverride(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SetTextMessageSpendLimitOverride, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::SetTextMessageSpendLimitOverrideAsync(const SetTextMessageSpendLimitOverrideRequest& request, const SetTextMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetTextMessageSpendLimitOverride(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SetTextMessageSpendLimitOverride, request, handler, context, m_executor.get());
 }
 
 SetVoiceMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetVoiceMessageSpendLimitOverride(const SetVoiceMessageSpendLimitOverrideRequest& request) const
@@ -1090,18 +869,12 @@ SetVoiceMessageSpendLimitOverrideOutcome PinpointSMSVoiceV2Client::SetVoiceMessa
 
 SetVoiceMessageSpendLimitOverrideOutcomeCallable PinpointSMSVoiceV2Client::SetVoiceMessageSpendLimitOverrideCallable(const SetVoiceMessageSpendLimitOverrideRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetVoiceMessageSpendLimitOverrideOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetVoiceMessageSpendLimitOverride(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SetVoiceMessageSpendLimitOverride, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::SetVoiceMessageSpendLimitOverrideAsync(const SetVoiceMessageSpendLimitOverrideRequest& request, const SetVoiceMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetVoiceMessageSpendLimitOverride(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SetVoiceMessageSpendLimitOverride, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome PinpointSMSVoiceV2Client::TagResource(const TagResourceRequest& request) const
@@ -1114,18 +887,12 @@ TagResourceOutcome PinpointSMSVoiceV2Client::TagResource(const TagResourceReques
 
 TagResourceOutcomeCallable PinpointSMSVoiceV2Client::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome PinpointSMSVoiceV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -1138,18 +905,12 @@ UntagResourceOutcome PinpointSMSVoiceV2Client::UntagResource(const UntagResource
 
 UntagResourceOutcomeCallable PinpointSMSVoiceV2Client::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateEventDestinationOutcome PinpointSMSVoiceV2Client::UpdateEventDestination(const UpdateEventDestinationRequest& request) const
@@ -1162,18 +923,12 @@ UpdateEventDestinationOutcome PinpointSMSVoiceV2Client::UpdateEventDestination(c
 
 UpdateEventDestinationOutcomeCallable PinpointSMSVoiceV2Client::UpdateEventDestinationCallable(const UpdateEventDestinationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEventDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEventDestination(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateEventDestination, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::UpdateEventDestinationAsync(const UpdateEventDestinationRequest& request, const UpdateEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateEventDestination(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateEventDestination, request, handler, context, m_executor.get());
 }
 
 UpdatePhoneNumberOutcome PinpointSMSVoiceV2Client::UpdatePhoneNumber(const UpdatePhoneNumberRequest& request) const
@@ -1186,18 +941,12 @@ UpdatePhoneNumberOutcome PinpointSMSVoiceV2Client::UpdatePhoneNumber(const Updat
 
 UpdatePhoneNumberOutcomeCallable PinpointSMSVoiceV2Client::UpdatePhoneNumberCallable(const UpdatePhoneNumberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePhoneNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePhoneNumber(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePhoneNumber, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::UpdatePhoneNumberAsync(const UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePhoneNumber(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePhoneNumber, request, handler, context, m_executor.get());
 }
 
 UpdatePoolOutcome PinpointSMSVoiceV2Client::UpdatePool(const UpdatePoolRequest& request) const
@@ -1210,17 +959,11 @@ UpdatePoolOutcome PinpointSMSVoiceV2Client::UpdatePool(const UpdatePoolRequest& 
 
 UpdatePoolOutcomeCallable PinpointSMSVoiceV2Client::UpdatePoolCallable(const UpdatePoolRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePool(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePool, request, m_executor.get());
 }
 
 void PinpointSMSVoiceV2Client::UpdatePoolAsync(const UpdatePoolRequest& request, const UpdatePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePool(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePool, request, handler, context, m_executor.get());
 }
 

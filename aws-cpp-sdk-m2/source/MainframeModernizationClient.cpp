@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -206,18 +207,12 @@ CancelBatchJobExecutionOutcome MainframeModernizationClient::CancelBatchJobExecu
 
 CancelBatchJobExecutionOutcomeCallable MainframeModernizationClient::CancelBatchJobExecutionCallable(const CancelBatchJobExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelBatchJobExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelBatchJobExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelBatchJobExecution, request, m_executor.get());
 }
 
 void MainframeModernizationClient::CancelBatchJobExecutionAsync(const CancelBatchJobExecutionRequest& request, const CancelBatchJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelBatchJobExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelBatchJobExecution, request, handler, context, m_executor.get());
 }
 
 CreateApplicationOutcome MainframeModernizationClient::CreateApplication(const CreateApplicationRequest& request) const
@@ -231,18 +226,12 @@ CreateApplicationOutcome MainframeModernizationClient::CreateApplication(const C
 
 CreateApplicationOutcomeCallable MainframeModernizationClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateApplication, request, m_executor.get());
 }
 
 void MainframeModernizationClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateApplication, request, handler, context, m_executor.get());
 }
 
 CreateDataSetImportTaskOutcome MainframeModernizationClient::CreateDataSetImportTask(const CreateDataSetImportTaskRequest& request) const
@@ -263,18 +252,12 @@ CreateDataSetImportTaskOutcome MainframeModernizationClient::CreateDataSetImport
 
 CreateDataSetImportTaskOutcomeCallable MainframeModernizationClient::CreateDataSetImportTaskCallable(const CreateDataSetImportTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDataSetImportTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataSetImportTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataSetImportTask, request, m_executor.get());
 }
 
 void MainframeModernizationClient::CreateDataSetImportTaskAsync(const CreateDataSetImportTaskRequest& request, const CreateDataSetImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataSetImportTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataSetImportTask, request, handler, context, m_executor.get());
 }
 
 CreateDeploymentOutcome MainframeModernizationClient::CreateDeployment(const CreateDeploymentRequest& request) const
@@ -295,18 +278,12 @@ CreateDeploymentOutcome MainframeModernizationClient::CreateDeployment(const Cre
 
 CreateDeploymentOutcomeCallable MainframeModernizationClient::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDeployment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDeployment, request, m_executor.get());
 }
 
 void MainframeModernizationClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDeployment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDeployment, request, handler, context, m_executor.get());
 }
 
 CreateEnvironmentOutcome MainframeModernizationClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
@@ -320,18 +297,12 @@ CreateEnvironmentOutcome MainframeModernizationClient::CreateEnvironment(const C
 
 CreateEnvironmentOutcomeCallable MainframeModernizationClient::CreateEnvironmentCallable(const CreateEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEnvironment, request, m_executor.get());
 }
 
 void MainframeModernizationClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEnvironment, request, handler, context, m_executor.get());
 }
 
 DeleteApplicationOutcome MainframeModernizationClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -351,18 +322,12 @@ DeleteApplicationOutcome MainframeModernizationClient::DeleteApplication(const D
 
 DeleteApplicationOutcomeCallable MainframeModernizationClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteApplication, request, m_executor.get());
 }
 
 void MainframeModernizationClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteApplication, request, handler, context, m_executor.get());
 }
 
 DeleteApplicationFromEnvironmentOutcome MainframeModernizationClient::DeleteApplicationFromEnvironment(const DeleteApplicationFromEnvironmentRequest& request) const
@@ -389,18 +354,12 @@ DeleteApplicationFromEnvironmentOutcome MainframeModernizationClient::DeleteAppl
 
 DeleteApplicationFromEnvironmentOutcomeCallable MainframeModernizationClient::DeleteApplicationFromEnvironmentCallable(const DeleteApplicationFromEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationFromEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplicationFromEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteApplicationFromEnvironment, request, m_executor.get());
 }
 
 void MainframeModernizationClient::DeleteApplicationFromEnvironmentAsync(const DeleteApplicationFromEnvironmentRequest& request, const DeleteApplicationFromEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteApplicationFromEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteApplicationFromEnvironment, request, handler, context, m_executor.get());
 }
 
 DeleteEnvironmentOutcome MainframeModernizationClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
@@ -420,18 +379,12 @@ DeleteEnvironmentOutcome MainframeModernizationClient::DeleteEnvironment(const D
 
 DeleteEnvironmentOutcomeCallable MainframeModernizationClient::DeleteEnvironmentCallable(const DeleteEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEnvironment, request, m_executor.get());
 }
 
 void MainframeModernizationClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEnvironment, request, handler, context, m_executor.get());
 }
 
 GetApplicationOutcome MainframeModernizationClient::GetApplication(const GetApplicationRequest& request) const
@@ -451,18 +404,12 @@ GetApplicationOutcome MainframeModernizationClient::GetApplication(const GetAppl
 
 GetApplicationOutcomeCallable MainframeModernizationClient::GetApplicationCallable(const GetApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetApplication, request, m_executor.get());
 }
 
 void MainframeModernizationClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetApplication, request, handler, context, m_executor.get());
 }
 
 GetApplicationVersionOutcome MainframeModernizationClient::GetApplicationVersion(const GetApplicationVersionRequest& request) const
@@ -489,18 +436,12 @@ GetApplicationVersionOutcome MainframeModernizationClient::GetApplicationVersion
 
 GetApplicationVersionOutcomeCallable MainframeModernizationClient::GetApplicationVersionCallable(const GetApplicationVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApplicationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplicationVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetApplicationVersion, request, m_executor.get());
 }
 
 void MainframeModernizationClient::GetApplicationVersionAsync(const GetApplicationVersionRequest& request, const GetApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetApplicationVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetApplicationVersion, request, handler, context, m_executor.get());
 }
 
 GetBatchJobExecutionOutcome MainframeModernizationClient::GetBatchJobExecution(const GetBatchJobExecutionRequest& request) const
@@ -527,18 +468,12 @@ GetBatchJobExecutionOutcome MainframeModernizationClient::GetBatchJobExecution(c
 
 GetBatchJobExecutionOutcomeCallable MainframeModernizationClient::GetBatchJobExecutionCallable(const GetBatchJobExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBatchJobExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBatchJobExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBatchJobExecution, request, m_executor.get());
 }
 
 void MainframeModernizationClient::GetBatchJobExecutionAsync(const GetBatchJobExecutionRequest& request, const GetBatchJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBatchJobExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBatchJobExecution, request, handler, context, m_executor.get());
 }
 
 GetDataSetDetailsOutcome MainframeModernizationClient::GetDataSetDetails(const GetDataSetDetailsRequest& request) const
@@ -565,18 +500,12 @@ GetDataSetDetailsOutcome MainframeModernizationClient::GetDataSetDetails(const G
 
 GetDataSetDetailsOutcomeCallable MainframeModernizationClient::GetDataSetDetailsCallable(const GetDataSetDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataSetDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataSetDetails(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDataSetDetails, request, m_executor.get());
 }
 
 void MainframeModernizationClient::GetDataSetDetailsAsync(const GetDataSetDetailsRequest& request, const GetDataSetDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDataSetDetails(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDataSetDetails, request, handler, context, m_executor.get());
 }
 
 GetDataSetImportTaskOutcome MainframeModernizationClient::GetDataSetImportTask(const GetDataSetImportTaskRequest& request) const
@@ -603,18 +532,12 @@ GetDataSetImportTaskOutcome MainframeModernizationClient::GetDataSetImportTask(c
 
 GetDataSetImportTaskOutcomeCallable MainframeModernizationClient::GetDataSetImportTaskCallable(const GetDataSetImportTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataSetImportTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataSetImportTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDataSetImportTask, request, m_executor.get());
 }
 
 void MainframeModernizationClient::GetDataSetImportTaskAsync(const GetDataSetImportTaskRequest& request, const GetDataSetImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDataSetImportTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDataSetImportTask, request, handler, context, m_executor.get());
 }
 
 GetDeploymentOutcome MainframeModernizationClient::GetDeployment(const GetDeploymentRequest& request) const
@@ -641,18 +564,12 @@ GetDeploymentOutcome MainframeModernizationClient::GetDeployment(const GetDeploy
 
 GetDeploymentOutcomeCallable MainframeModernizationClient::GetDeploymentCallable(const GetDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeployment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDeployment, request, m_executor.get());
 }
 
 void MainframeModernizationClient::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDeployment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDeployment, request, handler, context, m_executor.get());
 }
 
 GetEnvironmentOutcome MainframeModernizationClient::GetEnvironment(const GetEnvironmentRequest& request) const
@@ -672,18 +589,12 @@ GetEnvironmentOutcome MainframeModernizationClient::GetEnvironment(const GetEnvi
 
 GetEnvironmentOutcomeCallable MainframeModernizationClient::GetEnvironmentCallable(const GetEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEnvironment, request, m_executor.get());
 }
 
 void MainframeModernizationClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEnvironment, request, handler, context, m_executor.get());
 }
 
 ListApplicationVersionsOutcome MainframeModernizationClient::ListApplicationVersions(const ListApplicationVersionsRequest& request) const
@@ -704,18 +615,12 @@ ListApplicationVersionsOutcome MainframeModernizationClient::ListApplicationVers
 
 ListApplicationVersionsOutcomeCallable MainframeModernizationClient::ListApplicationVersionsCallable(const ListApplicationVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplicationVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListApplicationVersions, request, m_executor.get());
 }
 
 void MainframeModernizationClient::ListApplicationVersionsAsync(const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListApplicationVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListApplicationVersions, request, handler, context, m_executor.get());
 }
 
 ListApplicationsOutcome MainframeModernizationClient::ListApplications(const ListApplicationsRequest& request) const
@@ -729,18 +634,12 @@ ListApplicationsOutcome MainframeModernizationClient::ListApplications(const Lis
 
 ListApplicationsOutcomeCallable MainframeModernizationClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplications(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListApplications, request, m_executor.get());
 }
 
 void MainframeModernizationClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListApplications(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListApplications, request, handler, context, m_executor.get());
 }
 
 ListBatchJobDefinitionsOutcome MainframeModernizationClient::ListBatchJobDefinitions(const ListBatchJobDefinitionsRequest& request) const
@@ -761,18 +660,12 @@ ListBatchJobDefinitionsOutcome MainframeModernizationClient::ListBatchJobDefinit
 
 ListBatchJobDefinitionsOutcomeCallable MainframeModernizationClient::ListBatchJobDefinitionsCallable(const ListBatchJobDefinitionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBatchJobDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBatchJobDefinitions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBatchJobDefinitions, request, m_executor.get());
 }
 
 void MainframeModernizationClient::ListBatchJobDefinitionsAsync(const ListBatchJobDefinitionsRequest& request, const ListBatchJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBatchJobDefinitions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBatchJobDefinitions, request, handler, context, m_executor.get());
 }
 
 ListBatchJobExecutionsOutcome MainframeModernizationClient::ListBatchJobExecutions(const ListBatchJobExecutionsRequest& request) const
@@ -793,18 +686,12 @@ ListBatchJobExecutionsOutcome MainframeModernizationClient::ListBatchJobExecutio
 
 ListBatchJobExecutionsOutcomeCallable MainframeModernizationClient::ListBatchJobExecutionsCallable(const ListBatchJobExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBatchJobExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBatchJobExecutions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBatchJobExecutions, request, m_executor.get());
 }
 
 void MainframeModernizationClient::ListBatchJobExecutionsAsync(const ListBatchJobExecutionsRequest& request, const ListBatchJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBatchJobExecutions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBatchJobExecutions, request, handler, context, m_executor.get());
 }
 
 ListDataSetImportHistoryOutcome MainframeModernizationClient::ListDataSetImportHistory(const ListDataSetImportHistoryRequest& request) const
@@ -825,18 +712,12 @@ ListDataSetImportHistoryOutcome MainframeModernizationClient::ListDataSetImportH
 
 ListDataSetImportHistoryOutcomeCallable MainframeModernizationClient::ListDataSetImportHistoryCallable(const ListDataSetImportHistoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataSetImportHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataSetImportHistory(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDataSetImportHistory, request, m_executor.get());
 }
 
 void MainframeModernizationClient::ListDataSetImportHistoryAsync(const ListDataSetImportHistoryRequest& request, const ListDataSetImportHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDataSetImportHistory(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDataSetImportHistory, request, handler, context, m_executor.get());
 }
 
 ListDataSetsOutcome MainframeModernizationClient::ListDataSets(const ListDataSetsRequest& request) const
@@ -857,18 +738,12 @@ ListDataSetsOutcome MainframeModernizationClient::ListDataSets(const ListDataSet
 
 ListDataSetsOutcomeCallable MainframeModernizationClient::ListDataSetsCallable(const ListDataSetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataSets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDataSets, request, m_executor.get());
 }
 
 void MainframeModernizationClient::ListDataSetsAsync(const ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDataSets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDataSets, request, handler, context, m_executor.get());
 }
 
 ListDeploymentsOutcome MainframeModernizationClient::ListDeployments(const ListDeploymentsRequest& request) const
@@ -889,18 +764,12 @@ ListDeploymentsOutcome MainframeModernizationClient::ListDeployments(const ListD
 
 ListDeploymentsOutcomeCallable MainframeModernizationClient::ListDeploymentsCallable(const ListDeploymentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeployments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDeployments, request, m_executor.get());
 }
 
 void MainframeModernizationClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDeployments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDeployments, request, handler, context, m_executor.get());
 }
 
 ListEngineVersionsOutcome MainframeModernizationClient::ListEngineVersions(const ListEngineVersionsRequest& request) const
@@ -914,18 +783,12 @@ ListEngineVersionsOutcome MainframeModernizationClient::ListEngineVersions(const
 
 ListEngineVersionsOutcomeCallable MainframeModernizationClient::ListEngineVersionsCallable(const ListEngineVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEngineVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEngineVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEngineVersions, request, m_executor.get());
 }
 
 void MainframeModernizationClient::ListEngineVersionsAsync(const ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEngineVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEngineVersions, request, handler, context, m_executor.get());
 }
 
 ListEnvironmentsOutcome MainframeModernizationClient::ListEnvironments(const ListEnvironmentsRequest& request) const
@@ -939,18 +802,12 @@ ListEnvironmentsOutcome MainframeModernizationClient::ListEnvironments(const Lis
 
 ListEnvironmentsOutcomeCallable MainframeModernizationClient::ListEnvironmentsCallable(const ListEnvironmentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEnvironmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEnvironments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEnvironments, request, m_executor.get());
 }
 
 void MainframeModernizationClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEnvironments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEnvironments, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome MainframeModernizationClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -970,18 +827,12 @@ ListTagsForResourceOutcome MainframeModernizationClient::ListTagsForResource(con
 
 ListTagsForResourceOutcomeCallable MainframeModernizationClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void MainframeModernizationClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartApplicationOutcome MainframeModernizationClient::StartApplication(const StartApplicationRequest& request) const
@@ -1002,18 +853,12 @@ StartApplicationOutcome MainframeModernizationClient::StartApplication(const Sta
 
 StartApplicationOutcomeCallable MainframeModernizationClient::StartApplicationCallable(const StartApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartApplication, request, m_executor.get());
 }
 
 void MainframeModernizationClient::StartApplicationAsync(const StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartApplication, request, handler, context, m_executor.get());
 }
 
 StartBatchJobOutcome MainframeModernizationClient::StartBatchJob(const StartBatchJobRequest& request) const
@@ -1034,18 +879,12 @@ StartBatchJobOutcome MainframeModernizationClient::StartBatchJob(const StartBatc
 
 StartBatchJobOutcomeCallable MainframeModernizationClient::StartBatchJobCallable(const StartBatchJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartBatchJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartBatchJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartBatchJob, request, m_executor.get());
 }
 
 void MainframeModernizationClient::StartBatchJobAsync(const StartBatchJobRequest& request, const StartBatchJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartBatchJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartBatchJob, request, handler, context, m_executor.get());
 }
 
 StopApplicationOutcome MainframeModernizationClient::StopApplication(const StopApplicationRequest& request) const
@@ -1066,18 +905,12 @@ StopApplicationOutcome MainframeModernizationClient::StopApplication(const StopA
 
 StopApplicationOutcomeCallable MainframeModernizationClient::StopApplicationCallable(const StopApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopApplication, request, m_executor.get());
 }
 
 void MainframeModernizationClient::StopApplicationAsync(const StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopApplication, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome MainframeModernizationClient::TagResource(const TagResourceRequest& request) const
@@ -1097,18 +930,12 @@ TagResourceOutcome MainframeModernizationClient::TagResource(const TagResourceRe
 
 TagResourceOutcomeCallable MainframeModernizationClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void MainframeModernizationClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome MainframeModernizationClient::UntagResource(const UntagResourceRequest& request) const
@@ -1133,18 +960,12 @@ UntagResourceOutcome MainframeModernizationClient::UntagResource(const UntagReso
 
 UntagResourceOutcomeCallable MainframeModernizationClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void MainframeModernizationClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateApplicationOutcome MainframeModernizationClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -1164,18 +985,12 @@ UpdateApplicationOutcome MainframeModernizationClient::UpdateApplication(const U
 
 UpdateApplicationOutcomeCallable MainframeModernizationClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateApplication, request, m_executor.get());
 }
 
 void MainframeModernizationClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateApplication, request, handler, context, m_executor.get());
 }
 
 UpdateEnvironmentOutcome MainframeModernizationClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
@@ -1195,17 +1010,11 @@ UpdateEnvironmentOutcome MainframeModernizationClient::UpdateEnvironment(const U
 
 UpdateEnvironmentOutcomeCallable MainframeModernizationClient::UpdateEnvironmentCallable(const UpdateEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateEnvironment, request, m_executor.get());
 }
 
 void MainframeModernizationClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateEnvironment, request, handler, context, m_executor.get());
 }
 

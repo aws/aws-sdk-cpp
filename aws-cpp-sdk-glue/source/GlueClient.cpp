@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -345,18 +346,12 @@ BatchCreatePartitionOutcome GlueClient::BatchCreatePartition(const BatchCreatePa
 
 BatchCreatePartitionOutcomeCallable GlueClient::BatchCreatePartitionCallable(const BatchCreatePartitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchCreatePartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchCreatePartition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchCreatePartition, request, m_executor.get());
 }
 
 void GlueClient::BatchCreatePartitionAsync(const BatchCreatePartitionRequest& request, const BatchCreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchCreatePartition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchCreatePartition, request, handler, context, m_executor.get());
 }
 
 BatchDeleteConnectionOutcome GlueClient::BatchDeleteConnection(const BatchDeleteConnectionRequest& request) const
@@ -369,18 +364,12 @@ BatchDeleteConnectionOutcome GlueClient::BatchDeleteConnection(const BatchDelete
 
 BatchDeleteConnectionOutcomeCallable GlueClient::BatchDeleteConnectionCallable(const BatchDeleteConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDeleteConnection, request, m_executor.get());
 }
 
 void GlueClient::BatchDeleteConnectionAsync(const BatchDeleteConnectionRequest& request, const BatchDeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDeleteConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDeleteConnection, request, handler, context, m_executor.get());
 }
 
 BatchDeletePartitionOutcome GlueClient::BatchDeletePartition(const BatchDeletePartitionRequest& request) const
@@ -393,18 +382,12 @@ BatchDeletePartitionOutcome GlueClient::BatchDeletePartition(const BatchDeletePa
 
 BatchDeletePartitionOutcomeCallable GlueClient::BatchDeletePartitionCallable(const BatchDeletePartitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDeletePartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeletePartition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDeletePartition, request, m_executor.get());
 }
 
 void GlueClient::BatchDeletePartitionAsync(const BatchDeletePartitionRequest& request, const BatchDeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDeletePartition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDeletePartition, request, handler, context, m_executor.get());
 }
 
 BatchDeleteTableOutcome GlueClient::BatchDeleteTable(const BatchDeleteTableRequest& request) const
@@ -417,18 +400,12 @@ BatchDeleteTableOutcome GlueClient::BatchDeleteTable(const BatchDeleteTableReque
 
 BatchDeleteTableOutcomeCallable GlueClient::BatchDeleteTableCallable(const BatchDeleteTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDeleteTable, request, m_executor.get());
 }
 
 void GlueClient::BatchDeleteTableAsync(const BatchDeleteTableRequest& request, const BatchDeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDeleteTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDeleteTable, request, handler, context, m_executor.get());
 }
 
 BatchDeleteTableVersionOutcome GlueClient::BatchDeleteTableVersion(const BatchDeleteTableVersionRequest& request) const
@@ -441,18 +418,12 @@ BatchDeleteTableVersionOutcome GlueClient::BatchDeleteTableVersion(const BatchDe
 
 BatchDeleteTableVersionOutcomeCallable GlueClient::BatchDeleteTableVersionCallable(const BatchDeleteTableVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteTableVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteTableVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDeleteTableVersion, request, m_executor.get());
 }
 
 void GlueClient::BatchDeleteTableVersionAsync(const BatchDeleteTableVersionRequest& request, const BatchDeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDeleteTableVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDeleteTableVersion, request, handler, context, m_executor.get());
 }
 
 BatchGetBlueprintsOutcome GlueClient::BatchGetBlueprints(const BatchGetBlueprintsRequest& request) const
@@ -465,18 +436,12 @@ BatchGetBlueprintsOutcome GlueClient::BatchGetBlueprints(const BatchGetBlueprint
 
 BatchGetBlueprintsOutcomeCallable GlueClient::BatchGetBlueprintsCallable(const BatchGetBlueprintsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetBlueprintsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetBlueprints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetBlueprints, request, m_executor.get());
 }
 
 void GlueClient::BatchGetBlueprintsAsync(const BatchGetBlueprintsRequest& request, const BatchGetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetBlueprints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetBlueprints, request, handler, context, m_executor.get());
 }
 
 BatchGetCrawlersOutcome GlueClient::BatchGetCrawlers(const BatchGetCrawlersRequest& request) const
@@ -489,18 +454,12 @@ BatchGetCrawlersOutcome GlueClient::BatchGetCrawlers(const BatchGetCrawlersReque
 
 BatchGetCrawlersOutcomeCallable GlueClient::BatchGetCrawlersCallable(const BatchGetCrawlersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetCrawlersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetCrawlers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetCrawlers, request, m_executor.get());
 }
 
 void GlueClient::BatchGetCrawlersAsync(const BatchGetCrawlersRequest& request, const BatchGetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetCrawlers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetCrawlers, request, handler, context, m_executor.get());
 }
 
 BatchGetCustomEntityTypesOutcome GlueClient::BatchGetCustomEntityTypes(const BatchGetCustomEntityTypesRequest& request) const
@@ -513,18 +472,12 @@ BatchGetCustomEntityTypesOutcome GlueClient::BatchGetCustomEntityTypes(const Bat
 
 BatchGetCustomEntityTypesOutcomeCallable GlueClient::BatchGetCustomEntityTypesCallable(const BatchGetCustomEntityTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetCustomEntityTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetCustomEntityTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetCustomEntityTypes, request, m_executor.get());
 }
 
 void GlueClient::BatchGetCustomEntityTypesAsync(const BatchGetCustomEntityTypesRequest& request, const BatchGetCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetCustomEntityTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetCustomEntityTypes, request, handler, context, m_executor.get());
 }
 
 BatchGetDevEndpointsOutcome GlueClient::BatchGetDevEndpoints(const BatchGetDevEndpointsRequest& request) const
@@ -537,18 +490,12 @@ BatchGetDevEndpointsOutcome GlueClient::BatchGetDevEndpoints(const BatchGetDevEn
 
 BatchGetDevEndpointsOutcomeCallable GlueClient::BatchGetDevEndpointsCallable(const BatchGetDevEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetDevEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetDevEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetDevEndpoints, request, m_executor.get());
 }
 
 void GlueClient::BatchGetDevEndpointsAsync(const BatchGetDevEndpointsRequest& request, const BatchGetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetDevEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetDevEndpoints, request, handler, context, m_executor.get());
 }
 
 BatchGetJobsOutcome GlueClient::BatchGetJobs(const BatchGetJobsRequest& request) const
@@ -561,18 +508,12 @@ BatchGetJobsOutcome GlueClient::BatchGetJobs(const BatchGetJobsRequest& request)
 
 BatchGetJobsOutcomeCallable GlueClient::BatchGetJobsCallable(const BatchGetJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetJobs, request, m_executor.get());
 }
 
 void GlueClient::BatchGetJobsAsync(const BatchGetJobsRequest& request, const BatchGetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetJobs, request, handler, context, m_executor.get());
 }
 
 BatchGetPartitionOutcome GlueClient::BatchGetPartition(const BatchGetPartitionRequest& request) const
@@ -585,18 +526,12 @@ BatchGetPartitionOutcome GlueClient::BatchGetPartition(const BatchGetPartitionRe
 
 BatchGetPartitionOutcomeCallable GlueClient::BatchGetPartitionCallable(const BatchGetPartitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetPartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetPartition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetPartition, request, m_executor.get());
 }
 
 void GlueClient::BatchGetPartitionAsync(const BatchGetPartitionRequest& request, const BatchGetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetPartition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetPartition, request, handler, context, m_executor.get());
 }
 
 BatchGetTriggersOutcome GlueClient::BatchGetTriggers(const BatchGetTriggersRequest& request) const
@@ -609,18 +544,12 @@ BatchGetTriggersOutcome GlueClient::BatchGetTriggers(const BatchGetTriggersReque
 
 BatchGetTriggersOutcomeCallable GlueClient::BatchGetTriggersCallable(const BatchGetTriggersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetTriggersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetTriggers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetTriggers, request, m_executor.get());
 }
 
 void GlueClient::BatchGetTriggersAsync(const BatchGetTriggersRequest& request, const BatchGetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetTriggers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetTriggers, request, handler, context, m_executor.get());
 }
 
 BatchGetWorkflowsOutcome GlueClient::BatchGetWorkflows(const BatchGetWorkflowsRequest& request) const
@@ -633,18 +562,12 @@ BatchGetWorkflowsOutcome GlueClient::BatchGetWorkflows(const BatchGetWorkflowsRe
 
 BatchGetWorkflowsOutcomeCallable GlueClient::BatchGetWorkflowsCallable(const BatchGetWorkflowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetWorkflowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetWorkflows(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetWorkflows, request, m_executor.get());
 }
 
 void GlueClient::BatchGetWorkflowsAsync(const BatchGetWorkflowsRequest& request, const BatchGetWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetWorkflows(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetWorkflows, request, handler, context, m_executor.get());
 }
 
 BatchStopJobRunOutcome GlueClient::BatchStopJobRun(const BatchStopJobRunRequest& request) const
@@ -657,18 +580,12 @@ BatchStopJobRunOutcome GlueClient::BatchStopJobRun(const BatchStopJobRunRequest&
 
 BatchStopJobRunOutcomeCallable GlueClient::BatchStopJobRunCallable(const BatchStopJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchStopJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchStopJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchStopJobRun, request, m_executor.get());
 }
 
 void GlueClient::BatchStopJobRunAsync(const BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchStopJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchStopJobRun, request, handler, context, m_executor.get());
 }
 
 BatchUpdatePartitionOutcome GlueClient::BatchUpdatePartition(const BatchUpdatePartitionRequest& request) const
@@ -681,18 +598,12 @@ BatchUpdatePartitionOutcome GlueClient::BatchUpdatePartition(const BatchUpdatePa
 
 BatchUpdatePartitionOutcomeCallable GlueClient::BatchUpdatePartitionCallable(const BatchUpdatePartitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchUpdatePartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdatePartition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchUpdatePartition, request, m_executor.get());
 }
 
 void GlueClient::BatchUpdatePartitionAsync(const BatchUpdatePartitionRequest& request, const BatchUpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchUpdatePartition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchUpdatePartition, request, handler, context, m_executor.get());
 }
 
 CancelMLTaskRunOutcome GlueClient::CancelMLTaskRun(const CancelMLTaskRunRequest& request) const
@@ -705,18 +616,12 @@ CancelMLTaskRunOutcome GlueClient::CancelMLTaskRun(const CancelMLTaskRunRequest&
 
 CancelMLTaskRunOutcomeCallable GlueClient::CancelMLTaskRunCallable(const CancelMLTaskRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelMLTaskRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelMLTaskRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelMLTaskRun, request, m_executor.get());
 }
 
 void GlueClient::CancelMLTaskRunAsync(const CancelMLTaskRunRequest& request, const CancelMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelMLTaskRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelMLTaskRun, request, handler, context, m_executor.get());
 }
 
 CancelStatementOutcome GlueClient::CancelStatement(const CancelStatementRequest& request) const
@@ -729,18 +634,12 @@ CancelStatementOutcome GlueClient::CancelStatement(const CancelStatementRequest&
 
 CancelStatementOutcomeCallable GlueClient::CancelStatementCallable(const CancelStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelStatement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelStatement, request, m_executor.get());
 }
 
 void GlueClient::CancelStatementAsync(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelStatement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelStatement, request, handler, context, m_executor.get());
 }
 
 CheckSchemaVersionValidityOutcome GlueClient::CheckSchemaVersionValidity(const CheckSchemaVersionValidityRequest& request) const
@@ -753,18 +652,12 @@ CheckSchemaVersionValidityOutcome GlueClient::CheckSchemaVersionValidity(const C
 
 CheckSchemaVersionValidityOutcomeCallable GlueClient::CheckSchemaVersionValidityCallable(const CheckSchemaVersionValidityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CheckSchemaVersionValidityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CheckSchemaVersionValidity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CheckSchemaVersionValidity, request, m_executor.get());
 }
 
 void GlueClient::CheckSchemaVersionValidityAsync(const CheckSchemaVersionValidityRequest& request, const CheckSchemaVersionValidityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CheckSchemaVersionValidity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CheckSchemaVersionValidity, request, handler, context, m_executor.get());
 }
 
 CreateBlueprintOutcome GlueClient::CreateBlueprint(const CreateBlueprintRequest& request) const
@@ -777,18 +670,12 @@ CreateBlueprintOutcome GlueClient::CreateBlueprint(const CreateBlueprintRequest&
 
 CreateBlueprintOutcomeCallable GlueClient::CreateBlueprintCallable(const CreateBlueprintRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBlueprint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBlueprint, request, m_executor.get());
 }
 
 void GlueClient::CreateBlueprintAsync(const CreateBlueprintRequest& request, const CreateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBlueprint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBlueprint, request, handler, context, m_executor.get());
 }
 
 CreateClassifierOutcome GlueClient::CreateClassifier(const CreateClassifierRequest& request) const
@@ -801,18 +688,12 @@ CreateClassifierOutcome GlueClient::CreateClassifier(const CreateClassifierReque
 
 CreateClassifierOutcomeCallable GlueClient::CreateClassifierCallable(const CreateClassifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateClassifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateClassifier(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateClassifier, request, m_executor.get());
 }
 
 void GlueClient::CreateClassifierAsync(const CreateClassifierRequest& request, const CreateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateClassifier(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateClassifier, request, handler, context, m_executor.get());
 }
 
 CreateConnectionOutcome GlueClient::CreateConnection(const CreateConnectionRequest& request) const
@@ -825,18 +706,12 @@ CreateConnectionOutcome GlueClient::CreateConnection(const CreateConnectionReque
 
 CreateConnectionOutcomeCallable GlueClient::CreateConnectionCallable(const CreateConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateConnection, request, m_executor.get());
 }
 
 void GlueClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateConnection, request, handler, context, m_executor.get());
 }
 
 CreateCrawlerOutcome GlueClient::CreateCrawler(const CreateCrawlerRequest& request) const
@@ -849,18 +724,12 @@ CreateCrawlerOutcome GlueClient::CreateCrawler(const CreateCrawlerRequest& reque
 
 CreateCrawlerOutcomeCallable GlueClient::CreateCrawlerCallable(const CreateCrawlerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCrawlerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCrawler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCrawler, request, m_executor.get());
 }
 
 void GlueClient::CreateCrawlerAsync(const CreateCrawlerRequest& request, const CreateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCrawler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCrawler, request, handler, context, m_executor.get());
 }
 
 CreateCustomEntityTypeOutcome GlueClient::CreateCustomEntityType(const CreateCustomEntityTypeRequest& request) const
@@ -873,18 +742,12 @@ CreateCustomEntityTypeOutcome GlueClient::CreateCustomEntityType(const CreateCus
 
 CreateCustomEntityTypeOutcomeCallable GlueClient::CreateCustomEntityTypeCallable(const CreateCustomEntityTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCustomEntityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCustomEntityType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCustomEntityType, request, m_executor.get());
 }
 
 void GlueClient::CreateCustomEntityTypeAsync(const CreateCustomEntityTypeRequest& request, const CreateCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCustomEntityType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCustomEntityType, request, handler, context, m_executor.get());
 }
 
 CreateDatabaseOutcome GlueClient::CreateDatabase(const CreateDatabaseRequest& request) const
@@ -897,18 +760,12 @@ CreateDatabaseOutcome GlueClient::CreateDatabase(const CreateDatabaseRequest& re
 
 CreateDatabaseOutcomeCallable GlueClient::CreateDatabaseCallable(const CreateDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDatabase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDatabase, request, m_executor.get());
 }
 
 void GlueClient::CreateDatabaseAsync(const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDatabase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDatabase, request, handler, context, m_executor.get());
 }
 
 CreateDevEndpointOutcome GlueClient::CreateDevEndpoint(const CreateDevEndpointRequest& request) const
@@ -921,18 +778,12 @@ CreateDevEndpointOutcome GlueClient::CreateDevEndpoint(const CreateDevEndpointRe
 
 CreateDevEndpointOutcomeCallable GlueClient::CreateDevEndpointCallable(const CreateDevEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDevEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDevEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDevEndpoint, request, m_executor.get());
 }
 
 void GlueClient::CreateDevEndpointAsync(const CreateDevEndpointRequest& request, const CreateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDevEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDevEndpoint, request, handler, context, m_executor.get());
 }
 
 CreateJobOutcome GlueClient::CreateJob(const CreateJobRequest& request) const
@@ -945,18 +796,12 @@ CreateJobOutcome GlueClient::CreateJob(const CreateJobRequest& request) const
 
 CreateJobOutcomeCallable GlueClient::CreateJobCallable(const CreateJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateJob, request, m_executor.get());
 }
 
 void GlueClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateJob, request, handler, context, m_executor.get());
 }
 
 CreateMLTransformOutcome GlueClient::CreateMLTransform(const CreateMLTransformRequest& request) const
@@ -969,18 +814,12 @@ CreateMLTransformOutcome GlueClient::CreateMLTransform(const CreateMLTransformRe
 
 CreateMLTransformOutcomeCallable GlueClient::CreateMLTransformCallable(const CreateMLTransformRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMLTransformOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMLTransform(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMLTransform, request, m_executor.get());
 }
 
 void GlueClient::CreateMLTransformAsync(const CreateMLTransformRequest& request, const CreateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMLTransform(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMLTransform, request, handler, context, m_executor.get());
 }
 
 CreatePartitionOutcome GlueClient::CreatePartition(const CreatePartitionRequest& request) const
@@ -993,18 +832,12 @@ CreatePartitionOutcome GlueClient::CreatePartition(const CreatePartitionRequest&
 
 CreatePartitionOutcomeCallable GlueClient::CreatePartitionCallable(const CreatePartitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePartition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePartition, request, m_executor.get());
 }
 
 void GlueClient::CreatePartitionAsync(const CreatePartitionRequest& request, const CreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePartition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePartition, request, handler, context, m_executor.get());
 }
 
 CreatePartitionIndexOutcome GlueClient::CreatePartitionIndex(const CreatePartitionIndexRequest& request) const
@@ -1017,18 +850,12 @@ CreatePartitionIndexOutcome GlueClient::CreatePartitionIndex(const CreatePartiti
 
 CreatePartitionIndexOutcomeCallable GlueClient::CreatePartitionIndexCallable(const CreatePartitionIndexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePartitionIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePartitionIndex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePartitionIndex, request, m_executor.get());
 }
 
 void GlueClient::CreatePartitionIndexAsync(const CreatePartitionIndexRequest& request, const CreatePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePartitionIndex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePartitionIndex, request, handler, context, m_executor.get());
 }
 
 CreateRegistryOutcome GlueClient::CreateRegistry(const CreateRegistryRequest& request) const
@@ -1041,18 +868,12 @@ CreateRegistryOutcome GlueClient::CreateRegistry(const CreateRegistryRequest& re
 
 CreateRegistryOutcomeCallable GlueClient::CreateRegistryCallable(const CreateRegistryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRegistryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRegistry(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRegistry, request, m_executor.get());
 }
 
 void GlueClient::CreateRegistryAsync(const CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRegistry(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRegistry, request, handler, context, m_executor.get());
 }
 
 CreateSchemaOutcome GlueClient::CreateSchema(const CreateSchemaRequest& request) const
@@ -1065,18 +886,12 @@ CreateSchemaOutcome GlueClient::CreateSchema(const CreateSchemaRequest& request)
 
 CreateSchemaOutcomeCallable GlueClient::CreateSchemaCallable(const CreateSchemaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSchemaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSchema(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSchema, request, m_executor.get());
 }
 
 void GlueClient::CreateSchemaAsync(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSchema(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSchema, request, handler, context, m_executor.get());
 }
 
 CreateScriptOutcome GlueClient::CreateScript(const CreateScriptRequest& request) const
@@ -1089,18 +904,12 @@ CreateScriptOutcome GlueClient::CreateScript(const CreateScriptRequest& request)
 
 CreateScriptOutcomeCallable GlueClient::CreateScriptCallable(const CreateScriptRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateScriptOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateScript(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateScript, request, m_executor.get());
 }
 
 void GlueClient::CreateScriptAsync(const CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateScript(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateScript, request, handler, context, m_executor.get());
 }
 
 CreateSecurityConfigurationOutcome GlueClient::CreateSecurityConfiguration(const CreateSecurityConfigurationRequest& request) const
@@ -1113,18 +922,12 @@ CreateSecurityConfigurationOutcome GlueClient::CreateSecurityConfiguration(const
 
 CreateSecurityConfigurationOutcomeCallable GlueClient::CreateSecurityConfigurationCallable(const CreateSecurityConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSecurityConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSecurityConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSecurityConfiguration, request, m_executor.get());
 }
 
 void GlueClient::CreateSecurityConfigurationAsync(const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSecurityConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSecurityConfiguration, request, handler, context, m_executor.get());
 }
 
 CreateSessionOutcome GlueClient::CreateSession(const CreateSessionRequest& request) const
@@ -1137,18 +940,12 @@ CreateSessionOutcome GlueClient::CreateSession(const CreateSessionRequest& reque
 
 CreateSessionOutcomeCallable GlueClient::CreateSessionCallable(const CreateSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSession, request, m_executor.get());
 }
 
 void GlueClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSession, request, handler, context, m_executor.get());
 }
 
 CreateTableOutcome GlueClient::CreateTable(const CreateTableRequest& request) const
@@ -1161,18 +958,12 @@ CreateTableOutcome GlueClient::CreateTable(const CreateTableRequest& request) co
 
 CreateTableOutcomeCallable GlueClient::CreateTableCallable(const CreateTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTable, request, m_executor.get());
 }
 
 void GlueClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTable, request, handler, context, m_executor.get());
 }
 
 CreateTriggerOutcome GlueClient::CreateTrigger(const CreateTriggerRequest& request) const
@@ -1185,18 +976,12 @@ CreateTriggerOutcome GlueClient::CreateTrigger(const CreateTriggerRequest& reque
 
 CreateTriggerOutcomeCallable GlueClient::CreateTriggerCallable(const CreateTriggerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTriggerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTrigger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTrigger, request, m_executor.get());
 }
 
 void GlueClient::CreateTriggerAsync(const CreateTriggerRequest& request, const CreateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTrigger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTrigger, request, handler, context, m_executor.get());
 }
 
 CreateUserDefinedFunctionOutcome GlueClient::CreateUserDefinedFunction(const CreateUserDefinedFunctionRequest& request) const
@@ -1209,18 +994,12 @@ CreateUserDefinedFunctionOutcome GlueClient::CreateUserDefinedFunction(const Cre
 
 CreateUserDefinedFunctionOutcomeCallable GlueClient::CreateUserDefinedFunctionCallable(const CreateUserDefinedFunctionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserDefinedFunctionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserDefinedFunction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateUserDefinedFunction, request, m_executor.get());
 }
 
 void GlueClient::CreateUserDefinedFunctionAsync(const CreateUserDefinedFunctionRequest& request, const CreateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateUserDefinedFunction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateUserDefinedFunction, request, handler, context, m_executor.get());
 }
 
 CreateWorkflowOutcome GlueClient::CreateWorkflow(const CreateWorkflowRequest& request) const
@@ -1233,18 +1012,12 @@ CreateWorkflowOutcome GlueClient::CreateWorkflow(const CreateWorkflowRequest& re
 
 CreateWorkflowOutcomeCallable GlueClient::CreateWorkflowCallable(const CreateWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkflow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorkflow, request, m_executor.get());
 }
 
 void GlueClient::CreateWorkflowAsync(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorkflow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorkflow, request, handler, context, m_executor.get());
 }
 
 DeleteBlueprintOutcome GlueClient::DeleteBlueprint(const DeleteBlueprintRequest& request) const
@@ -1257,18 +1030,12 @@ DeleteBlueprintOutcome GlueClient::DeleteBlueprint(const DeleteBlueprintRequest&
 
 DeleteBlueprintOutcomeCallable GlueClient::DeleteBlueprintCallable(const DeleteBlueprintRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBlueprint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBlueprint, request, m_executor.get());
 }
 
 void GlueClient::DeleteBlueprintAsync(const DeleteBlueprintRequest& request, const DeleteBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBlueprint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBlueprint, request, handler, context, m_executor.get());
 }
 
 DeleteClassifierOutcome GlueClient::DeleteClassifier(const DeleteClassifierRequest& request) const
@@ -1281,18 +1048,12 @@ DeleteClassifierOutcome GlueClient::DeleteClassifier(const DeleteClassifierReque
 
 DeleteClassifierOutcomeCallable GlueClient::DeleteClassifierCallable(const DeleteClassifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteClassifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteClassifier(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteClassifier, request, m_executor.get());
 }
 
 void GlueClient::DeleteClassifierAsync(const DeleteClassifierRequest& request, const DeleteClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteClassifier(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteClassifier, request, handler, context, m_executor.get());
 }
 
 DeleteColumnStatisticsForPartitionOutcome GlueClient::DeleteColumnStatisticsForPartition(const DeleteColumnStatisticsForPartitionRequest& request) const
@@ -1305,18 +1066,12 @@ DeleteColumnStatisticsForPartitionOutcome GlueClient::DeleteColumnStatisticsForP
 
 DeleteColumnStatisticsForPartitionOutcomeCallable GlueClient::DeleteColumnStatisticsForPartitionCallable(const DeleteColumnStatisticsForPartitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteColumnStatisticsForPartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteColumnStatisticsForPartition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteColumnStatisticsForPartition, request, m_executor.get());
 }
 
 void GlueClient::DeleteColumnStatisticsForPartitionAsync(const DeleteColumnStatisticsForPartitionRequest& request, const DeleteColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteColumnStatisticsForPartition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteColumnStatisticsForPartition, request, handler, context, m_executor.get());
 }
 
 DeleteColumnStatisticsForTableOutcome GlueClient::DeleteColumnStatisticsForTable(const DeleteColumnStatisticsForTableRequest& request) const
@@ -1329,18 +1084,12 @@ DeleteColumnStatisticsForTableOutcome GlueClient::DeleteColumnStatisticsForTable
 
 DeleteColumnStatisticsForTableOutcomeCallable GlueClient::DeleteColumnStatisticsForTableCallable(const DeleteColumnStatisticsForTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteColumnStatisticsForTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteColumnStatisticsForTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteColumnStatisticsForTable, request, m_executor.get());
 }
 
 void GlueClient::DeleteColumnStatisticsForTableAsync(const DeleteColumnStatisticsForTableRequest& request, const DeleteColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteColumnStatisticsForTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteColumnStatisticsForTable, request, handler, context, m_executor.get());
 }
 
 DeleteConnectionOutcome GlueClient::DeleteConnection(const DeleteConnectionRequest& request) const
@@ -1353,18 +1102,12 @@ DeleteConnectionOutcome GlueClient::DeleteConnection(const DeleteConnectionReque
 
 DeleteConnectionOutcomeCallable GlueClient::DeleteConnectionCallable(const DeleteConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteConnection, request, m_executor.get());
 }
 
 void GlueClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteConnection, request, handler, context, m_executor.get());
 }
 
 DeleteCrawlerOutcome GlueClient::DeleteCrawler(const DeleteCrawlerRequest& request) const
@@ -1377,18 +1120,12 @@ DeleteCrawlerOutcome GlueClient::DeleteCrawler(const DeleteCrawlerRequest& reque
 
 DeleteCrawlerOutcomeCallable GlueClient::DeleteCrawlerCallable(const DeleteCrawlerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCrawlerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCrawler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCrawler, request, m_executor.get());
 }
 
 void GlueClient::DeleteCrawlerAsync(const DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCrawler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCrawler, request, handler, context, m_executor.get());
 }
 
 DeleteCustomEntityTypeOutcome GlueClient::DeleteCustomEntityType(const DeleteCustomEntityTypeRequest& request) const
@@ -1401,18 +1138,12 @@ DeleteCustomEntityTypeOutcome GlueClient::DeleteCustomEntityType(const DeleteCus
 
 DeleteCustomEntityTypeOutcomeCallable GlueClient::DeleteCustomEntityTypeCallable(const DeleteCustomEntityTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCustomEntityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCustomEntityType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCustomEntityType, request, m_executor.get());
 }
 
 void GlueClient::DeleteCustomEntityTypeAsync(const DeleteCustomEntityTypeRequest& request, const DeleteCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCustomEntityType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCustomEntityType, request, handler, context, m_executor.get());
 }
 
 DeleteDatabaseOutcome GlueClient::DeleteDatabase(const DeleteDatabaseRequest& request) const
@@ -1425,18 +1156,12 @@ DeleteDatabaseOutcome GlueClient::DeleteDatabase(const DeleteDatabaseRequest& re
 
 DeleteDatabaseOutcomeCallable GlueClient::DeleteDatabaseCallable(const DeleteDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDatabase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDatabase, request, m_executor.get());
 }
 
 void GlueClient::DeleteDatabaseAsync(const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDatabase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDatabase, request, handler, context, m_executor.get());
 }
 
 DeleteDevEndpointOutcome GlueClient::DeleteDevEndpoint(const DeleteDevEndpointRequest& request) const
@@ -1449,18 +1174,12 @@ DeleteDevEndpointOutcome GlueClient::DeleteDevEndpoint(const DeleteDevEndpointRe
 
 DeleteDevEndpointOutcomeCallable GlueClient::DeleteDevEndpointCallable(const DeleteDevEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDevEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDevEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDevEndpoint, request, m_executor.get());
 }
 
 void GlueClient::DeleteDevEndpointAsync(const DeleteDevEndpointRequest& request, const DeleteDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDevEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDevEndpoint, request, handler, context, m_executor.get());
 }
 
 DeleteJobOutcome GlueClient::DeleteJob(const DeleteJobRequest& request) const
@@ -1473,18 +1192,12 @@ DeleteJobOutcome GlueClient::DeleteJob(const DeleteJobRequest& request) const
 
 DeleteJobOutcomeCallable GlueClient::DeleteJobCallable(const DeleteJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteJob, request, m_executor.get());
 }
 
 void GlueClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteJob, request, handler, context, m_executor.get());
 }
 
 DeleteMLTransformOutcome GlueClient::DeleteMLTransform(const DeleteMLTransformRequest& request) const
@@ -1497,18 +1210,12 @@ DeleteMLTransformOutcome GlueClient::DeleteMLTransform(const DeleteMLTransformRe
 
 DeleteMLTransformOutcomeCallable GlueClient::DeleteMLTransformCallable(const DeleteMLTransformRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMLTransformOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMLTransform(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMLTransform, request, m_executor.get());
 }
 
 void GlueClient::DeleteMLTransformAsync(const DeleteMLTransformRequest& request, const DeleteMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMLTransform(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMLTransform, request, handler, context, m_executor.get());
 }
 
 DeletePartitionOutcome GlueClient::DeletePartition(const DeletePartitionRequest& request) const
@@ -1521,18 +1228,12 @@ DeletePartitionOutcome GlueClient::DeletePartition(const DeletePartitionRequest&
 
 DeletePartitionOutcomeCallable GlueClient::DeletePartitionCallable(const DeletePartitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePartition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePartition, request, m_executor.get());
 }
 
 void GlueClient::DeletePartitionAsync(const DeletePartitionRequest& request, const DeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePartition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePartition, request, handler, context, m_executor.get());
 }
 
 DeletePartitionIndexOutcome GlueClient::DeletePartitionIndex(const DeletePartitionIndexRequest& request) const
@@ -1545,18 +1246,12 @@ DeletePartitionIndexOutcome GlueClient::DeletePartitionIndex(const DeletePartiti
 
 DeletePartitionIndexOutcomeCallable GlueClient::DeletePartitionIndexCallable(const DeletePartitionIndexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePartitionIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePartitionIndex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePartitionIndex, request, m_executor.get());
 }
 
 void GlueClient::DeletePartitionIndexAsync(const DeletePartitionIndexRequest& request, const DeletePartitionIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePartitionIndex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePartitionIndex, request, handler, context, m_executor.get());
 }
 
 DeleteRegistryOutcome GlueClient::DeleteRegistry(const DeleteRegistryRequest& request) const
@@ -1569,18 +1264,12 @@ DeleteRegistryOutcome GlueClient::DeleteRegistry(const DeleteRegistryRequest& re
 
 DeleteRegistryOutcomeCallable GlueClient::DeleteRegistryCallable(const DeleteRegistryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRegistryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRegistry(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRegistry, request, m_executor.get());
 }
 
 void GlueClient::DeleteRegistryAsync(const DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRegistry(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRegistry, request, handler, context, m_executor.get());
 }
 
 DeleteResourcePolicyOutcome GlueClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -1593,18 +1282,12 @@ DeleteResourcePolicyOutcome GlueClient::DeleteResourcePolicy(const DeleteResourc
 
 DeleteResourcePolicyOutcomeCallable GlueClient::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteResourcePolicy, request, m_executor.get());
 }
 
 void GlueClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteResourcePolicy, request, handler, context, m_executor.get());
 }
 
 DeleteSchemaOutcome GlueClient::DeleteSchema(const DeleteSchemaRequest& request) const
@@ -1617,18 +1300,12 @@ DeleteSchemaOutcome GlueClient::DeleteSchema(const DeleteSchemaRequest& request)
 
 DeleteSchemaOutcomeCallable GlueClient::DeleteSchemaCallable(const DeleteSchemaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSchemaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSchema(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSchema, request, m_executor.get());
 }
 
 void GlueClient::DeleteSchemaAsync(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSchema(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSchema, request, handler, context, m_executor.get());
 }
 
 DeleteSchemaVersionsOutcome GlueClient::DeleteSchemaVersions(const DeleteSchemaVersionsRequest& request) const
@@ -1641,18 +1318,12 @@ DeleteSchemaVersionsOutcome GlueClient::DeleteSchemaVersions(const DeleteSchemaV
 
 DeleteSchemaVersionsOutcomeCallable GlueClient::DeleteSchemaVersionsCallable(const DeleteSchemaVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSchemaVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSchemaVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSchemaVersions, request, m_executor.get());
 }
 
 void GlueClient::DeleteSchemaVersionsAsync(const DeleteSchemaVersionsRequest& request, const DeleteSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSchemaVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSchemaVersions, request, handler, context, m_executor.get());
 }
 
 DeleteSecurityConfigurationOutcome GlueClient::DeleteSecurityConfiguration(const DeleteSecurityConfigurationRequest& request) const
@@ -1665,18 +1336,12 @@ DeleteSecurityConfigurationOutcome GlueClient::DeleteSecurityConfiguration(const
 
 DeleteSecurityConfigurationOutcomeCallable GlueClient::DeleteSecurityConfigurationCallable(const DeleteSecurityConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSecurityConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSecurityConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSecurityConfiguration, request, m_executor.get());
 }
 
 void GlueClient::DeleteSecurityConfigurationAsync(const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSecurityConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSecurityConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteSessionOutcome GlueClient::DeleteSession(const DeleteSessionRequest& request) const
@@ -1689,18 +1354,12 @@ DeleteSessionOutcome GlueClient::DeleteSession(const DeleteSessionRequest& reque
 
 DeleteSessionOutcomeCallable GlueClient::DeleteSessionCallable(const DeleteSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSession, request, m_executor.get());
 }
 
 void GlueClient::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSession, request, handler, context, m_executor.get());
 }
 
 DeleteTableOutcome GlueClient::DeleteTable(const DeleteTableRequest& request) const
@@ -1713,18 +1372,12 @@ DeleteTableOutcome GlueClient::DeleteTable(const DeleteTableRequest& request) co
 
 DeleteTableOutcomeCallable GlueClient::DeleteTableCallable(const DeleteTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTable, request, m_executor.get());
 }
 
 void GlueClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTable, request, handler, context, m_executor.get());
 }
 
 DeleteTableVersionOutcome GlueClient::DeleteTableVersion(const DeleteTableVersionRequest& request) const
@@ -1737,18 +1390,12 @@ DeleteTableVersionOutcome GlueClient::DeleteTableVersion(const DeleteTableVersio
 
 DeleteTableVersionOutcomeCallable GlueClient::DeleteTableVersionCallable(const DeleteTableVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTableVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTableVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTableVersion, request, m_executor.get());
 }
 
 void GlueClient::DeleteTableVersionAsync(const DeleteTableVersionRequest& request, const DeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTableVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTableVersion, request, handler, context, m_executor.get());
 }
 
 DeleteTriggerOutcome GlueClient::DeleteTrigger(const DeleteTriggerRequest& request) const
@@ -1761,18 +1408,12 @@ DeleteTriggerOutcome GlueClient::DeleteTrigger(const DeleteTriggerRequest& reque
 
 DeleteTriggerOutcomeCallable GlueClient::DeleteTriggerCallable(const DeleteTriggerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTriggerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTrigger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTrigger, request, m_executor.get());
 }
 
 void GlueClient::DeleteTriggerAsync(const DeleteTriggerRequest& request, const DeleteTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTrigger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTrigger, request, handler, context, m_executor.get());
 }
 
 DeleteUserDefinedFunctionOutcome GlueClient::DeleteUserDefinedFunction(const DeleteUserDefinedFunctionRequest& request) const
@@ -1785,18 +1426,12 @@ DeleteUserDefinedFunctionOutcome GlueClient::DeleteUserDefinedFunction(const Del
 
 DeleteUserDefinedFunctionOutcomeCallable GlueClient::DeleteUserDefinedFunctionCallable(const DeleteUserDefinedFunctionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserDefinedFunctionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserDefinedFunction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteUserDefinedFunction, request, m_executor.get());
 }
 
 void GlueClient::DeleteUserDefinedFunctionAsync(const DeleteUserDefinedFunctionRequest& request, const DeleteUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteUserDefinedFunction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteUserDefinedFunction, request, handler, context, m_executor.get());
 }
 
 DeleteWorkflowOutcome GlueClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const
@@ -1809,18 +1444,12 @@ DeleteWorkflowOutcome GlueClient::DeleteWorkflow(const DeleteWorkflowRequest& re
 
 DeleteWorkflowOutcomeCallable GlueClient::DeleteWorkflowCallable(const DeleteWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkflow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWorkflow, request, m_executor.get());
 }
 
 void GlueClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWorkflow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWorkflow, request, handler, context, m_executor.get());
 }
 
 GetBlueprintOutcome GlueClient::GetBlueprint(const GetBlueprintRequest& request) const
@@ -1833,18 +1462,12 @@ GetBlueprintOutcome GlueClient::GetBlueprint(const GetBlueprintRequest& request)
 
 GetBlueprintOutcomeCallable GlueClient::GetBlueprintCallable(const GetBlueprintRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlueprint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBlueprint, request, m_executor.get());
 }
 
 void GlueClient::GetBlueprintAsync(const GetBlueprintRequest& request, const GetBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBlueprint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBlueprint, request, handler, context, m_executor.get());
 }
 
 GetBlueprintRunOutcome GlueClient::GetBlueprintRun(const GetBlueprintRunRequest& request) const
@@ -1857,18 +1480,12 @@ GetBlueprintRunOutcome GlueClient::GetBlueprintRun(const GetBlueprintRunRequest&
 
 GetBlueprintRunOutcomeCallable GlueClient::GetBlueprintRunCallable(const GetBlueprintRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBlueprintRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlueprintRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBlueprintRun, request, m_executor.get());
 }
 
 void GlueClient::GetBlueprintRunAsync(const GetBlueprintRunRequest& request, const GetBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBlueprintRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBlueprintRun, request, handler, context, m_executor.get());
 }
 
 GetBlueprintRunsOutcome GlueClient::GetBlueprintRuns(const GetBlueprintRunsRequest& request) const
@@ -1881,18 +1498,12 @@ GetBlueprintRunsOutcome GlueClient::GetBlueprintRuns(const GetBlueprintRunsReque
 
 GetBlueprintRunsOutcomeCallable GlueClient::GetBlueprintRunsCallable(const GetBlueprintRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBlueprintRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlueprintRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBlueprintRuns, request, m_executor.get());
 }
 
 void GlueClient::GetBlueprintRunsAsync(const GetBlueprintRunsRequest& request, const GetBlueprintRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBlueprintRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBlueprintRuns, request, handler, context, m_executor.get());
 }
 
 GetCatalogImportStatusOutcome GlueClient::GetCatalogImportStatus(const GetCatalogImportStatusRequest& request) const
@@ -1905,18 +1516,12 @@ GetCatalogImportStatusOutcome GlueClient::GetCatalogImportStatus(const GetCatalo
 
 GetCatalogImportStatusOutcomeCallable GlueClient::GetCatalogImportStatusCallable(const GetCatalogImportStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCatalogImportStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCatalogImportStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCatalogImportStatus, request, m_executor.get());
 }
 
 void GlueClient::GetCatalogImportStatusAsync(const GetCatalogImportStatusRequest& request, const GetCatalogImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCatalogImportStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCatalogImportStatus, request, handler, context, m_executor.get());
 }
 
 GetClassifierOutcome GlueClient::GetClassifier(const GetClassifierRequest& request) const
@@ -1929,18 +1534,12 @@ GetClassifierOutcome GlueClient::GetClassifier(const GetClassifierRequest& reque
 
 GetClassifierOutcomeCallable GlueClient::GetClassifierCallable(const GetClassifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetClassifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetClassifier(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetClassifier, request, m_executor.get());
 }
 
 void GlueClient::GetClassifierAsync(const GetClassifierRequest& request, const GetClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetClassifier(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetClassifier, request, handler, context, m_executor.get());
 }
 
 GetClassifiersOutcome GlueClient::GetClassifiers(const GetClassifiersRequest& request) const
@@ -1953,18 +1552,12 @@ GetClassifiersOutcome GlueClient::GetClassifiers(const GetClassifiersRequest& re
 
 GetClassifiersOutcomeCallable GlueClient::GetClassifiersCallable(const GetClassifiersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetClassifiersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetClassifiers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetClassifiers, request, m_executor.get());
 }
 
 void GlueClient::GetClassifiersAsync(const GetClassifiersRequest& request, const GetClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetClassifiers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetClassifiers, request, handler, context, m_executor.get());
 }
 
 GetColumnStatisticsForPartitionOutcome GlueClient::GetColumnStatisticsForPartition(const GetColumnStatisticsForPartitionRequest& request) const
@@ -1977,18 +1570,12 @@ GetColumnStatisticsForPartitionOutcome GlueClient::GetColumnStatisticsForPartiti
 
 GetColumnStatisticsForPartitionOutcomeCallable GlueClient::GetColumnStatisticsForPartitionCallable(const GetColumnStatisticsForPartitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetColumnStatisticsForPartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetColumnStatisticsForPartition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetColumnStatisticsForPartition, request, m_executor.get());
 }
 
 void GlueClient::GetColumnStatisticsForPartitionAsync(const GetColumnStatisticsForPartitionRequest& request, const GetColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetColumnStatisticsForPartition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetColumnStatisticsForPartition, request, handler, context, m_executor.get());
 }
 
 GetColumnStatisticsForTableOutcome GlueClient::GetColumnStatisticsForTable(const GetColumnStatisticsForTableRequest& request) const
@@ -2001,18 +1588,12 @@ GetColumnStatisticsForTableOutcome GlueClient::GetColumnStatisticsForTable(const
 
 GetColumnStatisticsForTableOutcomeCallable GlueClient::GetColumnStatisticsForTableCallable(const GetColumnStatisticsForTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetColumnStatisticsForTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetColumnStatisticsForTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetColumnStatisticsForTable, request, m_executor.get());
 }
 
 void GlueClient::GetColumnStatisticsForTableAsync(const GetColumnStatisticsForTableRequest& request, const GetColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetColumnStatisticsForTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetColumnStatisticsForTable, request, handler, context, m_executor.get());
 }
 
 GetConnectionOutcome GlueClient::GetConnection(const GetConnectionRequest& request) const
@@ -2025,18 +1606,12 @@ GetConnectionOutcome GlueClient::GetConnection(const GetConnectionRequest& reque
 
 GetConnectionOutcomeCallable GlueClient::GetConnectionCallable(const GetConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetConnection, request, m_executor.get());
 }
 
 void GlueClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetConnection, request, handler, context, m_executor.get());
 }
 
 GetConnectionsOutcome GlueClient::GetConnections(const GetConnectionsRequest& request) const
@@ -2049,18 +1624,12 @@ GetConnectionsOutcome GlueClient::GetConnections(const GetConnectionsRequest& re
 
 GetConnectionsOutcomeCallable GlueClient::GetConnectionsCallable(const GetConnectionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnections(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetConnections, request, m_executor.get());
 }
 
 void GlueClient::GetConnectionsAsync(const GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetConnections(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetConnections, request, handler, context, m_executor.get());
 }
 
 GetCrawlerOutcome GlueClient::GetCrawler(const GetCrawlerRequest& request) const
@@ -2073,18 +1642,12 @@ GetCrawlerOutcome GlueClient::GetCrawler(const GetCrawlerRequest& request) const
 
 GetCrawlerOutcomeCallable GlueClient::GetCrawlerCallable(const GetCrawlerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCrawlerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCrawler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCrawler, request, m_executor.get());
 }
 
 void GlueClient::GetCrawlerAsync(const GetCrawlerRequest& request, const GetCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCrawler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCrawler, request, handler, context, m_executor.get());
 }
 
 GetCrawlerMetricsOutcome GlueClient::GetCrawlerMetrics(const GetCrawlerMetricsRequest& request) const
@@ -2097,18 +1660,12 @@ GetCrawlerMetricsOutcome GlueClient::GetCrawlerMetrics(const GetCrawlerMetricsRe
 
 GetCrawlerMetricsOutcomeCallable GlueClient::GetCrawlerMetricsCallable(const GetCrawlerMetricsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCrawlerMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCrawlerMetrics(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCrawlerMetrics, request, m_executor.get());
 }
 
 void GlueClient::GetCrawlerMetricsAsync(const GetCrawlerMetricsRequest& request, const GetCrawlerMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCrawlerMetrics(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCrawlerMetrics, request, handler, context, m_executor.get());
 }
 
 GetCrawlersOutcome GlueClient::GetCrawlers(const GetCrawlersRequest& request) const
@@ -2121,18 +1678,12 @@ GetCrawlersOutcome GlueClient::GetCrawlers(const GetCrawlersRequest& request) co
 
 GetCrawlersOutcomeCallable GlueClient::GetCrawlersCallable(const GetCrawlersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCrawlersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCrawlers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCrawlers, request, m_executor.get());
 }
 
 void GlueClient::GetCrawlersAsync(const GetCrawlersRequest& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCrawlers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCrawlers, request, handler, context, m_executor.get());
 }
 
 GetCustomEntityTypeOutcome GlueClient::GetCustomEntityType(const GetCustomEntityTypeRequest& request) const
@@ -2145,18 +1696,12 @@ GetCustomEntityTypeOutcome GlueClient::GetCustomEntityType(const GetCustomEntity
 
 GetCustomEntityTypeOutcomeCallable GlueClient::GetCustomEntityTypeCallable(const GetCustomEntityTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCustomEntityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCustomEntityType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCustomEntityType, request, m_executor.get());
 }
 
 void GlueClient::GetCustomEntityTypeAsync(const GetCustomEntityTypeRequest& request, const GetCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCustomEntityType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCustomEntityType, request, handler, context, m_executor.get());
 }
 
 GetDataCatalogEncryptionSettingsOutcome GlueClient::GetDataCatalogEncryptionSettings(const GetDataCatalogEncryptionSettingsRequest& request) const
@@ -2169,18 +1714,12 @@ GetDataCatalogEncryptionSettingsOutcome GlueClient::GetDataCatalogEncryptionSett
 
 GetDataCatalogEncryptionSettingsOutcomeCallable GlueClient::GetDataCatalogEncryptionSettingsCallable(const GetDataCatalogEncryptionSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataCatalogEncryptionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataCatalogEncryptionSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDataCatalogEncryptionSettings, request, m_executor.get());
 }
 
 void GlueClient::GetDataCatalogEncryptionSettingsAsync(const GetDataCatalogEncryptionSettingsRequest& request, const GetDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDataCatalogEncryptionSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDataCatalogEncryptionSettings, request, handler, context, m_executor.get());
 }
 
 GetDatabaseOutcome GlueClient::GetDatabase(const GetDatabaseRequest& request) const
@@ -2193,18 +1732,12 @@ GetDatabaseOutcome GlueClient::GetDatabase(const GetDatabaseRequest& request) co
 
 GetDatabaseOutcomeCallable GlueClient::GetDatabaseCallable(const GetDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDatabase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDatabase, request, m_executor.get());
 }
 
 void GlueClient::GetDatabaseAsync(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDatabase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDatabase, request, handler, context, m_executor.get());
 }
 
 GetDatabasesOutcome GlueClient::GetDatabases(const GetDatabasesRequest& request) const
@@ -2217,18 +1750,12 @@ GetDatabasesOutcome GlueClient::GetDatabases(const GetDatabasesRequest& request)
 
 GetDatabasesOutcomeCallable GlueClient::GetDatabasesCallable(const GetDatabasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDatabasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDatabases(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDatabases, request, m_executor.get());
 }
 
 void GlueClient::GetDatabasesAsync(const GetDatabasesRequest& request, const GetDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDatabases(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDatabases, request, handler, context, m_executor.get());
 }
 
 GetDataflowGraphOutcome GlueClient::GetDataflowGraph(const GetDataflowGraphRequest& request) const
@@ -2241,18 +1768,12 @@ GetDataflowGraphOutcome GlueClient::GetDataflowGraph(const GetDataflowGraphReque
 
 GetDataflowGraphOutcomeCallable GlueClient::GetDataflowGraphCallable(const GetDataflowGraphRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataflowGraphOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataflowGraph(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDataflowGraph, request, m_executor.get());
 }
 
 void GlueClient::GetDataflowGraphAsync(const GetDataflowGraphRequest& request, const GetDataflowGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDataflowGraph(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDataflowGraph, request, handler, context, m_executor.get());
 }
 
 GetDevEndpointOutcome GlueClient::GetDevEndpoint(const GetDevEndpointRequest& request) const
@@ -2265,18 +1786,12 @@ GetDevEndpointOutcome GlueClient::GetDevEndpoint(const GetDevEndpointRequest& re
 
 GetDevEndpointOutcomeCallable GlueClient::GetDevEndpointCallable(const GetDevEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDevEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDevEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDevEndpoint, request, m_executor.get());
 }
 
 void GlueClient::GetDevEndpointAsync(const GetDevEndpointRequest& request, const GetDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDevEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDevEndpoint, request, handler, context, m_executor.get());
 }
 
 GetDevEndpointsOutcome GlueClient::GetDevEndpoints(const GetDevEndpointsRequest& request) const
@@ -2289,18 +1804,12 @@ GetDevEndpointsOutcome GlueClient::GetDevEndpoints(const GetDevEndpointsRequest&
 
 GetDevEndpointsOutcomeCallable GlueClient::GetDevEndpointsCallable(const GetDevEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDevEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDevEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDevEndpoints, request, m_executor.get());
 }
 
 void GlueClient::GetDevEndpointsAsync(const GetDevEndpointsRequest& request, const GetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDevEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDevEndpoints, request, handler, context, m_executor.get());
 }
 
 GetJobOutcome GlueClient::GetJob(const GetJobRequest& request) const
@@ -2313,18 +1822,12 @@ GetJobOutcome GlueClient::GetJob(const GetJobRequest& request) const
 
 GetJobOutcomeCallable GlueClient::GetJobCallable(const GetJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetJob, request, m_executor.get());
 }
 
 void GlueClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetJob, request, handler, context, m_executor.get());
 }
 
 GetJobBookmarkOutcome GlueClient::GetJobBookmark(const GetJobBookmarkRequest& request) const
@@ -2337,18 +1840,12 @@ GetJobBookmarkOutcome GlueClient::GetJobBookmark(const GetJobBookmarkRequest& re
 
 GetJobBookmarkOutcomeCallable GlueClient::GetJobBookmarkCallable(const GetJobBookmarkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetJobBookmarkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJobBookmark(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetJobBookmark, request, m_executor.get());
 }
 
 void GlueClient::GetJobBookmarkAsync(const GetJobBookmarkRequest& request, const GetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetJobBookmark(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetJobBookmark, request, handler, context, m_executor.get());
 }
 
 GetJobRunOutcome GlueClient::GetJobRun(const GetJobRunRequest& request) const
@@ -2361,18 +1858,12 @@ GetJobRunOutcome GlueClient::GetJobRun(const GetJobRunRequest& request) const
 
 GetJobRunOutcomeCallable GlueClient::GetJobRunCallable(const GetJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetJobRun, request, m_executor.get());
 }
 
 void GlueClient::GetJobRunAsync(const GetJobRunRequest& request, const GetJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetJobRun, request, handler, context, m_executor.get());
 }
 
 GetJobRunsOutcome GlueClient::GetJobRuns(const GetJobRunsRequest& request) const
@@ -2385,18 +1876,12 @@ GetJobRunsOutcome GlueClient::GetJobRuns(const GetJobRunsRequest& request) const
 
 GetJobRunsOutcomeCallable GlueClient::GetJobRunsCallable(const GetJobRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetJobRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJobRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetJobRuns, request, m_executor.get());
 }
 
 void GlueClient::GetJobRunsAsync(const GetJobRunsRequest& request, const GetJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetJobRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetJobRuns, request, handler, context, m_executor.get());
 }
 
 GetJobsOutcome GlueClient::GetJobs(const GetJobsRequest& request) const
@@ -2409,18 +1894,12 @@ GetJobsOutcome GlueClient::GetJobs(const GetJobsRequest& request) const
 
 GetJobsOutcomeCallable GlueClient::GetJobsCallable(const GetJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetJobs, request, m_executor.get());
 }
 
 void GlueClient::GetJobsAsync(const GetJobsRequest& request, const GetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetJobs, request, handler, context, m_executor.get());
 }
 
 GetMLTaskRunOutcome GlueClient::GetMLTaskRun(const GetMLTaskRunRequest& request) const
@@ -2433,18 +1912,12 @@ GetMLTaskRunOutcome GlueClient::GetMLTaskRun(const GetMLTaskRunRequest& request)
 
 GetMLTaskRunOutcomeCallable GlueClient::GetMLTaskRunCallable(const GetMLTaskRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMLTaskRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMLTaskRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMLTaskRun, request, m_executor.get());
 }
 
 void GlueClient::GetMLTaskRunAsync(const GetMLTaskRunRequest& request, const GetMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMLTaskRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMLTaskRun, request, handler, context, m_executor.get());
 }
 
 GetMLTaskRunsOutcome GlueClient::GetMLTaskRuns(const GetMLTaskRunsRequest& request) const
@@ -2457,18 +1930,12 @@ GetMLTaskRunsOutcome GlueClient::GetMLTaskRuns(const GetMLTaskRunsRequest& reque
 
 GetMLTaskRunsOutcomeCallable GlueClient::GetMLTaskRunsCallable(const GetMLTaskRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMLTaskRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMLTaskRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMLTaskRuns, request, m_executor.get());
 }
 
 void GlueClient::GetMLTaskRunsAsync(const GetMLTaskRunsRequest& request, const GetMLTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMLTaskRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMLTaskRuns, request, handler, context, m_executor.get());
 }
 
 GetMLTransformOutcome GlueClient::GetMLTransform(const GetMLTransformRequest& request) const
@@ -2481,18 +1948,12 @@ GetMLTransformOutcome GlueClient::GetMLTransform(const GetMLTransformRequest& re
 
 GetMLTransformOutcomeCallable GlueClient::GetMLTransformCallable(const GetMLTransformRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMLTransformOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMLTransform(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMLTransform, request, m_executor.get());
 }
 
 void GlueClient::GetMLTransformAsync(const GetMLTransformRequest& request, const GetMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMLTransform(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMLTransform, request, handler, context, m_executor.get());
 }
 
 GetMLTransformsOutcome GlueClient::GetMLTransforms(const GetMLTransformsRequest& request) const
@@ -2505,18 +1966,12 @@ GetMLTransformsOutcome GlueClient::GetMLTransforms(const GetMLTransformsRequest&
 
 GetMLTransformsOutcomeCallable GlueClient::GetMLTransformsCallable(const GetMLTransformsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMLTransformsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMLTransforms(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMLTransforms, request, m_executor.get());
 }
 
 void GlueClient::GetMLTransformsAsync(const GetMLTransformsRequest& request, const GetMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMLTransforms(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMLTransforms, request, handler, context, m_executor.get());
 }
 
 GetMappingOutcome GlueClient::GetMapping(const GetMappingRequest& request) const
@@ -2529,18 +1984,12 @@ GetMappingOutcome GlueClient::GetMapping(const GetMappingRequest& request) const
 
 GetMappingOutcomeCallable GlueClient::GetMappingCallable(const GetMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMapping(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMapping, request, m_executor.get());
 }
 
 void GlueClient::GetMappingAsync(const GetMappingRequest& request, const GetMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMapping(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMapping, request, handler, context, m_executor.get());
 }
 
 GetPartitionOutcome GlueClient::GetPartition(const GetPartitionRequest& request) const
@@ -2553,18 +2002,12 @@ GetPartitionOutcome GlueClient::GetPartition(const GetPartitionRequest& request)
 
 GetPartitionOutcomeCallable GlueClient::GetPartitionCallable(const GetPartitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPartition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPartition, request, m_executor.get());
 }
 
 void GlueClient::GetPartitionAsync(const GetPartitionRequest& request, const GetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPartition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPartition, request, handler, context, m_executor.get());
 }
 
 GetPartitionIndexesOutcome GlueClient::GetPartitionIndexes(const GetPartitionIndexesRequest& request) const
@@ -2577,18 +2020,12 @@ GetPartitionIndexesOutcome GlueClient::GetPartitionIndexes(const GetPartitionInd
 
 GetPartitionIndexesOutcomeCallable GlueClient::GetPartitionIndexesCallable(const GetPartitionIndexesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPartitionIndexesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPartitionIndexes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPartitionIndexes, request, m_executor.get());
 }
 
 void GlueClient::GetPartitionIndexesAsync(const GetPartitionIndexesRequest& request, const GetPartitionIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPartitionIndexes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPartitionIndexes, request, handler, context, m_executor.get());
 }
 
 GetPartitionsOutcome GlueClient::GetPartitions(const GetPartitionsRequest& request) const
@@ -2601,18 +2038,12 @@ GetPartitionsOutcome GlueClient::GetPartitions(const GetPartitionsRequest& reque
 
 GetPartitionsOutcomeCallable GlueClient::GetPartitionsCallable(const GetPartitionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPartitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPartitions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPartitions, request, m_executor.get());
 }
 
 void GlueClient::GetPartitionsAsync(const GetPartitionsRequest& request, const GetPartitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPartitions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPartitions, request, handler, context, m_executor.get());
 }
 
 GetPlanOutcome GlueClient::GetPlan(const GetPlanRequest& request) const
@@ -2625,18 +2056,12 @@ GetPlanOutcome GlueClient::GetPlan(const GetPlanRequest& request) const
 
 GetPlanOutcomeCallable GlueClient::GetPlanCallable(const GetPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPlan, request, m_executor.get());
 }
 
 void GlueClient::GetPlanAsync(const GetPlanRequest& request, const GetPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPlan, request, handler, context, m_executor.get());
 }
 
 GetRegistryOutcome GlueClient::GetRegistry(const GetRegistryRequest& request) const
@@ -2649,18 +2074,12 @@ GetRegistryOutcome GlueClient::GetRegistry(const GetRegistryRequest& request) co
 
 GetRegistryOutcomeCallable GlueClient::GetRegistryCallable(const GetRegistryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRegistryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRegistry(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRegistry, request, m_executor.get());
 }
 
 void GlueClient::GetRegistryAsync(const GetRegistryRequest& request, const GetRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRegistry(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRegistry, request, handler, context, m_executor.get());
 }
 
 GetResourcePoliciesOutcome GlueClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const
@@ -2673,18 +2092,12 @@ GetResourcePoliciesOutcome GlueClient::GetResourcePolicies(const GetResourcePoli
 
 GetResourcePoliciesOutcomeCallable GlueClient::GetResourcePoliciesCallable(const GetResourcePoliciesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourcePoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourcePolicies(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResourcePolicies, request, m_executor.get());
 }
 
 void GlueClient::GetResourcePoliciesAsync(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResourcePolicies(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResourcePolicies, request, handler, context, m_executor.get());
 }
 
 GetResourcePolicyOutcome GlueClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
@@ -2697,18 +2110,12 @@ GetResourcePolicyOutcome GlueClient::GetResourcePolicy(const GetResourcePolicyRe
 
 GetResourcePolicyOutcomeCallable GlueClient::GetResourcePolicyCallable(const GetResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResourcePolicy, request, m_executor.get());
 }
 
 void GlueClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResourcePolicy, request, handler, context, m_executor.get());
 }
 
 GetSchemaOutcome GlueClient::GetSchema(const GetSchemaRequest& request) const
@@ -2721,18 +2128,12 @@ GetSchemaOutcome GlueClient::GetSchema(const GetSchemaRequest& request) const
 
 GetSchemaOutcomeCallable GlueClient::GetSchemaCallable(const GetSchemaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSchemaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSchema(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSchema, request, m_executor.get());
 }
 
 void GlueClient::GetSchemaAsync(const GetSchemaRequest& request, const GetSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSchema(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSchema, request, handler, context, m_executor.get());
 }
 
 GetSchemaByDefinitionOutcome GlueClient::GetSchemaByDefinition(const GetSchemaByDefinitionRequest& request) const
@@ -2745,18 +2146,12 @@ GetSchemaByDefinitionOutcome GlueClient::GetSchemaByDefinition(const GetSchemaBy
 
 GetSchemaByDefinitionOutcomeCallable GlueClient::GetSchemaByDefinitionCallable(const GetSchemaByDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSchemaByDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSchemaByDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSchemaByDefinition, request, m_executor.get());
 }
 
 void GlueClient::GetSchemaByDefinitionAsync(const GetSchemaByDefinitionRequest& request, const GetSchemaByDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSchemaByDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSchemaByDefinition, request, handler, context, m_executor.get());
 }
 
 GetSchemaVersionOutcome GlueClient::GetSchemaVersion(const GetSchemaVersionRequest& request) const
@@ -2769,18 +2164,12 @@ GetSchemaVersionOutcome GlueClient::GetSchemaVersion(const GetSchemaVersionReque
 
 GetSchemaVersionOutcomeCallable GlueClient::GetSchemaVersionCallable(const GetSchemaVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSchemaVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSchemaVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSchemaVersion, request, m_executor.get());
 }
 
 void GlueClient::GetSchemaVersionAsync(const GetSchemaVersionRequest& request, const GetSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSchemaVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSchemaVersion, request, handler, context, m_executor.get());
 }
 
 GetSchemaVersionsDiffOutcome GlueClient::GetSchemaVersionsDiff(const GetSchemaVersionsDiffRequest& request) const
@@ -2793,18 +2182,12 @@ GetSchemaVersionsDiffOutcome GlueClient::GetSchemaVersionsDiff(const GetSchemaVe
 
 GetSchemaVersionsDiffOutcomeCallable GlueClient::GetSchemaVersionsDiffCallable(const GetSchemaVersionsDiffRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSchemaVersionsDiffOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSchemaVersionsDiff(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSchemaVersionsDiff, request, m_executor.get());
 }
 
 void GlueClient::GetSchemaVersionsDiffAsync(const GetSchemaVersionsDiffRequest& request, const GetSchemaVersionsDiffResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSchemaVersionsDiff(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSchemaVersionsDiff, request, handler, context, m_executor.get());
 }
 
 GetSecurityConfigurationOutcome GlueClient::GetSecurityConfiguration(const GetSecurityConfigurationRequest& request) const
@@ -2817,18 +2200,12 @@ GetSecurityConfigurationOutcome GlueClient::GetSecurityConfiguration(const GetSe
 
 GetSecurityConfigurationOutcomeCallable GlueClient::GetSecurityConfigurationCallable(const GetSecurityConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSecurityConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSecurityConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSecurityConfiguration, request, m_executor.get());
 }
 
 void GlueClient::GetSecurityConfigurationAsync(const GetSecurityConfigurationRequest& request, const GetSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSecurityConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSecurityConfiguration, request, handler, context, m_executor.get());
 }
 
 GetSecurityConfigurationsOutcome GlueClient::GetSecurityConfigurations(const GetSecurityConfigurationsRequest& request) const
@@ -2841,18 +2218,12 @@ GetSecurityConfigurationsOutcome GlueClient::GetSecurityConfigurations(const Get
 
 GetSecurityConfigurationsOutcomeCallable GlueClient::GetSecurityConfigurationsCallable(const GetSecurityConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSecurityConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSecurityConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSecurityConfigurations, request, m_executor.get());
 }
 
 void GlueClient::GetSecurityConfigurationsAsync(const GetSecurityConfigurationsRequest& request, const GetSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSecurityConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSecurityConfigurations, request, handler, context, m_executor.get());
 }
 
 GetSessionOutcome GlueClient::GetSession(const GetSessionRequest& request) const
@@ -2865,18 +2236,12 @@ GetSessionOutcome GlueClient::GetSession(const GetSessionRequest& request) const
 
 GetSessionOutcomeCallable GlueClient::GetSessionCallable(const GetSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSession, request, m_executor.get());
 }
 
 void GlueClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSession, request, handler, context, m_executor.get());
 }
 
 GetStatementOutcome GlueClient::GetStatement(const GetStatementRequest& request) const
@@ -2889,18 +2254,12 @@ GetStatementOutcome GlueClient::GetStatement(const GetStatementRequest& request)
 
 GetStatementOutcomeCallable GlueClient::GetStatementCallable(const GetStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStatement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetStatement, request, m_executor.get());
 }
 
 void GlueClient::GetStatementAsync(const GetStatementRequest& request, const GetStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetStatement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetStatement, request, handler, context, m_executor.get());
 }
 
 GetTableOutcome GlueClient::GetTable(const GetTableRequest& request) const
@@ -2913,18 +2272,12 @@ GetTableOutcome GlueClient::GetTable(const GetTableRequest& request) const
 
 GetTableOutcomeCallable GlueClient::GetTableCallable(const GetTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTable, request, m_executor.get());
 }
 
 void GlueClient::GetTableAsync(const GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTable, request, handler, context, m_executor.get());
 }
 
 GetTableVersionOutcome GlueClient::GetTableVersion(const GetTableVersionRequest& request) const
@@ -2937,18 +2290,12 @@ GetTableVersionOutcome GlueClient::GetTableVersion(const GetTableVersionRequest&
 
 GetTableVersionOutcomeCallable GlueClient::GetTableVersionCallable(const GetTableVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTableVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTableVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTableVersion, request, m_executor.get());
 }
 
 void GlueClient::GetTableVersionAsync(const GetTableVersionRequest& request, const GetTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTableVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTableVersion, request, handler, context, m_executor.get());
 }
 
 GetTableVersionsOutcome GlueClient::GetTableVersions(const GetTableVersionsRequest& request) const
@@ -2961,18 +2308,12 @@ GetTableVersionsOutcome GlueClient::GetTableVersions(const GetTableVersionsReque
 
 GetTableVersionsOutcomeCallable GlueClient::GetTableVersionsCallable(const GetTableVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTableVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTableVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTableVersions, request, m_executor.get());
 }
 
 void GlueClient::GetTableVersionsAsync(const GetTableVersionsRequest& request, const GetTableVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTableVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTableVersions, request, handler, context, m_executor.get());
 }
 
 GetTablesOutcome GlueClient::GetTables(const GetTablesRequest& request) const
@@ -2985,18 +2326,12 @@ GetTablesOutcome GlueClient::GetTables(const GetTablesRequest& request) const
 
 GetTablesOutcomeCallable GlueClient::GetTablesCallable(const GetTablesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTablesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTables(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTables, request, m_executor.get());
 }
 
 void GlueClient::GetTablesAsync(const GetTablesRequest& request, const GetTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTables(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTables, request, handler, context, m_executor.get());
 }
 
 GetTagsOutcome GlueClient::GetTags(const GetTagsRequest& request) const
@@ -3009,18 +2344,12 @@ GetTagsOutcome GlueClient::GetTags(const GetTagsRequest& request) const
 
 GetTagsOutcomeCallable GlueClient::GetTagsCallable(const GetTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTags, request, m_executor.get());
 }
 
 void GlueClient::GetTagsAsync(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTags, request, handler, context, m_executor.get());
 }
 
 GetTriggerOutcome GlueClient::GetTrigger(const GetTriggerRequest& request) const
@@ -3033,18 +2362,12 @@ GetTriggerOutcome GlueClient::GetTrigger(const GetTriggerRequest& request) const
 
 GetTriggerOutcomeCallable GlueClient::GetTriggerCallable(const GetTriggerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTriggerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTrigger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTrigger, request, m_executor.get());
 }
 
 void GlueClient::GetTriggerAsync(const GetTriggerRequest& request, const GetTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTrigger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTrigger, request, handler, context, m_executor.get());
 }
 
 GetTriggersOutcome GlueClient::GetTriggers(const GetTriggersRequest& request) const
@@ -3057,18 +2380,12 @@ GetTriggersOutcome GlueClient::GetTriggers(const GetTriggersRequest& request) co
 
 GetTriggersOutcomeCallable GlueClient::GetTriggersCallable(const GetTriggersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTriggersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTriggers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTriggers, request, m_executor.get());
 }
 
 void GlueClient::GetTriggersAsync(const GetTriggersRequest& request, const GetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTriggers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTriggers, request, handler, context, m_executor.get());
 }
 
 GetUnfilteredPartitionMetadataOutcome GlueClient::GetUnfilteredPartitionMetadata(const GetUnfilteredPartitionMetadataRequest& request) const
@@ -3081,18 +2398,12 @@ GetUnfilteredPartitionMetadataOutcome GlueClient::GetUnfilteredPartitionMetadata
 
 GetUnfilteredPartitionMetadataOutcomeCallable GlueClient::GetUnfilteredPartitionMetadataCallable(const GetUnfilteredPartitionMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUnfilteredPartitionMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUnfilteredPartitionMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUnfilteredPartitionMetadata, request, m_executor.get());
 }
 
 void GlueClient::GetUnfilteredPartitionMetadataAsync(const GetUnfilteredPartitionMetadataRequest& request, const GetUnfilteredPartitionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUnfilteredPartitionMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUnfilteredPartitionMetadata, request, handler, context, m_executor.get());
 }
 
 GetUnfilteredPartitionsMetadataOutcome GlueClient::GetUnfilteredPartitionsMetadata(const GetUnfilteredPartitionsMetadataRequest& request) const
@@ -3105,18 +2416,12 @@ GetUnfilteredPartitionsMetadataOutcome GlueClient::GetUnfilteredPartitionsMetada
 
 GetUnfilteredPartitionsMetadataOutcomeCallable GlueClient::GetUnfilteredPartitionsMetadataCallable(const GetUnfilteredPartitionsMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUnfilteredPartitionsMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUnfilteredPartitionsMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUnfilteredPartitionsMetadata, request, m_executor.get());
 }
 
 void GlueClient::GetUnfilteredPartitionsMetadataAsync(const GetUnfilteredPartitionsMetadataRequest& request, const GetUnfilteredPartitionsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUnfilteredPartitionsMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUnfilteredPartitionsMetadata, request, handler, context, m_executor.get());
 }
 
 GetUnfilteredTableMetadataOutcome GlueClient::GetUnfilteredTableMetadata(const GetUnfilteredTableMetadataRequest& request) const
@@ -3129,18 +2434,12 @@ GetUnfilteredTableMetadataOutcome GlueClient::GetUnfilteredTableMetadata(const G
 
 GetUnfilteredTableMetadataOutcomeCallable GlueClient::GetUnfilteredTableMetadataCallable(const GetUnfilteredTableMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUnfilteredTableMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUnfilteredTableMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUnfilteredTableMetadata, request, m_executor.get());
 }
 
 void GlueClient::GetUnfilteredTableMetadataAsync(const GetUnfilteredTableMetadataRequest& request, const GetUnfilteredTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUnfilteredTableMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUnfilteredTableMetadata, request, handler, context, m_executor.get());
 }
 
 GetUserDefinedFunctionOutcome GlueClient::GetUserDefinedFunction(const GetUserDefinedFunctionRequest& request) const
@@ -3153,18 +2452,12 @@ GetUserDefinedFunctionOutcome GlueClient::GetUserDefinedFunction(const GetUserDe
 
 GetUserDefinedFunctionOutcomeCallable GlueClient::GetUserDefinedFunctionCallable(const GetUserDefinedFunctionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserDefinedFunctionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUserDefinedFunction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUserDefinedFunction, request, m_executor.get());
 }
 
 void GlueClient::GetUserDefinedFunctionAsync(const GetUserDefinedFunctionRequest& request, const GetUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUserDefinedFunction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUserDefinedFunction, request, handler, context, m_executor.get());
 }
 
 GetUserDefinedFunctionsOutcome GlueClient::GetUserDefinedFunctions(const GetUserDefinedFunctionsRequest& request) const
@@ -3177,18 +2470,12 @@ GetUserDefinedFunctionsOutcome GlueClient::GetUserDefinedFunctions(const GetUser
 
 GetUserDefinedFunctionsOutcomeCallable GlueClient::GetUserDefinedFunctionsCallable(const GetUserDefinedFunctionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserDefinedFunctionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUserDefinedFunctions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUserDefinedFunctions, request, m_executor.get());
 }
 
 void GlueClient::GetUserDefinedFunctionsAsync(const GetUserDefinedFunctionsRequest& request, const GetUserDefinedFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUserDefinedFunctions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUserDefinedFunctions, request, handler, context, m_executor.get());
 }
 
 GetWorkflowOutcome GlueClient::GetWorkflow(const GetWorkflowRequest& request) const
@@ -3201,18 +2488,12 @@ GetWorkflowOutcome GlueClient::GetWorkflow(const GetWorkflowRequest& request) co
 
 GetWorkflowOutcomeCallable GlueClient::GetWorkflowCallable(const GetWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkflow, request, m_executor.get());
 }
 
 void GlueClient::GetWorkflowAsync(const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkflow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkflow, request, handler, context, m_executor.get());
 }
 
 GetWorkflowRunOutcome GlueClient::GetWorkflowRun(const GetWorkflowRunRequest& request) const
@@ -3225,18 +2506,12 @@ GetWorkflowRunOutcome GlueClient::GetWorkflowRun(const GetWorkflowRunRequest& re
 
 GetWorkflowRunOutcomeCallable GlueClient::GetWorkflowRunCallable(const GetWorkflowRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflowRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkflowRun, request, m_executor.get());
 }
 
 void GlueClient::GetWorkflowRunAsync(const GetWorkflowRunRequest& request, const GetWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkflowRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkflowRun, request, handler, context, m_executor.get());
 }
 
 GetWorkflowRunPropertiesOutcome GlueClient::GetWorkflowRunProperties(const GetWorkflowRunPropertiesRequest& request) const
@@ -3249,18 +2524,12 @@ GetWorkflowRunPropertiesOutcome GlueClient::GetWorkflowRunProperties(const GetWo
 
 GetWorkflowRunPropertiesOutcomeCallable GlueClient::GetWorkflowRunPropertiesCallable(const GetWorkflowRunPropertiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowRunPropertiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflowRunProperties(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkflowRunProperties, request, m_executor.get());
 }
 
 void GlueClient::GetWorkflowRunPropertiesAsync(const GetWorkflowRunPropertiesRequest& request, const GetWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkflowRunProperties(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkflowRunProperties, request, handler, context, m_executor.get());
 }
 
 GetWorkflowRunsOutcome GlueClient::GetWorkflowRuns(const GetWorkflowRunsRequest& request) const
@@ -3273,18 +2542,12 @@ GetWorkflowRunsOutcome GlueClient::GetWorkflowRuns(const GetWorkflowRunsRequest&
 
 GetWorkflowRunsOutcomeCallable GlueClient::GetWorkflowRunsCallable(const GetWorkflowRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflowRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkflowRuns, request, m_executor.get());
 }
 
 void GlueClient::GetWorkflowRunsAsync(const GetWorkflowRunsRequest& request, const GetWorkflowRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkflowRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkflowRuns, request, handler, context, m_executor.get());
 }
 
 ImportCatalogToGlueOutcome GlueClient::ImportCatalogToGlue(const ImportCatalogToGlueRequest& request) const
@@ -3297,18 +2560,12 @@ ImportCatalogToGlueOutcome GlueClient::ImportCatalogToGlue(const ImportCatalogTo
 
 ImportCatalogToGlueOutcomeCallable GlueClient::ImportCatalogToGlueCallable(const ImportCatalogToGlueRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportCatalogToGlueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportCatalogToGlue(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportCatalogToGlue, request, m_executor.get());
 }
 
 void GlueClient::ImportCatalogToGlueAsync(const ImportCatalogToGlueRequest& request, const ImportCatalogToGlueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportCatalogToGlue(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportCatalogToGlue, request, handler, context, m_executor.get());
 }
 
 ListBlueprintsOutcome GlueClient::ListBlueprints(const ListBlueprintsRequest& request) const
@@ -3321,18 +2578,12 @@ ListBlueprintsOutcome GlueClient::ListBlueprints(const ListBlueprintsRequest& re
 
 ListBlueprintsOutcomeCallable GlueClient::ListBlueprintsCallable(const ListBlueprintsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBlueprintsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBlueprints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBlueprints, request, m_executor.get());
 }
 
 void GlueClient::ListBlueprintsAsync(const ListBlueprintsRequest& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBlueprints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBlueprints, request, handler, context, m_executor.get());
 }
 
 ListCrawlersOutcome GlueClient::ListCrawlers(const ListCrawlersRequest& request) const
@@ -3345,18 +2596,12 @@ ListCrawlersOutcome GlueClient::ListCrawlers(const ListCrawlersRequest& request)
 
 ListCrawlersOutcomeCallable GlueClient::ListCrawlersCallable(const ListCrawlersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCrawlersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCrawlers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCrawlers, request, m_executor.get());
 }
 
 void GlueClient::ListCrawlersAsync(const ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCrawlers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCrawlers, request, handler, context, m_executor.get());
 }
 
 ListCrawlsOutcome GlueClient::ListCrawls(const ListCrawlsRequest& request) const
@@ -3369,18 +2614,12 @@ ListCrawlsOutcome GlueClient::ListCrawls(const ListCrawlsRequest& request) const
 
 ListCrawlsOutcomeCallable GlueClient::ListCrawlsCallable(const ListCrawlsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCrawlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCrawls(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCrawls, request, m_executor.get());
 }
 
 void GlueClient::ListCrawlsAsync(const ListCrawlsRequest& request, const ListCrawlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCrawls(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCrawls, request, handler, context, m_executor.get());
 }
 
 ListCustomEntityTypesOutcome GlueClient::ListCustomEntityTypes(const ListCustomEntityTypesRequest& request) const
@@ -3393,18 +2632,12 @@ ListCustomEntityTypesOutcome GlueClient::ListCustomEntityTypes(const ListCustomE
 
 ListCustomEntityTypesOutcomeCallable GlueClient::ListCustomEntityTypesCallable(const ListCustomEntityTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCustomEntityTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCustomEntityTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCustomEntityTypes, request, m_executor.get());
 }
 
 void GlueClient::ListCustomEntityTypesAsync(const ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCustomEntityTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCustomEntityTypes, request, handler, context, m_executor.get());
 }
 
 ListDevEndpointsOutcome GlueClient::ListDevEndpoints(const ListDevEndpointsRequest& request) const
@@ -3417,18 +2650,12 @@ ListDevEndpointsOutcome GlueClient::ListDevEndpoints(const ListDevEndpointsReque
 
 ListDevEndpointsOutcomeCallable GlueClient::ListDevEndpointsCallable(const ListDevEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDevEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDevEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDevEndpoints, request, m_executor.get());
 }
 
 void GlueClient::ListDevEndpointsAsync(const ListDevEndpointsRequest& request, const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDevEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDevEndpoints, request, handler, context, m_executor.get());
 }
 
 ListJobsOutcome GlueClient::ListJobs(const ListJobsRequest& request) const
@@ -3441,18 +2668,12 @@ ListJobsOutcome GlueClient::ListJobs(const ListJobsRequest& request) const
 
 ListJobsOutcomeCallable GlueClient::ListJobsCallable(const ListJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListJobs, request, m_executor.get());
 }
 
 void GlueClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListJobs, request, handler, context, m_executor.get());
 }
 
 ListMLTransformsOutcome GlueClient::ListMLTransforms(const ListMLTransformsRequest& request) const
@@ -3465,18 +2686,12 @@ ListMLTransformsOutcome GlueClient::ListMLTransforms(const ListMLTransformsReque
 
 ListMLTransformsOutcomeCallable GlueClient::ListMLTransformsCallable(const ListMLTransformsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMLTransformsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMLTransforms(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMLTransforms, request, m_executor.get());
 }
 
 void GlueClient::ListMLTransformsAsync(const ListMLTransformsRequest& request, const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMLTransforms(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMLTransforms, request, handler, context, m_executor.get());
 }
 
 ListRegistriesOutcome GlueClient::ListRegistries(const ListRegistriesRequest& request) const
@@ -3489,18 +2704,12 @@ ListRegistriesOutcome GlueClient::ListRegistries(const ListRegistriesRequest& re
 
 ListRegistriesOutcomeCallable GlueClient::ListRegistriesCallable(const ListRegistriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRegistriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRegistries(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRegistries, request, m_executor.get());
 }
 
 void GlueClient::ListRegistriesAsync(const ListRegistriesRequest& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRegistries(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRegistries, request, handler, context, m_executor.get());
 }
 
 ListSchemaVersionsOutcome GlueClient::ListSchemaVersions(const ListSchemaVersionsRequest& request) const
@@ -3513,18 +2722,12 @@ ListSchemaVersionsOutcome GlueClient::ListSchemaVersions(const ListSchemaVersion
 
 ListSchemaVersionsOutcomeCallable GlueClient::ListSchemaVersionsCallable(const ListSchemaVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSchemaVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSchemaVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSchemaVersions, request, m_executor.get());
 }
 
 void GlueClient::ListSchemaVersionsAsync(const ListSchemaVersionsRequest& request, const ListSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSchemaVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSchemaVersions, request, handler, context, m_executor.get());
 }
 
 ListSchemasOutcome GlueClient::ListSchemas(const ListSchemasRequest& request) const
@@ -3537,18 +2740,12 @@ ListSchemasOutcome GlueClient::ListSchemas(const ListSchemasRequest& request) co
 
 ListSchemasOutcomeCallable GlueClient::ListSchemasCallable(const ListSchemasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSchemasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSchemas(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSchemas, request, m_executor.get());
 }
 
 void GlueClient::ListSchemasAsync(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSchemas(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSchemas, request, handler, context, m_executor.get());
 }
 
 ListSessionsOutcome GlueClient::ListSessions(const ListSessionsRequest& request) const
@@ -3561,18 +2758,12 @@ ListSessionsOutcome GlueClient::ListSessions(const ListSessionsRequest& request)
 
 ListSessionsOutcomeCallable GlueClient::ListSessionsCallable(const ListSessionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSessions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSessions, request, m_executor.get());
 }
 
 void GlueClient::ListSessionsAsync(const ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSessions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSessions, request, handler, context, m_executor.get());
 }
 
 ListStatementsOutcome GlueClient::ListStatements(const ListStatementsRequest& request) const
@@ -3585,18 +2776,12 @@ ListStatementsOutcome GlueClient::ListStatements(const ListStatementsRequest& re
 
 ListStatementsOutcomeCallable GlueClient::ListStatementsCallable(const ListStatementsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStatementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStatements(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStatements, request, m_executor.get());
 }
 
 void GlueClient::ListStatementsAsync(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStatements(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStatements, request, handler, context, m_executor.get());
 }
 
 ListTriggersOutcome GlueClient::ListTriggers(const ListTriggersRequest& request) const
@@ -3609,18 +2794,12 @@ ListTriggersOutcome GlueClient::ListTriggers(const ListTriggersRequest& request)
 
 ListTriggersOutcomeCallable GlueClient::ListTriggersCallable(const ListTriggersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTriggersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTriggers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTriggers, request, m_executor.get());
 }
 
 void GlueClient::ListTriggersAsync(const ListTriggersRequest& request, const ListTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTriggers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTriggers, request, handler, context, m_executor.get());
 }
 
 ListWorkflowsOutcome GlueClient::ListWorkflows(const ListWorkflowsRequest& request) const
@@ -3633,18 +2812,12 @@ ListWorkflowsOutcome GlueClient::ListWorkflows(const ListWorkflowsRequest& reque
 
 ListWorkflowsOutcomeCallable GlueClient::ListWorkflowsCallable(const ListWorkflowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkflows(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkflows, request, m_executor.get());
 }
 
 void GlueClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkflows(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkflows, request, handler, context, m_executor.get());
 }
 
 PutDataCatalogEncryptionSettingsOutcome GlueClient::PutDataCatalogEncryptionSettings(const PutDataCatalogEncryptionSettingsRequest& request) const
@@ -3657,18 +2830,12 @@ PutDataCatalogEncryptionSettingsOutcome GlueClient::PutDataCatalogEncryptionSett
 
 PutDataCatalogEncryptionSettingsOutcomeCallable GlueClient::PutDataCatalogEncryptionSettingsCallable(const PutDataCatalogEncryptionSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutDataCatalogEncryptionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutDataCatalogEncryptionSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutDataCatalogEncryptionSettings, request, m_executor.get());
 }
 
 void GlueClient::PutDataCatalogEncryptionSettingsAsync(const PutDataCatalogEncryptionSettingsRequest& request, const PutDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutDataCatalogEncryptionSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutDataCatalogEncryptionSettings, request, handler, context, m_executor.get());
 }
 
 PutResourcePolicyOutcome GlueClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -3681,18 +2848,12 @@ PutResourcePolicyOutcome GlueClient::PutResourcePolicy(const PutResourcePolicyRe
 
 PutResourcePolicyOutcomeCallable GlueClient::PutResourcePolicyCallable(const PutResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutResourcePolicy, request, m_executor.get());
 }
 
 void GlueClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutResourcePolicy, request, handler, context, m_executor.get());
 }
 
 PutSchemaVersionMetadataOutcome GlueClient::PutSchemaVersionMetadata(const PutSchemaVersionMetadataRequest& request) const
@@ -3705,18 +2866,12 @@ PutSchemaVersionMetadataOutcome GlueClient::PutSchemaVersionMetadata(const PutSc
 
 PutSchemaVersionMetadataOutcomeCallable GlueClient::PutSchemaVersionMetadataCallable(const PutSchemaVersionMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutSchemaVersionMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutSchemaVersionMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutSchemaVersionMetadata, request, m_executor.get());
 }
 
 void GlueClient::PutSchemaVersionMetadataAsync(const PutSchemaVersionMetadataRequest& request, const PutSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutSchemaVersionMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutSchemaVersionMetadata, request, handler, context, m_executor.get());
 }
 
 PutWorkflowRunPropertiesOutcome GlueClient::PutWorkflowRunProperties(const PutWorkflowRunPropertiesRequest& request) const
@@ -3729,18 +2884,12 @@ PutWorkflowRunPropertiesOutcome GlueClient::PutWorkflowRunProperties(const PutWo
 
 PutWorkflowRunPropertiesOutcomeCallable GlueClient::PutWorkflowRunPropertiesCallable(const PutWorkflowRunPropertiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutWorkflowRunPropertiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutWorkflowRunProperties(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutWorkflowRunProperties, request, m_executor.get());
 }
 
 void GlueClient::PutWorkflowRunPropertiesAsync(const PutWorkflowRunPropertiesRequest& request, const PutWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutWorkflowRunProperties(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutWorkflowRunProperties, request, handler, context, m_executor.get());
 }
 
 QuerySchemaVersionMetadataOutcome GlueClient::QuerySchemaVersionMetadata(const QuerySchemaVersionMetadataRequest& request) const
@@ -3753,18 +2902,12 @@ QuerySchemaVersionMetadataOutcome GlueClient::QuerySchemaVersionMetadata(const Q
 
 QuerySchemaVersionMetadataOutcomeCallable GlueClient::QuerySchemaVersionMetadataCallable(const QuerySchemaVersionMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QuerySchemaVersionMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QuerySchemaVersionMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(QuerySchemaVersionMetadata, request, m_executor.get());
 }
 
 void GlueClient::QuerySchemaVersionMetadataAsync(const QuerySchemaVersionMetadataRequest& request, const QuerySchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, QuerySchemaVersionMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(QuerySchemaVersionMetadata, request, handler, context, m_executor.get());
 }
 
 RegisterSchemaVersionOutcome GlueClient::RegisterSchemaVersion(const RegisterSchemaVersionRequest& request) const
@@ -3777,18 +2920,12 @@ RegisterSchemaVersionOutcome GlueClient::RegisterSchemaVersion(const RegisterSch
 
 RegisterSchemaVersionOutcomeCallable GlueClient::RegisterSchemaVersionCallable(const RegisterSchemaVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterSchemaVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterSchemaVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RegisterSchemaVersion, request, m_executor.get());
 }
 
 void GlueClient::RegisterSchemaVersionAsync(const RegisterSchemaVersionRequest& request, const RegisterSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterSchemaVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RegisterSchemaVersion, request, handler, context, m_executor.get());
 }
 
 RemoveSchemaVersionMetadataOutcome GlueClient::RemoveSchemaVersionMetadata(const RemoveSchemaVersionMetadataRequest& request) const
@@ -3801,18 +2938,12 @@ RemoveSchemaVersionMetadataOutcome GlueClient::RemoveSchemaVersionMetadata(const
 
 RemoveSchemaVersionMetadataOutcomeCallable GlueClient::RemoveSchemaVersionMetadataCallable(const RemoveSchemaVersionMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveSchemaVersionMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveSchemaVersionMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveSchemaVersionMetadata, request, m_executor.get());
 }
 
 void GlueClient::RemoveSchemaVersionMetadataAsync(const RemoveSchemaVersionMetadataRequest& request, const RemoveSchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveSchemaVersionMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveSchemaVersionMetadata, request, handler, context, m_executor.get());
 }
 
 ResetJobBookmarkOutcome GlueClient::ResetJobBookmark(const ResetJobBookmarkRequest& request) const
@@ -3825,18 +2956,12 @@ ResetJobBookmarkOutcome GlueClient::ResetJobBookmark(const ResetJobBookmarkReque
 
 ResetJobBookmarkOutcomeCallable GlueClient::ResetJobBookmarkCallable(const ResetJobBookmarkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResetJobBookmarkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetJobBookmark(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ResetJobBookmark, request, m_executor.get());
 }
 
 void GlueClient::ResetJobBookmarkAsync(const ResetJobBookmarkRequest& request, const ResetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ResetJobBookmark(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ResetJobBookmark, request, handler, context, m_executor.get());
 }
 
 ResumeWorkflowRunOutcome GlueClient::ResumeWorkflowRun(const ResumeWorkflowRunRequest& request) const
@@ -3849,18 +2974,12 @@ ResumeWorkflowRunOutcome GlueClient::ResumeWorkflowRun(const ResumeWorkflowRunRe
 
 ResumeWorkflowRunOutcomeCallable GlueClient::ResumeWorkflowRunCallable(const ResumeWorkflowRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResumeWorkflowRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResumeWorkflowRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ResumeWorkflowRun, request, m_executor.get());
 }
 
 void GlueClient::ResumeWorkflowRunAsync(const ResumeWorkflowRunRequest& request, const ResumeWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ResumeWorkflowRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ResumeWorkflowRun, request, handler, context, m_executor.get());
 }
 
 RunStatementOutcome GlueClient::RunStatement(const RunStatementRequest& request) const
@@ -3873,18 +2992,12 @@ RunStatementOutcome GlueClient::RunStatement(const RunStatementRequest& request)
 
 RunStatementOutcomeCallable GlueClient::RunStatementCallable(const RunStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RunStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RunStatement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RunStatement, request, m_executor.get());
 }
 
 void GlueClient::RunStatementAsync(const RunStatementRequest& request, const RunStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RunStatement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RunStatement, request, handler, context, m_executor.get());
 }
 
 SearchTablesOutcome GlueClient::SearchTables(const SearchTablesRequest& request) const
@@ -3897,18 +3010,12 @@ SearchTablesOutcome GlueClient::SearchTables(const SearchTablesRequest& request)
 
 SearchTablesOutcomeCallable GlueClient::SearchTablesCallable(const SearchTablesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchTablesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchTables(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchTables, request, m_executor.get());
 }
 
 void GlueClient::SearchTablesAsync(const SearchTablesRequest& request, const SearchTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchTables(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchTables, request, handler, context, m_executor.get());
 }
 
 StartBlueprintRunOutcome GlueClient::StartBlueprintRun(const StartBlueprintRunRequest& request) const
@@ -3921,18 +3028,12 @@ StartBlueprintRunOutcome GlueClient::StartBlueprintRun(const StartBlueprintRunRe
 
 StartBlueprintRunOutcomeCallable GlueClient::StartBlueprintRunCallable(const StartBlueprintRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartBlueprintRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartBlueprintRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartBlueprintRun, request, m_executor.get());
 }
 
 void GlueClient::StartBlueprintRunAsync(const StartBlueprintRunRequest& request, const StartBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartBlueprintRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartBlueprintRun, request, handler, context, m_executor.get());
 }
 
 StartCrawlerOutcome GlueClient::StartCrawler(const StartCrawlerRequest& request) const
@@ -3945,18 +3046,12 @@ StartCrawlerOutcome GlueClient::StartCrawler(const StartCrawlerRequest& request)
 
 StartCrawlerOutcomeCallable GlueClient::StartCrawlerCallable(const StartCrawlerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartCrawlerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartCrawler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartCrawler, request, m_executor.get());
 }
 
 void GlueClient::StartCrawlerAsync(const StartCrawlerRequest& request, const StartCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartCrawler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartCrawler, request, handler, context, m_executor.get());
 }
 
 StartCrawlerScheduleOutcome GlueClient::StartCrawlerSchedule(const StartCrawlerScheduleRequest& request) const
@@ -3969,18 +3064,12 @@ StartCrawlerScheduleOutcome GlueClient::StartCrawlerSchedule(const StartCrawlerS
 
 StartCrawlerScheduleOutcomeCallable GlueClient::StartCrawlerScheduleCallable(const StartCrawlerScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartCrawlerScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartCrawlerSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartCrawlerSchedule, request, m_executor.get());
 }
 
 void GlueClient::StartCrawlerScheduleAsync(const StartCrawlerScheduleRequest& request, const StartCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartCrawlerSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartCrawlerSchedule, request, handler, context, m_executor.get());
 }
 
 StartExportLabelsTaskRunOutcome GlueClient::StartExportLabelsTaskRun(const StartExportLabelsTaskRunRequest& request) const
@@ -3993,18 +3082,12 @@ StartExportLabelsTaskRunOutcome GlueClient::StartExportLabelsTaskRun(const Start
 
 StartExportLabelsTaskRunOutcomeCallable GlueClient::StartExportLabelsTaskRunCallable(const StartExportLabelsTaskRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartExportLabelsTaskRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartExportLabelsTaskRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartExportLabelsTaskRun, request, m_executor.get());
 }
 
 void GlueClient::StartExportLabelsTaskRunAsync(const StartExportLabelsTaskRunRequest& request, const StartExportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartExportLabelsTaskRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartExportLabelsTaskRun, request, handler, context, m_executor.get());
 }
 
 StartImportLabelsTaskRunOutcome GlueClient::StartImportLabelsTaskRun(const StartImportLabelsTaskRunRequest& request) const
@@ -4017,18 +3100,12 @@ StartImportLabelsTaskRunOutcome GlueClient::StartImportLabelsTaskRun(const Start
 
 StartImportLabelsTaskRunOutcomeCallable GlueClient::StartImportLabelsTaskRunCallable(const StartImportLabelsTaskRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartImportLabelsTaskRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartImportLabelsTaskRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartImportLabelsTaskRun, request, m_executor.get());
 }
 
 void GlueClient::StartImportLabelsTaskRunAsync(const StartImportLabelsTaskRunRequest& request, const StartImportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartImportLabelsTaskRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartImportLabelsTaskRun, request, handler, context, m_executor.get());
 }
 
 StartJobRunOutcome GlueClient::StartJobRun(const StartJobRunRequest& request) const
@@ -4041,18 +3118,12 @@ StartJobRunOutcome GlueClient::StartJobRun(const StartJobRunRequest& request) co
 
 StartJobRunOutcomeCallable GlueClient::StartJobRunCallable(const StartJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartJobRun, request, m_executor.get());
 }
 
 void GlueClient::StartJobRunAsync(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartJobRun, request, handler, context, m_executor.get());
 }
 
 StartMLEvaluationTaskRunOutcome GlueClient::StartMLEvaluationTaskRun(const StartMLEvaluationTaskRunRequest& request) const
@@ -4065,18 +3136,12 @@ StartMLEvaluationTaskRunOutcome GlueClient::StartMLEvaluationTaskRun(const Start
 
 StartMLEvaluationTaskRunOutcomeCallable GlueClient::StartMLEvaluationTaskRunCallable(const StartMLEvaluationTaskRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartMLEvaluationTaskRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMLEvaluationTaskRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartMLEvaluationTaskRun, request, m_executor.get());
 }
 
 void GlueClient::StartMLEvaluationTaskRunAsync(const StartMLEvaluationTaskRunRequest& request, const StartMLEvaluationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartMLEvaluationTaskRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartMLEvaluationTaskRun, request, handler, context, m_executor.get());
 }
 
 StartMLLabelingSetGenerationTaskRunOutcome GlueClient::StartMLLabelingSetGenerationTaskRun(const StartMLLabelingSetGenerationTaskRunRequest& request) const
@@ -4089,18 +3154,12 @@ StartMLLabelingSetGenerationTaskRunOutcome GlueClient::StartMLLabelingSetGenerat
 
 StartMLLabelingSetGenerationTaskRunOutcomeCallable GlueClient::StartMLLabelingSetGenerationTaskRunCallable(const StartMLLabelingSetGenerationTaskRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartMLLabelingSetGenerationTaskRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMLLabelingSetGenerationTaskRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartMLLabelingSetGenerationTaskRun, request, m_executor.get());
 }
 
 void GlueClient::StartMLLabelingSetGenerationTaskRunAsync(const StartMLLabelingSetGenerationTaskRunRequest& request, const StartMLLabelingSetGenerationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartMLLabelingSetGenerationTaskRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartMLLabelingSetGenerationTaskRun, request, handler, context, m_executor.get());
 }
 
 StartTriggerOutcome GlueClient::StartTrigger(const StartTriggerRequest& request) const
@@ -4113,18 +3172,12 @@ StartTriggerOutcome GlueClient::StartTrigger(const StartTriggerRequest& request)
 
 StartTriggerOutcomeCallable GlueClient::StartTriggerCallable(const StartTriggerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartTriggerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartTrigger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartTrigger, request, m_executor.get());
 }
 
 void GlueClient::StartTriggerAsync(const StartTriggerRequest& request, const StartTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartTrigger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartTrigger, request, handler, context, m_executor.get());
 }
 
 StartWorkflowRunOutcome GlueClient::StartWorkflowRun(const StartWorkflowRunRequest& request) const
@@ -4137,18 +3190,12 @@ StartWorkflowRunOutcome GlueClient::StartWorkflowRun(const StartWorkflowRunReque
 
 StartWorkflowRunOutcomeCallable GlueClient::StartWorkflowRunCallable(const StartWorkflowRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartWorkflowRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartWorkflowRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartWorkflowRun, request, m_executor.get());
 }
 
 void GlueClient::StartWorkflowRunAsync(const StartWorkflowRunRequest& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartWorkflowRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartWorkflowRun, request, handler, context, m_executor.get());
 }
 
 StopCrawlerOutcome GlueClient::StopCrawler(const StopCrawlerRequest& request) const
@@ -4161,18 +3208,12 @@ StopCrawlerOutcome GlueClient::StopCrawler(const StopCrawlerRequest& request) co
 
 StopCrawlerOutcomeCallable GlueClient::StopCrawlerCallable(const StopCrawlerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopCrawlerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopCrawler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopCrawler, request, m_executor.get());
 }
 
 void GlueClient::StopCrawlerAsync(const StopCrawlerRequest& request, const StopCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopCrawler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopCrawler, request, handler, context, m_executor.get());
 }
 
 StopCrawlerScheduleOutcome GlueClient::StopCrawlerSchedule(const StopCrawlerScheduleRequest& request) const
@@ -4185,18 +3226,12 @@ StopCrawlerScheduleOutcome GlueClient::StopCrawlerSchedule(const StopCrawlerSche
 
 StopCrawlerScheduleOutcomeCallable GlueClient::StopCrawlerScheduleCallable(const StopCrawlerScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopCrawlerScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopCrawlerSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopCrawlerSchedule, request, m_executor.get());
 }
 
 void GlueClient::StopCrawlerScheduleAsync(const StopCrawlerScheduleRequest& request, const StopCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopCrawlerSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopCrawlerSchedule, request, handler, context, m_executor.get());
 }
 
 StopSessionOutcome GlueClient::StopSession(const StopSessionRequest& request) const
@@ -4209,18 +3244,12 @@ StopSessionOutcome GlueClient::StopSession(const StopSessionRequest& request) co
 
 StopSessionOutcomeCallable GlueClient::StopSessionCallable(const StopSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopSession, request, m_executor.get());
 }
 
 void GlueClient::StopSessionAsync(const StopSessionRequest& request, const StopSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopSession, request, handler, context, m_executor.get());
 }
 
 StopTriggerOutcome GlueClient::StopTrigger(const StopTriggerRequest& request) const
@@ -4233,18 +3262,12 @@ StopTriggerOutcome GlueClient::StopTrigger(const StopTriggerRequest& request) co
 
 StopTriggerOutcomeCallable GlueClient::StopTriggerCallable(const StopTriggerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopTriggerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopTrigger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopTrigger, request, m_executor.get());
 }
 
 void GlueClient::StopTriggerAsync(const StopTriggerRequest& request, const StopTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopTrigger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopTrigger, request, handler, context, m_executor.get());
 }
 
 StopWorkflowRunOutcome GlueClient::StopWorkflowRun(const StopWorkflowRunRequest& request) const
@@ -4257,18 +3280,12 @@ StopWorkflowRunOutcome GlueClient::StopWorkflowRun(const StopWorkflowRunRequest&
 
 StopWorkflowRunOutcomeCallable GlueClient::StopWorkflowRunCallable(const StopWorkflowRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopWorkflowRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopWorkflowRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopWorkflowRun, request, m_executor.get());
 }
 
 void GlueClient::StopWorkflowRunAsync(const StopWorkflowRunRequest& request, const StopWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopWorkflowRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopWorkflowRun, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome GlueClient::TagResource(const TagResourceRequest& request) const
@@ -4281,18 +3298,12 @@ TagResourceOutcome GlueClient::TagResource(const TagResourceRequest& request) co
 
 TagResourceOutcomeCallable GlueClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void GlueClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome GlueClient::UntagResource(const UntagResourceRequest& request) const
@@ -4305,18 +3316,12 @@ UntagResourceOutcome GlueClient::UntagResource(const UntagResourceRequest& reque
 
 UntagResourceOutcomeCallable GlueClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void GlueClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateBlueprintOutcome GlueClient::UpdateBlueprint(const UpdateBlueprintRequest& request) const
@@ -4329,18 +3334,12 @@ UpdateBlueprintOutcome GlueClient::UpdateBlueprint(const UpdateBlueprintRequest&
 
 UpdateBlueprintOutcomeCallable GlueClient::UpdateBlueprintCallable(const UpdateBlueprintRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBlueprint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBlueprint, request, m_executor.get());
 }
 
 void GlueClient::UpdateBlueprintAsync(const UpdateBlueprintRequest& request, const UpdateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBlueprint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBlueprint, request, handler, context, m_executor.get());
 }
 
 UpdateClassifierOutcome GlueClient::UpdateClassifier(const UpdateClassifierRequest& request) const
@@ -4353,18 +3352,12 @@ UpdateClassifierOutcome GlueClient::UpdateClassifier(const UpdateClassifierReque
 
 UpdateClassifierOutcomeCallable GlueClient::UpdateClassifierCallable(const UpdateClassifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateClassifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateClassifier(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateClassifier, request, m_executor.get());
 }
 
 void GlueClient::UpdateClassifierAsync(const UpdateClassifierRequest& request, const UpdateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateClassifier(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateClassifier, request, handler, context, m_executor.get());
 }
 
 UpdateColumnStatisticsForPartitionOutcome GlueClient::UpdateColumnStatisticsForPartition(const UpdateColumnStatisticsForPartitionRequest& request) const
@@ -4377,18 +3370,12 @@ UpdateColumnStatisticsForPartitionOutcome GlueClient::UpdateColumnStatisticsForP
 
 UpdateColumnStatisticsForPartitionOutcomeCallable GlueClient::UpdateColumnStatisticsForPartitionCallable(const UpdateColumnStatisticsForPartitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateColumnStatisticsForPartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateColumnStatisticsForPartition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateColumnStatisticsForPartition, request, m_executor.get());
 }
 
 void GlueClient::UpdateColumnStatisticsForPartitionAsync(const UpdateColumnStatisticsForPartitionRequest& request, const UpdateColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateColumnStatisticsForPartition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateColumnStatisticsForPartition, request, handler, context, m_executor.get());
 }
 
 UpdateColumnStatisticsForTableOutcome GlueClient::UpdateColumnStatisticsForTable(const UpdateColumnStatisticsForTableRequest& request) const
@@ -4401,18 +3388,12 @@ UpdateColumnStatisticsForTableOutcome GlueClient::UpdateColumnStatisticsForTable
 
 UpdateColumnStatisticsForTableOutcomeCallable GlueClient::UpdateColumnStatisticsForTableCallable(const UpdateColumnStatisticsForTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateColumnStatisticsForTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateColumnStatisticsForTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateColumnStatisticsForTable, request, m_executor.get());
 }
 
 void GlueClient::UpdateColumnStatisticsForTableAsync(const UpdateColumnStatisticsForTableRequest& request, const UpdateColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateColumnStatisticsForTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateColumnStatisticsForTable, request, handler, context, m_executor.get());
 }
 
 UpdateConnectionOutcome GlueClient::UpdateConnection(const UpdateConnectionRequest& request) const
@@ -4425,18 +3406,12 @@ UpdateConnectionOutcome GlueClient::UpdateConnection(const UpdateConnectionReque
 
 UpdateConnectionOutcomeCallable GlueClient::UpdateConnectionCallable(const UpdateConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateConnection, request, m_executor.get());
 }
 
 void GlueClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateConnection, request, handler, context, m_executor.get());
 }
 
 UpdateCrawlerOutcome GlueClient::UpdateCrawler(const UpdateCrawlerRequest& request) const
@@ -4449,18 +3424,12 @@ UpdateCrawlerOutcome GlueClient::UpdateCrawler(const UpdateCrawlerRequest& reque
 
 UpdateCrawlerOutcomeCallable GlueClient::UpdateCrawlerCallable(const UpdateCrawlerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCrawlerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCrawler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCrawler, request, m_executor.get());
 }
 
 void GlueClient::UpdateCrawlerAsync(const UpdateCrawlerRequest& request, const UpdateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCrawler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCrawler, request, handler, context, m_executor.get());
 }
 
 UpdateCrawlerScheduleOutcome GlueClient::UpdateCrawlerSchedule(const UpdateCrawlerScheduleRequest& request) const
@@ -4473,18 +3442,12 @@ UpdateCrawlerScheduleOutcome GlueClient::UpdateCrawlerSchedule(const UpdateCrawl
 
 UpdateCrawlerScheduleOutcomeCallable GlueClient::UpdateCrawlerScheduleCallable(const UpdateCrawlerScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCrawlerScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCrawlerSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCrawlerSchedule, request, m_executor.get());
 }
 
 void GlueClient::UpdateCrawlerScheduleAsync(const UpdateCrawlerScheduleRequest& request, const UpdateCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCrawlerSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCrawlerSchedule, request, handler, context, m_executor.get());
 }
 
 UpdateDatabaseOutcome GlueClient::UpdateDatabase(const UpdateDatabaseRequest& request) const
@@ -4497,18 +3460,12 @@ UpdateDatabaseOutcome GlueClient::UpdateDatabase(const UpdateDatabaseRequest& re
 
 UpdateDatabaseOutcomeCallable GlueClient::UpdateDatabaseCallable(const UpdateDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDatabase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDatabase, request, m_executor.get());
 }
 
 void GlueClient::UpdateDatabaseAsync(const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDatabase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDatabase, request, handler, context, m_executor.get());
 }
 
 UpdateDevEndpointOutcome GlueClient::UpdateDevEndpoint(const UpdateDevEndpointRequest& request) const
@@ -4521,18 +3478,12 @@ UpdateDevEndpointOutcome GlueClient::UpdateDevEndpoint(const UpdateDevEndpointRe
 
 UpdateDevEndpointOutcomeCallable GlueClient::UpdateDevEndpointCallable(const UpdateDevEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDevEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDevEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDevEndpoint, request, m_executor.get());
 }
 
 void GlueClient::UpdateDevEndpointAsync(const UpdateDevEndpointRequest& request, const UpdateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDevEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDevEndpoint, request, handler, context, m_executor.get());
 }
 
 UpdateJobOutcome GlueClient::UpdateJob(const UpdateJobRequest& request) const
@@ -4545,18 +3496,12 @@ UpdateJobOutcome GlueClient::UpdateJob(const UpdateJobRequest& request) const
 
 UpdateJobOutcomeCallable GlueClient::UpdateJobCallable(const UpdateJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateJob, request, m_executor.get());
 }
 
 void GlueClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateJob, request, handler, context, m_executor.get());
 }
 
 UpdateJobFromSourceControlOutcome GlueClient::UpdateJobFromSourceControl(const UpdateJobFromSourceControlRequest& request) const
@@ -4569,18 +3514,12 @@ UpdateJobFromSourceControlOutcome GlueClient::UpdateJobFromSourceControl(const U
 
 UpdateJobFromSourceControlOutcomeCallable GlueClient::UpdateJobFromSourceControlCallable(const UpdateJobFromSourceControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateJobFromSourceControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJobFromSourceControl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateJobFromSourceControl, request, m_executor.get());
 }
 
 void GlueClient::UpdateJobFromSourceControlAsync(const UpdateJobFromSourceControlRequest& request, const UpdateJobFromSourceControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateJobFromSourceControl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateJobFromSourceControl, request, handler, context, m_executor.get());
 }
 
 UpdateMLTransformOutcome GlueClient::UpdateMLTransform(const UpdateMLTransformRequest& request) const
@@ -4593,18 +3532,12 @@ UpdateMLTransformOutcome GlueClient::UpdateMLTransform(const UpdateMLTransformRe
 
 UpdateMLTransformOutcomeCallable GlueClient::UpdateMLTransformCallable(const UpdateMLTransformRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMLTransformOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMLTransform(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateMLTransform, request, m_executor.get());
 }
 
 void GlueClient::UpdateMLTransformAsync(const UpdateMLTransformRequest& request, const UpdateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateMLTransform(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateMLTransform, request, handler, context, m_executor.get());
 }
 
 UpdatePartitionOutcome GlueClient::UpdatePartition(const UpdatePartitionRequest& request) const
@@ -4617,18 +3550,12 @@ UpdatePartitionOutcome GlueClient::UpdatePartition(const UpdatePartitionRequest&
 
 UpdatePartitionOutcomeCallable GlueClient::UpdatePartitionCallable(const UpdatePartitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePartition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePartition, request, m_executor.get());
 }
 
 void GlueClient::UpdatePartitionAsync(const UpdatePartitionRequest& request, const UpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePartition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePartition, request, handler, context, m_executor.get());
 }
 
 UpdateRegistryOutcome GlueClient::UpdateRegistry(const UpdateRegistryRequest& request) const
@@ -4641,18 +3568,12 @@ UpdateRegistryOutcome GlueClient::UpdateRegistry(const UpdateRegistryRequest& re
 
 UpdateRegistryOutcomeCallable GlueClient::UpdateRegistryCallable(const UpdateRegistryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRegistryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRegistry(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRegistry, request, m_executor.get());
 }
 
 void GlueClient::UpdateRegistryAsync(const UpdateRegistryRequest& request, const UpdateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRegistry(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRegistry, request, handler, context, m_executor.get());
 }
 
 UpdateSchemaOutcome GlueClient::UpdateSchema(const UpdateSchemaRequest& request) const
@@ -4665,18 +3586,12 @@ UpdateSchemaOutcome GlueClient::UpdateSchema(const UpdateSchemaRequest& request)
 
 UpdateSchemaOutcomeCallable GlueClient::UpdateSchemaCallable(const UpdateSchemaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSchemaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSchema(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSchema, request, m_executor.get());
 }
 
 void GlueClient::UpdateSchemaAsync(const UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSchema(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSchema, request, handler, context, m_executor.get());
 }
 
 UpdateSourceControlFromJobOutcome GlueClient::UpdateSourceControlFromJob(const UpdateSourceControlFromJobRequest& request) const
@@ -4689,18 +3604,12 @@ UpdateSourceControlFromJobOutcome GlueClient::UpdateSourceControlFromJob(const U
 
 UpdateSourceControlFromJobOutcomeCallable GlueClient::UpdateSourceControlFromJobCallable(const UpdateSourceControlFromJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSourceControlFromJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSourceControlFromJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSourceControlFromJob, request, m_executor.get());
 }
 
 void GlueClient::UpdateSourceControlFromJobAsync(const UpdateSourceControlFromJobRequest& request, const UpdateSourceControlFromJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSourceControlFromJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSourceControlFromJob, request, handler, context, m_executor.get());
 }
 
 UpdateTableOutcome GlueClient::UpdateTable(const UpdateTableRequest& request) const
@@ -4713,18 +3622,12 @@ UpdateTableOutcome GlueClient::UpdateTable(const UpdateTableRequest& request) co
 
 UpdateTableOutcomeCallable GlueClient::UpdateTableCallable(const UpdateTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTable, request, m_executor.get());
 }
 
 void GlueClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTable, request, handler, context, m_executor.get());
 }
 
 UpdateTriggerOutcome GlueClient::UpdateTrigger(const UpdateTriggerRequest& request) const
@@ -4737,18 +3640,12 @@ UpdateTriggerOutcome GlueClient::UpdateTrigger(const UpdateTriggerRequest& reque
 
 UpdateTriggerOutcomeCallable GlueClient::UpdateTriggerCallable(const UpdateTriggerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTriggerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTrigger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTrigger, request, m_executor.get());
 }
 
 void GlueClient::UpdateTriggerAsync(const UpdateTriggerRequest& request, const UpdateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTrigger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTrigger, request, handler, context, m_executor.get());
 }
 
 UpdateUserDefinedFunctionOutcome GlueClient::UpdateUserDefinedFunction(const UpdateUserDefinedFunctionRequest& request) const
@@ -4761,18 +3658,12 @@ UpdateUserDefinedFunctionOutcome GlueClient::UpdateUserDefinedFunction(const Upd
 
 UpdateUserDefinedFunctionOutcomeCallable GlueClient::UpdateUserDefinedFunctionCallable(const UpdateUserDefinedFunctionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserDefinedFunctionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserDefinedFunction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateUserDefinedFunction, request, m_executor.get());
 }
 
 void GlueClient::UpdateUserDefinedFunctionAsync(const UpdateUserDefinedFunctionRequest& request, const UpdateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateUserDefinedFunction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateUserDefinedFunction, request, handler, context, m_executor.get());
 }
 
 UpdateWorkflowOutcome GlueClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const
@@ -4785,17 +3676,11 @@ UpdateWorkflowOutcome GlueClient::UpdateWorkflow(const UpdateWorkflowRequest& re
 
 UpdateWorkflowOutcomeCallable GlueClient::UpdateWorkflowCallable(const UpdateWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkflow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateWorkflow, request, m_executor.get());
 }
 
 void GlueClient::UpdateWorkflowAsync(const UpdateWorkflowRequest& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateWorkflow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateWorkflow, request, handler, context, m_executor.get());
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -183,18 +184,12 @@ AcceptInvitationOutcome DetectiveClient::AcceptInvitation(const AcceptInvitation
 
 AcceptInvitationOutcomeCallable DetectiveClient::AcceptInvitationCallable(const AcceptInvitationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcceptInvitationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptInvitation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AcceptInvitation, request, m_executor.get());
 }
 
 void DetectiveClient::AcceptInvitationAsync(const AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AcceptInvitation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AcceptInvitation, request, handler, context, m_executor.get());
 }
 
 BatchGetGraphMemberDatasourcesOutcome DetectiveClient::BatchGetGraphMemberDatasources(const BatchGetGraphMemberDatasourcesRequest& request) const
@@ -208,18 +203,12 @@ BatchGetGraphMemberDatasourcesOutcome DetectiveClient::BatchGetGraphMemberDataso
 
 BatchGetGraphMemberDatasourcesOutcomeCallable DetectiveClient::BatchGetGraphMemberDatasourcesCallable(const BatchGetGraphMemberDatasourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetGraphMemberDatasourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetGraphMemberDatasources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetGraphMemberDatasources, request, m_executor.get());
 }
 
 void DetectiveClient::BatchGetGraphMemberDatasourcesAsync(const BatchGetGraphMemberDatasourcesRequest& request, const BatchGetGraphMemberDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetGraphMemberDatasources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetGraphMemberDatasources, request, handler, context, m_executor.get());
 }
 
 BatchGetMembershipDatasourcesOutcome DetectiveClient::BatchGetMembershipDatasources(const BatchGetMembershipDatasourcesRequest& request) const
@@ -233,18 +222,12 @@ BatchGetMembershipDatasourcesOutcome DetectiveClient::BatchGetMembershipDatasour
 
 BatchGetMembershipDatasourcesOutcomeCallable DetectiveClient::BatchGetMembershipDatasourcesCallable(const BatchGetMembershipDatasourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetMembershipDatasourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetMembershipDatasources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetMembershipDatasources, request, m_executor.get());
 }
 
 void DetectiveClient::BatchGetMembershipDatasourcesAsync(const BatchGetMembershipDatasourcesRequest& request, const BatchGetMembershipDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetMembershipDatasources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetMembershipDatasources, request, handler, context, m_executor.get());
 }
 
 CreateGraphOutcome DetectiveClient::CreateGraph(const CreateGraphRequest& request) const
@@ -258,18 +241,12 @@ CreateGraphOutcome DetectiveClient::CreateGraph(const CreateGraphRequest& reques
 
 CreateGraphOutcomeCallable DetectiveClient::CreateGraphCallable(const CreateGraphRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateGraphOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGraph(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateGraph, request, m_executor.get());
 }
 
 void DetectiveClient::CreateGraphAsync(const CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateGraph(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateGraph, request, handler, context, m_executor.get());
 }
 
 CreateMembersOutcome DetectiveClient::CreateMembers(const CreateMembersRequest& request) const
@@ -283,18 +260,12 @@ CreateMembersOutcome DetectiveClient::CreateMembers(const CreateMembersRequest& 
 
 CreateMembersOutcomeCallable DetectiveClient::CreateMembersCallable(const CreateMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMembers, request, m_executor.get());
 }
 
 void DetectiveClient::CreateMembersAsync(const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMembers, request, handler, context, m_executor.get());
 }
 
 DeleteGraphOutcome DetectiveClient::DeleteGraph(const DeleteGraphRequest& request) const
@@ -308,18 +279,12 @@ DeleteGraphOutcome DetectiveClient::DeleteGraph(const DeleteGraphRequest& reques
 
 DeleteGraphOutcomeCallable DetectiveClient::DeleteGraphCallable(const DeleteGraphRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteGraphOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGraph(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteGraph, request, m_executor.get());
 }
 
 void DetectiveClient::DeleteGraphAsync(const DeleteGraphRequest& request, const DeleteGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteGraph(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteGraph, request, handler, context, m_executor.get());
 }
 
 DeleteMembersOutcome DetectiveClient::DeleteMembers(const DeleteMembersRequest& request) const
@@ -333,18 +298,12 @@ DeleteMembersOutcome DetectiveClient::DeleteMembers(const DeleteMembersRequest& 
 
 DeleteMembersOutcomeCallable DetectiveClient::DeleteMembersCallable(const DeleteMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMembers, request, m_executor.get());
 }
 
 void DetectiveClient::DeleteMembersAsync(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMembers, request, handler, context, m_executor.get());
 }
 
 DescribeOrganizationConfigurationOutcome DetectiveClient::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
@@ -358,18 +317,12 @@ DescribeOrganizationConfigurationOutcome DetectiveClient::DescribeOrganizationCo
 
 DescribeOrganizationConfigurationOutcomeCallable DetectiveClient::DescribeOrganizationConfigurationCallable(const DescribeOrganizationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeOrganizationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOrganizationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeOrganizationConfiguration, request, m_executor.get());
 }
 
 void DetectiveClient::DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeOrganizationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeOrganizationConfiguration, request, handler, context, m_executor.get());
 }
 
 DisableOrganizationAdminAccountOutcome DetectiveClient::DisableOrganizationAdminAccount() const
@@ -409,18 +362,12 @@ DisassociateMembershipOutcome DetectiveClient::DisassociateMembership(const Disa
 
 DisassociateMembershipOutcomeCallable DetectiveClient::DisassociateMembershipCallable(const DisassociateMembershipRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateMembership(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateMembership, request, m_executor.get());
 }
 
 void DetectiveClient::DisassociateMembershipAsync(const DisassociateMembershipRequest& request, const DisassociateMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateMembership(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateMembership, request, handler, context, m_executor.get());
 }
 
 EnableOrganizationAdminAccountOutcome DetectiveClient::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
@@ -434,18 +381,12 @@ EnableOrganizationAdminAccountOutcome DetectiveClient::EnableOrganizationAdminAc
 
 EnableOrganizationAdminAccountOutcomeCallable DetectiveClient::EnableOrganizationAdminAccountCallable(const EnableOrganizationAdminAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableOrganizationAdminAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableOrganizationAdminAccount(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(EnableOrganizationAdminAccount, request, m_executor.get());
 }
 
 void DetectiveClient::EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, EnableOrganizationAdminAccount(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(EnableOrganizationAdminAccount, request, handler, context, m_executor.get());
 }
 
 GetMembersOutcome DetectiveClient::GetMembers(const GetMembersRequest& request) const
@@ -459,18 +400,12 @@ GetMembersOutcome DetectiveClient::GetMembers(const GetMembersRequest& request) 
 
 GetMembersOutcomeCallable DetectiveClient::GetMembersCallable(const GetMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMembers, request, m_executor.get());
 }
 
 void DetectiveClient::GetMembersAsync(const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMembers, request, handler, context, m_executor.get());
 }
 
 ListDatasourcePackagesOutcome DetectiveClient::ListDatasourcePackages(const ListDatasourcePackagesRequest& request) const
@@ -484,18 +419,12 @@ ListDatasourcePackagesOutcome DetectiveClient::ListDatasourcePackages(const List
 
 ListDatasourcePackagesOutcomeCallable DetectiveClient::ListDatasourcePackagesCallable(const ListDatasourcePackagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasourcePackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasourcePackages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDatasourcePackages, request, m_executor.get());
 }
 
 void DetectiveClient::ListDatasourcePackagesAsync(const ListDatasourcePackagesRequest& request, const ListDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatasourcePackages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDatasourcePackages, request, handler, context, m_executor.get());
 }
 
 ListGraphsOutcome DetectiveClient::ListGraphs(const ListGraphsRequest& request) const
@@ -509,18 +438,12 @@ ListGraphsOutcome DetectiveClient::ListGraphs(const ListGraphsRequest& request) 
 
 ListGraphsOutcomeCallable DetectiveClient::ListGraphsCallable(const ListGraphsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGraphsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGraphs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListGraphs, request, m_executor.get());
 }
 
 void DetectiveClient::ListGraphsAsync(const ListGraphsRequest& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListGraphs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListGraphs, request, handler, context, m_executor.get());
 }
 
 ListInvitationsOutcome DetectiveClient::ListInvitations(const ListInvitationsRequest& request) const
@@ -534,18 +457,12 @@ ListInvitationsOutcome DetectiveClient::ListInvitations(const ListInvitationsReq
 
 ListInvitationsOutcomeCallable DetectiveClient::ListInvitationsCallable(const ListInvitationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInvitationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInvitations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInvitations, request, m_executor.get());
 }
 
 void DetectiveClient::ListInvitationsAsync(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInvitations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInvitations, request, handler, context, m_executor.get());
 }
 
 ListMembersOutcome DetectiveClient::ListMembers(const ListMembersRequest& request) const
@@ -559,18 +476,12 @@ ListMembersOutcome DetectiveClient::ListMembers(const ListMembersRequest& reques
 
 ListMembersOutcomeCallable DetectiveClient::ListMembersCallable(const ListMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMembers, request, m_executor.get());
 }
 
 void DetectiveClient::ListMembersAsync(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMembers, request, handler, context, m_executor.get());
 }
 
 ListOrganizationAdminAccountsOutcome DetectiveClient::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
@@ -584,18 +495,12 @@ ListOrganizationAdminAccountsOutcome DetectiveClient::ListOrganizationAdminAccou
 
 ListOrganizationAdminAccountsOutcomeCallable DetectiveClient::ListOrganizationAdminAccountsCallable(const ListOrganizationAdminAccountsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListOrganizationAdminAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOrganizationAdminAccounts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListOrganizationAdminAccounts, request, m_executor.get());
 }
 
 void DetectiveClient::ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListOrganizationAdminAccounts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListOrganizationAdminAccounts, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome DetectiveClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -615,18 +520,12 @@ ListTagsForResourceOutcome DetectiveClient::ListTagsForResource(const ListTagsFo
 
 ListTagsForResourceOutcomeCallable DetectiveClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void DetectiveClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 RejectInvitationOutcome DetectiveClient::RejectInvitation(const RejectInvitationRequest& request) const
@@ -640,18 +539,12 @@ RejectInvitationOutcome DetectiveClient::RejectInvitation(const RejectInvitation
 
 RejectInvitationOutcomeCallable DetectiveClient::RejectInvitationCallable(const RejectInvitationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RejectInvitationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectInvitation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RejectInvitation, request, m_executor.get());
 }
 
 void DetectiveClient::RejectInvitationAsync(const RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RejectInvitation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RejectInvitation, request, handler, context, m_executor.get());
 }
 
 StartMonitoringMemberOutcome DetectiveClient::StartMonitoringMember(const StartMonitoringMemberRequest& request) const
@@ -665,18 +558,12 @@ StartMonitoringMemberOutcome DetectiveClient::StartMonitoringMember(const StartM
 
 StartMonitoringMemberOutcomeCallable DetectiveClient::StartMonitoringMemberCallable(const StartMonitoringMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartMonitoringMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMonitoringMember(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartMonitoringMember, request, m_executor.get());
 }
 
 void DetectiveClient::StartMonitoringMemberAsync(const StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartMonitoringMember(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartMonitoringMember, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome DetectiveClient::TagResource(const TagResourceRequest& request) const
@@ -696,18 +583,12 @@ TagResourceOutcome DetectiveClient::TagResource(const TagResourceRequest& reques
 
 TagResourceOutcomeCallable DetectiveClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void DetectiveClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome DetectiveClient::UntagResource(const UntagResourceRequest& request) const
@@ -732,18 +613,12 @@ UntagResourceOutcome DetectiveClient::UntagResource(const UntagResourceRequest& 
 
 UntagResourceOutcomeCallable DetectiveClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void DetectiveClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateDatasourcePackagesOutcome DetectiveClient::UpdateDatasourcePackages(const UpdateDatasourcePackagesRequest& request) const
@@ -757,18 +632,12 @@ UpdateDatasourcePackagesOutcome DetectiveClient::UpdateDatasourcePackages(const 
 
 UpdateDatasourcePackagesOutcomeCallable DetectiveClient::UpdateDatasourcePackagesCallable(const UpdateDatasourcePackagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDatasourcePackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDatasourcePackages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDatasourcePackages, request, m_executor.get());
 }
 
 void DetectiveClient::UpdateDatasourcePackagesAsync(const UpdateDatasourcePackagesRequest& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDatasourcePackages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDatasourcePackages, request, handler, context, m_executor.get());
 }
 
 UpdateOrganizationConfigurationOutcome DetectiveClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
@@ -782,17 +651,11 @@ UpdateOrganizationConfigurationOutcome DetectiveClient::UpdateOrganizationConfig
 
 UpdateOrganizationConfigurationOutcomeCallable DetectiveClient::UpdateOrganizationConfigurationCallable(const UpdateOrganizationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateOrganizationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateOrganizationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateOrganizationConfiguration, request, m_executor.get());
 }
 
 void DetectiveClient::UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateOrganizationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateOrganizationConfiguration, request, handler, context, m_executor.get());
 }
 

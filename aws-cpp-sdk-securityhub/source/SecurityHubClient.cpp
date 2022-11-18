@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -213,18 +214,12 @@ AcceptAdministratorInvitationOutcome SecurityHubClient::AcceptAdministratorInvit
 
 AcceptAdministratorInvitationOutcomeCallable SecurityHubClient::AcceptAdministratorInvitationCallable(const AcceptAdministratorInvitationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcceptAdministratorInvitationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptAdministratorInvitation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AcceptAdministratorInvitation, request, m_executor.get());
 }
 
 void SecurityHubClient::AcceptAdministratorInvitationAsync(const AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AcceptAdministratorInvitation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AcceptAdministratorInvitation, request, handler, context, m_executor.get());
 }
 
 BatchDisableStandardsOutcome SecurityHubClient::BatchDisableStandards(const BatchDisableStandardsRequest& request) const
@@ -238,18 +233,12 @@ BatchDisableStandardsOutcome SecurityHubClient::BatchDisableStandards(const Batc
 
 BatchDisableStandardsOutcomeCallable SecurityHubClient::BatchDisableStandardsCallable(const BatchDisableStandardsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDisableStandardsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDisableStandards(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDisableStandards, request, m_executor.get());
 }
 
 void SecurityHubClient::BatchDisableStandardsAsync(const BatchDisableStandardsRequest& request, const BatchDisableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDisableStandards(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDisableStandards, request, handler, context, m_executor.get());
 }
 
 BatchEnableStandardsOutcome SecurityHubClient::BatchEnableStandards(const BatchEnableStandardsRequest& request) const
@@ -263,18 +252,12 @@ BatchEnableStandardsOutcome SecurityHubClient::BatchEnableStandards(const BatchE
 
 BatchEnableStandardsOutcomeCallable SecurityHubClient::BatchEnableStandardsCallable(const BatchEnableStandardsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchEnableStandardsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchEnableStandards(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchEnableStandards, request, m_executor.get());
 }
 
 void SecurityHubClient::BatchEnableStandardsAsync(const BatchEnableStandardsRequest& request, const BatchEnableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchEnableStandards(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchEnableStandards, request, handler, context, m_executor.get());
 }
 
 BatchImportFindingsOutcome SecurityHubClient::BatchImportFindings(const BatchImportFindingsRequest& request) const
@@ -288,18 +271,12 @@ BatchImportFindingsOutcome SecurityHubClient::BatchImportFindings(const BatchImp
 
 BatchImportFindingsOutcomeCallable SecurityHubClient::BatchImportFindingsCallable(const BatchImportFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchImportFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchImportFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchImportFindings, request, m_executor.get());
 }
 
 void SecurityHubClient::BatchImportFindingsAsync(const BatchImportFindingsRequest& request, const BatchImportFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchImportFindings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchImportFindings, request, handler, context, m_executor.get());
 }
 
 BatchUpdateFindingsOutcome SecurityHubClient::BatchUpdateFindings(const BatchUpdateFindingsRequest& request) const
@@ -313,18 +290,12 @@ BatchUpdateFindingsOutcome SecurityHubClient::BatchUpdateFindings(const BatchUpd
 
 BatchUpdateFindingsOutcomeCallable SecurityHubClient::BatchUpdateFindingsCallable(const BatchUpdateFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdateFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchUpdateFindings, request, m_executor.get());
 }
 
 void SecurityHubClient::BatchUpdateFindingsAsync(const BatchUpdateFindingsRequest& request, const BatchUpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchUpdateFindings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchUpdateFindings, request, handler, context, m_executor.get());
 }
 
 CreateActionTargetOutcome SecurityHubClient::CreateActionTarget(const CreateActionTargetRequest& request) const
@@ -338,18 +309,12 @@ CreateActionTargetOutcome SecurityHubClient::CreateActionTarget(const CreateActi
 
 CreateActionTargetOutcomeCallable SecurityHubClient::CreateActionTargetCallable(const CreateActionTargetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateActionTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateActionTarget(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateActionTarget, request, m_executor.get());
 }
 
 void SecurityHubClient::CreateActionTargetAsync(const CreateActionTargetRequest& request, const CreateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateActionTarget(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateActionTarget, request, handler, context, m_executor.get());
 }
 
 CreateFindingAggregatorOutcome SecurityHubClient::CreateFindingAggregator(const CreateFindingAggregatorRequest& request) const
@@ -363,18 +328,12 @@ CreateFindingAggregatorOutcome SecurityHubClient::CreateFindingAggregator(const 
 
 CreateFindingAggregatorOutcomeCallable SecurityHubClient::CreateFindingAggregatorCallable(const CreateFindingAggregatorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFindingAggregatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFindingAggregator(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFindingAggregator, request, m_executor.get());
 }
 
 void SecurityHubClient::CreateFindingAggregatorAsync(const CreateFindingAggregatorRequest& request, const CreateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFindingAggregator(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFindingAggregator, request, handler, context, m_executor.get());
 }
 
 CreateInsightOutcome SecurityHubClient::CreateInsight(const CreateInsightRequest& request) const
@@ -388,18 +347,12 @@ CreateInsightOutcome SecurityHubClient::CreateInsight(const CreateInsightRequest
 
 CreateInsightOutcomeCallable SecurityHubClient::CreateInsightCallable(const CreateInsightRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateInsightOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInsight(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateInsight, request, m_executor.get());
 }
 
 void SecurityHubClient::CreateInsightAsync(const CreateInsightRequest& request, const CreateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateInsight(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateInsight, request, handler, context, m_executor.get());
 }
 
 CreateMembersOutcome SecurityHubClient::CreateMembers(const CreateMembersRequest& request) const
@@ -413,18 +366,12 @@ CreateMembersOutcome SecurityHubClient::CreateMembers(const CreateMembersRequest
 
 CreateMembersOutcomeCallable SecurityHubClient::CreateMembersCallable(const CreateMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMembers, request, m_executor.get());
 }
 
 void SecurityHubClient::CreateMembersAsync(const CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMembers, request, handler, context, m_executor.get());
 }
 
 DeclineInvitationsOutcome SecurityHubClient::DeclineInvitations(const DeclineInvitationsRequest& request) const
@@ -438,18 +385,12 @@ DeclineInvitationsOutcome SecurityHubClient::DeclineInvitations(const DeclineInv
 
 DeclineInvitationsOutcomeCallable SecurityHubClient::DeclineInvitationsCallable(const DeclineInvitationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeclineInvitationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeclineInvitations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeclineInvitations, request, m_executor.get());
 }
 
 void SecurityHubClient::DeclineInvitationsAsync(const DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeclineInvitations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeclineInvitations, request, handler, context, m_executor.get());
 }
 
 DeleteActionTargetOutcome SecurityHubClient::DeleteActionTarget(const DeleteActionTargetRequest& request) const
@@ -469,18 +410,12 @@ DeleteActionTargetOutcome SecurityHubClient::DeleteActionTarget(const DeleteActi
 
 DeleteActionTargetOutcomeCallable SecurityHubClient::DeleteActionTargetCallable(const DeleteActionTargetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteActionTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteActionTarget(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteActionTarget, request, m_executor.get());
 }
 
 void SecurityHubClient::DeleteActionTargetAsync(const DeleteActionTargetRequest& request, const DeleteActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteActionTarget(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteActionTarget, request, handler, context, m_executor.get());
 }
 
 DeleteFindingAggregatorOutcome SecurityHubClient::DeleteFindingAggregator(const DeleteFindingAggregatorRequest& request) const
@@ -500,18 +435,12 @@ DeleteFindingAggregatorOutcome SecurityHubClient::DeleteFindingAggregator(const 
 
 DeleteFindingAggregatorOutcomeCallable SecurityHubClient::DeleteFindingAggregatorCallable(const DeleteFindingAggregatorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFindingAggregatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFindingAggregator(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFindingAggregator, request, m_executor.get());
 }
 
 void SecurityHubClient::DeleteFindingAggregatorAsync(const DeleteFindingAggregatorRequest& request, const DeleteFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFindingAggregator(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFindingAggregator, request, handler, context, m_executor.get());
 }
 
 DeleteInsightOutcome SecurityHubClient::DeleteInsight(const DeleteInsightRequest& request) const
@@ -531,18 +460,12 @@ DeleteInsightOutcome SecurityHubClient::DeleteInsight(const DeleteInsightRequest
 
 DeleteInsightOutcomeCallable SecurityHubClient::DeleteInsightCallable(const DeleteInsightRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteInsightOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInsight(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteInsight, request, m_executor.get());
 }
 
 void SecurityHubClient::DeleteInsightAsync(const DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteInsight(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteInsight, request, handler, context, m_executor.get());
 }
 
 DeleteInvitationsOutcome SecurityHubClient::DeleteInvitations(const DeleteInvitationsRequest& request) const
@@ -556,18 +479,12 @@ DeleteInvitationsOutcome SecurityHubClient::DeleteInvitations(const DeleteInvita
 
 DeleteInvitationsOutcomeCallable SecurityHubClient::DeleteInvitationsCallable(const DeleteInvitationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteInvitationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInvitations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteInvitations, request, m_executor.get());
 }
 
 void SecurityHubClient::DeleteInvitationsAsync(const DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteInvitations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteInvitations, request, handler, context, m_executor.get());
 }
 
 DeleteMembersOutcome SecurityHubClient::DeleteMembers(const DeleteMembersRequest& request) const
@@ -581,18 +498,12 @@ DeleteMembersOutcome SecurityHubClient::DeleteMembers(const DeleteMembersRequest
 
 DeleteMembersOutcomeCallable SecurityHubClient::DeleteMembersCallable(const DeleteMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMembers, request, m_executor.get());
 }
 
 void SecurityHubClient::DeleteMembersAsync(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMembers, request, handler, context, m_executor.get());
 }
 
 DescribeActionTargetsOutcome SecurityHubClient::DescribeActionTargets(const DescribeActionTargetsRequest& request) const
@@ -606,18 +517,12 @@ DescribeActionTargetsOutcome SecurityHubClient::DescribeActionTargets(const Desc
 
 DescribeActionTargetsOutcomeCallable SecurityHubClient::DescribeActionTargetsCallable(const DescribeActionTargetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeActionTargetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeActionTargets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeActionTargets, request, m_executor.get());
 }
 
 void SecurityHubClient::DescribeActionTargetsAsync(const DescribeActionTargetsRequest& request, const DescribeActionTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeActionTargets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeActionTargets, request, handler, context, m_executor.get());
 }
 
 DescribeHubOutcome SecurityHubClient::DescribeHub(const DescribeHubRequest& request) const
@@ -631,18 +536,12 @@ DescribeHubOutcome SecurityHubClient::DescribeHub(const DescribeHubRequest& requ
 
 DescribeHubOutcomeCallable SecurityHubClient::DescribeHubCallable(const DescribeHubRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeHubOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHub(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeHub, request, m_executor.get());
 }
 
 void SecurityHubClient::DescribeHubAsync(const DescribeHubRequest& request, const DescribeHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeHub(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeHub, request, handler, context, m_executor.get());
 }
 
 DescribeOrganizationConfigurationOutcome SecurityHubClient::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
@@ -656,18 +555,12 @@ DescribeOrganizationConfigurationOutcome SecurityHubClient::DescribeOrganization
 
 DescribeOrganizationConfigurationOutcomeCallable SecurityHubClient::DescribeOrganizationConfigurationCallable(const DescribeOrganizationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeOrganizationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOrganizationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeOrganizationConfiguration, request, m_executor.get());
 }
 
 void SecurityHubClient::DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeOrganizationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeOrganizationConfiguration, request, handler, context, m_executor.get());
 }
 
 DescribeProductsOutcome SecurityHubClient::DescribeProducts(const DescribeProductsRequest& request) const
@@ -681,18 +574,12 @@ DescribeProductsOutcome SecurityHubClient::DescribeProducts(const DescribeProduc
 
 DescribeProductsOutcomeCallable SecurityHubClient::DescribeProductsCallable(const DescribeProductsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeProductsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProducts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeProducts, request, m_executor.get());
 }
 
 void SecurityHubClient::DescribeProductsAsync(const DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeProducts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeProducts, request, handler, context, m_executor.get());
 }
 
 DescribeStandardsOutcome SecurityHubClient::DescribeStandards(const DescribeStandardsRequest& request) const
@@ -706,18 +593,12 @@ DescribeStandardsOutcome SecurityHubClient::DescribeStandards(const DescribeStan
 
 DescribeStandardsOutcomeCallable SecurityHubClient::DescribeStandardsCallable(const DescribeStandardsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeStandardsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStandards(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeStandards, request, m_executor.get());
 }
 
 void SecurityHubClient::DescribeStandardsAsync(const DescribeStandardsRequest& request, const DescribeStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeStandards(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeStandards, request, handler, context, m_executor.get());
 }
 
 DescribeStandardsControlsOutcome SecurityHubClient::DescribeStandardsControls(const DescribeStandardsControlsRequest& request) const
@@ -737,18 +618,12 @@ DescribeStandardsControlsOutcome SecurityHubClient::DescribeStandardsControls(co
 
 DescribeStandardsControlsOutcomeCallable SecurityHubClient::DescribeStandardsControlsCallable(const DescribeStandardsControlsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeStandardsControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStandardsControls(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeStandardsControls, request, m_executor.get());
 }
 
 void SecurityHubClient::DescribeStandardsControlsAsync(const DescribeStandardsControlsRequest& request, const DescribeStandardsControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeStandardsControls(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeStandardsControls, request, handler, context, m_executor.get());
 }
 
 DisableImportFindingsForProductOutcome SecurityHubClient::DisableImportFindingsForProduct(const DisableImportFindingsForProductRequest& request) const
@@ -768,18 +643,12 @@ DisableImportFindingsForProductOutcome SecurityHubClient::DisableImportFindingsF
 
 DisableImportFindingsForProductOutcomeCallable SecurityHubClient::DisableImportFindingsForProductCallable(const DisableImportFindingsForProductRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableImportFindingsForProductOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableImportFindingsForProduct(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisableImportFindingsForProduct, request, m_executor.get());
 }
 
 void SecurityHubClient::DisableImportFindingsForProductAsync(const DisableImportFindingsForProductRequest& request, const DisableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisableImportFindingsForProduct(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisableImportFindingsForProduct, request, handler, context, m_executor.get());
 }
 
 DisableOrganizationAdminAccountOutcome SecurityHubClient::DisableOrganizationAdminAccount(const DisableOrganizationAdminAccountRequest& request) const
@@ -793,18 +662,12 @@ DisableOrganizationAdminAccountOutcome SecurityHubClient::DisableOrganizationAdm
 
 DisableOrganizationAdminAccountOutcomeCallable SecurityHubClient::DisableOrganizationAdminAccountCallable(const DisableOrganizationAdminAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableOrganizationAdminAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableOrganizationAdminAccount(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisableOrganizationAdminAccount, request, m_executor.get());
 }
 
 void SecurityHubClient::DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisableOrganizationAdminAccount(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisableOrganizationAdminAccount, request, handler, context, m_executor.get());
 }
 
 DisableSecurityHubOutcome SecurityHubClient::DisableSecurityHub(const DisableSecurityHubRequest& request) const
@@ -818,18 +681,12 @@ DisableSecurityHubOutcome SecurityHubClient::DisableSecurityHub(const DisableSec
 
 DisableSecurityHubOutcomeCallable SecurityHubClient::DisableSecurityHubCallable(const DisableSecurityHubRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableSecurityHubOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableSecurityHub(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisableSecurityHub, request, m_executor.get());
 }
 
 void SecurityHubClient::DisableSecurityHubAsync(const DisableSecurityHubRequest& request, const DisableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisableSecurityHub(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisableSecurityHub, request, handler, context, m_executor.get());
 }
 
 DisassociateFromAdministratorAccountOutcome SecurityHubClient::DisassociateFromAdministratorAccount(const DisassociateFromAdministratorAccountRequest& request) const
@@ -843,18 +700,12 @@ DisassociateFromAdministratorAccountOutcome SecurityHubClient::DisassociateFromA
 
 DisassociateFromAdministratorAccountOutcomeCallable SecurityHubClient::DisassociateFromAdministratorAccountCallable(const DisassociateFromAdministratorAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateFromAdministratorAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateFromAdministratorAccount(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateFromAdministratorAccount, request, m_executor.get());
 }
 
 void SecurityHubClient::DisassociateFromAdministratorAccountAsync(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateFromAdministratorAccount(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateFromAdministratorAccount, request, handler, context, m_executor.get());
 }
 
 DisassociateMembersOutcome SecurityHubClient::DisassociateMembers(const DisassociateMembersRequest& request) const
@@ -868,18 +719,12 @@ DisassociateMembersOutcome SecurityHubClient::DisassociateMembers(const Disassoc
 
 DisassociateMembersOutcomeCallable SecurityHubClient::DisassociateMembersCallable(const DisassociateMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateMembers, request, m_executor.get());
 }
 
 void SecurityHubClient::DisassociateMembersAsync(const DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateMembers, request, handler, context, m_executor.get());
 }
 
 EnableImportFindingsForProductOutcome SecurityHubClient::EnableImportFindingsForProduct(const EnableImportFindingsForProductRequest& request) const
@@ -893,18 +738,12 @@ EnableImportFindingsForProductOutcome SecurityHubClient::EnableImportFindingsFor
 
 EnableImportFindingsForProductOutcomeCallable SecurityHubClient::EnableImportFindingsForProductCallable(const EnableImportFindingsForProductRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableImportFindingsForProductOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableImportFindingsForProduct(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(EnableImportFindingsForProduct, request, m_executor.get());
 }
 
 void SecurityHubClient::EnableImportFindingsForProductAsync(const EnableImportFindingsForProductRequest& request, const EnableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, EnableImportFindingsForProduct(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(EnableImportFindingsForProduct, request, handler, context, m_executor.get());
 }
 
 EnableOrganizationAdminAccountOutcome SecurityHubClient::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
@@ -918,18 +757,12 @@ EnableOrganizationAdminAccountOutcome SecurityHubClient::EnableOrganizationAdmin
 
 EnableOrganizationAdminAccountOutcomeCallable SecurityHubClient::EnableOrganizationAdminAccountCallable(const EnableOrganizationAdminAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableOrganizationAdminAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableOrganizationAdminAccount(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(EnableOrganizationAdminAccount, request, m_executor.get());
 }
 
 void SecurityHubClient::EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, EnableOrganizationAdminAccount(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(EnableOrganizationAdminAccount, request, handler, context, m_executor.get());
 }
 
 EnableSecurityHubOutcome SecurityHubClient::EnableSecurityHub(const EnableSecurityHubRequest& request) const
@@ -943,18 +776,12 @@ EnableSecurityHubOutcome SecurityHubClient::EnableSecurityHub(const EnableSecuri
 
 EnableSecurityHubOutcomeCallable SecurityHubClient::EnableSecurityHubCallable(const EnableSecurityHubRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableSecurityHubOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableSecurityHub(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(EnableSecurityHub, request, m_executor.get());
 }
 
 void SecurityHubClient::EnableSecurityHubAsync(const EnableSecurityHubRequest& request, const EnableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, EnableSecurityHub(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(EnableSecurityHub, request, handler, context, m_executor.get());
 }
 
 GetAdministratorAccountOutcome SecurityHubClient::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const
@@ -968,18 +795,12 @@ GetAdministratorAccountOutcome SecurityHubClient::GetAdministratorAccount(const 
 
 GetAdministratorAccountOutcomeCallable SecurityHubClient::GetAdministratorAccountCallable(const GetAdministratorAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAdministratorAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAdministratorAccount(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAdministratorAccount, request, m_executor.get());
 }
 
 void SecurityHubClient::GetAdministratorAccountAsync(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAdministratorAccount(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAdministratorAccount, request, handler, context, m_executor.get());
 }
 
 GetEnabledStandardsOutcome SecurityHubClient::GetEnabledStandards(const GetEnabledStandardsRequest& request) const
@@ -993,18 +814,12 @@ GetEnabledStandardsOutcome SecurityHubClient::GetEnabledStandards(const GetEnabl
 
 GetEnabledStandardsOutcomeCallable SecurityHubClient::GetEnabledStandardsCallable(const GetEnabledStandardsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEnabledStandardsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEnabledStandards(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEnabledStandards, request, m_executor.get());
 }
 
 void SecurityHubClient::GetEnabledStandardsAsync(const GetEnabledStandardsRequest& request, const GetEnabledStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEnabledStandards(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEnabledStandards, request, handler, context, m_executor.get());
 }
 
 GetFindingAggregatorOutcome SecurityHubClient::GetFindingAggregator(const GetFindingAggregatorRequest& request) const
@@ -1024,18 +839,12 @@ GetFindingAggregatorOutcome SecurityHubClient::GetFindingAggregator(const GetFin
 
 GetFindingAggregatorOutcomeCallable SecurityHubClient::GetFindingAggregatorCallable(const GetFindingAggregatorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFindingAggregatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFindingAggregator(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFindingAggregator, request, m_executor.get());
 }
 
 void SecurityHubClient::GetFindingAggregatorAsync(const GetFindingAggregatorRequest& request, const GetFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFindingAggregator(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFindingAggregator, request, handler, context, m_executor.get());
 }
 
 GetFindingsOutcome SecurityHubClient::GetFindings(const GetFindingsRequest& request) const
@@ -1049,18 +858,12 @@ GetFindingsOutcome SecurityHubClient::GetFindings(const GetFindingsRequest& requ
 
 GetFindingsOutcomeCallable SecurityHubClient::GetFindingsCallable(const GetFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFindings, request, m_executor.get());
 }
 
 void SecurityHubClient::GetFindingsAsync(const GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFindings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFindings, request, handler, context, m_executor.get());
 }
 
 GetInsightResultsOutcome SecurityHubClient::GetInsightResults(const GetInsightResultsRequest& request) const
@@ -1080,18 +883,12 @@ GetInsightResultsOutcome SecurityHubClient::GetInsightResults(const GetInsightRe
 
 GetInsightResultsOutcomeCallable SecurityHubClient::GetInsightResultsCallable(const GetInsightResultsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetInsightResultsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInsightResults(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetInsightResults, request, m_executor.get());
 }
 
 void SecurityHubClient::GetInsightResultsAsync(const GetInsightResultsRequest& request, const GetInsightResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetInsightResults(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetInsightResults, request, handler, context, m_executor.get());
 }
 
 GetInsightsOutcome SecurityHubClient::GetInsights(const GetInsightsRequest& request) const
@@ -1105,18 +902,12 @@ GetInsightsOutcome SecurityHubClient::GetInsights(const GetInsightsRequest& requ
 
 GetInsightsOutcomeCallable SecurityHubClient::GetInsightsCallable(const GetInsightsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetInsightsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInsights(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetInsights, request, m_executor.get());
 }
 
 void SecurityHubClient::GetInsightsAsync(const GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetInsights(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetInsights, request, handler, context, m_executor.get());
 }
 
 GetInvitationsCountOutcome SecurityHubClient::GetInvitationsCount(const GetInvitationsCountRequest& request) const
@@ -1130,18 +921,12 @@ GetInvitationsCountOutcome SecurityHubClient::GetInvitationsCount(const GetInvit
 
 GetInvitationsCountOutcomeCallable SecurityHubClient::GetInvitationsCountCallable(const GetInvitationsCountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetInvitationsCountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInvitationsCount(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetInvitationsCount, request, m_executor.get());
 }
 
 void SecurityHubClient::GetInvitationsCountAsync(const GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetInvitationsCount(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetInvitationsCount, request, handler, context, m_executor.get());
 }
 
 GetMembersOutcome SecurityHubClient::GetMembers(const GetMembersRequest& request) const
@@ -1155,18 +940,12 @@ GetMembersOutcome SecurityHubClient::GetMembers(const GetMembersRequest& request
 
 GetMembersOutcomeCallable SecurityHubClient::GetMembersCallable(const GetMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMembers, request, m_executor.get());
 }
 
 void SecurityHubClient::GetMembersAsync(const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMembers, request, handler, context, m_executor.get());
 }
 
 InviteMembersOutcome SecurityHubClient::InviteMembers(const InviteMembersRequest& request) const
@@ -1180,18 +959,12 @@ InviteMembersOutcome SecurityHubClient::InviteMembers(const InviteMembersRequest
 
 InviteMembersOutcomeCallable SecurityHubClient::InviteMembersCallable(const InviteMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InviteMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InviteMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(InviteMembers, request, m_executor.get());
 }
 
 void SecurityHubClient::InviteMembersAsync(const InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, InviteMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(InviteMembers, request, handler, context, m_executor.get());
 }
 
 ListEnabledProductsForImportOutcome SecurityHubClient::ListEnabledProductsForImport(const ListEnabledProductsForImportRequest& request) const
@@ -1205,18 +978,12 @@ ListEnabledProductsForImportOutcome SecurityHubClient::ListEnabledProductsForImp
 
 ListEnabledProductsForImportOutcomeCallable SecurityHubClient::ListEnabledProductsForImportCallable(const ListEnabledProductsForImportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEnabledProductsForImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEnabledProductsForImport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEnabledProductsForImport, request, m_executor.get());
 }
 
 void SecurityHubClient::ListEnabledProductsForImportAsync(const ListEnabledProductsForImportRequest& request, const ListEnabledProductsForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEnabledProductsForImport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEnabledProductsForImport, request, handler, context, m_executor.get());
 }
 
 ListFindingAggregatorsOutcome SecurityHubClient::ListFindingAggregators(const ListFindingAggregatorsRequest& request) const
@@ -1230,18 +997,12 @@ ListFindingAggregatorsOutcome SecurityHubClient::ListFindingAggregators(const Li
 
 ListFindingAggregatorsOutcomeCallable SecurityHubClient::ListFindingAggregatorsCallable(const ListFindingAggregatorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFindingAggregatorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFindingAggregators(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFindingAggregators, request, m_executor.get());
 }
 
 void SecurityHubClient::ListFindingAggregatorsAsync(const ListFindingAggregatorsRequest& request, const ListFindingAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFindingAggregators(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFindingAggregators, request, handler, context, m_executor.get());
 }
 
 ListInvitationsOutcome SecurityHubClient::ListInvitations(const ListInvitationsRequest& request) const
@@ -1255,18 +1016,12 @@ ListInvitationsOutcome SecurityHubClient::ListInvitations(const ListInvitationsR
 
 ListInvitationsOutcomeCallable SecurityHubClient::ListInvitationsCallable(const ListInvitationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInvitationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInvitations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInvitations, request, m_executor.get());
 }
 
 void SecurityHubClient::ListInvitationsAsync(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInvitations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInvitations, request, handler, context, m_executor.get());
 }
 
 ListMembersOutcome SecurityHubClient::ListMembers(const ListMembersRequest& request) const
@@ -1280,18 +1035,12 @@ ListMembersOutcome SecurityHubClient::ListMembers(const ListMembersRequest& requ
 
 ListMembersOutcomeCallable SecurityHubClient::ListMembersCallable(const ListMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMembers, request, m_executor.get());
 }
 
 void SecurityHubClient::ListMembersAsync(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMembers, request, handler, context, m_executor.get());
 }
 
 ListOrganizationAdminAccountsOutcome SecurityHubClient::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
@@ -1305,18 +1054,12 @@ ListOrganizationAdminAccountsOutcome SecurityHubClient::ListOrganizationAdminAcc
 
 ListOrganizationAdminAccountsOutcomeCallable SecurityHubClient::ListOrganizationAdminAccountsCallable(const ListOrganizationAdminAccountsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListOrganizationAdminAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOrganizationAdminAccounts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListOrganizationAdminAccounts, request, m_executor.get());
 }
 
 void SecurityHubClient::ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListOrganizationAdminAccounts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListOrganizationAdminAccounts, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome SecurityHubClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1336,18 +1079,12 @@ ListTagsForResourceOutcome SecurityHubClient::ListTagsForResource(const ListTags
 
 ListTagsForResourceOutcomeCallable SecurityHubClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void SecurityHubClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome SecurityHubClient::TagResource(const TagResourceRequest& request) const
@@ -1367,18 +1104,12 @@ TagResourceOutcome SecurityHubClient::TagResource(const TagResourceRequest& requ
 
 TagResourceOutcomeCallable SecurityHubClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void SecurityHubClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome SecurityHubClient::UntagResource(const UntagResourceRequest& request) const
@@ -1403,18 +1134,12 @@ UntagResourceOutcome SecurityHubClient::UntagResource(const UntagResourceRequest
 
 UntagResourceOutcomeCallable SecurityHubClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void SecurityHubClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateActionTargetOutcome SecurityHubClient::UpdateActionTarget(const UpdateActionTargetRequest& request) const
@@ -1434,18 +1159,12 @@ UpdateActionTargetOutcome SecurityHubClient::UpdateActionTarget(const UpdateActi
 
 UpdateActionTargetOutcomeCallable SecurityHubClient::UpdateActionTargetCallable(const UpdateActionTargetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateActionTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateActionTarget(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateActionTarget, request, m_executor.get());
 }
 
 void SecurityHubClient::UpdateActionTargetAsync(const UpdateActionTargetRequest& request, const UpdateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateActionTarget(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateActionTarget, request, handler, context, m_executor.get());
 }
 
 UpdateFindingAggregatorOutcome SecurityHubClient::UpdateFindingAggregator(const UpdateFindingAggregatorRequest& request) const
@@ -1459,18 +1178,12 @@ UpdateFindingAggregatorOutcome SecurityHubClient::UpdateFindingAggregator(const 
 
 UpdateFindingAggregatorOutcomeCallable SecurityHubClient::UpdateFindingAggregatorCallable(const UpdateFindingAggregatorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFindingAggregatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFindingAggregator(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFindingAggregator, request, m_executor.get());
 }
 
 void SecurityHubClient::UpdateFindingAggregatorAsync(const UpdateFindingAggregatorRequest& request, const UpdateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFindingAggregator(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFindingAggregator, request, handler, context, m_executor.get());
 }
 
 UpdateFindingsOutcome SecurityHubClient::UpdateFindings(const UpdateFindingsRequest& request) const
@@ -1484,18 +1197,12 @@ UpdateFindingsOutcome SecurityHubClient::UpdateFindings(const UpdateFindingsRequ
 
 UpdateFindingsOutcomeCallable SecurityHubClient::UpdateFindingsCallable(const UpdateFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFindings, request, m_executor.get());
 }
 
 void SecurityHubClient::UpdateFindingsAsync(const UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFindings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFindings, request, handler, context, m_executor.get());
 }
 
 UpdateInsightOutcome SecurityHubClient::UpdateInsight(const UpdateInsightRequest& request) const
@@ -1515,18 +1222,12 @@ UpdateInsightOutcome SecurityHubClient::UpdateInsight(const UpdateInsightRequest
 
 UpdateInsightOutcomeCallable SecurityHubClient::UpdateInsightCallable(const UpdateInsightRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateInsightOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInsight(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateInsight, request, m_executor.get());
 }
 
 void SecurityHubClient::UpdateInsightAsync(const UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateInsight(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateInsight, request, handler, context, m_executor.get());
 }
 
 UpdateOrganizationConfigurationOutcome SecurityHubClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
@@ -1540,18 +1241,12 @@ UpdateOrganizationConfigurationOutcome SecurityHubClient::UpdateOrganizationConf
 
 UpdateOrganizationConfigurationOutcomeCallable SecurityHubClient::UpdateOrganizationConfigurationCallable(const UpdateOrganizationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateOrganizationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateOrganizationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateOrganizationConfiguration, request, m_executor.get());
 }
 
 void SecurityHubClient::UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateOrganizationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateOrganizationConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateSecurityHubConfigurationOutcome SecurityHubClient::UpdateSecurityHubConfiguration(const UpdateSecurityHubConfigurationRequest& request) const
@@ -1565,18 +1260,12 @@ UpdateSecurityHubConfigurationOutcome SecurityHubClient::UpdateSecurityHubConfig
 
 UpdateSecurityHubConfigurationOutcomeCallable SecurityHubClient::UpdateSecurityHubConfigurationCallable(const UpdateSecurityHubConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSecurityHubConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSecurityHubConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSecurityHubConfiguration, request, m_executor.get());
 }
 
 void SecurityHubClient::UpdateSecurityHubConfigurationAsync(const UpdateSecurityHubConfigurationRequest& request, const UpdateSecurityHubConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSecurityHubConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSecurityHubConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateStandardsControlOutcome SecurityHubClient::UpdateStandardsControl(const UpdateStandardsControlRequest& request) const
@@ -1596,17 +1285,11 @@ UpdateStandardsControlOutcome SecurityHubClient::UpdateStandardsControl(const Up
 
 UpdateStandardsControlOutcomeCallable SecurityHubClient::UpdateStandardsControlCallable(const UpdateStandardsControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStandardsControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStandardsControl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateStandardsControl, request, m_executor.get());
 }
 
 void SecurityHubClient::UpdateStandardsControlAsync(const UpdateStandardsControlRequest& request, const UpdateStandardsControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateStandardsControl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateStandardsControl, request, handler, context, m_executor.get());
 }
 

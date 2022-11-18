@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -223,18 +224,12 @@ AssociateBrowserSettingsOutcome WorkSpacesWebClient::AssociateBrowserSettings(co
 
 AssociateBrowserSettingsOutcomeCallable WorkSpacesWebClient::AssociateBrowserSettingsCallable(const AssociateBrowserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateBrowserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateBrowserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateBrowserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::AssociateBrowserSettingsAsync(const AssociateBrowserSettingsRequest& request, const AssociateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateBrowserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateBrowserSettings, request, handler, context, m_executor.get());
 }
 
 AssociateNetworkSettingsOutcome WorkSpacesWebClient::AssociateNetworkSettings(const AssociateNetworkSettingsRequest& request) const
@@ -260,18 +255,12 @@ AssociateNetworkSettingsOutcome WorkSpacesWebClient::AssociateNetworkSettings(co
 
 AssociateNetworkSettingsOutcomeCallable WorkSpacesWebClient::AssociateNetworkSettingsCallable(const AssociateNetworkSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateNetworkSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateNetworkSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateNetworkSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::AssociateNetworkSettingsAsync(const AssociateNetworkSettingsRequest& request, const AssociateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateNetworkSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateNetworkSettings, request, handler, context, m_executor.get());
 }
 
 AssociateTrustStoreOutcome WorkSpacesWebClient::AssociateTrustStore(const AssociateTrustStoreRequest& request) const
@@ -297,18 +286,12 @@ AssociateTrustStoreOutcome WorkSpacesWebClient::AssociateTrustStore(const Associ
 
 AssociateTrustStoreOutcomeCallable WorkSpacesWebClient::AssociateTrustStoreCallable(const AssociateTrustStoreRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateTrustStoreOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateTrustStore(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateTrustStore, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::AssociateTrustStoreAsync(const AssociateTrustStoreRequest& request, const AssociateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateTrustStore(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateTrustStore, request, handler, context, m_executor.get());
 }
 
 AssociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::AssociateUserAccessLoggingSettings(const AssociateUserAccessLoggingSettingsRequest& request) const
@@ -334,18 +317,12 @@ AssociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::AssociateUserAcce
 
 AssociateUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::AssociateUserAccessLoggingSettingsCallable(const AssociateUserAccessLoggingSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateUserAccessLoggingSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateUserAccessLoggingSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::AssociateUserAccessLoggingSettingsAsync(const AssociateUserAccessLoggingSettingsRequest& request, const AssociateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateUserAccessLoggingSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateUserAccessLoggingSettings, request, handler, context, m_executor.get());
 }
 
 AssociateUserSettingsOutcome WorkSpacesWebClient::AssociateUserSettings(const AssociateUserSettingsRequest& request) const
@@ -371,18 +348,12 @@ AssociateUserSettingsOutcome WorkSpacesWebClient::AssociateUserSettings(const As
 
 AssociateUserSettingsOutcomeCallable WorkSpacesWebClient::AssociateUserSettingsCallable(const AssociateUserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateUserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateUserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateUserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::AssociateUserSettingsAsync(const AssociateUserSettingsRequest& request, const AssociateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateUserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateUserSettings, request, handler, context, m_executor.get());
 }
 
 CreateBrowserSettingsOutcome WorkSpacesWebClient::CreateBrowserSettings(const CreateBrowserSettingsRequest& request) const
@@ -396,18 +367,12 @@ CreateBrowserSettingsOutcome WorkSpacesWebClient::CreateBrowserSettings(const Cr
 
 CreateBrowserSettingsOutcomeCallable WorkSpacesWebClient::CreateBrowserSettingsCallable(const CreateBrowserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBrowserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBrowserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBrowserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::CreateBrowserSettingsAsync(const CreateBrowserSettingsRequest& request, const CreateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBrowserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBrowserSettings, request, handler, context, m_executor.get());
 }
 
 CreateIdentityProviderOutcome WorkSpacesWebClient::CreateIdentityProvider(const CreateIdentityProviderRequest& request) const
@@ -421,18 +386,12 @@ CreateIdentityProviderOutcome WorkSpacesWebClient::CreateIdentityProvider(const 
 
 CreateIdentityProviderOutcomeCallable WorkSpacesWebClient::CreateIdentityProviderCallable(const CreateIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateIdentityProvider(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateIdentityProvider, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::CreateIdentityProviderAsync(const CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateIdentityProvider(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateIdentityProvider, request, handler, context, m_executor.get());
 }
 
 CreateNetworkSettingsOutcome WorkSpacesWebClient::CreateNetworkSettings(const CreateNetworkSettingsRequest& request) const
@@ -446,18 +405,12 @@ CreateNetworkSettingsOutcome WorkSpacesWebClient::CreateNetworkSettings(const Cr
 
 CreateNetworkSettingsOutcomeCallable WorkSpacesWebClient::CreateNetworkSettingsCallable(const CreateNetworkSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNetworkSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateNetworkSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::CreateNetworkSettingsAsync(const CreateNetworkSettingsRequest& request, const CreateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateNetworkSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateNetworkSettings, request, handler, context, m_executor.get());
 }
 
 CreatePortalOutcome WorkSpacesWebClient::CreatePortal(const CreatePortalRequest& request) const
@@ -471,18 +424,12 @@ CreatePortalOutcome WorkSpacesWebClient::CreatePortal(const CreatePortalRequest&
 
 CreatePortalOutcomeCallable WorkSpacesWebClient::CreatePortalCallable(const CreatePortalRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePortalOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePortal(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePortal, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::CreatePortalAsync(const CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePortal(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePortal, request, handler, context, m_executor.get());
 }
 
 CreateTrustStoreOutcome WorkSpacesWebClient::CreateTrustStore(const CreateTrustStoreRequest& request) const
@@ -496,18 +443,12 @@ CreateTrustStoreOutcome WorkSpacesWebClient::CreateTrustStore(const CreateTrustS
 
 CreateTrustStoreOutcomeCallable WorkSpacesWebClient::CreateTrustStoreCallable(const CreateTrustStoreRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTrustStoreOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTrustStore(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTrustStore, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::CreateTrustStoreAsync(const CreateTrustStoreRequest& request, const CreateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTrustStore(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTrustStore, request, handler, context, m_executor.get());
 }
 
 CreateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::CreateUserAccessLoggingSettings(const CreateUserAccessLoggingSettingsRequest& request) const
@@ -521,18 +462,12 @@ CreateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::CreateUserAccessLogg
 
 CreateUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::CreateUserAccessLoggingSettingsCallable(const CreateUserAccessLoggingSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserAccessLoggingSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateUserAccessLoggingSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::CreateUserAccessLoggingSettingsAsync(const CreateUserAccessLoggingSettingsRequest& request, const CreateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateUserAccessLoggingSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateUserAccessLoggingSettings, request, handler, context, m_executor.get());
 }
 
 CreateUserSettingsOutcome WorkSpacesWebClient::CreateUserSettings(const CreateUserSettingsRequest& request) const
@@ -546,18 +481,12 @@ CreateUserSettingsOutcome WorkSpacesWebClient::CreateUserSettings(const CreateUs
 
 CreateUserSettingsOutcomeCallable WorkSpacesWebClient::CreateUserSettingsCallable(const CreateUserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateUserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::CreateUserSettingsAsync(const CreateUserSettingsRequest& request, const CreateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateUserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateUserSettings, request, handler, context, m_executor.get());
 }
 
 DeleteBrowserSettingsOutcome WorkSpacesWebClient::DeleteBrowserSettings(const DeleteBrowserSettingsRequest& request) const
@@ -577,18 +506,12 @@ DeleteBrowserSettingsOutcome WorkSpacesWebClient::DeleteBrowserSettings(const De
 
 DeleteBrowserSettingsOutcomeCallable WorkSpacesWebClient::DeleteBrowserSettingsCallable(const DeleteBrowserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBrowserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBrowserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBrowserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DeleteBrowserSettingsAsync(const DeleteBrowserSettingsRequest& request, const DeleteBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBrowserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBrowserSettings, request, handler, context, m_executor.get());
 }
 
 DeleteIdentityProviderOutcome WorkSpacesWebClient::DeleteIdentityProvider(const DeleteIdentityProviderRequest& request) const
@@ -608,18 +531,12 @@ DeleteIdentityProviderOutcome WorkSpacesWebClient::DeleteIdentityProvider(const 
 
 DeleteIdentityProviderOutcomeCallable WorkSpacesWebClient::DeleteIdentityProviderCallable(const DeleteIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteIdentityProvider(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteIdentityProvider, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DeleteIdentityProviderAsync(const DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteIdentityProvider(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteIdentityProvider, request, handler, context, m_executor.get());
 }
 
 DeleteNetworkSettingsOutcome WorkSpacesWebClient::DeleteNetworkSettings(const DeleteNetworkSettingsRequest& request) const
@@ -639,18 +556,12 @@ DeleteNetworkSettingsOutcome WorkSpacesWebClient::DeleteNetworkSettings(const De
 
 DeleteNetworkSettingsOutcomeCallable WorkSpacesWebClient::DeleteNetworkSettingsCallable(const DeleteNetworkSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNetworkSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNetworkSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteNetworkSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DeleteNetworkSettingsAsync(const DeleteNetworkSettingsRequest& request, const DeleteNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteNetworkSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteNetworkSettings, request, handler, context, m_executor.get());
 }
 
 DeletePortalOutcome WorkSpacesWebClient::DeletePortal(const DeletePortalRequest& request) const
@@ -670,18 +581,12 @@ DeletePortalOutcome WorkSpacesWebClient::DeletePortal(const DeletePortalRequest&
 
 DeletePortalOutcomeCallable WorkSpacesWebClient::DeletePortalCallable(const DeletePortalRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePortalOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePortal(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePortal, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DeletePortalAsync(const DeletePortalRequest& request, const DeletePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePortal(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePortal, request, handler, context, m_executor.get());
 }
 
 DeleteTrustStoreOutcome WorkSpacesWebClient::DeleteTrustStore(const DeleteTrustStoreRequest& request) const
@@ -701,18 +606,12 @@ DeleteTrustStoreOutcome WorkSpacesWebClient::DeleteTrustStore(const DeleteTrustS
 
 DeleteTrustStoreOutcomeCallable WorkSpacesWebClient::DeleteTrustStoreCallable(const DeleteTrustStoreRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTrustStoreOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTrustStore(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTrustStore, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DeleteTrustStoreAsync(const DeleteTrustStoreRequest& request, const DeleteTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTrustStore(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTrustStore, request, handler, context, m_executor.get());
 }
 
 DeleteUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DeleteUserAccessLoggingSettings(const DeleteUserAccessLoggingSettingsRequest& request) const
@@ -732,18 +631,12 @@ DeleteUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DeleteUserAccessLogg
 
 DeleteUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::DeleteUserAccessLoggingSettingsCallable(const DeleteUserAccessLoggingSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserAccessLoggingSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteUserAccessLoggingSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DeleteUserAccessLoggingSettingsAsync(const DeleteUserAccessLoggingSettingsRequest& request, const DeleteUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteUserAccessLoggingSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteUserAccessLoggingSettings, request, handler, context, m_executor.get());
 }
 
 DeleteUserSettingsOutcome WorkSpacesWebClient::DeleteUserSettings(const DeleteUserSettingsRequest& request) const
@@ -763,18 +656,12 @@ DeleteUserSettingsOutcome WorkSpacesWebClient::DeleteUserSettings(const DeleteUs
 
 DeleteUserSettingsOutcomeCallable WorkSpacesWebClient::DeleteUserSettingsCallable(const DeleteUserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteUserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DeleteUserSettingsAsync(const DeleteUserSettingsRequest& request, const DeleteUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteUserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteUserSettings, request, handler, context, m_executor.get());
 }
 
 DisassociateBrowserSettingsOutcome WorkSpacesWebClient::DisassociateBrowserSettings(const DisassociateBrowserSettingsRequest& request) const
@@ -795,18 +682,12 @@ DisassociateBrowserSettingsOutcome WorkSpacesWebClient::DisassociateBrowserSetti
 
 DisassociateBrowserSettingsOutcomeCallable WorkSpacesWebClient::DisassociateBrowserSettingsCallable(const DisassociateBrowserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateBrowserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateBrowserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateBrowserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DisassociateBrowserSettingsAsync(const DisassociateBrowserSettingsRequest& request, const DisassociateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateBrowserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateBrowserSettings, request, handler, context, m_executor.get());
 }
 
 DisassociateNetworkSettingsOutcome WorkSpacesWebClient::DisassociateNetworkSettings(const DisassociateNetworkSettingsRequest& request) const
@@ -827,18 +708,12 @@ DisassociateNetworkSettingsOutcome WorkSpacesWebClient::DisassociateNetworkSetti
 
 DisassociateNetworkSettingsOutcomeCallable WorkSpacesWebClient::DisassociateNetworkSettingsCallable(const DisassociateNetworkSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateNetworkSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateNetworkSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateNetworkSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DisassociateNetworkSettingsAsync(const DisassociateNetworkSettingsRequest& request, const DisassociateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateNetworkSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateNetworkSettings, request, handler, context, m_executor.get());
 }
 
 DisassociateTrustStoreOutcome WorkSpacesWebClient::DisassociateTrustStore(const DisassociateTrustStoreRequest& request) const
@@ -859,18 +734,12 @@ DisassociateTrustStoreOutcome WorkSpacesWebClient::DisassociateTrustStore(const 
 
 DisassociateTrustStoreOutcomeCallable WorkSpacesWebClient::DisassociateTrustStoreCallable(const DisassociateTrustStoreRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateTrustStoreOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateTrustStore(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateTrustStore, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DisassociateTrustStoreAsync(const DisassociateTrustStoreRequest& request, const DisassociateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateTrustStore(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateTrustStore, request, handler, context, m_executor.get());
 }
 
 DisassociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DisassociateUserAccessLoggingSettings(const DisassociateUserAccessLoggingSettingsRequest& request) const
@@ -891,18 +760,12 @@ DisassociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DisassociateUs
 
 DisassociateUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::DisassociateUserAccessLoggingSettingsCallable(const DisassociateUserAccessLoggingSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateUserAccessLoggingSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateUserAccessLoggingSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DisassociateUserAccessLoggingSettingsAsync(const DisassociateUserAccessLoggingSettingsRequest& request, const DisassociateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateUserAccessLoggingSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateUserAccessLoggingSettings, request, handler, context, m_executor.get());
 }
 
 DisassociateUserSettingsOutcome WorkSpacesWebClient::DisassociateUserSettings(const DisassociateUserSettingsRequest& request) const
@@ -923,18 +786,12 @@ DisassociateUserSettingsOutcome WorkSpacesWebClient::DisassociateUserSettings(co
 
 DisassociateUserSettingsOutcomeCallable WorkSpacesWebClient::DisassociateUserSettingsCallable(const DisassociateUserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateUserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateUserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateUserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::DisassociateUserSettingsAsync(const DisassociateUserSettingsRequest& request, const DisassociateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateUserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateUserSettings, request, handler, context, m_executor.get());
 }
 
 GetBrowserSettingsOutcome WorkSpacesWebClient::GetBrowserSettings(const GetBrowserSettingsRequest& request) const
@@ -954,18 +811,12 @@ GetBrowserSettingsOutcome WorkSpacesWebClient::GetBrowserSettings(const GetBrows
 
 GetBrowserSettingsOutcomeCallable WorkSpacesWebClient::GetBrowserSettingsCallable(const GetBrowserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBrowserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBrowserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBrowserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::GetBrowserSettingsAsync(const GetBrowserSettingsRequest& request, const GetBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBrowserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBrowserSettings, request, handler, context, m_executor.get());
 }
 
 GetIdentityProviderOutcome WorkSpacesWebClient::GetIdentityProvider(const GetIdentityProviderRequest& request) const
@@ -985,18 +836,12 @@ GetIdentityProviderOutcome WorkSpacesWebClient::GetIdentityProvider(const GetIde
 
 GetIdentityProviderOutcomeCallable WorkSpacesWebClient::GetIdentityProviderCallable(const GetIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIdentityProvider(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetIdentityProvider, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::GetIdentityProviderAsync(const GetIdentityProviderRequest& request, const GetIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetIdentityProvider(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetIdentityProvider, request, handler, context, m_executor.get());
 }
 
 GetNetworkSettingsOutcome WorkSpacesWebClient::GetNetworkSettings(const GetNetworkSettingsRequest& request) const
@@ -1016,18 +861,12 @@ GetNetworkSettingsOutcome WorkSpacesWebClient::GetNetworkSettings(const GetNetwo
 
 GetNetworkSettingsOutcomeCallable WorkSpacesWebClient::GetNetworkSettingsCallable(const GetNetworkSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNetworkSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetNetworkSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::GetNetworkSettingsAsync(const GetNetworkSettingsRequest& request, const GetNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetNetworkSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetNetworkSettings, request, handler, context, m_executor.get());
 }
 
 GetPortalOutcome WorkSpacesWebClient::GetPortal(const GetPortalRequest& request) const
@@ -1047,18 +886,12 @@ GetPortalOutcome WorkSpacesWebClient::GetPortal(const GetPortalRequest& request)
 
 GetPortalOutcomeCallable WorkSpacesWebClient::GetPortalCallable(const GetPortalRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPortalOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPortal(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPortal, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::GetPortalAsync(const GetPortalRequest& request, const GetPortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPortal(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPortal, request, handler, context, m_executor.get());
 }
 
 GetPortalServiceProviderMetadataOutcome WorkSpacesWebClient::GetPortalServiceProviderMetadata(const GetPortalServiceProviderMetadataRequest& request) const
@@ -1078,18 +911,12 @@ GetPortalServiceProviderMetadataOutcome WorkSpacesWebClient::GetPortalServicePro
 
 GetPortalServiceProviderMetadataOutcomeCallable WorkSpacesWebClient::GetPortalServiceProviderMetadataCallable(const GetPortalServiceProviderMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPortalServiceProviderMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPortalServiceProviderMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPortalServiceProviderMetadata, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::GetPortalServiceProviderMetadataAsync(const GetPortalServiceProviderMetadataRequest& request, const GetPortalServiceProviderMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPortalServiceProviderMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPortalServiceProviderMetadata, request, handler, context, m_executor.get());
 }
 
 GetTrustStoreOutcome WorkSpacesWebClient::GetTrustStore(const GetTrustStoreRequest& request) const
@@ -1109,18 +936,12 @@ GetTrustStoreOutcome WorkSpacesWebClient::GetTrustStore(const GetTrustStoreReque
 
 GetTrustStoreOutcomeCallable WorkSpacesWebClient::GetTrustStoreCallable(const GetTrustStoreRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTrustStoreOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTrustStore(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTrustStore, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::GetTrustStoreAsync(const GetTrustStoreRequest& request, const GetTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTrustStore(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTrustStore, request, handler, context, m_executor.get());
 }
 
 GetTrustStoreCertificateOutcome WorkSpacesWebClient::GetTrustStoreCertificate(const GetTrustStoreCertificateRequest& request) const
@@ -1146,18 +967,12 @@ GetTrustStoreCertificateOutcome WorkSpacesWebClient::GetTrustStoreCertificate(co
 
 GetTrustStoreCertificateOutcomeCallable WorkSpacesWebClient::GetTrustStoreCertificateCallable(const GetTrustStoreCertificateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTrustStoreCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTrustStoreCertificate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTrustStoreCertificate, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::GetTrustStoreCertificateAsync(const GetTrustStoreCertificateRequest& request, const GetTrustStoreCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTrustStoreCertificate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTrustStoreCertificate, request, handler, context, m_executor.get());
 }
 
 GetUserAccessLoggingSettingsOutcome WorkSpacesWebClient::GetUserAccessLoggingSettings(const GetUserAccessLoggingSettingsRequest& request) const
@@ -1177,18 +992,12 @@ GetUserAccessLoggingSettingsOutcome WorkSpacesWebClient::GetUserAccessLoggingSet
 
 GetUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::GetUserAccessLoggingSettingsCallable(const GetUserAccessLoggingSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUserAccessLoggingSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUserAccessLoggingSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::GetUserAccessLoggingSettingsAsync(const GetUserAccessLoggingSettingsRequest& request, const GetUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUserAccessLoggingSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUserAccessLoggingSettings, request, handler, context, m_executor.get());
 }
 
 GetUserSettingsOutcome WorkSpacesWebClient::GetUserSettings(const GetUserSettingsRequest& request) const
@@ -1208,18 +1017,12 @@ GetUserSettingsOutcome WorkSpacesWebClient::GetUserSettings(const GetUserSetting
 
 GetUserSettingsOutcomeCallable WorkSpacesWebClient::GetUserSettingsCallable(const GetUserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::GetUserSettingsAsync(const GetUserSettingsRequest& request, const GetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUserSettings, request, handler, context, m_executor.get());
 }
 
 ListBrowserSettingsOutcome WorkSpacesWebClient::ListBrowserSettings(const ListBrowserSettingsRequest& request) const
@@ -1233,18 +1036,12 @@ ListBrowserSettingsOutcome WorkSpacesWebClient::ListBrowserSettings(const ListBr
 
 ListBrowserSettingsOutcomeCallable WorkSpacesWebClient::ListBrowserSettingsCallable(const ListBrowserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBrowserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBrowserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBrowserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::ListBrowserSettingsAsync(const ListBrowserSettingsRequest& request, const ListBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBrowserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBrowserSettings, request, handler, context, m_executor.get());
 }
 
 ListIdentityProvidersOutcome WorkSpacesWebClient::ListIdentityProviders(const ListIdentityProvidersRequest& request) const
@@ -1265,18 +1062,12 @@ ListIdentityProvidersOutcome WorkSpacesWebClient::ListIdentityProviders(const Li
 
 ListIdentityProvidersOutcomeCallable WorkSpacesWebClient::ListIdentityProvidersCallable(const ListIdentityProvidersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListIdentityProvidersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIdentityProviders(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListIdentityProviders, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::ListIdentityProvidersAsync(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListIdentityProviders(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListIdentityProviders, request, handler, context, m_executor.get());
 }
 
 ListNetworkSettingsOutcome WorkSpacesWebClient::ListNetworkSettings(const ListNetworkSettingsRequest& request) const
@@ -1290,18 +1081,12 @@ ListNetworkSettingsOutcome WorkSpacesWebClient::ListNetworkSettings(const ListNe
 
 ListNetworkSettingsOutcomeCallable WorkSpacesWebClient::ListNetworkSettingsCallable(const ListNetworkSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNetworkSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNetworkSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNetworkSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::ListNetworkSettingsAsync(const ListNetworkSettingsRequest& request, const ListNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNetworkSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNetworkSettings, request, handler, context, m_executor.get());
 }
 
 ListPortalsOutcome WorkSpacesWebClient::ListPortals(const ListPortalsRequest& request) const
@@ -1315,18 +1100,12 @@ ListPortalsOutcome WorkSpacesWebClient::ListPortals(const ListPortalsRequest& re
 
 ListPortalsOutcomeCallable WorkSpacesWebClient::ListPortalsCallable(const ListPortalsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPortalsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPortals(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPortals, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::ListPortalsAsync(const ListPortalsRequest& request, const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPortals(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPortals, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome WorkSpacesWebClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1346,18 +1125,12 @@ ListTagsForResourceOutcome WorkSpacesWebClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable WorkSpacesWebClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTrustStoreCertificatesOutcome WorkSpacesWebClient::ListTrustStoreCertificates(const ListTrustStoreCertificatesRequest& request) const
@@ -1378,18 +1151,12 @@ ListTrustStoreCertificatesOutcome WorkSpacesWebClient::ListTrustStoreCertificate
 
 ListTrustStoreCertificatesOutcomeCallable WorkSpacesWebClient::ListTrustStoreCertificatesCallable(const ListTrustStoreCertificatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTrustStoreCertificatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTrustStoreCertificates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTrustStoreCertificates, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::ListTrustStoreCertificatesAsync(const ListTrustStoreCertificatesRequest& request, const ListTrustStoreCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTrustStoreCertificates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTrustStoreCertificates, request, handler, context, m_executor.get());
 }
 
 ListTrustStoresOutcome WorkSpacesWebClient::ListTrustStores(const ListTrustStoresRequest& request) const
@@ -1403,18 +1170,12 @@ ListTrustStoresOutcome WorkSpacesWebClient::ListTrustStores(const ListTrustStore
 
 ListTrustStoresOutcomeCallable WorkSpacesWebClient::ListTrustStoresCallable(const ListTrustStoresRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTrustStoresOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTrustStores(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTrustStores, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::ListTrustStoresAsync(const ListTrustStoresRequest& request, const ListTrustStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTrustStores(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTrustStores, request, handler, context, m_executor.get());
 }
 
 ListUserAccessLoggingSettingsOutcome WorkSpacesWebClient::ListUserAccessLoggingSettings(const ListUserAccessLoggingSettingsRequest& request) const
@@ -1428,18 +1189,12 @@ ListUserAccessLoggingSettingsOutcome WorkSpacesWebClient::ListUserAccessLoggingS
 
 ListUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::ListUserAccessLoggingSettingsCallable(const ListUserAccessLoggingSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserAccessLoggingSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUserAccessLoggingSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::ListUserAccessLoggingSettingsAsync(const ListUserAccessLoggingSettingsRequest& request, const ListUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUserAccessLoggingSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUserAccessLoggingSettings, request, handler, context, m_executor.get());
 }
 
 ListUserSettingsOutcome WorkSpacesWebClient::ListUserSettings(const ListUserSettingsRequest& request) const
@@ -1453,18 +1208,12 @@ ListUserSettingsOutcome WorkSpacesWebClient::ListUserSettings(const ListUserSett
 
 ListUserSettingsOutcomeCallable WorkSpacesWebClient::ListUserSettingsCallable(const ListUserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::ListUserSettingsAsync(const ListUserSettingsRequest& request, const ListUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUserSettings, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome WorkSpacesWebClient::TagResource(const TagResourceRequest& request) const
@@ -1484,18 +1233,12 @@ TagResourceOutcome WorkSpacesWebClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable WorkSpacesWebClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome WorkSpacesWebClient::UntagResource(const UntagResourceRequest& request) const
@@ -1520,18 +1263,12 @@ UntagResourceOutcome WorkSpacesWebClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable WorkSpacesWebClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateBrowserSettingsOutcome WorkSpacesWebClient::UpdateBrowserSettings(const UpdateBrowserSettingsRequest& request) const
@@ -1551,18 +1288,12 @@ UpdateBrowserSettingsOutcome WorkSpacesWebClient::UpdateBrowserSettings(const Up
 
 UpdateBrowserSettingsOutcomeCallable WorkSpacesWebClient::UpdateBrowserSettingsCallable(const UpdateBrowserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBrowserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBrowserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBrowserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::UpdateBrowserSettingsAsync(const UpdateBrowserSettingsRequest& request, const UpdateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBrowserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBrowserSettings, request, handler, context, m_executor.get());
 }
 
 UpdateIdentityProviderOutcome WorkSpacesWebClient::UpdateIdentityProvider(const UpdateIdentityProviderRequest& request) const
@@ -1582,18 +1313,12 @@ UpdateIdentityProviderOutcome WorkSpacesWebClient::UpdateIdentityProvider(const 
 
 UpdateIdentityProviderOutcomeCallable WorkSpacesWebClient::UpdateIdentityProviderCallable(const UpdateIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIdentityProvider(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateIdentityProvider, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::UpdateIdentityProviderAsync(const UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateIdentityProvider(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateIdentityProvider, request, handler, context, m_executor.get());
 }
 
 UpdateNetworkSettingsOutcome WorkSpacesWebClient::UpdateNetworkSettings(const UpdateNetworkSettingsRequest& request) const
@@ -1613,18 +1338,12 @@ UpdateNetworkSettingsOutcome WorkSpacesWebClient::UpdateNetworkSettings(const Up
 
 UpdateNetworkSettingsOutcomeCallable WorkSpacesWebClient::UpdateNetworkSettingsCallable(const UpdateNetworkSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNetworkSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNetworkSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateNetworkSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::UpdateNetworkSettingsAsync(const UpdateNetworkSettingsRequest& request, const UpdateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateNetworkSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateNetworkSettings, request, handler, context, m_executor.get());
 }
 
 UpdatePortalOutcome WorkSpacesWebClient::UpdatePortal(const UpdatePortalRequest& request) const
@@ -1644,18 +1363,12 @@ UpdatePortalOutcome WorkSpacesWebClient::UpdatePortal(const UpdatePortalRequest&
 
 UpdatePortalOutcomeCallable WorkSpacesWebClient::UpdatePortalCallable(const UpdatePortalRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePortalOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePortal(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePortal, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::UpdatePortalAsync(const UpdatePortalRequest& request, const UpdatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePortal(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePortal, request, handler, context, m_executor.get());
 }
 
 UpdateTrustStoreOutcome WorkSpacesWebClient::UpdateTrustStore(const UpdateTrustStoreRequest& request) const
@@ -1675,18 +1388,12 @@ UpdateTrustStoreOutcome WorkSpacesWebClient::UpdateTrustStore(const UpdateTrustS
 
 UpdateTrustStoreOutcomeCallable WorkSpacesWebClient::UpdateTrustStoreCallable(const UpdateTrustStoreRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTrustStoreOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTrustStore(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTrustStore, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::UpdateTrustStoreAsync(const UpdateTrustStoreRequest& request, const UpdateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTrustStore(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTrustStore, request, handler, context, m_executor.get());
 }
 
 UpdateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::UpdateUserAccessLoggingSettings(const UpdateUserAccessLoggingSettingsRequest& request) const
@@ -1706,18 +1413,12 @@ UpdateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::UpdateUserAccessLogg
 
 UpdateUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::UpdateUserAccessLoggingSettingsCallable(const UpdateUserAccessLoggingSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserAccessLoggingSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateUserAccessLoggingSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::UpdateUserAccessLoggingSettingsAsync(const UpdateUserAccessLoggingSettingsRequest& request, const UpdateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateUserAccessLoggingSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateUserAccessLoggingSettings, request, handler, context, m_executor.get());
 }
 
 UpdateUserSettingsOutcome WorkSpacesWebClient::UpdateUserSettings(const UpdateUserSettingsRequest& request) const
@@ -1737,17 +1438,11 @@ UpdateUserSettingsOutcome WorkSpacesWebClient::UpdateUserSettings(const UpdateUs
 
 UpdateUserSettingsOutcomeCallable WorkSpacesWebClient::UpdateUserSettingsCallable(const UpdateUserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateUserSettings, request, m_executor.get());
 }
 
 void WorkSpacesWebClient::UpdateUserSettingsAsync(const UpdateUserSettingsRequest& request, const UpdateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateUserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateUserSettings, request, handler, context, m_executor.get());
 }
 

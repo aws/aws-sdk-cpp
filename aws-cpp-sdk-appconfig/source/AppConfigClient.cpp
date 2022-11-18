@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -126,10 +127,10 @@ AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& 
     /* Legacy constructors due deprecation */
   AppConfigClient::AppConfigClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -141,10 +142,10 @@ AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& 
 AppConfigClient::AppConfigClient(const AWSCredentials& credentials,
                                  const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -156,10 +157,10 @@ AppConfigClient::AppConfigClient(const AWSCredentials& credentials,
 AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                  const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -202,18 +203,12 @@ CreateApplicationOutcome AppConfigClient::CreateApplication(const CreateApplicat
 
 CreateApplicationOutcomeCallable AppConfigClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateApplication, request, m_executor.get());
 }
 
 void AppConfigClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateApplication, request, handler, context, m_executor.get());
 }
 
 CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(const CreateConfigurationProfileRequest& request) const
@@ -234,18 +229,12 @@ CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(co
 
 CreateConfigurationProfileOutcomeCallable AppConfigClient::CreateConfigurationProfileCallable(const CreateConfigurationProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConfigurationProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateConfigurationProfile, request, m_executor.get());
 }
 
 void AppConfigClient::CreateConfigurationProfileAsync(const CreateConfigurationProfileRequest& request, const CreateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateConfigurationProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateConfigurationProfile, request, handler, context, m_executor.get());
 }
 
 CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const CreateDeploymentStrategyRequest& request) const
@@ -259,18 +248,12 @@ CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const 
 
 CreateDeploymentStrategyOutcomeCallable AppConfigClient::CreateDeploymentStrategyCallable(const CreateDeploymentStrategyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDeploymentStrategy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDeploymentStrategy, request, m_executor.get());
 }
 
 void AppConfigClient::CreateDeploymentStrategyAsync(const CreateDeploymentStrategyRequest& request, const CreateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDeploymentStrategy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDeploymentStrategy, request, handler, context, m_executor.get());
 }
 
 CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
@@ -291,18 +274,12 @@ CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironm
 
 CreateEnvironmentOutcomeCallable AppConfigClient::CreateEnvironmentCallable(const CreateEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEnvironment, request, m_executor.get());
 }
 
 void AppConfigClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEnvironment, request, handler, context, m_executor.get());
 }
 
 CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionRequest& request) const
@@ -316,18 +293,12 @@ CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionReq
 
 CreateExtensionOutcomeCallable AppConfigClient::CreateExtensionCallable(const CreateExtensionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExtension(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateExtension, request, m_executor.get());
 }
 
 void AppConfigClient::CreateExtensionAsync(const CreateExtensionRequest& request, const CreateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateExtension(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateExtension, request, handler, context, m_executor.get());
 }
 
 CreateExtensionAssociationOutcome AppConfigClient::CreateExtensionAssociation(const CreateExtensionAssociationRequest& request) const
@@ -341,18 +312,12 @@ CreateExtensionAssociationOutcome AppConfigClient::CreateExtensionAssociation(co
 
 CreateExtensionAssociationOutcomeCallable AppConfigClient::CreateExtensionAssociationCallable(const CreateExtensionAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExtensionAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateExtensionAssociation, request, m_executor.get());
 }
 
 void AppConfigClient::CreateExtensionAssociationAsync(const CreateExtensionAssociationRequest& request, const CreateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateExtensionAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateExtensionAssociation, request, handler, context, m_executor.get());
 }
 
 CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurationVersion(const CreateHostedConfigurationVersionRequest& request) const
@@ -380,18 +345,12 @@ CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurati
 
 CreateHostedConfigurationVersionOutcomeCallable AppConfigClient::CreateHostedConfigurationVersionCallable(const CreateHostedConfigurationVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHostedConfigurationVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateHostedConfigurationVersion, request, m_executor.get());
 }
 
 void AppConfigClient::CreateHostedConfigurationVersionAsync(const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateHostedConfigurationVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateHostedConfigurationVersion, request, handler, context, m_executor.get());
 }
 
 DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -411,18 +370,12 @@ DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicat
 
 DeleteApplicationOutcomeCallable AppConfigClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteApplication, request, m_executor.get());
 }
 
 void AppConfigClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteApplication, request, handler, context, m_executor.get());
 }
 
 DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(const DeleteConfigurationProfileRequest& request) const
@@ -449,18 +402,12 @@ DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(co
 
 DeleteConfigurationProfileOutcomeCallable AppConfigClient::DeleteConfigurationProfileCallable(const DeleteConfigurationProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConfigurationProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteConfigurationProfile, request, m_executor.get());
 }
 
 void AppConfigClient::DeleteConfigurationProfileAsync(const DeleteConfigurationProfileRequest& request, const DeleteConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteConfigurationProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteConfigurationProfile, request, handler, context, m_executor.get());
 }
 
 DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const DeleteDeploymentStrategyRequest& request) const
@@ -480,18 +427,12 @@ DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const 
 
 DeleteDeploymentStrategyOutcomeCallable AppConfigClient::DeleteDeploymentStrategyCallable(const DeleteDeploymentStrategyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDeploymentStrategy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDeploymentStrategy, request, m_executor.get());
 }
 
 void AppConfigClient::DeleteDeploymentStrategyAsync(const DeleteDeploymentStrategyRequest& request, const DeleteDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDeploymentStrategy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDeploymentStrategy, request, handler, context, m_executor.get());
 }
 
 DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
@@ -518,18 +459,12 @@ DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironm
 
 DeleteEnvironmentOutcomeCallable AppConfigClient::DeleteEnvironmentCallable(const DeleteEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEnvironment, request, m_executor.get());
 }
 
 void AppConfigClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEnvironment, request, handler, context, m_executor.get());
 }
 
 DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionRequest& request) const
@@ -549,18 +484,12 @@ DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionReq
 
 DeleteExtensionOutcomeCallable AppConfigClient::DeleteExtensionCallable(const DeleteExtensionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExtension(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteExtension, request, m_executor.get());
 }
 
 void AppConfigClient::DeleteExtensionAsync(const DeleteExtensionRequest& request, const DeleteExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteExtension(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteExtension, request, handler, context, m_executor.get());
 }
 
 DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(const DeleteExtensionAssociationRequest& request) const
@@ -580,18 +509,12 @@ DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(co
 
 DeleteExtensionAssociationOutcomeCallable AppConfigClient::DeleteExtensionAssociationCallable(const DeleteExtensionAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExtensionAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteExtensionAssociation, request, m_executor.get());
 }
 
 void AppConfigClient::DeleteExtensionAssociationAsync(const DeleteExtensionAssociationRequest& request, const DeleteExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteExtensionAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteExtensionAssociation, request, handler, context, m_executor.get());
 }
 
 DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurationVersion(const DeleteHostedConfigurationVersionRequest& request) const
@@ -625,18 +548,12 @@ DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurati
 
 DeleteHostedConfigurationVersionOutcomeCallable AppConfigClient::DeleteHostedConfigurationVersionCallable(const DeleteHostedConfigurationVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHostedConfigurationVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteHostedConfigurationVersion, request, m_executor.get());
 }
 
 void AppConfigClient::DeleteHostedConfigurationVersionAsync(const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteHostedConfigurationVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteHostedConfigurationVersion, request, handler, context, m_executor.get());
 }
 
 GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationRequest& request) const
@@ -656,18 +573,12 @@ GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationReques
 
 GetApplicationOutcomeCallable AppConfigClient::GetApplicationCallable(const GetApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetApplication, request, m_executor.get());
 }
 
 void AppConfigClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetApplication, request, handler, context, m_executor.get());
 }
 
 GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const GetConfigurationProfileRequest& request) const
@@ -694,18 +605,12 @@ GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const Ge
 
 GetConfigurationProfileOutcomeCallable AppConfigClient::GetConfigurationProfileCallable(const GetConfigurationProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConfigurationProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetConfigurationProfile, request, m_executor.get());
 }
 
 void AppConfigClient::GetConfigurationProfileAsync(const GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetConfigurationProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetConfigurationProfile, request, handler, context, m_executor.get());
 }
 
 GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& request) const
@@ -739,18 +644,12 @@ GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& 
 
 GetDeploymentOutcomeCallable AppConfigClient::GetDeploymentCallable(const GetDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeployment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDeployment, request, m_executor.get());
 }
 
 void AppConfigClient::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDeployment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDeployment, request, handler, context, m_executor.get());
 }
 
 GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDeploymentStrategyRequest& request) const
@@ -770,18 +669,12 @@ GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDep
 
 GetDeploymentStrategyOutcomeCallable AppConfigClient::GetDeploymentStrategyCallable(const GetDeploymentStrategyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeploymentStrategy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDeploymentStrategy, request, m_executor.get());
 }
 
 void AppConfigClient::GetDeploymentStrategyAsync(const GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDeploymentStrategy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDeploymentStrategy, request, handler, context, m_executor.get());
 }
 
 GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentRequest& request) const
@@ -808,18 +701,12 @@ GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentReques
 
 GetEnvironmentOutcomeCallable AppConfigClient::GetEnvironmentCallable(const GetEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEnvironment, request, m_executor.get());
 }
 
 void AppConfigClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEnvironment, request, handler, context, m_executor.get());
 }
 
 GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& request) const
@@ -839,18 +726,12 @@ GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& req
 
 GetExtensionOutcomeCallable AppConfigClient::GetExtensionCallable(const GetExtensionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExtension(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetExtension, request, m_executor.get());
 }
 
 void AppConfigClient::GetExtensionAsync(const GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetExtension(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetExtension, request, handler, context, m_executor.get());
 }
 
 GetExtensionAssociationOutcome AppConfigClient::GetExtensionAssociation(const GetExtensionAssociationRequest& request) const
@@ -870,18 +751,12 @@ GetExtensionAssociationOutcome AppConfigClient::GetExtensionAssociation(const Ge
 
 GetExtensionAssociationOutcomeCallable AppConfigClient::GetExtensionAssociationCallable(const GetExtensionAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExtensionAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetExtensionAssociation, request, m_executor.get());
 }
 
 void AppConfigClient::GetExtensionAssociationAsync(const GetExtensionAssociationRequest& request, const GetExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetExtensionAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetExtensionAssociation, request, handler, context, m_executor.get());
 }
 
 GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVersion(const GetHostedConfigurationVersionRequest& request) const
@@ -915,18 +790,12 @@ GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVers
 
 GetHostedConfigurationVersionOutcomeCallable AppConfigClient::GetHostedConfigurationVersionCallable(const GetHostedConfigurationVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHostedConfigurationVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetHostedConfigurationVersion, request, m_executor.get());
 }
 
 void AppConfigClient::GetHostedConfigurationVersionAsync(const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetHostedConfigurationVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetHostedConfigurationVersion, request, handler, context, m_executor.get());
 }
 
 ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplicationsRequest& request) const
@@ -940,18 +809,12 @@ ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplications
 
 ListApplicationsOutcomeCallable AppConfigClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplications(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListApplications, request, m_executor.get());
 }
 
 void AppConfigClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListApplications(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListApplications, request, handler, context, m_executor.get());
 }
 
 ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(const ListConfigurationProfilesRequest& request) const
@@ -972,18 +835,12 @@ ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(cons
 
 ListConfigurationProfilesOutcomeCallable AppConfigClient::ListConfigurationProfilesCallable(const ListConfigurationProfilesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConfigurationProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConfigurationProfiles(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListConfigurationProfiles, request, m_executor.get());
 }
 
 void AppConfigClient::ListConfigurationProfilesAsync(const ListConfigurationProfilesRequest& request, const ListConfigurationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListConfigurationProfiles(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListConfigurationProfiles, request, handler, context, m_executor.get());
 }
 
 ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const ListDeploymentStrategiesRequest& request) const
@@ -997,18 +854,12 @@ ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const 
 
 ListDeploymentStrategiesOutcomeCallable AppConfigClient::ListDeploymentStrategiesCallable(const ListDeploymentStrategiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentStrategiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeploymentStrategies(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDeploymentStrategies, request, m_executor.get());
 }
 
 void AppConfigClient::ListDeploymentStrategiesAsync(const ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDeploymentStrategies(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDeploymentStrategies, request, handler, context, m_executor.get());
 }
 
 ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsRequest& request) const
@@ -1036,18 +887,12 @@ ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsReq
 
 ListDeploymentsOutcomeCallable AppConfigClient::ListDeploymentsCallable(const ListDeploymentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeployments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDeployments, request, m_executor.get());
 }
 
 void AppConfigClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDeployments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDeployments, request, handler, context, m_executor.get());
 }
 
 ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironmentsRequest& request) const
@@ -1068,18 +913,12 @@ ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironments
 
 ListEnvironmentsOutcomeCallable AppConfigClient::ListEnvironmentsCallable(const ListEnvironmentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEnvironmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEnvironments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEnvironments, request, m_executor.get());
 }
 
 void AppConfigClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEnvironments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEnvironments, request, handler, context, m_executor.get());
 }
 
 ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(const ListExtensionAssociationsRequest& request) const
@@ -1093,18 +932,12 @@ ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(cons
 
 ListExtensionAssociationsOutcomeCallable AppConfigClient::ListExtensionAssociationsCallable(const ListExtensionAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExtensionAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExtensionAssociations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExtensionAssociations, request, m_executor.get());
 }
 
 void AppConfigClient::ListExtensionAssociationsAsync(const ListExtensionAssociationsRequest& request, const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExtensionAssociations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExtensionAssociations, request, handler, context, m_executor.get());
 }
 
 ListExtensionsOutcome AppConfigClient::ListExtensions(const ListExtensionsRequest& request) const
@@ -1118,18 +951,12 @@ ListExtensionsOutcome AppConfigClient::ListExtensions(const ListExtensionsReques
 
 ListExtensionsOutcomeCallable AppConfigClient::ListExtensionsCallable(const ListExtensionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExtensionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExtensions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExtensions, request, m_executor.get());
 }
 
 void AppConfigClient::ListExtensionsAsync(const ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExtensions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExtensions, request, handler, context, m_executor.get());
 }
 
 ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationVersions(const ListHostedConfigurationVersionsRequest& request) const
@@ -1157,18 +984,12 @@ ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationV
 
 ListHostedConfigurationVersionsOutcomeCallable AppConfigClient::ListHostedConfigurationVersionsCallable(const ListHostedConfigurationVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListHostedConfigurationVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHostedConfigurationVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListHostedConfigurationVersions, request, m_executor.get());
 }
 
 void AppConfigClient::ListHostedConfigurationVersionsAsync(const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListHostedConfigurationVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListHostedConfigurationVersions, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1188,18 +1009,12 @@ ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsFo
 
 ListTagsForResourceOutcomeCallable AppConfigClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void AppConfigClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentRequest& request) const
@@ -1227,18 +1042,12 @@ StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentReq
 
 StartDeploymentOutcomeCallable AppConfigClient::StartDeploymentCallable(const StartDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDeployment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartDeployment, request, m_executor.get());
 }
 
 void AppConfigClient::StartDeploymentAsync(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartDeployment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartDeployment, request, handler, context, m_executor.get());
 }
 
 StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentRequest& request) const
@@ -1272,18 +1081,12 @@ StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentReques
 
 StopDeploymentOutcomeCallable AppConfigClient::StopDeploymentCallable(const StopDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopDeployment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopDeployment, request, m_executor.get());
 }
 
 void AppConfigClient::StopDeploymentAsync(const StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopDeployment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopDeployment, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& request) const
@@ -1303,18 +1106,12 @@ TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& reques
 
 TagResourceOutcomeCallable AppConfigClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void AppConfigClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& request) const
@@ -1339,18 +1136,12 @@ UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& 
 
 UntagResourceOutcomeCallable AppConfigClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void AppConfigClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -1370,18 +1161,12 @@ UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicat
 
 UpdateApplicationOutcomeCallable AppConfigClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateApplication, request, m_executor.get());
 }
 
 void AppConfigClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateApplication, request, handler, context, m_executor.get());
 }
 
 UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(const UpdateConfigurationProfileRequest& request) const
@@ -1408,18 +1193,12 @@ UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(co
 
 UpdateConfigurationProfileOutcomeCallable AppConfigClient::UpdateConfigurationProfileCallable(const UpdateConfigurationProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConfigurationProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateConfigurationProfile, request, m_executor.get());
 }
 
 void AppConfigClient::UpdateConfigurationProfileAsync(const UpdateConfigurationProfileRequest& request, const UpdateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateConfigurationProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateConfigurationProfile, request, handler, context, m_executor.get());
 }
 
 UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const UpdateDeploymentStrategyRequest& request) const
@@ -1439,18 +1218,12 @@ UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const 
 
 UpdateDeploymentStrategyOutcomeCallable AppConfigClient::UpdateDeploymentStrategyCallable(const UpdateDeploymentStrategyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDeploymentStrategy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDeploymentStrategy, request, m_executor.get());
 }
 
 void AppConfigClient::UpdateDeploymentStrategyAsync(const UpdateDeploymentStrategyRequest& request, const UpdateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDeploymentStrategy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDeploymentStrategy, request, handler, context, m_executor.get());
 }
 
 UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
@@ -1477,18 +1250,12 @@ UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironm
 
 UpdateEnvironmentOutcomeCallable AppConfigClient::UpdateEnvironmentCallable(const UpdateEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateEnvironment, request, m_executor.get());
 }
 
 void AppConfigClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateEnvironment, request, handler, context, m_executor.get());
 }
 
 UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionRequest& request) const
@@ -1508,18 +1275,12 @@ UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionReq
 
 UpdateExtensionOutcomeCallable AppConfigClient::UpdateExtensionCallable(const UpdateExtensionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExtension(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateExtension, request, m_executor.get());
 }
 
 void AppConfigClient::UpdateExtensionAsync(const UpdateExtensionRequest& request, const UpdateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateExtension(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateExtension, request, handler, context, m_executor.get());
 }
 
 UpdateExtensionAssociationOutcome AppConfigClient::UpdateExtensionAssociation(const UpdateExtensionAssociationRequest& request) const
@@ -1539,18 +1300,12 @@ UpdateExtensionAssociationOutcome AppConfigClient::UpdateExtensionAssociation(co
 
 UpdateExtensionAssociationOutcomeCallable AppConfigClient::UpdateExtensionAssociationCallable(const UpdateExtensionAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExtensionAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateExtensionAssociation, request, m_executor.get());
 }
 
 void AppConfigClient::UpdateExtensionAssociationAsync(const UpdateExtensionAssociationRequest& request, const UpdateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateExtensionAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateExtensionAssociation, request, handler, context, m_executor.get());
 }
 
 ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const ValidateConfigurationRequest& request) const
@@ -1583,17 +1338,11 @@ ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const Valida
 
 ValidateConfigurationOutcomeCallable AppConfigClient::ValidateConfigurationCallable(const ValidateConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ValidateConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ValidateConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ValidateConfiguration, request, m_executor.get());
 }
 
 void AppConfigClient::ValidateConfigurationAsync(const ValidateConfigurationRequest& request, const ValidateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ValidateConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ValidateConfiguration, request, handler, context, m_executor.get());
 }
 

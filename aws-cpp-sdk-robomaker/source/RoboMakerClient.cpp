@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -202,18 +203,12 @@ BatchDeleteWorldsOutcome RoboMakerClient::BatchDeleteWorlds(const BatchDeleteWor
 
 BatchDeleteWorldsOutcomeCallable RoboMakerClient::BatchDeleteWorldsCallable(const BatchDeleteWorldsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteWorldsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteWorlds(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDeleteWorlds, request, m_executor.get());
 }
 
 void RoboMakerClient::BatchDeleteWorldsAsync(const BatchDeleteWorldsRequest& request, const BatchDeleteWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDeleteWorlds(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDeleteWorlds, request, handler, context, m_executor.get());
 }
 
 BatchDescribeSimulationJobOutcome RoboMakerClient::BatchDescribeSimulationJob(const BatchDescribeSimulationJobRequest& request) const
@@ -227,18 +222,12 @@ BatchDescribeSimulationJobOutcome RoboMakerClient::BatchDescribeSimulationJob(co
 
 BatchDescribeSimulationJobOutcomeCallable RoboMakerClient::BatchDescribeSimulationJobCallable(const BatchDescribeSimulationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDescribeSimulationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDescribeSimulationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDescribeSimulationJob, request, m_executor.get());
 }
 
 void RoboMakerClient::BatchDescribeSimulationJobAsync(const BatchDescribeSimulationJobRequest& request, const BatchDescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDescribeSimulationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDescribeSimulationJob, request, handler, context, m_executor.get());
 }
 
 CancelSimulationJobOutcome RoboMakerClient::CancelSimulationJob(const CancelSimulationJobRequest& request) const
@@ -252,18 +241,12 @@ CancelSimulationJobOutcome RoboMakerClient::CancelSimulationJob(const CancelSimu
 
 CancelSimulationJobOutcomeCallable RoboMakerClient::CancelSimulationJobCallable(const CancelSimulationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelSimulationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelSimulationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelSimulationJob, request, m_executor.get());
 }
 
 void RoboMakerClient::CancelSimulationJobAsync(const CancelSimulationJobRequest& request, const CancelSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelSimulationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelSimulationJob, request, handler, context, m_executor.get());
 }
 
 CancelSimulationJobBatchOutcome RoboMakerClient::CancelSimulationJobBatch(const CancelSimulationJobBatchRequest& request) const
@@ -277,18 +260,12 @@ CancelSimulationJobBatchOutcome RoboMakerClient::CancelSimulationJobBatch(const 
 
 CancelSimulationJobBatchOutcomeCallable RoboMakerClient::CancelSimulationJobBatchCallable(const CancelSimulationJobBatchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelSimulationJobBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelSimulationJobBatch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelSimulationJobBatch, request, m_executor.get());
 }
 
 void RoboMakerClient::CancelSimulationJobBatchAsync(const CancelSimulationJobBatchRequest& request, const CancelSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelSimulationJobBatch(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelSimulationJobBatch, request, handler, context, m_executor.get());
 }
 
 CancelWorldExportJobOutcome RoboMakerClient::CancelWorldExportJob(const CancelWorldExportJobRequest& request) const
@@ -302,18 +279,12 @@ CancelWorldExportJobOutcome RoboMakerClient::CancelWorldExportJob(const CancelWo
 
 CancelWorldExportJobOutcomeCallable RoboMakerClient::CancelWorldExportJobCallable(const CancelWorldExportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelWorldExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelWorldExportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelWorldExportJob, request, m_executor.get());
 }
 
 void RoboMakerClient::CancelWorldExportJobAsync(const CancelWorldExportJobRequest& request, const CancelWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelWorldExportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelWorldExportJob, request, handler, context, m_executor.get());
 }
 
 CancelWorldGenerationJobOutcome RoboMakerClient::CancelWorldGenerationJob(const CancelWorldGenerationJobRequest& request) const
@@ -327,18 +298,12 @@ CancelWorldGenerationJobOutcome RoboMakerClient::CancelWorldGenerationJob(const 
 
 CancelWorldGenerationJobOutcomeCallable RoboMakerClient::CancelWorldGenerationJobCallable(const CancelWorldGenerationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelWorldGenerationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelWorldGenerationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelWorldGenerationJob, request, m_executor.get());
 }
 
 void RoboMakerClient::CancelWorldGenerationJobAsync(const CancelWorldGenerationJobRequest& request, const CancelWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelWorldGenerationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelWorldGenerationJob, request, handler, context, m_executor.get());
 }
 
 CreateRobotApplicationOutcome RoboMakerClient::CreateRobotApplication(const CreateRobotApplicationRequest& request) const
@@ -352,18 +317,12 @@ CreateRobotApplicationOutcome RoboMakerClient::CreateRobotApplication(const Crea
 
 CreateRobotApplicationOutcomeCallable RoboMakerClient::CreateRobotApplicationCallable(const CreateRobotApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRobotApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRobotApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRobotApplication, request, m_executor.get());
 }
 
 void RoboMakerClient::CreateRobotApplicationAsync(const CreateRobotApplicationRequest& request, const CreateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRobotApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRobotApplication, request, handler, context, m_executor.get());
 }
 
 CreateRobotApplicationVersionOutcome RoboMakerClient::CreateRobotApplicationVersion(const CreateRobotApplicationVersionRequest& request) const
@@ -377,18 +336,12 @@ CreateRobotApplicationVersionOutcome RoboMakerClient::CreateRobotApplicationVers
 
 CreateRobotApplicationVersionOutcomeCallable RoboMakerClient::CreateRobotApplicationVersionCallable(const CreateRobotApplicationVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRobotApplicationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRobotApplicationVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRobotApplicationVersion, request, m_executor.get());
 }
 
 void RoboMakerClient::CreateRobotApplicationVersionAsync(const CreateRobotApplicationVersionRequest& request, const CreateRobotApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRobotApplicationVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRobotApplicationVersion, request, handler, context, m_executor.get());
 }
 
 CreateSimulationApplicationOutcome RoboMakerClient::CreateSimulationApplication(const CreateSimulationApplicationRequest& request) const
@@ -402,18 +355,12 @@ CreateSimulationApplicationOutcome RoboMakerClient::CreateSimulationApplication(
 
 CreateSimulationApplicationOutcomeCallable RoboMakerClient::CreateSimulationApplicationCallable(const CreateSimulationApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSimulationApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSimulationApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSimulationApplication, request, m_executor.get());
 }
 
 void RoboMakerClient::CreateSimulationApplicationAsync(const CreateSimulationApplicationRequest& request, const CreateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSimulationApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSimulationApplication, request, handler, context, m_executor.get());
 }
 
 CreateSimulationApplicationVersionOutcome RoboMakerClient::CreateSimulationApplicationVersion(const CreateSimulationApplicationVersionRequest& request) const
@@ -427,18 +374,12 @@ CreateSimulationApplicationVersionOutcome RoboMakerClient::CreateSimulationAppli
 
 CreateSimulationApplicationVersionOutcomeCallable RoboMakerClient::CreateSimulationApplicationVersionCallable(const CreateSimulationApplicationVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSimulationApplicationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSimulationApplicationVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSimulationApplicationVersion, request, m_executor.get());
 }
 
 void RoboMakerClient::CreateSimulationApplicationVersionAsync(const CreateSimulationApplicationVersionRequest& request, const CreateSimulationApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSimulationApplicationVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSimulationApplicationVersion, request, handler, context, m_executor.get());
 }
 
 CreateSimulationJobOutcome RoboMakerClient::CreateSimulationJob(const CreateSimulationJobRequest& request) const
@@ -452,18 +393,12 @@ CreateSimulationJobOutcome RoboMakerClient::CreateSimulationJob(const CreateSimu
 
 CreateSimulationJobOutcomeCallable RoboMakerClient::CreateSimulationJobCallable(const CreateSimulationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSimulationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSimulationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSimulationJob, request, m_executor.get());
 }
 
 void RoboMakerClient::CreateSimulationJobAsync(const CreateSimulationJobRequest& request, const CreateSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSimulationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSimulationJob, request, handler, context, m_executor.get());
 }
 
 CreateWorldExportJobOutcome RoboMakerClient::CreateWorldExportJob(const CreateWorldExportJobRequest& request) const
@@ -477,18 +412,12 @@ CreateWorldExportJobOutcome RoboMakerClient::CreateWorldExportJob(const CreateWo
 
 CreateWorldExportJobOutcomeCallable RoboMakerClient::CreateWorldExportJobCallable(const CreateWorldExportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorldExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorldExportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorldExportJob, request, m_executor.get());
 }
 
 void RoboMakerClient::CreateWorldExportJobAsync(const CreateWorldExportJobRequest& request, const CreateWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorldExportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorldExportJob, request, handler, context, m_executor.get());
 }
 
 CreateWorldGenerationJobOutcome RoboMakerClient::CreateWorldGenerationJob(const CreateWorldGenerationJobRequest& request) const
@@ -502,18 +431,12 @@ CreateWorldGenerationJobOutcome RoboMakerClient::CreateWorldGenerationJob(const 
 
 CreateWorldGenerationJobOutcomeCallable RoboMakerClient::CreateWorldGenerationJobCallable(const CreateWorldGenerationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorldGenerationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorldGenerationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorldGenerationJob, request, m_executor.get());
 }
 
 void RoboMakerClient::CreateWorldGenerationJobAsync(const CreateWorldGenerationJobRequest& request, const CreateWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorldGenerationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorldGenerationJob, request, handler, context, m_executor.get());
 }
 
 CreateWorldTemplateOutcome RoboMakerClient::CreateWorldTemplate(const CreateWorldTemplateRequest& request) const
@@ -527,18 +450,12 @@ CreateWorldTemplateOutcome RoboMakerClient::CreateWorldTemplate(const CreateWorl
 
 CreateWorldTemplateOutcomeCallable RoboMakerClient::CreateWorldTemplateCallable(const CreateWorldTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorldTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorldTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorldTemplate, request, m_executor.get());
 }
 
 void RoboMakerClient::CreateWorldTemplateAsync(const CreateWorldTemplateRequest& request, const CreateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorldTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorldTemplate, request, handler, context, m_executor.get());
 }
 
 DeleteRobotApplicationOutcome RoboMakerClient::DeleteRobotApplication(const DeleteRobotApplicationRequest& request) const
@@ -552,18 +469,12 @@ DeleteRobotApplicationOutcome RoboMakerClient::DeleteRobotApplication(const Dele
 
 DeleteRobotApplicationOutcomeCallable RoboMakerClient::DeleteRobotApplicationCallable(const DeleteRobotApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRobotApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRobotApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRobotApplication, request, m_executor.get());
 }
 
 void RoboMakerClient::DeleteRobotApplicationAsync(const DeleteRobotApplicationRequest& request, const DeleteRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRobotApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRobotApplication, request, handler, context, m_executor.get());
 }
 
 DeleteSimulationApplicationOutcome RoboMakerClient::DeleteSimulationApplication(const DeleteSimulationApplicationRequest& request) const
@@ -577,18 +488,12 @@ DeleteSimulationApplicationOutcome RoboMakerClient::DeleteSimulationApplication(
 
 DeleteSimulationApplicationOutcomeCallable RoboMakerClient::DeleteSimulationApplicationCallable(const DeleteSimulationApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSimulationApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSimulationApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSimulationApplication, request, m_executor.get());
 }
 
 void RoboMakerClient::DeleteSimulationApplicationAsync(const DeleteSimulationApplicationRequest& request, const DeleteSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSimulationApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSimulationApplication, request, handler, context, m_executor.get());
 }
 
 DeleteWorldTemplateOutcome RoboMakerClient::DeleteWorldTemplate(const DeleteWorldTemplateRequest& request) const
@@ -602,18 +507,12 @@ DeleteWorldTemplateOutcome RoboMakerClient::DeleteWorldTemplate(const DeleteWorl
 
 DeleteWorldTemplateOutcomeCallable RoboMakerClient::DeleteWorldTemplateCallable(const DeleteWorldTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorldTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorldTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWorldTemplate, request, m_executor.get());
 }
 
 void RoboMakerClient::DeleteWorldTemplateAsync(const DeleteWorldTemplateRequest& request, const DeleteWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWorldTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWorldTemplate, request, handler, context, m_executor.get());
 }
 
 DescribeRobotApplicationOutcome RoboMakerClient::DescribeRobotApplication(const DescribeRobotApplicationRequest& request) const
@@ -627,18 +526,12 @@ DescribeRobotApplicationOutcome RoboMakerClient::DescribeRobotApplication(const 
 
 DescribeRobotApplicationOutcomeCallable RoboMakerClient::DescribeRobotApplicationCallable(const DescribeRobotApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRobotApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRobotApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRobotApplication, request, m_executor.get());
 }
 
 void RoboMakerClient::DescribeRobotApplicationAsync(const DescribeRobotApplicationRequest& request, const DescribeRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRobotApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRobotApplication, request, handler, context, m_executor.get());
 }
 
 DescribeSimulationApplicationOutcome RoboMakerClient::DescribeSimulationApplication(const DescribeSimulationApplicationRequest& request) const
@@ -652,18 +545,12 @@ DescribeSimulationApplicationOutcome RoboMakerClient::DescribeSimulationApplicat
 
 DescribeSimulationApplicationOutcomeCallable RoboMakerClient::DescribeSimulationApplicationCallable(const DescribeSimulationApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSimulationApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSimulationApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSimulationApplication, request, m_executor.get());
 }
 
 void RoboMakerClient::DescribeSimulationApplicationAsync(const DescribeSimulationApplicationRequest& request, const DescribeSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSimulationApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSimulationApplication, request, handler, context, m_executor.get());
 }
 
 DescribeSimulationJobOutcome RoboMakerClient::DescribeSimulationJob(const DescribeSimulationJobRequest& request) const
@@ -677,18 +564,12 @@ DescribeSimulationJobOutcome RoboMakerClient::DescribeSimulationJob(const Descri
 
 DescribeSimulationJobOutcomeCallable RoboMakerClient::DescribeSimulationJobCallable(const DescribeSimulationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSimulationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSimulationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSimulationJob, request, m_executor.get());
 }
 
 void RoboMakerClient::DescribeSimulationJobAsync(const DescribeSimulationJobRequest& request, const DescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSimulationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSimulationJob, request, handler, context, m_executor.get());
 }
 
 DescribeSimulationJobBatchOutcome RoboMakerClient::DescribeSimulationJobBatch(const DescribeSimulationJobBatchRequest& request) const
@@ -702,18 +583,12 @@ DescribeSimulationJobBatchOutcome RoboMakerClient::DescribeSimulationJobBatch(co
 
 DescribeSimulationJobBatchOutcomeCallable RoboMakerClient::DescribeSimulationJobBatchCallable(const DescribeSimulationJobBatchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSimulationJobBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSimulationJobBatch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSimulationJobBatch, request, m_executor.get());
 }
 
 void RoboMakerClient::DescribeSimulationJobBatchAsync(const DescribeSimulationJobBatchRequest& request, const DescribeSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSimulationJobBatch(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSimulationJobBatch, request, handler, context, m_executor.get());
 }
 
 DescribeWorldOutcome RoboMakerClient::DescribeWorld(const DescribeWorldRequest& request) const
@@ -727,18 +602,12 @@ DescribeWorldOutcome RoboMakerClient::DescribeWorld(const DescribeWorldRequest& 
 
 DescribeWorldOutcomeCallable RoboMakerClient::DescribeWorldCallable(const DescribeWorldRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeWorldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorld(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeWorld, request, m_executor.get());
 }
 
 void RoboMakerClient::DescribeWorldAsync(const DescribeWorldRequest& request, const DescribeWorldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeWorld(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeWorld, request, handler, context, m_executor.get());
 }
 
 DescribeWorldExportJobOutcome RoboMakerClient::DescribeWorldExportJob(const DescribeWorldExportJobRequest& request) const
@@ -752,18 +621,12 @@ DescribeWorldExportJobOutcome RoboMakerClient::DescribeWorldExportJob(const Desc
 
 DescribeWorldExportJobOutcomeCallable RoboMakerClient::DescribeWorldExportJobCallable(const DescribeWorldExportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeWorldExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorldExportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeWorldExportJob, request, m_executor.get());
 }
 
 void RoboMakerClient::DescribeWorldExportJobAsync(const DescribeWorldExportJobRequest& request, const DescribeWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeWorldExportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeWorldExportJob, request, handler, context, m_executor.get());
 }
 
 DescribeWorldGenerationJobOutcome RoboMakerClient::DescribeWorldGenerationJob(const DescribeWorldGenerationJobRequest& request) const
@@ -777,18 +640,12 @@ DescribeWorldGenerationJobOutcome RoboMakerClient::DescribeWorldGenerationJob(co
 
 DescribeWorldGenerationJobOutcomeCallable RoboMakerClient::DescribeWorldGenerationJobCallable(const DescribeWorldGenerationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeWorldGenerationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorldGenerationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeWorldGenerationJob, request, m_executor.get());
 }
 
 void RoboMakerClient::DescribeWorldGenerationJobAsync(const DescribeWorldGenerationJobRequest& request, const DescribeWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeWorldGenerationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeWorldGenerationJob, request, handler, context, m_executor.get());
 }
 
 DescribeWorldTemplateOutcome RoboMakerClient::DescribeWorldTemplate(const DescribeWorldTemplateRequest& request) const
@@ -802,18 +659,12 @@ DescribeWorldTemplateOutcome RoboMakerClient::DescribeWorldTemplate(const Descri
 
 DescribeWorldTemplateOutcomeCallable RoboMakerClient::DescribeWorldTemplateCallable(const DescribeWorldTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeWorldTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorldTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeWorldTemplate, request, m_executor.get());
 }
 
 void RoboMakerClient::DescribeWorldTemplateAsync(const DescribeWorldTemplateRequest& request, const DescribeWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeWorldTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeWorldTemplate, request, handler, context, m_executor.get());
 }
 
 GetWorldTemplateBodyOutcome RoboMakerClient::GetWorldTemplateBody(const GetWorldTemplateBodyRequest& request) const
@@ -827,18 +678,12 @@ GetWorldTemplateBodyOutcome RoboMakerClient::GetWorldTemplateBody(const GetWorld
 
 GetWorldTemplateBodyOutcomeCallable RoboMakerClient::GetWorldTemplateBodyCallable(const GetWorldTemplateBodyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorldTemplateBodyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorldTemplateBody(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorldTemplateBody, request, m_executor.get());
 }
 
 void RoboMakerClient::GetWorldTemplateBodyAsync(const GetWorldTemplateBodyRequest& request, const GetWorldTemplateBodyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorldTemplateBody(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorldTemplateBody, request, handler, context, m_executor.get());
 }
 
 ListRobotApplicationsOutcome RoboMakerClient::ListRobotApplications(const ListRobotApplicationsRequest& request) const
@@ -852,18 +697,12 @@ ListRobotApplicationsOutcome RoboMakerClient::ListRobotApplications(const ListRo
 
 ListRobotApplicationsOutcomeCallable RoboMakerClient::ListRobotApplicationsCallable(const ListRobotApplicationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRobotApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRobotApplications(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRobotApplications, request, m_executor.get());
 }
 
 void RoboMakerClient::ListRobotApplicationsAsync(const ListRobotApplicationsRequest& request, const ListRobotApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRobotApplications(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRobotApplications, request, handler, context, m_executor.get());
 }
 
 ListSimulationApplicationsOutcome RoboMakerClient::ListSimulationApplications(const ListSimulationApplicationsRequest& request) const
@@ -877,18 +716,12 @@ ListSimulationApplicationsOutcome RoboMakerClient::ListSimulationApplications(co
 
 ListSimulationApplicationsOutcomeCallable RoboMakerClient::ListSimulationApplicationsCallable(const ListSimulationApplicationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSimulationApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSimulationApplications(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSimulationApplications, request, m_executor.get());
 }
 
 void RoboMakerClient::ListSimulationApplicationsAsync(const ListSimulationApplicationsRequest& request, const ListSimulationApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSimulationApplications(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSimulationApplications, request, handler, context, m_executor.get());
 }
 
 ListSimulationJobBatchesOutcome RoboMakerClient::ListSimulationJobBatches(const ListSimulationJobBatchesRequest& request) const
@@ -902,18 +735,12 @@ ListSimulationJobBatchesOutcome RoboMakerClient::ListSimulationJobBatches(const 
 
 ListSimulationJobBatchesOutcomeCallable RoboMakerClient::ListSimulationJobBatchesCallable(const ListSimulationJobBatchesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSimulationJobBatchesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSimulationJobBatches(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSimulationJobBatches, request, m_executor.get());
 }
 
 void RoboMakerClient::ListSimulationJobBatchesAsync(const ListSimulationJobBatchesRequest& request, const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSimulationJobBatches(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSimulationJobBatches, request, handler, context, m_executor.get());
 }
 
 ListSimulationJobsOutcome RoboMakerClient::ListSimulationJobs(const ListSimulationJobsRequest& request) const
@@ -927,18 +754,12 @@ ListSimulationJobsOutcome RoboMakerClient::ListSimulationJobs(const ListSimulati
 
 ListSimulationJobsOutcomeCallable RoboMakerClient::ListSimulationJobsCallable(const ListSimulationJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSimulationJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSimulationJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSimulationJobs, request, m_executor.get());
 }
 
 void RoboMakerClient::ListSimulationJobsAsync(const ListSimulationJobsRequest& request, const ListSimulationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSimulationJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSimulationJobs, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome RoboMakerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -958,18 +779,12 @@ ListTagsForResourceOutcome RoboMakerClient::ListTagsForResource(const ListTagsFo
 
 ListTagsForResourceOutcomeCallable RoboMakerClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void RoboMakerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListWorldExportJobsOutcome RoboMakerClient::ListWorldExportJobs(const ListWorldExportJobsRequest& request) const
@@ -983,18 +798,12 @@ ListWorldExportJobsOutcome RoboMakerClient::ListWorldExportJobs(const ListWorldE
 
 ListWorldExportJobsOutcomeCallable RoboMakerClient::ListWorldExportJobsCallable(const ListWorldExportJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorldExportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorldExportJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorldExportJobs, request, m_executor.get());
 }
 
 void RoboMakerClient::ListWorldExportJobsAsync(const ListWorldExportJobsRequest& request, const ListWorldExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorldExportJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorldExportJobs, request, handler, context, m_executor.get());
 }
 
 ListWorldGenerationJobsOutcome RoboMakerClient::ListWorldGenerationJobs(const ListWorldGenerationJobsRequest& request) const
@@ -1008,18 +817,12 @@ ListWorldGenerationJobsOutcome RoboMakerClient::ListWorldGenerationJobs(const Li
 
 ListWorldGenerationJobsOutcomeCallable RoboMakerClient::ListWorldGenerationJobsCallable(const ListWorldGenerationJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorldGenerationJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorldGenerationJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorldGenerationJobs, request, m_executor.get());
 }
 
 void RoboMakerClient::ListWorldGenerationJobsAsync(const ListWorldGenerationJobsRequest& request, const ListWorldGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorldGenerationJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorldGenerationJobs, request, handler, context, m_executor.get());
 }
 
 ListWorldTemplatesOutcome RoboMakerClient::ListWorldTemplates(const ListWorldTemplatesRequest& request) const
@@ -1033,18 +836,12 @@ ListWorldTemplatesOutcome RoboMakerClient::ListWorldTemplates(const ListWorldTem
 
 ListWorldTemplatesOutcomeCallable RoboMakerClient::ListWorldTemplatesCallable(const ListWorldTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorldTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorldTemplates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorldTemplates, request, m_executor.get());
 }
 
 void RoboMakerClient::ListWorldTemplatesAsync(const ListWorldTemplatesRequest& request, const ListWorldTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorldTemplates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorldTemplates, request, handler, context, m_executor.get());
 }
 
 ListWorldsOutcome RoboMakerClient::ListWorlds(const ListWorldsRequest& request) const
@@ -1058,18 +855,12 @@ ListWorldsOutcome RoboMakerClient::ListWorlds(const ListWorldsRequest& request) 
 
 ListWorldsOutcomeCallable RoboMakerClient::ListWorldsCallable(const ListWorldsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorldsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorlds(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorlds, request, m_executor.get());
 }
 
 void RoboMakerClient::ListWorldsAsync(const ListWorldsRequest& request, const ListWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorlds(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorlds, request, handler, context, m_executor.get());
 }
 
 RestartSimulationJobOutcome RoboMakerClient::RestartSimulationJob(const RestartSimulationJobRequest& request) const
@@ -1083,18 +874,12 @@ RestartSimulationJobOutcome RoboMakerClient::RestartSimulationJob(const RestartS
 
 RestartSimulationJobOutcomeCallable RoboMakerClient::RestartSimulationJobCallable(const RestartSimulationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RestartSimulationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestartSimulationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RestartSimulationJob, request, m_executor.get());
 }
 
 void RoboMakerClient::RestartSimulationJobAsync(const RestartSimulationJobRequest& request, const RestartSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RestartSimulationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RestartSimulationJob, request, handler, context, m_executor.get());
 }
 
 StartSimulationJobBatchOutcome RoboMakerClient::StartSimulationJobBatch(const StartSimulationJobBatchRequest& request) const
@@ -1108,18 +893,12 @@ StartSimulationJobBatchOutcome RoboMakerClient::StartSimulationJobBatch(const St
 
 StartSimulationJobBatchOutcomeCallable RoboMakerClient::StartSimulationJobBatchCallable(const StartSimulationJobBatchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartSimulationJobBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSimulationJobBatch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartSimulationJobBatch, request, m_executor.get());
 }
 
 void RoboMakerClient::StartSimulationJobBatchAsync(const StartSimulationJobBatchRequest& request, const StartSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartSimulationJobBatch(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartSimulationJobBatch, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome RoboMakerClient::TagResource(const TagResourceRequest& request) const
@@ -1139,18 +918,12 @@ TagResourceOutcome RoboMakerClient::TagResource(const TagResourceRequest& reques
 
 TagResourceOutcomeCallable RoboMakerClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void RoboMakerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome RoboMakerClient::UntagResource(const UntagResourceRequest& request) const
@@ -1175,18 +948,12 @@ UntagResourceOutcome RoboMakerClient::UntagResource(const UntagResourceRequest& 
 
 UntagResourceOutcomeCallable RoboMakerClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void RoboMakerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateRobotApplicationOutcome RoboMakerClient::UpdateRobotApplication(const UpdateRobotApplicationRequest& request) const
@@ -1200,18 +967,12 @@ UpdateRobotApplicationOutcome RoboMakerClient::UpdateRobotApplication(const Upda
 
 UpdateRobotApplicationOutcomeCallable RoboMakerClient::UpdateRobotApplicationCallable(const UpdateRobotApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRobotApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRobotApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRobotApplication, request, m_executor.get());
 }
 
 void RoboMakerClient::UpdateRobotApplicationAsync(const UpdateRobotApplicationRequest& request, const UpdateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRobotApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRobotApplication, request, handler, context, m_executor.get());
 }
 
 UpdateSimulationApplicationOutcome RoboMakerClient::UpdateSimulationApplication(const UpdateSimulationApplicationRequest& request) const
@@ -1225,18 +986,12 @@ UpdateSimulationApplicationOutcome RoboMakerClient::UpdateSimulationApplication(
 
 UpdateSimulationApplicationOutcomeCallable RoboMakerClient::UpdateSimulationApplicationCallable(const UpdateSimulationApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSimulationApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSimulationApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSimulationApplication, request, m_executor.get());
 }
 
 void RoboMakerClient::UpdateSimulationApplicationAsync(const UpdateSimulationApplicationRequest& request, const UpdateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSimulationApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSimulationApplication, request, handler, context, m_executor.get());
 }
 
 UpdateWorldTemplateOutcome RoboMakerClient::UpdateWorldTemplate(const UpdateWorldTemplateRequest& request) const
@@ -1250,17 +1005,11 @@ UpdateWorldTemplateOutcome RoboMakerClient::UpdateWorldTemplate(const UpdateWorl
 
 UpdateWorldTemplateOutcomeCallable RoboMakerClient::UpdateWorldTemplateCallable(const UpdateWorldTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorldTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorldTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateWorldTemplate, request, m_executor.get());
 }
 
 void RoboMakerClient::UpdateWorldTemplateAsync(const UpdateWorldTemplateRequest& request, const UpdateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateWorldTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateWorldTemplate, request, handler, context, m_executor.get());
 }
 

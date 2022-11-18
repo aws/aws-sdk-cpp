@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -175,18 +176,12 @@ CreateDataIntegrationOutcome AppIntegrationsServiceClient::CreateDataIntegration
 
 CreateDataIntegrationOutcomeCallable AppIntegrationsServiceClient::CreateDataIntegrationCallable(const CreateDataIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataIntegration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataIntegration, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::CreateDataIntegrationAsync(const CreateDataIntegrationRequest& request, const CreateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataIntegration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataIntegration, request, handler, context, m_executor.get());
 }
 
 CreateEventIntegrationOutcome AppIntegrationsServiceClient::CreateEventIntegration(const CreateEventIntegrationRequest& request) const
@@ -200,18 +195,12 @@ CreateEventIntegrationOutcome AppIntegrationsServiceClient::CreateEventIntegrati
 
 CreateEventIntegrationOutcomeCallable AppIntegrationsServiceClient::CreateEventIntegrationCallable(const CreateEventIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEventIntegration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEventIntegration, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::CreateEventIntegrationAsync(const CreateEventIntegrationRequest& request, const CreateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEventIntegration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEventIntegration, request, handler, context, m_executor.get());
 }
 
 DeleteDataIntegrationOutcome AppIntegrationsServiceClient::DeleteDataIntegration(const DeleteDataIntegrationRequest& request) const
@@ -231,18 +220,12 @@ DeleteDataIntegrationOutcome AppIntegrationsServiceClient::DeleteDataIntegration
 
 DeleteDataIntegrationOutcomeCallable AppIntegrationsServiceClient::DeleteDataIntegrationCallable(const DeleteDataIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataIntegration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDataIntegration, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::DeleteDataIntegrationAsync(const DeleteDataIntegrationRequest& request, const DeleteDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDataIntegration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDataIntegration, request, handler, context, m_executor.get());
 }
 
 DeleteEventIntegrationOutcome AppIntegrationsServiceClient::DeleteEventIntegration(const DeleteEventIntegrationRequest& request) const
@@ -262,18 +245,12 @@ DeleteEventIntegrationOutcome AppIntegrationsServiceClient::DeleteEventIntegrati
 
 DeleteEventIntegrationOutcomeCallable AppIntegrationsServiceClient::DeleteEventIntegrationCallable(const DeleteEventIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEventIntegration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEventIntegration, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::DeleteEventIntegrationAsync(const DeleteEventIntegrationRequest& request, const DeleteEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEventIntegration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEventIntegration, request, handler, context, m_executor.get());
 }
 
 GetDataIntegrationOutcome AppIntegrationsServiceClient::GetDataIntegration(const GetDataIntegrationRequest& request) const
@@ -293,18 +270,12 @@ GetDataIntegrationOutcome AppIntegrationsServiceClient::GetDataIntegration(const
 
 GetDataIntegrationOutcomeCallable AppIntegrationsServiceClient::GetDataIntegrationCallable(const GetDataIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataIntegration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDataIntegration, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::GetDataIntegrationAsync(const GetDataIntegrationRequest& request, const GetDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDataIntegration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDataIntegration, request, handler, context, m_executor.get());
 }
 
 GetEventIntegrationOutcome AppIntegrationsServiceClient::GetEventIntegration(const GetEventIntegrationRequest& request) const
@@ -324,18 +295,12 @@ GetEventIntegrationOutcome AppIntegrationsServiceClient::GetEventIntegration(con
 
 GetEventIntegrationOutcomeCallable AppIntegrationsServiceClient::GetEventIntegrationCallable(const GetEventIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEventIntegration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEventIntegration, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::GetEventIntegrationAsync(const GetEventIntegrationRequest& request, const GetEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEventIntegration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEventIntegration, request, handler, context, m_executor.get());
 }
 
 ListDataIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListDataIntegrationAssociations(const ListDataIntegrationAssociationsRequest& request) const
@@ -356,18 +321,12 @@ ListDataIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListDataInt
 
 ListDataIntegrationAssociationsOutcomeCallable AppIntegrationsServiceClient::ListDataIntegrationAssociationsCallable(const ListDataIntegrationAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataIntegrationAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataIntegrationAssociations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDataIntegrationAssociations, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::ListDataIntegrationAssociationsAsync(const ListDataIntegrationAssociationsRequest& request, const ListDataIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDataIntegrationAssociations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDataIntegrationAssociations, request, handler, context, m_executor.get());
 }
 
 ListDataIntegrationsOutcome AppIntegrationsServiceClient::ListDataIntegrations(const ListDataIntegrationsRequest& request) const
@@ -381,18 +340,12 @@ ListDataIntegrationsOutcome AppIntegrationsServiceClient::ListDataIntegrations(c
 
 ListDataIntegrationsOutcomeCallable AppIntegrationsServiceClient::ListDataIntegrationsCallable(const ListDataIntegrationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataIntegrationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataIntegrations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDataIntegrations, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::ListDataIntegrationsAsync(const ListDataIntegrationsRequest& request, const ListDataIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDataIntegrations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDataIntegrations, request, handler, context, m_executor.get());
 }
 
 ListEventIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListEventIntegrationAssociations(const ListEventIntegrationAssociationsRequest& request) const
@@ -413,18 +366,12 @@ ListEventIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListEventI
 
 ListEventIntegrationAssociationsOutcomeCallable AppIntegrationsServiceClient::ListEventIntegrationAssociationsCallable(const ListEventIntegrationAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEventIntegrationAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventIntegrationAssociations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEventIntegrationAssociations, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::ListEventIntegrationAssociationsAsync(const ListEventIntegrationAssociationsRequest& request, const ListEventIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEventIntegrationAssociations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEventIntegrationAssociations, request, handler, context, m_executor.get());
 }
 
 ListEventIntegrationsOutcome AppIntegrationsServiceClient::ListEventIntegrations(const ListEventIntegrationsRequest& request) const
@@ -438,18 +385,12 @@ ListEventIntegrationsOutcome AppIntegrationsServiceClient::ListEventIntegrations
 
 ListEventIntegrationsOutcomeCallable AppIntegrationsServiceClient::ListEventIntegrationsCallable(const ListEventIntegrationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEventIntegrationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventIntegrations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEventIntegrations, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::ListEventIntegrationsAsync(const ListEventIntegrationsRequest& request, const ListEventIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEventIntegrations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEventIntegrations, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome AppIntegrationsServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -469,18 +410,12 @@ ListTagsForResourceOutcome AppIntegrationsServiceClient::ListTagsForResource(con
 
 ListTagsForResourceOutcomeCallable AppIntegrationsServiceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome AppIntegrationsServiceClient::TagResource(const TagResourceRequest& request) const
@@ -500,18 +435,12 @@ TagResourceOutcome AppIntegrationsServiceClient::TagResource(const TagResourceRe
 
 TagResourceOutcomeCallable AppIntegrationsServiceClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome AppIntegrationsServiceClient::UntagResource(const UntagResourceRequest& request) const
@@ -536,18 +465,12 @@ UntagResourceOutcome AppIntegrationsServiceClient::UntagResource(const UntagReso
 
 UntagResourceOutcomeCallable AppIntegrationsServiceClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateDataIntegrationOutcome AppIntegrationsServiceClient::UpdateDataIntegration(const UpdateDataIntegrationRequest& request) const
@@ -567,18 +490,12 @@ UpdateDataIntegrationOutcome AppIntegrationsServiceClient::UpdateDataIntegration
 
 UpdateDataIntegrationOutcomeCallable AppIntegrationsServiceClient::UpdateDataIntegrationCallable(const UpdateDataIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDataIntegration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDataIntegration, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::UpdateDataIntegrationAsync(const UpdateDataIntegrationRequest& request, const UpdateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDataIntegration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDataIntegration, request, handler, context, m_executor.get());
 }
 
 UpdateEventIntegrationOutcome AppIntegrationsServiceClient::UpdateEventIntegration(const UpdateEventIntegrationRequest& request) const
@@ -598,17 +515,11 @@ UpdateEventIntegrationOutcome AppIntegrationsServiceClient::UpdateEventIntegrati
 
 UpdateEventIntegrationOutcomeCallable AppIntegrationsServiceClient::UpdateEventIntegrationCallable(const UpdateEventIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEventIntegration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateEventIntegration, request, m_executor.get());
 }
 
 void AppIntegrationsServiceClient::UpdateEventIntegrationAsync(const UpdateEventIntegrationRequest& request, const UpdateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateEventIntegration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateEventIntegration, request, handler, context, m_executor.get());
 }
 

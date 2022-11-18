@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -176,18 +177,12 @@ CreateGroupOutcome ResourceGroupsClient::CreateGroup(const CreateGroupRequest& r
 
 CreateGroupOutcomeCallable ResourceGroupsClient::CreateGroupCallable(const CreateGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateGroup, request, m_executor.get());
 }
 
 void ResourceGroupsClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateGroup, request, handler, context, m_executor.get());
 }
 
 DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -201,18 +196,12 @@ DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& r
 
 DeleteGroupOutcomeCallable ResourceGroupsClient::DeleteGroupCallable(const DeleteGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteGroup, request, m_executor.get());
 }
 
 void ResourceGroupsClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteGroup, request, handler, context, m_executor.get());
 }
 
 GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) const
@@ -226,18 +215,12 @@ GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) c
 
 GetGroupOutcomeCallable ResourceGroupsClient::GetGroupCallable(const GetGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetGroup, request, m_executor.get());
 }
 
 void ResourceGroupsClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetGroup, request, handler, context, m_executor.get());
 }
 
 GetGroupConfigurationOutcome ResourceGroupsClient::GetGroupConfiguration(const GetGroupConfigurationRequest& request) const
@@ -251,18 +234,12 @@ GetGroupConfigurationOutcome ResourceGroupsClient::GetGroupConfiguration(const G
 
 GetGroupConfigurationOutcomeCallable ResourceGroupsClient::GetGroupConfigurationCallable(const GetGroupConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetGroupConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGroupConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetGroupConfiguration, request, m_executor.get());
 }
 
 void ResourceGroupsClient::GetGroupConfigurationAsync(const GetGroupConfigurationRequest& request, const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetGroupConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetGroupConfiguration, request, handler, context, m_executor.get());
 }
 
 GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequest& request) const
@@ -276,18 +253,12 @@ GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequ
 
 GetGroupQueryOutcomeCallable ResourceGroupsClient::GetGroupQueryCallable(const GetGroupQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetGroupQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGroupQuery(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetGroupQuery, request, m_executor.get());
 }
 
 void ResourceGroupsClient::GetGroupQueryAsync(const GetGroupQueryRequest& request, const GetGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetGroupQuery(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetGroupQuery, request, handler, context, m_executor.get());
 }
 
 GetTagsOutcome ResourceGroupsClient::GetTags(const GetTagsRequest& request) const
@@ -308,18 +279,12 @@ GetTagsOutcome ResourceGroupsClient::GetTags(const GetTagsRequest& request) cons
 
 GetTagsOutcomeCallable ResourceGroupsClient::GetTagsCallable(const GetTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTags, request, m_executor.get());
 }
 
 void ResourceGroupsClient::GetTagsAsync(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTags, request, handler, context, m_executor.get());
 }
 
 GroupResourcesOutcome ResourceGroupsClient::GroupResources(const GroupResourcesRequest& request) const
@@ -333,18 +298,12 @@ GroupResourcesOutcome ResourceGroupsClient::GroupResources(const GroupResourcesR
 
 GroupResourcesOutcomeCallable ResourceGroupsClient::GroupResourcesCallable(const GroupResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GroupResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GroupResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GroupResources, request, m_executor.get());
 }
 
 void ResourceGroupsClient::GroupResourcesAsync(const GroupResourcesRequest& request, const GroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GroupResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GroupResources, request, handler, context, m_executor.get());
 }
 
 ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGroupResourcesRequest& request) const
@@ -358,18 +317,12 @@ ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGro
 
 ListGroupResourcesOutcomeCallable ResourceGroupsClient::ListGroupResourcesCallable(const ListGroupResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGroupResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroupResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListGroupResources, request, m_executor.get());
 }
 
 void ResourceGroupsClient::ListGroupResourcesAsync(const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListGroupResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListGroupResources, request, handler, context, m_executor.get());
 }
 
 ListGroupsOutcome ResourceGroupsClient::ListGroups(const ListGroupsRequest& request) const
@@ -383,18 +336,12 @@ ListGroupsOutcome ResourceGroupsClient::ListGroups(const ListGroupsRequest& requ
 
 ListGroupsOutcomeCallable ResourceGroupsClient::ListGroupsCallable(const ListGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListGroups, request, m_executor.get());
 }
 
 void ResourceGroupsClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListGroups, request, handler, context, m_executor.get());
 }
 
 PutGroupConfigurationOutcome ResourceGroupsClient::PutGroupConfiguration(const PutGroupConfigurationRequest& request) const
@@ -408,18 +355,12 @@ PutGroupConfigurationOutcome ResourceGroupsClient::PutGroupConfiguration(const P
 
 PutGroupConfigurationOutcomeCallable ResourceGroupsClient::PutGroupConfigurationCallable(const PutGroupConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutGroupConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutGroupConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutGroupConfiguration, request, m_executor.get());
 }
 
 void ResourceGroupsClient::PutGroupConfigurationAsync(const PutGroupConfigurationRequest& request, const PutGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutGroupConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutGroupConfiguration, request, handler, context, m_executor.get());
 }
 
 SearchResourcesOutcome ResourceGroupsClient::SearchResources(const SearchResourcesRequest& request) const
@@ -433,18 +374,12 @@ SearchResourcesOutcome ResourceGroupsClient::SearchResources(const SearchResourc
 
 SearchResourcesOutcomeCallable ResourceGroupsClient::SearchResourcesCallable(const SearchResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchResources, request, m_executor.get());
 }
 
 void ResourceGroupsClient::SearchResourcesAsync(const SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchResources, request, handler, context, m_executor.get());
 }
 
 TagOutcome ResourceGroupsClient::Tag(const TagRequest& request) const
@@ -465,18 +400,12 @@ TagOutcome ResourceGroupsClient::Tag(const TagRequest& request) const
 
 TagOutcomeCallable ResourceGroupsClient::TagCallable(const TagRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Tag(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(Tag, request, m_executor.get());
 }
 
 void ResourceGroupsClient::TagAsync(const TagRequest& request, const TagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, Tag(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(Tag, request, handler, context, m_executor.get());
 }
 
 UngroupResourcesOutcome ResourceGroupsClient::UngroupResources(const UngroupResourcesRequest& request) const
@@ -490,18 +419,12 @@ UngroupResourcesOutcome ResourceGroupsClient::UngroupResources(const UngroupReso
 
 UngroupResourcesOutcomeCallable ResourceGroupsClient::UngroupResourcesCallable(const UngroupResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UngroupResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UngroupResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UngroupResources, request, m_executor.get());
 }
 
 void ResourceGroupsClient::UngroupResourcesAsync(const UngroupResourcesRequest& request, const UngroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UngroupResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UngroupResources, request, handler, context, m_executor.get());
 }
 
 UntagOutcome ResourceGroupsClient::Untag(const UntagRequest& request) const
@@ -522,18 +445,12 @@ UntagOutcome ResourceGroupsClient::Untag(const UntagRequest& request) const
 
 UntagOutcomeCallable ResourceGroupsClient::UntagCallable(const UntagRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Untag(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(Untag, request, m_executor.get());
 }
 
 void ResourceGroupsClient::UntagAsync(const UntagRequest& request, const UntagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, Untag(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(Untag, request, handler, context, m_executor.get());
 }
 
 UpdateGroupOutcome ResourceGroupsClient::UpdateGroup(const UpdateGroupRequest& request) const
@@ -547,18 +464,12 @@ UpdateGroupOutcome ResourceGroupsClient::UpdateGroup(const UpdateGroupRequest& r
 
 UpdateGroupOutcomeCallable ResourceGroupsClient::UpdateGroupCallable(const UpdateGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateGroup, request, m_executor.get());
 }
 
 void ResourceGroupsClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateGroup, request, handler, context, m_executor.get());
 }
 
 UpdateGroupQueryOutcome ResourceGroupsClient::UpdateGroupQuery(const UpdateGroupQueryRequest& request) const
@@ -572,17 +483,11 @@ UpdateGroupQueryOutcome ResourceGroupsClient::UpdateGroupQuery(const UpdateGroup
 
 UpdateGroupQueryOutcomeCallable ResourceGroupsClient::UpdateGroupQueryCallable(const UpdateGroupQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateGroupQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGroupQuery(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateGroupQuery, request, m_executor.get());
 }
 
 void ResourceGroupsClient::UpdateGroupQueryAsync(const UpdateGroupQueryRequest& request, const UpdateGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateGroupQuery(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateGroupQuery, request, handler, context, m_executor.get());
 }
 

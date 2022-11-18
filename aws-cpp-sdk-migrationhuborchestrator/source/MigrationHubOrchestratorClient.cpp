@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -188,18 +189,12 @@ CreateWorkflowOutcome MigrationHubOrchestratorClient::CreateWorkflow(const Creat
 
 CreateWorkflowOutcomeCallable MigrationHubOrchestratorClient::CreateWorkflowCallable(const CreateWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkflow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorkflow, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::CreateWorkflowAsync(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorkflow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorkflow, request, handler, context, m_executor.get());
 }
 
 CreateWorkflowStepOutcome MigrationHubOrchestratorClient::CreateWorkflowStep(const CreateWorkflowStepRequest& request) const
@@ -213,18 +208,12 @@ CreateWorkflowStepOutcome MigrationHubOrchestratorClient::CreateWorkflowStep(con
 
 CreateWorkflowStepOutcomeCallable MigrationHubOrchestratorClient::CreateWorkflowStepCallable(const CreateWorkflowStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkflowStep(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorkflowStep, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::CreateWorkflowStepAsync(const CreateWorkflowStepRequest& request, const CreateWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorkflowStep(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorkflowStep, request, handler, context, m_executor.get());
 }
 
 CreateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::CreateWorkflowStepGroup(const CreateWorkflowStepGroupRequest& request) const
@@ -238,18 +227,12 @@ CreateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::CreateWorkflowSte
 
 CreateWorkflowStepGroupOutcomeCallable MigrationHubOrchestratorClient::CreateWorkflowStepGroupCallable(const CreateWorkflowStepGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkflowStepGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorkflowStepGroup, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::CreateWorkflowStepGroupAsync(const CreateWorkflowStepGroupRequest& request, const CreateWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorkflowStepGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorkflowStepGroup, request, handler, context, m_executor.get());
 }
 
 DeleteWorkflowOutcome MigrationHubOrchestratorClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const
@@ -269,18 +252,12 @@ DeleteWorkflowOutcome MigrationHubOrchestratorClient::DeleteWorkflow(const Delet
 
 DeleteWorkflowOutcomeCallable MigrationHubOrchestratorClient::DeleteWorkflowCallable(const DeleteWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkflow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWorkflow, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWorkflow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWorkflow, request, handler, context, m_executor.get());
 }
 
 DeleteWorkflowStepOutcome MigrationHubOrchestratorClient::DeleteWorkflowStep(const DeleteWorkflowStepRequest& request) const
@@ -310,18 +287,12 @@ DeleteWorkflowStepOutcome MigrationHubOrchestratorClient::DeleteWorkflowStep(con
 
 DeleteWorkflowStepOutcomeCallable MigrationHubOrchestratorClient::DeleteWorkflowStepCallable(const DeleteWorkflowStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkflowStep(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWorkflowStep, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::DeleteWorkflowStepAsync(const DeleteWorkflowStepRequest& request, const DeleteWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWorkflowStep(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWorkflowStep, request, handler, context, m_executor.get());
 }
 
 DeleteWorkflowStepGroupOutcome MigrationHubOrchestratorClient::DeleteWorkflowStepGroup(const DeleteWorkflowStepGroupRequest& request) const
@@ -346,18 +317,12 @@ DeleteWorkflowStepGroupOutcome MigrationHubOrchestratorClient::DeleteWorkflowSte
 
 DeleteWorkflowStepGroupOutcomeCallable MigrationHubOrchestratorClient::DeleteWorkflowStepGroupCallable(const DeleteWorkflowStepGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkflowStepGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWorkflowStepGroup, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::DeleteWorkflowStepGroupAsync(const DeleteWorkflowStepGroupRequest& request, const DeleteWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWorkflowStepGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWorkflowStepGroup, request, handler, context, m_executor.get());
 }
 
 GetTemplateOutcome MigrationHubOrchestratorClient::GetTemplate(const GetTemplateRequest& request) const
@@ -377,18 +342,12 @@ GetTemplateOutcome MigrationHubOrchestratorClient::GetTemplate(const GetTemplate
 
 GetTemplateOutcomeCallable MigrationHubOrchestratorClient::GetTemplateCallable(const GetTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTemplate, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::GetTemplateAsync(const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTemplate, request, handler, context, m_executor.get());
 }
 
 GetTemplateStepOutcome MigrationHubOrchestratorClient::GetTemplateStep(const GetTemplateStepRequest& request) const
@@ -418,18 +377,12 @@ GetTemplateStepOutcome MigrationHubOrchestratorClient::GetTemplateStep(const Get
 
 GetTemplateStepOutcomeCallable MigrationHubOrchestratorClient::GetTemplateStepCallable(const GetTemplateStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTemplateStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemplateStep(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTemplateStep, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::GetTemplateStepAsync(const GetTemplateStepRequest& request, const GetTemplateStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTemplateStep(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTemplateStep, request, handler, context, m_executor.get());
 }
 
 GetTemplateStepGroupOutcome MigrationHubOrchestratorClient::GetTemplateStepGroup(const GetTemplateStepGroupRequest& request) const
@@ -456,18 +409,12 @@ GetTemplateStepGroupOutcome MigrationHubOrchestratorClient::GetTemplateStepGroup
 
 GetTemplateStepGroupOutcomeCallable MigrationHubOrchestratorClient::GetTemplateStepGroupCallable(const GetTemplateStepGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTemplateStepGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemplateStepGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTemplateStepGroup, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::GetTemplateStepGroupAsync(const GetTemplateStepGroupRequest& request, const GetTemplateStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTemplateStepGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTemplateStepGroup, request, handler, context, m_executor.get());
 }
 
 GetWorkflowOutcome MigrationHubOrchestratorClient::GetWorkflow(const GetWorkflowRequest& request) const
@@ -487,18 +434,12 @@ GetWorkflowOutcome MigrationHubOrchestratorClient::GetWorkflow(const GetWorkflow
 
 GetWorkflowOutcomeCallable MigrationHubOrchestratorClient::GetWorkflowCallable(const GetWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkflow, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::GetWorkflowAsync(const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkflow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkflow, request, handler, context, m_executor.get());
 }
 
 GetWorkflowStepOutcome MigrationHubOrchestratorClient::GetWorkflowStep(const GetWorkflowStepRequest& request) const
@@ -528,18 +469,12 @@ GetWorkflowStepOutcome MigrationHubOrchestratorClient::GetWorkflowStep(const Get
 
 GetWorkflowStepOutcomeCallable MigrationHubOrchestratorClient::GetWorkflowStepCallable(const GetWorkflowStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflowStep(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkflowStep, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::GetWorkflowStepAsync(const GetWorkflowStepRequest& request, const GetWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkflowStep(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkflowStep, request, handler, context, m_executor.get());
 }
 
 GetWorkflowStepGroupOutcome MigrationHubOrchestratorClient::GetWorkflowStepGroup(const GetWorkflowStepGroupRequest& request) const
@@ -564,18 +499,12 @@ GetWorkflowStepGroupOutcome MigrationHubOrchestratorClient::GetWorkflowStepGroup
 
 GetWorkflowStepGroupOutcomeCallable MigrationHubOrchestratorClient::GetWorkflowStepGroupCallable(const GetWorkflowStepGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflowStepGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkflowStepGroup, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::GetWorkflowStepGroupAsync(const GetWorkflowStepGroupRequest& request, const GetWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkflowStepGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkflowStepGroup, request, handler, context, m_executor.get());
 }
 
 ListPluginsOutcome MigrationHubOrchestratorClient::ListPlugins(const ListPluginsRequest& request) const
@@ -589,18 +518,12 @@ ListPluginsOutcome MigrationHubOrchestratorClient::ListPlugins(const ListPlugins
 
 ListPluginsOutcomeCallable MigrationHubOrchestratorClient::ListPluginsCallable(const ListPluginsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPluginsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPlugins(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPlugins, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::ListPluginsAsync(const ListPluginsRequest& request, const ListPluginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPlugins(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPlugins, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome MigrationHubOrchestratorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -620,18 +543,12 @@ ListTagsForResourceOutcome MigrationHubOrchestratorClient::ListTagsForResource(c
 
 ListTagsForResourceOutcomeCallable MigrationHubOrchestratorClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTemplateStepGroupsOutcome MigrationHubOrchestratorClient::ListTemplateStepGroups(const ListTemplateStepGroupsRequest& request) const
@@ -651,18 +568,12 @@ ListTemplateStepGroupsOutcome MigrationHubOrchestratorClient::ListTemplateStepGr
 
 ListTemplateStepGroupsOutcomeCallable MigrationHubOrchestratorClient::ListTemplateStepGroupsCallable(const ListTemplateStepGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTemplateStepGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplateStepGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTemplateStepGroups, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::ListTemplateStepGroupsAsync(const ListTemplateStepGroupsRequest& request, const ListTemplateStepGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTemplateStepGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTemplateStepGroups, request, handler, context, m_executor.get());
 }
 
 ListTemplateStepsOutcome MigrationHubOrchestratorClient::ListTemplateSteps(const ListTemplateStepsRequest& request) const
@@ -686,18 +597,12 @@ ListTemplateStepsOutcome MigrationHubOrchestratorClient::ListTemplateSteps(const
 
 ListTemplateStepsOutcomeCallable MigrationHubOrchestratorClient::ListTemplateStepsCallable(const ListTemplateStepsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTemplateStepsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplateSteps(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTemplateSteps, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::ListTemplateStepsAsync(const ListTemplateStepsRequest& request, const ListTemplateStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTemplateSteps(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTemplateSteps, request, handler, context, m_executor.get());
 }
 
 ListTemplatesOutcome MigrationHubOrchestratorClient::ListTemplates(const ListTemplatesRequest& request) const
@@ -711,18 +616,12 @@ ListTemplatesOutcome MigrationHubOrchestratorClient::ListTemplates(const ListTem
 
 ListTemplatesOutcomeCallable MigrationHubOrchestratorClient::ListTemplatesCallable(const ListTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTemplates, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTemplates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTemplates, request, handler, context, m_executor.get());
 }
 
 ListWorkflowStepGroupsOutcome MigrationHubOrchestratorClient::ListWorkflowStepGroups(const ListWorkflowStepGroupsRequest& request) const
@@ -741,18 +640,12 @@ ListWorkflowStepGroupsOutcome MigrationHubOrchestratorClient::ListWorkflowStepGr
 
 ListWorkflowStepGroupsOutcomeCallable MigrationHubOrchestratorClient::ListWorkflowStepGroupsCallable(const ListWorkflowStepGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowStepGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkflowStepGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkflowStepGroups, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::ListWorkflowStepGroupsAsync(const ListWorkflowStepGroupsRequest& request, const ListWorkflowStepGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkflowStepGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkflowStepGroups, request, handler, context, m_executor.get());
 }
 
 ListWorkflowStepsOutcome MigrationHubOrchestratorClient::ListWorkflowSteps(const ListWorkflowStepsRequest& request) const
@@ -780,18 +673,12 @@ ListWorkflowStepsOutcome MigrationHubOrchestratorClient::ListWorkflowSteps(const
 
 ListWorkflowStepsOutcomeCallable MigrationHubOrchestratorClient::ListWorkflowStepsCallable(const ListWorkflowStepsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowStepsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkflowSteps(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkflowSteps, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::ListWorkflowStepsAsync(const ListWorkflowStepsRequest& request, const ListWorkflowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkflowSteps(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkflowSteps, request, handler, context, m_executor.get());
 }
 
 ListWorkflowsOutcome MigrationHubOrchestratorClient::ListWorkflows(const ListWorkflowsRequest& request) const
@@ -805,18 +692,12 @@ ListWorkflowsOutcome MigrationHubOrchestratorClient::ListWorkflows(const ListWor
 
 ListWorkflowsOutcomeCallable MigrationHubOrchestratorClient::ListWorkflowsCallable(const ListWorkflowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkflows(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkflows, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkflows(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkflows, request, handler, context, m_executor.get());
 }
 
 RetryWorkflowStepOutcome MigrationHubOrchestratorClient::RetryWorkflowStep(const RetryWorkflowStepRequest& request) const
@@ -846,18 +727,12 @@ RetryWorkflowStepOutcome MigrationHubOrchestratorClient::RetryWorkflowStep(const
 
 RetryWorkflowStepOutcomeCallable MigrationHubOrchestratorClient::RetryWorkflowStepCallable(const RetryWorkflowStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RetryWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RetryWorkflowStep(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RetryWorkflowStep, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::RetryWorkflowStepAsync(const RetryWorkflowStepRequest& request, const RetryWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RetryWorkflowStep(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RetryWorkflowStep, request, handler, context, m_executor.get());
 }
 
 StartWorkflowOutcome MigrationHubOrchestratorClient::StartWorkflow(const StartWorkflowRequest& request) const
@@ -878,18 +753,12 @@ StartWorkflowOutcome MigrationHubOrchestratorClient::StartWorkflow(const StartWo
 
 StartWorkflowOutcomeCallable MigrationHubOrchestratorClient::StartWorkflowCallable(const StartWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartWorkflow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartWorkflow, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::StartWorkflowAsync(const StartWorkflowRequest& request, const StartWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartWorkflow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartWorkflow, request, handler, context, m_executor.get());
 }
 
 StopWorkflowOutcome MigrationHubOrchestratorClient::StopWorkflow(const StopWorkflowRequest& request) const
@@ -910,18 +779,12 @@ StopWorkflowOutcome MigrationHubOrchestratorClient::StopWorkflow(const StopWorkf
 
 StopWorkflowOutcomeCallable MigrationHubOrchestratorClient::StopWorkflowCallable(const StopWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopWorkflow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopWorkflow, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::StopWorkflowAsync(const StopWorkflowRequest& request, const StopWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopWorkflow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopWorkflow, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome MigrationHubOrchestratorClient::TagResource(const TagResourceRequest& request) const
@@ -941,18 +804,12 @@ TagResourceOutcome MigrationHubOrchestratorClient::TagResource(const TagResource
 
 TagResourceOutcomeCallable MigrationHubOrchestratorClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome MigrationHubOrchestratorClient::UntagResource(const UntagResourceRequest& request) const
@@ -977,18 +834,12 @@ UntagResourceOutcome MigrationHubOrchestratorClient::UntagResource(const UntagRe
 
 UntagResourceOutcomeCallable MigrationHubOrchestratorClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateWorkflowOutcome MigrationHubOrchestratorClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const
@@ -1008,18 +859,12 @@ UpdateWorkflowOutcome MigrationHubOrchestratorClient::UpdateWorkflow(const Updat
 
 UpdateWorkflowOutcomeCallable MigrationHubOrchestratorClient::UpdateWorkflowCallable(const UpdateWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkflow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateWorkflow, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::UpdateWorkflowAsync(const UpdateWorkflowRequest& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateWorkflow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateWorkflow, request, handler, context, m_executor.get());
 }
 
 UpdateWorkflowStepOutcome MigrationHubOrchestratorClient::UpdateWorkflowStep(const UpdateWorkflowStepRequest& request) const
@@ -1039,18 +884,12 @@ UpdateWorkflowStepOutcome MigrationHubOrchestratorClient::UpdateWorkflowStep(con
 
 UpdateWorkflowStepOutcomeCallable MigrationHubOrchestratorClient::UpdateWorkflowStepCallable(const UpdateWorkflowStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkflowStep(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateWorkflowStep, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::UpdateWorkflowStepAsync(const UpdateWorkflowStepRequest& request, const UpdateWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateWorkflowStep(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateWorkflowStep, request, handler, context, m_executor.get());
 }
 
 UpdateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::UpdateWorkflowStepGroup(const UpdateWorkflowStepGroupRequest& request) const
@@ -1075,17 +914,11 @@ UpdateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::UpdateWorkflowSte
 
 UpdateWorkflowStepGroupOutcomeCallable MigrationHubOrchestratorClient::UpdateWorkflowStepGroupCallable(const UpdateWorkflowStepGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkflowStepGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateWorkflowStepGroup, request, m_executor.get());
 }
 
 void MigrationHubOrchestratorClient::UpdateWorkflowStepGroupAsync(const UpdateWorkflowStepGroupRequest& request, const UpdateWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateWorkflowStepGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateWorkflowStepGroup, request, handler, context, m_executor.get());
 }
 

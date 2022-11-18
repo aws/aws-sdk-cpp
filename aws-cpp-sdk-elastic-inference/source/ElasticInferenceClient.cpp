@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -166,18 +167,12 @@ DescribeAcceleratorOfferingsOutcome ElasticInferenceClient::DescribeAcceleratorO
 
 DescribeAcceleratorOfferingsOutcomeCallable ElasticInferenceClient::DescribeAcceleratorOfferingsCallable(const DescribeAcceleratorOfferingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAcceleratorOfferings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAcceleratorOfferings, request, m_executor.get());
 }
 
 void ElasticInferenceClient::DescribeAcceleratorOfferingsAsync(const DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAcceleratorOfferings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAcceleratorOfferings, request, handler, context, m_executor.get());
 }
 
 DescribeAcceleratorTypesOutcome ElasticInferenceClient::DescribeAcceleratorTypes(const DescribeAcceleratorTypesRequest& request) const
@@ -191,18 +186,12 @@ DescribeAcceleratorTypesOutcome ElasticInferenceClient::DescribeAcceleratorTypes
 
 DescribeAcceleratorTypesOutcomeCallable ElasticInferenceClient::DescribeAcceleratorTypesCallable(const DescribeAcceleratorTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAcceleratorTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAcceleratorTypes, request, m_executor.get());
 }
 
 void ElasticInferenceClient::DescribeAcceleratorTypesAsync(const DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAcceleratorTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAcceleratorTypes, request, handler, context, m_executor.get());
 }
 
 DescribeAcceleratorsOutcome ElasticInferenceClient::DescribeAccelerators(const DescribeAcceleratorsRequest& request) const
@@ -216,18 +205,12 @@ DescribeAcceleratorsOutcome ElasticInferenceClient::DescribeAccelerators(const D
 
 DescribeAcceleratorsOutcomeCallable ElasticInferenceClient::DescribeAcceleratorsCallable(const DescribeAcceleratorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccelerators(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAccelerators, request, m_executor.get());
 }
 
 void ElasticInferenceClient::DescribeAcceleratorsAsync(const DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAccelerators(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAccelerators, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ElasticInferenceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -247,18 +230,12 @@ ListTagsForResourceOutcome ElasticInferenceClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable ElasticInferenceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ElasticInferenceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ElasticInferenceClient::TagResource(const TagResourceRequest& request) const
@@ -278,18 +255,12 @@ TagResourceOutcome ElasticInferenceClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable ElasticInferenceClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ElasticInferenceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ElasticInferenceClient::UntagResource(const UntagResourceRequest& request) const
@@ -314,17 +285,11 @@ UntagResourceOutcome ElasticInferenceClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable ElasticInferenceClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ElasticInferenceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 

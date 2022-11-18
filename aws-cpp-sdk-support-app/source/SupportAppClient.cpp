@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -170,18 +171,12 @@ CreateSlackChannelConfigurationOutcome SupportAppClient::CreateSlackChannelConfi
 
 CreateSlackChannelConfigurationOutcomeCallable SupportAppClient::CreateSlackChannelConfigurationCallable(const CreateSlackChannelConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSlackChannelConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSlackChannelConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSlackChannelConfiguration, request, m_executor.get());
 }
 
 void SupportAppClient::CreateSlackChannelConfigurationAsync(const CreateSlackChannelConfigurationRequest& request, const CreateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSlackChannelConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSlackChannelConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteAccountAliasOutcome SupportAppClient::DeleteAccountAlias(const DeleteAccountAliasRequest& request) const
@@ -195,18 +190,12 @@ DeleteAccountAliasOutcome SupportAppClient::DeleteAccountAlias(const DeleteAccou
 
 DeleteAccountAliasOutcomeCallable SupportAppClient::DeleteAccountAliasCallable(const DeleteAccountAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAccountAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccountAlias(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAccountAlias, request, m_executor.get());
 }
 
 void SupportAppClient::DeleteAccountAliasAsync(const DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAccountAlias(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAccountAlias, request, handler, context, m_executor.get());
 }
 
 DeleteSlackChannelConfigurationOutcome SupportAppClient::DeleteSlackChannelConfiguration(const DeleteSlackChannelConfigurationRequest& request) const
@@ -220,18 +209,12 @@ DeleteSlackChannelConfigurationOutcome SupportAppClient::DeleteSlackChannelConfi
 
 DeleteSlackChannelConfigurationOutcomeCallable SupportAppClient::DeleteSlackChannelConfigurationCallable(const DeleteSlackChannelConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSlackChannelConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSlackChannelConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSlackChannelConfiguration, request, m_executor.get());
 }
 
 void SupportAppClient::DeleteSlackChannelConfigurationAsync(const DeleteSlackChannelConfigurationRequest& request, const DeleteSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSlackChannelConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSlackChannelConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteSlackWorkspaceConfigurationOutcome SupportAppClient::DeleteSlackWorkspaceConfiguration(const DeleteSlackWorkspaceConfigurationRequest& request) const
@@ -245,18 +228,12 @@ DeleteSlackWorkspaceConfigurationOutcome SupportAppClient::DeleteSlackWorkspaceC
 
 DeleteSlackWorkspaceConfigurationOutcomeCallable SupportAppClient::DeleteSlackWorkspaceConfigurationCallable(const DeleteSlackWorkspaceConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSlackWorkspaceConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSlackWorkspaceConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSlackWorkspaceConfiguration, request, m_executor.get());
 }
 
 void SupportAppClient::DeleteSlackWorkspaceConfigurationAsync(const DeleteSlackWorkspaceConfigurationRequest& request, const DeleteSlackWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSlackWorkspaceConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSlackWorkspaceConfiguration, request, handler, context, m_executor.get());
 }
 
 GetAccountAliasOutcome SupportAppClient::GetAccountAlias(const GetAccountAliasRequest& request) const
@@ -270,18 +247,12 @@ GetAccountAliasOutcome SupportAppClient::GetAccountAlias(const GetAccountAliasRe
 
 GetAccountAliasOutcomeCallable SupportAppClient::GetAccountAliasCallable(const GetAccountAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccountAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccountAlias(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccountAlias, request, m_executor.get());
 }
 
 void SupportAppClient::GetAccountAliasAsync(const GetAccountAliasRequest& request, const GetAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccountAlias(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccountAlias, request, handler, context, m_executor.get());
 }
 
 ListSlackChannelConfigurationsOutcome SupportAppClient::ListSlackChannelConfigurations(const ListSlackChannelConfigurationsRequest& request) const
@@ -295,18 +266,12 @@ ListSlackChannelConfigurationsOutcome SupportAppClient::ListSlackChannelConfigur
 
 ListSlackChannelConfigurationsOutcomeCallable SupportAppClient::ListSlackChannelConfigurationsCallable(const ListSlackChannelConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSlackChannelConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSlackChannelConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSlackChannelConfigurations, request, m_executor.get());
 }
 
 void SupportAppClient::ListSlackChannelConfigurationsAsync(const ListSlackChannelConfigurationsRequest& request, const ListSlackChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSlackChannelConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSlackChannelConfigurations, request, handler, context, m_executor.get());
 }
 
 ListSlackWorkspaceConfigurationsOutcome SupportAppClient::ListSlackWorkspaceConfigurations(const ListSlackWorkspaceConfigurationsRequest& request) const
@@ -320,18 +285,12 @@ ListSlackWorkspaceConfigurationsOutcome SupportAppClient::ListSlackWorkspaceConf
 
 ListSlackWorkspaceConfigurationsOutcomeCallable SupportAppClient::ListSlackWorkspaceConfigurationsCallable(const ListSlackWorkspaceConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSlackWorkspaceConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSlackWorkspaceConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSlackWorkspaceConfigurations, request, m_executor.get());
 }
 
 void SupportAppClient::ListSlackWorkspaceConfigurationsAsync(const ListSlackWorkspaceConfigurationsRequest& request, const ListSlackWorkspaceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSlackWorkspaceConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSlackWorkspaceConfigurations, request, handler, context, m_executor.get());
 }
 
 PutAccountAliasOutcome SupportAppClient::PutAccountAlias(const PutAccountAliasRequest& request) const
@@ -345,18 +304,12 @@ PutAccountAliasOutcome SupportAppClient::PutAccountAlias(const PutAccountAliasRe
 
 PutAccountAliasOutcomeCallable SupportAppClient::PutAccountAliasCallable(const PutAccountAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAccountAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccountAlias(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutAccountAlias, request, m_executor.get());
 }
 
 void SupportAppClient::PutAccountAliasAsync(const PutAccountAliasRequest& request, const PutAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutAccountAlias(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutAccountAlias, request, handler, context, m_executor.get());
 }
 
 RegisterSlackWorkspaceForOrganizationOutcome SupportAppClient::RegisterSlackWorkspaceForOrganization(const RegisterSlackWorkspaceForOrganizationRequest& request) const
@@ -370,18 +323,12 @@ RegisterSlackWorkspaceForOrganizationOutcome SupportAppClient::RegisterSlackWork
 
 RegisterSlackWorkspaceForOrganizationOutcomeCallable SupportAppClient::RegisterSlackWorkspaceForOrganizationCallable(const RegisterSlackWorkspaceForOrganizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterSlackWorkspaceForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterSlackWorkspaceForOrganization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RegisterSlackWorkspaceForOrganization, request, m_executor.get());
 }
 
 void SupportAppClient::RegisterSlackWorkspaceForOrganizationAsync(const RegisterSlackWorkspaceForOrganizationRequest& request, const RegisterSlackWorkspaceForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterSlackWorkspaceForOrganization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RegisterSlackWorkspaceForOrganization, request, handler, context, m_executor.get());
 }
 
 UpdateSlackChannelConfigurationOutcome SupportAppClient::UpdateSlackChannelConfiguration(const UpdateSlackChannelConfigurationRequest& request) const
@@ -395,17 +342,11 @@ UpdateSlackChannelConfigurationOutcome SupportAppClient::UpdateSlackChannelConfi
 
 UpdateSlackChannelConfigurationOutcomeCallable SupportAppClient::UpdateSlackChannelConfigurationCallable(const UpdateSlackChannelConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSlackChannelConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSlackChannelConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSlackChannelConfiguration, request, m_executor.get());
 }
 
 void SupportAppClient::UpdateSlackChannelConfigurationAsync(const UpdateSlackChannelConfigurationRequest& request, const UpdateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSlackChannelConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSlackChannelConfiguration, request, handler, context, m_executor.get());
 }
 

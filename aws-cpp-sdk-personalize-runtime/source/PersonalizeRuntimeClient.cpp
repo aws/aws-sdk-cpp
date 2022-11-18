@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -162,18 +163,12 @@ GetPersonalizedRankingOutcome PersonalizeRuntimeClient::GetPersonalizedRanking(c
 
 GetPersonalizedRankingOutcomeCallable PersonalizeRuntimeClient::GetPersonalizedRankingCallable(const GetPersonalizedRankingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPersonalizedRankingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPersonalizedRanking(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPersonalizedRanking, request, m_executor.get());
 }
 
 void PersonalizeRuntimeClient::GetPersonalizedRankingAsync(const GetPersonalizedRankingRequest& request, const GetPersonalizedRankingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPersonalizedRanking(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPersonalizedRanking, request, handler, context, m_executor.get());
 }
 
 GetRecommendationsOutcome PersonalizeRuntimeClient::GetRecommendations(const GetRecommendationsRequest& request) const
@@ -187,17 +182,11 @@ GetRecommendationsOutcome PersonalizeRuntimeClient::GetRecommendations(const Get
 
 GetRecommendationsOutcomeCallable PersonalizeRuntimeClient::GetRecommendationsCallable(const GetRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecommendations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRecommendations, request, m_executor.get());
 }
 
 void PersonalizeRuntimeClient::GetRecommendationsAsync(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRecommendations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRecommendations, request, handler, context, m_executor.get());
 }
 

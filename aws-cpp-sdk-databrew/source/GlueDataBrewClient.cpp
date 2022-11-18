@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -211,18 +212,12 @@ BatchDeleteRecipeVersionOutcome GlueDataBrewClient::BatchDeleteRecipeVersion(con
 
 BatchDeleteRecipeVersionOutcomeCallable GlueDataBrewClient::BatchDeleteRecipeVersionCallable(const BatchDeleteRecipeVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteRecipeVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteRecipeVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDeleteRecipeVersion, request, m_executor.get());
 }
 
 void GlueDataBrewClient::BatchDeleteRecipeVersionAsync(const BatchDeleteRecipeVersionRequest& request, const BatchDeleteRecipeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDeleteRecipeVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDeleteRecipeVersion, request, handler, context, m_executor.get());
 }
 
 CreateDatasetOutcome GlueDataBrewClient::CreateDataset(const CreateDatasetRequest& request) const
@@ -236,18 +231,12 @@ CreateDatasetOutcome GlueDataBrewClient::CreateDataset(const CreateDatasetReques
 
 CreateDatasetOutcomeCallable GlueDataBrewClient::CreateDatasetCallable(const CreateDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataset, request, m_executor.get());
 }
 
 void GlueDataBrewClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataset, request, handler, context, m_executor.get());
 }
 
 CreateProfileJobOutcome GlueDataBrewClient::CreateProfileJob(const CreateProfileJobRequest& request) const
@@ -261,18 +250,12 @@ CreateProfileJobOutcome GlueDataBrewClient::CreateProfileJob(const CreateProfile
 
 CreateProfileJobOutcomeCallable GlueDataBrewClient::CreateProfileJobCallable(const CreateProfileJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProfileJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProfileJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateProfileJob, request, m_executor.get());
 }
 
 void GlueDataBrewClient::CreateProfileJobAsync(const CreateProfileJobRequest& request, const CreateProfileJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateProfileJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateProfileJob, request, handler, context, m_executor.get());
 }
 
 CreateProjectOutcome GlueDataBrewClient::CreateProject(const CreateProjectRequest& request) const
@@ -286,18 +269,12 @@ CreateProjectOutcome GlueDataBrewClient::CreateProject(const CreateProjectReques
 
 CreateProjectOutcomeCallable GlueDataBrewClient::CreateProjectCallable(const CreateProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateProject, request, m_executor.get());
 }
 
 void GlueDataBrewClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateProject, request, handler, context, m_executor.get());
 }
 
 CreateRecipeOutcome GlueDataBrewClient::CreateRecipe(const CreateRecipeRequest& request) const
@@ -311,18 +288,12 @@ CreateRecipeOutcome GlueDataBrewClient::CreateRecipe(const CreateRecipeRequest& 
 
 CreateRecipeOutcomeCallable GlueDataBrewClient::CreateRecipeCallable(const CreateRecipeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRecipe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRecipe, request, m_executor.get());
 }
 
 void GlueDataBrewClient::CreateRecipeAsync(const CreateRecipeRequest& request, const CreateRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRecipe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRecipe, request, handler, context, m_executor.get());
 }
 
 CreateRecipeJobOutcome GlueDataBrewClient::CreateRecipeJob(const CreateRecipeJobRequest& request) const
@@ -336,18 +307,12 @@ CreateRecipeJobOutcome GlueDataBrewClient::CreateRecipeJob(const CreateRecipeJob
 
 CreateRecipeJobOutcomeCallable GlueDataBrewClient::CreateRecipeJobCallable(const CreateRecipeJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRecipeJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRecipeJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRecipeJob, request, m_executor.get());
 }
 
 void GlueDataBrewClient::CreateRecipeJobAsync(const CreateRecipeJobRequest& request, const CreateRecipeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRecipeJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRecipeJob, request, handler, context, m_executor.get());
 }
 
 CreateRulesetOutcome GlueDataBrewClient::CreateRuleset(const CreateRulesetRequest& request) const
@@ -361,18 +326,12 @@ CreateRulesetOutcome GlueDataBrewClient::CreateRuleset(const CreateRulesetReques
 
 CreateRulesetOutcomeCallable GlueDataBrewClient::CreateRulesetCallable(const CreateRulesetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRuleset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRuleset, request, m_executor.get());
 }
 
 void GlueDataBrewClient::CreateRulesetAsync(const CreateRulesetRequest& request, const CreateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRuleset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRuleset, request, handler, context, m_executor.get());
 }
 
 CreateScheduleOutcome GlueDataBrewClient::CreateSchedule(const CreateScheduleRequest& request) const
@@ -386,18 +345,12 @@ CreateScheduleOutcome GlueDataBrewClient::CreateSchedule(const CreateScheduleReq
 
 CreateScheduleOutcomeCallable GlueDataBrewClient::CreateScheduleCallable(const CreateScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSchedule, request, m_executor.get());
 }
 
 void GlueDataBrewClient::CreateScheduleAsync(const CreateScheduleRequest& request, const CreateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSchedule, request, handler, context, m_executor.get());
 }
 
 DeleteDatasetOutcome GlueDataBrewClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -417,18 +370,12 @@ DeleteDatasetOutcome GlueDataBrewClient::DeleteDataset(const DeleteDatasetReques
 
 DeleteDatasetOutcomeCallable GlueDataBrewClient::DeleteDatasetCallable(const DeleteDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDataset, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDataset, request, handler, context, m_executor.get());
 }
 
 DeleteJobOutcome GlueDataBrewClient::DeleteJob(const DeleteJobRequest& request) const
@@ -448,18 +395,12 @@ DeleteJobOutcome GlueDataBrewClient::DeleteJob(const DeleteJobRequest& request) 
 
 DeleteJobOutcomeCallable GlueDataBrewClient::DeleteJobCallable(const DeleteJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteJob, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteJob, request, handler, context, m_executor.get());
 }
 
 DeleteProjectOutcome GlueDataBrewClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -479,18 +420,12 @@ DeleteProjectOutcome GlueDataBrewClient::DeleteProject(const DeleteProjectReques
 
 DeleteProjectOutcomeCallable GlueDataBrewClient::DeleteProjectCallable(const DeleteProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteProject, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteProject, request, handler, context, m_executor.get());
 }
 
 DeleteRecipeVersionOutcome GlueDataBrewClient::DeleteRecipeVersion(const DeleteRecipeVersionRequest& request) const
@@ -517,18 +452,12 @@ DeleteRecipeVersionOutcome GlueDataBrewClient::DeleteRecipeVersion(const DeleteR
 
 DeleteRecipeVersionOutcomeCallable GlueDataBrewClient::DeleteRecipeVersionCallable(const DeleteRecipeVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRecipeVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecipeVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRecipeVersion, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DeleteRecipeVersionAsync(const DeleteRecipeVersionRequest& request, const DeleteRecipeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRecipeVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRecipeVersion, request, handler, context, m_executor.get());
 }
 
 DeleteRulesetOutcome GlueDataBrewClient::DeleteRuleset(const DeleteRulesetRequest& request) const
@@ -548,18 +477,12 @@ DeleteRulesetOutcome GlueDataBrewClient::DeleteRuleset(const DeleteRulesetReques
 
 DeleteRulesetOutcomeCallable GlueDataBrewClient::DeleteRulesetCallable(const DeleteRulesetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRuleset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRuleset, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DeleteRulesetAsync(const DeleteRulesetRequest& request, const DeleteRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRuleset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRuleset, request, handler, context, m_executor.get());
 }
 
 DeleteScheduleOutcome GlueDataBrewClient::DeleteSchedule(const DeleteScheduleRequest& request) const
@@ -579,18 +502,12 @@ DeleteScheduleOutcome GlueDataBrewClient::DeleteSchedule(const DeleteScheduleReq
 
 DeleteScheduleOutcomeCallable GlueDataBrewClient::DeleteScheduleCallable(const DeleteScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSchedule, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DeleteScheduleAsync(const DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSchedule, request, handler, context, m_executor.get());
 }
 
 DescribeDatasetOutcome GlueDataBrewClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -610,18 +527,12 @@ DescribeDatasetOutcome GlueDataBrewClient::DescribeDataset(const DescribeDataset
 
 DescribeDatasetOutcomeCallable GlueDataBrewClient::DescribeDatasetCallable(const DescribeDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDataset, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDataset, request, handler, context, m_executor.get());
 }
 
 DescribeJobOutcome GlueDataBrewClient::DescribeJob(const DescribeJobRequest& request) const
@@ -641,18 +552,12 @@ DescribeJobOutcome GlueDataBrewClient::DescribeJob(const DescribeJobRequest& req
 
 DescribeJobOutcomeCallable GlueDataBrewClient::DescribeJobCallable(const DescribeJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJob, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DescribeJobAsync(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJob, request, handler, context, m_executor.get());
 }
 
 DescribeJobRunOutcome GlueDataBrewClient::DescribeJobRun(const DescribeJobRunRequest& request) const
@@ -679,18 +584,12 @@ DescribeJobRunOutcome GlueDataBrewClient::DescribeJobRun(const DescribeJobRunReq
 
 DescribeJobRunOutcomeCallable GlueDataBrewClient::DescribeJobRunCallable(const DescribeJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJobRun, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DescribeJobRunAsync(const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJobRun, request, handler, context, m_executor.get());
 }
 
 DescribeProjectOutcome GlueDataBrewClient::DescribeProject(const DescribeProjectRequest& request) const
@@ -710,18 +609,12 @@ DescribeProjectOutcome GlueDataBrewClient::DescribeProject(const DescribeProject
 
 DescribeProjectOutcomeCallable GlueDataBrewClient::DescribeProjectCallable(const DescribeProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeProject, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeProject, request, handler, context, m_executor.get());
 }
 
 DescribeRecipeOutcome GlueDataBrewClient::DescribeRecipe(const DescribeRecipeRequest& request) const
@@ -741,18 +634,12 @@ DescribeRecipeOutcome GlueDataBrewClient::DescribeRecipe(const DescribeRecipeReq
 
 DescribeRecipeOutcomeCallable GlueDataBrewClient::DescribeRecipeCallable(const DescribeRecipeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRecipe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRecipe, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DescribeRecipeAsync(const DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRecipe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRecipe, request, handler, context, m_executor.get());
 }
 
 DescribeRulesetOutcome GlueDataBrewClient::DescribeRuleset(const DescribeRulesetRequest& request) const
@@ -772,18 +659,12 @@ DescribeRulesetOutcome GlueDataBrewClient::DescribeRuleset(const DescribeRuleset
 
 DescribeRulesetOutcomeCallable GlueDataBrewClient::DescribeRulesetCallable(const DescribeRulesetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRuleset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRuleset, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DescribeRulesetAsync(const DescribeRulesetRequest& request, const DescribeRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRuleset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRuleset, request, handler, context, m_executor.get());
 }
 
 DescribeScheduleOutcome GlueDataBrewClient::DescribeSchedule(const DescribeScheduleRequest& request) const
@@ -803,18 +684,12 @@ DescribeScheduleOutcome GlueDataBrewClient::DescribeSchedule(const DescribeSched
 
 DescribeScheduleOutcomeCallable GlueDataBrewClient::DescribeScheduleCallable(const DescribeScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSchedule, request, m_executor.get());
 }
 
 void GlueDataBrewClient::DescribeScheduleAsync(const DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSchedule, request, handler, context, m_executor.get());
 }
 
 ListDatasetsOutcome GlueDataBrewClient::ListDatasets(const ListDatasetsRequest& request) const
@@ -828,18 +703,12 @@ ListDatasetsOutcome GlueDataBrewClient::ListDatasets(const ListDatasetsRequest& 
 
 ListDatasetsOutcomeCallable GlueDataBrewClient::ListDatasetsCallable(const ListDatasetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDatasets, request, m_executor.get());
 }
 
 void GlueDataBrewClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatasets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDatasets, request, handler, context, m_executor.get());
 }
 
 ListJobRunsOutcome GlueDataBrewClient::ListJobRuns(const ListJobRunsRequest& request) const
@@ -860,18 +729,12 @@ ListJobRunsOutcome GlueDataBrewClient::ListJobRuns(const ListJobRunsRequest& req
 
 ListJobRunsOutcomeCallable GlueDataBrewClient::ListJobRunsCallable(const ListJobRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListJobRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListJobRuns, request, m_executor.get());
 }
 
 void GlueDataBrewClient::ListJobRunsAsync(const ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListJobRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListJobRuns, request, handler, context, m_executor.get());
 }
 
 ListJobsOutcome GlueDataBrewClient::ListJobs(const ListJobsRequest& request) const
@@ -885,18 +748,12 @@ ListJobsOutcome GlueDataBrewClient::ListJobs(const ListJobsRequest& request) con
 
 ListJobsOutcomeCallable GlueDataBrewClient::ListJobsCallable(const ListJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListJobs, request, m_executor.get());
 }
 
 void GlueDataBrewClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListJobs, request, handler, context, m_executor.get());
 }
 
 ListProjectsOutcome GlueDataBrewClient::ListProjects(const ListProjectsRequest& request) const
@@ -910,18 +767,12 @@ ListProjectsOutcome GlueDataBrewClient::ListProjects(const ListProjectsRequest& 
 
 ListProjectsOutcomeCallable GlueDataBrewClient::ListProjectsCallable(const ListProjectsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProjectsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProjects(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListProjects, request, m_executor.get());
 }
 
 void GlueDataBrewClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListProjects(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListProjects, request, handler, context, m_executor.get());
 }
 
 ListRecipeVersionsOutcome GlueDataBrewClient::ListRecipeVersions(const ListRecipeVersionsRequest& request) const
@@ -940,18 +791,12 @@ ListRecipeVersionsOutcome GlueDataBrewClient::ListRecipeVersions(const ListRecip
 
 ListRecipeVersionsOutcomeCallable GlueDataBrewClient::ListRecipeVersionsCallable(const ListRecipeVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRecipeVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecipeVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRecipeVersions, request, m_executor.get());
 }
 
 void GlueDataBrewClient::ListRecipeVersionsAsync(const ListRecipeVersionsRequest& request, const ListRecipeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRecipeVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRecipeVersions, request, handler, context, m_executor.get());
 }
 
 ListRecipesOutcome GlueDataBrewClient::ListRecipes(const ListRecipesRequest& request) const
@@ -965,18 +810,12 @@ ListRecipesOutcome GlueDataBrewClient::ListRecipes(const ListRecipesRequest& req
 
 ListRecipesOutcomeCallable GlueDataBrewClient::ListRecipesCallable(const ListRecipesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRecipesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecipes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRecipes, request, m_executor.get());
 }
 
 void GlueDataBrewClient::ListRecipesAsync(const ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRecipes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRecipes, request, handler, context, m_executor.get());
 }
 
 ListRulesetsOutcome GlueDataBrewClient::ListRulesets(const ListRulesetsRequest& request) const
@@ -990,18 +829,12 @@ ListRulesetsOutcome GlueDataBrewClient::ListRulesets(const ListRulesetsRequest& 
 
 ListRulesetsOutcomeCallable GlueDataBrewClient::ListRulesetsCallable(const ListRulesetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRulesetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRulesets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRulesets, request, m_executor.get());
 }
 
 void GlueDataBrewClient::ListRulesetsAsync(const ListRulesetsRequest& request, const ListRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRulesets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRulesets, request, handler, context, m_executor.get());
 }
 
 ListSchedulesOutcome GlueDataBrewClient::ListSchedules(const ListSchedulesRequest& request) const
@@ -1015,18 +848,12 @@ ListSchedulesOutcome GlueDataBrewClient::ListSchedules(const ListSchedulesReques
 
 ListSchedulesOutcomeCallable GlueDataBrewClient::ListSchedulesCallable(const ListSchedulesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSchedulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSchedules(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSchedules, request, m_executor.get());
 }
 
 void GlueDataBrewClient::ListSchedulesAsync(const ListSchedulesRequest& request, const ListSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSchedules(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSchedules, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome GlueDataBrewClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1046,18 +873,12 @@ ListTagsForResourceOutcome GlueDataBrewClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable GlueDataBrewClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void GlueDataBrewClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PublishRecipeOutcome GlueDataBrewClient::PublishRecipe(const PublishRecipeRequest& request) const
@@ -1078,18 +899,12 @@ PublishRecipeOutcome GlueDataBrewClient::PublishRecipe(const PublishRecipeReques
 
 PublishRecipeOutcomeCallable GlueDataBrewClient::PublishRecipeCallable(const PublishRecipeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PublishRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PublishRecipe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PublishRecipe, request, m_executor.get());
 }
 
 void GlueDataBrewClient::PublishRecipeAsync(const PublishRecipeRequest& request, const PublishRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PublishRecipe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PublishRecipe, request, handler, context, m_executor.get());
 }
 
 SendProjectSessionActionOutcome GlueDataBrewClient::SendProjectSessionAction(const SendProjectSessionActionRequest& request) const
@@ -1110,18 +925,12 @@ SendProjectSessionActionOutcome GlueDataBrewClient::SendProjectSessionAction(con
 
 SendProjectSessionActionOutcomeCallable GlueDataBrewClient::SendProjectSessionActionCallable(const SendProjectSessionActionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendProjectSessionActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendProjectSessionAction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendProjectSessionAction, request, m_executor.get());
 }
 
 void GlueDataBrewClient::SendProjectSessionActionAsync(const SendProjectSessionActionRequest& request, const SendProjectSessionActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendProjectSessionAction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendProjectSessionAction, request, handler, context, m_executor.get());
 }
 
 StartJobRunOutcome GlueDataBrewClient::StartJobRun(const StartJobRunRequest& request) const
@@ -1142,18 +951,12 @@ StartJobRunOutcome GlueDataBrewClient::StartJobRun(const StartJobRunRequest& req
 
 StartJobRunOutcomeCallable GlueDataBrewClient::StartJobRunCallable(const StartJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartJobRun, request, m_executor.get());
 }
 
 void GlueDataBrewClient::StartJobRunAsync(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartJobRun, request, handler, context, m_executor.get());
 }
 
 StartProjectSessionOutcome GlueDataBrewClient::StartProjectSession(const StartProjectSessionRequest& request) const
@@ -1174,18 +977,12 @@ StartProjectSessionOutcome GlueDataBrewClient::StartProjectSession(const StartPr
 
 StartProjectSessionOutcomeCallable GlueDataBrewClient::StartProjectSessionCallable(const StartProjectSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartProjectSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartProjectSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartProjectSession, request, m_executor.get());
 }
 
 void GlueDataBrewClient::StartProjectSessionAsync(const StartProjectSessionRequest& request, const StartProjectSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartProjectSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartProjectSession, request, handler, context, m_executor.get());
 }
 
 StopJobRunOutcome GlueDataBrewClient::StopJobRun(const StopJobRunRequest& request) const
@@ -1213,18 +1010,12 @@ StopJobRunOutcome GlueDataBrewClient::StopJobRun(const StopJobRunRequest& reques
 
 StopJobRunOutcomeCallable GlueDataBrewClient::StopJobRunCallable(const StopJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopJobRun, request, m_executor.get());
 }
 
 void GlueDataBrewClient::StopJobRunAsync(const StopJobRunRequest& request, const StopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopJobRun, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome GlueDataBrewClient::TagResource(const TagResourceRequest& request) const
@@ -1244,18 +1035,12 @@ TagResourceOutcome GlueDataBrewClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable GlueDataBrewClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void GlueDataBrewClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome GlueDataBrewClient::UntagResource(const UntagResourceRequest& request) const
@@ -1280,18 +1065,12 @@ UntagResourceOutcome GlueDataBrewClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable GlueDataBrewClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void GlueDataBrewClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateDatasetOutcome GlueDataBrewClient::UpdateDataset(const UpdateDatasetRequest& request) const
@@ -1311,18 +1090,12 @@ UpdateDatasetOutcome GlueDataBrewClient::UpdateDataset(const UpdateDatasetReques
 
 UpdateDatasetOutcomeCallable GlueDataBrewClient::UpdateDatasetCallable(const UpdateDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDataset, request, m_executor.get());
 }
 
 void GlueDataBrewClient::UpdateDatasetAsync(const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDataset, request, handler, context, m_executor.get());
 }
 
 UpdateProfileJobOutcome GlueDataBrewClient::UpdateProfileJob(const UpdateProfileJobRequest& request) const
@@ -1342,18 +1115,12 @@ UpdateProfileJobOutcome GlueDataBrewClient::UpdateProfileJob(const UpdateProfile
 
 UpdateProfileJobOutcomeCallable GlueDataBrewClient::UpdateProfileJobCallable(const UpdateProfileJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateProfileJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProfileJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateProfileJob, request, m_executor.get());
 }
 
 void GlueDataBrewClient::UpdateProfileJobAsync(const UpdateProfileJobRequest& request, const UpdateProfileJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateProfileJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateProfileJob, request, handler, context, m_executor.get());
 }
 
 UpdateProjectOutcome GlueDataBrewClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -1373,18 +1140,12 @@ UpdateProjectOutcome GlueDataBrewClient::UpdateProject(const UpdateProjectReques
 
 UpdateProjectOutcomeCallable GlueDataBrewClient::UpdateProjectCallable(const UpdateProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateProject, request, m_executor.get());
 }
 
 void GlueDataBrewClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateProject, request, handler, context, m_executor.get());
 }
 
 UpdateRecipeOutcome GlueDataBrewClient::UpdateRecipe(const UpdateRecipeRequest& request) const
@@ -1404,18 +1165,12 @@ UpdateRecipeOutcome GlueDataBrewClient::UpdateRecipe(const UpdateRecipeRequest& 
 
 UpdateRecipeOutcomeCallable GlueDataBrewClient::UpdateRecipeCallable(const UpdateRecipeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRecipe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRecipe, request, m_executor.get());
 }
 
 void GlueDataBrewClient::UpdateRecipeAsync(const UpdateRecipeRequest& request, const UpdateRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRecipe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRecipe, request, handler, context, m_executor.get());
 }
 
 UpdateRecipeJobOutcome GlueDataBrewClient::UpdateRecipeJob(const UpdateRecipeJobRequest& request) const
@@ -1435,18 +1190,12 @@ UpdateRecipeJobOutcome GlueDataBrewClient::UpdateRecipeJob(const UpdateRecipeJob
 
 UpdateRecipeJobOutcomeCallable GlueDataBrewClient::UpdateRecipeJobCallable(const UpdateRecipeJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRecipeJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRecipeJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRecipeJob, request, m_executor.get());
 }
 
 void GlueDataBrewClient::UpdateRecipeJobAsync(const UpdateRecipeJobRequest& request, const UpdateRecipeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRecipeJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRecipeJob, request, handler, context, m_executor.get());
 }
 
 UpdateRulesetOutcome GlueDataBrewClient::UpdateRuleset(const UpdateRulesetRequest& request) const
@@ -1466,18 +1215,12 @@ UpdateRulesetOutcome GlueDataBrewClient::UpdateRuleset(const UpdateRulesetReques
 
 UpdateRulesetOutcomeCallable GlueDataBrewClient::UpdateRulesetCallable(const UpdateRulesetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRuleset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRuleset, request, m_executor.get());
 }
 
 void GlueDataBrewClient::UpdateRulesetAsync(const UpdateRulesetRequest& request, const UpdateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRuleset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRuleset, request, handler, context, m_executor.get());
 }
 
 UpdateScheduleOutcome GlueDataBrewClient::UpdateSchedule(const UpdateScheduleRequest& request) const
@@ -1497,17 +1240,11 @@ UpdateScheduleOutcome GlueDataBrewClient::UpdateSchedule(const UpdateScheduleReq
 
 UpdateScheduleOutcomeCallable GlueDataBrewClient::UpdateScheduleCallable(const UpdateScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSchedule, request, m_executor.get());
 }
 
 void GlueDataBrewClient::UpdateScheduleAsync(const UpdateScheduleRequest& request, const UpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSchedule, request, handler, context, m_executor.get());
 }
 

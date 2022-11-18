@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -216,18 +217,12 @@ AbortDocumentVersionUploadOutcome WorkDocsClient::AbortDocumentVersionUpload(con
 
 AbortDocumentVersionUploadOutcomeCallable WorkDocsClient::AbortDocumentVersionUploadCallable(const AbortDocumentVersionUploadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AbortDocumentVersionUploadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AbortDocumentVersionUpload(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AbortDocumentVersionUpload, request, m_executor.get());
 }
 
 void WorkDocsClient::AbortDocumentVersionUploadAsync(const AbortDocumentVersionUploadRequest& request, const AbortDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AbortDocumentVersionUpload(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AbortDocumentVersionUpload, request, handler, context, m_executor.get());
 }
 
 ActivateUserOutcome WorkDocsClient::ActivateUser(const ActivateUserRequest& request) const
@@ -248,18 +243,12 @@ ActivateUserOutcome WorkDocsClient::ActivateUser(const ActivateUserRequest& requ
 
 ActivateUserOutcomeCallable WorkDocsClient::ActivateUserCallable(const ActivateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ActivateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ActivateUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ActivateUser, request, m_executor.get());
 }
 
 void WorkDocsClient::ActivateUserAsync(const ActivateUserRequest& request, const ActivateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ActivateUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ActivateUser, request, handler, context, m_executor.get());
 }
 
 AddResourcePermissionsOutcome WorkDocsClient::AddResourcePermissions(const AddResourcePermissionsRequest& request) const
@@ -280,18 +269,12 @@ AddResourcePermissionsOutcome WorkDocsClient::AddResourcePermissions(const AddRe
 
 AddResourcePermissionsOutcomeCallable WorkDocsClient::AddResourcePermissionsCallable(const AddResourcePermissionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddResourcePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddResourcePermissions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddResourcePermissions, request, m_executor.get());
 }
 
 void WorkDocsClient::AddResourcePermissionsAsync(const AddResourcePermissionsRequest& request, const AddResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddResourcePermissions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddResourcePermissions, request, handler, context, m_executor.get());
 }
 
 CreateCommentOutcome WorkDocsClient::CreateComment(const CreateCommentRequest& request) const
@@ -319,18 +302,12 @@ CreateCommentOutcome WorkDocsClient::CreateComment(const CreateCommentRequest& r
 
 CreateCommentOutcomeCallable WorkDocsClient::CreateCommentCallable(const CreateCommentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCommentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateComment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateComment, request, m_executor.get());
 }
 
 void WorkDocsClient::CreateCommentAsync(const CreateCommentRequest& request, const CreateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateComment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateComment, request, handler, context, m_executor.get());
 }
 
 CreateCustomMetadataOutcome WorkDocsClient::CreateCustomMetadata(const CreateCustomMetadataRequest& request) const
@@ -351,18 +328,12 @@ CreateCustomMetadataOutcome WorkDocsClient::CreateCustomMetadata(const CreateCus
 
 CreateCustomMetadataOutcomeCallable WorkDocsClient::CreateCustomMetadataCallable(const CreateCustomMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCustomMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCustomMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCustomMetadata, request, m_executor.get());
 }
 
 void WorkDocsClient::CreateCustomMetadataAsync(const CreateCustomMetadataRequest& request, const CreateCustomMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCustomMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCustomMetadata, request, handler, context, m_executor.get());
 }
 
 CreateFolderOutcome WorkDocsClient::CreateFolder(const CreateFolderRequest& request) const
@@ -376,18 +347,12 @@ CreateFolderOutcome WorkDocsClient::CreateFolder(const CreateFolderRequest& requ
 
 CreateFolderOutcomeCallable WorkDocsClient::CreateFolderCallable(const CreateFolderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFolder(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFolder, request, m_executor.get());
 }
 
 void WorkDocsClient::CreateFolderAsync(const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFolder(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFolder, request, handler, context, m_executor.get());
 }
 
 CreateLabelsOutcome WorkDocsClient::CreateLabels(const CreateLabelsRequest& request) const
@@ -408,18 +373,12 @@ CreateLabelsOutcome WorkDocsClient::CreateLabels(const CreateLabelsRequest& requ
 
 CreateLabelsOutcomeCallable WorkDocsClient::CreateLabelsCallable(const CreateLabelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLabelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLabels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLabels, request, m_executor.get());
 }
 
 void WorkDocsClient::CreateLabelsAsync(const CreateLabelsRequest& request, const CreateLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLabels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLabels, request, handler, context, m_executor.get());
 }
 
 CreateNotificationSubscriptionOutcome WorkDocsClient::CreateNotificationSubscription(const CreateNotificationSubscriptionRequest& request) const
@@ -440,18 +399,12 @@ CreateNotificationSubscriptionOutcome WorkDocsClient::CreateNotificationSubscrip
 
 CreateNotificationSubscriptionOutcomeCallable WorkDocsClient::CreateNotificationSubscriptionCallable(const CreateNotificationSubscriptionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNotificationSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNotificationSubscription(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateNotificationSubscription, request, m_executor.get());
 }
 
 void WorkDocsClient::CreateNotificationSubscriptionAsync(const CreateNotificationSubscriptionRequest& request, const CreateNotificationSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateNotificationSubscription(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateNotificationSubscription, request, handler, context, m_executor.get());
 }
 
 CreateUserOutcome WorkDocsClient::CreateUser(const CreateUserRequest& request) const
@@ -465,18 +418,12 @@ CreateUserOutcome WorkDocsClient::CreateUser(const CreateUserRequest& request) c
 
 CreateUserOutcomeCallable WorkDocsClient::CreateUserCallable(const CreateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateUser, request, m_executor.get());
 }
 
 void WorkDocsClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateUser, request, handler, context, m_executor.get());
 }
 
 DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest& request) const
@@ -497,18 +444,12 @@ DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest
 
 DeactivateUserOutcomeCallable WorkDocsClient::DeactivateUserCallable(const DeactivateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeactivateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeactivateUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeactivateUser, request, m_executor.get());
 }
 
 void WorkDocsClient::DeactivateUserAsync(const DeactivateUserRequest& request, const DeactivateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeactivateUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeactivateUser, request, handler, context, m_executor.get());
 }
 
 DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& request) const
@@ -542,18 +483,12 @@ DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& r
 
 DeleteCommentOutcomeCallable WorkDocsClient::DeleteCommentCallable(const DeleteCommentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCommentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteComment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteComment, request, m_executor.get());
 }
 
 void WorkDocsClient::DeleteCommentAsync(const DeleteCommentRequest& request, const DeleteCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteComment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteComment, request, handler, context, m_executor.get());
 }
 
 DeleteCustomMetadataOutcome WorkDocsClient::DeleteCustomMetadata(const DeleteCustomMetadataRequest& request) const
@@ -574,18 +509,12 @@ DeleteCustomMetadataOutcome WorkDocsClient::DeleteCustomMetadata(const DeleteCus
 
 DeleteCustomMetadataOutcomeCallable WorkDocsClient::DeleteCustomMetadataCallable(const DeleteCustomMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCustomMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCustomMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCustomMetadata, request, m_executor.get());
 }
 
 void WorkDocsClient::DeleteCustomMetadataAsync(const DeleteCustomMetadataRequest& request, const DeleteCustomMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCustomMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCustomMetadata, request, handler, context, m_executor.get());
 }
 
 DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest& request) const
@@ -605,18 +534,12 @@ DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest
 
 DeleteDocumentOutcomeCallable WorkDocsClient::DeleteDocumentCallable(const DeleteDocumentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDocumentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDocument(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDocument, request, m_executor.get());
 }
 
 void WorkDocsClient::DeleteDocumentAsync(const DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDocument(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDocument, request, handler, context, m_executor.get());
 }
 
 DeleteDocumentVersionOutcome WorkDocsClient::DeleteDocumentVersion(const DeleteDocumentVersionRequest& request) const
@@ -648,18 +571,12 @@ DeleteDocumentVersionOutcome WorkDocsClient::DeleteDocumentVersion(const DeleteD
 
 DeleteDocumentVersionOutcomeCallable WorkDocsClient::DeleteDocumentVersionCallable(const DeleteDocumentVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDocumentVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDocumentVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDocumentVersion, request, m_executor.get());
 }
 
 void WorkDocsClient::DeleteDocumentVersionAsync(const DeleteDocumentVersionRequest& request, const DeleteDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDocumentVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDocumentVersion, request, handler, context, m_executor.get());
 }
 
 DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& request) const
@@ -679,18 +596,12 @@ DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& requ
 
 DeleteFolderOutcomeCallable WorkDocsClient::DeleteFolderCallable(const DeleteFolderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFolder(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFolder, request, m_executor.get());
 }
 
 void WorkDocsClient::DeleteFolderAsync(const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFolder(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFolder, request, handler, context, m_executor.get());
 }
 
 DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFolderContentsRequest& request) const
@@ -711,18 +622,12 @@ DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFol
 
 DeleteFolderContentsOutcomeCallable WorkDocsClient::DeleteFolderContentsCallable(const DeleteFolderContentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFolderContentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFolderContents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFolderContents, request, m_executor.get());
 }
 
 void WorkDocsClient::DeleteFolderContentsAsync(const DeleteFolderContentsRequest& request, const DeleteFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFolderContents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFolderContents, request, handler, context, m_executor.get());
 }
 
 DeleteLabelsOutcome WorkDocsClient::DeleteLabels(const DeleteLabelsRequest& request) const
@@ -743,18 +648,12 @@ DeleteLabelsOutcome WorkDocsClient::DeleteLabels(const DeleteLabelsRequest& requ
 
 DeleteLabelsOutcomeCallable WorkDocsClient::DeleteLabelsCallable(const DeleteLabelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLabelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLabels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLabels, request, m_executor.get());
 }
 
 void WorkDocsClient::DeleteLabelsAsync(const DeleteLabelsRequest& request, const DeleteLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLabels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLabels, request, handler, context, m_executor.get());
 }
 
 DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscription(const DeleteNotificationSubscriptionRequest& request) const
@@ -781,18 +680,12 @@ DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscrip
 
 DeleteNotificationSubscriptionOutcomeCallable WorkDocsClient::DeleteNotificationSubscriptionCallable(const DeleteNotificationSubscriptionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNotificationSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNotificationSubscription(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteNotificationSubscription, request, m_executor.get());
 }
 
 void WorkDocsClient::DeleteNotificationSubscriptionAsync(const DeleteNotificationSubscriptionRequest& request, const DeleteNotificationSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteNotificationSubscription(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteNotificationSubscription, request, handler, context, m_executor.get());
 }
 
 DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) const
@@ -812,18 +705,12 @@ DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) c
 
 DeleteUserOutcomeCallable WorkDocsClient::DeleteUserCallable(const DeleteUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteUser, request, m_executor.get());
 }
 
 void WorkDocsClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteUser, request, handler, context, m_executor.get());
 }
 
 DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActivitiesRequest& request) const
@@ -837,18 +724,12 @@ DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActiv
 
 DescribeActivitiesOutcomeCallable WorkDocsClient::DescribeActivitiesCallable(const DescribeActivitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeActivitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeActivities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeActivities, request, m_executor.get());
 }
 
 void WorkDocsClient::DescribeActivitiesAsync(const DescribeActivitiesRequest& request, const DescribeActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeActivities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeActivities, request, handler, context, m_executor.get());
 }
 
 DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsRequest& request) const
@@ -876,18 +757,12 @@ DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsR
 
 DescribeCommentsOutcomeCallable WorkDocsClient::DescribeCommentsCallable(const DescribeCommentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCommentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeComments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeComments, request, m_executor.get());
 }
 
 void WorkDocsClient::DescribeCommentsAsync(const DescribeCommentsRequest& request, const DescribeCommentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeComments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeComments, request, handler, context, m_executor.get());
 }
 
 DescribeDocumentVersionsOutcome WorkDocsClient::DescribeDocumentVersions(const DescribeDocumentVersionsRequest& request) const
@@ -908,18 +783,12 @@ DescribeDocumentVersionsOutcome WorkDocsClient::DescribeDocumentVersions(const D
 
 DescribeDocumentVersionsOutcomeCallable WorkDocsClient::DescribeDocumentVersionsCallable(const DescribeDocumentVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDocumentVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDocumentVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDocumentVersions, request, m_executor.get());
 }
 
 void WorkDocsClient::DescribeDocumentVersionsAsync(const DescribeDocumentVersionsRequest& request, const DescribeDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDocumentVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDocumentVersions, request, handler, context, m_executor.get());
 }
 
 DescribeFolderContentsOutcome WorkDocsClient::DescribeFolderContents(const DescribeFolderContentsRequest& request) const
@@ -940,18 +809,12 @@ DescribeFolderContentsOutcome WorkDocsClient::DescribeFolderContents(const Descr
 
 DescribeFolderContentsOutcomeCallable WorkDocsClient::DescribeFolderContentsCallable(const DescribeFolderContentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFolderContentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFolderContents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFolderContents, request, m_executor.get());
 }
 
 void WorkDocsClient::DescribeFolderContentsAsync(const DescribeFolderContentsRequest& request, const DescribeFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFolderContents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFolderContents, request, handler, context, m_executor.get());
 }
 
 DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest& request) const
@@ -970,18 +833,12 @@ DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest
 
 DescribeGroupsOutcomeCallable WorkDocsClient::DescribeGroupsCallable(const DescribeGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeGroups, request, m_executor.get());
 }
 
 void WorkDocsClient::DescribeGroupsAsync(const DescribeGroupsRequest& request, const DescribeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeGroups, request, handler, context, m_executor.get());
 }
 
 DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSubscriptions(const DescribeNotificationSubscriptionsRequest& request) const
@@ -1002,18 +859,12 @@ DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSub
 
 DescribeNotificationSubscriptionsOutcomeCallable WorkDocsClient::DescribeNotificationSubscriptionsCallable(const DescribeNotificationSubscriptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeNotificationSubscriptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNotificationSubscriptions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeNotificationSubscriptions, request, m_executor.get());
 }
 
 void WorkDocsClient::DescribeNotificationSubscriptionsAsync(const DescribeNotificationSubscriptionsRequest& request, const DescribeNotificationSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeNotificationSubscriptions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeNotificationSubscriptions, request, handler, context, m_executor.get());
 }
 
 DescribeResourcePermissionsOutcome WorkDocsClient::DescribeResourcePermissions(const DescribeResourcePermissionsRequest& request) const
@@ -1034,18 +885,12 @@ DescribeResourcePermissionsOutcome WorkDocsClient::DescribeResourcePermissions(c
 
 DescribeResourcePermissionsOutcomeCallable WorkDocsClient::DescribeResourcePermissionsCallable(const DescribeResourcePermissionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeResourcePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResourcePermissions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeResourcePermissions, request, m_executor.get());
 }
 
 void WorkDocsClient::DescribeResourcePermissionsAsync(const DescribeResourcePermissionsRequest& request, const DescribeResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeResourcePermissions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeResourcePermissions, request, handler, context, m_executor.get());
 }
 
 DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRootFoldersRequest& request) const
@@ -1064,18 +909,12 @@ DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRoo
 
 DescribeRootFoldersOutcomeCallable WorkDocsClient::DescribeRootFoldersCallable(const DescribeRootFoldersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRootFoldersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRootFolders(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRootFolders, request, m_executor.get());
 }
 
 void WorkDocsClient::DescribeRootFoldersAsync(const DescribeRootFoldersRequest& request, const DescribeRootFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRootFolders(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRootFolders, request, handler, context, m_executor.get());
 }
 
 DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& request) const
@@ -1089,18 +928,12 @@ DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& r
 
 DescribeUsersOutcomeCallable WorkDocsClient::DescribeUsersCallable(const DescribeUsersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeUsersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUsers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeUsers, request, m_executor.get());
 }
 
 void WorkDocsClient::DescribeUsersAsync(const DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeUsers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeUsers, request, handler, context, m_executor.get());
 }
 
 GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest& request) const
@@ -1119,18 +952,12 @@ GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest
 
 GetCurrentUserOutcomeCallable WorkDocsClient::GetCurrentUserCallable(const GetCurrentUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCurrentUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCurrentUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCurrentUser, request, m_executor.get());
 }
 
 void WorkDocsClient::GetCurrentUserAsync(const GetCurrentUserRequest& request, const GetCurrentUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCurrentUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCurrentUser, request, handler, context, m_executor.get());
 }
 
 GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request) const
@@ -1150,18 +977,12 @@ GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request
 
 GetDocumentOutcomeCallable WorkDocsClient::GetDocumentCallable(const GetDocumentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDocumentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDocument(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDocument, request, m_executor.get());
 }
 
 void WorkDocsClient::GetDocumentAsync(const GetDocumentRequest& request, const GetDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDocument(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDocument, request, handler, context, m_executor.get());
 }
 
 GetDocumentPathOutcome WorkDocsClient::GetDocumentPath(const GetDocumentPathRequest& request) const
@@ -1182,18 +1003,12 @@ GetDocumentPathOutcome WorkDocsClient::GetDocumentPath(const GetDocumentPathRequ
 
 GetDocumentPathOutcomeCallable WorkDocsClient::GetDocumentPathCallable(const GetDocumentPathRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDocumentPathOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDocumentPath(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDocumentPath, request, m_executor.get());
 }
 
 void WorkDocsClient::GetDocumentPathAsync(const GetDocumentPathRequest& request, const GetDocumentPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDocumentPath(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDocumentPath, request, handler, context, m_executor.get());
 }
 
 GetDocumentVersionOutcome WorkDocsClient::GetDocumentVersion(const GetDocumentVersionRequest& request) const
@@ -1220,18 +1035,12 @@ GetDocumentVersionOutcome WorkDocsClient::GetDocumentVersion(const GetDocumentVe
 
 GetDocumentVersionOutcomeCallable WorkDocsClient::GetDocumentVersionCallable(const GetDocumentVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDocumentVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDocumentVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDocumentVersion, request, m_executor.get());
 }
 
 void WorkDocsClient::GetDocumentVersionAsync(const GetDocumentVersionRequest& request, const GetDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDocumentVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDocumentVersion, request, handler, context, m_executor.get());
 }
 
 GetFolderOutcome WorkDocsClient::GetFolder(const GetFolderRequest& request) const
@@ -1251,18 +1060,12 @@ GetFolderOutcome WorkDocsClient::GetFolder(const GetFolderRequest& request) cons
 
 GetFolderOutcomeCallable WorkDocsClient::GetFolderCallable(const GetFolderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFolder(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFolder, request, m_executor.get());
 }
 
 void WorkDocsClient::GetFolderAsync(const GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFolder(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFolder, request, handler, context, m_executor.get());
 }
 
 GetFolderPathOutcome WorkDocsClient::GetFolderPath(const GetFolderPathRequest& request) const
@@ -1283,18 +1086,12 @@ GetFolderPathOutcome WorkDocsClient::GetFolderPath(const GetFolderPathRequest& r
 
 GetFolderPathOutcomeCallable WorkDocsClient::GetFolderPathCallable(const GetFolderPathRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFolderPathOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFolderPath(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFolderPath, request, m_executor.get());
 }
 
 void WorkDocsClient::GetFolderPathAsync(const GetFolderPathRequest& request, const GetFolderPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFolderPath(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFolderPath, request, handler, context, m_executor.get());
 }
 
 GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& request) const
@@ -1308,18 +1105,12 @@ GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& requ
 
 GetResourcesOutcomeCallable WorkDocsClient::GetResourcesCallable(const GetResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResources, request, m_executor.get());
 }
 
 void WorkDocsClient::GetResourcesAsync(const GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResources, request, handler, context, m_executor.get());
 }
 
 InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUpload(const InitiateDocumentVersionUploadRequest& request) const
@@ -1333,18 +1124,12 @@ InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUplo
 
 InitiateDocumentVersionUploadOutcomeCallable WorkDocsClient::InitiateDocumentVersionUploadCallable(const InitiateDocumentVersionUploadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InitiateDocumentVersionUploadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InitiateDocumentVersionUpload(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(InitiateDocumentVersionUpload, request, m_executor.get());
 }
 
 void WorkDocsClient::InitiateDocumentVersionUploadAsync(const InitiateDocumentVersionUploadRequest& request, const InitiateDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, InitiateDocumentVersionUpload(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(InitiateDocumentVersionUpload, request, handler, context, m_executor.get());
 }
 
 RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions(const RemoveAllResourcePermissionsRequest& request) const
@@ -1365,18 +1150,12 @@ RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions
 
 RemoveAllResourcePermissionsOutcomeCallable WorkDocsClient::RemoveAllResourcePermissionsCallable(const RemoveAllResourcePermissionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveAllResourcePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveAllResourcePermissions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveAllResourcePermissions, request, m_executor.get());
 }
 
 void WorkDocsClient::RemoveAllResourcePermissionsAsync(const RemoveAllResourcePermissionsRequest& request, const RemoveAllResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveAllResourcePermissions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveAllResourcePermissions, request, handler, context, m_executor.get());
 }
 
 RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const RemoveResourcePermissionRequest& request) const
@@ -1403,18 +1182,12 @@ RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const R
 
 RemoveResourcePermissionOutcomeCallable WorkDocsClient::RemoveResourcePermissionCallable(const RemoveResourcePermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveResourcePermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveResourcePermission, request, m_executor.get());
 }
 
 void WorkDocsClient::RemoveResourcePermissionAsync(const RemoveResourcePermissionRequest& request, const RemoveResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveResourcePermission(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveResourcePermission, request, handler, context, m_executor.get());
 }
 
 RestoreDocumentVersionsOutcome WorkDocsClient::RestoreDocumentVersions(const RestoreDocumentVersionsRequest& request) const
@@ -1434,18 +1207,12 @@ RestoreDocumentVersionsOutcome WorkDocsClient::RestoreDocumentVersions(const Res
 
 RestoreDocumentVersionsOutcomeCallable WorkDocsClient::RestoreDocumentVersionsCallable(const RestoreDocumentVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RestoreDocumentVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreDocumentVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RestoreDocumentVersions, request, m_executor.get());
 }
 
 void WorkDocsClient::RestoreDocumentVersionsAsync(const RestoreDocumentVersionsRequest& request, const RestoreDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RestoreDocumentVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RestoreDocumentVersions, request, handler, context, m_executor.get());
 }
 
 UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest& request) const
@@ -1465,18 +1232,12 @@ UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest
 
 UpdateDocumentOutcomeCallable WorkDocsClient::UpdateDocumentCallable(const UpdateDocumentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDocumentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDocument(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDocument, request, m_executor.get());
 }
 
 void WorkDocsClient::UpdateDocumentAsync(const UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDocument(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDocument, request, handler, context, m_executor.get());
 }
 
 UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateDocumentVersionRequest& request) const
@@ -1503,18 +1264,12 @@ UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateD
 
 UpdateDocumentVersionOutcomeCallable WorkDocsClient::UpdateDocumentVersionCallable(const UpdateDocumentVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDocumentVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDocumentVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDocumentVersion, request, m_executor.get());
 }
 
 void WorkDocsClient::UpdateDocumentVersionAsync(const UpdateDocumentVersionRequest& request, const UpdateDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDocumentVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDocumentVersion, request, handler, context, m_executor.get());
 }
 
 UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& request) const
@@ -1534,18 +1289,12 @@ UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& requ
 
 UpdateFolderOutcomeCallable WorkDocsClient::UpdateFolderCallable(const UpdateFolderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFolder(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFolder, request, m_executor.get());
 }
 
 void WorkDocsClient::UpdateFolderAsync(const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFolder(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFolder, request, handler, context, m_executor.get());
 }
 
 UpdateUserOutcome WorkDocsClient::UpdateUser(const UpdateUserRequest& request) const
@@ -1565,17 +1314,11 @@ UpdateUserOutcome WorkDocsClient::UpdateUser(const UpdateUserRequest& request) c
 
 UpdateUserOutcomeCallable WorkDocsClient::UpdateUserCallable(const UpdateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateUser, request, m_executor.get());
 }
 
 void WorkDocsClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateUser, request, handler, context, m_executor.get());
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -93,10 +94,10 @@ MobileClient::MobileClient(const std::shared_ptr<AWSCredentialsProvider>& creden
     /* Legacy constructors due deprecation */
   MobileClient::MobileClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MobileErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -108,10 +109,10 @@ MobileClient::MobileClient(const std::shared_ptr<AWSCredentialsProvider>& creden
 MobileClient::MobileClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MobileErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -123,10 +124,10 @@ MobileClient::MobileClient(const AWSCredentials& credentials,
 MobileClient::MobileClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MobileErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -169,18 +170,12 @@ CreateProjectOutcome MobileClient::CreateProject(const CreateProjectRequest& req
 
 CreateProjectOutcomeCallable MobileClient::CreateProjectCallable(const CreateProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateProject, request, m_executor.get());
 }
 
 void MobileClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateProject, request, handler, context, m_executor.get());
 }
 
 DeleteProjectOutcome MobileClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -200,18 +195,12 @@ DeleteProjectOutcome MobileClient::DeleteProject(const DeleteProjectRequest& req
 
 DeleteProjectOutcomeCallable MobileClient::DeleteProjectCallable(const DeleteProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteProject, request, m_executor.get());
 }
 
 void MobileClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteProject, request, handler, context, m_executor.get());
 }
 
 DescribeBundleOutcome MobileClient::DescribeBundle(const DescribeBundleRequest& request) const
@@ -231,18 +220,12 @@ DescribeBundleOutcome MobileClient::DescribeBundle(const DescribeBundleRequest& 
 
 DescribeBundleOutcomeCallable MobileClient::DescribeBundleCallable(const DescribeBundleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBundleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBundle(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeBundle, request, m_executor.get());
 }
 
 void MobileClient::DescribeBundleAsync(const DescribeBundleRequest& request, const DescribeBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeBundle(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeBundle, request, handler, context, m_executor.get());
 }
 
 DescribeProjectOutcome MobileClient::DescribeProject(const DescribeProjectRequest& request) const
@@ -261,18 +244,12 @@ DescribeProjectOutcome MobileClient::DescribeProject(const DescribeProjectReques
 
 DescribeProjectOutcomeCallable MobileClient::DescribeProjectCallable(const DescribeProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeProject, request, m_executor.get());
 }
 
 void MobileClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeProject, request, handler, context, m_executor.get());
 }
 
 ExportBundleOutcome MobileClient::ExportBundle(const ExportBundleRequest& request) const
@@ -292,18 +269,12 @@ ExportBundleOutcome MobileClient::ExportBundle(const ExportBundleRequest& reques
 
 ExportBundleOutcomeCallable MobileClient::ExportBundleCallable(const ExportBundleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExportBundleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportBundle(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExportBundle, request, m_executor.get());
 }
 
 void MobileClient::ExportBundleAsync(const ExportBundleRequest& request, const ExportBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExportBundle(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExportBundle, request, handler, context, m_executor.get());
 }
 
 ExportProjectOutcome MobileClient::ExportProject(const ExportProjectRequest& request) const
@@ -323,18 +294,12 @@ ExportProjectOutcome MobileClient::ExportProject(const ExportProjectRequest& req
 
 ExportProjectOutcomeCallable MobileClient::ExportProjectCallable(const ExportProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExportProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExportProject, request, m_executor.get());
 }
 
 void MobileClient::ExportProjectAsync(const ExportProjectRequest& request, const ExportProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExportProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExportProject, request, handler, context, m_executor.get());
 }
 
 ListBundlesOutcome MobileClient::ListBundles(const ListBundlesRequest& request) const
@@ -348,18 +313,12 @@ ListBundlesOutcome MobileClient::ListBundles(const ListBundlesRequest& request) 
 
 ListBundlesOutcomeCallable MobileClient::ListBundlesCallable(const ListBundlesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBundlesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBundles(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBundles, request, m_executor.get());
 }
 
 void MobileClient::ListBundlesAsync(const ListBundlesRequest& request, const ListBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBundles(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBundles, request, handler, context, m_executor.get());
 }
 
 ListProjectsOutcome MobileClient::ListProjects(const ListProjectsRequest& request) const
@@ -373,18 +332,12 @@ ListProjectsOutcome MobileClient::ListProjects(const ListProjectsRequest& reques
 
 ListProjectsOutcomeCallable MobileClient::ListProjectsCallable(const ListProjectsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProjectsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProjects(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListProjects, request, m_executor.get());
 }
 
 void MobileClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListProjects(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListProjects, request, handler, context, m_executor.get());
 }
 
 UpdateProjectOutcome MobileClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -403,17 +356,11 @@ UpdateProjectOutcome MobileClient::UpdateProject(const UpdateProjectRequest& req
 
 UpdateProjectOutcomeCallable MobileClient::UpdateProjectCallable(const UpdateProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateProject, request, m_executor.get());
 }
 
 void MobileClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateProject, request, handler, context, m_executor.get());
 }
 

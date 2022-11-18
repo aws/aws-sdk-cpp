@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -210,18 +211,12 @@ CancelImageCreationOutcome ImagebuilderClient::CancelImageCreation(const CancelI
 
 CancelImageCreationOutcomeCallable ImagebuilderClient::CancelImageCreationCallable(const CancelImageCreationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelImageCreationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelImageCreation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelImageCreation, request, m_executor.get());
 }
 
 void ImagebuilderClient::CancelImageCreationAsync(const CancelImageCreationRequest& request, const CancelImageCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelImageCreation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelImageCreation, request, handler, context, m_executor.get());
 }
 
 CreateComponentOutcome ImagebuilderClient::CreateComponent(const CreateComponentRequest& request) const
@@ -235,18 +230,12 @@ CreateComponentOutcome ImagebuilderClient::CreateComponent(const CreateComponent
 
 CreateComponentOutcomeCallable ImagebuilderClient::CreateComponentCallable(const CreateComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateComponent, request, m_executor.get());
 }
 
 void ImagebuilderClient::CreateComponentAsync(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateComponent, request, handler, context, m_executor.get());
 }
 
 CreateContainerRecipeOutcome ImagebuilderClient::CreateContainerRecipe(const CreateContainerRecipeRequest& request) const
@@ -260,18 +249,12 @@ CreateContainerRecipeOutcome ImagebuilderClient::CreateContainerRecipe(const Cre
 
 CreateContainerRecipeOutcomeCallable ImagebuilderClient::CreateContainerRecipeCallable(const CreateContainerRecipeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateContainerRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContainerRecipe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateContainerRecipe, request, m_executor.get());
 }
 
 void ImagebuilderClient::CreateContainerRecipeAsync(const CreateContainerRecipeRequest& request, const CreateContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateContainerRecipe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateContainerRecipe, request, handler, context, m_executor.get());
 }
 
 CreateDistributionConfigurationOutcome ImagebuilderClient::CreateDistributionConfiguration(const CreateDistributionConfigurationRequest& request) const
@@ -285,18 +268,12 @@ CreateDistributionConfigurationOutcome ImagebuilderClient::CreateDistributionCon
 
 CreateDistributionConfigurationOutcomeCallable ImagebuilderClient::CreateDistributionConfigurationCallable(const CreateDistributionConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDistributionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDistributionConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDistributionConfiguration, request, m_executor.get());
 }
 
 void ImagebuilderClient::CreateDistributionConfigurationAsync(const CreateDistributionConfigurationRequest& request, const CreateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDistributionConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDistributionConfiguration, request, handler, context, m_executor.get());
 }
 
 CreateImageOutcome ImagebuilderClient::CreateImage(const CreateImageRequest& request) const
@@ -310,18 +287,12 @@ CreateImageOutcome ImagebuilderClient::CreateImage(const CreateImageRequest& req
 
 CreateImageOutcomeCallable ImagebuilderClient::CreateImageCallable(const CreateImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateImage, request, m_executor.get());
 }
 
 void ImagebuilderClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateImage, request, handler, context, m_executor.get());
 }
 
 CreateImagePipelineOutcome ImagebuilderClient::CreateImagePipeline(const CreateImagePipelineRequest& request) const
@@ -335,18 +306,12 @@ CreateImagePipelineOutcome ImagebuilderClient::CreateImagePipeline(const CreateI
 
 CreateImagePipelineOutcomeCallable ImagebuilderClient::CreateImagePipelineCallable(const CreateImagePipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateImagePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateImagePipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateImagePipeline, request, m_executor.get());
 }
 
 void ImagebuilderClient::CreateImagePipelineAsync(const CreateImagePipelineRequest& request, const CreateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateImagePipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateImagePipeline, request, handler, context, m_executor.get());
 }
 
 CreateImageRecipeOutcome ImagebuilderClient::CreateImageRecipe(const CreateImageRecipeRequest& request) const
@@ -360,18 +325,12 @@ CreateImageRecipeOutcome ImagebuilderClient::CreateImageRecipe(const CreateImage
 
 CreateImageRecipeOutcomeCallable ImagebuilderClient::CreateImageRecipeCallable(const CreateImageRecipeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateImageRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateImageRecipe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateImageRecipe, request, m_executor.get());
 }
 
 void ImagebuilderClient::CreateImageRecipeAsync(const CreateImageRecipeRequest& request, const CreateImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateImageRecipe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateImageRecipe, request, handler, context, m_executor.get());
 }
 
 CreateInfrastructureConfigurationOutcome ImagebuilderClient::CreateInfrastructureConfiguration(const CreateInfrastructureConfigurationRequest& request) const
@@ -385,18 +344,12 @@ CreateInfrastructureConfigurationOutcome ImagebuilderClient::CreateInfrastructur
 
 CreateInfrastructureConfigurationOutcomeCallable ImagebuilderClient::CreateInfrastructureConfigurationCallable(const CreateInfrastructureConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateInfrastructureConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInfrastructureConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateInfrastructureConfiguration, request, m_executor.get());
 }
 
 void ImagebuilderClient::CreateInfrastructureConfigurationAsync(const CreateInfrastructureConfigurationRequest& request, const CreateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateInfrastructureConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateInfrastructureConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteComponentOutcome ImagebuilderClient::DeleteComponent(const DeleteComponentRequest& request) const
@@ -415,18 +368,12 @@ DeleteComponentOutcome ImagebuilderClient::DeleteComponent(const DeleteComponent
 
 DeleteComponentOutcomeCallable ImagebuilderClient::DeleteComponentCallable(const DeleteComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteComponent, request, m_executor.get());
 }
 
 void ImagebuilderClient::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteComponent, request, handler, context, m_executor.get());
 }
 
 DeleteContainerRecipeOutcome ImagebuilderClient::DeleteContainerRecipe(const DeleteContainerRecipeRequest& request) const
@@ -445,18 +392,12 @@ DeleteContainerRecipeOutcome ImagebuilderClient::DeleteContainerRecipe(const Del
 
 DeleteContainerRecipeOutcomeCallable ImagebuilderClient::DeleteContainerRecipeCallable(const DeleteContainerRecipeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteContainerRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContainerRecipe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteContainerRecipe, request, m_executor.get());
 }
 
 void ImagebuilderClient::DeleteContainerRecipeAsync(const DeleteContainerRecipeRequest& request, const DeleteContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteContainerRecipe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteContainerRecipe, request, handler, context, m_executor.get());
 }
 
 DeleteDistributionConfigurationOutcome ImagebuilderClient::DeleteDistributionConfiguration(const DeleteDistributionConfigurationRequest& request) const
@@ -475,18 +416,12 @@ DeleteDistributionConfigurationOutcome ImagebuilderClient::DeleteDistributionCon
 
 DeleteDistributionConfigurationOutcomeCallable ImagebuilderClient::DeleteDistributionConfigurationCallable(const DeleteDistributionConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDistributionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDistributionConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDistributionConfiguration, request, m_executor.get());
 }
 
 void ImagebuilderClient::DeleteDistributionConfigurationAsync(const DeleteDistributionConfigurationRequest& request, const DeleteDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDistributionConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDistributionConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteImageOutcome ImagebuilderClient::DeleteImage(const DeleteImageRequest& request) const
@@ -505,18 +440,12 @@ DeleteImageOutcome ImagebuilderClient::DeleteImage(const DeleteImageRequest& req
 
 DeleteImageOutcomeCallable ImagebuilderClient::DeleteImageCallable(const DeleteImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteImage, request, m_executor.get());
 }
 
 void ImagebuilderClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteImage, request, handler, context, m_executor.get());
 }
 
 DeleteImagePipelineOutcome ImagebuilderClient::DeleteImagePipeline(const DeleteImagePipelineRequest& request) const
@@ -535,18 +464,12 @@ DeleteImagePipelineOutcome ImagebuilderClient::DeleteImagePipeline(const DeleteI
 
 DeleteImagePipelineOutcomeCallable ImagebuilderClient::DeleteImagePipelineCallable(const DeleteImagePipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteImagePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImagePipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteImagePipeline, request, m_executor.get());
 }
 
 void ImagebuilderClient::DeleteImagePipelineAsync(const DeleteImagePipelineRequest& request, const DeleteImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteImagePipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteImagePipeline, request, handler, context, m_executor.get());
 }
 
 DeleteImageRecipeOutcome ImagebuilderClient::DeleteImageRecipe(const DeleteImageRecipeRequest& request) const
@@ -565,18 +488,12 @@ DeleteImageRecipeOutcome ImagebuilderClient::DeleteImageRecipe(const DeleteImage
 
 DeleteImageRecipeOutcomeCallable ImagebuilderClient::DeleteImageRecipeCallable(const DeleteImageRecipeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteImageRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImageRecipe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteImageRecipe, request, m_executor.get());
 }
 
 void ImagebuilderClient::DeleteImageRecipeAsync(const DeleteImageRecipeRequest& request, const DeleteImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteImageRecipe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteImageRecipe, request, handler, context, m_executor.get());
 }
 
 DeleteInfrastructureConfigurationOutcome ImagebuilderClient::DeleteInfrastructureConfiguration(const DeleteInfrastructureConfigurationRequest& request) const
@@ -595,18 +512,12 @@ DeleteInfrastructureConfigurationOutcome ImagebuilderClient::DeleteInfrastructur
 
 DeleteInfrastructureConfigurationOutcomeCallable ImagebuilderClient::DeleteInfrastructureConfigurationCallable(const DeleteInfrastructureConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteInfrastructureConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInfrastructureConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteInfrastructureConfiguration, request, m_executor.get());
 }
 
 void ImagebuilderClient::DeleteInfrastructureConfigurationAsync(const DeleteInfrastructureConfigurationRequest& request, const DeleteInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteInfrastructureConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteInfrastructureConfiguration, request, handler, context, m_executor.get());
 }
 
 GetComponentOutcome ImagebuilderClient::GetComponent(const GetComponentRequest& request) const
@@ -625,18 +536,12 @@ GetComponentOutcome ImagebuilderClient::GetComponent(const GetComponentRequest& 
 
 GetComponentOutcomeCallable ImagebuilderClient::GetComponentCallable(const GetComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetComponent, request, m_executor.get());
 }
 
 void ImagebuilderClient::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetComponent, request, handler, context, m_executor.get());
 }
 
 GetComponentPolicyOutcome ImagebuilderClient::GetComponentPolicy(const GetComponentPolicyRequest& request) const
@@ -655,18 +560,12 @@ GetComponentPolicyOutcome ImagebuilderClient::GetComponentPolicy(const GetCompon
 
 GetComponentPolicyOutcomeCallable ImagebuilderClient::GetComponentPolicyCallable(const GetComponentPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetComponentPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComponentPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetComponentPolicy, request, m_executor.get());
 }
 
 void ImagebuilderClient::GetComponentPolicyAsync(const GetComponentPolicyRequest& request, const GetComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetComponentPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetComponentPolicy, request, handler, context, m_executor.get());
 }
 
 GetContainerRecipeOutcome ImagebuilderClient::GetContainerRecipe(const GetContainerRecipeRequest& request) const
@@ -685,18 +584,12 @@ GetContainerRecipeOutcome ImagebuilderClient::GetContainerRecipe(const GetContai
 
 GetContainerRecipeOutcomeCallable ImagebuilderClient::GetContainerRecipeCallable(const GetContainerRecipeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetContainerRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContainerRecipe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetContainerRecipe, request, m_executor.get());
 }
 
 void ImagebuilderClient::GetContainerRecipeAsync(const GetContainerRecipeRequest& request, const GetContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetContainerRecipe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetContainerRecipe, request, handler, context, m_executor.get());
 }
 
 GetContainerRecipePolicyOutcome ImagebuilderClient::GetContainerRecipePolicy(const GetContainerRecipePolicyRequest& request) const
@@ -715,18 +608,12 @@ GetContainerRecipePolicyOutcome ImagebuilderClient::GetContainerRecipePolicy(con
 
 GetContainerRecipePolicyOutcomeCallable ImagebuilderClient::GetContainerRecipePolicyCallable(const GetContainerRecipePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetContainerRecipePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContainerRecipePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetContainerRecipePolicy, request, m_executor.get());
 }
 
 void ImagebuilderClient::GetContainerRecipePolicyAsync(const GetContainerRecipePolicyRequest& request, const GetContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetContainerRecipePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetContainerRecipePolicy, request, handler, context, m_executor.get());
 }
 
 GetDistributionConfigurationOutcome ImagebuilderClient::GetDistributionConfiguration(const GetDistributionConfigurationRequest& request) const
@@ -745,18 +632,12 @@ GetDistributionConfigurationOutcome ImagebuilderClient::GetDistributionConfigura
 
 GetDistributionConfigurationOutcomeCallable ImagebuilderClient::GetDistributionConfigurationCallable(const GetDistributionConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDistributionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDistributionConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDistributionConfiguration, request, m_executor.get());
 }
 
 void ImagebuilderClient::GetDistributionConfigurationAsync(const GetDistributionConfigurationRequest& request, const GetDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDistributionConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDistributionConfiguration, request, handler, context, m_executor.get());
 }
 
 GetImageOutcome ImagebuilderClient::GetImage(const GetImageRequest& request) const
@@ -775,18 +656,12 @@ GetImageOutcome ImagebuilderClient::GetImage(const GetImageRequest& request) con
 
 GetImageOutcomeCallable ImagebuilderClient::GetImageCallable(const GetImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetImage, request, m_executor.get());
 }
 
 void ImagebuilderClient::GetImageAsync(const GetImageRequest& request, const GetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetImage, request, handler, context, m_executor.get());
 }
 
 GetImagePipelineOutcome ImagebuilderClient::GetImagePipeline(const GetImagePipelineRequest& request) const
@@ -805,18 +680,12 @@ GetImagePipelineOutcome ImagebuilderClient::GetImagePipeline(const GetImagePipel
 
 GetImagePipelineOutcomeCallable ImagebuilderClient::GetImagePipelineCallable(const GetImagePipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetImagePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImagePipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetImagePipeline, request, m_executor.get());
 }
 
 void ImagebuilderClient::GetImagePipelineAsync(const GetImagePipelineRequest& request, const GetImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetImagePipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetImagePipeline, request, handler, context, m_executor.get());
 }
 
 GetImagePolicyOutcome ImagebuilderClient::GetImagePolicy(const GetImagePolicyRequest& request) const
@@ -835,18 +704,12 @@ GetImagePolicyOutcome ImagebuilderClient::GetImagePolicy(const GetImagePolicyReq
 
 GetImagePolicyOutcomeCallable ImagebuilderClient::GetImagePolicyCallable(const GetImagePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetImagePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImagePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetImagePolicy, request, m_executor.get());
 }
 
 void ImagebuilderClient::GetImagePolicyAsync(const GetImagePolicyRequest& request, const GetImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetImagePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetImagePolicy, request, handler, context, m_executor.get());
 }
 
 GetImageRecipeOutcome ImagebuilderClient::GetImageRecipe(const GetImageRecipeRequest& request) const
@@ -865,18 +728,12 @@ GetImageRecipeOutcome ImagebuilderClient::GetImageRecipe(const GetImageRecipeReq
 
 GetImageRecipeOutcomeCallable ImagebuilderClient::GetImageRecipeCallable(const GetImageRecipeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetImageRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImageRecipe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetImageRecipe, request, m_executor.get());
 }
 
 void ImagebuilderClient::GetImageRecipeAsync(const GetImageRecipeRequest& request, const GetImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetImageRecipe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetImageRecipe, request, handler, context, m_executor.get());
 }
 
 GetImageRecipePolicyOutcome ImagebuilderClient::GetImageRecipePolicy(const GetImageRecipePolicyRequest& request) const
@@ -895,18 +752,12 @@ GetImageRecipePolicyOutcome ImagebuilderClient::GetImageRecipePolicy(const GetIm
 
 GetImageRecipePolicyOutcomeCallable ImagebuilderClient::GetImageRecipePolicyCallable(const GetImageRecipePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetImageRecipePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImageRecipePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetImageRecipePolicy, request, m_executor.get());
 }
 
 void ImagebuilderClient::GetImageRecipePolicyAsync(const GetImageRecipePolicyRequest& request, const GetImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetImageRecipePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetImageRecipePolicy, request, handler, context, m_executor.get());
 }
 
 GetInfrastructureConfigurationOutcome ImagebuilderClient::GetInfrastructureConfiguration(const GetInfrastructureConfigurationRequest& request) const
@@ -925,18 +776,12 @@ GetInfrastructureConfigurationOutcome ImagebuilderClient::GetInfrastructureConfi
 
 GetInfrastructureConfigurationOutcomeCallable ImagebuilderClient::GetInfrastructureConfigurationCallable(const GetInfrastructureConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetInfrastructureConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInfrastructureConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetInfrastructureConfiguration, request, m_executor.get());
 }
 
 void ImagebuilderClient::GetInfrastructureConfigurationAsync(const GetInfrastructureConfigurationRequest& request, const GetInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetInfrastructureConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetInfrastructureConfiguration, request, handler, context, m_executor.get());
 }
 
 ImportComponentOutcome ImagebuilderClient::ImportComponent(const ImportComponentRequest& request) const
@@ -950,18 +795,12 @@ ImportComponentOutcome ImagebuilderClient::ImportComponent(const ImportComponent
 
 ImportComponentOutcomeCallable ImagebuilderClient::ImportComponentCallable(const ImportComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportComponent, request, m_executor.get());
 }
 
 void ImagebuilderClient::ImportComponentAsync(const ImportComponentRequest& request, const ImportComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportComponent, request, handler, context, m_executor.get());
 }
 
 ImportVmImageOutcome ImagebuilderClient::ImportVmImage(const ImportVmImageRequest& request) const
@@ -975,18 +814,12 @@ ImportVmImageOutcome ImagebuilderClient::ImportVmImage(const ImportVmImageReques
 
 ImportVmImageOutcomeCallable ImagebuilderClient::ImportVmImageCallable(const ImportVmImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportVmImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportVmImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportVmImage, request, m_executor.get());
 }
 
 void ImagebuilderClient::ImportVmImageAsync(const ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportVmImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportVmImage, request, handler, context, m_executor.get());
 }
 
 ListComponentBuildVersionsOutcome ImagebuilderClient::ListComponentBuildVersions(const ListComponentBuildVersionsRequest& request) const
@@ -1000,18 +833,12 @@ ListComponentBuildVersionsOutcome ImagebuilderClient::ListComponentBuildVersions
 
 ListComponentBuildVersionsOutcomeCallable ImagebuilderClient::ListComponentBuildVersionsCallable(const ListComponentBuildVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListComponentBuildVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComponentBuildVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListComponentBuildVersions, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListComponentBuildVersionsAsync(const ListComponentBuildVersionsRequest& request, const ListComponentBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListComponentBuildVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListComponentBuildVersions, request, handler, context, m_executor.get());
 }
 
 ListComponentsOutcome ImagebuilderClient::ListComponents(const ListComponentsRequest& request) const
@@ -1025,18 +852,12 @@ ListComponentsOutcome ImagebuilderClient::ListComponents(const ListComponentsReq
 
 ListComponentsOutcomeCallable ImagebuilderClient::ListComponentsCallable(const ListComponentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComponents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListComponents, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListComponents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListComponents, request, handler, context, m_executor.get());
 }
 
 ListContainerRecipesOutcome ImagebuilderClient::ListContainerRecipes(const ListContainerRecipesRequest& request) const
@@ -1050,18 +871,12 @@ ListContainerRecipesOutcome ImagebuilderClient::ListContainerRecipes(const ListC
 
 ListContainerRecipesOutcomeCallable ImagebuilderClient::ListContainerRecipesCallable(const ListContainerRecipesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListContainerRecipesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContainerRecipes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListContainerRecipes, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListContainerRecipesAsync(const ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListContainerRecipes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListContainerRecipes, request, handler, context, m_executor.get());
 }
 
 ListDistributionConfigurationsOutcome ImagebuilderClient::ListDistributionConfigurations(const ListDistributionConfigurationsRequest& request) const
@@ -1075,18 +890,12 @@ ListDistributionConfigurationsOutcome ImagebuilderClient::ListDistributionConfig
 
 ListDistributionConfigurationsOutcomeCallable ImagebuilderClient::ListDistributionConfigurationsCallable(const ListDistributionConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDistributionConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributionConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDistributionConfigurations, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListDistributionConfigurationsAsync(const ListDistributionConfigurationsRequest& request, const ListDistributionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDistributionConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDistributionConfigurations, request, handler, context, m_executor.get());
 }
 
 ListImageBuildVersionsOutcome ImagebuilderClient::ListImageBuildVersions(const ListImageBuildVersionsRequest& request) const
@@ -1100,18 +909,12 @@ ListImageBuildVersionsOutcome ImagebuilderClient::ListImageBuildVersions(const L
 
 ListImageBuildVersionsOutcomeCallable ImagebuilderClient::ListImageBuildVersionsCallable(const ListImageBuildVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListImageBuildVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImageBuildVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListImageBuildVersions, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListImageBuildVersionsAsync(const ListImageBuildVersionsRequest& request, const ListImageBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListImageBuildVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListImageBuildVersions, request, handler, context, m_executor.get());
 }
 
 ListImagePackagesOutcome ImagebuilderClient::ListImagePackages(const ListImagePackagesRequest& request) const
@@ -1125,18 +928,12 @@ ListImagePackagesOutcome ImagebuilderClient::ListImagePackages(const ListImagePa
 
 ListImagePackagesOutcomeCallable ImagebuilderClient::ListImagePackagesCallable(const ListImagePackagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListImagePackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImagePackages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListImagePackages, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListImagePackagesAsync(const ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListImagePackages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListImagePackages, request, handler, context, m_executor.get());
 }
 
 ListImagePipelineImagesOutcome ImagebuilderClient::ListImagePipelineImages(const ListImagePipelineImagesRequest& request) const
@@ -1150,18 +947,12 @@ ListImagePipelineImagesOutcome ImagebuilderClient::ListImagePipelineImages(const
 
 ListImagePipelineImagesOutcomeCallable ImagebuilderClient::ListImagePipelineImagesCallable(const ListImagePipelineImagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListImagePipelineImagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImagePipelineImages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListImagePipelineImages, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListImagePipelineImagesAsync(const ListImagePipelineImagesRequest& request, const ListImagePipelineImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListImagePipelineImages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListImagePipelineImages, request, handler, context, m_executor.get());
 }
 
 ListImagePipelinesOutcome ImagebuilderClient::ListImagePipelines(const ListImagePipelinesRequest& request) const
@@ -1175,18 +966,12 @@ ListImagePipelinesOutcome ImagebuilderClient::ListImagePipelines(const ListImage
 
 ListImagePipelinesOutcomeCallable ImagebuilderClient::ListImagePipelinesCallable(const ListImagePipelinesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListImagePipelinesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImagePipelines(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListImagePipelines, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListImagePipelinesAsync(const ListImagePipelinesRequest& request, const ListImagePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListImagePipelines(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListImagePipelines, request, handler, context, m_executor.get());
 }
 
 ListImageRecipesOutcome ImagebuilderClient::ListImageRecipes(const ListImageRecipesRequest& request) const
@@ -1200,18 +985,12 @@ ListImageRecipesOutcome ImagebuilderClient::ListImageRecipes(const ListImageReci
 
 ListImageRecipesOutcomeCallable ImagebuilderClient::ListImageRecipesCallable(const ListImageRecipesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListImageRecipesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImageRecipes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListImageRecipes, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListImageRecipesAsync(const ListImageRecipesRequest& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListImageRecipes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListImageRecipes, request, handler, context, m_executor.get());
 }
 
 ListImagesOutcome ImagebuilderClient::ListImages(const ListImagesRequest& request) const
@@ -1225,18 +1004,12 @@ ListImagesOutcome ImagebuilderClient::ListImages(const ListImagesRequest& reques
 
 ListImagesOutcomeCallable ImagebuilderClient::ListImagesCallable(const ListImagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListImagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListImages, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListImagesAsync(const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListImages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListImages, request, handler, context, m_executor.get());
 }
 
 ListInfrastructureConfigurationsOutcome ImagebuilderClient::ListInfrastructureConfigurations(const ListInfrastructureConfigurationsRequest& request) const
@@ -1250,18 +1023,12 @@ ListInfrastructureConfigurationsOutcome ImagebuilderClient::ListInfrastructureCo
 
 ListInfrastructureConfigurationsOutcomeCallable ImagebuilderClient::ListInfrastructureConfigurationsCallable(const ListInfrastructureConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInfrastructureConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInfrastructureConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInfrastructureConfigurations, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListInfrastructureConfigurationsAsync(const ListInfrastructureConfigurationsRequest& request, const ListInfrastructureConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInfrastructureConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInfrastructureConfigurations, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ImagebuilderClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1281,18 +1048,12 @@ ListTagsForResourceOutcome ImagebuilderClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable ImagebuilderClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ImagebuilderClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutComponentPolicyOutcome ImagebuilderClient::PutComponentPolicy(const PutComponentPolicyRequest& request) const
@@ -1306,18 +1067,12 @@ PutComponentPolicyOutcome ImagebuilderClient::PutComponentPolicy(const PutCompon
 
 PutComponentPolicyOutcomeCallable ImagebuilderClient::PutComponentPolicyCallable(const PutComponentPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutComponentPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutComponentPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutComponentPolicy, request, m_executor.get());
 }
 
 void ImagebuilderClient::PutComponentPolicyAsync(const PutComponentPolicyRequest& request, const PutComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutComponentPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutComponentPolicy, request, handler, context, m_executor.get());
 }
 
 PutContainerRecipePolicyOutcome ImagebuilderClient::PutContainerRecipePolicy(const PutContainerRecipePolicyRequest& request) const
@@ -1331,18 +1086,12 @@ PutContainerRecipePolicyOutcome ImagebuilderClient::PutContainerRecipePolicy(con
 
 PutContainerRecipePolicyOutcomeCallable ImagebuilderClient::PutContainerRecipePolicyCallable(const PutContainerRecipePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutContainerRecipePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutContainerRecipePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutContainerRecipePolicy, request, m_executor.get());
 }
 
 void ImagebuilderClient::PutContainerRecipePolicyAsync(const PutContainerRecipePolicyRequest& request, const PutContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutContainerRecipePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutContainerRecipePolicy, request, handler, context, m_executor.get());
 }
 
 PutImagePolicyOutcome ImagebuilderClient::PutImagePolicy(const PutImagePolicyRequest& request) const
@@ -1356,18 +1105,12 @@ PutImagePolicyOutcome ImagebuilderClient::PutImagePolicy(const PutImagePolicyReq
 
 PutImagePolicyOutcomeCallable ImagebuilderClient::PutImagePolicyCallable(const PutImagePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutImagePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutImagePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutImagePolicy, request, m_executor.get());
 }
 
 void ImagebuilderClient::PutImagePolicyAsync(const PutImagePolicyRequest& request, const PutImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutImagePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutImagePolicy, request, handler, context, m_executor.get());
 }
 
 PutImageRecipePolicyOutcome ImagebuilderClient::PutImageRecipePolicy(const PutImageRecipePolicyRequest& request) const
@@ -1381,18 +1124,12 @@ PutImageRecipePolicyOutcome ImagebuilderClient::PutImageRecipePolicy(const PutIm
 
 PutImageRecipePolicyOutcomeCallable ImagebuilderClient::PutImageRecipePolicyCallable(const PutImageRecipePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutImageRecipePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutImageRecipePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutImageRecipePolicy, request, m_executor.get());
 }
 
 void ImagebuilderClient::PutImageRecipePolicyAsync(const PutImageRecipePolicyRequest& request, const PutImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutImageRecipePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutImageRecipePolicy, request, handler, context, m_executor.get());
 }
 
 StartImagePipelineExecutionOutcome ImagebuilderClient::StartImagePipelineExecution(const StartImagePipelineExecutionRequest& request) const
@@ -1406,18 +1143,12 @@ StartImagePipelineExecutionOutcome ImagebuilderClient::StartImagePipelineExecuti
 
 StartImagePipelineExecutionOutcomeCallable ImagebuilderClient::StartImagePipelineExecutionCallable(const StartImagePipelineExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartImagePipelineExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartImagePipelineExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartImagePipelineExecution, request, m_executor.get());
 }
 
 void ImagebuilderClient::StartImagePipelineExecutionAsync(const StartImagePipelineExecutionRequest& request, const StartImagePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartImagePipelineExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartImagePipelineExecution, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ImagebuilderClient::TagResource(const TagResourceRequest& request) const
@@ -1437,18 +1168,12 @@ TagResourceOutcome ImagebuilderClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable ImagebuilderClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ImagebuilderClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ImagebuilderClient::UntagResource(const UntagResourceRequest& request) const
@@ -1473,18 +1198,12 @@ UntagResourceOutcome ImagebuilderClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable ImagebuilderClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ImagebuilderClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateDistributionConfigurationOutcome ImagebuilderClient::UpdateDistributionConfiguration(const UpdateDistributionConfigurationRequest& request) const
@@ -1498,18 +1217,12 @@ UpdateDistributionConfigurationOutcome ImagebuilderClient::UpdateDistributionCon
 
 UpdateDistributionConfigurationOutcomeCallable ImagebuilderClient::UpdateDistributionConfigurationCallable(const UpdateDistributionConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDistributionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDistributionConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDistributionConfiguration, request, m_executor.get());
 }
 
 void ImagebuilderClient::UpdateDistributionConfigurationAsync(const UpdateDistributionConfigurationRequest& request, const UpdateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDistributionConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDistributionConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateImagePipelineOutcome ImagebuilderClient::UpdateImagePipeline(const UpdateImagePipelineRequest& request) const
@@ -1523,18 +1236,12 @@ UpdateImagePipelineOutcome ImagebuilderClient::UpdateImagePipeline(const UpdateI
 
 UpdateImagePipelineOutcomeCallable ImagebuilderClient::UpdateImagePipelineCallable(const UpdateImagePipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateImagePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateImagePipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateImagePipeline, request, m_executor.get());
 }
 
 void ImagebuilderClient::UpdateImagePipelineAsync(const UpdateImagePipelineRequest& request, const UpdateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateImagePipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateImagePipeline, request, handler, context, m_executor.get());
 }
 
 UpdateInfrastructureConfigurationOutcome ImagebuilderClient::UpdateInfrastructureConfiguration(const UpdateInfrastructureConfigurationRequest& request) const
@@ -1548,17 +1255,11 @@ UpdateInfrastructureConfigurationOutcome ImagebuilderClient::UpdateInfrastructur
 
 UpdateInfrastructureConfigurationOutcomeCallable ImagebuilderClient::UpdateInfrastructureConfigurationCallable(const UpdateInfrastructureConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateInfrastructureConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInfrastructureConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateInfrastructureConfiguration, request, m_executor.get());
 }
 
 void ImagebuilderClient::UpdateInfrastructureConfigurationAsync(const UpdateInfrastructureConfigurationRequest& request, const UpdateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateInfrastructureConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateInfrastructureConfiguration, request, handler, context, m_executor.get());
 }
 

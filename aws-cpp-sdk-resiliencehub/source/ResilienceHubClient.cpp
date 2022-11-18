@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -199,18 +200,12 @@ AddDraftAppVersionResourceMappingsOutcome ResilienceHubClient::AddDraftAppVersio
 
 AddDraftAppVersionResourceMappingsOutcomeCallable ResilienceHubClient::AddDraftAppVersionResourceMappingsCallable(const AddDraftAppVersionResourceMappingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddDraftAppVersionResourceMappingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddDraftAppVersionResourceMappings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddDraftAppVersionResourceMappings, request, m_executor.get());
 }
 
 void ResilienceHubClient::AddDraftAppVersionResourceMappingsAsync(const AddDraftAppVersionResourceMappingsRequest& request, const AddDraftAppVersionResourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddDraftAppVersionResourceMappings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddDraftAppVersionResourceMappings, request, handler, context, m_executor.get());
 }
 
 CreateAppOutcome ResilienceHubClient::CreateApp(const CreateAppRequest& request) const
@@ -224,18 +219,12 @@ CreateAppOutcome ResilienceHubClient::CreateApp(const CreateAppRequest& request)
 
 CreateAppOutcomeCallable ResilienceHubClient::CreateAppCallable(const CreateAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateApp, request, m_executor.get());
 }
 
 void ResilienceHubClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateApp, request, handler, context, m_executor.get());
 }
 
 CreateRecommendationTemplateOutcome ResilienceHubClient::CreateRecommendationTemplate(const CreateRecommendationTemplateRequest& request) const
@@ -249,18 +238,12 @@ CreateRecommendationTemplateOutcome ResilienceHubClient::CreateRecommendationTem
 
 CreateRecommendationTemplateOutcomeCallable ResilienceHubClient::CreateRecommendationTemplateCallable(const CreateRecommendationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRecommendationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRecommendationTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRecommendationTemplate, request, m_executor.get());
 }
 
 void ResilienceHubClient::CreateRecommendationTemplateAsync(const CreateRecommendationTemplateRequest& request, const CreateRecommendationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRecommendationTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRecommendationTemplate, request, handler, context, m_executor.get());
 }
 
 CreateResiliencyPolicyOutcome ResilienceHubClient::CreateResiliencyPolicy(const CreateResiliencyPolicyRequest& request) const
@@ -274,18 +257,12 @@ CreateResiliencyPolicyOutcome ResilienceHubClient::CreateResiliencyPolicy(const 
 
 CreateResiliencyPolicyOutcomeCallable ResilienceHubClient::CreateResiliencyPolicyCallable(const CreateResiliencyPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateResiliencyPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResiliencyPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateResiliencyPolicy, request, m_executor.get());
 }
 
 void ResilienceHubClient::CreateResiliencyPolicyAsync(const CreateResiliencyPolicyRequest& request, const CreateResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateResiliencyPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateResiliencyPolicy, request, handler, context, m_executor.get());
 }
 
 DeleteAppOutcome ResilienceHubClient::DeleteApp(const DeleteAppRequest& request) const
@@ -299,18 +276,12 @@ DeleteAppOutcome ResilienceHubClient::DeleteApp(const DeleteAppRequest& request)
 
 DeleteAppOutcomeCallable ResilienceHubClient::DeleteAppCallable(const DeleteAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteApp, request, m_executor.get());
 }
 
 void ResilienceHubClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteApp, request, handler, context, m_executor.get());
 }
 
 DeleteAppAssessmentOutcome ResilienceHubClient::DeleteAppAssessment(const DeleteAppAssessmentRequest& request) const
@@ -324,18 +295,12 @@ DeleteAppAssessmentOutcome ResilienceHubClient::DeleteAppAssessment(const Delete
 
 DeleteAppAssessmentOutcomeCallable ResilienceHubClient::DeleteAppAssessmentCallable(const DeleteAppAssessmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppAssessment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAppAssessment, request, m_executor.get());
 }
 
 void ResilienceHubClient::DeleteAppAssessmentAsync(const DeleteAppAssessmentRequest& request, const DeleteAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAppAssessment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAppAssessment, request, handler, context, m_executor.get());
 }
 
 DeleteRecommendationTemplateOutcome ResilienceHubClient::DeleteRecommendationTemplate(const DeleteRecommendationTemplateRequest& request) const
@@ -349,18 +314,12 @@ DeleteRecommendationTemplateOutcome ResilienceHubClient::DeleteRecommendationTem
 
 DeleteRecommendationTemplateOutcomeCallable ResilienceHubClient::DeleteRecommendationTemplateCallable(const DeleteRecommendationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRecommendationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecommendationTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRecommendationTemplate, request, m_executor.get());
 }
 
 void ResilienceHubClient::DeleteRecommendationTemplateAsync(const DeleteRecommendationTemplateRequest& request, const DeleteRecommendationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRecommendationTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRecommendationTemplate, request, handler, context, m_executor.get());
 }
 
 DeleteResiliencyPolicyOutcome ResilienceHubClient::DeleteResiliencyPolicy(const DeleteResiliencyPolicyRequest& request) const
@@ -374,18 +333,12 @@ DeleteResiliencyPolicyOutcome ResilienceHubClient::DeleteResiliencyPolicy(const 
 
 DeleteResiliencyPolicyOutcomeCallable ResilienceHubClient::DeleteResiliencyPolicyCallable(const DeleteResiliencyPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResiliencyPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResiliencyPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteResiliencyPolicy, request, m_executor.get());
 }
 
 void ResilienceHubClient::DeleteResiliencyPolicyAsync(const DeleteResiliencyPolicyRequest& request, const DeleteResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResiliencyPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteResiliencyPolicy, request, handler, context, m_executor.get());
 }
 
 DescribeAppOutcome ResilienceHubClient::DescribeApp(const DescribeAppRequest& request) const
@@ -399,18 +352,12 @@ DescribeAppOutcome ResilienceHubClient::DescribeApp(const DescribeAppRequest& re
 
 DescribeAppOutcomeCallable ResilienceHubClient::DescribeAppCallable(const DescribeAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeApp, request, m_executor.get());
 }
 
 void ResilienceHubClient::DescribeAppAsync(const DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeApp, request, handler, context, m_executor.get());
 }
 
 DescribeAppAssessmentOutcome ResilienceHubClient::DescribeAppAssessment(const DescribeAppAssessmentRequest& request) const
@@ -424,18 +371,12 @@ DescribeAppAssessmentOutcome ResilienceHubClient::DescribeAppAssessment(const De
 
 DescribeAppAssessmentOutcomeCallable ResilienceHubClient::DescribeAppAssessmentCallable(const DescribeAppAssessmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAppAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppAssessment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAppAssessment, request, m_executor.get());
 }
 
 void ResilienceHubClient::DescribeAppAssessmentAsync(const DescribeAppAssessmentRequest& request, const DescribeAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAppAssessment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAppAssessment, request, handler, context, m_executor.get());
 }
 
 DescribeAppVersionResourcesResolutionStatusOutcome ResilienceHubClient::DescribeAppVersionResourcesResolutionStatus(const DescribeAppVersionResourcesResolutionStatusRequest& request) const
@@ -449,18 +390,12 @@ DescribeAppVersionResourcesResolutionStatusOutcome ResilienceHubClient::Describe
 
 DescribeAppVersionResourcesResolutionStatusOutcomeCallable ResilienceHubClient::DescribeAppVersionResourcesResolutionStatusCallable(const DescribeAppVersionResourcesResolutionStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAppVersionResourcesResolutionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppVersionResourcesResolutionStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAppVersionResourcesResolutionStatus, request, m_executor.get());
 }
 
 void ResilienceHubClient::DescribeAppVersionResourcesResolutionStatusAsync(const DescribeAppVersionResourcesResolutionStatusRequest& request, const DescribeAppVersionResourcesResolutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAppVersionResourcesResolutionStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAppVersionResourcesResolutionStatus, request, handler, context, m_executor.get());
 }
 
 DescribeAppVersionTemplateOutcome ResilienceHubClient::DescribeAppVersionTemplate(const DescribeAppVersionTemplateRequest& request) const
@@ -474,18 +409,12 @@ DescribeAppVersionTemplateOutcome ResilienceHubClient::DescribeAppVersionTemplat
 
 DescribeAppVersionTemplateOutcomeCallable ResilienceHubClient::DescribeAppVersionTemplateCallable(const DescribeAppVersionTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAppVersionTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppVersionTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAppVersionTemplate, request, m_executor.get());
 }
 
 void ResilienceHubClient::DescribeAppVersionTemplateAsync(const DescribeAppVersionTemplateRequest& request, const DescribeAppVersionTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAppVersionTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAppVersionTemplate, request, handler, context, m_executor.get());
 }
 
 DescribeDraftAppVersionResourcesImportStatusOutcome ResilienceHubClient::DescribeDraftAppVersionResourcesImportStatus(const DescribeDraftAppVersionResourcesImportStatusRequest& request) const
@@ -499,18 +428,12 @@ DescribeDraftAppVersionResourcesImportStatusOutcome ResilienceHubClient::Describ
 
 DescribeDraftAppVersionResourcesImportStatusOutcomeCallable ResilienceHubClient::DescribeDraftAppVersionResourcesImportStatusCallable(const DescribeDraftAppVersionResourcesImportStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDraftAppVersionResourcesImportStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDraftAppVersionResourcesImportStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDraftAppVersionResourcesImportStatus, request, m_executor.get());
 }
 
 void ResilienceHubClient::DescribeDraftAppVersionResourcesImportStatusAsync(const DescribeDraftAppVersionResourcesImportStatusRequest& request, const DescribeDraftAppVersionResourcesImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDraftAppVersionResourcesImportStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDraftAppVersionResourcesImportStatus, request, handler, context, m_executor.get());
 }
 
 DescribeResiliencyPolicyOutcome ResilienceHubClient::DescribeResiliencyPolicy(const DescribeResiliencyPolicyRequest& request) const
@@ -524,18 +447,12 @@ DescribeResiliencyPolicyOutcome ResilienceHubClient::DescribeResiliencyPolicy(co
 
 DescribeResiliencyPolicyOutcomeCallable ResilienceHubClient::DescribeResiliencyPolicyCallable(const DescribeResiliencyPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeResiliencyPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResiliencyPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeResiliencyPolicy, request, m_executor.get());
 }
 
 void ResilienceHubClient::DescribeResiliencyPolicyAsync(const DescribeResiliencyPolicyRequest& request, const DescribeResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeResiliencyPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeResiliencyPolicy, request, handler, context, m_executor.get());
 }
 
 ImportResourcesToDraftAppVersionOutcome ResilienceHubClient::ImportResourcesToDraftAppVersion(const ImportResourcesToDraftAppVersionRequest& request) const
@@ -549,18 +466,12 @@ ImportResourcesToDraftAppVersionOutcome ResilienceHubClient::ImportResourcesToDr
 
 ImportResourcesToDraftAppVersionOutcomeCallable ResilienceHubClient::ImportResourcesToDraftAppVersionCallable(const ImportResourcesToDraftAppVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportResourcesToDraftAppVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportResourcesToDraftAppVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportResourcesToDraftAppVersion, request, m_executor.get());
 }
 
 void ResilienceHubClient::ImportResourcesToDraftAppVersionAsync(const ImportResourcesToDraftAppVersionRequest& request, const ImportResourcesToDraftAppVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportResourcesToDraftAppVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportResourcesToDraftAppVersion, request, handler, context, m_executor.get());
 }
 
 ListAlarmRecommendationsOutcome ResilienceHubClient::ListAlarmRecommendations(const ListAlarmRecommendationsRequest& request) const
@@ -574,18 +485,12 @@ ListAlarmRecommendationsOutcome ResilienceHubClient::ListAlarmRecommendations(co
 
 ListAlarmRecommendationsOutcomeCallable ResilienceHubClient::ListAlarmRecommendationsCallable(const ListAlarmRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAlarmRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAlarmRecommendations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAlarmRecommendations, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListAlarmRecommendationsAsync(const ListAlarmRecommendationsRequest& request, const ListAlarmRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAlarmRecommendations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAlarmRecommendations, request, handler, context, m_executor.get());
 }
 
 ListAppAssessmentsOutcome ResilienceHubClient::ListAppAssessments(const ListAppAssessmentsRequest& request) const
@@ -599,18 +504,12 @@ ListAppAssessmentsOutcome ResilienceHubClient::ListAppAssessments(const ListAppA
 
 ListAppAssessmentsOutcomeCallable ResilienceHubClient::ListAppAssessmentsCallable(const ListAppAssessmentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppAssessmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppAssessments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAppAssessments, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListAppAssessmentsAsync(const ListAppAssessmentsRequest& request, const ListAppAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAppAssessments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAppAssessments, request, handler, context, m_executor.get());
 }
 
 ListAppComponentCompliancesOutcome ResilienceHubClient::ListAppComponentCompliances(const ListAppComponentCompliancesRequest& request) const
@@ -624,18 +523,12 @@ ListAppComponentCompliancesOutcome ResilienceHubClient::ListAppComponentComplian
 
 ListAppComponentCompliancesOutcomeCallable ResilienceHubClient::ListAppComponentCompliancesCallable(const ListAppComponentCompliancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppComponentCompliancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppComponentCompliances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAppComponentCompliances, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListAppComponentCompliancesAsync(const ListAppComponentCompliancesRequest& request, const ListAppComponentCompliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAppComponentCompliances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAppComponentCompliances, request, handler, context, m_executor.get());
 }
 
 ListAppComponentRecommendationsOutcome ResilienceHubClient::ListAppComponentRecommendations(const ListAppComponentRecommendationsRequest& request) const
@@ -649,18 +542,12 @@ ListAppComponentRecommendationsOutcome ResilienceHubClient::ListAppComponentReco
 
 ListAppComponentRecommendationsOutcomeCallable ResilienceHubClient::ListAppComponentRecommendationsCallable(const ListAppComponentRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppComponentRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppComponentRecommendations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAppComponentRecommendations, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListAppComponentRecommendationsAsync(const ListAppComponentRecommendationsRequest& request, const ListAppComponentRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAppComponentRecommendations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAppComponentRecommendations, request, handler, context, m_executor.get());
 }
 
 ListAppVersionResourceMappingsOutcome ResilienceHubClient::ListAppVersionResourceMappings(const ListAppVersionResourceMappingsRequest& request) const
@@ -674,18 +561,12 @@ ListAppVersionResourceMappingsOutcome ResilienceHubClient::ListAppVersionResourc
 
 ListAppVersionResourceMappingsOutcomeCallable ResilienceHubClient::ListAppVersionResourceMappingsCallable(const ListAppVersionResourceMappingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppVersionResourceMappingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppVersionResourceMappings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAppVersionResourceMappings, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListAppVersionResourceMappingsAsync(const ListAppVersionResourceMappingsRequest& request, const ListAppVersionResourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAppVersionResourceMappings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAppVersionResourceMappings, request, handler, context, m_executor.get());
 }
 
 ListAppVersionResourcesOutcome ResilienceHubClient::ListAppVersionResources(const ListAppVersionResourcesRequest& request) const
@@ -699,18 +580,12 @@ ListAppVersionResourcesOutcome ResilienceHubClient::ListAppVersionResources(cons
 
 ListAppVersionResourcesOutcomeCallable ResilienceHubClient::ListAppVersionResourcesCallable(const ListAppVersionResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppVersionResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppVersionResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAppVersionResources, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListAppVersionResourcesAsync(const ListAppVersionResourcesRequest& request, const ListAppVersionResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAppVersionResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAppVersionResources, request, handler, context, m_executor.get());
 }
 
 ListAppVersionsOutcome ResilienceHubClient::ListAppVersions(const ListAppVersionsRequest& request) const
@@ -724,18 +599,12 @@ ListAppVersionsOutcome ResilienceHubClient::ListAppVersions(const ListAppVersion
 
 ListAppVersionsOutcomeCallable ResilienceHubClient::ListAppVersionsCallable(const ListAppVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAppVersions, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListAppVersionsAsync(const ListAppVersionsRequest& request, const ListAppVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAppVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAppVersions, request, handler, context, m_executor.get());
 }
 
 ListAppsOutcome ResilienceHubClient::ListApps(const ListAppsRequest& request) const
@@ -749,18 +618,12 @@ ListAppsOutcome ResilienceHubClient::ListApps(const ListAppsRequest& request) co
 
 ListAppsOutcomeCallable ResilienceHubClient::ListAppsCallable(const ListAppsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApps(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListApps, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListAppsAsync(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListApps(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListApps, request, handler, context, m_executor.get());
 }
 
 ListRecommendationTemplatesOutcome ResilienceHubClient::ListRecommendationTemplates(const ListRecommendationTemplatesRequest& request) const
@@ -779,18 +642,12 @@ ListRecommendationTemplatesOutcome ResilienceHubClient::ListRecommendationTempla
 
 ListRecommendationTemplatesOutcomeCallable ResilienceHubClient::ListRecommendationTemplatesCallable(const ListRecommendationTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRecommendationTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecommendationTemplates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRecommendationTemplates, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListRecommendationTemplatesAsync(const ListRecommendationTemplatesRequest& request, const ListRecommendationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRecommendationTemplates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRecommendationTemplates, request, handler, context, m_executor.get());
 }
 
 ListResiliencyPoliciesOutcome ResilienceHubClient::ListResiliencyPolicies(const ListResiliencyPoliciesRequest& request) const
@@ -804,18 +661,12 @@ ListResiliencyPoliciesOutcome ResilienceHubClient::ListResiliencyPolicies(const 
 
 ListResiliencyPoliciesOutcomeCallable ResilienceHubClient::ListResiliencyPoliciesCallable(const ListResiliencyPoliciesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListResiliencyPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResiliencyPolicies(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListResiliencyPolicies, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListResiliencyPoliciesAsync(const ListResiliencyPoliciesRequest& request, const ListResiliencyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListResiliencyPolicies(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListResiliencyPolicies, request, handler, context, m_executor.get());
 }
 
 ListSopRecommendationsOutcome ResilienceHubClient::ListSopRecommendations(const ListSopRecommendationsRequest& request) const
@@ -829,18 +680,12 @@ ListSopRecommendationsOutcome ResilienceHubClient::ListSopRecommendations(const 
 
 ListSopRecommendationsOutcomeCallable ResilienceHubClient::ListSopRecommendationsCallable(const ListSopRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSopRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSopRecommendations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSopRecommendations, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListSopRecommendationsAsync(const ListSopRecommendationsRequest& request, const ListSopRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSopRecommendations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSopRecommendations, request, handler, context, m_executor.get());
 }
 
 ListSuggestedResiliencyPoliciesOutcome ResilienceHubClient::ListSuggestedResiliencyPolicies(const ListSuggestedResiliencyPoliciesRequest& request) const
@@ -854,18 +699,12 @@ ListSuggestedResiliencyPoliciesOutcome ResilienceHubClient::ListSuggestedResilie
 
 ListSuggestedResiliencyPoliciesOutcomeCallable ResilienceHubClient::ListSuggestedResiliencyPoliciesCallable(const ListSuggestedResiliencyPoliciesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSuggestedResiliencyPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSuggestedResiliencyPolicies(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSuggestedResiliencyPolicies, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListSuggestedResiliencyPoliciesAsync(const ListSuggestedResiliencyPoliciesRequest& request, const ListSuggestedResiliencyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSuggestedResiliencyPolicies(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSuggestedResiliencyPolicies, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ResilienceHubClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -885,18 +724,12 @@ ListTagsForResourceOutcome ResilienceHubClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable ResilienceHubClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTestRecommendationsOutcome ResilienceHubClient::ListTestRecommendations(const ListTestRecommendationsRequest& request) const
@@ -910,18 +743,12 @@ ListTestRecommendationsOutcome ResilienceHubClient::ListTestRecommendations(cons
 
 ListTestRecommendationsOutcomeCallable ResilienceHubClient::ListTestRecommendationsCallable(const ListTestRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTestRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTestRecommendations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTestRecommendations, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListTestRecommendationsAsync(const ListTestRecommendationsRequest& request, const ListTestRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTestRecommendations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTestRecommendations, request, handler, context, m_executor.get());
 }
 
 ListUnsupportedAppVersionResourcesOutcome ResilienceHubClient::ListUnsupportedAppVersionResources(const ListUnsupportedAppVersionResourcesRequest& request) const
@@ -935,18 +762,12 @@ ListUnsupportedAppVersionResourcesOutcome ResilienceHubClient::ListUnsupportedAp
 
 ListUnsupportedAppVersionResourcesOutcomeCallable ResilienceHubClient::ListUnsupportedAppVersionResourcesCallable(const ListUnsupportedAppVersionResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUnsupportedAppVersionResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUnsupportedAppVersionResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUnsupportedAppVersionResources, request, m_executor.get());
 }
 
 void ResilienceHubClient::ListUnsupportedAppVersionResourcesAsync(const ListUnsupportedAppVersionResourcesRequest& request, const ListUnsupportedAppVersionResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUnsupportedAppVersionResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUnsupportedAppVersionResources, request, handler, context, m_executor.get());
 }
 
 PublishAppVersionOutcome ResilienceHubClient::PublishAppVersion(const PublishAppVersionRequest& request) const
@@ -960,18 +781,12 @@ PublishAppVersionOutcome ResilienceHubClient::PublishAppVersion(const PublishApp
 
 PublishAppVersionOutcomeCallable ResilienceHubClient::PublishAppVersionCallable(const PublishAppVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PublishAppVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PublishAppVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PublishAppVersion, request, m_executor.get());
 }
 
 void ResilienceHubClient::PublishAppVersionAsync(const PublishAppVersionRequest& request, const PublishAppVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PublishAppVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PublishAppVersion, request, handler, context, m_executor.get());
 }
 
 PutDraftAppVersionTemplateOutcome ResilienceHubClient::PutDraftAppVersionTemplate(const PutDraftAppVersionTemplateRequest& request) const
@@ -985,18 +800,12 @@ PutDraftAppVersionTemplateOutcome ResilienceHubClient::PutDraftAppVersionTemplat
 
 PutDraftAppVersionTemplateOutcomeCallable ResilienceHubClient::PutDraftAppVersionTemplateCallable(const PutDraftAppVersionTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutDraftAppVersionTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutDraftAppVersionTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutDraftAppVersionTemplate, request, m_executor.get());
 }
 
 void ResilienceHubClient::PutDraftAppVersionTemplateAsync(const PutDraftAppVersionTemplateRequest& request, const PutDraftAppVersionTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutDraftAppVersionTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutDraftAppVersionTemplate, request, handler, context, m_executor.get());
 }
 
 RemoveDraftAppVersionResourceMappingsOutcome ResilienceHubClient::RemoveDraftAppVersionResourceMappings(const RemoveDraftAppVersionResourceMappingsRequest& request) const
@@ -1010,18 +819,12 @@ RemoveDraftAppVersionResourceMappingsOutcome ResilienceHubClient::RemoveDraftApp
 
 RemoveDraftAppVersionResourceMappingsOutcomeCallable ResilienceHubClient::RemoveDraftAppVersionResourceMappingsCallable(const RemoveDraftAppVersionResourceMappingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveDraftAppVersionResourceMappingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveDraftAppVersionResourceMappings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveDraftAppVersionResourceMappings, request, m_executor.get());
 }
 
 void ResilienceHubClient::RemoveDraftAppVersionResourceMappingsAsync(const RemoveDraftAppVersionResourceMappingsRequest& request, const RemoveDraftAppVersionResourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveDraftAppVersionResourceMappings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveDraftAppVersionResourceMappings, request, handler, context, m_executor.get());
 }
 
 ResolveAppVersionResourcesOutcome ResilienceHubClient::ResolveAppVersionResources(const ResolveAppVersionResourcesRequest& request) const
@@ -1035,18 +838,12 @@ ResolveAppVersionResourcesOutcome ResilienceHubClient::ResolveAppVersionResource
 
 ResolveAppVersionResourcesOutcomeCallable ResilienceHubClient::ResolveAppVersionResourcesCallable(const ResolveAppVersionResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResolveAppVersionResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResolveAppVersionResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ResolveAppVersionResources, request, m_executor.get());
 }
 
 void ResilienceHubClient::ResolveAppVersionResourcesAsync(const ResolveAppVersionResourcesRequest& request, const ResolveAppVersionResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ResolveAppVersionResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ResolveAppVersionResources, request, handler, context, m_executor.get());
 }
 
 StartAppAssessmentOutcome ResilienceHubClient::StartAppAssessment(const StartAppAssessmentRequest& request) const
@@ -1060,18 +857,12 @@ StartAppAssessmentOutcome ResilienceHubClient::StartAppAssessment(const StartApp
 
 StartAppAssessmentOutcomeCallable ResilienceHubClient::StartAppAssessmentCallable(const StartAppAssessmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartAppAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartAppAssessment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartAppAssessment, request, m_executor.get());
 }
 
 void ResilienceHubClient::StartAppAssessmentAsync(const StartAppAssessmentRequest& request, const StartAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartAppAssessment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartAppAssessment, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ResilienceHubClient::TagResource(const TagResourceRequest& request) const
@@ -1091,18 +882,12 @@ TagResourceOutcome ResilienceHubClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable ResilienceHubClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ResilienceHubClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ResilienceHubClient::UntagResource(const UntagResourceRequest& request) const
@@ -1127,18 +912,12 @@ UntagResourceOutcome ResilienceHubClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable ResilienceHubClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ResilienceHubClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateAppOutcome ResilienceHubClient::UpdateApp(const UpdateAppRequest& request) const
@@ -1152,18 +931,12 @@ UpdateAppOutcome ResilienceHubClient::UpdateApp(const UpdateAppRequest& request)
 
 UpdateAppOutcomeCallable ResilienceHubClient::UpdateAppCallable(const UpdateAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateApp, request, m_executor.get());
 }
 
 void ResilienceHubClient::UpdateAppAsync(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateApp, request, handler, context, m_executor.get());
 }
 
 UpdateResiliencyPolicyOutcome ResilienceHubClient::UpdateResiliencyPolicy(const UpdateResiliencyPolicyRequest& request) const
@@ -1177,17 +950,11 @@ UpdateResiliencyPolicyOutcome ResilienceHubClient::UpdateResiliencyPolicy(const 
 
 UpdateResiliencyPolicyOutcomeCallable ResilienceHubClient::UpdateResiliencyPolicyCallable(const UpdateResiliencyPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateResiliencyPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResiliencyPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateResiliencyPolicy, request, m_executor.get());
 }
 
 void ResilienceHubClient::UpdateResiliencyPolicyAsync(const UpdateResiliencyPolicyRequest& request, const UpdateResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateResiliencyPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateResiliencyPolicy, request, handler, context, m_executor.get());
 }
 

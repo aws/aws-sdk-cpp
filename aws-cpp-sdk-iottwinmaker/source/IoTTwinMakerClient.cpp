@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -198,18 +199,12 @@ BatchPutPropertyValuesOutcome IoTTwinMakerClient::BatchPutPropertyValues(const B
 
 BatchPutPropertyValuesOutcomeCallable IoTTwinMakerClient::BatchPutPropertyValuesCallable(const BatchPutPropertyValuesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchPutPropertyValuesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchPutPropertyValues(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchPutPropertyValues, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::BatchPutPropertyValuesAsync(const BatchPutPropertyValuesRequest& request, const BatchPutPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchPutPropertyValues(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchPutPropertyValues, request, handler, context, m_executor.get());
 }
 
 CreateComponentTypeOutcome IoTTwinMakerClient::CreateComponentType(const CreateComponentTypeRequest& request) const
@@ -238,18 +233,12 @@ CreateComponentTypeOutcome IoTTwinMakerClient::CreateComponentType(const CreateC
 
 CreateComponentTypeOutcomeCallable IoTTwinMakerClient::CreateComponentTypeCallable(const CreateComponentTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateComponentTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateComponentType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateComponentType, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::CreateComponentTypeAsync(const CreateComponentTypeRequest& request, const CreateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateComponentType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateComponentType, request, handler, context, m_executor.get());
 }
 
 CreateEntityOutcome IoTTwinMakerClient::CreateEntity(const CreateEntityRequest& request) const
@@ -272,18 +261,12 @@ CreateEntityOutcome IoTTwinMakerClient::CreateEntity(const CreateEntityRequest& 
 
 CreateEntityOutcomeCallable IoTTwinMakerClient::CreateEntityCallable(const CreateEntityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEntityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEntity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEntity, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::CreateEntityAsync(const CreateEntityRequest& request, const CreateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEntity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEntity, request, handler, context, m_executor.get());
 }
 
 CreateSceneOutcome IoTTwinMakerClient::CreateScene(const CreateSceneRequest& request) const
@@ -306,18 +289,12 @@ CreateSceneOutcome IoTTwinMakerClient::CreateScene(const CreateSceneRequest& req
 
 CreateSceneOutcomeCallable IoTTwinMakerClient::CreateSceneCallable(const CreateSceneRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSceneOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateScene(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateScene, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::CreateSceneAsync(const CreateSceneRequest& request, const CreateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateScene(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateScene, request, handler, context, m_executor.get());
 }
 
 CreateWorkspaceOutcome IoTTwinMakerClient::CreateWorkspace(const CreateWorkspaceRequest& request) const
@@ -339,18 +316,12 @@ CreateWorkspaceOutcome IoTTwinMakerClient::CreateWorkspace(const CreateWorkspace
 
 CreateWorkspaceOutcomeCallable IoTTwinMakerClient::CreateWorkspaceCallable(const CreateWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkspace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorkspace, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::CreateWorkspaceAsync(const CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorkspace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorkspace, request, handler, context, m_executor.get());
 }
 
 DeleteComponentTypeOutcome IoTTwinMakerClient::DeleteComponentType(const DeleteComponentTypeRequest& request) const
@@ -379,18 +350,12 @@ DeleteComponentTypeOutcome IoTTwinMakerClient::DeleteComponentType(const DeleteC
 
 DeleteComponentTypeOutcomeCallable IoTTwinMakerClient::DeleteComponentTypeCallable(const DeleteComponentTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteComponentTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteComponentType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteComponentType, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::DeleteComponentTypeAsync(const DeleteComponentTypeRequest& request, const DeleteComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteComponentType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteComponentType, request, handler, context, m_executor.get());
 }
 
 DeleteEntityOutcome IoTTwinMakerClient::DeleteEntity(const DeleteEntityRequest& request) const
@@ -419,18 +384,12 @@ DeleteEntityOutcome IoTTwinMakerClient::DeleteEntity(const DeleteEntityRequest& 
 
 DeleteEntityOutcomeCallable IoTTwinMakerClient::DeleteEntityCallable(const DeleteEntityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEntityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEntity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEntity, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::DeleteEntityAsync(const DeleteEntityRequest& request, const DeleteEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEntity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEntity, request, handler, context, m_executor.get());
 }
 
 DeleteSceneOutcome IoTTwinMakerClient::DeleteScene(const DeleteSceneRequest& request) const
@@ -459,18 +418,12 @@ DeleteSceneOutcome IoTTwinMakerClient::DeleteScene(const DeleteSceneRequest& req
 
 DeleteSceneOutcomeCallable IoTTwinMakerClient::DeleteSceneCallable(const DeleteSceneRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSceneOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteScene(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteScene, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::DeleteSceneAsync(const DeleteSceneRequest& request, const DeleteSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteScene(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteScene, request, handler, context, m_executor.get());
 }
 
 DeleteWorkspaceOutcome IoTTwinMakerClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const
@@ -492,18 +445,12 @@ DeleteWorkspaceOutcome IoTTwinMakerClient::DeleteWorkspace(const DeleteWorkspace
 
 DeleteWorkspaceOutcomeCallable IoTTwinMakerClient::DeleteWorkspaceCallable(const DeleteWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkspace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWorkspace, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::DeleteWorkspaceAsync(const DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWorkspace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWorkspace, request, handler, context, m_executor.get());
 }
 
 ExecuteQueryOutcome IoTTwinMakerClient::ExecuteQuery(const ExecuteQueryRequest& request) const
@@ -519,18 +466,12 @@ ExecuteQueryOutcome IoTTwinMakerClient::ExecuteQuery(const ExecuteQueryRequest& 
 
 ExecuteQueryOutcomeCallable IoTTwinMakerClient::ExecuteQueryCallable(const ExecuteQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExecuteQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteQuery(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExecuteQuery, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::ExecuteQueryAsync(const ExecuteQueryRequest& request, const ExecuteQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExecuteQuery(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExecuteQuery, request, handler, context, m_executor.get());
 }
 
 GetComponentTypeOutcome IoTTwinMakerClient::GetComponentType(const GetComponentTypeRequest& request) const
@@ -559,18 +500,12 @@ GetComponentTypeOutcome IoTTwinMakerClient::GetComponentType(const GetComponentT
 
 GetComponentTypeOutcomeCallable IoTTwinMakerClient::GetComponentTypeCallable(const GetComponentTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetComponentTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComponentType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetComponentType, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::GetComponentTypeAsync(const GetComponentTypeRequest& request, const GetComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetComponentType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetComponentType, request, handler, context, m_executor.get());
 }
 
 GetEntityOutcome IoTTwinMakerClient::GetEntity(const GetEntityRequest& request) const
@@ -599,18 +534,12 @@ GetEntityOutcome IoTTwinMakerClient::GetEntity(const GetEntityRequest& request) 
 
 GetEntityOutcomeCallable IoTTwinMakerClient::GetEntityCallable(const GetEntityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEntityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEntity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEntity, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::GetEntityAsync(const GetEntityRequest& request, const GetEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEntity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEntity, request, handler, context, m_executor.get());
 }
 
 GetPricingPlanOutcome IoTTwinMakerClient::GetPricingPlan(const GetPricingPlanRequest& request) const
@@ -626,18 +555,12 @@ GetPricingPlanOutcome IoTTwinMakerClient::GetPricingPlan(const GetPricingPlanReq
 
 GetPricingPlanOutcomeCallable IoTTwinMakerClient::GetPricingPlanCallable(const GetPricingPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPricingPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPricingPlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPricingPlan, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::GetPricingPlanAsync(const GetPricingPlanRequest& request, const GetPricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPricingPlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPricingPlan, request, handler, context, m_executor.get());
 }
 
 GetPropertyValueOutcome IoTTwinMakerClient::GetPropertyValue(const GetPropertyValueRequest& request) const
@@ -660,18 +583,12 @@ GetPropertyValueOutcome IoTTwinMakerClient::GetPropertyValue(const GetPropertyVa
 
 GetPropertyValueOutcomeCallable IoTTwinMakerClient::GetPropertyValueCallable(const GetPropertyValueRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPropertyValueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPropertyValue(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPropertyValue, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::GetPropertyValueAsync(const GetPropertyValueRequest& request, const GetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPropertyValue(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPropertyValue, request, handler, context, m_executor.get());
 }
 
 GetPropertyValueHistoryOutcome IoTTwinMakerClient::GetPropertyValueHistory(const GetPropertyValueHistoryRequest& request) const
@@ -694,18 +611,12 @@ GetPropertyValueHistoryOutcome IoTTwinMakerClient::GetPropertyValueHistory(const
 
 GetPropertyValueHistoryOutcomeCallable IoTTwinMakerClient::GetPropertyValueHistoryCallable(const GetPropertyValueHistoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPropertyValueHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPropertyValueHistory(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPropertyValueHistory, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::GetPropertyValueHistoryAsync(const GetPropertyValueHistoryRequest& request, const GetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPropertyValueHistory(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPropertyValueHistory, request, handler, context, m_executor.get());
 }
 
 GetSceneOutcome IoTTwinMakerClient::GetScene(const GetSceneRequest& request) const
@@ -734,18 +645,12 @@ GetSceneOutcome IoTTwinMakerClient::GetScene(const GetSceneRequest& request) con
 
 GetSceneOutcomeCallable IoTTwinMakerClient::GetSceneCallable(const GetSceneRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSceneOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetScene(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetScene, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::GetSceneAsync(const GetSceneRequest& request, const GetSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetScene(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetScene, request, handler, context, m_executor.get());
 }
 
 GetWorkspaceOutcome IoTTwinMakerClient::GetWorkspace(const GetWorkspaceRequest& request) const
@@ -767,18 +672,12 @@ GetWorkspaceOutcome IoTTwinMakerClient::GetWorkspace(const GetWorkspaceRequest& 
 
 GetWorkspaceOutcomeCallable IoTTwinMakerClient::GetWorkspaceCallable(const GetWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkspace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkspace, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::GetWorkspaceAsync(const GetWorkspaceRequest& request, const GetWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkspace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkspace, request, handler, context, m_executor.get());
 }
 
 ListComponentTypesOutcome IoTTwinMakerClient::ListComponentTypes(const ListComponentTypesRequest& request) const
@@ -801,18 +700,12 @@ ListComponentTypesOutcome IoTTwinMakerClient::ListComponentTypes(const ListCompo
 
 ListComponentTypesOutcomeCallable IoTTwinMakerClient::ListComponentTypesCallable(const ListComponentTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListComponentTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComponentTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListComponentTypes, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::ListComponentTypesAsync(const ListComponentTypesRequest& request, const ListComponentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListComponentTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListComponentTypes, request, handler, context, m_executor.get());
 }
 
 ListEntitiesOutcome IoTTwinMakerClient::ListEntities(const ListEntitiesRequest& request) const
@@ -835,18 +728,12 @@ ListEntitiesOutcome IoTTwinMakerClient::ListEntities(const ListEntitiesRequest& 
 
 ListEntitiesOutcomeCallable IoTTwinMakerClient::ListEntitiesCallable(const ListEntitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEntities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEntities, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::ListEntitiesAsync(const ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEntities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEntities, request, handler, context, m_executor.get());
 }
 
 ListScenesOutcome IoTTwinMakerClient::ListScenes(const ListScenesRequest& request) const
@@ -869,18 +756,12 @@ ListScenesOutcome IoTTwinMakerClient::ListScenes(const ListScenesRequest& reques
 
 ListScenesOutcomeCallable IoTTwinMakerClient::ListScenesCallable(const ListScenesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListScenesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListScenes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListScenes, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::ListScenesAsync(const ListScenesRequest& request, const ListScenesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListScenes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListScenes, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome IoTTwinMakerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -896,18 +777,12 @@ ListTagsForResourceOutcome IoTTwinMakerClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable IoTTwinMakerClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListWorkspacesOutcome IoTTwinMakerClient::ListWorkspaces(const ListWorkspacesRequest& request) const
@@ -923,18 +798,12 @@ ListWorkspacesOutcome IoTTwinMakerClient::ListWorkspaces(const ListWorkspacesReq
 
 ListWorkspacesOutcomeCallable IoTTwinMakerClient::ListWorkspacesCallable(const ListWorkspacesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkspacesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkspaces(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkspaces, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::ListWorkspacesAsync(const ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkspaces(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkspaces, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome IoTTwinMakerClient::TagResource(const TagResourceRequest& request) const
@@ -950,18 +819,12 @@ TagResourceOutcome IoTTwinMakerClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable IoTTwinMakerClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome IoTTwinMakerClient::UntagResource(const UntagResourceRequest& request) const
@@ -987,18 +850,12 @@ UntagResourceOutcome IoTTwinMakerClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable IoTTwinMakerClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateComponentTypeOutcome IoTTwinMakerClient::UpdateComponentType(const UpdateComponentTypeRequest& request) const
@@ -1027,18 +884,12 @@ UpdateComponentTypeOutcome IoTTwinMakerClient::UpdateComponentType(const UpdateC
 
 UpdateComponentTypeOutcomeCallable IoTTwinMakerClient::UpdateComponentTypeCallable(const UpdateComponentTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateComponentTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateComponentType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateComponentType, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::UpdateComponentTypeAsync(const UpdateComponentTypeRequest& request, const UpdateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateComponentType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateComponentType, request, handler, context, m_executor.get());
 }
 
 UpdateEntityOutcome IoTTwinMakerClient::UpdateEntity(const UpdateEntityRequest& request) const
@@ -1067,18 +918,12 @@ UpdateEntityOutcome IoTTwinMakerClient::UpdateEntity(const UpdateEntityRequest& 
 
 UpdateEntityOutcomeCallable IoTTwinMakerClient::UpdateEntityCallable(const UpdateEntityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEntityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEntity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateEntity, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::UpdateEntityAsync(const UpdateEntityRequest& request, const UpdateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateEntity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateEntity, request, handler, context, m_executor.get());
 }
 
 UpdatePricingPlanOutcome IoTTwinMakerClient::UpdatePricingPlan(const UpdatePricingPlanRequest& request) const
@@ -1094,18 +939,12 @@ UpdatePricingPlanOutcome IoTTwinMakerClient::UpdatePricingPlan(const UpdatePrici
 
 UpdatePricingPlanOutcomeCallable IoTTwinMakerClient::UpdatePricingPlanCallable(const UpdatePricingPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePricingPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePricingPlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePricingPlan, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::UpdatePricingPlanAsync(const UpdatePricingPlanRequest& request, const UpdatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePricingPlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePricingPlan, request, handler, context, m_executor.get());
 }
 
 UpdateSceneOutcome IoTTwinMakerClient::UpdateScene(const UpdateSceneRequest& request) const
@@ -1134,18 +973,12 @@ UpdateSceneOutcome IoTTwinMakerClient::UpdateScene(const UpdateSceneRequest& req
 
 UpdateSceneOutcomeCallable IoTTwinMakerClient::UpdateSceneCallable(const UpdateSceneRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSceneOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateScene(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateScene, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::UpdateSceneAsync(const UpdateSceneRequest& request, const UpdateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateScene(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateScene, request, handler, context, m_executor.get());
 }
 
 UpdateWorkspaceOutcome IoTTwinMakerClient::UpdateWorkspace(const UpdateWorkspaceRequest& request) const
@@ -1167,17 +1000,11 @@ UpdateWorkspaceOutcome IoTTwinMakerClient::UpdateWorkspace(const UpdateWorkspace
 
 UpdateWorkspaceOutcomeCallable IoTTwinMakerClient::UpdateWorkspaceCallable(const UpdateWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkspace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateWorkspace, request, m_executor.get());
 }
 
 void IoTTwinMakerClient::UpdateWorkspaceAsync(const UpdateWorkspaceRequest& request, const UpdateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateWorkspace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateWorkspace, request, handler, context, m_executor.get());
 }
 

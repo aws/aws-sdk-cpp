@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -205,18 +206,12 @@ AddLFTagsToResourceOutcome LakeFormationClient::AddLFTagsToResource(const AddLFT
 
 AddLFTagsToResourceOutcomeCallable LakeFormationClient::AddLFTagsToResourceCallable(const AddLFTagsToResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddLFTagsToResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddLFTagsToResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddLFTagsToResource, request, m_executor.get());
 }
 
 void LakeFormationClient::AddLFTagsToResourceAsync(const AddLFTagsToResourceRequest& request, const AddLFTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddLFTagsToResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddLFTagsToResource, request, handler, context, m_executor.get());
 }
 
 AssumeDecoratedRoleWithSAMLOutcome LakeFormationClient::AssumeDecoratedRoleWithSAML(const AssumeDecoratedRoleWithSAMLRequest& request) const
@@ -230,18 +225,12 @@ AssumeDecoratedRoleWithSAMLOutcome LakeFormationClient::AssumeDecoratedRoleWithS
 
 AssumeDecoratedRoleWithSAMLOutcomeCallable LakeFormationClient::AssumeDecoratedRoleWithSAMLCallable(const AssumeDecoratedRoleWithSAMLRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssumeDecoratedRoleWithSAMLOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssumeDecoratedRoleWithSAML(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssumeDecoratedRoleWithSAML, request, m_executor.get());
 }
 
 void LakeFormationClient::AssumeDecoratedRoleWithSAMLAsync(const AssumeDecoratedRoleWithSAMLRequest& request, const AssumeDecoratedRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssumeDecoratedRoleWithSAML(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssumeDecoratedRoleWithSAML, request, handler, context, m_executor.get());
 }
 
 BatchGrantPermissionsOutcome LakeFormationClient::BatchGrantPermissions(const BatchGrantPermissionsRequest& request) const
@@ -255,18 +244,12 @@ BatchGrantPermissionsOutcome LakeFormationClient::BatchGrantPermissions(const Ba
 
 BatchGrantPermissionsOutcomeCallable LakeFormationClient::BatchGrantPermissionsCallable(const BatchGrantPermissionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGrantPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGrantPermissions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGrantPermissions, request, m_executor.get());
 }
 
 void LakeFormationClient::BatchGrantPermissionsAsync(const BatchGrantPermissionsRequest& request, const BatchGrantPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGrantPermissions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGrantPermissions, request, handler, context, m_executor.get());
 }
 
 BatchRevokePermissionsOutcome LakeFormationClient::BatchRevokePermissions(const BatchRevokePermissionsRequest& request) const
@@ -280,18 +263,12 @@ BatchRevokePermissionsOutcome LakeFormationClient::BatchRevokePermissions(const 
 
 BatchRevokePermissionsOutcomeCallable LakeFormationClient::BatchRevokePermissionsCallable(const BatchRevokePermissionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchRevokePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchRevokePermissions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchRevokePermissions, request, m_executor.get());
 }
 
 void LakeFormationClient::BatchRevokePermissionsAsync(const BatchRevokePermissionsRequest& request, const BatchRevokePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchRevokePermissions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchRevokePermissions, request, handler, context, m_executor.get());
 }
 
 CancelTransactionOutcome LakeFormationClient::CancelTransaction(const CancelTransactionRequest& request) const
@@ -305,18 +282,12 @@ CancelTransactionOutcome LakeFormationClient::CancelTransaction(const CancelTran
 
 CancelTransactionOutcomeCallable LakeFormationClient::CancelTransactionCallable(const CancelTransactionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelTransactionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelTransaction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelTransaction, request, m_executor.get());
 }
 
 void LakeFormationClient::CancelTransactionAsync(const CancelTransactionRequest& request, const CancelTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelTransaction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelTransaction, request, handler, context, m_executor.get());
 }
 
 CommitTransactionOutcome LakeFormationClient::CommitTransaction(const CommitTransactionRequest& request) const
@@ -330,18 +301,12 @@ CommitTransactionOutcome LakeFormationClient::CommitTransaction(const CommitTran
 
 CommitTransactionOutcomeCallable LakeFormationClient::CommitTransactionCallable(const CommitTransactionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CommitTransactionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CommitTransaction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CommitTransaction, request, m_executor.get());
 }
 
 void LakeFormationClient::CommitTransactionAsync(const CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CommitTransaction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CommitTransaction, request, handler, context, m_executor.get());
 }
 
 CreateDataCellsFilterOutcome LakeFormationClient::CreateDataCellsFilter(const CreateDataCellsFilterRequest& request) const
@@ -355,18 +320,12 @@ CreateDataCellsFilterOutcome LakeFormationClient::CreateDataCellsFilter(const Cr
 
 CreateDataCellsFilterOutcomeCallable LakeFormationClient::CreateDataCellsFilterCallable(const CreateDataCellsFilterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDataCellsFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataCellsFilter(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataCellsFilter, request, m_executor.get());
 }
 
 void LakeFormationClient::CreateDataCellsFilterAsync(const CreateDataCellsFilterRequest& request, const CreateDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataCellsFilter(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataCellsFilter, request, handler, context, m_executor.get());
 }
 
 CreateLFTagOutcome LakeFormationClient::CreateLFTag(const CreateLFTagRequest& request) const
@@ -380,18 +339,12 @@ CreateLFTagOutcome LakeFormationClient::CreateLFTag(const CreateLFTagRequest& re
 
 CreateLFTagOutcomeCallable LakeFormationClient::CreateLFTagCallable(const CreateLFTagRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLFTagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLFTag(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLFTag, request, m_executor.get());
 }
 
 void LakeFormationClient::CreateLFTagAsync(const CreateLFTagRequest& request, const CreateLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLFTag(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLFTag, request, handler, context, m_executor.get());
 }
 
 DeleteDataCellsFilterOutcome LakeFormationClient::DeleteDataCellsFilter(const DeleteDataCellsFilterRequest& request) const
@@ -405,18 +358,12 @@ DeleteDataCellsFilterOutcome LakeFormationClient::DeleteDataCellsFilter(const De
 
 DeleteDataCellsFilterOutcomeCallable LakeFormationClient::DeleteDataCellsFilterCallable(const DeleteDataCellsFilterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDataCellsFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataCellsFilter(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDataCellsFilter, request, m_executor.get());
 }
 
 void LakeFormationClient::DeleteDataCellsFilterAsync(const DeleteDataCellsFilterRequest& request, const DeleteDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDataCellsFilter(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDataCellsFilter, request, handler, context, m_executor.get());
 }
 
 DeleteLFTagOutcome LakeFormationClient::DeleteLFTag(const DeleteLFTagRequest& request) const
@@ -430,18 +377,12 @@ DeleteLFTagOutcome LakeFormationClient::DeleteLFTag(const DeleteLFTagRequest& re
 
 DeleteLFTagOutcomeCallable LakeFormationClient::DeleteLFTagCallable(const DeleteLFTagRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLFTagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLFTag(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLFTag, request, m_executor.get());
 }
 
 void LakeFormationClient::DeleteLFTagAsync(const DeleteLFTagRequest& request, const DeleteLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLFTag(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLFTag, request, handler, context, m_executor.get());
 }
 
 DeleteObjectsOnCancelOutcome LakeFormationClient::DeleteObjectsOnCancel(const DeleteObjectsOnCancelRequest& request) const
@@ -455,18 +396,12 @@ DeleteObjectsOnCancelOutcome LakeFormationClient::DeleteObjectsOnCancel(const De
 
 DeleteObjectsOnCancelOutcomeCallable LakeFormationClient::DeleteObjectsOnCancelCallable(const DeleteObjectsOnCancelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteObjectsOnCancelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteObjectsOnCancel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteObjectsOnCancel, request, m_executor.get());
 }
 
 void LakeFormationClient::DeleteObjectsOnCancelAsync(const DeleteObjectsOnCancelRequest& request, const DeleteObjectsOnCancelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteObjectsOnCancel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteObjectsOnCancel, request, handler, context, m_executor.get());
 }
 
 DeregisterResourceOutcome LakeFormationClient::DeregisterResource(const DeregisterResourceRequest& request) const
@@ -480,18 +415,12 @@ DeregisterResourceOutcome LakeFormationClient::DeregisterResource(const Deregist
 
 DeregisterResourceOutcomeCallable LakeFormationClient::DeregisterResourceCallable(const DeregisterResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeregisterResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeregisterResource, request, m_executor.get());
 }
 
 void LakeFormationClient::DeregisterResourceAsync(const DeregisterResourceRequest& request, const DeregisterResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeregisterResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeregisterResource, request, handler, context, m_executor.get());
 }
 
 DescribeResourceOutcome LakeFormationClient::DescribeResource(const DescribeResourceRequest& request) const
@@ -505,18 +434,12 @@ DescribeResourceOutcome LakeFormationClient::DescribeResource(const DescribeReso
 
 DescribeResourceOutcomeCallable LakeFormationClient::DescribeResourceCallable(const DescribeResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeResource, request, m_executor.get());
 }
 
 void LakeFormationClient::DescribeResourceAsync(const DescribeResourceRequest& request, const DescribeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeResource, request, handler, context, m_executor.get());
 }
 
 DescribeTransactionOutcome LakeFormationClient::DescribeTransaction(const DescribeTransactionRequest& request) const
@@ -530,18 +453,12 @@ DescribeTransactionOutcome LakeFormationClient::DescribeTransaction(const Descri
 
 DescribeTransactionOutcomeCallable LakeFormationClient::DescribeTransactionCallable(const DescribeTransactionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTransactionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTransaction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTransaction, request, m_executor.get());
 }
 
 void LakeFormationClient::DescribeTransactionAsync(const DescribeTransactionRequest& request, const DescribeTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTransaction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTransaction, request, handler, context, m_executor.get());
 }
 
 ExtendTransactionOutcome LakeFormationClient::ExtendTransaction(const ExtendTransactionRequest& request) const
@@ -555,18 +472,12 @@ ExtendTransactionOutcome LakeFormationClient::ExtendTransaction(const ExtendTran
 
 ExtendTransactionOutcomeCallable LakeFormationClient::ExtendTransactionCallable(const ExtendTransactionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExtendTransactionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExtendTransaction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExtendTransaction, request, m_executor.get());
 }
 
 void LakeFormationClient::ExtendTransactionAsync(const ExtendTransactionRequest& request, const ExtendTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExtendTransaction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExtendTransaction, request, handler, context, m_executor.get());
 }
 
 GetDataLakeSettingsOutcome LakeFormationClient::GetDataLakeSettings(const GetDataLakeSettingsRequest& request) const
@@ -580,18 +491,12 @@ GetDataLakeSettingsOutcome LakeFormationClient::GetDataLakeSettings(const GetDat
 
 GetDataLakeSettingsOutcomeCallable LakeFormationClient::GetDataLakeSettingsCallable(const GetDataLakeSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataLakeSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataLakeSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDataLakeSettings, request, m_executor.get());
 }
 
 void LakeFormationClient::GetDataLakeSettingsAsync(const GetDataLakeSettingsRequest& request, const GetDataLakeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDataLakeSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDataLakeSettings, request, handler, context, m_executor.get());
 }
 
 GetEffectivePermissionsForPathOutcome LakeFormationClient::GetEffectivePermissionsForPath(const GetEffectivePermissionsForPathRequest& request) const
@@ -605,18 +510,12 @@ GetEffectivePermissionsForPathOutcome LakeFormationClient::GetEffectivePermissio
 
 GetEffectivePermissionsForPathOutcomeCallable LakeFormationClient::GetEffectivePermissionsForPathCallable(const GetEffectivePermissionsForPathRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEffectivePermissionsForPathOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEffectivePermissionsForPath(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEffectivePermissionsForPath, request, m_executor.get());
 }
 
 void LakeFormationClient::GetEffectivePermissionsForPathAsync(const GetEffectivePermissionsForPathRequest& request, const GetEffectivePermissionsForPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEffectivePermissionsForPath(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEffectivePermissionsForPath, request, handler, context, m_executor.get());
 }
 
 GetLFTagOutcome LakeFormationClient::GetLFTag(const GetLFTagRequest& request) const
@@ -630,18 +529,12 @@ GetLFTagOutcome LakeFormationClient::GetLFTag(const GetLFTagRequest& request) co
 
 GetLFTagOutcomeCallable LakeFormationClient::GetLFTagCallable(const GetLFTagRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLFTagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLFTag(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLFTag, request, m_executor.get());
 }
 
 void LakeFormationClient::GetLFTagAsync(const GetLFTagRequest& request, const GetLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLFTag(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLFTag, request, handler, context, m_executor.get());
 }
 
 GetQueryStateOutcome LakeFormationClient::GetQueryState(const GetQueryStateRequest& request) const
@@ -657,18 +550,12 @@ GetQueryStateOutcome LakeFormationClient::GetQueryState(const GetQueryStateReque
 
 GetQueryStateOutcomeCallable LakeFormationClient::GetQueryStateCallable(const GetQueryStateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetQueryStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetQueryState(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetQueryState, request, m_executor.get());
 }
 
 void LakeFormationClient::GetQueryStateAsync(const GetQueryStateRequest& request, const GetQueryStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetQueryState(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetQueryState, request, handler, context, m_executor.get());
 }
 
 GetQueryStatisticsOutcome LakeFormationClient::GetQueryStatistics(const GetQueryStatisticsRequest& request) const
@@ -684,18 +571,12 @@ GetQueryStatisticsOutcome LakeFormationClient::GetQueryStatistics(const GetQuery
 
 GetQueryStatisticsOutcomeCallable LakeFormationClient::GetQueryStatisticsCallable(const GetQueryStatisticsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetQueryStatisticsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetQueryStatistics(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetQueryStatistics, request, m_executor.get());
 }
 
 void LakeFormationClient::GetQueryStatisticsAsync(const GetQueryStatisticsRequest& request, const GetQueryStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetQueryStatistics(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetQueryStatistics, request, handler, context, m_executor.get());
 }
 
 GetResourceLFTagsOutcome LakeFormationClient::GetResourceLFTags(const GetResourceLFTagsRequest& request) const
@@ -709,18 +590,12 @@ GetResourceLFTagsOutcome LakeFormationClient::GetResourceLFTags(const GetResourc
 
 GetResourceLFTagsOutcomeCallable LakeFormationClient::GetResourceLFTagsCallable(const GetResourceLFTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourceLFTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceLFTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResourceLFTags, request, m_executor.get());
 }
 
 void LakeFormationClient::GetResourceLFTagsAsync(const GetResourceLFTagsRequest& request, const GetResourceLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResourceLFTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResourceLFTags, request, handler, context, m_executor.get());
 }
 
 GetTableObjectsOutcome LakeFormationClient::GetTableObjects(const GetTableObjectsRequest& request) const
@@ -734,18 +609,12 @@ GetTableObjectsOutcome LakeFormationClient::GetTableObjects(const GetTableObject
 
 GetTableObjectsOutcomeCallable LakeFormationClient::GetTableObjectsCallable(const GetTableObjectsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTableObjectsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTableObjects(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTableObjects, request, m_executor.get());
 }
 
 void LakeFormationClient::GetTableObjectsAsync(const GetTableObjectsRequest& request, const GetTableObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTableObjects(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTableObjects, request, handler, context, m_executor.get());
 }
 
 GetTemporaryGluePartitionCredentialsOutcome LakeFormationClient::GetTemporaryGluePartitionCredentials(const GetTemporaryGluePartitionCredentialsRequest& request) const
@@ -759,18 +628,12 @@ GetTemporaryGluePartitionCredentialsOutcome LakeFormationClient::GetTemporaryGlu
 
 GetTemporaryGluePartitionCredentialsOutcomeCallable LakeFormationClient::GetTemporaryGluePartitionCredentialsCallable(const GetTemporaryGluePartitionCredentialsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTemporaryGluePartitionCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemporaryGluePartitionCredentials(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTemporaryGluePartitionCredentials, request, m_executor.get());
 }
 
 void LakeFormationClient::GetTemporaryGluePartitionCredentialsAsync(const GetTemporaryGluePartitionCredentialsRequest& request, const GetTemporaryGluePartitionCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTemporaryGluePartitionCredentials(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTemporaryGluePartitionCredentials, request, handler, context, m_executor.get());
 }
 
 GetTemporaryGlueTableCredentialsOutcome LakeFormationClient::GetTemporaryGlueTableCredentials(const GetTemporaryGlueTableCredentialsRequest& request) const
@@ -784,18 +647,12 @@ GetTemporaryGlueTableCredentialsOutcome LakeFormationClient::GetTemporaryGlueTab
 
 GetTemporaryGlueTableCredentialsOutcomeCallable LakeFormationClient::GetTemporaryGlueTableCredentialsCallable(const GetTemporaryGlueTableCredentialsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTemporaryGlueTableCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemporaryGlueTableCredentials(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTemporaryGlueTableCredentials, request, m_executor.get());
 }
 
 void LakeFormationClient::GetTemporaryGlueTableCredentialsAsync(const GetTemporaryGlueTableCredentialsRequest& request, const GetTemporaryGlueTableCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTemporaryGlueTableCredentials(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTemporaryGlueTableCredentials, request, handler, context, m_executor.get());
 }
 
 GetWorkUnitResultsOutcome LakeFormationClient::GetWorkUnitResults(const GetWorkUnitResultsRequest& request) const
@@ -811,18 +668,12 @@ GetWorkUnitResultsOutcome LakeFormationClient::GetWorkUnitResults(const GetWorkU
 
 GetWorkUnitResultsOutcomeCallable LakeFormationClient::GetWorkUnitResultsCallable(const GetWorkUnitResultsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkUnitResultsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkUnitResults(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkUnitResults, request, m_executor.get());
 }
 
 void LakeFormationClient::GetWorkUnitResultsAsync(const GetWorkUnitResultsRequest& request, const GetWorkUnitResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkUnitResults(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkUnitResults, request, handler, context, m_executor.get());
 }
 
 GetWorkUnitsOutcome LakeFormationClient::GetWorkUnits(const GetWorkUnitsRequest& request) const
@@ -838,18 +689,12 @@ GetWorkUnitsOutcome LakeFormationClient::GetWorkUnits(const GetWorkUnitsRequest&
 
 GetWorkUnitsOutcomeCallable LakeFormationClient::GetWorkUnitsCallable(const GetWorkUnitsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkUnitsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkUnits(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkUnits, request, m_executor.get());
 }
 
 void LakeFormationClient::GetWorkUnitsAsync(const GetWorkUnitsRequest& request, const GetWorkUnitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkUnits(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkUnits, request, handler, context, m_executor.get());
 }
 
 GrantPermissionsOutcome LakeFormationClient::GrantPermissions(const GrantPermissionsRequest& request) const
@@ -863,18 +708,12 @@ GrantPermissionsOutcome LakeFormationClient::GrantPermissions(const GrantPermiss
 
 GrantPermissionsOutcomeCallable LakeFormationClient::GrantPermissionsCallable(const GrantPermissionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GrantPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GrantPermissions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GrantPermissions, request, m_executor.get());
 }
 
 void LakeFormationClient::GrantPermissionsAsync(const GrantPermissionsRequest& request, const GrantPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GrantPermissions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GrantPermissions, request, handler, context, m_executor.get());
 }
 
 ListDataCellsFilterOutcome LakeFormationClient::ListDataCellsFilter(const ListDataCellsFilterRequest& request) const
@@ -888,18 +727,12 @@ ListDataCellsFilterOutcome LakeFormationClient::ListDataCellsFilter(const ListDa
 
 ListDataCellsFilterOutcomeCallable LakeFormationClient::ListDataCellsFilterCallable(const ListDataCellsFilterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataCellsFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataCellsFilter(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDataCellsFilter, request, m_executor.get());
 }
 
 void LakeFormationClient::ListDataCellsFilterAsync(const ListDataCellsFilterRequest& request, const ListDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDataCellsFilter(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDataCellsFilter, request, handler, context, m_executor.get());
 }
 
 ListLFTagsOutcome LakeFormationClient::ListLFTags(const ListLFTagsRequest& request) const
@@ -913,18 +746,12 @@ ListLFTagsOutcome LakeFormationClient::ListLFTags(const ListLFTagsRequest& reque
 
 ListLFTagsOutcomeCallable LakeFormationClient::ListLFTagsCallable(const ListLFTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLFTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLFTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLFTags, request, m_executor.get());
 }
 
 void LakeFormationClient::ListLFTagsAsync(const ListLFTagsRequest& request, const ListLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLFTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLFTags, request, handler, context, m_executor.get());
 }
 
 ListPermissionsOutcome LakeFormationClient::ListPermissions(const ListPermissionsRequest& request) const
@@ -938,18 +765,12 @@ ListPermissionsOutcome LakeFormationClient::ListPermissions(const ListPermission
 
 ListPermissionsOutcomeCallable LakeFormationClient::ListPermissionsCallable(const ListPermissionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPermissions, request, m_executor.get());
 }
 
 void LakeFormationClient::ListPermissionsAsync(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPermissions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPermissions, request, handler, context, m_executor.get());
 }
 
 ListResourcesOutcome LakeFormationClient::ListResources(const ListResourcesRequest& request) const
@@ -963,18 +784,12 @@ ListResourcesOutcome LakeFormationClient::ListResources(const ListResourcesReque
 
 ListResourcesOutcomeCallable LakeFormationClient::ListResourcesCallable(const ListResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListResources, request, m_executor.get());
 }
 
 void LakeFormationClient::ListResourcesAsync(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListResources, request, handler, context, m_executor.get());
 }
 
 ListTableStorageOptimizersOutcome LakeFormationClient::ListTableStorageOptimizers(const ListTableStorageOptimizersRequest& request) const
@@ -988,18 +803,12 @@ ListTableStorageOptimizersOutcome LakeFormationClient::ListTableStorageOptimizer
 
 ListTableStorageOptimizersOutcomeCallable LakeFormationClient::ListTableStorageOptimizersCallable(const ListTableStorageOptimizersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTableStorageOptimizersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTableStorageOptimizers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTableStorageOptimizers, request, m_executor.get());
 }
 
 void LakeFormationClient::ListTableStorageOptimizersAsync(const ListTableStorageOptimizersRequest& request, const ListTableStorageOptimizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTableStorageOptimizers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTableStorageOptimizers, request, handler, context, m_executor.get());
 }
 
 ListTransactionsOutcome LakeFormationClient::ListTransactions(const ListTransactionsRequest& request) const
@@ -1013,18 +822,12 @@ ListTransactionsOutcome LakeFormationClient::ListTransactions(const ListTransact
 
 ListTransactionsOutcomeCallable LakeFormationClient::ListTransactionsCallable(const ListTransactionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTransactionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTransactions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTransactions, request, m_executor.get());
 }
 
 void LakeFormationClient::ListTransactionsAsync(const ListTransactionsRequest& request, const ListTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTransactions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTransactions, request, handler, context, m_executor.get());
 }
 
 PutDataLakeSettingsOutcome LakeFormationClient::PutDataLakeSettings(const PutDataLakeSettingsRequest& request) const
@@ -1038,18 +841,12 @@ PutDataLakeSettingsOutcome LakeFormationClient::PutDataLakeSettings(const PutDat
 
 PutDataLakeSettingsOutcomeCallable LakeFormationClient::PutDataLakeSettingsCallable(const PutDataLakeSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutDataLakeSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutDataLakeSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutDataLakeSettings, request, m_executor.get());
 }
 
 void LakeFormationClient::PutDataLakeSettingsAsync(const PutDataLakeSettingsRequest& request, const PutDataLakeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutDataLakeSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutDataLakeSettings, request, handler, context, m_executor.get());
 }
 
 RegisterResourceOutcome LakeFormationClient::RegisterResource(const RegisterResourceRequest& request) const
@@ -1063,18 +860,12 @@ RegisterResourceOutcome LakeFormationClient::RegisterResource(const RegisterReso
 
 RegisterResourceOutcomeCallable LakeFormationClient::RegisterResourceCallable(const RegisterResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RegisterResource, request, m_executor.get());
 }
 
 void LakeFormationClient::RegisterResourceAsync(const RegisterResourceRequest& request, const RegisterResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RegisterResource, request, handler, context, m_executor.get());
 }
 
 RemoveLFTagsFromResourceOutcome LakeFormationClient::RemoveLFTagsFromResource(const RemoveLFTagsFromResourceRequest& request) const
@@ -1088,18 +879,12 @@ RemoveLFTagsFromResourceOutcome LakeFormationClient::RemoveLFTagsFromResource(co
 
 RemoveLFTagsFromResourceOutcomeCallable LakeFormationClient::RemoveLFTagsFromResourceCallable(const RemoveLFTagsFromResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveLFTagsFromResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveLFTagsFromResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveLFTagsFromResource, request, m_executor.get());
 }
 
 void LakeFormationClient::RemoveLFTagsFromResourceAsync(const RemoveLFTagsFromResourceRequest& request, const RemoveLFTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveLFTagsFromResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveLFTagsFromResource, request, handler, context, m_executor.get());
 }
 
 RevokePermissionsOutcome LakeFormationClient::RevokePermissions(const RevokePermissionsRequest& request) const
@@ -1113,18 +898,12 @@ RevokePermissionsOutcome LakeFormationClient::RevokePermissions(const RevokePerm
 
 RevokePermissionsOutcomeCallable LakeFormationClient::RevokePermissionsCallable(const RevokePermissionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RevokePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokePermissions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RevokePermissions, request, m_executor.get());
 }
 
 void LakeFormationClient::RevokePermissionsAsync(const RevokePermissionsRequest& request, const RevokePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RevokePermissions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RevokePermissions, request, handler, context, m_executor.get());
 }
 
 SearchDatabasesByLFTagsOutcome LakeFormationClient::SearchDatabasesByLFTags(const SearchDatabasesByLFTagsRequest& request) const
@@ -1138,18 +917,12 @@ SearchDatabasesByLFTagsOutcome LakeFormationClient::SearchDatabasesByLFTags(cons
 
 SearchDatabasesByLFTagsOutcomeCallable LakeFormationClient::SearchDatabasesByLFTagsCallable(const SearchDatabasesByLFTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchDatabasesByLFTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchDatabasesByLFTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchDatabasesByLFTags, request, m_executor.get());
 }
 
 void LakeFormationClient::SearchDatabasesByLFTagsAsync(const SearchDatabasesByLFTagsRequest& request, const SearchDatabasesByLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchDatabasesByLFTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchDatabasesByLFTags, request, handler, context, m_executor.get());
 }
 
 SearchTablesByLFTagsOutcome LakeFormationClient::SearchTablesByLFTags(const SearchTablesByLFTagsRequest& request) const
@@ -1163,18 +936,12 @@ SearchTablesByLFTagsOutcome LakeFormationClient::SearchTablesByLFTags(const Sear
 
 SearchTablesByLFTagsOutcomeCallable LakeFormationClient::SearchTablesByLFTagsCallable(const SearchTablesByLFTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchTablesByLFTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchTablesByLFTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchTablesByLFTags, request, m_executor.get());
 }
 
 void LakeFormationClient::SearchTablesByLFTagsAsync(const SearchTablesByLFTagsRequest& request, const SearchTablesByLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchTablesByLFTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchTablesByLFTags, request, handler, context, m_executor.get());
 }
 
 StartQueryPlanningOutcome LakeFormationClient::StartQueryPlanning(const StartQueryPlanningRequest& request) const
@@ -1190,18 +957,12 @@ StartQueryPlanningOutcome LakeFormationClient::StartQueryPlanning(const StartQue
 
 StartQueryPlanningOutcomeCallable LakeFormationClient::StartQueryPlanningCallable(const StartQueryPlanningRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartQueryPlanningOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartQueryPlanning(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartQueryPlanning, request, m_executor.get());
 }
 
 void LakeFormationClient::StartQueryPlanningAsync(const StartQueryPlanningRequest& request, const StartQueryPlanningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartQueryPlanning(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartQueryPlanning, request, handler, context, m_executor.get());
 }
 
 StartTransactionOutcome LakeFormationClient::StartTransaction(const StartTransactionRequest& request) const
@@ -1215,18 +976,12 @@ StartTransactionOutcome LakeFormationClient::StartTransaction(const StartTransac
 
 StartTransactionOutcomeCallable LakeFormationClient::StartTransactionCallable(const StartTransactionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartTransactionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartTransaction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartTransaction, request, m_executor.get());
 }
 
 void LakeFormationClient::StartTransactionAsync(const StartTransactionRequest& request, const StartTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartTransaction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartTransaction, request, handler, context, m_executor.get());
 }
 
 UpdateLFTagOutcome LakeFormationClient::UpdateLFTag(const UpdateLFTagRequest& request) const
@@ -1240,18 +995,12 @@ UpdateLFTagOutcome LakeFormationClient::UpdateLFTag(const UpdateLFTagRequest& re
 
 UpdateLFTagOutcomeCallable LakeFormationClient::UpdateLFTagCallable(const UpdateLFTagRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLFTagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLFTag(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLFTag, request, m_executor.get());
 }
 
 void LakeFormationClient::UpdateLFTagAsync(const UpdateLFTagRequest& request, const UpdateLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLFTag(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLFTag, request, handler, context, m_executor.get());
 }
 
 UpdateResourceOutcome LakeFormationClient::UpdateResource(const UpdateResourceRequest& request) const
@@ -1265,18 +1014,12 @@ UpdateResourceOutcome LakeFormationClient::UpdateResource(const UpdateResourceRe
 
 UpdateResourceOutcomeCallable LakeFormationClient::UpdateResourceCallable(const UpdateResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateResource, request, m_executor.get());
 }
 
 void LakeFormationClient::UpdateResourceAsync(const UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateResource, request, handler, context, m_executor.get());
 }
 
 UpdateTableObjectsOutcome LakeFormationClient::UpdateTableObjects(const UpdateTableObjectsRequest& request) const
@@ -1290,18 +1033,12 @@ UpdateTableObjectsOutcome LakeFormationClient::UpdateTableObjects(const UpdateTa
 
 UpdateTableObjectsOutcomeCallable LakeFormationClient::UpdateTableObjectsCallable(const UpdateTableObjectsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTableObjectsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTableObjects(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTableObjects, request, m_executor.get());
 }
 
 void LakeFormationClient::UpdateTableObjectsAsync(const UpdateTableObjectsRequest& request, const UpdateTableObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTableObjects(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTableObjects, request, handler, context, m_executor.get());
 }
 
 UpdateTableStorageOptimizerOutcome LakeFormationClient::UpdateTableStorageOptimizer(const UpdateTableStorageOptimizerRequest& request) const
@@ -1315,17 +1052,11 @@ UpdateTableStorageOptimizerOutcome LakeFormationClient::UpdateTableStorageOptimi
 
 UpdateTableStorageOptimizerOutcomeCallable LakeFormationClient::UpdateTableStorageOptimizerCallable(const UpdateTableStorageOptimizerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTableStorageOptimizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTableStorageOptimizer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTableStorageOptimizer, request, m_executor.get());
 }
 
 void LakeFormationClient::UpdateTableStorageOptimizerAsync(const UpdateTableStorageOptimizerRequest& request, const UpdateTableStorageOptimizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTableStorageOptimizer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTableStorageOptimizer, request, handler, context, m_executor.get());
 }
 

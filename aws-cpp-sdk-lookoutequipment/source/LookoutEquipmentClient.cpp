@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -192,18 +193,12 @@ CreateDatasetOutcome LookoutEquipmentClient::CreateDataset(const CreateDatasetRe
 
 CreateDatasetOutcomeCallable LookoutEquipmentClient::CreateDatasetCallable(const CreateDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataset, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataset, request, handler, context, m_executor.get());
 }
 
 CreateInferenceSchedulerOutcome LookoutEquipmentClient::CreateInferenceScheduler(const CreateInferenceSchedulerRequest& request) const
@@ -216,18 +211,12 @@ CreateInferenceSchedulerOutcome LookoutEquipmentClient::CreateInferenceScheduler
 
 CreateInferenceSchedulerOutcomeCallable LookoutEquipmentClient::CreateInferenceSchedulerCallable(const CreateInferenceSchedulerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateInferenceSchedulerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInferenceScheduler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateInferenceScheduler, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::CreateInferenceSchedulerAsync(const CreateInferenceSchedulerRequest& request, const CreateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateInferenceScheduler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateInferenceScheduler, request, handler, context, m_executor.get());
 }
 
 CreateLabelOutcome LookoutEquipmentClient::CreateLabel(const CreateLabelRequest& request) const
@@ -240,18 +229,12 @@ CreateLabelOutcome LookoutEquipmentClient::CreateLabel(const CreateLabelRequest&
 
 CreateLabelOutcomeCallable LookoutEquipmentClient::CreateLabelCallable(const CreateLabelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLabel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLabel, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::CreateLabelAsync(const CreateLabelRequest& request, const CreateLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLabel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLabel, request, handler, context, m_executor.get());
 }
 
 CreateLabelGroupOutcome LookoutEquipmentClient::CreateLabelGroup(const CreateLabelGroupRequest& request) const
@@ -264,18 +247,12 @@ CreateLabelGroupOutcome LookoutEquipmentClient::CreateLabelGroup(const CreateLab
 
 CreateLabelGroupOutcomeCallable LookoutEquipmentClient::CreateLabelGroupCallable(const CreateLabelGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLabelGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLabelGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLabelGroup, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::CreateLabelGroupAsync(const CreateLabelGroupRequest& request, const CreateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLabelGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLabelGroup, request, handler, context, m_executor.get());
 }
 
 CreateModelOutcome LookoutEquipmentClient::CreateModel(const CreateModelRequest& request) const
@@ -288,18 +265,12 @@ CreateModelOutcome LookoutEquipmentClient::CreateModel(const CreateModelRequest&
 
 CreateModelOutcomeCallable LookoutEquipmentClient::CreateModelCallable(const CreateModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateModel, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateModel, request, handler, context, m_executor.get());
 }
 
 DeleteDatasetOutcome LookoutEquipmentClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -312,18 +283,12 @@ DeleteDatasetOutcome LookoutEquipmentClient::DeleteDataset(const DeleteDatasetRe
 
 DeleteDatasetOutcomeCallable LookoutEquipmentClient::DeleteDatasetCallable(const DeleteDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDataset, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDataset, request, handler, context, m_executor.get());
 }
 
 DeleteInferenceSchedulerOutcome LookoutEquipmentClient::DeleteInferenceScheduler(const DeleteInferenceSchedulerRequest& request) const
@@ -336,18 +301,12 @@ DeleteInferenceSchedulerOutcome LookoutEquipmentClient::DeleteInferenceScheduler
 
 DeleteInferenceSchedulerOutcomeCallable LookoutEquipmentClient::DeleteInferenceSchedulerCallable(const DeleteInferenceSchedulerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteInferenceSchedulerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInferenceScheduler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteInferenceScheduler, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::DeleteInferenceSchedulerAsync(const DeleteInferenceSchedulerRequest& request, const DeleteInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteInferenceScheduler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteInferenceScheduler, request, handler, context, m_executor.get());
 }
 
 DeleteLabelOutcome LookoutEquipmentClient::DeleteLabel(const DeleteLabelRequest& request) const
@@ -360,18 +319,12 @@ DeleteLabelOutcome LookoutEquipmentClient::DeleteLabel(const DeleteLabelRequest&
 
 DeleteLabelOutcomeCallable LookoutEquipmentClient::DeleteLabelCallable(const DeleteLabelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLabel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLabel, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::DeleteLabelAsync(const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLabel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLabel, request, handler, context, m_executor.get());
 }
 
 DeleteLabelGroupOutcome LookoutEquipmentClient::DeleteLabelGroup(const DeleteLabelGroupRequest& request) const
@@ -384,18 +337,12 @@ DeleteLabelGroupOutcome LookoutEquipmentClient::DeleteLabelGroup(const DeleteLab
 
 DeleteLabelGroupOutcomeCallable LookoutEquipmentClient::DeleteLabelGroupCallable(const DeleteLabelGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLabelGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLabelGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLabelGroup, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::DeleteLabelGroupAsync(const DeleteLabelGroupRequest& request, const DeleteLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLabelGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLabelGroup, request, handler, context, m_executor.get());
 }
 
 DeleteModelOutcome LookoutEquipmentClient::DeleteModel(const DeleteModelRequest& request) const
@@ -408,18 +355,12 @@ DeleteModelOutcome LookoutEquipmentClient::DeleteModel(const DeleteModelRequest&
 
 DeleteModelOutcomeCallable LookoutEquipmentClient::DeleteModelCallable(const DeleteModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteModel, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteModel, request, handler, context, m_executor.get());
 }
 
 DescribeDataIngestionJobOutcome LookoutEquipmentClient::DescribeDataIngestionJob(const DescribeDataIngestionJobRequest& request) const
@@ -432,18 +373,12 @@ DescribeDataIngestionJobOutcome LookoutEquipmentClient::DescribeDataIngestionJob
 
 DescribeDataIngestionJobOutcomeCallable LookoutEquipmentClient::DescribeDataIngestionJobCallable(const DescribeDataIngestionJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDataIngestionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataIngestionJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDataIngestionJob, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::DescribeDataIngestionJobAsync(const DescribeDataIngestionJobRequest& request, const DescribeDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDataIngestionJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDataIngestionJob, request, handler, context, m_executor.get());
 }
 
 DescribeDatasetOutcome LookoutEquipmentClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -456,18 +391,12 @@ DescribeDatasetOutcome LookoutEquipmentClient::DescribeDataset(const DescribeDat
 
 DescribeDatasetOutcomeCallable LookoutEquipmentClient::DescribeDatasetCallable(const DescribeDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDataset, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDataset, request, handler, context, m_executor.get());
 }
 
 DescribeInferenceSchedulerOutcome LookoutEquipmentClient::DescribeInferenceScheduler(const DescribeInferenceSchedulerRequest& request) const
@@ -480,18 +409,12 @@ DescribeInferenceSchedulerOutcome LookoutEquipmentClient::DescribeInferenceSched
 
 DescribeInferenceSchedulerOutcomeCallable LookoutEquipmentClient::DescribeInferenceSchedulerCallable(const DescribeInferenceSchedulerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInferenceSchedulerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInferenceScheduler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeInferenceScheduler, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::DescribeInferenceSchedulerAsync(const DescribeInferenceSchedulerRequest& request, const DescribeInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeInferenceScheduler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeInferenceScheduler, request, handler, context, m_executor.get());
 }
 
 DescribeLabelOutcome LookoutEquipmentClient::DescribeLabel(const DescribeLabelRequest& request) const
@@ -504,18 +427,12 @@ DescribeLabelOutcome LookoutEquipmentClient::DescribeLabel(const DescribeLabelRe
 
 DescribeLabelOutcomeCallable LookoutEquipmentClient::DescribeLabelCallable(const DescribeLabelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLabel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLabel, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::DescribeLabelAsync(const DescribeLabelRequest& request, const DescribeLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLabel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLabel, request, handler, context, m_executor.get());
 }
 
 DescribeLabelGroupOutcome LookoutEquipmentClient::DescribeLabelGroup(const DescribeLabelGroupRequest& request) const
@@ -528,18 +445,12 @@ DescribeLabelGroupOutcome LookoutEquipmentClient::DescribeLabelGroup(const Descr
 
 DescribeLabelGroupOutcomeCallable LookoutEquipmentClient::DescribeLabelGroupCallable(const DescribeLabelGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLabelGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLabelGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLabelGroup, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::DescribeLabelGroupAsync(const DescribeLabelGroupRequest& request, const DescribeLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLabelGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLabelGroup, request, handler, context, m_executor.get());
 }
 
 DescribeModelOutcome LookoutEquipmentClient::DescribeModel(const DescribeModelRequest& request) const
@@ -552,18 +463,12 @@ DescribeModelOutcome LookoutEquipmentClient::DescribeModel(const DescribeModelRe
 
 DescribeModelOutcomeCallable LookoutEquipmentClient::DescribeModelCallable(const DescribeModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeModel, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeModel, request, handler, context, m_executor.get());
 }
 
 ListDataIngestionJobsOutcome LookoutEquipmentClient::ListDataIngestionJobs(const ListDataIngestionJobsRequest& request) const
@@ -576,18 +481,12 @@ ListDataIngestionJobsOutcome LookoutEquipmentClient::ListDataIngestionJobs(const
 
 ListDataIngestionJobsOutcomeCallable LookoutEquipmentClient::ListDataIngestionJobsCallable(const ListDataIngestionJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataIngestionJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataIngestionJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDataIngestionJobs, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::ListDataIngestionJobsAsync(const ListDataIngestionJobsRequest& request, const ListDataIngestionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDataIngestionJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDataIngestionJobs, request, handler, context, m_executor.get());
 }
 
 ListDatasetsOutcome LookoutEquipmentClient::ListDatasets(const ListDatasetsRequest& request) const
@@ -600,18 +499,12 @@ ListDatasetsOutcome LookoutEquipmentClient::ListDatasets(const ListDatasetsReque
 
 ListDatasetsOutcomeCallable LookoutEquipmentClient::ListDatasetsCallable(const ListDatasetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDatasets, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatasets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDatasets, request, handler, context, m_executor.get());
 }
 
 ListInferenceEventsOutcome LookoutEquipmentClient::ListInferenceEvents(const ListInferenceEventsRequest& request) const
@@ -624,18 +517,12 @@ ListInferenceEventsOutcome LookoutEquipmentClient::ListInferenceEvents(const Lis
 
 ListInferenceEventsOutcomeCallable LookoutEquipmentClient::ListInferenceEventsCallable(const ListInferenceEventsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInferenceEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInferenceEvents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInferenceEvents, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::ListInferenceEventsAsync(const ListInferenceEventsRequest& request, const ListInferenceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInferenceEvents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInferenceEvents, request, handler, context, m_executor.get());
 }
 
 ListInferenceExecutionsOutcome LookoutEquipmentClient::ListInferenceExecutions(const ListInferenceExecutionsRequest& request) const
@@ -648,18 +535,12 @@ ListInferenceExecutionsOutcome LookoutEquipmentClient::ListInferenceExecutions(c
 
 ListInferenceExecutionsOutcomeCallable LookoutEquipmentClient::ListInferenceExecutionsCallable(const ListInferenceExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInferenceExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInferenceExecutions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInferenceExecutions, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::ListInferenceExecutionsAsync(const ListInferenceExecutionsRequest& request, const ListInferenceExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInferenceExecutions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInferenceExecutions, request, handler, context, m_executor.get());
 }
 
 ListInferenceSchedulersOutcome LookoutEquipmentClient::ListInferenceSchedulers(const ListInferenceSchedulersRequest& request) const
@@ -672,18 +553,12 @@ ListInferenceSchedulersOutcome LookoutEquipmentClient::ListInferenceSchedulers(c
 
 ListInferenceSchedulersOutcomeCallable LookoutEquipmentClient::ListInferenceSchedulersCallable(const ListInferenceSchedulersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInferenceSchedulersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInferenceSchedulers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInferenceSchedulers, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::ListInferenceSchedulersAsync(const ListInferenceSchedulersRequest& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInferenceSchedulers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInferenceSchedulers, request, handler, context, m_executor.get());
 }
 
 ListLabelGroupsOutcome LookoutEquipmentClient::ListLabelGroups(const ListLabelGroupsRequest& request) const
@@ -696,18 +571,12 @@ ListLabelGroupsOutcome LookoutEquipmentClient::ListLabelGroups(const ListLabelGr
 
 ListLabelGroupsOutcomeCallable LookoutEquipmentClient::ListLabelGroupsCallable(const ListLabelGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLabelGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLabelGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLabelGroups, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::ListLabelGroupsAsync(const ListLabelGroupsRequest& request, const ListLabelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLabelGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLabelGroups, request, handler, context, m_executor.get());
 }
 
 ListLabelsOutcome LookoutEquipmentClient::ListLabels(const ListLabelsRequest& request) const
@@ -720,18 +589,12 @@ ListLabelsOutcome LookoutEquipmentClient::ListLabels(const ListLabelsRequest& re
 
 ListLabelsOutcomeCallable LookoutEquipmentClient::ListLabelsCallable(const ListLabelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLabelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLabels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLabels, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::ListLabelsAsync(const ListLabelsRequest& request, const ListLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLabels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLabels, request, handler, context, m_executor.get());
 }
 
 ListModelsOutcome LookoutEquipmentClient::ListModels(const ListModelsRequest& request) const
@@ -744,18 +607,12 @@ ListModelsOutcome LookoutEquipmentClient::ListModels(const ListModelsRequest& re
 
 ListModelsOutcomeCallable LookoutEquipmentClient::ListModelsCallable(const ListModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListModels, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::ListModelsAsync(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListModels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListModels, request, handler, context, m_executor.get());
 }
 
 ListSensorStatisticsOutcome LookoutEquipmentClient::ListSensorStatistics(const ListSensorStatisticsRequest& request) const
@@ -768,18 +625,12 @@ ListSensorStatisticsOutcome LookoutEquipmentClient::ListSensorStatistics(const L
 
 ListSensorStatisticsOutcomeCallable LookoutEquipmentClient::ListSensorStatisticsCallable(const ListSensorStatisticsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSensorStatisticsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSensorStatistics(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSensorStatistics, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::ListSensorStatisticsAsync(const ListSensorStatisticsRequest& request, const ListSensorStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSensorStatistics(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSensorStatistics, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome LookoutEquipmentClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -792,18 +643,12 @@ ListTagsForResourceOutcome LookoutEquipmentClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable LookoutEquipmentClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartDataIngestionJobOutcome LookoutEquipmentClient::StartDataIngestionJob(const StartDataIngestionJobRequest& request) const
@@ -816,18 +661,12 @@ StartDataIngestionJobOutcome LookoutEquipmentClient::StartDataIngestionJob(const
 
 StartDataIngestionJobOutcomeCallable LookoutEquipmentClient::StartDataIngestionJobCallable(const StartDataIngestionJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDataIngestionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDataIngestionJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartDataIngestionJob, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::StartDataIngestionJobAsync(const StartDataIngestionJobRequest& request, const StartDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartDataIngestionJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartDataIngestionJob, request, handler, context, m_executor.get());
 }
 
 StartInferenceSchedulerOutcome LookoutEquipmentClient::StartInferenceScheduler(const StartInferenceSchedulerRequest& request) const
@@ -840,18 +679,12 @@ StartInferenceSchedulerOutcome LookoutEquipmentClient::StartInferenceScheduler(c
 
 StartInferenceSchedulerOutcomeCallable LookoutEquipmentClient::StartInferenceSchedulerCallable(const StartInferenceSchedulerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartInferenceSchedulerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartInferenceScheduler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartInferenceScheduler, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::StartInferenceSchedulerAsync(const StartInferenceSchedulerRequest& request, const StartInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartInferenceScheduler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartInferenceScheduler, request, handler, context, m_executor.get());
 }
 
 StopInferenceSchedulerOutcome LookoutEquipmentClient::StopInferenceScheduler(const StopInferenceSchedulerRequest& request) const
@@ -864,18 +697,12 @@ StopInferenceSchedulerOutcome LookoutEquipmentClient::StopInferenceScheduler(con
 
 StopInferenceSchedulerOutcomeCallable LookoutEquipmentClient::StopInferenceSchedulerCallable(const StopInferenceSchedulerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopInferenceSchedulerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopInferenceScheduler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopInferenceScheduler, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::StopInferenceSchedulerAsync(const StopInferenceSchedulerRequest& request, const StopInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopInferenceScheduler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopInferenceScheduler, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome LookoutEquipmentClient::TagResource(const TagResourceRequest& request) const
@@ -888,18 +715,12 @@ TagResourceOutcome LookoutEquipmentClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable LookoutEquipmentClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome LookoutEquipmentClient::UntagResource(const UntagResourceRequest& request) const
@@ -912,18 +733,12 @@ UntagResourceOutcome LookoutEquipmentClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable LookoutEquipmentClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateInferenceSchedulerOutcome LookoutEquipmentClient::UpdateInferenceScheduler(const UpdateInferenceSchedulerRequest& request) const
@@ -936,18 +751,12 @@ UpdateInferenceSchedulerOutcome LookoutEquipmentClient::UpdateInferenceScheduler
 
 UpdateInferenceSchedulerOutcomeCallable LookoutEquipmentClient::UpdateInferenceSchedulerCallable(const UpdateInferenceSchedulerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateInferenceSchedulerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInferenceScheduler(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateInferenceScheduler, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::UpdateInferenceSchedulerAsync(const UpdateInferenceSchedulerRequest& request, const UpdateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateInferenceScheduler(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateInferenceScheduler, request, handler, context, m_executor.get());
 }
 
 UpdateLabelGroupOutcome LookoutEquipmentClient::UpdateLabelGroup(const UpdateLabelGroupRequest& request) const
@@ -960,17 +769,11 @@ UpdateLabelGroupOutcome LookoutEquipmentClient::UpdateLabelGroup(const UpdateLab
 
 UpdateLabelGroupOutcomeCallable LookoutEquipmentClient::UpdateLabelGroupCallable(const UpdateLabelGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLabelGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLabelGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLabelGroup, request, m_executor.get());
 }
 
 void LookoutEquipmentClient::UpdateLabelGroupAsync(const UpdateLabelGroupRequest& request, const UpdateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLabelGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLabelGroup, request, handler, context, m_executor.get());
 }
 

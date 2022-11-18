@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -174,18 +175,12 @@ AssociateRepositoryOutcome CodeGuruReviewerClient::AssociateRepository(const Ass
 
 AssociateRepositoryOutcomeCallable CodeGuruReviewerClient::AssociateRepositoryCallable(const AssociateRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateRepository(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateRepository, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::AssociateRepositoryAsync(const AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateRepository(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateRepository, request, handler, context, m_executor.get());
 }
 
 CreateCodeReviewOutcome CodeGuruReviewerClient::CreateCodeReview(const CreateCodeReviewRequest& request) const
@@ -199,18 +194,12 @@ CreateCodeReviewOutcome CodeGuruReviewerClient::CreateCodeReview(const CreateCod
 
 CreateCodeReviewOutcomeCallable CodeGuruReviewerClient::CreateCodeReviewCallable(const CreateCodeReviewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCodeReviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCodeReview(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCodeReview, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::CreateCodeReviewAsync(const CreateCodeReviewRequest& request, const CreateCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCodeReview(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCodeReview, request, handler, context, m_executor.get());
 }
 
 DescribeCodeReviewOutcome CodeGuruReviewerClient::DescribeCodeReview(const DescribeCodeReviewRequest& request) const
@@ -230,18 +219,12 @@ DescribeCodeReviewOutcome CodeGuruReviewerClient::DescribeCodeReview(const Descr
 
 DescribeCodeReviewOutcomeCallable CodeGuruReviewerClient::DescribeCodeReviewCallable(const DescribeCodeReviewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCodeReviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCodeReview(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCodeReview, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::DescribeCodeReviewAsync(const DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCodeReview(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCodeReview, request, handler, context, m_executor.get());
 }
 
 DescribeRecommendationFeedbackOutcome CodeGuruReviewerClient::DescribeRecommendationFeedback(const DescribeRecommendationFeedbackRequest& request) const
@@ -266,18 +249,12 @@ DescribeRecommendationFeedbackOutcome CodeGuruReviewerClient::DescribeRecommenda
 
 DescribeRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::DescribeRecommendationFeedbackCallable(const DescribeRecommendationFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRecommendationFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRecommendationFeedback(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRecommendationFeedback, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::DescribeRecommendationFeedbackAsync(const DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRecommendationFeedback(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRecommendationFeedback, request, handler, context, m_executor.get());
 }
 
 DescribeRepositoryAssociationOutcome CodeGuruReviewerClient::DescribeRepositoryAssociation(const DescribeRepositoryAssociationRequest& request) const
@@ -297,18 +274,12 @@ DescribeRepositoryAssociationOutcome CodeGuruReviewerClient::DescribeRepositoryA
 
 DescribeRepositoryAssociationOutcomeCallable CodeGuruReviewerClient::DescribeRepositoryAssociationCallable(const DescribeRepositoryAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRepositoryAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRepositoryAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRepositoryAssociation, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::DescribeRepositoryAssociationAsync(const DescribeRepositoryAssociationRequest& request, const DescribeRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRepositoryAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRepositoryAssociation, request, handler, context, m_executor.get());
 }
 
 DisassociateRepositoryOutcome CodeGuruReviewerClient::DisassociateRepository(const DisassociateRepositoryRequest& request) const
@@ -328,18 +299,12 @@ DisassociateRepositoryOutcome CodeGuruReviewerClient::DisassociateRepository(con
 
 DisassociateRepositoryOutcomeCallable CodeGuruReviewerClient::DisassociateRepositoryCallable(const DisassociateRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateRepository(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateRepository, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::DisassociateRepositoryAsync(const DisassociateRepositoryRequest& request, const DisassociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateRepository(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateRepository, request, handler, context, m_executor.get());
 }
 
 ListCodeReviewsOutcome CodeGuruReviewerClient::ListCodeReviews(const ListCodeReviewsRequest& request) const
@@ -358,18 +323,12 @@ ListCodeReviewsOutcome CodeGuruReviewerClient::ListCodeReviews(const ListCodeRev
 
 ListCodeReviewsOutcomeCallable CodeGuruReviewerClient::ListCodeReviewsCallable(const ListCodeReviewsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCodeReviewsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCodeReviews(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCodeReviews, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::ListCodeReviewsAsync(const ListCodeReviewsRequest& request, const ListCodeReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCodeReviews(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCodeReviews, request, handler, context, m_executor.get());
 }
 
 ListRecommendationFeedbackOutcome CodeGuruReviewerClient::ListRecommendationFeedback(const ListRecommendationFeedbackRequest& request) const
@@ -390,18 +349,12 @@ ListRecommendationFeedbackOutcome CodeGuruReviewerClient::ListRecommendationFeed
 
 ListRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::ListRecommendationFeedbackCallable(const ListRecommendationFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRecommendationFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecommendationFeedback(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRecommendationFeedback, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::ListRecommendationFeedbackAsync(const ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRecommendationFeedback(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRecommendationFeedback, request, handler, context, m_executor.get());
 }
 
 ListRecommendationsOutcome CodeGuruReviewerClient::ListRecommendations(const ListRecommendationsRequest& request) const
@@ -422,18 +375,12 @@ ListRecommendationsOutcome CodeGuruReviewerClient::ListRecommendations(const Lis
 
 ListRecommendationsOutcomeCallable CodeGuruReviewerClient::ListRecommendationsCallable(const ListRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecommendations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRecommendations, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::ListRecommendationsAsync(const ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRecommendations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRecommendations, request, handler, context, m_executor.get());
 }
 
 ListRepositoryAssociationsOutcome CodeGuruReviewerClient::ListRepositoryAssociations(const ListRepositoryAssociationsRequest& request) const
@@ -447,18 +394,12 @@ ListRepositoryAssociationsOutcome CodeGuruReviewerClient::ListRepositoryAssociat
 
 ListRepositoryAssociationsOutcomeCallable CodeGuruReviewerClient::ListRepositoryAssociationsCallable(const ListRepositoryAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRepositoryAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRepositoryAssociations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRepositoryAssociations, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::ListRepositoryAssociationsAsync(const ListRepositoryAssociationsRequest& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRepositoryAssociations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRepositoryAssociations, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome CodeGuruReviewerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -478,18 +419,12 @@ ListTagsForResourceOutcome CodeGuruReviewerClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable CodeGuruReviewerClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutRecommendationFeedbackOutcome CodeGuruReviewerClient::PutRecommendationFeedback(const PutRecommendationFeedbackRequest& request) const
@@ -503,18 +438,12 @@ PutRecommendationFeedbackOutcome CodeGuruReviewerClient::PutRecommendationFeedba
 
 PutRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::PutRecommendationFeedbackCallable(const PutRecommendationFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutRecommendationFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRecommendationFeedback(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutRecommendationFeedback, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::PutRecommendationFeedbackAsync(const PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutRecommendationFeedback(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutRecommendationFeedback, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome CodeGuruReviewerClient::TagResource(const TagResourceRequest& request) const
@@ -534,18 +463,12 @@ TagResourceOutcome CodeGuruReviewerClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable CodeGuruReviewerClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome CodeGuruReviewerClient::UntagResource(const UntagResourceRequest& request) const
@@ -570,17 +493,11 @@ UntagResourceOutcome CodeGuruReviewerClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable CodeGuruReviewerClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void CodeGuruReviewerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 

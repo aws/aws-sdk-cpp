@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -162,18 +163,12 @@ DescribeServicesOutcome PricingClient::DescribeServices(const DescribeServicesRe
 
 DescribeServicesOutcomeCallable PricingClient::DescribeServicesCallable(const DescribeServicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeServicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeServices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeServices, request, m_executor.get());
 }
 
 void PricingClient::DescribeServicesAsync(const DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeServices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeServices, request, handler, context, m_executor.get());
 }
 
 GetAttributeValuesOutcome PricingClient::GetAttributeValues(const GetAttributeValuesRequest& request) const
@@ -186,18 +181,12 @@ GetAttributeValuesOutcome PricingClient::GetAttributeValues(const GetAttributeVa
 
 GetAttributeValuesOutcomeCallable PricingClient::GetAttributeValuesCallable(const GetAttributeValuesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAttributeValuesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAttributeValues(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAttributeValues, request, m_executor.get());
 }
 
 void PricingClient::GetAttributeValuesAsync(const GetAttributeValuesRequest& request, const GetAttributeValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAttributeValues(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAttributeValues, request, handler, context, m_executor.get());
 }
 
 GetProductsOutcome PricingClient::GetProducts(const GetProductsRequest& request) const
@@ -210,17 +199,11 @@ GetProductsOutcome PricingClient::GetProducts(const GetProductsRequest& request)
 
 GetProductsOutcomeCallable PricingClient::GetProductsCallable(const GetProductsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetProductsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProducts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetProducts, request, m_executor.get());
 }
 
 void PricingClient::GetProductsAsync(const GetProductsRequest& request, const GetProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetProducts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetProducts, request, handler, context, m_executor.get());
 }
 

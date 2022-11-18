@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -188,18 +189,12 @@ AssociateResourceOutcome SyntheticsClient::AssociateResource(const AssociateReso
 
 AssociateResourceOutcomeCallable SyntheticsClient::AssociateResourceCallable(const AssociateResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateResource, request, m_executor.get());
 }
 
 void SyntheticsClient::AssociateResourceAsync(const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateResource, request, handler, context, m_executor.get());
 }
 
 CreateCanaryOutcome SyntheticsClient::CreateCanary(const CreateCanaryRequest& request) const
@@ -213,18 +208,12 @@ CreateCanaryOutcome SyntheticsClient::CreateCanary(const CreateCanaryRequest& re
 
 CreateCanaryOutcomeCallable SyntheticsClient::CreateCanaryCallable(const CreateCanaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCanaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCanary(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCanary, request, m_executor.get());
 }
 
 void SyntheticsClient::CreateCanaryAsync(const CreateCanaryRequest& request, const CreateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCanary(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCanary, request, handler, context, m_executor.get());
 }
 
 CreateGroupOutcome SyntheticsClient::CreateGroup(const CreateGroupRequest& request) const
@@ -238,18 +227,12 @@ CreateGroupOutcome SyntheticsClient::CreateGroup(const CreateGroupRequest& reque
 
 CreateGroupOutcomeCallable SyntheticsClient::CreateGroupCallable(const CreateGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateGroup, request, m_executor.get());
 }
 
 void SyntheticsClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateGroup, request, handler, context, m_executor.get());
 }
 
 DeleteCanaryOutcome SyntheticsClient::DeleteCanary(const DeleteCanaryRequest& request) const
@@ -269,18 +252,12 @@ DeleteCanaryOutcome SyntheticsClient::DeleteCanary(const DeleteCanaryRequest& re
 
 DeleteCanaryOutcomeCallable SyntheticsClient::DeleteCanaryCallable(const DeleteCanaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCanaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCanary(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCanary, request, m_executor.get());
 }
 
 void SyntheticsClient::DeleteCanaryAsync(const DeleteCanaryRequest& request, const DeleteCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCanary(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCanary, request, handler, context, m_executor.get());
 }
 
 DeleteGroupOutcome SyntheticsClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -300,18 +277,12 @@ DeleteGroupOutcome SyntheticsClient::DeleteGroup(const DeleteGroupRequest& reque
 
 DeleteGroupOutcomeCallable SyntheticsClient::DeleteGroupCallable(const DeleteGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteGroup, request, m_executor.get());
 }
 
 void SyntheticsClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteGroup, request, handler, context, m_executor.get());
 }
 
 DescribeCanariesOutcome SyntheticsClient::DescribeCanaries(const DescribeCanariesRequest& request) const
@@ -325,18 +296,12 @@ DescribeCanariesOutcome SyntheticsClient::DescribeCanaries(const DescribeCanarie
 
 DescribeCanariesOutcomeCallable SyntheticsClient::DescribeCanariesCallable(const DescribeCanariesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCanariesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCanaries(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCanaries, request, m_executor.get());
 }
 
 void SyntheticsClient::DescribeCanariesAsync(const DescribeCanariesRequest& request, const DescribeCanariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCanaries(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCanaries, request, handler, context, m_executor.get());
 }
 
 DescribeCanariesLastRunOutcome SyntheticsClient::DescribeCanariesLastRun(const DescribeCanariesLastRunRequest& request) const
@@ -350,18 +315,12 @@ DescribeCanariesLastRunOutcome SyntheticsClient::DescribeCanariesLastRun(const D
 
 DescribeCanariesLastRunOutcomeCallable SyntheticsClient::DescribeCanariesLastRunCallable(const DescribeCanariesLastRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCanariesLastRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCanariesLastRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCanariesLastRun, request, m_executor.get());
 }
 
 void SyntheticsClient::DescribeCanariesLastRunAsync(const DescribeCanariesLastRunRequest& request, const DescribeCanariesLastRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCanariesLastRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCanariesLastRun, request, handler, context, m_executor.get());
 }
 
 DescribeRuntimeVersionsOutcome SyntheticsClient::DescribeRuntimeVersions(const DescribeRuntimeVersionsRequest& request) const
@@ -375,18 +334,12 @@ DescribeRuntimeVersionsOutcome SyntheticsClient::DescribeRuntimeVersions(const D
 
 DescribeRuntimeVersionsOutcomeCallable SyntheticsClient::DescribeRuntimeVersionsCallable(const DescribeRuntimeVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRuntimeVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRuntimeVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRuntimeVersions, request, m_executor.get());
 }
 
 void SyntheticsClient::DescribeRuntimeVersionsAsync(const DescribeRuntimeVersionsRequest& request, const DescribeRuntimeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRuntimeVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRuntimeVersions, request, handler, context, m_executor.get());
 }
 
 DisassociateResourceOutcome SyntheticsClient::DisassociateResource(const DisassociateResourceRequest& request) const
@@ -407,18 +360,12 @@ DisassociateResourceOutcome SyntheticsClient::DisassociateResource(const Disasso
 
 DisassociateResourceOutcomeCallable SyntheticsClient::DisassociateResourceCallable(const DisassociateResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateResource, request, m_executor.get());
 }
 
 void SyntheticsClient::DisassociateResourceAsync(const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateResource, request, handler, context, m_executor.get());
 }
 
 GetCanaryOutcome SyntheticsClient::GetCanary(const GetCanaryRequest& request) const
@@ -438,18 +385,12 @@ GetCanaryOutcome SyntheticsClient::GetCanary(const GetCanaryRequest& request) co
 
 GetCanaryOutcomeCallable SyntheticsClient::GetCanaryCallable(const GetCanaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCanaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCanary(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCanary, request, m_executor.get());
 }
 
 void SyntheticsClient::GetCanaryAsync(const GetCanaryRequest& request, const GetCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCanary(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCanary, request, handler, context, m_executor.get());
 }
 
 GetCanaryRunsOutcome SyntheticsClient::GetCanaryRuns(const GetCanaryRunsRequest& request) const
@@ -470,18 +411,12 @@ GetCanaryRunsOutcome SyntheticsClient::GetCanaryRuns(const GetCanaryRunsRequest&
 
 GetCanaryRunsOutcomeCallable SyntheticsClient::GetCanaryRunsCallable(const GetCanaryRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCanaryRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCanaryRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCanaryRuns, request, m_executor.get());
 }
 
 void SyntheticsClient::GetCanaryRunsAsync(const GetCanaryRunsRequest& request, const GetCanaryRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCanaryRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCanaryRuns, request, handler, context, m_executor.get());
 }
 
 GetGroupOutcome SyntheticsClient::GetGroup(const GetGroupRequest& request) const
@@ -501,18 +436,12 @@ GetGroupOutcome SyntheticsClient::GetGroup(const GetGroupRequest& request) const
 
 GetGroupOutcomeCallable SyntheticsClient::GetGroupCallable(const GetGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetGroup, request, m_executor.get());
 }
 
 void SyntheticsClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetGroup, request, handler, context, m_executor.get());
 }
 
 ListAssociatedGroupsOutcome SyntheticsClient::ListAssociatedGroups(const ListAssociatedGroupsRequest& request) const
@@ -533,18 +462,12 @@ ListAssociatedGroupsOutcome SyntheticsClient::ListAssociatedGroups(const ListAss
 
 ListAssociatedGroupsOutcomeCallable SyntheticsClient::ListAssociatedGroupsCallable(const ListAssociatedGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssociatedGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssociatedGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAssociatedGroups, request, m_executor.get());
 }
 
 void SyntheticsClient::ListAssociatedGroupsAsync(const ListAssociatedGroupsRequest& request, const ListAssociatedGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAssociatedGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAssociatedGroups, request, handler, context, m_executor.get());
 }
 
 ListGroupResourcesOutcome SyntheticsClient::ListGroupResources(const ListGroupResourcesRequest& request) const
@@ -565,18 +488,12 @@ ListGroupResourcesOutcome SyntheticsClient::ListGroupResources(const ListGroupRe
 
 ListGroupResourcesOutcomeCallable SyntheticsClient::ListGroupResourcesCallable(const ListGroupResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGroupResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroupResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListGroupResources, request, m_executor.get());
 }
 
 void SyntheticsClient::ListGroupResourcesAsync(const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListGroupResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListGroupResources, request, handler, context, m_executor.get());
 }
 
 ListGroupsOutcome SyntheticsClient::ListGroups(const ListGroupsRequest& request) const
@@ -590,18 +507,12 @@ ListGroupsOutcome SyntheticsClient::ListGroups(const ListGroupsRequest& request)
 
 ListGroupsOutcomeCallable SyntheticsClient::ListGroupsCallable(const ListGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListGroups, request, m_executor.get());
 }
 
 void SyntheticsClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListGroups, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome SyntheticsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -621,18 +532,12 @@ ListTagsForResourceOutcome SyntheticsClient::ListTagsForResource(const ListTagsF
 
 ListTagsForResourceOutcomeCallable SyntheticsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void SyntheticsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartCanaryOutcome SyntheticsClient::StartCanary(const StartCanaryRequest& request) const
@@ -653,18 +558,12 @@ StartCanaryOutcome SyntheticsClient::StartCanary(const StartCanaryRequest& reque
 
 StartCanaryOutcomeCallable SyntheticsClient::StartCanaryCallable(const StartCanaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartCanaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartCanary(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartCanary, request, m_executor.get());
 }
 
 void SyntheticsClient::StartCanaryAsync(const StartCanaryRequest& request, const StartCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartCanary(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartCanary, request, handler, context, m_executor.get());
 }
 
 StopCanaryOutcome SyntheticsClient::StopCanary(const StopCanaryRequest& request) const
@@ -685,18 +584,12 @@ StopCanaryOutcome SyntheticsClient::StopCanary(const StopCanaryRequest& request)
 
 StopCanaryOutcomeCallable SyntheticsClient::StopCanaryCallable(const StopCanaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopCanaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopCanary(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopCanary, request, m_executor.get());
 }
 
 void SyntheticsClient::StopCanaryAsync(const StopCanaryRequest& request, const StopCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopCanary(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopCanary, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome SyntheticsClient::TagResource(const TagResourceRequest& request) const
@@ -716,18 +609,12 @@ TagResourceOutcome SyntheticsClient::TagResource(const TagResourceRequest& reque
 
 TagResourceOutcomeCallable SyntheticsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void SyntheticsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome SyntheticsClient::UntagResource(const UntagResourceRequest& request) const
@@ -752,18 +639,12 @@ UntagResourceOutcome SyntheticsClient::UntagResource(const UntagResourceRequest&
 
 UntagResourceOutcomeCallable SyntheticsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void SyntheticsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateCanaryOutcome SyntheticsClient::UpdateCanary(const UpdateCanaryRequest& request) const
@@ -783,17 +664,11 @@ UpdateCanaryOutcome SyntheticsClient::UpdateCanary(const UpdateCanaryRequest& re
 
 UpdateCanaryOutcomeCallable SyntheticsClient::UpdateCanaryCallable(const UpdateCanaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCanaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCanary(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCanary, request, m_executor.get());
 }
 
 void SyntheticsClient::UpdateCanaryAsync(const UpdateCanaryRequest& request, const UpdateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCanary(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCanary, request, handler, context, m_executor.get());
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -197,18 +198,12 @@ CreateAppOutcome AmplifyClient::CreateApp(const CreateAppRequest& request) const
 
 CreateAppOutcomeCallable AmplifyClient::CreateAppCallable(const CreateAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateApp, request, m_executor.get());
 }
 
 void AmplifyClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateApp, request, handler, context, m_executor.get());
 }
 
 CreateBackendEnvironmentOutcome AmplifyClient::CreateBackendEnvironment(const CreateBackendEnvironmentRequest& request) const
@@ -229,18 +224,12 @@ CreateBackendEnvironmentOutcome AmplifyClient::CreateBackendEnvironment(const Cr
 
 CreateBackendEnvironmentOutcomeCallable AmplifyClient::CreateBackendEnvironmentCallable(const CreateBackendEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackendEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackendEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBackendEnvironment, request, m_executor.get());
 }
 
 void AmplifyClient::CreateBackendEnvironmentAsync(const CreateBackendEnvironmentRequest& request, const CreateBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBackendEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBackendEnvironment, request, handler, context, m_executor.get());
 }
 
 CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& request) const
@@ -261,18 +250,12 @@ CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& reque
 
 CreateBranchOutcomeCallable AmplifyClient::CreateBranchCallable(const CreateBranchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBranchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBranch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBranch, request, m_executor.get());
 }
 
 void AmplifyClient::CreateBranchAsync(const CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBranch(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBranch, request, handler, context, m_executor.get());
 }
 
 CreateDeploymentOutcome AmplifyClient::CreateDeployment(const CreateDeploymentRequest& request) const
@@ -300,18 +283,12 @@ CreateDeploymentOutcome AmplifyClient::CreateDeployment(const CreateDeploymentRe
 
 CreateDeploymentOutcomeCallable AmplifyClient::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDeployment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDeployment, request, m_executor.get());
 }
 
 void AmplifyClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDeployment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDeployment, request, handler, context, m_executor.get());
 }
 
 CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const CreateDomainAssociationRequest& request) const
@@ -332,18 +309,12 @@ CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const Crea
 
 CreateDomainAssociationOutcomeCallable AmplifyClient::CreateDomainAssociationCallable(const CreateDomainAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDomainAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDomainAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDomainAssociation, request, m_executor.get());
 }
 
 void AmplifyClient::CreateDomainAssociationAsync(const CreateDomainAssociationRequest& request, const CreateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDomainAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDomainAssociation, request, handler, context, m_executor.get());
 }
 
 CreateWebhookOutcome AmplifyClient::CreateWebhook(const CreateWebhookRequest& request) const
@@ -364,18 +335,12 @@ CreateWebhookOutcome AmplifyClient::CreateWebhook(const CreateWebhookRequest& re
 
 CreateWebhookOutcomeCallable AmplifyClient::CreateWebhookCallable(const CreateWebhookRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWebhookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWebhook(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWebhook, request, m_executor.get());
 }
 
 void AmplifyClient::CreateWebhookAsync(const CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWebhook(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWebhook, request, handler, context, m_executor.get());
 }
 
 DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
@@ -395,18 +360,12 @@ DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
 
 DeleteAppOutcomeCallable AmplifyClient::DeleteAppCallable(const DeleteAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteApp, request, m_executor.get());
 }
 
 void AmplifyClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteApp, request, handler, context, m_executor.get());
 }
 
 DeleteBackendEnvironmentOutcome AmplifyClient::DeleteBackendEnvironment(const DeleteBackendEnvironmentRequest& request) const
@@ -433,18 +392,12 @@ DeleteBackendEnvironmentOutcome AmplifyClient::DeleteBackendEnvironment(const De
 
 DeleteBackendEnvironmentOutcomeCallable AmplifyClient::DeleteBackendEnvironmentCallable(const DeleteBackendEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackendEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBackendEnvironment, request, m_executor.get());
 }
 
 void AmplifyClient::DeleteBackendEnvironmentAsync(const DeleteBackendEnvironmentRequest& request, const DeleteBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBackendEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBackendEnvironment, request, handler, context, m_executor.get());
 }
 
 DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& request) const
@@ -471,18 +424,12 @@ DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& reque
 
 DeleteBranchOutcomeCallable AmplifyClient::DeleteBranchCallable(const DeleteBranchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBranchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBranch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBranch, request, m_executor.get());
 }
 
 void AmplifyClient::DeleteBranchAsync(const DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBranch(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBranch, request, handler, context, m_executor.get());
 }
 
 DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const DeleteDomainAssociationRequest& request) const
@@ -509,18 +456,12 @@ DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const Dele
 
 DeleteDomainAssociationOutcomeCallable AmplifyClient::DeleteDomainAssociationCallable(const DeleteDomainAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDomainAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDomainAssociation, request, m_executor.get());
 }
 
 void AmplifyClient::DeleteDomainAssociationAsync(const DeleteDomainAssociationRequest& request, const DeleteDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDomainAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDomainAssociation, request, handler, context, m_executor.get());
 }
 
 DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const
@@ -554,18 +495,12 @@ DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const
 
 DeleteJobOutcomeCallable AmplifyClient::DeleteJobCallable(const DeleteJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteJob, request, m_executor.get());
 }
 
 void AmplifyClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteJob, request, handler, context, m_executor.get());
 }
 
 DeleteWebhookOutcome AmplifyClient::DeleteWebhook(const DeleteWebhookRequest& request) const
@@ -585,18 +520,12 @@ DeleteWebhookOutcome AmplifyClient::DeleteWebhook(const DeleteWebhookRequest& re
 
 DeleteWebhookOutcomeCallable AmplifyClient::DeleteWebhookCallable(const DeleteWebhookRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWebhookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWebhook(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWebhook, request, m_executor.get());
 }
 
 void AmplifyClient::DeleteWebhookAsync(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWebhook(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWebhook, request, handler, context, m_executor.get());
 }
 
 GenerateAccessLogsOutcome AmplifyClient::GenerateAccessLogs(const GenerateAccessLogsRequest& request) const
@@ -617,18 +546,12 @@ GenerateAccessLogsOutcome AmplifyClient::GenerateAccessLogs(const GenerateAccess
 
 GenerateAccessLogsOutcomeCallable AmplifyClient::GenerateAccessLogsCallable(const GenerateAccessLogsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GenerateAccessLogsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateAccessLogs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GenerateAccessLogs, request, m_executor.get());
 }
 
 void AmplifyClient::GenerateAccessLogsAsync(const GenerateAccessLogsRequest& request, const GenerateAccessLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GenerateAccessLogs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GenerateAccessLogs, request, handler, context, m_executor.get());
 }
 
 GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
@@ -648,18 +571,12 @@ GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
 
 GetAppOutcomeCallable AmplifyClient::GetAppCallable(const GetAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetApp, request, m_executor.get());
 }
 
 void AmplifyClient::GetAppAsync(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetApp, request, handler, context, m_executor.get());
 }
 
 GetArtifactUrlOutcome AmplifyClient::GetArtifactUrl(const GetArtifactUrlRequest& request) const
@@ -679,18 +596,12 @@ GetArtifactUrlOutcome AmplifyClient::GetArtifactUrl(const GetArtifactUrlRequest&
 
 GetArtifactUrlOutcomeCallable AmplifyClient::GetArtifactUrlCallable(const GetArtifactUrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetArtifactUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetArtifactUrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetArtifactUrl, request, m_executor.get());
 }
 
 void AmplifyClient::GetArtifactUrlAsync(const GetArtifactUrlRequest& request, const GetArtifactUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetArtifactUrl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetArtifactUrl, request, handler, context, m_executor.get());
 }
 
 GetBackendEnvironmentOutcome AmplifyClient::GetBackendEnvironment(const GetBackendEnvironmentRequest& request) const
@@ -717,18 +628,12 @@ GetBackendEnvironmentOutcome AmplifyClient::GetBackendEnvironment(const GetBacke
 
 GetBackendEnvironmentOutcomeCallable AmplifyClient::GetBackendEnvironmentCallable(const GetBackendEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendEnvironment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBackendEnvironment, request, m_executor.get());
 }
 
 void AmplifyClient::GetBackendEnvironmentAsync(const GetBackendEnvironmentRequest& request, const GetBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBackendEnvironment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBackendEnvironment, request, handler, context, m_executor.get());
 }
 
 GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
@@ -755,18 +660,12 @@ GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
 
 GetBranchOutcomeCallable AmplifyClient::GetBranchCallable(const GetBranchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBranchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBranch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBranch, request, m_executor.get());
 }
 
 void AmplifyClient::GetBranchAsync(const GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBranch(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBranch, request, handler, context, m_executor.get());
 }
 
 GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainAssociationRequest& request) const
@@ -793,18 +692,12 @@ GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainA
 
 GetDomainAssociationOutcomeCallable AmplifyClient::GetDomainAssociationCallable(const GetDomainAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDomainAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDomainAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDomainAssociation, request, m_executor.get());
 }
 
 void AmplifyClient::GetDomainAssociationAsync(const GetDomainAssociationRequest& request, const GetDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDomainAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDomainAssociation, request, handler, context, m_executor.get());
 }
 
 GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const
@@ -838,18 +731,12 @@ GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const
 
 GetJobOutcomeCallable AmplifyClient::GetJobCallable(const GetJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetJob, request, m_executor.get());
 }
 
 void AmplifyClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetJob, request, handler, context, m_executor.get());
 }
 
 GetWebhookOutcome AmplifyClient::GetWebhook(const GetWebhookRequest& request) const
@@ -869,18 +756,12 @@ GetWebhookOutcome AmplifyClient::GetWebhook(const GetWebhookRequest& request) co
 
 GetWebhookOutcomeCallable AmplifyClient::GetWebhookCallable(const GetWebhookRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWebhookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWebhook(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWebhook, request, m_executor.get());
 }
 
 void AmplifyClient::GetWebhookAsync(const GetWebhookRequest& request, const GetWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWebhook(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWebhook, request, handler, context, m_executor.get());
 }
 
 ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const
@@ -894,18 +775,12 @@ ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const
 
 ListAppsOutcomeCallable AmplifyClient::ListAppsCallable(const ListAppsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApps(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListApps, request, m_executor.get());
 }
 
 void AmplifyClient::ListAppsAsync(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListApps(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListApps, request, handler, context, m_executor.get());
 }
 
 ListArtifactsOutcome AmplifyClient::ListArtifacts(const ListArtifactsRequest& request) const
@@ -940,18 +815,12 @@ ListArtifactsOutcome AmplifyClient::ListArtifacts(const ListArtifactsRequest& re
 
 ListArtifactsOutcomeCallable AmplifyClient::ListArtifactsCallable(const ListArtifactsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListArtifactsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListArtifacts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListArtifacts, request, m_executor.get());
 }
 
 void AmplifyClient::ListArtifactsAsync(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListArtifacts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListArtifacts, request, handler, context, m_executor.get());
 }
 
 ListBackendEnvironmentsOutcome AmplifyClient::ListBackendEnvironments(const ListBackendEnvironmentsRequest& request) const
@@ -972,18 +841,12 @@ ListBackendEnvironmentsOutcome AmplifyClient::ListBackendEnvironments(const List
 
 ListBackendEnvironmentsOutcomeCallable AmplifyClient::ListBackendEnvironmentsCallable(const ListBackendEnvironmentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBackendEnvironmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBackendEnvironments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBackendEnvironments, request, m_executor.get());
 }
 
 void AmplifyClient::ListBackendEnvironmentsAsync(const ListBackendEnvironmentsRequest& request, const ListBackendEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBackendEnvironments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBackendEnvironments, request, handler, context, m_executor.get());
 }
 
 ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& request) const
@@ -1004,18 +867,12 @@ ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& reque
 
 ListBranchesOutcomeCallable AmplifyClient::ListBranchesCallable(const ListBranchesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBranchesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBranches(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBranches, request, m_executor.get());
 }
 
 void AmplifyClient::ListBranchesAsync(const ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBranches(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBranches, request, handler, context, m_executor.get());
 }
 
 ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDomainAssociationsRequest& request) const
@@ -1036,18 +893,12 @@ ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDo
 
 ListDomainAssociationsOutcomeCallable AmplifyClient::ListDomainAssociationsCallable(const ListDomainAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDomainAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomainAssociations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDomainAssociations, request, m_executor.get());
 }
 
 void AmplifyClient::ListDomainAssociationsAsync(const ListDomainAssociationsRequest& request, const ListDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDomainAssociations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDomainAssociations, request, handler, context, m_executor.get());
 }
 
 ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const
@@ -1075,18 +926,12 @@ ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const
 
 ListJobsOutcomeCallable AmplifyClient::ListJobsCallable(const ListJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListJobs, request, m_executor.get());
 }
 
 void AmplifyClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListJobs, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome AmplifyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1106,18 +951,12 @@ ListTagsForResourceOutcome AmplifyClient::ListTagsForResource(const ListTagsForR
 
 ListTagsForResourceOutcomeCallable AmplifyClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void AmplifyClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListWebhooksOutcome AmplifyClient::ListWebhooks(const ListWebhooksRequest& request) const
@@ -1138,18 +977,12 @@ ListWebhooksOutcome AmplifyClient::ListWebhooks(const ListWebhooksRequest& reque
 
 ListWebhooksOutcomeCallable AmplifyClient::ListWebhooksCallable(const ListWebhooksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWebhooksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWebhooks(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWebhooks, request, m_executor.get());
 }
 
 void AmplifyClient::ListWebhooksAsync(const ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWebhooks(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWebhooks, request, handler, context, m_executor.get());
 }
 
 StartDeploymentOutcome AmplifyClient::StartDeployment(const StartDeploymentRequest& request) const
@@ -1177,18 +1010,12 @@ StartDeploymentOutcome AmplifyClient::StartDeployment(const StartDeploymentReque
 
 StartDeploymentOutcomeCallable AmplifyClient::StartDeploymentCallable(const StartDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDeployment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartDeployment, request, m_executor.get());
 }
 
 void AmplifyClient::StartDeploymentAsync(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartDeployment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartDeployment, request, handler, context, m_executor.get());
 }
 
 StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const
@@ -1216,18 +1043,12 @@ StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const
 
 StartJobOutcomeCallable AmplifyClient::StartJobCallable(const StartJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartJob, request, m_executor.get());
 }
 
 void AmplifyClient::StartJobAsync(const StartJobRequest& request, const StartJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartJob, request, handler, context, m_executor.get());
 }
 
 StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const
@@ -1262,18 +1083,12 @@ StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const
 
 StopJobOutcomeCallable AmplifyClient::StopJobCallable(const StopJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopJob, request, m_executor.get());
 }
 
 void AmplifyClient::StopJobAsync(const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopJob, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome AmplifyClient::TagResource(const TagResourceRequest& request) const
@@ -1293,18 +1108,12 @@ TagResourceOutcome AmplifyClient::TagResource(const TagResourceRequest& request)
 
 TagResourceOutcomeCallable AmplifyClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void AmplifyClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome AmplifyClient::UntagResource(const UntagResourceRequest& request) const
@@ -1329,18 +1138,12 @@ UntagResourceOutcome AmplifyClient::UntagResource(const UntagResourceRequest& re
 
 UntagResourceOutcomeCallable AmplifyClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void AmplifyClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
@@ -1360,18 +1163,12 @@ UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
 
 UpdateAppOutcomeCallable AmplifyClient::UpdateAppCallable(const UpdateAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateApp, request, m_executor.get());
 }
 
 void AmplifyClient::UpdateAppAsync(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateApp, request, handler, context, m_executor.get());
 }
 
 UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& request) const
@@ -1398,18 +1195,12 @@ UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& reque
 
 UpdateBranchOutcomeCallable AmplifyClient::UpdateBranchCallable(const UpdateBranchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBranchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBranch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBranch, request, m_executor.get());
 }
 
 void AmplifyClient::UpdateBranchAsync(const UpdateBranchRequest& request, const UpdateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBranch(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBranch, request, handler, context, m_executor.get());
 }
 
 UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const UpdateDomainAssociationRequest& request) const
@@ -1436,18 +1227,12 @@ UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const Upda
 
 UpdateDomainAssociationOutcomeCallable AmplifyClient::UpdateDomainAssociationCallable(const UpdateDomainAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDomainAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDomainAssociation, request, m_executor.get());
 }
 
 void AmplifyClient::UpdateDomainAssociationAsync(const UpdateDomainAssociationRequest& request, const UpdateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDomainAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDomainAssociation, request, handler, context, m_executor.get());
 }
 
 UpdateWebhookOutcome AmplifyClient::UpdateWebhook(const UpdateWebhookRequest& request) const
@@ -1467,17 +1252,11 @@ UpdateWebhookOutcome AmplifyClient::UpdateWebhook(const UpdateWebhookRequest& re
 
 UpdateWebhookOutcomeCallable AmplifyClient::UpdateWebhookCallable(const UpdateWebhookRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWebhookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWebhook(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateWebhook, request, m_executor.get());
 }
 
 void AmplifyClient::UpdateWebhookAsync(const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateWebhook(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateWebhook, request, handler, context, m_executor.get());
 }
 

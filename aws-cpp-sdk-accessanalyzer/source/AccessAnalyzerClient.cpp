@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -188,18 +189,12 @@ ApplyArchiveRuleOutcome AccessAnalyzerClient::ApplyArchiveRule(const ApplyArchiv
 
 ApplyArchiveRuleOutcomeCallable AccessAnalyzerClient::ApplyArchiveRuleCallable(const ApplyArchiveRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ApplyArchiveRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ApplyArchiveRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ApplyArchiveRule, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::ApplyArchiveRuleAsync(const ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ApplyArchiveRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ApplyArchiveRule, request, handler, context, m_executor.get());
 }
 
 CancelPolicyGenerationOutcome AccessAnalyzerClient::CancelPolicyGeneration(const CancelPolicyGenerationRequest& request) const
@@ -219,18 +214,12 @@ CancelPolicyGenerationOutcome AccessAnalyzerClient::CancelPolicyGeneration(const
 
 CancelPolicyGenerationOutcomeCallable AccessAnalyzerClient::CancelPolicyGenerationCallable(const CancelPolicyGenerationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelPolicyGenerationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelPolicyGeneration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelPolicyGeneration, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::CancelPolicyGenerationAsync(const CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelPolicyGeneration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelPolicyGeneration, request, handler, context, m_executor.get());
 }
 
 CreateAccessPreviewOutcome AccessAnalyzerClient::CreateAccessPreview(const CreateAccessPreviewRequest& request) const
@@ -244,18 +233,12 @@ CreateAccessPreviewOutcome AccessAnalyzerClient::CreateAccessPreview(const Creat
 
 CreateAccessPreviewOutcomeCallable AccessAnalyzerClient::CreateAccessPreviewCallable(const CreateAccessPreviewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAccessPreviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccessPreview(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAccessPreview, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::CreateAccessPreviewAsync(const CreateAccessPreviewRequest& request, const CreateAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAccessPreview(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAccessPreview, request, handler, context, m_executor.get());
 }
 
 CreateAnalyzerOutcome AccessAnalyzerClient::CreateAnalyzer(const CreateAnalyzerRequest& request) const
@@ -269,18 +252,12 @@ CreateAnalyzerOutcome AccessAnalyzerClient::CreateAnalyzer(const CreateAnalyzerR
 
 CreateAnalyzerOutcomeCallable AccessAnalyzerClient::CreateAnalyzerCallable(const CreateAnalyzerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAnalyzerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAnalyzer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAnalyzer, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::CreateAnalyzerAsync(const CreateAnalyzerRequest& request, const CreateAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAnalyzer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAnalyzer, request, handler, context, m_executor.get());
 }
 
 CreateArchiveRuleOutcome AccessAnalyzerClient::CreateArchiveRule(const CreateArchiveRuleRequest& request) const
@@ -301,18 +278,12 @@ CreateArchiveRuleOutcome AccessAnalyzerClient::CreateArchiveRule(const CreateArc
 
 CreateArchiveRuleOutcomeCallable AccessAnalyzerClient::CreateArchiveRuleCallable(const CreateArchiveRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateArchiveRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateArchiveRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateArchiveRule, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::CreateArchiveRuleAsync(const CreateArchiveRuleRequest& request, const CreateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateArchiveRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateArchiveRule, request, handler, context, m_executor.get());
 }
 
 DeleteAnalyzerOutcome AccessAnalyzerClient::DeleteAnalyzer(const DeleteAnalyzerRequest& request) const
@@ -332,18 +303,12 @@ DeleteAnalyzerOutcome AccessAnalyzerClient::DeleteAnalyzer(const DeleteAnalyzerR
 
 DeleteAnalyzerOutcomeCallable AccessAnalyzerClient::DeleteAnalyzerCallable(const DeleteAnalyzerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAnalyzerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAnalyzer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAnalyzer, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::DeleteAnalyzerAsync(const DeleteAnalyzerRequest& request, const DeleteAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAnalyzer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAnalyzer, request, handler, context, m_executor.get());
 }
 
 DeleteArchiveRuleOutcome AccessAnalyzerClient::DeleteArchiveRule(const DeleteArchiveRuleRequest& request) const
@@ -370,18 +335,12 @@ DeleteArchiveRuleOutcome AccessAnalyzerClient::DeleteArchiveRule(const DeleteArc
 
 DeleteArchiveRuleOutcomeCallable AccessAnalyzerClient::DeleteArchiveRuleCallable(const DeleteArchiveRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteArchiveRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteArchiveRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteArchiveRule, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::DeleteArchiveRuleAsync(const DeleteArchiveRuleRequest& request, const DeleteArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteArchiveRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteArchiveRule, request, handler, context, m_executor.get());
 }
 
 GetAccessPreviewOutcome AccessAnalyzerClient::GetAccessPreview(const GetAccessPreviewRequest& request) const
@@ -406,18 +365,12 @@ GetAccessPreviewOutcome AccessAnalyzerClient::GetAccessPreview(const GetAccessPr
 
 GetAccessPreviewOutcomeCallable AccessAnalyzerClient::GetAccessPreviewCallable(const GetAccessPreviewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessPreviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPreview(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccessPreview, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::GetAccessPreviewAsync(const GetAccessPreviewRequest& request, const GetAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccessPreview(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccessPreview, request, handler, context, m_executor.get());
 }
 
 GetAnalyzedResourceOutcome AccessAnalyzerClient::GetAnalyzedResource(const GetAnalyzedResourceRequest& request) const
@@ -441,18 +394,12 @@ GetAnalyzedResourceOutcome AccessAnalyzerClient::GetAnalyzedResource(const GetAn
 
 GetAnalyzedResourceOutcomeCallable AccessAnalyzerClient::GetAnalyzedResourceCallable(const GetAnalyzedResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAnalyzedResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAnalyzedResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAnalyzedResource, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::GetAnalyzedResourceAsync(const GetAnalyzedResourceRequest& request, const GetAnalyzedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAnalyzedResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAnalyzedResource, request, handler, context, m_executor.get());
 }
 
 GetAnalyzerOutcome AccessAnalyzerClient::GetAnalyzer(const GetAnalyzerRequest& request) const
@@ -472,18 +419,12 @@ GetAnalyzerOutcome AccessAnalyzerClient::GetAnalyzer(const GetAnalyzerRequest& r
 
 GetAnalyzerOutcomeCallable AccessAnalyzerClient::GetAnalyzerCallable(const GetAnalyzerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAnalyzerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAnalyzer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAnalyzer, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::GetAnalyzerAsync(const GetAnalyzerRequest& request, const GetAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAnalyzer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAnalyzer, request, handler, context, m_executor.get());
 }
 
 GetArchiveRuleOutcome AccessAnalyzerClient::GetArchiveRule(const GetArchiveRuleRequest& request) const
@@ -510,18 +451,12 @@ GetArchiveRuleOutcome AccessAnalyzerClient::GetArchiveRule(const GetArchiveRuleR
 
 GetArchiveRuleOutcomeCallable AccessAnalyzerClient::GetArchiveRuleCallable(const GetArchiveRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetArchiveRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetArchiveRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetArchiveRule, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::GetArchiveRuleAsync(const GetArchiveRuleRequest& request, const GetArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetArchiveRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetArchiveRule, request, handler, context, m_executor.get());
 }
 
 GetFindingOutcome AccessAnalyzerClient::GetFinding(const GetFindingRequest& request) const
@@ -546,18 +481,12 @@ GetFindingOutcome AccessAnalyzerClient::GetFinding(const GetFindingRequest& requ
 
 GetFindingOutcomeCallable AccessAnalyzerClient::GetFindingCallable(const GetFindingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFindingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFinding(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFinding, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::GetFindingAsync(const GetFindingRequest& request, const GetFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFinding(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFinding, request, handler, context, m_executor.get());
 }
 
 GetGeneratedPolicyOutcome AccessAnalyzerClient::GetGeneratedPolicy(const GetGeneratedPolicyRequest& request) const
@@ -577,18 +506,12 @@ GetGeneratedPolicyOutcome AccessAnalyzerClient::GetGeneratedPolicy(const GetGene
 
 GetGeneratedPolicyOutcomeCallable AccessAnalyzerClient::GetGeneratedPolicyCallable(const GetGeneratedPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetGeneratedPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGeneratedPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetGeneratedPolicy, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::GetGeneratedPolicyAsync(const GetGeneratedPolicyRequest& request, const GetGeneratedPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetGeneratedPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetGeneratedPolicy, request, handler, context, m_executor.get());
 }
 
 ListAccessPreviewFindingsOutcome AccessAnalyzerClient::ListAccessPreviewFindings(const ListAccessPreviewFindingsRequest& request) const
@@ -608,18 +531,12 @@ ListAccessPreviewFindingsOutcome AccessAnalyzerClient::ListAccessPreviewFindings
 
 ListAccessPreviewFindingsOutcomeCallable AccessAnalyzerClient::ListAccessPreviewFindingsCallable(const ListAccessPreviewFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAccessPreviewFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessPreviewFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAccessPreviewFindings, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::ListAccessPreviewFindingsAsync(const ListAccessPreviewFindingsRequest& request, const ListAccessPreviewFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAccessPreviewFindings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAccessPreviewFindings, request, handler, context, m_executor.get());
 }
 
 ListAccessPreviewsOutcome AccessAnalyzerClient::ListAccessPreviews(const ListAccessPreviewsRequest& request) const
@@ -638,18 +555,12 @@ ListAccessPreviewsOutcome AccessAnalyzerClient::ListAccessPreviews(const ListAcc
 
 ListAccessPreviewsOutcomeCallable AccessAnalyzerClient::ListAccessPreviewsCallable(const ListAccessPreviewsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAccessPreviewsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessPreviews(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAccessPreviews, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::ListAccessPreviewsAsync(const ListAccessPreviewsRequest& request, const ListAccessPreviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAccessPreviews(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAccessPreviews, request, handler, context, m_executor.get());
 }
 
 ListAnalyzedResourcesOutcome AccessAnalyzerClient::ListAnalyzedResources(const ListAnalyzedResourcesRequest& request) const
@@ -663,18 +574,12 @@ ListAnalyzedResourcesOutcome AccessAnalyzerClient::ListAnalyzedResources(const L
 
 ListAnalyzedResourcesOutcomeCallable AccessAnalyzerClient::ListAnalyzedResourcesCallable(const ListAnalyzedResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAnalyzedResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnalyzedResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAnalyzedResources, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::ListAnalyzedResourcesAsync(const ListAnalyzedResourcesRequest& request, const ListAnalyzedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAnalyzedResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAnalyzedResources, request, handler, context, m_executor.get());
 }
 
 ListAnalyzersOutcome AccessAnalyzerClient::ListAnalyzers(const ListAnalyzersRequest& request) const
@@ -688,18 +593,12 @@ ListAnalyzersOutcome AccessAnalyzerClient::ListAnalyzers(const ListAnalyzersRequ
 
 ListAnalyzersOutcomeCallable AccessAnalyzerClient::ListAnalyzersCallable(const ListAnalyzersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAnalyzersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnalyzers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAnalyzers, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::ListAnalyzersAsync(const ListAnalyzersRequest& request, const ListAnalyzersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAnalyzers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAnalyzers, request, handler, context, m_executor.get());
 }
 
 ListArchiveRulesOutcome AccessAnalyzerClient::ListArchiveRules(const ListArchiveRulesRequest& request) const
@@ -720,18 +619,12 @@ ListArchiveRulesOutcome AccessAnalyzerClient::ListArchiveRules(const ListArchive
 
 ListArchiveRulesOutcomeCallable AccessAnalyzerClient::ListArchiveRulesCallable(const ListArchiveRulesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListArchiveRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListArchiveRules(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListArchiveRules, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::ListArchiveRulesAsync(const ListArchiveRulesRequest& request, const ListArchiveRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListArchiveRules(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListArchiveRules, request, handler, context, m_executor.get());
 }
 
 ListFindingsOutcome AccessAnalyzerClient::ListFindings(const ListFindingsRequest& request) const
@@ -745,18 +638,12 @@ ListFindingsOutcome AccessAnalyzerClient::ListFindings(const ListFindingsRequest
 
 ListFindingsOutcomeCallable AccessAnalyzerClient::ListFindingsCallable(const ListFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFindings, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::ListFindingsAsync(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFindings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFindings, request, handler, context, m_executor.get());
 }
 
 ListPolicyGenerationsOutcome AccessAnalyzerClient::ListPolicyGenerations(const ListPolicyGenerationsRequest& request) const
@@ -770,18 +657,12 @@ ListPolicyGenerationsOutcome AccessAnalyzerClient::ListPolicyGenerations(const L
 
 ListPolicyGenerationsOutcomeCallable AccessAnalyzerClient::ListPolicyGenerationsCallable(const ListPolicyGenerationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPolicyGenerationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPolicyGenerations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPolicyGenerations, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::ListPolicyGenerationsAsync(const ListPolicyGenerationsRequest& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPolicyGenerations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPolicyGenerations, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome AccessAnalyzerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -801,18 +682,12 @@ ListTagsForResourceOutcome AccessAnalyzerClient::ListTagsForResource(const ListT
 
 ListTagsForResourceOutcomeCallable AccessAnalyzerClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartPolicyGenerationOutcome AccessAnalyzerClient::StartPolicyGeneration(const StartPolicyGenerationRequest& request) const
@@ -826,18 +701,12 @@ StartPolicyGenerationOutcome AccessAnalyzerClient::StartPolicyGeneration(const S
 
 StartPolicyGenerationOutcomeCallable AccessAnalyzerClient::StartPolicyGenerationCallable(const StartPolicyGenerationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartPolicyGenerationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartPolicyGeneration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartPolicyGeneration, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::StartPolicyGenerationAsync(const StartPolicyGenerationRequest& request, const StartPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartPolicyGeneration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartPolicyGeneration, request, handler, context, m_executor.get());
 }
 
 StartResourceScanOutcome AccessAnalyzerClient::StartResourceScan(const StartResourceScanRequest& request) const
@@ -851,18 +720,12 @@ StartResourceScanOutcome AccessAnalyzerClient::StartResourceScan(const StartReso
 
 StartResourceScanOutcomeCallable AccessAnalyzerClient::StartResourceScanCallable(const StartResourceScanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartResourceScanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartResourceScan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartResourceScan, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::StartResourceScanAsync(const StartResourceScanRequest& request, const StartResourceScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartResourceScan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartResourceScan, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome AccessAnalyzerClient::TagResource(const TagResourceRequest& request) const
@@ -882,18 +745,12 @@ TagResourceOutcome AccessAnalyzerClient::TagResource(const TagResourceRequest& r
 
 TagResourceOutcomeCallable AccessAnalyzerClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome AccessAnalyzerClient::UntagResource(const UntagResourceRequest& request) const
@@ -918,18 +775,12 @@ UntagResourceOutcome AccessAnalyzerClient::UntagResource(const UntagResourceRequ
 
 UntagResourceOutcomeCallable AccessAnalyzerClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateArchiveRuleOutcome AccessAnalyzerClient::UpdateArchiveRule(const UpdateArchiveRuleRequest& request) const
@@ -956,18 +807,12 @@ UpdateArchiveRuleOutcome AccessAnalyzerClient::UpdateArchiveRule(const UpdateArc
 
 UpdateArchiveRuleOutcomeCallable AccessAnalyzerClient::UpdateArchiveRuleCallable(const UpdateArchiveRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateArchiveRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateArchiveRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateArchiveRule, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::UpdateArchiveRuleAsync(const UpdateArchiveRuleRequest& request, const UpdateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateArchiveRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateArchiveRule, request, handler, context, m_executor.get());
 }
 
 UpdateFindingsOutcome AccessAnalyzerClient::UpdateFindings(const UpdateFindingsRequest& request) const
@@ -981,18 +826,12 @@ UpdateFindingsOutcome AccessAnalyzerClient::UpdateFindings(const UpdateFindingsR
 
 UpdateFindingsOutcomeCallable AccessAnalyzerClient::UpdateFindingsCallable(const UpdateFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFindings, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::UpdateFindingsAsync(const UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFindings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFindings, request, handler, context, m_executor.get());
 }
 
 ValidatePolicyOutcome AccessAnalyzerClient::ValidatePolicy(const ValidatePolicyRequest& request) const
@@ -1006,17 +845,11 @@ ValidatePolicyOutcome AccessAnalyzerClient::ValidatePolicy(const ValidatePolicyR
 
 ValidatePolicyOutcomeCallable AccessAnalyzerClient::ValidatePolicyCallable(const ValidatePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ValidatePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ValidatePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ValidatePolicy, request, m_executor.get());
 }
 
 void AccessAnalyzerClient::ValidatePolicyAsync(const ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ValidatePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ValidatePolicy, request, handler, context, m_executor.get());
 }
 

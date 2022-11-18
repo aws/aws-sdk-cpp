@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -189,18 +190,12 @@ CreateReplicationSetOutcome SSMIncidentsClient::CreateReplicationSet(const Creat
 
 CreateReplicationSetOutcomeCallable SSMIncidentsClient::CreateReplicationSetCallable(const CreateReplicationSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateReplicationSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateReplicationSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateReplicationSet, request, m_executor.get());
 }
 
 void SSMIncidentsClient::CreateReplicationSetAsync(const CreateReplicationSetRequest& request, const CreateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateReplicationSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateReplicationSet, request, handler, context, m_executor.get());
 }
 
 CreateResponsePlanOutcome SSMIncidentsClient::CreateResponsePlan(const CreateResponsePlanRequest& request) const
@@ -214,18 +209,12 @@ CreateResponsePlanOutcome SSMIncidentsClient::CreateResponsePlan(const CreateRes
 
 CreateResponsePlanOutcomeCallable SSMIncidentsClient::CreateResponsePlanCallable(const CreateResponsePlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateResponsePlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResponsePlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateResponsePlan, request, m_executor.get());
 }
 
 void SSMIncidentsClient::CreateResponsePlanAsync(const CreateResponsePlanRequest& request, const CreateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateResponsePlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateResponsePlan, request, handler, context, m_executor.get());
 }
 
 CreateTimelineEventOutcome SSMIncidentsClient::CreateTimelineEvent(const CreateTimelineEventRequest& request) const
@@ -239,18 +228,12 @@ CreateTimelineEventOutcome SSMIncidentsClient::CreateTimelineEvent(const CreateT
 
 CreateTimelineEventOutcomeCallable SSMIncidentsClient::CreateTimelineEventCallable(const CreateTimelineEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTimelineEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTimelineEvent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTimelineEvent, request, m_executor.get());
 }
 
 void SSMIncidentsClient::CreateTimelineEventAsync(const CreateTimelineEventRequest& request, const CreateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTimelineEvent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTimelineEvent, request, handler, context, m_executor.get());
 }
 
 DeleteIncidentRecordOutcome SSMIncidentsClient::DeleteIncidentRecord(const DeleteIncidentRecordRequest& request) const
@@ -264,18 +247,12 @@ DeleteIncidentRecordOutcome SSMIncidentsClient::DeleteIncidentRecord(const Delet
 
 DeleteIncidentRecordOutcomeCallable SSMIncidentsClient::DeleteIncidentRecordCallable(const DeleteIncidentRecordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteIncidentRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteIncidentRecord(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteIncidentRecord, request, m_executor.get());
 }
 
 void SSMIncidentsClient::DeleteIncidentRecordAsync(const DeleteIncidentRecordRequest& request, const DeleteIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteIncidentRecord(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteIncidentRecord, request, handler, context, m_executor.get());
 }
 
 DeleteReplicationSetOutcome SSMIncidentsClient::DeleteReplicationSet(const DeleteReplicationSetRequest& request) const
@@ -294,18 +271,12 @@ DeleteReplicationSetOutcome SSMIncidentsClient::DeleteReplicationSet(const Delet
 
 DeleteReplicationSetOutcomeCallable SSMIncidentsClient::DeleteReplicationSetCallable(const DeleteReplicationSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteReplicationSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReplicationSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteReplicationSet, request, m_executor.get());
 }
 
 void SSMIncidentsClient::DeleteReplicationSetAsync(const DeleteReplicationSetRequest& request, const DeleteReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteReplicationSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteReplicationSet, request, handler, context, m_executor.get());
 }
 
 DeleteResourcePolicyOutcome SSMIncidentsClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -319,18 +290,12 @@ DeleteResourcePolicyOutcome SSMIncidentsClient::DeleteResourcePolicy(const Delet
 
 DeleteResourcePolicyOutcomeCallable SSMIncidentsClient::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteResourcePolicy, request, m_executor.get());
 }
 
 void SSMIncidentsClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteResourcePolicy, request, handler, context, m_executor.get());
 }
 
 DeleteResponsePlanOutcome SSMIncidentsClient::DeleteResponsePlan(const DeleteResponsePlanRequest& request) const
@@ -344,18 +309,12 @@ DeleteResponsePlanOutcome SSMIncidentsClient::DeleteResponsePlan(const DeleteRes
 
 DeleteResponsePlanOutcomeCallable SSMIncidentsClient::DeleteResponsePlanCallable(const DeleteResponsePlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResponsePlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResponsePlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteResponsePlan, request, m_executor.get());
 }
 
 void SSMIncidentsClient::DeleteResponsePlanAsync(const DeleteResponsePlanRequest& request, const DeleteResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResponsePlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteResponsePlan, request, handler, context, m_executor.get());
 }
 
 DeleteTimelineEventOutcome SSMIncidentsClient::DeleteTimelineEvent(const DeleteTimelineEventRequest& request) const
@@ -369,18 +328,12 @@ DeleteTimelineEventOutcome SSMIncidentsClient::DeleteTimelineEvent(const DeleteT
 
 DeleteTimelineEventOutcomeCallable SSMIncidentsClient::DeleteTimelineEventCallable(const DeleteTimelineEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTimelineEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTimelineEvent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTimelineEvent, request, m_executor.get());
 }
 
 void SSMIncidentsClient::DeleteTimelineEventAsync(const DeleteTimelineEventRequest& request, const DeleteTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTimelineEvent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTimelineEvent, request, handler, context, m_executor.get());
 }
 
 GetIncidentRecordOutcome SSMIncidentsClient::GetIncidentRecord(const GetIncidentRecordRequest& request) const
@@ -399,18 +352,12 @@ GetIncidentRecordOutcome SSMIncidentsClient::GetIncidentRecord(const GetIncident
 
 GetIncidentRecordOutcomeCallable SSMIncidentsClient::GetIncidentRecordCallable(const GetIncidentRecordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetIncidentRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIncidentRecord(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetIncidentRecord, request, m_executor.get());
 }
 
 void SSMIncidentsClient::GetIncidentRecordAsync(const GetIncidentRecordRequest& request, const GetIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetIncidentRecord(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetIncidentRecord, request, handler, context, m_executor.get());
 }
 
 GetReplicationSetOutcome SSMIncidentsClient::GetReplicationSet(const GetReplicationSetRequest& request) const
@@ -429,18 +376,12 @@ GetReplicationSetOutcome SSMIncidentsClient::GetReplicationSet(const GetReplicat
 
 GetReplicationSetOutcomeCallable SSMIncidentsClient::GetReplicationSetCallable(const GetReplicationSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReplicationSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReplicationSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetReplicationSet, request, m_executor.get());
 }
 
 void SSMIncidentsClient::GetReplicationSetAsync(const GetReplicationSetRequest& request, const GetReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetReplicationSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetReplicationSet, request, handler, context, m_executor.get());
 }
 
 GetResourcePoliciesOutcome SSMIncidentsClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const
@@ -459,18 +400,12 @@ GetResourcePoliciesOutcome SSMIncidentsClient::GetResourcePolicies(const GetReso
 
 GetResourcePoliciesOutcomeCallable SSMIncidentsClient::GetResourcePoliciesCallable(const GetResourcePoliciesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourcePoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourcePolicies(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResourcePolicies, request, m_executor.get());
 }
 
 void SSMIncidentsClient::GetResourcePoliciesAsync(const GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResourcePolicies(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResourcePolicies, request, handler, context, m_executor.get());
 }
 
 GetResponsePlanOutcome SSMIncidentsClient::GetResponsePlan(const GetResponsePlanRequest& request) const
@@ -489,18 +424,12 @@ GetResponsePlanOutcome SSMIncidentsClient::GetResponsePlan(const GetResponsePlan
 
 GetResponsePlanOutcomeCallable SSMIncidentsClient::GetResponsePlanCallable(const GetResponsePlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResponsePlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResponsePlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResponsePlan, request, m_executor.get());
 }
 
 void SSMIncidentsClient::GetResponsePlanAsync(const GetResponsePlanRequest& request, const GetResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResponsePlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResponsePlan, request, handler, context, m_executor.get());
 }
 
 GetTimelineEventOutcome SSMIncidentsClient::GetTimelineEvent(const GetTimelineEventRequest& request) const
@@ -524,18 +453,12 @@ GetTimelineEventOutcome SSMIncidentsClient::GetTimelineEvent(const GetTimelineEv
 
 GetTimelineEventOutcomeCallable SSMIncidentsClient::GetTimelineEventCallable(const GetTimelineEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTimelineEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTimelineEvent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTimelineEvent, request, m_executor.get());
 }
 
 void SSMIncidentsClient::GetTimelineEventAsync(const GetTimelineEventRequest& request, const GetTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTimelineEvent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTimelineEvent, request, handler, context, m_executor.get());
 }
 
 ListIncidentRecordsOutcome SSMIncidentsClient::ListIncidentRecords(const ListIncidentRecordsRequest& request) const
@@ -549,18 +472,12 @@ ListIncidentRecordsOutcome SSMIncidentsClient::ListIncidentRecords(const ListInc
 
 ListIncidentRecordsOutcomeCallable SSMIncidentsClient::ListIncidentRecordsCallable(const ListIncidentRecordsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListIncidentRecordsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIncidentRecords(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListIncidentRecords, request, m_executor.get());
 }
 
 void SSMIncidentsClient::ListIncidentRecordsAsync(const ListIncidentRecordsRequest& request, const ListIncidentRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListIncidentRecords(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListIncidentRecords, request, handler, context, m_executor.get());
 }
 
 ListRelatedItemsOutcome SSMIncidentsClient::ListRelatedItems(const ListRelatedItemsRequest& request) const
@@ -574,18 +491,12 @@ ListRelatedItemsOutcome SSMIncidentsClient::ListRelatedItems(const ListRelatedIt
 
 ListRelatedItemsOutcomeCallable SSMIncidentsClient::ListRelatedItemsCallable(const ListRelatedItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRelatedItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRelatedItems(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRelatedItems, request, m_executor.get());
 }
 
 void SSMIncidentsClient::ListRelatedItemsAsync(const ListRelatedItemsRequest& request, const ListRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRelatedItems(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRelatedItems, request, handler, context, m_executor.get());
 }
 
 ListReplicationSetsOutcome SSMIncidentsClient::ListReplicationSets(const ListReplicationSetsRequest& request) const
@@ -599,18 +510,12 @@ ListReplicationSetsOutcome SSMIncidentsClient::ListReplicationSets(const ListRep
 
 ListReplicationSetsOutcomeCallable SSMIncidentsClient::ListReplicationSetsCallable(const ListReplicationSetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReplicationSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReplicationSets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListReplicationSets, request, m_executor.get());
 }
 
 void SSMIncidentsClient::ListReplicationSetsAsync(const ListReplicationSetsRequest& request, const ListReplicationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListReplicationSets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListReplicationSets, request, handler, context, m_executor.get());
 }
 
 ListResponsePlansOutcome SSMIncidentsClient::ListResponsePlans(const ListResponsePlansRequest& request) const
@@ -624,18 +529,12 @@ ListResponsePlansOutcome SSMIncidentsClient::ListResponsePlans(const ListRespons
 
 ListResponsePlansOutcomeCallable SSMIncidentsClient::ListResponsePlansCallable(const ListResponsePlansRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListResponsePlansOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResponsePlans(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListResponsePlans, request, m_executor.get());
 }
 
 void SSMIncidentsClient::ListResponsePlansAsync(const ListResponsePlansRequest& request, const ListResponsePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListResponsePlans(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListResponsePlans, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome SSMIncidentsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -655,18 +554,12 @@ ListTagsForResourceOutcome SSMIncidentsClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable SSMIncidentsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void SSMIncidentsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTimelineEventsOutcome SSMIncidentsClient::ListTimelineEvents(const ListTimelineEventsRequest& request) const
@@ -680,18 +573,12 @@ ListTimelineEventsOutcome SSMIncidentsClient::ListTimelineEvents(const ListTimel
 
 ListTimelineEventsOutcomeCallable SSMIncidentsClient::ListTimelineEventsCallable(const ListTimelineEventsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTimelineEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTimelineEvents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTimelineEvents, request, m_executor.get());
 }
 
 void SSMIncidentsClient::ListTimelineEventsAsync(const ListTimelineEventsRequest& request, const ListTimelineEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTimelineEvents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTimelineEvents, request, handler, context, m_executor.get());
 }
 
 PutResourcePolicyOutcome SSMIncidentsClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -705,18 +592,12 @@ PutResourcePolicyOutcome SSMIncidentsClient::PutResourcePolicy(const PutResource
 
 PutResourcePolicyOutcomeCallable SSMIncidentsClient::PutResourcePolicyCallable(const PutResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutResourcePolicy, request, m_executor.get());
 }
 
 void SSMIncidentsClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutResourcePolicy, request, handler, context, m_executor.get());
 }
 
 StartIncidentOutcome SSMIncidentsClient::StartIncident(const StartIncidentRequest& request) const
@@ -730,18 +611,12 @@ StartIncidentOutcome SSMIncidentsClient::StartIncident(const StartIncidentReques
 
 StartIncidentOutcomeCallable SSMIncidentsClient::StartIncidentCallable(const StartIncidentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartIncidentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartIncident(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartIncident, request, m_executor.get());
 }
 
 void SSMIncidentsClient::StartIncidentAsync(const StartIncidentRequest& request, const StartIncidentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartIncident(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartIncident, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome SSMIncidentsClient::TagResource(const TagResourceRequest& request) const
@@ -761,18 +636,12 @@ TagResourceOutcome SSMIncidentsClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable SSMIncidentsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void SSMIncidentsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome SSMIncidentsClient::UntagResource(const UntagResourceRequest& request) const
@@ -797,18 +666,12 @@ UntagResourceOutcome SSMIncidentsClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable SSMIncidentsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void SSMIncidentsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateDeletionProtectionOutcome SSMIncidentsClient::UpdateDeletionProtection(const UpdateDeletionProtectionRequest& request) const
@@ -822,18 +685,12 @@ UpdateDeletionProtectionOutcome SSMIncidentsClient::UpdateDeletionProtection(con
 
 UpdateDeletionProtectionOutcomeCallable SSMIncidentsClient::UpdateDeletionProtectionCallable(const UpdateDeletionProtectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDeletionProtectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDeletionProtection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDeletionProtection, request, m_executor.get());
 }
 
 void SSMIncidentsClient::UpdateDeletionProtectionAsync(const UpdateDeletionProtectionRequest& request, const UpdateDeletionProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDeletionProtection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDeletionProtection, request, handler, context, m_executor.get());
 }
 
 UpdateIncidentRecordOutcome SSMIncidentsClient::UpdateIncidentRecord(const UpdateIncidentRecordRequest& request) const
@@ -847,18 +704,12 @@ UpdateIncidentRecordOutcome SSMIncidentsClient::UpdateIncidentRecord(const Updat
 
 UpdateIncidentRecordOutcomeCallable SSMIncidentsClient::UpdateIncidentRecordCallable(const UpdateIncidentRecordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateIncidentRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIncidentRecord(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateIncidentRecord, request, m_executor.get());
 }
 
 void SSMIncidentsClient::UpdateIncidentRecordAsync(const UpdateIncidentRecordRequest& request, const UpdateIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateIncidentRecord(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateIncidentRecord, request, handler, context, m_executor.get());
 }
 
 UpdateRelatedItemsOutcome SSMIncidentsClient::UpdateRelatedItems(const UpdateRelatedItemsRequest& request) const
@@ -872,18 +723,12 @@ UpdateRelatedItemsOutcome SSMIncidentsClient::UpdateRelatedItems(const UpdateRel
 
 UpdateRelatedItemsOutcomeCallable SSMIncidentsClient::UpdateRelatedItemsCallable(const UpdateRelatedItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRelatedItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRelatedItems(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRelatedItems, request, m_executor.get());
 }
 
 void SSMIncidentsClient::UpdateRelatedItemsAsync(const UpdateRelatedItemsRequest& request, const UpdateRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRelatedItems(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRelatedItems, request, handler, context, m_executor.get());
 }
 
 UpdateReplicationSetOutcome SSMIncidentsClient::UpdateReplicationSet(const UpdateReplicationSetRequest& request) const
@@ -897,18 +742,12 @@ UpdateReplicationSetOutcome SSMIncidentsClient::UpdateReplicationSet(const Updat
 
 UpdateReplicationSetOutcomeCallable SSMIncidentsClient::UpdateReplicationSetCallable(const UpdateReplicationSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReplicationSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReplicationSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateReplicationSet, request, m_executor.get());
 }
 
 void SSMIncidentsClient::UpdateReplicationSetAsync(const UpdateReplicationSetRequest& request, const UpdateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateReplicationSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateReplicationSet, request, handler, context, m_executor.get());
 }
 
 UpdateResponsePlanOutcome SSMIncidentsClient::UpdateResponsePlan(const UpdateResponsePlanRequest& request) const
@@ -922,18 +761,12 @@ UpdateResponsePlanOutcome SSMIncidentsClient::UpdateResponsePlan(const UpdateRes
 
 UpdateResponsePlanOutcomeCallable SSMIncidentsClient::UpdateResponsePlanCallable(const UpdateResponsePlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateResponsePlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResponsePlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateResponsePlan, request, m_executor.get());
 }
 
 void SSMIncidentsClient::UpdateResponsePlanAsync(const UpdateResponsePlanRequest& request, const UpdateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateResponsePlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateResponsePlan, request, handler, context, m_executor.get());
 }
 
 UpdateTimelineEventOutcome SSMIncidentsClient::UpdateTimelineEvent(const UpdateTimelineEventRequest& request) const
@@ -947,17 +780,11 @@ UpdateTimelineEventOutcome SSMIncidentsClient::UpdateTimelineEvent(const UpdateT
 
 UpdateTimelineEventOutcomeCallable SSMIncidentsClient::UpdateTimelineEventCallable(const UpdateTimelineEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTimelineEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTimelineEvent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTimelineEvent, request, m_executor.get());
 }
 
 void SSMIncidentsClient::UpdateTimelineEventAsync(const UpdateTimelineEventRequest& request, const UpdateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTimelineEvent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTimelineEvent, request, handler, context, m_executor.get());
 }
 

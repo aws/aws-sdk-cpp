@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -174,18 +175,12 @@ CreateSuiteDefinitionOutcome IoTDeviceAdvisorClient::CreateSuiteDefinition(const
 
 CreateSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::CreateSuiteDefinitionCallable(const CreateSuiteDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSuiteDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSuiteDefinition, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::CreateSuiteDefinitionAsync(const CreateSuiteDefinitionRequest& request, const CreateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSuiteDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSuiteDefinition, request, handler, context, m_executor.get());
 }
 
 DeleteSuiteDefinitionOutcome IoTDeviceAdvisorClient::DeleteSuiteDefinition(const DeleteSuiteDefinitionRequest& request) const
@@ -205,18 +200,12 @@ DeleteSuiteDefinitionOutcome IoTDeviceAdvisorClient::DeleteSuiteDefinition(const
 
 DeleteSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::DeleteSuiteDefinitionCallable(const DeleteSuiteDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSuiteDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSuiteDefinition, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::DeleteSuiteDefinitionAsync(const DeleteSuiteDefinitionRequest& request, const DeleteSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSuiteDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSuiteDefinition, request, handler, context, m_executor.get());
 }
 
 GetEndpointOutcome IoTDeviceAdvisorClient::GetEndpoint(const GetEndpointRequest& request) const
@@ -230,18 +219,12 @@ GetEndpointOutcome IoTDeviceAdvisorClient::GetEndpoint(const GetEndpointRequest&
 
 GetEndpointOutcomeCallable IoTDeviceAdvisorClient::GetEndpointCallable(const GetEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEndpoint, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::GetEndpointAsync(const GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEndpoint, request, handler, context, m_executor.get());
 }
 
 GetSuiteDefinitionOutcome IoTDeviceAdvisorClient::GetSuiteDefinition(const GetSuiteDefinitionRequest& request) const
@@ -261,18 +244,12 @@ GetSuiteDefinitionOutcome IoTDeviceAdvisorClient::GetSuiteDefinition(const GetSu
 
 GetSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::GetSuiteDefinitionCallable(const GetSuiteDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSuiteDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSuiteDefinition, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::GetSuiteDefinitionAsync(const GetSuiteDefinitionRequest& request, const GetSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSuiteDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSuiteDefinition, request, handler, context, m_executor.get());
 }
 
 GetSuiteRunOutcome IoTDeviceAdvisorClient::GetSuiteRun(const GetSuiteRunRequest& request) const
@@ -299,18 +276,12 @@ GetSuiteRunOutcome IoTDeviceAdvisorClient::GetSuiteRun(const GetSuiteRunRequest&
 
 GetSuiteRunOutcomeCallable IoTDeviceAdvisorClient::GetSuiteRunCallable(const GetSuiteRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSuiteRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSuiteRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSuiteRun, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::GetSuiteRunAsync(const GetSuiteRunRequest& request, const GetSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSuiteRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSuiteRun, request, handler, context, m_executor.get());
 }
 
 GetSuiteRunReportOutcome IoTDeviceAdvisorClient::GetSuiteRunReport(const GetSuiteRunReportRequest& request) const
@@ -338,18 +309,12 @@ GetSuiteRunReportOutcome IoTDeviceAdvisorClient::GetSuiteRunReport(const GetSuit
 
 GetSuiteRunReportOutcomeCallable IoTDeviceAdvisorClient::GetSuiteRunReportCallable(const GetSuiteRunReportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSuiteRunReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSuiteRunReport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSuiteRunReport, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::GetSuiteRunReportAsync(const GetSuiteRunReportRequest& request, const GetSuiteRunReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSuiteRunReport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSuiteRunReport, request, handler, context, m_executor.get());
 }
 
 ListSuiteDefinitionsOutcome IoTDeviceAdvisorClient::ListSuiteDefinitions(const ListSuiteDefinitionsRequest& request) const
@@ -363,18 +328,12 @@ ListSuiteDefinitionsOutcome IoTDeviceAdvisorClient::ListSuiteDefinitions(const L
 
 ListSuiteDefinitionsOutcomeCallable IoTDeviceAdvisorClient::ListSuiteDefinitionsCallable(const ListSuiteDefinitionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSuiteDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSuiteDefinitions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSuiteDefinitions, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::ListSuiteDefinitionsAsync(const ListSuiteDefinitionsRequest& request, const ListSuiteDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSuiteDefinitions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSuiteDefinitions, request, handler, context, m_executor.get());
 }
 
 ListSuiteRunsOutcome IoTDeviceAdvisorClient::ListSuiteRuns(const ListSuiteRunsRequest& request) const
@@ -388,18 +347,12 @@ ListSuiteRunsOutcome IoTDeviceAdvisorClient::ListSuiteRuns(const ListSuiteRunsRe
 
 ListSuiteRunsOutcomeCallable IoTDeviceAdvisorClient::ListSuiteRunsCallable(const ListSuiteRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSuiteRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSuiteRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSuiteRuns, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::ListSuiteRunsAsync(const ListSuiteRunsRequest& request, const ListSuiteRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSuiteRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSuiteRuns, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome IoTDeviceAdvisorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -419,18 +372,12 @@ ListTagsForResourceOutcome IoTDeviceAdvisorClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable IoTDeviceAdvisorClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartSuiteRunOutcome IoTDeviceAdvisorClient::StartSuiteRun(const StartSuiteRunRequest& request) const
@@ -451,18 +398,12 @@ StartSuiteRunOutcome IoTDeviceAdvisorClient::StartSuiteRun(const StartSuiteRunRe
 
 StartSuiteRunOutcomeCallable IoTDeviceAdvisorClient::StartSuiteRunCallable(const StartSuiteRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartSuiteRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSuiteRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartSuiteRun, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::StartSuiteRunAsync(const StartSuiteRunRequest& request, const StartSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartSuiteRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartSuiteRun, request, handler, context, m_executor.get());
 }
 
 StopSuiteRunOutcome IoTDeviceAdvisorClient::StopSuiteRun(const StopSuiteRunRequest& request) const
@@ -490,18 +431,12 @@ StopSuiteRunOutcome IoTDeviceAdvisorClient::StopSuiteRun(const StopSuiteRunReque
 
 StopSuiteRunOutcomeCallable IoTDeviceAdvisorClient::StopSuiteRunCallable(const StopSuiteRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopSuiteRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopSuiteRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopSuiteRun, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::StopSuiteRunAsync(const StopSuiteRunRequest& request, const StopSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopSuiteRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopSuiteRun, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome IoTDeviceAdvisorClient::TagResource(const TagResourceRequest& request) const
@@ -521,18 +456,12 @@ TagResourceOutcome IoTDeviceAdvisorClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable IoTDeviceAdvisorClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome IoTDeviceAdvisorClient::UntagResource(const UntagResourceRequest& request) const
@@ -557,18 +486,12 @@ UntagResourceOutcome IoTDeviceAdvisorClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable IoTDeviceAdvisorClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateSuiteDefinitionOutcome IoTDeviceAdvisorClient::UpdateSuiteDefinition(const UpdateSuiteDefinitionRequest& request) const
@@ -588,17 +511,11 @@ UpdateSuiteDefinitionOutcome IoTDeviceAdvisorClient::UpdateSuiteDefinition(const
 
 UpdateSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::UpdateSuiteDefinitionCallable(const UpdateSuiteDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSuiteDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSuiteDefinition, request, m_executor.get());
 }
 
 void IoTDeviceAdvisorClient::UpdateSuiteDefinitionAsync(const UpdateSuiteDefinitionRequest& request, const UpdateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSuiteDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSuiteDefinition, request, handler, context, m_executor.get());
 }
 

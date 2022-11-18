@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -184,18 +185,12 @@ AcknowledgeOrderReceiptOutcome PrivateNetworksClient::AcknowledgeOrderReceipt(co
 
 AcknowledgeOrderReceiptOutcomeCallable PrivateNetworksClient::AcknowledgeOrderReceiptCallable(const AcknowledgeOrderReceiptRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcknowledgeOrderReceiptOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcknowledgeOrderReceipt(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AcknowledgeOrderReceipt, request, m_executor.get());
 }
 
 void PrivateNetworksClient::AcknowledgeOrderReceiptAsync(const AcknowledgeOrderReceiptRequest& request, const AcknowledgeOrderReceiptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AcknowledgeOrderReceipt(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AcknowledgeOrderReceipt, request, handler, context, m_executor.get());
 }
 
 ActivateDeviceIdentifierOutcome PrivateNetworksClient::ActivateDeviceIdentifier(const ActivateDeviceIdentifierRequest& request) const
@@ -209,18 +204,12 @@ ActivateDeviceIdentifierOutcome PrivateNetworksClient::ActivateDeviceIdentifier(
 
 ActivateDeviceIdentifierOutcomeCallable PrivateNetworksClient::ActivateDeviceIdentifierCallable(const ActivateDeviceIdentifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ActivateDeviceIdentifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ActivateDeviceIdentifier(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ActivateDeviceIdentifier, request, m_executor.get());
 }
 
 void PrivateNetworksClient::ActivateDeviceIdentifierAsync(const ActivateDeviceIdentifierRequest& request, const ActivateDeviceIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ActivateDeviceIdentifier(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ActivateDeviceIdentifier, request, handler, context, m_executor.get());
 }
 
 ActivateNetworkSiteOutcome PrivateNetworksClient::ActivateNetworkSite(const ActivateNetworkSiteRequest& request) const
@@ -234,18 +223,12 @@ ActivateNetworkSiteOutcome PrivateNetworksClient::ActivateNetworkSite(const Acti
 
 ActivateNetworkSiteOutcomeCallable PrivateNetworksClient::ActivateNetworkSiteCallable(const ActivateNetworkSiteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ActivateNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ActivateNetworkSite(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ActivateNetworkSite, request, m_executor.get());
 }
 
 void PrivateNetworksClient::ActivateNetworkSiteAsync(const ActivateNetworkSiteRequest& request, const ActivateNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ActivateNetworkSite(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ActivateNetworkSite, request, handler, context, m_executor.get());
 }
 
 ConfigureAccessPointOutcome PrivateNetworksClient::ConfigureAccessPoint(const ConfigureAccessPointRequest& request) const
@@ -259,18 +242,12 @@ ConfigureAccessPointOutcome PrivateNetworksClient::ConfigureAccessPoint(const Co
 
 ConfigureAccessPointOutcomeCallable PrivateNetworksClient::ConfigureAccessPointCallable(const ConfigureAccessPointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ConfigureAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfigureAccessPoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ConfigureAccessPoint, request, m_executor.get());
 }
 
 void PrivateNetworksClient::ConfigureAccessPointAsync(const ConfigureAccessPointRequest& request, const ConfigureAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ConfigureAccessPoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ConfigureAccessPoint, request, handler, context, m_executor.get());
 }
 
 CreateNetworkOutcome PrivateNetworksClient::CreateNetwork(const CreateNetworkRequest& request) const
@@ -284,18 +261,12 @@ CreateNetworkOutcome PrivateNetworksClient::CreateNetwork(const CreateNetworkReq
 
 CreateNetworkOutcomeCallable PrivateNetworksClient::CreateNetworkCallable(const CreateNetworkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNetwork(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateNetwork, request, m_executor.get());
 }
 
 void PrivateNetworksClient::CreateNetworkAsync(const CreateNetworkRequest& request, const CreateNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateNetwork(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateNetwork, request, handler, context, m_executor.get());
 }
 
 CreateNetworkSiteOutcome PrivateNetworksClient::CreateNetworkSite(const CreateNetworkSiteRequest& request) const
@@ -309,18 +280,12 @@ CreateNetworkSiteOutcome PrivateNetworksClient::CreateNetworkSite(const CreateNe
 
 CreateNetworkSiteOutcomeCallable PrivateNetworksClient::CreateNetworkSiteCallable(const CreateNetworkSiteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNetworkSite(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateNetworkSite, request, m_executor.get());
 }
 
 void PrivateNetworksClient::CreateNetworkSiteAsync(const CreateNetworkSiteRequest& request, const CreateNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateNetworkSite(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateNetworkSite, request, handler, context, m_executor.get());
 }
 
 DeactivateDeviceIdentifierOutcome PrivateNetworksClient::DeactivateDeviceIdentifier(const DeactivateDeviceIdentifierRequest& request) const
@@ -334,18 +299,12 @@ DeactivateDeviceIdentifierOutcome PrivateNetworksClient::DeactivateDeviceIdentif
 
 DeactivateDeviceIdentifierOutcomeCallable PrivateNetworksClient::DeactivateDeviceIdentifierCallable(const DeactivateDeviceIdentifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeactivateDeviceIdentifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeactivateDeviceIdentifier(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeactivateDeviceIdentifier, request, m_executor.get());
 }
 
 void PrivateNetworksClient::DeactivateDeviceIdentifierAsync(const DeactivateDeviceIdentifierRequest& request, const DeactivateDeviceIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeactivateDeviceIdentifier(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeactivateDeviceIdentifier, request, handler, context, m_executor.get());
 }
 
 DeleteNetworkOutcome PrivateNetworksClient::DeleteNetwork(const DeleteNetworkRequest& request) const
@@ -365,18 +324,12 @@ DeleteNetworkOutcome PrivateNetworksClient::DeleteNetwork(const DeleteNetworkReq
 
 DeleteNetworkOutcomeCallable PrivateNetworksClient::DeleteNetworkCallable(const DeleteNetworkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNetworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNetwork(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteNetwork, request, m_executor.get());
 }
 
 void PrivateNetworksClient::DeleteNetworkAsync(const DeleteNetworkRequest& request, const DeleteNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteNetwork(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteNetwork, request, handler, context, m_executor.get());
 }
 
 DeleteNetworkSiteOutcome PrivateNetworksClient::DeleteNetworkSite(const DeleteNetworkSiteRequest& request) const
@@ -396,18 +349,12 @@ DeleteNetworkSiteOutcome PrivateNetworksClient::DeleteNetworkSite(const DeleteNe
 
 DeleteNetworkSiteOutcomeCallable PrivateNetworksClient::DeleteNetworkSiteCallable(const DeleteNetworkSiteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNetworkSite(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteNetworkSite, request, m_executor.get());
 }
 
 void PrivateNetworksClient::DeleteNetworkSiteAsync(const DeleteNetworkSiteRequest& request, const DeleteNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteNetworkSite(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteNetworkSite, request, handler, context, m_executor.get());
 }
 
 GetDeviceIdentifierOutcome PrivateNetworksClient::GetDeviceIdentifier(const GetDeviceIdentifierRequest& request) const
@@ -427,18 +374,12 @@ GetDeviceIdentifierOutcome PrivateNetworksClient::GetDeviceIdentifier(const GetD
 
 GetDeviceIdentifierOutcomeCallable PrivateNetworksClient::GetDeviceIdentifierCallable(const GetDeviceIdentifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeviceIdentifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeviceIdentifier(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDeviceIdentifier, request, m_executor.get());
 }
 
 void PrivateNetworksClient::GetDeviceIdentifierAsync(const GetDeviceIdentifierRequest& request, const GetDeviceIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDeviceIdentifier(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDeviceIdentifier, request, handler, context, m_executor.get());
 }
 
 GetNetworkOutcome PrivateNetworksClient::GetNetwork(const GetNetworkRequest& request) const
@@ -458,18 +399,12 @@ GetNetworkOutcome PrivateNetworksClient::GetNetwork(const GetNetworkRequest& req
 
 GetNetworkOutcomeCallable PrivateNetworksClient::GetNetworkCallable(const GetNetworkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNetworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetwork(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetNetwork, request, m_executor.get());
 }
 
 void PrivateNetworksClient::GetNetworkAsync(const GetNetworkRequest& request, const GetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetNetwork(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetNetwork, request, handler, context, m_executor.get());
 }
 
 GetNetworkResourceOutcome PrivateNetworksClient::GetNetworkResource(const GetNetworkResourceRequest& request) const
@@ -489,18 +424,12 @@ GetNetworkResourceOutcome PrivateNetworksClient::GetNetworkResource(const GetNet
 
 GetNetworkResourceOutcomeCallable PrivateNetworksClient::GetNetworkResourceCallable(const GetNetworkResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNetworkResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetNetworkResource, request, m_executor.get());
 }
 
 void PrivateNetworksClient::GetNetworkResourceAsync(const GetNetworkResourceRequest& request, const GetNetworkResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetNetworkResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetNetworkResource, request, handler, context, m_executor.get());
 }
 
 GetNetworkSiteOutcome PrivateNetworksClient::GetNetworkSite(const GetNetworkSiteRequest& request) const
@@ -520,18 +449,12 @@ GetNetworkSiteOutcome PrivateNetworksClient::GetNetworkSite(const GetNetworkSite
 
 GetNetworkSiteOutcomeCallable PrivateNetworksClient::GetNetworkSiteCallable(const GetNetworkSiteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkSite(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetNetworkSite, request, m_executor.get());
 }
 
 void PrivateNetworksClient::GetNetworkSiteAsync(const GetNetworkSiteRequest& request, const GetNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetNetworkSite(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetNetworkSite, request, handler, context, m_executor.get());
 }
 
 GetOrderOutcome PrivateNetworksClient::GetOrder(const GetOrderRequest& request) const
@@ -551,18 +474,12 @@ GetOrderOutcome PrivateNetworksClient::GetOrder(const GetOrderRequest& request) 
 
 GetOrderOutcomeCallable PrivateNetworksClient::GetOrderCallable(const GetOrderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetOrderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOrder(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetOrder, request, m_executor.get());
 }
 
 void PrivateNetworksClient::GetOrderAsync(const GetOrderRequest& request, const GetOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetOrder(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetOrder, request, handler, context, m_executor.get());
 }
 
 ListDeviceIdentifiersOutcome PrivateNetworksClient::ListDeviceIdentifiers(const ListDeviceIdentifiersRequest& request) const
@@ -576,18 +493,12 @@ ListDeviceIdentifiersOutcome PrivateNetworksClient::ListDeviceIdentifiers(const 
 
 ListDeviceIdentifiersOutcomeCallable PrivateNetworksClient::ListDeviceIdentifiersCallable(const ListDeviceIdentifiersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDeviceIdentifiersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeviceIdentifiers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDeviceIdentifiers, request, m_executor.get());
 }
 
 void PrivateNetworksClient::ListDeviceIdentifiersAsync(const ListDeviceIdentifiersRequest& request, const ListDeviceIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDeviceIdentifiers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDeviceIdentifiers, request, handler, context, m_executor.get());
 }
 
 ListNetworkResourcesOutcome PrivateNetworksClient::ListNetworkResources(const ListNetworkResourcesRequest& request) const
@@ -601,18 +512,12 @@ ListNetworkResourcesOutcome PrivateNetworksClient::ListNetworkResources(const Li
 
 ListNetworkResourcesOutcomeCallable PrivateNetworksClient::ListNetworkResourcesCallable(const ListNetworkResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNetworkResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNetworkResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNetworkResources, request, m_executor.get());
 }
 
 void PrivateNetworksClient::ListNetworkResourcesAsync(const ListNetworkResourcesRequest& request, const ListNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNetworkResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNetworkResources, request, handler, context, m_executor.get());
 }
 
 ListNetworkSitesOutcome PrivateNetworksClient::ListNetworkSites(const ListNetworkSitesRequest& request) const
@@ -626,18 +531,12 @@ ListNetworkSitesOutcome PrivateNetworksClient::ListNetworkSites(const ListNetwor
 
 ListNetworkSitesOutcomeCallable PrivateNetworksClient::ListNetworkSitesCallable(const ListNetworkSitesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNetworkSitesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNetworkSites(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNetworkSites, request, m_executor.get());
 }
 
 void PrivateNetworksClient::ListNetworkSitesAsync(const ListNetworkSitesRequest& request, const ListNetworkSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNetworkSites(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNetworkSites, request, handler, context, m_executor.get());
 }
 
 ListNetworksOutcome PrivateNetworksClient::ListNetworks(const ListNetworksRequest& request) const
@@ -651,18 +550,12 @@ ListNetworksOutcome PrivateNetworksClient::ListNetworks(const ListNetworksReques
 
 ListNetworksOutcomeCallable PrivateNetworksClient::ListNetworksCallable(const ListNetworksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNetworksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNetworks(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNetworks, request, m_executor.get());
 }
 
 void PrivateNetworksClient::ListNetworksAsync(const ListNetworksRequest& request, const ListNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNetworks(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNetworks, request, handler, context, m_executor.get());
 }
 
 ListOrdersOutcome PrivateNetworksClient::ListOrders(const ListOrdersRequest& request) const
@@ -676,18 +569,12 @@ ListOrdersOutcome PrivateNetworksClient::ListOrders(const ListOrdersRequest& req
 
 ListOrdersOutcomeCallable PrivateNetworksClient::ListOrdersCallable(const ListOrdersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListOrdersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOrders(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListOrders, request, m_executor.get());
 }
 
 void PrivateNetworksClient::ListOrdersAsync(const ListOrdersRequest& request, const ListOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListOrders(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListOrders, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome PrivateNetworksClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -707,18 +594,12 @@ ListTagsForResourceOutcome PrivateNetworksClient::ListTagsForResource(const List
 
 ListTagsForResourceOutcomeCallable PrivateNetworksClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void PrivateNetworksClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PingOutcome PrivateNetworksClient::Ping() const
@@ -764,18 +645,12 @@ TagResourceOutcome PrivateNetworksClient::TagResource(const TagResourceRequest& 
 
 TagResourceOutcomeCallable PrivateNetworksClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void PrivateNetworksClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome PrivateNetworksClient::UntagResource(const UntagResourceRequest& request) const
@@ -800,18 +675,12 @@ UntagResourceOutcome PrivateNetworksClient::UntagResource(const UntagResourceReq
 
 UntagResourceOutcomeCallable PrivateNetworksClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void PrivateNetworksClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateNetworkSiteOutcome PrivateNetworksClient::UpdateNetworkSite(const UpdateNetworkSiteRequest& request) const
@@ -825,18 +694,12 @@ UpdateNetworkSiteOutcome PrivateNetworksClient::UpdateNetworkSite(const UpdateNe
 
 UpdateNetworkSiteOutcomeCallable PrivateNetworksClient::UpdateNetworkSiteCallable(const UpdateNetworkSiteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNetworkSite(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateNetworkSite, request, m_executor.get());
 }
 
 void PrivateNetworksClient::UpdateNetworkSiteAsync(const UpdateNetworkSiteRequest& request, const UpdateNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateNetworkSite(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateNetworkSite, request, handler, context, m_executor.get());
 }
 
 UpdateNetworkSitePlanOutcome PrivateNetworksClient::UpdateNetworkSitePlan(const UpdateNetworkSitePlanRequest& request) const
@@ -850,17 +713,11 @@ UpdateNetworkSitePlanOutcome PrivateNetworksClient::UpdateNetworkSitePlan(const 
 
 UpdateNetworkSitePlanOutcomeCallable PrivateNetworksClient::UpdateNetworkSitePlanCallable(const UpdateNetworkSitePlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNetworkSitePlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNetworkSitePlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateNetworkSitePlan, request, m_executor.get());
 }
 
 void PrivateNetworksClient::UpdateNetworkSitePlanAsync(const UpdateNetworkSitePlanRequest& request, const UpdateNetworkSitePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateNetworkSitePlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateNetworkSitePlan, request, handler, context, m_executor.get());
 }
 

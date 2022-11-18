@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -169,18 +170,12 @@ AnalyzeDocumentOutcome TextractClient::AnalyzeDocument(const AnalyzeDocumentRequ
 
 AnalyzeDocumentOutcomeCallable TextractClient::AnalyzeDocumentCallable(const AnalyzeDocumentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AnalyzeDocumentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AnalyzeDocument(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AnalyzeDocument, request, m_executor.get());
 }
 
 void TextractClient::AnalyzeDocumentAsync(const AnalyzeDocumentRequest& request, const AnalyzeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AnalyzeDocument(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AnalyzeDocument, request, handler, context, m_executor.get());
 }
 
 AnalyzeExpenseOutcome TextractClient::AnalyzeExpense(const AnalyzeExpenseRequest& request) const
@@ -193,18 +188,12 @@ AnalyzeExpenseOutcome TextractClient::AnalyzeExpense(const AnalyzeExpenseRequest
 
 AnalyzeExpenseOutcomeCallable TextractClient::AnalyzeExpenseCallable(const AnalyzeExpenseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AnalyzeExpenseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AnalyzeExpense(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AnalyzeExpense, request, m_executor.get());
 }
 
 void TextractClient::AnalyzeExpenseAsync(const AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AnalyzeExpense(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AnalyzeExpense, request, handler, context, m_executor.get());
 }
 
 AnalyzeIDOutcome TextractClient::AnalyzeID(const AnalyzeIDRequest& request) const
@@ -217,18 +206,12 @@ AnalyzeIDOutcome TextractClient::AnalyzeID(const AnalyzeIDRequest& request) cons
 
 AnalyzeIDOutcomeCallable TextractClient::AnalyzeIDCallable(const AnalyzeIDRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AnalyzeIDOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AnalyzeID(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AnalyzeID, request, m_executor.get());
 }
 
 void TextractClient::AnalyzeIDAsync(const AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AnalyzeID(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AnalyzeID, request, handler, context, m_executor.get());
 }
 
 DetectDocumentTextOutcome TextractClient::DetectDocumentText(const DetectDocumentTextRequest& request) const
@@ -241,18 +224,12 @@ DetectDocumentTextOutcome TextractClient::DetectDocumentText(const DetectDocumen
 
 DetectDocumentTextOutcomeCallable TextractClient::DetectDocumentTextCallable(const DetectDocumentTextRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DetectDocumentTextOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectDocumentText(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DetectDocumentText, request, m_executor.get());
 }
 
 void TextractClient::DetectDocumentTextAsync(const DetectDocumentTextRequest& request, const DetectDocumentTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DetectDocumentText(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DetectDocumentText, request, handler, context, m_executor.get());
 }
 
 GetDocumentAnalysisOutcome TextractClient::GetDocumentAnalysis(const GetDocumentAnalysisRequest& request) const
@@ -265,18 +242,12 @@ GetDocumentAnalysisOutcome TextractClient::GetDocumentAnalysis(const GetDocument
 
 GetDocumentAnalysisOutcomeCallable TextractClient::GetDocumentAnalysisCallable(const GetDocumentAnalysisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDocumentAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDocumentAnalysis(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDocumentAnalysis, request, m_executor.get());
 }
 
 void TextractClient::GetDocumentAnalysisAsync(const GetDocumentAnalysisRequest& request, const GetDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDocumentAnalysis(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDocumentAnalysis, request, handler, context, m_executor.get());
 }
 
 GetDocumentTextDetectionOutcome TextractClient::GetDocumentTextDetection(const GetDocumentTextDetectionRequest& request) const
@@ -289,18 +260,12 @@ GetDocumentTextDetectionOutcome TextractClient::GetDocumentTextDetection(const G
 
 GetDocumentTextDetectionOutcomeCallable TextractClient::GetDocumentTextDetectionCallable(const GetDocumentTextDetectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDocumentTextDetectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDocumentTextDetection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDocumentTextDetection, request, m_executor.get());
 }
 
 void TextractClient::GetDocumentTextDetectionAsync(const GetDocumentTextDetectionRequest& request, const GetDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDocumentTextDetection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDocumentTextDetection, request, handler, context, m_executor.get());
 }
 
 GetExpenseAnalysisOutcome TextractClient::GetExpenseAnalysis(const GetExpenseAnalysisRequest& request) const
@@ -313,18 +278,12 @@ GetExpenseAnalysisOutcome TextractClient::GetExpenseAnalysis(const GetExpenseAna
 
 GetExpenseAnalysisOutcomeCallable TextractClient::GetExpenseAnalysisCallable(const GetExpenseAnalysisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExpenseAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExpenseAnalysis(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetExpenseAnalysis, request, m_executor.get());
 }
 
 void TextractClient::GetExpenseAnalysisAsync(const GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetExpenseAnalysis(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetExpenseAnalysis, request, handler, context, m_executor.get());
 }
 
 StartDocumentAnalysisOutcome TextractClient::StartDocumentAnalysis(const StartDocumentAnalysisRequest& request) const
@@ -337,18 +296,12 @@ StartDocumentAnalysisOutcome TextractClient::StartDocumentAnalysis(const StartDo
 
 StartDocumentAnalysisOutcomeCallable TextractClient::StartDocumentAnalysisCallable(const StartDocumentAnalysisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDocumentAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDocumentAnalysis(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartDocumentAnalysis, request, m_executor.get());
 }
 
 void TextractClient::StartDocumentAnalysisAsync(const StartDocumentAnalysisRequest& request, const StartDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartDocumentAnalysis(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartDocumentAnalysis, request, handler, context, m_executor.get());
 }
 
 StartDocumentTextDetectionOutcome TextractClient::StartDocumentTextDetection(const StartDocumentTextDetectionRequest& request) const
@@ -361,18 +314,12 @@ StartDocumentTextDetectionOutcome TextractClient::StartDocumentTextDetection(con
 
 StartDocumentTextDetectionOutcomeCallable TextractClient::StartDocumentTextDetectionCallable(const StartDocumentTextDetectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDocumentTextDetectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDocumentTextDetection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartDocumentTextDetection, request, m_executor.get());
 }
 
 void TextractClient::StartDocumentTextDetectionAsync(const StartDocumentTextDetectionRequest& request, const StartDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartDocumentTextDetection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartDocumentTextDetection, request, handler, context, m_executor.get());
 }
 
 StartExpenseAnalysisOutcome TextractClient::StartExpenseAnalysis(const StartExpenseAnalysisRequest& request) const
@@ -385,17 +332,11 @@ StartExpenseAnalysisOutcome TextractClient::StartExpenseAnalysis(const StartExpe
 
 StartExpenseAnalysisOutcomeCallable TextractClient::StartExpenseAnalysisCallable(const StartExpenseAnalysisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartExpenseAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartExpenseAnalysis(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartExpenseAnalysis, request, m_executor.get());
 }
 
 void TextractClient::StartExpenseAnalysisAsync(const StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartExpenseAnalysis(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartExpenseAnalysis, request, handler, context, m_executor.get());
 }
 

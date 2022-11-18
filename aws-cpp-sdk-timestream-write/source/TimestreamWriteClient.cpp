@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -216,18 +217,12 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
 
 CreateDatabaseOutcomeCallable TimestreamWriteClient::CreateDatabaseCallable(const CreateDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDatabase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDatabase, request, m_executor.get());
 }
 
 void TimestreamWriteClient::CreateDatabaseAsync(const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDatabase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDatabase, request, handler, context, m_executor.get());
 }
 
 CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& request) const
@@ -281,18 +276,12 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
 
 CreateTableOutcomeCallable TimestreamWriteClient::CreateTableCallable(const CreateTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTable, request, m_executor.get());
 }
 
 void TimestreamWriteClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTable, request, handler, context, m_executor.get());
 }
 
 DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabaseRequest& request) const
@@ -346,18 +335,12 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
 
 DeleteDatabaseOutcomeCallable TimestreamWriteClient::DeleteDatabaseCallable(const DeleteDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDatabase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDatabase, request, m_executor.get());
 }
 
 void TimestreamWriteClient::DeleteDatabaseAsync(const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDatabase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDatabase, request, handler, context, m_executor.get());
 }
 
 DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& request) const
@@ -411,18 +394,12 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
 
 DeleteTableOutcomeCallable TimestreamWriteClient::DeleteTableCallable(const DeleteTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTable, request, m_executor.get());
 }
 
 void TimestreamWriteClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTable, request, handler, context, m_executor.get());
 }
 
 DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDatabaseRequest& request) const
@@ -476,18 +453,12 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
 
 DescribeDatabaseOutcomeCallable TimestreamWriteClient::DescribeDatabaseCallable(const DescribeDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDatabase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDatabase, request, m_executor.get());
 }
 
 void TimestreamWriteClient::DescribeDatabaseAsync(const DescribeDatabaseRequest& request, const DescribeDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDatabase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDatabase, request, handler, context, m_executor.get());
 }
 
 DescribeEndpointsOutcome TimestreamWriteClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
@@ -500,18 +471,12 @@ DescribeEndpointsOutcome TimestreamWriteClient::DescribeEndpoints(const Describe
 
 DescribeEndpointsOutcomeCallable TimestreamWriteClient::DescribeEndpointsCallable(const DescribeEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEndpoints, request, m_executor.get());
 }
 
 void TimestreamWriteClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEndpoints, request, handler, context, m_executor.get());
 }
 
 DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableRequest& request) const
@@ -565,18 +530,12 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
 
 DescribeTableOutcomeCallable TimestreamWriteClient::DescribeTableCallable(const DescribeTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTable, request, m_executor.get());
 }
 
 void TimestreamWriteClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTable, request, handler, context, m_executor.get());
 }
 
 ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesRequest& request) const
@@ -630,18 +589,12 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
 
 ListDatabasesOutcomeCallable TimestreamWriteClient::ListDatabasesCallable(const ListDatabasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatabasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatabases(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDatabases, request, m_executor.get());
 }
 
 void TimestreamWriteClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatabases(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDatabases, request, handler, context, m_executor.get());
 }
 
 ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& request) const
@@ -695,18 +648,12 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
 
 ListTablesOutcomeCallable TimestreamWriteClient::ListTablesCallable(const ListTablesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTablesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTables(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTables, request, m_executor.get());
 }
 
 void TimestreamWriteClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTables(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTables, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -760,18 +707,12 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
 
 ListTagsForResourceOutcomeCallable TimestreamWriteClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void TimestreamWriteClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& request) const
@@ -825,18 +766,12 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
 
 TagResourceOutcomeCallable TimestreamWriteClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void TimestreamWriteClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceRequest& request) const
@@ -890,18 +825,12 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
 
 UntagResourceOutcomeCallable TimestreamWriteClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void TimestreamWriteClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabaseRequest& request) const
@@ -955,18 +884,12 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
 
 UpdateDatabaseOutcomeCallable TimestreamWriteClient::UpdateDatabaseCallable(const UpdateDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDatabase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDatabase, request, m_executor.get());
 }
 
 void TimestreamWriteClient::UpdateDatabaseAsync(const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDatabase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDatabase, request, handler, context, m_executor.get());
 }
 
 UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& request) const
@@ -1020,18 +943,12 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
 
 UpdateTableOutcomeCallable TimestreamWriteClient::UpdateTableCallable(const UpdateTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTable, request, m_executor.get());
 }
 
 void TimestreamWriteClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTable, request, handler, context, m_executor.get());
 }
 
 WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsRequest& request) const
@@ -1085,17 +1002,11 @@ WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsReques
 
 WriteRecordsOutcomeCallable TimestreamWriteClient::WriteRecordsCallable(const WriteRecordsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< WriteRecordsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->WriteRecords(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(WriteRecords, request, m_executor.get());
 }
 
 void TimestreamWriteClient::WriteRecordsAsync(const WriteRecordsRequest& request, const WriteRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, WriteRecords(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(WriteRecords, request, handler, context, m_executor.get());
 }
 

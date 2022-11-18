@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -193,18 +194,12 @@ CancelJournalKinesisStreamOutcome QLDBClient::CancelJournalKinesisStream(const C
 
 CancelJournalKinesisStreamOutcomeCallable QLDBClient::CancelJournalKinesisStreamCallable(const CancelJournalKinesisStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelJournalKinesisStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelJournalKinesisStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelJournalKinesisStream, request, m_executor.get());
 }
 
 void QLDBClient::CancelJournalKinesisStreamAsync(const CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelJournalKinesisStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelJournalKinesisStream, request, handler, context, m_executor.get());
 }
 
 CreateLedgerOutcome QLDBClient::CreateLedger(const CreateLedgerRequest& request) const
@@ -218,18 +213,12 @@ CreateLedgerOutcome QLDBClient::CreateLedger(const CreateLedgerRequest& request)
 
 CreateLedgerOutcomeCallable QLDBClient::CreateLedgerCallable(const CreateLedgerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLedgerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLedger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLedger, request, m_executor.get());
 }
 
 void QLDBClient::CreateLedgerAsync(const CreateLedgerRequest& request, const CreateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLedger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLedger, request, handler, context, m_executor.get());
 }
 
 DeleteLedgerOutcome QLDBClient::DeleteLedger(const DeleteLedgerRequest& request) const
@@ -249,18 +238,12 @@ DeleteLedgerOutcome QLDBClient::DeleteLedger(const DeleteLedgerRequest& request)
 
 DeleteLedgerOutcomeCallable QLDBClient::DeleteLedgerCallable(const DeleteLedgerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLedgerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLedger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLedger, request, m_executor.get());
 }
 
 void QLDBClient::DeleteLedgerAsync(const DeleteLedgerRequest& request, const DeleteLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLedger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLedger, request, handler, context, m_executor.get());
 }
 
 DescribeJournalKinesisStreamOutcome QLDBClient::DescribeJournalKinesisStream(const DescribeJournalKinesisStreamRequest& request) const
@@ -287,18 +270,12 @@ DescribeJournalKinesisStreamOutcome QLDBClient::DescribeJournalKinesisStream(con
 
 DescribeJournalKinesisStreamOutcomeCallable QLDBClient::DescribeJournalKinesisStreamCallable(const DescribeJournalKinesisStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJournalKinesisStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJournalKinesisStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJournalKinesisStream, request, m_executor.get());
 }
 
 void QLDBClient::DescribeJournalKinesisStreamAsync(const DescribeJournalKinesisStreamRequest& request, const DescribeJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJournalKinesisStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJournalKinesisStream, request, handler, context, m_executor.get());
 }
 
 DescribeJournalS3ExportOutcome QLDBClient::DescribeJournalS3Export(const DescribeJournalS3ExportRequest& request) const
@@ -325,18 +302,12 @@ DescribeJournalS3ExportOutcome QLDBClient::DescribeJournalS3Export(const Describ
 
 DescribeJournalS3ExportOutcomeCallable QLDBClient::DescribeJournalS3ExportCallable(const DescribeJournalS3ExportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJournalS3ExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJournalS3Export(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJournalS3Export, request, m_executor.get());
 }
 
 void QLDBClient::DescribeJournalS3ExportAsync(const DescribeJournalS3ExportRequest& request, const DescribeJournalS3ExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJournalS3Export(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJournalS3Export, request, handler, context, m_executor.get());
 }
 
 DescribeLedgerOutcome QLDBClient::DescribeLedger(const DescribeLedgerRequest& request) const
@@ -356,18 +327,12 @@ DescribeLedgerOutcome QLDBClient::DescribeLedger(const DescribeLedgerRequest& re
 
 DescribeLedgerOutcomeCallable QLDBClient::DescribeLedgerCallable(const DescribeLedgerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLedgerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLedger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLedger, request, m_executor.get());
 }
 
 void QLDBClient::DescribeLedgerAsync(const DescribeLedgerRequest& request, const DescribeLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLedger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLedger, request, handler, context, m_executor.get());
 }
 
 ExportJournalToS3Outcome QLDBClient::ExportJournalToS3(const ExportJournalToS3Request& request) const
@@ -388,18 +353,12 @@ ExportJournalToS3Outcome QLDBClient::ExportJournalToS3(const ExportJournalToS3Re
 
 ExportJournalToS3OutcomeCallable QLDBClient::ExportJournalToS3Callable(const ExportJournalToS3Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExportJournalToS3Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportJournalToS3(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExportJournalToS3, request, m_executor.get());
 }
 
 void QLDBClient::ExportJournalToS3Async(const ExportJournalToS3Request& request, const ExportJournalToS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExportJournalToS3(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExportJournalToS3, request, handler, context, m_executor.get());
 }
 
 GetBlockOutcome QLDBClient::GetBlock(const GetBlockRequest& request) const
@@ -420,18 +379,12 @@ GetBlockOutcome QLDBClient::GetBlock(const GetBlockRequest& request) const
 
 GetBlockOutcomeCallable QLDBClient::GetBlockCallable(const GetBlockRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlock(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBlock, request, m_executor.get());
 }
 
 void QLDBClient::GetBlockAsync(const GetBlockRequest& request, const GetBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBlock(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBlock, request, handler, context, m_executor.get());
 }
 
 GetDigestOutcome QLDBClient::GetDigest(const GetDigestRequest& request) const
@@ -452,18 +405,12 @@ GetDigestOutcome QLDBClient::GetDigest(const GetDigestRequest& request) const
 
 GetDigestOutcomeCallable QLDBClient::GetDigestCallable(const GetDigestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDigestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDigest(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDigest, request, m_executor.get());
 }
 
 void QLDBClient::GetDigestAsync(const GetDigestRequest& request, const GetDigestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDigest(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDigest, request, handler, context, m_executor.get());
 }
 
 GetRevisionOutcome QLDBClient::GetRevision(const GetRevisionRequest& request) const
@@ -484,18 +431,12 @@ GetRevisionOutcome QLDBClient::GetRevision(const GetRevisionRequest& request) co
 
 GetRevisionOutcomeCallable QLDBClient::GetRevisionCallable(const GetRevisionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRevisionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRevision(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRevision, request, m_executor.get());
 }
 
 void QLDBClient::GetRevisionAsync(const GetRevisionRequest& request, const GetRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRevision(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRevision, request, handler, context, m_executor.get());
 }
 
 ListJournalKinesisStreamsForLedgerOutcome QLDBClient::ListJournalKinesisStreamsForLedger(const ListJournalKinesisStreamsForLedgerRequest& request) const
@@ -516,18 +457,12 @@ ListJournalKinesisStreamsForLedgerOutcome QLDBClient::ListJournalKinesisStreamsF
 
 ListJournalKinesisStreamsForLedgerOutcomeCallable QLDBClient::ListJournalKinesisStreamsForLedgerCallable(const ListJournalKinesisStreamsForLedgerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListJournalKinesisStreamsForLedgerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJournalKinesisStreamsForLedger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListJournalKinesisStreamsForLedger, request, m_executor.get());
 }
 
 void QLDBClient::ListJournalKinesisStreamsForLedgerAsync(const ListJournalKinesisStreamsForLedgerRequest& request, const ListJournalKinesisStreamsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListJournalKinesisStreamsForLedger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListJournalKinesisStreamsForLedger, request, handler, context, m_executor.get());
 }
 
 ListJournalS3ExportsOutcome QLDBClient::ListJournalS3Exports(const ListJournalS3ExportsRequest& request) const
@@ -541,18 +476,12 @@ ListJournalS3ExportsOutcome QLDBClient::ListJournalS3Exports(const ListJournalS3
 
 ListJournalS3ExportsOutcomeCallable QLDBClient::ListJournalS3ExportsCallable(const ListJournalS3ExportsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListJournalS3ExportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJournalS3Exports(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListJournalS3Exports, request, m_executor.get());
 }
 
 void QLDBClient::ListJournalS3ExportsAsync(const ListJournalS3ExportsRequest& request, const ListJournalS3ExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListJournalS3Exports(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListJournalS3Exports, request, handler, context, m_executor.get());
 }
 
 ListJournalS3ExportsForLedgerOutcome QLDBClient::ListJournalS3ExportsForLedger(const ListJournalS3ExportsForLedgerRequest& request) const
@@ -573,18 +502,12 @@ ListJournalS3ExportsForLedgerOutcome QLDBClient::ListJournalS3ExportsForLedger(c
 
 ListJournalS3ExportsForLedgerOutcomeCallable QLDBClient::ListJournalS3ExportsForLedgerCallable(const ListJournalS3ExportsForLedgerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListJournalS3ExportsForLedgerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJournalS3ExportsForLedger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListJournalS3ExportsForLedger, request, m_executor.get());
 }
 
 void QLDBClient::ListJournalS3ExportsForLedgerAsync(const ListJournalS3ExportsForLedgerRequest& request, const ListJournalS3ExportsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListJournalS3ExportsForLedger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListJournalS3ExportsForLedger, request, handler, context, m_executor.get());
 }
 
 ListLedgersOutcome QLDBClient::ListLedgers(const ListLedgersRequest& request) const
@@ -598,18 +521,12 @@ ListLedgersOutcome QLDBClient::ListLedgers(const ListLedgersRequest& request) co
 
 ListLedgersOutcomeCallable QLDBClient::ListLedgersCallable(const ListLedgersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLedgersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLedgers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLedgers, request, m_executor.get());
 }
 
 void QLDBClient::ListLedgersAsync(const ListLedgersRequest& request, const ListLedgersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLedgers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLedgers, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome QLDBClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -629,18 +546,12 @@ ListTagsForResourceOutcome QLDBClient::ListTagsForResource(const ListTagsForReso
 
 ListTagsForResourceOutcomeCallable QLDBClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void QLDBClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StreamJournalToKinesisOutcome QLDBClient::StreamJournalToKinesis(const StreamJournalToKinesisRequest& request) const
@@ -661,18 +572,12 @@ StreamJournalToKinesisOutcome QLDBClient::StreamJournalToKinesis(const StreamJou
 
 StreamJournalToKinesisOutcomeCallable QLDBClient::StreamJournalToKinesisCallable(const StreamJournalToKinesisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StreamJournalToKinesisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StreamJournalToKinesis(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StreamJournalToKinesis, request, m_executor.get());
 }
 
 void QLDBClient::StreamJournalToKinesisAsync(const StreamJournalToKinesisRequest& request, const StreamJournalToKinesisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StreamJournalToKinesis(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StreamJournalToKinesis, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome QLDBClient::TagResource(const TagResourceRequest& request) const
@@ -692,18 +597,12 @@ TagResourceOutcome QLDBClient::TagResource(const TagResourceRequest& request) co
 
 TagResourceOutcomeCallable QLDBClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void QLDBClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome QLDBClient::UntagResource(const UntagResourceRequest& request) const
@@ -728,18 +627,12 @@ UntagResourceOutcome QLDBClient::UntagResource(const UntagResourceRequest& reque
 
 UntagResourceOutcomeCallable QLDBClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void QLDBClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateLedgerOutcome QLDBClient::UpdateLedger(const UpdateLedgerRequest& request) const
@@ -759,18 +652,12 @@ UpdateLedgerOutcome QLDBClient::UpdateLedger(const UpdateLedgerRequest& request)
 
 UpdateLedgerOutcomeCallable QLDBClient::UpdateLedgerCallable(const UpdateLedgerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLedgerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLedger(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLedger, request, m_executor.get());
 }
 
 void QLDBClient::UpdateLedgerAsync(const UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLedger(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLedger, request, handler, context, m_executor.get());
 }
 
 UpdateLedgerPermissionsModeOutcome QLDBClient::UpdateLedgerPermissionsMode(const UpdateLedgerPermissionsModeRequest& request) const
@@ -791,17 +678,11 @@ UpdateLedgerPermissionsModeOutcome QLDBClient::UpdateLedgerPermissionsMode(const
 
 UpdateLedgerPermissionsModeOutcomeCallable QLDBClient::UpdateLedgerPermissionsModeCallable(const UpdateLedgerPermissionsModeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLedgerPermissionsModeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLedgerPermissionsMode(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLedgerPermissionsMode, request, m_executor.get());
 }
 
 void QLDBClient::UpdateLedgerPermissionsModeAsync(const UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLedgerPermissionsMode(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLedgerPermissionsMode, request, handler, context, m_executor.get());
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -182,18 +183,12 @@ CreateCampaignOutcome ConnectCampaignsClient::CreateCampaign(const CreateCampaig
 
 CreateCampaignOutcomeCallable ConnectCampaignsClient::CreateCampaignCallable(const CreateCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCampaign(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCampaign, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::CreateCampaignAsync(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCampaign(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCampaign, request, handler, context, m_executor.get());
 }
 
 DeleteCampaignOutcome ConnectCampaignsClient::DeleteCampaign(const DeleteCampaignRequest& request) const
@@ -213,18 +208,12 @@ DeleteCampaignOutcome ConnectCampaignsClient::DeleteCampaign(const DeleteCampaig
 
 DeleteCampaignOutcomeCallable ConnectCampaignsClient::DeleteCampaignCallable(const DeleteCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCampaign(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCampaign, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::DeleteCampaignAsync(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCampaign(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCampaign, request, handler, context, m_executor.get());
 }
 
 DeleteConnectInstanceConfigOutcome ConnectCampaignsClient::DeleteConnectInstanceConfig(const DeleteConnectInstanceConfigRequest& request) const
@@ -245,18 +234,12 @@ DeleteConnectInstanceConfigOutcome ConnectCampaignsClient::DeleteConnectInstance
 
 DeleteConnectInstanceConfigOutcomeCallable ConnectCampaignsClient::DeleteConnectInstanceConfigCallable(const DeleteConnectInstanceConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectInstanceConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnectInstanceConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteConnectInstanceConfig, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::DeleteConnectInstanceConfigAsync(const DeleteConnectInstanceConfigRequest& request, const DeleteConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteConnectInstanceConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteConnectInstanceConfig, request, handler, context, m_executor.get());
 }
 
 DeleteInstanceOnboardingJobOutcome ConnectCampaignsClient::DeleteInstanceOnboardingJob(const DeleteInstanceOnboardingJobRequest& request) const
@@ -277,18 +260,12 @@ DeleteInstanceOnboardingJobOutcome ConnectCampaignsClient::DeleteInstanceOnboard
 
 DeleteInstanceOnboardingJobOutcomeCallable ConnectCampaignsClient::DeleteInstanceOnboardingJobCallable(const DeleteInstanceOnboardingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteInstanceOnboardingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInstanceOnboardingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteInstanceOnboardingJob, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::DeleteInstanceOnboardingJobAsync(const DeleteInstanceOnboardingJobRequest& request, const DeleteInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteInstanceOnboardingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteInstanceOnboardingJob, request, handler, context, m_executor.get());
 }
 
 DescribeCampaignOutcome ConnectCampaignsClient::DescribeCampaign(const DescribeCampaignRequest& request) const
@@ -308,18 +285,12 @@ DescribeCampaignOutcome ConnectCampaignsClient::DescribeCampaign(const DescribeC
 
 DescribeCampaignOutcomeCallable ConnectCampaignsClient::DescribeCampaignCallable(const DescribeCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCampaign(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCampaign, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::DescribeCampaignAsync(const DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCampaign(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCampaign, request, handler, context, m_executor.get());
 }
 
 GetCampaignStateOutcome ConnectCampaignsClient::GetCampaignState(const GetCampaignStateRequest& request) const
@@ -340,18 +311,12 @@ GetCampaignStateOutcome ConnectCampaignsClient::GetCampaignState(const GetCampai
 
 GetCampaignStateOutcomeCallable ConnectCampaignsClient::GetCampaignStateCallable(const GetCampaignStateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCampaignStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCampaignState(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCampaignState, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::GetCampaignStateAsync(const GetCampaignStateRequest& request, const GetCampaignStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCampaignState(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCampaignState, request, handler, context, m_executor.get());
 }
 
 GetCampaignStateBatchOutcome ConnectCampaignsClient::GetCampaignStateBatch(const GetCampaignStateBatchRequest& request) const
@@ -365,18 +330,12 @@ GetCampaignStateBatchOutcome ConnectCampaignsClient::GetCampaignStateBatch(const
 
 GetCampaignStateBatchOutcomeCallable ConnectCampaignsClient::GetCampaignStateBatchCallable(const GetCampaignStateBatchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCampaignStateBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCampaignStateBatch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCampaignStateBatch, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::GetCampaignStateBatchAsync(const GetCampaignStateBatchRequest& request, const GetCampaignStateBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCampaignStateBatch(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCampaignStateBatch, request, handler, context, m_executor.get());
 }
 
 GetConnectInstanceConfigOutcome ConnectCampaignsClient::GetConnectInstanceConfig(const GetConnectInstanceConfigRequest& request) const
@@ -397,18 +356,12 @@ GetConnectInstanceConfigOutcome ConnectCampaignsClient::GetConnectInstanceConfig
 
 GetConnectInstanceConfigOutcomeCallable ConnectCampaignsClient::GetConnectInstanceConfigCallable(const GetConnectInstanceConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConnectInstanceConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnectInstanceConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetConnectInstanceConfig, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::GetConnectInstanceConfigAsync(const GetConnectInstanceConfigRequest& request, const GetConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetConnectInstanceConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetConnectInstanceConfig, request, handler, context, m_executor.get());
 }
 
 GetInstanceOnboardingJobStatusOutcome ConnectCampaignsClient::GetInstanceOnboardingJobStatus(const GetInstanceOnboardingJobStatusRequest& request) const
@@ -429,18 +382,12 @@ GetInstanceOnboardingJobStatusOutcome ConnectCampaignsClient::GetInstanceOnboard
 
 GetInstanceOnboardingJobStatusOutcomeCallable ConnectCampaignsClient::GetInstanceOnboardingJobStatusCallable(const GetInstanceOnboardingJobStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetInstanceOnboardingJobStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInstanceOnboardingJobStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetInstanceOnboardingJobStatus, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::GetInstanceOnboardingJobStatusAsync(const GetInstanceOnboardingJobStatusRequest& request, const GetInstanceOnboardingJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetInstanceOnboardingJobStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetInstanceOnboardingJobStatus, request, handler, context, m_executor.get());
 }
 
 ListCampaignsOutcome ConnectCampaignsClient::ListCampaigns(const ListCampaignsRequest& request) const
@@ -454,18 +401,12 @@ ListCampaignsOutcome ConnectCampaignsClient::ListCampaigns(const ListCampaignsRe
 
 ListCampaignsOutcomeCallable ConnectCampaignsClient::ListCampaignsCallable(const ListCampaignsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCampaignsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCampaigns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCampaigns, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::ListCampaignsAsync(const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCampaigns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCampaigns, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ConnectCampaignsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -485,18 +426,12 @@ ListTagsForResourceOutcome ConnectCampaignsClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable ConnectCampaignsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PauseCampaignOutcome ConnectCampaignsClient::PauseCampaign(const PauseCampaignRequest& request) const
@@ -517,18 +452,12 @@ PauseCampaignOutcome ConnectCampaignsClient::PauseCampaign(const PauseCampaignRe
 
 PauseCampaignOutcomeCallable ConnectCampaignsClient::PauseCampaignCallable(const PauseCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PauseCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PauseCampaign(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PauseCampaign, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::PauseCampaignAsync(const PauseCampaignRequest& request, const PauseCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PauseCampaign(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PauseCampaign, request, handler, context, m_executor.get());
 }
 
 PutDialRequestBatchOutcome ConnectCampaignsClient::PutDialRequestBatch(const PutDialRequestBatchRequest& request) const
@@ -549,18 +478,12 @@ PutDialRequestBatchOutcome ConnectCampaignsClient::PutDialRequestBatch(const Put
 
 PutDialRequestBatchOutcomeCallable ConnectCampaignsClient::PutDialRequestBatchCallable(const PutDialRequestBatchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutDialRequestBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutDialRequestBatch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutDialRequestBatch, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::PutDialRequestBatchAsync(const PutDialRequestBatchRequest& request, const PutDialRequestBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutDialRequestBatch(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutDialRequestBatch, request, handler, context, m_executor.get());
 }
 
 ResumeCampaignOutcome ConnectCampaignsClient::ResumeCampaign(const ResumeCampaignRequest& request) const
@@ -581,18 +504,12 @@ ResumeCampaignOutcome ConnectCampaignsClient::ResumeCampaign(const ResumeCampaig
 
 ResumeCampaignOutcomeCallable ConnectCampaignsClient::ResumeCampaignCallable(const ResumeCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResumeCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResumeCampaign(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ResumeCampaign, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::ResumeCampaignAsync(const ResumeCampaignRequest& request, const ResumeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ResumeCampaign(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ResumeCampaign, request, handler, context, m_executor.get());
 }
 
 StartCampaignOutcome ConnectCampaignsClient::StartCampaign(const StartCampaignRequest& request) const
@@ -613,18 +530,12 @@ StartCampaignOutcome ConnectCampaignsClient::StartCampaign(const StartCampaignRe
 
 StartCampaignOutcomeCallable ConnectCampaignsClient::StartCampaignCallable(const StartCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartCampaign(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartCampaign, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::StartCampaignAsync(const StartCampaignRequest& request, const StartCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartCampaign(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartCampaign, request, handler, context, m_executor.get());
 }
 
 StartInstanceOnboardingJobOutcome ConnectCampaignsClient::StartInstanceOnboardingJob(const StartInstanceOnboardingJobRequest& request) const
@@ -645,18 +556,12 @@ StartInstanceOnboardingJobOutcome ConnectCampaignsClient::StartInstanceOnboardin
 
 StartInstanceOnboardingJobOutcomeCallable ConnectCampaignsClient::StartInstanceOnboardingJobCallable(const StartInstanceOnboardingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartInstanceOnboardingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartInstanceOnboardingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartInstanceOnboardingJob, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::StartInstanceOnboardingJobAsync(const StartInstanceOnboardingJobRequest& request, const StartInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartInstanceOnboardingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartInstanceOnboardingJob, request, handler, context, m_executor.get());
 }
 
 StopCampaignOutcome ConnectCampaignsClient::StopCampaign(const StopCampaignRequest& request) const
@@ -677,18 +582,12 @@ StopCampaignOutcome ConnectCampaignsClient::StopCampaign(const StopCampaignReque
 
 StopCampaignOutcomeCallable ConnectCampaignsClient::StopCampaignCallable(const StopCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopCampaign(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopCampaign, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::StopCampaignAsync(const StopCampaignRequest& request, const StopCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopCampaign(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopCampaign, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ConnectCampaignsClient::TagResource(const TagResourceRequest& request) const
@@ -708,18 +607,12 @@ TagResourceOutcome ConnectCampaignsClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable ConnectCampaignsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ConnectCampaignsClient::UntagResource(const UntagResourceRequest& request) const
@@ -744,18 +637,12 @@ UntagResourceOutcome ConnectCampaignsClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable ConnectCampaignsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateCampaignDialerConfigOutcome ConnectCampaignsClient::UpdateCampaignDialerConfig(const UpdateCampaignDialerConfigRequest& request) const
@@ -776,18 +663,12 @@ UpdateCampaignDialerConfigOutcome ConnectCampaignsClient::UpdateCampaignDialerCo
 
 UpdateCampaignDialerConfigOutcomeCallable ConnectCampaignsClient::UpdateCampaignDialerConfigCallable(const UpdateCampaignDialerConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignDialerConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCampaignDialerConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCampaignDialerConfig, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::UpdateCampaignDialerConfigAsync(const UpdateCampaignDialerConfigRequest& request, const UpdateCampaignDialerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCampaignDialerConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCampaignDialerConfig, request, handler, context, m_executor.get());
 }
 
 UpdateCampaignNameOutcome ConnectCampaignsClient::UpdateCampaignName(const UpdateCampaignNameRequest& request) const
@@ -808,18 +689,12 @@ UpdateCampaignNameOutcome ConnectCampaignsClient::UpdateCampaignName(const Updat
 
 UpdateCampaignNameOutcomeCallable ConnectCampaignsClient::UpdateCampaignNameCallable(const UpdateCampaignNameRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCampaignName(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCampaignName, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::UpdateCampaignNameAsync(const UpdateCampaignNameRequest& request, const UpdateCampaignNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCampaignName(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCampaignName, request, handler, context, m_executor.get());
 }
 
 UpdateCampaignOutboundCallConfigOutcome ConnectCampaignsClient::UpdateCampaignOutboundCallConfig(const UpdateCampaignOutboundCallConfigRequest& request) const
@@ -840,17 +715,11 @@ UpdateCampaignOutboundCallConfigOutcome ConnectCampaignsClient::UpdateCampaignOu
 
 UpdateCampaignOutboundCallConfigOutcomeCallable ConnectCampaignsClient::UpdateCampaignOutboundCallConfigCallable(const UpdateCampaignOutboundCallConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignOutboundCallConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCampaignOutboundCallConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCampaignOutboundCallConfig, request, m_executor.get());
 }
 
 void ConnectCampaignsClient::UpdateCampaignOutboundCallConfigAsync(const UpdateCampaignOutboundCallConfigRequest& request, const UpdateCampaignOutboundCallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCampaignOutboundCallConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCampaignOutboundCallConfig, request, handler, context, m_executor.get());
 }
 

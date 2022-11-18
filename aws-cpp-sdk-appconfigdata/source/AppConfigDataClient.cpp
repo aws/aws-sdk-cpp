@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -167,18 +168,12 @@ GetLatestConfigurationOutcome AppConfigDataClient::GetLatestConfiguration(const 
 
 GetLatestConfigurationOutcomeCallable AppConfigDataClient::GetLatestConfigurationCallable(const GetLatestConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLatestConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLatestConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLatestConfiguration, request, m_executor.get());
 }
 
 void AppConfigDataClient::GetLatestConfigurationAsync(const GetLatestConfigurationRequest& request, const GetLatestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLatestConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLatestConfiguration, request, handler, context, m_executor.get());
 }
 
 StartConfigurationSessionOutcome AppConfigDataClient::StartConfigurationSession(const StartConfigurationSessionRequest& request) const
@@ -192,17 +187,11 @@ StartConfigurationSessionOutcome AppConfigDataClient::StartConfigurationSession(
 
 StartConfigurationSessionOutcomeCallable AppConfigDataClient::StartConfigurationSessionCallable(const StartConfigurationSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartConfigurationSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartConfigurationSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartConfigurationSession, request, m_executor.get());
 }
 
 void AppConfigDataClient::StartConfigurationSessionAsync(const StartConfigurationSessionRequest& request, const StartConfigurationSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartConfigurationSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartConfigurationSession, request, handler, context, m_executor.get());
 }
 

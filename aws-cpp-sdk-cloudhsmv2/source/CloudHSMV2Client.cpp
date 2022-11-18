@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -174,18 +175,12 @@ CopyBackupToRegionOutcome CloudHSMV2Client::CopyBackupToRegion(const CopyBackupT
 
 CopyBackupToRegionOutcomeCallable CloudHSMV2Client::CopyBackupToRegionCallable(const CopyBackupToRegionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CopyBackupToRegionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyBackupToRegion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CopyBackupToRegion, request, m_executor.get());
 }
 
 void CloudHSMV2Client::CopyBackupToRegionAsync(const CopyBackupToRegionRequest& request, const CopyBackupToRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CopyBackupToRegion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CopyBackupToRegion, request, handler, context, m_executor.get());
 }
 
 CreateClusterOutcome CloudHSMV2Client::CreateCluster(const CreateClusterRequest& request) const
@@ -198,18 +193,12 @@ CreateClusterOutcome CloudHSMV2Client::CreateCluster(const CreateClusterRequest&
 
 CreateClusterOutcomeCallable CloudHSMV2Client::CreateClusterCallable(const CreateClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCluster(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCluster, request, m_executor.get());
 }
 
 void CloudHSMV2Client::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCluster(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCluster, request, handler, context, m_executor.get());
 }
 
 CreateHsmOutcome CloudHSMV2Client::CreateHsm(const CreateHsmRequest& request) const
@@ -222,18 +211,12 @@ CreateHsmOutcome CloudHSMV2Client::CreateHsm(const CreateHsmRequest& request) co
 
 CreateHsmOutcomeCallable CloudHSMV2Client::CreateHsmCallable(const CreateHsmRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHsmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHsm(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateHsm, request, m_executor.get());
 }
 
 void CloudHSMV2Client::CreateHsmAsync(const CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateHsm(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateHsm, request, handler, context, m_executor.get());
 }
 
 DeleteBackupOutcome CloudHSMV2Client::DeleteBackup(const DeleteBackupRequest& request) const
@@ -246,18 +229,12 @@ DeleteBackupOutcome CloudHSMV2Client::DeleteBackup(const DeleteBackupRequest& re
 
 DeleteBackupOutcomeCallable CloudHSMV2Client::DeleteBackupCallable(const DeleteBackupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBackup, request, m_executor.get());
 }
 
 void CloudHSMV2Client::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBackup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBackup, request, handler, context, m_executor.get());
 }
 
 DeleteClusterOutcome CloudHSMV2Client::DeleteCluster(const DeleteClusterRequest& request) const
@@ -270,18 +247,12 @@ DeleteClusterOutcome CloudHSMV2Client::DeleteCluster(const DeleteClusterRequest&
 
 DeleteClusterOutcomeCallable CloudHSMV2Client::DeleteClusterCallable(const DeleteClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCluster(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCluster, request, m_executor.get());
 }
 
 void CloudHSMV2Client::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCluster(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCluster, request, handler, context, m_executor.get());
 }
 
 DeleteHsmOutcome CloudHSMV2Client::DeleteHsm(const DeleteHsmRequest& request) const
@@ -294,18 +265,12 @@ DeleteHsmOutcome CloudHSMV2Client::DeleteHsm(const DeleteHsmRequest& request) co
 
 DeleteHsmOutcomeCallable CloudHSMV2Client::DeleteHsmCallable(const DeleteHsmRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteHsmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHsm(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteHsm, request, m_executor.get());
 }
 
 void CloudHSMV2Client::DeleteHsmAsync(const DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteHsm(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteHsm, request, handler, context, m_executor.get());
 }
 
 DescribeBackupsOutcome CloudHSMV2Client::DescribeBackups(const DescribeBackupsRequest& request) const
@@ -318,18 +283,12 @@ DescribeBackupsOutcome CloudHSMV2Client::DescribeBackups(const DescribeBackupsRe
 
 DescribeBackupsOutcomeCallable CloudHSMV2Client::DescribeBackupsCallable(const DescribeBackupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBackupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBackups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeBackups, request, m_executor.get());
 }
 
 void CloudHSMV2Client::DescribeBackupsAsync(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeBackups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeBackups, request, handler, context, m_executor.get());
 }
 
 DescribeClustersOutcome CloudHSMV2Client::DescribeClusters(const DescribeClustersRequest& request) const
@@ -342,18 +301,12 @@ DescribeClustersOutcome CloudHSMV2Client::DescribeClusters(const DescribeCluster
 
 DescribeClustersOutcomeCallable CloudHSMV2Client::DescribeClustersCallable(const DescribeClustersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeClustersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeClusters(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeClusters, request, m_executor.get());
 }
 
 void CloudHSMV2Client::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeClusters(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeClusters, request, handler, context, m_executor.get());
 }
 
 InitializeClusterOutcome CloudHSMV2Client::InitializeCluster(const InitializeClusterRequest& request) const
@@ -366,18 +319,12 @@ InitializeClusterOutcome CloudHSMV2Client::InitializeCluster(const InitializeClu
 
 InitializeClusterOutcomeCallable CloudHSMV2Client::InitializeClusterCallable(const InitializeClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InitializeClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InitializeCluster(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(InitializeCluster, request, m_executor.get());
 }
 
 void CloudHSMV2Client::InitializeClusterAsync(const InitializeClusterRequest& request, const InitializeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, InitializeCluster(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(InitializeCluster, request, handler, context, m_executor.get());
 }
 
 ListTagsOutcome CloudHSMV2Client::ListTags(const ListTagsRequest& request) const
@@ -390,18 +337,12 @@ ListTagsOutcome CloudHSMV2Client::ListTags(const ListTagsRequest& request) const
 
 ListTagsOutcomeCallable CloudHSMV2Client::ListTagsCallable(const ListTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTags, request, m_executor.get());
 }
 
 void CloudHSMV2Client::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTags, request, handler, context, m_executor.get());
 }
 
 ModifyBackupAttributesOutcome CloudHSMV2Client::ModifyBackupAttributes(const ModifyBackupAttributesRequest& request) const
@@ -414,18 +355,12 @@ ModifyBackupAttributesOutcome CloudHSMV2Client::ModifyBackupAttributes(const Mod
 
 ModifyBackupAttributesOutcomeCallable CloudHSMV2Client::ModifyBackupAttributesCallable(const ModifyBackupAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ModifyBackupAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyBackupAttributes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ModifyBackupAttributes, request, m_executor.get());
 }
 
 void CloudHSMV2Client::ModifyBackupAttributesAsync(const ModifyBackupAttributesRequest& request, const ModifyBackupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ModifyBackupAttributes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ModifyBackupAttributes, request, handler, context, m_executor.get());
 }
 
 ModifyClusterOutcome CloudHSMV2Client::ModifyCluster(const ModifyClusterRequest& request) const
@@ -438,18 +373,12 @@ ModifyClusterOutcome CloudHSMV2Client::ModifyCluster(const ModifyClusterRequest&
 
 ModifyClusterOutcomeCallable CloudHSMV2Client::ModifyClusterCallable(const ModifyClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ModifyClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyCluster(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ModifyCluster, request, m_executor.get());
 }
 
 void CloudHSMV2Client::ModifyClusterAsync(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ModifyCluster(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ModifyCluster, request, handler, context, m_executor.get());
 }
 
 RestoreBackupOutcome CloudHSMV2Client::RestoreBackup(const RestoreBackupRequest& request) const
@@ -462,18 +391,12 @@ RestoreBackupOutcome CloudHSMV2Client::RestoreBackup(const RestoreBackupRequest&
 
 RestoreBackupOutcomeCallable CloudHSMV2Client::RestoreBackupCallable(const RestoreBackupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RestoreBackupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreBackup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RestoreBackup, request, m_executor.get());
 }
 
 void CloudHSMV2Client::RestoreBackupAsync(const RestoreBackupRequest& request, const RestoreBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RestoreBackup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RestoreBackup, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome CloudHSMV2Client::TagResource(const TagResourceRequest& request) const
@@ -486,18 +409,12 @@ TagResourceOutcome CloudHSMV2Client::TagResource(const TagResourceRequest& reque
 
 TagResourceOutcomeCallable CloudHSMV2Client::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void CloudHSMV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome CloudHSMV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -510,17 +427,11 @@ UntagResourceOutcome CloudHSMV2Client::UntagResource(const UntagResourceRequest&
 
 UntagResourceOutcomeCallable CloudHSMV2Client::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void CloudHSMV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 

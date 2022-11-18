@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -186,18 +187,12 @@ BatchCreateAttendeeOutcome ChimeSDKMeetingsClient::BatchCreateAttendee(const Bat
 
 BatchCreateAttendeeOutcomeCallable ChimeSDKMeetingsClient::BatchCreateAttendeeCallable(const BatchCreateAttendeeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchCreateAttendeeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchCreateAttendee(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchCreateAttendee, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::BatchCreateAttendeeAsync(const BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchCreateAttendee(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchCreateAttendee, request, handler, context, m_executor.get());
 }
 
 BatchUpdateAttendeeCapabilitiesExceptOutcome ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExcept(const BatchUpdateAttendeeCapabilitiesExceptRequest& request) const
@@ -221,18 +216,12 @@ BatchUpdateAttendeeCapabilitiesExceptOutcome ChimeSDKMeetingsClient::BatchUpdate
 
 BatchUpdateAttendeeCapabilitiesExceptOutcomeCallable ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExceptCallable(const BatchUpdateAttendeeCapabilitiesExceptRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateAttendeeCapabilitiesExceptOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdateAttendeeCapabilitiesExcept(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchUpdateAttendeeCapabilitiesExcept, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExceptAsync(const BatchUpdateAttendeeCapabilitiesExceptRequest& request, const BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchUpdateAttendeeCapabilitiesExcept(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchUpdateAttendeeCapabilitiesExcept, request, handler, context, m_executor.get());
 }
 
 CreateAttendeeOutcome ChimeSDKMeetingsClient::CreateAttendee(const CreateAttendeeRequest& request) const
@@ -253,18 +242,12 @@ CreateAttendeeOutcome ChimeSDKMeetingsClient::CreateAttendee(const CreateAttende
 
 CreateAttendeeOutcomeCallable ChimeSDKMeetingsClient::CreateAttendeeCallable(const CreateAttendeeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAttendeeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAttendee(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAttendee, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::CreateAttendeeAsync(const CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAttendee(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAttendee, request, handler, context, m_executor.get());
 }
 
 CreateMeetingOutcome ChimeSDKMeetingsClient::CreateMeeting(const CreateMeetingRequest& request) const
@@ -278,18 +261,12 @@ CreateMeetingOutcome ChimeSDKMeetingsClient::CreateMeeting(const CreateMeetingRe
 
 CreateMeetingOutcomeCallable ChimeSDKMeetingsClient::CreateMeetingCallable(const CreateMeetingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMeetingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMeeting(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMeeting, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::CreateMeetingAsync(const CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMeeting(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMeeting, request, handler, context, m_executor.get());
 }
 
 CreateMeetingWithAttendeesOutcome ChimeSDKMeetingsClient::CreateMeetingWithAttendees(const CreateMeetingWithAttendeesRequest& request) const
@@ -306,18 +283,12 @@ CreateMeetingWithAttendeesOutcome ChimeSDKMeetingsClient::CreateMeetingWithAtten
 
 CreateMeetingWithAttendeesOutcomeCallable ChimeSDKMeetingsClient::CreateMeetingWithAttendeesCallable(const CreateMeetingWithAttendeesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMeetingWithAttendeesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMeetingWithAttendees(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMeetingWithAttendees, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::CreateMeetingWithAttendeesAsync(const CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMeetingWithAttendees(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMeetingWithAttendees, request, handler, context, m_executor.get());
 }
 
 DeleteAttendeeOutcome ChimeSDKMeetingsClient::DeleteAttendee(const DeleteAttendeeRequest& request) const
@@ -344,18 +315,12 @@ DeleteAttendeeOutcome ChimeSDKMeetingsClient::DeleteAttendee(const DeleteAttende
 
 DeleteAttendeeOutcomeCallable ChimeSDKMeetingsClient::DeleteAttendeeCallable(const DeleteAttendeeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAttendeeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAttendee(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAttendee, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::DeleteAttendeeAsync(const DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAttendee(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAttendee, request, handler, context, m_executor.get());
 }
 
 DeleteMeetingOutcome ChimeSDKMeetingsClient::DeleteMeeting(const DeleteMeetingRequest& request) const
@@ -375,18 +340,12 @@ DeleteMeetingOutcome ChimeSDKMeetingsClient::DeleteMeeting(const DeleteMeetingRe
 
 DeleteMeetingOutcomeCallable ChimeSDKMeetingsClient::DeleteMeetingCallable(const DeleteMeetingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMeetingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMeeting(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMeeting, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::DeleteMeetingAsync(const DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMeeting(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMeeting, request, handler, context, m_executor.get());
 }
 
 GetAttendeeOutcome ChimeSDKMeetingsClient::GetAttendee(const GetAttendeeRequest& request) const
@@ -413,18 +372,12 @@ GetAttendeeOutcome ChimeSDKMeetingsClient::GetAttendee(const GetAttendeeRequest&
 
 GetAttendeeOutcomeCallable ChimeSDKMeetingsClient::GetAttendeeCallable(const GetAttendeeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAttendeeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAttendee(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAttendee, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::GetAttendeeAsync(const GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAttendee(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAttendee, request, handler, context, m_executor.get());
 }
 
 GetMeetingOutcome ChimeSDKMeetingsClient::GetMeeting(const GetMeetingRequest& request) const
@@ -444,18 +397,12 @@ GetMeetingOutcome ChimeSDKMeetingsClient::GetMeeting(const GetMeetingRequest& re
 
 GetMeetingOutcomeCallable ChimeSDKMeetingsClient::GetMeetingCallable(const GetMeetingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMeetingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMeeting(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMeeting, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::GetMeetingAsync(const GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMeeting(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMeeting, request, handler, context, m_executor.get());
 }
 
 ListAttendeesOutcome ChimeSDKMeetingsClient::ListAttendees(const ListAttendeesRequest& request) const
@@ -476,18 +423,12 @@ ListAttendeesOutcome ChimeSDKMeetingsClient::ListAttendees(const ListAttendeesRe
 
 ListAttendeesOutcomeCallable ChimeSDKMeetingsClient::ListAttendeesCallable(const ListAttendeesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAttendeesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAttendees(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAttendees, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::ListAttendeesAsync(const ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAttendees(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAttendees, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ChimeSDKMeetingsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -506,18 +447,12 @@ ListTagsForResourceOutcome ChimeSDKMeetingsClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable ChimeSDKMeetingsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StartMeetingTranscription(const StartMeetingTranscriptionRequest& request) const
@@ -541,18 +476,12 @@ StartMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StartMeetingTranscripti
 
 StartMeetingTranscriptionOutcomeCallable ChimeSDKMeetingsClient::StartMeetingTranscriptionCallable(const StartMeetingTranscriptionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartMeetingTranscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMeetingTranscription(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartMeetingTranscription, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::StartMeetingTranscriptionAsync(const StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartMeetingTranscription(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartMeetingTranscription, request, handler, context, m_executor.get());
 }
 
 StopMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StopMeetingTranscription(const StopMeetingTranscriptionRequest& request) const
@@ -576,18 +505,12 @@ StopMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StopMeetingTranscription
 
 StopMeetingTranscriptionOutcomeCallable ChimeSDKMeetingsClient::StopMeetingTranscriptionCallable(const StopMeetingTranscriptionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopMeetingTranscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopMeetingTranscription(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopMeetingTranscription, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::StopMeetingTranscriptionAsync(const StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopMeetingTranscription(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopMeetingTranscription, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ChimeSDKMeetingsClient::TagResource(const TagResourceRequest& request) const
@@ -604,18 +527,12 @@ TagResourceOutcome ChimeSDKMeetingsClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable ChimeSDKMeetingsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ChimeSDKMeetingsClient::UntagResource(const UntagResourceRequest& request) const
@@ -632,18 +549,12 @@ UntagResourceOutcome ChimeSDKMeetingsClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable ChimeSDKMeetingsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateAttendeeCapabilitiesOutcome ChimeSDKMeetingsClient::UpdateAttendeeCapabilities(const UpdateAttendeeCapabilitiesRequest& request) const
@@ -671,17 +582,11 @@ UpdateAttendeeCapabilitiesOutcome ChimeSDKMeetingsClient::UpdateAttendeeCapabili
 
 UpdateAttendeeCapabilitiesOutcomeCallable ChimeSDKMeetingsClient::UpdateAttendeeCapabilitiesCallable(const UpdateAttendeeCapabilitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAttendeeCapabilitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAttendeeCapabilities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAttendeeCapabilities, request, m_executor.get());
 }
 
 void ChimeSDKMeetingsClient::UpdateAttendeeCapabilitiesAsync(const UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAttendeeCapabilities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAttendeeCapabilities, request, handler, context, m_executor.get());
 }
 

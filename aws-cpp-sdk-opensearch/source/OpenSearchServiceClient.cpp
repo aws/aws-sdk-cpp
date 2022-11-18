@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -216,18 +217,12 @@ AcceptInboundConnectionOutcome OpenSearchServiceClient::AcceptInboundConnection(
 
 AcceptInboundConnectionOutcomeCallable OpenSearchServiceClient::AcceptInboundConnectionCallable(const AcceptInboundConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcceptInboundConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptInboundConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AcceptInboundConnection, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::AcceptInboundConnectionAsync(const AcceptInboundConnectionRequest& request, const AcceptInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AcceptInboundConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AcceptInboundConnection, request, handler, context, m_executor.get());
 }
 
 AddTagsOutcome OpenSearchServiceClient::AddTags(const AddTagsRequest& request) const
@@ -241,18 +236,12 @@ AddTagsOutcome OpenSearchServiceClient::AddTags(const AddTagsRequest& request) c
 
 AddTagsOutcomeCallable OpenSearchServiceClient::AddTagsCallable(const AddTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddTags, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddTags, request, handler, context, m_executor.get());
 }
 
 AssociatePackageOutcome OpenSearchServiceClient::AssociatePackage(const AssociatePackageRequest& request) const
@@ -278,18 +267,12 @@ AssociatePackageOutcome OpenSearchServiceClient::AssociatePackage(const Associat
 
 AssociatePackageOutcomeCallable OpenSearchServiceClient::AssociatePackageCallable(const AssociatePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociatePackage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociatePackage, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::AssociatePackageAsync(const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociatePackage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociatePackage, request, handler, context, m_executor.get());
 }
 
 AuthorizeVpcEndpointAccessOutcome OpenSearchServiceClient::AuthorizeVpcEndpointAccess(const AuthorizeVpcEndpointAccessRequest& request) const
@@ -310,18 +293,12 @@ AuthorizeVpcEndpointAccessOutcome OpenSearchServiceClient::AuthorizeVpcEndpointA
 
 AuthorizeVpcEndpointAccessOutcomeCallable OpenSearchServiceClient::AuthorizeVpcEndpointAccessCallable(const AuthorizeVpcEndpointAccessRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AuthorizeVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AuthorizeVpcEndpointAccess(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AuthorizeVpcEndpointAccess, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::AuthorizeVpcEndpointAccessAsync(const AuthorizeVpcEndpointAccessRequest& request, const AuthorizeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AuthorizeVpcEndpointAccess(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AuthorizeVpcEndpointAccess, request, handler, context, m_executor.get());
 }
 
 CancelServiceSoftwareUpdateOutcome OpenSearchServiceClient::CancelServiceSoftwareUpdate(const CancelServiceSoftwareUpdateRequest& request) const
@@ -335,18 +312,12 @@ CancelServiceSoftwareUpdateOutcome OpenSearchServiceClient::CancelServiceSoftwar
 
 CancelServiceSoftwareUpdateOutcomeCallable OpenSearchServiceClient::CancelServiceSoftwareUpdateCallable(const CancelServiceSoftwareUpdateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelServiceSoftwareUpdateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelServiceSoftwareUpdate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelServiceSoftwareUpdate, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::CancelServiceSoftwareUpdateAsync(const CancelServiceSoftwareUpdateRequest& request, const CancelServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelServiceSoftwareUpdate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelServiceSoftwareUpdate, request, handler, context, m_executor.get());
 }
 
 CreateDomainOutcome OpenSearchServiceClient::CreateDomain(const CreateDomainRequest& request) const
@@ -360,18 +331,12 @@ CreateDomainOutcome OpenSearchServiceClient::CreateDomain(const CreateDomainRequ
 
 CreateDomainOutcomeCallable OpenSearchServiceClient::CreateDomainCallable(const CreateDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDomain, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDomain, request, handler, context, m_executor.get());
 }
 
 CreateOutboundConnectionOutcome OpenSearchServiceClient::CreateOutboundConnection(const CreateOutboundConnectionRequest& request) const
@@ -385,18 +350,12 @@ CreateOutboundConnectionOutcome OpenSearchServiceClient::CreateOutboundConnectio
 
 CreateOutboundConnectionOutcomeCallable OpenSearchServiceClient::CreateOutboundConnectionCallable(const CreateOutboundConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateOutboundConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateOutboundConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateOutboundConnection, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::CreateOutboundConnectionAsync(const CreateOutboundConnectionRequest& request, const CreateOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateOutboundConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateOutboundConnection, request, handler, context, m_executor.get());
 }
 
 CreatePackageOutcome OpenSearchServiceClient::CreatePackage(const CreatePackageRequest& request) const
@@ -410,18 +369,12 @@ CreatePackageOutcome OpenSearchServiceClient::CreatePackage(const CreatePackageR
 
 CreatePackageOutcomeCallable OpenSearchServiceClient::CreatePackageCallable(const CreatePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePackage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePackage, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::CreatePackageAsync(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePackage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePackage, request, handler, context, m_executor.get());
 }
 
 CreateVpcEndpointOutcome OpenSearchServiceClient::CreateVpcEndpoint(const CreateVpcEndpointRequest& request) const
@@ -435,18 +388,12 @@ CreateVpcEndpointOutcome OpenSearchServiceClient::CreateVpcEndpoint(const Create
 
 CreateVpcEndpointOutcomeCallable OpenSearchServiceClient::CreateVpcEndpointCallable(const CreateVpcEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVpcEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateVpcEndpoint, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::CreateVpcEndpointAsync(const CreateVpcEndpointRequest& request, const CreateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateVpcEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateVpcEndpoint, request, handler, context, m_executor.get());
 }
 
 DeleteDomainOutcome OpenSearchServiceClient::DeleteDomain(const DeleteDomainRequest& request) const
@@ -466,18 +413,12 @@ DeleteDomainOutcome OpenSearchServiceClient::DeleteDomain(const DeleteDomainRequ
 
 DeleteDomainOutcomeCallable OpenSearchServiceClient::DeleteDomainCallable(const DeleteDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDomain, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDomain, request, handler, context, m_executor.get());
 }
 
 DeleteInboundConnectionOutcome OpenSearchServiceClient::DeleteInboundConnection(const DeleteInboundConnectionRequest& request) const
@@ -497,18 +438,12 @@ DeleteInboundConnectionOutcome OpenSearchServiceClient::DeleteInboundConnection(
 
 DeleteInboundConnectionOutcomeCallable OpenSearchServiceClient::DeleteInboundConnectionCallable(const DeleteInboundConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteInboundConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInboundConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteInboundConnection, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DeleteInboundConnectionAsync(const DeleteInboundConnectionRequest& request, const DeleteInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteInboundConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteInboundConnection, request, handler, context, m_executor.get());
 }
 
 DeleteOutboundConnectionOutcome OpenSearchServiceClient::DeleteOutboundConnection(const DeleteOutboundConnectionRequest& request) const
@@ -528,18 +463,12 @@ DeleteOutboundConnectionOutcome OpenSearchServiceClient::DeleteOutboundConnectio
 
 DeleteOutboundConnectionOutcomeCallable OpenSearchServiceClient::DeleteOutboundConnectionCallable(const DeleteOutboundConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteOutboundConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOutboundConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteOutboundConnection, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DeleteOutboundConnectionAsync(const DeleteOutboundConnectionRequest& request, const DeleteOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteOutboundConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteOutboundConnection, request, handler, context, m_executor.get());
 }
 
 DeletePackageOutcome OpenSearchServiceClient::DeletePackage(const DeletePackageRequest& request) const
@@ -559,18 +488,12 @@ DeletePackageOutcome OpenSearchServiceClient::DeletePackage(const DeletePackageR
 
 DeletePackageOutcomeCallable OpenSearchServiceClient::DeletePackageCallable(const DeletePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePackage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePackage, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DeletePackageAsync(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePackage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePackage, request, handler, context, m_executor.get());
 }
 
 DeleteVpcEndpointOutcome OpenSearchServiceClient::DeleteVpcEndpoint(const DeleteVpcEndpointRequest& request) const
@@ -590,18 +513,12 @@ DeleteVpcEndpointOutcome OpenSearchServiceClient::DeleteVpcEndpoint(const Delete
 
 DeleteVpcEndpointOutcomeCallable OpenSearchServiceClient::DeleteVpcEndpointCallable(const DeleteVpcEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVpcEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteVpcEndpoint, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DeleteVpcEndpointAsync(const DeleteVpcEndpointRequest& request, const DeleteVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteVpcEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteVpcEndpoint, request, handler, context, m_executor.get());
 }
 
 DescribeDomainOutcome OpenSearchServiceClient::DescribeDomain(const DescribeDomainRequest& request) const
@@ -621,18 +538,12 @@ DescribeDomainOutcome OpenSearchServiceClient::DescribeDomain(const DescribeDoma
 
 DescribeDomainOutcomeCallable OpenSearchServiceClient::DescribeDomainCallable(const DescribeDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDomain, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDomain, request, handler, context, m_executor.get());
 }
 
 DescribeDomainAutoTunesOutcome OpenSearchServiceClient::DescribeDomainAutoTunes(const DescribeDomainAutoTunesRequest& request) const
@@ -653,18 +564,12 @@ DescribeDomainAutoTunesOutcome OpenSearchServiceClient::DescribeDomainAutoTunes(
 
 DescribeDomainAutoTunesOutcomeCallable OpenSearchServiceClient::DescribeDomainAutoTunesCallable(const DescribeDomainAutoTunesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainAutoTunesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomainAutoTunes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDomainAutoTunes, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribeDomainAutoTunesAsync(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDomainAutoTunes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDomainAutoTunes, request, handler, context, m_executor.get());
 }
 
 DescribeDomainChangeProgressOutcome OpenSearchServiceClient::DescribeDomainChangeProgress(const DescribeDomainChangeProgressRequest& request) const
@@ -685,18 +590,12 @@ DescribeDomainChangeProgressOutcome OpenSearchServiceClient::DescribeDomainChang
 
 DescribeDomainChangeProgressOutcomeCallable OpenSearchServiceClient::DescribeDomainChangeProgressCallable(const DescribeDomainChangeProgressRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainChangeProgressOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomainChangeProgress(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDomainChangeProgress, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribeDomainChangeProgressAsync(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDomainChangeProgress(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDomainChangeProgress, request, handler, context, m_executor.get());
 }
 
 DescribeDomainConfigOutcome OpenSearchServiceClient::DescribeDomainConfig(const DescribeDomainConfigRequest& request) const
@@ -717,18 +616,12 @@ DescribeDomainConfigOutcome OpenSearchServiceClient::DescribeDomainConfig(const 
 
 DescribeDomainConfigOutcomeCallable OpenSearchServiceClient::DescribeDomainConfigCallable(const DescribeDomainConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomainConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDomainConfig, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribeDomainConfigAsync(const DescribeDomainConfigRequest& request, const DescribeDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDomainConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDomainConfig, request, handler, context, m_executor.get());
 }
 
 DescribeDomainsOutcome OpenSearchServiceClient::DescribeDomains(const DescribeDomainsRequest& request) const
@@ -742,18 +635,12 @@ DescribeDomainsOutcome OpenSearchServiceClient::DescribeDomains(const DescribeDo
 
 DescribeDomainsOutcomeCallable OpenSearchServiceClient::DescribeDomainsCallable(const DescribeDomainsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomains(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDomains, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDomains(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDomains, request, handler, context, m_executor.get());
 }
 
 DescribeInboundConnectionsOutcome OpenSearchServiceClient::DescribeInboundConnections(const DescribeInboundConnectionsRequest& request) const
@@ -767,18 +654,12 @@ DescribeInboundConnectionsOutcome OpenSearchServiceClient::DescribeInboundConnec
 
 DescribeInboundConnectionsOutcomeCallable OpenSearchServiceClient::DescribeInboundConnectionsCallable(const DescribeInboundConnectionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInboundConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInboundConnections(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeInboundConnections, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribeInboundConnectionsAsync(const DescribeInboundConnectionsRequest& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeInboundConnections(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeInboundConnections, request, handler, context, m_executor.get());
 }
 
 DescribeInstanceTypeLimitsOutcome OpenSearchServiceClient::DescribeInstanceTypeLimits(const DescribeInstanceTypeLimitsRequest& request) const
@@ -804,18 +685,12 @@ DescribeInstanceTypeLimitsOutcome OpenSearchServiceClient::DescribeInstanceTypeL
 
 DescribeInstanceTypeLimitsOutcomeCallable OpenSearchServiceClient::DescribeInstanceTypeLimitsCallable(const DescribeInstanceTypeLimitsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInstanceTypeLimitsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInstanceTypeLimits(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeInstanceTypeLimits, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribeInstanceTypeLimitsAsync(const DescribeInstanceTypeLimitsRequest& request, const DescribeInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeInstanceTypeLimits(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeInstanceTypeLimits, request, handler, context, m_executor.get());
 }
 
 DescribeOutboundConnectionsOutcome OpenSearchServiceClient::DescribeOutboundConnections(const DescribeOutboundConnectionsRequest& request) const
@@ -829,18 +704,12 @@ DescribeOutboundConnectionsOutcome OpenSearchServiceClient::DescribeOutboundConn
 
 DescribeOutboundConnectionsOutcomeCallable OpenSearchServiceClient::DescribeOutboundConnectionsCallable(const DescribeOutboundConnectionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeOutboundConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOutboundConnections(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeOutboundConnections, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribeOutboundConnectionsAsync(const DescribeOutboundConnectionsRequest& request, const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeOutboundConnections(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeOutboundConnections, request, handler, context, m_executor.get());
 }
 
 DescribePackagesOutcome OpenSearchServiceClient::DescribePackages(const DescribePackagesRequest& request) const
@@ -854,18 +723,12 @@ DescribePackagesOutcome OpenSearchServiceClient::DescribePackages(const Describe
 
 DescribePackagesOutcomeCallable OpenSearchServiceClient::DescribePackagesCallable(const DescribePackagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePackages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribePackages, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribePackages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribePackages, request, handler, context, m_executor.get());
 }
 
 DescribeReservedInstanceOfferingsOutcome OpenSearchServiceClient::DescribeReservedInstanceOfferings(const DescribeReservedInstanceOfferingsRequest& request) const
@@ -879,18 +742,12 @@ DescribeReservedInstanceOfferingsOutcome OpenSearchServiceClient::DescribeReserv
 
 DescribeReservedInstanceOfferingsOutcomeCallable OpenSearchServiceClient::DescribeReservedInstanceOfferingsCallable(const DescribeReservedInstanceOfferingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeReservedInstanceOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReservedInstanceOfferings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeReservedInstanceOfferings, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribeReservedInstanceOfferingsAsync(const DescribeReservedInstanceOfferingsRequest& request, const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeReservedInstanceOfferings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeReservedInstanceOfferings, request, handler, context, m_executor.get());
 }
 
 DescribeReservedInstancesOutcome OpenSearchServiceClient::DescribeReservedInstances(const DescribeReservedInstancesRequest& request) const
@@ -904,18 +761,12 @@ DescribeReservedInstancesOutcome OpenSearchServiceClient::DescribeReservedInstan
 
 DescribeReservedInstancesOutcomeCallable OpenSearchServiceClient::DescribeReservedInstancesCallable(const DescribeReservedInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeReservedInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReservedInstances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeReservedInstances, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribeReservedInstancesAsync(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeReservedInstances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeReservedInstances, request, handler, context, m_executor.get());
 }
 
 DescribeVpcEndpointsOutcome OpenSearchServiceClient::DescribeVpcEndpoints(const DescribeVpcEndpointsRequest& request) const
@@ -929,18 +780,12 @@ DescribeVpcEndpointsOutcome OpenSearchServiceClient::DescribeVpcEndpoints(const 
 
 DescribeVpcEndpointsOutcomeCallable OpenSearchServiceClient::DescribeVpcEndpointsCallable(const DescribeVpcEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeVpcEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVpcEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeVpcEndpoints, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DescribeVpcEndpointsAsync(const DescribeVpcEndpointsRequest& request, const DescribeVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeVpcEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeVpcEndpoints, request, handler, context, m_executor.get());
 }
 
 DissociatePackageOutcome OpenSearchServiceClient::DissociatePackage(const DissociatePackageRequest& request) const
@@ -966,18 +811,12 @@ DissociatePackageOutcome OpenSearchServiceClient::DissociatePackage(const Dissoc
 
 DissociatePackageOutcomeCallable OpenSearchServiceClient::DissociatePackageCallable(const DissociatePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DissociatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DissociatePackage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DissociatePackage, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::DissociatePackageAsync(const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DissociatePackage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DissociatePackage, request, handler, context, m_executor.get());
 }
 
 GetCompatibleVersionsOutcome OpenSearchServiceClient::GetCompatibleVersions(const GetCompatibleVersionsRequest& request) const
@@ -991,18 +830,12 @@ GetCompatibleVersionsOutcome OpenSearchServiceClient::GetCompatibleVersions(cons
 
 GetCompatibleVersionsOutcomeCallable OpenSearchServiceClient::GetCompatibleVersionsCallable(const GetCompatibleVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCompatibleVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCompatibleVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCompatibleVersions, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::GetCompatibleVersionsAsync(const GetCompatibleVersionsRequest& request, const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCompatibleVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCompatibleVersions, request, handler, context, m_executor.get());
 }
 
 GetPackageVersionHistoryOutcome OpenSearchServiceClient::GetPackageVersionHistory(const GetPackageVersionHistoryRequest& request) const
@@ -1023,18 +856,12 @@ GetPackageVersionHistoryOutcome OpenSearchServiceClient::GetPackageVersionHistor
 
 GetPackageVersionHistoryOutcomeCallable OpenSearchServiceClient::GetPackageVersionHistoryCallable(const GetPackageVersionHistoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPackageVersionHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPackageVersionHistory(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPackageVersionHistory, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::GetPackageVersionHistoryAsync(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPackageVersionHistory(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPackageVersionHistory, request, handler, context, m_executor.get());
 }
 
 GetUpgradeHistoryOutcome OpenSearchServiceClient::GetUpgradeHistory(const GetUpgradeHistoryRequest& request) const
@@ -1055,18 +882,12 @@ GetUpgradeHistoryOutcome OpenSearchServiceClient::GetUpgradeHistory(const GetUpg
 
 GetUpgradeHistoryOutcomeCallable OpenSearchServiceClient::GetUpgradeHistoryCallable(const GetUpgradeHistoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUpgradeHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUpgradeHistory(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUpgradeHistory, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::GetUpgradeHistoryAsync(const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUpgradeHistory(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUpgradeHistory, request, handler, context, m_executor.get());
 }
 
 GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgradeStatusRequest& request) const
@@ -1087,18 +908,12 @@ GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgra
 
 GetUpgradeStatusOutcomeCallable OpenSearchServiceClient::GetUpgradeStatusCallable(const GetUpgradeStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUpgradeStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUpgradeStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUpgradeStatus, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::GetUpgradeStatusAsync(const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUpgradeStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUpgradeStatus, request, handler, context, m_executor.get());
 }
 
 ListDomainNamesOutcome OpenSearchServiceClient::ListDomainNames(const ListDomainNamesRequest& request) const
@@ -1112,18 +927,12 @@ ListDomainNamesOutcome OpenSearchServiceClient::ListDomainNames(const ListDomain
 
 ListDomainNamesOutcomeCallable OpenSearchServiceClient::ListDomainNamesCallable(const ListDomainNamesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDomainNamesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomainNames(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDomainNames, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDomainNames(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDomainNames, request, handler, context, m_executor.get());
 }
 
 ListDomainsForPackageOutcome OpenSearchServiceClient::ListDomainsForPackage(const ListDomainsForPackageRequest& request) const
@@ -1144,18 +953,12 @@ ListDomainsForPackageOutcome OpenSearchServiceClient::ListDomainsForPackage(cons
 
 ListDomainsForPackageOutcomeCallable OpenSearchServiceClient::ListDomainsForPackageCallable(const ListDomainsForPackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDomainsForPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomainsForPackage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDomainsForPackage, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::ListDomainsForPackageAsync(const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDomainsForPackage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDomainsForPackage, request, handler, context, m_executor.get());
 }
 
 ListInstanceTypeDetailsOutcome OpenSearchServiceClient::ListInstanceTypeDetails(const ListInstanceTypeDetailsRequest& request) const
@@ -1175,18 +978,12 @@ ListInstanceTypeDetailsOutcome OpenSearchServiceClient::ListInstanceTypeDetails(
 
 ListInstanceTypeDetailsOutcomeCallable OpenSearchServiceClient::ListInstanceTypeDetailsCallable(const ListInstanceTypeDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInstanceTypeDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInstanceTypeDetails(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInstanceTypeDetails, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::ListInstanceTypeDetailsAsync(const ListInstanceTypeDetailsRequest& request, const ListInstanceTypeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInstanceTypeDetails(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInstanceTypeDetails, request, handler, context, m_executor.get());
 }
 
 ListPackagesForDomainOutcome OpenSearchServiceClient::ListPackagesForDomain(const ListPackagesForDomainRequest& request) const
@@ -1207,18 +1004,12 @@ ListPackagesForDomainOutcome OpenSearchServiceClient::ListPackagesForDomain(cons
 
 ListPackagesForDomainOutcomeCallable OpenSearchServiceClient::ListPackagesForDomainCallable(const ListPackagesForDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPackagesForDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPackagesForDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPackagesForDomain, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::ListPackagesForDomainAsync(const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPackagesForDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPackagesForDomain, request, handler, context, m_executor.get());
 }
 
 ListTagsOutcome OpenSearchServiceClient::ListTags(const ListTagsRequest& request) const
@@ -1237,18 +1028,12 @@ ListTagsOutcome OpenSearchServiceClient::ListTags(const ListTagsRequest& request
 
 ListTagsOutcomeCallable OpenSearchServiceClient::ListTagsCallable(const ListTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTags, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTags, request, handler, context, m_executor.get());
 }
 
 ListVersionsOutcome OpenSearchServiceClient::ListVersions(const ListVersionsRequest& request) const
@@ -1262,18 +1047,12 @@ ListVersionsOutcome OpenSearchServiceClient::ListVersions(const ListVersionsRequ
 
 ListVersionsOutcomeCallable OpenSearchServiceClient::ListVersionsCallable(const ListVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListVersions, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::ListVersionsAsync(const ListVersionsRequest& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListVersions, request, handler, context, m_executor.get());
 }
 
 ListVpcEndpointAccessOutcome OpenSearchServiceClient::ListVpcEndpointAccess(const ListVpcEndpointAccessRequest& request) const
@@ -1294,18 +1073,12 @@ ListVpcEndpointAccessOutcome OpenSearchServiceClient::ListVpcEndpointAccess(cons
 
 ListVpcEndpointAccessOutcomeCallable OpenSearchServiceClient::ListVpcEndpointAccessCallable(const ListVpcEndpointAccessRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcEndpointAccess(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListVpcEndpointAccess, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::ListVpcEndpointAccessAsync(const ListVpcEndpointAccessRequest& request, const ListVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListVpcEndpointAccess(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListVpcEndpointAccess, request, handler, context, m_executor.get());
 }
 
 ListVpcEndpointsOutcome OpenSearchServiceClient::ListVpcEndpoints(const ListVpcEndpointsRequest& request) const
@@ -1319,18 +1092,12 @@ ListVpcEndpointsOutcome OpenSearchServiceClient::ListVpcEndpoints(const ListVpcE
 
 ListVpcEndpointsOutcomeCallable OpenSearchServiceClient::ListVpcEndpointsCallable(const ListVpcEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListVpcEndpoints, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::ListVpcEndpointsAsync(const ListVpcEndpointsRequest& request, const ListVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListVpcEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListVpcEndpoints, request, handler, context, m_executor.get());
 }
 
 ListVpcEndpointsForDomainOutcome OpenSearchServiceClient::ListVpcEndpointsForDomain(const ListVpcEndpointsForDomainRequest& request) const
@@ -1351,18 +1118,12 @@ ListVpcEndpointsForDomainOutcome OpenSearchServiceClient::ListVpcEndpointsForDom
 
 ListVpcEndpointsForDomainOutcomeCallable OpenSearchServiceClient::ListVpcEndpointsForDomainCallable(const ListVpcEndpointsForDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointsForDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcEndpointsForDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListVpcEndpointsForDomain, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::ListVpcEndpointsForDomainAsync(const ListVpcEndpointsForDomainRequest& request, const ListVpcEndpointsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListVpcEndpointsForDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListVpcEndpointsForDomain, request, handler, context, m_executor.get());
 }
 
 PurchaseReservedInstanceOfferingOutcome OpenSearchServiceClient::PurchaseReservedInstanceOffering(const PurchaseReservedInstanceOfferingRequest& request) const
@@ -1376,18 +1137,12 @@ PurchaseReservedInstanceOfferingOutcome OpenSearchServiceClient::PurchaseReserve
 
 PurchaseReservedInstanceOfferingOutcomeCallable OpenSearchServiceClient::PurchaseReservedInstanceOfferingCallable(const PurchaseReservedInstanceOfferingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PurchaseReservedInstanceOfferingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PurchaseReservedInstanceOffering(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PurchaseReservedInstanceOffering, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::PurchaseReservedInstanceOfferingAsync(const PurchaseReservedInstanceOfferingRequest& request, const PurchaseReservedInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PurchaseReservedInstanceOffering(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PurchaseReservedInstanceOffering, request, handler, context, m_executor.get());
 }
 
 RejectInboundConnectionOutcome OpenSearchServiceClient::RejectInboundConnection(const RejectInboundConnectionRequest& request) const
@@ -1408,18 +1163,12 @@ RejectInboundConnectionOutcome OpenSearchServiceClient::RejectInboundConnection(
 
 RejectInboundConnectionOutcomeCallable OpenSearchServiceClient::RejectInboundConnectionCallable(const RejectInboundConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RejectInboundConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectInboundConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RejectInboundConnection, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::RejectInboundConnectionAsync(const RejectInboundConnectionRequest& request, const RejectInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RejectInboundConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RejectInboundConnection, request, handler, context, m_executor.get());
 }
 
 RemoveTagsOutcome OpenSearchServiceClient::RemoveTags(const RemoveTagsRequest& request) const
@@ -1433,18 +1182,12 @@ RemoveTagsOutcome OpenSearchServiceClient::RemoveTags(const RemoveTagsRequest& r
 
 RemoveTagsOutcomeCallable OpenSearchServiceClient::RemoveTagsCallable(const RemoveTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveTags, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveTags, request, handler, context, m_executor.get());
 }
 
 RevokeVpcEndpointAccessOutcome OpenSearchServiceClient::RevokeVpcEndpointAccess(const RevokeVpcEndpointAccessRequest& request) const
@@ -1465,18 +1208,12 @@ RevokeVpcEndpointAccessOutcome OpenSearchServiceClient::RevokeVpcEndpointAccess(
 
 RevokeVpcEndpointAccessOutcomeCallable OpenSearchServiceClient::RevokeVpcEndpointAccessCallable(const RevokeVpcEndpointAccessRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RevokeVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeVpcEndpointAccess(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RevokeVpcEndpointAccess, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::RevokeVpcEndpointAccessAsync(const RevokeVpcEndpointAccessRequest& request, const RevokeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RevokeVpcEndpointAccess(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RevokeVpcEndpointAccess, request, handler, context, m_executor.get());
 }
 
 StartServiceSoftwareUpdateOutcome OpenSearchServiceClient::StartServiceSoftwareUpdate(const StartServiceSoftwareUpdateRequest& request) const
@@ -1490,18 +1227,12 @@ StartServiceSoftwareUpdateOutcome OpenSearchServiceClient::StartServiceSoftwareU
 
 StartServiceSoftwareUpdateOutcomeCallable OpenSearchServiceClient::StartServiceSoftwareUpdateCallable(const StartServiceSoftwareUpdateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartServiceSoftwareUpdateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartServiceSoftwareUpdate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartServiceSoftwareUpdate, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::StartServiceSoftwareUpdateAsync(const StartServiceSoftwareUpdateRequest& request, const StartServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartServiceSoftwareUpdate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartServiceSoftwareUpdate, request, handler, context, m_executor.get());
 }
 
 UpdateDomainConfigOutcome OpenSearchServiceClient::UpdateDomainConfig(const UpdateDomainConfigRequest& request) const
@@ -1522,18 +1253,12 @@ UpdateDomainConfigOutcome OpenSearchServiceClient::UpdateDomainConfig(const Upda
 
 UpdateDomainConfigOutcomeCallable OpenSearchServiceClient::UpdateDomainConfigCallable(const UpdateDomainConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDomainConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDomainConfig, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::UpdateDomainConfigAsync(const UpdateDomainConfigRequest& request, const UpdateDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDomainConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDomainConfig, request, handler, context, m_executor.get());
 }
 
 UpdatePackageOutcome OpenSearchServiceClient::UpdatePackage(const UpdatePackageRequest& request) const
@@ -1547,18 +1272,12 @@ UpdatePackageOutcome OpenSearchServiceClient::UpdatePackage(const UpdatePackageR
 
 UpdatePackageOutcomeCallable OpenSearchServiceClient::UpdatePackageCallable(const UpdatePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePackage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePackage, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::UpdatePackageAsync(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePackage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePackage, request, handler, context, m_executor.get());
 }
 
 UpdateVpcEndpointOutcome OpenSearchServiceClient::UpdateVpcEndpoint(const UpdateVpcEndpointRequest& request) const
@@ -1572,18 +1291,12 @@ UpdateVpcEndpointOutcome OpenSearchServiceClient::UpdateVpcEndpoint(const Update
 
 UpdateVpcEndpointOutcomeCallable OpenSearchServiceClient::UpdateVpcEndpointCallable(const UpdateVpcEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVpcEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateVpcEndpoint, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::UpdateVpcEndpointAsync(const UpdateVpcEndpointRequest& request, const UpdateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateVpcEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateVpcEndpoint, request, handler, context, m_executor.get());
 }
 
 UpgradeDomainOutcome OpenSearchServiceClient::UpgradeDomain(const UpgradeDomainRequest& request) const
@@ -1597,17 +1310,11 @@ UpgradeDomainOutcome OpenSearchServiceClient::UpgradeDomain(const UpgradeDomainR
 
 UpgradeDomainOutcomeCallable OpenSearchServiceClient::UpgradeDomainCallable(const UpgradeDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpgradeDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpgradeDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpgradeDomain, request, m_executor.get());
 }
 
 void OpenSearchServiceClient::UpgradeDomainAsync(const UpgradeDomainRequest& request, const UpgradeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpgradeDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpgradeDomain, request, handler, context, m_executor.get());
 }
 

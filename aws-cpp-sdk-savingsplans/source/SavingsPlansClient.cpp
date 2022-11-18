@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -169,18 +170,12 @@ CreateSavingsPlanOutcome SavingsPlansClient::CreateSavingsPlan(const CreateSavin
 
 CreateSavingsPlanOutcomeCallable SavingsPlansClient::CreateSavingsPlanCallable(const CreateSavingsPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSavingsPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSavingsPlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSavingsPlan, request, m_executor.get());
 }
 
 void SavingsPlansClient::CreateSavingsPlanAsync(const CreateSavingsPlanRequest& request, const CreateSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSavingsPlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSavingsPlan, request, handler, context, m_executor.get());
 }
 
 DeleteQueuedSavingsPlanOutcome SavingsPlansClient::DeleteQueuedSavingsPlan(const DeleteQueuedSavingsPlanRequest& request) const
@@ -194,18 +189,12 @@ DeleteQueuedSavingsPlanOutcome SavingsPlansClient::DeleteQueuedSavingsPlan(const
 
 DeleteQueuedSavingsPlanOutcomeCallable SavingsPlansClient::DeleteQueuedSavingsPlanCallable(const DeleteQueuedSavingsPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteQueuedSavingsPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteQueuedSavingsPlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteQueuedSavingsPlan, request, m_executor.get());
 }
 
 void SavingsPlansClient::DeleteQueuedSavingsPlanAsync(const DeleteQueuedSavingsPlanRequest& request, const DeleteQueuedSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteQueuedSavingsPlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteQueuedSavingsPlan, request, handler, context, m_executor.get());
 }
 
 DescribeSavingsPlanRatesOutcome SavingsPlansClient::DescribeSavingsPlanRates(const DescribeSavingsPlanRatesRequest& request) const
@@ -219,18 +208,12 @@ DescribeSavingsPlanRatesOutcome SavingsPlansClient::DescribeSavingsPlanRates(con
 
 DescribeSavingsPlanRatesOutcomeCallable SavingsPlansClient::DescribeSavingsPlanRatesCallable(const DescribeSavingsPlanRatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSavingsPlanRatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSavingsPlanRates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSavingsPlanRates, request, m_executor.get());
 }
 
 void SavingsPlansClient::DescribeSavingsPlanRatesAsync(const DescribeSavingsPlanRatesRequest& request, const DescribeSavingsPlanRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSavingsPlanRates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSavingsPlanRates, request, handler, context, m_executor.get());
 }
 
 DescribeSavingsPlansOutcome SavingsPlansClient::DescribeSavingsPlans(const DescribeSavingsPlansRequest& request) const
@@ -244,18 +227,12 @@ DescribeSavingsPlansOutcome SavingsPlansClient::DescribeSavingsPlans(const Descr
 
 DescribeSavingsPlansOutcomeCallable SavingsPlansClient::DescribeSavingsPlansCallable(const DescribeSavingsPlansRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSavingsPlansOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSavingsPlans(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSavingsPlans, request, m_executor.get());
 }
 
 void SavingsPlansClient::DescribeSavingsPlansAsync(const DescribeSavingsPlansRequest& request, const DescribeSavingsPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSavingsPlans(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSavingsPlans, request, handler, context, m_executor.get());
 }
 
 DescribeSavingsPlansOfferingRatesOutcome SavingsPlansClient::DescribeSavingsPlansOfferingRates(const DescribeSavingsPlansOfferingRatesRequest& request) const
@@ -269,18 +246,12 @@ DescribeSavingsPlansOfferingRatesOutcome SavingsPlansClient::DescribeSavingsPlan
 
 DescribeSavingsPlansOfferingRatesOutcomeCallable SavingsPlansClient::DescribeSavingsPlansOfferingRatesCallable(const DescribeSavingsPlansOfferingRatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSavingsPlansOfferingRatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSavingsPlansOfferingRates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSavingsPlansOfferingRates, request, m_executor.get());
 }
 
 void SavingsPlansClient::DescribeSavingsPlansOfferingRatesAsync(const DescribeSavingsPlansOfferingRatesRequest& request, const DescribeSavingsPlansOfferingRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSavingsPlansOfferingRates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSavingsPlansOfferingRates, request, handler, context, m_executor.get());
 }
 
 DescribeSavingsPlansOfferingsOutcome SavingsPlansClient::DescribeSavingsPlansOfferings(const DescribeSavingsPlansOfferingsRequest& request) const
@@ -294,18 +265,12 @@ DescribeSavingsPlansOfferingsOutcome SavingsPlansClient::DescribeSavingsPlansOff
 
 DescribeSavingsPlansOfferingsOutcomeCallable SavingsPlansClient::DescribeSavingsPlansOfferingsCallable(const DescribeSavingsPlansOfferingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSavingsPlansOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSavingsPlansOfferings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSavingsPlansOfferings, request, m_executor.get());
 }
 
 void SavingsPlansClient::DescribeSavingsPlansOfferingsAsync(const DescribeSavingsPlansOfferingsRequest& request, const DescribeSavingsPlansOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSavingsPlansOfferings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSavingsPlansOfferings, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome SavingsPlansClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -319,18 +284,12 @@ ListTagsForResourceOutcome SavingsPlansClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable SavingsPlansClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void SavingsPlansClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome SavingsPlansClient::TagResource(const TagResourceRequest& request) const
@@ -344,18 +303,12 @@ TagResourceOutcome SavingsPlansClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable SavingsPlansClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void SavingsPlansClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome SavingsPlansClient::UntagResource(const UntagResourceRequest& request) const
@@ -369,17 +322,11 @@ UntagResourceOutcome SavingsPlansClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable SavingsPlansClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void SavingsPlansClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 

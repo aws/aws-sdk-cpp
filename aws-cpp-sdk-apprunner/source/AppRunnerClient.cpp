@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -194,18 +195,12 @@ AssociateCustomDomainOutcome AppRunnerClient::AssociateCustomDomain(const Associ
 
 AssociateCustomDomainOutcomeCallable AppRunnerClient::AssociateCustomDomainCallable(const AssociateCustomDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateCustomDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateCustomDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateCustomDomain, request, m_executor.get());
 }
 
 void AppRunnerClient::AssociateCustomDomainAsync(const AssociateCustomDomainRequest& request, const AssociateCustomDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateCustomDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateCustomDomain, request, handler, context, m_executor.get());
 }
 
 CreateAutoScalingConfigurationOutcome AppRunnerClient::CreateAutoScalingConfiguration(const CreateAutoScalingConfigurationRequest& request) const
@@ -218,18 +213,12 @@ CreateAutoScalingConfigurationOutcome AppRunnerClient::CreateAutoScalingConfigur
 
 CreateAutoScalingConfigurationOutcomeCallable AppRunnerClient::CreateAutoScalingConfigurationCallable(const CreateAutoScalingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAutoScalingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAutoScalingConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAutoScalingConfiguration, request, m_executor.get());
 }
 
 void AppRunnerClient::CreateAutoScalingConfigurationAsync(const CreateAutoScalingConfigurationRequest& request, const CreateAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAutoScalingConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAutoScalingConfiguration, request, handler, context, m_executor.get());
 }
 
 CreateConnectionOutcome AppRunnerClient::CreateConnection(const CreateConnectionRequest& request) const
@@ -242,18 +231,12 @@ CreateConnectionOutcome AppRunnerClient::CreateConnection(const CreateConnection
 
 CreateConnectionOutcomeCallable AppRunnerClient::CreateConnectionCallable(const CreateConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateConnection, request, m_executor.get());
 }
 
 void AppRunnerClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateConnection, request, handler, context, m_executor.get());
 }
 
 CreateObservabilityConfigurationOutcome AppRunnerClient::CreateObservabilityConfiguration(const CreateObservabilityConfigurationRequest& request) const
@@ -266,18 +249,12 @@ CreateObservabilityConfigurationOutcome AppRunnerClient::CreateObservabilityConf
 
 CreateObservabilityConfigurationOutcomeCallable AppRunnerClient::CreateObservabilityConfigurationCallable(const CreateObservabilityConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateObservabilityConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateObservabilityConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateObservabilityConfiguration, request, m_executor.get());
 }
 
 void AppRunnerClient::CreateObservabilityConfigurationAsync(const CreateObservabilityConfigurationRequest& request, const CreateObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateObservabilityConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateObservabilityConfiguration, request, handler, context, m_executor.get());
 }
 
 CreateServiceOutcome AppRunnerClient::CreateService(const CreateServiceRequest& request) const
@@ -290,18 +267,12 @@ CreateServiceOutcome AppRunnerClient::CreateService(const CreateServiceRequest& 
 
 CreateServiceOutcomeCallable AppRunnerClient::CreateServiceCallable(const CreateServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateService, request, m_executor.get());
 }
 
 void AppRunnerClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateService, request, handler, context, m_executor.get());
 }
 
 CreateVpcConnectorOutcome AppRunnerClient::CreateVpcConnector(const CreateVpcConnectorRequest& request) const
@@ -314,18 +285,12 @@ CreateVpcConnectorOutcome AppRunnerClient::CreateVpcConnector(const CreateVpcCon
 
 CreateVpcConnectorOutcomeCallable AppRunnerClient::CreateVpcConnectorCallable(const CreateVpcConnectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateVpcConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVpcConnector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateVpcConnector, request, m_executor.get());
 }
 
 void AppRunnerClient::CreateVpcConnectorAsync(const CreateVpcConnectorRequest& request, const CreateVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateVpcConnector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateVpcConnector, request, handler, context, m_executor.get());
 }
 
 CreateVpcIngressConnectionOutcome AppRunnerClient::CreateVpcIngressConnection(const CreateVpcIngressConnectionRequest& request) const
@@ -338,18 +303,12 @@ CreateVpcIngressConnectionOutcome AppRunnerClient::CreateVpcIngressConnection(co
 
 CreateVpcIngressConnectionOutcomeCallable AppRunnerClient::CreateVpcIngressConnectionCallable(const CreateVpcIngressConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateVpcIngressConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVpcIngressConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateVpcIngressConnection, request, m_executor.get());
 }
 
 void AppRunnerClient::CreateVpcIngressConnectionAsync(const CreateVpcIngressConnectionRequest& request, const CreateVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateVpcIngressConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateVpcIngressConnection, request, handler, context, m_executor.get());
 }
 
 DeleteAutoScalingConfigurationOutcome AppRunnerClient::DeleteAutoScalingConfiguration(const DeleteAutoScalingConfigurationRequest& request) const
@@ -362,18 +321,12 @@ DeleteAutoScalingConfigurationOutcome AppRunnerClient::DeleteAutoScalingConfigur
 
 DeleteAutoScalingConfigurationOutcomeCallable AppRunnerClient::DeleteAutoScalingConfigurationCallable(const DeleteAutoScalingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAutoScalingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAutoScalingConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAutoScalingConfiguration, request, m_executor.get());
 }
 
 void AppRunnerClient::DeleteAutoScalingConfigurationAsync(const DeleteAutoScalingConfigurationRequest& request, const DeleteAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAutoScalingConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAutoScalingConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteConnectionOutcome AppRunnerClient::DeleteConnection(const DeleteConnectionRequest& request) const
@@ -386,18 +339,12 @@ DeleteConnectionOutcome AppRunnerClient::DeleteConnection(const DeleteConnection
 
 DeleteConnectionOutcomeCallable AppRunnerClient::DeleteConnectionCallable(const DeleteConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteConnection, request, m_executor.get());
 }
 
 void AppRunnerClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteConnection, request, handler, context, m_executor.get());
 }
 
 DeleteObservabilityConfigurationOutcome AppRunnerClient::DeleteObservabilityConfiguration(const DeleteObservabilityConfigurationRequest& request) const
@@ -410,18 +357,12 @@ DeleteObservabilityConfigurationOutcome AppRunnerClient::DeleteObservabilityConf
 
 DeleteObservabilityConfigurationOutcomeCallable AppRunnerClient::DeleteObservabilityConfigurationCallable(const DeleteObservabilityConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteObservabilityConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteObservabilityConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteObservabilityConfiguration, request, m_executor.get());
 }
 
 void AppRunnerClient::DeleteObservabilityConfigurationAsync(const DeleteObservabilityConfigurationRequest& request, const DeleteObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteObservabilityConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteObservabilityConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteServiceOutcome AppRunnerClient::DeleteService(const DeleteServiceRequest& request) const
@@ -434,18 +375,12 @@ DeleteServiceOutcome AppRunnerClient::DeleteService(const DeleteServiceRequest& 
 
 DeleteServiceOutcomeCallable AppRunnerClient::DeleteServiceCallable(const DeleteServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteService, request, m_executor.get());
 }
 
 void AppRunnerClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteService, request, handler, context, m_executor.get());
 }
 
 DeleteVpcConnectorOutcome AppRunnerClient::DeleteVpcConnector(const DeleteVpcConnectorRequest& request) const
@@ -458,18 +393,12 @@ DeleteVpcConnectorOutcome AppRunnerClient::DeleteVpcConnector(const DeleteVpcCon
 
 DeleteVpcConnectorOutcomeCallable AppRunnerClient::DeleteVpcConnectorCallable(const DeleteVpcConnectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVpcConnector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteVpcConnector, request, m_executor.get());
 }
 
 void AppRunnerClient::DeleteVpcConnectorAsync(const DeleteVpcConnectorRequest& request, const DeleteVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteVpcConnector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteVpcConnector, request, handler, context, m_executor.get());
 }
 
 DeleteVpcIngressConnectionOutcome AppRunnerClient::DeleteVpcIngressConnection(const DeleteVpcIngressConnectionRequest& request) const
@@ -482,18 +411,12 @@ DeleteVpcIngressConnectionOutcome AppRunnerClient::DeleteVpcIngressConnection(co
 
 DeleteVpcIngressConnectionOutcomeCallable AppRunnerClient::DeleteVpcIngressConnectionCallable(const DeleteVpcIngressConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcIngressConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVpcIngressConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteVpcIngressConnection, request, m_executor.get());
 }
 
 void AppRunnerClient::DeleteVpcIngressConnectionAsync(const DeleteVpcIngressConnectionRequest& request, const DeleteVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteVpcIngressConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteVpcIngressConnection, request, handler, context, m_executor.get());
 }
 
 DescribeAutoScalingConfigurationOutcome AppRunnerClient::DescribeAutoScalingConfiguration(const DescribeAutoScalingConfigurationRequest& request) const
@@ -506,18 +429,12 @@ DescribeAutoScalingConfigurationOutcome AppRunnerClient::DescribeAutoScalingConf
 
 DescribeAutoScalingConfigurationOutcomeCallable AppRunnerClient::DescribeAutoScalingConfigurationCallable(const DescribeAutoScalingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAutoScalingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAutoScalingConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAutoScalingConfiguration, request, m_executor.get());
 }
 
 void AppRunnerClient::DescribeAutoScalingConfigurationAsync(const DescribeAutoScalingConfigurationRequest& request, const DescribeAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAutoScalingConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAutoScalingConfiguration, request, handler, context, m_executor.get());
 }
 
 DescribeCustomDomainsOutcome AppRunnerClient::DescribeCustomDomains(const DescribeCustomDomainsRequest& request) const
@@ -530,18 +447,12 @@ DescribeCustomDomainsOutcome AppRunnerClient::DescribeCustomDomains(const Descri
 
 DescribeCustomDomainsOutcomeCallable AppRunnerClient::DescribeCustomDomainsCallable(const DescribeCustomDomainsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCustomDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCustomDomains(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCustomDomains, request, m_executor.get());
 }
 
 void AppRunnerClient::DescribeCustomDomainsAsync(const DescribeCustomDomainsRequest& request, const DescribeCustomDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCustomDomains(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCustomDomains, request, handler, context, m_executor.get());
 }
 
 DescribeObservabilityConfigurationOutcome AppRunnerClient::DescribeObservabilityConfiguration(const DescribeObservabilityConfigurationRequest& request) const
@@ -554,18 +465,12 @@ DescribeObservabilityConfigurationOutcome AppRunnerClient::DescribeObservability
 
 DescribeObservabilityConfigurationOutcomeCallable AppRunnerClient::DescribeObservabilityConfigurationCallable(const DescribeObservabilityConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeObservabilityConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeObservabilityConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeObservabilityConfiguration, request, m_executor.get());
 }
 
 void AppRunnerClient::DescribeObservabilityConfigurationAsync(const DescribeObservabilityConfigurationRequest& request, const DescribeObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeObservabilityConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeObservabilityConfiguration, request, handler, context, m_executor.get());
 }
 
 DescribeServiceOutcome AppRunnerClient::DescribeService(const DescribeServiceRequest& request) const
@@ -578,18 +483,12 @@ DescribeServiceOutcome AppRunnerClient::DescribeService(const DescribeServiceReq
 
 DescribeServiceOutcomeCallable AppRunnerClient::DescribeServiceCallable(const DescribeServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeService, request, m_executor.get());
 }
 
 void AppRunnerClient::DescribeServiceAsync(const DescribeServiceRequest& request, const DescribeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeService, request, handler, context, m_executor.get());
 }
 
 DescribeVpcConnectorOutcome AppRunnerClient::DescribeVpcConnector(const DescribeVpcConnectorRequest& request) const
@@ -602,18 +501,12 @@ DescribeVpcConnectorOutcome AppRunnerClient::DescribeVpcConnector(const Describe
 
 DescribeVpcConnectorOutcomeCallable AppRunnerClient::DescribeVpcConnectorCallable(const DescribeVpcConnectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeVpcConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVpcConnector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeVpcConnector, request, m_executor.get());
 }
 
 void AppRunnerClient::DescribeVpcConnectorAsync(const DescribeVpcConnectorRequest& request, const DescribeVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeVpcConnector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeVpcConnector, request, handler, context, m_executor.get());
 }
 
 DescribeVpcIngressConnectionOutcome AppRunnerClient::DescribeVpcIngressConnection(const DescribeVpcIngressConnectionRequest& request) const
@@ -626,18 +519,12 @@ DescribeVpcIngressConnectionOutcome AppRunnerClient::DescribeVpcIngressConnectio
 
 DescribeVpcIngressConnectionOutcomeCallable AppRunnerClient::DescribeVpcIngressConnectionCallable(const DescribeVpcIngressConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeVpcIngressConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVpcIngressConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeVpcIngressConnection, request, m_executor.get());
 }
 
 void AppRunnerClient::DescribeVpcIngressConnectionAsync(const DescribeVpcIngressConnectionRequest& request, const DescribeVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeVpcIngressConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeVpcIngressConnection, request, handler, context, m_executor.get());
 }
 
 DisassociateCustomDomainOutcome AppRunnerClient::DisassociateCustomDomain(const DisassociateCustomDomainRequest& request) const
@@ -650,18 +537,12 @@ DisassociateCustomDomainOutcome AppRunnerClient::DisassociateCustomDomain(const 
 
 DisassociateCustomDomainOutcomeCallable AppRunnerClient::DisassociateCustomDomainCallable(const DisassociateCustomDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateCustomDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateCustomDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateCustomDomain, request, m_executor.get());
 }
 
 void AppRunnerClient::DisassociateCustomDomainAsync(const DisassociateCustomDomainRequest& request, const DisassociateCustomDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateCustomDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateCustomDomain, request, handler, context, m_executor.get());
 }
 
 ListAutoScalingConfigurationsOutcome AppRunnerClient::ListAutoScalingConfigurations(const ListAutoScalingConfigurationsRequest& request) const
@@ -674,18 +555,12 @@ ListAutoScalingConfigurationsOutcome AppRunnerClient::ListAutoScalingConfigurati
 
 ListAutoScalingConfigurationsOutcomeCallable AppRunnerClient::ListAutoScalingConfigurationsCallable(const ListAutoScalingConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAutoScalingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAutoScalingConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAutoScalingConfigurations, request, m_executor.get());
 }
 
 void AppRunnerClient::ListAutoScalingConfigurationsAsync(const ListAutoScalingConfigurationsRequest& request, const ListAutoScalingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAutoScalingConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAutoScalingConfigurations, request, handler, context, m_executor.get());
 }
 
 ListConnectionsOutcome AppRunnerClient::ListConnections(const ListConnectionsRequest& request) const
@@ -698,18 +573,12 @@ ListConnectionsOutcome AppRunnerClient::ListConnections(const ListConnectionsReq
 
 ListConnectionsOutcomeCallable AppRunnerClient::ListConnectionsCallable(const ListConnectionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnections(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListConnections, request, m_executor.get());
 }
 
 void AppRunnerClient::ListConnectionsAsync(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListConnections(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListConnections, request, handler, context, m_executor.get());
 }
 
 ListObservabilityConfigurationsOutcome AppRunnerClient::ListObservabilityConfigurations(const ListObservabilityConfigurationsRequest& request) const
@@ -722,18 +591,12 @@ ListObservabilityConfigurationsOutcome AppRunnerClient::ListObservabilityConfigu
 
 ListObservabilityConfigurationsOutcomeCallable AppRunnerClient::ListObservabilityConfigurationsCallable(const ListObservabilityConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListObservabilityConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListObservabilityConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListObservabilityConfigurations, request, m_executor.get());
 }
 
 void AppRunnerClient::ListObservabilityConfigurationsAsync(const ListObservabilityConfigurationsRequest& request, const ListObservabilityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListObservabilityConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListObservabilityConfigurations, request, handler, context, m_executor.get());
 }
 
 ListOperationsOutcome AppRunnerClient::ListOperations(const ListOperationsRequest& request) const
@@ -746,18 +609,12 @@ ListOperationsOutcome AppRunnerClient::ListOperations(const ListOperationsReques
 
 ListOperationsOutcomeCallable AppRunnerClient::ListOperationsCallable(const ListOperationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListOperationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOperations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListOperations, request, m_executor.get());
 }
 
 void AppRunnerClient::ListOperationsAsync(const ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListOperations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListOperations, request, handler, context, m_executor.get());
 }
 
 ListServicesOutcome AppRunnerClient::ListServices(const ListServicesRequest& request) const
@@ -770,18 +627,12 @@ ListServicesOutcome AppRunnerClient::ListServices(const ListServicesRequest& req
 
 ListServicesOutcomeCallable AppRunnerClient::ListServicesCallable(const ListServicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListServicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListServices, request, m_executor.get());
 }
 
 void AppRunnerClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListServices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListServices, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome AppRunnerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -794,18 +645,12 @@ ListTagsForResourceOutcome AppRunnerClient::ListTagsForResource(const ListTagsFo
 
 ListTagsForResourceOutcomeCallable AppRunnerClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void AppRunnerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListVpcConnectorsOutcome AppRunnerClient::ListVpcConnectors(const ListVpcConnectorsRequest& request) const
@@ -818,18 +663,12 @@ ListVpcConnectorsOutcome AppRunnerClient::ListVpcConnectors(const ListVpcConnect
 
 ListVpcConnectorsOutcomeCallable AppRunnerClient::ListVpcConnectorsCallable(const ListVpcConnectorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVpcConnectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcConnectors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListVpcConnectors, request, m_executor.get());
 }
 
 void AppRunnerClient::ListVpcConnectorsAsync(const ListVpcConnectorsRequest& request, const ListVpcConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListVpcConnectors(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListVpcConnectors, request, handler, context, m_executor.get());
 }
 
 ListVpcIngressConnectionsOutcome AppRunnerClient::ListVpcIngressConnections(const ListVpcIngressConnectionsRequest& request) const
@@ -842,18 +681,12 @@ ListVpcIngressConnectionsOutcome AppRunnerClient::ListVpcIngressConnections(cons
 
 ListVpcIngressConnectionsOutcomeCallable AppRunnerClient::ListVpcIngressConnectionsCallable(const ListVpcIngressConnectionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVpcIngressConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcIngressConnections(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListVpcIngressConnections, request, m_executor.get());
 }
 
 void AppRunnerClient::ListVpcIngressConnectionsAsync(const ListVpcIngressConnectionsRequest& request, const ListVpcIngressConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListVpcIngressConnections(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListVpcIngressConnections, request, handler, context, m_executor.get());
 }
 
 PauseServiceOutcome AppRunnerClient::PauseService(const PauseServiceRequest& request) const
@@ -866,18 +699,12 @@ PauseServiceOutcome AppRunnerClient::PauseService(const PauseServiceRequest& req
 
 PauseServiceOutcomeCallable AppRunnerClient::PauseServiceCallable(const PauseServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PauseServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PauseService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PauseService, request, m_executor.get());
 }
 
 void AppRunnerClient::PauseServiceAsync(const PauseServiceRequest& request, const PauseServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PauseService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PauseService, request, handler, context, m_executor.get());
 }
 
 ResumeServiceOutcome AppRunnerClient::ResumeService(const ResumeServiceRequest& request) const
@@ -890,18 +717,12 @@ ResumeServiceOutcome AppRunnerClient::ResumeService(const ResumeServiceRequest& 
 
 ResumeServiceOutcomeCallable AppRunnerClient::ResumeServiceCallable(const ResumeServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResumeServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResumeService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ResumeService, request, m_executor.get());
 }
 
 void AppRunnerClient::ResumeServiceAsync(const ResumeServiceRequest& request, const ResumeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ResumeService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ResumeService, request, handler, context, m_executor.get());
 }
 
 StartDeploymentOutcome AppRunnerClient::StartDeployment(const StartDeploymentRequest& request) const
@@ -914,18 +735,12 @@ StartDeploymentOutcome AppRunnerClient::StartDeployment(const StartDeploymentReq
 
 StartDeploymentOutcomeCallable AppRunnerClient::StartDeploymentCallable(const StartDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDeployment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartDeployment, request, m_executor.get());
 }
 
 void AppRunnerClient::StartDeploymentAsync(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartDeployment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartDeployment, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome AppRunnerClient::TagResource(const TagResourceRequest& request) const
@@ -938,18 +753,12 @@ TagResourceOutcome AppRunnerClient::TagResource(const TagResourceRequest& reques
 
 TagResourceOutcomeCallable AppRunnerClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void AppRunnerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome AppRunnerClient::UntagResource(const UntagResourceRequest& request) const
@@ -962,18 +771,12 @@ UntagResourceOutcome AppRunnerClient::UntagResource(const UntagResourceRequest& 
 
 UntagResourceOutcomeCallable AppRunnerClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void AppRunnerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateServiceOutcome AppRunnerClient::UpdateService(const UpdateServiceRequest& request) const
@@ -986,18 +789,12 @@ UpdateServiceOutcome AppRunnerClient::UpdateService(const UpdateServiceRequest& 
 
 UpdateServiceOutcomeCallable AppRunnerClient::UpdateServiceCallable(const UpdateServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateService, request, m_executor.get());
 }
 
 void AppRunnerClient::UpdateServiceAsync(const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateService, request, handler, context, m_executor.get());
 }
 
 UpdateVpcIngressConnectionOutcome AppRunnerClient::UpdateVpcIngressConnection(const UpdateVpcIngressConnectionRequest& request) const
@@ -1010,17 +807,11 @@ UpdateVpcIngressConnectionOutcome AppRunnerClient::UpdateVpcIngressConnection(co
 
 UpdateVpcIngressConnectionOutcomeCallable AppRunnerClient::UpdateVpcIngressConnectionCallable(const UpdateVpcIngressConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateVpcIngressConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVpcIngressConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateVpcIngressConnection, request, m_executor.get());
 }
 
 void AppRunnerClient::UpdateVpcIngressConnectionAsync(const UpdateVpcIngressConnectionRequest& request, const UpdateVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateVpcIngressConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateVpcIngressConnection, request, handler, context, m_executor.get());
 }
 

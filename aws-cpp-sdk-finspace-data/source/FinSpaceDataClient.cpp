@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -204,18 +205,12 @@ AssociateUserToPermissionGroupOutcome FinSpaceDataClient::AssociateUserToPermiss
 
 AssociateUserToPermissionGroupOutcomeCallable FinSpaceDataClient::AssociateUserToPermissionGroupCallable(const AssociateUserToPermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateUserToPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateUserToPermissionGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateUserToPermissionGroup, request, m_executor.get());
 }
 
 void FinSpaceDataClient::AssociateUserToPermissionGroupAsync(const AssociateUserToPermissionGroupRequest& request, const AssociateUserToPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateUserToPermissionGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateUserToPermissionGroup, request, handler, context, m_executor.get());
 }
 
 CreateChangesetOutcome FinSpaceDataClient::CreateChangeset(const CreateChangesetRequest& request) const
@@ -236,18 +231,12 @@ CreateChangesetOutcome FinSpaceDataClient::CreateChangeset(const CreateChangeset
 
 CreateChangesetOutcomeCallable FinSpaceDataClient::CreateChangesetCallable(const CreateChangesetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateChangesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateChangeset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateChangeset, request, m_executor.get());
 }
 
 void FinSpaceDataClient::CreateChangesetAsync(const CreateChangesetRequest& request, const CreateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateChangeset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateChangeset, request, handler, context, m_executor.get());
 }
 
 CreateDataViewOutcome FinSpaceDataClient::CreateDataView(const CreateDataViewRequest& request) const
@@ -268,18 +257,12 @@ CreateDataViewOutcome FinSpaceDataClient::CreateDataView(const CreateDataViewReq
 
 CreateDataViewOutcomeCallable FinSpaceDataClient::CreateDataViewCallable(const CreateDataViewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDataViewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataView(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataView, request, m_executor.get());
 }
 
 void FinSpaceDataClient::CreateDataViewAsync(const CreateDataViewRequest& request, const CreateDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataView(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataView, request, handler, context, m_executor.get());
 }
 
 CreateDatasetOutcome FinSpaceDataClient::CreateDataset(const CreateDatasetRequest& request) const
@@ -293,18 +276,12 @@ CreateDatasetOutcome FinSpaceDataClient::CreateDataset(const CreateDatasetReques
 
 CreateDatasetOutcomeCallable FinSpaceDataClient::CreateDatasetCallable(const CreateDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataset, request, m_executor.get());
 }
 
 void FinSpaceDataClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataset, request, handler, context, m_executor.get());
 }
 
 CreatePermissionGroupOutcome FinSpaceDataClient::CreatePermissionGroup(const CreatePermissionGroupRequest& request) const
@@ -318,18 +295,12 @@ CreatePermissionGroupOutcome FinSpaceDataClient::CreatePermissionGroup(const Cre
 
 CreatePermissionGroupOutcomeCallable FinSpaceDataClient::CreatePermissionGroupCallable(const CreatePermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePermissionGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePermissionGroup, request, m_executor.get());
 }
 
 void FinSpaceDataClient::CreatePermissionGroupAsync(const CreatePermissionGroupRequest& request, const CreatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePermissionGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePermissionGroup, request, handler, context, m_executor.get());
 }
 
 CreateUserOutcome FinSpaceDataClient::CreateUser(const CreateUserRequest& request) const
@@ -343,18 +314,12 @@ CreateUserOutcome FinSpaceDataClient::CreateUser(const CreateUserRequest& reques
 
 CreateUserOutcomeCallable FinSpaceDataClient::CreateUserCallable(const CreateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateUser, request, m_executor.get());
 }
 
 void FinSpaceDataClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateUser, request, handler, context, m_executor.get());
 }
 
 DeleteDatasetOutcome FinSpaceDataClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -374,18 +339,12 @@ DeleteDatasetOutcome FinSpaceDataClient::DeleteDataset(const DeleteDatasetReques
 
 DeleteDatasetOutcomeCallable FinSpaceDataClient::DeleteDatasetCallable(const DeleteDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDataset, request, m_executor.get());
 }
 
 void FinSpaceDataClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDataset, request, handler, context, m_executor.get());
 }
 
 DeletePermissionGroupOutcome FinSpaceDataClient::DeletePermissionGroup(const DeletePermissionGroupRequest& request) const
@@ -405,18 +364,12 @@ DeletePermissionGroupOutcome FinSpaceDataClient::DeletePermissionGroup(const Del
 
 DeletePermissionGroupOutcomeCallable FinSpaceDataClient::DeletePermissionGroupCallable(const DeletePermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePermissionGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePermissionGroup, request, m_executor.get());
 }
 
 void FinSpaceDataClient::DeletePermissionGroupAsync(const DeletePermissionGroupRequest& request, const DeletePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePermissionGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePermissionGroup, request, handler, context, m_executor.get());
 }
 
 DisableUserOutcome FinSpaceDataClient::DisableUser(const DisableUserRequest& request) const
@@ -437,18 +390,12 @@ DisableUserOutcome FinSpaceDataClient::DisableUser(const DisableUserRequest& req
 
 DisableUserOutcomeCallable FinSpaceDataClient::DisableUserCallable(const DisableUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisableUser, request, m_executor.get());
 }
 
 void FinSpaceDataClient::DisableUserAsync(const DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisableUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisableUser, request, handler, context, m_executor.get());
 }
 
 DisassociateUserFromPermissionGroupOutcome FinSpaceDataClient::DisassociateUserFromPermissionGroup(const DisassociateUserFromPermissionGroupRequest& request) const
@@ -475,18 +422,12 @@ DisassociateUserFromPermissionGroupOutcome FinSpaceDataClient::DisassociateUserF
 
 DisassociateUserFromPermissionGroupOutcomeCallable FinSpaceDataClient::DisassociateUserFromPermissionGroupCallable(const DisassociateUserFromPermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateUserFromPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateUserFromPermissionGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateUserFromPermissionGroup, request, m_executor.get());
 }
 
 void FinSpaceDataClient::DisassociateUserFromPermissionGroupAsync(const DisassociateUserFromPermissionGroupRequest& request, const DisassociateUserFromPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateUserFromPermissionGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateUserFromPermissionGroup, request, handler, context, m_executor.get());
 }
 
 EnableUserOutcome FinSpaceDataClient::EnableUser(const EnableUserRequest& request) const
@@ -507,18 +448,12 @@ EnableUserOutcome FinSpaceDataClient::EnableUser(const EnableUserRequest& reques
 
 EnableUserOutcomeCallable FinSpaceDataClient::EnableUserCallable(const EnableUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(EnableUser, request, m_executor.get());
 }
 
 void FinSpaceDataClient::EnableUserAsync(const EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, EnableUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(EnableUser, request, handler, context, m_executor.get());
 }
 
 GetChangesetOutcome FinSpaceDataClient::GetChangeset(const GetChangesetRequest& request) const
@@ -545,18 +480,12 @@ GetChangesetOutcome FinSpaceDataClient::GetChangeset(const GetChangesetRequest& 
 
 GetChangesetOutcomeCallable FinSpaceDataClient::GetChangesetCallable(const GetChangesetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetChangesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetChangeset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetChangeset, request, m_executor.get());
 }
 
 void FinSpaceDataClient::GetChangesetAsync(const GetChangesetRequest& request, const GetChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetChangeset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetChangeset, request, handler, context, m_executor.get());
 }
 
 GetDataViewOutcome FinSpaceDataClient::GetDataView(const GetDataViewRequest& request) const
@@ -583,18 +512,12 @@ GetDataViewOutcome FinSpaceDataClient::GetDataView(const GetDataViewRequest& req
 
 GetDataViewOutcomeCallable FinSpaceDataClient::GetDataViewCallable(const GetDataViewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataViewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataView(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDataView, request, m_executor.get());
 }
 
 void FinSpaceDataClient::GetDataViewAsync(const GetDataViewRequest& request, const GetDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDataView(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDataView, request, handler, context, m_executor.get());
 }
 
 GetDatasetOutcome FinSpaceDataClient::GetDataset(const GetDatasetRequest& request) const
@@ -614,18 +537,12 @@ GetDatasetOutcome FinSpaceDataClient::GetDataset(const GetDatasetRequest& reques
 
 GetDatasetOutcomeCallable FinSpaceDataClient::GetDatasetCallable(const GetDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDataset, request, m_executor.get());
 }
 
 void FinSpaceDataClient::GetDatasetAsync(const GetDatasetRequest& request, const GetDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDataset, request, handler, context, m_executor.get());
 }
 
 GetExternalDataViewAccessDetailsOutcome FinSpaceDataClient::GetExternalDataViewAccessDetails(const GetExternalDataViewAccessDetailsRequest& request) const
@@ -653,18 +570,12 @@ GetExternalDataViewAccessDetailsOutcome FinSpaceDataClient::GetExternalDataViewA
 
 GetExternalDataViewAccessDetailsOutcomeCallable FinSpaceDataClient::GetExternalDataViewAccessDetailsCallable(const GetExternalDataViewAccessDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExternalDataViewAccessDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExternalDataViewAccessDetails(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetExternalDataViewAccessDetails, request, m_executor.get());
 }
 
 void FinSpaceDataClient::GetExternalDataViewAccessDetailsAsync(const GetExternalDataViewAccessDetailsRequest& request, const GetExternalDataViewAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetExternalDataViewAccessDetails(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetExternalDataViewAccessDetails, request, handler, context, m_executor.get());
 }
 
 GetPermissionGroupOutcome FinSpaceDataClient::GetPermissionGroup(const GetPermissionGroupRequest& request) const
@@ -684,18 +595,12 @@ GetPermissionGroupOutcome FinSpaceDataClient::GetPermissionGroup(const GetPermis
 
 GetPermissionGroupOutcomeCallable FinSpaceDataClient::GetPermissionGroupCallable(const GetPermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPermissionGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPermissionGroup, request, m_executor.get());
 }
 
 void FinSpaceDataClient::GetPermissionGroupAsync(const GetPermissionGroupRequest& request, const GetPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPermissionGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPermissionGroup, request, handler, context, m_executor.get());
 }
 
 GetProgrammaticAccessCredentialsOutcome FinSpaceDataClient::GetProgrammaticAccessCredentials(const GetProgrammaticAccessCredentialsRequest& request) const
@@ -714,18 +619,12 @@ GetProgrammaticAccessCredentialsOutcome FinSpaceDataClient::GetProgrammaticAcces
 
 GetProgrammaticAccessCredentialsOutcomeCallable FinSpaceDataClient::GetProgrammaticAccessCredentialsCallable(const GetProgrammaticAccessCredentialsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetProgrammaticAccessCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProgrammaticAccessCredentials(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetProgrammaticAccessCredentials, request, m_executor.get());
 }
 
 void FinSpaceDataClient::GetProgrammaticAccessCredentialsAsync(const GetProgrammaticAccessCredentialsRequest& request, const GetProgrammaticAccessCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetProgrammaticAccessCredentials(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetProgrammaticAccessCredentials, request, handler, context, m_executor.get());
 }
 
 GetUserOutcome FinSpaceDataClient::GetUser(const GetUserRequest& request) const
@@ -745,18 +644,12 @@ GetUserOutcome FinSpaceDataClient::GetUser(const GetUserRequest& request) const
 
 GetUserOutcomeCallable FinSpaceDataClient::GetUserCallable(const GetUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUser, request, m_executor.get());
 }
 
 void FinSpaceDataClient::GetUserAsync(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUser, request, handler, context, m_executor.get());
 }
 
 GetWorkingLocationOutcome FinSpaceDataClient::GetWorkingLocation(const GetWorkingLocationRequest& request) const
@@ -770,18 +663,12 @@ GetWorkingLocationOutcome FinSpaceDataClient::GetWorkingLocation(const GetWorkin
 
 GetWorkingLocationOutcomeCallable FinSpaceDataClient::GetWorkingLocationCallable(const GetWorkingLocationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkingLocationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkingLocation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkingLocation, request, m_executor.get());
 }
 
 void FinSpaceDataClient::GetWorkingLocationAsync(const GetWorkingLocationRequest& request, const GetWorkingLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkingLocation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkingLocation, request, handler, context, m_executor.get());
 }
 
 ListChangesetsOutcome FinSpaceDataClient::ListChangesets(const ListChangesetsRequest& request) const
@@ -802,18 +689,12 @@ ListChangesetsOutcome FinSpaceDataClient::ListChangesets(const ListChangesetsReq
 
 ListChangesetsOutcomeCallable FinSpaceDataClient::ListChangesetsCallable(const ListChangesetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListChangesetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChangesets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListChangesets, request, m_executor.get());
 }
 
 void FinSpaceDataClient::ListChangesetsAsync(const ListChangesetsRequest& request, const ListChangesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListChangesets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListChangesets, request, handler, context, m_executor.get());
 }
 
 ListDataViewsOutcome FinSpaceDataClient::ListDataViews(const ListDataViewsRequest& request) const
@@ -834,18 +715,12 @@ ListDataViewsOutcome FinSpaceDataClient::ListDataViews(const ListDataViewsReques
 
 ListDataViewsOutcomeCallable FinSpaceDataClient::ListDataViewsCallable(const ListDataViewsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataViewsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataViews(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDataViews, request, m_executor.get());
 }
 
 void FinSpaceDataClient::ListDataViewsAsync(const ListDataViewsRequest& request, const ListDataViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDataViews(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDataViews, request, handler, context, m_executor.get());
 }
 
 ListDatasetsOutcome FinSpaceDataClient::ListDatasets(const ListDatasetsRequest& request) const
@@ -859,18 +734,12 @@ ListDatasetsOutcome FinSpaceDataClient::ListDatasets(const ListDatasetsRequest& 
 
 ListDatasetsOutcomeCallable FinSpaceDataClient::ListDatasetsCallable(const ListDatasetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDatasets, request, m_executor.get());
 }
 
 void FinSpaceDataClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatasets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDatasets, request, handler, context, m_executor.get());
 }
 
 ListPermissionGroupsOutcome FinSpaceDataClient::ListPermissionGroups(const ListPermissionGroupsRequest& request) const
@@ -889,18 +758,12 @@ ListPermissionGroupsOutcome FinSpaceDataClient::ListPermissionGroups(const ListP
 
 ListPermissionGroupsOutcomeCallable FinSpaceDataClient::ListPermissionGroupsCallable(const ListPermissionGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPermissionGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissionGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPermissionGroups, request, m_executor.get());
 }
 
 void FinSpaceDataClient::ListPermissionGroupsAsync(const ListPermissionGroupsRequest& request, const ListPermissionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPermissionGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPermissionGroups, request, handler, context, m_executor.get());
 }
 
 ListPermissionGroupsByUserOutcome FinSpaceDataClient::ListPermissionGroupsByUser(const ListPermissionGroupsByUserRequest& request) const
@@ -926,18 +789,12 @@ ListPermissionGroupsByUserOutcome FinSpaceDataClient::ListPermissionGroupsByUser
 
 ListPermissionGroupsByUserOutcomeCallable FinSpaceDataClient::ListPermissionGroupsByUserCallable(const ListPermissionGroupsByUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPermissionGroupsByUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissionGroupsByUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPermissionGroupsByUser, request, m_executor.get());
 }
 
 void FinSpaceDataClient::ListPermissionGroupsByUserAsync(const ListPermissionGroupsByUserRequest& request, const ListPermissionGroupsByUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPermissionGroupsByUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPermissionGroupsByUser, request, handler, context, m_executor.get());
 }
 
 ListUsersOutcome FinSpaceDataClient::ListUsers(const ListUsersRequest& request) const
@@ -956,18 +813,12 @@ ListUsersOutcome FinSpaceDataClient::ListUsers(const ListUsersRequest& request) 
 
 ListUsersOutcomeCallable FinSpaceDataClient::ListUsersCallable(const ListUsersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUsersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUsers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUsers, request, m_executor.get());
 }
 
 void FinSpaceDataClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUsers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUsers, request, handler, context, m_executor.get());
 }
 
 ListUsersByPermissionGroupOutcome FinSpaceDataClient::ListUsersByPermissionGroup(const ListUsersByPermissionGroupRequest& request) const
@@ -993,18 +844,12 @@ ListUsersByPermissionGroupOutcome FinSpaceDataClient::ListUsersByPermissionGroup
 
 ListUsersByPermissionGroupOutcomeCallable FinSpaceDataClient::ListUsersByPermissionGroupCallable(const ListUsersByPermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUsersByPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUsersByPermissionGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUsersByPermissionGroup, request, m_executor.get());
 }
 
 void FinSpaceDataClient::ListUsersByPermissionGroupAsync(const ListUsersByPermissionGroupRequest& request, const ListUsersByPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUsersByPermissionGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUsersByPermissionGroup, request, handler, context, m_executor.get());
 }
 
 ResetUserPasswordOutcome FinSpaceDataClient::ResetUserPassword(const ResetUserPasswordRequest& request) const
@@ -1025,18 +870,12 @@ ResetUserPasswordOutcome FinSpaceDataClient::ResetUserPassword(const ResetUserPa
 
 ResetUserPasswordOutcomeCallable FinSpaceDataClient::ResetUserPasswordCallable(const ResetUserPasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResetUserPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetUserPassword(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ResetUserPassword, request, m_executor.get());
 }
 
 void FinSpaceDataClient::ResetUserPasswordAsync(const ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ResetUserPassword(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ResetUserPassword, request, handler, context, m_executor.get());
 }
 
 UpdateChangesetOutcome FinSpaceDataClient::UpdateChangeset(const UpdateChangesetRequest& request) const
@@ -1063,18 +902,12 @@ UpdateChangesetOutcome FinSpaceDataClient::UpdateChangeset(const UpdateChangeset
 
 UpdateChangesetOutcomeCallable FinSpaceDataClient::UpdateChangesetCallable(const UpdateChangesetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateChangesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateChangeset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateChangeset, request, m_executor.get());
 }
 
 void FinSpaceDataClient::UpdateChangesetAsync(const UpdateChangesetRequest& request, const UpdateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateChangeset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateChangeset, request, handler, context, m_executor.get());
 }
 
 UpdateDatasetOutcome FinSpaceDataClient::UpdateDataset(const UpdateDatasetRequest& request) const
@@ -1094,18 +927,12 @@ UpdateDatasetOutcome FinSpaceDataClient::UpdateDataset(const UpdateDatasetReques
 
 UpdateDatasetOutcomeCallable FinSpaceDataClient::UpdateDatasetCallable(const UpdateDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDataset, request, m_executor.get());
 }
 
 void FinSpaceDataClient::UpdateDatasetAsync(const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDataset, request, handler, context, m_executor.get());
 }
 
 UpdatePermissionGroupOutcome FinSpaceDataClient::UpdatePermissionGroup(const UpdatePermissionGroupRequest& request) const
@@ -1125,18 +952,12 @@ UpdatePermissionGroupOutcome FinSpaceDataClient::UpdatePermissionGroup(const Upd
 
 UpdatePermissionGroupOutcomeCallable FinSpaceDataClient::UpdatePermissionGroupCallable(const UpdatePermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePermissionGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePermissionGroup, request, m_executor.get());
 }
 
 void FinSpaceDataClient::UpdatePermissionGroupAsync(const UpdatePermissionGroupRequest& request, const UpdatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePermissionGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePermissionGroup, request, handler, context, m_executor.get());
 }
 
 UpdateUserOutcome FinSpaceDataClient::UpdateUser(const UpdateUserRequest& request) const
@@ -1156,17 +977,11 @@ UpdateUserOutcome FinSpaceDataClient::UpdateUser(const UpdateUserRequest& reques
 
 UpdateUserOutcomeCallable FinSpaceDataClient::UpdateUserCallable(const UpdateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateUser, request, m_executor.get());
 }
 
 void FinSpaceDataClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateUser, request, handler, context, m_executor.get());
 }
 

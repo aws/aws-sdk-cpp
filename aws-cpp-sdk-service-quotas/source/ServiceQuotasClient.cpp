@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -178,18 +179,12 @@ AssociateServiceQuotaTemplateOutcome ServiceQuotasClient::AssociateServiceQuotaT
 
 AssociateServiceQuotaTemplateOutcomeCallable ServiceQuotasClient::AssociateServiceQuotaTemplateCallable(const AssociateServiceQuotaTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateServiceQuotaTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateServiceQuotaTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateServiceQuotaTemplate, request, m_executor.get());
 }
 
 void ServiceQuotasClient::AssociateServiceQuotaTemplateAsync(const AssociateServiceQuotaTemplateRequest& request, const AssociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateServiceQuotaTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateServiceQuotaTemplate, request, handler, context, m_executor.get());
 }
 
 DeleteServiceQuotaIncreaseRequestFromTemplateOutcome ServiceQuotasClient::DeleteServiceQuotaIncreaseRequestFromTemplate(const DeleteServiceQuotaIncreaseRequestFromTemplateRequest& request) const
@@ -202,18 +197,12 @@ DeleteServiceQuotaIncreaseRequestFromTemplateOutcome ServiceQuotasClient::Delete
 
 DeleteServiceQuotaIncreaseRequestFromTemplateOutcomeCallable ServiceQuotasClient::DeleteServiceQuotaIncreaseRequestFromTemplateCallable(const DeleteServiceQuotaIncreaseRequestFromTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteServiceQuotaIncreaseRequestFromTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteServiceQuotaIncreaseRequestFromTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteServiceQuotaIncreaseRequestFromTemplate, request, m_executor.get());
 }
 
 void ServiceQuotasClient::DeleteServiceQuotaIncreaseRequestFromTemplateAsync(const DeleteServiceQuotaIncreaseRequestFromTemplateRequest& request, const DeleteServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteServiceQuotaIncreaseRequestFromTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteServiceQuotaIncreaseRequestFromTemplate, request, handler, context, m_executor.get());
 }
 
 DisassociateServiceQuotaTemplateOutcome ServiceQuotasClient::DisassociateServiceQuotaTemplate(const DisassociateServiceQuotaTemplateRequest& request) const
@@ -226,18 +215,12 @@ DisassociateServiceQuotaTemplateOutcome ServiceQuotasClient::DisassociateService
 
 DisassociateServiceQuotaTemplateOutcomeCallable ServiceQuotasClient::DisassociateServiceQuotaTemplateCallable(const DisassociateServiceQuotaTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateServiceQuotaTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateServiceQuotaTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateServiceQuotaTemplate, request, m_executor.get());
 }
 
 void ServiceQuotasClient::DisassociateServiceQuotaTemplateAsync(const DisassociateServiceQuotaTemplateRequest& request, const DisassociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateServiceQuotaTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateServiceQuotaTemplate, request, handler, context, m_executor.get());
 }
 
 GetAWSDefaultServiceQuotaOutcome ServiceQuotasClient::GetAWSDefaultServiceQuota(const GetAWSDefaultServiceQuotaRequest& request) const
@@ -250,18 +233,12 @@ GetAWSDefaultServiceQuotaOutcome ServiceQuotasClient::GetAWSDefaultServiceQuota(
 
 GetAWSDefaultServiceQuotaOutcomeCallable ServiceQuotasClient::GetAWSDefaultServiceQuotaCallable(const GetAWSDefaultServiceQuotaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAWSDefaultServiceQuotaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAWSDefaultServiceQuota(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAWSDefaultServiceQuota, request, m_executor.get());
 }
 
 void ServiceQuotasClient::GetAWSDefaultServiceQuotaAsync(const GetAWSDefaultServiceQuotaRequest& request, const GetAWSDefaultServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAWSDefaultServiceQuota(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAWSDefaultServiceQuota, request, handler, context, m_executor.get());
 }
 
 GetAssociationForServiceQuotaTemplateOutcome ServiceQuotasClient::GetAssociationForServiceQuotaTemplate(const GetAssociationForServiceQuotaTemplateRequest& request) const
@@ -274,18 +251,12 @@ GetAssociationForServiceQuotaTemplateOutcome ServiceQuotasClient::GetAssociation
 
 GetAssociationForServiceQuotaTemplateOutcomeCallable ServiceQuotasClient::GetAssociationForServiceQuotaTemplateCallable(const GetAssociationForServiceQuotaTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAssociationForServiceQuotaTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssociationForServiceQuotaTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAssociationForServiceQuotaTemplate, request, m_executor.get());
 }
 
 void ServiceQuotasClient::GetAssociationForServiceQuotaTemplateAsync(const GetAssociationForServiceQuotaTemplateRequest& request, const GetAssociationForServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAssociationForServiceQuotaTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAssociationForServiceQuotaTemplate, request, handler, context, m_executor.get());
 }
 
 GetRequestedServiceQuotaChangeOutcome ServiceQuotasClient::GetRequestedServiceQuotaChange(const GetRequestedServiceQuotaChangeRequest& request) const
@@ -298,18 +269,12 @@ GetRequestedServiceQuotaChangeOutcome ServiceQuotasClient::GetRequestedServiceQu
 
 GetRequestedServiceQuotaChangeOutcomeCallable ServiceQuotasClient::GetRequestedServiceQuotaChangeCallable(const GetRequestedServiceQuotaChangeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRequestedServiceQuotaChangeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRequestedServiceQuotaChange(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRequestedServiceQuotaChange, request, m_executor.get());
 }
 
 void ServiceQuotasClient::GetRequestedServiceQuotaChangeAsync(const GetRequestedServiceQuotaChangeRequest& request, const GetRequestedServiceQuotaChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRequestedServiceQuotaChange(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRequestedServiceQuotaChange, request, handler, context, m_executor.get());
 }
 
 GetServiceQuotaOutcome ServiceQuotasClient::GetServiceQuota(const GetServiceQuotaRequest& request) const
@@ -322,18 +287,12 @@ GetServiceQuotaOutcome ServiceQuotasClient::GetServiceQuota(const GetServiceQuot
 
 GetServiceQuotaOutcomeCallable ServiceQuotasClient::GetServiceQuotaCallable(const GetServiceQuotaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetServiceQuotaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServiceQuota(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetServiceQuota, request, m_executor.get());
 }
 
 void ServiceQuotasClient::GetServiceQuotaAsync(const GetServiceQuotaRequest& request, const GetServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetServiceQuota(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetServiceQuota, request, handler, context, m_executor.get());
 }
 
 GetServiceQuotaIncreaseRequestFromTemplateOutcome ServiceQuotasClient::GetServiceQuotaIncreaseRequestFromTemplate(const GetServiceQuotaIncreaseRequestFromTemplateRequest& request) const
@@ -346,18 +305,12 @@ GetServiceQuotaIncreaseRequestFromTemplateOutcome ServiceQuotasClient::GetServic
 
 GetServiceQuotaIncreaseRequestFromTemplateOutcomeCallable ServiceQuotasClient::GetServiceQuotaIncreaseRequestFromTemplateCallable(const GetServiceQuotaIncreaseRequestFromTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetServiceQuotaIncreaseRequestFromTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServiceQuotaIncreaseRequestFromTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetServiceQuotaIncreaseRequestFromTemplate, request, m_executor.get());
 }
 
 void ServiceQuotasClient::GetServiceQuotaIncreaseRequestFromTemplateAsync(const GetServiceQuotaIncreaseRequestFromTemplateRequest& request, const GetServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetServiceQuotaIncreaseRequestFromTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetServiceQuotaIncreaseRequestFromTemplate, request, handler, context, m_executor.get());
 }
 
 ListAWSDefaultServiceQuotasOutcome ServiceQuotasClient::ListAWSDefaultServiceQuotas(const ListAWSDefaultServiceQuotasRequest& request) const
@@ -370,18 +323,12 @@ ListAWSDefaultServiceQuotasOutcome ServiceQuotasClient::ListAWSDefaultServiceQuo
 
 ListAWSDefaultServiceQuotasOutcomeCallable ServiceQuotasClient::ListAWSDefaultServiceQuotasCallable(const ListAWSDefaultServiceQuotasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAWSDefaultServiceQuotasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAWSDefaultServiceQuotas(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAWSDefaultServiceQuotas, request, m_executor.get());
 }
 
 void ServiceQuotasClient::ListAWSDefaultServiceQuotasAsync(const ListAWSDefaultServiceQuotasRequest& request, const ListAWSDefaultServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAWSDefaultServiceQuotas(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAWSDefaultServiceQuotas, request, handler, context, m_executor.get());
 }
 
 ListRequestedServiceQuotaChangeHistoryOutcome ServiceQuotasClient::ListRequestedServiceQuotaChangeHistory(const ListRequestedServiceQuotaChangeHistoryRequest& request) const
@@ -394,18 +341,12 @@ ListRequestedServiceQuotaChangeHistoryOutcome ServiceQuotasClient::ListRequested
 
 ListRequestedServiceQuotaChangeHistoryOutcomeCallable ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryCallable(const ListRequestedServiceQuotaChangeHistoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRequestedServiceQuotaChangeHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRequestedServiceQuotaChangeHistory(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRequestedServiceQuotaChangeHistory, request, m_executor.get());
 }
 
 void ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryAsync(const ListRequestedServiceQuotaChangeHistoryRequest& request, const ListRequestedServiceQuotaChangeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRequestedServiceQuotaChangeHistory(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRequestedServiceQuotaChangeHistory, request, handler, context, m_executor.get());
 }
 
 ListRequestedServiceQuotaChangeHistoryByQuotaOutcome ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryByQuota(const ListRequestedServiceQuotaChangeHistoryByQuotaRequest& request) const
@@ -418,18 +359,12 @@ ListRequestedServiceQuotaChangeHistoryByQuotaOutcome ServiceQuotasClient::ListRe
 
 ListRequestedServiceQuotaChangeHistoryByQuotaOutcomeCallable ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryByQuotaCallable(const ListRequestedServiceQuotaChangeHistoryByQuotaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRequestedServiceQuotaChangeHistoryByQuotaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRequestedServiceQuotaChangeHistoryByQuota(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRequestedServiceQuotaChangeHistoryByQuota, request, m_executor.get());
 }
 
 void ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryByQuotaAsync(const ListRequestedServiceQuotaChangeHistoryByQuotaRequest& request, const ListRequestedServiceQuotaChangeHistoryByQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRequestedServiceQuotaChangeHistoryByQuota(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRequestedServiceQuotaChangeHistoryByQuota, request, handler, context, m_executor.get());
 }
 
 ListServiceQuotaIncreaseRequestsInTemplateOutcome ServiceQuotasClient::ListServiceQuotaIncreaseRequestsInTemplate(const ListServiceQuotaIncreaseRequestsInTemplateRequest& request) const
@@ -442,18 +377,12 @@ ListServiceQuotaIncreaseRequestsInTemplateOutcome ServiceQuotasClient::ListServi
 
 ListServiceQuotaIncreaseRequestsInTemplateOutcomeCallable ServiceQuotasClient::ListServiceQuotaIncreaseRequestsInTemplateCallable(const ListServiceQuotaIncreaseRequestsInTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListServiceQuotaIncreaseRequestsInTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServiceQuotaIncreaseRequestsInTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListServiceQuotaIncreaseRequestsInTemplate, request, m_executor.get());
 }
 
 void ServiceQuotasClient::ListServiceQuotaIncreaseRequestsInTemplateAsync(const ListServiceQuotaIncreaseRequestsInTemplateRequest& request, const ListServiceQuotaIncreaseRequestsInTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListServiceQuotaIncreaseRequestsInTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListServiceQuotaIncreaseRequestsInTemplate, request, handler, context, m_executor.get());
 }
 
 ListServiceQuotasOutcome ServiceQuotasClient::ListServiceQuotas(const ListServiceQuotasRequest& request) const
@@ -466,18 +395,12 @@ ListServiceQuotasOutcome ServiceQuotasClient::ListServiceQuotas(const ListServic
 
 ListServiceQuotasOutcomeCallable ServiceQuotasClient::ListServiceQuotasCallable(const ListServiceQuotasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListServiceQuotasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServiceQuotas(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListServiceQuotas, request, m_executor.get());
 }
 
 void ServiceQuotasClient::ListServiceQuotasAsync(const ListServiceQuotasRequest& request, const ListServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListServiceQuotas(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListServiceQuotas, request, handler, context, m_executor.get());
 }
 
 ListServicesOutcome ServiceQuotasClient::ListServices(const ListServicesRequest& request) const
@@ -490,18 +413,12 @@ ListServicesOutcome ServiceQuotasClient::ListServices(const ListServicesRequest&
 
 ListServicesOutcomeCallable ServiceQuotasClient::ListServicesCallable(const ListServicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListServicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListServices, request, m_executor.get());
 }
 
 void ServiceQuotasClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListServices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListServices, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ServiceQuotasClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -514,18 +431,12 @@ ListTagsForResourceOutcome ServiceQuotasClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable ServiceQuotasClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ServiceQuotasClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutServiceQuotaIncreaseRequestIntoTemplateOutcome ServiceQuotasClient::PutServiceQuotaIncreaseRequestIntoTemplate(const PutServiceQuotaIncreaseRequestIntoTemplateRequest& request) const
@@ -538,18 +449,12 @@ PutServiceQuotaIncreaseRequestIntoTemplateOutcome ServiceQuotasClient::PutServic
 
 PutServiceQuotaIncreaseRequestIntoTemplateOutcomeCallable ServiceQuotasClient::PutServiceQuotaIncreaseRequestIntoTemplateCallable(const PutServiceQuotaIncreaseRequestIntoTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutServiceQuotaIncreaseRequestIntoTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutServiceQuotaIncreaseRequestIntoTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutServiceQuotaIncreaseRequestIntoTemplate, request, m_executor.get());
 }
 
 void ServiceQuotasClient::PutServiceQuotaIncreaseRequestIntoTemplateAsync(const PutServiceQuotaIncreaseRequestIntoTemplateRequest& request, const PutServiceQuotaIncreaseRequestIntoTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutServiceQuotaIncreaseRequestIntoTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutServiceQuotaIncreaseRequestIntoTemplate, request, handler, context, m_executor.get());
 }
 
 RequestServiceQuotaIncreaseOutcome ServiceQuotasClient::RequestServiceQuotaIncrease(const RequestServiceQuotaIncreaseRequest& request) const
@@ -562,18 +467,12 @@ RequestServiceQuotaIncreaseOutcome ServiceQuotasClient::RequestServiceQuotaIncre
 
 RequestServiceQuotaIncreaseOutcomeCallable ServiceQuotasClient::RequestServiceQuotaIncreaseCallable(const RequestServiceQuotaIncreaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RequestServiceQuotaIncreaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RequestServiceQuotaIncrease(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RequestServiceQuotaIncrease, request, m_executor.get());
 }
 
 void ServiceQuotasClient::RequestServiceQuotaIncreaseAsync(const RequestServiceQuotaIncreaseRequest& request, const RequestServiceQuotaIncreaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RequestServiceQuotaIncrease(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RequestServiceQuotaIncrease, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ServiceQuotasClient::TagResource(const TagResourceRequest& request) const
@@ -586,18 +485,12 @@ TagResourceOutcome ServiceQuotasClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable ServiceQuotasClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ServiceQuotasClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ServiceQuotasClient::UntagResource(const UntagResourceRequest& request) const
@@ -610,17 +503,11 @@ UntagResourceOutcome ServiceQuotasClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable ServiceQuotasClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ServiceQuotasClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 

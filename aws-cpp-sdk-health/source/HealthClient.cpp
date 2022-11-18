@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -169,18 +170,12 @@ DescribeAffectedAccountsForOrganizationOutcome HealthClient::DescribeAffectedAcc
 
 DescribeAffectedAccountsForOrganizationOutcomeCallable HealthClient::DescribeAffectedAccountsForOrganizationCallable(const DescribeAffectedAccountsForOrganizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAffectedAccountsForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAffectedAccountsForOrganization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAffectedAccountsForOrganization, request, m_executor.get());
 }
 
 void HealthClient::DescribeAffectedAccountsForOrganizationAsync(const DescribeAffectedAccountsForOrganizationRequest& request, const DescribeAffectedAccountsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAffectedAccountsForOrganization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAffectedAccountsForOrganization, request, handler, context, m_executor.get());
 }
 
 DescribeAffectedEntitiesOutcome HealthClient::DescribeAffectedEntities(const DescribeAffectedEntitiesRequest& request) const
@@ -193,18 +188,12 @@ DescribeAffectedEntitiesOutcome HealthClient::DescribeAffectedEntities(const Des
 
 DescribeAffectedEntitiesOutcomeCallable HealthClient::DescribeAffectedEntitiesCallable(const DescribeAffectedEntitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAffectedEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAffectedEntities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAffectedEntities, request, m_executor.get());
 }
 
 void HealthClient::DescribeAffectedEntitiesAsync(const DescribeAffectedEntitiesRequest& request, const DescribeAffectedEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAffectedEntities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAffectedEntities, request, handler, context, m_executor.get());
 }
 
 DescribeAffectedEntitiesForOrganizationOutcome HealthClient::DescribeAffectedEntitiesForOrganization(const DescribeAffectedEntitiesForOrganizationRequest& request) const
@@ -217,18 +206,12 @@ DescribeAffectedEntitiesForOrganizationOutcome HealthClient::DescribeAffectedEnt
 
 DescribeAffectedEntitiesForOrganizationOutcomeCallable HealthClient::DescribeAffectedEntitiesForOrganizationCallable(const DescribeAffectedEntitiesForOrganizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAffectedEntitiesForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAffectedEntitiesForOrganization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAffectedEntitiesForOrganization, request, m_executor.get());
 }
 
 void HealthClient::DescribeAffectedEntitiesForOrganizationAsync(const DescribeAffectedEntitiesForOrganizationRequest& request, const DescribeAffectedEntitiesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAffectedEntitiesForOrganization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAffectedEntitiesForOrganization, request, handler, context, m_executor.get());
 }
 
 DescribeEntityAggregatesOutcome HealthClient::DescribeEntityAggregates(const DescribeEntityAggregatesRequest& request) const
@@ -241,18 +224,12 @@ DescribeEntityAggregatesOutcome HealthClient::DescribeEntityAggregates(const Des
 
 DescribeEntityAggregatesOutcomeCallable HealthClient::DescribeEntityAggregatesCallable(const DescribeEntityAggregatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEntityAggregatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEntityAggregates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEntityAggregates, request, m_executor.get());
 }
 
 void HealthClient::DescribeEntityAggregatesAsync(const DescribeEntityAggregatesRequest& request, const DescribeEntityAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEntityAggregates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEntityAggregates, request, handler, context, m_executor.get());
 }
 
 DescribeEventAggregatesOutcome HealthClient::DescribeEventAggregates(const DescribeEventAggregatesRequest& request) const
@@ -265,18 +242,12 @@ DescribeEventAggregatesOutcome HealthClient::DescribeEventAggregates(const Descr
 
 DescribeEventAggregatesOutcomeCallable HealthClient::DescribeEventAggregatesCallable(const DescribeEventAggregatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEventAggregatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventAggregates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEventAggregates, request, m_executor.get());
 }
 
 void HealthClient::DescribeEventAggregatesAsync(const DescribeEventAggregatesRequest& request, const DescribeEventAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEventAggregates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEventAggregates, request, handler, context, m_executor.get());
 }
 
 DescribeEventDetailsOutcome HealthClient::DescribeEventDetails(const DescribeEventDetailsRequest& request) const
@@ -289,18 +260,12 @@ DescribeEventDetailsOutcome HealthClient::DescribeEventDetails(const DescribeEve
 
 DescribeEventDetailsOutcomeCallable HealthClient::DescribeEventDetailsCallable(const DescribeEventDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEventDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventDetails(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEventDetails, request, m_executor.get());
 }
 
 void HealthClient::DescribeEventDetailsAsync(const DescribeEventDetailsRequest& request, const DescribeEventDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEventDetails(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEventDetails, request, handler, context, m_executor.get());
 }
 
 DescribeEventDetailsForOrganizationOutcome HealthClient::DescribeEventDetailsForOrganization(const DescribeEventDetailsForOrganizationRequest& request) const
@@ -313,18 +278,12 @@ DescribeEventDetailsForOrganizationOutcome HealthClient::DescribeEventDetailsFor
 
 DescribeEventDetailsForOrganizationOutcomeCallable HealthClient::DescribeEventDetailsForOrganizationCallable(const DescribeEventDetailsForOrganizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEventDetailsForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventDetailsForOrganization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEventDetailsForOrganization, request, m_executor.get());
 }
 
 void HealthClient::DescribeEventDetailsForOrganizationAsync(const DescribeEventDetailsForOrganizationRequest& request, const DescribeEventDetailsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEventDetailsForOrganization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEventDetailsForOrganization, request, handler, context, m_executor.get());
 }
 
 DescribeEventTypesOutcome HealthClient::DescribeEventTypes(const DescribeEventTypesRequest& request) const
@@ -337,18 +296,12 @@ DescribeEventTypesOutcome HealthClient::DescribeEventTypes(const DescribeEventTy
 
 DescribeEventTypesOutcomeCallable HealthClient::DescribeEventTypesCallable(const DescribeEventTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEventTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEventTypes, request, m_executor.get());
 }
 
 void HealthClient::DescribeEventTypesAsync(const DescribeEventTypesRequest& request, const DescribeEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEventTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEventTypes, request, handler, context, m_executor.get());
 }
 
 DescribeEventsOutcome HealthClient::DescribeEvents(const DescribeEventsRequest& request) const
@@ -361,18 +314,12 @@ DescribeEventsOutcome HealthClient::DescribeEvents(const DescribeEventsRequest& 
 
 DescribeEventsOutcomeCallable HealthClient::DescribeEventsCallable(const DescribeEventsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEvents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEvents, request, m_executor.get());
 }
 
 void HealthClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEvents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEvents, request, handler, context, m_executor.get());
 }
 
 DescribeEventsForOrganizationOutcome HealthClient::DescribeEventsForOrganization(const DescribeEventsForOrganizationRequest& request) const
@@ -385,18 +332,12 @@ DescribeEventsForOrganizationOutcome HealthClient::DescribeEventsForOrganization
 
 DescribeEventsForOrganizationOutcomeCallable HealthClient::DescribeEventsForOrganizationCallable(const DescribeEventsForOrganizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEventsForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventsForOrganization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEventsForOrganization, request, m_executor.get());
 }
 
 void HealthClient::DescribeEventsForOrganizationAsync(const DescribeEventsForOrganizationRequest& request, const DescribeEventsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEventsForOrganization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEventsForOrganization, request, handler, context, m_executor.get());
 }
 
 DescribeHealthServiceStatusForOrganizationOutcome HealthClient::DescribeHealthServiceStatusForOrganization() const

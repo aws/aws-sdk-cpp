@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -214,18 +215,12 @@ AcceptEulasOutcome NimbleStudioClient::AcceptEulas(const AcceptEulasRequest& req
 
 AcceptEulasOutcomeCallable NimbleStudioClient::AcceptEulasCallable(const AcceptEulasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcceptEulasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptEulas(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AcceptEulas, request, m_executor.get());
 }
 
 void NimbleStudioClient::AcceptEulasAsync(const AcceptEulasRequest& request, const AcceptEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AcceptEulas(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AcceptEulas, request, handler, context, m_executor.get());
 }
 
 CreateLaunchProfileOutcome NimbleStudioClient::CreateLaunchProfile(const CreateLaunchProfileRequest& request) const
@@ -246,18 +241,12 @@ CreateLaunchProfileOutcome NimbleStudioClient::CreateLaunchProfile(const CreateL
 
 CreateLaunchProfileOutcomeCallable NimbleStudioClient::CreateLaunchProfileCallable(const CreateLaunchProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLaunchProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLaunchProfile, request, m_executor.get());
 }
 
 void NimbleStudioClient::CreateLaunchProfileAsync(const CreateLaunchProfileRequest& request, const CreateLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLaunchProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLaunchProfile, request, handler, context, m_executor.get());
 }
 
 CreateStreamingImageOutcome NimbleStudioClient::CreateStreamingImage(const CreateStreamingImageRequest& request) const
@@ -278,18 +267,12 @@ CreateStreamingImageOutcome NimbleStudioClient::CreateStreamingImage(const Creat
 
 CreateStreamingImageOutcomeCallable NimbleStudioClient::CreateStreamingImageCallable(const CreateStreamingImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStreamingImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateStreamingImage, request, m_executor.get());
 }
 
 void NimbleStudioClient::CreateStreamingImageAsync(const CreateStreamingImageRequest& request, const CreateStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateStreamingImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateStreamingImage, request, handler, context, m_executor.get());
 }
 
 CreateStreamingSessionOutcome NimbleStudioClient::CreateStreamingSession(const CreateStreamingSessionRequest& request) const
@@ -310,18 +293,12 @@ CreateStreamingSessionOutcome NimbleStudioClient::CreateStreamingSession(const C
 
 CreateStreamingSessionOutcomeCallable NimbleStudioClient::CreateStreamingSessionCallable(const CreateStreamingSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStreamingSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateStreamingSession, request, m_executor.get());
 }
 
 void NimbleStudioClient::CreateStreamingSessionAsync(const CreateStreamingSessionRequest& request, const CreateStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateStreamingSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateStreamingSession, request, handler, context, m_executor.get());
 }
 
 CreateStreamingSessionStreamOutcome NimbleStudioClient::CreateStreamingSessionStream(const CreateStreamingSessionStreamRequest& request) const
@@ -349,18 +326,12 @@ CreateStreamingSessionStreamOutcome NimbleStudioClient::CreateStreamingSessionSt
 
 CreateStreamingSessionStreamOutcomeCallable NimbleStudioClient::CreateStreamingSessionStreamCallable(const CreateStreamingSessionStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingSessionStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStreamingSessionStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateStreamingSessionStream, request, m_executor.get());
 }
 
 void NimbleStudioClient::CreateStreamingSessionStreamAsync(const CreateStreamingSessionStreamRequest& request, const CreateStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateStreamingSessionStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateStreamingSessionStream, request, handler, context, m_executor.get());
 }
 
 CreateStudioOutcome NimbleStudioClient::CreateStudio(const CreateStudioRequest& request) const
@@ -374,18 +345,12 @@ CreateStudioOutcome NimbleStudioClient::CreateStudio(const CreateStudioRequest& 
 
 CreateStudioOutcomeCallable NimbleStudioClient::CreateStudioCallable(const CreateStudioRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStudio(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateStudio, request, m_executor.get());
 }
 
 void NimbleStudioClient::CreateStudioAsync(const CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateStudio(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateStudio, request, handler, context, m_executor.get());
 }
 
 CreateStudioComponentOutcome NimbleStudioClient::CreateStudioComponent(const CreateStudioComponentRequest& request) const
@@ -406,18 +371,12 @@ CreateStudioComponentOutcome NimbleStudioClient::CreateStudioComponent(const Cre
 
 CreateStudioComponentOutcomeCallable NimbleStudioClient::CreateStudioComponentCallable(const CreateStudioComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStudioComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStudioComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateStudioComponent, request, m_executor.get());
 }
 
 void NimbleStudioClient::CreateStudioComponentAsync(const CreateStudioComponentRequest& request, const CreateStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateStudioComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateStudioComponent, request, handler, context, m_executor.get());
 }
 
 DeleteLaunchProfileOutcome NimbleStudioClient::DeleteLaunchProfile(const DeleteLaunchProfileRequest& request) const
@@ -444,18 +403,12 @@ DeleteLaunchProfileOutcome NimbleStudioClient::DeleteLaunchProfile(const DeleteL
 
 DeleteLaunchProfileOutcomeCallable NimbleStudioClient::DeleteLaunchProfileCallable(const DeleteLaunchProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLaunchProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLaunchProfile, request, m_executor.get());
 }
 
 void NimbleStudioClient::DeleteLaunchProfileAsync(const DeleteLaunchProfileRequest& request, const DeleteLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLaunchProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLaunchProfile, request, handler, context, m_executor.get());
 }
 
 DeleteLaunchProfileMemberOutcome NimbleStudioClient::DeleteLaunchProfileMember(const DeleteLaunchProfileMemberRequest& request) const
@@ -489,18 +442,12 @@ DeleteLaunchProfileMemberOutcome NimbleStudioClient::DeleteLaunchProfileMember(c
 
 DeleteLaunchProfileMemberOutcomeCallable NimbleStudioClient::DeleteLaunchProfileMemberCallable(const DeleteLaunchProfileMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLaunchProfileMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLaunchProfileMember(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLaunchProfileMember, request, m_executor.get());
 }
 
 void NimbleStudioClient::DeleteLaunchProfileMemberAsync(const DeleteLaunchProfileMemberRequest& request, const DeleteLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLaunchProfileMember(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLaunchProfileMember, request, handler, context, m_executor.get());
 }
 
 DeleteStreamingImageOutcome NimbleStudioClient::DeleteStreamingImage(const DeleteStreamingImageRequest& request) const
@@ -527,18 +474,12 @@ DeleteStreamingImageOutcome NimbleStudioClient::DeleteStreamingImage(const Delet
 
 DeleteStreamingImageOutcomeCallable NimbleStudioClient::DeleteStreamingImageCallable(const DeleteStreamingImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStreamingImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStreamingImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteStreamingImage, request, m_executor.get());
 }
 
 void NimbleStudioClient::DeleteStreamingImageAsync(const DeleteStreamingImageRequest& request, const DeleteStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteStreamingImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteStreamingImage, request, handler, context, m_executor.get());
 }
 
 DeleteStreamingSessionOutcome NimbleStudioClient::DeleteStreamingSession(const DeleteStreamingSessionRequest& request) const
@@ -565,18 +506,12 @@ DeleteStreamingSessionOutcome NimbleStudioClient::DeleteStreamingSession(const D
 
 DeleteStreamingSessionOutcomeCallable NimbleStudioClient::DeleteStreamingSessionCallable(const DeleteStreamingSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStreamingSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteStreamingSession, request, m_executor.get());
 }
 
 void NimbleStudioClient::DeleteStreamingSessionAsync(const DeleteStreamingSessionRequest& request, const DeleteStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteStreamingSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteStreamingSession, request, handler, context, m_executor.get());
 }
 
 DeleteStudioOutcome NimbleStudioClient::DeleteStudio(const DeleteStudioRequest& request) const
@@ -596,18 +531,12 @@ DeleteStudioOutcome NimbleStudioClient::DeleteStudio(const DeleteStudioRequest& 
 
 DeleteStudioOutcomeCallable NimbleStudioClient::DeleteStudioCallable(const DeleteStudioRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStudio(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteStudio, request, m_executor.get());
 }
 
 void NimbleStudioClient::DeleteStudioAsync(const DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteStudio(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteStudio, request, handler, context, m_executor.get());
 }
 
 DeleteStudioComponentOutcome NimbleStudioClient::DeleteStudioComponent(const DeleteStudioComponentRequest& request) const
@@ -634,18 +563,12 @@ DeleteStudioComponentOutcome NimbleStudioClient::DeleteStudioComponent(const Del
 
 DeleteStudioComponentOutcomeCallable NimbleStudioClient::DeleteStudioComponentCallable(const DeleteStudioComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStudioComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteStudioComponent, request, m_executor.get());
 }
 
 void NimbleStudioClient::DeleteStudioComponentAsync(const DeleteStudioComponentRequest& request, const DeleteStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteStudioComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteStudioComponent, request, handler, context, m_executor.get());
 }
 
 DeleteStudioMemberOutcome NimbleStudioClient::DeleteStudioMember(const DeleteStudioMemberRequest& request) const
@@ -672,18 +595,12 @@ DeleteStudioMemberOutcome NimbleStudioClient::DeleteStudioMember(const DeleteStu
 
 DeleteStudioMemberOutcomeCallable NimbleStudioClient::DeleteStudioMemberCallable(const DeleteStudioMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStudioMember(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteStudioMember, request, m_executor.get());
 }
 
 void NimbleStudioClient::DeleteStudioMemberAsync(const DeleteStudioMemberRequest& request, const DeleteStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteStudioMember(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteStudioMember, request, handler, context, m_executor.get());
 }
 
 GetEulaOutcome NimbleStudioClient::GetEula(const GetEulaRequest& request) const
@@ -703,18 +620,12 @@ GetEulaOutcome NimbleStudioClient::GetEula(const GetEulaRequest& request) const
 
 GetEulaOutcomeCallable NimbleStudioClient::GetEulaCallable(const GetEulaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEulaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEula(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEula, request, m_executor.get());
 }
 
 void NimbleStudioClient::GetEulaAsync(const GetEulaRequest& request, const GetEulaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEula(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEula, request, handler, context, m_executor.get());
 }
 
 GetLaunchProfileOutcome NimbleStudioClient::GetLaunchProfile(const GetLaunchProfileRequest& request) const
@@ -741,18 +652,12 @@ GetLaunchProfileOutcome NimbleStudioClient::GetLaunchProfile(const GetLaunchProf
 
 GetLaunchProfileOutcomeCallable NimbleStudioClient::GetLaunchProfileCallable(const GetLaunchProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLaunchProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLaunchProfile, request, m_executor.get());
 }
 
 void NimbleStudioClient::GetLaunchProfileAsync(const GetLaunchProfileRequest& request, const GetLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLaunchProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLaunchProfile, request, handler, context, m_executor.get());
 }
 
 GetLaunchProfileDetailsOutcome NimbleStudioClient::GetLaunchProfileDetails(const GetLaunchProfileDetailsRequest& request) const
@@ -780,18 +685,12 @@ GetLaunchProfileDetailsOutcome NimbleStudioClient::GetLaunchProfileDetails(const
 
 GetLaunchProfileDetailsOutcomeCallable NimbleStudioClient::GetLaunchProfileDetailsCallable(const GetLaunchProfileDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLaunchProfileDetails(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLaunchProfileDetails, request, m_executor.get());
 }
 
 void NimbleStudioClient::GetLaunchProfileDetailsAsync(const GetLaunchProfileDetailsRequest& request, const GetLaunchProfileDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLaunchProfileDetails(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLaunchProfileDetails, request, handler, context, m_executor.get());
 }
 
 GetLaunchProfileInitializationOutcome NimbleStudioClient::GetLaunchProfileInitialization(const GetLaunchProfileInitializationRequest& request) const
@@ -834,18 +733,12 @@ GetLaunchProfileInitializationOutcome NimbleStudioClient::GetLaunchProfileInitia
 
 GetLaunchProfileInitializationOutcomeCallable NimbleStudioClient::GetLaunchProfileInitializationCallable(const GetLaunchProfileInitializationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileInitializationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLaunchProfileInitialization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLaunchProfileInitialization, request, m_executor.get());
 }
 
 void NimbleStudioClient::GetLaunchProfileInitializationAsync(const GetLaunchProfileInitializationRequest& request, const GetLaunchProfileInitializationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLaunchProfileInitialization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLaunchProfileInitialization, request, handler, context, m_executor.get());
 }
 
 GetLaunchProfileMemberOutcome NimbleStudioClient::GetLaunchProfileMember(const GetLaunchProfileMemberRequest& request) const
@@ -879,18 +772,12 @@ GetLaunchProfileMemberOutcome NimbleStudioClient::GetLaunchProfileMember(const G
 
 GetLaunchProfileMemberOutcomeCallable NimbleStudioClient::GetLaunchProfileMemberCallable(const GetLaunchProfileMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLaunchProfileMember(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLaunchProfileMember, request, m_executor.get());
 }
 
 void NimbleStudioClient::GetLaunchProfileMemberAsync(const GetLaunchProfileMemberRequest& request, const GetLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLaunchProfileMember(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLaunchProfileMember, request, handler, context, m_executor.get());
 }
 
 GetStreamingImageOutcome NimbleStudioClient::GetStreamingImage(const GetStreamingImageRequest& request) const
@@ -917,18 +804,12 @@ GetStreamingImageOutcome NimbleStudioClient::GetStreamingImage(const GetStreamin
 
 GetStreamingImageOutcomeCallable NimbleStudioClient::GetStreamingImageCallable(const GetStreamingImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStreamingImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamingImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetStreamingImage, request, m_executor.get());
 }
 
 void NimbleStudioClient::GetStreamingImageAsync(const GetStreamingImageRequest& request, const GetStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetStreamingImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetStreamingImage, request, handler, context, m_executor.get());
 }
 
 GetStreamingSessionOutcome NimbleStudioClient::GetStreamingSession(const GetStreamingSessionRequest& request) const
@@ -955,18 +836,12 @@ GetStreamingSessionOutcome NimbleStudioClient::GetStreamingSession(const GetStre
 
 GetStreamingSessionOutcomeCallable NimbleStudioClient::GetStreamingSessionCallable(const GetStreamingSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamingSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetStreamingSession, request, m_executor.get());
 }
 
 void NimbleStudioClient::GetStreamingSessionAsync(const GetStreamingSessionRequest& request, const GetStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetStreamingSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetStreamingSession, request, handler, context, m_executor.get());
 }
 
 GetStreamingSessionStreamOutcome NimbleStudioClient::GetStreamingSessionStream(const GetStreamingSessionStreamRequest& request) const
@@ -1000,18 +875,12 @@ GetStreamingSessionStreamOutcome NimbleStudioClient::GetStreamingSessionStream(c
 
 GetStreamingSessionStreamOutcomeCallable NimbleStudioClient::GetStreamingSessionStreamCallable(const GetStreamingSessionStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStreamingSessionStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamingSessionStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetStreamingSessionStream, request, m_executor.get());
 }
 
 void NimbleStudioClient::GetStreamingSessionStreamAsync(const GetStreamingSessionStreamRequest& request, const GetStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetStreamingSessionStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetStreamingSessionStream, request, handler, context, m_executor.get());
 }
 
 GetStudioOutcome NimbleStudioClient::GetStudio(const GetStudioRequest& request) const
@@ -1031,18 +900,12 @@ GetStudioOutcome NimbleStudioClient::GetStudio(const GetStudioRequest& request) 
 
 GetStudioOutcomeCallable NimbleStudioClient::GetStudioCallable(const GetStudioRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStudio(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetStudio, request, m_executor.get());
 }
 
 void NimbleStudioClient::GetStudioAsync(const GetStudioRequest& request, const GetStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetStudio(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetStudio, request, handler, context, m_executor.get());
 }
 
 GetStudioComponentOutcome NimbleStudioClient::GetStudioComponent(const GetStudioComponentRequest& request) const
@@ -1069,18 +932,12 @@ GetStudioComponentOutcome NimbleStudioClient::GetStudioComponent(const GetStudio
 
 GetStudioComponentOutcomeCallable NimbleStudioClient::GetStudioComponentCallable(const GetStudioComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStudioComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStudioComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetStudioComponent, request, m_executor.get());
 }
 
 void NimbleStudioClient::GetStudioComponentAsync(const GetStudioComponentRequest& request, const GetStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetStudioComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetStudioComponent, request, handler, context, m_executor.get());
 }
 
 GetStudioMemberOutcome NimbleStudioClient::GetStudioMember(const GetStudioMemberRequest& request) const
@@ -1107,18 +964,12 @@ GetStudioMemberOutcome NimbleStudioClient::GetStudioMember(const GetStudioMember
 
 GetStudioMemberOutcomeCallable NimbleStudioClient::GetStudioMemberCallable(const GetStudioMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStudioMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStudioMember(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetStudioMember, request, m_executor.get());
 }
 
 void NimbleStudioClient::GetStudioMemberAsync(const GetStudioMemberRequest& request, const GetStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetStudioMember(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetStudioMember, request, handler, context, m_executor.get());
 }
 
 ListEulaAcceptancesOutcome NimbleStudioClient::ListEulaAcceptances(const ListEulaAcceptancesRequest& request) const
@@ -1139,18 +990,12 @@ ListEulaAcceptancesOutcome NimbleStudioClient::ListEulaAcceptances(const ListEul
 
 ListEulaAcceptancesOutcomeCallable NimbleStudioClient::ListEulaAcceptancesCallable(const ListEulaAcceptancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEulaAcceptancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEulaAcceptances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEulaAcceptances, request, m_executor.get());
 }
 
 void NimbleStudioClient::ListEulaAcceptancesAsync(const ListEulaAcceptancesRequest& request, const ListEulaAcceptancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEulaAcceptances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEulaAcceptances, request, handler, context, m_executor.get());
 }
 
 ListEulasOutcome NimbleStudioClient::ListEulas(const ListEulasRequest& request) const
@@ -1164,18 +1009,12 @@ ListEulasOutcome NimbleStudioClient::ListEulas(const ListEulasRequest& request) 
 
 ListEulasOutcomeCallable NimbleStudioClient::ListEulasCallable(const ListEulasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEulasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEulas(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEulas, request, m_executor.get());
 }
 
 void NimbleStudioClient::ListEulasAsync(const ListEulasRequest& request, const ListEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEulas(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEulas, request, handler, context, m_executor.get());
 }
 
 ListLaunchProfileMembersOutcome NimbleStudioClient::ListLaunchProfileMembers(const ListLaunchProfileMembersRequest& request) const
@@ -1203,18 +1042,12 @@ ListLaunchProfileMembersOutcome NimbleStudioClient::ListLaunchProfileMembers(con
 
 ListLaunchProfileMembersOutcomeCallable NimbleStudioClient::ListLaunchProfileMembersCallable(const ListLaunchProfileMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLaunchProfileMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLaunchProfileMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLaunchProfileMembers, request, m_executor.get());
 }
 
 void NimbleStudioClient::ListLaunchProfileMembersAsync(const ListLaunchProfileMembersRequest& request, const ListLaunchProfileMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLaunchProfileMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLaunchProfileMembers, request, handler, context, m_executor.get());
 }
 
 ListLaunchProfilesOutcome NimbleStudioClient::ListLaunchProfiles(const ListLaunchProfilesRequest& request) const
@@ -1235,18 +1068,12 @@ ListLaunchProfilesOutcome NimbleStudioClient::ListLaunchProfiles(const ListLaunc
 
 ListLaunchProfilesOutcomeCallable NimbleStudioClient::ListLaunchProfilesCallable(const ListLaunchProfilesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLaunchProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLaunchProfiles(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLaunchProfiles, request, m_executor.get());
 }
 
 void NimbleStudioClient::ListLaunchProfilesAsync(const ListLaunchProfilesRequest& request, const ListLaunchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLaunchProfiles(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLaunchProfiles, request, handler, context, m_executor.get());
 }
 
 ListStreamingImagesOutcome NimbleStudioClient::ListStreamingImages(const ListStreamingImagesRequest& request) const
@@ -1267,18 +1094,12 @@ ListStreamingImagesOutcome NimbleStudioClient::ListStreamingImages(const ListStr
 
 ListStreamingImagesOutcomeCallable NimbleStudioClient::ListStreamingImagesCallable(const ListStreamingImagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStreamingImagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreamingImages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStreamingImages, request, m_executor.get());
 }
 
 void NimbleStudioClient::ListStreamingImagesAsync(const ListStreamingImagesRequest& request, const ListStreamingImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStreamingImages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStreamingImages, request, handler, context, m_executor.get());
 }
 
 ListStreamingSessionsOutcome NimbleStudioClient::ListStreamingSessions(const ListStreamingSessionsRequest& request) const
@@ -1299,18 +1120,12 @@ ListStreamingSessionsOutcome NimbleStudioClient::ListStreamingSessions(const Lis
 
 ListStreamingSessionsOutcomeCallable NimbleStudioClient::ListStreamingSessionsCallable(const ListStreamingSessionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStreamingSessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreamingSessions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStreamingSessions, request, m_executor.get());
 }
 
 void NimbleStudioClient::ListStreamingSessionsAsync(const ListStreamingSessionsRequest& request, const ListStreamingSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStreamingSessions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStreamingSessions, request, handler, context, m_executor.get());
 }
 
 ListStudioComponentsOutcome NimbleStudioClient::ListStudioComponents(const ListStudioComponentsRequest& request) const
@@ -1331,18 +1146,12 @@ ListStudioComponentsOutcome NimbleStudioClient::ListStudioComponents(const ListS
 
 ListStudioComponentsOutcomeCallable NimbleStudioClient::ListStudioComponentsCallable(const ListStudioComponentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStudioComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStudioComponents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStudioComponents, request, m_executor.get());
 }
 
 void NimbleStudioClient::ListStudioComponentsAsync(const ListStudioComponentsRequest& request, const ListStudioComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStudioComponents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStudioComponents, request, handler, context, m_executor.get());
 }
 
 ListStudioMembersOutcome NimbleStudioClient::ListStudioMembers(const ListStudioMembersRequest& request) const
@@ -1363,18 +1172,12 @@ ListStudioMembersOutcome NimbleStudioClient::ListStudioMembers(const ListStudioM
 
 ListStudioMembersOutcomeCallable NimbleStudioClient::ListStudioMembersCallable(const ListStudioMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStudioMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStudioMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStudioMembers, request, m_executor.get());
 }
 
 void NimbleStudioClient::ListStudioMembersAsync(const ListStudioMembersRequest& request, const ListStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStudioMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStudioMembers, request, handler, context, m_executor.get());
 }
 
 ListStudiosOutcome NimbleStudioClient::ListStudios(const ListStudiosRequest& request) const
@@ -1388,18 +1191,12 @@ ListStudiosOutcome NimbleStudioClient::ListStudios(const ListStudiosRequest& req
 
 ListStudiosOutcomeCallable NimbleStudioClient::ListStudiosCallable(const ListStudiosRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStudiosOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStudios(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStudios, request, m_executor.get());
 }
 
 void NimbleStudioClient::ListStudiosAsync(const ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStudios(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStudios, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome NimbleStudioClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1419,18 +1216,12 @@ ListTagsForResourceOutcome NimbleStudioClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable NimbleStudioClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void NimbleStudioClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutLaunchProfileMembersOutcome NimbleStudioClient::PutLaunchProfileMembers(const PutLaunchProfileMembersRequest& request) const
@@ -1458,18 +1249,12 @@ PutLaunchProfileMembersOutcome NimbleStudioClient::PutLaunchProfileMembers(const
 
 PutLaunchProfileMembersOutcomeCallable NimbleStudioClient::PutLaunchProfileMembersCallable(const PutLaunchProfileMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutLaunchProfileMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutLaunchProfileMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutLaunchProfileMembers, request, m_executor.get());
 }
 
 void NimbleStudioClient::PutLaunchProfileMembersAsync(const PutLaunchProfileMembersRequest& request, const PutLaunchProfileMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutLaunchProfileMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutLaunchProfileMembers, request, handler, context, m_executor.get());
 }
 
 PutStudioMembersOutcome NimbleStudioClient::PutStudioMembers(const PutStudioMembersRequest& request) const
@@ -1490,18 +1275,12 @@ PutStudioMembersOutcome NimbleStudioClient::PutStudioMembers(const PutStudioMemb
 
 PutStudioMembersOutcomeCallable NimbleStudioClient::PutStudioMembersCallable(const PutStudioMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutStudioMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutStudioMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutStudioMembers, request, m_executor.get());
 }
 
 void NimbleStudioClient::PutStudioMembersAsync(const PutStudioMembersRequest& request, const PutStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutStudioMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutStudioMembers, request, handler, context, m_executor.get());
 }
 
 StartStreamingSessionOutcome NimbleStudioClient::StartStreamingSession(const StartStreamingSessionRequest& request) const
@@ -1529,18 +1308,12 @@ StartStreamingSessionOutcome NimbleStudioClient::StartStreamingSession(const Sta
 
 StartStreamingSessionOutcomeCallable NimbleStudioClient::StartStreamingSessionCallable(const StartStreamingSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartStreamingSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartStreamingSession, request, m_executor.get());
 }
 
 void NimbleStudioClient::StartStreamingSessionAsync(const StartStreamingSessionRequest& request, const StartStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartStreamingSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartStreamingSession, request, handler, context, m_executor.get());
 }
 
 StartStudioSSOConfigurationRepairOutcome NimbleStudioClient::StartStudioSSOConfigurationRepair(const StartStudioSSOConfigurationRepairRequest& request) const
@@ -1561,18 +1334,12 @@ StartStudioSSOConfigurationRepairOutcome NimbleStudioClient::StartStudioSSOConfi
 
 StartStudioSSOConfigurationRepairOutcomeCallable NimbleStudioClient::StartStudioSSOConfigurationRepairCallable(const StartStudioSSOConfigurationRepairRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartStudioSSOConfigurationRepairOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartStudioSSOConfigurationRepair(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartStudioSSOConfigurationRepair, request, m_executor.get());
 }
 
 void NimbleStudioClient::StartStudioSSOConfigurationRepairAsync(const StartStudioSSOConfigurationRepairRequest& request, const StartStudioSSOConfigurationRepairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartStudioSSOConfigurationRepair(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartStudioSSOConfigurationRepair, request, handler, context, m_executor.get());
 }
 
 StopStreamingSessionOutcome NimbleStudioClient::StopStreamingSession(const StopStreamingSessionRequest& request) const
@@ -1600,18 +1367,12 @@ StopStreamingSessionOutcome NimbleStudioClient::StopStreamingSession(const StopS
 
 StopStreamingSessionOutcomeCallable NimbleStudioClient::StopStreamingSessionCallable(const StopStreamingSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopStreamingSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopStreamingSession, request, m_executor.get());
 }
 
 void NimbleStudioClient::StopStreamingSessionAsync(const StopStreamingSessionRequest& request, const StopStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopStreamingSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopStreamingSession, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome NimbleStudioClient::TagResource(const TagResourceRequest& request) const
@@ -1631,18 +1392,12 @@ TagResourceOutcome NimbleStudioClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable NimbleStudioClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void NimbleStudioClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome NimbleStudioClient::UntagResource(const UntagResourceRequest& request) const
@@ -1667,18 +1422,12 @@ UntagResourceOutcome NimbleStudioClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable NimbleStudioClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void NimbleStudioClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateLaunchProfileOutcome NimbleStudioClient::UpdateLaunchProfile(const UpdateLaunchProfileRequest& request) const
@@ -1705,18 +1454,12 @@ UpdateLaunchProfileOutcome NimbleStudioClient::UpdateLaunchProfile(const UpdateL
 
 UpdateLaunchProfileOutcomeCallable NimbleStudioClient::UpdateLaunchProfileCallable(const UpdateLaunchProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLaunchProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLaunchProfile, request, m_executor.get());
 }
 
 void NimbleStudioClient::UpdateLaunchProfileAsync(const UpdateLaunchProfileRequest& request, const UpdateLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLaunchProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLaunchProfile, request, handler, context, m_executor.get());
 }
 
 UpdateLaunchProfileMemberOutcome NimbleStudioClient::UpdateLaunchProfileMember(const UpdateLaunchProfileMemberRequest& request) const
@@ -1750,18 +1493,12 @@ UpdateLaunchProfileMemberOutcome NimbleStudioClient::UpdateLaunchProfileMember(c
 
 UpdateLaunchProfileMemberOutcomeCallable NimbleStudioClient::UpdateLaunchProfileMemberCallable(const UpdateLaunchProfileMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchProfileMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLaunchProfileMember(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLaunchProfileMember, request, m_executor.get());
 }
 
 void NimbleStudioClient::UpdateLaunchProfileMemberAsync(const UpdateLaunchProfileMemberRequest& request, const UpdateLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLaunchProfileMember(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLaunchProfileMember, request, handler, context, m_executor.get());
 }
 
 UpdateStreamingImageOutcome NimbleStudioClient::UpdateStreamingImage(const UpdateStreamingImageRequest& request) const
@@ -1788,18 +1525,12 @@ UpdateStreamingImageOutcome NimbleStudioClient::UpdateStreamingImage(const Updat
 
 UpdateStreamingImageOutcomeCallable NimbleStudioClient::UpdateStreamingImageCallable(const UpdateStreamingImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStreamingImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStreamingImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateStreamingImage, request, m_executor.get());
 }
 
 void NimbleStudioClient::UpdateStreamingImageAsync(const UpdateStreamingImageRequest& request, const UpdateStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateStreamingImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateStreamingImage, request, handler, context, m_executor.get());
 }
 
 UpdateStudioOutcome NimbleStudioClient::UpdateStudio(const UpdateStudioRequest& request) const
@@ -1819,18 +1550,12 @@ UpdateStudioOutcome NimbleStudioClient::UpdateStudio(const UpdateStudioRequest& 
 
 UpdateStudioOutcomeCallable NimbleStudioClient::UpdateStudioCallable(const UpdateStudioRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStudio(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateStudio, request, m_executor.get());
 }
 
 void NimbleStudioClient::UpdateStudioAsync(const UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateStudio(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateStudio, request, handler, context, m_executor.get());
 }
 
 UpdateStudioComponentOutcome NimbleStudioClient::UpdateStudioComponent(const UpdateStudioComponentRequest& request) const
@@ -1857,17 +1582,11 @@ UpdateStudioComponentOutcome NimbleStudioClient::UpdateStudioComponent(const Upd
 
 UpdateStudioComponentOutcomeCallable NimbleStudioClient::UpdateStudioComponentCallable(const UpdateStudioComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStudioComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStudioComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateStudioComponent, request, m_executor.get());
 }
 
 void NimbleStudioClient::UpdateStudioComponentAsync(const UpdateStudioComponentRequest& request, const UpdateStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateStudioComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateStudioComponent, request, handler, context, m_executor.get());
 }
 

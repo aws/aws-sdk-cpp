@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -214,18 +215,12 @@ CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& 
 
 CancelQueryOutcomeCallable TimestreamQueryClient::CancelQueryCallable(const CancelQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelQuery(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelQuery, request, m_executor.get());
 }
 
 void TimestreamQueryClient::CancelQueryAsync(const CancelQueryRequest& request, const CancelQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelQuery(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelQuery, request, handler, context, m_executor.get());
 }
 
 CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const CreateScheduledQueryRequest& request) const
@@ -279,18 +274,12 @@ CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const Cr
 
 CreateScheduledQueryOutcomeCallable TimestreamQueryClient::CreateScheduledQueryCallable(const CreateScheduledQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateScheduledQuery(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateScheduledQuery, request, m_executor.get());
 }
 
 void TimestreamQueryClient::CreateScheduledQueryAsync(const CreateScheduledQueryRequest& request, const CreateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateScheduledQuery(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateScheduledQuery, request, handler, context, m_executor.get());
 }
 
 DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const DeleteScheduledQueryRequest& request) const
@@ -344,18 +333,12 @@ DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const De
 
 DeleteScheduledQueryOutcomeCallable TimestreamQueryClient::DeleteScheduledQueryCallable(const DeleteScheduledQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteScheduledQuery(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteScheduledQuery, request, m_executor.get());
 }
 
 void TimestreamQueryClient::DeleteScheduledQueryAsync(const DeleteScheduledQueryRequest& request, const DeleteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteScheduledQuery(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteScheduledQuery, request, handler, context, m_executor.get());
 }
 
 DescribeEndpointsOutcome TimestreamQueryClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
@@ -368,18 +351,12 @@ DescribeEndpointsOutcome TimestreamQueryClient::DescribeEndpoints(const Describe
 
 DescribeEndpointsOutcomeCallable TimestreamQueryClient::DescribeEndpointsCallable(const DescribeEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEndpoints, request, m_executor.get());
 }
 
 void TimestreamQueryClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEndpoints, request, handler, context, m_executor.get());
 }
 
 DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(const DescribeScheduledQueryRequest& request) const
@@ -433,18 +410,12 @@ DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(cons
 
 DescribeScheduledQueryOutcomeCallable TimestreamQueryClient::DescribeScheduledQueryCallable(const DescribeScheduledQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeScheduledQuery(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeScheduledQuery, request, m_executor.get());
 }
 
 void TimestreamQueryClient::DescribeScheduledQueryAsync(const DescribeScheduledQueryRequest& request, const DescribeScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeScheduledQuery(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeScheduledQuery, request, handler, context, m_executor.get());
 }
 
 ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const ExecuteScheduledQueryRequest& request) const
@@ -498,18 +469,12 @@ ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const 
 
 ExecuteScheduledQueryOutcomeCallable TimestreamQueryClient::ExecuteScheduledQueryCallable(const ExecuteScheduledQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExecuteScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteScheduledQuery(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExecuteScheduledQuery, request, m_executor.get());
 }
 
 void TimestreamQueryClient::ExecuteScheduledQueryAsync(const ExecuteScheduledQueryRequest& request, const ExecuteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExecuteScheduledQuery(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExecuteScheduledQuery, request, handler, context, m_executor.get());
 }
 
 ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const ListScheduledQueriesRequest& request) const
@@ -563,18 +528,12 @@ ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const Li
 
 ListScheduledQueriesOutcomeCallable TimestreamQueryClient::ListScheduledQueriesCallable(const ListScheduledQueriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListScheduledQueriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListScheduledQueries(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListScheduledQueries, request, m_executor.get());
 }
 
 void TimestreamQueryClient::ListScheduledQueriesAsync(const ListScheduledQueriesRequest& request, const ListScheduledQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListScheduledQueries(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListScheduledQueries, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -628,18 +587,12 @@ ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const List
 
 ListTagsForResourceOutcomeCallable TimestreamQueryClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void TimestreamQueryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryRequest& request) const
@@ -693,18 +646,12 @@ PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryReques
 
 PrepareQueryOutcomeCallable TimestreamQueryClient::PrepareQueryCallable(const PrepareQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PrepareQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PrepareQuery(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PrepareQuery, request, m_executor.get());
 }
 
 void TimestreamQueryClient::PrepareQueryAsync(const PrepareQueryRequest& request, const PrepareQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PrepareQuery(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PrepareQuery, request, handler, context, m_executor.get());
 }
 
 QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
@@ -758,18 +705,12 @@ QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
 
 QueryOutcomeCallable TimestreamQueryClient::QueryCallable(const QueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Query(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(Query, request, m_executor.get());
 }
 
 void TimestreamQueryClient::QueryAsync(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, Query(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(Query, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& request) const
@@ -823,18 +764,12 @@ TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& 
 
 TagResourceOutcomeCallable TimestreamQueryClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void TimestreamQueryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceRequest& request) const
@@ -888,18 +823,12 @@ UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceReq
 
 UntagResourceOutcomeCallable TimestreamQueryClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void TimestreamQueryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateScheduledQueryOutcome TimestreamQueryClient::UpdateScheduledQuery(const UpdateScheduledQueryRequest& request) const
@@ -953,17 +882,11 @@ UpdateScheduledQueryOutcome TimestreamQueryClient::UpdateScheduledQuery(const Up
 
 UpdateScheduledQueryOutcomeCallable TimestreamQueryClient::UpdateScheduledQueryCallable(const UpdateScheduledQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateScheduledQuery(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateScheduledQuery, request, m_executor.get());
 }
 
 void TimestreamQueryClient::UpdateScheduledQueryAsync(const UpdateScheduledQueryRequest& request, const UpdateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateScheduledQuery(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateScheduledQuery, request, handler, context, m_executor.get());
 }
 

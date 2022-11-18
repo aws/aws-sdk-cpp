@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -186,18 +187,12 @@ AcceptPageOutcome SSMContactsClient::AcceptPage(const AcceptPageRequest& request
 
 AcceptPageOutcomeCallable SSMContactsClient::AcceptPageCallable(const AcceptPageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcceptPageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptPage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AcceptPage, request, m_executor.get());
 }
 
 void SSMContactsClient::AcceptPageAsync(const AcceptPageRequest& request, const AcceptPageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AcceptPage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AcceptPage, request, handler, context, m_executor.get());
 }
 
 ActivateContactChannelOutcome SSMContactsClient::ActivateContactChannel(const ActivateContactChannelRequest& request) const
@@ -210,18 +205,12 @@ ActivateContactChannelOutcome SSMContactsClient::ActivateContactChannel(const Ac
 
 ActivateContactChannelOutcomeCallable SSMContactsClient::ActivateContactChannelCallable(const ActivateContactChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ActivateContactChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ActivateContactChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ActivateContactChannel, request, m_executor.get());
 }
 
 void SSMContactsClient::ActivateContactChannelAsync(const ActivateContactChannelRequest& request, const ActivateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ActivateContactChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ActivateContactChannel, request, handler, context, m_executor.get());
 }
 
 CreateContactOutcome SSMContactsClient::CreateContact(const CreateContactRequest& request) const
@@ -234,18 +223,12 @@ CreateContactOutcome SSMContactsClient::CreateContact(const CreateContactRequest
 
 CreateContactOutcomeCallable SSMContactsClient::CreateContactCallable(const CreateContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateContact, request, m_executor.get());
 }
 
 void SSMContactsClient::CreateContactAsync(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateContact, request, handler, context, m_executor.get());
 }
 
 CreateContactChannelOutcome SSMContactsClient::CreateContactChannel(const CreateContactChannelRequest& request) const
@@ -258,18 +241,12 @@ CreateContactChannelOutcome SSMContactsClient::CreateContactChannel(const Create
 
 CreateContactChannelOutcomeCallable SSMContactsClient::CreateContactChannelCallable(const CreateContactChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateContactChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContactChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateContactChannel, request, m_executor.get());
 }
 
 void SSMContactsClient::CreateContactChannelAsync(const CreateContactChannelRequest& request, const CreateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateContactChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateContactChannel, request, handler, context, m_executor.get());
 }
 
 DeactivateContactChannelOutcome SSMContactsClient::DeactivateContactChannel(const DeactivateContactChannelRequest& request) const
@@ -282,18 +259,12 @@ DeactivateContactChannelOutcome SSMContactsClient::DeactivateContactChannel(cons
 
 DeactivateContactChannelOutcomeCallable SSMContactsClient::DeactivateContactChannelCallable(const DeactivateContactChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeactivateContactChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeactivateContactChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeactivateContactChannel, request, m_executor.get());
 }
 
 void SSMContactsClient::DeactivateContactChannelAsync(const DeactivateContactChannelRequest& request, const DeactivateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeactivateContactChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeactivateContactChannel, request, handler, context, m_executor.get());
 }
 
 DeleteContactOutcome SSMContactsClient::DeleteContact(const DeleteContactRequest& request) const
@@ -306,18 +277,12 @@ DeleteContactOutcome SSMContactsClient::DeleteContact(const DeleteContactRequest
 
 DeleteContactOutcomeCallable SSMContactsClient::DeleteContactCallable(const DeleteContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteContact, request, m_executor.get());
 }
 
 void SSMContactsClient::DeleteContactAsync(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteContact, request, handler, context, m_executor.get());
 }
 
 DeleteContactChannelOutcome SSMContactsClient::DeleteContactChannel(const DeleteContactChannelRequest& request) const
@@ -330,18 +295,12 @@ DeleteContactChannelOutcome SSMContactsClient::DeleteContactChannel(const Delete
 
 DeleteContactChannelOutcomeCallable SSMContactsClient::DeleteContactChannelCallable(const DeleteContactChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteContactChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContactChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteContactChannel, request, m_executor.get());
 }
 
 void SSMContactsClient::DeleteContactChannelAsync(const DeleteContactChannelRequest& request, const DeleteContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteContactChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteContactChannel, request, handler, context, m_executor.get());
 }
 
 DescribeEngagementOutcome SSMContactsClient::DescribeEngagement(const DescribeEngagementRequest& request) const
@@ -354,18 +313,12 @@ DescribeEngagementOutcome SSMContactsClient::DescribeEngagement(const DescribeEn
 
 DescribeEngagementOutcomeCallable SSMContactsClient::DescribeEngagementCallable(const DescribeEngagementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEngagementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEngagement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEngagement, request, m_executor.get());
 }
 
 void SSMContactsClient::DescribeEngagementAsync(const DescribeEngagementRequest& request, const DescribeEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEngagement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEngagement, request, handler, context, m_executor.get());
 }
 
 DescribePageOutcome SSMContactsClient::DescribePage(const DescribePageRequest& request) const
@@ -378,18 +331,12 @@ DescribePageOutcome SSMContactsClient::DescribePage(const DescribePageRequest& r
 
 DescribePageOutcomeCallable SSMContactsClient::DescribePageCallable(const DescribePageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribePage, request, m_executor.get());
 }
 
 void SSMContactsClient::DescribePageAsync(const DescribePageRequest& request, const DescribePageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribePage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribePage, request, handler, context, m_executor.get());
 }
 
 GetContactOutcome SSMContactsClient::GetContact(const GetContactRequest& request) const
@@ -402,18 +349,12 @@ GetContactOutcome SSMContactsClient::GetContact(const GetContactRequest& request
 
 GetContactOutcomeCallable SSMContactsClient::GetContactCallable(const GetContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetContact, request, m_executor.get());
 }
 
 void SSMContactsClient::GetContactAsync(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetContact, request, handler, context, m_executor.get());
 }
 
 GetContactChannelOutcome SSMContactsClient::GetContactChannel(const GetContactChannelRequest& request) const
@@ -426,18 +367,12 @@ GetContactChannelOutcome SSMContactsClient::GetContactChannel(const GetContactCh
 
 GetContactChannelOutcomeCallable SSMContactsClient::GetContactChannelCallable(const GetContactChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetContactChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContactChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetContactChannel, request, m_executor.get());
 }
 
 void SSMContactsClient::GetContactChannelAsync(const GetContactChannelRequest& request, const GetContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetContactChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetContactChannel, request, handler, context, m_executor.get());
 }
 
 GetContactPolicyOutcome SSMContactsClient::GetContactPolicy(const GetContactPolicyRequest& request) const
@@ -450,18 +385,12 @@ GetContactPolicyOutcome SSMContactsClient::GetContactPolicy(const GetContactPoli
 
 GetContactPolicyOutcomeCallable SSMContactsClient::GetContactPolicyCallable(const GetContactPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetContactPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContactPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetContactPolicy, request, m_executor.get());
 }
 
 void SSMContactsClient::GetContactPolicyAsync(const GetContactPolicyRequest& request, const GetContactPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetContactPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetContactPolicy, request, handler, context, m_executor.get());
 }
 
 ListContactChannelsOutcome SSMContactsClient::ListContactChannels(const ListContactChannelsRequest& request) const
@@ -474,18 +403,12 @@ ListContactChannelsOutcome SSMContactsClient::ListContactChannels(const ListCont
 
 ListContactChannelsOutcomeCallable SSMContactsClient::ListContactChannelsCallable(const ListContactChannelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListContactChannelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContactChannels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListContactChannels, request, m_executor.get());
 }
 
 void SSMContactsClient::ListContactChannelsAsync(const ListContactChannelsRequest& request, const ListContactChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListContactChannels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListContactChannels, request, handler, context, m_executor.get());
 }
 
 ListContactsOutcome SSMContactsClient::ListContacts(const ListContactsRequest& request) const
@@ -498,18 +421,12 @@ ListContactsOutcome SSMContactsClient::ListContacts(const ListContactsRequest& r
 
 ListContactsOutcomeCallable SSMContactsClient::ListContactsCallable(const ListContactsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListContactsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContacts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListContacts, request, m_executor.get());
 }
 
 void SSMContactsClient::ListContactsAsync(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListContacts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListContacts, request, handler, context, m_executor.get());
 }
 
 ListEngagementsOutcome SSMContactsClient::ListEngagements(const ListEngagementsRequest& request) const
@@ -522,18 +439,12 @@ ListEngagementsOutcome SSMContactsClient::ListEngagements(const ListEngagementsR
 
 ListEngagementsOutcomeCallable SSMContactsClient::ListEngagementsCallable(const ListEngagementsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEngagementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEngagements(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEngagements, request, m_executor.get());
 }
 
 void SSMContactsClient::ListEngagementsAsync(const ListEngagementsRequest& request, const ListEngagementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEngagements(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEngagements, request, handler, context, m_executor.get());
 }
 
 ListPageReceiptsOutcome SSMContactsClient::ListPageReceipts(const ListPageReceiptsRequest& request) const
@@ -546,18 +457,12 @@ ListPageReceiptsOutcome SSMContactsClient::ListPageReceipts(const ListPageReceip
 
 ListPageReceiptsOutcomeCallable SSMContactsClient::ListPageReceiptsCallable(const ListPageReceiptsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPageReceiptsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPageReceipts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPageReceipts, request, m_executor.get());
 }
 
 void SSMContactsClient::ListPageReceiptsAsync(const ListPageReceiptsRequest& request, const ListPageReceiptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPageReceipts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPageReceipts, request, handler, context, m_executor.get());
 }
 
 ListPagesByContactOutcome SSMContactsClient::ListPagesByContact(const ListPagesByContactRequest& request) const
@@ -570,18 +475,12 @@ ListPagesByContactOutcome SSMContactsClient::ListPagesByContact(const ListPagesB
 
 ListPagesByContactOutcomeCallable SSMContactsClient::ListPagesByContactCallable(const ListPagesByContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPagesByContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPagesByContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPagesByContact, request, m_executor.get());
 }
 
 void SSMContactsClient::ListPagesByContactAsync(const ListPagesByContactRequest& request, const ListPagesByContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPagesByContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPagesByContact, request, handler, context, m_executor.get());
 }
 
 ListPagesByEngagementOutcome SSMContactsClient::ListPagesByEngagement(const ListPagesByEngagementRequest& request) const
@@ -594,18 +493,12 @@ ListPagesByEngagementOutcome SSMContactsClient::ListPagesByEngagement(const List
 
 ListPagesByEngagementOutcomeCallable SSMContactsClient::ListPagesByEngagementCallable(const ListPagesByEngagementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPagesByEngagementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPagesByEngagement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPagesByEngagement, request, m_executor.get());
 }
 
 void SSMContactsClient::ListPagesByEngagementAsync(const ListPagesByEngagementRequest& request, const ListPagesByEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPagesByEngagement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPagesByEngagement, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome SSMContactsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -618,18 +511,12 @@ ListTagsForResourceOutcome SSMContactsClient::ListTagsForResource(const ListTags
 
 ListTagsForResourceOutcomeCallable SSMContactsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void SSMContactsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutContactPolicyOutcome SSMContactsClient::PutContactPolicy(const PutContactPolicyRequest& request) const
@@ -642,18 +529,12 @@ PutContactPolicyOutcome SSMContactsClient::PutContactPolicy(const PutContactPoli
 
 PutContactPolicyOutcomeCallable SSMContactsClient::PutContactPolicyCallable(const PutContactPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutContactPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutContactPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutContactPolicy, request, m_executor.get());
 }
 
 void SSMContactsClient::PutContactPolicyAsync(const PutContactPolicyRequest& request, const PutContactPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutContactPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutContactPolicy, request, handler, context, m_executor.get());
 }
 
 SendActivationCodeOutcome SSMContactsClient::SendActivationCode(const SendActivationCodeRequest& request) const
@@ -666,18 +547,12 @@ SendActivationCodeOutcome SSMContactsClient::SendActivationCode(const SendActiva
 
 SendActivationCodeOutcomeCallable SSMContactsClient::SendActivationCodeCallable(const SendActivationCodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendActivationCodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendActivationCode(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendActivationCode, request, m_executor.get());
 }
 
 void SSMContactsClient::SendActivationCodeAsync(const SendActivationCodeRequest& request, const SendActivationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendActivationCode(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendActivationCode, request, handler, context, m_executor.get());
 }
 
 StartEngagementOutcome SSMContactsClient::StartEngagement(const StartEngagementRequest& request) const
@@ -690,18 +565,12 @@ StartEngagementOutcome SSMContactsClient::StartEngagement(const StartEngagementR
 
 StartEngagementOutcomeCallable SSMContactsClient::StartEngagementCallable(const StartEngagementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartEngagementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartEngagement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartEngagement, request, m_executor.get());
 }
 
 void SSMContactsClient::StartEngagementAsync(const StartEngagementRequest& request, const StartEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartEngagement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartEngagement, request, handler, context, m_executor.get());
 }
 
 StopEngagementOutcome SSMContactsClient::StopEngagement(const StopEngagementRequest& request) const
@@ -714,18 +583,12 @@ StopEngagementOutcome SSMContactsClient::StopEngagement(const StopEngagementRequ
 
 StopEngagementOutcomeCallable SSMContactsClient::StopEngagementCallable(const StopEngagementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopEngagementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopEngagement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopEngagement, request, m_executor.get());
 }
 
 void SSMContactsClient::StopEngagementAsync(const StopEngagementRequest& request, const StopEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopEngagement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopEngagement, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome SSMContactsClient::TagResource(const TagResourceRequest& request) const
@@ -738,18 +601,12 @@ TagResourceOutcome SSMContactsClient::TagResource(const TagResourceRequest& requ
 
 TagResourceOutcomeCallable SSMContactsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void SSMContactsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome SSMContactsClient::UntagResource(const UntagResourceRequest& request) const
@@ -762,18 +619,12 @@ UntagResourceOutcome SSMContactsClient::UntagResource(const UntagResourceRequest
 
 UntagResourceOutcomeCallable SSMContactsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void SSMContactsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateContactOutcome SSMContactsClient::UpdateContact(const UpdateContactRequest& request) const
@@ -786,18 +637,12 @@ UpdateContactOutcome SSMContactsClient::UpdateContact(const UpdateContactRequest
 
 UpdateContactOutcomeCallable SSMContactsClient::UpdateContactCallable(const UpdateContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateContact, request, m_executor.get());
 }
 
 void SSMContactsClient::UpdateContactAsync(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateContact, request, handler, context, m_executor.get());
 }
 
 UpdateContactChannelOutcome SSMContactsClient::UpdateContactChannel(const UpdateContactChannelRequest& request) const
@@ -810,17 +655,11 @@ UpdateContactChannelOutcome SSMContactsClient::UpdateContactChannel(const Update
 
 UpdateContactChannelOutcomeCallable SSMContactsClient::UpdateContactChannelCallable(const UpdateContactChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateContactChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContactChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateContactChannel, request, m_executor.get());
 }
 
 void SSMContactsClient::UpdateContactChannelAsync(const UpdateContactChannelRequest& request, const UpdateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateContactChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateContactChannel, request, handler, context, m_executor.get());
 }
 

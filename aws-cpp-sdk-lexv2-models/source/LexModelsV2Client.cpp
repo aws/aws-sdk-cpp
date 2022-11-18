@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -252,18 +253,12 @@ BatchCreateCustomVocabularyItemOutcome LexModelsV2Client::BatchCreateCustomVocab
 
 BatchCreateCustomVocabularyItemOutcomeCallable LexModelsV2Client::BatchCreateCustomVocabularyItemCallable(const BatchCreateCustomVocabularyItemRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchCreateCustomVocabularyItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchCreateCustomVocabularyItem(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchCreateCustomVocabularyItem, request, m_executor.get());
 }
 
 void LexModelsV2Client::BatchCreateCustomVocabularyItemAsync(const BatchCreateCustomVocabularyItemRequest& request, const BatchCreateCustomVocabularyItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchCreateCustomVocabularyItem(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchCreateCustomVocabularyItem, request, handler, context, m_executor.get());
 }
 
 BatchDeleteCustomVocabularyItemOutcome LexModelsV2Client::BatchDeleteCustomVocabularyItem(const BatchDeleteCustomVocabularyItemRequest& request) const
@@ -298,18 +293,12 @@ BatchDeleteCustomVocabularyItemOutcome LexModelsV2Client::BatchDeleteCustomVocab
 
 BatchDeleteCustomVocabularyItemOutcomeCallable LexModelsV2Client::BatchDeleteCustomVocabularyItemCallable(const BatchDeleteCustomVocabularyItemRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteCustomVocabularyItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteCustomVocabularyItem(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDeleteCustomVocabularyItem, request, m_executor.get());
 }
 
 void LexModelsV2Client::BatchDeleteCustomVocabularyItemAsync(const BatchDeleteCustomVocabularyItemRequest& request, const BatchDeleteCustomVocabularyItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDeleteCustomVocabularyItem(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDeleteCustomVocabularyItem, request, handler, context, m_executor.get());
 }
 
 BatchUpdateCustomVocabularyItemOutcome LexModelsV2Client::BatchUpdateCustomVocabularyItem(const BatchUpdateCustomVocabularyItemRequest& request) const
@@ -344,18 +333,12 @@ BatchUpdateCustomVocabularyItemOutcome LexModelsV2Client::BatchUpdateCustomVocab
 
 BatchUpdateCustomVocabularyItemOutcomeCallable LexModelsV2Client::BatchUpdateCustomVocabularyItemCallable(const BatchUpdateCustomVocabularyItemRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateCustomVocabularyItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdateCustomVocabularyItem(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchUpdateCustomVocabularyItem, request, m_executor.get());
 }
 
 void LexModelsV2Client::BatchUpdateCustomVocabularyItemAsync(const BatchUpdateCustomVocabularyItemRequest& request, const BatchUpdateCustomVocabularyItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchUpdateCustomVocabularyItem(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchUpdateCustomVocabularyItem, request, handler, context, m_executor.get());
 }
 
 BuildBotLocaleOutcome LexModelsV2Client::BuildBotLocale(const BuildBotLocaleRequest& request) const
@@ -389,18 +372,12 @@ BuildBotLocaleOutcome LexModelsV2Client::BuildBotLocale(const BuildBotLocaleRequ
 
 BuildBotLocaleOutcomeCallable LexModelsV2Client::BuildBotLocaleCallable(const BuildBotLocaleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BuildBotLocaleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BuildBotLocale(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BuildBotLocale, request, m_executor.get());
 }
 
 void LexModelsV2Client::BuildBotLocaleAsync(const BuildBotLocaleRequest& request, const BuildBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BuildBotLocale(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BuildBotLocale, request, handler, context, m_executor.get());
 }
 
 CreateBotOutcome LexModelsV2Client::CreateBot(const CreateBotRequest& request) const
@@ -414,18 +391,12 @@ CreateBotOutcome LexModelsV2Client::CreateBot(const CreateBotRequest& request) c
 
 CreateBotOutcomeCallable LexModelsV2Client::CreateBotCallable(const CreateBotRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBot, request, m_executor.get());
 }
 
 void LexModelsV2Client::CreateBotAsync(const CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBot(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBot, request, handler, context, m_executor.get());
 }
 
 CreateBotAliasOutcome LexModelsV2Client::CreateBotAlias(const CreateBotAliasRequest& request) const
@@ -446,18 +417,12 @@ CreateBotAliasOutcome LexModelsV2Client::CreateBotAlias(const CreateBotAliasRequ
 
 CreateBotAliasOutcomeCallable LexModelsV2Client::CreateBotAliasCallable(const CreateBotAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBotAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBotAlias(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBotAlias, request, m_executor.get());
 }
 
 void LexModelsV2Client::CreateBotAliasAsync(const CreateBotAliasRequest& request, const CreateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBotAlias(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBotAlias, request, handler, context, m_executor.get());
 }
 
 CreateBotLocaleOutcome LexModelsV2Client::CreateBotLocale(const CreateBotLocaleRequest& request) const
@@ -485,18 +450,12 @@ CreateBotLocaleOutcome LexModelsV2Client::CreateBotLocale(const CreateBotLocaleR
 
 CreateBotLocaleOutcomeCallable LexModelsV2Client::CreateBotLocaleCallable(const CreateBotLocaleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBotLocaleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBotLocale(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBotLocale, request, m_executor.get());
 }
 
 void LexModelsV2Client::CreateBotLocaleAsync(const CreateBotLocaleRequest& request, const CreateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBotLocale(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBotLocale, request, handler, context, m_executor.get());
 }
 
 CreateBotVersionOutcome LexModelsV2Client::CreateBotVersion(const CreateBotVersionRequest& request) const
@@ -517,18 +476,12 @@ CreateBotVersionOutcome LexModelsV2Client::CreateBotVersion(const CreateBotVersi
 
 CreateBotVersionOutcomeCallable LexModelsV2Client::CreateBotVersionCallable(const CreateBotVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBotVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBotVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBotVersion, request, m_executor.get());
 }
 
 void LexModelsV2Client::CreateBotVersionAsync(const CreateBotVersionRequest& request, const CreateBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBotVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBotVersion, request, handler, context, m_executor.get());
 }
 
 CreateExportOutcome LexModelsV2Client::CreateExport(const CreateExportRequest& request) const
@@ -542,18 +495,12 @@ CreateExportOutcome LexModelsV2Client::CreateExport(const CreateExportRequest& r
 
 CreateExportOutcomeCallable LexModelsV2Client::CreateExportCallable(const CreateExportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateExport, request, m_executor.get());
 }
 
 void LexModelsV2Client::CreateExportAsync(const CreateExportRequest& request, const CreateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateExport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateExport, request, handler, context, m_executor.get());
 }
 
 CreateIntentOutcome LexModelsV2Client::CreateIntent(const CreateIntentRequest& request) const
@@ -588,18 +535,12 @@ CreateIntentOutcome LexModelsV2Client::CreateIntent(const CreateIntentRequest& r
 
 CreateIntentOutcomeCallable LexModelsV2Client::CreateIntentCallable(const CreateIntentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateIntentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateIntent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateIntent, request, m_executor.get());
 }
 
 void LexModelsV2Client::CreateIntentAsync(const CreateIntentRequest& request, const CreateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateIntent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateIntent, request, handler, context, m_executor.get());
 }
 
 CreateResourcePolicyOutcome LexModelsV2Client::CreateResourcePolicy(const CreateResourcePolicyRequest& request) const
@@ -619,18 +560,12 @@ CreateResourcePolicyOutcome LexModelsV2Client::CreateResourcePolicy(const Create
 
 CreateResourcePolicyOutcomeCallable LexModelsV2Client::CreateResourcePolicyCallable(const CreateResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateResourcePolicy, request, m_executor.get());
 }
 
 void LexModelsV2Client::CreateResourcePolicyAsync(const CreateResourcePolicyRequest& request, const CreateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateResourcePolicy, request, handler, context, m_executor.get());
 }
 
 CreateResourcePolicyStatementOutcome LexModelsV2Client::CreateResourcePolicyStatement(const CreateResourcePolicyStatementRequest& request) const
@@ -651,18 +586,12 @@ CreateResourcePolicyStatementOutcome LexModelsV2Client::CreateResourcePolicyStat
 
 CreateResourcePolicyStatementOutcomeCallable LexModelsV2Client::CreateResourcePolicyStatementCallable(const CreateResourcePolicyStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateResourcePolicyStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourcePolicyStatement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateResourcePolicyStatement, request, m_executor.get());
 }
 
 void LexModelsV2Client::CreateResourcePolicyStatementAsync(const CreateResourcePolicyStatementRequest& request, const CreateResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateResourcePolicyStatement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateResourcePolicyStatement, request, handler, context, m_executor.get());
 }
 
 CreateSlotOutcome LexModelsV2Client::CreateSlot(const CreateSlotRequest& request) const
@@ -704,18 +633,12 @@ CreateSlotOutcome LexModelsV2Client::CreateSlot(const CreateSlotRequest& request
 
 CreateSlotOutcomeCallable LexModelsV2Client::CreateSlotCallable(const CreateSlotRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSlotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSlot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSlot, request, m_executor.get());
 }
 
 void LexModelsV2Client::CreateSlotAsync(const CreateSlotRequest& request, const CreateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSlot(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSlot, request, handler, context, m_executor.get());
 }
 
 CreateSlotTypeOutcome LexModelsV2Client::CreateSlotType(const CreateSlotTypeRequest& request) const
@@ -750,18 +673,12 @@ CreateSlotTypeOutcome LexModelsV2Client::CreateSlotType(const CreateSlotTypeRequ
 
 CreateSlotTypeOutcomeCallable LexModelsV2Client::CreateSlotTypeCallable(const CreateSlotTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSlotTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSlotType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSlotType, request, m_executor.get());
 }
 
 void LexModelsV2Client::CreateSlotTypeAsync(const CreateSlotTypeRequest& request, const CreateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSlotType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSlotType, request, handler, context, m_executor.get());
 }
 
 CreateUploadUrlOutcome LexModelsV2Client::CreateUploadUrl(const CreateUploadUrlRequest& request) const
@@ -775,18 +692,12 @@ CreateUploadUrlOutcome LexModelsV2Client::CreateUploadUrl(const CreateUploadUrlR
 
 CreateUploadUrlOutcomeCallable LexModelsV2Client::CreateUploadUrlCallable(const CreateUploadUrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUploadUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUploadUrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateUploadUrl, request, m_executor.get());
 }
 
 void LexModelsV2Client::CreateUploadUrlAsync(const CreateUploadUrlRequest& request, const CreateUploadUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateUploadUrl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateUploadUrl, request, handler, context, m_executor.get());
 }
 
 DeleteBotOutcome LexModelsV2Client::DeleteBot(const DeleteBotRequest& request) const
@@ -806,18 +717,12 @@ DeleteBotOutcome LexModelsV2Client::DeleteBot(const DeleteBotRequest& request) c
 
 DeleteBotOutcomeCallable LexModelsV2Client::DeleteBotCallable(const DeleteBotRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBot, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteBotAsync(const DeleteBotRequest& request, const DeleteBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBot(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBot, request, handler, context, m_executor.get());
 }
 
 DeleteBotAliasOutcome LexModelsV2Client::DeleteBotAlias(const DeleteBotAliasRequest& request) const
@@ -844,18 +749,12 @@ DeleteBotAliasOutcome LexModelsV2Client::DeleteBotAlias(const DeleteBotAliasRequ
 
 DeleteBotAliasOutcomeCallable LexModelsV2Client::DeleteBotAliasCallable(const DeleteBotAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBotAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBotAlias(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBotAlias, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteBotAliasAsync(const DeleteBotAliasRequest& request, const DeleteBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBotAlias(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBotAlias, request, handler, context, m_executor.get());
 }
 
 DeleteBotLocaleOutcome LexModelsV2Client::DeleteBotLocale(const DeleteBotLocaleRequest& request) const
@@ -889,18 +788,12 @@ DeleteBotLocaleOutcome LexModelsV2Client::DeleteBotLocale(const DeleteBotLocaleR
 
 DeleteBotLocaleOutcomeCallable LexModelsV2Client::DeleteBotLocaleCallable(const DeleteBotLocaleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBotLocaleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBotLocale(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBotLocale, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteBotLocaleAsync(const DeleteBotLocaleRequest& request, const DeleteBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBotLocale(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBotLocale, request, handler, context, m_executor.get());
 }
 
 DeleteBotVersionOutcome LexModelsV2Client::DeleteBotVersion(const DeleteBotVersionRequest& request) const
@@ -927,18 +820,12 @@ DeleteBotVersionOutcome LexModelsV2Client::DeleteBotVersion(const DeleteBotVersi
 
 DeleteBotVersionOutcomeCallable LexModelsV2Client::DeleteBotVersionCallable(const DeleteBotVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBotVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBotVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBotVersion, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteBotVersionAsync(const DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBotVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBotVersion, request, handler, context, m_executor.get());
 }
 
 DeleteCustomVocabularyOutcome LexModelsV2Client::DeleteCustomVocabulary(const DeleteCustomVocabularyRequest& request) const
@@ -973,18 +860,12 @@ DeleteCustomVocabularyOutcome LexModelsV2Client::DeleteCustomVocabulary(const De
 
 DeleteCustomVocabularyOutcomeCallable LexModelsV2Client::DeleteCustomVocabularyCallable(const DeleteCustomVocabularyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCustomVocabularyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCustomVocabulary(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCustomVocabulary, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteCustomVocabularyAsync(const DeleteCustomVocabularyRequest& request, const DeleteCustomVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCustomVocabulary(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCustomVocabulary, request, handler, context, m_executor.get());
 }
 
 DeleteExportOutcome LexModelsV2Client::DeleteExport(const DeleteExportRequest& request) const
@@ -1004,18 +885,12 @@ DeleteExportOutcome LexModelsV2Client::DeleteExport(const DeleteExportRequest& r
 
 DeleteExportOutcomeCallable LexModelsV2Client::DeleteExportCallable(const DeleteExportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteExport, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteExportAsync(const DeleteExportRequest& request, const DeleteExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteExport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteExport, request, handler, context, m_executor.get());
 }
 
 DeleteImportOutcome LexModelsV2Client::DeleteImport(const DeleteImportRequest& request) const
@@ -1035,18 +910,12 @@ DeleteImportOutcome LexModelsV2Client::DeleteImport(const DeleteImportRequest& r
 
 DeleteImportOutcomeCallable LexModelsV2Client::DeleteImportCallable(const DeleteImportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteImport, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteImportAsync(const DeleteImportRequest& request, const DeleteImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteImport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteImport, request, handler, context, m_executor.get());
 }
 
 DeleteIntentOutcome LexModelsV2Client::DeleteIntent(const DeleteIntentRequest& request) const
@@ -1087,18 +956,12 @@ DeleteIntentOutcome LexModelsV2Client::DeleteIntent(const DeleteIntentRequest& r
 
 DeleteIntentOutcomeCallable LexModelsV2Client::DeleteIntentCallable(const DeleteIntentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteIntentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteIntent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteIntent, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteIntentAsync(const DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteIntent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteIntent, request, handler, context, m_executor.get());
 }
 
 DeleteResourcePolicyOutcome LexModelsV2Client::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -1118,18 +981,12 @@ DeleteResourcePolicyOutcome LexModelsV2Client::DeleteResourcePolicy(const Delete
 
 DeleteResourcePolicyOutcomeCallable LexModelsV2Client::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteResourcePolicy, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteResourcePolicy, request, handler, context, m_executor.get());
 }
 
 DeleteResourcePolicyStatementOutcome LexModelsV2Client::DeleteResourcePolicyStatement(const DeleteResourcePolicyStatementRequest& request) const
@@ -1156,18 +1013,12 @@ DeleteResourcePolicyStatementOutcome LexModelsV2Client::DeleteResourcePolicyStat
 
 DeleteResourcePolicyStatementOutcomeCallable LexModelsV2Client::DeleteResourcePolicyStatementCallable(const DeleteResourcePolicyStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicyStatement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteResourcePolicyStatement, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteResourcePolicyStatementAsync(const DeleteResourcePolicyStatementRequest& request, const DeleteResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResourcePolicyStatement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteResourcePolicyStatement, request, handler, context, m_executor.get());
 }
 
 DeleteSlotOutcome LexModelsV2Client::DeleteSlot(const DeleteSlotRequest& request) const
@@ -1215,18 +1066,12 @@ DeleteSlotOutcome LexModelsV2Client::DeleteSlot(const DeleteSlotRequest& request
 
 DeleteSlotOutcomeCallable LexModelsV2Client::DeleteSlotCallable(const DeleteSlotRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSlotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSlot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSlot, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteSlotAsync(const DeleteSlotRequest& request, const DeleteSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSlot(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSlot, request, handler, context, m_executor.get());
 }
 
 DeleteSlotTypeOutcome LexModelsV2Client::DeleteSlotType(const DeleteSlotTypeRequest& request) const
@@ -1267,18 +1112,12 @@ DeleteSlotTypeOutcome LexModelsV2Client::DeleteSlotType(const DeleteSlotTypeRequ
 
 DeleteSlotTypeOutcomeCallable LexModelsV2Client::DeleteSlotTypeCallable(const DeleteSlotTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSlotTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSlotType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSlotType, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteSlotTypeAsync(const DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSlotType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSlotType, request, handler, context, m_executor.get());
 }
 
 DeleteUtterancesOutcome LexModelsV2Client::DeleteUtterances(const DeleteUtterancesRequest& request) const
@@ -1299,18 +1138,12 @@ DeleteUtterancesOutcome LexModelsV2Client::DeleteUtterances(const DeleteUtteranc
 
 DeleteUtterancesOutcomeCallable LexModelsV2Client::DeleteUtterancesCallable(const DeleteUtterancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUtterancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUtterances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteUtterances, request, m_executor.get());
 }
 
 void LexModelsV2Client::DeleteUtterancesAsync(const DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteUtterances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteUtterances, request, handler, context, m_executor.get());
 }
 
 DescribeBotOutcome LexModelsV2Client::DescribeBot(const DescribeBotRequest& request) const
@@ -1330,18 +1163,12 @@ DescribeBotOutcome LexModelsV2Client::DescribeBot(const DescribeBotRequest& requ
 
 DescribeBotOutcomeCallable LexModelsV2Client::DescribeBotCallable(const DescribeBotRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeBot, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeBotAsync(const DescribeBotRequest& request, const DescribeBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeBot(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeBot, request, handler, context, m_executor.get());
 }
 
 DescribeBotAliasOutcome LexModelsV2Client::DescribeBotAlias(const DescribeBotAliasRequest& request) const
@@ -1368,18 +1195,12 @@ DescribeBotAliasOutcome LexModelsV2Client::DescribeBotAlias(const DescribeBotAli
 
 DescribeBotAliasOutcomeCallable LexModelsV2Client::DescribeBotAliasCallable(const DescribeBotAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBotAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBotAlias(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeBotAlias, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeBotAliasAsync(const DescribeBotAliasRequest& request, const DescribeBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeBotAlias(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeBotAlias, request, handler, context, m_executor.get());
 }
 
 DescribeBotLocaleOutcome LexModelsV2Client::DescribeBotLocale(const DescribeBotLocaleRequest& request) const
@@ -1413,18 +1234,12 @@ DescribeBotLocaleOutcome LexModelsV2Client::DescribeBotLocale(const DescribeBotL
 
 DescribeBotLocaleOutcomeCallable LexModelsV2Client::DescribeBotLocaleCallable(const DescribeBotLocaleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBotLocaleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBotLocale(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeBotLocale, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeBotLocaleAsync(const DescribeBotLocaleRequest& request, const DescribeBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeBotLocale(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeBotLocale, request, handler, context, m_executor.get());
 }
 
 DescribeBotRecommendationOutcome LexModelsV2Client::DescribeBotRecommendation(const DescribeBotRecommendationRequest& request) const
@@ -1465,18 +1280,12 @@ DescribeBotRecommendationOutcome LexModelsV2Client::DescribeBotRecommendation(co
 
 DescribeBotRecommendationOutcomeCallable LexModelsV2Client::DescribeBotRecommendationCallable(const DescribeBotRecommendationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBotRecommendationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBotRecommendation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeBotRecommendation, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeBotRecommendationAsync(const DescribeBotRecommendationRequest& request, const DescribeBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeBotRecommendation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeBotRecommendation, request, handler, context, m_executor.get());
 }
 
 DescribeBotVersionOutcome LexModelsV2Client::DescribeBotVersion(const DescribeBotVersionRequest& request) const
@@ -1503,18 +1312,12 @@ DescribeBotVersionOutcome LexModelsV2Client::DescribeBotVersion(const DescribeBo
 
 DescribeBotVersionOutcomeCallable LexModelsV2Client::DescribeBotVersionCallable(const DescribeBotVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBotVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBotVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeBotVersion, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeBotVersionAsync(const DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeBotVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeBotVersion, request, handler, context, m_executor.get());
 }
 
 DescribeCustomVocabularyMetadataOutcome LexModelsV2Client::DescribeCustomVocabularyMetadata(const DescribeCustomVocabularyMetadataRequest& request) const
@@ -1549,18 +1352,12 @@ DescribeCustomVocabularyMetadataOutcome LexModelsV2Client::DescribeCustomVocabul
 
 DescribeCustomVocabularyMetadataOutcomeCallable LexModelsV2Client::DescribeCustomVocabularyMetadataCallable(const DescribeCustomVocabularyMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCustomVocabularyMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCustomVocabularyMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCustomVocabularyMetadata, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeCustomVocabularyMetadataAsync(const DescribeCustomVocabularyMetadataRequest& request, const DescribeCustomVocabularyMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCustomVocabularyMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCustomVocabularyMetadata, request, handler, context, m_executor.get());
 }
 
 DescribeExportOutcome LexModelsV2Client::DescribeExport(const DescribeExportRequest& request) const
@@ -1580,18 +1377,12 @@ DescribeExportOutcome LexModelsV2Client::DescribeExport(const DescribeExportRequ
 
 DescribeExportOutcomeCallable LexModelsV2Client::DescribeExportCallable(const DescribeExportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeExport, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeExportAsync(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeExport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeExport, request, handler, context, m_executor.get());
 }
 
 DescribeImportOutcome LexModelsV2Client::DescribeImport(const DescribeImportRequest& request) const
@@ -1611,18 +1402,12 @@ DescribeImportOutcome LexModelsV2Client::DescribeImport(const DescribeImportRequ
 
 DescribeImportOutcomeCallable LexModelsV2Client::DescribeImportCallable(const DescribeImportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeImport, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeImportAsync(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeImport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeImport, request, handler, context, m_executor.get());
 }
 
 DescribeIntentOutcome LexModelsV2Client::DescribeIntent(const DescribeIntentRequest& request) const
@@ -1663,18 +1448,12 @@ DescribeIntentOutcome LexModelsV2Client::DescribeIntent(const DescribeIntentRequ
 
 DescribeIntentOutcomeCallable LexModelsV2Client::DescribeIntentCallable(const DescribeIntentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeIntentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIntent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeIntent, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeIntentAsync(const DescribeIntentRequest& request, const DescribeIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeIntent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeIntent, request, handler, context, m_executor.get());
 }
 
 DescribeResourcePolicyOutcome LexModelsV2Client::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const
@@ -1694,18 +1473,12 @@ DescribeResourcePolicyOutcome LexModelsV2Client::DescribeResourcePolicy(const De
 
 DescribeResourcePolicyOutcomeCallable LexModelsV2Client::DescribeResourcePolicyCallable(const DescribeResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeResourcePolicy, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeResourcePolicyAsync(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeResourcePolicy, request, handler, context, m_executor.get());
 }
 
 DescribeSlotOutcome LexModelsV2Client::DescribeSlot(const DescribeSlotRequest& request) const
@@ -1753,18 +1526,12 @@ DescribeSlotOutcome LexModelsV2Client::DescribeSlot(const DescribeSlotRequest& r
 
 DescribeSlotOutcomeCallable LexModelsV2Client::DescribeSlotCallable(const DescribeSlotRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSlotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSlot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSlot, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeSlotAsync(const DescribeSlotRequest& request, const DescribeSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSlot(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSlot, request, handler, context, m_executor.get());
 }
 
 DescribeSlotTypeOutcome LexModelsV2Client::DescribeSlotType(const DescribeSlotTypeRequest& request) const
@@ -1805,18 +1572,12 @@ DescribeSlotTypeOutcome LexModelsV2Client::DescribeSlotType(const DescribeSlotTy
 
 DescribeSlotTypeOutcomeCallable LexModelsV2Client::DescribeSlotTypeCallable(const DescribeSlotTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSlotTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSlotType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSlotType, request, m_executor.get());
 }
 
 void LexModelsV2Client::DescribeSlotTypeAsync(const DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSlotType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSlotType, request, handler, context, m_executor.get());
 }
 
 ListAggregatedUtterancesOutcome LexModelsV2Client::ListAggregatedUtterances(const ListAggregatedUtterancesRequest& request) const
@@ -1837,18 +1598,12 @@ ListAggregatedUtterancesOutcome LexModelsV2Client::ListAggregatedUtterances(cons
 
 ListAggregatedUtterancesOutcomeCallable LexModelsV2Client::ListAggregatedUtterancesCallable(const ListAggregatedUtterancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAggregatedUtterancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAggregatedUtterances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAggregatedUtterances, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListAggregatedUtterancesAsync(const ListAggregatedUtterancesRequest& request, const ListAggregatedUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAggregatedUtterances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAggregatedUtterances, request, handler, context, m_executor.get());
 }
 
 ListBotAliasesOutcome LexModelsV2Client::ListBotAliases(const ListBotAliasesRequest& request) const
@@ -1869,18 +1624,12 @@ ListBotAliasesOutcome LexModelsV2Client::ListBotAliases(const ListBotAliasesRequ
 
 ListBotAliasesOutcomeCallable LexModelsV2Client::ListBotAliasesCallable(const ListBotAliasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBotAliasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBotAliases(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBotAliases, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListBotAliasesAsync(const ListBotAliasesRequest& request, const ListBotAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBotAliases(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBotAliases, request, handler, context, m_executor.get());
 }
 
 ListBotLocalesOutcome LexModelsV2Client::ListBotLocales(const ListBotLocalesRequest& request) const
@@ -1908,18 +1657,12 @@ ListBotLocalesOutcome LexModelsV2Client::ListBotLocales(const ListBotLocalesRequ
 
 ListBotLocalesOutcomeCallable LexModelsV2Client::ListBotLocalesCallable(const ListBotLocalesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBotLocalesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBotLocales(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBotLocales, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListBotLocalesAsync(const ListBotLocalesRequest& request, const ListBotLocalesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBotLocales(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBotLocales, request, handler, context, m_executor.get());
 }
 
 ListBotRecommendationsOutcome LexModelsV2Client::ListBotRecommendations(const ListBotRecommendationsRequest& request) const
@@ -1954,18 +1697,12 @@ ListBotRecommendationsOutcome LexModelsV2Client::ListBotRecommendations(const Li
 
 ListBotRecommendationsOutcomeCallable LexModelsV2Client::ListBotRecommendationsCallable(const ListBotRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBotRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBotRecommendations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBotRecommendations, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListBotRecommendationsAsync(const ListBotRecommendationsRequest& request, const ListBotRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBotRecommendations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBotRecommendations, request, handler, context, m_executor.get());
 }
 
 ListBotVersionsOutcome LexModelsV2Client::ListBotVersions(const ListBotVersionsRequest& request) const
@@ -1986,18 +1723,12 @@ ListBotVersionsOutcome LexModelsV2Client::ListBotVersions(const ListBotVersionsR
 
 ListBotVersionsOutcomeCallable LexModelsV2Client::ListBotVersionsCallable(const ListBotVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBotVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBotVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBotVersions, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListBotVersionsAsync(const ListBotVersionsRequest& request, const ListBotVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBotVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBotVersions, request, handler, context, m_executor.get());
 }
 
 ListBotsOutcome LexModelsV2Client::ListBots(const ListBotsRequest& request) const
@@ -2011,18 +1742,12 @@ ListBotsOutcome LexModelsV2Client::ListBots(const ListBotsRequest& request) cons
 
 ListBotsOutcomeCallable LexModelsV2Client::ListBotsCallable(const ListBotsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBots(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBots, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListBotsAsync(const ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBots(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBots, request, handler, context, m_executor.get());
 }
 
 ListBuiltInIntentsOutcome LexModelsV2Client::ListBuiltInIntents(const ListBuiltInIntentsRequest& request) const
@@ -2043,18 +1768,12 @@ ListBuiltInIntentsOutcome LexModelsV2Client::ListBuiltInIntents(const ListBuiltI
 
 ListBuiltInIntentsOutcomeCallable LexModelsV2Client::ListBuiltInIntentsCallable(const ListBuiltInIntentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBuiltInIntentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBuiltInIntents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBuiltInIntents, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListBuiltInIntentsAsync(const ListBuiltInIntentsRequest& request, const ListBuiltInIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBuiltInIntents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBuiltInIntents, request, handler, context, m_executor.get());
 }
 
 ListBuiltInSlotTypesOutcome LexModelsV2Client::ListBuiltInSlotTypes(const ListBuiltInSlotTypesRequest& request) const
@@ -2075,18 +1794,12 @@ ListBuiltInSlotTypesOutcome LexModelsV2Client::ListBuiltInSlotTypes(const ListBu
 
 ListBuiltInSlotTypesOutcomeCallable LexModelsV2Client::ListBuiltInSlotTypesCallable(const ListBuiltInSlotTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBuiltInSlotTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBuiltInSlotTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBuiltInSlotTypes, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListBuiltInSlotTypesAsync(const ListBuiltInSlotTypesRequest& request, const ListBuiltInSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBuiltInSlotTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBuiltInSlotTypes, request, handler, context, m_executor.get());
 }
 
 ListCustomVocabularyItemsOutcome LexModelsV2Client::ListCustomVocabularyItems(const ListCustomVocabularyItemsRequest& request) const
@@ -2121,18 +1834,12 @@ ListCustomVocabularyItemsOutcome LexModelsV2Client::ListCustomVocabularyItems(co
 
 ListCustomVocabularyItemsOutcomeCallable LexModelsV2Client::ListCustomVocabularyItemsCallable(const ListCustomVocabularyItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCustomVocabularyItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCustomVocabularyItems(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCustomVocabularyItems, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListCustomVocabularyItemsAsync(const ListCustomVocabularyItemsRequest& request, const ListCustomVocabularyItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCustomVocabularyItems(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCustomVocabularyItems, request, handler, context, m_executor.get());
 }
 
 ListExportsOutcome LexModelsV2Client::ListExports(const ListExportsRequest& request) const
@@ -2146,18 +1853,12 @@ ListExportsOutcome LexModelsV2Client::ListExports(const ListExportsRequest& requ
 
 ListExportsOutcomeCallable LexModelsV2Client::ListExportsCallable(const ListExportsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExports(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExports, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListExportsAsync(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExports(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExports, request, handler, context, m_executor.get());
 }
 
 ListImportsOutcome LexModelsV2Client::ListImports(const ListImportsRequest& request) const
@@ -2171,18 +1872,12 @@ ListImportsOutcome LexModelsV2Client::ListImports(const ListImportsRequest& requ
 
 ListImportsOutcomeCallable LexModelsV2Client::ListImportsCallable(const ListImportsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListImportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImports(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListImports, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListImports(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListImports, request, handler, context, m_executor.get());
 }
 
 ListIntentsOutcome LexModelsV2Client::ListIntents(const ListIntentsRequest& request) const
@@ -2217,18 +1912,12 @@ ListIntentsOutcome LexModelsV2Client::ListIntents(const ListIntentsRequest& requ
 
 ListIntentsOutcomeCallable LexModelsV2Client::ListIntentsCallable(const ListIntentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListIntentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIntents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListIntents, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListIntentsAsync(const ListIntentsRequest& request, const ListIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListIntents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListIntents, request, handler, context, m_executor.get());
 }
 
 ListRecommendedIntentsOutcome LexModelsV2Client::ListRecommendedIntents(const ListRecommendedIntentsRequest& request) const
@@ -2270,18 +1959,12 @@ ListRecommendedIntentsOutcome LexModelsV2Client::ListRecommendedIntents(const Li
 
 ListRecommendedIntentsOutcomeCallable LexModelsV2Client::ListRecommendedIntentsCallable(const ListRecommendedIntentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRecommendedIntentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecommendedIntents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRecommendedIntents, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListRecommendedIntentsAsync(const ListRecommendedIntentsRequest& request, const ListRecommendedIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRecommendedIntents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRecommendedIntents, request, handler, context, m_executor.get());
 }
 
 ListSlotTypesOutcome LexModelsV2Client::ListSlotTypes(const ListSlotTypesRequest& request) const
@@ -2316,18 +1999,12 @@ ListSlotTypesOutcome LexModelsV2Client::ListSlotTypes(const ListSlotTypesRequest
 
 ListSlotTypesOutcomeCallable LexModelsV2Client::ListSlotTypesCallable(const ListSlotTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSlotTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSlotTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSlotTypes, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListSlotTypesAsync(const ListSlotTypesRequest& request, const ListSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSlotTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSlotTypes, request, handler, context, m_executor.get());
 }
 
 ListSlotsOutcome LexModelsV2Client::ListSlots(const ListSlotsRequest& request) const
@@ -2369,18 +2046,12 @@ ListSlotsOutcome LexModelsV2Client::ListSlots(const ListSlotsRequest& request) c
 
 ListSlotsOutcomeCallable LexModelsV2Client::ListSlotsCallable(const ListSlotsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSlotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSlots(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSlots, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListSlotsAsync(const ListSlotsRequest& request, const ListSlotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSlots(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSlots, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome LexModelsV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -2400,18 +2071,12 @@ ListTagsForResourceOutcome LexModelsV2Client::ListTagsForResource(const ListTags
 
 ListTagsForResourceOutcomeCallable LexModelsV2Client::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void LexModelsV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 SearchAssociatedTranscriptsOutcome LexModelsV2Client::SearchAssociatedTranscripts(const SearchAssociatedTranscriptsRequest& request) const
@@ -2453,18 +2118,12 @@ SearchAssociatedTranscriptsOutcome LexModelsV2Client::SearchAssociatedTranscript
 
 SearchAssociatedTranscriptsOutcomeCallable LexModelsV2Client::SearchAssociatedTranscriptsCallable(const SearchAssociatedTranscriptsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchAssociatedTranscriptsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchAssociatedTranscripts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchAssociatedTranscripts, request, m_executor.get());
 }
 
 void LexModelsV2Client::SearchAssociatedTranscriptsAsync(const SearchAssociatedTranscriptsRequest& request, const SearchAssociatedTranscriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchAssociatedTranscripts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchAssociatedTranscripts, request, handler, context, m_executor.get());
 }
 
 StartBotRecommendationOutcome LexModelsV2Client::StartBotRecommendation(const StartBotRecommendationRequest& request) const
@@ -2499,18 +2158,12 @@ StartBotRecommendationOutcome LexModelsV2Client::StartBotRecommendation(const St
 
 StartBotRecommendationOutcomeCallable LexModelsV2Client::StartBotRecommendationCallable(const StartBotRecommendationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartBotRecommendationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartBotRecommendation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartBotRecommendation, request, m_executor.get());
 }
 
 void LexModelsV2Client::StartBotRecommendationAsync(const StartBotRecommendationRequest& request, const StartBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartBotRecommendation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartBotRecommendation, request, handler, context, m_executor.get());
 }
 
 StartImportOutcome LexModelsV2Client::StartImport(const StartImportRequest& request) const
@@ -2524,18 +2177,12 @@ StartImportOutcome LexModelsV2Client::StartImport(const StartImportRequest& requ
 
 StartImportOutcomeCallable LexModelsV2Client::StartImportCallable(const StartImportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartImport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartImport, request, m_executor.get());
 }
 
 void LexModelsV2Client::StartImportAsync(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartImport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartImport, request, handler, context, m_executor.get());
 }
 
 StopBotRecommendationOutcome LexModelsV2Client::StopBotRecommendation(const StopBotRecommendationRequest& request) const
@@ -2577,18 +2224,12 @@ StopBotRecommendationOutcome LexModelsV2Client::StopBotRecommendation(const Stop
 
 StopBotRecommendationOutcomeCallable LexModelsV2Client::StopBotRecommendationCallable(const StopBotRecommendationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopBotRecommendationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopBotRecommendation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopBotRecommendation, request, m_executor.get());
 }
 
 void LexModelsV2Client::StopBotRecommendationAsync(const StopBotRecommendationRequest& request, const StopBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopBotRecommendation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopBotRecommendation, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome LexModelsV2Client::TagResource(const TagResourceRequest& request) const
@@ -2608,18 +2249,12 @@ TagResourceOutcome LexModelsV2Client::TagResource(const TagResourceRequest& requ
 
 TagResourceOutcomeCallable LexModelsV2Client::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void LexModelsV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome LexModelsV2Client::UntagResource(const UntagResourceRequest& request) const
@@ -2644,18 +2279,12 @@ UntagResourceOutcome LexModelsV2Client::UntagResource(const UntagResourceRequest
 
 UntagResourceOutcomeCallable LexModelsV2Client::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void LexModelsV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateBotOutcome LexModelsV2Client::UpdateBot(const UpdateBotRequest& request) const
@@ -2675,18 +2304,12 @@ UpdateBotOutcome LexModelsV2Client::UpdateBot(const UpdateBotRequest& request) c
 
 UpdateBotOutcomeCallable LexModelsV2Client::UpdateBotCallable(const UpdateBotRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBot, request, m_executor.get());
 }
 
 void LexModelsV2Client::UpdateBotAsync(const UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBot(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBot, request, handler, context, m_executor.get());
 }
 
 UpdateBotAliasOutcome LexModelsV2Client::UpdateBotAlias(const UpdateBotAliasRequest& request) const
@@ -2713,18 +2336,12 @@ UpdateBotAliasOutcome LexModelsV2Client::UpdateBotAlias(const UpdateBotAliasRequ
 
 UpdateBotAliasOutcomeCallable LexModelsV2Client::UpdateBotAliasCallable(const UpdateBotAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBotAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBotAlias(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBotAlias, request, m_executor.get());
 }
 
 void LexModelsV2Client::UpdateBotAliasAsync(const UpdateBotAliasRequest& request, const UpdateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBotAlias(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBotAlias, request, handler, context, m_executor.get());
 }
 
 UpdateBotLocaleOutcome LexModelsV2Client::UpdateBotLocale(const UpdateBotLocaleRequest& request) const
@@ -2758,18 +2375,12 @@ UpdateBotLocaleOutcome LexModelsV2Client::UpdateBotLocale(const UpdateBotLocaleR
 
 UpdateBotLocaleOutcomeCallable LexModelsV2Client::UpdateBotLocaleCallable(const UpdateBotLocaleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBotLocaleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBotLocale(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBotLocale, request, m_executor.get());
 }
 
 void LexModelsV2Client::UpdateBotLocaleAsync(const UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBotLocale(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBotLocale, request, handler, context, m_executor.get());
 }
 
 UpdateBotRecommendationOutcome LexModelsV2Client::UpdateBotRecommendation(const UpdateBotRecommendationRequest& request) const
@@ -2810,18 +2421,12 @@ UpdateBotRecommendationOutcome LexModelsV2Client::UpdateBotRecommendation(const 
 
 UpdateBotRecommendationOutcomeCallable LexModelsV2Client::UpdateBotRecommendationCallable(const UpdateBotRecommendationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBotRecommendationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBotRecommendation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBotRecommendation, request, m_executor.get());
 }
 
 void LexModelsV2Client::UpdateBotRecommendationAsync(const UpdateBotRecommendationRequest& request, const UpdateBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBotRecommendation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBotRecommendation, request, handler, context, m_executor.get());
 }
 
 UpdateExportOutcome LexModelsV2Client::UpdateExport(const UpdateExportRequest& request) const
@@ -2841,18 +2446,12 @@ UpdateExportOutcome LexModelsV2Client::UpdateExport(const UpdateExportRequest& r
 
 UpdateExportOutcomeCallable LexModelsV2Client::UpdateExportCallable(const UpdateExportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateExport, request, m_executor.get());
 }
 
 void LexModelsV2Client::UpdateExportAsync(const UpdateExportRequest& request, const UpdateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateExport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateExport, request, handler, context, m_executor.get());
 }
 
 UpdateIntentOutcome LexModelsV2Client::UpdateIntent(const UpdateIntentRequest& request) const
@@ -2893,18 +2492,12 @@ UpdateIntentOutcome LexModelsV2Client::UpdateIntent(const UpdateIntentRequest& r
 
 UpdateIntentOutcomeCallable LexModelsV2Client::UpdateIntentCallable(const UpdateIntentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateIntentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIntent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateIntent, request, m_executor.get());
 }
 
 void LexModelsV2Client::UpdateIntentAsync(const UpdateIntentRequest& request, const UpdateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateIntent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateIntent, request, handler, context, m_executor.get());
 }
 
 UpdateResourcePolicyOutcome LexModelsV2Client::UpdateResourcePolicy(const UpdateResourcePolicyRequest& request) const
@@ -2924,18 +2517,12 @@ UpdateResourcePolicyOutcome LexModelsV2Client::UpdateResourcePolicy(const Update
 
 UpdateResourcePolicyOutcomeCallable LexModelsV2Client::UpdateResourcePolicyCallable(const UpdateResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateResourcePolicy, request, m_executor.get());
 }
 
 void LexModelsV2Client::UpdateResourcePolicyAsync(const UpdateResourcePolicyRequest& request, const UpdateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateResourcePolicy, request, handler, context, m_executor.get());
 }
 
 UpdateSlotOutcome LexModelsV2Client::UpdateSlot(const UpdateSlotRequest& request) const
@@ -2983,18 +2570,12 @@ UpdateSlotOutcome LexModelsV2Client::UpdateSlot(const UpdateSlotRequest& request
 
 UpdateSlotOutcomeCallable LexModelsV2Client::UpdateSlotCallable(const UpdateSlotRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSlotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSlot(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSlot, request, m_executor.get());
 }
 
 void LexModelsV2Client::UpdateSlotAsync(const UpdateSlotRequest& request, const UpdateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSlot(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSlot, request, handler, context, m_executor.get());
 }
 
 UpdateSlotTypeOutcome LexModelsV2Client::UpdateSlotType(const UpdateSlotTypeRequest& request) const
@@ -3035,17 +2616,11 @@ UpdateSlotTypeOutcome LexModelsV2Client::UpdateSlotType(const UpdateSlotTypeRequ
 
 UpdateSlotTypeOutcomeCallable LexModelsV2Client::UpdateSlotTypeCallable(const UpdateSlotTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSlotTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSlotType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSlotType, request, m_executor.get());
 }
 
 void LexModelsV2Client::UpdateSlotTypeAsync(const UpdateSlotTypeRequest& request, const UpdateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSlotType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSlotType, request, handler, context, m_executor.get());
 }
 

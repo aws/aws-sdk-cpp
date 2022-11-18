@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -182,18 +183,12 @@ CreateActivityOutcome SFNClient::CreateActivity(const CreateActivityRequest& req
 
 CreateActivityOutcomeCallable SFNClient::CreateActivityCallable(const CreateActivityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateActivityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateActivity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateActivity, request, m_executor.get());
 }
 
 void SFNClient::CreateActivityAsync(const CreateActivityRequest& request, const CreateActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateActivity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateActivity, request, handler, context, m_executor.get());
 }
 
 CreateStateMachineOutcome SFNClient::CreateStateMachine(const CreateStateMachineRequest& request) const
@@ -206,18 +201,12 @@ CreateStateMachineOutcome SFNClient::CreateStateMachine(const CreateStateMachine
 
 CreateStateMachineOutcomeCallable SFNClient::CreateStateMachineCallable(const CreateStateMachineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStateMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStateMachine(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateStateMachine, request, m_executor.get());
 }
 
 void SFNClient::CreateStateMachineAsync(const CreateStateMachineRequest& request, const CreateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateStateMachine(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateStateMachine, request, handler, context, m_executor.get());
 }
 
 DeleteActivityOutcome SFNClient::DeleteActivity(const DeleteActivityRequest& request) const
@@ -230,18 +219,12 @@ DeleteActivityOutcome SFNClient::DeleteActivity(const DeleteActivityRequest& req
 
 DeleteActivityOutcomeCallable SFNClient::DeleteActivityCallable(const DeleteActivityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteActivityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteActivity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteActivity, request, m_executor.get());
 }
 
 void SFNClient::DeleteActivityAsync(const DeleteActivityRequest& request, const DeleteActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteActivity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteActivity, request, handler, context, m_executor.get());
 }
 
 DeleteStateMachineOutcome SFNClient::DeleteStateMachine(const DeleteStateMachineRequest& request) const
@@ -254,18 +237,12 @@ DeleteStateMachineOutcome SFNClient::DeleteStateMachine(const DeleteStateMachine
 
 DeleteStateMachineOutcomeCallable SFNClient::DeleteStateMachineCallable(const DeleteStateMachineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStateMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStateMachine(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteStateMachine, request, m_executor.get());
 }
 
 void SFNClient::DeleteStateMachineAsync(const DeleteStateMachineRequest& request, const DeleteStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteStateMachine(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteStateMachine, request, handler, context, m_executor.get());
 }
 
 DescribeActivityOutcome SFNClient::DescribeActivity(const DescribeActivityRequest& request) const
@@ -278,18 +255,12 @@ DescribeActivityOutcome SFNClient::DescribeActivity(const DescribeActivityReques
 
 DescribeActivityOutcomeCallable SFNClient::DescribeActivityCallable(const DescribeActivityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeActivityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeActivity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeActivity, request, m_executor.get());
 }
 
 void SFNClient::DescribeActivityAsync(const DescribeActivityRequest& request, const DescribeActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeActivity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeActivity, request, handler, context, m_executor.get());
 }
 
 DescribeExecutionOutcome SFNClient::DescribeExecution(const DescribeExecutionRequest& request) const
@@ -302,18 +273,12 @@ DescribeExecutionOutcome SFNClient::DescribeExecution(const DescribeExecutionReq
 
 DescribeExecutionOutcomeCallable SFNClient::DescribeExecutionCallable(const DescribeExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeExecution, request, m_executor.get());
 }
 
 void SFNClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeExecution, request, handler, context, m_executor.get());
 }
 
 DescribeStateMachineOutcome SFNClient::DescribeStateMachine(const DescribeStateMachineRequest& request) const
@@ -326,18 +291,12 @@ DescribeStateMachineOutcome SFNClient::DescribeStateMachine(const DescribeStateM
 
 DescribeStateMachineOutcomeCallable SFNClient::DescribeStateMachineCallable(const DescribeStateMachineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeStateMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStateMachine(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeStateMachine, request, m_executor.get());
 }
 
 void SFNClient::DescribeStateMachineAsync(const DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeStateMachine(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeStateMachine, request, handler, context, m_executor.get());
 }
 
 DescribeStateMachineForExecutionOutcome SFNClient::DescribeStateMachineForExecution(const DescribeStateMachineForExecutionRequest& request) const
@@ -350,18 +309,12 @@ DescribeStateMachineForExecutionOutcome SFNClient::DescribeStateMachineForExecut
 
 DescribeStateMachineForExecutionOutcomeCallable SFNClient::DescribeStateMachineForExecutionCallable(const DescribeStateMachineForExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeStateMachineForExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStateMachineForExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeStateMachineForExecution, request, m_executor.get());
 }
 
 void SFNClient::DescribeStateMachineForExecutionAsync(const DescribeStateMachineForExecutionRequest& request, const DescribeStateMachineForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeStateMachineForExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeStateMachineForExecution, request, handler, context, m_executor.get());
 }
 
 GetActivityTaskOutcome SFNClient::GetActivityTask(const GetActivityTaskRequest& request) const
@@ -374,18 +327,12 @@ GetActivityTaskOutcome SFNClient::GetActivityTask(const GetActivityTaskRequest& 
 
 GetActivityTaskOutcomeCallable SFNClient::GetActivityTaskCallable(const GetActivityTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetActivityTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetActivityTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetActivityTask, request, m_executor.get());
 }
 
 void SFNClient::GetActivityTaskAsync(const GetActivityTaskRequest& request, const GetActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetActivityTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetActivityTask, request, handler, context, m_executor.get());
 }
 
 GetExecutionHistoryOutcome SFNClient::GetExecutionHistory(const GetExecutionHistoryRequest& request) const
@@ -398,18 +345,12 @@ GetExecutionHistoryOutcome SFNClient::GetExecutionHistory(const GetExecutionHist
 
 GetExecutionHistoryOutcomeCallable SFNClient::GetExecutionHistoryCallable(const GetExecutionHistoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExecutionHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExecutionHistory(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetExecutionHistory, request, m_executor.get());
 }
 
 void SFNClient::GetExecutionHistoryAsync(const GetExecutionHistoryRequest& request, const GetExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetExecutionHistory(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetExecutionHistory, request, handler, context, m_executor.get());
 }
 
 ListActivitiesOutcome SFNClient::ListActivities(const ListActivitiesRequest& request) const
@@ -422,18 +363,12 @@ ListActivitiesOutcome SFNClient::ListActivities(const ListActivitiesRequest& req
 
 ListActivitiesOutcomeCallable SFNClient::ListActivitiesCallable(const ListActivitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListActivitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListActivities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListActivities, request, m_executor.get());
 }
 
 void SFNClient::ListActivitiesAsync(const ListActivitiesRequest& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListActivities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListActivities, request, handler, context, m_executor.get());
 }
 
 ListExecutionsOutcome SFNClient::ListExecutions(const ListExecutionsRequest& request) const
@@ -446,18 +381,12 @@ ListExecutionsOutcome SFNClient::ListExecutions(const ListExecutionsRequest& req
 
 ListExecutionsOutcomeCallable SFNClient::ListExecutionsCallable(const ListExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExecutions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExecutions, request, m_executor.get());
 }
 
 void SFNClient::ListExecutionsAsync(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExecutions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExecutions, request, handler, context, m_executor.get());
 }
 
 ListStateMachinesOutcome SFNClient::ListStateMachines(const ListStateMachinesRequest& request) const
@@ -470,18 +399,12 @@ ListStateMachinesOutcome SFNClient::ListStateMachines(const ListStateMachinesReq
 
 ListStateMachinesOutcomeCallable SFNClient::ListStateMachinesCallable(const ListStateMachinesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStateMachinesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStateMachines(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStateMachines, request, m_executor.get());
 }
 
 void SFNClient::ListStateMachinesAsync(const ListStateMachinesRequest& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStateMachines(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStateMachines, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome SFNClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -494,18 +417,12 @@ ListTagsForResourceOutcome SFNClient::ListTagsForResource(const ListTagsForResou
 
 ListTagsForResourceOutcomeCallable SFNClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void SFNClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 SendTaskFailureOutcome SFNClient::SendTaskFailure(const SendTaskFailureRequest& request) const
@@ -518,18 +435,12 @@ SendTaskFailureOutcome SFNClient::SendTaskFailure(const SendTaskFailureRequest& 
 
 SendTaskFailureOutcomeCallable SFNClient::SendTaskFailureCallable(const SendTaskFailureRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendTaskFailureOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendTaskFailure(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendTaskFailure, request, m_executor.get());
 }
 
 void SFNClient::SendTaskFailureAsync(const SendTaskFailureRequest& request, const SendTaskFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendTaskFailure(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendTaskFailure, request, handler, context, m_executor.get());
 }
 
 SendTaskHeartbeatOutcome SFNClient::SendTaskHeartbeat(const SendTaskHeartbeatRequest& request) const
@@ -542,18 +453,12 @@ SendTaskHeartbeatOutcome SFNClient::SendTaskHeartbeat(const SendTaskHeartbeatReq
 
 SendTaskHeartbeatOutcomeCallable SFNClient::SendTaskHeartbeatCallable(const SendTaskHeartbeatRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendTaskHeartbeatOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendTaskHeartbeat(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendTaskHeartbeat, request, m_executor.get());
 }
 
 void SFNClient::SendTaskHeartbeatAsync(const SendTaskHeartbeatRequest& request, const SendTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendTaskHeartbeat(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendTaskHeartbeat, request, handler, context, m_executor.get());
 }
 
 SendTaskSuccessOutcome SFNClient::SendTaskSuccess(const SendTaskSuccessRequest& request) const
@@ -566,18 +471,12 @@ SendTaskSuccessOutcome SFNClient::SendTaskSuccess(const SendTaskSuccessRequest& 
 
 SendTaskSuccessOutcomeCallable SFNClient::SendTaskSuccessCallable(const SendTaskSuccessRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendTaskSuccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendTaskSuccess(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendTaskSuccess, request, m_executor.get());
 }
 
 void SFNClient::SendTaskSuccessAsync(const SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendTaskSuccess(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendTaskSuccess, request, handler, context, m_executor.get());
 }
 
 StartExecutionOutcome SFNClient::StartExecution(const StartExecutionRequest& request) const
@@ -590,18 +489,12 @@ StartExecutionOutcome SFNClient::StartExecution(const StartExecutionRequest& req
 
 StartExecutionOutcomeCallable SFNClient::StartExecutionCallable(const StartExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartExecution, request, m_executor.get());
 }
 
 void SFNClient::StartExecutionAsync(const StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartExecution, request, handler, context, m_executor.get());
 }
 
 StartSyncExecutionOutcome SFNClient::StartSyncExecution(const StartSyncExecutionRequest& request) const
@@ -616,18 +509,12 @@ StartSyncExecutionOutcome SFNClient::StartSyncExecution(const StartSyncExecution
 
 StartSyncExecutionOutcomeCallable SFNClient::StartSyncExecutionCallable(const StartSyncExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartSyncExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSyncExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartSyncExecution, request, m_executor.get());
 }
 
 void SFNClient::StartSyncExecutionAsync(const StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartSyncExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartSyncExecution, request, handler, context, m_executor.get());
 }
 
 StopExecutionOutcome SFNClient::StopExecution(const StopExecutionRequest& request) const
@@ -640,18 +527,12 @@ StopExecutionOutcome SFNClient::StopExecution(const StopExecutionRequest& reques
 
 StopExecutionOutcomeCallable SFNClient::StopExecutionCallable(const StopExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopExecution, request, m_executor.get());
 }
 
 void SFNClient::StopExecutionAsync(const StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopExecution, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome SFNClient::TagResource(const TagResourceRequest& request) const
@@ -664,18 +545,12 @@ TagResourceOutcome SFNClient::TagResource(const TagResourceRequest& request) con
 
 TagResourceOutcomeCallable SFNClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void SFNClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome SFNClient::UntagResource(const UntagResourceRequest& request) const
@@ -688,18 +563,12 @@ UntagResourceOutcome SFNClient::UntagResource(const UntagResourceRequest& reques
 
 UntagResourceOutcomeCallable SFNClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void SFNClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateStateMachineOutcome SFNClient::UpdateStateMachine(const UpdateStateMachineRequest& request) const
@@ -712,17 +581,11 @@ UpdateStateMachineOutcome SFNClient::UpdateStateMachine(const UpdateStateMachine
 
 UpdateStateMachineOutcomeCallable SFNClient::UpdateStateMachineCallable(const UpdateStateMachineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStateMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStateMachine(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateStateMachine, request, m_executor.get());
 }
 
 void SFNClient::UpdateStateMachineAsync(const UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateStateMachine(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateStateMachine, request, handler, context, m_executor.get());
 }
 

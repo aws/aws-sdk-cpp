@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -185,18 +186,12 @@ ConfigureLogsOutcome MediaPackageClient::ConfigureLogs(const ConfigureLogsReques
 
 ConfigureLogsOutcomeCallable MediaPackageClient::ConfigureLogsCallable(const ConfigureLogsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ConfigureLogsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfigureLogs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ConfigureLogs, request, m_executor.get());
 }
 
 void MediaPackageClient::ConfigureLogsAsync(const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ConfigureLogs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ConfigureLogs, request, handler, context, m_executor.get());
 }
 
 CreateChannelOutcome MediaPackageClient::CreateChannel(const CreateChannelRequest& request) const
@@ -210,18 +205,12 @@ CreateChannelOutcome MediaPackageClient::CreateChannel(const CreateChannelReques
 
 CreateChannelOutcomeCallable MediaPackageClient::CreateChannelCallable(const CreateChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateChannel, request, m_executor.get());
 }
 
 void MediaPackageClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateChannel, request, handler, context, m_executor.get());
 }
 
 CreateHarvestJobOutcome MediaPackageClient::CreateHarvestJob(const CreateHarvestJobRequest& request) const
@@ -235,18 +224,12 @@ CreateHarvestJobOutcome MediaPackageClient::CreateHarvestJob(const CreateHarvest
 
 CreateHarvestJobOutcomeCallable MediaPackageClient::CreateHarvestJobCallable(const CreateHarvestJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHarvestJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHarvestJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateHarvestJob, request, m_executor.get());
 }
 
 void MediaPackageClient::CreateHarvestJobAsync(const CreateHarvestJobRequest& request, const CreateHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateHarvestJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateHarvestJob, request, handler, context, m_executor.get());
 }
 
 CreateOriginEndpointOutcome MediaPackageClient::CreateOriginEndpoint(const CreateOriginEndpointRequest& request) const
@@ -260,18 +243,12 @@ CreateOriginEndpointOutcome MediaPackageClient::CreateOriginEndpoint(const Creat
 
 CreateOriginEndpointOutcomeCallable MediaPackageClient::CreateOriginEndpointCallable(const CreateOriginEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateOriginEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateOriginEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateOriginEndpoint, request, m_executor.get());
 }
 
 void MediaPackageClient::CreateOriginEndpointAsync(const CreateOriginEndpointRequest& request, const CreateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateOriginEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateOriginEndpoint, request, handler, context, m_executor.get());
 }
 
 DeleteChannelOutcome MediaPackageClient::DeleteChannel(const DeleteChannelRequest& request) const
@@ -291,18 +268,12 @@ DeleteChannelOutcome MediaPackageClient::DeleteChannel(const DeleteChannelReques
 
 DeleteChannelOutcomeCallable MediaPackageClient::DeleteChannelCallable(const DeleteChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteChannel, request, m_executor.get());
 }
 
 void MediaPackageClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteChannel, request, handler, context, m_executor.get());
 }
 
 DeleteOriginEndpointOutcome MediaPackageClient::DeleteOriginEndpoint(const DeleteOriginEndpointRequest& request) const
@@ -322,18 +293,12 @@ DeleteOriginEndpointOutcome MediaPackageClient::DeleteOriginEndpoint(const Delet
 
 DeleteOriginEndpointOutcomeCallable MediaPackageClient::DeleteOriginEndpointCallable(const DeleteOriginEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteOriginEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOriginEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteOriginEndpoint, request, m_executor.get());
 }
 
 void MediaPackageClient::DeleteOriginEndpointAsync(const DeleteOriginEndpointRequest& request, const DeleteOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteOriginEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteOriginEndpoint, request, handler, context, m_executor.get());
 }
 
 DescribeChannelOutcome MediaPackageClient::DescribeChannel(const DescribeChannelRequest& request) const
@@ -353,18 +318,12 @@ DescribeChannelOutcome MediaPackageClient::DescribeChannel(const DescribeChannel
 
 DescribeChannelOutcomeCallable MediaPackageClient::DescribeChannelCallable(const DescribeChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeChannel, request, m_executor.get());
 }
 
 void MediaPackageClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeChannel, request, handler, context, m_executor.get());
 }
 
 DescribeHarvestJobOutcome MediaPackageClient::DescribeHarvestJob(const DescribeHarvestJobRequest& request) const
@@ -384,18 +343,12 @@ DescribeHarvestJobOutcome MediaPackageClient::DescribeHarvestJob(const DescribeH
 
 DescribeHarvestJobOutcomeCallable MediaPackageClient::DescribeHarvestJobCallable(const DescribeHarvestJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeHarvestJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHarvestJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeHarvestJob, request, m_executor.get());
 }
 
 void MediaPackageClient::DescribeHarvestJobAsync(const DescribeHarvestJobRequest& request, const DescribeHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeHarvestJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeHarvestJob, request, handler, context, m_executor.get());
 }
 
 DescribeOriginEndpointOutcome MediaPackageClient::DescribeOriginEndpoint(const DescribeOriginEndpointRequest& request) const
@@ -415,18 +368,12 @@ DescribeOriginEndpointOutcome MediaPackageClient::DescribeOriginEndpoint(const D
 
 DescribeOriginEndpointOutcomeCallable MediaPackageClient::DescribeOriginEndpointCallable(const DescribeOriginEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeOriginEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOriginEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeOriginEndpoint, request, m_executor.get());
 }
 
 void MediaPackageClient::DescribeOriginEndpointAsync(const DescribeOriginEndpointRequest& request, const DescribeOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeOriginEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeOriginEndpoint, request, handler, context, m_executor.get());
 }
 
 ListChannelsOutcome MediaPackageClient::ListChannels(const ListChannelsRequest& request) const
@@ -440,18 +387,12 @@ ListChannelsOutcome MediaPackageClient::ListChannels(const ListChannelsRequest& 
 
 ListChannelsOutcomeCallable MediaPackageClient::ListChannelsCallable(const ListChannelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListChannelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListChannels, request, m_executor.get());
 }
 
 void MediaPackageClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListChannels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListChannels, request, handler, context, m_executor.get());
 }
 
 ListHarvestJobsOutcome MediaPackageClient::ListHarvestJobs(const ListHarvestJobsRequest& request) const
@@ -465,18 +406,12 @@ ListHarvestJobsOutcome MediaPackageClient::ListHarvestJobs(const ListHarvestJobs
 
 ListHarvestJobsOutcomeCallable MediaPackageClient::ListHarvestJobsCallable(const ListHarvestJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListHarvestJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHarvestJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListHarvestJobs, request, m_executor.get());
 }
 
 void MediaPackageClient::ListHarvestJobsAsync(const ListHarvestJobsRequest& request, const ListHarvestJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListHarvestJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListHarvestJobs, request, handler, context, m_executor.get());
 }
 
 ListOriginEndpointsOutcome MediaPackageClient::ListOriginEndpoints(const ListOriginEndpointsRequest& request) const
@@ -490,18 +425,12 @@ ListOriginEndpointsOutcome MediaPackageClient::ListOriginEndpoints(const ListOri
 
 ListOriginEndpointsOutcomeCallable MediaPackageClient::ListOriginEndpointsCallable(const ListOriginEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListOriginEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOriginEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListOriginEndpoints, request, m_executor.get());
 }
 
 void MediaPackageClient::ListOriginEndpointsAsync(const ListOriginEndpointsRequest& request, const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListOriginEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListOriginEndpoints, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome MediaPackageClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -521,18 +450,12 @@ ListTagsForResourceOutcome MediaPackageClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable MediaPackageClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void MediaPackageClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 RotateIngestEndpointCredentialsOutcome MediaPackageClient::RotateIngestEndpointCredentials(const RotateIngestEndpointCredentialsRequest& request) const
@@ -560,18 +483,12 @@ RotateIngestEndpointCredentialsOutcome MediaPackageClient::RotateIngestEndpointC
 
 RotateIngestEndpointCredentialsOutcomeCallable MediaPackageClient::RotateIngestEndpointCredentialsCallable(const RotateIngestEndpointCredentialsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RotateIngestEndpointCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RotateIngestEndpointCredentials(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RotateIngestEndpointCredentials, request, m_executor.get());
 }
 
 void MediaPackageClient::RotateIngestEndpointCredentialsAsync(const RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RotateIngestEndpointCredentials(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RotateIngestEndpointCredentials, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome MediaPackageClient::TagResource(const TagResourceRequest& request) const
@@ -591,18 +508,12 @@ TagResourceOutcome MediaPackageClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable MediaPackageClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void MediaPackageClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome MediaPackageClient::UntagResource(const UntagResourceRequest& request) const
@@ -627,18 +538,12 @@ UntagResourceOutcome MediaPackageClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable MediaPackageClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void MediaPackageClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateChannelOutcome MediaPackageClient::UpdateChannel(const UpdateChannelRequest& request) const
@@ -658,18 +563,12 @@ UpdateChannelOutcome MediaPackageClient::UpdateChannel(const UpdateChannelReques
 
 UpdateChannelOutcomeCallable MediaPackageClient::UpdateChannelCallable(const UpdateChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateChannel, request, m_executor.get());
 }
 
 void MediaPackageClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateChannel, request, handler, context, m_executor.get());
 }
 
 UpdateOriginEndpointOutcome MediaPackageClient::UpdateOriginEndpoint(const UpdateOriginEndpointRequest& request) const
@@ -689,17 +588,11 @@ UpdateOriginEndpointOutcome MediaPackageClient::UpdateOriginEndpoint(const Updat
 
 UpdateOriginEndpointOutcomeCallable MediaPackageClient::UpdateOriginEndpointCallable(const UpdateOriginEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateOriginEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateOriginEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateOriginEndpoint, request, m_executor.get());
 }
 
 void MediaPackageClient::UpdateOriginEndpointAsync(const UpdateOriginEndpointRequest& request, const UpdateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateOriginEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateOriginEndpoint, request, handler, context, m_executor.get());
 }
 

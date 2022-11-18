@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -186,18 +187,12 @@ CreateAlarmModelOutcome IoTEventsClient::CreateAlarmModel(const CreateAlarmModel
 
 CreateAlarmModelOutcomeCallable IoTEventsClient::CreateAlarmModelCallable(const CreateAlarmModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAlarmModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAlarmModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAlarmModel, request, m_executor.get());
 }
 
 void IoTEventsClient::CreateAlarmModelAsync(const CreateAlarmModelRequest& request, const CreateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAlarmModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAlarmModel, request, handler, context, m_executor.get());
 }
 
 CreateDetectorModelOutcome IoTEventsClient::CreateDetectorModel(const CreateDetectorModelRequest& request) const
@@ -211,18 +206,12 @@ CreateDetectorModelOutcome IoTEventsClient::CreateDetectorModel(const CreateDete
 
 CreateDetectorModelOutcomeCallable IoTEventsClient::CreateDetectorModelCallable(const CreateDetectorModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDetectorModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDetectorModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDetectorModel, request, m_executor.get());
 }
 
 void IoTEventsClient::CreateDetectorModelAsync(const CreateDetectorModelRequest& request, const CreateDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDetectorModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDetectorModel, request, handler, context, m_executor.get());
 }
 
 CreateInputOutcome IoTEventsClient::CreateInput(const CreateInputRequest& request) const
@@ -236,18 +225,12 @@ CreateInputOutcome IoTEventsClient::CreateInput(const CreateInputRequest& reques
 
 CreateInputOutcomeCallable IoTEventsClient::CreateInputCallable(const CreateInputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateInputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateInput, request, m_executor.get());
 }
 
 void IoTEventsClient::CreateInputAsync(const CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateInput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateInput, request, handler, context, m_executor.get());
 }
 
 DeleteAlarmModelOutcome IoTEventsClient::DeleteAlarmModel(const DeleteAlarmModelRequest& request) const
@@ -267,18 +250,12 @@ DeleteAlarmModelOutcome IoTEventsClient::DeleteAlarmModel(const DeleteAlarmModel
 
 DeleteAlarmModelOutcomeCallable IoTEventsClient::DeleteAlarmModelCallable(const DeleteAlarmModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAlarmModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAlarmModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAlarmModel, request, m_executor.get());
 }
 
 void IoTEventsClient::DeleteAlarmModelAsync(const DeleteAlarmModelRequest& request, const DeleteAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAlarmModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAlarmModel, request, handler, context, m_executor.get());
 }
 
 DeleteDetectorModelOutcome IoTEventsClient::DeleteDetectorModel(const DeleteDetectorModelRequest& request) const
@@ -298,18 +275,12 @@ DeleteDetectorModelOutcome IoTEventsClient::DeleteDetectorModel(const DeleteDete
 
 DeleteDetectorModelOutcomeCallable IoTEventsClient::DeleteDetectorModelCallable(const DeleteDetectorModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDetectorModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDetectorModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDetectorModel, request, m_executor.get());
 }
 
 void IoTEventsClient::DeleteDetectorModelAsync(const DeleteDetectorModelRequest& request, const DeleteDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDetectorModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDetectorModel, request, handler, context, m_executor.get());
 }
 
 DeleteInputOutcome IoTEventsClient::DeleteInput(const DeleteInputRequest& request) const
@@ -329,18 +300,12 @@ DeleteInputOutcome IoTEventsClient::DeleteInput(const DeleteInputRequest& reques
 
 DeleteInputOutcomeCallable IoTEventsClient::DeleteInputCallable(const DeleteInputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteInputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteInput, request, m_executor.get());
 }
 
 void IoTEventsClient::DeleteInputAsync(const DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteInput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteInput, request, handler, context, m_executor.get());
 }
 
 DescribeAlarmModelOutcome IoTEventsClient::DescribeAlarmModel(const DescribeAlarmModelRequest& request) const
@@ -360,18 +325,12 @@ DescribeAlarmModelOutcome IoTEventsClient::DescribeAlarmModel(const DescribeAlar
 
 DescribeAlarmModelOutcomeCallable IoTEventsClient::DescribeAlarmModelCallable(const DescribeAlarmModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAlarmModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAlarmModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAlarmModel, request, m_executor.get());
 }
 
 void IoTEventsClient::DescribeAlarmModelAsync(const DescribeAlarmModelRequest& request, const DescribeAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAlarmModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAlarmModel, request, handler, context, m_executor.get());
 }
 
 DescribeDetectorModelOutcome IoTEventsClient::DescribeDetectorModel(const DescribeDetectorModelRequest& request) const
@@ -391,18 +350,12 @@ DescribeDetectorModelOutcome IoTEventsClient::DescribeDetectorModel(const Descri
 
 DescribeDetectorModelOutcomeCallable IoTEventsClient::DescribeDetectorModelCallable(const DescribeDetectorModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDetectorModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDetectorModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDetectorModel, request, m_executor.get());
 }
 
 void IoTEventsClient::DescribeDetectorModelAsync(const DescribeDetectorModelRequest& request, const DescribeDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDetectorModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDetectorModel, request, handler, context, m_executor.get());
 }
 
 DescribeDetectorModelAnalysisOutcome IoTEventsClient::DescribeDetectorModelAnalysis(const DescribeDetectorModelAnalysisRequest& request) const
@@ -422,18 +375,12 @@ DescribeDetectorModelAnalysisOutcome IoTEventsClient::DescribeDetectorModelAnaly
 
 DescribeDetectorModelAnalysisOutcomeCallable IoTEventsClient::DescribeDetectorModelAnalysisCallable(const DescribeDetectorModelAnalysisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDetectorModelAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDetectorModelAnalysis(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDetectorModelAnalysis, request, m_executor.get());
 }
 
 void IoTEventsClient::DescribeDetectorModelAnalysisAsync(const DescribeDetectorModelAnalysisRequest& request, const DescribeDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDetectorModelAnalysis(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDetectorModelAnalysis, request, handler, context, m_executor.get());
 }
 
 DescribeInputOutcome IoTEventsClient::DescribeInput(const DescribeInputRequest& request) const
@@ -453,18 +400,12 @@ DescribeInputOutcome IoTEventsClient::DescribeInput(const DescribeInputRequest& 
 
 DescribeInputOutcomeCallable IoTEventsClient::DescribeInputCallable(const DescribeInputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeInput, request, m_executor.get());
 }
 
 void IoTEventsClient::DescribeInputAsync(const DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeInput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeInput, request, handler, context, m_executor.get());
 }
 
 DescribeLoggingOptionsOutcome IoTEventsClient::DescribeLoggingOptions(const DescribeLoggingOptionsRequest& request) const
@@ -478,18 +419,12 @@ DescribeLoggingOptionsOutcome IoTEventsClient::DescribeLoggingOptions(const Desc
 
 DescribeLoggingOptionsOutcomeCallable IoTEventsClient::DescribeLoggingOptionsCallable(const DescribeLoggingOptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLoggingOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLoggingOptions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLoggingOptions, request, m_executor.get());
 }
 
 void IoTEventsClient::DescribeLoggingOptionsAsync(const DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLoggingOptions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLoggingOptions, request, handler, context, m_executor.get());
 }
 
 GetDetectorModelAnalysisResultsOutcome IoTEventsClient::GetDetectorModelAnalysisResults(const GetDetectorModelAnalysisResultsRequest& request) const
@@ -510,18 +445,12 @@ GetDetectorModelAnalysisResultsOutcome IoTEventsClient::GetDetectorModelAnalysis
 
 GetDetectorModelAnalysisResultsOutcomeCallable IoTEventsClient::GetDetectorModelAnalysisResultsCallable(const GetDetectorModelAnalysisResultsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDetectorModelAnalysisResultsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDetectorModelAnalysisResults(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDetectorModelAnalysisResults, request, m_executor.get());
 }
 
 void IoTEventsClient::GetDetectorModelAnalysisResultsAsync(const GetDetectorModelAnalysisResultsRequest& request, const GetDetectorModelAnalysisResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDetectorModelAnalysisResults(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDetectorModelAnalysisResults, request, handler, context, m_executor.get());
 }
 
 ListAlarmModelVersionsOutcome IoTEventsClient::ListAlarmModelVersions(const ListAlarmModelVersionsRequest& request) const
@@ -542,18 +471,12 @@ ListAlarmModelVersionsOutcome IoTEventsClient::ListAlarmModelVersions(const List
 
 ListAlarmModelVersionsOutcomeCallable IoTEventsClient::ListAlarmModelVersionsCallable(const ListAlarmModelVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAlarmModelVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAlarmModelVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAlarmModelVersions, request, m_executor.get());
 }
 
 void IoTEventsClient::ListAlarmModelVersionsAsync(const ListAlarmModelVersionsRequest& request, const ListAlarmModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAlarmModelVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAlarmModelVersions, request, handler, context, m_executor.get());
 }
 
 ListAlarmModelsOutcome IoTEventsClient::ListAlarmModels(const ListAlarmModelsRequest& request) const
@@ -567,18 +490,12 @@ ListAlarmModelsOutcome IoTEventsClient::ListAlarmModels(const ListAlarmModelsReq
 
 ListAlarmModelsOutcomeCallable IoTEventsClient::ListAlarmModelsCallable(const ListAlarmModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAlarmModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAlarmModels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAlarmModels, request, m_executor.get());
 }
 
 void IoTEventsClient::ListAlarmModelsAsync(const ListAlarmModelsRequest& request, const ListAlarmModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAlarmModels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAlarmModels, request, handler, context, m_executor.get());
 }
 
 ListDetectorModelVersionsOutcome IoTEventsClient::ListDetectorModelVersions(const ListDetectorModelVersionsRequest& request) const
@@ -599,18 +516,12 @@ ListDetectorModelVersionsOutcome IoTEventsClient::ListDetectorModelVersions(cons
 
 ListDetectorModelVersionsOutcomeCallable IoTEventsClient::ListDetectorModelVersionsCallable(const ListDetectorModelVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDetectorModelVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDetectorModelVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDetectorModelVersions, request, m_executor.get());
 }
 
 void IoTEventsClient::ListDetectorModelVersionsAsync(const ListDetectorModelVersionsRequest& request, const ListDetectorModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDetectorModelVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDetectorModelVersions, request, handler, context, m_executor.get());
 }
 
 ListDetectorModelsOutcome IoTEventsClient::ListDetectorModels(const ListDetectorModelsRequest& request) const
@@ -624,18 +535,12 @@ ListDetectorModelsOutcome IoTEventsClient::ListDetectorModels(const ListDetector
 
 ListDetectorModelsOutcomeCallable IoTEventsClient::ListDetectorModelsCallable(const ListDetectorModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDetectorModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDetectorModels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDetectorModels, request, m_executor.get());
 }
 
 void IoTEventsClient::ListDetectorModelsAsync(const ListDetectorModelsRequest& request, const ListDetectorModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDetectorModels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDetectorModels, request, handler, context, m_executor.get());
 }
 
 ListInputRoutingsOutcome IoTEventsClient::ListInputRoutings(const ListInputRoutingsRequest& request) const
@@ -649,18 +554,12 @@ ListInputRoutingsOutcome IoTEventsClient::ListInputRoutings(const ListInputRouti
 
 ListInputRoutingsOutcomeCallable IoTEventsClient::ListInputRoutingsCallable(const ListInputRoutingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInputRoutingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInputRoutings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInputRoutings, request, m_executor.get());
 }
 
 void IoTEventsClient::ListInputRoutingsAsync(const ListInputRoutingsRequest& request, const ListInputRoutingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInputRoutings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInputRoutings, request, handler, context, m_executor.get());
 }
 
 ListInputsOutcome IoTEventsClient::ListInputs(const ListInputsRequest& request) const
@@ -674,18 +573,12 @@ ListInputsOutcome IoTEventsClient::ListInputs(const ListInputsRequest& request) 
 
 ListInputsOutcomeCallable IoTEventsClient::ListInputsCallable(const ListInputsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInputsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInputs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInputs, request, m_executor.get());
 }
 
 void IoTEventsClient::ListInputsAsync(const ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInputs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInputs, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome IoTEventsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -704,18 +597,12 @@ ListTagsForResourceOutcome IoTEventsClient::ListTagsForResource(const ListTagsFo
 
 ListTagsForResourceOutcomeCallable IoTEventsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void IoTEventsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutLoggingOptionsOutcome IoTEventsClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const
@@ -729,18 +616,12 @@ PutLoggingOptionsOutcome IoTEventsClient::PutLoggingOptions(const PutLoggingOpti
 
 PutLoggingOptionsOutcomeCallable IoTEventsClient::PutLoggingOptionsCallable(const PutLoggingOptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutLoggingOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutLoggingOptions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutLoggingOptions, request, m_executor.get());
 }
 
 void IoTEventsClient::PutLoggingOptionsAsync(const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutLoggingOptions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutLoggingOptions, request, handler, context, m_executor.get());
 }
 
 StartDetectorModelAnalysisOutcome IoTEventsClient::StartDetectorModelAnalysis(const StartDetectorModelAnalysisRequest& request) const
@@ -754,18 +635,12 @@ StartDetectorModelAnalysisOutcome IoTEventsClient::StartDetectorModelAnalysis(co
 
 StartDetectorModelAnalysisOutcomeCallable IoTEventsClient::StartDetectorModelAnalysisCallable(const StartDetectorModelAnalysisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDetectorModelAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDetectorModelAnalysis(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartDetectorModelAnalysis, request, m_executor.get());
 }
 
 void IoTEventsClient::StartDetectorModelAnalysisAsync(const StartDetectorModelAnalysisRequest& request, const StartDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartDetectorModelAnalysis(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartDetectorModelAnalysis, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome IoTEventsClient::TagResource(const TagResourceRequest& request) const
@@ -784,18 +659,12 @@ TagResourceOutcome IoTEventsClient::TagResource(const TagResourceRequest& reques
 
 TagResourceOutcomeCallable IoTEventsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void IoTEventsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome IoTEventsClient::UntagResource(const UntagResourceRequest& request) const
@@ -819,18 +688,12 @@ UntagResourceOutcome IoTEventsClient::UntagResource(const UntagResourceRequest& 
 
 UntagResourceOutcomeCallable IoTEventsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void IoTEventsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateAlarmModelOutcome IoTEventsClient::UpdateAlarmModel(const UpdateAlarmModelRequest& request) const
@@ -850,18 +713,12 @@ UpdateAlarmModelOutcome IoTEventsClient::UpdateAlarmModel(const UpdateAlarmModel
 
 UpdateAlarmModelOutcomeCallable IoTEventsClient::UpdateAlarmModelCallable(const UpdateAlarmModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAlarmModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAlarmModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAlarmModel, request, m_executor.get());
 }
 
 void IoTEventsClient::UpdateAlarmModelAsync(const UpdateAlarmModelRequest& request, const UpdateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAlarmModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAlarmModel, request, handler, context, m_executor.get());
 }
 
 UpdateDetectorModelOutcome IoTEventsClient::UpdateDetectorModel(const UpdateDetectorModelRequest& request) const
@@ -881,18 +738,12 @@ UpdateDetectorModelOutcome IoTEventsClient::UpdateDetectorModel(const UpdateDete
 
 UpdateDetectorModelOutcomeCallable IoTEventsClient::UpdateDetectorModelCallable(const UpdateDetectorModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDetectorModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDetectorModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDetectorModel, request, m_executor.get());
 }
 
 void IoTEventsClient::UpdateDetectorModelAsync(const UpdateDetectorModelRequest& request, const UpdateDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDetectorModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDetectorModel, request, handler, context, m_executor.get());
 }
 
 UpdateInputOutcome IoTEventsClient::UpdateInput(const UpdateInputRequest& request) const
@@ -912,17 +763,11 @@ UpdateInputOutcome IoTEventsClient::UpdateInput(const UpdateInputRequest& reques
 
 UpdateInputOutcomeCallable IoTEventsClient::UpdateInputCallable(const UpdateInputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateInputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateInput, request, m_executor.get());
 }
 
 void IoTEventsClient::UpdateInputAsync(const UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateInput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateInput, request, handler, context, m_executor.get());
 }
 

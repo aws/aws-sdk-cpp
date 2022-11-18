@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -194,18 +195,12 @@ CreateAppOutcome SMSClient::CreateApp(const CreateAppRequest& request) const
 
 CreateAppOutcomeCallable SMSClient::CreateAppCallable(const CreateAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateApp, request, m_executor.get());
 }
 
 void SMSClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateApp, request, handler, context, m_executor.get());
 }
 
 CreateReplicationJobOutcome SMSClient::CreateReplicationJob(const CreateReplicationJobRequest& request) const
@@ -218,18 +213,12 @@ CreateReplicationJobOutcome SMSClient::CreateReplicationJob(const CreateReplicat
 
 CreateReplicationJobOutcomeCallable SMSClient::CreateReplicationJobCallable(const CreateReplicationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateReplicationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateReplicationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateReplicationJob, request, m_executor.get());
 }
 
 void SMSClient::CreateReplicationJobAsync(const CreateReplicationJobRequest& request, const CreateReplicationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateReplicationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateReplicationJob, request, handler, context, m_executor.get());
 }
 
 DeleteAppOutcome SMSClient::DeleteApp(const DeleteAppRequest& request) const
@@ -242,18 +231,12 @@ DeleteAppOutcome SMSClient::DeleteApp(const DeleteAppRequest& request) const
 
 DeleteAppOutcomeCallable SMSClient::DeleteAppCallable(const DeleteAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteApp, request, m_executor.get());
 }
 
 void SMSClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteApp, request, handler, context, m_executor.get());
 }
 
 DeleteAppLaunchConfigurationOutcome SMSClient::DeleteAppLaunchConfiguration(const DeleteAppLaunchConfigurationRequest& request) const
@@ -266,18 +249,12 @@ DeleteAppLaunchConfigurationOutcome SMSClient::DeleteAppLaunchConfiguration(cons
 
 DeleteAppLaunchConfigurationOutcomeCallable SMSClient::DeleteAppLaunchConfigurationCallable(const DeleteAppLaunchConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppLaunchConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppLaunchConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAppLaunchConfiguration, request, m_executor.get());
 }
 
 void SMSClient::DeleteAppLaunchConfigurationAsync(const DeleteAppLaunchConfigurationRequest& request, const DeleteAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAppLaunchConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAppLaunchConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteAppReplicationConfigurationOutcome SMSClient::DeleteAppReplicationConfiguration(const DeleteAppReplicationConfigurationRequest& request) const
@@ -290,18 +267,12 @@ DeleteAppReplicationConfigurationOutcome SMSClient::DeleteAppReplicationConfigur
 
 DeleteAppReplicationConfigurationOutcomeCallable SMSClient::DeleteAppReplicationConfigurationCallable(const DeleteAppReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppReplicationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAppReplicationConfiguration, request, m_executor.get());
 }
 
 void SMSClient::DeleteAppReplicationConfigurationAsync(const DeleteAppReplicationConfigurationRequest& request, const DeleteAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAppReplicationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAppReplicationConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteAppValidationConfigurationOutcome SMSClient::DeleteAppValidationConfiguration(const DeleteAppValidationConfigurationRequest& request) const
@@ -314,18 +285,12 @@ DeleteAppValidationConfigurationOutcome SMSClient::DeleteAppValidationConfigurat
 
 DeleteAppValidationConfigurationOutcomeCallable SMSClient::DeleteAppValidationConfigurationCallable(const DeleteAppValidationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppValidationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppValidationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAppValidationConfiguration, request, m_executor.get());
 }
 
 void SMSClient::DeleteAppValidationConfigurationAsync(const DeleteAppValidationConfigurationRequest& request, const DeleteAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAppValidationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAppValidationConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteReplicationJobOutcome SMSClient::DeleteReplicationJob(const DeleteReplicationJobRequest& request) const
@@ -338,18 +303,12 @@ DeleteReplicationJobOutcome SMSClient::DeleteReplicationJob(const DeleteReplicat
 
 DeleteReplicationJobOutcomeCallable SMSClient::DeleteReplicationJobCallable(const DeleteReplicationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteReplicationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReplicationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteReplicationJob, request, m_executor.get());
 }
 
 void SMSClient::DeleteReplicationJobAsync(const DeleteReplicationJobRequest& request, const DeleteReplicationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteReplicationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteReplicationJob, request, handler, context, m_executor.get());
 }
 
 DeleteServerCatalogOutcome SMSClient::DeleteServerCatalog(const DeleteServerCatalogRequest& request) const
@@ -362,18 +321,12 @@ DeleteServerCatalogOutcome SMSClient::DeleteServerCatalog(const DeleteServerCata
 
 DeleteServerCatalogOutcomeCallable SMSClient::DeleteServerCatalogCallable(const DeleteServerCatalogRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteServerCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteServerCatalog(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteServerCatalog, request, m_executor.get());
 }
 
 void SMSClient::DeleteServerCatalogAsync(const DeleteServerCatalogRequest& request, const DeleteServerCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteServerCatalog(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteServerCatalog, request, handler, context, m_executor.get());
 }
 
 DisassociateConnectorOutcome SMSClient::DisassociateConnector(const DisassociateConnectorRequest& request) const
@@ -386,18 +339,12 @@ DisassociateConnectorOutcome SMSClient::DisassociateConnector(const Disassociate
 
 DisassociateConnectorOutcomeCallable SMSClient::DisassociateConnectorCallable(const DisassociateConnectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateConnector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateConnector, request, m_executor.get());
 }
 
 void SMSClient::DisassociateConnectorAsync(const DisassociateConnectorRequest& request, const DisassociateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateConnector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateConnector, request, handler, context, m_executor.get());
 }
 
 GenerateChangeSetOutcome SMSClient::GenerateChangeSet(const GenerateChangeSetRequest& request) const
@@ -410,18 +357,12 @@ GenerateChangeSetOutcome SMSClient::GenerateChangeSet(const GenerateChangeSetReq
 
 GenerateChangeSetOutcomeCallable SMSClient::GenerateChangeSetCallable(const GenerateChangeSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GenerateChangeSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateChangeSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GenerateChangeSet, request, m_executor.get());
 }
 
 void SMSClient::GenerateChangeSetAsync(const GenerateChangeSetRequest& request, const GenerateChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GenerateChangeSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GenerateChangeSet, request, handler, context, m_executor.get());
 }
 
 GenerateTemplateOutcome SMSClient::GenerateTemplate(const GenerateTemplateRequest& request) const
@@ -434,18 +375,12 @@ GenerateTemplateOutcome SMSClient::GenerateTemplate(const GenerateTemplateReques
 
 GenerateTemplateOutcomeCallable SMSClient::GenerateTemplateCallable(const GenerateTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GenerateTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GenerateTemplate, request, m_executor.get());
 }
 
 void SMSClient::GenerateTemplateAsync(const GenerateTemplateRequest& request, const GenerateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GenerateTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GenerateTemplate, request, handler, context, m_executor.get());
 }
 
 GetAppOutcome SMSClient::GetApp(const GetAppRequest& request) const
@@ -458,18 +393,12 @@ GetAppOutcome SMSClient::GetApp(const GetAppRequest& request) const
 
 GetAppOutcomeCallable SMSClient::GetAppCallable(const GetAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetApp, request, m_executor.get());
 }
 
 void SMSClient::GetAppAsync(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetApp, request, handler, context, m_executor.get());
 }
 
 GetAppLaunchConfigurationOutcome SMSClient::GetAppLaunchConfiguration(const GetAppLaunchConfigurationRequest& request) const
@@ -482,18 +411,12 @@ GetAppLaunchConfigurationOutcome SMSClient::GetAppLaunchConfiguration(const GetA
 
 GetAppLaunchConfigurationOutcomeCallable SMSClient::GetAppLaunchConfigurationCallable(const GetAppLaunchConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAppLaunchConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppLaunchConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAppLaunchConfiguration, request, m_executor.get());
 }
 
 void SMSClient::GetAppLaunchConfigurationAsync(const GetAppLaunchConfigurationRequest& request, const GetAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAppLaunchConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAppLaunchConfiguration, request, handler, context, m_executor.get());
 }
 
 GetAppReplicationConfigurationOutcome SMSClient::GetAppReplicationConfiguration(const GetAppReplicationConfigurationRequest& request) const
@@ -506,18 +429,12 @@ GetAppReplicationConfigurationOutcome SMSClient::GetAppReplicationConfiguration(
 
 GetAppReplicationConfigurationOutcomeCallable SMSClient::GetAppReplicationConfigurationCallable(const GetAppReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAppReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppReplicationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAppReplicationConfiguration, request, m_executor.get());
 }
 
 void SMSClient::GetAppReplicationConfigurationAsync(const GetAppReplicationConfigurationRequest& request, const GetAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAppReplicationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAppReplicationConfiguration, request, handler, context, m_executor.get());
 }
 
 GetAppValidationConfigurationOutcome SMSClient::GetAppValidationConfiguration(const GetAppValidationConfigurationRequest& request) const
@@ -530,18 +447,12 @@ GetAppValidationConfigurationOutcome SMSClient::GetAppValidationConfiguration(co
 
 GetAppValidationConfigurationOutcomeCallable SMSClient::GetAppValidationConfigurationCallable(const GetAppValidationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAppValidationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppValidationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAppValidationConfiguration, request, m_executor.get());
 }
 
 void SMSClient::GetAppValidationConfigurationAsync(const GetAppValidationConfigurationRequest& request, const GetAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAppValidationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAppValidationConfiguration, request, handler, context, m_executor.get());
 }
 
 GetAppValidationOutputOutcome SMSClient::GetAppValidationOutput(const GetAppValidationOutputRequest& request) const
@@ -554,18 +465,12 @@ GetAppValidationOutputOutcome SMSClient::GetAppValidationOutput(const GetAppVali
 
 GetAppValidationOutputOutcomeCallable SMSClient::GetAppValidationOutputCallable(const GetAppValidationOutputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAppValidationOutputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppValidationOutput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAppValidationOutput, request, m_executor.get());
 }
 
 void SMSClient::GetAppValidationOutputAsync(const GetAppValidationOutputRequest& request, const GetAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAppValidationOutput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAppValidationOutput, request, handler, context, m_executor.get());
 }
 
 GetConnectorsOutcome SMSClient::GetConnectors(const GetConnectorsRequest& request) const
@@ -578,18 +483,12 @@ GetConnectorsOutcome SMSClient::GetConnectors(const GetConnectorsRequest& reques
 
 GetConnectorsOutcomeCallable SMSClient::GetConnectorsCallable(const GetConnectorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConnectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnectors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetConnectors, request, m_executor.get());
 }
 
 void SMSClient::GetConnectorsAsync(const GetConnectorsRequest& request, const GetConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetConnectors(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetConnectors, request, handler, context, m_executor.get());
 }
 
 GetReplicationJobsOutcome SMSClient::GetReplicationJobs(const GetReplicationJobsRequest& request) const
@@ -602,18 +501,12 @@ GetReplicationJobsOutcome SMSClient::GetReplicationJobs(const GetReplicationJobs
 
 GetReplicationJobsOutcomeCallable SMSClient::GetReplicationJobsCallable(const GetReplicationJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReplicationJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReplicationJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetReplicationJobs, request, m_executor.get());
 }
 
 void SMSClient::GetReplicationJobsAsync(const GetReplicationJobsRequest& request, const GetReplicationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetReplicationJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetReplicationJobs, request, handler, context, m_executor.get());
 }
 
 GetReplicationRunsOutcome SMSClient::GetReplicationRuns(const GetReplicationRunsRequest& request) const
@@ -626,18 +519,12 @@ GetReplicationRunsOutcome SMSClient::GetReplicationRuns(const GetReplicationRuns
 
 GetReplicationRunsOutcomeCallable SMSClient::GetReplicationRunsCallable(const GetReplicationRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReplicationRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReplicationRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetReplicationRuns, request, m_executor.get());
 }
 
 void SMSClient::GetReplicationRunsAsync(const GetReplicationRunsRequest& request, const GetReplicationRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetReplicationRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetReplicationRuns, request, handler, context, m_executor.get());
 }
 
 GetServersOutcome SMSClient::GetServers(const GetServersRequest& request) const
@@ -650,18 +537,12 @@ GetServersOutcome SMSClient::GetServers(const GetServersRequest& request) const
 
 GetServersOutcomeCallable SMSClient::GetServersCallable(const GetServersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetServers, request, m_executor.get());
 }
 
 void SMSClient::GetServersAsync(const GetServersRequest& request, const GetServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetServers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetServers, request, handler, context, m_executor.get());
 }
 
 ImportAppCatalogOutcome SMSClient::ImportAppCatalog(const ImportAppCatalogRequest& request) const
@@ -674,18 +555,12 @@ ImportAppCatalogOutcome SMSClient::ImportAppCatalog(const ImportAppCatalogReques
 
 ImportAppCatalogOutcomeCallable SMSClient::ImportAppCatalogCallable(const ImportAppCatalogRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportAppCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportAppCatalog(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportAppCatalog, request, m_executor.get());
 }
 
 void SMSClient::ImportAppCatalogAsync(const ImportAppCatalogRequest& request, const ImportAppCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportAppCatalog(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportAppCatalog, request, handler, context, m_executor.get());
 }
 
 ImportServerCatalogOutcome SMSClient::ImportServerCatalog(const ImportServerCatalogRequest& request) const
@@ -698,18 +573,12 @@ ImportServerCatalogOutcome SMSClient::ImportServerCatalog(const ImportServerCata
 
 ImportServerCatalogOutcomeCallable SMSClient::ImportServerCatalogCallable(const ImportServerCatalogRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportServerCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportServerCatalog(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportServerCatalog, request, m_executor.get());
 }
 
 void SMSClient::ImportServerCatalogAsync(const ImportServerCatalogRequest& request, const ImportServerCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportServerCatalog(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportServerCatalog, request, handler, context, m_executor.get());
 }
 
 LaunchAppOutcome SMSClient::LaunchApp(const LaunchAppRequest& request) const
@@ -722,18 +591,12 @@ LaunchAppOutcome SMSClient::LaunchApp(const LaunchAppRequest& request) const
 
 LaunchAppOutcomeCallable SMSClient::LaunchAppCallable(const LaunchAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< LaunchAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->LaunchApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(LaunchApp, request, m_executor.get());
 }
 
 void SMSClient::LaunchAppAsync(const LaunchAppRequest& request, const LaunchAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, LaunchApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(LaunchApp, request, handler, context, m_executor.get());
 }
 
 ListAppsOutcome SMSClient::ListApps(const ListAppsRequest& request) const
@@ -746,18 +609,12 @@ ListAppsOutcome SMSClient::ListApps(const ListAppsRequest& request) const
 
 ListAppsOutcomeCallable SMSClient::ListAppsCallable(const ListAppsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApps(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListApps, request, m_executor.get());
 }
 
 void SMSClient::ListAppsAsync(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListApps(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListApps, request, handler, context, m_executor.get());
 }
 
 NotifyAppValidationOutputOutcome SMSClient::NotifyAppValidationOutput(const NotifyAppValidationOutputRequest& request) const
@@ -770,18 +627,12 @@ NotifyAppValidationOutputOutcome SMSClient::NotifyAppValidationOutput(const Noti
 
 NotifyAppValidationOutputOutcomeCallable SMSClient::NotifyAppValidationOutputCallable(const NotifyAppValidationOutputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< NotifyAppValidationOutputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->NotifyAppValidationOutput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(NotifyAppValidationOutput, request, m_executor.get());
 }
 
 void SMSClient::NotifyAppValidationOutputAsync(const NotifyAppValidationOutputRequest& request, const NotifyAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, NotifyAppValidationOutput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(NotifyAppValidationOutput, request, handler, context, m_executor.get());
 }
 
 PutAppLaunchConfigurationOutcome SMSClient::PutAppLaunchConfiguration(const PutAppLaunchConfigurationRequest& request) const
@@ -794,18 +645,12 @@ PutAppLaunchConfigurationOutcome SMSClient::PutAppLaunchConfiguration(const PutA
 
 PutAppLaunchConfigurationOutcomeCallable SMSClient::PutAppLaunchConfigurationCallable(const PutAppLaunchConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAppLaunchConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAppLaunchConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutAppLaunchConfiguration, request, m_executor.get());
 }
 
 void SMSClient::PutAppLaunchConfigurationAsync(const PutAppLaunchConfigurationRequest& request, const PutAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutAppLaunchConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutAppLaunchConfiguration, request, handler, context, m_executor.get());
 }
 
 PutAppReplicationConfigurationOutcome SMSClient::PutAppReplicationConfiguration(const PutAppReplicationConfigurationRequest& request) const
@@ -818,18 +663,12 @@ PutAppReplicationConfigurationOutcome SMSClient::PutAppReplicationConfiguration(
 
 PutAppReplicationConfigurationOutcomeCallable SMSClient::PutAppReplicationConfigurationCallable(const PutAppReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAppReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAppReplicationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutAppReplicationConfiguration, request, m_executor.get());
 }
 
 void SMSClient::PutAppReplicationConfigurationAsync(const PutAppReplicationConfigurationRequest& request, const PutAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutAppReplicationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutAppReplicationConfiguration, request, handler, context, m_executor.get());
 }
 
 PutAppValidationConfigurationOutcome SMSClient::PutAppValidationConfiguration(const PutAppValidationConfigurationRequest& request) const
@@ -842,18 +681,12 @@ PutAppValidationConfigurationOutcome SMSClient::PutAppValidationConfiguration(co
 
 PutAppValidationConfigurationOutcomeCallable SMSClient::PutAppValidationConfigurationCallable(const PutAppValidationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAppValidationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAppValidationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutAppValidationConfiguration, request, m_executor.get());
 }
 
 void SMSClient::PutAppValidationConfigurationAsync(const PutAppValidationConfigurationRequest& request, const PutAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutAppValidationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutAppValidationConfiguration, request, handler, context, m_executor.get());
 }
 
 StartAppReplicationOutcome SMSClient::StartAppReplication(const StartAppReplicationRequest& request) const
@@ -866,18 +699,12 @@ StartAppReplicationOutcome SMSClient::StartAppReplication(const StartAppReplicat
 
 StartAppReplicationOutcomeCallable SMSClient::StartAppReplicationCallable(const StartAppReplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartAppReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartAppReplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartAppReplication, request, m_executor.get());
 }
 
 void SMSClient::StartAppReplicationAsync(const StartAppReplicationRequest& request, const StartAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartAppReplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartAppReplication, request, handler, context, m_executor.get());
 }
 
 StartOnDemandAppReplicationOutcome SMSClient::StartOnDemandAppReplication(const StartOnDemandAppReplicationRequest& request) const
@@ -890,18 +717,12 @@ StartOnDemandAppReplicationOutcome SMSClient::StartOnDemandAppReplication(const 
 
 StartOnDemandAppReplicationOutcomeCallable SMSClient::StartOnDemandAppReplicationCallable(const StartOnDemandAppReplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartOnDemandAppReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartOnDemandAppReplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartOnDemandAppReplication, request, m_executor.get());
 }
 
 void SMSClient::StartOnDemandAppReplicationAsync(const StartOnDemandAppReplicationRequest& request, const StartOnDemandAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartOnDemandAppReplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartOnDemandAppReplication, request, handler, context, m_executor.get());
 }
 
 StartOnDemandReplicationRunOutcome SMSClient::StartOnDemandReplicationRun(const StartOnDemandReplicationRunRequest& request) const
@@ -914,18 +735,12 @@ StartOnDemandReplicationRunOutcome SMSClient::StartOnDemandReplicationRun(const 
 
 StartOnDemandReplicationRunOutcomeCallable SMSClient::StartOnDemandReplicationRunCallable(const StartOnDemandReplicationRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartOnDemandReplicationRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartOnDemandReplicationRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartOnDemandReplicationRun, request, m_executor.get());
 }
 
 void SMSClient::StartOnDemandReplicationRunAsync(const StartOnDemandReplicationRunRequest& request, const StartOnDemandReplicationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartOnDemandReplicationRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartOnDemandReplicationRun, request, handler, context, m_executor.get());
 }
 
 StopAppReplicationOutcome SMSClient::StopAppReplication(const StopAppReplicationRequest& request) const
@@ -938,18 +753,12 @@ StopAppReplicationOutcome SMSClient::StopAppReplication(const StopAppReplication
 
 StopAppReplicationOutcomeCallable SMSClient::StopAppReplicationCallable(const StopAppReplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopAppReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopAppReplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopAppReplication, request, m_executor.get());
 }
 
 void SMSClient::StopAppReplicationAsync(const StopAppReplicationRequest& request, const StopAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopAppReplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopAppReplication, request, handler, context, m_executor.get());
 }
 
 TerminateAppOutcome SMSClient::TerminateApp(const TerminateAppRequest& request) const
@@ -962,18 +771,12 @@ TerminateAppOutcome SMSClient::TerminateApp(const TerminateAppRequest& request) 
 
 TerminateAppOutcomeCallable SMSClient::TerminateAppCallable(const TerminateAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TerminateAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TerminateApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TerminateApp, request, m_executor.get());
 }
 
 void SMSClient::TerminateAppAsync(const TerminateAppRequest& request, const TerminateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TerminateApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TerminateApp, request, handler, context, m_executor.get());
 }
 
 UpdateAppOutcome SMSClient::UpdateApp(const UpdateAppRequest& request) const
@@ -986,18 +789,12 @@ UpdateAppOutcome SMSClient::UpdateApp(const UpdateAppRequest& request) const
 
 UpdateAppOutcomeCallable SMSClient::UpdateAppCallable(const UpdateAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateApp, request, m_executor.get());
 }
 
 void SMSClient::UpdateAppAsync(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateApp, request, handler, context, m_executor.get());
 }
 
 UpdateReplicationJobOutcome SMSClient::UpdateReplicationJob(const UpdateReplicationJobRequest& request) const
@@ -1010,17 +807,11 @@ UpdateReplicationJobOutcome SMSClient::UpdateReplicationJob(const UpdateReplicat
 
 UpdateReplicationJobOutcomeCallable SMSClient::UpdateReplicationJobCallable(const UpdateReplicationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReplicationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReplicationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateReplicationJob, request, m_executor.get());
 }
 
 void SMSClient::UpdateReplicationJobAsync(const UpdateReplicationJobRequest& request, const UpdateReplicationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateReplicationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateReplicationJob, request, handler, context, m_executor.get());
 }
 

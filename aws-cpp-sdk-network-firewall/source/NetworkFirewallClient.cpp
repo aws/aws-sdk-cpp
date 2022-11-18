@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -190,18 +191,12 @@ AssociateFirewallPolicyOutcome NetworkFirewallClient::AssociateFirewallPolicy(co
 
 AssociateFirewallPolicyOutcomeCallable NetworkFirewallClient::AssociateFirewallPolicyCallable(const AssociateFirewallPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateFirewallPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateFirewallPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateFirewallPolicy, request, m_executor.get());
 }
 
 void NetworkFirewallClient::AssociateFirewallPolicyAsync(const AssociateFirewallPolicyRequest& request, const AssociateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateFirewallPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateFirewallPolicy, request, handler, context, m_executor.get());
 }
 
 AssociateSubnetsOutcome NetworkFirewallClient::AssociateSubnets(const AssociateSubnetsRequest& request) const
@@ -214,18 +209,12 @@ AssociateSubnetsOutcome NetworkFirewallClient::AssociateSubnets(const AssociateS
 
 AssociateSubnetsOutcomeCallable NetworkFirewallClient::AssociateSubnetsCallable(const AssociateSubnetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateSubnetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateSubnets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateSubnets, request, m_executor.get());
 }
 
 void NetworkFirewallClient::AssociateSubnetsAsync(const AssociateSubnetsRequest& request, const AssociateSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateSubnets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateSubnets, request, handler, context, m_executor.get());
 }
 
 CreateFirewallOutcome NetworkFirewallClient::CreateFirewall(const CreateFirewallRequest& request) const
@@ -238,18 +227,12 @@ CreateFirewallOutcome NetworkFirewallClient::CreateFirewall(const CreateFirewall
 
 CreateFirewallOutcomeCallable NetworkFirewallClient::CreateFirewallCallable(const CreateFirewallRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFirewallOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFirewall(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFirewall, request, m_executor.get());
 }
 
 void NetworkFirewallClient::CreateFirewallAsync(const CreateFirewallRequest& request, const CreateFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFirewall(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFirewall, request, handler, context, m_executor.get());
 }
 
 CreateFirewallPolicyOutcome NetworkFirewallClient::CreateFirewallPolicy(const CreateFirewallPolicyRequest& request) const
@@ -262,18 +245,12 @@ CreateFirewallPolicyOutcome NetworkFirewallClient::CreateFirewallPolicy(const Cr
 
 CreateFirewallPolicyOutcomeCallable NetworkFirewallClient::CreateFirewallPolicyCallable(const CreateFirewallPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFirewallPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFirewallPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFirewallPolicy, request, m_executor.get());
 }
 
 void NetworkFirewallClient::CreateFirewallPolicyAsync(const CreateFirewallPolicyRequest& request, const CreateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFirewallPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFirewallPolicy, request, handler, context, m_executor.get());
 }
 
 CreateRuleGroupOutcome NetworkFirewallClient::CreateRuleGroup(const CreateRuleGroupRequest& request) const
@@ -286,18 +263,12 @@ CreateRuleGroupOutcome NetworkFirewallClient::CreateRuleGroup(const CreateRuleGr
 
 CreateRuleGroupOutcomeCallable NetworkFirewallClient::CreateRuleGroupCallable(const CreateRuleGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRuleGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRuleGroup, request, m_executor.get());
 }
 
 void NetworkFirewallClient::CreateRuleGroupAsync(const CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRuleGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRuleGroup, request, handler, context, m_executor.get());
 }
 
 DeleteFirewallOutcome NetworkFirewallClient::DeleteFirewall(const DeleteFirewallRequest& request) const
@@ -310,18 +281,12 @@ DeleteFirewallOutcome NetworkFirewallClient::DeleteFirewall(const DeleteFirewall
 
 DeleteFirewallOutcomeCallable NetworkFirewallClient::DeleteFirewallCallable(const DeleteFirewallRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFirewallOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFirewall(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFirewall, request, m_executor.get());
 }
 
 void NetworkFirewallClient::DeleteFirewallAsync(const DeleteFirewallRequest& request, const DeleteFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFirewall(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFirewall, request, handler, context, m_executor.get());
 }
 
 DeleteFirewallPolicyOutcome NetworkFirewallClient::DeleteFirewallPolicy(const DeleteFirewallPolicyRequest& request) const
@@ -334,18 +299,12 @@ DeleteFirewallPolicyOutcome NetworkFirewallClient::DeleteFirewallPolicy(const De
 
 DeleteFirewallPolicyOutcomeCallable NetworkFirewallClient::DeleteFirewallPolicyCallable(const DeleteFirewallPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFirewallPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFirewallPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFirewallPolicy, request, m_executor.get());
 }
 
 void NetworkFirewallClient::DeleteFirewallPolicyAsync(const DeleteFirewallPolicyRequest& request, const DeleteFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFirewallPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFirewallPolicy, request, handler, context, m_executor.get());
 }
 
 DeleteResourcePolicyOutcome NetworkFirewallClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -358,18 +317,12 @@ DeleteResourcePolicyOutcome NetworkFirewallClient::DeleteResourcePolicy(const De
 
 DeleteResourcePolicyOutcomeCallable NetworkFirewallClient::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteResourcePolicy, request, m_executor.get());
 }
 
 void NetworkFirewallClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteResourcePolicy, request, handler, context, m_executor.get());
 }
 
 DeleteRuleGroupOutcome NetworkFirewallClient::DeleteRuleGroup(const DeleteRuleGroupRequest& request) const
@@ -382,18 +335,12 @@ DeleteRuleGroupOutcome NetworkFirewallClient::DeleteRuleGroup(const DeleteRuleGr
 
 DeleteRuleGroupOutcomeCallable NetworkFirewallClient::DeleteRuleGroupCallable(const DeleteRuleGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRuleGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRuleGroup, request, m_executor.get());
 }
 
 void NetworkFirewallClient::DeleteRuleGroupAsync(const DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRuleGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRuleGroup, request, handler, context, m_executor.get());
 }
 
 DescribeFirewallOutcome NetworkFirewallClient::DescribeFirewall(const DescribeFirewallRequest& request) const
@@ -406,18 +353,12 @@ DescribeFirewallOutcome NetworkFirewallClient::DescribeFirewall(const DescribeFi
 
 DescribeFirewallOutcomeCallable NetworkFirewallClient::DescribeFirewallCallable(const DescribeFirewallRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFirewallOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFirewall(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFirewall, request, m_executor.get());
 }
 
 void NetworkFirewallClient::DescribeFirewallAsync(const DescribeFirewallRequest& request, const DescribeFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFirewall(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFirewall, request, handler, context, m_executor.get());
 }
 
 DescribeFirewallPolicyOutcome NetworkFirewallClient::DescribeFirewallPolicy(const DescribeFirewallPolicyRequest& request) const
@@ -430,18 +371,12 @@ DescribeFirewallPolicyOutcome NetworkFirewallClient::DescribeFirewallPolicy(cons
 
 DescribeFirewallPolicyOutcomeCallable NetworkFirewallClient::DescribeFirewallPolicyCallable(const DescribeFirewallPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFirewallPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFirewallPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFirewallPolicy, request, m_executor.get());
 }
 
 void NetworkFirewallClient::DescribeFirewallPolicyAsync(const DescribeFirewallPolicyRequest& request, const DescribeFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFirewallPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFirewallPolicy, request, handler, context, m_executor.get());
 }
 
 DescribeLoggingConfigurationOutcome NetworkFirewallClient::DescribeLoggingConfiguration(const DescribeLoggingConfigurationRequest& request) const
@@ -454,18 +389,12 @@ DescribeLoggingConfigurationOutcome NetworkFirewallClient::DescribeLoggingConfig
 
 DescribeLoggingConfigurationOutcomeCallable NetworkFirewallClient::DescribeLoggingConfigurationCallable(const DescribeLoggingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLoggingConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLoggingConfiguration, request, m_executor.get());
 }
 
 void NetworkFirewallClient::DescribeLoggingConfigurationAsync(const DescribeLoggingConfigurationRequest& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLoggingConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLoggingConfiguration, request, handler, context, m_executor.get());
 }
 
 DescribeResourcePolicyOutcome NetworkFirewallClient::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const
@@ -478,18 +407,12 @@ DescribeResourcePolicyOutcome NetworkFirewallClient::DescribeResourcePolicy(cons
 
 DescribeResourcePolicyOutcomeCallable NetworkFirewallClient::DescribeResourcePolicyCallable(const DescribeResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeResourcePolicy, request, m_executor.get());
 }
 
 void NetworkFirewallClient::DescribeResourcePolicyAsync(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeResourcePolicy, request, handler, context, m_executor.get());
 }
 
 DescribeRuleGroupOutcome NetworkFirewallClient::DescribeRuleGroup(const DescribeRuleGroupRequest& request) const
@@ -502,18 +425,12 @@ DescribeRuleGroupOutcome NetworkFirewallClient::DescribeRuleGroup(const Describe
 
 DescribeRuleGroupOutcomeCallable NetworkFirewallClient::DescribeRuleGroupCallable(const DescribeRuleGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRuleGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRuleGroup, request, m_executor.get());
 }
 
 void NetworkFirewallClient::DescribeRuleGroupAsync(const DescribeRuleGroupRequest& request, const DescribeRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRuleGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRuleGroup, request, handler, context, m_executor.get());
 }
 
 DescribeRuleGroupMetadataOutcome NetworkFirewallClient::DescribeRuleGroupMetadata(const DescribeRuleGroupMetadataRequest& request) const
@@ -526,18 +443,12 @@ DescribeRuleGroupMetadataOutcome NetworkFirewallClient::DescribeRuleGroupMetadat
 
 DescribeRuleGroupMetadataOutcomeCallable NetworkFirewallClient::DescribeRuleGroupMetadataCallable(const DescribeRuleGroupMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRuleGroupMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRuleGroupMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRuleGroupMetadata, request, m_executor.get());
 }
 
 void NetworkFirewallClient::DescribeRuleGroupMetadataAsync(const DescribeRuleGroupMetadataRequest& request, const DescribeRuleGroupMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRuleGroupMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRuleGroupMetadata, request, handler, context, m_executor.get());
 }
 
 DisassociateSubnetsOutcome NetworkFirewallClient::DisassociateSubnets(const DisassociateSubnetsRequest& request) const
@@ -550,18 +461,12 @@ DisassociateSubnetsOutcome NetworkFirewallClient::DisassociateSubnets(const Disa
 
 DisassociateSubnetsOutcomeCallable NetworkFirewallClient::DisassociateSubnetsCallable(const DisassociateSubnetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateSubnetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateSubnets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateSubnets, request, m_executor.get());
 }
 
 void NetworkFirewallClient::DisassociateSubnetsAsync(const DisassociateSubnetsRequest& request, const DisassociateSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateSubnets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateSubnets, request, handler, context, m_executor.get());
 }
 
 ListFirewallPoliciesOutcome NetworkFirewallClient::ListFirewallPolicies(const ListFirewallPoliciesRequest& request) const
@@ -574,18 +479,12 @@ ListFirewallPoliciesOutcome NetworkFirewallClient::ListFirewallPolicies(const Li
 
 ListFirewallPoliciesOutcomeCallable NetworkFirewallClient::ListFirewallPoliciesCallable(const ListFirewallPoliciesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFirewallPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFirewallPolicies(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFirewallPolicies, request, m_executor.get());
 }
 
 void NetworkFirewallClient::ListFirewallPoliciesAsync(const ListFirewallPoliciesRequest& request, const ListFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFirewallPolicies(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFirewallPolicies, request, handler, context, m_executor.get());
 }
 
 ListFirewallsOutcome NetworkFirewallClient::ListFirewalls(const ListFirewallsRequest& request) const
@@ -598,18 +497,12 @@ ListFirewallsOutcome NetworkFirewallClient::ListFirewalls(const ListFirewallsReq
 
 ListFirewallsOutcomeCallable NetworkFirewallClient::ListFirewallsCallable(const ListFirewallsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFirewallsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFirewalls(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFirewalls, request, m_executor.get());
 }
 
 void NetworkFirewallClient::ListFirewallsAsync(const ListFirewallsRequest& request, const ListFirewallsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFirewalls(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFirewalls, request, handler, context, m_executor.get());
 }
 
 ListRuleGroupsOutcome NetworkFirewallClient::ListRuleGroups(const ListRuleGroupsRequest& request) const
@@ -622,18 +515,12 @@ ListRuleGroupsOutcome NetworkFirewallClient::ListRuleGroups(const ListRuleGroups
 
 ListRuleGroupsOutcomeCallable NetworkFirewallClient::ListRuleGroupsCallable(const ListRuleGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRuleGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRuleGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRuleGroups, request, m_executor.get());
 }
 
 void NetworkFirewallClient::ListRuleGroupsAsync(const ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRuleGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRuleGroups, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome NetworkFirewallClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -646,18 +533,12 @@ ListTagsForResourceOutcome NetworkFirewallClient::ListTagsForResource(const List
 
 ListTagsForResourceOutcomeCallable NetworkFirewallClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void NetworkFirewallClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutResourcePolicyOutcome NetworkFirewallClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
@@ -670,18 +551,12 @@ PutResourcePolicyOutcome NetworkFirewallClient::PutResourcePolicy(const PutResou
 
 PutResourcePolicyOutcomeCallable NetworkFirewallClient::PutResourcePolicyCallable(const PutResourcePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourcePolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutResourcePolicy, request, m_executor.get());
 }
 
 void NetworkFirewallClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutResourcePolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutResourcePolicy, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome NetworkFirewallClient::TagResource(const TagResourceRequest& request) const
@@ -694,18 +569,12 @@ TagResourceOutcome NetworkFirewallClient::TagResource(const TagResourceRequest& 
 
 TagResourceOutcomeCallable NetworkFirewallClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void NetworkFirewallClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome NetworkFirewallClient::UntagResource(const UntagResourceRequest& request) const
@@ -718,18 +587,12 @@ UntagResourceOutcome NetworkFirewallClient::UntagResource(const UntagResourceReq
 
 UntagResourceOutcomeCallable NetworkFirewallClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void NetworkFirewallClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateFirewallDeleteProtectionOutcome NetworkFirewallClient::UpdateFirewallDeleteProtection(const UpdateFirewallDeleteProtectionRequest& request) const
@@ -742,18 +605,12 @@ UpdateFirewallDeleteProtectionOutcome NetworkFirewallClient::UpdateFirewallDelet
 
 UpdateFirewallDeleteProtectionOutcomeCallable NetworkFirewallClient::UpdateFirewallDeleteProtectionCallable(const UpdateFirewallDeleteProtectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFirewallDeleteProtectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFirewallDeleteProtection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFirewallDeleteProtection, request, m_executor.get());
 }
 
 void NetworkFirewallClient::UpdateFirewallDeleteProtectionAsync(const UpdateFirewallDeleteProtectionRequest& request, const UpdateFirewallDeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFirewallDeleteProtection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFirewallDeleteProtection, request, handler, context, m_executor.get());
 }
 
 UpdateFirewallDescriptionOutcome NetworkFirewallClient::UpdateFirewallDescription(const UpdateFirewallDescriptionRequest& request) const
@@ -766,18 +623,12 @@ UpdateFirewallDescriptionOutcome NetworkFirewallClient::UpdateFirewallDescriptio
 
 UpdateFirewallDescriptionOutcomeCallable NetworkFirewallClient::UpdateFirewallDescriptionCallable(const UpdateFirewallDescriptionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFirewallDescriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFirewallDescription(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFirewallDescription, request, m_executor.get());
 }
 
 void NetworkFirewallClient::UpdateFirewallDescriptionAsync(const UpdateFirewallDescriptionRequest& request, const UpdateFirewallDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFirewallDescription(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFirewallDescription, request, handler, context, m_executor.get());
 }
 
 UpdateFirewallEncryptionConfigurationOutcome NetworkFirewallClient::UpdateFirewallEncryptionConfiguration(const UpdateFirewallEncryptionConfigurationRequest& request) const
@@ -790,18 +641,12 @@ UpdateFirewallEncryptionConfigurationOutcome NetworkFirewallClient::UpdateFirewa
 
 UpdateFirewallEncryptionConfigurationOutcomeCallable NetworkFirewallClient::UpdateFirewallEncryptionConfigurationCallable(const UpdateFirewallEncryptionConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFirewallEncryptionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFirewallEncryptionConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFirewallEncryptionConfiguration, request, m_executor.get());
 }
 
 void NetworkFirewallClient::UpdateFirewallEncryptionConfigurationAsync(const UpdateFirewallEncryptionConfigurationRequest& request, const UpdateFirewallEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFirewallEncryptionConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFirewallEncryptionConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateFirewallPolicyOutcome NetworkFirewallClient::UpdateFirewallPolicy(const UpdateFirewallPolicyRequest& request) const
@@ -814,18 +659,12 @@ UpdateFirewallPolicyOutcome NetworkFirewallClient::UpdateFirewallPolicy(const Up
 
 UpdateFirewallPolicyOutcomeCallable NetworkFirewallClient::UpdateFirewallPolicyCallable(const UpdateFirewallPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFirewallPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFirewallPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFirewallPolicy, request, m_executor.get());
 }
 
 void NetworkFirewallClient::UpdateFirewallPolicyAsync(const UpdateFirewallPolicyRequest& request, const UpdateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFirewallPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFirewallPolicy, request, handler, context, m_executor.get());
 }
 
 UpdateFirewallPolicyChangeProtectionOutcome NetworkFirewallClient::UpdateFirewallPolicyChangeProtection(const UpdateFirewallPolicyChangeProtectionRequest& request) const
@@ -838,18 +677,12 @@ UpdateFirewallPolicyChangeProtectionOutcome NetworkFirewallClient::UpdateFirewal
 
 UpdateFirewallPolicyChangeProtectionOutcomeCallable NetworkFirewallClient::UpdateFirewallPolicyChangeProtectionCallable(const UpdateFirewallPolicyChangeProtectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFirewallPolicyChangeProtectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFirewallPolicyChangeProtection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFirewallPolicyChangeProtection, request, m_executor.get());
 }
 
 void NetworkFirewallClient::UpdateFirewallPolicyChangeProtectionAsync(const UpdateFirewallPolicyChangeProtectionRequest& request, const UpdateFirewallPolicyChangeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFirewallPolicyChangeProtection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFirewallPolicyChangeProtection, request, handler, context, m_executor.get());
 }
 
 UpdateLoggingConfigurationOutcome NetworkFirewallClient::UpdateLoggingConfiguration(const UpdateLoggingConfigurationRequest& request) const
@@ -862,18 +695,12 @@ UpdateLoggingConfigurationOutcome NetworkFirewallClient::UpdateLoggingConfigurat
 
 UpdateLoggingConfigurationOutcomeCallable NetworkFirewallClient::UpdateLoggingConfigurationCallable(const UpdateLoggingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLoggingConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLoggingConfiguration, request, m_executor.get());
 }
 
 void NetworkFirewallClient::UpdateLoggingConfigurationAsync(const UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLoggingConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLoggingConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateRuleGroupOutcome NetworkFirewallClient::UpdateRuleGroup(const UpdateRuleGroupRequest& request) const
@@ -886,18 +713,12 @@ UpdateRuleGroupOutcome NetworkFirewallClient::UpdateRuleGroup(const UpdateRuleGr
 
 UpdateRuleGroupOutcomeCallable NetworkFirewallClient::UpdateRuleGroupCallable(const UpdateRuleGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRuleGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRuleGroup, request, m_executor.get());
 }
 
 void NetworkFirewallClient::UpdateRuleGroupAsync(const UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRuleGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRuleGroup, request, handler, context, m_executor.get());
 }
 
 UpdateSubnetChangeProtectionOutcome NetworkFirewallClient::UpdateSubnetChangeProtection(const UpdateSubnetChangeProtectionRequest& request) const
@@ -910,17 +731,11 @@ UpdateSubnetChangeProtectionOutcome NetworkFirewallClient::UpdateSubnetChangePro
 
 UpdateSubnetChangeProtectionOutcomeCallable NetworkFirewallClient::UpdateSubnetChangeProtectionCallable(const UpdateSubnetChangeProtectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSubnetChangeProtectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSubnetChangeProtection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSubnetChangeProtection, request, m_executor.get());
 }
 
 void NetworkFirewallClient::UpdateSubnetChangeProtectionAsync(const UpdateSubnetChangeProtectionRequest& request, const UpdateSubnetChangeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSubnetChangeProtection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSubnetChangeProtection, request, handler, context, m_executor.get());
 }
 

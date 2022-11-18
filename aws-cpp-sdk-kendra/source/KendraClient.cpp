@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -219,18 +220,12 @@ AssociateEntitiesToExperienceOutcome KendraClient::AssociateEntitiesToExperience
 
 AssociateEntitiesToExperienceOutcomeCallable KendraClient::AssociateEntitiesToExperienceCallable(const AssociateEntitiesToExperienceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateEntitiesToExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateEntitiesToExperience(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateEntitiesToExperience, request, m_executor.get());
 }
 
 void KendraClient::AssociateEntitiesToExperienceAsync(const AssociateEntitiesToExperienceRequest& request, const AssociateEntitiesToExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateEntitiesToExperience(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateEntitiesToExperience, request, handler, context, m_executor.get());
 }
 
 AssociatePersonasToEntitiesOutcome KendraClient::AssociatePersonasToEntities(const AssociatePersonasToEntitiesRequest& request) const
@@ -243,18 +238,12 @@ AssociatePersonasToEntitiesOutcome KendraClient::AssociatePersonasToEntities(con
 
 AssociatePersonasToEntitiesOutcomeCallable KendraClient::AssociatePersonasToEntitiesCallable(const AssociatePersonasToEntitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociatePersonasToEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociatePersonasToEntities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociatePersonasToEntities, request, m_executor.get());
 }
 
 void KendraClient::AssociatePersonasToEntitiesAsync(const AssociatePersonasToEntitiesRequest& request, const AssociatePersonasToEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociatePersonasToEntities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociatePersonasToEntities, request, handler, context, m_executor.get());
 }
 
 BatchDeleteDocumentOutcome KendraClient::BatchDeleteDocument(const BatchDeleteDocumentRequest& request) const
@@ -267,18 +256,12 @@ BatchDeleteDocumentOutcome KendraClient::BatchDeleteDocument(const BatchDeleteDo
 
 BatchDeleteDocumentOutcomeCallable KendraClient::BatchDeleteDocumentCallable(const BatchDeleteDocumentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteDocumentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteDocument(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDeleteDocument, request, m_executor.get());
 }
 
 void KendraClient::BatchDeleteDocumentAsync(const BatchDeleteDocumentRequest& request, const BatchDeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDeleteDocument(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDeleteDocument, request, handler, context, m_executor.get());
 }
 
 BatchGetDocumentStatusOutcome KendraClient::BatchGetDocumentStatus(const BatchGetDocumentStatusRequest& request) const
@@ -291,18 +274,12 @@ BatchGetDocumentStatusOutcome KendraClient::BatchGetDocumentStatus(const BatchGe
 
 BatchGetDocumentStatusOutcomeCallable KendraClient::BatchGetDocumentStatusCallable(const BatchGetDocumentStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetDocumentStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetDocumentStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetDocumentStatus, request, m_executor.get());
 }
 
 void KendraClient::BatchGetDocumentStatusAsync(const BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetDocumentStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetDocumentStatus, request, handler, context, m_executor.get());
 }
 
 BatchPutDocumentOutcome KendraClient::BatchPutDocument(const BatchPutDocumentRequest& request) const
@@ -315,18 +292,12 @@ BatchPutDocumentOutcome KendraClient::BatchPutDocument(const BatchPutDocumentReq
 
 BatchPutDocumentOutcomeCallable KendraClient::BatchPutDocumentCallable(const BatchPutDocumentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchPutDocumentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchPutDocument(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchPutDocument, request, m_executor.get());
 }
 
 void KendraClient::BatchPutDocumentAsync(const BatchPutDocumentRequest& request, const BatchPutDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchPutDocument(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchPutDocument, request, handler, context, m_executor.get());
 }
 
 ClearQuerySuggestionsOutcome KendraClient::ClearQuerySuggestions(const ClearQuerySuggestionsRequest& request) const
@@ -339,18 +310,12 @@ ClearQuerySuggestionsOutcome KendraClient::ClearQuerySuggestions(const ClearQuer
 
 ClearQuerySuggestionsOutcomeCallable KendraClient::ClearQuerySuggestionsCallable(const ClearQuerySuggestionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ClearQuerySuggestionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ClearQuerySuggestions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ClearQuerySuggestions, request, m_executor.get());
 }
 
 void KendraClient::ClearQuerySuggestionsAsync(const ClearQuerySuggestionsRequest& request, const ClearQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ClearQuerySuggestions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ClearQuerySuggestions, request, handler, context, m_executor.get());
 }
 
 CreateAccessControlConfigurationOutcome KendraClient::CreateAccessControlConfiguration(const CreateAccessControlConfigurationRequest& request) const
@@ -363,18 +328,12 @@ CreateAccessControlConfigurationOutcome KendraClient::CreateAccessControlConfigu
 
 CreateAccessControlConfigurationOutcomeCallable KendraClient::CreateAccessControlConfigurationCallable(const CreateAccessControlConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAccessControlConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccessControlConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAccessControlConfiguration, request, m_executor.get());
 }
 
 void KendraClient::CreateAccessControlConfigurationAsync(const CreateAccessControlConfigurationRequest& request, const CreateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAccessControlConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAccessControlConfiguration, request, handler, context, m_executor.get());
 }
 
 CreateDataSourceOutcome KendraClient::CreateDataSource(const CreateDataSourceRequest& request) const
@@ -387,18 +346,12 @@ CreateDataSourceOutcome KendraClient::CreateDataSource(const CreateDataSourceReq
 
 CreateDataSourceOutcomeCallable KendraClient::CreateDataSourceCallable(const CreateDataSourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDataSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataSource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataSource, request, m_executor.get());
 }
 
 void KendraClient::CreateDataSourceAsync(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataSource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataSource, request, handler, context, m_executor.get());
 }
 
 CreateExperienceOutcome KendraClient::CreateExperience(const CreateExperienceRequest& request) const
@@ -411,18 +364,12 @@ CreateExperienceOutcome KendraClient::CreateExperience(const CreateExperienceReq
 
 CreateExperienceOutcomeCallable KendraClient::CreateExperienceCallable(const CreateExperienceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExperience(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateExperience, request, m_executor.get());
 }
 
 void KendraClient::CreateExperienceAsync(const CreateExperienceRequest& request, const CreateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateExperience(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateExperience, request, handler, context, m_executor.get());
 }
 
 CreateFaqOutcome KendraClient::CreateFaq(const CreateFaqRequest& request) const
@@ -435,18 +382,12 @@ CreateFaqOutcome KendraClient::CreateFaq(const CreateFaqRequest& request) const
 
 CreateFaqOutcomeCallable KendraClient::CreateFaqCallable(const CreateFaqRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFaqOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFaq(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFaq, request, m_executor.get());
 }
 
 void KendraClient::CreateFaqAsync(const CreateFaqRequest& request, const CreateFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFaq(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFaq, request, handler, context, m_executor.get());
 }
 
 CreateIndexOutcome KendraClient::CreateIndex(const CreateIndexRequest& request) const
@@ -459,18 +400,12 @@ CreateIndexOutcome KendraClient::CreateIndex(const CreateIndexRequest& request) 
 
 CreateIndexOutcomeCallable KendraClient::CreateIndexCallable(const CreateIndexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateIndex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateIndex, request, m_executor.get());
 }
 
 void KendraClient::CreateIndexAsync(const CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateIndex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateIndex, request, handler, context, m_executor.get());
 }
 
 CreateQuerySuggestionsBlockListOutcome KendraClient::CreateQuerySuggestionsBlockList(const CreateQuerySuggestionsBlockListRequest& request) const
@@ -483,18 +418,12 @@ CreateQuerySuggestionsBlockListOutcome KendraClient::CreateQuerySuggestionsBlock
 
 CreateQuerySuggestionsBlockListOutcomeCallable KendraClient::CreateQuerySuggestionsBlockListCallable(const CreateQuerySuggestionsBlockListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateQuerySuggestionsBlockListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateQuerySuggestionsBlockList(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateQuerySuggestionsBlockList, request, m_executor.get());
 }
 
 void KendraClient::CreateQuerySuggestionsBlockListAsync(const CreateQuerySuggestionsBlockListRequest& request, const CreateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateQuerySuggestionsBlockList(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateQuerySuggestionsBlockList, request, handler, context, m_executor.get());
 }
 
 CreateThesaurusOutcome KendraClient::CreateThesaurus(const CreateThesaurusRequest& request) const
@@ -507,18 +436,12 @@ CreateThesaurusOutcome KendraClient::CreateThesaurus(const CreateThesaurusReques
 
 CreateThesaurusOutcomeCallable KendraClient::CreateThesaurusCallable(const CreateThesaurusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateThesaurusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateThesaurus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateThesaurus, request, m_executor.get());
 }
 
 void KendraClient::CreateThesaurusAsync(const CreateThesaurusRequest& request, const CreateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateThesaurus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateThesaurus, request, handler, context, m_executor.get());
 }
 
 DeleteAccessControlConfigurationOutcome KendraClient::DeleteAccessControlConfiguration(const DeleteAccessControlConfigurationRequest& request) const
@@ -531,18 +454,12 @@ DeleteAccessControlConfigurationOutcome KendraClient::DeleteAccessControlConfigu
 
 DeleteAccessControlConfigurationOutcomeCallable KendraClient::DeleteAccessControlConfigurationCallable(const DeleteAccessControlConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessControlConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessControlConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAccessControlConfiguration, request, m_executor.get());
 }
 
 void KendraClient::DeleteAccessControlConfigurationAsync(const DeleteAccessControlConfigurationRequest& request, const DeleteAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAccessControlConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAccessControlConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteDataSourceOutcome KendraClient::DeleteDataSource(const DeleteDataSourceRequest& request) const
@@ -555,18 +472,12 @@ DeleteDataSourceOutcome KendraClient::DeleteDataSource(const DeleteDataSourceReq
 
 DeleteDataSourceOutcomeCallable KendraClient::DeleteDataSourceCallable(const DeleteDataSourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDataSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataSource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDataSource, request, m_executor.get());
 }
 
 void KendraClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDataSource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDataSource, request, handler, context, m_executor.get());
 }
 
 DeleteExperienceOutcome KendraClient::DeleteExperience(const DeleteExperienceRequest& request) const
@@ -579,18 +490,12 @@ DeleteExperienceOutcome KendraClient::DeleteExperience(const DeleteExperienceReq
 
 DeleteExperienceOutcomeCallable KendraClient::DeleteExperienceCallable(const DeleteExperienceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExperience(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteExperience, request, m_executor.get());
 }
 
 void KendraClient::DeleteExperienceAsync(const DeleteExperienceRequest& request, const DeleteExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteExperience(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteExperience, request, handler, context, m_executor.get());
 }
 
 DeleteFaqOutcome KendraClient::DeleteFaq(const DeleteFaqRequest& request) const
@@ -603,18 +508,12 @@ DeleteFaqOutcome KendraClient::DeleteFaq(const DeleteFaqRequest& request) const
 
 DeleteFaqOutcomeCallable KendraClient::DeleteFaqCallable(const DeleteFaqRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFaqOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFaq(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFaq, request, m_executor.get());
 }
 
 void KendraClient::DeleteFaqAsync(const DeleteFaqRequest& request, const DeleteFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFaq(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFaq, request, handler, context, m_executor.get());
 }
 
 DeleteIndexOutcome KendraClient::DeleteIndex(const DeleteIndexRequest& request) const
@@ -627,18 +526,12 @@ DeleteIndexOutcome KendraClient::DeleteIndex(const DeleteIndexRequest& request) 
 
 DeleteIndexOutcomeCallable KendraClient::DeleteIndexCallable(const DeleteIndexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteIndex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteIndex, request, m_executor.get());
 }
 
 void KendraClient::DeleteIndexAsync(const DeleteIndexRequest& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteIndex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteIndex, request, handler, context, m_executor.get());
 }
 
 DeletePrincipalMappingOutcome KendraClient::DeletePrincipalMapping(const DeletePrincipalMappingRequest& request) const
@@ -651,18 +544,12 @@ DeletePrincipalMappingOutcome KendraClient::DeletePrincipalMapping(const DeleteP
 
 DeletePrincipalMappingOutcomeCallable KendraClient::DeletePrincipalMappingCallable(const DeletePrincipalMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePrincipalMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePrincipalMapping(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePrincipalMapping, request, m_executor.get());
 }
 
 void KendraClient::DeletePrincipalMappingAsync(const DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePrincipalMapping(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePrincipalMapping, request, handler, context, m_executor.get());
 }
 
 DeleteQuerySuggestionsBlockListOutcome KendraClient::DeleteQuerySuggestionsBlockList(const DeleteQuerySuggestionsBlockListRequest& request) const
@@ -675,18 +562,12 @@ DeleteQuerySuggestionsBlockListOutcome KendraClient::DeleteQuerySuggestionsBlock
 
 DeleteQuerySuggestionsBlockListOutcomeCallable KendraClient::DeleteQuerySuggestionsBlockListCallable(const DeleteQuerySuggestionsBlockListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteQuerySuggestionsBlockListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteQuerySuggestionsBlockList(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteQuerySuggestionsBlockList, request, m_executor.get());
 }
 
 void KendraClient::DeleteQuerySuggestionsBlockListAsync(const DeleteQuerySuggestionsBlockListRequest& request, const DeleteQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteQuerySuggestionsBlockList(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteQuerySuggestionsBlockList, request, handler, context, m_executor.get());
 }
 
 DeleteThesaurusOutcome KendraClient::DeleteThesaurus(const DeleteThesaurusRequest& request) const
@@ -699,18 +580,12 @@ DeleteThesaurusOutcome KendraClient::DeleteThesaurus(const DeleteThesaurusReques
 
 DeleteThesaurusOutcomeCallable KendraClient::DeleteThesaurusCallable(const DeleteThesaurusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteThesaurusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteThesaurus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteThesaurus, request, m_executor.get());
 }
 
 void KendraClient::DeleteThesaurusAsync(const DeleteThesaurusRequest& request, const DeleteThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteThesaurus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteThesaurus, request, handler, context, m_executor.get());
 }
 
 DescribeAccessControlConfigurationOutcome KendraClient::DescribeAccessControlConfiguration(const DescribeAccessControlConfigurationRequest& request) const
@@ -723,18 +598,12 @@ DescribeAccessControlConfigurationOutcome KendraClient::DescribeAccessControlCon
 
 DescribeAccessControlConfigurationOutcomeCallable KendraClient::DescribeAccessControlConfigurationCallable(const DescribeAccessControlConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAccessControlConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccessControlConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAccessControlConfiguration, request, m_executor.get());
 }
 
 void KendraClient::DescribeAccessControlConfigurationAsync(const DescribeAccessControlConfigurationRequest& request, const DescribeAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAccessControlConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAccessControlConfiguration, request, handler, context, m_executor.get());
 }
 
 DescribeDataSourceOutcome KendraClient::DescribeDataSource(const DescribeDataSourceRequest& request) const
@@ -747,18 +616,12 @@ DescribeDataSourceOutcome KendraClient::DescribeDataSource(const DescribeDataSou
 
 DescribeDataSourceOutcomeCallable KendraClient::DescribeDataSourceCallable(const DescribeDataSourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDataSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataSource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDataSource, request, m_executor.get());
 }
 
 void KendraClient::DescribeDataSourceAsync(const DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDataSource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDataSource, request, handler, context, m_executor.get());
 }
 
 DescribeExperienceOutcome KendraClient::DescribeExperience(const DescribeExperienceRequest& request) const
@@ -771,18 +634,12 @@ DescribeExperienceOutcome KendraClient::DescribeExperience(const DescribeExperie
 
 DescribeExperienceOutcomeCallable KendraClient::DescribeExperienceCallable(const DescribeExperienceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExperience(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeExperience, request, m_executor.get());
 }
 
 void KendraClient::DescribeExperienceAsync(const DescribeExperienceRequest& request, const DescribeExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeExperience(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeExperience, request, handler, context, m_executor.get());
 }
 
 DescribeFaqOutcome KendraClient::DescribeFaq(const DescribeFaqRequest& request) const
@@ -795,18 +652,12 @@ DescribeFaqOutcome KendraClient::DescribeFaq(const DescribeFaqRequest& request) 
 
 DescribeFaqOutcomeCallable KendraClient::DescribeFaqCallable(const DescribeFaqRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFaqOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFaq(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFaq, request, m_executor.get());
 }
 
 void KendraClient::DescribeFaqAsync(const DescribeFaqRequest& request, const DescribeFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFaq(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFaq, request, handler, context, m_executor.get());
 }
 
 DescribeIndexOutcome KendraClient::DescribeIndex(const DescribeIndexRequest& request) const
@@ -819,18 +670,12 @@ DescribeIndexOutcome KendraClient::DescribeIndex(const DescribeIndexRequest& req
 
 DescribeIndexOutcomeCallable KendraClient::DescribeIndexCallable(const DescribeIndexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIndex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeIndex, request, m_executor.get());
 }
 
 void KendraClient::DescribeIndexAsync(const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeIndex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeIndex, request, handler, context, m_executor.get());
 }
 
 DescribePrincipalMappingOutcome KendraClient::DescribePrincipalMapping(const DescribePrincipalMappingRequest& request) const
@@ -843,18 +688,12 @@ DescribePrincipalMappingOutcome KendraClient::DescribePrincipalMapping(const Des
 
 DescribePrincipalMappingOutcomeCallable KendraClient::DescribePrincipalMappingCallable(const DescribePrincipalMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePrincipalMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePrincipalMapping(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribePrincipalMapping, request, m_executor.get());
 }
 
 void KendraClient::DescribePrincipalMappingAsync(const DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribePrincipalMapping(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribePrincipalMapping, request, handler, context, m_executor.get());
 }
 
 DescribeQuerySuggestionsBlockListOutcome KendraClient::DescribeQuerySuggestionsBlockList(const DescribeQuerySuggestionsBlockListRequest& request) const
@@ -867,18 +706,12 @@ DescribeQuerySuggestionsBlockListOutcome KendraClient::DescribeQuerySuggestionsB
 
 DescribeQuerySuggestionsBlockListOutcomeCallable KendraClient::DescribeQuerySuggestionsBlockListCallable(const DescribeQuerySuggestionsBlockListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeQuerySuggestionsBlockListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeQuerySuggestionsBlockList(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeQuerySuggestionsBlockList, request, m_executor.get());
 }
 
 void KendraClient::DescribeQuerySuggestionsBlockListAsync(const DescribeQuerySuggestionsBlockListRequest& request, const DescribeQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeQuerySuggestionsBlockList(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeQuerySuggestionsBlockList, request, handler, context, m_executor.get());
 }
 
 DescribeQuerySuggestionsConfigOutcome KendraClient::DescribeQuerySuggestionsConfig(const DescribeQuerySuggestionsConfigRequest& request) const
@@ -891,18 +724,12 @@ DescribeQuerySuggestionsConfigOutcome KendraClient::DescribeQuerySuggestionsConf
 
 DescribeQuerySuggestionsConfigOutcomeCallable KendraClient::DescribeQuerySuggestionsConfigCallable(const DescribeQuerySuggestionsConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeQuerySuggestionsConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeQuerySuggestionsConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeQuerySuggestionsConfig, request, m_executor.get());
 }
 
 void KendraClient::DescribeQuerySuggestionsConfigAsync(const DescribeQuerySuggestionsConfigRequest& request, const DescribeQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeQuerySuggestionsConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeQuerySuggestionsConfig, request, handler, context, m_executor.get());
 }
 
 DescribeThesaurusOutcome KendraClient::DescribeThesaurus(const DescribeThesaurusRequest& request) const
@@ -915,18 +742,12 @@ DescribeThesaurusOutcome KendraClient::DescribeThesaurus(const DescribeThesaurus
 
 DescribeThesaurusOutcomeCallable KendraClient::DescribeThesaurusCallable(const DescribeThesaurusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeThesaurusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeThesaurus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeThesaurus, request, m_executor.get());
 }
 
 void KendraClient::DescribeThesaurusAsync(const DescribeThesaurusRequest& request, const DescribeThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeThesaurus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeThesaurus, request, handler, context, m_executor.get());
 }
 
 DisassociateEntitiesFromExperienceOutcome KendraClient::DisassociateEntitiesFromExperience(const DisassociateEntitiesFromExperienceRequest& request) const
@@ -939,18 +760,12 @@ DisassociateEntitiesFromExperienceOutcome KendraClient::DisassociateEntitiesFrom
 
 DisassociateEntitiesFromExperienceOutcomeCallable KendraClient::DisassociateEntitiesFromExperienceCallable(const DisassociateEntitiesFromExperienceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateEntitiesFromExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateEntitiesFromExperience(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateEntitiesFromExperience, request, m_executor.get());
 }
 
 void KendraClient::DisassociateEntitiesFromExperienceAsync(const DisassociateEntitiesFromExperienceRequest& request, const DisassociateEntitiesFromExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateEntitiesFromExperience(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateEntitiesFromExperience, request, handler, context, m_executor.get());
 }
 
 DisassociatePersonasFromEntitiesOutcome KendraClient::DisassociatePersonasFromEntities(const DisassociatePersonasFromEntitiesRequest& request) const
@@ -963,18 +778,12 @@ DisassociatePersonasFromEntitiesOutcome KendraClient::DisassociatePersonasFromEn
 
 DisassociatePersonasFromEntitiesOutcomeCallable KendraClient::DisassociatePersonasFromEntitiesCallable(const DisassociatePersonasFromEntitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociatePersonasFromEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociatePersonasFromEntities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociatePersonasFromEntities, request, m_executor.get());
 }
 
 void KendraClient::DisassociatePersonasFromEntitiesAsync(const DisassociatePersonasFromEntitiesRequest& request, const DisassociatePersonasFromEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociatePersonasFromEntities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociatePersonasFromEntities, request, handler, context, m_executor.get());
 }
 
 GetQuerySuggestionsOutcome KendraClient::GetQuerySuggestions(const GetQuerySuggestionsRequest& request) const
@@ -987,18 +796,12 @@ GetQuerySuggestionsOutcome KendraClient::GetQuerySuggestions(const GetQuerySugge
 
 GetQuerySuggestionsOutcomeCallable KendraClient::GetQuerySuggestionsCallable(const GetQuerySuggestionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetQuerySuggestionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetQuerySuggestions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetQuerySuggestions, request, m_executor.get());
 }
 
 void KendraClient::GetQuerySuggestionsAsync(const GetQuerySuggestionsRequest& request, const GetQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetQuerySuggestions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetQuerySuggestions, request, handler, context, m_executor.get());
 }
 
 GetSnapshotsOutcome KendraClient::GetSnapshots(const GetSnapshotsRequest& request) const
@@ -1011,18 +814,12 @@ GetSnapshotsOutcome KendraClient::GetSnapshots(const GetSnapshotsRequest& reques
 
 GetSnapshotsOutcomeCallable KendraClient::GetSnapshotsCallable(const GetSnapshotsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSnapshotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSnapshots(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSnapshots, request, m_executor.get());
 }
 
 void KendraClient::GetSnapshotsAsync(const GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSnapshots(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSnapshots, request, handler, context, m_executor.get());
 }
 
 ListAccessControlConfigurationsOutcome KendraClient::ListAccessControlConfigurations(const ListAccessControlConfigurationsRequest& request) const
@@ -1035,18 +832,12 @@ ListAccessControlConfigurationsOutcome KendraClient::ListAccessControlConfigurat
 
 ListAccessControlConfigurationsOutcomeCallable KendraClient::ListAccessControlConfigurationsCallable(const ListAccessControlConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAccessControlConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessControlConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAccessControlConfigurations, request, m_executor.get());
 }
 
 void KendraClient::ListAccessControlConfigurationsAsync(const ListAccessControlConfigurationsRequest& request, const ListAccessControlConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAccessControlConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAccessControlConfigurations, request, handler, context, m_executor.get());
 }
 
 ListDataSourceSyncJobsOutcome KendraClient::ListDataSourceSyncJobs(const ListDataSourceSyncJobsRequest& request) const
@@ -1059,18 +850,12 @@ ListDataSourceSyncJobsOutcome KendraClient::ListDataSourceSyncJobs(const ListDat
 
 ListDataSourceSyncJobsOutcomeCallable KendraClient::ListDataSourceSyncJobsCallable(const ListDataSourceSyncJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataSourceSyncJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataSourceSyncJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDataSourceSyncJobs, request, m_executor.get());
 }
 
 void KendraClient::ListDataSourceSyncJobsAsync(const ListDataSourceSyncJobsRequest& request, const ListDataSourceSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDataSourceSyncJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDataSourceSyncJobs, request, handler, context, m_executor.get());
 }
 
 ListDataSourcesOutcome KendraClient::ListDataSources(const ListDataSourcesRequest& request) const
@@ -1083,18 +868,12 @@ ListDataSourcesOutcome KendraClient::ListDataSources(const ListDataSourcesReques
 
 ListDataSourcesOutcomeCallable KendraClient::ListDataSourcesCallable(const ListDataSourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataSourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataSources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDataSources, request, m_executor.get());
 }
 
 void KendraClient::ListDataSourcesAsync(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDataSources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDataSources, request, handler, context, m_executor.get());
 }
 
 ListEntityPersonasOutcome KendraClient::ListEntityPersonas(const ListEntityPersonasRequest& request) const
@@ -1107,18 +886,12 @@ ListEntityPersonasOutcome KendraClient::ListEntityPersonas(const ListEntityPerso
 
 ListEntityPersonasOutcomeCallable KendraClient::ListEntityPersonasCallable(const ListEntityPersonasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEntityPersonasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEntityPersonas(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEntityPersonas, request, m_executor.get());
 }
 
 void KendraClient::ListEntityPersonasAsync(const ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEntityPersonas(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEntityPersonas, request, handler, context, m_executor.get());
 }
 
 ListExperienceEntitiesOutcome KendraClient::ListExperienceEntities(const ListExperienceEntitiesRequest& request) const
@@ -1131,18 +904,12 @@ ListExperienceEntitiesOutcome KendraClient::ListExperienceEntities(const ListExp
 
 ListExperienceEntitiesOutcomeCallable KendraClient::ListExperienceEntitiesCallable(const ListExperienceEntitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExperienceEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExperienceEntities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExperienceEntities, request, m_executor.get());
 }
 
 void KendraClient::ListExperienceEntitiesAsync(const ListExperienceEntitiesRequest& request, const ListExperienceEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExperienceEntities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExperienceEntities, request, handler, context, m_executor.get());
 }
 
 ListExperiencesOutcome KendraClient::ListExperiences(const ListExperiencesRequest& request) const
@@ -1155,18 +922,12 @@ ListExperiencesOutcome KendraClient::ListExperiences(const ListExperiencesReques
 
 ListExperiencesOutcomeCallable KendraClient::ListExperiencesCallable(const ListExperiencesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExperiencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExperiences(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExperiences, request, m_executor.get());
 }
 
 void KendraClient::ListExperiencesAsync(const ListExperiencesRequest& request, const ListExperiencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExperiences(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExperiences, request, handler, context, m_executor.get());
 }
 
 ListFaqsOutcome KendraClient::ListFaqs(const ListFaqsRequest& request) const
@@ -1179,18 +940,12 @@ ListFaqsOutcome KendraClient::ListFaqs(const ListFaqsRequest& request) const
 
 ListFaqsOutcomeCallable KendraClient::ListFaqsCallable(const ListFaqsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFaqsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFaqs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFaqs, request, m_executor.get());
 }
 
 void KendraClient::ListFaqsAsync(const ListFaqsRequest& request, const ListFaqsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFaqs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFaqs, request, handler, context, m_executor.get());
 }
 
 ListGroupsOlderThanOrderingIdOutcome KendraClient::ListGroupsOlderThanOrderingId(const ListGroupsOlderThanOrderingIdRequest& request) const
@@ -1203,18 +958,12 @@ ListGroupsOlderThanOrderingIdOutcome KendraClient::ListGroupsOlderThanOrderingId
 
 ListGroupsOlderThanOrderingIdOutcomeCallable KendraClient::ListGroupsOlderThanOrderingIdCallable(const ListGroupsOlderThanOrderingIdRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGroupsOlderThanOrderingIdOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroupsOlderThanOrderingId(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListGroupsOlderThanOrderingId, request, m_executor.get());
 }
 
 void KendraClient::ListGroupsOlderThanOrderingIdAsync(const ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListGroupsOlderThanOrderingId(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListGroupsOlderThanOrderingId, request, handler, context, m_executor.get());
 }
 
 ListIndicesOutcome KendraClient::ListIndices(const ListIndicesRequest& request) const
@@ -1227,18 +976,12 @@ ListIndicesOutcome KendraClient::ListIndices(const ListIndicesRequest& request) 
 
 ListIndicesOutcomeCallable KendraClient::ListIndicesCallable(const ListIndicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListIndicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIndices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListIndices, request, m_executor.get());
 }
 
 void KendraClient::ListIndicesAsync(const ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListIndices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListIndices, request, handler, context, m_executor.get());
 }
 
 ListQuerySuggestionsBlockListsOutcome KendraClient::ListQuerySuggestionsBlockLists(const ListQuerySuggestionsBlockListsRequest& request) const
@@ -1251,18 +994,12 @@ ListQuerySuggestionsBlockListsOutcome KendraClient::ListQuerySuggestionsBlockLis
 
 ListQuerySuggestionsBlockListsOutcomeCallable KendraClient::ListQuerySuggestionsBlockListsCallable(const ListQuerySuggestionsBlockListsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListQuerySuggestionsBlockListsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListQuerySuggestionsBlockLists(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListQuerySuggestionsBlockLists, request, m_executor.get());
 }
 
 void KendraClient::ListQuerySuggestionsBlockListsAsync(const ListQuerySuggestionsBlockListsRequest& request, const ListQuerySuggestionsBlockListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListQuerySuggestionsBlockLists(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListQuerySuggestionsBlockLists, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome KendraClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1275,18 +1012,12 @@ ListTagsForResourceOutcome KendraClient::ListTagsForResource(const ListTagsForRe
 
 ListTagsForResourceOutcomeCallable KendraClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void KendraClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListThesauriOutcome KendraClient::ListThesauri(const ListThesauriRequest& request) const
@@ -1299,18 +1030,12 @@ ListThesauriOutcome KendraClient::ListThesauri(const ListThesauriRequest& reques
 
 ListThesauriOutcomeCallable KendraClient::ListThesauriCallable(const ListThesauriRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListThesauriOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListThesauri(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListThesauri, request, m_executor.get());
 }
 
 void KendraClient::ListThesauriAsync(const ListThesauriRequest& request, const ListThesauriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListThesauri(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListThesauri, request, handler, context, m_executor.get());
 }
 
 PutPrincipalMappingOutcome KendraClient::PutPrincipalMapping(const PutPrincipalMappingRequest& request) const
@@ -1323,18 +1048,12 @@ PutPrincipalMappingOutcome KendraClient::PutPrincipalMapping(const PutPrincipalM
 
 PutPrincipalMappingOutcomeCallable KendraClient::PutPrincipalMappingCallable(const PutPrincipalMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutPrincipalMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPrincipalMapping(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutPrincipalMapping, request, m_executor.get());
 }
 
 void KendraClient::PutPrincipalMappingAsync(const PutPrincipalMappingRequest& request, const PutPrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutPrincipalMapping(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutPrincipalMapping, request, handler, context, m_executor.get());
 }
 
 QueryOutcome KendraClient::Query(const QueryRequest& request) const
@@ -1347,18 +1066,12 @@ QueryOutcome KendraClient::Query(const QueryRequest& request) const
 
 QueryOutcomeCallable KendraClient::QueryCallable(const QueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Query(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(Query, request, m_executor.get());
 }
 
 void KendraClient::QueryAsync(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, Query(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(Query, request, handler, context, m_executor.get());
 }
 
 StartDataSourceSyncJobOutcome KendraClient::StartDataSourceSyncJob(const StartDataSourceSyncJobRequest& request) const
@@ -1371,18 +1084,12 @@ StartDataSourceSyncJobOutcome KendraClient::StartDataSourceSyncJob(const StartDa
 
 StartDataSourceSyncJobOutcomeCallable KendraClient::StartDataSourceSyncJobCallable(const StartDataSourceSyncJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDataSourceSyncJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDataSourceSyncJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartDataSourceSyncJob, request, m_executor.get());
 }
 
 void KendraClient::StartDataSourceSyncJobAsync(const StartDataSourceSyncJobRequest& request, const StartDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartDataSourceSyncJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartDataSourceSyncJob, request, handler, context, m_executor.get());
 }
 
 StopDataSourceSyncJobOutcome KendraClient::StopDataSourceSyncJob(const StopDataSourceSyncJobRequest& request) const
@@ -1395,18 +1102,12 @@ StopDataSourceSyncJobOutcome KendraClient::StopDataSourceSyncJob(const StopDataS
 
 StopDataSourceSyncJobOutcomeCallable KendraClient::StopDataSourceSyncJobCallable(const StopDataSourceSyncJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopDataSourceSyncJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopDataSourceSyncJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopDataSourceSyncJob, request, m_executor.get());
 }
 
 void KendraClient::StopDataSourceSyncJobAsync(const StopDataSourceSyncJobRequest& request, const StopDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopDataSourceSyncJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopDataSourceSyncJob, request, handler, context, m_executor.get());
 }
 
 SubmitFeedbackOutcome KendraClient::SubmitFeedback(const SubmitFeedbackRequest& request) const
@@ -1419,18 +1120,12 @@ SubmitFeedbackOutcome KendraClient::SubmitFeedback(const SubmitFeedbackRequest& 
 
 SubmitFeedbackOutcomeCallable KendraClient::SubmitFeedbackCallable(const SubmitFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SubmitFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SubmitFeedback(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SubmitFeedback, request, m_executor.get());
 }
 
 void KendraClient::SubmitFeedbackAsync(const SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SubmitFeedback(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SubmitFeedback, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome KendraClient::TagResource(const TagResourceRequest& request) const
@@ -1443,18 +1138,12 @@ TagResourceOutcome KendraClient::TagResource(const TagResourceRequest& request) 
 
 TagResourceOutcomeCallable KendraClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void KendraClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome KendraClient::UntagResource(const UntagResourceRequest& request) const
@@ -1467,18 +1156,12 @@ UntagResourceOutcome KendraClient::UntagResource(const UntagResourceRequest& req
 
 UntagResourceOutcomeCallable KendraClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void KendraClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateAccessControlConfigurationOutcome KendraClient::UpdateAccessControlConfiguration(const UpdateAccessControlConfigurationRequest& request) const
@@ -1491,18 +1174,12 @@ UpdateAccessControlConfigurationOutcome KendraClient::UpdateAccessControlConfigu
 
 UpdateAccessControlConfigurationOutcomeCallable KendraClient::UpdateAccessControlConfigurationCallable(const UpdateAccessControlConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAccessControlConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAccessControlConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAccessControlConfiguration, request, m_executor.get());
 }
 
 void KendraClient::UpdateAccessControlConfigurationAsync(const UpdateAccessControlConfigurationRequest& request, const UpdateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAccessControlConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAccessControlConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateDataSourceOutcome KendraClient::UpdateDataSource(const UpdateDataSourceRequest& request) const
@@ -1515,18 +1192,12 @@ UpdateDataSourceOutcome KendraClient::UpdateDataSource(const UpdateDataSourceReq
 
 UpdateDataSourceOutcomeCallable KendraClient::UpdateDataSourceCallable(const UpdateDataSourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDataSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDataSource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDataSource, request, m_executor.get());
 }
 
 void KendraClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDataSource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDataSource, request, handler, context, m_executor.get());
 }
 
 UpdateExperienceOutcome KendraClient::UpdateExperience(const UpdateExperienceRequest& request) const
@@ -1539,18 +1210,12 @@ UpdateExperienceOutcome KendraClient::UpdateExperience(const UpdateExperienceReq
 
 UpdateExperienceOutcomeCallable KendraClient::UpdateExperienceCallable(const UpdateExperienceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExperience(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateExperience, request, m_executor.get());
 }
 
 void KendraClient::UpdateExperienceAsync(const UpdateExperienceRequest& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateExperience(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateExperience, request, handler, context, m_executor.get());
 }
 
 UpdateIndexOutcome KendraClient::UpdateIndex(const UpdateIndexRequest& request) const
@@ -1563,18 +1228,12 @@ UpdateIndexOutcome KendraClient::UpdateIndex(const UpdateIndexRequest& request) 
 
 UpdateIndexOutcomeCallable KendraClient::UpdateIndexCallable(const UpdateIndexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIndex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateIndex, request, m_executor.get());
 }
 
 void KendraClient::UpdateIndexAsync(const UpdateIndexRequest& request, const UpdateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateIndex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateIndex, request, handler, context, m_executor.get());
 }
 
 UpdateQuerySuggestionsBlockListOutcome KendraClient::UpdateQuerySuggestionsBlockList(const UpdateQuerySuggestionsBlockListRequest& request) const
@@ -1587,18 +1246,12 @@ UpdateQuerySuggestionsBlockListOutcome KendraClient::UpdateQuerySuggestionsBlock
 
 UpdateQuerySuggestionsBlockListOutcomeCallable KendraClient::UpdateQuerySuggestionsBlockListCallable(const UpdateQuerySuggestionsBlockListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateQuerySuggestionsBlockListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateQuerySuggestionsBlockList(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateQuerySuggestionsBlockList, request, m_executor.get());
 }
 
 void KendraClient::UpdateQuerySuggestionsBlockListAsync(const UpdateQuerySuggestionsBlockListRequest& request, const UpdateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateQuerySuggestionsBlockList(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateQuerySuggestionsBlockList, request, handler, context, m_executor.get());
 }
 
 UpdateQuerySuggestionsConfigOutcome KendraClient::UpdateQuerySuggestionsConfig(const UpdateQuerySuggestionsConfigRequest& request) const
@@ -1611,18 +1264,12 @@ UpdateQuerySuggestionsConfigOutcome KendraClient::UpdateQuerySuggestionsConfig(c
 
 UpdateQuerySuggestionsConfigOutcomeCallable KendraClient::UpdateQuerySuggestionsConfigCallable(const UpdateQuerySuggestionsConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateQuerySuggestionsConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateQuerySuggestionsConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateQuerySuggestionsConfig, request, m_executor.get());
 }
 
 void KendraClient::UpdateQuerySuggestionsConfigAsync(const UpdateQuerySuggestionsConfigRequest& request, const UpdateQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateQuerySuggestionsConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateQuerySuggestionsConfig, request, handler, context, m_executor.get());
 }
 
 UpdateThesaurusOutcome KendraClient::UpdateThesaurus(const UpdateThesaurusRequest& request) const
@@ -1635,17 +1282,11 @@ UpdateThesaurusOutcome KendraClient::UpdateThesaurus(const UpdateThesaurusReques
 
 UpdateThesaurusOutcomeCallable KendraClient::UpdateThesaurusCallable(const UpdateThesaurusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateThesaurusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateThesaurus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateThesaurus, request, m_executor.get());
 }
 
 void KendraClient::UpdateThesaurusAsync(const UpdateThesaurusRequest& request, const UpdateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateThesaurus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateThesaurus, request, handler, context, m_executor.get());
 }
 

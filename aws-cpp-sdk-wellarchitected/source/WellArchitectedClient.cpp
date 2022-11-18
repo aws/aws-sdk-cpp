@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -209,18 +210,12 @@ AssociateLensesOutcome WellArchitectedClient::AssociateLenses(const AssociateLen
 
 AssociateLensesOutcomeCallable WellArchitectedClient::AssociateLensesCallable(const AssociateLensesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateLensesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateLenses(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateLenses, request, m_executor.get());
 }
 
 void WellArchitectedClient::AssociateLensesAsync(const AssociateLensesRequest& request, const AssociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateLenses(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateLenses, request, handler, context, m_executor.get());
 }
 
 CreateLensShareOutcome WellArchitectedClient::CreateLensShare(const CreateLensShareRequest& request) const
@@ -241,18 +236,12 @@ CreateLensShareOutcome WellArchitectedClient::CreateLensShare(const CreateLensSh
 
 CreateLensShareOutcomeCallable WellArchitectedClient::CreateLensShareCallable(const CreateLensShareRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLensShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLensShare(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLensShare, request, m_executor.get());
 }
 
 void WellArchitectedClient::CreateLensShareAsync(const CreateLensShareRequest& request, const CreateLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLensShare(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLensShare, request, handler, context, m_executor.get());
 }
 
 CreateLensVersionOutcome WellArchitectedClient::CreateLensVersion(const CreateLensVersionRequest& request) const
@@ -273,18 +262,12 @@ CreateLensVersionOutcome WellArchitectedClient::CreateLensVersion(const CreateLe
 
 CreateLensVersionOutcomeCallable WellArchitectedClient::CreateLensVersionCallable(const CreateLensVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLensVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLensVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLensVersion, request, m_executor.get());
 }
 
 void WellArchitectedClient::CreateLensVersionAsync(const CreateLensVersionRequest& request, const CreateLensVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLensVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLensVersion, request, handler, context, m_executor.get());
 }
 
 CreateMilestoneOutcome WellArchitectedClient::CreateMilestone(const CreateMilestoneRequest& request) const
@@ -305,18 +288,12 @@ CreateMilestoneOutcome WellArchitectedClient::CreateMilestone(const CreateMilest
 
 CreateMilestoneOutcomeCallable WellArchitectedClient::CreateMilestoneCallable(const CreateMilestoneRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMilestoneOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMilestone(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMilestone, request, m_executor.get());
 }
 
 void WellArchitectedClient::CreateMilestoneAsync(const CreateMilestoneRequest& request, const CreateMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMilestone(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMilestone, request, handler, context, m_executor.get());
 }
 
 CreateWorkloadOutcome WellArchitectedClient::CreateWorkload(const CreateWorkloadRequest& request) const
@@ -330,18 +307,12 @@ CreateWorkloadOutcome WellArchitectedClient::CreateWorkload(const CreateWorkload
 
 CreateWorkloadOutcomeCallable WellArchitectedClient::CreateWorkloadCallable(const CreateWorkloadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkloadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkload(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorkload, request, m_executor.get());
 }
 
 void WellArchitectedClient::CreateWorkloadAsync(const CreateWorkloadRequest& request, const CreateWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorkload(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorkload, request, handler, context, m_executor.get());
 }
 
 CreateWorkloadShareOutcome WellArchitectedClient::CreateWorkloadShare(const CreateWorkloadShareRequest& request) const
@@ -362,18 +333,12 @@ CreateWorkloadShareOutcome WellArchitectedClient::CreateWorkloadShare(const Crea
 
 CreateWorkloadShareOutcomeCallable WellArchitectedClient::CreateWorkloadShareCallable(const CreateWorkloadShareRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkloadShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkloadShare(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorkloadShare, request, m_executor.get());
 }
 
 void WellArchitectedClient::CreateWorkloadShareAsync(const CreateWorkloadShareRequest& request, const CreateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorkloadShare(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorkloadShare, request, handler, context, m_executor.get());
 }
 
 DeleteLensOutcome WellArchitectedClient::DeleteLens(const DeleteLensRequest& request) const
@@ -403,18 +368,12 @@ DeleteLensOutcome WellArchitectedClient::DeleteLens(const DeleteLensRequest& req
 
 DeleteLensOutcomeCallable WellArchitectedClient::DeleteLensCallable(const DeleteLensRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLensOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLens(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLens, request, m_executor.get());
 }
 
 void WellArchitectedClient::DeleteLensAsync(const DeleteLensRequest& request, const DeleteLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLens(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLens, request, handler, context, m_executor.get());
 }
 
 DeleteLensShareOutcome WellArchitectedClient::DeleteLensShare(const DeleteLensShareRequest& request) const
@@ -446,18 +405,12 @@ DeleteLensShareOutcome WellArchitectedClient::DeleteLensShare(const DeleteLensSh
 
 DeleteLensShareOutcomeCallable WellArchitectedClient::DeleteLensShareCallable(const DeleteLensShareRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLensShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLensShare(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLensShare, request, m_executor.get());
 }
 
 void WellArchitectedClient::DeleteLensShareAsync(const DeleteLensShareRequest& request, const DeleteLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLensShare(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLensShare, request, handler, context, m_executor.get());
 }
 
 DeleteWorkloadOutcome WellArchitectedClient::DeleteWorkload(const DeleteWorkloadRequest& request) const
@@ -482,18 +435,12 @@ DeleteWorkloadOutcome WellArchitectedClient::DeleteWorkload(const DeleteWorkload
 
 DeleteWorkloadOutcomeCallable WellArchitectedClient::DeleteWorkloadCallable(const DeleteWorkloadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkloadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkload(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWorkload, request, m_executor.get());
 }
 
 void WellArchitectedClient::DeleteWorkloadAsync(const DeleteWorkloadRequest& request, const DeleteWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWorkload(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWorkload, request, handler, context, m_executor.get());
 }
 
 DeleteWorkloadShareOutcome WellArchitectedClient::DeleteWorkloadShare(const DeleteWorkloadShareRequest& request) const
@@ -525,18 +472,12 @@ DeleteWorkloadShareOutcome WellArchitectedClient::DeleteWorkloadShare(const Dele
 
 DeleteWorkloadShareOutcomeCallable WellArchitectedClient::DeleteWorkloadShareCallable(const DeleteWorkloadShareRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkloadShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkloadShare(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWorkloadShare, request, m_executor.get());
 }
 
 void WellArchitectedClient::DeleteWorkloadShareAsync(const DeleteWorkloadShareRequest& request, const DeleteWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWorkloadShare(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWorkloadShare, request, handler, context, m_executor.get());
 }
 
 DisassociateLensesOutcome WellArchitectedClient::DisassociateLenses(const DisassociateLensesRequest& request) const
@@ -557,18 +498,12 @@ DisassociateLensesOutcome WellArchitectedClient::DisassociateLenses(const Disass
 
 DisassociateLensesOutcomeCallable WellArchitectedClient::DisassociateLensesCallable(const DisassociateLensesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateLensesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateLenses(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateLenses, request, m_executor.get());
 }
 
 void WellArchitectedClient::DisassociateLensesAsync(const DisassociateLensesRequest& request, const DisassociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateLenses(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateLenses, request, handler, context, m_executor.get());
 }
 
 ExportLensOutcome WellArchitectedClient::ExportLens(const ExportLensRequest& request) const
@@ -589,18 +524,12 @@ ExportLensOutcome WellArchitectedClient::ExportLens(const ExportLensRequest& req
 
 ExportLensOutcomeCallable WellArchitectedClient::ExportLensCallable(const ExportLensRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExportLensOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportLens(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExportLens, request, m_executor.get());
 }
 
 void WellArchitectedClient::ExportLensAsync(const ExportLensRequest& request, const ExportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExportLens(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExportLens, request, handler, context, m_executor.get());
 }
 
 GetAnswerOutcome WellArchitectedClient::GetAnswer(const GetAnswerRequest& request) const
@@ -634,18 +563,12 @@ GetAnswerOutcome WellArchitectedClient::GetAnswer(const GetAnswerRequest& reques
 
 GetAnswerOutcomeCallable WellArchitectedClient::GetAnswerCallable(const GetAnswerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAnswerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAnswer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAnswer, request, m_executor.get());
 }
 
 void WellArchitectedClient::GetAnswerAsync(const GetAnswerRequest& request, const GetAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAnswer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAnswer, request, handler, context, m_executor.get());
 }
 
 GetLensOutcome WellArchitectedClient::GetLens(const GetLensRequest& request) const
@@ -665,18 +588,12 @@ GetLensOutcome WellArchitectedClient::GetLens(const GetLensRequest& request) con
 
 GetLensOutcomeCallable WellArchitectedClient::GetLensCallable(const GetLensRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLensOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLens(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLens, request, m_executor.get());
 }
 
 void WellArchitectedClient::GetLensAsync(const GetLensRequest& request, const GetLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLens(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLens, request, handler, context, m_executor.get());
 }
 
 GetLensReviewOutcome WellArchitectedClient::GetLensReview(const GetLensReviewRequest& request) const
@@ -703,18 +620,12 @@ GetLensReviewOutcome WellArchitectedClient::GetLensReview(const GetLensReviewReq
 
 GetLensReviewOutcomeCallable WellArchitectedClient::GetLensReviewCallable(const GetLensReviewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLensReviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLensReview(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLensReview, request, m_executor.get());
 }
 
 void WellArchitectedClient::GetLensReviewAsync(const GetLensReviewRequest& request, const GetLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLensReview(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLensReview, request, handler, context, m_executor.get());
 }
 
 GetLensReviewReportOutcome WellArchitectedClient::GetLensReviewReport(const GetLensReviewReportRequest& request) const
@@ -742,18 +653,12 @@ GetLensReviewReportOutcome WellArchitectedClient::GetLensReviewReport(const GetL
 
 GetLensReviewReportOutcomeCallable WellArchitectedClient::GetLensReviewReportCallable(const GetLensReviewReportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLensReviewReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLensReviewReport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLensReviewReport, request, m_executor.get());
 }
 
 void WellArchitectedClient::GetLensReviewReportAsync(const GetLensReviewReportRequest& request, const GetLensReviewReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLensReviewReport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLensReviewReport, request, handler, context, m_executor.get());
 }
 
 GetLensVersionDifferenceOutcome WellArchitectedClient::GetLensVersionDifference(const GetLensVersionDifferenceRequest& request) const
@@ -774,18 +679,12 @@ GetLensVersionDifferenceOutcome WellArchitectedClient::GetLensVersionDifference(
 
 GetLensVersionDifferenceOutcomeCallable WellArchitectedClient::GetLensVersionDifferenceCallable(const GetLensVersionDifferenceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLensVersionDifferenceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLensVersionDifference(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLensVersionDifference, request, m_executor.get());
 }
 
 void WellArchitectedClient::GetLensVersionDifferenceAsync(const GetLensVersionDifferenceRequest& request, const GetLensVersionDifferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLensVersionDifference(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLensVersionDifference, request, handler, context, m_executor.get());
 }
 
 GetMilestoneOutcome WellArchitectedClient::GetMilestone(const GetMilestoneRequest& request) const
@@ -812,18 +711,12 @@ GetMilestoneOutcome WellArchitectedClient::GetMilestone(const GetMilestoneReques
 
 GetMilestoneOutcomeCallable WellArchitectedClient::GetMilestoneCallable(const GetMilestoneRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMilestoneOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMilestone(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMilestone, request, m_executor.get());
 }
 
 void WellArchitectedClient::GetMilestoneAsync(const GetMilestoneRequest& request, const GetMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMilestone(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMilestone, request, handler, context, m_executor.get());
 }
 
 GetWorkloadOutcome WellArchitectedClient::GetWorkload(const GetWorkloadRequest& request) const
@@ -843,18 +736,12 @@ GetWorkloadOutcome WellArchitectedClient::GetWorkload(const GetWorkloadRequest& 
 
 GetWorkloadOutcomeCallable WellArchitectedClient::GetWorkloadCallable(const GetWorkloadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkloadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkload(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetWorkload, request, m_executor.get());
 }
 
 void WellArchitectedClient::GetWorkloadAsync(const GetWorkloadRequest& request, const GetWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetWorkload(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetWorkload, request, handler, context, m_executor.get());
 }
 
 ImportLensOutcome WellArchitectedClient::ImportLens(const ImportLensRequest& request) const
@@ -868,18 +755,12 @@ ImportLensOutcome WellArchitectedClient::ImportLens(const ImportLensRequest& req
 
 ImportLensOutcomeCallable WellArchitectedClient::ImportLensCallable(const ImportLensRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportLensOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportLens(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportLens, request, m_executor.get());
 }
 
 void WellArchitectedClient::ImportLensAsync(const ImportLensRequest& request, const ImportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportLens(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportLens, request, handler, context, m_executor.get());
 }
 
 ListAnswersOutcome WellArchitectedClient::ListAnswers(const ListAnswersRequest& request) const
@@ -907,18 +788,12 @@ ListAnswersOutcome WellArchitectedClient::ListAnswers(const ListAnswersRequest& 
 
 ListAnswersOutcomeCallable WellArchitectedClient::ListAnswersCallable(const ListAnswersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAnswersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnswers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAnswers, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListAnswersAsync(const ListAnswersRequest& request, const ListAnswersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAnswers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAnswers, request, handler, context, m_executor.get());
 }
 
 ListCheckDetailsOutcome WellArchitectedClient::ListCheckDetails(const ListCheckDetailsRequest& request) const
@@ -939,18 +814,12 @@ ListCheckDetailsOutcome WellArchitectedClient::ListCheckDetails(const ListCheckD
 
 ListCheckDetailsOutcomeCallable WellArchitectedClient::ListCheckDetailsCallable(const ListCheckDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCheckDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCheckDetails(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCheckDetails, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListCheckDetailsAsync(const ListCheckDetailsRequest& request, const ListCheckDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCheckDetails(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCheckDetails, request, handler, context, m_executor.get());
 }
 
 ListCheckSummariesOutcome WellArchitectedClient::ListCheckSummaries(const ListCheckSummariesRequest& request) const
@@ -971,18 +840,12 @@ ListCheckSummariesOutcome WellArchitectedClient::ListCheckSummaries(const ListCh
 
 ListCheckSummariesOutcomeCallable WellArchitectedClient::ListCheckSummariesCallable(const ListCheckSummariesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCheckSummariesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCheckSummaries(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCheckSummaries, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListCheckSummariesAsync(const ListCheckSummariesRequest& request, const ListCheckSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCheckSummaries(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCheckSummaries, request, handler, context, m_executor.get());
 }
 
 ListLensReviewImprovementsOutcome WellArchitectedClient::ListLensReviewImprovements(const ListLensReviewImprovementsRequest& request) const
@@ -1010,18 +873,12 @@ ListLensReviewImprovementsOutcome WellArchitectedClient::ListLensReviewImproveme
 
 ListLensReviewImprovementsOutcomeCallable WellArchitectedClient::ListLensReviewImprovementsCallable(const ListLensReviewImprovementsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLensReviewImprovementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLensReviewImprovements(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLensReviewImprovements, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListLensReviewImprovementsAsync(const ListLensReviewImprovementsRequest& request, const ListLensReviewImprovementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLensReviewImprovements(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLensReviewImprovements, request, handler, context, m_executor.get());
 }
 
 ListLensReviewsOutcome WellArchitectedClient::ListLensReviews(const ListLensReviewsRequest& request) const
@@ -1042,18 +899,12 @@ ListLensReviewsOutcome WellArchitectedClient::ListLensReviews(const ListLensRevi
 
 ListLensReviewsOutcomeCallable WellArchitectedClient::ListLensReviewsCallable(const ListLensReviewsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLensReviewsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLensReviews(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLensReviews, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListLensReviewsAsync(const ListLensReviewsRequest& request, const ListLensReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLensReviews(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLensReviews, request, handler, context, m_executor.get());
 }
 
 ListLensSharesOutcome WellArchitectedClient::ListLensShares(const ListLensSharesRequest& request) const
@@ -1074,18 +925,12 @@ ListLensSharesOutcome WellArchitectedClient::ListLensShares(const ListLensShares
 
 ListLensSharesOutcomeCallable WellArchitectedClient::ListLensSharesCallable(const ListLensSharesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLensSharesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLensShares(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLensShares, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListLensSharesAsync(const ListLensSharesRequest& request, const ListLensSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLensShares(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLensShares, request, handler, context, m_executor.get());
 }
 
 ListLensesOutcome WellArchitectedClient::ListLenses(const ListLensesRequest& request) const
@@ -1099,18 +944,12 @@ ListLensesOutcome WellArchitectedClient::ListLenses(const ListLensesRequest& req
 
 ListLensesOutcomeCallable WellArchitectedClient::ListLensesCallable(const ListLensesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLensesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLenses(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLenses, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListLensesAsync(const ListLensesRequest& request, const ListLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLenses(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLenses, request, handler, context, m_executor.get());
 }
 
 ListMilestonesOutcome WellArchitectedClient::ListMilestones(const ListMilestonesRequest& request) const
@@ -1131,18 +970,12 @@ ListMilestonesOutcome WellArchitectedClient::ListMilestones(const ListMilestones
 
 ListMilestonesOutcomeCallable WellArchitectedClient::ListMilestonesCallable(const ListMilestonesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMilestonesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMilestones(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMilestones, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListMilestonesAsync(const ListMilestonesRequest& request, const ListMilestonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMilestones(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMilestones, request, handler, context, m_executor.get());
 }
 
 ListNotificationsOutcome WellArchitectedClient::ListNotifications(const ListNotificationsRequest& request) const
@@ -1156,18 +989,12 @@ ListNotificationsOutcome WellArchitectedClient::ListNotifications(const ListNoti
 
 ListNotificationsOutcomeCallable WellArchitectedClient::ListNotificationsCallable(const ListNotificationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNotificationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNotifications(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNotifications, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListNotificationsAsync(const ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNotifications(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNotifications, request, handler, context, m_executor.get());
 }
 
 ListShareInvitationsOutcome WellArchitectedClient::ListShareInvitations(const ListShareInvitationsRequest& request) const
@@ -1181,18 +1008,12 @@ ListShareInvitationsOutcome WellArchitectedClient::ListShareInvitations(const Li
 
 ListShareInvitationsOutcomeCallable WellArchitectedClient::ListShareInvitationsCallable(const ListShareInvitationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListShareInvitationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListShareInvitations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListShareInvitations, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListShareInvitationsAsync(const ListShareInvitationsRequest& request, const ListShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListShareInvitations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListShareInvitations, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome WellArchitectedClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1212,18 +1033,12 @@ ListTagsForResourceOutcome WellArchitectedClient::ListTagsForResource(const List
 
 ListTagsForResourceOutcomeCallable WellArchitectedClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListWorkloadSharesOutcome WellArchitectedClient::ListWorkloadShares(const ListWorkloadSharesRequest& request) const
@@ -1244,18 +1059,12 @@ ListWorkloadSharesOutcome WellArchitectedClient::ListWorkloadShares(const ListWo
 
 ListWorkloadSharesOutcomeCallable WellArchitectedClient::ListWorkloadSharesCallable(const ListWorkloadSharesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkloadSharesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkloadShares(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkloadShares, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListWorkloadSharesAsync(const ListWorkloadSharesRequest& request, const ListWorkloadSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkloadShares(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkloadShares, request, handler, context, m_executor.get());
 }
 
 ListWorkloadsOutcome WellArchitectedClient::ListWorkloads(const ListWorkloadsRequest& request) const
@@ -1269,18 +1078,12 @@ ListWorkloadsOutcome WellArchitectedClient::ListWorkloads(const ListWorkloadsReq
 
 ListWorkloadsOutcomeCallable WellArchitectedClient::ListWorkloadsCallable(const ListWorkloadsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkloadsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkloads(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkloads, request, m_executor.get());
 }
 
 void WellArchitectedClient::ListWorkloadsAsync(const ListWorkloadsRequest& request, const ListWorkloadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkloads(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkloads, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome WellArchitectedClient::TagResource(const TagResourceRequest& request) const
@@ -1300,18 +1103,12 @@ TagResourceOutcome WellArchitectedClient::TagResource(const TagResourceRequest& 
 
 TagResourceOutcomeCallable WellArchitectedClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void WellArchitectedClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome WellArchitectedClient::UntagResource(const UntagResourceRequest& request) const
@@ -1336,18 +1133,12 @@ UntagResourceOutcome WellArchitectedClient::UntagResource(const UntagResourceReq
 
 UntagResourceOutcomeCallable WellArchitectedClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void WellArchitectedClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateAnswerOutcome WellArchitectedClient::UpdateAnswer(const UpdateAnswerRequest& request) const
@@ -1381,18 +1172,12 @@ UpdateAnswerOutcome WellArchitectedClient::UpdateAnswer(const UpdateAnswerReques
 
 UpdateAnswerOutcomeCallable WellArchitectedClient::UpdateAnswerCallable(const UpdateAnswerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAnswerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAnswer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAnswer, request, m_executor.get());
 }
 
 void WellArchitectedClient::UpdateAnswerAsync(const UpdateAnswerRequest& request, const UpdateAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAnswer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAnswer, request, handler, context, m_executor.get());
 }
 
 UpdateGlobalSettingsOutcome WellArchitectedClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
@@ -1406,18 +1191,12 @@ UpdateGlobalSettingsOutcome WellArchitectedClient::UpdateGlobalSettings(const Up
 
 UpdateGlobalSettingsOutcomeCallable WellArchitectedClient::UpdateGlobalSettingsCallable(const UpdateGlobalSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateGlobalSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGlobalSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateGlobalSettings, request, m_executor.get());
 }
 
 void WellArchitectedClient::UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateGlobalSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateGlobalSettings, request, handler, context, m_executor.get());
 }
 
 UpdateLensReviewOutcome WellArchitectedClient::UpdateLensReview(const UpdateLensReviewRequest& request) const
@@ -1444,18 +1223,12 @@ UpdateLensReviewOutcome WellArchitectedClient::UpdateLensReview(const UpdateLens
 
 UpdateLensReviewOutcomeCallable WellArchitectedClient::UpdateLensReviewCallable(const UpdateLensReviewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLensReviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLensReview(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLensReview, request, m_executor.get());
 }
 
 void WellArchitectedClient::UpdateLensReviewAsync(const UpdateLensReviewRequest& request, const UpdateLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLensReview(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLensReview, request, handler, context, m_executor.get());
 }
 
 UpdateShareInvitationOutcome WellArchitectedClient::UpdateShareInvitation(const UpdateShareInvitationRequest& request) const
@@ -1475,18 +1248,12 @@ UpdateShareInvitationOutcome WellArchitectedClient::UpdateShareInvitation(const 
 
 UpdateShareInvitationOutcomeCallable WellArchitectedClient::UpdateShareInvitationCallable(const UpdateShareInvitationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateShareInvitationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateShareInvitation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateShareInvitation, request, m_executor.get());
 }
 
 void WellArchitectedClient::UpdateShareInvitationAsync(const UpdateShareInvitationRequest& request, const UpdateShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateShareInvitation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateShareInvitation, request, handler, context, m_executor.get());
 }
 
 UpdateWorkloadOutcome WellArchitectedClient::UpdateWorkload(const UpdateWorkloadRequest& request) const
@@ -1506,18 +1273,12 @@ UpdateWorkloadOutcome WellArchitectedClient::UpdateWorkload(const UpdateWorkload
 
 UpdateWorkloadOutcomeCallable WellArchitectedClient::UpdateWorkloadCallable(const UpdateWorkloadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkloadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkload(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateWorkload, request, m_executor.get());
 }
 
 void WellArchitectedClient::UpdateWorkloadAsync(const UpdateWorkloadRequest& request, const UpdateWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateWorkload(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateWorkload, request, handler, context, m_executor.get());
 }
 
 UpdateWorkloadShareOutcome WellArchitectedClient::UpdateWorkloadShare(const UpdateWorkloadShareRequest& request) const
@@ -1544,18 +1305,12 @@ UpdateWorkloadShareOutcome WellArchitectedClient::UpdateWorkloadShare(const Upda
 
 UpdateWorkloadShareOutcomeCallable WellArchitectedClient::UpdateWorkloadShareCallable(const UpdateWorkloadShareRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkloadShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkloadShare(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateWorkloadShare, request, m_executor.get());
 }
 
 void WellArchitectedClient::UpdateWorkloadShareAsync(const UpdateWorkloadShareRequest& request, const UpdateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateWorkloadShare(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateWorkloadShare, request, handler, context, m_executor.get());
 }
 
 UpgradeLensReviewOutcome WellArchitectedClient::UpgradeLensReview(const UpgradeLensReviewRequest& request) const
@@ -1583,17 +1338,11 @@ UpgradeLensReviewOutcome WellArchitectedClient::UpgradeLensReview(const UpgradeL
 
 UpgradeLensReviewOutcomeCallable WellArchitectedClient::UpgradeLensReviewCallable(const UpgradeLensReviewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpgradeLensReviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpgradeLensReview(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpgradeLensReview, request, m_executor.get());
 }
 
 void WellArchitectedClient::UpgradeLensReviewAsync(const UpgradeLensReviewRequest& request, const UpgradeLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpgradeLensReview(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpgradeLensReview, request, handler, context, m_executor.get());
 }
 

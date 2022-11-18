@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -168,18 +169,12 @@ GetRawMessageContentOutcome WorkMailMessageFlowClient::GetRawMessageContent(cons
 
 GetRawMessageContentOutcomeCallable WorkMailMessageFlowClient::GetRawMessageContentCallable(const GetRawMessageContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRawMessageContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRawMessageContent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRawMessageContent, request, m_executor.get());
 }
 
 void WorkMailMessageFlowClient::GetRawMessageContentAsync(const GetRawMessageContentRequest& request, const GetRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRawMessageContent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRawMessageContent, request, handler, context, m_executor.get());
 }
 
 PutRawMessageContentOutcome WorkMailMessageFlowClient::PutRawMessageContent(const PutRawMessageContentRequest& request) const
@@ -199,17 +194,11 @@ PutRawMessageContentOutcome WorkMailMessageFlowClient::PutRawMessageContent(cons
 
 PutRawMessageContentOutcomeCallable WorkMailMessageFlowClient::PutRawMessageContentCallable(const PutRawMessageContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutRawMessageContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRawMessageContent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutRawMessageContent, request, m_executor.get());
 }
 
 void WorkMailMessageFlowClient::PutRawMessageContentAsync(const PutRawMessageContentRequest& request, const PutRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutRawMessageContent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutRawMessageContent, request, handler, context, m_executor.get());
 }
 

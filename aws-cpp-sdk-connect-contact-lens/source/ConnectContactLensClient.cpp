@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -161,17 +162,11 @@ ListRealtimeContactAnalysisSegmentsOutcome ConnectContactLensClient::ListRealtim
 
 ListRealtimeContactAnalysisSegmentsOutcomeCallable ConnectContactLensClient::ListRealtimeContactAnalysisSegmentsCallable(const ListRealtimeContactAnalysisSegmentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRealtimeContactAnalysisSegmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRealtimeContactAnalysisSegments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRealtimeContactAnalysisSegments, request, m_executor.get());
 }
 
 void ConnectContactLensClient::ListRealtimeContactAnalysisSegmentsAsync(const ListRealtimeContactAnalysisSegmentsRequest& request, const ListRealtimeContactAnalysisSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRealtimeContactAnalysisSegments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRealtimeContactAnalysisSegments, request, handler, context, m_executor.get());
 }
 

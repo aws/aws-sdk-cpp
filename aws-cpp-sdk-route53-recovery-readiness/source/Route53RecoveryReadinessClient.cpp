@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -192,18 +193,12 @@ CreateCellOutcome Route53RecoveryReadinessClient::CreateCell(const CreateCellReq
 
 CreateCellOutcomeCallable Route53RecoveryReadinessClient::CreateCellCallable(const CreateCellRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCellOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCell(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCell, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::CreateCellAsync(const CreateCellRequest& request, const CreateCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCell(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCell, request, handler, context, m_executor.get());
 }
 
 CreateCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::CreateCrossAccountAuthorization(const CreateCrossAccountAuthorizationRequest& request) const
@@ -217,18 +212,12 @@ CreateCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::CreateCro
 
 CreateCrossAccountAuthorizationOutcomeCallable Route53RecoveryReadinessClient::CreateCrossAccountAuthorizationCallable(const CreateCrossAccountAuthorizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCrossAccountAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCrossAccountAuthorization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCrossAccountAuthorization, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::CreateCrossAccountAuthorizationAsync(const CreateCrossAccountAuthorizationRequest& request, const CreateCrossAccountAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCrossAccountAuthorization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCrossAccountAuthorization, request, handler, context, m_executor.get());
 }
 
 CreateReadinessCheckOutcome Route53RecoveryReadinessClient::CreateReadinessCheck(const CreateReadinessCheckRequest& request) const
@@ -242,18 +231,12 @@ CreateReadinessCheckOutcome Route53RecoveryReadinessClient::CreateReadinessCheck
 
 CreateReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::CreateReadinessCheckCallable(const CreateReadinessCheckRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateReadinessCheck(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateReadinessCheck, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::CreateReadinessCheckAsync(const CreateReadinessCheckRequest& request, const CreateReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateReadinessCheck(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateReadinessCheck, request, handler, context, m_executor.get());
 }
 
 CreateRecoveryGroupOutcome Route53RecoveryReadinessClient::CreateRecoveryGroup(const CreateRecoveryGroupRequest& request) const
@@ -267,18 +250,12 @@ CreateRecoveryGroupOutcome Route53RecoveryReadinessClient::CreateRecoveryGroup(c
 
 CreateRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::CreateRecoveryGroupCallable(const CreateRecoveryGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRecoveryGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRecoveryGroup, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::CreateRecoveryGroupAsync(const CreateRecoveryGroupRequest& request, const CreateRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRecoveryGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRecoveryGroup, request, handler, context, m_executor.get());
 }
 
 CreateResourceSetOutcome Route53RecoveryReadinessClient::CreateResourceSet(const CreateResourceSetRequest& request) const
@@ -292,18 +269,12 @@ CreateResourceSetOutcome Route53RecoveryReadinessClient::CreateResourceSet(const
 
 CreateResourceSetOutcomeCallable Route53RecoveryReadinessClient::CreateResourceSetCallable(const CreateResourceSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourceSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateResourceSet, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::CreateResourceSetAsync(const CreateResourceSetRequest& request, const CreateResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateResourceSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateResourceSet, request, handler, context, m_executor.get());
 }
 
 DeleteCellOutcome Route53RecoveryReadinessClient::DeleteCell(const DeleteCellRequest& request) const
@@ -323,18 +294,12 @@ DeleteCellOutcome Route53RecoveryReadinessClient::DeleteCell(const DeleteCellReq
 
 DeleteCellOutcomeCallable Route53RecoveryReadinessClient::DeleteCellCallable(const DeleteCellRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCellOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCell(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCell, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::DeleteCellAsync(const DeleteCellRequest& request, const DeleteCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCell(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCell, request, handler, context, m_executor.get());
 }
 
 DeleteCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::DeleteCrossAccountAuthorization(const DeleteCrossAccountAuthorizationRequest& request) const
@@ -354,18 +319,12 @@ DeleteCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::DeleteCro
 
 DeleteCrossAccountAuthorizationOutcomeCallable Route53RecoveryReadinessClient::DeleteCrossAccountAuthorizationCallable(const DeleteCrossAccountAuthorizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCrossAccountAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCrossAccountAuthorization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCrossAccountAuthorization, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::DeleteCrossAccountAuthorizationAsync(const DeleteCrossAccountAuthorizationRequest& request, const DeleteCrossAccountAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCrossAccountAuthorization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCrossAccountAuthorization, request, handler, context, m_executor.get());
 }
 
 DeleteReadinessCheckOutcome Route53RecoveryReadinessClient::DeleteReadinessCheck(const DeleteReadinessCheckRequest& request) const
@@ -385,18 +344,12 @@ DeleteReadinessCheckOutcome Route53RecoveryReadinessClient::DeleteReadinessCheck
 
 DeleteReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::DeleteReadinessCheckCallable(const DeleteReadinessCheckRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReadinessCheck(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteReadinessCheck, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::DeleteReadinessCheckAsync(const DeleteReadinessCheckRequest& request, const DeleteReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteReadinessCheck(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteReadinessCheck, request, handler, context, m_executor.get());
 }
 
 DeleteRecoveryGroupOutcome Route53RecoveryReadinessClient::DeleteRecoveryGroup(const DeleteRecoveryGroupRequest& request) const
@@ -416,18 +369,12 @@ DeleteRecoveryGroupOutcome Route53RecoveryReadinessClient::DeleteRecoveryGroup(c
 
 DeleteRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::DeleteRecoveryGroupCallable(const DeleteRecoveryGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecoveryGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRecoveryGroup, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::DeleteRecoveryGroupAsync(const DeleteRecoveryGroupRequest& request, const DeleteRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRecoveryGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRecoveryGroup, request, handler, context, m_executor.get());
 }
 
 DeleteResourceSetOutcome Route53RecoveryReadinessClient::DeleteResourceSet(const DeleteResourceSetRequest& request) const
@@ -447,18 +394,12 @@ DeleteResourceSetOutcome Route53RecoveryReadinessClient::DeleteResourceSet(const
 
 DeleteResourceSetOutcomeCallable Route53RecoveryReadinessClient::DeleteResourceSetCallable(const DeleteResourceSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourceSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteResourceSet, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::DeleteResourceSetAsync(const DeleteResourceSetRequest& request, const DeleteResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResourceSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteResourceSet, request, handler, context, m_executor.get());
 }
 
 GetArchitectureRecommendationsOutcome Route53RecoveryReadinessClient::GetArchitectureRecommendations(const GetArchitectureRecommendationsRequest& request) const
@@ -479,18 +420,12 @@ GetArchitectureRecommendationsOutcome Route53RecoveryReadinessClient::GetArchite
 
 GetArchitectureRecommendationsOutcomeCallable Route53RecoveryReadinessClient::GetArchitectureRecommendationsCallable(const GetArchitectureRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetArchitectureRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetArchitectureRecommendations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetArchitectureRecommendations, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::GetArchitectureRecommendationsAsync(const GetArchitectureRecommendationsRequest& request, const GetArchitectureRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetArchitectureRecommendations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetArchitectureRecommendations, request, handler, context, m_executor.get());
 }
 
 GetCellOutcome Route53RecoveryReadinessClient::GetCell(const GetCellRequest& request) const
@@ -510,18 +445,12 @@ GetCellOutcome Route53RecoveryReadinessClient::GetCell(const GetCellRequest& req
 
 GetCellOutcomeCallable Route53RecoveryReadinessClient::GetCellCallable(const GetCellRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCellOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCell(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCell, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::GetCellAsync(const GetCellRequest& request, const GetCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCell(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCell, request, handler, context, m_executor.get());
 }
 
 GetCellReadinessSummaryOutcome Route53RecoveryReadinessClient::GetCellReadinessSummary(const GetCellReadinessSummaryRequest& request) const
@@ -541,18 +470,12 @@ GetCellReadinessSummaryOutcome Route53RecoveryReadinessClient::GetCellReadinessS
 
 GetCellReadinessSummaryOutcomeCallable Route53RecoveryReadinessClient::GetCellReadinessSummaryCallable(const GetCellReadinessSummaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCellReadinessSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCellReadinessSummary(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCellReadinessSummary, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::GetCellReadinessSummaryAsync(const GetCellReadinessSummaryRequest& request, const GetCellReadinessSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCellReadinessSummary(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCellReadinessSummary, request, handler, context, m_executor.get());
 }
 
 GetReadinessCheckOutcome Route53RecoveryReadinessClient::GetReadinessCheck(const GetReadinessCheckRequest& request) const
@@ -572,18 +495,12 @@ GetReadinessCheckOutcome Route53RecoveryReadinessClient::GetReadinessCheck(const
 
 GetReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::GetReadinessCheckCallable(const GetReadinessCheckRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReadinessCheck(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetReadinessCheck, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::GetReadinessCheckAsync(const GetReadinessCheckRequest& request, const GetReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetReadinessCheck(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetReadinessCheck, request, handler, context, m_executor.get());
 }
 
 GetReadinessCheckResourceStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheckResourceStatus(const GetReadinessCheckResourceStatusRequest& request) const
@@ -611,18 +528,12 @@ GetReadinessCheckResourceStatusOutcome Route53RecoveryReadinessClient::GetReadin
 
 GetReadinessCheckResourceStatusOutcomeCallable Route53RecoveryReadinessClient::GetReadinessCheckResourceStatusCallable(const GetReadinessCheckResourceStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReadinessCheckResourceStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReadinessCheckResourceStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetReadinessCheckResourceStatus, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::GetReadinessCheckResourceStatusAsync(const GetReadinessCheckResourceStatusRequest& request, const GetReadinessCheckResourceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetReadinessCheckResourceStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetReadinessCheckResourceStatus, request, handler, context, m_executor.get());
 }
 
 GetReadinessCheckStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheckStatus(const GetReadinessCheckStatusRequest& request) const
@@ -643,18 +554,12 @@ GetReadinessCheckStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheck
 
 GetReadinessCheckStatusOutcomeCallable Route53RecoveryReadinessClient::GetReadinessCheckStatusCallable(const GetReadinessCheckStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReadinessCheckStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReadinessCheckStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetReadinessCheckStatus, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::GetReadinessCheckStatusAsync(const GetReadinessCheckStatusRequest& request, const GetReadinessCheckStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetReadinessCheckStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetReadinessCheckStatus, request, handler, context, m_executor.get());
 }
 
 GetRecoveryGroupOutcome Route53RecoveryReadinessClient::GetRecoveryGroup(const GetRecoveryGroupRequest& request) const
@@ -674,18 +579,12 @@ GetRecoveryGroupOutcome Route53RecoveryReadinessClient::GetRecoveryGroup(const G
 
 GetRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::GetRecoveryGroupCallable(const GetRecoveryGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecoveryGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRecoveryGroup, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::GetRecoveryGroupAsync(const GetRecoveryGroupRequest& request, const GetRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRecoveryGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRecoveryGroup, request, handler, context, m_executor.get());
 }
 
 GetRecoveryGroupReadinessSummaryOutcome Route53RecoveryReadinessClient::GetRecoveryGroupReadinessSummary(const GetRecoveryGroupReadinessSummaryRequest& request) const
@@ -705,18 +604,12 @@ GetRecoveryGroupReadinessSummaryOutcome Route53RecoveryReadinessClient::GetRecov
 
 GetRecoveryGroupReadinessSummaryOutcomeCallable Route53RecoveryReadinessClient::GetRecoveryGroupReadinessSummaryCallable(const GetRecoveryGroupReadinessSummaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecoveryGroupReadinessSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecoveryGroupReadinessSummary(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRecoveryGroupReadinessSummary, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::GetRecoveryGroupReadinessSummaryAsync(const GetRecoveryGroupReadinessSummaryRequest& request, const GetRecoveryGroupReadinessSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRecoveryGroupReadinessSummary(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRecoveryGroupReadinessSummary, request, handler, context, m_executor.get());
 }
 
 GetResourceSetOutcome Route53RecoveryReadinessClient::GetResourceSet(const GetResourceSetRequest& request) const
@@ -736,18 +629,12 @@ GetResourceSetOutcome Route53RecoveryReadinessClient::GetResourceSet(const GetRe
 
 GetResourceSetOutcomeCallable Route53RecoveryReadinessClient::GetResourceSetCallable(const GetResourceSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResourceSet, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::GetResourceSetAsync(const GetResourceSetRequest& request, const GetResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResourceSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResourceSet, request, handler, context, m_executor.get());
 }
 
 ListCellsOutcome Route53RecoveryReadinessClient::ListCells(const ListCellsRequest& request) const
@@ -761,18 +648,12 @@ ListCellsOutcome Route53RecoveryReadinessClient::ListCells(const ListCellsReques
 
 ListCellsOutcomeCallable Route53RecoveryReadinessClient::ListCellsCallable(const ListCellsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCellsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCells(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCells, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::ListCellsAsync(const ListCellsRequest& request, const ListCellsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCells(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCells, request, handler, context, m_executor.get());
 }
 
 ListCrossAccountAuthorizationsOutcome Route53RecoveryReadinessClient::ListCrossAccountAuthorizations(const ListCrossAccountAuthorizationsRequest& request) const
@@ -786,18 +667,12 @@ ListCrossAccountAuthorizationsOutcome Route53RecoveryReadinessClient::ListCrossA
 
 ListCrossAccountAuthorizationsOutcomeCallable Route53RecoveryReadinessClient::ListCrossAccountAuthorizationsCallable(const ListCrossAccountAuthorizationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCrossAccountAuthorizationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCrossAccountAuthorizations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCrossAccountAuthorizations, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::ListCrossAccountAuthorizationsAsync(const ListCrossAccountAuthorizationsRequest& request, const ListCrossAccountAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCrossAccountAuthorizations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCrossAccountAuthorizations, request, handler, context, m_executor.get());
 }
 
 ListReadinessChecksOutcome Route53RecoveryReadinessClient::ListReadinessChecks(const ListReadinessChecksRequest& request) const
@@ -811,18 +686,12 @@ ListReadinessChecksOutcome Route53RecoveryReadinessClient::ListReadinessChecks(c
 
 ListReadinessChecksOutcomeCallable Route53RecoveryReadinessClient::ListReadinessChecksCallable(const ListReadinessChecksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReadinessChecksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReadinessChecks(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListReadinessChecks, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::ListReadinessChecksAsync(const ListReadinessChecksRequest& request, const ListReadinessChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListReadinessChecks(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListReadinessChecks, request, handler, context, m_executor.get());
 }
 
 ListRecoveryGroupsOutcome Route53RecoveryReadinessClient::ListRecoveryGroups(const ListRecoveryGroupsRequest& request) const
@@ -836,18 +705,12 @@ ListRecoveryGroupsOutcome Route53RecoveryReadinessClient::ListRecoveryGroups(con
 
 ListRecoveryGroupsOutcomeCallable Route53RecoveryReadinessClient::ListRecoveryGroupsCallable(const ListRecoveryGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRecoveryGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecoveryGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRecoveryGroups, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::ListRecoveryGroupsAsync(const ListRecoveryGroupsRequest& request, const ListRecoveryGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRecoveryGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRecoveryGroups, request, handler, context, m_executor.get());
 }
 
 ListResourceSetsOutcome Route53RecoveryReadinessClient::ListResourceSets(const ListResourceSetsRequest& request) const
@@ -861,18 +724,12 @@ ListResourceSetsOutcome Route53RecoveryReadinessClient::ListResourceSets(const L
 
 ListResourceSetsOutcomeCallable Route53RecoveryReadinessClient::ListResourceSetsCallable(const ListResourceSetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListResourceSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceSets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListResourceSets, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::ListResourceSetsAsync(const ListResourceSetsRequest& request, const ListResourceSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListResourceSets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListResourceSets, request, handler, context, m_executor.get());
 }
 
 ListRulesOutcome Route53RecoveryReadinessClient::ListRules(const ListRulesRequest& request) const
@@ -886,18 +743,12 @@ ListRulesOutcome Route53RecoveryReadinessClient::ListRules(const ListRulesReques
 
 ListRulesOutcomeCallable Route53RecoveryReadinessClient::ListRulesCallable(const ListRulesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRules(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRules, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::ListRulesAsync(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRules(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRules, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourcesOutcome Route53RecoveryReadinessClient::ListTagsForResources(const ListTagsForResourcesRequest& request) const
@@ -917,18 +768,12 @@ ListTagsForResourcesOutcome Route53RecoveryReadinessClient::ListTagsForResources
 
 ListTagsForResourcesOutcomeCallable Route53RecoveryReadinessClient::ListTagsForResourcesCallable(const ListTagsForResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResources, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::ListTagsForResourcesAsync(const ListTagsForResourcesRequest& request, const ListTagsForResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResources, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome Route53RecoveryReadinessClient::TagResource(const TagResourceRequest& request) const
@@ -948,18 +793,12 @@ TagResourceOutcome Route53RecoveryReadinessClient::TagResource(const TagResource
 
 TagResourceOutcomeCallable Route53RecoveryReadinessClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome Route53RecoveryReadinessClient::UntagResource(const UntagResourceRequest& request) const
@@ -984,18 +823,12 @@ UntagResourceOutcome Route53RecoveryReadinessClient::UntagResource(const UntagRe
 
 UntagResourceOutcomeCallable Route53RecoveryReadinessClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateCellOutcome Route53RecoveryReadinessClient::UpdateCell(const UpdateCellRequest& request) const
@@ -1015,18 +848,12 @@ UpdateCellOutcome Route53RecoveryReadinessClient::UpdateCell(const UpdateCellReq
 
 UpdateCellOutcomeCallable Route53RecoveryReadinessClient::UpdateCellCallable(const UpdateCellRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCellOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCell(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCell, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::UpdateCellAsync(const UpdateCellRequest& request, const UpdateCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCell(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCell, request, handler, context, m_executor.get());
 }
 
 UpdateReadinessCheckOutcome Route53RecoveryReadinessClient::UpdateReadinessCheck(const UpdateReadinessCheckRequest& request) const
@@ -1046,18 +873,12 @@ UpdateReadinessCheckOutcome Route53RecoveryReadinessClient::UpdateReadinessCheck
 
 UpdateReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::UpdateReadinessCheckCallable(const UpdateReadinessCheckRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReadinessCheck(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateReadinessCheck, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::UpdateReadinessCheckAsync(const UpdateReadinessCheckRequest& request, const UpdateReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateReadinessCheck(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateReadinessCheck, request, handler, context, m_executor.get());
 }
 
 UpdateRecoveryGroupOutcome Route53RecoveryReadinessClient::UpdateRecoveryGroup(const UpdateRecoveryGroupRequest& request) const
@@ -1077,18 +898,12 @@ UpdateRecoveryGroupOutcome Route53RecoveryReadinessClient::UpdateRecoveryGroup(c
 
 UpdateRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::UpdateRecoveryGroupCallable(const UpdateRecoveryGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRecoveryGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRecoveryGroup, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::UpdateRecoveryGroupAsync(const UpdateRecoveryGroupRequest& request, const UpdateRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRecoveryGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRecoveryGroup, request, handler, context, m_executor.get());
 }
 
 UpdateResourceSetOutcome Route53RecoveryReadinessClient::UpdateResourceSet(const UpdateResourceSetRequest& request) const
@@ -1108,17 +923,11 @@ UpdateResourceSetOutcome Route53RecoveryReadinessClient::UpdateResourceSet(const
 
 UpdateResourceSetOutcomeCallable Route53RecoveryReadinessClient::UpdateResourceSetCallable(const UpdateResourceSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourceSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateResourceSet, request, m_executor.get());
 }
 
 void Route53RecoveryReadinessClient::UpdateResourceSetAsync(const UpdateResourceSetRequest& request, const UpdateResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateResourceSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateResourceSet, request, handler, context, m_executor.get());
 }
 

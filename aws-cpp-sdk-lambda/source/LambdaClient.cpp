@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -146,10 +147,10 @@ LambdaClient::LambdaClient(const std::shared_ptr<AWSCredentialsProvider>& creden
     /* Legacy constructors due deprecation */
   LambdaClient::LambdaClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -161,10 +162,10 @@ LambdaClient::LambdaClient(const std::shared_ptr<AWSCredentialsProvider>& creden
 LambdaClient::LambdaClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -176,10 +177,10 @@ LambdaClient::LambdaClient(const AWSCredentials& credentials,
 LambdaClient::LambdaClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -236,18 +237,12 @@ AddLayerVersionPermissionOutcome LambdaClient::AddLayerVersionPermission(const A
 
 AddLayerVersionPermissionOutcomeCallable LambdaClient::AddLayerVersionPermissionCallable(const AddLayerVersionPermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddLayerVersionPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddLayerVersionPermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddLayerVersionPermission, request, m_executor.get());
 }
 
 void LambdaClient::AddLayerVersionPermissionAsync(const AddLayerVersionPermissionRequest& request, const AddLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddLayerVersionPermission(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddLayerVersionPermission, request, handler, context, m_executor.get());
 }
 
 AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& request) const
@@ -268,18 +263,12 @@ AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& req
 
 AddPermissionOutcomeCallable LambdaClient::AddPermissionCallable(const AddPermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddPermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddPermission, request, m_executor.get());
 }
 
 void LambdaClient::AddPermissionAsync(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddPermission(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddPermission, request, handler, context, m_executor.get());
 }
 
 CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) const
@@ -300,18 +289,12 @@ CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) 
 
 CreateAliasOutcomeCallable LambdaClient::CreateAliasCallable(const CreateAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAlias(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAlias, request, m_executor.get());
 }
 
 void LambdaClient::CreateAliasAsync(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAlias(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAlias, request, handler, context, m_executor.get());
 }
 
 CreateCodeSigningConfigOutcome LambdaClient::CreateCodeSigningConfig(const CreateCodeSigningConfigRequest& request) const
@@ -325,18 +308,12 @@ CreateCodeSigningConfigOutcome LambdaClient::CreateCodeSigningConfig(const Creat
 
 CreateCodeSigningConfigOutcomeCallable LambdaClient::CreateCodeSigningConfigCallable(const CreateCodeSigningConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCodeSigningConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCodeSigningConfig, request, m_executor.get());
 }
 
 void LambdaClient::CreateCodeSigningConfigAsync(const CreateCodeSigningConfigRequest& request, const CreateCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCodeSigningConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCodeSigningConfig, request, handler, context, m_executor.get());
 }
 
 CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const CreateEventSourceMappingRequest& request) const
@@ -350,18 +327,12 @@ CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const Cre
 
 CreateEventSourceMappingOutcomeCallable LambdaClient::CreateEventSourceMappingCallable(const CreateEventSourceMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEventSourceMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEventSourceMapping(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEventSourceMapping, request, m_executor.get());
 }
 
 void LambdaClient::CreateEventSourceMappingAsync(const CreateEventSourceMappingRequest& request, const CreateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEventSourceMapping(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEventSourceMapping, request, handler, context, m_executor.get());
 }
 
 CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& request) const
@@ -375,18 +346,12 @@ CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& 
 
 CreateFunctionOutcomeCallable LambdaClient::CreateFunctionCallable(const CreateFunctionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFunctionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFunction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFunction, request, m_executor.get());
 }
 
 void LambdaClient::CreateFunctionAsync(const CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFunction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFunction, request, handler, context, m_executor.get());
 }
 
 CreateFunctionUrlConfigOutcome LambdaClient::CreateFunctionUrlConfig(const CreateFunctionUrlConfigRequest& request) const
@@ -407,18 +372,12 @@ CreateFunctionUrlConfigOutcome LambdaClient::CreateFunctionUrlConfig(const Creat
 
 CreateFunctionUrlConfigOutcomeCallable LambdaClient::CreateFunctionUrlConfigCallable(const CreateFunctionUrlConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFunctionUrlConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFunctionUrlConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFunctionUrlConfig, request, m_executor.get());
 }
 
 void LambdaClient::CreateFunctionUrlConfigAsync(const CreateFunctionUrlConfigRequest& request, const CreateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFunctionUrlConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFunctionUrlConfig, request, handler, context, m_executor.get());
 }
 
 DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) const
@@ -445,18 +404,12 @@ DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) 
 
 DeleteAliasOutcomeCallable LambdaClient::DeleteAliasCallable(const DeleteAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAlias(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAlias, request, m_executor.get());
 }
 
 void LambdaClient::DeleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAlias(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAlias, request, handler, context, m_executor.get());
 }
 
 DeleteCodeSigningConfigOutcome LambdaClient::DeleteCodeSigningConfig(const DeleteCodeSigningConfigRequest& request) const
@@ -476,18 +429,12 @@ DeleteCodeSigningConfigOutcome LambdaClient::DeleteCodeSigningConfig(const Delet
 
 DeleteCodeSigningConfigOutcomeCallable LambdaClient::DeleteCodeSigningConfigCallable(const DeleteCodeSigningConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCodeSigningConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCodeSigningConfig, request, m_executor.get());
 }
 
 void LambdaClient::DeleteCodeSigningConfigAsync(const DeleteCodeSigningConfigRequest& request, const DeleteCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCodeSigningConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCodeSigningConfig, request, handler, context, m_executor.get());
 }
 
 DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const DeleteEventSourceMappingRequest& request) const
@@ -507,18 +454,12 @@ DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const Del
 
 DeleteEventSourceMappingOutcomeCallable LambdaClient::DeleteEventSourceMappingCallable(const DeleteEventSourceMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEventSourceMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEventSourceMapping(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEventSourceMapping, request, m_executor.get());
 }
 
 void LambdaClient::DeleteEventSourceMappingAsync(const DeleteEventSourceMappingRequest& request, const DeleteEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEventSourceMapping(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEventSourceMapping, request, handler, context, m_executor.get());
 }
 
 DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& request) const
@@ -538,18 +479,12 @@ DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& 
 
 DeleteFunctionOutcomeCallable LambdaClient::DeleteFunctionCallable(const DeleteFunctionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFunctionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFunction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFunction, request, m_executor.get());
 }
 
 void LambdaClient::DeleteFunctionAsync(const DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFunction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFunction, request, handler, context, m_executor.get());
 }
 
 DeleteFunctionCodeSigningConfigOutcome LambdaClient::DeleteFunctionCodeSigningConfig(const DeleteFunctionCodeSigningConfigRequest& request) const
@@ -570,18 +505,12 @@ DeleteFunctionCodeSigningConfigOutcome LambdaClient::DeleteFunctionCodeSigningCo
 
 DeleteFunctionCodeSigningConfigOutcomeCallable LambdaClient::DeleteFunctionCodeSigningConfigCallable(const DeleteFunctionCodeSigningConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFunctionCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFunctionCodeSigningConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFunctionCodeSigningConfig, request, m_executor.get());
 }
 
 void LambdaClient::DeleteFunctionCodeSigningConfigAsync(const DeleteFunctionCodeSigningConfigRequest& request, const DeleteFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFunctionCodeSigningConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFunctionCodeSigningConfig, request, handler, context, m_executor.get());
 }
 
 DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const DeleteFunctionConcurrencyRequest& request) const
@@ -602,18 +531,12 @@ DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const D
 
 DeleteFunctionConcurrencyOutcomeCallable LambdaClient::DeleteFunctionConcurrencyCallable(const DeleteFunctionConcurrencyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFunctionConcurrencyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFunctionConcurrency(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFunctionConcurrency, request, m_executor.get());
 }
 
 void LambdaClient::DeleteFunctionConcurrencyAsync(const DeleteFunctionConcurrencyRequest& request, const DeleteFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFunctionConcurrency(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFunctionConcurrency, request, handler, context, m_executor.get());
 }
 
 DeleteFunctionEventInvokeConfigOutcome LambdaClient::DeleteFunctionEventInvokeConfig(const DeleteFunctionEventInvokeConfigRequest& request) const
@@ -634,18 +557,12 @@ DeleteFunctionEventInvokeConfigOutcome LambdaClient::DeleteFunctionEventInvokeCo
 
 DeleteFunctionEventInvokeConfigOutcomeCallable LambdaClient::DeleteFunctionEventInvokeConfigCallable(const DeleteFunctionEventInvokeConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFunctionEventInvokeConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFunctionEventInvokeConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFunctionEventInvokeConfig, request, m_executor.get());
 }
 
 void LambdaClient::DeleteFunctionEventInvokeConfigAsync(const DeleteFunctionEventInvokeConfigRequest& request, const DeleteFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFunctionEventInvokeConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFunctionEventInvokeConfig, request, handler, context, m_executor.get());
 }
 
 DeleteFunctionUrlConfigOutcome LambdaClient::DeleteFunctionUrlConfig(const DeleteFunctionUrlConfigRequest& request) const
@@ -666,18 +583,12 @@ DeleteFunctionUrlConfigOutcome LambdaClient::DeleteFunctionUrlConfig(const Delet
 
 DeleteFunctionUrlConfigOutcomeCallable LambdaClient::DeleteFunctionUrlConfigCallable(const DeleteFunctionUrlConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFunctionUrlConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFunctionUrlConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFunctionUrlConfig, request, m_executor.get());
 }
 
 void LambdaClient::DeleteFunctionUrlConfigAsync(const DeleteFunctionUrlConfigRequest& request, const DeleteFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFunctionUrlConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFunctionUrlConfig, request, handler, context, m_executor.get());
 }
 
 DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVersionRequest& request) const
@@ -704,18 +615,12 @@ DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVers
 
 DeleteLayerVersionOutcomeCallable LambdaClient::DeleteLayerVersionCallable(const DeleteLayerVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLayerVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLayerVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLayerVersion, request, m_executor.get());
 }
 
 void LambdaClient::DeleteLayerVersionAsync(const DeleteLayerVersionRequest& request, const DeleteLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLayerVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLayerVersion, request, handler, context, m_executor.get());
 }
 
 DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurrencyConfig(const DeleteProvisionedConcurrencyConfigRequest& request) const
@@ -741,18 +646,12 @@ DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurr
 
 DeleteProvisionedConcurrencyConfigOutcomeCallable LambdaClient::DeleteProvisionedConcurrencyConfigCallable(const DeleteProvisionedConcurrencyConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteProvisionedConcurrencyConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProvisionedConcurrencyConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteProvisionedConcurrencyConfig, request, m_executor.get());
 }
 
 void LambdaClient::DeleteProvisionedConcurrencyConfigAsync(const DeleteProvisionedConcurrencyConfigRequest& request, const DeleteProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteProvisionedConcurrencyConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteProvisionedConcurrencyConfig, request, handler, context, m_executor.get());
 }
 
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
@@ -766,18 +665,12 @@ GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSetti
 
 GetAccountSettingsOutcomeCallable LambdaClient::GetAccountSettingsCallable(const GetAccountSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccountSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccountSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccountSettings, request, m_executor.get());
 }
 
 void LambdaClient::GetAccountSettingsAsync(const GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccountSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccountSettings, request, handler, context, m_executor.get());
 }
 
 GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
@@ -804,18 +697,12 @@ GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
 
 GetAliasOutcomeCallable LambdaClient::GetAliasCallable(const GetAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAlias(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAlias, request, m_executor.get());
 }
 
 void LambdaClient::GetAliasAsync(const GetAliasRequest& request, const GetAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAlias(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAlias, request, handler, context, m_executor.get());
 }
 
 GetCodeSigningConfigOutcome LambdaClient::GetCodeSigningConfig(const GetCodeSigningConfigRequest& request) const
@@ -835,18 +722,12 @@ GetCodeSigningConfigOutcome LambdaClient::GetCodeSigningConfig(const GetCodeSign
 
 GetCodeSigningConfigOutcomeCallable LambdaClient::GetCodeSigningConfigCallable(const GetCodeSigningConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCodeSigningConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCodeSigningConfig, request, m_executor.get());
 }
 
 void LambdaClient::GetCodeSigningConfigAsync(const GetCodeSigningConfigRequest& request, const GetCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCodeSigningConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCodeSigningConfig, request, handler, context, m_executor.get());
 }
 
 GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventSourceMappingRequest& request) const
@@ -866,18 +747,12 @@ GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventS
 
 GetEventSourceMappingOutcomeCallable LambdaClient::GetEventSourceMappingCallable(const GetEventSourceMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEventSourceMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEventSourceMapping(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetEventSourceMapping, request, m_executor.get());
 }
 
 void LambdaClient::GetEventSourceMappingAsync(const GetEventSourceMappingRequest& request, const GetEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetEventSourceMapping(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetEventSourceMapping, request, handler, context, m_executor.get());
 }
 
 GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) const
@@ -897,18 +772,12 @@ GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) 
 
 GetFunctionOutcomeCallable LambdaClient::GetFunctionCallable(const GetFunctionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFunctionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFunction, request, m_executor.get());
 }
 
 void LambdaClient::GetFunctionAsync(const GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFunction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFunction, request, handler, context, m_executor.get());
 }
 
 GetFunctionCodeSigningConfigOutcome LambdaClient::GetFunctionCodeSigningConfig(const GetFunctionCodeSigningConfigRequest& request) const
@@ -929,18 +798,12 @@ GetFunctionCodeSigningConfigOutcome LambdaClient::GetFunctionCodeSigningConfig(c
 
 GetFunctionCodeSigningConfigOutcomeCallable LambdaClient::GetFunctionCodeSigningConfigCallable(const GetFunctionCodeSigningConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFunctionCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunctionCodeSigningConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFunctionCodeSigningConfig, request, m_executor.get());
 }
 
 void LambdaClient::GetFunctionCodeSigningConfigAsync(const GetFunctionCodeSigningConfigRequest& request, const GetFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFunctionCodeSigningConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFunctionCodeSigningConfig, request, handler, context, m_executor.get());
 }
 
 GetFunctionConcurrencyOutcome LambdaClient::GetFunctionConcurrency(const GetFunctionConcurrencyRequest& request) const
@@ -961,18 +824,12 @@ GetFunctionConcurrencyOutcome LambdaClient::GetFunctionConcurrency(const GetFunc
 
 GetFunctionConcurrencyOutcomeCallable LambdaClient::GetFunctionConcurrencyCallable(const GetFunctionConcurrencyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFunctionConcurrencyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunctionConcurrency(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFunctionConcurrency, request, m_executor.get());
 }
 
 void LambdaClient::GetFunctionConcurrencyAsync(const GetFunctionConcurrencyRequest& request, const GetFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFunctionConcurrency(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFunctionConcurrency, request, handler, context, m_executor.get());
 }
 
 GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const GetFunctionConfigurationRequest& request) const
@@ -993,18 +850,12 @@ GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const Get
 
 GetFunctionConfigurationOutcomeCallable LambdaClient::GetFunctionConfigurationCallable(const GetFunctionConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFunctionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunctionConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFunctionConfiguration, request, m_executor.get());
 }
 
 void LambdaClient::GetFunctionConfigurationAsync(const GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFunctionConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFunctionConfiguration, request, handler, context, m_executor.get());
 }
 
 GetFunctionEventInvokeConfigOutcome LambdaClient::GetFunctionEventInvokeConfig(const GetFunctionEventInvokeConfigRequest& request) const
@@ -1025,18 +876,12 @@ GetFunctionEventInvokeConfigOutcome LambdaClient::GetFunctionEventInvokeConfig(c
 
 GetFunctionEventInvokeConfigOutcomeCallable LambdaClient::GetFunctionEventInvokeConfigCallable(const GetFunctionEventInvokeConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFunctionEventInvokeConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunctionEventInvokeConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFunctionEventInvokeConfig, request, m_executor.get());
 }
 
 void LambdaClient::GetFunctionEventInvokeConfigAsync(const GetFunctionEventInvokeConfigRequest& request, const GetFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFunctionEventInvokeConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFunctionEventInvokeConfig, request, handler, context, m_executor.get());
 }
 
 GetFunctionUrlConfigOutcome LambdaClient::GetFunctionUrlConfig(const GetFunctionUrlConfigRequest& request) const
@@ -1057,18 +902,12 @@ GetFunctionUrlConfigOutcome LambdaClient::GetFunctionUrlConfig(const GetFunction
 
 GetFunctionUrlConfigOutcomeCallable LambdaClient::GetFunctionUrlConfigCallable(const GetFunctionUrlConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFunctionUrlConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunctionUrlConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFunctionUrlConfig, request, m_executor.get());
 }
 
 void LambdaClient::GetFunctionUrlConfigAsync(const GetFunctionUrlConfigRequest& request, const GetFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFunctionUrlConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFunctionUrlConfig, request, handler, context, m_executor.get());
 }
 
 GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionRequest& request) const
@@ -1095,18 +934,12 @@ GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionReques
 
 GetLayerVersionOutcomeCallable LambdaClient::GetLayerVersionCallable(const GetLayerVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLayerVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLayerVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLayerVersion, request, m_executor.get());
 }
 
 void LambdaClient::GetLayerVersionAsync(const GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLayerVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLayerVersion, request, handler, context, m_executor.get());
 }
 
 GetLayerVersionByArnOutcome LambdaClient::GetLayerVersionByArn(const GetLayerVersionByArnRequest& request) const
@@ -1128,18 +961,12 @@ GetLayerVersionByArnOutcome LambdaClient::GetLayerVersionByArn(const GetLayerVer
 
 GetLayerVersionByArnOutcomeCallable LambdaClient::GetLayerVersionByArnCallable(const GetLayerVersionByArnRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLayerVersionByArnOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLayerVersionByArn(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLayerVersionByArn, request, m_executor.get());
 }
 
 void LambdaClient::GetLayerVersionByArnAsync(const GetLayerVersionByArnRequest& request, const GetLayerVersionByArnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLayerVersionByArn(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLayerVersionByArn, request, handler, context, m_executor.get());
 }
 
 GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerVersionPolicyRequest& request) const
@@ -1167,18 +994,12 @@ GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerV
 
 GetLayerVersionPolicyOutcomeCallable LambdaClient::GetLayerVersionPolicyCallable(const GetLayerVersionPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLayerVersionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLayerVersionPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLayerVersionPolicy, request, m_executor.get());
 }
 
 void LambdaClient::GetLayerVersionPolicyAsync(const GetLayerVersionPolicyRequest& request, const GetLayerVersionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLayerVersionPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLayerVersionPolicy, request, handler, context, m_executor.get());
 }
 
 GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
@@ -1199,18 +1020,12 @@ GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
 
 GetPolicyOutcomeCallable LambdaClient::GetPolicyCallable(const GetPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPolicy, request, m_executor.get());
 }
 
 void LambdaClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPolicy, request, handler, context, m_executor.get());
 }
 
 GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyConfig(const GetProvisionedConcurrencyConfigRequest& request) const
@@ -1236,18 +1051,12 @@ GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyCo
 
 GetProvisionedConcurrencyConfigOutcomeCallable LambdaClient::GetProvisionedConcurrencyConfigCallable(const GetProvisionedConcurrencyConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetProvisionedConcurrencyConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProvisionedConcurrencyConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetProvisionedConcurrencyConfig, request, m_executor.get());
 }
 
 void LambdaClient::GetProvisionedConcurrencyConfigAsync(const GetProvisionedConcurrencyConfigRequest& request, const GetProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetProvisionedConcurrencyConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetProvisionedConcurrencyConfig, request, handler, context, m_executor.get());
 }
 
 InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
@@ -1268,18 +1077,12 @@ InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
 
 InvokeOutcomeCallable LambdaClient::InvokeCallable(const InvokeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InvokeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Invoke(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(Invoke, request, m_executor.get());
 }
 
 void LambdaClient::InvokeAsync(const InvokeRequest& request, const InvokeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, Invoke(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(Invoke, request, handler, context, m_executor.get());
 }
 
 ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) const
@@ -1300,18 +1103,12 @@ ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) 
 
 ListAliasesOutcomeCallable LambdaClient::ListAliasesCallable(const ListAliasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAliasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAliases(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAliases, request, m_executor.get());
 }
 
 void LambdaClient::ListAliasesAsync(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAliases(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAliases, request, handler, context, m_executor.get());
 }
 
 ListCodeSigningConfigsOutcome LambdaClient::ListCodeSigningConfigs(const ListCodeSigningConfigsRequest& request) const
@@ -1325,18 +1122,12 @@ ListCodeSigningConfigsOutcome LambdaClient::ListCodeSigningConfigs(const ListCod
 
 ListCodeSigningConfigsOutcomeCallable LambdaClient::ListCodeSigningConfigsCallable(const ListCodeSigningConfigsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCodeSigningConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCodeSigningConfigs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCodeSigningConfigs, request, m_executor.get());
 }
 
 void LambdaClient::ListCodeSigningConfigsAsync(const ListCodeSigningConfigsRequest& request, const ListCodeSigningConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCodeSigningConfigs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCodeSigningConfigs, request, handler, context, m_executor.get());
 }
 
 ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListEventSourceMappingsRequest& request) const
@@ -1350,18 +1141,12 @@ ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListE
 
 ListEventSourceMappingsOutcomeCallable LambdaClient::ListEventSourceMappingsCallable(const ListEventSourceMappingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEventSourceMappingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventSourceMappings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEventSourceMappings, request, m_executor.get());
 }
 
 void LambdaClient::ListEventSourceMappingsAsync(const ListEventSourceMappingsRequest& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEventSourceMappings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEventSourceMappings, request, handler, context, m_executor.get());
 }
 
 ListFunctionEventInvokeConfigsOutcome LambdaClient::ListFunctionEventInvokeConfigs(const ListFunctionEventInvokeConfigsRequest& request) const
@@ -1382,18 +1167,12 @@ ListFunctionEventInvokeConfigsOutcome LambdaClient::ListFunctionEventInvokeConfi
 
 ListFunctionEventInvokeConfigsOutcomeCallable LambdaClient::ListFunctionEventInvokeConfigsCallable(const ListFunctionEventInvokeConfigsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFunctionEventInvokeConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFunctionEventInvokeConfigs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFunctionEventInvokeConfigs, request, m_executor.get());
 }
 
 void LambdaClient::ListFunctionEventInvokeConfigsAsync(const ListFunctionEventInvokeConfigsRequest& request, const ListFunctionEventInvokeConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFunctionEventInvokeConfigs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFunctionEventInvokeConfigs, request, handler, context, m_executor.get());
 }
 
 ListFunctionUrlConfigsOutcome LambdaClient::ListFunctionUrlConfigs(const ListFunctionUrlConfigsRequest& request) const
@@ -1414,18 +1193,12 @@ ListFunctionUrlConfigsOutcome LambdaClient::ListFunctionUrlConfigs(const ListFun
 
 ListFunctionUrlConfigsOutcomeCallable LambdaClient::ListFunctionUrlConfigsCallable(const ListFunctionUrlConfigsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFunctionUrlConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFunctionUrlConfigs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFunctionUrlConfigs, request, m_executor.get());
 }
 
 void LambdaClient::ListFunctionUrlConfigsAsync(const ListFunctionUrlConfigsRequest& request, const ListFunctionUrlConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFunctionUrlConfigs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFunctionUrlConfigs, request, handler, context, m_executor.get());
 }
 
 ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& request) const
@@ -1439,18 +1212,12 @@ ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& req
 
 ListFunctionsOutcomeCallable LambdaClient::ListFunctionsCallable(const ListFunctionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFunctionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFunctions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFunctions, request, m_executor.get());
 }
 
 void LambdaClient::ListFunctionsAsync(const ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFunctions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFunctions, request, handler, context, m_executor.get());
 }
 
 ListFunctionsByCodeSigningConfigOutcome LambdaClient::ListFunctionsByCodeSigningConfig(const ListFunctionsByCodeSigningConfigRequest& request) const
@@ -1471,18 +1238,12 @@ ListFunctionsByCodeSigningConfigOutcome LambdaClient::ListFunctionsByCodeSigning
 
 ListFunctionsByCodeSigningConfigOutcomeCallable LambdaClient::ListFunctionsByCodeSigningConfigCallable(const ListFunctionsByCodeSigningConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFunctionsByCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFunctionsByCodeSigningConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFunctionsByCodeSigningConfig, request, m_executor.get());
 }
 
 void LambdaClient::ListFunctionsByCodeSigningConfigAsync(const ListFunctionsByCodeSigningConfigRequest& request, const ListFunctionsByCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFunctionsByCodeSigningConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFunctionsByCodeSigningConfig, request, handler, context, m_executor.get());
 }
 
 ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersionsRequest& request) const
@@ -1503,18 +1264,12 @@ ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersions
 
 ListLayerVersionsOutcomeCallable LambdaClient::ListLayerVersionsCallable(const ListLayerVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLayerVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLayerVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLayerVersions, request, m_executor.get());
 }
 
 void LambdaClient::ListLayerVersionsAsync(const ListLayerVersionsRequest& request, const ListLayerVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLayerVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLayerVersions, request, handler, context, m_executor.get());
 }
 
 ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) const
@@ -1528,18 +1283,12 @@ ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) con
 
 ListLayersOutcomeCallable LambdaClient::ListLayersCallable(const ListLayersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLayersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLayers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLayers, request, m_executor.get());
 }
 
 void LambdaClient::ListLayersAsync(const ListLayersRequest& request, const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLayers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLayers, request, handler, context, m_executor.get());
 }
 
 ListProvisionedConcurrencyConfigsOutcome LambdaClient::ListProvisionedConcurrencyConfigs(const ListProvisionedConcurrencyConfigsRequest& request) const
@@ -1563,18 +1312,12 @@ ListProvisionedConcurrencyConfigsOutcome LambdaClient::ListProvisionedConcurrenc
 
 ListProvisionedConcurrencyConfigsOutcomeCallable LambdaClient::ListProvisionedConcurrencyConfigsCallable(const ListProvisionedConcurrencyConfigsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProvisionedConcurrencyConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProvisionedConcurrencyConfigs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListProvisionedConcurrencyConfigs, request, m_executor.get());
 }
 
 void LambdaClient::ListProvisionedConcurrencyConfigsAsync(const ListProvisionedConcurrencyConfigsRequest& request, const ListProvisionedConcurrencyConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListProvisionedConcurrencyConfigs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListProvisionedConcurrencyConfigs, request, handler, context, m_executor.get());
 }
 
 ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
@@ -1594,18 +1337,12 @@ ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
 
 ListTagsOutcomeCallable LambdaClient::ListTagsCallable(const ListTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTags, request, m_executor.get());
 }
 
 void LambdaClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTags, request, handler, context, m_executor.get());
 }
 
 ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVersionsByFunctionRequest& request) const
@@ -1626,18 +1363,12 @@ ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVer
 
 ListVersionsByFunctionOutcomeCallable LambdaClient::ListVersionsByFunctionCallable(const ListVersionsByFunctionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVersionsByFunctionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVersionsByFunction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListVersionsByFunction, request, m_executor.get());
 }
 
 void LambdaClient::ListVersionsByFunctionAsync(const ListVersionsByFunctionRequest& request, const ListVersionsByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListVersionsByFunction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListVersionsByFunction, request, handler, context, m_executor.get());
 }
 
 PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerVersionRequest& request) const
@@ -1658,18 +1389,12 @@ PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerV
 
 PublishLayerVersionOutcomeCallable LambdaClient::PublishLayerVersionCallable(const PublishLayerVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PublishLayerVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PublishLayerVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PublishLayerVersion, request, m_executor.get());
 }
 
 void LambdaClient::PublishLayerVersionAsync(const PublishLayerVersionRequest& request, const PublishLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PublishLayerVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PublishLayerVersion, request, handler, context, m_executor.get());
 }
 
 PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& request) const
@@ -1690,18 +1415,12 @@ PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& 
 
 PublishVersionOutcomeCallable LambdaClient::PublishVersionCallable(const PublishVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PublishVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PublishVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PublishVersion, request, m_executor.get());
 }
 
 void LambdaClient::PublishVersionAsync(const PublishVersionRequest& request, const PublishVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PublishVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PublishVersion, request, handler, context, m_executor.get());
 }
 
 PutFunctionCodeSigningConfigOutcome LambdaClient::PutFunctionCodeSigningConfig(const PutFunctionCodeSigningConfigRequest& request) const
@@ -1722,18 +1441,12 @@ PutFunctionCodeSigningConfigOutcome LambdaClient::PutFunctionCodeSigningConfig(c
 
 PutFunctionCodeSigningConfigOutcomeCallable LambdaClient::PutFunctionCodeSigningConfigCallable(const PutFunctionCodeSigningConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutFunctionCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutFunctionCodeSigningConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutFunctionCodeSigningConfig, request, m_executor.get());
 }
 
 void LambdaClient::PutFunctionCodeSigningConfigAsync(const PutFunctionCodeSigningConfigRequest& request, const PutFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutFunctionCodeSigningConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutFunctionCodeSigningConfig, request, handler, context, m_executor.get());
 }
 
 PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunctionConcurrencyRequest& request) const
@@ -1754,18 +1467,12 @@ PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunc
 
 PutFunctionConcurrencyOutcomeCallable LambdaClient::PutFunctionConcurrencyCallable(const PutFunctionConcurrencyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutFunctionConcurrencyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutFunctionConcurrency(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutFunctionConcurrency, request, m_executor.get());
 }
 
 void LambdaClient::PutFunctionConcurrencyAsync(const PutFunctionConcurrencyRequest& request, const PutFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutFunctionConcurrency(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutFunctionConcurrency, request, handler, context, m_executor.get());
 }
 
 PutFunctionEventInvokeConfigOutcome LambdaClient::PutFunctionEventInvokeConfig(const PutFunctionEventInvokeConfigRequest& request) const
@@ -1786,18 +1493,12 @@ PutFunctionEventInvokeConfigOutcome LambdaClient::PutFunctionEventInvokeConfig(c
 
 PutFunctionEventInvokeConfigOutcomeCallable LambdaClient::PutFunctionEventInvokeConfigCallable(const PutFunctionEventInvokeConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutFunctionEventInvokeConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutFunctionEventInvokeConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutFunctionEventInvokeConfig, request, m_executor.get());
 }
 
 void LambdaClient::PutFunctionEventInvokeConfigAsync(const PutFunctionEventInvokeConfigRequest& request, const PutFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutFunctionEventInvokeConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutFunctionEventInvokeConfig, request, handler, context, m_executor.get());
 }
 
 PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyConfig(const PutProvisionedConcurrencyConfigRequest& request) const
@@ -1823,18 +1524,12 @@ PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyCo
 
 PutProvisionedConcurrencyConfigOutcomeCallable LambdaClient::PutProvisionedConcurrencyConfigCallable(const PutProvisionedConcurrencyConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutProvisionedConcurrencyConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutProvisionedConcurrencyConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutProvisionedConcurrencyConfig, request, m_executor.get());
 }
 
 void LambdaClient::PutProvisionedConcurrencyConfigAsync(const PutProvisionedConcurrencyConfigRequest& request, const PutProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutProvisionedConcurrencyConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutProvisionedConcurrencyConfig, request, handler, context, m_executor.get());
 }
 
 RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(const RemoveLayerVersionPermissionRequest& request) const
@@ -1868,18 +1563,12 @@ RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(c
 
 RemoveLayerVersionPermissionOutcomeCallable LambdaClient::RemoveLayerVersionPermissionCallable(const RemoveLayerVersionPermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveLayerVersionPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveLayerVersionPermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveLayerVersionPermission, request, m_executor.get());
 }
 
 void LambdaClient::RemoveLayerVersionPermissionAsync(const RemoveLayerVersionPermissionRequest& request, const RemoveLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveLayerVersionPermission(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveLayerVersionPermission, request, handler, context, m_executor.get());
 }
 
 RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionRequest& request) const
@@ -1906,18 +1595,12 @@ RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionReq
 
 RemovePermissionOutcomeCallable LambdaClient::RemovePermissionCallable(const RemovePermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemovePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemovePermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemovePermission, request, m_executor.get());
 }
 
 void LambdaClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemovePermission(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemovePermission, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) const
@@ -1937,18 +1620,12 @@ TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) 
 
 TagResourceOutcomeCallable LambdaClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void LambdaClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& request) const
@@ -1973,18 +1650,12 @@ UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& req
 
 UntagResourceOutcomeCallable LambdaClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void LambdaClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) const
@@ -2011,18 +1682,12 @@ UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) 
 
 UpdateAliasOutcomeCallable LambdaClient::UpdateAliasCallable(const UpdateAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAlias(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAlias, request, m_executor.get());
 }
 
 void LambdaClient::UpdateAliasAsync(const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAlias(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAlias, request, handler, context, m_executor.get());
 }
 
 UpdateCodeSigningConfigOutcome LambdaClient::UpdateCodeSigningConfig(const UpdateCodeSigningConfigRequest& request) const
@@ -2042,18 +1707,12 @@ UpdateCodeSigningConfigOutcome LambdaClient::UpdateCodeSigningConfig(const Updat
 
 UpdateCodeSigningConfigOutcomeCallable LambdaClient::UpdateCodeSigningConfigCallable(const UpdateCodeSigningConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCodeSigningConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCodeSigningConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCodeSigningConfig, request, m_executor.get());
 }
 
 void LambdaClient::UpdateCodeSigningConfigAsync(const UpdateCodeSigningConfigRequest& request, const UpdateCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCodeSigningConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCodeSigningConfig, request, handler, context, m_executor.get());
 }
 
 UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const UpdateEventSourceMappingRequest& request) const
@@ -2073,18 +1732,12 @@ UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const Upd
 
 UpdateEventSourceMappingOutcomeCallable LambdaClient::UpdateEventSourceMappingCallable(const UpdateEventSourceMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEventSourceMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEventSourceMapping(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateEventSourceMapping, request, m_executor.get());
 }
 
 void LambdaClient::UpdateEventSourceMappingAsync(const UpdateEventSourceMappingRequest& request, const UpdateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateEventSourceMapping(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateEventSourceMapping, request, handler, context, m_executor.get());
 }
 
 UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionCodeRequest& request) const
@@ -2105,18 +1758,12 @@ UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionC
 
 UpdateFunctionCodeOutcomeCallable LambdaClient::UpdateFunctionCodeCallable(const UpdateFunctionCodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFunctionCodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFunctionCode(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFunctionCode, request, m_executor.get());
 }
 
 void LambdaClient::UpdateFunctionCodeAsync(const UpdateFunctionCodeRequest& request, const UpdateFunctionCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFunctionCode(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFunctionCode, request, handler, context, m_executor.get());
 }
 
 UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(const UpdateFunctionConfigurationRequest& request) const
@@ -2137,18 +1784,12 @@ UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(con
 
 UpdateFunctionConfigurationOutcomeCallable LambdaClient::UpdateFunctionConfigurationCallable(const UpdateFunctionConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFunctionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFunctionConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFunctionConfiguration, request, m_executor.get());
 }
 
 void LambdaClient::UpdateFunctionConfigurationAsync(const UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFunctionConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFunctionConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateFunctionEventInvokeConfigOutcome LambdaClient::UpdateFunctionEventInvokeConfig(const UpdateFunctionEventInvokeConfigRequest& request) const
@@ -2169,18 +1810,12 @@ UpdateFunctionEventInvokeConfigOutcome LambdaClient::UpdateFunctionEventInvokeCo
 
 UpdateFunctionEventInvokeConfigOutcomeCallable LambdaClient::UpdateFunctionEventInvokeConfigCallable(const UpdateFunctionEventInvokeConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFunctionEventInvokeConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFunctionEventInvokeConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFunctionEventInvokeConfig, request, m_executor.get());
 }
 
 void LambdaClient::UpdateFunctionEventInvokeConfigAsync(const UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFunctionEventInvokeConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFunctionEventInvokeConfig, request, handler, context, m_executor.get());
 }
 
 UpdateFunctionUrlConfigOutcome LambdaClient::UpdateFunctionUrlConfig(const UpdateFunctionUrlConfigRequest& request) const
@@ -2201,17 +1836,11 @@ UpdateFunctionUrlConfigOutcome LambdaClient::UpdateFunctionUrlConfig(const Updat
 
 UpdateFunctionUrlConfigOutcomeCallable LambdaClient::UpdateFunctionUrlConfigCallable(const UpdateFunctionUrlConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFunctionUrlConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFunctionUrlConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFunctionUrlConfig, request, m_executor.get());
 }
 
 void LambdaClient::UpdateFunctionUrlConfigAsync(const UpdateFunctionUrlConfigRequest& request, const UpdateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFunctionUrlConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFunctionUrlConfig, request, handler, context, m_executor.get());
 }
 

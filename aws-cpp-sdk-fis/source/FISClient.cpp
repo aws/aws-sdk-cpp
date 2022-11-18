@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -176,18 +177,12 @@ CreateExperimentTemplateOutcome FISClient::CreateExperimentTemplate(const Create
 
 CreateExperimentTemplateOutcomeCallable FISClient::CreateExperimentTemplateCallable(const CreateExperimentTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateExperimentTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExperimentTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateExperimentTemplate, request, m_executor.get());
 }
 
 void FISClient::CreateExperimentTemplateAsync(const CreateExperimentTemplateRequest& request, const CreateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateExperimentTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateExperimentTemplate, request, handler, context, m_executor.get());
 }
 
 DeleteExperimentTemplateOutcome FISClient::DeleteExperimentTemplate(const DeleteExperimentTemplateRequest& request) const
@@ -207,18 +202,12 @@ DeleteExperimentTemplateOutcome FISClient::DeleteExperimentTemplate(const Delete
 
 DeleteExperimentTemplateOutcomeCallable FISClient::DeleteExperimentTemplateCallable(const DeleteExperimentTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteExperimentTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExperimentTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteExperimentTemplate, request, m_executor.get());
 }
 
 void FISClient::DeleteExperimentTemplateAsync(const DeleteExperimentTemplateRequest& request, const DeleteExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteExperimentTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteExperimentTemplate, request, handler, context, m_executor.get());
 }
 
 GetActionOutcome FISClient::GetAction(const GetActionRequest& request) const
@@ -238,18 +227,12 @@ GetActionOutcome FISClient::GetAction(const GetActionRequest& request) const
 
 GetActionOutcomeCallable FISClient::GetActionCallable(const GetActionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAction, request, m_executor.get());
 }
 
 void FISClient::GetActionAsync(const GetActionRequest& request, const GetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAction, request, handler, context, m_executor.get());
 }
 
 GetExperimentOutcome FISClient::GetExperiment(const GetExperimentRequest& request) const
@@ -269,18 +252,12 @@ GetExperimentOutcome FISClient::GetExperiment(const GetExperimentRequest& reques
 
 GetExperimentOutcomeCallable FISClient::GetExperimentCallable(const GetExperimentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExperiment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetExperiment, request, m_executor.get());
 }
 
 void FISClient::GetExperimentAsync(const GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetExperiment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetExperiment, request, handler, context, m_executor.get());
 }
 
 GetExperimentTemplateOutcome FISClient::GetExperimentTemplate(const GetExperimentTemplateRequest& request) const
@@ -300,18 +277,12 @@ GetExperimentTemplateOutcome FISClient::GetExperimentTemplate(const GetExperimen
 
 GetExperimentTemplateOutcomeCallable FISClient::GetExperimentTemplateCallable(const GetExperimentTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExperimentTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExperimentTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetExperimentTemplate, request, m_executor.get());
 }
 
 void FISClient::GetExperimentTemplateAsync(const GetExperimentTemplateRequest& request, const GetExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetExperimentTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetExperimentTemplate, request, handler, context, m_executor.get());
 }
 
 GetTargetResourceTypeOutcome FISClient::GetTargetResourceType(const GetTargetResourceTypeRequest& request) const
@@ -331,18 +302,12 @@ GetTargetResourceTypeOutcome FISClient::GetTargetResourceType(const GetTargetRes
 
 GetTargetResourceTypeOutcomeCallable FISClient::GetTargetResourceTypeCallable(const GetTargetResourceTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTargetResourceTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTargetResourceType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTargetResourceType, request, m_executor.get());
 }
 
 void FISClient::GetTargetResourceTypeAsync(const GetTargetResourceTypeRequest& request, const GetTargetResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTargetResourceType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTargetResourceType, request, handler, context, m_executor.get());
 }
 
 ListActionsOutcome FISClient::ListActions(const ListActionsRequest& request) const
@@ -356,18 +321,12 @@ ListActionsOutcome FISClient::ListActions(const ListActionsRequest& request) con
 
 ListActionsOutcomeCallable FISClient::ListActionsCallable(const ListActionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListActionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListActions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListActions, request, m_executor.get());
 }
 
 void FISClient::ListActionsAsync(const ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListActions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListActions, request, handler, context, m_executor.get());
 }
 
 ListExperimentTemplatesOutcome FISClient::ListExperimentTemplates(const ListExperimentTemplatesRequest& request) const
@@ -381,18 +340,12 @@ ListExperimentTemplatesOutcome FISClient::ListExperimentTemplates(const ListExpe
 
 ListExperimentTemplatesOutcomeCallable FISClient::ListExperimentTemplatesCallable(const ListExperimentTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExperimentTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExperimentTemplates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExperimentTemplates, request, m_executor.get());
 }
 
 void FISClient::ListExperimentTemplatesAsync(const ListExperimentTemplatesRequest& request, const ListExperimentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExperimentTemplates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExperimentTemplates, request, handler, context, m_executor.get());
 }
 
 ListExperimentsOutcome FISClient::ListExperiments(const ListExperimentsRequest& request) const
@@ -406,18 +359,12 @@ ListExperimentsOutcome FISClient::ListExperiments(const ListExperimentsRequest& 
 
 ListExperimentsOutcomeCallable FISClient::ListExperimentsCallable(const ListExperimentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExperimentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExperiments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExperiments, request, m_executor.get());
 }
 
 void FISClient::ListExperimentsAsync(const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExperiments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExperiments, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome FISClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -437,18 +384,12 @@ ListTagsForResourceOutcome FISClient::ListTagsForResource(const ListTagsForResou
 
 ListTagsForResourceOutcomeCallable FISClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void FISClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTargetResourceTypesOutcome FISClient::ListTargetResourceTypes(const ListTargetResourceTypesRequest& request) const
@@ -462,18 +403,12 @@ ListTargetResourceTypesOutcome FISClient::ListTargetResourceTypes(const ListTarg
 
 ListTargetResourceTypesOutcomeCallable FISClient::ListTargetResourceTypesCallable(const ListTargetResourceTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTargetResourceTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTargetResourceTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTargetResourceTypes, request, m_executor.get());
 }
 
 void FISClient::ListTargetResourceTypesAsync(const ListTargetResourceTypesRequest& request, const ListTargetResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTargetResourceTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTargetResourceTypes, request, handler, context, m_executor.get());
 }
 
 StartExperimentOutcome FISClient::StartExperiment(const StartExperimentRequest& request) const
@@ -487,18 +422,12 @@ StartExperimentOutcome FISClient::StartExperiment(const StartExperimentRequest& 
 
 StartExperimentOutcomeCallable FISClient::StartExperimentCallable(const StartExperimentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartExperiment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartExperiment, request, m_executor.get());
 }
 
 void FISClient::StartExperimentAsync(const StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartExperiment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartExperiment, request, handler, context, m_executor.get());
 }
 
 StopExperimentOutcome FISClient::StopExperiment(const StopExperimentRequest& request) const
@@ -518,18 +447,12 @@ StopExperimentOutcome FISClient::StopExperiment(const StopExperimentRequest& req
 
 StopExperimentOutcomeCallable FISClient::StopExperimentCallable(const StopExperimentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopExperiment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopExperiment, request, m_executor.get());
 }
 
 void FISClient::StopExperimentAsync(const StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopExperiment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopExperiment, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome FISClient::TagResource(const TagResourceRequest& request) const
@@ -549,18 +472,12 @@ TagResourceOutcome FISClient::TagResource(const TagResourceRequest& request) con
 
 TagResourceOutcomeCallable FISClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void FISClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome FISClient::UntagResource(const UntagResourceRequest& request) const
@@ -580,18 +497,12 @@ UntagResourceOutcome FISClient::UntagResource(const UntagResourceRequest& reques
 
 UntagResourceOutcomeCallable FISClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void FISClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateExperimentTemplateOutcome FISClient::UpdateExperimentTemplate(const UpdateExperimentTemplateRequest& request) const
@@ -611,17 +522,11 @@ UpdateExperimentTemplateOutcome FISClient::UpdateExperimentTemplate(const Update
 
 UpdateExperimentTemplateOutcomeCallable FISClient::UpdateExperimentTemplateCallable(const UpdateExperimentTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateExperimentTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExperimentTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateExperimentTemplate, request, m_executor.get());
 }
 
 void FISClient::UpdateExperimentTemplateAsync(const UpdateExperimentTemplateRequest& request, const UpdateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateExperimentTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateExperimentTemplate, request, handler, context, m_executor.get());
 }
 

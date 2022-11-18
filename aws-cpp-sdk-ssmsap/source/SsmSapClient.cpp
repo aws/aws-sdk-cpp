@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -176,18 +177,12 @@ DeleteResourcePermissionOutcome SsmSapClient::DeleteResourcePermission(const Del
 
 DeleteResourcePermissionOutcomeCallable SsmSapClient::DeleteResourcePermissionCallable(const DeleteResourcePermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteResourcePermission, request, m_executor.get());
 }
 
 void SsmSapClient::DeleteResourcePermissionAsync(const DeleteResourcePermissionRequest& request, const DeleteResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResourcePermission(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteResourcePermission, request, handler, context, m_executor.get());
 }
 
 DeregisterApplicationOutcome SsmSapClient::DeregisterApplication(const DeregisterApplicationRequest& request) const
@@ -201,18 +196,12 @@ DeregisterApplicationOutcome SsmSapClient::DeregisterApplication(const Deregiste
 
 DeregisterApplicationOutcomeCallable SsmSapClient::DeregisterApplicationCallable(const DeregisterApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeregisterApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeregisterApplication, request, m_executor.get());
 }
 
 void SsmSapClient::DeregisterApplicationAsync(const DeregisterApplicationRequest& request, const DeregisterApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeregisterApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeregisterApplication, request, handler, context, m_executor.get());
 }
 
 GetApplicationOutcome SsmSapClient::GetApplication(const GetApplicationRequest& request) const
@@ -226,18 +215,12 @@ GetApplicationOutcome SsmSapClient::GetApplication(const GetApplicationRequest& 
 
 GetApplicationOutcomeCallable SsmSapClient::GetApplicationCallable(const GetApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetApplication, request, m_executor.get());
 }
 
 void SsmSapClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetApplication, request, handler, context, m_executor.get());
 }
 
 GetComponentOutcome SsmSapClient::GetComponent(const GetComponentRequest& request) const
@@ -251,18 +234,12 @@ GetComponentOutcome SsmSapClient::GetComponent(const GetComponentRequest& reques
 
 GetComponentOutcomeCallable SsmSapClient::GetComponentCallable(const GetComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetComponent, request, m_executor.get());
 }
 
 void SsmSapClient::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetComponent, request, handler, context, m_executor.get());
 }
 
 GetDatabaseOutcome SsmSapClient::GetDatabase(const GetDatabaseRequest& request) const
@@ -276,18 +253,12 @@ GetDatabaseOutcome SsmSapClient::GetDatabase(const GetDatabaseRequest& request) 
 
 GetDatabaseOutcomeCallable SsmSapClient::GetDatabaseCallable(const GetDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDatabase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDatabase, request, m_executor.get());
 }
 
 void SsmSapClient::GetDatabaseAsync(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDatabase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDatabase, request, handler, context, m_executor.get());
 }
 
 GetOperationOutcome SsmSapClient::GetOperation(const GetOperationRequest& request) const
@@ -301,18 +272,12 @@ GetOperationOutcome SsmSapClient::GetOperation(const GetOperationRequest& reques
 
 GetOperationOutcomeCallable SsmSapClient::GetOperationCallable(const GetOperationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetOperationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOperation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetOperation, request, m_executor.get());
 }
 
 void SsmSapClient::GetOperationAsync(const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetOperation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetOperation, request, handler, context, m_executor.get());
 }
 
 GetResourcePermissionOutcome SsmSapClient::GetResourcePermission(const GetResourcePermissionRequest& request) const
@@ -326,18 +291,12 @@ GetResourcePermissionOutcome SsmSapClient::GetResourcePermission(const GetResour
 
 GetResourcePermissionOutcomeCallable SsmSapClient::GetResourcePermissionCallable(const GetResourcePermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourcePermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResourcePermission, request, m_executor.get());
 }
 
 void SsmSapClient::GetResourcePermissionAsync(const GetResourcePermissionRequest& request, const GetResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResourcePermission(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResourcePermission, request, handler, context, m_executor.get());
 }
 
 ListApplicationsOutcome SsmSapClient::ListApplications(const ListApplicationsRequest& request) const
@@ -351,18 +310,12 @@ ListApplicationsOutcome SsmSapClient::ListApplications(const ListApplicationsReq
 
 ListApplicationsOutcomeCallable SsmSapClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplications(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListApplications, request, m_executor.get());
 }
 
 void SsmSapClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListApplications(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListApplications, request, handler, context, m_executor.get());
 }
 
 ListComponentsOutcome SsmSapClient::ListComponents(const ListComponentsRequest& request) const
@@ -376,18 +329,12 @@ ListComponentsOutcome SsmSapClient::ListComponents(const ListComponentsRequest& 
 
 ListComponentsOutcomeCallable SsmSapClient::ListComponentsCallable(const ListComponentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComponents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListComponents, request, m_executor.get());
 }
 
 void SsmSapClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListComponents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListComponents, request, handler, context, m_executor.get());
 }
 
 ListDatabasesOutcome SsmSapClient::ListDatabases(const ListDatabasesRequest& request) const
@@ -401,18 +348,12 @@ ListDatabasesOutcome SsmSapClient::ListDatabases(const ListDatabasesRequest& req
 
 ListDatabasesOutcomeCallable SsmSapClient::ListDatabasesCallable(const ListDatabasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatabasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatabases(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDatabases, request, m_executor.get());
 }
 
 void SsmSapClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatabases(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDatabases, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome SsmSapClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -432,18 +373,12 @@ ListTagsForResourceOutcome SsmSapClient::ListTagsForResource(const ListTagsForRe
 
 ListTagsForResourceOutcomeCallable SsmSapClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void SsmSapClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutResourcePermissionOutcome SsmSapClient::PutResourcePermission(const PutResourcePermissionRequest& request) const
@@ -457,18 +392,12 @@ PutResourcePermissionOutcome SsmSapClient::PutResourcePermission(const PutResour
 
 PutResourcePermissionOutcomeCallable SsmSapClient::PutResourcePermissionCallable(const PutResourcePermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourcePermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutResourcePermission, request, m_executor.get());
 }
 
 void SsmSapClient::PutResourcePermissionAsync(const PutResourcePermissionRequest& request, const PutResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutResourcePermission(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutResourcePermission, request, handler, context, m_executor.get());
 }
 
 RegisterApplicationOutcome SsmSapClient::RegisterApplication(const RegisterApplicationRequest& request) const
@@ -482,18 +411,12 @@ RegisterApplicationOutcome SsmSapClient::RegisterApplication(const RegisterAppli
 
 RegisterApplicationOutcomeCallable SsmSapClient::RegisterApplicationCallable(const RegisterApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RegisterApplication, request, m_executor.get());
 }
 
 void SsmSapClient::RegisterApplicationAsync(const RegisterApplicationRequest& request, const RegisterApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RegisterApplication, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome SsmSapClient::TagResource(const TagResourceRequest& request) const
@@ -513,18 +436,12 @@ TagResourceOutcome SsmSapClient::TagResource(const TagResourceRequest& request) 
 
 TagResourceOutcomeCallable SsmSapClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void SsmSapClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome SsmSapClient::UntagResource(const UntagResourceRequest& request) const
@@ -549,18 +466,12 @@ UntagResourceOutcome SsmSapClient::UntagResource(const UntagResourceRequest& req
 
 UntagResourceOutcomeCallable SsmSapClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void SsmSapClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateApplicationSettingsOutcome SsmSapClient::UpdateApplicationSettings(const UpdateApplicationSettingsRequest& request) const
@@ -574,17 +485,11 @@ UpdateApplicationSettingsOutcome SsmSapClient::UpdateApplicationSettings(const U
 
 UpdateApplicationSettingsOutcomeCallable SsmSapClient::UpdateApplicationSettingsCallable(const UpdateApplicationSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplicationSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateApplicationSettings, request, m_executor.get());
 }
 
 void SsmSapClient::UpdateApplicationSettingsAsync(const UpdateApplicationSettingsRequest& request, const UpdateApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateApplicationSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateApplicationSettings, request, handler, context, m_executor.get());
 }
 

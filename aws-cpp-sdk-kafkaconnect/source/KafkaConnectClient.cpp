@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -172,18 +173,12 @@ CreateConnectorOutcome KafkaConnectClient::CreateConnector(const CreateConnector
 
 CreateConnectorOutcomeCallable KafkaConnectClient::CreateConnectorCallable(const CreateConnectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateConnector, request, m_executor.get());
 }
 
 void KafkaConnectClient::CreateConnectorAsync(const CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateConnector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateConnector, request, handler, context, m_executor.get());
 }
 
 CreateCustomPluginOutcome KafkaConnectClient::CreateCustomPlugin(const CreateCustomPluginRequest& request) const
@@ -197,18 +192,12 @@ CreateCustomPluginOutcome KafkaConnectClient::CreateCustomPlugin(const CreateCus
 
 CreateCustomPluginOutcomeCallable KafkaConnectClient::CreateCustomPluginCallable(const CreateCustomPluginRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCustomPluginOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCustomPlugin(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCustomPlugin, request, m_executor.get());
 }
 
 void KafkaConnectClient::CreateCustomPluginAsync(const CreateCustomPluginRequest& request, const CreateCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCustomPlugin(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCustomPlugin, request, handler, context, m_executor.get());
 }
 
 CreateWorkerConfigurationOutcome KafkaConnectClient::CreateWorkerConfiguration(const CreateWorkerConfigurationRequest& request) const
@@ -222,18 +211,12 @@ CreateWorkerConfigurationOutcome KafkaConnectClient::CreateWorkerConfiguration(c
 
 CreateWorkerConfigurationOutcomeCallable KafkaConnectClient::CreateWorkerConfigurationCallable(const CreateWorkerConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkerConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkerConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorkerConfiguration, request, m_executor.get());
 }
 
 void KafkaConnectClient::CreateWorkerConfigurationAsync(const CreateWorkerConfigurationRequest& request, const CreateWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorkerConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorkerConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteConnectorOutcome KafkaConnectClient::DeleteConnector(const DeleteConnectorRequest& request) const
@@ -253,18 +236,12 @@ DeleteConnectorOutcome KafkaConnectClient::DeleteConnector(const DeleteConnector
 
 DeleteConnectorOutcomeCallable KafkaConnectClient::DeleteConnectorCallable(const DeleteConnectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteConnector, request, m_executor.get());
 }
 
 void KafkaConnectClient::DeleteConnectorAsync(const DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteConnector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteConnector, request, handler, context, m_executor.get());
 }
 
 DeleteCustomPluginOutcome KafkaConnectClient::DeleteCustomPlugin(const DeleteCustomPluginRequest& request) const
@@ -284,18 +261,12 @@ DeleteCustomPluginOutcome KafkaConnectClient::DeleteCustomPlugin(const DeleteCus
 
 DeleteCustomPluginOutcomeCallable KafkaConnectClient::DeleteCustomPluginCallable(const DeleteCustomPluginRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCustomPluginOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCustomPlugin(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCustomPlugin, request, m_executor.get());
 }
 
 void KafkaConnectClient::DeleteCustomPluginAsync(const DeleteCustomPluginRequest& request, const DeleteCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCustomPlugin(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCustomPlugin, request, handler, context, m_executor.get());
 }
 
 DescribeConnectorOutcome KafkaConnectClient::DescribeConnector(const DescribeConnectorRequest& request) const
@@ -315,18 +286,12 @@ DescribeConnectorOutcome KafkaConnectClient::DescribeConnector(const DescribeCon
 
 DescribeConnectorOutcomeCallable KafkaConnectClient::DescribeConnectorCallable(const DescribeConnectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeConnector, request, m_executor.get());
 }
 
 void KafkaConnectClient::DescribeConnectorAsync(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeConnector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeConnector, request, handler, context, m_executor.get());
 }
 
 DescribeCustomPluginOutcome KafkaConnectClient::DescribeCustomPlugin(const DescribeCustomPluginRequest& request) const
@@ -346,18 +311,12 @@ DescribeCustomPluginOutcome KafkaConnectClient::DescribeCustomPlugin(const Descr
 
 DescribeCustomPluginOutcomeCallable KafkaConnectClient::DescribeCustomPluginCallable(const DescribeCustomPluginRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCustomPluginOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCustomPlugin(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCustomPlugin, request, m_executor.get());
 }
 
 void KafkaConnectClient::DescribeCustomPluginAsync(const DescribeCustomPluginRequest& request, const DescribeCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCustomPlugin(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCustomPlugin, request, handler, context, m_executor.get());
 }
 
 DescribeWorkerConfigurationOutcome KafkaConnectClient::DescribeWorkerConfiguration(const DescribeWorkerConfigurationRequest& request) const
@@ -377,18 +336,12 @@ DescribeWorkerConfigurationOutcome KafkaConnectClient::DescribeWorkerConfigurati
 
 DescribeWorkerConfigurationOutcomeCallable KafkaConnectClient::DescribeWorkerConfigurationCallable(const DescribeWorkerConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkerConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkerConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeWorkerConfiguration, request, m_executor.get());
 }
 
 void KafkaConnectClient::DescribeWorkerConfigurationAsync(const DescribeWorkerConfigurationRequest& request, const DescribeWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeWorkerConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeWorkerConfiguration, request, handler, context, m_executor.get());
 }
 
 ListConnectorsOutcome KafkaConnectClient::ListConnectors(const ListConnectorsRequest& request) const
@@ -402,18 +355,12 @@ ListConnectorsOutcome KafkaConnectClient::ListConnectors(const ListConnectorsReq
 
 ListConnectorsOutcomeCallable KafkaConnectClient::ListConnectorsCallable(const ListConnectorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConnectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnectors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListConnectors, request, m_executor.get());
 }
 
 void KafkaConnectClient::ListConnectorsAsync(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListConnectors(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListConnectors, request, handler, context, m_executor.get());
 }
 
 ListCustomPluginsOutcome KafkaConnectClient::ListCustomPlugins(const ListCustomPluginsRequest& request) const
@@ -427,18 +374,12 @@ ListCustomPluginsOutcome KafkaConnectClient::ListCustomPlugins(const ListCustomP
 
 ListCustomPluginsOutcomeCallable KafkaConnectClient::ListCustomPluginsCallable(const ListCustomPluginsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCustomPluginsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCustomPlugins(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCustomPlugins, request, m_executor.get());
 }
 
 void KafkaConnectClient::ListCustomPluginsAsync(const ListCustomPluginsRequest& request, const ListCustomPluginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCustomPlugins(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCustomPlugins, request, handler, context, m_executor.get());
 }
 
 ListWorkerConfigurationsOutcome KafkaConnectClient::ListWorkerConfigurations(const ListWorkerConfigurationsRequest& request) const
@@ -452,18 +393,12 @@ ListWorkerConfigurationsOutcome KafkaConnectClient::ListWorkerConfigurations(con
 
 ListWorkerConfigurationsOutcomeCallable KafkaConnectClient::ListWorkerConfigurationsCallable(const ListWorkerConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkerConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkerConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkerConfigurations, request, m_executor.get());
 }
 
 void KafkaConnectClient::ListWorkerConfigurationsAsync(const ListWorkerConfigurationsRequest& request, const ListWorkerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkerConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkerConfigurations, request, handler, context, m_executor.get());
 }
 
 UpdateConnectorOutcome KafkaConnectClient::UpdateConnector(const UpdateConnectorRequest& request) const
@@ -488,17 +423,11 @@ UpdateConnectorOutcome KafkaConnectClient::UpdateConnector(const UpdateConnector
 
 UpdateConnectorOutcomeCallable KafkaConnectClient::UpdateConnectorCallable(const UpdateConnectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateConnector, request, m_executor.get());
 }
 
 void KafkaConnectClient::UpdateConnectorAsync(const UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateConnector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateConnector, request, handler, context, m_executor.get());
 }
 

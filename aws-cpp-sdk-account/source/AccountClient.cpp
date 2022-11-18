@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -165,18 +166,12 @@ DeleteAlternateContactOutcome AccountClient::DeleteAlternateContact(const Delete
 
 DeleteAlternateContactOutcomeCallable AccountClient::DeleteAlternateContactCallable(const DeleteAlternateContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAlternateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAlternateContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAlternateContact, request, m_executor.get());
 }
 
 void AccountClient::DeleteAlternateContactAsync(const DeleteAlternateContactRequest& request, const DeleteAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAlternateContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAlternateContact, request, handler, context, m_executor.get());
 }
 
 GetAlternateContactOutcome AccountClient::GetAlternateContact(const GetAlternateContactRequest& request) const
@@ -190,18 +185,12 @@ GetAlternateContactOutcome AccountClient::GetAlternateContact(const GetAlternate
 
 GetAlternateContactOutcomeCallable AccountClient::GetAlternateContactCallable(const GetAlternateContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAlternateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAlternateContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAlternateContact, request, m_executor.get());
 }
 
 void AccountClient::GetAlternateContactAsync(const GetAlternateContactRequest& request, const GetAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAlternateContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAlternateContact, request, handler, context, m_executor.get());
 }
 
 GetContactInformationOutcome AccountClient::GetContactInformation(const GetContactInformationRequest& request) const
@@ -215,18 +204,12 @@ GetContactInformationOutcome AccountClient::GetContactInformation(const GetConta
 
 GetContactInformationOutcomeCallable AccountClient::GetContactInformationCallable(const GetContactInformationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetContactInformationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContactInformation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetContactInformation, request, m_executor.get());
 }
 
 void AccountClient::GetContactInformationAsync(const GetContactInformationRequest& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetContactInformation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetContactInformation, request, handler, context, m_executor.get());
 }
 
 PutAlternateContactOutcome AccountClient::PutAlternateContact(const PutAlternateContactRequest& request) const
@@ -240,18 +223,12 @@ PutAlternateContactOutcome AccountClient::PutAlternateContact(const PutAlternate
 
 PutAlternateContactOutcomeCallable AccountClient::PutAlternateContactCallable(const PutAlternateContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAlternateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAlternateContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutAlternateContact, request, m_executor.get());
 }
 
 void AccountClient::PutAlternateContactAsync(const PutAlternateContactRequest& request, const PutAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutAlternateContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutAlternateContact, request, handler, context, m_executor.get());
 }
 
 PutContactInformationOutcome AccountClient::PutContactInformation(const PutContactInformationRequest& request) const
@@ -265,17 +242,11 @@ PutContactInformationOutcome AccountClient::PutContactInformation(const PutConta
 
 PutContactInformationOutcomeCallable AccountClient::PutContactInformationCallable(const PutContactInformationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutContactInformationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutContactInformation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutContactInformation, request, m_executor.get());
 }
 
 void AccountClient::PutContactInformationAsync(const PutContactInformationRequest& request, const PutContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutContactInformation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutContactInformation, request, handler, context, m_executor.get());
 }
 

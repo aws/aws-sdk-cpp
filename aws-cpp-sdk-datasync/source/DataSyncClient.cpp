@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -203,18 +204,12 @@ CancelTaskExecutionOutcome DataSyncClient::CancelTaskExecution(const CancelTaskE
 
 CancelTaskExecutionOutcomeCallable DataSyncClient::CancelTaskExecutionCallable(const CancelTaskExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelTaskExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelTaskExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelTaskExecution, request, m_executor.get());
 }
 
 void DataSyncClient::CancelTaskExecutionAsync(const CancelTaskExecutionRequest& request, const CancelTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelTaskExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelTaskExecution, request, handler, context, m_executor.get());
 }
 
 CreateAgentOutcome DataSyncClient::CreateAgent(const CreateAgentRequest& request) const
@@ -227,18 +222,12 @@ CreateAgentOutcome DataSyncClient::CreateAgent(const CreateAgentRequest& request
 
 CreateAgentOutcomeCallable DataSyncClient::CreateAgentCallable(const CreateAgentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAgentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAgent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAgent, request, m_executor.get());
 }
 
 void DataSyncClient::CreateAgentAsync(const CreateAgentRequest& request, const CreateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAgent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAgent, request, handler, context, m_executor.get());
 }
 
 CreateLocationEfsOutcome DataSyncClient::CreateLocationEfs(const CreateLocationEfsRequest& request) const
@@ -251,18 +240,12 @@ CreateLocationEfsOutcome DataSyncClient::CreateLocationEfs(const CreateLocationE
 
 CreateLocationEfsOutcomeCallable DataSyncClient::CreateLocationEfsCallable(const CreateLocationEfsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLocationEfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationEfs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLocationEfs, request, m_executor.get());
 }
 
 void DataSyncClient::CreateLocationEfsAsync(const CreateLocationEfsRequest& request, const CreateLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLocationEfs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLocationEfs, request, handler, context, m_executor.get());
 }
 
 CreateLocationFsxLustreOutcome DataSyncClient::CreateLocationFsxLustre(const CreateLocationFsxLustreRequest& request) const
@@ -275,18 +258,12 @@ CreateLocationFsxLustreOutcome DataSyncClient::CreateLocationFsxLustre(const Cre
 
 CreateLocationFsxLustreOutcomeCallable DataSyncClient::CreateLocationFsxLustreCallable(const CreateLocationFsxLustreRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLocationFsxLustreOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationFsxLustre(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLocationFsxLustre, request, m_executor.get());
 }
 
 void DataSyncClient::CreateLocationFsxLustreAsync(const CreateLocationFsxLustreRequest& request, const CreateLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLocationFsxLustre(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLocationFsxLustre, request, handler, context, m_executor.get());
 }
 
 CreateLocationFsxOntapOutcome DataSyncClient::CreateLocationFsxOntap(const CreateLocationFsxOntapRequest& request) const
@@ -299,18 +276,12 @@ CreateLocationFsxOntapOutcome DataSyncClient::CreateLocationFsxOntap(const Creat
 
 CreateLocationFsxOntapOutcomeCallable DataSyncClient::CreateLocationFsxOntapCallable(const CreateLocationFsxOntapRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLocationFsxOntapOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationFsxOntap(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLocationFsxOntap, request, m_executor.get());
 }
 
 void DataSyncClient::CreateLocationFsxOntapAsync(const CreateLocationFsxOntapRequest& request, const CreateLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLocationFsxOntap(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLocationFsxOntap, request, handler, context, m_executor.get());
 }
 
 CreateLocationFsxOpenZfsOutcome DataSyncClient::CreateLocationFsxOpenZfs(const CreateLocationFsxOpenZfsRequest& request) const
@@ -323,18 +294,12 @@ CreateLocationFsxOpenZfsOutcome DataSyncClient::CreateLocationFsxOpenZfs(const C
 
 CreateLocationFsxOpenZfsOutcomeCallable DataSyncClient::CreateLocationFsxOpenZfsCallable(const CreateLocationFsxOpenZfsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLocationFsxOpenZfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationFsxOpenZfs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLocationFsxOpenZfs, request, m_executor.get());
 }
 
 void DataSyncClient::CreateLocationFsxOpenZfsAsync(const CreateLocationFsxOpenZfsRequest& request, const CreateLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLocationFsxOpenZfs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLocationFsxOpenZfs, request, handler, context, m_executor.get());
 }
 
 CreateLocationFsxWindowsOutcome DataSyncClient::CreateLocationFsxWindows(const CreateLocationFsxWindowsRequest& request) const
@@ -347,18 +312,12 @@ CreateLocationFsxWindowsOutcome DataSyncClient::CreateLocationFsxWindows(const C
 
 CreateLocationFsxWindowsOutcomeCallable DataSyncClient::CreateLocationFsxWindowsCallable(const CreateLocationFsxWindowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLocationFsxWindowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationFsxWindows(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLocationFsxWindows, request, m_executor.get());
 }
 
 void DataSyncClient::CreateLocationFsxWindowsAsync(const CreateLocationFsxWindowsRequest& request, const CreateLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLocationFsxWindows(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLocationFsxWindows, request, handler, context, m_executor.get());
 }
 
 CreateLocationHdfsOutcome DataSyncClient::CreateLocationHdfs(const CreateLocationHdfsRequest& request) const
@@ -371,18 +330,12 @@ CreateLocationHdfsOutcome DataSyncClient::CreateLocationHdfs(const CreateLocatio
 
 CreateLocationHdfsOutcomeCallable DataSyncClient::CreateLocationHdfsCallable(const CreateLocationHdfsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLocationHdfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationHdfs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLocationHdfs, request, m_executor.get());
 }
 
 void DataSyncClient::CreateLocationHdfsAsync(const CreateLocationHdfsRequest& request, const CreateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLocationHdfs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLocationHdfs, request, handler, context, m_executor.get());
 }
 
 CreateLocationNfsOutcome DataSyncClient::CreateLocationNfs(const CreateLocationNfsRequest& request) const
@@ -395,18 +348,12 @@ CreateLocationNfsOutcome DataSyncClient::CreateLocationNfs(const CreateLocationN
 
 CreateLocationNfsOutcomeCallable DataSyncClient::CreateLocationNfsCallable(const CreateLocationNfsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLocationNfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationNfs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLocationNfs, request, m_executor.get());
 }
 
 void DataSyncClient::CreateLocationNfsAsync(const CreateLocationNfsRequest& request, const CreateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLocationNfs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLocationNfs, request, handler, context, m_executor.get());
 }
 
 CreateLocationObjectStorageOutcome DataSyncClient::CreateLocationObjectStorage(const CreateLocationObjectStorageRequest& request) const
@@ -419,18 +366,12 @@ CreateLocationObjectStorageOutcome DataSyncClient::CreateLocationObjectStorage(c
 
 CreateLocationObjectStorageOutcomeCallable DataSyncClient::CreateLocationObjectStorageCallable(const CreateLocationObjectStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLocationObjectStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationObjectStorage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLocationObjectStorage, request, m_executor.get());
 }
 
 void DataSyncClient::CreateLocationObjectStorageAsync(const CreateLocationObjectStorageRequest& request, const CreateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLocationObjectStorage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLocationObjectStorage, request, handler, context, m_executor.get());
 }
 
 CreateLocationS3Outcome DataSyncClient::CreateLocationS3(const CreateLocationS3Request& request) const
@@ -443,18 +384,12 @@ CreateLocationS3Outcome DataSyncClient::CreateLocationS3(const CreateLocationS3R
 
 CreateLocationS3OutcomeCallable DataSyncClient::CreateLocationS3Callable(const CreateLocationS3Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLocationS3Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationS3(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLocationS3, request, m_executor.get());
 }
 
 void DataSyncClient::CreateLocationS3Async(const CreateLocationS3Request& request, const CreateLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLocationS3(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLocationS3, request, handler, context, m_executor.get());
 }
 
 CreateLocationSmbOutcome DataSyncClient::CreateLocationSmb(const CreateLocationSmbRequest& request) const
@@ -467,18 +402,12 @@ CreateLocationSmbOutcome DataSyncClient::CreateLocationSmb(const CreateLocationS
 
 CreateLocationSmbOutcomeCallable DataSyncClient::CreateLocationSmbCallable(const CreateLocationSmbRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLocationSmbOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationSmb(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLocationSmb, request, m_executor.get());
 }
 
 void DataSyncClient::CreateLocationSmbAsync(const CreateLocationSmbRequest& request, const CreateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLocationSmb(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLocationSmb, request, handler, context, m_executor.get());
 }
 
 CreateTaskOutcome DataSyncClient::CreateTask(const CreateTaskRequest& request) const
@@ -491,18 +420,12 @@ CreateTaskOutcome DataSyncClient::CreateTask(const CreateTaskRequest& request) c
 
 CreateTaskOutcomeCallable DataSyncClient::CreateTaskCallable(const CreateTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTask, request, m_executor.get());
 }
 
 void DataSyncClient::CreateTaskAsync(const CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTask, request, handler, context, m_executor.get());
 }
 
 DeleteAgentOutcome DataSyncClient::DeleteAgent(const DeleteAgentRequest& request) const
@@ -515,18 +438,12 @@ DeleteAgentOutcome DataSyncClient::DeleteAgent(const DeleteAgentRequest& request
 
 DeleteAgentOutcomeCallable DataSyncClient::DeleteAgentCallable(const DeleteAgentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAgentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAgent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAgent, request, m_executor.get());
 }
 
 void DataSyncClient::DeleteAgentAsync(const DeleteAgentRequest& request, const DeleteAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAgent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAgent, request, handler, context, m_executor.get());
 }
 
 DeleteLocationOutcome DataSyncClient::DeleteLocation(const DeleteLocationRequest& request) const
@@ -539,18 +456,12 @@ DeleteLocationOutcome DataSyncClient::DeleteLocation(const DeleteLocationRequest
 
 DeleteLocationOutcomeCallable DataSyncClient::DeleteLocationCallable(const DeleteLocationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLocationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLocation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLocation, request, m_executor.get());
 }
 
 void DataSyncClient::DeleteLocationAsync(const DeleteLocationRequest& request, const DeleteLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLocation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLocation, request, handler, context, m_executor.get());
 }
 
 DeleteTaskOutcome DataSyncClient::DeleteTask(const DeleteTaskRequest& request) const
@@ -563,18 +474,12 @@ DeleteTaskOutcome DataSyncClient::DeleteTask(const DeleteTaskRequest& request) c
 
 DeleteTaskOutcomeCallable DataSyncClient::DeleteTaskCallable(const DeleteTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTask, request, m_executor.get());
 }
 
 void DataSyncClient::DeleteTaskAsync(const DeleteTaskRequest& request, const DeleteTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTask, request, handler, context, m_executor.get());
 }
 
 DescribeAgentOutcome DataSyncClient::DescribeAgent(const DescribeAgentRequest& request) const
@@ -587,18 +492,12 @@ DescribeAgentOutcome DataSyncClient::DescribeAgent(const DescribeAgentRequest& r
 
 DescribeAgentOutcomeCallable DataSyncClient::DescribeAgentCallable(const DescribeAgentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAgentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAgent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAgent, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeAgentAsync(const DescribeAgentRequest& request, const DescribeAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAgent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAgent, request, handler, context, m_executor.get());
 }
 
 DescribeLocationEfsOutcome DataSyncClient::DescribeLocationEfs(const DescribeLocationEfsRequest& request) const
@@ -611,18 +510,12 @@ DescribeLocationEfsOutcome DataSyncClient::DescribeLocationEfs(const DescribeLoc
 
 DescribeLocationEfsOutcomeCallable DataSyncClient::DescribeLocationEfsCallable(const DescribeLocationEfsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationEfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationEfs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLocationEfs, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeLocationEfsAsync(const DescribeLocationEfsRequest& request, const DescribeLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLocationEfs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLocationEfs, request, handler, context, m_executor.get());
 }
 
 DescribeLocationFsxLustreOutcome DataSyncClient::DescribeLocationFsxLustre(const DescribeLocationFsxLustreRequest& request) const
@@ -635,18 +528,12 @@ DescribeLocationFsxLustreOutcome DataSyncClient::DescribeLocationFsxLustre(const
 
 DescribeLocationFsxLustreOutcomeCallable DataSyncClient::DescribeLocationFsxLustreCallable(const DescribeLocationFsxLustreRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationFsxLustreOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationFsxLustre(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLocationFsxLustre, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeLocationFsxLustreAsync(const DescribeLocationFsxLustreRequest& request, const DescribeLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLocationFsxLustre(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLocationFsxLustre, request, handler, context, m_executor.get());
 }
 
 DescribeLocationFsxOntapOutcome DataSyncClient::DescribeLocationFsxOntap(const DescribeLocationFsxOntapRequest& request) const
@@ -659,18 +546,12 @@ DescribeLocationFsxOntapOutcome DataSyncClient::DescribeLocationFsxOntap(const D
 
 DescribeLocationFsxOntapOutcomeCallable DataSyncClient::DescribeLocationFsxOntapCallable(const DescribeLocationFsxOntapRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationFsxOntapOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationFsxOntap(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLocationFsxOntap, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeLocationFsxOntapAsync(const DescribeLocationFsxOntapRequest& request, const DescribeLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLocationFsxOntap(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLocationFsxOntap, request, handler, context, m_executor.get());
 }
 
 DescribeLocationFsxOpenZfsOutcome DataSyncClient::DescribeLocationFsxOpenZfs(const DescribeLocationFsxOpenZfsRequest& request) const
@@ -683,18 +564,12 @@ DescribeLocationFsxOpenZfsOutcome DataSyncClient::DescribeLocationFsxOpenZfs(con
 
 DescribeLocationFsxOpenZfsOutcomeCallable DataSyncClient::DescribeLocationFsxOpenZfsCallable(const DescribeLocationFsxOpenZfsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationFsxOpenZfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationFsxOpenZfs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLocationFsxOpenZfs, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeLocationFsxOpenZfsAsync(const DescribeLocationFsxOpenZfsRequest& request, const DescribeLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLocationFsxOpenZfs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLocationFsxOpenZfs, request, handler, context, m_executor.get());
 }
 
 DescribeLocationFsxWindowsOutcome DataSyncClient::DescribeLocationFsxWindows(const DescribeLocationFsxWindowsRequest& request) const
@@ -707,18 +582,12 @@ DescribeLocationFsxWindowsOutcome DataSyncClient::DescribeLocationFsxWindows(con
 
 DescribeLocationFsxWindowsOutcomeCallable DataSyncClient::DescribeLocationFsxWindowsCallable(const DescribeLocationFsxWindowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationFsxWindowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationFsxWindows(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLocationFsxWindows, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeLocationFsxWindowsAsync(const DescribeLocationFsxWindowsRequest& request, const DescribeLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLocationFsxWindows(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLocationFsxWindows, request, handler, context, m_executor.get());
 }
 
 DescribeLocationHdfsOutcome DataSyncClient::DescribeLocationHdfs(const DescribeLocationHdfsRequest& request) const
@@ -731,18 +600,12 @@ DescribeLocationHdfsOutcome DataSyncClient::DescribeLocationHdfs(const DescribeL
 
 DescribeLocationHdfsOutcomeCallable DataSyncClient::DescribeLocationHdfsCallable(const DescribeLocationHdfsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationHdfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationHdfs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLocationHdfs, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeLocationHdfsAsync(const DescribeLocationHdfsRequest& request, const DescribeLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLocationHdfs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLocationHdfs, request, handler, context, m_executor.get());
 }
 
 DescribeLocationNfsOutcome DataSyncClient::DescribeLocationNfs(const DescribeLocationNfsRequest& request) const
@@ -755,18 +618,12 @@ DescribeLocationNfsOutcome DataSyncClient::DescribeLocationNfs(const DescribeLoc
 
 DescribeLocationNfsOutcomeCallable DataSyncClient::DescribeLocationNfsCallable(const DescribeLocationNfsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationNfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationNfs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLocationNfs, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeLocationNfsAsync(const DescribeLocationNfsRequest& request, const DescribeLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLocationNfs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLocationNfs, request, handler, context, m_executor.get());
 }
 
 DescribeLocationObjectStorageOutcome DataSyncClient::DescribeLocationObjectStorage(const DescribeLocationObjectStorageRequest& request) const
@@ -779,18 +636,12 @@ DescribeLocationObjectStorageOutcome DataSyncClient::DescribeLocationObjectStora
 
 DescribeLocationObjectStorageOutcomeCallable DataSyncClient::DescribeLocationObjectStorageCallable(const DescribeLocationObjectStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationObjectStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationObjectStorage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLocationObjectStorage, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeLocationObjectStorageAsync(const DescribeLocationObjectStorageRequest& request, const DescribeLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLocationObjectStorage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLocationObjectStorage, request, handler, context, m_executor.get());
 }
 
 DescribeLocationS3Outcome DataSyncClient::DescribeLocationS3(const DescribeLocationS3Request& request) const
@@ -803,18 +654,12 @@ DescribeLocationS3Outcome DataSyncClient::DescribeLocationS3(const DescribeLocat
 
 DescribeLocationS3OutcomeCallable DataSyncClient::DescribeLocationS3Callable(const DescribeLocationS3Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationS3Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationS3(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLocationS3, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeLocationS3Async(const DescribeLocationS3Request& request, const DescribeLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLocationS3(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLocationS3, request, handler, context, m_executor.get());
 }
 
 DescribeLocationSmbOutcome DataSyncClient::DescribeLocationSmb(const DescribeLocationSmbRequest& request) const
@@ -827,18 +672,12 @@ DescribeLocationSmbOutcome DataSyncClient::DescribeLocationSmb(const DescribeLoc
 
 DescribeLocationSmbOutcomeCallable DataSyncClient::DescribeLocationSmbCallable(const DescribeLocationSmbRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationSmbOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationSmb(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLocationSmb, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeLocationSmbAsync(const DescribeLocationSmbRequest& request, const DescribeLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLocationSmb(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLocationSmb, request, handler, context, m_executor.get());
 }
 
 DescribeTaskOutcome DataSyncClient::DescribeTask(const DescribeTaskRequest& request) const
@@ -851,18 +690,12 @@ DescribeTaskOutcome DataSyncClient::DescribeTask(const DescribeTaskRequest& requ
 
 DescribeTaskOutcomeCallable DataSyncClient::DescribeTaskCallable(const DescribeTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTask, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeTaskAsync(const DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTask, request, handler, context, m_executor.get());
 }
 
 DescribeTaskExecutionOutcome DataSyncClient::DescribeTaskExecution(const DescribeTaskExecutionRequest& request) const
@@ -875,18 +708,12 @@ DescribeTaskExecutionOutcome DataSyncClient::DescribeTaskExecution(const Describ
 
 DescribeTaskExecutionOutcomeCallable DataSyncClient::DescribeTaskExecutionCallable(const DescribeTaskExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTaskExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTaskExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTaskExecution, request, m_executor.get());
 }
 
 void DataSyncClient::DescribeTaskExecutionAsync(const DescribeTaskExecutionRequest& request, const DescribeTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTaskExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTaskExecution, request, handler, context, m_executor.get());
 }
 
 ListAgentsOutcome DataSyncClient::ListAgents(const ListAgentsRequest& request) const
@@ -899,18 +726,12 @@ ListAgentsOutcome DataSyncClient::ListAgents(const ListAgentsRequest& request) c
 
 ListAgentsOutcomeCallable DataSyncClient::ListAgentsCallable(const ListAgentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAgentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAgents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAgents, request, m_executor.get());
 }
 
 void DataSyncClient::ListAgentsAsync(const ListAgentsRequest& request, const ListAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAgents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAgents, request, handler, context, m_executor.get());
 }
 
 ListLocationsOutcome DataSyncClient::ListLocations(const ListLocationsRequest& request) const
@@ -923,18 +744,12 @@ ListLocationsOutcome DataSyncClient::ListLocations(const ListLocationsRequest& r
 
 ListLocationsOutcomeCallable DataSyncClient::ListLocationsCallable(const ListLocationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLocationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLocations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLocations, request, m_executor.get());
 }
 
 void DataSyncClient::ListLocationsAsync(const ListLocationsRequest& request, const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLocations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLocations, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome DataSyncClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -947,18 +762,12 @@ ListTagsForResourceOutcome DataSyncClient::ListTagsForResource(const ListTagsFor
 
 ListTagsForResourceOutcomeCallable DataSyncClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void DataSyncClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTaskExecutionsOutcome DataSyncClient::ListTaskExecutions(const ListTaskExecutionsRequest& request) const
@@ -971,18 +780,12 @@ ListTaskExecutionsOutcome DataSyncClient::ListTaskExecutions(const ListTaskExecu
 
 ListTaskExecutionsOutcomeCallable DataSyncClient::ListTaskExecutionsCallable(const ListTaskExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTaskExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTaskExecutions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTaskExecutions, request, m_executor.get());
 }
 
 void DataSyncClient::ListTaskExecutionsAsync(const ListTaskExecutionsRequest& request, const ListTaskExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTaskExecutions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTaskExecutions, request, handler, context, m_executor.get());
 }
 
 ListTasksOutcome DataSyncClient::ListTasks(const ListTasksRequest& request) const
@@ -995,18 +798,12 @@ ListTasksOutcome DataSyncClient::ListTasks(const ListTasksRequest& request) cons
 
 ListTasksOutcomeCallable DataSyncClient::ListTasksCallable(const ListTasksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTasks(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTasks, request, m_executor.get());
 }
 
 void DataSyncClient::ListTasksAsync(const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTasks(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTasks, request, handler, context, m_executor.get());
 }
 
 StartTaskExecutionOutcome DataSyncClient::StartTaskExecution(const StartTaskExecutionRequest& request) const
@@ -1019,18 +816,12 @@ StartTaskExecutionOutcome DataSyncClient::StartTaskExecution(const StartTaskExec
 
 StartTaskExecutionOutcomeCallable DataSyncClient::StartTaskExecutionCallable(const StartTaskExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartTaskExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartTaskExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartTaskExecution, request, m_executor.get());
 }
 
 void DataSyncClient::StartTaskExecutionAsync(const StartTaskExecutionRequest& request, const StartTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartTaskExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartTaskExecution, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome DataSyncClient::TagResource(const TagResourceRequest& request) const
@@ -1043,18 +834,12 @@ TagResourceOutcome DataSyncClient::TagResource(const TagResourceRequest& request
 
 TagResourceOutcomeCallable DataSyncClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void DataSyncClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome DataSyncClient::UntagResource(const UntagResourceRequest& request) const
@@ -1067,18 +852,12 @@ UntagResourceOutcome DataSyncClient::UntagResource(const UntagResourceRequest& r
 
 UntagResourceOutcomeCallable DataSyncClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void DataSyncClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateAgentOutcome DataSyncClient::UpdateAgent(const UpdateAgentRequest& request) const
@@ -1091,18 +870,12 @@ UpdateAgentOutcome DataSyncClient::UpdateAgent(const UpdateAgentRequest& request
 
 UpdateAgentOutcomeCallable DataSyncClient::UpdateAgentCallable(const UpdateAgentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAgentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAgent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAgent, request, m_executor.get());
 }
 
 void DataSyncClient::UpdateAgentAsync(const UpdateAgentRequest& request, const UpdateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAgent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAgent, request, handler, context, m_executor.get());
 }
 
 UpdateLocationHdfsOutcome DataSyncClient::UpdateLocationHdfs(const UpdateLocationHdfsRequest& request) const
@@ -1115,18 +888,12 @@ UpdateLocationHdfsOutcome DataSyncClient::UpdateLocationHdfs(const UpdateLocatio
 
 UpdateLocationHdfsOutcomeCallable DataSyncClient::UpdateLocationHdfsCallable(const UpdateLocationHdfsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLocationHdfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLocationHdfs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLocationHdfs, request, m_executor.get());
 }
 
 void DataSyncClient::UpdateLocationHdfsAsync(const UpdateLocationHdfsRequest& request, const UpdateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLocationHdfs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLocationHdfs, request, handler, context, m_executor.get());
 }
 
 UpdateLocationNfsOutcome DataSyncClient::UpdateLocationNfs(const UpdateLocationNfsRequest& request) const
@@ -1139,18 +906,12 @@ UpdateLocationNfsOutcome DataSyncClient::UpdateLocationNfs(const UpdateLocationN
 
 UpdateLocationNfsOutcomeCallable DataSyncClient::UpdateLocationNfsCallable(const UpdateLocationNfsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLocationNfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLocationNfs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLocationNfs, request, m_executor.get());
 }
 
 void DataSyncClient::UpdateLocationNfsAsync(const UpdateLocationNfsRequest& request, const UpdateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLocationNfs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLocationNfs, request, handler, context, m_executor.get());
 }
 
 UpdateLocationObjectStorageOutcome DataSyncClient::UpdateLocationObjectStorage(const UpdateLocationObjectStorageRequest& request) const
@@ -1163,18 +924,12 @@ UpdateLocationObjectStorageOutcome DataSyncClient::UpdateLocationObjectStorage(c
 
 UpdateLocationObjectStorageOutcomeCallable DataSyncClient::UpdateLocationObjectStorageCallable(const UpdateLocationObjectStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLocationObjectStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLocationObjectStorage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLocationObjectStorage, request, m_executor.get());
 }
 
 void DataSyncClient::UpdateLocationObjectStorageAsync(const UpdateLocationObjectStorageRequest& request, const UpdateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLocationObjectStorage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLocationObjectStorage, request, handler, context, m_executor.get());
 }
 
 UpdateLocationSmbOutcome DataSyncClient::UpdateLocationSmb(const UpdateLocationSmbRequest& request) const
@@ -1187,18 +942,12 @@ UpdateLocationSmbOutcome DataSyncClient::UpdateLocationSmb(const UpdateLocationS
 
 UpdateLocationSmbOutcomeCallable DataSyncClient::UpdateLocationSmbCallable(const UpdateLocationSmbRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLocationSmbOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLocationSmb(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLocationSmb, request, m_executor.get());
 }
 
 void DataSyncClient::UpdateLocationSmbAsync(const UpdateLocationSmbRequest& request, const UpdateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLocationSmb(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLocationSmb, request, handler, context, m_executor.get());
 }
 
 UpdateTaskOutcome DataSyncClient::UpdateTask(const UpdateTaskRequest& request) const
@@ -1211,18 +960,12 @@ UpdateTaskOutcome DataSyncClient::UpdateTask(const UpdateTaskRequest& request) c
 
 UpdateTaskOutcomeCallable DataSyncClient::UpdateTaskCallable(const UpdateTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTask, request, m_executor.get());
 }
 
 void DataSyncClient::UpdateTaskAsync(const UpdateTaskRequest& request, const UpdateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTask, request, handler, context, m_executor.get());
 }
 
 UpdateTaskExecutionOutcome DataSyncClient::UpdateTaskExecution(const UpdateTaskExecutionRequest& request) const
@@ -1235,17 +978,11 @@ UpdateTaskExecutionOutcome DataSyncClient::UpdateTaskExecution(const UpdateTaskE
 
 UpdateTaskExecutionOutcomeCallable DataSyncClient::UpdateTaskExecutionCallable(const UpdateTaskExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTaskExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTaskExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTaskExecution, request, m_executor.get());
 }
 
 void DataSyncClient::UpdateTaskExecutionAsync(const UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTaskExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTaskExecution, request, handler, context, m_executor.get());
 }
 

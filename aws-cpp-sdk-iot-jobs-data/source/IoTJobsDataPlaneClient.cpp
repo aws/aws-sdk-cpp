@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -177,18 +178,12 @@ DescribeJobExecutionOutcome IoTJobsDataPlaneClient::DescribeJobExecution(const D
 
 DescribeJobExecutionOutcomeCallable IoTJobsDataPlaneClient::DescribeJobExecutionCallable(const DescribeJobExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJobExecution, request, m_executor.get());
 }
 
 void IoTJobsDataPlaneClient::DescribeJobExecutionAsync(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJobExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJobExecution, request, handler, context, m_executor.get());
 }
 
 GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(const GetPendingJobExecutionsRequest& request) const
@@ -209,18 +204,12 @@ GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(c
 
 GetPendingJobExecutionsOutcomeCallable IoTJobsDataPlaneClient::GetPendingJobExecutionsCallable(const GetPendingJobExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPendingJobExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPendingJobExecutions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPendingJobExecutions, request, m_executor.get());
 }
 
 void IoTJobsDataPlaneClient::GetPendingJobExecutionsAsync(const GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPendingJobExecutions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPendingJobExecutions, request, handler, context, m_executor.get());
 }
 
 StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobExecution(const StartNextPendingJobExecutionRequest& request) const
@@ -241,18 +230,12 @@ StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobE
 
 StartNextPendingJobExecutionOutcomeCallable IoTJobsDataPlaneClient::StartNextPendingJobExecutionCallable(const StartNextPendingJobExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartNextPendingJobExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartNextPendingJobExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartNextPendingJobExecution, request, m_executor.get());
 }
 
 void IoTJobsDataPlaneClient::StartNextPendingJobExecutionAsync(const StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartNextPendingJobExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartNextPendingJobExecution, request, handler, context, m_executor.get());
 }
 
 UpdateJobExecutionOutcome IoTJobsDataPlaneClient::UpdateJobExecution(const UpdateJobExecutionRequest& request) const
@@ -279,17 +262,11 @@ UpdateJobExecutionOutcome IoTJobsDataPlaneClient::UpdateJobExecution(const Updat
 
 UpdateJobExecutionOutcomeCallable IoTJobsDataPlaneClient::UpdateJobExecutionCallable(const UpdateJobExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateJobExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJobExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateJobExecution, request, m_executor.get());
 }
 
 void IoTJobsDataPlaneClient::UpdateJobExecutionAsync(const UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateJobExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateJobExecution, request, handler, context, m_executor.get());
 }
 

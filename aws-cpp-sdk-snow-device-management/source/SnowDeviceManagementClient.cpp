@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -180,18 +181,12 @@ CancelTaskOutcome SnowDeviceManagementClient::CancelTask(const CancelTaskRequest
 
 CancelTaskOutcomeCallable SnowDeviceManagementClient::CancelTaskCallable(const CancelTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelTask, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::CancelTaskAsync(const CancelTaskRequest& request, const CancelTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelTask, request, handler, context, m_executor.get());
 }
 
 CreateTaskOutcome SnowDeviceManagementClient::CreateTask(const CreateTaskRequest& request) const
@@ -205,18 +200,12 @@ CreateTaskOutcome SnowDeviceManagementClient::CreateTask(const CreateTaskRequest
 
 CreateTaskOutcomeCallable SnowDeviceManagementClient::CreateTaskCallable(const CreateTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTask, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::CreateTaskAsync(const CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTask, request, handler, context, m_executor.get());
 }
 
 DescribeDeviceOutcome SnowDeviceManagementClient::DescribeDevice(const DescribeDeviceRequest& request) const
@@ -237,18 +226,12 @@ DescribeDeviceOutcome SnowDeviceManagementClient::DescribeDevice(const DescribeD
 
 DescribeDeviceOutcomeCallable SnowDeviceManagementClient::DescribeDeviceCallable(const DescribeDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDevice, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDevice, request, handler, context, m_executor.get());
 }
 
 DescribeDeviceEc2InstancesOutcome SnowDeviceManagementClient::DescribeDeviceEc2Instances(const DescribeDeviceEc2InstancesRequest& request) const
@@ -269,18 +252,12 @@ DescribeDeviceEc2InstancesOutcome SnowDeviceManagementClient::DescribeDeviceEc2I
 
 DescribeDeviceEc2InstancesOutcomeCallable SnowDeviceManagementClient::DescribeDeviceEc2InstancesCallable(const DescribeDeviceEc2InstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDeviceEc2InstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDeviceEc2Instances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDeviceEc2Instances, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::DescribeDeviceEc2InstancesAsync(const DescribeDeviceEc2InstancesRequest& request, const DescribeDeviceEc2InstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDeviceEc2Instances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDeviceEc2Instances, request, handler, context, m_executor.get());
 }
 
 DescribeExecutionOutcome SnowDeviceManagementClient::DescribeExecution(const DescribeExecutionRequest& request) const
@@ -307,18 +284,12 @@ DescribeExecutionOutcome SnowDeviceManagementClient::DescribeExecution(const Des
 
 DescribeExecutionOutcomeCallable SnowDeviceManagementClient::DescribeExecutionCallable(const DescribeExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeExecution, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeExecution, request, handler, context, m_executor.get());
 }
 
 DescribeTaskOutcome SnowDeviceManagementClient::DescribeTask(const DescribeTaskRequest& request) const
@@ -338,18 +309,12 @@ DescribeTaskOutcome SnowDeviceManagementClient::DescribeTask(const DescribeTaskR
 
 DescribeTaskOutcomeCallable SnowDeviceManagementClient::DescribeTaskCallable(const DescribeTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTask, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::DescribeTaskAsync(const DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTask, request, handler, context, m_executor.get());
 }
 
 ListDeviceResourcesOutcome SnowDeviceManagementClient::ListDeviceResources(const ListDeviceResourcesRequest& request) const
@@ -370,18 +335,12 @@ ListDeviceResourcesOutcome SnowDeviceManagementClient::ListDeviceResources(const
 
 ListDeviceResourcesOutcomeCallable SnowDeviceManagementClient::ListDeviceResourcesCallable(const ListDeviceResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDeviceResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeviceResources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDeviceResources, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::ListDeviceResourcesAsync(const ListDeviceResourcesRequest& request, const ListDeviceResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDeviceResources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDeviceResources, request, handler, context, m_executor.get());
 }
 
 ListDevicesOutcome SnowDeviceManagementClient::ListDevices(const ListDevicesRequest& request) const
@@ -395,18 +354,12 @@ ListDevicesOutcome SnowDeviceManagementClient::ListDevices(const ListDevicesRequ
 
 ListDevicesOutcomeCallable SnowDeviceManagementClient::ListDevicesCallable(const ListDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDevices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDevices, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDevices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDevices, request, handler, context, m_executor.get());
 }
 
 ListExecutionsOutcome SnowDeviceManagementClient::ListExecutions(const ListExecutionsRequest& request) const
@@ -425,18 +378,12 @@ ListExecutionsOutcome SnowDeviceManagementClient::ListExecutions(const ListExecu
 
 ListExecutionsOutcomeCallable SnowDeviceManagementClient::ListExecutionsCallable(const ListExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExecutions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExecutions, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::ListExecutionsAsync(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExecutions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExecutions, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome SnowDeviceManagementClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -456,18 +403,12 @@ ListTagsForResourceOutcome SnowDeviceManagementClient::ListTagsForResource(const
 
 ListTagsForResourceOutcomeCallable SnowDeviceManagementClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTasksOutcome SnowDeviceManagementClient::ListTasks(const ListTasksRequest& request) const
@@ -481,18 +422,12 @@ ListTasksOutcome SnowDeviceManagementClient::ListTasks(const ListTasksRequest& r
 
 ListTasksOutcomeCallable SnowDeviceManagementClient::ListTasksCallable(const ListTasksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTasks(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTasks, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::ListTasksAsync(const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTasks(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTasks, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome SnowDeviceManagementClient::TagResource(const TagResourceRequest& request) const
@@ -512,18 +447,12 @@ TagResourceOutcome SnowDeviceManagementClient::TagResource(const TagResourceRequ
 
 TagResourceOutcomeCallable SnowDeviceManagementClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome SnowDeviceManagementClient::UntagResource(const UntagResourceRequest& request) const
@@ -548,17 +477,11 @@ UntagResourceOutcome SnowDeviceManagementClient::UntagResource(const UntagResour
 
 UntagResourceOutcomeCallable SnowDeviceManagementClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void SnowDeviceManagementClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 

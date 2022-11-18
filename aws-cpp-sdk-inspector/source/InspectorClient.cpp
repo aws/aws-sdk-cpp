@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -195,18 +196,12 @@ AddAttributesToFindingsOutcome InspectorClient::AddAttributesToFindings(const Ad
 
 AddAttributesToFindingsOutcomeCallable InspectorClient::AddAttributesToFindingsCallable(const AddAttributesToFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddAttributesToFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddAttributesToFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddAttributesToFindings, request, m_executor.get());
 }
 
 void InspectorClient::AddAttributesToFindingsAsync(const AddAttributesToFindingsRequest& request, const AddAttributesToFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddAttributesToFindings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddAttributesToFindings, request, handler, context, m_executor.get());
 }
 
 CreateAssessmentTargetOutcome InspectorClient::CreateAssessmentTarget(const CreateAssessmentTargetRequest& request) const
@@ -219,18 +214,12 @@ CreateAssessmentTargetOutcome InspectorClient::CreateAssessmentTarget(const Crea
 
 CreateAssessmentTargetOutcomeCallable InspectorClient::CreateAssessmentTargetCallable(const CreateAssessmentTargetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAssessmentTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAssessmentTarget(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAssessmentTarget, request, m_executor.get());
 }
 
 void InspectorClient::CreateAssessmentTargetAsync(const CreateAssessmentTargetRequest& request, const CreateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAssessmentTarget(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAssessmentTarget, request, handler, context, m_executor.get());
 }
 
 CreateAssessmentTemplateOutcome InspectorClient::CreateAssessmentTemplate(const CreateAssessmentTemplateRequest& request) const
@@ -243,18 +232,12 @@ CreateAssessmentTemplateOutcome InspectorClient::CreateAssessmentTemplate(const 
 
 CreateAssessmentTemplateOutcomeCallable InspectorClient::CreateAssessmentTemplateCallable(const CreateAssessmentTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAssessmentTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAssessmentTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAssessmentTemplate, request, m_executor.get());
 }
 
 void InspectorClient::CreateAssessmentTemplateAsync(const CreateAssessmentTemplateRequest& request, const CreateAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAssessmentTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAssessmentTemplate, request, handler, context, m_executor.get());
 }
 
 CreateExclusionsPreviewOutcome InspectorClient::CreateExclusionsPreview(const CreateExclusionsPreviewRequest& request) const
@@ -267,18 +250,12 @@ CreateExclusionsPreviewOutcome InspectorClient::CreateExclusionsPreview(const Cr
 
 CreateExclusionsPreviewOutcomeCallable InspectorClient::CreateExclusionsPreviewCallable(const CreateExclusionsPreviewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateExclusionsPreviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExclusionsPreview(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateExclusionsPreview, request, m_executor.get());
 }
 
 void InspectorClient::CreateExclusionsPreviewAsync(const CreateExclusionsPreviewRequest& request, const CreateExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateExclusionsPreview(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateExclusionsPreview, request, handler, context, m_executor.get());
 }
 
 CreateResourceGroupOutcome InspectorClient::CreateResourceGroup(const CreateResourceGroupRequest& request) const
@@ -291,18 +268,12 @@ CreateResourceGroupOutcome InspectorClient::CreateResourceGroup(const CreateReso
 
 CreateResourceGroupOutcomeCallable InspectorClient::CreateResourceGroupCallable(const CreateResourceGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateResourceGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourceGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateResourceGroup, request, m_executor.get());
 }
 
 void InspectorClient::CreateResourceGroupAsync(const CreateResourceGroupRequest& request, const CreateResourceGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateResourceGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateResourceGroup, request, handler, context, m_executor.get());
 }
 
 DeleteAssessmentRunOutcome InspectorClient::DeleteAssessmentRun(const DeleteAssessmentRunRequest& request) const
@@ -315,18 +286,12 @@ DeleteAssessmentRunOutcome InspectorClient::DeleteAssessmentRun(const DeleteAsse
 
 DeleteAssessmentRunOutcomeCallable InspectorClient::DeleteAssessmentRunCallable(const DeleteAssessmentRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAssessmentRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssessmentRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAssessmentRun, request, m_executor.get());
 }
 
 void InspectorClient::DeleteAssessmentRunAsync(const DeleteAssessmentRunRequest& request, const DeleteAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAssessmentRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAssessmentRun, request, handler, context, m_executor.get());
 }
 
 DeleteAssessmentTargetOutcome InspectorClient::DeleteAssessmentTarget(const DeleteAssessmentTargetRequest& request) const
@@ -339,18 +304,12 @@ DeleteAssessmentTargetOutcome InspectorClient::DeleteAssessmentTarget(const Dele
 
 DeleteAssessmentTargetOutcomeCallable InspectorClient::DeleteAssessmentTargetCallable(const DeleteAssessmentTargetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAssessmentTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssessmentTarget(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAssessmentTarget, request, m_executor.get());
 }
 
 void InspectorClient::DeleteAssessmentTargetAsync(const DeleteAssessmentTargetRequest& request, const DeleteAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAssessmentTarget(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAssessmentTarget, request, handler, context, m_executor.get());
 }
 
 DeleteAssessmentTemplateOutcome InspectorClient::DeleteAssessmentTemplate(const DeleteAssessmentTemplateRequest& request) const
@@ -363,18 +322,12 @@ DeleteAssessmentTemplateOutcome InspectorClient::DeleteAssessmentTemplate(const 
 
 DeleteAssessmentTemplateOutcomeCallable InspectorClient::DeleteAssessmentTemplateCallable(const DeleteAssessmentTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAssessmentTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssessmentTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAssessmentTemplate, request, m_executor.get());
 }
 
 void InspectorClient::DeleteAssessmentTemplateAsync(const DeleteAssessmentTemplateRequest& request, const DeleteAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAssessmentTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAssessmentTemplate, request, handler, context, m_executor.get());
 }
 
 DescribeAssessmentRunsOutcome InspectorClient::DescribeAssessmentRuns(const DescribeAssessmentRunsRequest& request) const
@@ -387,18 +340,12 @@ DescribeAssessmentRunsOutcome InspectorClient::DescribeAssessmentRuns(const Desc
 
 DescribeAssessmentRunsOutcomeCallable InspectorClient::DescribeAssessmentRunsCallable(const DescribeAssessmentRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAssessmentRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAssessmentRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAssessmentRuns, request, m_executor.get());
 }
 
 void InspectorClient::DescribeAssessmentRunsAsync(const DescribeAssessmentRunsRequest& request, const DescribeAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAssessmentRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAssessmentRuns, request, handler, context, m_executor.get());
 }
 
 DescribeAssessmentTargetsOutcome InspectorClient::DescribeAssessmentTargets(const DescribeAssessmentTargetsRequest& request) const
@@ -411,18 +358,12 @@ DescribeAssessmentTargetsOutcome InspectorClient::DescribeAssessmentTargets(cons
 
 DescribeAssessmentTargetsOutcomeCallable InspectorClient::DescribeAssessmentTargetsCallable(const DescribeAssessmentTargetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAssessmentTargetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAssessmentTargets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAssessmentTargets, request, m_executor.get());
 }
 
 void InspectorClient::DescribeAssessmentTargetsAsync(const DescribeAssessmentTargetsRequest& request, const DescribeAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAssessmentTargets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAssessmentTargets, request, handler, context, m_executor.get());
 }
 
 DescribeAssessmentTemplatesOutcome InspectorClient::DescribeAssessmentTemplates(const DescribeAssessmentTemplatesRequest& request) const
@@ -435,18 +376,12 @@ DescribeAssessmentTemplatesOutcome InspectorClient::DescribeAssessmentTemplates(
 
 DescribeAssessmentTemplatesOutcomeCallable InspectorClient::DescribeAssessmentTemplatesCallable(const DescribeAssessmentTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAssessmentTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAssessmentTemplates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAssessmentTemplates, request, m_executor.get());
 }
 
 void InspectorClient::DescribeAssessmentTemplatesAsync(const DescribeAssessmentTemplatesRequest& request, const DescribeAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAssessmentTemplates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAssessmentTemplates, request, handler, context, m_executor.get());
 }
 
 DescribeCrossAccountAccessRoleOutcome InspectorClient::DescribeCrossAccountAccessRole() const
@@ -484,18 +419,12 @@ DescribeExclusionsOutcome InspectorClient::DescribeExclusions(const DescribeExcl
 
 DescribeExclusionsOutcomeCallable InspectorClient::DescribeExclusionsCallable(const DescribeExclusionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeExclusionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExclusions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeExclusions, request, m_executor.get());
 }
 
 void InspectorClient::DescribeExclusionsAsync(const DescribeExclusionsRequest& request, const DescribeExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeExclusions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeExclusions, request, handler, context, m_executor.get());
 }
 
 DescribeFindingsOutcome InspectorClient::DescribeFindings(const DescribeFindingsRequest& request) const
@@ -508,18 +437,12 @@ DescribeFindingsOutcome InspectorClient::DescribeFindings(const DescribeFindings
 
 DescribeFindingsOutcomeCallable InspectorClient::DescribeFindingsCallable(const DescribeFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFindings, request, m_executor.get());
 }
 
 void InspectorClient::DescribeFindingsAsync(const DescribeFindingsRequest& request, const DescribeFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFindings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFindings, request, handler, context, m_executor.get());
 }
 
 DescribeResourceGroupsOutcome InspectorClient::DescribeResourceGroups(const DescribeResourceGroupsRequest& request) const
@@ -532,18 +455,12 @@ DescribeResourceGroupsOutcome InspectorClient::DescribeResourceGroups(const Desc
 
 DescribeResourceGroupsOutcomeCallable InspectorClient::DescribeResourceGroupsCallable(const DescribeResourceGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeResourceGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResourceGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeResourceGroups, request, m_executor.get());
 }
 
 void InspectorClient::DescribeResourceGroupsAsync(const DescribeResourceGroupsRequest& request, const DescribeResourceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeResourceGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeResourceGroups, request, handler, context, m_executor.get());
 }
 
 DescribeRulesPackagesOutcome InspectorClient::DescribeRulesPackages(const DescribeRulesPackagesRequest& request) const
@@ -556,18 +473,12 @@ DescribeRulesPackagesOutcome InspectorClient::DescribeRulesPackages(const Descri
 
 DescribeRulesPackagesOutcomeCallable InspectorClient::DescribeRulesPackagesCallable(const DescribeRulesPackagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRulesPackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRulesPackages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRulesPackages, request, m_executor.get());
 }
 
 void InspectorClient::DescribeRulesPackagesAsync(const DescribeRulesPackagesRequest& request, const DescribeRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRulesPackages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRulesPackages, request, handler, context, m_executor.get());
 }
 
 GetAssessmentReportOutcome InspectorClient::GetAssessmentReport(const GetAssessmentReportRequest& request) const
@@ -580,18 +491,12 @@ GetAssessmentReportOutcome InspectorClient::GetAssessmentReport(const GetAssessm
 
 GetAssessmentReportOutcomeCallable InspectorClient::GetAssessmentReportCallable(const GetAssessmentReportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAssessmentReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssessmentReport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAssessmentReport, request, m_executor.get());
 }
 
 void InspectorClient::GetAssessmentReportAsync(const GetAssessmentReportRequest& request, const GetAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAssessmentReport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAssessmentReport, request, handler, context, m_executor.get());
 }
 
 GetExclusionsPreviewOutcome InspectorClient::GetExclusionsPreview(const GetExclusionsPreviewRequest& request) const
@@ -604,18 +509,12 @@ GetExclusionsPreviewOutcome InspectorClient::GetExclusionsPreview(const GetExclu
 
 GetExclusionsPreviewOutcomeCallable InspectorClient::GetExclusionsPreviewCallable(const GetExclusionsPreviewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExclusionsPreviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExclusionsPreview(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetExclusionsPreview, request, m_executor.get());
 }
 
 void InspectorClient::GetExclusionsPreviewAsync(const GetExclusionsPreviewRequest& request, const GetExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetExclusionsPreview(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetExclusionsPreview, request, handler, context, m_executor.get());
 }
 
 GetTelemetryMetadataOutcome InspectorClient::GetTelemetryMetadata(const GetTelemetryMetadataRequest& request) const
@@ -628,18 +527,12 @@ GetTelemetryMetadataOutcome InspectorClient::GetTelemetryMetadata(const GetTelem
 
 GetTelemetryMetadataOutcomeCallable InspectorClient::GetTelemetryMetadataCallable(const GetTelemetryMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTelemetryMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTelemetryMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTelemetryMetadata, request, m_executor.get());
 }
 
 void InspectorClient::GetTelemetryMetadataAsync(const GetTelemetryMetadataRequest& request, const GetTelemetryMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTelemetryMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTelemetryMetadata, request, handler, context, m_executor.get());
 }
 
 ListAssessmentRunAgentsOutcome InspectorClient::ListAssessmentRunAgents(const ListAssessmentRunAgentsRequest& request) const
@@ -652,18 +545,12 @@ ListAssessmentRunAgentsOutcome InspectorClient::ListAssessmentRunAgents(const Li
 
 ListAssessmentRunAgentsOutcomeCallable InspectorClient::ListAssessmentRunAgentsCallable(const ListAssessmentRunAgentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentRunAgentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessmentRunAgents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAssessmentRunAgents, request, m_executor.get());
 }
 
 void InspectorClient::ListAssessmentRunAgentsAsync(const ListAssessmentRunAgentsRequest& request, const ListAssessmentRunAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAssessmentRunAgents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAssessmentRunAgents, request, handler, context, m_executor.get());
 }
 
 ListAssessmentRunsOutcome InspectorClient::ListAssessmentRuns(const ListAssessmentRunsRequest& request) const
@@ -676,18 +563,12 @@ ListAssessmentRunsOutcome InspectorClient::ListAssessmentRuns(const ListAssessme
 
 ListAssessmentRunsOutcomeCallable InspectorClient::ListAssessmentRunsCallable(const ListAssessmentRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessmentRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAssessmentRuns, request, m_executor.get());
 }
 
 void InspectorClient::ListAssessmentRunsAsync(const ListAssessmentRunsRequest& request, const ListAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAssessmentRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAssessmentRuns, request, handler, context, m_executor.get());
 }
 
 ListAssessmentTargetsOutcome InspectorClient::ListAssessmentTargets(const ListAssessmentTargetsRequest& request) const
@@ -700,18 +581,12 @@ ListAssessmentTargetsOutcome InspectorClient::ListAssessmentTargets(const ListAs
 
 ListAssessmentTargetsOutcomeCallable InspectorClient::ListAssessmentTargetsCallable(const ListAssessmentTargetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentTargetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessmentTargets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAssessmentTargets, request, m_executor.get());
 }
 
 void InspectorClient::ListAssessmentTargetsAsync(const ListAssessmentTargetsRequest& request, const ListAssessmentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAssessmentTargets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAssessmentTargets, request, handler, context, m_executor.get());
 }
 
 ListAssessmentTemplatesOutcome InspectorClient::ListAssessmentTemplates(const ListAssessmentTemplatesRequest& request) const
@@ -724,18 +599,12 @@ ListAssessmentTemplatesOutcome InspectorClient::ListAssessmentTemplates(const Li
 
 ListAssessmentTemplatesOutcomeCallable InspectorClient::ListAssessmentTemplatesCallable(const ListAssessmentTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessmentTemplates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAssessmentTemplates, request, m_executor.get());
 }
 
 void InspectorClient::ListAssessmentTemplatesAsync(const ListAssessmentTemplatesRequest& request, const ListAssessmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAssessmentTemplates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAssessmentTemplates, request, handler, context, m_executor.get());
 }
 
 ListEventSubscriptionsOutcome InspectorClient::ListEventSubscriptions(const ListEventSubscriptionsRequest& request) const
@@ -748,18 +617,12 @@ ListEventSubscriptionsOutcome InspectorClient::ListEventSubscriptions(const List
 
 ListEventSubscriptionsOutcomeCallable InspectorClient::ListEventSubscriptionsCallable(const ListEventSubscriptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEventSubscriptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventSubscriptions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEventSubscriptions, request, m_executor.get());
 }
 
 void InspectorClient::ListEventSubscriptionsAsync(const ListEventSubscriptionsRequest& request, const ListEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEventSubscriptions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEventSubscriptions, request, handler, context, m_executor.get());
 }
 
 ListExclusionsOutcome InspectorClient::ListExclusions(const ListExclusionsRequest& request) const
@@ -772,18 +635,12 @@ ListExclusionsOutcome InspectorClient::ListExclusions(const ListExclusionsReques
 
 ListExclusionsOutcomeCallable InspectorClient::ListExclusionsCallable(const ListExclusionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExclusionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExclusions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExclusions, request, m_executor.get());
 }
 
 void InspectorClient::ListExclusionsAsync(const ListExclusionsRequest& request, const ListExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExclusions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExclusions, request, handler, context, m_executor.get());
 }
 
 ListFindingsOutcome InspectorClient::ListFindings(const ListFindingsRequest& request) const
@@ -796,18 +653,12 @@ ListFindingsOutcome InspectorClient::ListFindings(const ListFindingsRequest& req
 
 ListFindingsOutcomeCallable InspectorClient::ListFindingsCallable(const ListFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFindings, request, m_executor.get());
 }
 
 void InspectorClient::ListFindingsAsync(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFindings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFindings, request, handler, context, m_executor.get());
 }
 
 ListRulesPackagesOutcome InspectorClient::ListRulesPackages(const ListRulesPackagesRequest& request) const
@@ -820,18 +671,12 @@ ListRulesPackagesOutcome InspectorClient::ListRulesPackages(const ListRulesPacka
 
 ListRulesPackagesOutcomeCallable InspectorClient::ListRulesPackagesCallable(const ListRulesPackagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRulesPackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRulesPackages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRulesPackages, request, m_executor.get());
 }
 
 void InspectorClient::ListRulesPackagesAsync(const ListRulesPackagesRequest& request, const ListRulesPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRulesPackages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRulesPackages, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome InspectorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -844,18 +689,12 @@ ListTagsForResourceOutcome InspectorClient::ListTagsForResource(const ListTagsFo
 
 ListTagsForResourceOutcomeCallable InspectorClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void InspectorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PreviewAgentsOutcome InspectorClient::PreviewAgents(const PreviewAgentsRequest& request) const
@@ -868,18 +707,12 @@ PreviewAgentsOutcome InspectorClient::PreviewAgents(const PreviewAgentsRequest& 
 
 PreviewAgentsOutcomeCallable InspectorClient::PreviewAgentsCallable(const PreviewAgentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PreviewAgentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PreviewAgents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PreviewAgents, request, m_executor.get());
 }
 
 void InspectorClient::PreviewAgentsAsync(const PreviewAgentsRequest& request, const PreviewAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PreviewAgents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PreviewAgents, request, handler, context, m_executor.get());
 }
 
 RegisterCrossAccountAccessRoleOutcome InspectorClient::RegisterCrossAccountAccessRole(const RegisterCrossAccountAccessRoleRequest& request) const
@@ -892,18 +725,12 @@ RegisterCrossAccountAccessRoleOutcome InspectorClient::RegisterCrossAccountAcces
 
 RegisterCrossAccountAccessRoleOutcomeCallable InspectorClient::RegisterCrossAccountAccessRoleCallable(const RegisterCrossAccountAccessRoleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterCrossAccountAccessRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterCrossAccountAccessRole(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RegisterCrossAccountAccessRole, request, m_executor.get());
 }
 
 void InspectorClient::RegisterCrossAccountAccessRoleAsync(const RegisterCrossAccountAccessRoleRequest& request, const RegisterCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterCrossAccountAccessRole(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RegisterCrossAccountAccessRole, request, handler, context, m_executor.get());
 }
 
 RemoveAttributesFromFindingsOutcome InspectorClient::RemoveAttributesFromFindings(const RemoveAttributesFromFindingsRequest& request) const
@@ -916,18 +743,12 @@ RemoveAttributesFromFindingsOutcome InspectorClient::RemoveAttributesFromFinding
 
 RemoveAttributesFromFindingsOutcomeCallable InspectorClient::RemoveAttributesFromFindingsCallable(const RemoveAttributesFromFindingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveAttributesFromFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveAttributesFromFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveAttributesFromFindings, request, m_executor.get());
 }
 
 void InspectorClient::RemoveAttributesFromFindingsAsync(const RemoveAttributesFromFindingsRequest& request, const RemoveAttributesFromFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveAttributesFromFindings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveAttributesFromFindings, request, handler, context, m_executor.get());
 }
 
 SetTagsForResourceOutcome InspectorClient::SetTagsForResource(const SetTagsForResourceRequest& request) const
@@ -940,18 +761,12 @@ SetTagsForResourceOutcome InspectorClient::SetTagsForResource(const SetTagsForRe
 
 SetTagsForResourceOutcomeCallable InspectorClient::SetTagsForResourceCallable(const SetTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SetTagsForResource, request, m_executor.get());
 }
 
 void InspectorClient::SetTagsForResourceAsync(const SetTagsForResourceRequest& request, const SetTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SetTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartAssessmentRunOutcome InspectorClient::StartAssessmentRun(const StartAssessmentRunRequest& request) const
@@ -964,18 +779,12 @@ StartAssessmentRunOutcome InspectorClient::StartAssessmentRun(const StartAssessm
 
 StartAssessmentRunOutcomeCallable InspectorClient::StartAssessmentRunCallable(const StartAssessmentRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartAssessmentRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartAssessmentRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartAssessmentRun, request, m_executor.get());
 }
 
 void InspectorClient::StartAssessmentRunAsync(const StartAssessmentRunRequest& request, const StartAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartAssessmentRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartAssessmentRun, request, handler, context, m_executor.get());
 }
 
 StopAssessmentRunOutcome InspectorClient::StopAssessmentRun(const StopAssessmentRunRequest& request) const
@@ -988,18 +797,12 @@ StopAssessmentRunOutcome InspectorClient::StopAssessmentRun(const StopAssessment
 
 StopAssessmentRunOutcomeCallable InspectorClient::StopAssessmentRunCallable(const StopAssessmentRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopAssessmentRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopAssessmentRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopAssessmentRun, request, m_executor.get());
 }
 
 void InspectorClient::StopAssessmentRunAsync(const StopAssessmentRunRequest& request, const StopAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopAssessmentRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopAssessmentRun, request, handler, context, m_executor.get());
 }
 
 SubscribeToEventOutcome InspectorClient::SubscribeToEvent(const SubscribeToEventRequest& request) const
@@ -1012,18 +815,12 @@ SubscribeToEventOutcome InspectorClient::SubscribeToEvent(const SubscribeToEvent
 
 SubscribeToEventOutcomeCallable InspectorClient::SubscribeToEventCallable(const SubscribeToEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SubscribeToEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SubscribeToEvent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SubscribeToEvent, request, m_executor.get());
 }
 
 void InspectorClient::SubscribeToEventAsync(const SubscribeToEventRequest& request, const SubscribeToEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SubscribeToEvent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SubscribeToEvent, request, handler, context, m_executor.get());
 }
 
 UnsubscribeFromEventOutcome InspectorClient::UnsubscribeFromEvent(const UnsubscribeFromEventRequest& request) const
@@ -1036,18 +833,12 @@ UnsubscribeFromEventOutcome InspectorClient::UnsubscribeFromEvent(const Unsubscr
 
 UnsubscribeFromEventOutcomeCallable InspectorClient::UnsubscribeFromEventCallable(const UnsubscribeFromEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UnsubscribeFromEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnsubscribeFromEvent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UnsubscribeFromEvent, request, m_executor.get());
 }
 
 void InspectorClient::UnsubscribeFromEventAsync(const UnsubscribeFromEventRequest& request, const UnsubscribeFromEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UnsubscribeFromEvent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UnsubscribeFromEvent, request, handler, context, m_executor.get());
 }
 
 UpdateAssessmentTargetOutcome InspectorClient::UpdateAssessmentTarget(const UpdateAssessmentTargetRequest& request) const
@@ -1060,17 +851,11 @@ UpdateAssessmentTargetOutcome InspectorClient::UpdateAssessmentTarget(const Upda
 
 UpdateAssessmentTargetOutcomeCallable InspectorClient::UpdateAssessmentTargetCallable(const UpdateAssessmentTargetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAssessmentTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAssessmentTarget(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAssessmentTarget, request, m_executor.get());
 }
 
 void InspectorClient::UpdateAssessmentTargetAsync(const UpdateAssessmentTargetRequest& request, const UpdateAssessmentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAssessmentTarget(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAssessmentTarget, request, handler, context, m_executor.get());
 }
 

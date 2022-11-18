@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -196,18 +197,12 @@ CreateComponentOutcome AmplifyUIBuilderClient::CreateComponent(const CreateCompo
 
 CreateComponentOutcomeCallable AmplifyUIBuilderClient::CreateComponentCallable(const CreateComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateComponent, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::CreateComponentAsync(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateComponent, request, handler, context, m_executor.get());
 }
 
 CreateFormOutcome AmplifyUIBuilderClient::CreateForm(const CreateFormRequest& request) const
@@ -235,18 +230,12 @@ CreateFormOutcome AmplifyUIBuilderClient::CreateForm(const CreateFormRequest& re
 
 CreateFormOutcomeCallable AmplifyUIBuilderClient::CreateFormCallable(const CreateFormRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateForm(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateForm, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::CreateFormAsync(const CreateFormRequest& request, const CreateFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateForm(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateForm, request, handler, context, m_executor.get());
 }
 
 CreateThemeOutcome AmplifyUIBuilderClient::CreateTheme(const CreateThemeRequest& request) const
@@ -274,18 +263,12 @@ CreateThemeOutcome AmplifyUIBuilderClient::CreateTheme(const CreateThemeRequest&
 
 CreateThemeOutcomeCallable AmplifyUIBuilderClient::CreateThemeCallable(const CreateThemeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateThemeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTheme(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTheme, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::CreateThemeAsync(const CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTheme(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTheme, request, handler, context, m_executor.get());
 }
 
 DeleteComponentOutcome AmplifyUIBuilderClient::DeleteComponent(const DeleteComponentRequest& request) const
@@ -319,18 +302,12 @@ DeleteComponentOutcome AmplifyUIBuilderClient::DeleteComponent(const DeleteCompo
 
 DeleteComponentOutcomeCallable AmplifyUIBuilderClient::DeleteComponentCallable(const DeleteComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteComponent, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteComponent, request, handler, context, m_executor.get());
 }
 
 DeleteFormOutcome AmplifyUIBuilderClient::DeleteForm(const DeleteFormRequest& request) const
@@ -364,18 +341,12 @@ DeleteFormOutcome AmplifyUIBuilderClient::DeleteForm(const DeleteFormRequest& re
 
 DeleteFormOutcomeCallable AmplifyUIBuilderClient::DeleteFormCallable(const DeleteFormRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteForm(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteForm, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::DeleteFormAsync(const DeleteFormRequest& request, const DeleteFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteForm(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteForm, request, handler, context, m_executor.get());
 }
 
 DeleteThemeOutcome AmplifyUIBuilderClient::DeleteTheme(const DeleteThemeRequest& request) const
@@ -409,18 +380,12 @@ DeleteThemeOutcome AmplifyUIBuilderClient::DeleteTheme(const DeleteThemeRequest&
 
 DeleteThemeOutcomeCallable AmplifyUIBuilderClient::DeleteThemeCallable(const DeleteThemeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteThemeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTheme(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTheme, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::DeleteThemeAsync(const DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTheme(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTheme, request, handler, context, m_executor.get());
 }
 
 ExchangeCodeForTokenOutcome AmplifyUIBuilderClient::ExchangeCodeForToken(const ExchangeCodeForTokenRequest& request) const
@@ -440,18 +405,12 @@ ExchangeCodeForTokenOutcome AmplifyUIBuilderClient::ExchangeCodeForToken(const E
 
 ExchangeCodeForTokenOutcomeCallable AmplifyUIBuilderClient::ExchangeCodeForTokenCallable(const ExchangeCodeForTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExchangeCodeForTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExchangeCodeForToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExchangeCodeForToken, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::ExchangeCodeForTokenAsync(const ExchangeCodeForTokenRequest& request, const ExchangeCodeForTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExchangeCodeForToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExchangeCodeForToken, request, handler, context, m_executor.get());
 }
 
 ExportComponentsOutcome AmplifyUIBuilderClient::ExportComponents(const ExportComponentsRequest& request) const
@@ -479,18 +438,12 @@ ExportComponentsOutcome AmplifyUIBuilderClient::ExportComponents(const ExportCom
 
 ExportComponentsOutcomeCallable AmplifyUIBuilderClient::ExportComponentsCallable(const ExportComponentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExportComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportComponents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExportComponents, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::ExportComponentsAsync(const ExportComponentsRequest& request, const ExportComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExportComponents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExportComponents, request, handler, context, m_executor.get());
 }
 
 ExportFormsOutcome AmplifyUIBuilderClient::ExportForms(const ExportFormsRequest& request) const
@@ -518,18 +471,12 @@ ExportFormsOutcome AmplifyUIBuilderClient::ExportForms(const ExportFormsRequest&
 
 ExportFormsOutcomeCallable AmplifyUIBuilderClient::ExportFormsCallable(const ExportFormsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExportFormsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportForms(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExportForms, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::ExportFormsAsync(const ExportFormsRequest& request, const ExportFormsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExportForms(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExportForms, request, handler, context, m_executor.get());
 }
 
 ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesRequest& request) const
@@ -557,18 +504,12 @@ ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesReque
 
 ExportThemesOutcomeCallable AmplifyUIBuilderClient::ExportThemesCallable(const ExportThemesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExportThemesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportThemes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExportThemes, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::ExportThemesAsync(const ExportThemesRequest& request, const ExportThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExportThemes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExportThemes, request, handler, context, m_executor.get());
 }
 
 GetComponentOutcome AmplifyUIBuilderClient::GetComponent(const GetComponentRequest& request) const
@@ -602,18 +543,12 @@ GetComponentOutcome AmplifyUIBuilderClient::GetComponent(const GetComponentReque
 
 GetComponentOutcomeCallable AmplifyUIBuilderClient::GetComponentCallable(const GetComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetComponent, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetComponent, request, handler, context, m_executor.get());
 }
 
 GetFormOutcome AmplifyUIBuilderClient::GetForm(const GetFormRequest& request) const
@@ -647,18 +582,12 @@ GetFormOutcome AmplifyUIBuilderClient::GetForm(const GetFormRequest& request) co
 
 GetFormOutcomeCallable AmplifyUIBuilderClient::GetFormCallable(const GetFormRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetForm(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetForm, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::GetFormAsync(const GetFormRequest& request, const GetFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetForm(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetForm, request, handler, context, m_executor.get());
 }
 
 GetMetadataOutcome AmplifyUIBuilderClient::GetMetadata(const GetMetadataRequest& request) const
@@ -686,18 +615,12 @@ GetMetadataOutcome AmplifyUIBuilderClient::GetMetadata(const GetMetadataRequest&
 
 GetMetadataOutcomeCallable AmplifyUIBuilderClient::GetMetadataCallable(const GetMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMetadata, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::GetMetadataAsync(const GetMetadataRequest& request, const GetMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMetadata, request, handler, context, m_executor.get());
 }
 
 GetThemeOutcome AmplifyUIBuilderClient::GetTheme(const GetThemeRequest& request) const
@@ -731,18 +654,12 @@ GetThemeOutcome AmplifyUIBuilderClient::GetTheme(const GetThemeRequest& request)
 
 GetThemeOutcomeCallable AmplifyUIBuilderClient::GetThemeCallable(const GetThemeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetThemeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTheme(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTheme, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::GetThemeAsync(const GetThemeRequest& request, const GetThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTheme(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTheme, request, handler, context, m_executor.get());
 }
 
 ListComponentsOutcome AmplifyUIBuilderClient::ListComponents(const ListComponentsRequest& request) const
@@ -770,18 +687,12 @@ ListComponentsOutcome AmplifyUIBuilderClient::ListComponents(const ListComponent
 
 ListComponentsOutcomeCallable AmplifyUIBuilderClient::ListComponentsCallable(const ListComponentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComponents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListComponents, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListComponents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListComponents, request, handler, context, m_executor.get());
 }
 
 ListFormsOutcome AmplifyUIBuilderClient::ListForms(const ListFormsRequest& request) const
@@ -809,18 +720,12 @@ ListFormsOutcome AmplifyUIBuilderClient::ListForms(const ListFormsRequest& reque
 
 ListFormsOutcomeCallable AmplifyUIBuilderClient::ListFormsCallable(const ListFormsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFormsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListForms(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListForms, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::ListFormsAsync(const ListFormsRequest& request, const ListFormsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListForms(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListForms, request, handler, context, m_executor.get());
 }
 
 ListThemesOutcome AmplifyUIBuilderClient::ListThemes(const ListThemesRequest& request) const
@@ -848,18 +753,12 @@ ListThemesOutcome AmplifyUIBuilderClient::ListThemes(const ListThemesRequest& re
 
 ListThemesOutcomeCallable AmplifyUIBuilderClient::ListThemesCallable(const ListThemesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListThemesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListThemes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListThemes, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::ListThemesAsync(const ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListThemes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListThemes, request, handler, context, m_executor.get());
 }
 
 PutMetadataFlagOutcome AmplifyUIBuilderClient::PutMetadataFlag(const PutMetadataFlagRequest& request) const
@@ -893,18 +792,12 @@ PutMetadataFlagOutcome AmplifyUIBuilderClient::PutMetadataFlag(const PutMetadata
 
 PutMetadataFlagOutcomeCallable AmplifyUIBuilderClient::PutMetadataFlagCallable(const PutMetadataFlagRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutMetadataFlagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutMetadataFlag(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutMetadataFlag, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::PutMetadataFlagAsync(const PutMetadataFlagRequest& request, const PutMetadataFlagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutMetadataFlag(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutMetadataFlag, request, handler, context, m_executor.get());
 }
 
 RefreshTokenOutcome AmplifyUIBuilderClient::RefreshToken(const RefreshTokenRequest& request) const
@@ -925,18 +818,12 @@ RefreshTokenOutcome AmplifyUIBuilderClient::RefreshToken(const RefreshTokenReque
 
 RefreshTokenOutcomeCallable AmplifyUIBuilderClient::RefreshTokenCallable(const RefreshTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RefreshTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RefreshToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RefreshToken, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::RefreshTokenAsync(const RefreshTokenRequest& request, const RefreshTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RefreshToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RefreshToken, request, handler, context, m_executor.get());
 }
 
 UpdateComponentOutcome AmplifyUIBuilderClient::UpdateComponent(const UpdateComponentRequest& request) const
@@ -970,18 +857,12 @@ UpdateComponentOutcome AmplifyUIBuilderClient::UpdateComponent(const UpdateCompo
 
 UpdateComponentOutcomeCallable AmplifyUIBuilderClient::UpdateComponentCallable(const UpdateComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateComponent, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::UpdateComponentAsync(const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateComponent, request, handler, context, m_executor.get());
 }
 
 UpdateFormOutcome AmplifyUIBuilderClient::UpdateForm(const UpdateFormRequest& request) const
@@ -1015,18 +896,12 @@ UpdateFormOutcome AmplifyUIBuilderClient::UpdateForm(const UpdateFormRequest& re
 
 UpdateFormOutcomeCallable AmplifyUIBuilderClient::UpdateFormCallable(const UpdateFormRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateForm(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateForm, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::UpdateFormAsync(const UpdateFormRequest& request, const UpdateFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateForm(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateForm, request, handler, context, m_executor.get());
 }
 
 UpdateThemeOutcome AmplifyUIBuilderClient::UpdateTheme(const UpdateThemeRequest& request) const
@@ -1060,17 +935,11 @@ UpdateThemeOutcome AmplifyUIBuilderClient::UpdateTheme(const UpdateThemeRequest&
 
 UpdateThemeOutcomeCallable AmplifyUIBuilderClient::UpdateThemeCallable(const UpdateThemeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateThemeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTheme(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTheme, request, m_executor.get());
 }
 
 void AmplifyUIBuilderClient::UpdateThemeAsync(const UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTheme(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTheme, request, handler, context, m_executor.get());
 }
 

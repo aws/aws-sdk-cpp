@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -191,18 +192,12 @@ CreateAssistantOutcome ConnectWisdomServiceClient::CreateAssistant(const CreateA
 
 CreateAssistantOutcomeCallable ConnectWisdomServiceClient::CreateAssistantCallable(const CreateAssistantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAssistantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAssistant(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAssistant, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::CreateAssistantAsync(const CreateAssistantRequest& request, const CreateAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAssistant(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAssistant, request, handler, context, m_executor.get());
 }
 
 CreateAssistantAssociationOutcome ConnectWisdomServiceClient::CreateAssistantAssociation(const CreateAssistantAssociationRequest& request) const
@@ -223,18 +218,12 @@ CreateAssistantAssociationOutcome ConnectWisdomServiceClient::CreateAssistantAss
 
 CreateAssistantAssociationOutcomeCallable ConnectWisdomServiceClient::CreateAssistantAssociationCallable(const CreateAssistantAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAssistantAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAssistantAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAssistantAssociation, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::CreateAssistantAssociationAsync(const CreateAssistantAssociationRequest& request, const CreateAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAssistantAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAssistantAssociation, request, handler, context, m_executor.get());
 }
 
 CreateContentOutcome ConnectWisdomServiceClient::CreateContent(const CreateContentRequest& request) const
@@ -255,18 +244,12 @@ CreateContentOutcome ConnectWisdomServiceClient::CreateContent(const CreateConte
 
 CreateContentOutcomeCallable ConnectWisdomServiceClient::CreateContentCallable(const CreateContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateContent, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::CreateContentAsync(const CreateContentRequest& request, const CreateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateContent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateContent, request, handler, context, m_executor.get());
 }
 
 CreateKnowledgeBaseOutcome ConnectWisdomServiceClient::CreateKnowledgeBase(const CreateKnowledgeBaseRequest& request) const
@@ -280,18 +263,12 @@ CreateKnowledgeBaseOutcome ConnectWisdomServiceClient::CreateKnowledgeBase(const
 
 CreateKnowledgeBaseOutcomeCallable ConnectWisdomServiceClient::CreateKnowledgeBaseCallable(const CreateKnowledgeBaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateKnowledgeBaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateKnowledgeBase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateKnowledgeBase, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::CreateKnowledgeBaseAsync(const CreateKnowledgeBaseRequest& request, const CreateKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateKnowledgeBase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateKnowledgeBase, request, handler, context, m_executor.get());
 }
 
 CreateSessionOutcome ConnectWisdomServiceClient::CreateSession(const CreateSessionRequest& request) const
@@ -312,18 +289,12 @@ CreateSessionOutcome ConnectWisdomServiceClient::CreateSession(const CreateSessi
 
 CreateSessionOutcomeCallable ConnectWisdomServiceClient::CreateSessionCallable(const CreateSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSession, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSession, request, handler, context, m_executor.get());
 }
 
 DeleteAssistantOutcome ConnectWisdomServiceClient::DeleteAssistant(const DeleteAssistantRequest& request) const
@@ -343,18 +314,12 @@ DeleteAssistantOutcome ConnectWisdomServiceClient::DeleteAssistant(const DeleteA
 
 DeleteAssistantOutcomeCallable ConnectWisdomServiceClient::DeleteAssistantCallable(const DeleteAssistantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAssistantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssistant(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAssistant, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::DeleteAssistantAsync(const DeleteAssistantRequest& request, const DeleteAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAssistant(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAssistant, request, handler, context, m_executor.get());
 }
 
 DeleteAssistantAssociationOutcome ConnectWisdomServiceClient::DeleteAssistantAssociation(const DeleteAssistantAssociationRequest& request) const
@@ -381,18 +346,12 @@ DeleteAssistantAssociationOutcome ConnectWisdomServiceClient::DeleteAssistantAss
 
 DeleteAssistantAssociationOutcomeCallable ConnectWisdomServiceClient::DeleteAssistantAssociationCallable(const DeleteAssistantAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAssistantAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssistantAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAssistantAssociation, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::DeleteAssistantAssociationAsync(const DeleteAssistantAssociationRequest& request, const DeleteAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAssistantAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAssistantAssociation, request, handler, context, m_executor.get());
 }
 
 DeleteContentOutcome ConnectWisdomServiceClient::DeleteContent(const DeleteContentRequest& request) const
@@ -419,18 +378,12 @@ DeleteContentOutcome ConnectWisdomServiceClient::DeleteContent(const DeleteConte
 
 DeleteContentOutcomeCallable ConnectWisdomServiceClient::DeleteContentCallable(const DeleteContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteContent, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::DeleteContentAsync(const DeleteContentRequest& request, const DeleteContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteContent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteContent, request, handler, context, m_executor.get());
 }
 
 DeleteKnowledgeBaseOutcome ConnectWisdomServiceClient::DeleteKnowledgeBase(const DeleteKnowledgeBaseRequest& request) const
@@ -450,18 +403,12 @@ DeleteKnowledgeBaseOutcome ConnectWisdomServiceClient::DeleteKnowledgeBase(const
 
 DeleteKnowledgeBaseOutcomeCallable ConnectWisdomServiceClient::DeleteKnowledgeBaseCallable(const DeleteKnowledgeBaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteKnowledgeBaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteKnowledgeBase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteKnowledgeBase, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::DeleteKnowledgeBaseAsync(const DeleteKnowledgeBaseRequest& request, const DeleteKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteKnowledgeBase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteKnowledgeBase, request, handler, context, m_executor.get());
 }
 
 GetAssistantOutcome ConnectWisdomServiceClient::GetAssistant(const GetAssistantRequest& request) const
@@ -481,18 +428,12 @@ GetAssistantOutcome ConnectWisdomServiceClient::GetAssistant(const GetAssistantR
 
 GetAssistantOutcomeCallable ConnectWisdomServiceClient::GetAssistantCallable(const GetAssistantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAssistantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssistant(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAssistant, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::GetAssistantAsync(const GetAssistantRequest& request, const GetAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAssistant(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAssistant, request, handler, context, m_executor.get());
 }
 
 GetAssistantAssociationOutcome ConnectWisdomServiceClient::GetAssistantAssociation(const GetAssistantAssociationRequest& request) const
@@ -519,18 +460,12 @@ GetAssistantAssociationOutcome ConnectWisdomServiceClient::GetAssistantAssociati
 
 GetAssistantAssociationOutcomeCallable ConnectWisdomServiceClient::GetAssistantAssociationCallable(const GetAssistantAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAssistantAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssistantAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAssistantAssociation, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::GetAssistantAssociationAsync(const GetAssistantAssociationRequest& request, const GetAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAssistantAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAssistantAssociation, request, handler, context, m_executor.get());
 }
 
 GetContentOutcome ConnectWisdomServiceClient::GetContent(const GetContentRequest& request) const
@@ -557,18 +492,12 @@ GetContentOutcome ConnectWisdomServiceClient::GetContent(const GetContentRequest
 
 GetContentOutcomeCallable ConnectWisdomServiceClient::GetContentCallable(const GetContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetContent, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::GetContentAsync(const GetContentRequest& request, const GetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetContent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetContent, request, handler, context, m_executor.get());
 }
 
 GetContentSummaryOutcome ConnectWisdomServiceClient::GetContentSummary(const GetContentSummaryRequest& request) const
@@ -596,18 +525,12 @@ GetContentSummaryOutcome ConnectWisdomServiceClient::GetContentSummary(const Get
 
 GetContentSummaryOutcomeCallable ConnectWisdomServiceClient::GetContentSummaryCallable(const GetContentSummaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetContentSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContentSummary(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetContentSummary, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::GetContentSummaryAsync(const GetContentSummaryRequest& request, const GetContentSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetContentSummary(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetContentSummary, request, handler, context, m_executor.get());
 }
 
 GetKnowledgeBaseOutcome ConnectWisdomServiceClient::GetKnowledgeBase(const GetKnowledgeBaseRequest& request) const
@@ -627,18 +550,12 @@ GetKnowledgeBaseOutcome ConnectWisdomServiceClient::GetKnowledgeBase(const GetKn
 
 GetKnowledgeBaseOutcomeCallable ConnectWisdomServiceClient::GetKnowledgeBaseCallable(const GetKnowledgeBaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetKnowledgeBaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetKnowledgeBase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetKnowledgeBase, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::GetKnowledgeBaseAsync(const GetKnowledgeBaseRequest& request, const GetKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetKnowledgeBase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetKnowledgeBase, request, handler, context, m_executor.get());
 }
 
 GetRecommendationsOutcome ConnectWisdomServiceClient::GetRecommendations(const GetRecommendationsRequest& request) const
@@ -666,18 +583,12 @@ GetRecommendationsOutcome ConnectWisdomServiceClient::GetRecommendations(const G
 
 GetRecommendationsOutcomeCallable ConnectWisdomServiceClient::GetRecommendationsCallable(const GetRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecommendations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRecommendations, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::GetRecommendationsAsync(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRecommendations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRecommendations, request, handler, context, m_executor.get());
 }
 
 GetSessionOutcome ConnectWisdomServiceClient::GetSession(const GetSessionRequest& request) const
@@ -704,18 +615,12 @@ GetSessionOutcome ConnectWisdomServiceClient::GetSession(const GetSessionRequest
 
 GetSessionOutcomeCallable ConnectWisdomServiceClient::GetSessionCallable(const GetSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSession, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSession, request, handler, context, m_executor.get());
 }
 
 ListAssistantAssociationsOutcome ConnectWisdomServiceClient::ListAssistantAssociations(const ListAssistantAssociationsRequest& request) const
@@ -736,18 +641,12 @@ ListAssistantAssociationsOutcome ConnectWisdomServiceClient::ListAssistantAssoci
 
 ListAssistantAssociationsOutcomeCallable ConnectWisdomServiceClient::ListAssistantAssociationsCallable(const ListAssistantAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssistantAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssistantAssociations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAssistantAssociations, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::ListAssistantAssociationsAsync(const ListAssistantAssociationsRequest& request, const ListAssistantAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAssistantAssociations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAssistantAssociations, request, handler, context, m_executor.get());
 }
 
 ListAssistantsOutcome ConnectWisdomServiceClient::ListAssistants(const ListAssistantsRequest& request) const
@@ -761,18 +660,12 @@ ListAssistantsOutcome ConnectWisdomServiceClient::ListAssistants(const ListAssis
 
 ListAssistantsOutcomeCallable ConnectWisdomServiceClient::ListAssistantsCallable(const ListAssistantsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssistantsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssistants(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAssistants, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::ListAssistantsAsync(const ListAssistantsRequest& request, const ListAssistantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAssistants(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAssistants, request, handler, context, m_executor.get());
 }
 
 ListContentsOutcome ConnectWisdomServiceClient::ListContents(const ListContentsRequest& request) const
@@ -793,18 +686,12 @@ ListContentsOutcome ConnectWisdomServiceClient::ListContents(const ListContentsR
 
 ListContentsOutcomeCallable ConnectWisdomServiceClient::ListContentsCallable(const ListContentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListContentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListContents, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::ListContentsAsync(const ListContentsRequest& request, const ListContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListContents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListContents, request, handler, context, m_executor.get());
 }
 
 ListKnowledgeBasesOutcome ConnectWisdomServiceClient::ListKnowledgeBases(const ListKnowledgeBasesRequest& request) const
@@ -818,18 +705,12 @@ ListKnowledgeBasesOutcome ConnectWisdomServiceClient::ListKnowledgeBases(const L
 
 ListKnowledgeBasesOutcomeCallable ConnectWisdomServiceClient::ListKnowledgeBasesCallable(const ListKnowledgeBasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListKnowledgeBasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListKnowledgeBases(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListKnowledgeBases, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::ListKnowledgeBasesAsync(const ListKnowledgeBasesRequest& request, const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListKnowledgeBases(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListKnowledgeBases, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ConnectWisdomServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -849,18 +730,12 @@ ListTagsForResourceOutcome ConnectWisdomServiceClient::ListTagsForResource(const
 
 ListTagsForResourceOutcomeCallable ConnectWisdomServiceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 NotifyRecommendationsReceivedOutcome ConnectWisdomServiceClient::NotifyRecommendationsReceived(const NotifyRecommendationsReceivedRequest& request) const
@@ -888,18 +763,12 @@ NotifyRecommendationsReceivedOutcome ConnectWisdomServiceClient::NotifyRecommend
 
 NotifyRecommendationsReceivedOutcomeCallable ConnectWisdomServiceClient::NotifyRecommendationsReceivedCallable(const NotifyRecommendationsReceivedRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< NotifyRecommendationsReceivedOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->NotifyRecommendationsReceived(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(NotifyRecommendationsReceived, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::NotifyRecommendationsReceivedAsync(const NotifyRecommendationsReceivedRequest& request, const NotifyRecommendationsReceivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, NotifyRecommendationsReceived(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(NotifyRecommendationsReceived, request, handler, context, m_executor.get());
 }
 
 QueryAssistantOutcome ConnectWisdomServiceClient::QueryAssistant(const QueryAssistantRequest& request) const
@@ -920,18 +789,12 @@ QueryAssistantOutcome ConnectWisdomServiceClient::QueryAssistant(const QueryAssi
 
 QueryAssistantOutcomeCallable ConnectWisdomServiceClient::QueryAssistantCallable(const QueryAssistantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryAssistantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QueryAssistant(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(QueryAssistant, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::QueryAssistantAsync(const QueryAssistantRequest& request, const QueryAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, QueryAssistant(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(QueryAssistant, request, handler, context, m_executor.get());
 }
 
 RemoveKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::RemoveKnowledgeBaseTemplateUri(const RemoveKnowledgeBaseTemplateUriRequest& request) const
@@ -952,18 +815,12 @@ RemoveKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::RemoveKnowledg
 
 RemoveKnowledgeBaseTemplateUriOutcomeCallable ConnectWisdomServiceClient::RemoveKnowledgeBaseTemplateUriCallable(const RemoveKnowledgeBaseTemplateUriRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveKnowledgeBaseTemplateUriOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveKnowledgeBaseTemplateUri(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveKnowledgeBaseTemplateUri, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::RemoveKnowledgeBaseTemplateUriAsync(const RemoveKnowledgeBaseTemplateUriRequest& request, const RemoveKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveKnowledgeBaseTemplateUri(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveKnowledgeBaseTemplateUri, request, handler, context, m_executor.get());
 }
 
 SearchContentOutcome ConnectWisdomServiceClient::SearchContent(const SearchContentRequest& request) const
@@ -984,18 +841,12 @@ SearchContentOutcome ConnectWisdomServiceClient::SearchContent(const SearchConte
 
 SearchContentOutcomeCallable ConnectWisdomServiceClient::SearchContentCallable(const SearchContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchContent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchContent, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::SearchContentAsync(const SearchContentRequest& request, const SearchContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchContent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchContent, request, handler, context, m_executor.get());
 }
 
 SearchSessionsOutcome ConnectWisdomServiceClient::SearchSessions(const SearchSessionsRequest& request) const
@@ -1016,18 +867,12 @@ SearchSessionsOutcome ConnectWisdomServiceClient::SearchSessions(const SearchSes
 
 SearchSessionsOutcomeCallable ConnectWisdomServiceClient::SearchSessionsCallable(const SearchSessionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchSessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchSessions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchSessions, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::SearchSessionsAsync(const SearchSessionsRequest& request, const SearchSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchSessions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchSessions, request, handler, context, m_executor.get());
 }
 
 StartContentUploadOutcome ConnectWisdomServiceClient::StartContentUpload(const StartContentUploadRequest& request) const
@@ -1048,18 +893,12 @@ StartContentUploadOutcome ConnectWisdomServiceClient::StartContentUpload(const S
 
 StartContentUploadOutcomeCallable ConnectWisdomServiceClient::StartContentUploadCallable(const StartContentUploadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartContentUploadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartContentUpload(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartContentUpload, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::StartContentUploadAsync(const StartContentUploadRequest& request, const StartContentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartContentUpload(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartContentUpload, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ConnectWisdomServiceClient::TagResource(const TagResourceRequest& request) const
@@ -1079,18 +918,12 @@ TagResourceOutcome ConnectWisdomServiceClient::TagResource(const TagResourceRequ
 
 TagResourceOutcomeCallable ConnectWisdomServiceClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ConnectWisdomServiceClient::UntagResource(const UntagResourceRequest& request) const
@@ -1115,18 +948,12 @@ UntagResourceOutcome ConnectWisdomServiceClient::UntagResource(const UntagResour
 
 UntagResourceOutcomeCallable ConnectWisdomServiceClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateContentOutcome ConnectWisdomServiceClient::UpdateContent(const UpdateContentRequest& request) const
@@ -1153,18 +980,12 @@ UpdateContentOutcome ConnectWisdomServiceClient::UpdateContent(const UpdateConte
 
 UpdateContentOutcomeCallable ConnectWisdomServiceClient::UpdateContentCallable(const UpdateContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateContent, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::UpdateContentAsync(const UpdateContentRequest& request, const UpdateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateContent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateContent, request, handler, context, m_executor.get());
 }
 
 UpdateKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::UpdateKnowledgeBaseTemplateUri(const UpdateKnowledgeBaseTemplateUriRequest& request) const
@@ -1185,17 +1006,11 @@ UpdateKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::UpdateKnowledg
 
 UpdateKnowledgeBaseTemplateUriOutcomeCallable ConnectWisdomServiceClient::UpdateKnowledgeBaseTemplateUriCallable(const UpdateKnowledgeBaseTemplateUriRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateKnowledgeBaseTemplateUriOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateKnowledgeBaseTemplateUri(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateKnowledgeBaseTemplateUri, request, m_executor.get());
 }
 
 void ConnectWisdomServiceClient::UpdateKnowledgeBaseTemplateUriAsync(const UpdateKnowledgeBaseTemplateUriRequest& request, const UpdateKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateKnowledgeBaseTemplateUri(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateKnowledgeBaseTemplateUri, request, handler, context, m_executor.get());
 }
 

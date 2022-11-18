@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -162,18 +163,12 @@ CreateHomeRegionControlOutcome MigrationHubConfigClient::CreateHomeRegionControl
 
 CreateHomeRegionControlOutcomeCallable MigrationHubConfigClient::CreateHomeRegionControlCallable(const CreateHomeRegionControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHomeRegionControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHomeRegionControl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateHomeRegionControl, request, m_executor.get());
 }
 
 void MigrationHubConfigClient::CreateHomeRegionControlAsync(const CreateHomeRegionControlRequest& request, const CreateHomeRegionControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateHomeRegionControl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateHomeRegionControl, request, handler, context, m_executor.get());
 }
 
 DescribeHomeRegionControlsOutcome MigrationHubConfigClient::DescribeHomeRegionControls(const DescribeHomeRegionControlsRequest& request) const
@@ -186,18 +181,12 @@ DescribeHomeRegionControlsOutcome MigrationHubConfigClient::DescribeHomeRegionCo
 
 DescribeHomeRegionControlsOutcomeCallable MigrationHubConfigClient::DescribeHomeRegionControlsCallable(const DescribeHomeRegionControlsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeHomeRegionControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHomeRegionControls(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeHomeRegionControls, request, m_executor.get());
 }
 
 void MigrationHubConfigClient::DescribeHomeRegionControlsAsync(const DescribeHomeRegionControlsRequest& request, const DescribeHomeRegionControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeHomeRegionControls(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeHomeRegionControls, request, handler, context, m_executor.get());
 }
 
 GetHomeRegionOutcome MigrationHubConfigClient::GetHomeRegion(const GetHomeRegionRequest& request) const
@@ -210,17 +199,11 @@ GetHomeRegionOutcome MigrationHubConfigClient::GetHomeRegion(const GetHomeRegion
 
 GetHomeRegionOutcomeCallable MigrationHubConfigClient::GetHomeRegionCallable(const GetHomeRegionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetHomeRegionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHomeRegion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetHomeRegion, request, m_executor.get());
 }
 
 void MigrationHubConfigClient::GetHomeRegionAsync(const GetHomeRegionRequest& request, const GetHomeRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetHomeRegion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetHomeRegion, request, handler, context, m_executor.get());
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -271,20 +272,13 @@ AssociateAlias2020_05_31Outcome CloudFrontClient::AssociateAlias2020_05_31(const
 
 AssociateAlias2020_05_31OutcomeCallable CloudFrontClient::AssociateAlias2020_05_31Callable(const AssociateAlias2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateAlias2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateAlias2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateAlias2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::AssociateAlias2020_05_31Async(const AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateAlias2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateAlias2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateCachePolicy2020_05_31Outcome CloudFrontClient::CreateCachePolicy2020_05_31(const CreateCachePolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCachePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -296,20 +290,13 @@ CreateCachePolicy2020_05_31Outcome CloudFrontClient::CreateCachePolicy2020_05_31
 
 CreateCachePolicy2020_05_31OutcomeCallable CloudFrontClient::CreateCachePolicy2020_05_31Callable(const CreateCachePolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCachePolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCachePolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCachePolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateCachePolicy2020_05_31Async(const CreateCachePolicy2020_05_31Request& request, const CreateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCachePolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCachePolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31(const CreateCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCloudFrontOriginAccessIdentity2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -321,20 +308,13 @@ CreateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::CreateCl
 
 CreateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31Callable(const CreateCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCloudFrontOriginAccessIdentity2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCloudFrontOriginAccessIdentity2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCloudFrontOriginAccessIdentity2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31Async(const CreateCloudFrontOriginAccessIdentity2020_05_31Request& request, const CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCloudFrontOriginAccessIdentity2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCloudFrontOriginAccessIdentity2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateDistribution2020_05_31Outcome CloudFrontClient::CreateDistribution2020_05_31(const CreateDistribution2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -346,20 +326,13 @@ CreateDistribution2020_05_31Outcome CloudFrontClient::CreateDistribution2020_05_
 
 CreateDistribution2020_05_31OutcomeCallable CloudFrontClient::CreateDistribution2020_05_31Callable(const CreateDistribution2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDistribution2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDistribution2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDistribution2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateDistribution2020_05_31Async(const CreateDistribution2020_05_31Request& request, const CreateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDistribution2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDistribution2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateDistributionWithTags2020_05_31(const CreateDistributionWithTags2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDistributionWithTags2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -374,20 +347,13 @@ CreateDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateDistribution
 
 CreateDistributionWithTags2020_05_31OutcomeCallable CloudFrontClient::CreateDistributionWithTags2020_05_31Callable(const CreateDistributionWithTags2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDistributionWithTags2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDistributionWithTags2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDistributionWithTags2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateDistributionWithTags2020_05_31Async(const CreateDistributionWithTags2020_05_31Request& request, const CreateDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDistributionWithTags2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDistributionWithTags2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::CreateFieldLevelEncryptionConfig2020_05_31(const CreateFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFieldLevelEncryptionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -399,20 +365,13 @@ CreateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::CreateFieldL
 
 CreateFieldLevelEncryptionConfig2020_05_31OutcomeCallable CloudFrontClient::CreateFieldLevelEncryptionConfig2020_05_31Callable(const CreateFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFieldLevelEncryptionConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFieldLevelEncryptionConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFieldLevelEncryptionConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateFieldLevelEncryptionConfig2020_05_31Async(const CreateFieldLevelEncryptionConfig2020_05_31Request& request, const CreateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFieldLevelEncryptionConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFieldLevelEncryptionConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31(const CreateFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFieldLevelEncryptionProfile2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -424,20 +383,13 @@ CreateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::CreateField
 
 CreateFieldLevelEncryptionProfile2020_05_31OutcomeCallable CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31Callable(const CreateFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFieldLevelEncryptionProfile2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFieldLevelEncryptionProfile2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFieldLevelEncryptionProfile2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31Async(const CreateFieldLevelEncryptionProfile2020_05_31Request& request, const CreateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFieldLevelEncryptionProfile2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFieldLevelEncryptionProfile2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateFunction2020_05_31Outcome CloudFrontClient::CreateFunction2020_05_31(const CreateFunction2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -449,20 +401,13 @@ CreateFunction2020_05_31Outcome CloudFrontClient::CreateFunction2020_05_31(const
 
 CreateFunction2020_05_31OutcomeCallable CloudFrontClient::CreateFunction2020_05_31Callable(const CreateFunction2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFunction2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFunction2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateFunction2020_05_31Async(const CreateFunction2020_05_31Request& request, const CreateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFunction2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFunction2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateInvalidation2020_05_31Outcome CloudFrontClient::CreateInvalidation2020_05_31(const CreateInvalidation2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInvalidation2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -481,20 +426,13 @@ CreateInvalidation2020_05_31Outcome CloudFrontClient::CreateInvalidation2020_05_
 
 CreateInvalidation2020_05_31OutcomeCallable CloudFrontClient::CreateInvalidation2020_05_31Callable(const CreateInvalidation2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateInvalidation2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInvalidation2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateInvalidation2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateInvalidation2020_05_31Async(const CreateInvalidation2020_05_31Request& request, const CreateInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateInvalidation2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateInvalidation2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateKeyGroup2020_05_31Outcome CloudFrontClient::CreateKeyGroup2020_05_31(const CreateKeyGroup2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -506,20 +444,13 @@ CreateKeyGroup2020_05_31Outcome CloudFrontClient::CreateKeyGroup2020_05_31(const
 
 CreateKeyGroup2020_05_31OutcomeCallable CloudFrontClient::CreateKeyGroup2020_05_31Callable(const CreateKeyGroup2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateKeyGroup2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateKeyGroup2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateKeyGroup2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateKeyGroup2020_05_31Async(const CreateKeyGroup2020_05_31Request& request, const CreateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateKeyGroup2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateKeyGroup2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateMonitoringSubscription2020_05_31Outcome CloudFrontClient::CreateMonitoringSubscription2020_05_31(const CreateMonitoringSubscription2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMonitoringSubscription2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -538,20 +469,13 @@ CreateMonitoringSubscription2020_05_31Outcome CloudFrontClient::CreateMonitoring
 
 CreateMonitoringSubscription2020_05_31OutcomeCallable CloudFrontClient::CreateMonitoringSubscription2020_05_31Callable(const CreateMonitoringSubscription2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMonitoringSubscription2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMonitoringSubscription2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMonitoringSubscription2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateMonitoringSubscription2020_05_31Async(const CreateMonitoringSubscription2020_05_31Request& request, const CreateMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMonitoringSubscription2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMonitoringSubscription2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateOriginAccessControl2020_05_31Outcome CloudFrontClient::CreateOriginAccessControl2020_05_31(const CreateOriginAccessControl2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOriginAccessControl2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -563,20 +487,13 @@ CreateOriginAccessControl2020_05_31Outcome CloudFrontClient::CreateOriginAccessC
 
 CreateOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::CreateOriginAccessControl2020_05_31Callable(const CreateOriginAccessControl2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateOriginAccessControl2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateOriginAccessControl2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateOriginAccessControl2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateOriginAccessControl2020_05_31Async(const CreateOriginAccessControl2020_05_31Request& request, const CreateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateOriginAccessControl2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateOriginAccessControl2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::CreateOriginRequestPolicy2020_05_31(const CreateOriginRequestPolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOriginRequestPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -588,20 +505,13 @@ CreateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::CreateOriginRequest
 
 CreateOriginRequestPolicy2020_05_31OutcomeCallable CloudFrontClient::CreateOriginRequestPolicy2020_05_31Callable(const CreateOriginRequestPolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateOriginRequestPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateOriginRequestPolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateOriginRequestPolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateOriginRequestPolicy2020_05_31Async(const CreateOriginRequestPolicy2020_05_31Request& request, const CreateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateOriginRequestPolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateOriginRequestPolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreatePublicKey2020_05_31Outcome CloudFrontClient::CreatePublicKey2020_05_31(const CreatePublicKey2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePublicKey2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -613,20 +523,13 @@ CreatePublicKey2020_05_31Outcome CloudFrontClient::CreatePublicKey2020_05_31(con
 
 CreatePublicKey2020_05_31OutcomeCallable CloudFrontClient::CreatePublicKey2020_05_31Callable(const CreatePublicKey2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePublicKey2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePublicKey2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePublicKey2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreatePublicKey2020_05_31Async(const CreatePublicKey2020_05_31Request& request, const CreatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePublicKey2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePublicKey2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::CreateRealtimeLogConfig2020_05_31(const CreateRealtimeLogConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -638,20 +541,13 @@ CreateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::CreateRealtimeLogConf
 
 CreateRealtimeLogConfig2020_05_31OutcomeCallable CloudFrontClient::CreateRealtimeLogConfig2020_05_31Callable(const CreateRealtimeLogConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRealtimeLogConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRealtimeLogConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRealtimeLogConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateRealtimeLogConfig2020_05_31Async(const CreateRealtimeLogConfig2020_05_31Request& request, const CreateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRealtimeLogConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRealtimeLogConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::CreateResponseHeadersPolicy2020_05_31(const CreateResponseHeadersPolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateResponseHeadersPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -663,20 +559,13 @@ CreateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::CreateResponseHea
 
 CreateResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::CreateResponseHeadersPolicy2020_05_31Callable(const CreateResponseHeadersPolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResponseHeadersPolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateResponseHeadersPolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateResponseHeadersPolicy2020_05_31Async(const CreateResponseHeadersPolicy2020_05_31Request& request, const CreateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateResponseHeadersPolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateResponseHeadersPolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateStreamingDistribution2020_05_31Outcome CloudFrontClient::CreateStreamingDistribution2020_05_31(const CreateStreamingDistribution2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStreamingDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -688,20 +577,13 @@ CreateStreamingDistribution2020_05_31Outcome CloudFrontClient::CreateStreamingDi
 
 CreateStreamingDistribution2020_05_31OutcomeCallable CloudFrontClient::CreateStreamingDistribution2020_05_31Callable(const CreateStreamingDistribution2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingDistribution2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStreamingDistribution2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateStreamingDistribution2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateStreamingDistribution2020_05_31Async(const CreateStreamingDistribution2020_05_31Request& request, const CreateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateStreamingDistribution2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateStreamingDistribution2020_05_31, request, handler, context, m_executor.get());
 }
-
 CreateStreamingDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateStreamingDistributionWithTags2020_05_31(const CreateStreamingDistributionWithTags2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStreamingDistributionWithTags2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -716,20 +598,13 @@ CreateStreamingDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateStr
 
 CreateStreamingDistributionWithTags2020_05_31OutcomeCallable CloudFrontClient::CreateStreamingDistributionWithTags2020_05_31Callable(const CreateStreamingDistributionWithTags2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingDistributionWithTags2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStreamingDistributionWithTags2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateStreamingDistributionWithTags2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::CreateStreamingDistributionWithTags2020_05_31Async(const CreateStreamingDistributionWithTags2020_05_31Request& request, const CreateStreamingDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateStreamingDistributionWithTags2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateStreamingDistributionWithTags2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteCachePolicy2020_05_31Outcome CloudFrontClient::DeleteCachePolicy2020_05_31(const DeleteCachePolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCachePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -747,20 +622,13 @@ DeleteCachePolicy2020_05_31Outcome CloudFrontClient::DeleteCachePolicy2020_05_31
 
 DeleteCachePolicy2020_05_31OutcomeCallable CloudFrontClient::DeleteCachePolicy2020_05_31Callable(const DeleteCachePolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCachePolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCachePolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCachePolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteCachePolicy2020_05_31Async(const DeleteCachePolicy2020_05_31Request& request, const DeleteCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCachePolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCachePolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2020_05_31(const DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCloudFrontOriginAccessIdentity2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -778,20 +646,13 @@ DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::DeleteCl
 
 DeleteCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2020_05_31Callable(const DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCloudFrontOriginAccessIdentity2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCloudFrontOriginAccessIdentity2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2020_05_31Async(const DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request, const DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCloudFrontOriginAccessIdentity2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCloudFrontOriginAccessIdentity2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteDistribution2020_05_31Outcome CloudFrontClient::DeleteDistribution2020_05_31(const DeleteDistribution2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -809,20 +670,13 @@ DeleteDistribution2020_05_31Outcome CloudFrontClient::DeleteDistribution2020_05_
 
 DeleteDistribution2020_05_31OutcomeCallable CloudFrontClient::DeleteDistribution2020_05_31Callable(const DeleteDistribution2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDistribution2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDistribution2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDistribution2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteDistribution2020_05_31Async(const DeleteDistribution2020_05_31Request& request, const DeleteDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDistribution2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDistribution2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::DeleteFieldLevelEncryptionConfig2020_05_31(const DeleteFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFieldLevelEncryptionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -840,20 +694,13 @@ DeleteFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::DeleteFieldL
 
 DeleteFieldLevelEncryptionConfig2020_05_31OutcomeCallable CloudFrontClient::DeleteFieldLevelEncryptionConfig2020_05_31Callable(const DeleteFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFieldLevelEncryptionConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFieldLevelEncryptionConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFieldLevelEncryptionConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteFieldLevelEncryptionConfig2020_05_31Async(const DeleteFieldLevelEncryptionConfig2020_05_31Request& request, const DeleteFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFieldLevelEncryptionConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFieldLevelEncryptionConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31(const DeleteFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFieldLevelEncryptionProfile2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -871,20 +718,13 @@ DeleteFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::DeleteField
 
 DeleteFieldLevelEncryptionProfile2020_05_31OutcomeCallable CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31Callable(const DeleteFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFieldLevelEncryptionProfile2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFieldLevelEncryptionProfile2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFieldLevelEncryptionProfile2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31Async(const DeleteFieldLevelEncryptionProfile2020_05_31Request& request, const DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFieldLevelEncryptionProfile2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFieldLevelEncryptionProfile2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteFunction2020_05_31Outcome CloudFrontClient::DeleteFunction2020_05_31(const DeleteFunction2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -907,20 +747,13 @@ DeleteFunction2020_05_31Outcome CloudFrontClient::DeleteFunction2020_05_31(const
 
 DeleteFunction2020_05_31OutcomeCallable CloudFrontClient::DeleteFunction2020_05_31Callable(const DeleteFunction2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFunction2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFunction2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteFunction2020_05_31Async(const DeleteFunction2020_05_31Request& request, const DeleteFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFunction2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFunction2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const DeleteKeyGroup2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -938,20 +771,13 @@ DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const
 
 DeleteKeyGroup2020_05_31OutcomeCallable CloudFrontClient::DeleteKeyGroup2020_05_31Callable(const DeleteKeyGroup2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteKeyGroup2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteKeyGroup2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteKeyGroup2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteKeyGroup2020_05_31Async(const DeleteKeyGroup2020_05_31Request& request, const DeleteKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteKeyGroup2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteKeyGroup2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoringSubscription2020_05_31(const DeleteMonitoringSubscription2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMonitoringSubscription2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -970,20 +796,13 @@ DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoring
 
 DeleteMonitoringSubscription2020_05_31OutcomeCallable CloudFrontClient::DeleteMonitoringSubscription2020_05_31Callable(const DeleteMonitoringSubscription2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMonitoringSubscription2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMonitoringSubscription2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMonitoringSubscription2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteMonitoringSubscription2020_05_31Async(const DeleteMonitoringSubscription2020_05_31Request& request, const DeleteMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMonitoringSubscription2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMonitoringSubscription2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteOriginAccessControl2020_05_31Outcome CloudFrontClient::DeleteOriginAccessControl2020_05_31(const DeleteOriginAccessControl2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOriginAccessControl2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1001,20 +820,13 @@ DeleteOriginAccessControl2020_05_31Outcome CloudFrontClient::DeleteOriginAccessC
 
 DeleteOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::DeleteOriginAccessControl2020_05_31Callable(const DeleteOriginAccessControl2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteOriginAccessControl2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOriginAccessControl2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteOriginAccessControl2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteOriginAccessControl2020_05_31Async(const DeleteOriginAccessControl2020_05_31Request& request, const DeleteOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteOriginAccessControl2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteOriginAccessControl2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteOriginRequestPolicy2020_05_31Outcome CloudFrontClient::DeleteOriginRequestPolicy2020_05_31(const DeleteOriginRequestPolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOriginRequestPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1032,20 +844,13 @@ DeleteOriginRequestPolicy2020_05_31Outcome CloudFrontClient::DeleteOriginRequest
 
 DeleteOriginRequestPolicy2020_05_31OutcomeCallable CloudFrontClient::DeleteOriginRequestPolicy2020_05_31Callable(const DeleteOriginRequestPolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteOriginRequestPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOriginRequestPolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteOriginRequestPolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteOriginRequestPolicy2020_05_31Async(const DeleteOriginRequestPolicy2020_05_31Request& request, const DeleteOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteOriginRequestPolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteOriginRequestPolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeletePublicKey2020_05_31Outcome CloudFrontClient::DeletePublicKey2020_05_31(const DeletePublicKey2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePublicKey2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1063,20 +868,13 @@ DeletePublicKey2020_05_31Outcome CloudFrontClient::DeletePublicKey2020_05_31(con
 
 DeletePublicKey2020_05_31OutcomeCallable CloudFrontClient::DeletePublicKey2020_05_31Callable(const DeletePublicKey2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePublicKey2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePublicKey2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePublicKey2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeletePublicKey2020_05_31Async(const DeletePublicKey2020_05_31Request& request, const DeletePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePublicKey2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePublicKey2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteRealtimeLogConfig2020_05_31Outcome CloudFrontClient::DeleteRealtimeLogConfig2020_05_31(const DeleteRealtimeLogConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1088,20 +886,13 @@ DeleteRealtimeLogConfig2020_05_31Outcome CloudFrontClient::DeleteRealtimeLogConf
 
 DeleteRealtimeLogConfig2020_05_31OutcomeCallable CloudFrontClient::DeleteRealtimeLogConfig2020_05_31Callable(const DeleteRealtimeLogConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRealtimeLogConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRealtimeLogConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRealtimeLogConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteRealtimeLogConfig2020_05_31Async(const DeleteRealtimeLogConfig2020_05_31Request& request, const DeleteRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRealtimeLogConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRealtimeLogConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31(const DeleteResponseHeadersPolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResponseHeadersPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1119,20 +910,13 @@ DeleteResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::DeleteResponseHea
 
 DeleteResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31Callable(const DeleteResponseHeadersPolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResponseHeadersPolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteResponseHeadersPolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31Async(const DeleteResponseHeadersPolicy2020_05_31Request& request, const DeleteResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResponseHeadersPolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteResponseHeadersPolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 DeleteStreamingDistribution2020_05_31Outcome CloudFrontClient::DeleteStreamingDistribution2020_05_31(const DeleteStreamingDistribution2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStreamingDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1150,20 +934,13 @@ DeleteStreamingDistribution2020_05_31Outcome CloudFrontClient::DeleteStreamingDi
 
 DeleteStreamingDistribution2020_05_31OutcomeCallable CloudFrontClient::DeleteStreamingDistribution2020_05_31Callable(const DeleteStreamingDistribution2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStreamingDistribution2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStreamingDistribution2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteStreamingDistribution2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DeleteStreamingDistribution2020_05_31Async(const DeleteStreamingDistribution2020_05_31Request& request, const DeleteStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteStreamingDistribution2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteStreamingDistribution2020_05_31, request, handler, context, m_executor.get());
 }
-
 DescribeFunction2020_05_31Outcome CloudFrontClient::DescribeFunction2020_05_31(const DescribeFunction2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1182,20 +959,13 @@ DescribeFunction2020_05_31Outcome CloudFrontClient::DescribeFunction2020_05_31(c
 
 DescribeFunction2020_05_31OutcomeCallable CloudFrontClient::DescribeFunction2020_05_31Callable(const DescribeFunction2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFunction2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFunction2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::DescribeFunction2020_05_31Async(const DescribeFunction2020_05_31Request& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFunction2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFunction2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetCachePolicy2020_05_31Outcome CloudFrontClient::GetCachePolicy2020_05_31(const GetCachePolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCachePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1213,20 +983,13 @@ GetCachePolicy2020_05_31Outcome CloudFrontClient::GetCachePolicy2020_05_31(const
 
 GetCachePolicy2020_05_31OutcomeCallable CloudFrontClient::GetCachePolicy2020_05_31Callable(const GetCachePolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCachePolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCachePolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCachePolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetCachePolicy2020_05_31Async(const GetCachePolicy2020_05_31Request& request, const GetCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCachePolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCachePolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetCachePolicyConfig2020_05_31Outcome CloudFrontClient::GetCachePolicyConfig2020_05_31(const GetCachePolicyConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCachePolicyConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1245,20 +1008,13 @@ GetCachePolicyConfig2020_05_31Outcome CloudFrontClient::GetCachePolicyConfig2020
 
 GetCachePolicyConfig2020_05_31OutcomeCallable CloudFrontClient::GetCachePolicyConfig2020_05_31Callable(const GetCachePolicyConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCachePolicyConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCachePolicyConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCachePolicyConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetCachePolicyConfig2020_05_31Async(const GetCachePolicyConfig2020_05_31Request& request, const GetCachePolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCachePolicyConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCachePolicyConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentity2020_05_31(const GetCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCloudFrontOriginAccessIdentity2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1276,20 +1032,13 @@ GetCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::GetCloudFro
 
 GetCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable CloudFrontClient::GetCloudFrontOriginAccessIdentity2020_05_31Callable(const GetCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCloudFrontOriginAccessIdentity2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCloudFrontOriginAccessIdentity2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCloudFrontOriginAccessIdentity2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetCloudFrontOriginAccessIdentity2020_05_31Async(const GetCloudFrontOriginAccessIdentity2020_05_31Request& request, const GetCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCloudFrontOriginAccessIdentity2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCloudFrontOriginAccessIdentity2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2020_05_31(const GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCloudFrontOriginAccessIdentityConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1308,20 +1057,13 @@ GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome CloudFrontClient::GetCl
 
 GetCloudFrontOriginAccessIdentityConfig2020_05_31OutcomeCallable CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2020_05_31Callable(const GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCloudFrontOriginAccessIdentityConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCloudFrontOriginAccessIdentityConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2020_05_31Async(const GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request, const GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCloudFrontOriginAccessIdentityConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCloudFrontOriginAccessIdentityConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetDistribution2020_05_31Outcome CloudFrontClient::GetDistribution2020_05_31(const GetDistribution2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1339,20 +1081,13 @@ GetDistribution2020_05_31Outcome CloudFrontClient::GetDistribution2020_05_31(con
 
 GetDistribution2020_05_31OutcomeCallable CloudFrontClient::GetDistribution2020_05_31Callable(const GetDistribution2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDistribution2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDistribution2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDistribution2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetDistribution2020_05_31Async(const GetDistribution2020_05_31Request& request, const GetDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDistribution2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDistribution2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetDistributionConfig2020_05_31Outcome CloudFrontClient::GetDistributionConfig2020_05_31(const GetDistributionConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDistributionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1371,20 +1106,13 @@ GetDistributionConfig2020_05_31Outcome CloudFrontClient::GetDistributionConfig20
 
 GetDistributionConfig2020_05_31OutcomeCallable CloudFrontClient::GetDistributionConfig2020_05_31Callable(const GetDistributionConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDistributionConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDistributionConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDistributionConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetDistributionConfig2020_05_31Async(const GetDistributionConfig2020_05_31Request& request, const GetDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDistributionConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDistributionConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetFieldLevelEncryption2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryption2020_05_31(const GetFieldLevelEncryption2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFieldLevelEncryption2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1402,20 +1130,13 @@ GetFieldLevelEncryption2020_05_31Outcome CloudFrontClient::GetFieldLevelEncrypti
 
 GetFieldLevelEncryption2020_05_31OutcomeCallable CloudFrontClient::GetFieldLevelEncryption2020_05_31Callable(const GetFieldLevelEncryption2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFieldLevelEncryption2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFieldLevelEncryption2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFieldLevelEncryption2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetFieldLevelEncryption2020_05_31Async(const GetFieldLevelEncryption2020_05_31Request& request, const GetFieldLevelEncryption2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFieldLevelEncryption2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFieldLevelEncryption2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionConfig2020_05_31(const GetFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFieldLevelEncryptionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1434,20 +1155,13 @@ GetFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEn
 
 GetFieldLevelEncryptionConfig2020_05_31OutcomeCallable CloudFrontClient::GetFieldLevelEncryptionConfig2020_05_31Callable(const GetFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFieldLevelEncryptionConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFieldLevelEncryptionConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFieldLevelEncryptionConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetFieldLevelEncryptionConfig2020_05_31Async(const GetFieldLevelEncryptionConfig2020_05_31Request& request, const GetFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFieldLevelEncryptionConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFieldLevelEncryptionConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionProfile2020_05_31(const GetFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFieldLevelEncryptionProfile2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1465,20 +1179,13 @@ GetFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::GetFieldLevelE
 
 GetFieldLevelEncryptionProfile2020_05_31OutcomeCallable CloudFrontClient::GetFieldLevelEncryptionProfile2020_05_31Callable(const GetFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFieldLevelEncryptionProfile2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFieldLevelEncryptionProfile2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFieldLevelEncryptionProfile2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetFieldLevelEncryptionProfile2020_05_31Async(const GetFieldLevelEncryptionProfile2020_05_31Request& request, const GetFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFieldLevelEncryptionProfile2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFieldLevelEncryptionProfile2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetFieldLevelEncryptionProfileConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31(const GetFieldLevelEncryptionProfileConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFieldLevelEncryptionProfileConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1497,20 +1204,13 @@ GetFieldLevelEncryptionProfileConfig2020_05_31Outcome CloudFrontClient::GetField
 
 GetFieldLevelEncryptionProfileConfig2020_05_31OutcomeCallable CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31Callable(const GetFieldLevelEncryptionProfileConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFieldLevelEncryptionProfileConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFieldLevelEncryptionProfileConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFieldLevelEncryptionProfileConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31Async(const GetFieldLevelEncryptionProfileConfig2020_05_31Request& request, const GetFieldLevelEncryptionProfileConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFieldLevelEncryptionProfileConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFieldLevelEncryptionProfileConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetFunction2020_05_31Outcome CloudFrontClient::GetFunction2020_05_31(const GetFunction2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1528,20 +1228,13 @@ GetFunction2020_05_31Outcome CloudFrontClient::GetFunction2020_05_31(const GetFu
 
 GetFunction2020_05_31OutcomeCallable CloudFrontClient::GetFunction2020_05_31Callable(const GetFunction2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunction2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFunction2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetFunction2020_05_31Async(const GetFunction2020_05_31Request& request, const GetFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFunction2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFunction2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetInvalidation2020_05_31Outcome CloudFrontClient::GetInvalidation2020_05_31(const GetInvalidation2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInvalidation2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1566,20 +1259,13 @@ GetInvalidation2020_05_31Outcome CloudFrontClient::GetInvalidation2020_05_31(con
 
 GetInvalidation2020_05_31OutcomeCallable CloudFrontClient::GetInvalidation2020_05_31Callable(const GetInvalidation2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetInvalidation2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInvalidation2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetInvalidation2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetInvalidation2020_05_31Async(const GetInvalidation2020_05_31Request& request, const GetInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetInvalidation2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetInvalidation2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetKeyGroup2020_05_31Outcome CloudFrontClient::GetKeyGroup2020_05_31(const GetKeyGroup2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1597,20 +1283,13 @@ GetKeyGroup2020_05_31Outcome CloudFrontClient::GetKeyGroup2020_05_31(const GetKe
 
 GetKeyGroup2020_05_31OutcomeCallable CloudFrontClient::GetKeyGroup2020_05_31Callable(const GetKeyGroup2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetKeyGroup2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetKeyGroup2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetKeyGroup2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetKeyGroup2020_05_31Async(const GetKeyGroup2020_05_31Request& request, const GetKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetKeyGroup2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetKeyGroup2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetKeyGroupConfig2020_05_31Outcome CloudFrontClient::GetKeyGroupConfig2020_05_31(const GetKeyGroupConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetKeyGroupConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1629,20 +1308,13 @@ GetKeyGroupConfig2020_05_31Outcome CloudFrontClient::GetKeyGroupConfig2020_05_31
 
 GetKeyGroupConfig2020_05_31OutcomeCallable CloudFrontClient::GetKeyGroupConfig2020_05_31Callable(const GetKeyGroupConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetKeyGroupConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetKeyGroupConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetKeyGroupConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetKeyGroupConfig2020_05_31Async(const GetKeyGroupConfig2020_05_31Request& request, const GetKeyGroupConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetKeyGroupConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetKeyGroupConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetMonitoringSubscription2020_05_31Outcome CloudFrontClient::GetMonitoringSubscription2020_05_31(const GetMonitoringSubscription2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMonitoringSubscription2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1661,20 +1333,13 @@ GetMonitoringSubscription2020_05_31Outcome CloudFrontClient::GetMonitoringSubscr
 
 GetMonitoringSubscription2020_05_31OutcomeCallable CloudFrontClient::GetMonitoringSubscription2020_05_31Callable(const GetMonitoringSubscription2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMonitoringSubscription2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMonitoringSubscription2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMonitoringSubscription2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetMonitoringSubscription2020_05_31Async(const GetMonitoringSubscription2020_05_31Request& request, const GetMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMonitoringSubscription2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMonitoringSubscription2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetOriginAccessControl2020_05_31Outcome CloudFrontClient::GetOriginAccessControl2020_05_31(const GetOriginAccessControl2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOriginAccessControl2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1692,20 +1357,13 @@ GetOriginAccessControl2020_05_31Outcome CloudFrontClient::GetOriginAccessControl
 
 GetOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::GetOriginAccessControl2020_05_31Callable(const GetOriginAccessControl2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetOriginAccessControl2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOriginAccessControl2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetOriginAccessControl2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetOriginAccessControl2020_05_31Async(const GetOriginAccessControl2020_05_31Request& request, const GetOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetOriginAccessControl2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetOriginAccessControl2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetOriginAccessControlConfig2020_05_31Outcome CloudFrontClient::GetOriginAccessControlConfig2020_05_31(const GetOriginAccessControlConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOriginAccessControlConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1724,20 +1382,13 @@ GetOriginAccessControlConfig2020_05_31Outcome CloudFrontClient::GetOriginAccessC
 
 GetOriginAccessControlConfig2020_05_31OutcomeCallable CloudFrontClient::GetOriginAccessControlConfig2020_05_31Callable(const GetOriginAccessControlConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetOriginAccessControlConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOriginAccessControlConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetOriginAccessControlConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetOriginAccessControlConfig2020_05_31Async(const GetOriginAccessControlConfig2020_05_31Request& request, const GetOriginAccessControlConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetOriginAccessControlConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetOriginAccessControlConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetOriginRequestPolicy2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicy2020_05_31(const GetOriginRequestPolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOriginRequestPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1755,20 +1406,13 @@ GetOriginRequestPolicy2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicy
 
 GetOriginRequestPolicy2020_05_31OutcomeCallable CloudFrontClient::GetOriginRequestPolicy2020_05_31Callable(const GetOriginRequestPolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetOriginRequestPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOriginRequestPolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetOriginRequestPolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetOriginRequestPolicy2020_05_31Async(const GetOriginRequestPolicy2020_05_31Request& request, const GetOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetOriginRequestPolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetOriginRequestPolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetOriginRequestPolicyConfig2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicyConfig2020_05_31(const GetOriginRequestPolicyConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOriginRequestPolicyConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1787,20 +1431,13 @@ GetOriginRequestPolicyConfig2020_05_31Outcome CloudFrontClient::GetOriginRequest
 
 GetOriginRequestPolicyConfig2020_05_31OutcomeCallable CloudFrontClient::GetOriginRequestPolicyConfig2020_05_31Callable(const GetOriginRequestPolicyConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetOriginRequestPolicyConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOriginRequestPolicyConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetOriginRequestPolicyConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetOriginRequestPolicyConfig2020_05_31Async(const GetOriginRequestPolicyConfig2020_05_31Request& request, const GetOriginRequestPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetOriginRequestPolicyConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetOriginRequestPolicyConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetPublicKey2020_05_31Outcome CloudFrontClient::GetPublicKey2020_05_31(const GetPublicKey2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPublicKey2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1818,20 +1455,13 @@ GetPublicKey2020_05_31Outcome CloudFrontClient::GetPublicKey2020_05_31(const Get
 
 GetPublicKey2020_05_31OutcomeCallable CloudFrontClient::GetPublicKey2020_05_31Callable(const GetPublicKey2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPublicKey2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPublicKey2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPublicKey2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetPublicKey2020_05_31Async(const GetPublicKey2020_05_31Request& request, const GetPublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPublicKey2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPublicKey2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetPublicKeyConfig2020_05_31Outcome CloudFrontClient::GetPublicKeyConfig2020_05_31(const GetPublicKeyConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPublicKeyConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1850,20 +1480,13 @@ GetPublicKeyConfig2020_05_31Outcome CloudFrontClient::GetPublicKeyConfig2020_05_
 
 GetPublicKeyConfig2020_05_31OutcomeCallable CloudFrontClient::GetPublicKeyConfig2020_05_31Callable(const GetPublicKeyConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPublicKeyConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPublicKeyConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPublicKeyConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetPublicKeyConfig2020_05_31Async(const GetPublicKeyConfig2020_05_31Request& request, const GetPublicKeyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPublicKeyConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPublicKeyConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetRealtimeLogConfig2020_05_31Outcome CloudFrontClient::GetRealtimeLogConfig2020_05_31(const GetRealtimeLogConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1875,20 +1498,13 @@ GetRealtimeLogConfig2020_05_31Outcome CloudFrontClient::GetRealtimeLogConfig2020
 
 GetRealtimeLogConfig2020_05_31OutcomeCallable CloudFrontClient::GetRealtimeLogConfig2020_05_31Callable(const GetRealtimeLogConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRealtimeLogConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRealtimeLogConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRealtimeLogConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetRealtimeLogConfig2020_05_31Async(const GetRealtimeLogConfig2020_05_31Request& request, const GetRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRealtimeLogConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRealtimeLogConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicy2020_05_31(const GetResponseHeadersPolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResponseHeadersPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1906,20 +1522,13 @@ GetResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::GetResponseHeadersPo
 
 GetResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::GetResponseHeadersPolicy2020_05_31Callable(const GetResponseHeadersPolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResponseHeadersPolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResponseHeadersPolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetResponseHeadersPolicy2020_05_31Async(const GetResponseHeadersPolicy2020_05_31Request& request, const GetResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResponseHeadersPolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResponseHeadersPolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetResponseHeadersPolicyConfig2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31(const GetResponseHeadersPolicyConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResponseHeadersPolicyConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1938,20 +1547,13 @@ GetResponseHeadersPolicyConfig2020_05_31Outcome CloudFrontClient::GetResponseHea
 
 GetResponseHeadersPolicyConfig2020_05_31OutcomeCallable CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31Callable(const GetResponseHeadersPolicyConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResponseHeadersPolicyConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResponseHeadersPolicyConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResponseHeadersPolicyConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31Async(const GetResponseHeadersPolicyConfig2020_05_31Request& request, const GetResponseHeadersPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResponseHeadersPolicyConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResponseHeadersPolicyConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetStreamingDistribution2020_05_31Outcome CloudFrontClient::GetStreamingDistribution2020_05_31(const GetStreamingDistribution2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1969,20 +1571,13 @@ GetStreamingDistribution2020_05_31Outcome CloudFrontClient::GetStreamingDistribu
 
 GetStreamingDistribution2020_05_31OutcomeCallable CloudFrontClient::GetStreamingDistribution2020_05_31Callable(const GetStreamingDistribution2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStreamingDistribution2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamingDistribution2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetStreamingDistribution2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetStreamingDistribution2020_05_31Async(const GetStreamingDistribution2020_05_31Request& request, const GetStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetStreamingDistribution2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetStreamingDistribution2020_05_31, request, handler, context, m_executor.get());
 }
-
 GetStreamingDistributionConfig2020_05_31Outcome CloudFrontClient::GetStreamingDistributionConfig2020_05_31(const GetStreamingDistributionConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingDistributionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2001,20 +1596,13 @@ GetStreamingDistributionConfig2020_05_31Outcome CloudFrontClient::GetStreamingDi
 
 GetStreamingDistributionConfig2020_05_31OutcomeCallable CloudFrontClient::GetStreamingDistributionConfig2020_05_31Callable(const GetStreamingDistributionConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStreamingDistributionConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamingDistributionConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetStreamingDistributionConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::GetStreamingDistributionConfig2020_05_31Async(const GetStreamingDistributionConfig2020_05_31Request& request, const GetStreamingDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetStreamingDistributionConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetStreamingDistributionConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListCachePolicies2020_05_31Outcome CloudFrontClient::ListCachePolicies2020_05_31(const ListCachePolicies2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCachePolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2026,20 +1614,13 @@ ListCachePolicies2020_05_31Outcome CloudFrontClient::ListCachePolicies2020_05_31
 
 ListCachePolicies2020_05_31OutcomeCallable CloudFrontClient::ListCachePolicies2020_05_31Callable(const ListCachePolicies2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCachePolicies2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCachePolicies2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCachePolicies2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListCachePolicies2020_05_31Async(const ListCachePolicies2020_05_31Request& request, const ListCachePolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCachePolicies2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCachePolicies2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListCloudFrontOriginAccessIdentities2020_05_31Outcome CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31(const ListCloudFrontOriginAccessIdentities2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCloudFrontOriginAccessIdentities2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2051,20 +1632,13 @@ ListCloudFrontOriginAccessIdentities2020_05_31Outcome CloudFrontClient::ListClou
 
 ListCloudFrontOriginAccessIdentities2020_05_31OutcomeCallable CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31Callable(const ListCloudFrontOriginAccessIdentities2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCloudFrontOriginAccessIdentities2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCloudFrontOriginAccessIdentities2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCloudFrontOriginAccessIdentities2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31Async(const ListCloudFrontOriginAccessIdentities2020_05_31Request& request, const ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCloudFrontOriginAccessIdentities2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCloudFrontOriginAccessIdentities2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListConflictingAliases2020_05_31Outcome CloudFrontClient::ListConflictingAliases2020_05_31(const ListConflictingAliases2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConflictingAliases2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2086,20 +1660,13 @@ ListConflictingAliases2020_05_31Outcome CloudFrontClient::ListConflictingAliases
 
 ListConflictingAliases2020_05_31OutcomeCallable CloudFrontClient::ListConflictingAliases2020_05_31Callable(const ListConflictingAliases2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConflictingAliases2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConflictingAliases2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListConflictingAliases2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListConflictingAliases2020_05_31Async(const ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListConflictingAliases2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListConflictingAliases2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListDistributions2020_05_31Outcome CloudFrontClient::ListDistributions2020_05_31(const ListDistributions2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributions2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2111,20 +1678,13 @@ ListDistributions2020_05_31Outcome CloudFrontClient::ListDistributions2020_05_31
 
 ListDistributions2020_05_31OutcomeCallable CloudFrontClient::ListDistributions2020_05_31Callable(const ListDistributions2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDistributions2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributions2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDistributions2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListDistributions2020_05_31Async(const ListDistributions2020_05_31Request& request, const ListDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDistributions2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDistributions2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListDistributionsByCachePolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByCachePolicyId2020_05_31(const ListDistributionsByCachePolicyId2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByCachePolicyId2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2142,20 +1702,13 @@ ListDistributionsByCachePolicyId2020_05_31Outcome CloudFrontClient::ListDistribu
 
 ListDistributionsByCachePolicyId2020_05_31OutcomeCallable CloudFrontClient::ListDistributionsByCachePolicyId2020_05_31Callable(const ListDistributionsByCachePolicyId2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDistributionsByCachePolicyId2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributionsByCachePolicyId2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDistributionsByCachePolicyId2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListDistributionsByCachePolicyId2020_05_31Async(const ListDistributionsByCachePolicyId2020_05_31Request& request, const ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDistributionsByCachePolicyId2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDistributionsByCachePolicyId2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListDistributionsByKeyGroup2020_05_31Outcome CloudFrontClient::ListDistributionsByKeyGroup2020_05_31(const ListDistributionsByKeyGroup2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2173,20 +1726,13 @@ ListDistributionsByKeyGroup2020_05_31Outcome CloudFrontClient::ListDistributions
 
 ListDistributionsByKeyGroup2020_05_31OutcomeCallable CloudFrontClient::ListDistributionsByKeyGroup2020_05_31Callable(const ListDistributionsByKeyGroup2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDistributionsByKeyGroup2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributionsByKeyGroup2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDistributionsByKeyGroup2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListDistributionsByKeyGroup2020_05_31Async(const ListDistributionsByKeyGroup2020_05_31Request& request, const ListDistributionsByKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDistributionsByKeyGroup2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDistributionsByKeyGroup2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListDistributionsByOriginRequestPolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31(const ListDistributionsByOriginRequestPolicyId2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByOriginRequestPolicyId2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2204,20 +1750,13 @@ ListDistributionsByOriginRequestPolicyId2020_05_31Outcome CloudFrontClient::List
 
 ListDistributionsByOriginRequestPolicyId2020_05_31OutcomeCallable CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31Callable(const ListDistributionsByOriginRequestPolicyId2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDistributionsByOriginRequestPolicyId2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributionsByOriginRequestPolicyId2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDistributionsByOriginRequestPolicyId2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31Async(const ListDistributionsByOriginRequestPolicyId2020_05_31Request& request, const ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDistributionsByOriginRequestPolicyId2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDistributionsByOriginRequestPolicyId2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListDistributionsByRealtimeLogConfig2020_05_31Outcome CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31(const ListDistributionsByRealtimeLogConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2229,20 +1768,13 @@ ListDistributionsByRealtimeLogConfig2020_05_31Outcome CloudFrontClient::ListDist
 
 ListDistributionsByRealtimeLogConfig2020_05_31OutcomeCallable CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31Callable(const ListDistributionsByRealtimeLogConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDistributionsByRealtimeLogConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributionsByRealtimeLogConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDistributionsByRealtimeLogConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31Async(const ListDistributionsByRealtimeLogConfig2020_05_31Request& request, const ListDistributionsByRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDistributionsByRealtimeLogConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDistributionsByRealtimeLogConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByResponseHeadersPolicyId2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2260,20 +1792,13 @@ ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome CloudFrontClient::Li
 
 ListDistributionsByResponseHeadersPolicyId2020_05_31OutcomeCallable CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31Callable(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributionsByResponseHeadersPolicyId2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDistributionsByResponseHeadersPolicyId2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31Async(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request, const ListDistributionsByResponseHeadersPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDistributionsByResponseHeadersPolicyId2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDistributionsByResponseHeadersPolicyId2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListDistributionsByWebACLId2020_05_31Outcome CloudFrontClient::ListDistributionsByWebACLId2020_05_31(const ListDistributionsByWebACLId2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByWebACLId2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2291,20 +1816,13 @@ ListDistributionsByWebACLId2020_05_31Outcome CloudFrontClient::ListDistributions
 
 ListDistributionsByWebACLId2020_05_31OutcomeCallable CloudFrontClient::ListDistributionsByWebACLId2020_05_31Callable(const ListDistributionsByWebACLId2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDistributionsByWebACLId2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributionsByWebACLId2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDistributionsByWebACLId2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListDistributionsByWebACLId2020_05_31Async(const ListDistributionsByWebACLId2020_05_31Request& request, const ListDistributionsByWebACLId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDistributionsByWebACLId2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDistributionsByWebACLId2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListFieldLevelEncryptionConfigs2020_05_31Outcome CloudFrontClient::ListFieldLevelEncryptionConfigs2020_05_31(const ListFieldLevelEncryptionConfigs2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFieldLevelEncryptionConfigs2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2316,20 +1834,13 @@ ListFieldLevelEncryptionConfigs2020_05_31Outcome CloudFrontClient::ListFieldLeve
 
 ListFieldLevelEncryptionConfigs2020_05_31OutcomeCallable CloudFrontClient::ListFieldLevelEncryptionConfigs2020_05_31Callable(const ListFieldLevelEncryptionConfigs2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFieldLevelEncryptionConfigs2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFieldLevelEncryptionConfigs2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFieldLevelEncryptionConfigs2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListFieldLevelEncryptionConfigs2020_05_31Async(const ListFieldLevelEncryptionConfigs2020_05_31Request& request, const ListFieldLevelEncryptionConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFieldLevelEncryptionConfigs2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFieldLevelEncryptionConfigs2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListFieldLevelEncryptionProfiles2020_05_31Outcome CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31(const ListFieldLevelEncryptionProfiles2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFieldLevelEncryptionProfiles2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2341,20 +1852,13 @@ ListFieldLevelEncryptionProfiles2020_05_31Outcome CloudFrontClient::ListFieldLev
 
 ListFieldLevelEncryptionProfiles2020_05_31OutcomeCallable CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31Callable(const ListFieldLevelEncryptionProfiles2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFieldLevelEncryptionProfiles2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFieldLevelEncryptionProfiles2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFieldLevelEncryptionProfiles2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31Async(const ListFieldLevelEncryptionProfiles2020_05_31Request& request, const ListFieldLevelEncryptionProfiles2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFieldLevelEncryptionProfiles2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFieldLevelEncryptionProfiles2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListFunctions2020_05_31Outcome CloudFrontClient::ListFunctions2020_05_31(const ListFunctions2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFunctions2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2366,20 +1870,13 @@ ListFunctions2020_05_31Outcome CloudFrontClient::ListFunctions2020_05_31(const L
 
 ListFunctions2020_05_31OutcomeCallable CloudFrontClient::ListFunctions2020_05_31Callable(const ListFunctions2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFunctions2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFunctions2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFunctions2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListFunctions2020_05_31Async(const ListFunctions2020_05_31Request& request, const ListFunctions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFunctions2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFunctions2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListInvalidations2020_05_31Outcome CloudFrontClient::ListInvalidations2020_05_31(const ListInvalidations2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInvalidations2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2398,20 +1895,13 @@ ListInvalidations2020_05_31Outcome CloudFrontClient::ListInvalidations2020_05_31
 
 ListInvalidations2020_05_31OutcomeCallable CloudFrontClient::ListInvalidations2020_05_31Callable(const ListInvalidations2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInvalidations2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInvalidations2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInvalidations2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListInvalidations2020_05_31Async(const ListInvalidations2020_05_31Request& request, const ListInvalidations2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInvalidations2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInvalidations2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListKeyGroups2020_05_31Outcome CloudFrontClient::ListKeyGroups2020_05_31(const ListKeyGroups2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListKeyGroups2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2423,20 +1913,13 @@ ListKeyGroups2020_05_31Outcome CloudFrontClient::ListKeyGroups2020_05_31(const L
 
 ListKeyGroups2020_05_31OutcomeCallable CloudFrontClient::ListKeyGroups2020_05_31Callable(const ListKeyGroups2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListKeyGroups2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListKeyGroups2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListKeyGroups2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListKeyGroups2020_05_31Async(const ListKeyGroups2020_05_31Request& request, const ListKeyGroups2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListKeyGroups2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListKeyGroups2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListOriginAccessControls2020_05_31Outcome CloudFrontClient::ListOriginAccessControls2020_05_31(const ListOriginAccessControls2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOriginAccessControls2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2448,20 +1931,13 @@ ListOriginAccessControls2020_05_31Outcome CloudFrontClient::ListOriginAccessCont
 
 ListOriginAccessControls2020_05_31OutcomeCallable CloudFrontClient::ListOriginAccessControls2020_05_31Callable(const ListOriginAccessControls2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListOriginAccessControls2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOriginAccessControls2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListOriginAccessControls2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListOriginAccessControls2020_05_31Async(const ListOriginAccessControls2020_05_31Request& request, const ListOriginAccessControls2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListOriginAccessControls2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListOriginAccessControls2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListOriginRequestPolicies2020_05_31Outcome CloudFrontClient::ListOriginRequestPolicies2020_05_31(const ListOriginRequestPolicies2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOriginRequestPolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2473,20 +1949,13 @@ ListOriginRequestPolicies2020_05_31Outcome CloudFrontClient::ListOriginRequestPo
 
 ListOriginRequestPolicies2020_05_31OutcomeCallable CloudFrontClient::ListOriginRequestPolicies2020_05_31Callable(const ListOriginRequestPolicies2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListOriginRequestPolicies2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOriginRequestPolicies2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListOriginRequestPolicies2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListOriginRequestPolicies2020_05_31Async(const ListOriginRequestPolicies2020_05_31Request& request, const ListOriginRequestPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListOriginRequestPolicies2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListOriginRequestPolicies2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListPublicKeys2020_05_31Outcome CloudFrontClient::ListPublicKeys2020_05_31(const ListPublicKeys2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPublicKeys2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2498,20 +1967,13 @@ ListPublicKeys2020_05_31Outcome CloudFrontClient::ListPublicKeys2020_05_31(const
 
 ListPublicKeys2020_05_31OutcomeCallable CloudFrontClient::ListPublicKeys2020_05_31Callable(const ListPublicKeys2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPublicKeys2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPublicKeys2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPublicKeys2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListPublicKeys2020_05_31Async(const ListPublicKeys2020_05_31Request& request, const ListPublicKeys2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPublicKeys2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPublicKeys2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListRealtimeLogConfigs2020_05_31Outcome CloudFrontClient::ListRealtimeLogConfigs2020_05_31(const ListRealtimeLogConfigs2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRealtimeLogConfigs2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2523,20 +1985,13 @@ ListRealtimeLogConfigs2020_05_31Outcome CloudFrontClient::ListRealtimeLogConfigs
 
 ListRealtimeLogConfigs2020_05_31OutcomeCallable CloudFrontClient::ListRealtimeLogConfigs2020_05_31Callable(const ListRealtimeLogConfigs2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRealtimeLogConfigs2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRealtimeLogConfigs2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRealtimeLogConfigs2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListRealtimeLogConfigs2020_05_31Async(const ListRealtimeLogConfigs2020_05_31Request& request, const ListRealtimeLogConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRealtimeLogConfigs2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRealtimeLogConfigs2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListResponseHeadersPolicies2020_05_31Outcome CloudFrontClient::ListResponseHeadersPolicies2020_05_31(const ListResponseHeadersPolicies2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResponseHeadersPolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2548,20 +2003,13 @@ ListResponseHeadersPolicies2020_05_31Outcome CloudFrontClient::ListResponseHeade
 
 ListResponseHeadersPolicies2020_05_31OutcomeCallable CloudFrontClient::ListResponseHeadersPolicies2020_05_31Callable(const ListResponseHeadersPolicies2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListResponseHeadersPolicies2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResponseHeadersPolicies2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListResponseHeadersPolicies2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListResponseHeadersPolicies2020_05_31Async(const ListResponseHeadersPolicies2020_05_31Request& request, const ListResponseHeadersPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListResponseHeadersPolicies2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListResponseHeadersPolicies2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListStreamingDistributions2020_05_31Outcome CloudFrontClient::ListStreamingDistributions2020_05_31(const ListStreamingDistributions2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStreamingDistributions2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2573,20 +2021,13 @@ ListStreamingDistributions2020_05_31Outcome CloudFrontClient::ListStreamingDistr
 
 ListStreamingDistributions2020_05_31OutcomeCallable CloudFrontClient::ListStreamingDistributions2020_05_31Callable(const ListStreamingDistributions2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStreamingDistributions2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreamingDistributions2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStreamingDistributions2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListStreamingDistributions2020_05_31Async(const ListStreamingDistributions2020_05_31Request& request, const ListStreamingDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStreamingDistributions2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStreamingDistributions2020_05_31, request, handler, context, m_executor.get());
 }
-
 ListTagsForResource2020_05_31Outcome CloudFrontClient::ListTagsForResource2020_05_31(const ListTagsForResource2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2603,20 +2044,13 @@ ListTagsForResource2020_05_31Outcome CloudFrontClient::ListTagsForResource2020_0
 
 ListTagsForResource2020_05_31OutcomeCallable CloudFrontClient::ListTagsForResource2020_05_31Callable(const ListTagsForResource2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResource2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::ListTagsForResource2020_05_31Async(const ListTagsForResource2020_05_31Request& request, const ListTagsForResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource2020_05_31, request, handler, context, m_executor.get());
 }
-
 PublishFunction2020_05_31Outcome CloudFrontClient::PublishFunction2020_05_31(const PublishFunction2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2640,20 +2074,13 @@ PublishFunction2020_05_31Outcome CloudFrontClient::PublishFunction2020_05_31(con
 
 PublishFunction2020_05_31OutcomeCallable CloudFrontClient::PublishFunction2020_05_31Callable(const PublishFunction2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PublishFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->PublishFunction2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PublishFunction2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::PublishFunction2020_05_31Async(const PublishFunction2020_05_31Request& request, const PublishFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PublishFunction2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PublishFunction2020_05_31, request, handler, context, m_executor.get());
 }
-
 TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagResource2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2673,20 +2100,13 @@ TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagRe
 
 TagResource2020_05_31OutcomeCallable CloudFrontClient::TagResource2020_05_31Callable(const TagResource2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResource2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::TagResource2020_05_31Async(const TagResource2020_05_31Request& request, const TagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource2020_05_31, request, handler, context, m_executor.get());
 }
-
 TestFunction2020_05_31Outcome CloudFrontClient::TestFunction2020_05_31(const TestFunction2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2710,20 +2130,13 @@ TestFunction2020_05_31Outcome CloudFrontClient::TestFunction2020_05_31(const Tes
 
 TestFunction2020_05_31OutcomeCallable CloudFrontClient::TestFunction2020_05_31Callable(const TestFunction2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TestFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestFunction2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TestFunction2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::TestFunction2020_05_31Async(const TestFunction2020_05_31Request& request, const TestFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TestFunction2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TestFunction2020_05_31, request, handler, context, m_executor.get());
 }
-
 UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const UntagResource2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2743,20 +2156,13 @@ UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const U
 
 UntagResource2020_05_31OutcomeCallable CloudFrontClient::UntagResource2020_05_31Callable(const UntagResource2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResource2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UntagResource2020_05_31Async(const UntagResource2020_05_31Request& request, const UntagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateCachePolicy2020_05_31Outcome CloudFrontClient::UpdateCachePolicy2020_05_31(const UpdateCachePolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCachePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2774,20 +2180,13 @@ UpdateCachePolicy2020_05_31Outcome CloudFrontClient::UpdateCachePolicy2020_05_31
 
 UpdateCachePolicy2020_05_31OutcomeCallable CloudFrontClient::UpdateCachePolicy2020_05_31Callable(const UpdateCachePolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCachePolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCachePolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCachePolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateCachePolicy2020_05_31Async(const UpdateCachePolicy2020_05_31Request& request, const UpdateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCachePolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCachePolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2020_05_31(const UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCloudFrontOriginAccessIdentity2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2806,20 +2205,13 @@ UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::UpdateCl
 
 UpdateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2020_05_31Callable(const UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCloudFrontOriginAccessIdentity2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCloudFrontOriginAccessIdentity2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2020_05_31Async(const UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request, const UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCloudFrontOriginAccessIdentity2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCloudFrontOriginAccessIdentity2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateDistribution2020_05_31Outcome CloudFrontClient::UpdateDistribution2020_05_31(const UpdateDistribution2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2838,20 +2230,13 @@ UpdateDistribution2020_05_31Outcome CloudFrontClient::UpdateDistribution2020_05_
 
 UpdateDistribution2020_05_31OutcomeCallable CloudFrontClient::UpdateDistribution2020_05_31Callable(const UpdateDistribution2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDistribution2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDistribution2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDistribution2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateDistribution2020_05_31Async(const UpdateDistribution2020_05_31Request& request, const UpdateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDistribution2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDistribution2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::UpdateFieldLevelEncryptionConfig2020_05_31(const UpdateFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFieldLevelEncryptionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2870,20 +2255,13 @@ UpdateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::UpdateFieldL
 
 UpdateFieldLevelEncryptionConfig2020_05_31OutcomeCallable CloudFrontClient::UpdateFieldLevelEncryptionConfig2020_05_31Callable(const UpdateFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFieldLevelEncryptionConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFieldLevelEncryptionConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFieldLevelEncryptionConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateFieldLevelEncryptionConfig2020_05_31Async(const UpdateFieldLevelEncryptionConfig2020_05_31Request& request, const UpdateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFieldLevelEncryptionConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFieldLevelEncryptionConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31(const UpdateFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFieldLevelEncryptionProfile2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2902,20 +2280,13 @@ UpdateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::UpdateField
 
 UpdateFieldLevelEncryptionProfile2020_05_31OutcomeCallable CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31Callable(const UpdateFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFieldLevelEncryptionProfile2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFieldLevelEncryptionProfile2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFieldLevelEncryptionProfile2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31Async(const UpdateFieldLevelEncryptionProfile2020_05_31Request& request, const UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFieldLevelEncryptionProfile2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFieldLevelEncryptionProfile2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateFunction2020_05_31Outcome CloudFrontClient::UpdateFunction2020_05_31(const UpdateFunction2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2938,20 +2309,13 @@ UpdateFunction2020_05_31Outcome CloudFrontClient::UpdateFunction2020_05_31(const
 
 UpdateFunction2020_05_31OutcomeCallable CloudFrontClient::UpdateFunction2020_05_31Callable(const UpdateFunction2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFunction2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFunction2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateFunction2020_05_31Async(const UpdateFunction2020_05_31Request& request, const UpdateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFunction2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFunction2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const UpdateKeyGroup2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2969,20 +2333,13 @@ UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const
 
 UpdateKeyGroup2020_05_31OutcomeCallable CloudFrontClient::UpdateKeyGroup2020_05_31Callable(const UpdateKeyGroup2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateKeyGroup2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateKeyGroup2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateKeyGroup2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateKeyGroup2020_05_31Async(const UpdateKeyGroup2020_05_31Request& request, const UpdateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateKeyGroup2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateKeyGroup2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateOriginAccessControl2020_05_31Outcome CloudFrontClient::UpdateOriginAccessControl2020_05_31(const UpdateOriginAccessControl2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOriginAccessControl2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3001,20 +2358,13 @@ UpdateOriginAccessControl2020_05_31Outcome CloudFrontClient::UpdateOriginAccessC
 
 UpdateOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::UpdateOriginAccessControl2020_05_31Callable(const UpdateOriginAccessControl2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateOriginAccessControl2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateOriginAccessControl2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateOriginAccessControl2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateOriginAccessControl2020_05_31Async(const UpdateOriginAccessControl2020_05_31Request& request, const UpdateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateOriginAccessControl2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateOriginAccessControl2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::UpdateOriginRequestPolicy2020_05_31(const UpdateOriginRequestPolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOriginRequestPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3032,20 +2382,13 @@ UpdateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::UpdateOriginRequest
 
 UpdateOriginRequestPolicy2020_05_31OutcomeCallable CloudFrontClient::UpdateOriginRequestPolicy2020_05_31Callable(const UpdateOriginRequestPolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateOriginRequestPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateOriginRequestPolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateOriginRequestPolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateOriginRequestPolicy2020_05_31Async(const UpdateOriginRequestPolicy2020_05_31Request& request, const UpdateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateOriginRequestPolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateOriginRequestPolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdatePublicKey2020_05_31Outcome CloudFrontClient::UpdatePublicKey2020_05_31(const UpdatePublicKey2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePublicKey2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3064,20 +2407,13 @@ UpdatePublicKey2020_05_31Outcome CloudFrontClient::UpdatePublicKey2020_05_31(con
 
 UpdatePublicKey2020_05_31OutcomeCallable CloudFrontClient::UpdatePublicKey2020_05_31Callable(const UpdatePublicKey2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePublicKey2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePublicKey2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePublicKey2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdatePublicKey2020_05_31Async(const UpdatePublicKey2020_05_31Request& request, const UpdatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePublicKey2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePublicKey2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::UpdateRealtimeLogConfig2020_05_31(const UpdateRealtimeLogConfig2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3089,20 +2425,13 @@ UpdateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::UpdateRealtimeLogConf
 
 UpdateRealtimeLogConfig2020_05_31OutcomeCallable CloudFrontClient::UpdateRealtimeLogConfig2020_05_31Callable(const UpdateRealtimeLogConfig2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRealtimeLogConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRealtimeLogConfig2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRealtimeLogConfig2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateRealtimeLogConfig2020_05_31Async(const UpdateRealtimeLogConfig2020_05_31Request& request, const UpdateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRealtimeLogConfig2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRealtimeLogConfig2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31(const UpdateResponseHeadersPolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResponseHeadersPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3120,20 +2449,13 @@ UpdateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::UpdateResponseHea
 
 UpdateResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31Callable(const UpdateResponseHeadersPolicy2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResponseHeadersPolicy2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateResponseHeadersPolicy2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31Async(const UpdateResponseHeadersPolicy2020_05_31Request& request, const UpdateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateResponseHeadersPolicy2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateResponseHeadersPolicy2020_05_31, request, handler, context, m_executor.get());
 }
-
 UpdateStreamingDistribution2020_05_31Outcome CloudFrontClient::UpdateStreamingDistribution2020_05_31(const UpdateStreamingDistribution2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStreamingDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3152,17 +2474,10 @@ UpdateStreamingDistribution2020_05_31Outcome CloudFrontClient::UpdateStreamingDi
 
 UpdateStreamingDistribution2020_05_31OutcomeCallable CloudFrontClient::UpdateStreamingDistribution2020_05_31Callable(const UpdateStreamingDistribution2020_05_31Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStreamingDistribution2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStreamingDistribution2020_05_31(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateStreamingDistribution2020_05_31, request, m_executor.get());
 }
 
 void CloudFrontClient::UpdateStreamingDistribution2020_05_31Async(const UpdateStreamingDistribution2020_05_31Request& request, const UpdateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateStreamingDistribution2020_05_31(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateStreamingDistribution2020_05_31, request, handler, context, m_executor.get());
 }
-

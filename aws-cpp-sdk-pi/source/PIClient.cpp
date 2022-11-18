@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -165,18 +166,12 @@ DescribeDimensionKeysOutcome PIClient::DescribeDimensionKeys(const DescribeDimen
 
 DescribeDimensionKeysOutcomeCallable PIClient::DescribeDimensionKeysCallable(const DescribeDimensionKeysRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDimensionKeysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDimensionKeys(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDimensionKeys, request, m_executor.get());
 }
 
 void PIClient::DescribeDimensionKeysAsync(const DescribeDimensionKeysRequest& request, const DescribeDimensionKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDimensionKeys(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDimensionKeys, request, handler, context, m_executor.get());
 }
 
 GetDimensionKeyDetailsOutcome PIClient::GetDimensionKeyDetails(const GetDimensionKeyDetailsRequest& request) const
@@ -189,18 +184,12 @@ GetDimensionKeyDetailsOutcome PIClient::GetDimensionKeyDetails(const GetDimensio
 
 GetDimensionKeyDetailsOutcomeCallable PIClient::GetDimensionKeyDetailsCallable(const GetDimensionKeyDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDimensionKeyDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDimensionKeyDetails(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDimensionKeyDetails, request, m_executor.get());
 }
 
 void PIClient::GetDimensionKeyDetailsAsync(const GetDimensionKeyDetailsRequest& request, const GetDimensionKeyDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDimensionKeyDetails(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDimensionKeyDetails, request, handler, context, m_executor.get());
 }
 
 GetResourceMetadataOutcome PIClient::GetResourceMetadata(const GetResourceMetadataRequest& request) const
@@ -213,18 +202,12 @@ GetResourceMetadataOutcome PIClient::GetResourceMetadata(const GetResourceMetada
 
 GetResourceMetadataOutcomeCallable PIClient::GetResourceMetadataCallable(const GetResourceMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourceMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResourceMetadata, request, m_executor.get());
 }
 
 void PIClient::GetResourceMetadataAsync(const GetResourceMetadataRequest& request, const GetResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResourceMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResourceMetadata, request, handler, context, m_executor.get());
 }
 
 GetResourceMetricsOutcome PIClient::GetResourceMetrics(const GetResourceMetricsRequest& request) const
@@ -237,18 +220,12 @@ GetResourceMetricsOutcome PIClient::GetResourceMetrics(const GetResourceMetricsR
 
 GetResourceMetricsOutcomeCallable PIClient::GetResourceMetricsCallable(const GetResourceMetricsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourceMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceMetrics(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetResourceMetrics, request, m_executor.get());
 }
 
 void PIClient::GetResourceMetricsAsync(const GetResourceMetricsRequest& request, const GetResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResourceMetrics(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetResourceMetrics, request, handler, context, m_executor.get());
 }
 
 ListAvailableResourceDimensionsOutcome PIClient::ListAvailableResourceDimensions(const ListAvailableResourceDimensionsRequest& request) const
@@ -261,18 +238,12 @@ ListAvailableResourceDimensionsOutcome PIClient::ListAvailableResourceDimensions
 
 ListAvailableResourceDimensionsOutcomeCallable PIClient::ListAvailableResourceDimensionsCallable(const ListAvailableResourceDimensionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAvailableResourceDimensionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAvailableResourceDimensions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAvailableResourceDimensions, request, m_executor.get());
 }
 
 void PIClient::ListAvailableResourceDimensionsAsync(const ListAvailableResourceDimensionsRequest& request, const ListAvailableResourceDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAvailableResourceDimensions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAvailableResourceDimensions, request, handler, context, m_executor.get());
 }
 
 ListAvailableResourceMetricsOutcome PIClient::ListAvailableResourceMetrics(const ListAvailableResourceMetricsRequest& request) const
@@ -285,17 +256,11 @@ ListAvailableResourceMetricsOutcome PIClient::ListAvailableResourceMetrics(const
 
 ListAvailableResourceMetricsOutcomeCallable PIClient::ListAvailableResourceMetricsCallable(const ListAvailableResourceMetricsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAvailableResourceMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAvailableResourceMetrics(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAvailableResourceMetrics, request, m_executor.get());
 }
 
 void PIClient::ListAvailableResourceMetricsAsync(const ListAvailableResourceMetricsRequest& request, const ListAvailableResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAvailableResourceMetrics(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAvailableResourceMetrics, request, handler, context, m_executor.get());
 }
 

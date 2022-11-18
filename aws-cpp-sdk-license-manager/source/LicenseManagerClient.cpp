@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -209,18 +210,12 @@ AcceptGrantOutcome LicenseManagerClient::AcceptGrant(const AcceptGrantRequest& r
 
 AcceptGrantOutcomeCallable LicenseManagerClient::AcceptGrantCallable(const AcceptGrantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcceptGrantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptGrant(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AcceptGrant, request, m_executor.get());
 }
 
 void LicenseManagerClient::AcceptGrantAsync(const AcceptGrantRequest& request, const AcceptGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AcceptGrant(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AcceptGrant, request, handler, context, m_executor.get());
 }
 
 CheckInLicenseOutcome LicenseManagerClient::CheckInLicense(const CheckInLicenseRequest& request) const
@@ -233,18 +228,12 @@ CheckInLicenseOutcome LicenseManagerClient::CheckInLicense(const CheckInLicenseR
 
 CheckInLicenseOutcomeCallable LicenseManagerClient::CheckInLicenseCallable(const CheckInLicenseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CheckInLicenseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CheckInLicense(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CheckInLicense, request, m_executor.get());
 }
 
 void LicenseManagerClient::CheckInLicenseAsync(const CheckInLicenseRequest& request, const CheckInLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CheckInLicense(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CheckInLicense, request, handler, context, m_executor.get());
 }
 
 CheckoutBorrowLicenseOutcome LicenseManagerClient::CheckoutBorrowLicense(const CheckoutBorrowLicenseRequest& request) const
@@ -257,18 +246,12 @@ CheckoutBorrowLicenseOutcome LicenseManagerClient::CheckoutBorrowLicense(const C
 
 CheckoutBorrowLicenseOutcomeCallable LicenseManagerClient::CheckoutBorrowLicenseCallable(const CheckoutBorrowLicenseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CheckoutBorrowLicenseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CheckoutBorrowLicense(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CheckoutBorrowLicense, request, m_executor.get());
 }
 
 void LicenseManagerClient::CheckoutBorrowLicenseAsync(const CheckoutBorrowLicenseRequest& request, const CheckoutBorrowLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CheckoutBorrowLicense(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CheckoutBorrowLicense, request, handler, context, m_executor.get());
 }
 
 CheckoutLicenseOutcome LicenseManagerClient::CheckoutLicense(const CheckoutLicenseRequest& request) const
@@ -281,18 +264,12 @@ CheckoutLicenseOutcome LicenseManagerClient::CheckoutLicense(const CheckoutLicen
 
 CheckoutLicenseOutcomeCallable LicenseManagerClient::CheckoutLicenseCallable(const CheckoutLicenseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CheckoutLicenseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CheckoutLicense(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CheckoutLicense, request, m_executor.get());
 }
 
 void LicenseManagerClient::CheckoutLicenseAsync(const CheckoutLicenseRequest& request, const CheckoutLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CheckoutLicense(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CheckoutLicense, request, handler, context, m_executor.get());
 }
 
 CreateGrantOutcome LicenseManagerClient::CreateGrant(const CreateGrantRequest& request) const
@@ -305,18 +282,12 @@ CreateGrantOutcome LicenseManagerClient::CreateGrant(const CreateGrantRequest& r
 
 CreateGrantOutcomeCallable LicenseManagerClient::CreateGrantCallable(const CreateGrantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateGrantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGrant(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateGrant, request, m_executor.get());
 }
 
 void LicenseManagerClient::CreateGrantAsync(const CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateGrant(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateGrant, request, handler, context, m_executor.get());
 }
 
 CreateGrantVersionOutcome LicenseManagerClient::CreateGrantVersion(const CreateGrantVersionRequest& request) const
@@ -329,18 +300,12 @@ CreateGrantVersionOutcome LicenseManagerClient::CreateGrantVersion(const CreateG
 
 CreateGrantVersionOutcomeCallable LicenseManagerClient::CreateGrantVersionCallable(const CreateGrantVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateGrantVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGrantVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateGrantVersion, request, m_executor.get());
 }
 
 void LicenseManagerClient::CreateGrantVersionAsync(const CreateGrantVersionRequest& request, const CreateGrantVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateGrantVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateGrantVersion, request, handler, context, m_executor.get());
 }
 
 CreateLicenseOutcome LicenseManagerClient::CreateLicense(const CreateLicenseRequest& request) const
@@ -353,18 +318,12 @@ CreateLicenseOutcome LicenseManagerClient::CreateLicense(const CreateLicenseRequ
 
 CreateLicenseOutcomeCallable LicenseManagerClient::CreateLicenseCallable(const CreateLicenseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLicenseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLicense(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLicense, request, m_executor.get());
 }
 
 void LicenseManagerClient::CreateLicenseAsync(const CreateLicenseRequest& request, const CreateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLicense(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLicense, request, handler, context, m_executor.get());
 }
 
 CreateLicenseConfigurationOutcome LicenseManagerClient::CreateLicenseConfiguration(const CreateLicenseConfigurationRequest& request) const
@@ -377,18 +336,12 @@ CreateLicenseConfigurationOutcome LicenseManagerClient::CreateLicenseConfigurati
 
 CreateLicenseConfigurationOutcomeCallable LicenseManagerClient::CreateLicenseConfigurationCallable(const CreateLicenseConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLicenseConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLicenseConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLicenseConfiguration, request, m_executor.get());
 }
 
 void LicenseManagerClient::CreateLicenseConfigurationAsync(const CreateLicenseConfigurationRequest& request, const CreateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLicenseConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLicenseConfiguration, request, handler, context, m_executor.get());
 }
 
 CreateLicenseConversionTaskForResourceOutcome LicenseManagerClient::CreateLicenseConversionTaskForResource(const CreateLicenseConversionTaskForResourceRequest& request) const
@@ -401,18 +354,12 @@ CreateLicenseConversionTaskForResourceOutcome LicenseManagerClient::CreateLicens
 
 CreateLicenseConversionTaskForResourceOutcomeCallable LicenseManagerClient::CreateLicenseConversionTaskForResourceCallable(const CreateLicenseConversionTaskForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLicenseConversionTaskForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLicenseConversionTaskForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLicenseConversionTaskForResource, request, m_executor.get());
 }
 
 void LicenseManagerClient::CreateLicenseConversionTaskForResourceAsync(const CreateLicenseConversionTaskForResourceRequest& request, const CreateLicenseConversionTaskForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLicenseConversionTaskForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLicenseConversionTaskForResource, request, handler, context, m_executor.get());
 }
 
 CreateLicenseManagerReportGeneratorOutcome LicenseManagerClient::CreateLicenseManagerReportGenerator(const CreateLicenseManagerReportGeneratorRequest& request) const
@@ -425,18 +372,12 @@ CreateLicenseManagerReportGeneratorOutcome LicenseManagerClient::CreateLicenseMa
 
 CreateLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::CreateLicenseManagerReportGeneratorCallable(const CreateLicenseManagerReportGeneratorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLicenseManagerReportGeneratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLicenseManagerReportGenerator(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLicenseManagerReportGenerator, request, m_executor.get());
 }
 
 void LicenseManagerClient::CreateLicenseManagerReportGeneratorAsync(const CreateLicenseManagerReportGeneratorRequest& request, const CreateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLicenseManagerReportGenerator(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLicenseManagerReportGenerator, request, handler, context, m_executor.get());
 }
 
 CreateLicenseVersionOutcome LicenseManagerClient::CreateLicenseVersion(const CreateLicenseVersionRequest& request) const
@@ -449,18 +390,12 @@ CreateLicenseVersionOutcome LicenseManagerClient::CreateLicenseVersion(const Cre
 
 CreateLicenseVersionOutcomeCallable LicenseManagerClient::CreateLicenseVersionCallable(const CreateLicenseVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLicenseVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLicenseVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLicenseVersion, request, m_executor.get());
 }
 
 void LicenseManagerClient::CreateLicenseVersionAsync(const CreateLicenseVersionRequest& request, const CreateLicenseVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLicenseVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLicenseVersion, request, handler, context, m_executor.get());
 }
 
 CreateTokenOutcome LicenseManagerClient::CreateToken(const CreateTokenRequest& request) const
@@ -473,18 +408,12 @@ CreateTokenOutcome LicenseManagerClient::CreateToken(const CreateTokenRequest& r
 
 CreateTokenOutcomeCallable LicenseManagerClient::CreateTokenCallable(const CreateTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateToken, request, m_executor.get());
 }
 
 void LicenseManagerClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateToken, request, handler, context, m_executor.get());
 }
 
 DeleteGrantOutcome LicenseManagerClient::DeleteGrant(const DeleteGrantRequest& request) const
@@ -497,18 +426,12 @@ DeleteGrantOutcome LicenseManagerClient::DeleteGrant(const DeleteGrantRequest& r
 
 DeleteGrantOutcomeCallable LicenseManagerClient::DeleteGrantCallable(const DeleteGrantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteGrantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGrant(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteGrant, request, m_executor.get());
 }
 
 void LicenseManagerClient::DeleteGrantAsync(const DeleteGrantRequest& request, const DeleteGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteGrant(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteGrant, request, handler, context, m_executor.get());
 }
 
 DeleteLicenseOutcome LicenseManagerClient::DeleteLicense(const DeleteLicenseRequest& request) const
@@ -521,18 +444,12 @@ DeleteLicenseOutcome LicenseManagerClient::DeleteLicense(const DeleteLicenseRequ
 
 DeleteLicenseOutcomeCallable LicenseManagerClient::DeleteLicenseCallable(const DeleteLicenseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLicenseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLicense(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLicense, request, m_executor.get());
 }
 
 void LicenseManagerClient::DeleteLicenseAsync(const DeleteLicenseRequest& request, const DeleteLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLicense(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLicense, request, handler, context, m_executor.get());
 }
 
 DeleteLicenseConfigurationOutcome LicenseManagerClient::DeleteLicenseConfiguration(const DeleteLicenseConfigurationRequest& request) const
@@ -545,18 +462,12 @@ DeleteLicenseConfigurationOutcome LicenseManagerClient::DeleteLicenseConfigurati
 
 DeleteLicenseConfigurationOutcomeCallable LicenseManagerClient::DeleteLicenseConfigurationCallable(const DeleteLicenseConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLicenseConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLicenseConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLicenseConfiguration, request, m_executor.get());
 }
 
 void LicenseManagerClient::DeleteLicenseConfigurationAsync(const DeleteLicenseConfigurationRequest& request, const DeleteLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLicenseConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLicenseConfiguration, request, handler, context, m_executor.get());
 }
 
 DeleteLicenseManagerReportGeneratorOutcome LicenseManagerClient::DeleteLicenseManagerReportGenerator(const DeleteLicenseManagerReportGeneratorRequest& request) const
@@ -569,18 +480,12 @@ DeleteLicenseManagerReportGeneratorOutcome LicenseManagerClient::DeleteLicenseMa
 
 DeleteLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::DeleteLicenseManagerReportGeneratorCallable(const DeleteLicenseManagerReportGeneratorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLicenseManagerReportGeneratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLicenseManagerReportGenerator(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLicenseManagerReportGenerator, request, m_executor.get());
 }
 
 void LicenseManagerClient::DeleteLicenseManagerReportGeneratorAsync(const DeleteLicenseManagerReportGeneratorRequest& request, const DeleteLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLicenseManagerReportGenerator(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLicenseManagerReportGenerator, request, handler, context, m_executor.get());
 }
 
 DeleteTokenOutcome LicenseManagerClient::DeleteToken(const DeleteTokenRequest& request) const
@@ -593,18 +498,12 @@ DeleteTokenOutcome LicenseManagerClient::DeleteToken(const DeleteTokenRequest& r
 
 DeleteTokenOutcomeCallable LicenseManagerClient::DeleteTokenCallable(const DeleteTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteToken, request, m_executor.get());
 }
 
 void LicenseManagerClient::DeleteTokenAsync(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteToken, request, handler, context, m_executor.get());
 }
 
 ExtendLicenseConsumptionOutcome LicenseManagerClient::ExtendLicenseConsumption(const ExtendLicenseConsumptionRequest& request) const
@@ -617,18 +516,12 @@ ExtendLicenseConsumptionOutcome LicenseManagerClient::ExtendLicenseConsumption(c
 
 ExtendLicenseConsumptionOutcomeCallable LicenseManagerClient::ExtendLicenseConsumptionCallable(const ExtendLicenseConsumptionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExtendLicenseConsumptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExtendLicenseConsumption(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExtendLicenseConsumption, request, m_executor.get());
 }
 
 void LicenseManagerClient::ExtendLicenseConsumptionAsync(const ExtendLicenseConsumptionRequest& request, const ExtendLicenseConsumptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExtendLicenseConsumption(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExtendLicenseConsumption, request, handler, context, m_executor.get());
 }
 
 GetAccessTokenOutcome LicenseManagerClient::GetAccessToken(const GetAccessTokenRequest& request) const
@@ -641,18 +534,12 @@ GetAccessTokenOutcome LicenseManagerClient::GetAccessToken(const GetAccessTokenR
 
 GetAccessTokenOutcomeCallable LicenseManagerClient::GetAccessTokenCallable(const GetAccessTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccessToken, request, m_executor.get());
 }
 
 void LicenseManagerClient::GetAccessTokenAsync(const GetAccessTokenRequest& request, const GetAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccessToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccessToken, request, handler, context, m_executor.get());
 }
 
 GetGrantOutcome LicenseManagerClient::GetGrant(const GetGrantRequest& request) const
@@ -665,18 +552,12 @@ GetGrantOutcome LicenseManagerClient::GetGrant(const GetGrantRequest& request) c
 
 GetGrantOutcomeCallable LicenseManagerClient::GetGrantCallable(const GetGrantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetGrantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGrant(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetGrant, request, m_executor.get());
 }
 
 void LicenseManagerClient::GetGrantAsync(const GetGrantRequest& request, const GetGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetGrant(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetGrant, request, handler, context, m_executor.get());
 }
 
 GetLicenseOutcome LicenseManagerClient::GetLicense(const GetLicenseRequest& request) const
@@ -689,18 +570,12 @@ GetLicenseOutcome LicenseManagerClient::GetLicense(const GetLicenseRequest& requ
 
 GetLicenseOutcomeCallable LicenseManagerClient::GetLicenseCallable(const GetLicenseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLicenseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLicense(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLicense, request, m_executor.get());
 }
 
 void LicenseManagerClient::GetLicenseAsync(const GetLicenseRequest& request, const GetLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLicense(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLicense, request, handler, context, m_executor.get());
 }
 
 GetLicenseConfigurationOutcome LicenseManagerClient::GetLicenseConfiguration(const GetLicenseConfigurationRequest& request) const
@@ -713,18 +588,12 @@ GetLicenseConfigurationOutcome LicenseManagerClient::GetLicenseConfiguration(con
 
 GetLicenseConfigurationOutcomeCallable LicenseManagerClient::GetLicenseConfigurationCallable(const GetLicenseConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLicenseConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLicenseConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLicenseConfiguration, request, m_executor.get());
 }
 
 void LicenseManagerClient::GetLicenseConfigurationAsync(const GetLicenseConfigurationRequest& request, const GetLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLicenseConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLicenseConfiguration, request, handler, context, m_executor.get());
 }
 
 GetLicenseConversionTaskOutcome LicenseManagerClient::GetLicenseConversionTask(const GetLicenseConversionTaskRequest& request) const
@@ -737,18 +606,12 @@ GetLicenseConversionTaskOutcome LicenseManagerClient::GetLicenseConversionTask(c
 
 GetLicenseConversionTaskOutcomeCallable LicenseManagerClient::GetLicenseConversionTaskCallable(const GetLicenseConversionTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLicenseConversionTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLicenseConversionTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLicenseConversionTask, request, m_executor.get());
 }
 
 void LicenseManagerClient::GetLicenseConversionTaskAsync(const GetLicenseConversionTaskRequest& request, const GetLicenseConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLicenseConversionTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLicenseConversionTask, request, handler, context, m_executor.get());
 }
 
 GetLicenseManagerReportGeneratorOutcome LicenseManagerClient::GetLicenseManagerReportGenerator(const GetLicenseManagerReportGeneratorRequest& request) const
@@ -761,18 +624,12 @@ GetLicenseManagerReportGeneratorOutcome LicenseManagerClient::GetLicenseManagerR
 
 GetLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::GetLicenseManagerReportGeneratorCallable(const GetLicenseManagerReportGeneratorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLicenseManagerReportGeneratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLicenseManagerReportGenerator(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLicenseManagerReportGenerator, request, m_executor.get());
 }
 
 void LicenseManagerClient::GetLicenseManagerReportGeneratorAsync(const GetLicenseManagerReportGeneratorRequest& request, const GetLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLicenseManagerReportGenerator(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLicenseManagerReportGenerator, request, handler, context, m_executor.get());
 }
 
 GetLicenseUsageOutcome LicenseManagerClient::GetLicenseUsage(const GetLicenseUsageRequest& request) const
@@ -785,18 +642,12 @@ GetLicenseUsageOutcome LicenseManagerClient::GetLicenseUsage(const GetLicenseUsa
 
 GetLicenseUsageOutcomeCallable LicenseManagerClient::GetLicenseUsageCallable(const GetLicenseUsageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLicenseUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLicenseUsage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLicenseUsage, request, m_executor.get());
 }
 
 void LicenseManagerClient::GetLicenseUsageAsync(const GetLicenseUsageRequest& request, const GetLicenseUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLicenseUsage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLicenseUsage, request, handler, context, m_executor.get());
 }
 
 GetServiceSettingsOutcome LicenseManagerClient::GetServiceSettings(const GetServiceSettingsRequest& request) const
@@ -809,18 +660,12 @@ GetServiceSettingsOutcome LicenseManagerClient::GetServiceSettings(const GetServ
 
 GetServiceSettingsOutcomeCallable LicenseManagerClient::GetServiceSettingsCallable(const GetServiceSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetServiceSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServiceSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetServiceSettings, request, m_executor.get());
 }
 
 void LicenseManagerClient::GetServiceSettingsAsync(const GetServiceSettingsRequest& request, const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetServiceSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetServiceSettings, request, handler, context, m_executor.get());
 }
 
 ListAssociationsForLicenseConfigurationOutcome LicenseManagerClient::ListAssociationsForLicenseConfiguration(const ListAssociationsForLicenseConfigurationRequest& request) const
@@ -833,18 +678,12 @@ ListAssociationsForLicenseConfigurationOutcome LicenseManagerClient::ListAssocia
 
 ListAssociationsForLicenseConfigurationOutcomeCallable LicenseManagerClient::ListAssociationsForLicenseConfigurationCallable(const ListAssociationsForLicenseConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssociationsForLicenseConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssociationsForLicenseConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAssociationsForLicenseConfiguration, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListAssociationsForLicenseConfigurationAsync(const ListAssociationsForLicenseConfigurationRequest& request, const ListAssociationsForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAssociationsForLicenseConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAssociationsForLicenseConfiguration, request, handler, context, m_executor.get());
 }
 
 ListDistributedGrantsOutcome LicenseManagerClient::ListDistributedGrants(const ListDistributedGrantsRequest& request) const
@@ -857,18 +696,12 @@ ListDistributedGrantsOutcome LicenseManagerClient::ListDistributedGrants(const L
 
 ListDistributedGrantsOutcomeCallable LicenseManagerClient::ListDistributedGrantsCallable(const ListDistributedGrantsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDistributedGrantsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributedGrants(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDistributedGrants, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListDistributedGrantsAsync(const ListDistributedGrantsRequest& request, const ListDistributedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDistributedGrants(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDistributedGrants, request, handler, context, m_executor.get());
 }
 
 ListFailuresForLicenseConfigurationOperationsOutcome LicenseManagerClient::ListFailuresForLicenseConfigurationOperations(const ListFailuresForLicenseConfigurationOperationsRequest& request) const
@@ -881,18 +714,12 @@ ListFailuresForLicenseConfigurationOperationsOutcome LicenseManagerClient::ListF
 
 ListFailuresForLicenseConfigurationOperationsOutcomeCallable LicenseManagerClient::ListFailuresForLicenseConfigurationOperationsCallable(const ListFailuresForLicenseConfigurationOperationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFailuresForLicenseConfigurationOperationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFailuresForLicenseConfigurationOperations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFailuresForLicenseConfigurationOperations, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListFailuresForLicenseConfigurationOperationsAsync(const ListFailuresForLicenseConfigurationOperationsRequest& request, const ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFailuresForLicenseConfigurationOperations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFailuresForLicenseConfigurationOperations, request, handler, context, m_executor.get());
 }
 
 ListLicenseConfigurationsOutcome LicenseManagerClient::ListLicenseConfigurations(const ListLicenseConfigurationsRequest& request) const
@@ -905,18 +732,12 @@ ListLicenseConfigurationsOutcome LicenseManagerClient::ListLicenseConfigurations
 
 ListLicenseConfigurationsOutcomeCallable LicenseManagerClient::ListLicenseConfigurationsCallable(const ListLicenseConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLicenseConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLicenseConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLicenseConfigurations, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListLicenseConfigurationsAsync(const ListLicenseConfigurationsRequest& request, const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLicenseConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLicenseConfigurations, request, handler, context, m_executor.get());
 }
 
 ListLicenseConversionTasksOutcome LicenseManagerClient::ListLicenseConversionTasks(const ListLicenseConversionTasksRequest& request) const
@@ -929,18 +750,12 @@ ListLicenseConversionTasksOutcome LicenseManagerClient::ListLicenseConversionTas
 
 ListLicenseConversionTasksOutcomeCallable LicenseManagerClient::ListLicenseConversionTasksCallable(const ListLicenseConversionTasksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLicenseConversionTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLicenseConversionTasks(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLicenseConversionTasks, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListLicenseConversionTasksAsync(const ListLicenseConversionTasksRequest& request, const ListLicenseConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLicenseConversionTasks(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLicenseConversionTasks, request, handler, context, m_executor.get());
 }
 
 ListLicenseManagerReportGeneratorsOutcome LicenseManagerClient::ListLicenseManagerReportGenerators(const ListLicenseManagerReportGeneratorsRequest& request) const
@@ -953,18 +768,12 @@ ListLicenseManagerReportGeneratorsOutcome LicenseManagerClient::ListLicenseManag
 
 ListLicenseManagerReportGeneratorsOutcomeCallable LicenseManagerClient::ListLicenseManagerReportGeneratorsCallable(const ListLicenseManagerReportGeneratorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLicenseManagerReportGeneratorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLicenseManagerReportGenerators(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLicenseManagerReportGenerators, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListLicenseManagerReportGeneratorsAsync(const ListLicenseManagerReportGeneratorsRequest& request, const ListLicenseManagerReportGeneratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLicenseManagerReportGenerators(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLicenseManagerReportGenerators, request, handler, context, m_executor.get());
 }
 
 ListLicenseSpecificationsForResourceOutcome LicenseManagerClient::ListLicenseSpecificationsForResource(const ListLicenseSpecificationsForResourceRequest& request) const
@@ -977,18 +786,12 @@ ListLicenseSpecificationsForResourceOutcome LicenseManagerClient::ListLicenseSpe
 
 ListLicenseSpecificationsForResourceOutcomeCallable LicenseManagerClient::ListLicenseSpecificationsForResourceCallable(const ListLicenseSpecificationsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLicenseSpecificationsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLicenseSpecificationsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLicenseSpecificationsForResource, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListLicenseSpecificationsForResourceAsync(const ListLicenseSpecificationsForResourceRequest& request, const ListLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLicenseSpecificationsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLicenseSpecificationsForResource, request, handler, context, m_executor.get());
 }
 
 ListLicenseVersionsOutcome LicenseManagerClient::ListLicenseVersions(const ListLicenseVersionsRequest& request) const
@@ -1001,18 +804,12 @@ ListLicenseVersionsOutcome LicenseManagerClient::ListLicenseVersions(const ListL
 
 ListLicenseVersionsOutcomeCallable LicenseManagerClient::ListLicenseVersionsCallable(const ListLicenseVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLicenseVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLicenseVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLicenseVersions, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListLicenseVersionsAsync(const ListLicenseVersionsRequest& request, const ListLicenseVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLicenseVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLicenseVersions, request, handler, context, m_executor.get());
 }
 
 ListLicensesOutcome LicenseManagerClient::ListLicenses(const ListLicensesRequest& request) const
@@ -1025,18 +822,12 @@ ListLicensesOutcome LicenseManagerClient::ListLicenses(const ListLicensesRequest
 
 ListLicensesOutcomeCallable LicenseManagerClient::ListLicensesCallable(const ListLicensesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLicensesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLicenses(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLicenses, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListLicensesAsync(const ListLicensesRequest& request, const ListLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLicenses(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLicenses, request, handler, context, m_executor.get());
 }
 
 ListReceivedGrantsOutcome LicenseManagerClient::ListReceivedGrants(const ListReceivedGrantsRequest& request) const
@@ -1049,18 +840,12 @@ ListReceivedGrantsOutcome LicenseManagerClient::ListReceivedGrants(const ListRec
 
 ListReceivedGrantsOutcomeCallable LicenseManagerClient::ListReceivedGrantsCallable(const ListReceivedGrantsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReceivedGrantsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReceivedGrants(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListReceivedGrants, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListReceivedGrantsAsync(const ListReceivedGrantsRequest& request, const ListReceivedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListReceivedGrants(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListReceivedGrants, request, handler, context, m_executor.get());
 }
 
 ListReceivedGrantsForOrganizationOutcome LicenseManagerClient::ListReceivedGrantsForOrganization(const ListReceivedGrantsForOrganizationRequest& request) const
@@ -1073,18 +858,12 @@ ListReceivedGrantsForOrganizationOutcome LicenseManagerClient::ListReceivedGrant
 
 ListReceivedGrantsForOrganizationOutcomeCallable LicenseManagerClient::ListReceivedGrantsForOrganizationCallable(const ListReceivedGrantsForOrganizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReceivedGrantsForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReceivedGrantsForOrganization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListReceivedGrantsForOrganization, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListReceivedGrantsForOrganizationAsync(const ListReceivedGrantsForOrganizationRequest& request, const ListReceivedGrantsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListReceivedGrantsForOrganization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListReceivedGrantsForOrganization, request, handler, context, m_executor.get());
 }
 
 ListReceivedLicensesOutcome LicenseManagerClient::ListReceivedLicenses(const ListReceivedLicensesRequest& request) const
@@ -1097,18 +876,12 @@ ListReceivedLicensesOutcome LicenseManagerClient::ListReceivedLicenses(const Lis
 
 ListReceivedLicensesOutcomeCallable LicenseManagerClient::ListReceivedLicensesCallable(const ListReceivedLicensesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReceivedLicensesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReceivedLicenses(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListReceivedLicenses, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListReceivedLicensesAsync(const ListReceivedLicensesRequest& request, const ListReceivedLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListReceivedLicenses(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListReceivedLicenses, request, handler, context, m_executor.get());
 }
 
 ListReceivedLicensesForOrganizationOutcome LicenseManagerClient::ListReceivedLicensesForOrganization(const ListReceivedLicensesForOrganizationRequest& request) const
@@ -1121,18 +894,12 @@ ListReceivedLicensesForOrganizationOutcome LicenseManagerClient::ListReceivedLic
 
 ListReceivedLicensesForOrganizationOutcomeCallable LicenseManagerClient::ListReceivedLicensesForOrganizationCallable(const ListReceivedLicensesForOrganizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReceivedLicensesForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReceivedLicensesForOrganization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListReceivedLicensesForOrganization, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListReceivedLicensesForOrganizationAsync(const ListReceivedLicensesForOrganizationRequest& request, const ListReceivedLicensesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListReceivedLicensesForOrganization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListReceivedLicensesForOrganization, request, handler, context, m_executor.get());
 }
 
 ListResourceInventoryOutcome LicenseManagerClient::ListResourceInventory(const ListResourceInventoryRequest& request) const
@@ -1145,18 +912,12 @@ ListResourceInventoryOutcome LicenseManagerClient::ListResourceInventory(const L
 
 ListResourceInventoryOutcomeCallable LicenseManagerClient::ListResourceInventoryCallable(const ListResourceInventoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListResourceInventoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceInventory(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListResourceInventory, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListResourceInventoryAsync(const ListResourceInventoryRequest& request, const ListResourceInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListResourceInventory(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListResourceInventory, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome LicenseManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1169,18 +930,12 @@ ListTagsForResourceOutcome LicenseManagerClient::ListTagsForResource(const ListT
 
 ListTagsForResourceOutcomeCallable LicenseManagerClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTokensOutcome LicenseManagerClient::ListTokens(const ListTokensRequest& request) const
@@ -1193,18 +948,12 @@ ListTokensOutcome LicenseManagerClient::ListTokens(const ListTokensRequest& requ
 
 ListTokensOutcomeCallable LicenseManagerClient::ListTokensCallable(const ListTokensRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTokensOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTokens(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTokens, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListTokensAsync(const ListTokensRequest& request, const ListTokensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTokens(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTokens, request, handler, context, m_executor.get());
 }
 
 ListUsageForLicenseConfigurationOutcome LicenseManagerClient::ListUsageForLicenseConfiguration(const ListUsageForLicenseConfigurationRequest& request) const
@@ -1217,18 +966,12 @@ ListUsageForLicenseConfigurationOutcome LicenseManagerClient::ListUsageForLicens
 
 ListUsageForLicenseConfigurationOutcomeCallable LicenseManagerClient::ListUsageForLicenseConfigurationCallable(const ListUsageForLicenseConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUsageForLicenseConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUsageForLicenseConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUsageForLicenseConfiguration, request, m_executor.get());
 }
 
 void LicenseManagerClient::ListUsageForLicenseConfigurationAsync(const ListUsageForLicenseConfigurationRequest& request, const ListUsageForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUsageForLicenseConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUsageForLicenseConfiguration, request, handler, context, m_executor.get());
 }
 
 RejectGrantOutcome LicenseManagerClient::RejectGrant(const RejectGrantRequest& request) const
@@ -1241,18 +984,12 @@ RejectGrantOutcome LicenseManagerClient::RejectGrant(const RejectGrantRequest& r
 
 RejectGrantOutcomeCallable LicenseManagerClient::RejectGrantCallable(const RejectGrantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RejectGrantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectGrant(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RejectGrant, request, m_executor.get());
 }
 
 void LicenseManagerClient::RejectGrantAsync(const RejectGrantRequest& request, const RejectGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RejectGrant(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RejectGrant, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome LicenseManagerClient::TagResource(const TagResourceRequest& request) const
@@ -1265,18 +1002,12 @@ TagResourceOutcome LicenseManagerClient::TagResource(const TagResourceRequest& r
 
 TagResourceOutcomeCallable LicenseManagerClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void LicenseManagerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome LicenseManagerClient::UntagResource(const UntagResourceRequest& request) const
@@ -1289,18 +1020,12 @@ UntagResourceOutcome LicenseManagerClient::UntagResource(const UntagResourceRequ
 
 UntagResourceOutcomeCallable LicenseManagerClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void LicenseManagerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateLicenseConfigurationOutcome LicenseManagerClient::UpdateLicenseConfiguration(const UpdateLicenseConfigurationRequest& request) const
@@ -1313,18 +1038,12 @@ UpdateLicenseConfigurationOutcome LicenseManagerClient::UpdateLicenseConfigurati
 
 UpdateLicenseConfigurationOutcomeCallable LicenseManagerClient::UpdateLicenseConfigurationCallable(const UpdateLicenseConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLicenseConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLicenseConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLicenseConfiguration, request, m_executor.get());
 }
 
 void LicenseManagerClient::UpdateLicenseConfigurationAsync(const UpdateLicenseConfigurationRequest& request, const UpdateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLicenseConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLicenseConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateLicenseManagerReportGeneratorOutcome LicenseManagerClient::UpdateLicenseManagerReportGenerator(const UpdateLicenseManagerReportGeneratorRequest& request) const
@@ -1337,18 +1056,12 @@ UpdateLicenseManagerReportGeneratorOutcome LicenseManagerClient::UpdateLicenseMa
 
 UpdateLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::UpdateLicenseManagerReportGeneratorCallable(const UpdateLicenseManagerReportGeneratorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLicenseManagerReportGeneratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLicenseManagerReportGenerator(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLicenseManagerReportGenerator, request, m_executor.get());
 }
 
 void LicenseManagerClient::UpdateLicenseManagerReportGeneratorAsync(const UpdateLicenseManagerReportGeneratorRequest& request, const UpdateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLicenseManagerReportGenerator(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLicenseManagerReportGenerator, request, handler, context, m_executor.get());
 }
 
 UpdateLicenseSpecificationsForResourceOutcome LicenseManagerClient::UpdateLicenseSpecificationsForResource(const UpdateLicenseSpecificationsForResourceRequest& request) const
@@ -1361,18 +1074,12 @@ UpdateLicenseSpecificationsForResourceOutcome LicenseManagerClient::UpdateLicens
 
 UpdateLicenseSpecificationsForResourceOutcomeCallable LicenseManagerClient::UpdateLicenseSpecificationsForResourceCallable(const UpdateLicenseSpecificationsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLicenseSpecificationsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLicenseSpecificationsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLicenseSpecificationsForResource, request, m_executor.get());
 }
 
 void LicenseManagerClient::UpdateLicenseSpecificationsForResourceAsync(const UpdateLicenseSpecificationsForResourceRequest& request, const UpdateLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLicenseSpecificationsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLicenseSpecificationsForResource, request, handler, context, m_executor.get());
 }
 
 UpdateServiceSettingsOutcome LicenseManagerClient::UpdateServiceSettings(const UpdateServiceSettingsRequest& request) const
@@ -1385,17 +1092,11 @@ UpdateServiceSettingsOutcome LicenseManagerClient::UpdateServiceSettings(const U
 
 UpdateServiceSettingsOutcomeCallable LicenseManagerClient::UpdateServiceSettingsCallable(const UpdateServiceSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateServiceSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateServiceSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateServiceSettings, request, m_executor.get());
 }
 
 void LicenseManagerClient::UpdateServiceSettingsAsync(const UpdateServiceSettingsRequest& request, const UpdateServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateServiceSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateServiceSettings, request, handler, context, m_executor.get());
 }
 

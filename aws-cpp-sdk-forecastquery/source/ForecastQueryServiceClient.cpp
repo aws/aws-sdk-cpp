@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -161,18 +162,12 @@ QueryForecastOutcome ForecastQueryServiceClient::QueryForecast(const QueryForeca
 
 QueryForecastOutcomeCallable ForecastQueryServiceClient::QueryForecastCallable(const QueryForecastRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QueryForecast(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(QueryForecast, request, m_executor.get());
 }
 
 void ForecastQueryServiceClient::QueryForecastAsync(const QueryForecastRequest& request, const QueryForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, QueryForecast(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(QueryForecast, request, handler, context, m_executor.get());
 }
 
 QueryWhatIfForecastOutcome ForecastQueryServiceClient::QueryWhatIfForecast(const QueryWhatIfForecastRequest& request) const
@@ -185,17 +180,11 @@ QueryWhatIfForecastOutcome ForecastQueryServiceClient::QueryWhatIfForecast(const
 
 QueryWhatIfForecastOutcomeCallable ForecastQueryServiceClient::QueryWhatIfForecastCallable(const QueryWhatIfForecastRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryWhatIfForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QueryWhatIfForecast(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(QueryWhatIfForecast, request, m_executor.get());
 }
 
 void ForecastQueryServiceClient::QueryWhatIfForecastAsync(const QueryWhatIfForecastRequest& request, const QueryWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, QueryWhatIfForecast(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(QueryWhatIfForecast, request, handler, context, m_executor.get());
 }
 

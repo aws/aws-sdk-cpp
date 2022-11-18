@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -226,18 +227,12 @@ AcceptInputDeviceTransferOutcome MediaLiveClient::AcceptInputDeviceTransfer(cons
 
 AcceptInputDeviceTransferOutcomeCallable MediaLiveClient::AcceptInputDeviceTransferCallable(const AcceptInputDeviceTransferRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcceptInputDeviceTransferOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptInputDeviceTransfer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AcceptInputDeviceTransfer, request, m_executor.get());
 }
 
 void MediaLiveClient::AcceptInputDeviceTransferAsync(const AcceptInputDeviceTransferRequest& request, const AcceptInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AcceptInputDeviceTransfer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AcceptInputDeviceTransfer, request, handler, context, m_executor.get());
 }
 
 BatchDeleteOutcome MediaLiveClient::BatchDelete(const BatchDeleteRequest& request) const
@@ -251,18 +246,12 @@ BatchDeleteOutcome MediaLiveClient::BatchDelete(const BatchDeleteRequest& reques
 
 BatchDeleteOutcomeCallable MediaLiveClient::BatchDeleteCallable(const BatchDeleteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDelete(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDelete, request, m_executor.get());
 }
 
 void MediaLiveClient::BatchDeleteAsync(const BatchDeleteRequest& request, const BatchDeleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDelete(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDelete, request, handler, context, m_executor.get());
 }
 
 BatchStartOutcome MediaLiveClient::BatchStart(const BatchStartRequest& request) const
@@ -276,18 +265,12 @@ BatchStartOutcome MediaLiveClient::BatchStart(const BatchStartRequest& request) 
 
 BatchStartOutcomeCallable MediaLiveClient::BatchStartCallable(const BatchStartRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchStartOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchStart(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchStart, request, m_executor.get());
 }
 
 void MediaLiveClient::BatchStartAsync(const BatchStartRequest& request, const BatchStartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchStart(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchStart, request, handler, context, m_executor.get());
 }
 
 BatchStopOutcome MediaLiveClient::BatchStop(const BatchStopRequest& request) const
@@ -301,18 +284,12 @@ BatchStopOutcome MediaLiveClient::BatchStop(const BatchStopRequest& request) con
 
 BatchStopOutcomeCallable MediaLiveClient::BatchStopCallable(const BatchStopRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchStopOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchStop(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchStop, request, m_executor.get());
 }
 
 void MediaLiveClient::BatchStopAsync(const BatchStopRequest& request, const BatchStopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchStop(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchStop, request, handler, context, m_executor.get());
 }
 
 BatchUpdateScheduleOutcome MediaLiveClient::BatchUpdateSchedule(const BatchUpdateScheduleRequest& request) const
@@ -333,18 +310,12 @@ BatchUpdateScheduleOutcome MediaLiveClient::BatchUpdateSchedule(const BatchUpdat
 
 BatchUpdateScheduleOutcomeCallable MediaLiveClient::BatchUpdateScheduleCallable(const BatchUpdateScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdateSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchUpdateSchedule, request, m_executor.get());
 }
 
 void MediaLiveClient::BatchUpdateScheduleAsync(const BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchUpdateSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchUpdateSchedule, request, handler, context, m_executor.get());
 }
 
 CancelInputDeviceTransferOutcome MediaLiveClient::CancelInputDeviceTransfer(const CancelInputDeviceTransferRequest& request) const
@@ -365,18 +336,12 @@ CancelInputDeviceTransferOutcome MediaLiveClient::CancelInputDeviceTransfer(cons
 
 CancelInputDeviceTransferOutcomeCallable MediaLiveClient::CancelInputDeviceTransferCallable(const CancelInputDeviceTransferRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelInputDeviceTransferOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelInputDeviceTransfer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelInputDeviceTransfer, request, m_executor.get());
 }
 
 void MediaLiveClient::CancelInputDeviceTransferAsync(const CancelInputDeviceTransferRequest& request, const CancelInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelInputDeviceTransfer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelInputDeviceTransfer, request, handler, context, m_executor.get());
 }
 
 ClaimDeviceOutcome MediaLiveClient::ClaimDevice(const ClaimDeviceRequest& request) const
@@ -390,18 +355,12 @@ ClaimDeviceOutcome MediaLiveClient::ClaimDevice(const ClaimDeviceRequest& reques
 
 ClaimDeviceOutcomeCallable MediaLiveClient::ClaimDeviceCallable(const ClaimDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ClaimDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ClaimDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ClaimDevice, request, m_executor.get());
 }
 
 void MediaLiveClient::ClaimDeviceAsync(const ClaimDeviceRequest& request, const ClaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ClaimDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ClaimDevice, request, handler, context, m_executor.get());
 }
 
 CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& request) const
@@ -415,18 +374,12 @@ CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& 
 
 CreateChannelOutcomeCallable MediaLiveClient::CreateChannelCallable(const CreateChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateChannel, request, m_executor.get());
 }
 
 void MediaLiveClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateChannel, request, handler, context, m_executor.get());
 }
 
 CreateInputOutcome MediaLiveClient::CreateInput(const CreateInputRequest& request) const
@@ -440,18 +393,12 @@ CreateInputOutcome MediaLiveClient::CreateInput(const CreateInputRequest& reques
 
 CreateInputOutcomeCallable MediaLiveClient::CreateInputCallable(const CreateInputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateInputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateInput, request, m_executor.get());
 }
 
 void MediaLiveClient::CreateInputAsync(const CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateInput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateInput, request, handler, context, m_executor.get());
 }
 
 CreateInputSecurityGroupOutcome MediaLiveClient::CreateInputSecurityGroup(const CreateInputSecurityGroupRequest& request) const
@@ -465,18 +412,12 @@ CreateInputSecurityGroupOutcome MediaLiveClient::CreateInputSecurityGroup(const 
 
 CreateInputSecurityGroupOutcomeCallable MediaLiveClient::CreateInputSecurityGroupCallable(const CreateInputSecurityGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateInputSecurityGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInputSecurityGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateInputSecurityGroup, request, m_executor.get());
 }
 
 void MediaLiveClient::CreateInputSecurityGroupAsync(const CreateInputSecurityGroupRequest& request, const CreateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateInputSecurityGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateInputSecurityGroup, request, handler, context, m_executor.get());
 }
 
 CreateMultiplexOutcome MediaLiveClient::CreateMultiplex(const CreateMultiplexRequest& request) const
@@ -490,18 +431,12 @@ CreateMultiplexOutcome MediaLiveClient::CreateMultiplex(const CreateMultiplexReq
 
 CreateMultiplexOutcomeCallable MediaLiveClient::CreateMultiplexCallable(const CreateMultiplexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMultiplexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMultiplex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMultiplex, request, m_executor.get());
 }
 
 void MediaLiveClient::CreateMultiplexAsync(const CreateMultiplexRequest& request, const CreateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMultiplex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMultiplex, request, handler, context, m_executor.get());
 }
 
 CreateMultiplexProgramOutcome MediaLiveClient::CreateMultiplexProgram(const CreateMultiplexProgramRequest& request) const
@@ -522,18 +457,12 @@ CreateMultiplexProgramOutcome MediaLiveClient::CreateMultiplexProgram(const Crea
 
 CreateMultiplexProgramOutcomeCallable MediaLiveClient::CreateMultiplexProgramCallable(const CreateMultiplexProgramRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMultiplexProgramOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMultiplexProgram(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMultiplexProgram, request, m_executor.get());
 }
 
 void MediaLiveClient::CreateMultiplexProgramAsync(const CreateMultiplexProgramRequest& request, const CreateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMultiplexProgram(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMultiplexProgram, request, handler, context, m_executor.get());
 }
 
 CreatePartnerInputOutcome MediaLiveClient::CreatePartnerInput(const CreatePartnerInputRequest& request) const
@@ -554,18 +483,12 @@ CreatePartnerInputOutcome MediaLiveClient::CreatePartnerInput(const CreatePartne
 
 CreatePartnerInputOutcomeCallable MediaLiveClient::CreatePartnerInputCallable(const CreatePartnerInputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePartnerInputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePartnerInput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePartnerInput, request, m_executor.get());
 }
 
 void MediaLiveClient::CreatePartnerInputAsync(const CreatePartnerInputRequest& request, const CreatePartnerInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePartnerInput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePartnerInput, request, handler, context, m_executor.get());
 }
 
 CreateTagsOutcome MediaLiveClient::CreateTags(const CreateTagsRequest& request) const
@@ -585,18 +508,12 @@ CreateTagsOutcome MediaLiveClient::CreateTags(const CreateTagsRequest& request) 
 
 CreateTagsOutcomeCallable MediaLiveClient::CreateTagsCallable(const CreateTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTags, request, m_executor.get());
 }
 
 void MediaLiveClient::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTags, request, handler, context, m_executor.get());
 }
 
 DeleteChannelOutcome MediaLiveClient::DeleteChannel(const DeleteChannelRequest& request) const
@@ -616,18 +533,12 @@ DeleteChannelOutcome MediaLiveClient::DeleteChannel(const DeleteChannelRequest& 
 
 DeleteChannelOutcomeCallable MediaLiveClient::DeleteChannelCallable(const DeleteChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteChannel, request, m_executor.get());
 }
 
 void MediaLiveClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteChannel, request, handler, context, m_executor.get());
 }
 
 DeleteInputOutcome MediaLiveClient::DeleteInput(const DeleteInputRequest& request) const
@@ -647,18 +558,12 @@ DeleteInputOutcome MediaLiveClient::DeleteInput(const DeleteInputRequest& reques
 
 DeleteInputOutcomeCallable MediaLiveClient::DeleteInputCallable(const DeleteInputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteInputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteInput, request, m_executor.get());
 }
 
 void MediaLiveClient::DeleteInputAsync(const DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteInput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteInput, request, handler, context, m_executor.get());
 }
 
 DeleteInputSecurityGroupOutcome MediaLiveClient::DeleteInputSecurityGroup(const DeleteInputSecurityGroupRequest& request) const
@@ -678,18 +583,12 @@ DeleteInputSecurityGroupOutcome MediaLiveClient::DeleteInputSecurityGroup(const 
 
 DeleteInputSecurityGroupOutcomeCallable MediaLiveClient::DeleteInputSecurityGroupCallable(const DeleteInputSecurityGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteInputSecurityGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInputSecurityGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteInputSecurityGroup, request, m_executor.get());
 }
 
 void MediaLiveClient::DeleteInputSecurityGroupAsync(const DeleteInputSecurityGroupRequest& request, const DeleteInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteInputSecurityGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteInputSecurityGroup, request, handler, context, m_executor.get());
 }
 
 DeleteMultiplexOutcome MediaLiveClient::DeleteMultiplex(const DeleteMultiplexRequest& request) const
@@ -709,18 +608,12 @@ DeleteMultiplexOutcome MediaLiveClient::DeleteMultiplex(const DeleteMultiplexReq
 
 DeleteMultiplexOutcomeCallable MediaLiveClient::DeleteMultiplexCallable(const DeleteMultiplexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMultiplexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMultiplex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMultiplex, request, m_executor.get());
 }
 
 void MediaLiveClient::DeleteMultiplexAsync(const DeleteMultiplexRequest& request, const DeleteMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMultiplex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMultiplex, request, handler, context, m_executor.get());
 }
 
 DeleteMultiplexProgramOutcome MediaLiveClient::DeleteMultiplexProgram(const DeleteMultiplexProgramRequest& request) const
@@ -747,18 +640,12 @@ DeleteMultiplexProgramOutcome MediaLiveClient::DeleteMultiplexProgram(const Dele
 
 DeleteMultiplexProgramOutcomeCallable MediaLiveClient::DeleteMultiplexProgramCallable(const DeleteMultiplexProgramRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMultiplexProgramOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMultiplexProgram(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMultiplexProgram, request, m_executor.get());
 }
 
 void MediaLiveClient::DeleteMultiplexProgramAsync(const DeleteMultiplexProgramRequest& request, const DeleteMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMultiplexProgram(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMultiplexProgram, request, handler, context, m_executor.get());
 }
 
 DeleteReservationOutcome MediaLiveClient::DeleteReservation(const DeleteReservationRequest& request) const
@@ -778,18 +665,12 @@ DeleteReservationOutcome MediaLiveClient::DeleteReservation(const DeleteReservat
 
 DeleteReservationOutcomeCallable MediaLiveClient::DeleteReservationCallable(const DeleteReservationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteReservationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReservation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteReservation, request, m_executor.get());
 }
 
 void MediaLiveClient::DeleteReservationAsync(const DeleteReservationRequest& request, const DeleteReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteReservation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteReservation, request, handler, context, m_executor.get());
 }
 
 DeleteScheduleOutcome MediaLiveClient::DeleteSchedule(const DeleteScheduleRequest& request) const
@@ -810,18 +691,12 @@ DeleteScheduleOutcome MediaLiveClient::DeleteSchedule(const DeleteScheduleReques
 
 DeleteScheduleOutcomeCallable MediaLiveClient::DeleteScheduleCallable(const DeleteScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSchedule, request, m_executor.get());
 }
 
 void MediaLiveClient::DeleteScheduleAsync(const DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSchedule, request, handler, context, m_executor.get());
 }
 
 DeleteTagsOutcome MediaLiveClient::DeleteTags(const DeleteTagsRequest& request) const
@@ -846,18 +721,12 @@ DeleteTagsOutcome MediaLiveClient::DeleteTags(const DeleteTagsRequest& request) 
 
 DeleteTagsOutcomeCallable MediaLiveClient::DeleteTagsCallable(const DeleteTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTags, request, m_executor.get());
 }
 
 void MediaLiveClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTags, request, handler, context, m_executor.get());
 }
 
 DescribeChannelOutcome MediaLiveClient::DescribeChannel(const DescribeChannelRequest& request) const
@@ -877,18 +746,12 @@ DescribeChannelOutcome MediaLiveClient::DescribeChannel(const DescribeChannelReq
 
 DescribeChannelOutcomeCallable MediaLiveClient::DescribeChannelCallable(const DescribeChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeChannel, request, m_executor.get());
 }
 
 void MediaLiveClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeChannel, request, handler, context, m_executor.get());
 }
 
 DescribeInputOutcome MediaLiveClient::DescribeInput(const DescribeInputRequest& request) const
@@ -908,18 +771,12 @@ DescribeInputOutcome MediaLiveClient::DescribeInput(const DescribeInputRequest& 
 
 DescribeInputOutcomeCallable MediaLiveClient::DescribeInputCallable(const DescribeInputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeInput, request, m_executor.get());
 }
 
 void MediaLiveClient::DescribeInputAsync(const DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeInput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeInput, request, handler, context, m_executor.get());
 }
 
 DescribeInputDeviceOutcome MediaLiveClient::DescribeInputDevice(const DescribeInputDeviceRequest& request) const
@@ -939,18 +796,12 @@ DescribeInputDeviceOutcome MediaLiveClient::DescribeInputDevice(const DescribeIn
 
 DescribeInputDeviceOutcomeCallable MediaLiveClient::DescribeInputDeviceCallable(const DescribeInputDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInputDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInputDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeInputDevice, request, m_executor.get());
 }
 
 void MediaLiveClient::DescribeInputDeviceAsync(const DescribeInputDeviceRequest& request, const DescribeInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeInputDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeInputDevice, request, handler, context, m_executor.get());
 }
 
 DescribeInputDeviceThumbnailOutcome MediaLiveClient::DescribeInputDeviceThumbnail(const DescribeInputDeviceThumbnailRequest& request) const
@@ -976,18 +827,12 @@ DescribeInputDeviceThumbnailOutcome MediaLiveClient::DescribeInputDeviceThumbnai
 
 DescribeInputDeviceThumbnailOutcomeCallable MediaLiveClient::DescribeInputDeviceThumbnailCallable(const DescribeInputDeviceThumbnailRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInputDeviceThumbnailOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInputDeviceThumbnail(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeInputDeviceThumbnail, request, m_executor.get());
 }
 
 void MediaLiveClient::DescribeInputDeviceThumbnailAsync(const DescribeInputDeviceThumbnailRequest& request, const DescribeInputDeviceThumbnailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeInputDeviceThumbnail(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeInputDeviceThumbnail, request, handler, context, m_executor.get());
 }
 
 DescribeInputSecurityGroupOutcome MediaLiveClient::DescribeInputSecurityGroup(const DescribeInputSecurityGroupRequest& request) const
@@ -1007,18 +852,12 @@ DescribeInputSecurityGroupOutcome MediaLiveClient::DescribeInputSecurityGroup(co
 
 DescribeInputSecurityGroupOutcomeCallable MediaLiveClient::DescribeInputSecurityGroupCallable(const DescribeInputSecurityGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInputSecurityGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInputSecurityGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeInputSecurityGroup, request, m_executor.get());
 }
 
 void MediaLiveClient::DescribeInputSecurityGroupAsync(const DescribeInputSecurityGroupRequest& request, const DescribeInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeInputSecurityGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeInputSecurityGroup, request, handler, context, m_executor.get());
 }
 
 DescribeMultiplexOutcome MediaLiveClient::DescribeMultiplex(const DescribeMultiplexRequest& request) const
@@ -1038,18 +877,12 @@ DescribeMultiplexOutcome MediaLiveClient::DescribeMultiplex(const DescribeMultip
 
 DescribeMultiplexOutcomeCallable MediaLiveClient::DescribeMultiplexCallable(const DescribeMultiplexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeMultiplexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMultiplex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeMultiplex, request, m_executor.get());
 }
 
 void MediaLiveClient::DescribeMultiplexAsync(const DescribeMultiplexRequest& request, const DescribeMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeMultiplex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeMultiplex, request, handler, context, m_executor.get());
 }
 
 DescribeMultiplexProgramOutcome MediaLiveClient::DescribeMultiplexProgram(const DescribeMultiplexProgramRequest& request) const
@@ -1076,18 +909,12 @@ DescribeMultiplexProgramOutcome MediaLiveClient::DescribeMultiplexProgram(const 
 
 DescribeMultiplexProgramOutcomeCallable MediaLiveClient::DescribeMultiplexProgramCallable(const DescribeMultiplexProgramRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeMultiplexProgramOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMultiplexProgram(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeMultiplexProgram, request, m_executor.get());
 }
 
 void MediaLiveClient::DescribeMultiplexProgramAsync(const DescribeMultiplexProgramRequest& request, const DescribeMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeMultiplexProgram(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeMultiplexProgram, request, handler, context, m_executor.get());
 }
 
 DescribeOfferingOutcome MediaLiveClient::DescribeOffering(const DescribeOfferingRequest& request) const
@@ -1107,18 +934,12 @@ DescribeOfferingOutcome MediaLiveClient::DescribeOffering(const DescribeOffering
 
 DescribeOfferingOutcomeCallable MediaLiveClient::DescribeOfferingCallable(const DescribeOfferingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeOfferingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOffering(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeOffering, request, m_executor.get());
 }
 
 void MediaLiveClient::DescribeOfferingAsync(const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeOffering(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeOffering, request, handler, context, m_executor.get());
 }
 
 DescribeReservationOutcome MediaLiveClient::DescribeReservation(const DescribeReservationRequest& request) const
@@ -1138,18 +959,12 @@ DescribeReservationOutcome MediaLiveClient::DescribeReservation(const DescribeRe
 
 DescribeReservationOutcomeCallable MediaLiveClient::DescribeReservationCallable(const DescribeReservationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeReservationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReservation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeReservation, request, m_executor.get());
 }
 
 void MediaLiveClient::DescribeReservationAsync(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeReservation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeReservation, request, handler, context, m_executor.get());
 }
 
 DescribeScheduleOutcome MediaLiveClient::DescribeSchedule(const DescribeScheduleRequest& request) const
@@ -1170,18 +985,12 @@ DescribeScheduleOutcome MediaLiveClient::DescribeSchedule(const DescribeSchedule
 
 DescribeScheduleOutcomeCallable MediaLiveClient::DescribeScheduleCallable(const DescribeScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSchedule, request, m_executor.get());
 }
 
 void MediaLiveClient::DescribeScheduleAsync(const DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSchedule, request, handler, context, m_executor.get());
 }
 
 ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& request) const
@@ -1195,18 +1004,12 @@ ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& req
 
 ListChannelsOutcomeCallable MediaLiveClient::ListChannelsCallable(const ListChannelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListChannelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListChannels, request, m_executor.get());
 }
 
 void MediaLiveClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListChannels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListChannels, request, handler, context, m_executor.get());
 }
 
 ListInputDeviceTransfersOutcome MediaLiveClient::ListInputDeviceTransfers(const ListInputDeviceTransfersRequest& request) const
@@ -1225,18 +1028,12 @@ ListInputDeviceTransfersOutcome MediaLiveClient::ListInputDeviceTransfers(const 
 
 ListInputDeviceTransfersOutcomeCallable MediaLiveClient::ListInputDeviceTransfersCallable(const ListInputDeviceTransfersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInputDeviceTransfersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInputDeviceTransfers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInputDeviceTransfers, request, m_executor.get());
 }
 
 void MediaLiveClient::ListInputDeviceTransfersAsync(const ListInputDeviceTransfersRequest& request, const ListInputDeviceTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInputDeviceTransfers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInputDeviceTransfers, request, handler, context, m_executor.get());
 }
 
 ListInputDevicesOutcome MediaLiveClient::ListInputDevices(const ListInputDevicesRequest& request) const
@@ -1250,18 +1047,12 @@ ListInputDevicesOutcome MediaLiveClient::ListInputDevices(const ListInputDevices
 
 ListInputDevicesOutcomeCallable MediaLiveClient::ListInputDevicesCallable(const ListInputDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInputDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInputDevices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInputDevices, request, m_executor.get());
 }
 
 void MediaLiveClient::ListInputDevicesAsync(const ListInputDevicesRequest& request, const ListInputDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInputDevices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInputDevices, request, handler, context, m_executor.get());
 }
 
 ListInputSecurityGroupsOutcome MediaLiveClient::ListInputSecurityGroups(const ListInputSecurityGroupsRequest& request) const
@@ -1275,18 +1066,12 @@ ListInputSecurityGroupsOutcome MediaLiveClient::ListInputSecurityGroups(const Li
 
 ListInputSecurityGroupsOutcomeCallable MediaLiveClient::ListInputSecurityGroupsCallable(const ListInputSecurityGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInputSecurityGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInputSecurityGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInputSecurityGroups, request, m_executor.get());
 }
 
 void MediaLiveClient::ListInputSecurityGroupsAsync(const ListInputSecurityGroupsRequest& request, const ListInputSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInputSecurityGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInputSecurityGroups, request, handler, context, m_executor.get());
 }
 
 ListInputsOutcome MediaLiveClient::ListInputs(const ListInputsRequest& request) const
@@ -1300,18 +1085,12 @@ ListInputsOutcome MediaLiveClient::ListInputs(const ListInputsRequest& request) 
 
 ListInputsOutcomeCallable MediaLiveClient::ListInputsCallable(const ListInputsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInputsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInputs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInputs, request, m_executor.get());
 }
 
 void MediaLiveClient::ListInputsAsync(const ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInputs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInputs, request, handler, context, m_executor.get());
 }
 
 ListMultiplexProgramsOutcome MediaLiveClient::ListMultiplexPrograms(const ListMultiplexProgramsRequest& request) const
@@ -1332,18 +1111,12 @@ ListMultiplexProgramsOutcome MediaLiveClient::ListMultiplexPrograms(const ListMu
 
 ListMultiplexProgramsOutcomeCallable MediaLiveClient::ListMultiplexProgramsCallable(const ListMultiplexProgramsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMultiplexProgramsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMultiplexPrograms(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMultiplexPrograms, request, m_executor.get());
 }
 
 void MediaLiveClient::ListMultiplexProgramsAsync(const ListMultiplexProgramsRequest& request, const ListMultiplexProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMultiplexPrograms(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMultiplexPrograms, request, handler, context, m_executor.get());
 }
 
 ListMultiplexesOutcome MediaLiveClient::ListMultiplexes(const ListMultiplexesRequest& request) const
@@ -1357,18 +1130,12 @@ ListMultiplexesOutcome MediaLiveClient::ListMultiplexes(const ListMultiplexesReq
 
 ListMultiplexesOutcomeCallable MediaLiveClient::ListMultiplexesCallable(const ListMultiplexesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMultiplexesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMultiplexes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMultiplexes, request, m_executor.get());
 }
 
 void MediaLiveClient::ListMultiplexesAsync(const ListMultiplexesRequest& request, const ListMultiplexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMultiplexes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMultiplexes, request, handler, context, m_executor.get());
 }
 
 ListOfferingsOutcome MediaLiveClient::ListOfferings(const ListOfferingsRequest& request) const
@@ -1382,18 +1149,12 @@ ListOfferingsOutcome MediaLiveClient::ListOfferings(const ListOfferingsRequest& 
 
 ListOfferingsOutcomeCallable MediaLiveClient::ListOfferingsCallable(const ListOfferingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOfferings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListOfferings, request, m_executor.get());
 }
 
 void MediaLiveClient::ListOfferingsAsync(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListOfferings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListOfferings, request, handler, context, m_executor.get());
 }
 
 ListReservationsOutcome MediaLiveClient::ListReservations(const ListReservationsRequest& request) const
@@ -1407,18 +1168,12 @@ ListReservationsOutcome MediaLiveClient::ListReservations(const ListReservations
 
 ListReservationsOutcomeCallable MediaLiveClient::ListReservationsCallable(const ListReservationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReservationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReservations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListReservations, request, m_executor.get());
 }
 
 void MediaLiveClient::ListReservationsAsync(const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListReservations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListReservations, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome MediaLiveClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1438,18 +1193,12 @@ ListTagsForResourceOutcome MediaLiveClient::ListTagsForResource(const ListTagsFo
 
 ListTagsForResourceOutcomeCallable MediaLiveClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void MediaLiveClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PurchaseOfferingOutcome MediaLiveClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
@@ -1470,18 +1219,12 @@ PurchaseOfferingOutcome MediaLiveClient::PurchaseOffering(const PurchaseOffering
 
 PurchaseOfferingOutcomeCallable MediaLiveClient::PurchaseOfferingCallable(const PurchaseOfferingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PurchaseOfferingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PurchaseOffering(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PurchaseOffering, request, m_executor.get());
 }
 
 void MediaLiveClient::PurchaseOfferingAsync(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PurchaseOffering(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PurchaseOffering, request, handler, context, m_executor.get());
 }
 
 RebootInputDeviceOutcome MediaLiveClient::RebootInputDevice(const RebootInputDeviceRequest& request) const
@@ -1502,18 +1245,12 @@ RebootInputDeviceOutcome MediaLiveClient::RebootInputDevice(const RebootInputDev
 
 RebootInputDeviceOutcomeCallable MediaLiveClient::RebootInputDeviceCallable(const RebootInputDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RebootInputDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RebootInputDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RebootInputDevice, request, m_executor.get());
 }
 
 void MediaLiveClient::RebootInputDeviceAsync(const RebootInputDeviceRequest& request, const RebootInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RebootInputDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RebootInputDevice, request, handler, context, m_executor.get());
 }
 
 RejectInputDeviceTransferOutcome MediaLiveClient::RejectInputDeviceTransfer(const RejectInputDeviceTransferRequest& request) const
@@ -1534,18 +1271,12 @@ RejectInputDeviceTransferOutcome MediaLiveClient::RejectInputDeviceTransfer(cons
 
 RejectInputDeviceTransferOutcomeCallable MediaLiveClient::RejectInputDeviceTransferCallable(const RejectInputDeviceTransferRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RejectInputDeviceTransferOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectInputDeviceTransfer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RejectInputDeviceTransfer, request, m_executor.get());
 }
 
 void MediaLiveClient::RejectInputDeviceTransferAsync(const RejectInputDeviceTransferRequest& request, const RejectInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RejectInputDeviceTransfer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RejectInputDeviceTransfer, request, handler, context, m_executor.get());
 }
 
 StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& request) const
@@ -1566,18 +1297,12 @@ StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& req
 
 StartChannelOutcomeCallable MediaLiveClient::StartChannelCallable(const StartChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartChannel, request, m_executor.get());
 }
 
 void MediaLiveClient::StartChannelAsync(const StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartChannel, request, handler, context, m_executor.get());
 }
 
 StartInputDeviceMaintenanceWindowOutcome MediaLiveClient::StartInputDeviceMaintenanceWindow(const StartInputDeviceMaintenanceWindowRequest& request) const
@@ -1598,18 +1323,12 @@ StartInputDeviceMaintenanceWindowOutcome MediaLiveClient::StartInputDeviceMainte
 
 StartInputDeviceMaintenanceWindowOutcomeCallable MediaLiveClient::StartInputDeviceMaintenanceWindowCallable(const StartInputDeviceMaintenanceWindowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartInputDeviceMaintenanceWindowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartInputDeviceMaintenanceWindow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartInputDeviceMaintenanceWindow, request, m_executor.get());
 }
 
 void MediaLiveClient::StartInputDeviceMaintenanceWindowAsync(const StartInputDeviceMaintenanceWindowRequest& request, const StartInputDeviceMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartInputDeviceMaintenanceWindow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartInputDeviceMaintenanceWindow, request, handler, context, m_executor.get());
 }
 
 StartMultiplexOutcome MediaLiveClient::StartMultiplex(const StartMultiplexRequest& request) const
@@ -1630,18 +1349,12 @@ StartMultiplexOutcome MediaLiveClient::StartMultiplex(const StartMultiplexReques
 
 StartMultiplexOutcomeCallable MediaLiveClient::StartMultiplexCallable(const StartMultiplexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartMultiplexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMultiplex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartMultiplex, request, m_executor.get());
 }
 
 void MediaLiveClient::StartMultiplexAsync(const StartMultiplexRequest& request, const StartMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartMultiplex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartMultiplex, request, handler, context, m_executor.get());
 }
 
 StopChannelOutcome MediaLiveClient::StopChannel(const StopChannelRequest& request) const
@@ -1662,18 +1375,12 @@ StopChannelOutcome MediaLiveClient::StopChannel(const StopChannelRequest& reques
 
 StopChannelOutcomeCallable MediaLiveClient::StopChannelCallable(const StopChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopChannel, request, m_executor.get());
 }
 
 void MediaLiveClient::StopChannelAsync(const StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopChannel, request, handler, context, m_executor.get());
 }
 
 StopMultiplexOutcome MediaLiveClient::StopMultiplex(const StopMultiplexRequest& request) const
@@ -1694,18 +1401,12 @@ StopMultiplexOutcome MediaLiveClient::StopMultiplex(const StopMultiplexRequest& 
 
 StopMultiplexOutcomeCallable MediaLiveClient::StopMultiplexCallable(const StopMultiplexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopMultiplexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopMultiplex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopMultiplex, request, m_executor.get());
 }
 
 void MediaLiveClient::StopMultiplexAsync(const StopMultiplexRequest& request, const StopMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopMultiplex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopMultiplex, request, handler, context, m_executor.get());
 }
 
 TransferInputDeviceOutcome MediaLiveClient::TransferInputDevice(const TransferInputDeviceRequest& request) const
@@ -1726,18 +1427,12 @@ TransferInputDeviceOutcome MediaLiveClient::TransferInputDevice(const TransferIn
 
 TransferInputDeviceOutcomeCallable MediaLiveClient::TransferInputDeviceCallable(const TransferInputDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TransferInputDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TransferInputDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TransferInputDevice, request, m_executor.get());
 }
 
 void MediaLiveClient::TransferInputDeviceAsync(const TransferInputDeviceRequest& request, const TransferInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TransferInputDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TransferInputDevice, request, handler, context, m_executor.get());
 }
 
 UpdateChannelOutcome MediaLiveClient::UpdateChannel(const UpdateChannelRequest& request) const
@@ -1757,18 +1452,12 @@ UpdateChannelOutcome MediaLiveClient::UpdateChannel(const UpdateChannelRequest& 
 
 UpdateChannelOutcomeCallable MediaLiveClient::UpdateChannelCallable(const UpdateChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateChannel, request, m_executor.get());
 }
 
 void MediaLiveClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateChannel, request, handler, context, m_executor.get());
 }
 
 UpdateChannelClassOutcome MediaLiveClient::UpdateChannelClass(const UpdateChannelClassRequest& request) const
@@ -1789,18 +1478,12 @@ UpdateChannelClassOutcome MediaLiveClient::UpdateChannelClass(const UpdateChanne
 
 UpdateChannelClassOutcomeCallable MediaLiveClient::UpdateChannelClassCallable(const UpdateChannelClassRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateChannelClassOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateChannelClass(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateChannelClass, request, m_executor.get());
 }
 
 void MediaLiveClient::UpdateChannelClassAsync(const UpdateChannelClassRequest& request, const UpdateChannelClassResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateChannelClass(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateChannelClass, request, handler, context, m_executor.get());
 }
 
 UpdateInputOutcome MediaLiveClient::UpdateInput(const UpdateInputRequest& request) const
@@ -1820,18 +1503,12 @@ UpdateInputOutcome MediaLiveClient::UpdateInput(const UpdateInputRequest& reques
 
 UpdateInputOutcomeCallable MediaLiveClient::UpdateInputCallable(const UpdateInputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateInputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateInput, request, m_executor.get());
 }
 
 void MediaLiveClient::UpdateInputAsync(const UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateInput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateInput, request, handler, context, m_executor.get());
 }
 
 UpdateInputDeviceOutcome MediaLiveClient::UpdateInputDevice(const UpdateInputDeviceRequest& request) const
@@ -1851,18 +1528,12 @@ UpdateInputDeviceOutcome MediaLiveClient::UpdateInputDevice(const UpdateInputDev
 
 UpdateInputDeviceOutcomeCallable MediaLiveClient::UpdateInputDeviceCallable(const UpdateInputDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateInputDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInputDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateInputDevice, request, m_executor.get());
 }
 
 void MediaLiveClient::UpdateInputDeviceAsync(const UpdateInputDeviceRequest& request, const UpdateInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateInputDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateInputDevice, request, handler, context, m_executor.get());
 }
 
 UpdateInputSecurityGroupOutcome MediaLiveClient::UpdateInputSecurityGroup(const UpdateInputSecurityGroupRequest& request) const
@@ -1882,18 +1553,12 @@ UpdateInputSecurityGroupOutcome MediaLiveClient::UpdateInputSecurityGroup(const 
 
 UpdateInputSecurityGroupOutcomeCallable MediaLiveClient::UpdateInputSecurityGroupCallable(const UpdateInputSecurityGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateInputSecurityGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInputSecurityGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateInputSecurityGroup, request, m_executor.get());
 }
 
 void MediaLiveClient::UpdateInputSecurityGroupAsync(const UpdateInputSecurityGroupRequest& request, const UpdateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateInputSecurityGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateInputSecurityGroup, request, handler, context, m_executor.get());
 }
 
 UpdateMultiplexOutcome MediaLiveClient::UpdateMultiplex(const UpdateMultiplexRequest& request) const
@@ -1913,18 +1578,12 @@ UpdateMultiplexOutcome MediaLiveClient::UpdateMultiplex(const UpdateMultiplexReq
 
 UpdateMultiplexOutcomeCallable MediaLiveClient::UpdateMultiplexCallable(const UpdateMultiplexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMultiplexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMultiplex(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateMultiplex, request, m_executor.get());
 }
 
 void MediaLiveClient::UpdateMultiplexAsync(const UpdateMultiplexRequest& request, const UpdateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateMultiplex(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateMultiplex, request, handler, context, m_executor.get());
 }
 
 UpdateMultiplexProgramOutcome MediaLiveClient::UpdateMultiplexProgram(const UpdateMultiplexProgramRequest& request) const
@@ -1951,18 +1610,12 @@ UpdateMultiplexProgramOutcome MediaLiveClient::UpdateMultiplexProgram(const Upda
 
 UpdateMultiplexProgramOutcomeCallable MediaLiveClient::UpdateMultiplexProgramCallable(const UpdateMultiplexProgramRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMultiplexProgramOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMultiplexProgram(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateMultiplexProgram, request, m_executor.get());
 }
 
 void MediaLiveClient::UpdateMultiplexProgramAsync(const UpdateMultiplexProgramRequest& request, const UpdateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateMultiplexProgram(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateMultiplexProgram, request, handler, context, m_executor.get());
 }
 
 UpdateReservationOutcome MediaLiveClient::UpdateReservation(const UpdateReservationRequest& request) const
@@ -1982,17 +1635,11 @@ UpdateReservationOutcome MediaLiveClient::UpdateReservation(const UpdateReservat
 
 UpdateReservationOutcomeCallable MediaLiveClient::UpdateReservationCallable(const UpdateReservationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReservationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReservation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateReservation, request, m_executor.get());
 }
 
 void MediaLiveClient::UpdateReservationAsync(const UpdateReservationRequest& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateReservation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateReservation, request, handler, context, m_executor.get());
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -188,18 +189,12 @@ CancelJobRunOutcome EMRServerlessClient::CancelJobRun(const CancelJobRunRequest&
 
 CancelJobRunOutcomeCallable EMRServerlessClient::CancelJobRunCallable(const CancelJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelJobRun, request, m_executor.get());
 }
 
 void EMRServerlessClient::CancelJobRunAsync(const CancelJobRunRequest& request, const CancelJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelJobRun, request, handler, context, m_executor.get());
 }
 
 CreateApplicationOutcome EMRServerlessClient::CreateApplication(const CreateApplicationRequest& request) const
@@ -213,18 +208,12 @@ CreateApplicationOutcome EMRServerlessClient::CreateApplication(const CreateAppl
 
 CreateApplicationOutcomeCallable EMRServerlessClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateApplication, request, m_executor.get());
 }
 
 void EMRServerlessClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateApplication, request, handler, context, m_executor.get());
 }
 
 DeleteApplicationOutcome EMRServerlessClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -244,18 +233,12 @@ DeleteApplicationOutcome EMRServerlessClient::DeleteApplication(const DeleteAppl
 
 DeleteApplicationOutcomeCallable EMRServerlessClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteApplication, request, m_executor.get());
 }
 
 void EMRServerlessClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteApplication, request, handler, context, m_executor.get());
 }
 
 GetApplicationOutcome EMRServerlessClient::GetApplication(const GetApplicationRequest& request) const
@@ -275,18 +258,12 @@ GetApplicationOutcome EMRServerlessClient::GetApplication(const GetApplicationRe
 
 GetApplicationOutcomeCallable EMRServerlessClient::GetApplicationCallable(const GetApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetApplication, request, m_executor.get());
 }
 
 void EMRServerlessClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetApplication, request, handler, context, m_executor.get());
 }
 
 GetDashboardForJobRunOutcome EMRServerlessClient::GetDashboardForJobRun(const GetDashboardForJobRunRequest& request) const
@@ -314,18 +291,12 @@ GetDashboardForJobRunOutcome EMRServerlessClient::GetDashboardForJobRun(const Ge
 
 GetDashboardForJobRunOutcomeCallable EMRServerlessClient::GetDashboardForJobRunCallable(const GetDashboardForJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDashboardForJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDashboardForJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDashboardForJobRun, request, m_executor.get());
 }
 
 void EMRServerlessClient::GetDashboardForJobRunAsync(const GetDashboardForJobRunRequest& request, const GetDashboardForJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDashboardForJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDashboardForJobRun, request, handler, context, m_executor.get());
 }
 
 GetJobRunOutcome EMRServerlessClient::GetJobRun(const GetJobRunRequest& request) const
@@ -352,18 +323,12 @@ GetJobRunOutcome EMRServerlessClient::GetJobRun(const GetJobRunRequest& request)
 
 GetJobRunOutcomeCallable EMRServerlessClient::GetJobRunCallable(const GetJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetJobRun, request, m_executor.get());
 }
 
 void EMRServerlessClient::GetJobRunAsync(const GetJobRunRequest& request, const GetJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetJobRun, request, handler, context, m_executor.get());
 }
 
 ListApplicationsOutcome EMRServerlessClient::ListApplications(const ListApplicationsRequest& request) const
@@ -377,18 +342,12 @@ ListApplicationsOutcome EMRServerlessClient::ListApplications(const ListApplicat
 
 ListApplicationsOutcomeCallable EMRServerlessClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplications(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListApplications, request, m_executor.get());
 }
 
 void EMRServerlessClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListApplications(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListApplications, request, handler, context, m_executor.get());
 }
 
 ListJobRunsOutcome EMRServerlessClient::ListJobRuns(const ListJobRunsRequest& request) const
@@ -409,18 +368,12 @@ ListJobRunsOutcome EMRServerlessClient::ListJobRuns(const ListJobRunsRequest& re
 
 ListJobRunsOutcomeCallable EMRServerlessClient::ListJobRunsCallable(const ListJobRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListJobRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListJobRuns, request, m_executor.get());
 }
 
 void EMRServerlessClient::ListJobRunsAsync(const ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListJobRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListJobRuns, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome EMRServerlessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -440,18 +393,12 @@ ListTagsForResourceOutcome EMRServerlessClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable EMRServerlessClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void EMRServerlessClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartApplicationOutcome EMRServerlessClient::StartApplication(const StartApplicationRequest& request) const
@@ -472,18 +419,12 @@ StartApplicationOutcome EMRServerlessClient::StartApplication(const StartApplica
 
 StartApplicationOutcomeCallable EMRServerlessClient::StartApplicationCallable(const StartApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartApplication, request, m_executor.get());
 }
 
 void EMRServerlessClient::StartApplicationAsync(const StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartApplication, request, handler, context, m_executor.get());
 }
 
 StartJobRunOutcome EMRServerlessClient::StartJobRun(const StartJobRunRequest& request) const
@@ -504,18 +445,12 @@ StartJobRunOutcome EMRServerlessClient::StartJobRun(const StartJobRunRequest& re
 
 StartJobRunOutcomeCallable EMRServerlessClient::StartJobRunCallable(const StartJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartJobRun, request, m_executor.get());
 }
 
 void EMRServerlessClient::StartJobRunAsync(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartJobRun, request, handler, context, m_executor.get());
 }
 
 StopApplicationOutcome EMRServerlessClient::StopApplication(const StopApplicationRequest& request) const
@@ -536,18 +471,12 @@ StopApplicationOutcome EMRServerlessClient::StopApplication(const StopApplicatio
 
 StopApplicationOutcomeCallable EMRServerlessClient::StopApplicationCallable(const StopApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopApplication, request, m_executor.get());
 }
 
 void EMRServerlessClient::StopApplicationAsync(const StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopApplication, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome EMRServerlessClient::TagResource(const TagResourceRequest& request) const
@@ -567,18 +496,12 @@ TagResourceOutcome EMRServerlessClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable EMRServerlessClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void EMRServerlessClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome EMRServerlessClient::UntagResource(const UntagResourceRequest& request) const
@@ -603,18 +526,12 @@ UntagResourceOutcome EMRServerlessClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable EMRServerlessClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void EMRServerlessClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateApplicationOutcome EMRServerlessClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -634,17 +551,11 @@ UpdateApplicationOutcome EMRServerlessClient::UpdateApplication(const UpdateAppl
 
 UpdateApplicationOutcomeCallable EMRServerlessClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateApplication, request, m_executor.get());
 }
 
 void EMRServerlessClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateApplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateApplication, request, handler, context, m_executor.get());
 }
 

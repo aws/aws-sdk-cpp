@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -196,18 +197,12 @@ CancelContactOutcome GroundStationClient::CancelContact(const CancelContactReque
 
 CancelContactOutcomeCallable GroundStationClient::CancelContactCallable(const CancelContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelContact, request, m_executor.get());
 }
 
 void GroundStationClient::CancelContactAsync(const CancelContactRequest& request, const CancelContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelContact, request, handler, context, m_executor.get());
 }
 
 CreateConfigOutcome GroundStationClient::CreateConfig(const CreateConfigRequest& request) const
@@ -221,18 +216,12 @@ CreateConfigOutcome GroundStationClient::CreateConfig(const CreateConfigRequest&
 
 CreateConfigOutcomeCallable GroundStationClient::CreateConfigCallable(const CreateConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateConfig, request, m_executor.get());
 }
 
 void GroundStationClient::CreateConfigAsync(const CreateConfigRequest& request, const CreateConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateConfig, request, handler, context, m_executor.get());
 }
 
 CreateDataflowEndpointGroupOutcome GroundStationClient::CreateDataflowEndpointGroup(const CreateDataflowEndpointGroupRequest& request) const
@@ -246,18 +235,12 @@ CreateDataflowEndpointGroupOutcome GroundStationClient::CreateDataflowEndpointGr
 
 CreateDataflowEndpointGroupOutcomeCallable GroundStationClient::CreateDataflowEndpointGroupCallable(const CreateDataflowEndpointGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDataflowEndpointGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataflowEndpointGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataflowEndpointGroup, request, m_executor.get());
 }
 
 void GroundStationClient::CreateDataflowEndpointGroupAsync(const CreateDataflowEndpointGroupRequest& request, const CreateDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataflowEndpointGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataflowEndpointGroup, request, handler, context, m_executor.get());
 }
 
 CreateEphemerisOutcome GroundStationClient::CreateEphemeris(const CreateEphemerisRequest& request) const
@@ -271,18 +254,12 @@ CreateEphemerisOutcome GroundStationClient::CreateEphemeris(const CreateEphemeri
 
 CreateEphemerisOutcomeCallable GroundStationClient::CreateEphemerisCallable(const CreateEphemerisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEphemeris(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEphemeris, request, m_executor.get());
 }
 
 void GroundStationClient::CreateEphemerisAsync(const CreateEphemerisRequest& request, const CreateEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEphemeris(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEphemeris, request, handler, context, m_executor.get());
 }
 
 CreateMissionProfileOutcome GroundStationClient::CreateMissionProfile(const CreateMissionProfileRequest& request) const
@@ -296,18 +273,12 @@ CreateMissionProfileOutcome GroundStationClient::CreateMissionProfile(const Crea
 
 CreateMissionProfileOutcomeCallable GroundStationClient::CreateMissionProfileCallable(const CreateMissionProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMissionProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMissionProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMissionProfile, request, m_executor.get());
 }
 
 void GroundStationClient::CreateMissionProfileAsync(const CreateMissionProfileRequest& request, const CreateMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMissionProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMissionProfile, request, handler, context, m_executor.get());
 }
 
 DeleteConfigOutcome GroundStationClient::DeleteConfig(const DeleteConfigRequest& request) const
@@ -333,18 +304,12 @@ DeleteConfigOutcome GroundStationClient::DeleteConfig(const DeleteConfigRequest&
 
 DeleteConfigOutcomeCallable GroundStationClient::DeleteConfigCallable(const DeleteConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteConfig, request, m_executor.get());
 }
 
 void GroundStationClient::DeleteConfigAsync(const DeleteConfigRequest& request, const DeleteConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteConfig, request, handler, context, m_executor.get());
 }
 
 DeleteDataflowEndpointGroupOutcome GroundStationClient::DeleteDataflowEndpointGroup(const DeleteDataflowEndpointGroupRequest& request) const
@@ -364,18 +329,12 @@ DeleteDataflowEndpointGroupOutcome GroundStationClient::DeleteDataflowEndpointGr
 
 DeleteDataflowEndpointGroupOutcomeCallable GroundStationClient::DeleteDataflowEndpointGroupCallable(const DeleteDataflowEndpointGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDataflowEndpointGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataflowEndpointGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDataflowEndpointGroup, request, m_executor.get());
 }
 
 void GroundStationClient::DeleteDataflowEndpointGroupAsync(const DeleteDataflowEndpointGroupRequest& request, const DeleteDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDataflowEndpointGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDataflowEndpointGroup, request, handler, context, m_executor.get());
 }
 
 DeleteEphemerisOutcome GroundStationClient::DeleteEphemeris(const DeleteEphemerisRequest& request) const
@@ -395,18 +354,12 @@ DeleteEphemerisOutcome GroundStationClient::DeleteEphemeris(const DeleteEphemeri
 
 DeleteEphemerisOutcomeCallable GroundStationClient::DeleteEphemerisCallable(const DeleteEphemerisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEphemeris(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEphemeris, request, m_executor.get());
 }
 
 void GroundStationClient::DeleteEphemerisAsync(const DeleteEphemerisRequest& request, const DeleteEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEphemeris(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEphemeris, request, handler, context, m_executor.get());
 }
 
 DeleteMissionProfileOutcome GroundStationClient::DeleteMissionProfile(const DeleteMissionProfileRequest& request) const
@@ -426,18 +379,12 @@ DeleteMissionProfileOutcome GroundStationClient::DeleteMissionProfile(const Dele
 
 DeleteMissionProfileOutcomeCallable GroundStationClient::DeleteMissionProfileCallable(const DeleteMissionProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMissionProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMissionProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMissionProfile, request, m_executor.get());
 }
 
 void GroundStationClient::DeleteMissionProfileAsync(const DeleteMissionProfileRequest& request, const DeleteMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMissionProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMissionProfile, request, handler, context, m_executor.get());
 }
 
 DescribeContactOutcome GroundStationClient::DescribeContact(const DescribeContactRequest& request) const
@@ -457,18 +404,12 @@ DescribeContactOutcome GroundStationClient::DescribeContact(const DescribeContac
 
 DescribeContactOutcomeCallable GroundStationClient::DescribeContactCallable(const DescribeContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeContact, request, m_executor.get());
 }
 
 void GroundStationClient::DescribeContactAsync(const DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeContact, request, handler, context, m_executor.get());
 }
 
 DescribeEphemerisOutcome GroundStationClient::DescribeEphemeris(const DescribeEphemerisRequest& request) const
@@ -488,18 +429,12 @@ DescribeEphemerisOutcome GroundStationClient::DescribeEphemeris(const DescribeEp
 
 DescribeEphemerisOutcomeCallable GroundStationClient::DescribeEphemerisCallable(const DescribeEphemerisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEphemeris(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEphemeris, request, m_executor.get());
 }
 
 void GroundStationClient::DescribeEphemerisAsync(const DescribeEphemerisRequest& request, const DescribeEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEphemeris(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEphemeris, request, handler, context, m_executor.get());
 }
 
 GetConfigOutcome GroundStationClient::GetConfig(const GetConfigRequest& request) const
@@ -525,18 +460,12 @@ GetConfigOutcome GroundStationClient::GetConfig(const GetConfigRequest& request)
 
 GetConfigOutcomeCallable GroundStationClient::GetConfigCallable(const GetConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetConfig, request, m_executor.get());
 }
 
 void GroundStationClient::GetConfigAsync(const GetConfigRequest& request, const GetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetConfig, request, handler, context, m_executor.get());
 }
 
 GetDataflowEndpointGroupOutcome GroundStationClient::GetDataflowEndpointGroup(const GetDataflowEndpointGroupRequest& request) const
@@ -556,18 +485,12 @@ GetDataflowEndpointGroupOutcome GroundStationClient::GetDataflowEndpointGroup(co
 
 GetDataflowEndpointGroupOutcomeCallable GroundStationClient::GetDataflowEndpointGroupCallable(const GetDataflowEndpointGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataflowEndpointGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataflowEndpointGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDataflowEndpointGroup, request, m_executor.get());
 }
 
 void GroundStationClient::GetDataflowEndpointGroupAsync(const GetDataflowEndpointGroupRequest& request, const GetDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDataflowEndpointGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDataflowEndpointGroup, request, handler, context, m_executor.get());
 }
 
 GetMinuteUsageOutcome GroundStationClient::GetMinuteUsage(const GetMinuteUsageRequest& request) const
@@ -581,18 +504,12 @@ GetMinuteUsageOutcome GroundStationClient::GetMinuteUsage(const GetMinuteUsageRe
 
 GetMinuteUsageOutcomeCallable GroundStationClient::GetMinuteUsageCallable(const GetMinuteUsageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMinuteUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMinuteUsage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMinuteUsage, request, m_executor.get());
 }
 
 void GroundStationClient::GetMinuteUsageAsync(const GetMinuteUsageRequest& request, const GetMinuteUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMinuteUsage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMinuteUsage, request, handler, context, m_executor.get());
 }
 
 GetMissionProfileOutcome GroundStationClient::GetMissionProfile(const GetMissionProfileRequest& request) const
@@ -612,18 +529,12 @@ GetMissionProfileOutcome GroundStationClient::GetMissionProfile(const GetMission
 
 GetMissionProfileOutcomeCallable GroundStationClient::GetMissionProfileCallable(const GetMissionProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMissionProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMissionProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMissionProfile, request, m_executor.get());
 }
 
 void GroundStationClient::GetMissionProfileAsync(const GetMissionProfileRequest& request, const GetMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMissionProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMissionProfile, request, handler, context, m_executor.get());
 }
 
 GetSatelliteOutcome GroundStationClient::GetSatellite(const GetSatelliteRequest& request) const
@@ -643,18 +554,12 @@ GetSatelliteOutcome GroundStationClient::GetSatellite(const GetSatelliteRequest&
 
 GetSatelliteOutcomeCallable GroundStationClient::GetSatelliteCallable(const GetSatelliteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSatelliteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSatellite(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSatellite, request, m_executor.get());
 }
 
 void GroundStationClient::GetSatelliteAsync(const GetSatelliteRequest& request, const GetSatelliteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSatellite(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSatellite, request, handler, context, m_executor.get());
 }
 
 ListConfigsOutcome GroundStationClient::ListConfigs(const ListConfigsRequest& request) const
@@ -668,18 +573,12 @@ ListConfigsOutcome GroundStationClient::ListConfigs(const ListConfigsRequest& re
 
 ListConfigsOutcomeCallable GroundStationClient::ListConfigsCallable(const ListConfigsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConfigs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListConfigs, request, m_executor.get());
 }
 
 void GroundStationClient::ListConfigsAsync(const ListConfigsRequest& request, const ListConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListConfigs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListConfigs, request, handler, context, m_executor.get());
 }
 
 ListContactsOutcome GroundStationClient::ListContacts(const ListContactsRequest& request) const
@@ -693,18 +592,12 @@ ListContactsOutcome GroundStationClient::ListContacts(const ListContactsRequest&
 
 ListContactsOutcomeCallable GroundStationClient::ListContactsCallable(const ListContactsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListContactsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContacts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListContacts, request, m_executor.get());
 }
 
 void GroundStationClient::ListContactsAsync(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListContacts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListContacts, request, handler, context, m_executor.get());
 }
 
 ListDataflowEndpointGroupsOutcome GroundStationClient::ListDataflowEndpointGroups(const ListDataflowEndpointGroupsRequest& request) const
@@ -718,18 +611,12 @@ ListDataflowEndpointGroupsOutcome GroundStationClient::ListDataflowEndpointGroup
 
 ListDataflowEndpointGroupsOutcomeCallable GroundStationClient::ListDataflowEndpointGroupsCallable(const ListDataflowEndpointGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataflowEndpointGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataflowEndpointGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDataflowEndpointGroups, request, m_executor.get());
 }
 
 void GroundStationClient::ListDataflowEndpointGroupsAsync(const ListDataflowEndpointGroupsRequest& request, const ListDataflowEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDataflowEndpointGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDataflowEndpointGroups, request, handler, context, m_executor.get());
 }
 
 ListEphemeridesOutcome GroundStationClient::ListEphemerides(const ListEphemeridesRequest& request) const
@@ -743,18 +630,12 @@ ListEphemeridesOutcome GroundStationClient::ListEphemerides(const ListEphemeride
 
 ListEphemeridesOutcomeCallable GroundStationClient::ListEphemeridesCallable(const ListEphemeridesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEphemeridesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEphemerides(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEphemerides, request, m_executor.get());
 }
 
 void GroundStationClient::ListEphemeridesAsync(const ListEphemeridesRequest& request, const ListEphemeridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEphemerides(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEphemerides, request, handler, context, m_executor.get());
 }
 
 ListGroundStationsOutcome GroundStationClient::ListGroundStations(const ListGroundStationsRequest& request) const
@@ -768,18 +649,12 @@ ListGroundStationsOutcome GroundStationClient::ListGroundStations(const ListGrou
 
 ListGroundStationsOutcomeCallable GroundStationClient::ListGroundStationsCallable(const ListGroundStationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGroundStationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroundStations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListGroundStations, request, m_executor.get());
 }
 
 void GroundStationClient::ListGroundStationsAsync(const ListGroundStationsRequest& request, const ListGroundStationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListGroundStations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListGroundStations, request, handler, context, m_executor.get());
 }
 
 ListMissionProfilesOutcome GroundStationClient::ListMissionProfiles(const ListMissionProfilesRequest& request) const
@@ -793,18 +668,12 @@ ListMissionProfilesOutcome GroundStationClient::ListMissionProfiles(const ListMi
 
 ListMissionProfilesOutcomeCallable GroundStationClient::ListMissionProfilesCallable(const ListMissionProfilesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMissionProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMissionProfiles(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMissionProfiles, request, m_executor.get());
 }
 
 void GroundStationClient::ListMissionProfilesAsync(const ListMissionProfilesRequest& request, const ListMissionProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMissionProfiles(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMissionProfiles, request, handler, context, m_executor.get());
 }
 
 ListSatellitesOutcome GroundStationClient::ListSatellites(const ListSatellitesRequest& request) const
@@ -818,18 +687,12 @@ ListSatellitesOutcome GroundStationClient::ListSatellites(const ListSatellitesRe
 
 ListSatellitesOutcomeCallable GroundStationClient::ListSatellitesCallable(const ListSatellitesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSatellitesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSatellites(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSatellites, request, m_executor.get());
 }
 
 void GroundStationClient::ListSatellitesAsync(const ListSatellitesRequest& request, const ListSatellitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSatellites(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSatellites, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome GroundStationClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -849,18 +712,12 @@ ListTagsForResourceOutcome GroundStationClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable GroundStationClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void GroundStationClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ReserveContactOutcome GroundStationClient::ReserveContact(const ReserveContactRequest& request) const
@@ -874,18 +731,12 @@ ReserveContactOutcome GroundStationClient::ReserveContact(const ReserveContactRe
 
 ReserveContactOutcomeCallable GroundStationClient::ReserveContactCallable(const ReserveContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ReserveContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReserveContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ReserveContact, request, m_executor.get());
 }
 
 void GroundStationClient::ReserveContactAsync(const ReserveContactRequest& request, const ReserveContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ReserveContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ReserveContact, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome GroundStationClient::TagResource(const TagResourceRequest& request) const
@@ -905,18 +756,12 @@ TagResourceOutcome GroundStationClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable GroundStationClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void GroundStationClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome GroundStationClient::UntagResource(const UntagResourceRequest& request) const
@@ -941,18 +786,12 @@ UntagResourceOutcome GroundStationClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable GroundStationClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void GroundStationClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateConfigOutcome GroundStationClient::UpdateConfig(const UpdateConfigRequest& request) const
@@ -978,18 +817,12 @@ UpdateConfigOutcome GroundStationClient::UpdateConfig(const UpdateConfigRequest&
 
 UpdateConfigOutcomeCallable GroundStationClient::UpdateConfigCallable(const UpdateConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateConfig, request, m_executor.get());
 }
 
 void GroundStationClient::UpdateConfigAsync(const UpdateConfigRequest& request, const UpdateConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateConfig, request, handler, context, m_executor.get());
 }
 
 UpdateEphemerisOutcome GroundStationClient::UpdateEphemeris(const UpdateEphemerisRequest& request) const
@@ -1009,18 +842,12 @@ UpdateEphemerisOutcome GroundStationClient::UpdateEphemeris(const UpdateEphemeri
 
 UpdateEphemerisOutcomeCallable GroundStationClient::UpdateEphemerisCallable(const UpdateEphemerisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEphemeris(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateEphemeris, request, m_executor.get());
 }
 
 void GroundStationClient::UpdateEphemerisAsync(const UpdateEphemerisRequest& request, const UpdateEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateEphemeris(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateEphemeris, request, handler, context, m_executor.get());
 }
 
 UpdateMissionProfileOutcome GroundStationClient::UpdateMissionProfile(const UpdateMissionProfileRequest& request) const
@@ -1040,17 +867,11 @@ UpdateMissionProfileOutcome GroundStationClient::UpdateMissionProfile(const Upda
 
 UpdateMissionProfileOutcomeCallable GroundStationClient::UpdateMissionProfileCallable(const UpdateMissionProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMissionProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMissionProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateMissionProfile, request, m_executor.get());
 }
 
 void GroundStationClient::UpdateMissionProfileAsync(const UpdateMissionProfileRequest& request, const UpdateMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateMissionProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateMissionProfile, request, handler, context, m_executor.get());
 }
 

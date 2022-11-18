@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -423,18 +424,12 @@ AddAssociationOutcome SageMakerClient::AddAssociation(const AddAssociationReques
 
 AddAssociationOutcomeCallable SageMakerClient::AddAssociationCallable(const AddAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddAssociation, request, m_executor.get());
 }
 
 void SageMakerClient::AddAssociationAsync(const AddAssociationRequest& request, const AddAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddAssociation, request, handler, context, m_executor.get());
 }
 
 AddTagsOutcome SageMakerClient::AddTags(const AddTagsRequest& request) const
@@ -447,18 +442,12 @@ AddTagsOutcome SageMakerClient::AddTags(const AddTagsRequest& request) const
 
 AddTagsOutcomeCallable SageMakerClient::AddTagsCallable(const AddTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddTags, request, m_executor.get());
 }
 
 void SageMakerClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddTags, request, handler, context, m_executor.get());
 }
 
 AssociateTrialComponentOutcome SageMakerClient::AssociateTrialComponent(const AssociateTrialComponentRequest& request) const
@@ -471,18 +460,12 @@ AssociateTrialComponentOutcome SageMakerClient::AssociateTrialComponent(const As
 
 AssociateTrialComponentOutcomeCallable SageMakerClient::AssociateTrialComponentCallable(const AssociateTrialComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateTrialComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateTrialComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateTrialComponent, request, m_executor.get());
 }
 
 void SageMakerClient::AssociateTrialComponentAsync(const AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateTrialComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateTrialComponent, request, handler, context, m_executor.get());
 }
 
 BatchDescribeModelPackageOutcome SageMakerClient::BatchDescribeModelPackage(const BatchDescribeModelPackageRequest& request) const
@@ -495,18 +478,12 @@ BatchDescribeModelPackageOutcome SageMakerClient::BatchDescribeModelPackage(cons
 
 BatchDescribeModelPackageOutcomeCallable SageMakerClient::BatchDescribeModelPackageCallable(const BatchDescribeModelPackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDescribeModelPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDescribeModelPackage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchDescribeModelPackage, request, m_executor.get());
 }
 
 void SageMakerClient::BatchDescribeModelPackageAsync(const BatchDescribeModelPackageRequest& request, const BatchDescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchDescribeModelPackage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchDescribeModelPackage, request, handler, context, m_executor.get());
 }
 
 CreateActionOutcome SageMakerClient::CreateAction(const CreateActionRequest& request) const
@@ -519,18 +496,12 @@ CreateActionOutcome SageMakerClient::CreateAction(const CreateActionRequest& req
 
 CreateActionOutcomeCallable SageMakerClient::CreateActionCallable(const CreateActionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAction, request, m_executor.get());
 }
 
 void SageMakerClient::CreateActionAsync(const CreateActionRequest& request, const CreateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAction, request, handler, context, m_executor.get());
 }
 
 CreateAlgorithmOutcome SageMakerClient::CreateAlgorithm(const CreateAlgorithmRequest& request) const
@@ -543,18 +514,12 @@ CreateAlgorithmOutcome SageMakerClient::CreateAlgorithm(const CreateAlgorithmReq
 
 CreateAlgorithmOutcomeCallable SageMakerClient::CreateAlgorithmCallable(const CreateAlgorithmRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAlgorithmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAlgorithm(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAlgorithm, request, m_executor.get());
 }
 
 void SageMakerClient::CreateAlgorithmAsync(const CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAlgorithm(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAlgorithm, request, handler, context, m_executor.get());
 }
 
 CreateAppOutcome SageMakerClient::CreateApp(const CreateAppRequest& request) const
@@ -567,18 +532,12 @@ CreateAppOutcome SageMakerClient::CreateApp(const CreateAppRequest& request) con
 
 CreateAppOutcomeCallable SageMakerClient::CreateAppCallable(const CreateAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateApp, request, m_executor.get());
 }
 
 void SageMakerClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateApp, request, handler, context, m_executor.get());
 }
 
 CreateAppImageConfigOutcome SageMakerClient::CreateAppImageConfig(const CreateAppImageConfigRequest& request) const
@@ -591,18 +550,12 @@ CreateAppImageConfigOutcome SageMakerClient::CreateAppImageConfig(const CreateAp
 
 CreateAppImageConfigOutcomeCallable SageMakerClient::CreateAppImageConfigCallable(const CreateAppImageConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAppImageConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAppImageConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAppImageConfig, request, m_executor.get());
 }
 
 void SageMakerClient::CreateAppImageConfigAsync(const CreateAppImageConfigRequest& request, const CreateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAppImageConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAppImageConfig, request, handler, context, m_executor.get());
 }
 
 CreateArtifactOutcome SageMakerClient::CreateArtifact(const CreateArtifactRequest& request) const
@@ -615,18 +568,12 @@ CreateArtifactOutcome SageMakerClient::CreateArtifact(const CreateArtifactReques
 
 CreateArtifactOutcomeCallable SageMakerClient::CreateArtifactCallable(const CreateArtifactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateArtifactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateArtifact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateArtifact, request, m_executor.get());
 }
 
 void SageMakerClient::CreateArtifactAsync(const CreateArtifactRequest& request, const CreateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateArtifact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateArtifact, request, handler, context, m_executor.get());
 }
 
 CreateAutoMLJobOutcome SageMakerClient::CreateAutoMLJob(const CreateAutoMLJobRequest& request) const
@@ -639,18 +586,12 @@ CreateAutoMLJobOutcome SageMakerClient::CreateAutoMLJob(const CreateAutoMLJobReq
 
 CreateAutoMLJobOutcomeCallable SageMakerClient::CreateAutoMLJobCallable(const CreateAutoMLJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAutoMLJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAutoMLJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAutoMLJob, request, m_executor.get());
 }
 
 void SageMakerClient::CreateAutoMLJobAsync(const CreateAutoMLJobRequest& request, const CreateAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAutoMLJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAutoMLJob, request, handler, context, m_executor.get());
 }
 
 CreateCodeRepositoryOutcome SageMakerClient::CreateCodeRepository(const CreateCodeRepositoryRequest& request) const
@@ -663,18 +604,12 @@ CreateCodeRepositoryOutcome SageMakerClient::CreateCodeRepository(const CreateCo
 
 CreateCodeRepositoryOutcomeCallable SageMakerClient::CreateCodeRepositoryCallable(const CreateCodeRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCodeRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCodeRepository(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCodeRepository, request, m_executor.get());
 }
 
 void SageMakerClient::CreateCodeRepositoryAsync(const CreateCodeRepositoryRequest& request, const CreateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCodeRepository(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCodeRepository, request, handler, context, m_executor.get());
 }
 
 CreateCompilationJobOutcome SageMakerClient::CreateCompilationJob(const CreateCompilationJobRequest& request) const
@@ -687,18 +622,12 @@ CreateCompilationJobOutcome SageMakerClient::CreateCompilationJob(const CreateCo
 
 CreateCompilationJobOutcomeCallable SageMakerClient::CreateCompilationJobCallable(const CreateCompilationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCompilationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCompilationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCompilationJob, request, m_executor.get());
 }
 
 void SageMakerClient::CreateCompilationJobAsync(const CreateCompilationJobRequest& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCompilationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCompilationJob, request, handler, context, m_executor.get());
 }
 
 CreateContextOutcome SageMakerClient::CreateContext(const CreateContextRequest& request) const
@@ -711,18 +640,12 @@ CreateContextOutcome SageMakerClient::CreateContext(const CreateContextRequest& 
 
 CreateContextOutcomeCallable SageMakerClient::CreateContextCallable(const CreateContextRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateContextOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContext(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateContext, request, m_executor.get());
 }
 
 void SageMakerClient::CreateContextAsync(const CreateContextRequest& request, const CreateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateContext(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateContext, request, handler, context, m_executor.get());
 }
 
 CreateDataQualityJobDefinitionOutcome SageMakerClient::CreateDataQualityJobDefinition(const CreateDataQualityJobDefinitionRequest& request) const
@@ -735,18 +658,12 @@ CreateDataQualityJobDefinitionOutcome SageMakerClient::CreateDataQualityJobDefin
 
 CreateDataQualityJobDefinitionOutcomeCallable SageMakerClient::CreateDataQualityJobDefinitionCallable(const CreateDataQualityJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDataQualityJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataQualityJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataQualityJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::CreateDataQualityJobDefinitionAsync(const CreateDataQualityJobDefinitionRequest& request, const CreateDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataQualityJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataQualityJobDefinition, request, handler, context, m_executor.get());
 }
 
 CreateDeviceFleetOutcome SageMakerClient::CreateDeviceFleet(const CreateDeviceFleetRequest& request) const
@@ -759,18 +676,12 @@ CreateDeviceFleetOutcome SageMakerClient::CreateDeviceFleet(const CreateDeviceFl
 
 CreateDeviceFleetOutcomeCallable SageMakerClient::CreateDeviceFleetCallable(const CreateDeviceFleetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDeviceFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDeviceFleet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDeviceFleet, request, m_executor.get());
 }
 
 void SageMakerClient::CreateDeviceFleetAsync(const CreateDeviceFleetRequest& request, const CreateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDeviceFleet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDeviceFleet, request, handler, context, m_executor.get());
 }
 
 CreateDomainOutcome SageMakerClient::CreateDomain(const CreateDomainRequest& request) const
@@ -783,18 +694,12 @@ CreateDomainOutcome SageMakerClient::CreateDomain(const CreateDomainRequest& req
 
 CreateDomainOutcomeCallable SageMakerClient::CreateDomainCallable(const CreateDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDomain, request, m_executor.get());
 }
 
 void SageMakerClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDomain, request, handler, context, m_executor.get());
 }
 
 CreateEdgeDeploymentPlanOutcome SageMakerClient::CreateEdgeDeploymentPlan(const CreateEdgeDeploymentPlanRequest& request) const
@@ -807,18 +712,12 @@ CreateEdgeDeploymentPlanOutcome SageMakerClient::CreateEdgeDeploymentPlan(const 
 
 CreateEdgeDeploymentPlanOutcomeCallable SageMakerClient::CreateEdgeDeploymentPlanCallable(const CreateEdgeDeploymentPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEdgeDeploymentPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEdgeDeploymentPlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEdgeDeploymentPlan, request, m_executor.get());
 }
 
 void SageMakerClient::CreateEdgeDeploymentPlanAsync(const CreateEdgeDeploymentPlanRequest& request, const CreateEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEdgeDeploymentPlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEdgeDeploymentPlan, request, handler, context, m_executor.get());
 }
 
 CreateEdgeDeploymentStageOutcome SageMakerClient::CreateEdgeDeploymentStage(const CreateEdgeDeploymentStageRequest& request) const
@@ -831,18 +730,12 @@ CreateEdgeDeploymentStageOutcome SageMakerClient::CreateEdgeDeploymentStage(cons
 
 CreateEdgeDeploymentStageOutcomeCallable SageMakerClient::CreateEdgeDeploymentStageCallable(const CreateEdgeDeploymentStageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEdgeDeploymentStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEdgeDeploymentStage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEdgeDeploymentStage, request, m_executor.get());
 }
 
 void SageMakerClient::CreateEdgeDeploymentStageAsync(const CreateEdgeDeploymentStageRequest& request, const CreateEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEdgeDeploymentStage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEdgeDeploymentStage, request, handler, context, m_executor.get());
 }
 
 CreateEdgePackagingJobOutcome SageMakerClient::CreateEdgePackagingJob(const CreateEdgePackagingJobRequest& request) const
@@ -855,18 +748,12 @@ CreateEdgePackagingJobOutcome SageMakerClient::CreateEdgePackagingJob(const Crea
 
 CreateEdgePackagingJobOutcomeCallable SageMakerClient::CreateEdgePackagingJobCallable(const CreateEdgePackagingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEdgePackagingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEdgePackagingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEdgePackagingJob, request, m_executor.get());
 }
 
 void SageMakerClient::CreateEdgePackagingJobAsync(const CreateEdgePackagingJobRequest& request, const CreateEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEdgePackagingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEdgePackagingJob, request, handler, context, m_executor.get());
 }
 
 CreateEndpointOutcome SageMakerClient::CreateEndpoint(const CreateEndpointRequest& request) const
@@ -879,18 +766,12 @@ CreateEndpointOutcome SageMakerClient::CreateEndpoint(const CreateEndpointReques
 
 CreateEndpointOutcomeCallable SageMakerClient::CreateEndpointCallable(const CreateEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEndpoint, request, m_executor.get());
 }
 
 void SageMakerClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEndpoint, request, handler, context, m_executor.get());
 }
 
 CreateEndpointConfigOutcome SageMakerClient::CreateEndpointConfig(const CreateEndpointConfigRequest& request) const
@@ -903,18 +784,12 @@ CreateEndpointConfigOutcome SageMakerClient::CreateEndpointConfig(const CreateEn
 
 CreateEndpointConfigOutcomeCallable SageMakerClient::CreateEndpointConfigCallable(const CreateEndpointConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEndpointConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEndpointConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEndpointConfig, request, m_executor.get());
 }
 
 void SageMakerClient::CreateEndpointConfigAsync(const CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEndpointConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEndpointConfig, request, handler, context, m_executor.get());
 }
 
 CreateExperimentOutcome SageMakerClient::CreateExperiment(const CreateExperimentRequest& request) const
@@ -927,18 +802,12 @@ CreateExperimentOutcome SageMakerClient::CreateExperiment(const CreateExperiment
 
 CreateExperimentOutcomeCallable SageMakerClient::CreateExperimentCallable(const CreateExperimentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExperiment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateExperiment, request, m_executor.get());
 }
 
 void SageMakerClient::CreateExperimentAsync(const CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateExperiment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateExperiment, request, handler, context, m_executor.get());
 }
 
 CreateFeatureGroupOutcome SageMakerClient::CreateFeatureGroup(const CreateFeatureGroupRequest& request) const
@@ -951,18 +820,12 @@ CreateFeatureGroupOutcome SageMakerClient::CreateFeatureGroup(const CreateFeatur
 
 CreateFeatureGroupOutcomeCallable SageMakerClient::CreateFeatureGroupCallable(const CreateFeatureGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFeatureGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFeatureGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFeatureGroup, request, m_executor.get());
 }
 
 void SageMakerClient::CreateFeatureGroupAsync(const CreateFeatureGroupRequest& request, const CreateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFeatureGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFeatureGroup, request, handler, context, m_executor.get());
 }
 
 CreateFlowDefinitionOutcome SageMakerClient::CreateFlowDefinition(const CreateFlowDefinitionRequest& request) const
@@ -975,18 +838,12 @@ CreateFlowDefinitionOutcome SageMakerClient::CreateFlowDefinition(const CreateFl
 
 CreateFlowDefinitionOutcomeCallable SageMakerClient::CreateFlowDefinitionCallable(const CreateFlowDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFlowDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFlowDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFlowDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::CreateFlowDefinitionAsync(const CreateFlowDefinitionRequest& request, const CreateFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFlowDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFlowDefinition, request, handler, context, m_executor.get());
 }
 
 CreateHumanTaskUiOutcome SageMakerClient::CreateHumanTaskUi(const CreateHumanTaskUiRequest& request) const
@@ -999,18 +856,12 @@ CreateHumanTaskUiOutcome SageMakerClient::CreateHumanTaskUi(const CreateHumanTas
 
 CreateHumanTaskUiOutcomeCallable SageMakerClient::CreateHumanTaskUiCallable(const CreateHumanTaskUiRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHumanTaskUiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHumanTaskUi(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateHumanTaskUi, request, m_executor.get());
 }
 
 void SageMakerClient::CreateHumanTaskUiAsync(const CreateHumanTaskUiRequest& request, const CreateHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateHumanTaskUi(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateHumanTaskUi, request, handler, context, m_executor.get());
 }
 
 CreateHyperParameterTuningJobOutcome SageMakerClient::CreateHyperParameterTuningJob(const CreateHyperParameterTuningJobRequest& request) const
@@ -1023,18 +874,12 @@ CreateHyperParameterTuningJobOutcome SageMakerClient::CreateHyperParameterTuning
 
 CreateHyperParameterTuningJobOutcomeCallable SageMakerClient::CreateHyperParameterTuningJobCallable(const CreateHyperParameterTuningJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHyperParameterTuningJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHyperParameterTuningJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateHyperParameterTuningJob, request, m_executor.get());
 }
 
 void SageMakerClient::CreateHyperParameterTuningJobAsync(const CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateHyperParameterTuningJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateHyperParameterTuningJob, request, handler, context, m_executor.get());
 }
 
 CreateImageOutcome SageMakerClient::CreateImage(const CreateImageRequest& request) const
@@ -1047,18 +892,12 @@ CreateImageOutcome SageMakerClient::CreateImage(const CreateImageRequest& reques
 
 CreateImageOutcomeCallable SageMakerClient::CreateImageCallable(const CreateImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateImage, request, m_executor.get());
 }
 
 void SageMakerClient::CreateImageAsync(const CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateImage, request, handler, context, m_executor.get());
 }
 
 CreateImageVersionOutcome SageMakerClient::CreateImageVersion(const CreateImageVersionRequest& request) const
@@ -1071,18 +910,12 @@ CreateImageVersionOutcome SageMakerClient::CreateImageVersion(const CreateImageV
 
 CreateImageVersionOutcomeCallable SageMakerClient::CreateImageVersionCallable(const CreateImageVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateImageVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateImageVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateImageVersion, request, m_executor.get());
 }
 
 void SageMakerClient::CreateImageVersionAsync(const CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateImageVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateImageVersion, request, handler, context, m_executor.get());
 }
 
 CreateInferenceRecommendationsJobOutcome SageMakerClient::CreateInferenceRecommendationsJob(const CreateInferenceRecommendationsJobRequest& request) const
@@ -1095,18 +928,12 @@ CreateInferenceRecommendationsJobOutcome SageMakerClient::CreateInferenceRecomme
 
 CreateInferenceRecommendationsJobOutcomeCallable SageMakerClient::CreateInferenceRecommendationsJobCallable(const CreateInferenceRecommendationsJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateInferenceRecommendationsJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInferenceRecommendationsJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateInferenceRecommendationsJob, request, m_executor.get());
 }
 
 void SageMakerClient::CreateInferenceRecommendationsJobAsync(const CreateInferenceRecommendationsJobRequest& request, const CreateInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateInferenceRecommendationsJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateInferenceRecommendationsJob, request, handler, context, m_executor.get());
 }
 
 CreateLabelingJobOutcome SageMakerClient::CreateLabelingJob(const CreateLabelingJobRequest& request) const
@@ -1119,18 +946,12 @@ CreateLabelingJobOutcome SageMakerClient::CreateLabelingJob(const CreateLabeling
 
 CreateLabelingJobOutcomeCallable SageMakerClient::CreateLabelingJobCallable(const CreateLabelingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLabelingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLabelingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLabelingJob, request, m_executor.get());
 }
 
 void SageMakerClient::CreateLabelingJobAsync(const CreateLabelingJobRequest& request, const CreateLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLabelingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLabelingJob, request, handler, context, m_executor.get());
 }
 
 CreateModelOutcome SageMakerClient::CreateModel(const CreateModelRequest& request) const
@@ -1143,18 +964,12 @@ CreateModelOutcome SageMakerClient::CreateModel(const CreateModelRequest& reques
 
 CreateModelOutcomeCallable SageMakerClient::CreateModelCallable(const CreateModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateModel, request, m_executor.get());
 }
 
 void SageMakerClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateModel, request, handler, context, m_executor.get());
 }
 
 CreateModelBiasJobDefinitionOutcome SageMakerClient::CreateModelBiasJobDefinition(const CreateModelBiasJobDefinitionRequest& request) const
@@ -1167,18 +982,12 @@ CreateModelBiasJobDefinitionOutcome SageMakerClient::CreateModelBiasJobDefinitio
 
 CreateModelBiasJobDefinitionOutcomeCallable SageMakerClient::CreateModelBiasJobDefinitionCallable(const CreateModelBiasJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelBiasJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModelBiasJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateModelBiasJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::CreateModelBiasJobDefinitionAsync(const CreateModelBiasJobDefinitionRequest& request, const CreateModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateModelBiasJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateModelBiasJobDefinition, request, handler, context, m_executor.get());
 }
 
 CreateModelExplainabilityJobDefinitionOutcome SageMakerClient::CreateModelExplainabilityJobDefinition(const CreateModelExplainabilityJobDefinitionRequest& request) const
@@ -1191,18 +1000,12 @@ CreateModelExplainabilityJobDefinitionOutcome SageMakerClient::CreateModelExplai
 
 CreateModelExplainabilityJobDefinitionOutcomeCallable SageMakerClient::CreateModelExplainabilityJobDefinitionCallable(const CreateModelExplainabilityJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelExplainabilityJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModelExplainabilityJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateModelExplainabilityJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::CreateModelExplainabilityJobDefinitionAsync(const CreateModelExplainabilityJobDefinitionRequest& request, const CreateModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateModelExplainabilityJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateModelExplainabilityJobDefinition, request, handler, context, m_executor.get());
 }
 
 CreateModelPackageOutcome SageMakerClient::CreateModelPackage(const CreateModelPackageRequest& request) const
@@ -1215,18 +1018,12 @@ CreateModelPackageOutcome SageMakerClient::CreateModelPackage(const CreateModelP
 
 CreateModelPackageOutcomeCallable SageMakerClient::CreateModelPackageCallable(const CreateModelPackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModelPackage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateModelPackage, request, m_executor.get());
 }
 
 void SageMakerClient::CreateModelPackageAsync(const CreateModelPackageRequest& request, const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateModelPackage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateModelPackage, request, handler, context, m_executor.get());
 }
 
 CreateModelPackageGroupOutcome SageMakerClient::CreateModelPackageGroup(const CreateModelPackageGroupRequest& request) const
@@ -1239,18 +1036,12 @@ CreateModelPackageGroupOutcome SageMakerClient::CreateModelPackageGroup(const Cr
 
 CreateModelPackageGroupOutcomeCallable SageMakerClient::CreateModelPackageGroupCallable(const CreateModelPackageGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelPackageGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModelPackageGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateModelPackageGroup, request, m_executor.get());
 }
 
 void SageMakerClient::CreateModelPackageGroupAsync(const CreateModelPackageGroupRequest& request, const CreateModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateModelPackageGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateModelPackageGroup, request, handler, context, m_executor.get());
 }
 
 CreateModelQualityJobDefinitionOutcome SageMakerClient::CreateModelQualityJobDefinition(const CreateModelQualityJobDefinitionRequest& request) const
@@ -1263,18 +1054,12 @@ CreateModelQualityJobDefinitionOutcome SageMakerClient::CreateModelQualityJobDef
 
 CreateModelQualityJobDefinitionOutcomeCallable SageMakerClient::CreateModelQualityJobDefinitionCallable(const CreateModelQualityJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelQualityJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModelQualityJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateModelQualityJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::CreateModelQualityJobDefinitionAsync(const CreateModelQualityJobDefinitionRequest& request, const CreateModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateModelQualityJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateModelQualityJobDefinition, request, handler, context, m_executor.get());
 }
 
 CreateMonitoringScheduleOutcome SageMakerClient::CreateMonitoringSchedule(const CreateMonitoringScheduleRequest& request) const
@@ -1287,18 +1072,12 @@ CreateMonitoringScheduleOutcome SageMakerClient::CreateMonitoringSchedule(const 
 
 CreateMonitoringScheduleOutcomeCallable SageMakerClient::CreateMonitoringScheduleCallable(const CreateMonitoringScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMonitoringScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMonitoringSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMonitoringSchedule, request, m_executor.get());
 }
 
 void SageMakerClient::CreateMonitoringScheduleAsync(const CreateMonitoringScheduleRequest& request, const CreateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMonitoringSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMonitoringSchedule, request, handler, context, m_executor.get());
 }
 
 CreateNotebookInstanceOutcome SageMakerClient::CreateNotebookInstance(const CreateNotebookInstanceRequest& request) const
@@ -1311,18 +1090,12 @@ CreateNotebookInstanceOutcome SageMakerClient::CreateNotebookInstance(const Crea
 
 CreateNotebookInstanceOutcomeCallable SageMakerClient::CreateNotebookInstanceCallable(const CreateNotebookInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNotebookInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNotebookInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateNotebookInstance, request, m_executor.get());
 }
 
 void SageMakerClient::CreateNotebookInstanceAsync(const CreateNotebookInstanceRequest& request, const CreateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateNotebookInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateNotebookInstance, request, handler, context, m_executor.get());
 }
 
 CreateNotebookInstanceLifecycleConfigOutcome SageMakerClient::CreateNotebookInstanceLifecycleConfig(const CreateNotebookInstanceLifecycleConfigRequest& request) const
@@ -1335,18 +1108,12 @@ CreateNotebookInstanceLifecycleConfigOutcome SageMakerClient::CreateNotebookInst
 
 CreateNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::CreateNotebookInstanceLifecycleConfigCallable(const CreateNotebookInstanceLifecycleConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNotebookInstanceLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNotebookInstanceLifecycleConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateNotebookInstanceLifecycleConfig, request, m_executor.get());
 }
 
 void SageMakerClient::CreateNotebookInstanceLifecycleConfigAsync(const CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateNotebookInstanceLifecycleConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateNotebookInstanceLifecycleConfig, request, handler, context, m_executor.get());
 }
 
 CreatePipelineOutcome SageMakerClient::CreatePipeline(const CreatePipelineRequest& request) const
@@ -1359,18 +1126,12 @@ CreatePipelineOutcome SageMakerClient::CreatePipeline(const CreatePipelineReques
 
 CreatePipelineOutcomeCallable SageMakerClient::CreatePipelineCallable(const CreatePipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePipeline, request, m_executor.get());
 }
 
 void SageMakerClient::CreatePipelineAsync(const CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePipeline, request, handler, context, m_executor.get());
 }
 
 CreatePresignedDomainUrlOutcome SageMakerClient::CreatePresignedDomainUrl(const CreatePresignedDomainUrlRequest& request) const
@@ -1383,18 +1144,12 @@ CreatePresignedDomainUrlOutcome SageMakerClient::CreatePresignedDomainUrl(const 
 
 CreatePresignedDomainUrlOutcomeCallable SageMakerClient::CreatePresignedDomainUrlCallable(const CreatePresignedDomainUrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePresignedDomainUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePresignedDomainUrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePresignedDomainUrl, request, m_executor.get());
 }
 
 void SageMakerClient::CreatePresignedDomainUrlAsync(const CreatePresignedDomainUrlRequest& request, const CreatePresignedDomainUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePresignedDomainUrl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePresignedDomainUrl, request, handler, context, m_executor.get());
 }
 
 CreatePresignedNotebookInstanceUrlOutcome SageMakerClient::CreatePresignedNotebookInstanceUrl(const CreatePresignedNotebookInstanceUrlRequest& request) const
@@ -1407,18 +1162,12 @@ CreatePresignedNotebookInstanceUrlOutcome SageMakerClient::CreatePresignedNotebo
 
 CreatePresignedNotebookInstanceUrlOutcomeCallable SageMakerClient::CreatePresignedNotebookInstanceUrlCallable(const CreatePresignedNotebookInstanceUrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePresignedNotebookInstanceUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePresignedNotebookInstanceUrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePresignedNotebookInstanceUrl, request, m_executor.get());
 }
 
 void SageMakerClient::CreatePresignedNotebookInstanceUrlAsync(const CreatePresignedNotebookInstanceUrlRequest& request, const CreatePresignedNotebookInstanceUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePresignedNotebookInstanceUrl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePresignedNotebookInstanceUrl, request, handler, context, m_executor.get());
 }
 
 CreateProcessingJobOutcome SageMakerClient::CreateProcessingJob(const CreateProcessingJobRequest& request) const
@@ -1431,18 +1180,12 @@ CreateProcessingJobOutcome SageMakerClient::CreateProcessingJob(const CreateProc
 
 CreateProcessingJobOutcomeCallable SageMakerClient::CreateProcessingJobCallable(const CreateProcessingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProcessingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProcessingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateProcessingJob, request, m_executor.get());
 }
 
 void SageMakerClient::CreateProcessingJobAsync(const CreateProcessingJobRequest& request, const CreateProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateProcessingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateProcessingJob, request, handler, context, m_executor.get());
 }
 
 CreateProjectOutcome SageMakerClient::CreateProject(const CreateProjectRequest& request) const
@@ -1455,18 +1198,12 @@ CreateProjectOutcome SageMakerClient::CreateProject(const CreateProjectRequest& 
 
 CreateProjectOutcomeCallable SageMakerClient::CreateProjectCallable(const CreateProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateProject, request, m_executor.get());
 }
 
 void SageMakerClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateProject, request, handler, context, m_executor.get());
 }
 
 CreateStudioLifecycleConfigOutcome SageMakerClient::CreateStudioLifecycleConfig(const CreateStudioLifecycleConfigRequest& request) const
@@ -1479,18 +1216,12 @@ CreateStudioLifecycleConfigOutcome SageMakerClient::CreateStudioLifecycleConfig(
 
 CreateStudioLifecycleConfigOutcomeCallable SageMakerClient::CreateStudioLifecycleConfigCallable(const CreateStudioLifecycleConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStudioLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStudioLifecycleConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateStudioLifecycleConfig, request, m_executor.get());
 }
 
 void SageMakerClient::CreateStudioLifecycleConfigAsync(const CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateStudioLifecycleConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateStudioLifecycleConfig, request, handler, context, m_executor.get());
 }
 
 CreateTrainingJobOutcome SageMakerClient::CreateTrainingJob(const CreateTrainingJobRequest& request) const
@@ -1503,18 +1234,12 @@ CreateTrainingJobOutcome SageMakerClient::CreateTrainingJob(const CreateTraining
 
 CreateTrainingJobOutcomeCallable SageMakerClient::CreateTrainingJobCallable(const CreateTrainingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTrainingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTrainingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTrainingJob, request, m_executor.get());
 }
 
 void SageMakerClient::CreateTrainingJobAsync(const CreateTrainingJobRequest& request, const CreateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTrainingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTrainingJob, request, handler, context, m_executor.get());
 }
 
 CreateTransformJobOutcome SageMakerClient::CreateTransformJob(const CreateTransformJobRequest& request) const
@@ -1527,18 +1252,12 @@ CreateTransformJobOutcome SageMakerClient::CreateTransformJob(const CreateTransf
 
 CreateTransformJobOutcomeCallable SageMakerClient::CreateTransformJobCallable(const CreateTransformJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTransformJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTransformJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTransformJob, request, m_executor.get());
 }
 
 void SageMakerClient::CreateTransformJobAsync(const CreateTransformJobRequest& request, const CreateTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTransformJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTransformJob, request, handler, context, m_executor.get());
 }
 
 CreateTrialOutcome SageMakerClient::CreateTrial(const CreateTrialRequest& request) const
@@ -1551,18 +1270,12 @@ CreateTrialOutcome SageMakerClient::CreateTrial(const CreateTrialRequest& reques
 
 CreateTrialOutcomeCallable SageMakerClient::CreateTrialCallable(const CreateTrialRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTrialOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTrial(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTrial, request, m_executor.get());
 }
 
 void SageMakerClient::CreateTrialAsync(const CreateTrialRequest& request, const CreateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTrial(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTrial, request, handler, context, m_executor.get());
 }
 
 CreateTrialComponentOutcome SageMakerClient::CreateTrialComponent(const CreateTrialComponentRequest& request) const
@@ -1575,18 +1288,12 @@ CreateTrialComponentOutcome SageMakerClient::CreateTrialComponent(const CreateTr
 
 CreateTrialComponentOutcomeCallable SageMakerClient::CreateTrialComponentCallable(const CreateTrialComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTrialComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTrialComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTrialComponent, request, m_executor.get());
 }
 
 void SageMakerClient::CreateTrialComponentAsync(const CreateTrialComponentRequest& request, const CreateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTrialComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTrialComponent, request, handler, context, m_executor.get());
 }
 
 CreateUserProfileOutcome SageMakerClient::CreateUserProfile(const CreateUserProfileRequest& request) const
@@ -1599,18 +1306,12 @@ CreateUserProfileOutcome SageMakerClient::CreateUserProfile(const CreateUserProf
 
 CreateUserProfileOutcomeCallable SageMakerClient::CreateUserProfileCallable(const CreateUserProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateUserProfile, request, m_executor.get());
 }
 
 void SageMakerClient::CreateUserProfileAsync(const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateUserProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateUserProfile, request, handler, context, m_executor.get());
 }
 
 CreateWorkforceOutcome SageMakerClient::CreateWorkforce(const CreateWorkforceRequest& request) const
@@ -1623,18 +1324,12 @@ CreateWorkforceOutcome SageMakerClient::CreateWorkforce(const CreateWorkforceReq
 
 CreateWorkforceOutcomeCallable SageMakerClient::CreateWorkforceCallable(const CreateWorkforceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkforceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkforce(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorkforce, request, m_executor.get());
 }
 
 void SageMakerClient::CreateWorkforceAsync(const CreateWorkforceRequest& request, const CreateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorkforce(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorkforce, request, handler, context, m_executor.get());
 }
 
 CreateWorkteamOutcome SageMakerClient::CreateWorkteam(const CreateWorkteamRequest& request) const
@@ -1647,18 +1342,12 @@ CreateWorkteamOutcome SageMakerClient::CreateWorkteam(const CreateWorkteamReques
 
 CreateWorkteamOutcomeCallable SageMakerClient::CreateWorkteamCallable(const CreateWorkteamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkteamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkteam(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorkteam, request, m_executor.get());
 }
 
 void SageMakerClient::CreateWorkteamAsync(const CreateWorkteamRequest& request, const CreateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorkteam(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorkteam, request, handler, context, m_executor.get());
 }
 
 DeleteActionOutcome SageMakerClient::DeleteAction(const DeleteActionRequest& request) const
@@ -1671,18 +1360,12 @@ DeleteActionOutcome SageMakerClient::DeleteAction(const DeleteActionRequest& req
 
 DeleteActionOutcomeCallable SageMakerClient::DeleteActionCallable(const DeleteActionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAction, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteActionAsync(const DeleteActionRequest& request, const DeleteActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAction, request, handler, context, m_executor.get());
 }
 
 DeleteAlgorithmOutcome SageMakerClient::DeleteAlgorithm(const DeleteAlgorithmRequest& request) const
@@ -1695,18 +1378,12 @@ DeleteAlgorithmOutcome SageMakerClient::DeleteAlgorithm(const DeleteAlgorithmReq
 
 DeleteAlgorithmOutcomeCallable SageMakerClient::DeleteAlgorithmCallable(const DeleteAlgorithmRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAlgorithmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAlgorithm(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAlgorithm, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteAlgorithmAsync(const DeleteAlgorithmRequest& request, const DeleteAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAlgorithm(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAlgorithm, request, handler, context, m_executor.get());
 }
 
 DeleteAppOutcome SageMakerClient::DeleteApp(const DeleteAppRequest& request) const
@@ -1719,18 +1396,12 @@ DeleteAppOutcome SageMakerClient::DeleteApp(const DeleteAppRequest& request) con
 
 DeleteAppOutcomeCallable SageMakerClient::DeleteAppCallable(const DeleteAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteApp, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteApp, request, handler, context, m_executor.get());
 }
 
 DeleteAppImageConfigOutcome SageMakerClient::DeleteAppImageConfig(const DeleteAppImageConfigRequest& request) const
@@ -1743,18 +1414,12 @@ DeleteAppImageConfigOutcome SageMakerClient::DeleteAppImageConfig(const DeleteAp
 
 DeleteAppImageConfigOutcomeCallable SageMakerClient::DeleteAppImageConfigCallable(const DeleteAppImageConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppImageConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppImageConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAppImageConfig, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteAppImageConfigAsync(const DeleteAppImageConfigRequest& request, const DeleteAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAppImageConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAppImageConfig, request, handler, context, m_executor.get());
 }
 
 DeleteArtifactOutcome SageMakerClient::DeleteArtifact(const DeleteArtifactRequest& request) const
@@ -1767,18 +1432,12 @@ DeleteArtifactOutcome SageMakerClient::DeleteArtifact(const DeleteArtifactReques
 
 DeleteArtifactOutcomeCallable SageMakerClient::DeleteArtifactCallable(const DeleteArtifactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteArtifactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteArtifact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteArtifact, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteArtifactAsync(const DeleteArtifactRequest& request, const DeleteArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteArtifact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteArtifact, request, handler, context, m_executor.get());
 }
 
 DeleteAssociationOutcome SageMakerClient::DeleteAssociation(const DeleteAssociationRequest& request) const
@@ -1791,18 +1450,12 @@ DeleteAssociationOutcome SageMakerClient::DeleteAssociation(const DeleteAssociat
 
 DeleteAssociationOutcomeCallable SageMakerClient::DeleteAssociationCallable(const DeleteAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssociation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAssociation, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteAssociationAsync(const DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAssociation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAssociation, request, handler, context, m_executor.get());
 }
 
 DeleteCodeRepositoryOutcome SageMakerClient::DeleteCodeRepository(const DeleteCodeRepositoryRequest& request) const
@@ -1815,18 +1468,12 @@ DeleteCodeRepositoryOutcome SageMakerClient::DeleteCodeRepository(const DeleteCo
 
 DeleteCodeRepositoryOutcomeCallable SageMakerClient::DeleteCodeRepositoryCallable(const DeleteCodeRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCodeRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCodeRepository(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCodeRepository, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteCodeRepositoryAsync(const DeleteCodeRepositoryRequest& request, const DeleteCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCodeRepository(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCodeRepository, request, handler, context, m_executor.get());
 }
 
 DeleteContextOutcome SageMakerClient::DeleteContext(const DeleteContextRequest& request) const
@@ -1839,18 +1486,12 @@ DeleteContextOutcome SageMakerClient::DeleteContext(const DeleteContextRequest& 
 
 DeleteContextOutcomeCallable SageMakerClient::DeleteContextCallable(const DeleteContextRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteContextOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContext(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteContext, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteContextAsync(const DeleteContextRequest& request, const DeleteContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteContext(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteContext, request, handler, context, m_executor.get());
 }
 
 DeleteDataQualityJobDefinitionOutcome SageMakerClient::DeleteDataQualityJobDefinition(const DeleteDataQualityJobDefinitionRequest& request) const
@@ -1863,18 +1504,12 @@ DeleteDataQualityJobDefinitionOutcome SageMakerClient::DeleteDataQualityJobDefin
 
 DeleteDataQualityJobDefinitionOutcomeCallable SageMakerClient::DeleteDataQualityJobDefinitionCallable(const DeleteDataQualityJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDataQualityJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataQualityJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDataQualityJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteDataQualityJobDefinitionAsync(const DeleteDataQualityJobDefinitionRequest& request, const DeleteDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDataQualityJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDataQualityJobDefinition, request, handler, context, m_executor.get());
 }
 
 DeleteDeviceFleetOutcome SageMakerClient::DeleteDeviceFleet(const DeleteDeviceFleetRequest& request) const
@@ -1887,18 +1522,12 @@ DeleteDeviceFleetOutcome SageMakerClient::DeleteDeviceFleet(const DeleteDeviceFl
 
 DeleteDeviceFleetOutcomeCallable SageMakerClient::DeleteDeviceFleetCallable(const DeleteDeviceFleetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDeviceFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDeviceFleet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDeviceFleet, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteDeviceFleetAsync(const DeleteDeviceFleetRequest& request, const DeleteDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDeviceFleet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDeviceFleet, request, handler, context, m_executor.get());
 }
 
 DeleteDomainOutcome SageMakerClient::DeleteDomain(const DeleteDomainRequest& request) const
@@ -1911,18 +1540,12 @@ DeleteDomainOutcome SageMakerClient::DeleteDomain(const DeleteDomainRequest& req
 
 DeleteDomainOutcomeCallable SageMakerClient::DeleteDomainCallable(const DeleteDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDomain, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDomain, request, handler, context, m_executor.get());
 }
 
 DeleteEdgeDeploymentPlanOutcome SageMakerClient::DeleteEdgeDeploymentPlan(const DeleteEdgeDeploymentPlanRequest& request) const
@@ -1935,18 +1558,12 @@ DeleteEdgeDeploymentPlanOutcome SageMakerClient::DeleteEdgeDeploymentPlan(const 
 
 DeleteEdgeDeploymentPlanOutcomeCallable SageMakerClient::DeleteEdgeDeploymentPlanCallable(const DeleteEdgeDeploymentPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEdgeDeploymentPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEdgeDeploymentPlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEdgeDeploymentPlan, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteEdgeDeploymentPlanAsync(const DeleteEdgeDeploymentPlanRequest& request, const DeleteEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEdgeDeploymentPlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEdgeDeploymentPlan, request, handler, context, m_executor.get());
 }
 
 DeleteEdgeDeploymentStageOutcome SageMakerClient::DeleteEdgeDeploymentStage(const DeleteEdgeDeploymentStageRequest& request) const
@@ -1959,18 +1576,12 @@ DeleteEdgeDeploymentStageOutcome SageMakerClient::DeleteEdgeDeploymentStage(cons
 
 DeleteEdgeDeploymentStageOutcomeCallable SageMakerClient::DeleteEdgeDeploymentStageCallable(const DeleteEdgeDeploymentStageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEdgeDeploymentStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEdgeDeploymentStage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEdgeDeploymentStage, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteEdgeDeploymentStageAsync(const DeleteEdgeDeploymentStageRequest& request, const DeleteEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEdgeDeploymentStage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEdgeDeploymentStage, request, handler, context, m_executor.get());
 }
 
 DeleteEndpointOutcome SageMakerClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
@@ -1983,18 +1594,12 @@ DeleteEndpointOutcome SageMakerClient::DeleteEndpoint(const DeleteEndpointReques
 
 DeleteEndpointOutcomeCallable SageMakerClient::DeleteEndpointCallable(const DeleteEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEndpoint, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEndpoint, request, handler, context, m_executor.get());
 }
 
 DeleteEndpointConfigOutcome SageMakerClient::DeleteEndpointConfig(const DeleteEndpointConfigRequest& request) const
@@ -2007,18 +1612,12 @@ DeleteEndpointConfigOutcome SageMakerClient::DeleteEndpointConfig(const DeleteEn
 
 DeleteEndpointConfigOutcomeCallable SageMakerClient::DeleteEndpointConfigCallable(const DeleteEndpointConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEndpointConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEndpointConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEndpointConfig, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteEndpointConfigAsync(const DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEndpointConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEndpointConfig, request, handler, context, m_executor.get());
 }
 
 DeleteExperimentOutcome SageMakerClient::DeleteExperiment(const DeleteExperimentRequest& request) const
@@ -2031,18 +1630,12 @@ DeleteExperimentOutcome SageMakerClient::DeleteExperiment(const DeleteExperiment
 
 DeleteExperimentOutcomeCallable SageMakerClient::DeleteExperimentCallable(const DeleteExperimentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExperiment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteExperiment, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteExperimentAsync(const DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteExperiment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteExperiment, request, handler, context, m_executor.get());
 }
 
 DeleteFeatureGroupOutcome SageMakerClient::DeleteFeatureGroup(const DeleteFeatureGroupRequest& request) const
@@ -2055,18 +1648,12 @@ DeleteFeatureGroupOutcome SageMakerClient::DeleteFeatureGroup(const DeleteFeatur
 
 DeleteFeatureGroupOutcomeCallable SageMakerClient::DeleteFeatureGroupCallable(const DeleteFeatureGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFeatureGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFeatureGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFeatureGroup, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteFeatureGroupAsync(const DeleteFeatureGroupRequest& request, const DeleteFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFeatureGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFeatureGroup, request, handler, context, m_executor.get());
 }
 
 DeleteFlowDefinitionOutcome SageMakerClient::DeleteFlowDefinition(const DeleteFlowDefinitionRequest& request) const
@@ -2079,18 +1666,12 @@ DeleteFlowDefinitionOutcome SageMakerClient::DeleteFlowDefinition(const DeleteFl
 
 DeleteFlowDefinitionOutcomeCallable SageMakerClient::DeleteFlowDefinitionCallable(const DeleteFlowDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFlowDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFlowDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFlowDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteFlowDefinitionAsync(const DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFlowDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFlowDefinition, request, handler, context, m_executor.get());
 }
 
 DeleteHumanTaskUiOutcome SageMakerClient::DeleteHumanTaskUi(const DeleteHumanTaskUiRequest& request) const
@@ -2103,18 +1684,12 @@ DeleteHumanTaskUiOutcome SageMakerClient::DeleteHumanTaskUi(const DeleteHumanTas
 
 DeleteHumanTaskUiOutcomeCallable SageMakerClient::DeleteHumanTaskUiCallable(const DeleteHumanTaskUiRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteHumanTaskUiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHumanTaskUi(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteHumanTaskUi, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteHumanTaskUiAsync(const DeleteHumanTaskUiRequest& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteHumanTaskUi(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteHumanTaskUi, request, handler, context, m_executor.get());
 }
 
 DeleteImageOutcome SageMakerClient::DeleteImage(const DeleteImageRequest& request) const
@@ -2127,18 +1702,12 @@ DeleteImageOutcome SageMakerClient::DeleteImage(const DeleteImageRequest& reques
 
 DeleteImageOutcomeCallable SageMakerClient::DeleteImageCallable(const DeleteImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteImage, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteImage, request, handler, context, m_executor.get());
 }
 
 DeleteImageVersionOutcome SageMakerClient::DeleteImageVersion(const DeleteImageVersionRequest& request) const
@@ -2151,18 +1720,12 @@ DeleteImageVersionOutcome SageMakerClient::DeleteImageVersion(const DeleteImageV
 
 DeleteImageVersionOutcomeCallable SageMakerClient::DeleteImageVersionCallable(const DeleteImageVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteImageVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImageVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteImageVersion, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteImageVersionAsync(const DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteImageVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteImageVersion, request, handler, context, m_executor.get());
 }
 
 DeleteModelOutcome SageMakerClient::DeleteModel(const DeleteModelRequest& request) const
@@ -2175,18 +1738,12 @@ DeleteModelOutcome SageMakerClient::DeleteModel(const DeleteModelRequest& reques
 
 DeleteModelOutcomeCallable SageMakerClient::DeleteModelCallable(const DeleteModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteModel, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteModel, request, handler, context, m_executor.get());
 }
 
 DeleteModelBiasJobDefinitionOutcome SageMakerClient::DeleteModelBiasJobDefinition(const DeleteModelBiasJobDefinitionRequest& request) const
@@ -2199,18 +1756,12 @@ DeleteModelBiasJobDefinitionOutcome SageMakerClient::DeleteModelBiasJobDefinitio
 
 DeleteModelBiasJobDefinitionOutcomeCallable SageMakerClient::DeleteModelBiasJobDefinitionCallable(const DeleteModelBiasJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelBiasJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModelBiasJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteModelBiasJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteModelBiasJobDefinitionAsync(const DeleteModelBiasJobDefinitionRequest& request, const DeleteModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteModelBiasJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteModelBiasJobDefinition, request, handler, context, m_executor.get());
 }
 
 DeleteModelExplainabilityJobDefinitionOutcome SageMakerClient::DeleteModelExplainabilityJobDefinition(const DeleteModelExplainabilityJobDefinitionRequest& request) const
@@ -2223,18 +1774,12 @@ DeleteModelExplainabilityJobDefinitionOutcome SageMakerClient::DeleteModelExplai
 
 DeleteModelExplainabilityJobDefinitionOutcomeCallable SageMakerClient::DeleteModelExplainabilityJobDefinitionCallable(const DeleteModelExplainabilityJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelExplainabilityJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModelExplainabilityJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteModelExplainabilityJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteModelExplainabilityJobDefinitionAsync(const DeleteModelExplainabilityJobDefinitionRequest& request, const DeleteModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteModelExplainabilityJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteModelExplainabilityJobDefinition, request, handler, context, m_executor.get());
 }
 
 DeleteModelPackageOutcome SageMakerClient::DeleteModelPackage(const DeleteModelPackageRequest& request) const
@@ -2247,18 +1792,12 @@ DeleteModelPackageOutcome SageMakerClient::DeleteModelPackage(const DeleteModelP
 
 DeleteModelPackageOutcomeCallable SageMakerClient::DeleteModelPackageCallable(const DeleteModelPackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModelPackage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteModelPackage, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteModelPackageAsync(const DeleteModelPackageRequest& request, const DeleteModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteModelPackage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteModelPackage, request, handler, context, m_executor.get());
 }
 
 DeleteModelPackageGroupOutcome SageMakerClient::DeleteModelPackageGroup(const DeleteModelPackageGroupRequest& request) const
@@ -2271,18 +1810,12 @@ DeleteModelPackageGroupOutcome SageMakerClient::DeleteModelPackageGroup(const De
 
 DeleteModelPackageGroupOutcomeCallable SageMakerClient::DeleteModelPackageGroupCallable(const DeleteModelPackageGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelPackageGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModelPackageGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteModelPackageGroup, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteModelPackageGroupAsync(const DeleteModelPackageGroupRequest& request, const DeleteModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteModelPackageGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteModelPackageGroup, request, handler, context, m_executor.get());
 }
 
 DeleteModelPackageGroupPolicyOutcome SageMakerClient::DeleteModelPackageGroupPolicy(const DeleteModelPackageGroupPolicyRequest& request) const
@@ -2295,18 +1828,12 @@ DeleteModelPackageGroupPolicyOutcome SageMakerClient::DeleteModelPackageGroupPol
 
 DeleteModelPackageGroupPolicyOutcomeCallable SageMakerClient::DeleteModelPackageGroupPolicyCallable(const DeleteModelPackageGroupPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelPackageGroupPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModelPackageGroupPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteModelPackageGroupPolicy, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteModelPackageGroupPolicyAsync(const DeleteModelPackageGroupPolicyRequest& request, const DeleteModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteModelPackageGroupPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteModelPackageGroupPolicy, request, handler, context, m_executor.get());
 }
 
 DeleteModelQualityJobDefinitionOutcome SageMakerClient::DeleteModelQualityJobDefinition(const DeleteModelQualityJobDefinitionRequest& request) const
@@ -2319,18 +1846,12 @@ DeleteModelQualityJobDefinitionOutcome SageMakerClient::DeleteModelQualityJobDef
 
 DeleteModelQualityJobDefinitionOutcomeCallable SageMakerClient::DeleteModelQualityJobDefinitionCallable(const DeleteModelQualityJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelQualityJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModelQualityJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteModelQualityJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteModelQualityJobDefinitionAsync(const DeleteModelQualityJobDefinitionRequest& request, const DeleteModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteModelQualityJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteModelQualityJobDefinition, request, handler, context, m_executor.get());
 }
 
 DeleteMonitoringScheduleOutcome SageMakerClient::DeleteMonitoringSchedule(const DeleteMonitoringScheduleRequest& request) const
@@ -2343,18 +1864,12 @@ DeleteMonitoringScheduleOutcome SageMakerClient::DeleteMonitoringSchedule(const 
 
 DeleteMonitoringScheduleOutcomeCallable SageMakerClient::DeleteMonitoringScheduleCallable(const DeleteMonitoringScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMonitoringScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMonitoringSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMonitoringSchedule, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteMonitoringScheduleAsync(const DeleteMonitoringScheduleRequest& request, const DeleteMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMonitoringSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMonitoringSchedule, request, handler, context, m_executor.get());
 }
 
 DeleteNotebookInstanceOutcome SageMakerClient::DeleteNotebookInstance(const DeleteNotebookInstanceRequest& request) const
@@ -2367,18 +1882,12 @@ DeleteNotebookInstanceOutcome SageMakerClient::DeleteNotebookInstance(const Dele
 
 DeleteNotebookInstanceOutcomeCallable SageMakerClient::DeleteNotebookInstanceCallable(const DeleteNotebookInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNotebookInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNotebookInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteNotebookInstance, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteNotebookInstanceAsync(const DeleteNotebookInstanceRequest& request, const DeleteNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteNotebookInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteNotebookInstance, request, handler, context, m_executor.get());
 }
 
 DeleteNotebookInstanceLifecycleConfigOutcome SageMakerClient::DeleteNotebookInstanceLifecycleConfig(const DeleteNotebookInstanceLifecycleConfigRequest& request) const
@@ -2391,18 +1900,12 @@ DeleteNotebookInstanceLifecycleConfigOutcome SageMakerClient::DeleteNotebookInst
 
 DeleteNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::DeleteNotebookInstanceLifecycleConfigCallable(const DeleteNotebookInstanceLifecycleConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNotebookInstanceLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNotebookInstanceLifecycleConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteNotebookInstanceLifecycleConfig, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteNotebookInstanceLifecycleConfigAsync(const DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteNotebookInstanceLifecycleConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteNotebookInstanceLifecycleConfig, request, handler, context, m_executor.get());
 }
 
 DeletePipelineOutcome SageMakerClient::DeletePipeline(const DeletePipelineRequest& request) const
@@ -2415,18 +1918,12 @@ DeletePipelineOutcome SageMakerClient::DeletePipeline(const DeletePipelineReques
 
 DeletePipelineOutcomeCallable SageMakerClient::DeletePipelineCallable(const DeletePipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePipeline, request, m_executor.get());
 }
 
 void SageMakerClient::DeletePipelineAsync(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePipeline, request, handler, context, m_executor.get());
 }
 
 DeleteProjectOutcome SageMakerClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -2439,18 +1936,12 @@ DeleteProjectOutcome SageMakerClient::DeleteProject(const DeleteProjectRequest& 
 
 DeleteProjectOutcomeCallable SageMakerClient::DeleteProjectCallable(const DeleteProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteProject, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteProject, request, handler, context, m_executor.get());
 }
 
 DeleteStudioLifecycleConfigOutcome SageMakerClient::DeleteStudioLifecycleConfig(const DeleteStudioLifecycleConfigRequest& request) const
@@ -2463,18 +1954,12 @@ DeleteStudioLifecycleConfigOutcome SageMakerClient::DeleteStudioLifecycleConfig(
 
 DeleteStudioLifecycleConfigOutcomeCallable SageMakerClient::DeleteStudioLifecycleConfigCallable(const DeleteStudioLifecycleConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStudioLifecycleConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteStudioLifecycleConfig, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteStudioLifecycleConfigAsync(const DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteStudioLifecycleConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteStudioLifecycleConfig, request, handler, context, m_executor.get());
 }
 
 DeleteTagsOutcome SageMakerClient::DeleteTags(const DeleteTagsRequest& request) const
@@ -2487,18 +1972,12 @@ DeleteTagsOutcome SageMakerClient::DeleteTags(const DeleteTagsRequest& request) 
 
 DeleteTagsOutcomeCallable SageMakerClient::DeleteTagsCallable(const DeleteTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTags, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTags, request, handler, context, m_executor.get());
 }
 
 DeleteTrialOutcome SageMakerClient::DeleteTrial(const DeleteTrialRequest& request) const
@@ -2511,18 +1990,12 @@ DeleteTrialOutcome SageMakerClient::DeleteTrial(const DeleteTrialRequest& reques
 
 DeleteTrialOutcomeCallable SageMakerClient::DeleteTrialCallable(const DeleteTrialRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTrialOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTrial(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTrial, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteTrialAsync(const DeleteTrialRequest& request, const DeleteTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTrial(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTrial, request, handler, context, m_executor.get());
 }
 
 DeleteTrialComponentOutcome SageMakerClient::DeleteTrialComponent(const DeleteTrialComponentRequest& request) const
@@ -2535,18 +2008,12 @@ DeleteTrialComponentOutcome SageMakerClient::DeleteTrialComponent(const DeleteTr
 
 DeleteTrialComponentOutcomeCallable SageMakerClient::DeleteTrialComponentCallable(const DeleteTrialComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTrialComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTrialComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTrialComponent, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteTrialComponentAsync(const DeleteTrialComponentRequest& request, const DeleteTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTrialComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTrialComponent, request, handler, context, m_executor.get());
 }
 
 DeleteUserProfileOutcome SageMakerClient::DeleteUserProfile(const DeleteUserProfileRequest& request) const
@@ -2559,18 +2026,12 @@ DeleteUserProfileOutcome SageMakerClient::DeleteUserProfile(const DeleteUserProf
 
 DeleteUserProfileOutcomeCallable SageMakerClient::DeleteUserProfileCallable(const DeleteUserProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteUserProfile, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteUserProfileAsync(const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteUserProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteUserProfile, request, handler, context, m_executor.get());
 }
 
 DeleteWorkforceOutcome SageMakerClient::DeleteWorkforce(const DeleteWorkforceRequest& request) const
@@ -2583,18 +2044,12 @@ DeleteWorkforceOutcome SageMakerClient::DeleteWorkforce(const DeleteWorkforceReq
 
 DeleteWorkforceOutcomeCallable SageMakerClient::DeleteWorkforceCallable(const DeleteWorkforceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkforceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkforce(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWorkforce, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteWorkforceAsync(const DeleteWorkforceRequest& request, const DeleteWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWorkforce(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWorkforce, request, handler, context, m_executor.get());
 }
 
 DeleteWorkteamOutcome SageMakerClient::DeleteWorkteam(const DeleteWorkteamRequest& request) const
@@ -2607,18 +2062,12 @@ DeleteWorkteamOutcome SageMakerClient::DeleteWorkteam(const DeleteWorkteamReques
 
 DeleteWorkteamOutcomeCallable SageMakerClient::DeleteWorkteamCallable(const DeleteWorkteamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkteamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkteam(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWorkteam, request, m_executor.get());
 }
 
 void SageMakerClient::DeleteWorkteamAsync(const DeleteWorkteamRequest& request, const DeleteWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWorkteam(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWorkteam, request, handler, context, m_executor.get());
 }
 
 DeregisterDevicesOutcome SageMakerClient::DeregisterDevices(const DeregisterDevicesRequest& request) const
@@ -2631,18 +2080,12 @@ DeregisterDevicesOutcome SageMakerClient::DeregisterDevices(const DeregisterDevi
 
 DeregisterDevicesOutcomeCallable SageMakerClient::DeregisterDevicesCallable(const DeregisterDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeregisterDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterDevices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeregisterDevices, request, m_executor.get());
 }
 
 void SageMakerClient::DeregisterDevicesAsync(const DeregisterDevicesRequest& request, const DeregisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeregisterDevices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeregisterDevices, request, handler, context, m_executor.get());
 }
 
 DescribeActionOutcome SageMakerClient::DescribeAction(const DescribeActionRequest& request) const
@@ -2655,18 +2098,12 @@ DescribeActionOutcome SageMakerClient::DescribeAction(const DescribeActionReques
 
 DescribeActionOutcomeCallable SageMakerClient::DescribeActionCallable(const DescribeActionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAction, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeActionAsync(const DescribeActionRequest& request, const DescribeActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAction, request, handler, context, m_executor.get());
 }
 
 DescribeAlgorithmOutcome SageMakerClient::DescribeAlgorithm(const DescribeAlgorithmRequest& request) const
@@ -2679,18 +2116,12 @@ DescribeAlgorithmOutcome SageMakerClient::DescribeAlgorithm(const DescribeAlgori
 
 DescribeAlgorithmOutcomeCallable SageMakerClient::DescribeAlgorithmCallable(const DescribeAlgorithmRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAlgorithmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAlgorithm(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAlgorithm, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeAlgorithmAsync(const DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAlgorithm(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAlgorithm, request, handler, context, m_executor.get());
 }
 
 DescribeAppOutcome SageMakerClient::DescribeApp(const DescribeAppRequest& request) const
@@ -2703,18 +2134,12 @@ DescribeAppOutcome SageMakerClient::DescribeApp(const DescribeAppRequest& reques
 
 DescribeAppOutcomeCallable SageMakerClient::DescribeAppCallable(const DescribeAppRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeApp, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeAppAsync(const DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeApp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeApp, request, handler, context, m_executor.get());
 }
 
 DescribeAppImageConfigOutcome SageMakerClient::DescribeAppImageConfig(const DescribeAppImageConfigRequest& request) const
@@ -2727,18 +2152,12 @@ DescribeAppImageConfigOutcome SageMakerClient::DescribeAppImageConfig(const Desc
 
 DescribeAppImageConfigOutcomeCallable SageMakerClient::DescribeAppImageConfigCallable(const DescribeAppImageConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAppImageConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppImageConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAppImageConfig, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeAppImageConfigAsync(const DescribeAppImageConfigRequest& request, const DescribeAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAppImageConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAppImageConfig, request, handler, context, m_executor.get());
 }
 
 DescribeArtifactOutcome SageMakerClient::DescribeArtifact(const DescribeArtifactRequest& request) const
@@ -2751,18 +2170,12 @@ DescribeArtifactOutcome SageMakerClient::DescribeArtifact(const DescribeArtifact
 
 DescribeArtifactOutcomeCallable SageMakerClient::DescribeArtifactCallable(const DescribeArtifactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeArtifactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeArtifact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeArtifact, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeArtifactAsync(const DescribeArtifactRequest& request, const DescribeArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeArtifact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeArtifact, request, handler, context, m_executor.get());
 }
 
 DescribeAutoMLJobOutcome SageMakerClient::DescribeAutoMLJob(const DescribeAutoMLJobRequest& request) const
@@ -2775,18 +2188,12 @@ DescribeAutoMLJobOutcome SageMakerClient::DescribeAutoMLJob(const DescribeAutoML
 
 DescribeAutoMLJobOutcomeCallable SageMakerClient::DescribeAutoMLJobCallable(const DescribeAutoMLJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAutoMLJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAutoMLJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAutoMLJob, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeAutoMLJobAsync(const DescribeAutoMLJobRequest& request, const DescribeAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAutoMLJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAutoMLJob, request, handler, context, m_executor.get());
 }
 
 DescribeCodeRepositoryOutcome SageMakerClient::DescribeCodeRepository(const DescribeCodeRepositoryRequest& request) const
@@ -2799,18 +2206,12 @@ DescribeCodeRepositoryOutcome SageMakerClient::DescribeCodeRepository(const Desc
 
 DescribeCodeRepositoryOutcomeCallable SageMakerClient::DescribeCodeRepositoryCallable(const DescribeCodeRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCodeRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCodeRepository(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCodeRepository, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeCodeRepositoryAsync(const DescribeCodeRepositoryRequest& request, const DescribeCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCodeRepository(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCodeRepository, request, handler, context, m_executor.get());
 }
 
 DescribeCompilationJobOutcome SageMakerClient::DescribeCompilationJob(const DescribeCompilationJobRequest& request) const
@@ -2823,18 +2224,12 @@ DescribeCompilationJobOutcome SageMakerClient::DescribeCompilationJob(const Desc
 
 DescribeCompilationJobOutcomeCallable SageMakerClient::DescribeCompilationJobCallable(const DescribeCompilationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCompilationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCompilationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCompilationJob, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeCompilationJobAsync(const DescribeCompilationJobRequest& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCompilationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCompilationJob, request, handler, context, m_executor.get());
 }
 
 DescribeContextOutcome SageMakerClient::DescribeContext(const DescribeContextRequest& request) const
@@ -2847,18 +2242,12 @@ DescribeContextOutcome SageMakerClient::DescribeContext(const DescribeContextReq
 
 DescribeContextOutcomeCallable SageMakerClient::DescribeContextCallable(const DescribeContextRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeContextOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeContext(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeContext, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeContextAsync(const DescribeContextRequest& request, const DescribeContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeContext(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeContext, request, handler, context, m_executor.get());
 }
 
 DescribeDataQualityJobDefinitionOutcome SageMakerClient::DescribeDataQualityJobDefinition(const DescribeDataQualityJobDefinitionRequest& request) const
@@ -2871,18 +2260,12 @@ DescribeDataQualityJobDefinitionOutcome SageMakerClient::DescribeDataQualityJobD
 
 DescribeDataQualityJobDefinitionOutcomeCallable SageMakerClient::DescribeDataQualityJobDefinitionCallable(const DescribeDataQualityJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDataQualityJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataQualityJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDataQualityJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeDataQualityJobDefinitionAsync(const DescribeDataQualityJobDefinitionRequest& request, const DescribeDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDataQualityJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDataQualityJobDefinition, request, handler, context, m_executor.get());
 }
 
 DescribeDeviceOutcome SageMakerClient::DescribeDevice(const DescribeDeviceRequest& request) const
@@ -2895,18 +2278,12 @@ DescribeDeviceOutcome SageMakerClient::DescribeDevice(const DescribeDeviceReques
 
 DescribeDeviceOutcomeCallable SageMakerClient::DescribeDeviceCallable(const DescribeDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDevice, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDevice, request, handler, context, m_executor.get());
 }
 
 DescribeDeviceFleetOutcome SageMakerClient::DescribeDeviceFleet(const DescribeDeviceFleetRequest& request) const
@@ -2919,18 +2296,12 @@ DescribeDeviceFleetOutcome SageMakerClient::DescribeDeviceFleet(const DescribeDe
 
 DescribeDeviceFleetOutcomeCallable SageMakerClient::DescribeDeviceFleetCallable(const DescribeDeviceFleetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDeviceFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDeviceFleet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDeviceFleet, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeDeviceFleetAsync(const DescribeDeviceFleetRequest& request, const DescribeDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDeviceFleet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDeviceFleet, request, handler, context, m_executor.get());
 }
 
 DescribeDomainOutcome SageMakerClient::DescribeDomain(const DescribeDomainRequest& request) const
@@ -2943,18 +2314,12 @@ DescribeDomainOutcome SageMakerClient::DescribeDomain(const DescribeDomainReques
 
 DescribeDomainOutcomeCallable SageMakerClient::DescribeDomainCallable(const DescribeDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDomain, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDomain, request, handler, context, m_executor.get());
 }
 
 DescribeEdgeDeploymentPlanOutcome SageMakerClient::DescribeEdgeDeploymentPlan(const DescribeEdgeDeploymentPlanRequest& request) const
@@ -2967,18 +2332,12 @@ DescribeEdgeDeploymentPlanOutcome SageMakerClient::DescribeEdgeDeploymentPlan(co
 
 DescribeEdgeDeploymentPlanOutcomeCallable SageMakerClient::DescribeEdgeDeploymentPlanCallable(const DescribeEdgeDeploymentPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEdgeDeploymentPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEdgeDeploymentPlan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEdgeDeploymentPlan, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeEdgeDeploymentPlanAsync(const DescribeEdgeDeploymentPlanRequest& request, const DescribeEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEdgeDeploymentPlan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEdgeDeploymentPlan, request, handler, context, m_executor.get());
 }
 
 DescribeEdgePackagingJobOutcome SageMakerClient::DescribeEdgePackagingJob(const DescribeEdgePackagingJobRequest& request) const
@@ -2991,18 +2350,12 @@ DescribeEdgePackagingJobOutcome SageMakerClient::DescribeEdgePackagingJob(const 
 
 DescribeEdgePackagingJobOutcomeCallable SageMakerClient::DescribeEdgePackagingJobCallable(const DescribeEdgePackagingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEdgePackagingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEdgePackagingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEdgePackagingJob, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeEdgePackagingJobAsync(const DescribeEdgePackagingJobRequest& request, const DescribeEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEdgePackagingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEdgePackagingJob, request, handler, context, m_executor.get());
 }
 
 DescribeEndpointOutcome SageMakerClient::DescribeEndpoint(const DescribeEndpointRequest& request) const
@@ -3015,18 +2368,12 @@ DescribeEndpointOutcome SageMakerClient::DescribeEndpoint(const DescribeEndpoint
 
 DescribeEndpointOutcomeCallable SageMakerClient::DescribeEndpointCallable(const DescribeEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEndpoint, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeEndpointAsync(const DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEndpoint, request, handler, context, m_executor.get());
 }
 
 DescribeEndpointConfigOutcome SageMakerClient::DescribeEndpointConfig(const DescribeEndpointConfigRequest& request) const
@@ -3039,18 +2386,12 @@ DescribeEndpointConfigOutcome SageMakerClient::DescribeEndpointConfig(const Desc
 
 DescribeEndpointConfigOutcomeCallable SageMakerClient::DescribeEndpointConfigCallable(const DescribeEndpointConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpointConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEndpointConfig, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeEndpointConfigAsync(const DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEndpointConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEndpointConfig, request, handler, context, m_executor.get());
 }
 
 DescribeExperimentOutcome SageMakerClient::DescribeExperiment(const DescribeExperimentRequest& request) const
@@ -3063,18 +2404,12 @@ DescribeExperimentOutcome SageMakerClient::DescribeExperiment(const DescribeExpe
 
 DescribeExperimentOutcomeCallable SageMakerClient::DescribeExperimentCallable(const DescribeExperimentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExperiment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeExperiment, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeExperimentAsync(const DescribeExperimentRequest& request, const DescribeExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeExperiment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeExperiment, request, handler, context, m_executor.get());
 }
 
 DescribeFeatureGroupOutcome SageMakerClient::DescribeFeatureGroup(const DescribeFeatureGroupRequest& request) const
@@ -3087,18 +2422,12 @@ DescribeFeatureGroupOutcome SageMakerClient::DescribeFeatureGroup(const Describe
 
 DescribeFeatureGroupOutcomeCallable SageMakerClient::DescribeFeatureGroupCallable(const DescribeFeatureGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFeatureGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFeatureGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFeatureGroup, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeFeatureGroupAsync(const DescribeFeatureGroupRequest& request, const DescribeFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFeatureGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFeatureGroup, request, handler, context, m_executor.get());
 }
 
 DescribeFeatureMetadataOutcome SageMakerClient::DescribeFeatureMetadata(const DescribeFeatureMetadataRequest& request) const
@@ -3111,18 +2440,12 @@ DescribeFeatureMetadataOutcome SageMakerClient::DescribeFeatureMetadata(const De
 
 DescribeFeatureMetadataOutcomeCallable SageMakerClient::DescribeFeatureMetadataCallable(const DescribeFeatureMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFeatureMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFeatureMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFeatureMetadata, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeFeatureMetadataAsync(const DescribeFeatureMetadataRequest& request, const DescribeFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFeatureMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFeatureMetadata, request, handler, context, m_executor.get());
 }
 
 DescribeFlowDefinitionOutcome SageMakerClient::DescribeFlowDefinition(const DescribeFlowDefinitionRequest& request) const
@@ -3135,18 +2458,12 @@ DescribeFlowDefinitionOutcome SageMakerClient::DescribeFlowDefinition(const Desc
 
 DescribeFlowDefinitionOutcomeCallable SageMakerClient::DescribeFlowDefinitionCallable(const DescribeFlowDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFlowDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFlowDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFlowDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeFlowDefinitionAsync(const DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFlowDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFlowDefinition, request, handler, context, m_executor.get());
 }
 
 DescribeHumanTaskUiOutcome SageMakerClient::DescribeHumanTaskUi(const DescribeHumanTaskUiRequest& request) const
@@ -3159,18 +2476,12 @@ DescribeHumanTaskUiOutcome SageMakerClient::DescribeHumanTaskUi(const DescribeHu
 
 DescribeHumanTaskUiOutcomeCallable SageMakerClient::DescribeHumanTaskUiCallable(const DescribeHumanTaskUiRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeHumanTaskUiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHumanTaskUi(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeHumanTaskUi, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeHumanTaskUiAsync(const DescribeHumanTaskUiRequest& request, const DescribeHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeHumanTaskUi(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeHumanTaskUi, request, handler, context, m_executor.get());
 }
 
 DescribeHyperParameterTuningJobOutcome SageMakerClient::DescribeHyperParameterTuningJob(const DescribeHyperParameterTuningJobRequest& request) const
@@ -3183,18 +2494,12 @@ DescribeHyperParameterTuningJobOutcome SageMakerClient::DescribeHyperParameterTu
 
 DescribeHyperParameterTuningJobOutcomeCallable SageMakerClient::DescribeHyperParameterTuningJobCallable(const DescribeHyperParameterTuningJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeHyperParameterTuningJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHyperParameterTuningJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeHyperParameterTuningJob, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeHyperParameterTuningJobAsync(const DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeHyperParameterTuningJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeHyperParameterTuningJob, request, handler, context, m_executor.get());
 }
 
 DescribeImageOutcome SageMakerClient::DescribeImage(const DescribeImageRequest& request) const
@@ -3207,18 +2512,12 @@ DescribeImageOutcome SageMakerClient::DescribeImage(const DescribeImageRequest& 
 
 DescribeImageOutcomeCallable SageMakerClient::DescribeImageCallable(const DescribeImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeImage, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeImageAsync(const DescribeImageRequest& request, const DescribeImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeImage, request, handler, context, m_executor.get());
 }
 
 DescribeImageVersionOutcome SageMakerClient::DescribeImageVersion(const DescribeImageVersionRequest& request) const
@@ -3231,18 +2530,12 @@ DescribeImageVersionOutcome SageMakerClient::DescribeImageVersion(const Describe
 
 DescribeImageVersionOutcomeCallable SageMakerClient::DescribeImageVersionCallable(const DescribeImageVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeImageVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImageVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeImageVersion, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeImageVersionAsync(const DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeImageVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeImageVersion, request, handler, context, m_executor.get());
 }
 
 DescribeInferenceRecommendationsJobOutcome SageMakerClient::DescribeInferenceRecommendationsJob(const DescribeInferenceRecommendationsJobRequest& request) const
@@ -3255,18 +2548,12 @@ DescribeInferenceRecommendationsJobOutcome SageMakerClient::DescribeInferenceRec
 
 DescribeInferenceRecommendationsJobOutcomeCallable SageMakerClient::DescribeInferenceRecommendationsJobCallable(const DescribeInferenceRecommendationsJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInferenceRecommendationsJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInferenceRecommendationsJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeInferenceRecommendationsJob, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeInferenceRecommendationsJobAsync(const DescribeInferenceRecommendationsJobRequest& request, const DescribeInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeInferenceRecommendationsJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeInferenceRecommendationsJob, request, handler, context, m_executor.get());
 }
 
 DescribeLabelingJobOutcome SageMakerClient::DescribeLabelingJob(const DescribeLabelingJobRequest& request) const
@@ -3279,18 +2566,12 @@ DescribeLabelingJobOutcome SageMakerClient::DescribeLabelingJob(const DescribeLa
 
 DescribeLabelingJobOutcomeCallable SageMakerClient::DescribeLabelingJobCallable(const DescribeLabelingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLabelingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLabelingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLabelingJob, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeLabelingJobAsync(const DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLabelingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLabelingJob, request, handler, context, m_executor.get());
 }
 
 DescribeLineageGroupOutcome SageMakerClient::DescribeLineageGroup(const DescribeLineageGroupRequest& request) const
@@ -3303,18 +2584,12 @@ DescribeLineageGroupOutcome SageMakerClient::DescribeLineageGroup(const Describe
 
 DescribeLineageGroupOutcomeCallable SageMakerClient::DescribeLineageGroupCallable(const DescribeLineageGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLineageGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLineageGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLineageGroup, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeLineageGroupAsync(const DescribeLineageGroupRequest& request, const DescribeLineageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLineageGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLineageGroup, request, handler, context, m_executor.get());
 }
 
 DescribeModelOutcome SageMakerClient::DescribeModel(const DescribeModelRequest& request) const
@@ -3327,18 +2602,12 @@ DescribeModelOutcome SageMakerClient::DescribeModel(const DescribeModelRequest& 
 
 DescribeModelOutcomeCallable SageMakerClient::DescribeModelCallable(const DescribeModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeModel, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeModel, request, handler, context, m_executor.get());
 }
 
 DescribeModelBiasJobDefinitionOutcome SageMakerClient::DescribeModelBiasJobDefinition(const DescribeModelBiasJobDefinitionRequest& request) const
@@ -3351,18 +2620,12 @@ DescribeModelBiasJobDefinitionOutcome SageMakerClient::DescribeModelBiasJobDefin
 
 DescribeModelBiasJobDefinitionOutcomeCallable SageMakerClient::DescribeModelBiasJobDefinitionCallable(const DescribeModelBiasJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelBiasJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModelBiasJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeModelBiasJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeModelBiasJobDefinitionAsync(const DescribeModelBiasJobDefinitionRequest& request, const DescribeModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeModelBiasJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeModelBiasJobDefinition, request, handler, context, m_executor.get());
 }
 
 DescribeModelExplainabilityJobDefinitionOutcome SageMakerClient::DescribeModelExplainabilityJobDefinition(const DescribeModelExplainabilityJobDefinitionRequest& request) const
@@ -3375,18 +2638,12 @@ DescribeModelExplainabilityJobDefinitionOutcome SageMakerClient::DescribeModelEx
 
 DescribeModelExplainabilityJobDefinitionOutcomeCallable SageMakerClient::DescribeModelExplainabilityJobDefinitionCallable(const DescribeModelExplainabilityJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelExplainabilityJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModelExplainabilityJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeModelExplainabilityJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeModelExplainabilityJobDefinitionAsync(const DescribeModelExplainabilityJobDefinitionRequest& request, const DescribeModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeModelExplainabilityJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeModelExplainabilityJobDefinition, request, handler, context, m_executor.get());
 }
 
 DescribeModelPackageOutcome SageMakerClient::DescribeModelPackage(const DescribeModelPackageRequest& request) const
@@ -3399,18 +2656,12 @@ DescribeModelPackageOutcome SageMakerClient::DescribeModelPackage(const Describe
 
 DescribeModelPackageOutcomeCallable SageMakerClient::DescribeModelPackageCallable(const DescribeModelPackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModelPackage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeModelPackage, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeModelPackageAsync(const DescribeModelPackageRequest& request, const DescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeModelPackage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeModelPackage, request, handler, context, m_executor.get());
 }
 
 DescribeModelPackageGroupOutcome SageMakerClient::DescribeModelPackageGroup(const DescribeModelPackageGroupRequest& request) const
@@ -3423,18 +2674,12 @@ DescribeModelPackageGroupOutcome SageMakerClient::DescribeModelPackageGroup(cons
 
 DescribeModelPackageGroupOutcomeCallable SageMakerClient::DescribeModelPackageGroupCallable(const DescribeModelPackageGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelPackageGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModelPackageGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeModelPackageGroup, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeModelPackageGroupAsync(const DescribeModelPackageGroupRequest& request, const DescribeModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeModelPackageGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeModelPackageGroup, request, handler, context, m_executor.get());
 }
 
 DescribeModelQualityJobDefinitionOutcome SageMakerClient::DescribeModelQualityJobDefinition(const DescribeModelQualityJobDefinitionRequest& request) const
@@ -3447,18 +2692,12 @@ DescribeModelQualityJobDefinitionOutcome SageMakerClient::DescribeModelQualityJo
 
 DescribeModelQualityJobDefinitionOutcomeCallable SageMakerClient::DescribeModelQualityJobDefinitionCallable(const DescribeModelQualityJobDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelQualityJobDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModelQualityJobDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeModelQualityJobDefinition, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeModelQualityJobDefinitionAsync(const DescribeModelQualityJobDefinitionRequest& request, const DescribeModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeModelQualityJobDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeModelQualityJobDefinition, request, handler, context, m_executor.get());
 }
 
 DescribeMonitoringScheduleOutcome SageMakerClient::DescribeMonitoringSchedule(const DescribeMonitoringScheduleRequest& request) const
@@ -3471,18 +2710,12 @@ DescribeMonitoringScheduleOutcome SageMakerClient::DescribeMonitoringSchedule(co
 
 DescribeMonitoringScheduleOutcomeCallable SageMakerClient::DescribeMonitoringScheduleCallable(const DescribeMonitoringScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeMonitoringScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMonitoringSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeMonitoringSchedule, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeMonitoringScheduleAsync(const DescribeMonitoringScheduleRequest& request, const DescribeMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeMonitoringSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeMonitoringSchedule, request, handler, context, m_executor.get());
 }
 
 DescribeNotebookInstanceOutcome SageMakerClient::DescribeNotebookInstance(const DescribeNotebookInstanceRequest& request) const
@@ -3495,18 +2728,12 @@ DescribeNotebookInstanceOutcome SageMakerClient::DescribeNotebookInstance(const 
 
 DescribeNotebookInstanceOutcomeCallable SageMakerClient::DescribeNotebookInstanceCallable(const DescribeNotebookInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeNotebookInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNotebookInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeNotebookInstance, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeNotebookInstanceAsync(const DescribeNotebookInstanceRequest& request, const DescribeNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeNotebookInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeNotebookInstance, request, handler, context, m_executor.get());
 }
 
 DescribeNotebookInstanceLifecycleConfigOutcome SageMakerClient::DescribeNotebookInstanceLifecycleConfig(const DescribeNotebookInstanceLifecycleConfigRequest& request) const
@@ -3519,18 +2746,12 @@ DescribeNotebookInstanceLifecycleConfigOutcome SageMakerClient::DescribeNotebook
 
 DescribeNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::DescribeNotebookInstanceLifecycleConfigCallable(const DescribeNotebookInstanceLifecycleConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeNotebookInstanceLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNotebookInstanceLifecycleConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeNotebookInstanceLifecycleConfig, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeNotebookInstanceLifecycleConfigAsync(const DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeNotebookInstanceLifecycleConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeNotebookInstanceLifecycleConfig, request, handler, context, m_executor.get());
 }
 
 DescribePipelineOutcome SageMakerClient::DescribePipeline(const DescribePipelineRequest& request) const
@@ -3543,18 +2764,12 @@ DescribePipelineOutcome SageMakerClient::DescribePipeline(const DescribePipeline
 
 DescribePipelineOutcomeCallable SageMakerClient::DescribePipelineCallable(const DescribePipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribePipeline, request, m_executor.get());
 }
 
 void SageMakerClient::DescribePipelineAsync(const DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribePipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribePipeline, request, handler, context, m_executor.get());
 }
 
 DescribePipelineDefinitionForExecutionOutcome SageMakerClient::DescribePipelineDefinitionForExecution(const DescribePipelineDefinitionForExecutionRequest& request) const
@@ -3567,18 +2782,12 @@ DescribePipelineDefinitionForExecutionOutcome SageMakerClient::DescribePipelineD
 
 DescribePipelineDefinitionForExecutionOutcomeCallable SageMakerClient::DescribePipelineDefinitionForExecutionCallable(const DescribePipelineDefinitionForExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePipelineDefinitionForExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePipelineDefinitionForExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribePipelineDefinitionForExecution, request, m_executor.get());
 }
 
 void SageMakerClient::DescribePipelineDefinitionForExecutionAsync(const DescribePipelineDefinitionForExecutionRequest& request, const DescribePipelineDefinitionForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribePipelineDefinitionForExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribePipelineDefinitionForExecution, request, handler, context, m_executor.get());
 }
 
 DescribePipelineExecutionOutcome SageMakerClient::DescribePipelineExecution(const DescribePipelineExecutionRequest& request) const
@@ -3591,18 +2800,12 @@ DescribePipelineExecutionOutcome SageMakerClient::DescribePipelineExecution(cons
 
 DescribePipelineExecutionOutcomeCallable SageMakerClient::DescribePipelineExecutionCallable(const DescribePipelineExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePipelineExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePipelineExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribePipelineExecution, request, m_executor.get());
 }
 
 void SageMakerClient::DescribePipelineExecutionAsync(const DescribePipelineExecutionRequest& request, const DescribePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribePipelineExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribePipelineExecution, request, handler, context, m_executor.get());
 }
 
 DescribeProcessingJobOutcome SageMakerClient::DescribeProcessingJob(const DescribeProcessingJobRequest& request) const
@@ -3615,18 +2818,12 @@ DescribeProcessingJobOutcome SageMakerClient::DescribeProcessingJob(const Descri
 
 DescribeProcessingJobOutcomeCallable SageMakerClient::DescribeProcessingJobCallable(const DescribeProcessingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeProcessingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProcessingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeProcessingJob, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeProcessingJobAsync(const DescribeProcessingJobRequest& request, const DescribeProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeProcessingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeProcessingJob, request, handler, context, m_executor.get());
 }
 
 DescribeProjectOutcome SageMakerClient::DescribeProject(const DescribeProjectRequest& request) const
@@ -3639,18 +2836,12 @@ DescribeProjectOutcome SageMakerClient::DescribeProject(const DescribeProjectReq
 
 DescribeProjectOutcomeCallable SageMakerClient::DescribeProjectCallable(const DescribeProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeProject, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeProject, request, handler, context, m_executor.get());
 }
 
 DescribeStudioLifecycleConfigOutcome SageMakerClient::DescribeStudioLifecycleConfig(const DescribeStudioLifecycleConfigRequest& request) const
@@ -3663,18 +2854,12 @@ DescribeStudioLifecycleConfigOutcome SageMakerClient::DescribeStudioLifecycleCon
 
 DescribeStudioLifecycleConfigOutcomeCallable SageMakerClient::DescribeStudioLifecycleConfigCallable(const DescribeStudioLifecycleConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeStudioLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStudioLifecycleConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeStudioLifecycleConfig, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeStudioLifecycleConfigAsync(const DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeStudioLifecycleConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeStudioLifecycleConfig, request, handler, context, m_executor.get());
 }
 
 DescribeSubscribedWorkteamOutcome SageMakerClient::DescribeSubscribedWorkteam(const DescribeSubscribedWorkteamRequest& request) const
@@ -3687,18 +2872,12 @@ DescribeSubscribedWorkteamOutcome SageMakerClient::DescribeSubscribedWorkteam(co
 
 DescribeSubscribedWorkteamOutcomeCallable SageMakerClient::DescribeSubscribedWorkteamCallable(const DescribeSubscribedWorkteamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSubscribedWorkteamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSubscribedWorkteam(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSubscribedWorkteam, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeSubscribedWorkteamAsync(const DescribeSubscribedWorkteamRequest& request, const DescribeSubscribedWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSubscribedWorkteam(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSubscribedWorkteam, request, handler, context, m_executor.get());
 }
 
 DescribeTrainingJobOutcome SageMakerClient::DescribeTrainingJob(const DescribeTrainingJobRequest& request) const
@@ -3711,18 +2890,12 @@ DescribeTrainingJobOutcome SageMakerClient::DescribeTrainingJob(const DescribeTr
 
 DescribeTrainingJobOutcomeCallable SageMakerClient::DescribeTrainingJobCallable(const DescribeTrainingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTrainingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTrainingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTrainingJob, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeTrainingJobAsync(const DescribeTrainingJobRequest& request, const DescribeTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTrainingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTrainingJob, request, handler, context, m_executor.get());
 }
 
 DescribeTransformJobOutcome SageMakerClient::DescribeTransformJob(const DescribeTransformJobRequest& request) const
@@ -3735,18 +2908,12 @@ DescribeTransformJobOutcome SageMakerClient::DescribeTransformJob(const Describe
 
 DescribeTransformJobOutcomeCallable SageMakerClient::DescribeTransformJobCallable(const DescribeTransformJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTransformJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTransformJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTransformJob, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeTransformJobAsync(const DescribeTransformJobRequest& request, const DescribeTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTransformJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTransformJob, request, handler, context, m_executor.get());
 }
 
 DescribeTrialOutcome SageMakerClient::DescribeTrial(const DescribeTrialRequest& request) const
@@ -3759,18 +2926,12 @@ DescribeTrialOutcome SageMakerClient::DescribeTrial(const DescribeTrialRequest& 
 
 DescribeTrialOutcomeCallable SageMakerClient::DescribeTrialCallable(const DescribeTrialRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTrialOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTrial(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTrial, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeTrialAsync(const DescribeTrialRequest& request, const DescribeTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTrial(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTrial, request, handler, context, m_executor.get());
 }
 
 DescribeTrialComponentOutcome SageMakerClient::DescribeTrialComponent(const DescribeTrialComponentRequest& request) const
@@ -3783,18 +2944,12 @@ DescribeTrialComponentOutcome SageMakerClient::DescribeTrialComponent(const Desc
 
 DescribeTrialComponentOutcomeCallable SageMakerClient::DescribeTrialComponentCallable(const DescribeTrialComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTrialComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTrialComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTrialComponent, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeTrialComponentAsync(const DescribeTrialComponentRequest& request, const DescribeTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTrialComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTrialComponent, request, handler, context, m_executor.get());
 }
 
 DescribeUserProfileOutcome SageMakerClient::DescribeUserProfile(const DescribeUserProfileRequest& request) const
@@ -3807,18 +2962,12 @@ DescribeUserProfileOutcome SageMakerClient::DescribeUserProfile(const DescribeUs
 
 DescribeUserProfileOutcomeCallable SageMakerClient::DescribeUserProfileCallable(const DescribeUserProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeUserProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUserProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeUserProfile, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeUserProfileAsync(const DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeUserProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeUserProfile, request, handler, context, m_executor.get());
 }
 
 DescribeWorkforceOutcome SageMakerClient::DescribeWorkforce(const DescribeWorkforceRequest& request) const
@@ -3831,18 +2980,12 @@ DescribeWorkforceOutcome SageMakerClient::DescribeWorkforce(const DescribeWorkfo
 
 DescribeWorkforceOutcomeCallable SageMakerClient::DescribeWorkforceCallable(const DescribeWorkforceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkforceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkforce(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeWorkforce, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeWorkforceAsync(const DescribeWorkforceRequest& request, const DescribeWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeWorkforce(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeWorkforce, request, handler, context, m_executor.get());
 }
 
 DescribeWorkteamOutcome SageMakerClient::DescribeWorkteam(const DescribeWorkteamRequest& request) const
@@ -3855,18 +2998,12 @@ DescribeWorkteamOutcome SageMakerClient::DescribeWorkteam(const DescribeWorkteam
 
 DescribeWorkteamOutcomeCallable SageMakerClient::DescribeWorkteamCallable(const DescribeWorkteamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkteamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkteam(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeWorkteam, request, m_executor.get());
 }
 
 void SageMakerClient::DescribeWorkteamAsync(const DescribeWorkteamRequest& request, const DescribeWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeWorkteam(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeWorkteam, request, handler, context, m_executor.get());
 }
 
 DisableSagemakerServicecatalogPortfolioOutcome SageMakerClient::DisableSagemakerServicecatalogPortfolio(const DisableSagemakerServicecatalogPortfolioRequest& request) const
@@ -3879,18 +3016,12 @@ DisableSagemakerServicecatalogPortfolioOutcome SageMakerClient::DisableSagemaker
 
 DisableSagemakerServicecatalogPortfolioOutcomeCallable SageMakerClient::DisableSagemakerServicecatalogPortfolioCallable(const DisableSagemakerServicecatalogPortfolioRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableSagemakerServicecatalogPortfolioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableSagemakerServicecatalogPortfolio(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisableSagemakerServicecatalogPortfolio, request, m_executor.get());
 }
 
 void SageMakerClient::DisableSagemakerServicecatalogPortfolioAsync(const DisableSagemakerServicecatalogPortfolioRequest& request, const DisableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisableSagemakerServicecatalogPortfolio(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisableSagemakerServicecatalogPortfolio, request, handler, context, m_executor.get());
 }
 
 DisassociateTrialComponentOutcome SageMakerClient::DisassociateTrialComponent(const DisassociateTrialComponentRequest& request) const
@@ -3903,18 +3034,12 @@ DisassociateTrialComponentOutcome SageMakerClient::DisassociateTrialComponent(co
 
 DisassociateTrialComponentOutcomeCallable SageMakerClient::DisassociateTrialComponentCallable(const DisassociateTrialComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateTrialComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateTrialComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateTrialComponent, request, m_executor.get());
 }
 
 void SageMakerClient::DisassociateTrialComponentAsync(const DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateTrialComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateTrialComponent, request, handler, context, m_executor.get());
 }
 
 EnableSagemakerServicecatalogPortfolioOutcome SageMakerClient::EnableSagemakerServicecatalogPortfolio(const EnableSagemakerServicecatalogPortfolioRequest& request) const
@@ -3927,18 +3052,12 @@ EnableSagemakerServicecatalogPortfolioOutcome SageMakerClient::EnableSagemakerSe
 
 EnableSagemakerServicecatalogPortfolioOutcomeCallable SageMakerClient::EnableSagemakerServicecatalogPortfolioCallable(const EnableSagemakerServicecatalogPortfolioRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableSagemakerServicecatalogPortfolioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableSagemakerServicecatalogPortfolio(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(EnableSagemakerServicecatalogPortfolio, request, m_executor.get());
 }
 
 void SageMakerClient::EnableSagemakerServicecatalogPortfolioAsync(const EnableSagemakerServicecatalogPortfolioRequest& request, const EnableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, EnableSagemakerServicecatalogPortfolio(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(EnableSagemakerServicecatalogPortfolio, request, handler, context, m_executor.get());
 }
 
 GetDeviceFleetReportOutcome SageMakerClient::GetDeviceFleetReport(const GetDeviceFleetReportRequest& request) const
@@ -3951,18 +3070,12 @@ GetDeviceFleetReportOutcome SageMakerClient::GetDeviceFleetReport(const GetDevic
 
 GetDeviceFleetReportOutcomeCallable SageMakerClient::GetDeviceFleetReportCallable(const GetDeviceFleetReportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeviceFleetReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeviceFleetReport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDeviceFleetReport, request, m_executor.get());
 }
 
 void SageMakerClient::GetDeviceFleetReportAsync(const GetDeviceFleetReportRequest& request, const GetDeviceFleetReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDeviceFleetReport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDeviceFleetReport, request, handler, context, m_executor.get());
 }
 
 GetLineageGroupPolicyOutcome SageMakerClient::GetLineageGroupPolicy(const GetLineageGroupPolicyRequest& request) const
@@ -3975,18 +3088,12 @@ GetLineageGroupPolicyOutcome SageMakerClient::GetLineageGroupPolicy(const GetLin
 
 GetLineageGroupPolicyOutcomeCallable SageMakerClient::GetLineageGroupPolicyCallable(const GetLineageGroupPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLineageGroupPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLineageGroupPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLineageGroupPolicy, request, m_executor.get());
 }
 
 void SageMakerClient::GetLineageGroupPolicyAsync(const GetLineageGroupPolicyRequest& request, const GetLineageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLineageGroupPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLineageGroupPolicy, request, handler, context, m_executor.get());
 }
 
 GetModelPackageGroupPolicyOutcome SageMakerClient::GetModelPackageGroupPolicy(const GetModelPackageGroupPolicyRequest& request) const
@@ -3999,18 +3106,12 @@ GetModelPackageGroupPolicyOutcome SageMakerClient::GetModelPackageGroupPolicy(co
 
 GetModelPackageGroupPolicyOutcomeCallable SageMakerClient::GetModelPackageGroupPolicyCallable(const GetModelPackageGroupPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetModelPackageGroupPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetModelPackageGroupPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetModelPackageGroupPolicy, request, m_executor.get());
 }
 
 void SageMakerClient::GetModelPackageGroupPolicyAsync(const GetModelPackageGroupPolicyRequest& request, const GetModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetModelPackageGroupPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetModelPackageGroupPolicy, request, handler, context, m_executor.get());
 }
 
 GetSagemakerServicecatalogPortfolioStatusOutcome SageMakerClient::GetSagemakerServicecatalogPortfolioStatus(const GetSagemakerServicecatalogPortfolioStatusRequest& request) const
@@ -4023,18 +3124,12 @@ GetSagemakerServicecatalogPortfolioStatusOutcome SageMakerClient::GetSagemakerSe
 
 GetSagemakerServicecatalogPortfolioStatusOutcomeCallable SageMakerClient::GetSagemakerServicecatalogPortfolioStatusCallable(const GetSagemakerServicecatalogPortfolioStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSagemakerServicecatalogPortfolioStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSagemakerServicecatalogPortfolioStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSagemakerServicecatalogPortfolioStatus, request, m_executor.get());
 }
 
 void SageMakerClient::GetSagemakerServicecatalogPortfolioStatusAsync(const GetSagemakerServicecatalogPortfolioStatusRequest& request, const GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSagemakerServicecatalogPortfolioStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSagemakerServicecatalogPortfolioStatus, request, handler, context, m_executor.get());
 }
 
 GetSearchSuggestionsOutcome SageMakerClient::GetSearchSuggestions(const GetSearchSuggestionsRequest& request) const
@@ -4047,18 +3142,12 @@ GetSearchSuggestionsOutcome SageMakerClient::GetSearchSuggestions(const GetSearc
 
 GetSearchSuggestionsOutcomeCallable SageMakerClient::GetSearchSuggestionsCallable(const GetSearchSuggestionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSearchSuggestionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSearchSuggestions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSearchSuggestions, request, m_executor.get());
 }
 
 void SageMakerClient::GetSearchSuggestionsAsync(const GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSearchSuggestions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSearchSuggestions, request, handler, context, m_executor.get());
 }
 
 ListActionsOutcome SageMakerClient::ListActions(const ListActionsRequest& request) const
@@ -4071,18 +3160,12 @@ ListActionsOutcome SageMakerClient::ListActions(const ListActionsRequest& reques
 
 ListActionsOutcomeCallable SageMakerClient::ListActionsCallable(const ListActionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListActionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListActions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListActions, request, m_executor.get());
 }
 
 void SageMakerClient::ListActionsAsync(const ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListActions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListActions, request, handler, context, m_executor.get());
 }
 
 ListAlgorithmsOutcome SageMakerClient::ListAlgorithms(const ListAlgorithmsRequest& request) const
@@ -4095,18 +3178,12 @@ ListAlgorithmsOutcome SageMakerClient::ListAlgorithms(const ListAlgorithmsReques
 
 ListAlgorithmsOutcomeCallable SageMakerClient::ListAlgorithmsCallable(const ListAlgorithmsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAlgorithmsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAlgorithms(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAlgorithms, request, m_executor.get());
 }
 
 void SageMakerClient::ListAlgorithmsAsync(const ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAlgorithms(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAlgorithms, request, handler, context, m_executor.get());
 }
 
 ListAppImageConfigsOutcome SageMakerClient::ListAppImageConfigs(const ListAppImageConfigsRequest& request) const
@@ -4119,18 +3196,12 @@ ListAppImageConfigsOutcome SageMakerClient::ListAppImageConfigs(const ListAppIma
 
 ListAppImageConfigsOutcomeCallable SageMakerClient::ListAppImageConfigsCallable(const ListAppImageConfigsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppImageConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppImageConfigs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAppImageConfigs, request, m_executor.get());
 }
 
 void SageMakerClient::ListAppImageConfigsAsync(const ListAppImageConfigsRequest& request, const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAppImageConfigs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAppImageConfigs, request, handler, context, m_executor.get());
 }
 
 ListAppsOutcome SageMakerClient::ListApps(const ListAppsRequest& request) const
@@ -4143,18 +3214,12 @@ ListAppsOutcome SageMakerClient::ListApps(const ListAppsRequest& request) const
 
 ListAppsOutcomeCallable SageMakerClient::ListAppsCallable(const ListAppsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApps(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListApps, request, m_executor.get());
 }
 
 void SageMakerClient::ListAppsAsync(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListApps(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListApps, request, handler, context, m_executor.get());
 }
 
 ListArtifactsOutcome SageMakerClient::ListArtifacts(const ListArtifactsRequest& request) const
@@ -4167,18 +3232,12 @@ ListArtifactsOutcome SageMakerClient::ListArtifacts(const ListArtifactsRequest& 
 
 ListArtifactsOutcomeCallable SageMakerClient::ListArtifactsCallable(const ListArtifactsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListArtifactsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListArtifacts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListArtifacts, request, m_executor.get());
 }
 
 void SageMakerClient::ListArtifactsAsync(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListArtifacts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListArtifacts, request, handler, context, m_executor.get());
 }
 
 ListAssociationsOutcome SageMakerClient::ListAssociations(const ListAssociationsRequest& request) const
@@ -4191,18 +3250,12 @@ ListAssociationsOutcome SageMakerClient::ListAssociations(const ListAssociations
 
 ListAssociationsOutcomeCallable SageMakerClient::ListAssociationsCallable(const ListAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssociations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAssociations, request, m_executor.get());
 }
 
 void SageMakerClient::ListAssociationsAsync(const ListAssociationsRequest& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAssociations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAssociations, request, handler, context, m_executor.get());
 }
 
 ListAutoMLJobsOutcome SageMakerClient::ListAutoMLJobs(const ListAutoMLJobsRequest& request) const
@@ -4215,18 +3268,12 @@ ListAutoMLJobsOutcome SageMakerClient::ListAutoMLJobs(const ListAutoMLJobsReques
 
 ListAutoMLJobsOutcomeCallable SageMakerClient::ListAutoMLJobsCallable(const ListAutoMLJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAutoMLJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAutoMLJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAutoMLJobs, request, m_executor.get());
 }
 
 void SageMakerClient::ListAutoMLJobsAsync(const ListAutoMLJobsRequest& request, const ListAutoMLJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAutoMLJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAutoMLJobs, request, handler, context, m_executor.get());
 }
 
 ListCandidatesForAutoMLJobOutcome SageMakerClient::ListCandidatesForAutoMLJob(const ListCandidatesForAutoMLJobRequest& request) const
@@ -4239,18 +3286,12 @@ ListCandidatesForAutoMLJobOutcome SageMakerClient::ListCandidatesForAutoMLJob(co
 
 ListCandidatesForAutoMLJobOutcomeCallable SageMakerClient::ListCandidatesForAutoMLJobCallable(const ListCandidatesForAutoMLJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCandidatesForAutoMLJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCandidatesForAutoMLJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCandidatesForAutoMLJob, request, m_executor.get());
 }
 
 void SageMakerClient::ListCandidatesForAutoMLJobAsync(const ListCandidatesForAutoMLJobRequest& request, const ListCandidatesForAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCandidatesForAutoMLJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCandidatesForAutoMLJob, request, handler, context, m_executor.get());
 }
 
 ListCodeRepositoriesOutcome SageMakerClient::ListCodeRepositories(const ListCodeRepositoriesRequest& request) const
@@ -4263,18 +3304,12 @@ ListCodeRepositoriesOutcome SageMakerClient::ListCodeRepositories(const ListCode
 
 ListCodeRepositoriesOutcomeCallable SageMakerClient::ListCodeRepositoriesCallable(const ListCodeRepositoriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCodeRepositoriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCodeRepositories(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCodeRepositories, request, m_executor.get());
 }
 
 void SageMakerClient::ListCodeRepositoriesAsync(const ListCodeRepositoriesRequest& request, const ListCodeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCodeRepositories(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCodeRepositories, request, handler, context, m_executor.get());
 }
 
 ListCompilationJobsOutcome SageMakerClient::ListCompilationJobs(const ListCompilationJobsRequest& request) const
@@ -4287,18 +3322,12 @@ ListCompilationJobsOutcome SageMakerClient::ListCompilationJobs(const ListCompil
 
 ListCompilationJobsOutcomeCallable SageMakerClient::ListCompilationJobsCallable(const ListCompilationJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCompilationJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCompilationJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCompilationJobs, request, m_executor.get());
 }
 
 void SageMakerClient::ListCompilationJobsAsync(const ListCompilationJobsRequest& request, const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCompilationJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCompilationJobs, request, handler, context, m_executor.get());
 }
 
 ListContextsOutcome SageMakerClient::ListContexts(const ListContextsRequest& request) const
@@ -4311,18 +3340,12 @@ ListContextsOutcome SageMakerClient::ListContexts(const ListContextsRequest& req
 
 ListContextsOutcomeCallable SageMakerClient::ListContextsCallable(const ListContextsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListContextsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContexts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListContexts, request, m_executor.get());
 }
 
 void SageMakerClient::ListContextsAsync(const ListContextsRequest& request, const ListContextsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListContexts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListContexts, request, handler, context, m_executor.get());
 }
 
 ListDataQualityJobDefinitionsOutcome SageMakerClient::ListDataQualityJobDefinitions(const ListDataQualityJobDefinitionsRequest& request) const
@@ -4335,18 +3358,12 @@ ListDataQualityJobDefinitionsOutcome SageMakerClient::ListDataQualityJobDefiniti
 
 ListDataQualityJobDefinitionsOutcomeCallable SageMakerClient::ListDataQualityJobDefinitionsCallable(const ListDataQualityJobDefinitionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataQualityJobDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataQualityJobDefinitions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDataQualityJobDefinitions, request, m_executor.get());
 }
 
 void SageMakerClient::ListDataQualityJobDefinitionsAsync(const ListDataQualityJobDefinitionsRequest& request, const ListDataQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDataQualityJobDefinitions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDataQualityJobDefinitions, request, handler, context, m_executor.get());
 }
 
 ListDeviceFleetsOutcome SageMakerClient::ListDeviceFleets(const ListDeviceFleetsRequest& request) const
@@ -4359,18 +3376,12 @@ ListDeviceFleetsOutcome SageMakerClient::ListDeviceFleets(const ListDeviceFleets
 
 ListDeviceFleetsOutcomeCallable SageMakerClient::ListDeviceFleetsCallable(const ListDeviceFleetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDeviceFleetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeviceFleets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDeviceFleets, request, m_executor.get());
 }
 
 void SageMakerClient::ListDeviceFleetsAsync(const ListDeviceFleetsRequest& request, const ListDeviceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDeviceFleets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDeviceFleets, request, handler, context, m_executor.get());
 }
 
 ListDevicesOutcome SageMakerClient::ListDevices(const ListDevicesRequest& request) const
@@ -4383,18 +3394,12 @@ ListDevicesOutcome SageMakerClient::ListDevices(const ListDevicesRequest& reques
 
 ListDevicesOutcomeCallable SageMakerClient::ListDevicesCallable(const ListDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDevices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDevices, request, m_executor.get());
 }
 
 void SageMakerClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDevices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDevices, request, handler, context, m_executor.get());
 }
 
 ListDomainsOutcome SageMakerClient::ListDomains(const ListDomainsRequest& request) const
@@ -4407,18 +3412,12 @@ ListDomainsOutcome SageMakerClient::ListDomains(const ListDomainsRequest& reques
 
 ListDomainsOutcomeCallable SageMakerClient::ListDomainsCallable(const ListDomainsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomains(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDomains, request, m_executor.get());
 }
 
 void SageMakerClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDomains(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDomains, request, handler, context, m_executor.get());
 }
 
 ListEdgeDeploymentPlansOutcome SageMakerClient::ListEdgeDeploymentPlans(const ListEdgeDeploymentPlansRequest& request) const
@@ -4431,18 +3430,12 @@ ListEdgeDeploymentPlansOutcome SageMakerClient::ListEdgeDeploymentPlans(const Li
 
 ListEdgeDeploymentPlansOutcomeCallable SageMakerClient::ListEdgeDeploymentPlansCallable(const ListEdgeDeploymentPlansRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEdgeDeploymentPlansOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEdgeDeploymentPlans(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEdgeDeploymentPlans, request, m_executor.get());
 }
 
 void SageMakerClient::ListEdgeDeploymentPlansAsync(const ListEdgeDeploymentPlansRequest& request, const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEdgeDeploymentPlans(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEdgeDeploymentPlans, request, handler, context, m_executor.get());
 }
 
 ListEdgePackagingJobsOutcome SageMakerClient::ListEdgePackagingJobs(const ListEdgePackagingJobsRequest& request) const
@@ -4455,18 +3448,12 @@ ListEdgePackagingJobsOutcome SageMakerClient::ListEdgePackagingJobs(const ListEd
 
 ListEdgePackagingJobsOutcomeCallable SageMakerClient::ListEdgePackagingJobsCallable(const ListEdgePackagingJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEdgePackagingJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEdgePackagingJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEdgePackagingJobs, request, m_executor.get());
 }
 
 void SageMakerClient::ListEdgePackagingJobsAsync(const ListEdgePackagingJobsRequest& request, const ListEdgePackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEdgePackagingJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEdgePackagingJobs, request, handler, context, m_executor.get());
 }
 
 ListEndpointConfigsOutcome SageMakerClient::ListEndpointConfigs(const ListEndpointConfigsRequest& request) const
@@ -4479,18 +3466,12 @@ ListEndpointConfigsOutcome SageMakerClient::ListEndpointConfigs(const ListEndpoi
 
 ListEndpointConfigsOutcomeCallable SageMakerClient::ListEndpointConfigsCallable(const ListEndpointConfigsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEndpointConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEndpointConfigs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEndpointConfigs, request, m_executor.get());
 }
 
 void SageMakerClient::ListEndpointConfigsAsync(const ListEndpointConfigsRequest& request, const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEndpointConfigs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEndpointConfigs, request, handler, context, m_executor.get());
 }
 
 ListEndpointsOutcome SageMakerClient::ListEndpoints(const ListEndpointsRequest& request) const
@@ -4503,18 +3484,12 @@ ListEndpointsOutcome SageMakerClient::ListEndpoints(const ListEndpointsRequest& 
 
 ListEndpointsOutcomeCallable SageMakerClient::ListEndpointsCallable(const ListEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEndpoints, request, m_executor.get());
 }
 
 void SageMakerClient::ListEndpointsAsync(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEndpoints, request, handler, context, m_executor.get());
 }
 
 ListExperimentsOutcome SageMakerClient::ListExperiments(const ListExperimentsRequest& request) const
@@ -4527,18 +3502,12 @@ ListExperimentsOutcome SageMakerClient::ListExperiments(const ListExperimentsReq
 
 ListExperimentsOutcomeCallable SageMakerClient::ListExperimentsCallable(const ListExperimentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExperimentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExperiments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExperiments, request, m_executor.get());
 }
 
 void SageMakerClient::ListExperimentsAsync(const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExperiments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExperiments, request, handler, context, m_executor.get());
 }
 
 ListFeatureGroupsOutcome SageMakerClient::ListFeatureGroups(const ListFeatureGroupsRequest& request) const
@@ -4551,18 +3520,12 @@ ListFeatureGroupsOutcome SageMakerClient::ListFeatureGroups(const ListFeatureGro
 
 ListFeatureGroupsOutcomeCallable SageMakerClient::ListFeatureGroupsCallable(const ListFeatureGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFeatureGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFeatureGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFeatureGroups, request, m_executor.get());
 }
 
 void SageMakerClient::ListFeatureGroupsAsync(const ListFeatureGroupsRequest& request, const ListFeatureGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFeatureGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFeatureGroups, request, handler, context, m_executor.get());
 }
 
 ListFlowDefinitionsOutcome SageMakerClient::ListFlowDefinitions(const ListFlowDefinitionsRequest& request) const
@@ -4575,18 +3538,12 @@ ListFlowDefinitionsOutcome SageMakerClient::ListFlowDefinitions(const ListFlowDe
 
 ListFlowDefinitionsOutcomeCallable SageMakerClient::ListFlowDefinitionsCallable(const ListFlowDefinitionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFlowDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFlowDefinitions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFlowDefinitions, request, m_executor.get());
 }
 
 void SageMakerClient::ListFlowDefinitionsAsync(const ListFlowDefinitionsRequest& request, const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFlowDefinitions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFlowDefinitions, request, handler, context, m_executor.get());
 }
 
 ListHumanTaskUisOutcome SageMakerClient::ListHumanTaskUis(const ListHumanTaskUisRequest& request) const
@@ -4599,18 +3556,12 @@ ListHumanTaskUisOutcome SageMakerClient::ListHumanTaskUis(const ListHumanTaskUis
 
 ListHumanTaskUisOutcomeCallable SageMakerClient::ListHumanTaskUisCallable(const ListHumanTaskUisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListHumanTaskUisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHumanTaskUis(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListHumanTaskUis, request, m_executor.get());
 }
 
 void SageMakerClient::ListHumanTaskUisAsync(const ListHumanTaskUisRequest& request, const ListHumanTaskUisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListHumanTaskUis(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListHumanTaskUis, request, handler, context, m_executor.get());
 }
 
 ListHyperParameterTuningJobsOutcome SageMakerClient::ListHyperParameterTuningJobs(const ListHyperParameterTuningJobsRequest& request) const
@@ -4623,18 +3574,12 @@ ListHyperParameterTuningJobsOutcome SageMakerClient::ListHyperParameterTuningJob
 
 ListHyperParameterTuningJobsOutcomeCallable SageMakerClient::ListHyperParameterTuningJobsCallable(const ListHyperParameterTuningJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListHyperParameterTuningJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHyperParameterTuningJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListHyperParameterTuningJobs, request, m_executor.get());
 }
 
 void SageMakerClient::ListHyperParameterTuningJobsAsync(const ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListHyperParameterTuningJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListHyperParameterTuningJobs, request, handler, context, m_executor.get());
 }
 
 ListImageVersionsOutcome SageMakerClient::ListImageVersions(const ListImageVersionsRequest& request) const
@@ -4647,18 +3592,12 @@ ListImageVersionsOutcome SageMakerClient::ListImageVersions(const ListImageVersi
 
 ListImageVersionsOutcomeCallable SageMakerClient::ListImageVersionsCallable(const ListImageVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListImageVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImageVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListImageVersions, request, m_executor.get());
 }
 
 void SageMakerClient::ListImageVersionsAsync(const ListImageVersionsRequest& request, const ListImageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListImageVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListImageVersions, request, handler, context, m_executor.get());
 }
 
 ListImagesOutcome SageMakerClient::ListImages(const ListImagesRequest& request) const
@@ -4671,18 +3610,12 @@ ListImagesOutcome SageMakerClient::ListImages(const ListImagesRequest& request) 
 
 ListImagesOutcomeCallable SageMakerClient::ListImagesCallable(const ListImagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListImagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListImages, request, m_executor.get());
 }
 
 void SageMakerClient::ListImagesAsync(const ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListImages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListImages, request, handler, context, m_executor.get());
 }
 
 ListInferenceRecommendationsJobStepsOutcome SageMakerClient::ListInferenceRecommendationsJobSteps(const ListInferenceRecommendationsJobStepsRequest& request) const
@@ -4695,18 +3628,12 @@ ListInferenceRecommendationsJobStepsOutcome SageMakerClient::ListInferenceRecomm
 
 ListInferenceRecommendationsJobStepsOutcomeCallable SageMakerClient::ListInferenceRecommendationsJobStepsCallable(const ListInferenceRecommendationsJobStepsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInferenceRecommendationsJobStepsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInferenceRecommendationsJobSteps(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInferenceRecommendationsJobSteps, request, m_executor.get());
 }
 
 void SageMakerClient::ListInferenceRecommendationsJobStepsAsync(const ListInferenceRecommendationsJobStepsRequest& request, const ListInferenceRecommendationsJobStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInferenceRecommendationsJobSteps(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInferenceRecommendationsJobSteps, request, handler, context, m_executor.get());
 }
 
 ListInferenceRecommendationsJobsOutcome SageMakerClient::ListInferenceRecommendationsJobs(const ListInferenceRecommendationsJobsRequest& request) const
@@ -4719,18 +3646,12 @@ ListInferenceRecommendationsJobsOutcome SageMakerClient::ListInferenceRecommenda
 
 ListInferenceRecommendationsJobsOutcomeCallable SageMakerClient::ListInferenceRecommendationsJobsCallable(const ListInferenceRecommendationsJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInferenceRecommendationsJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInferenceRecommendationsJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInferenceRecommendationsJobs, request, m_executor.get());
 }
 
 void SageMakerClient::ListInferenceRecommendationsJobsAsync(const ListInferenceRecommendationsJobsRequest& request, const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInferenceRecommendationsJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInferenceRecommendationsJobs, request, handler, context, m_executor.get());
 }
 
 ListLabelingJobsOutcome SageMakerClient::ListLabelingJobs(const ListLabelingJobsRequest& request) const
@@ -4743,18 +3664,12 @@ ListLabelingJobsOutcome SageMakerClient::ListLabelingJobs(const ListLabelingJobs
 
 ListLabelingJobsOutcomeCallable SageMakerClient::ListLabelingJobsCallable(const ListLabelingJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLabelingJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLabelingJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLabelingJobs, request, m_executor.get());
 }
 
 void SageMakerClient::ListLabelingJobsAsync(const ListLabelingJobsRequest& request, const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLabelingJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLabelingJobs, request, handler, context, m_executor.get());
 }
 
 ListLabelingJobsForWorkteamOutcome SageMakerClient::ListLabelingJobsForWorkteam(const ListLabelingJobsForWorkteamRequest& request) const
@@ -4767,18 +3682,12 @@ ListLabelingJobsForWorkteamOutcome SageMakerClient::ListLabelingJobsForWorkteam(
 
 ListLabelingJobsForWorkteamOutcomeCallable SageMakerClient::ListLabelingJobsForWorkteamCallable(const ListLabelingJobsForWorkteamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLabelingJobsForWorkteamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLabelingJobsForWorkteam(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLabelingJobsForWorkteam, request, m_executor.get());
 }
 
 void SageMakerClient::ListLabelingJobsForWorkteamAsync(const ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLabelingJobsForWorkteam(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLabelingJobsForWorkteam, request, handler, context, m_executor.get());
 }
 
 ListLineageGroupsOutcome SageMakerClient::ListLineageGroups(const ListLineageGroupsRequest& request) const
@@ -4791,18 +3700,12 @@ ListLineageGroupsOutcome SageMakerClient::ListLineageGroups(const ListLineageGro
 
 ListLineageGroupsOutcomeCallable SageMakerClient::ListLineageGroupsCallable(const ListLineageGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLineageGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLineageGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLineageGroups, request, m_executor.get());
 }
 
 void SageMakerClient::ListLineageGroupsAsync(const ListLineageGroupsRequest& request, const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLineageGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLineageGroups, request, handler, context, m_executor.get());
 }
 
 ListModelBiasJobDefinitionsOutcome SageMakerClient::ListModelBiasJobDefinitions(const ListModelBiasJobDefinitionsRequest& request) const
@@ -4815,18 +3718,12 @@ ListModelBiasJobDefinitionsOutcome SageMakerClient::ListModelBiasJobDefinitions(
 
 ListModelBiasJobDefinitionsOutcomeCallable SageMakerClient::ListModelBiasJobDefinitionsCallable(const ListModelBiasJobDefinitionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelBiasJobDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelBiasJobDefinitions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListModelBiasJobDefinitions, request, m_executor.get());
 }
 
 void SageMakerClient::ListModelBiasJobDefinitionsAsync(const ListModelBiasJobDefinitionsRequest& request, const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListModelBiasJobDefinitions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListModelBiasJobDefinitions, request, handler, context, m_executor.get());
 }
 
 ListModelExplainabilityJobDefinitionsOutcome SageMakerClient::ListModelExplainabilityJobDefinitions(const ListModelExplainabilityJobDefinitionsRequest& request) const
@@ -4839,18 +3736,12 @@ ListModelExplainabilityJobDefinitionsOutcome SageMakerClient::ListModelExplainab
 
 ListModelExplainabilityJobDefinitionsOutcomeCallable SageMakerClient::ListModelExplainabilityJobDefinitionsCallable(const ListModelExplainabilityJobDefinitionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelExplainabilityJobDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelExplainabilityJobDefinitions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListModelExplainabilityJobDefinitions, request, m_executor.get());
 }
 
 void SageMakerClient::ListModelExplainabilityJobDefinitionsAsync(const ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListModelExplainabilityJobDefinitions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListModelExplainabilityJobDefinitions, request, handler, context, m_executor.get());
 }
 
 ListModelMetadataOutcome SageMakerClient::ListModelMetadata(const ListModelMetadataRequest& request) const
@@ -4863,18 +3754,12 @@ ListModelMetadataOutcome SageMakerClient::ListModelMetadata(const ListModelMetad
 
 ListModelMetadataOutcomeCallable SageMakerClient::ListModelMetadataCallable(const ListModelMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListModelMetadata, request, m_executor.get());
 }
 
 void SageMakerClient::ListModelMetadataAsync(const ListModelMetadataRequest& request, const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListModelMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListModelMetadata, request, handler, context, m_executor.get());
 }
 
 ListModelPackageGroupsOutcome SageMakerClient::ListModelPackageGroups(const ListModelPackageGroupsRequest& request) const
@@ -4887,18 +3772,12 @@ ListModelPackageGroupsOutcome SageMakerClient::ListModelPackageGroups(const List
 
 ListModelPackageGroupsOutcomeCallable SageMakerClient::ListModelPackageGroupsCallable(const ListModelPackageGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelPackageGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelPackageGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListModelPackageGroups, request, m_executor.get());
 }
 
 void SageMakerClient::ListModelPackageGroupsAsync(const ListModelPackageGroupsRequest& request, const ListModelPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListModelPackageGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListModelPackageGroups, request, handler, context, m_executor.get());
 }
 
 ListModelPackagesOutcome SageMakerClient::ListModelPackages(const ListModelPackagesRequest& request) const
@@ -4911,18 +3790,12 @@ ListModelPackagesOutcome SageMakerClient::ListModelPackages(const ListModelPacka
 
 ListModelPackagesOutcomeCallable SageMakerClient::ListModelPackagesCallable(const ListModelPackagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelPackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelPackages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListModelPackages, request, m_executor.get());
 }
 
 void SageMakerClient::ListModelPackagesAsync(const ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListModelPackages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListModelPackages, request, handler, context, m_executor.get());
 }
 
 ListModelQualityJobDefinitionsOutcome SageMakerClient::ListModelQualityJobDefinitions(const ListModelQualityJobDefinitionsRequest& request) const
@@ -4935,18 +3808,12 @@ ListModelQualityJobDefinitionsOutcome SageMakerClient::ListModelQualityJobDefini
 
 ListModelQualityJobDefinitionsOutcomeCallable SageMakerClient::ListModelQualityJobDefinitionsCallable(const ListModelQualityJobDefinitionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelQualityJobDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelQualityJobDefinitions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListModelQualityJobDefinitions, request, m_executor.get());
 }
 
 void SageMakerClient::ListModelQualityJobDefinitionsAsync(const ListModelQualityJobDefinitionsRequest& request, const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListModelQualityJobDefinitions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListModelQualityJobDefinitions, request, handler, context, m_executor.get());
 }
 
 ListModelsOutcome SageMakerClient::ListModels(const ListModelsRequest& request) const
@@ -4959,18 +3826,12 @@ ListModelsOutcome SageMakerClient::ListModels(const ListModelsRequest& request) 
 
 ListModelsOutcomeCallable SageMakerClient::ListModelsCallable(const ListModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListModels, request, m_executor.get());
 }
 
 void SageMakerClient::ListModelsAsync(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListModels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListModels, request, handler, context, m_executor.get());
 }
 
 ListMonitoringExecutionsOutcome SageMakerClient::ListMonitoringExecutions(const ListMonitoringExecutionsRequest& request) const
@@ -4983,18 +3844,12 @@ ListMonitoringExecutionsOutcome SageMakerClient::ListMonitoringExecutions(const 
 
 ListMonitoringExecutionsOutcomeCallable SageMakerClient::ListMonitoringExecutionsCallable(const ListMonitoringExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMonitoringExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMonitoringExecutions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMonitoringExecutions, request, m_executor.get());
 }
 
 void SageMakerClient::ListMonitoringExecutionsAsync(const ListMonitoringExecutionsRequest& request, const ListMonitoringExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMonitoringExecutions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMonitoringExecutions, request, handler, context, m_executor.get());
 }
 
 ListMonitoringSchedulesOutcome SageMakerClient::ListMonitoringSchedules(const ListMonitoringSchedulesRequest& request) const
@@ -5007,18 +3862,12 @@ ListMonitoringSchedulesOutcome SageMakerClient::ListMonitoringSchedules(const Li
 
 ListMonitoringSchedulesOutcomeCallable SageMakerClient::ListMonitoringSchedulesCallable(const ListMonitoringSchedulesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMonitoringSchedulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMonitoringSchedules(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMonitoringSchedules, request, m_executor.get());
 }
 
 void SageMakerClient::ListMonitoringSchedulesAsync(const ListMonitoringSchedulesRequest& request, const ListMonitoringSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMonitoringSchedules(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMonitoringSchedules, request, handler, context, m_executor.get());
 }
 
 ListNotebookInstanceLifecycleConfigsOutcome SageMakerClient::ListNotebookInstanceLifecycleConfigs(const ListNotebookInstanceLifecycleConfigsRequest& request) const
@@ -5031,18 +3880,12 @@ ListNotebookInstanceLifecycleConfigsOutcome SageMakerClient::ListNotebookInstanc
 
 ListNotebookInstanceLifecycleConfigsOutcomeCallable SageMakerClient::ListNotebookInstanceLifecycleConfigsCallable(const ListNotebookInstanceLifecycleConfigsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNotebookInstanceLifecycleConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNotebookInstanceLifecycleConfigs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNotebookInstanceLifecycleConfigs, request, m_executor.get());
 }
 
 void SageMakerClient::ListNotebookInstanceLifecycleConfigsAsync(const ListNotebookInstanceLifecycleConfigsRequest& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNotebookInstanceLifecycleConfigs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNotebookInstanceLifecycleConfigs, request, handler, context, m_executor.get());
 }
 
 ListNotebookInstancesOutcome SageMakerClient::ListNotebookInstances(const ListNotebookInstancesRequest& request) const
@@ -5055,18 +3898,12 @@ ListNotebookInstancesOutcome SageMakerClient::ListNotebookInstances(const ListNo
 
 ListNotebookInstancesOutcomeCallable SageMakerClient::ListNotebookInstancesCallable(const ListNotebookInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNotebookInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNotebookInstances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNotebookInstances, request, m_executor.get());
 }
 
 void SageMakerClient::ListNotebookInstancesAsync(const ListNotebookInstancesRequest& request, const ListNotebookInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNotebookInstances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNotebookInstances, request, handler, context, m_executor.get());
 }
 
 ListPipelineExecutionStepsOutcome SageMakerClient::ListPipelineExecutionSteps(const ListPipelineExecutionStepsRequest& request) const
@@ -5079,18 +3916,12 @@ ListPipelineExecutionStepsOutcome SageMakerClient::ListPipelineExecutionSteps(co
 
 ListPipelineExecutionStepsOutcomeCallable SageMakerClient::ListPipelineExecutionStepsCallable(const ListPipelineExecutionStepsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPipelineExecutionStepsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPipelineExecutionSteps(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPipelineExecutionSteps, request, m_executor.get());
 }
 
 void SageMakerClient::ListPipelineExecutionStepsAsync(const ListPipelineExecutionStepsRequest& request, const ListPipelineExecutionStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPipelineExecutionSteps(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPipelineExecutionSteps, request, handler, context, m_executor.get());
 }
 
 ListPipelineExecutionsOutcome SageMakerClient::ListPipelineExecutions(const ListPipelineExecutionsRequest& request) const
@@ -5103,18 +3934,12 @@ ListPipelineExecutionsOutcome SageMakerClient::ListPipelineExecutions(const List
 
 ListPipelineExecutionsOutcomeCallable SageMakerClient::ListPipelineExecutionsCallable(const ListPipelineExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPipelineExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPipelineExecutions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPipelineExecutions, request, m_executor.get());
 }
 
 void SageMakerClient::ListPipelineExecutionsAsync(const ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPipelineExecutions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPipelineExecutions, request, handler, context, m_executor.get());
 }
 
 ListPipelineParametersForExecutionOutcome SageMakerClient::ListPipelineParametersForExecution(const ListPipelineParametersForExecutionRequest& request) const
@@ -5127,18 +3952,12 @@ ListPipelineParametersForExecutionOutcome SageMakerClient::ListPipelineParameter
 
 ListPipelineParametersForExecutionOutcomeCallable SageMakerClient::ListPipelineParametersForExecutionCallable(const ListPipelineParametersForExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPipelineParametersForExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPipelineParametersForExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPipelineParametersForExecution, request, m_executor.get());
 }
 
 void SageMakerClient::ListPipelineParametersForExecutionAsync(const ListPipelineParametersForExecutionRequest& request, const ListPipelineParametersForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPipelineParametersForExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPipelineParametersForExecution, request, handler, context, m_executor.get());
 }
 
 ListPipelinesOutcome SageMakerClient::ListPipelines(const ListPipelinesRequest& request) const
@@ -5151,18 +3970,12 @@ ListPipelinesOutcome SageMakerClient::ListPipelines(const ListPipelinesRequest& 
 
 ListPipelinesOutcomeCallable SageMakerClient::ListPipelinesCallable(const ListPipelinesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPipelinesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPipelines(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListPipelines, request, m_executor.get());
 }
 
 void SageMakerClient::ListPipelinesAsync(const ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListPipelines(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListPipelines, request, handler, context, m_executor.get());
 }
 
 ListProcessingJobsOutcome SageMakerClient::ListProcessingJobs(const ListProcessingJobsRequest& request) const
@@ -5175,18 +3988,12 @@ ListProcessingJobsOutcome SageMakerClient::ListProcessingJobs(const ListProcessi
 
 ListProcessingJobsOutcomeCallable SageMakerClient::ListProcessingJobsCallable(const ListProcessingJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProcessingJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProcessingJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListProcessingJobs, request, m_executor.get());
 }
 
 void SageMakerClient::ListProcessingJobsAsync(const ListProcessingJobsRequest& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListProcessingJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListProcessingJobs, request, handler, context, m_executor.get());
 }
 
 ListProjectsOutcome SageMakerClient::ListProjects(const ListProjectsRequest& request) const
@@ -5199,18 +4006,12 @@ ListProjectsOutcome SageMakerClient::ListProjects(const ListProjectsRequest& req
 
 ListProjectsOutcomeCallable SageMakerClient::ListProjectsCallable(const ListProjectsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProjectsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProjects(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListProjects, request, m_executor.get());
 }
 
 void SageMakerClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListProjects(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListProjects, request, handler, context, m_executor.get());
 }
 
 ListStageDevicesOutcome SageMakerClient::ListStageDevices(const ListStageDevicesRequest& request) const
@@ -5223,18 +4024,12 @@ ListStageDevicesOutcome SageMakerClient::ListStageDevices(const ListStageDevices
 
 ListStageDevicesOutcomeCallable SageMakerClient::ListStageDevicesCallable(const ListStageDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStageDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStageDevices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStageDevices, request, m_executor.get());
 }
 
 void SageMakerClient::ListStageDevicesAsync(const ListStageDevicesRequest& request, const ListStageDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStageDevices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStageDevices, request, handler, context, m_executor.get());
 }
 
 ListStudioLifecycleConfigsOutcome SageMakerClient::ListStudioLifecycleConfigs(const ListStudioLifecycleConfigsRequest& request) const
@@ -5247,18 +4042,12 @@ ListStudioLifecycleConfigsOutcome SageMakerClient::ListStudioLifecycleConfigs(co
 
 ListStudioLifecycleConfigsOutcomeCallable SageMakerClient::ListStudioLifecycleConfigsCallable(const ListStudioLifecycleConfigsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStudioLifecycleConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStudioLifecycleConfigs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStudioLifecycleConfigs, request, m_executor.get());
 }
 
 void SageMakerClient::ListStudioLifecycleConfigsAsync(const ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStudioLifecycleConfigs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStudioLifecycleConfigs, request, handler, context, m_executor.get());
 }
 
 ListSubscribedWorkteamsOutcome SageMakerClient::ListSubscribedWorkteams(const ListSubscribedWorkteamsRequest& request) const
@@ -5271,18 +4060,12 @@ ListSubscribedWorkteamsOutcome SageMakerClient::ListSubscribedWorkteams(const Li
 
 ListSubscribedWorkteamsOutcomeCallable SageMakerClient::ListSubscribedWorkteamsCallable(const ListSubscribedWorkteamsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSubscribedWorkteamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSubscribedWorkteams(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSubscribedWorkteams, request, m_executor.get());
 }
 
 void SageMakerClient::ListSubscribedWorkteamsAsync(const ListSubscribedWorkteamsRequest& request, const ListSubscribedWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSubscribedWorkteams(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSubscribedWorkteams, request, handler, context, m_executor.get());
 }
 
 ListTagsOutcome SageMakerClient::ListTags(const ListTagsRequest& request) const
@@ -5295,18 +4078,12 @@ ListTagsOutcome SageMakerClient::ListTags(const ListTagsRequest& request) const
 
 ListTagsOutcomeCallable SageMakerClient::ListTagsCallable(const ListTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTags, request, m_executor.get());
 }
 
 void SageMakerClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTags(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTags, request, handler, context, m_executor.get());
 }
 
 ListTrainingJobsOutcome SageMakerClient::ListTrainingJobs(const ListTrainingJobsRequest& request) const
@@ -5319,18 +4096,12 @@ ListTrainingJobsOutcome SageMakerClient::ListTrainingJobs(const ListTrainingJobs
 
 ListTrainingJobsOutcomeCallable SageMakerClient::ListTrainingJobsCallable(const ListTrainingJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTrainingJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTrainingJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTrainingJobs, request, m_executor.get());
 }
 
 void SageMakerClient::ListTrainingJobsAsync(const ListTrainingJobsRequest& request, const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTrainingJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTrainingJobs, request, handler, context, m_executor.get());
 }
 
 ListTrainingJobsForHyperParameterTuningJobOutcome SageMakerClient::ListTrainingJobsForHyperParameterTuningJob(const ListTrainingJobsForHyperParameterTuningJobRequest& request) const
@@ -5343,18 +4114,12 @@ ListTrainingJobsForHyperParameterTuningJobOutcome SageMakerClient::ListTrainingJ
 
 ListTrainingJobsForHyperParameterTuningJobOutcomeCallable SageMakerClient::ListTrainingJobsForHyperParameterTuningJobCallable(const ListTrainingJobsForHyperParameterTuningJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTrainingJobsForHyperParameterTuningJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTrainingJobsForHyperParameterTuningJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTrainingJobsForHyperParameterTuningJob, request, m_executor.get());
 }
 
 void SageMakerClient::ListTrainingJobsForHyperParameterTuningJobAsync(const ListTrainingJobsForHyperParameterTuningJobRequest& request, const ListTrainingJobsForHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTrainingJobsForHyperParameterTuningJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTrainingJobsForHyperParameterTuningJob, request, handler, context, m_executor.get());
 }
 
 ListTransformJobsOutcome SageMakerClient::ListTransformJobs(const ListTransformJobsRequest& request) const
@@ -5367,18 +4132,12 @@ ListTransformJobsOutcome SageMakerClient::ListTransformJobs(const ListTransformJ
 
 ListTransformJobsOutcomeCallable SageMakerClient::ListTransformJobsCallable(const ListTransformJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTransformJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTransformJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTransformJobs, request, m_executor.get());
 }
 
 void SageMakerClient::ListTransformJobsAsync(const ListTransformJobsRequest& request, const ListTransformJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTransformJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTransformJobs, request, handler, context, m_executor.get());
 }
 
 ListTrialComponentsOutcome SageMakerClient::ListTrialComponents(const ListTrialComponentsRequest& request) const
@@ -5391,18 +4150,12 @@ ListTrialComponentsOutcome SageMakerClient::ListTrialComponents(const ListTrialC
 
 ListTrialComponentsOutcomeCallable SageMakerClient::ListTrialComponentsCallable(const ListTrialComponentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTrialComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTrialComponents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTrialComponents, request, m_executor.get());
 }
 
 void SageMakerClient::ListTrialComponentsAsync(const ListTrialComponentsRequest& request, const ListTrialComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTrialComponents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTrialComponents, request, handler, context, m_executor.get());
 }
 
 ListTrialsOutcome SageMakerClient::ListTrials(const ListTrialsRequest& request) const
@@ -5415,18 +4168,12 @@ ListTrialsOutcome SageMakerClient::ListTrials(const ListTrialsRequest& request) 
 
 ListTrialsOutcomeCallable SageMakerClient::ListTrialsCallable(const ListTrialsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTrialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTrials(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTrials, request, m_executor.get());
 }
 
 void SageMakerClient::ListTrialsAsync(const ListTrialsRequest& request, const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTrials(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTrials, request, handler, context, m_executor.get());
 }
 
 ListUserProfilesOutcome SageMakerClient::ListUserProfiles(const ListUserProfilesRequest& request) const
@@ -5439,18 +4186,12 @@ ListUserProfilesOutcome SageMakerClient::ListUserProfiles(const ListUserProfiles
 
 ListUserProfilesOutcomeCallable SageMakerClient::ListUserProfilesCallable(const ListUserProfilesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUserProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserProfiles(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUserProfiles, request, m_executor.get());
 }
 
 void SageMakerClient::ListUserProfilesAsync(const ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUserProfiles(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUserProfiles, request, handler, context, m_executor.get());
 }
 
 ListWorkforcesOutcome SageMakerClient::ListWorkforces(const ListWorkforcesRequest& request) const
@@ -5463,18 +4204,12 @@ ListWorkforcesOutcome SageMakerClient::ListWorkforces(const ListWorkforcesReques
 
 ListWorkforcesOutcomeCallable SageMakerClient::ListWorkforcesCallable(const ListWorkforcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkforcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkforces(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkforces, request, m_executor.get());
 }
 
 void SageMakerClient::ListWorkforcesAsync(const ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkforces(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkforces, request, handler, context, m_executor.get());
 }
 
 ListWorkteamsOutcome SageMakerClient::ListWorkteams(const ListWorkteamsRequest& request) const
@@ -5487,18 +4222,12 @@ ListWorkteamsOutcome SageMakerClient::ListWorkteams(const ListWorkteamsRequest& 
 
 ListWorkteamsOutcomeCallable SageMakerClient::ListWorkteamsCallable(const ListWorkteamsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkteamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkteams(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkteams, request, m_executor.get());
 }
 
 void SageMakerClient::ListWorkteamsAsync(const ListWorkteamsRequest& request, const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkteams(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkteams, request, handler, context, m_executor.get());
 }
 
 PutModelPackageGroupPolicyOutcome SageMakerClient::PutModelPackageGroupPolicy(const PutModelPackageGroupPolicyRequest& request) const
@@ -5511,18 +4240,12 @@ PutModelPackageGroupPolicyOutcome SageMakerClient::PutModelPackageGroupPolicy(co
 
 PutModelPackageGroupPolicyOutcomeCallable SageMakerClient::PutModelPackageGroupPolicyCallable(const PutModelPackageGroupPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutModelPackageGroupPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutModelPackageGroupPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutModelPackageGroupPolicy, request, m_executor.get());
 }
 
 void SageMakerClient::PutModelPackageGroupPolicyAsync(const PutModelPackageGroupPolicyRequest& request, const PutModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutModelPackageGroupPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutModelPackageGroupPolicy, request, handler, context, m_executor.get());
 }
 
 QueryLineageOutcome SageMakerClient::QueryLineage(const QueryLineageRequest& request) const
@@ -5535,18 +4258,12 @@ QueryLineageOutcome SageMakerClient::QueryLineage(const QueryLineageRequest& req
 
 QueryLineageOutcomeCallable SageMakerClient::QueryLineageCallable(const QueryLineageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryLineageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QueryLineage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(QueryLineage, request, m_executor.get());
 }
 
 void SageMakerClient::QueryLineageAsync(const QueryLineageRequest& request, const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, QueryLineage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(QueryLineage, request, handler, context, m_executor.get());
 }
 
 RegisterDevicesOutcome SageMakerClient::RegisterDevices(const RegisterDevicesRequest& request) const
@@ -5559,18 +4276,12 @@ RegisterDevicesOutcome SageMakerClient::RegisterDevices(const RegisterDevicesReq
 
 RegisterDevicesOutcomeCallable SageMakerClient::RegisterDevicesCallable(const RegisterDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterDevices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RegisterDevices, request, m_executor.get());
 }
 
 void SageMakerClient::RegisterDevicesAsync(const RegisterDevicesRequest& request, const RegisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterDevices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RegisterDevices, request, handler, context, m_executor.get());
 }
 
 RenderUiTemplateOutcome SageMakerClient::RenderUiTemplate(const RenderUiTemplateRequest& request) const
@@ -5583,18 +4294,12 @@ RenderUiTemplateOutcome SageMakerClient::RenderUiTemplate(const RenderUiTemplate
 
 RenderUiTemplateOutcomeCallable SageMakerClient::RenderUiTemplateCallable(const RenderUiTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RenderUiTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RenderUiTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RenderUiTemplate, request, m_executor.get());
 }
 
 void SageMakerClient::RenderUiTemplateAsync(const RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RenderUiTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RenderUiTemplate, request, handler, context, m_executor.get());
 }
 
 RetryPipelineExecutionOutcome SageMakerClient::RetryPipelineExecution(const RetryPipelineExecutionRequest& request) const
@@ -5607,18 +4312,12 @@ RetryPipelineExecutionOutcome SageMakerClient::RetryPipelineExecution(const Retr
 
 RetryPipelineExecutionOutcomeCallable SageMakerClient::RetryPipelineExecutionCallable(const RetryPipelineExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RetryPipelineExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RetryPipelineExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RetryPipelineExecution, request, m_executor.get());
 }
 
 void SageMakerClient::RetryPipelineExecutionAsync(const RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RetryPipelineExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RetryPipelineExecution, request, handler, context, m_executor.get());
 }
 
 SearchOutcome SageMakerClient::Search(const SearchRequest& request) const
@@ -5631,18 +4330,12 @@ SearchOutcome SageMakerClient::Search(const SearchRequest& request) const
 
 SearchOutcomeCallable SageMakerClient::SearchCallable(const SearchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Search(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(Search, request, m_executor.get());
 }
 
 void SageMakerClient::SearchAsync(const SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, Search(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(Search, request, handler, context, m_executor.get());
 }
 
 SendPipelineExecutionStepFailureOutcome SageMakerClient::SendPipelineExecutionStepFailure(const SendPipelineExecutionStepFailureRequest& request) const
@@ -5655,18 +4348,12 @@ SendPipelineExecutionStepFailureOutcome SageMakerClient::SendPipelineExecutionSt
 
 SendPipelineExecutionStepFailureOutcomeCallable SageMakerClient::SendPipelineExecutionStepFailureCallable(const SendPipelineExecutionStepFailureRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendPipelineExecutionStepFailureOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendPipelineExecutionStepFailure(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendPipelineExecutionStepFailure, request, m_executor.get());
 }
 
 void SageMakerClient::SendPipelineExecutionStepFailureAsync(const SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendPipelineExecutionStepFailure(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendPipelineExecutionStepFailure, request, handler, context, m_executor.get());
 }
 
 SendPipelineExecutionStepSuccessOutcome SageMakerClient::SendPipelineExecutionStepSuccess(const SendPipelineExecutionStepSuccessRequest& request) const
@@ -5679,18 +4366,12 @@ SendPipelineExecutionStepSuccessOutcome SageMakerClient::SendPipelineExecutionSt
 
 SendPipelineExecutionStepSuccessOutcomeCallable SageMakerClient::SendPipelineExecutionStepSuccessCallable(const SendPipelineExecutionStepSuccessRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendPipelineExecutionStepSuccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendPipelineExecutionStepSuccess(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendPipelineExecutionStepSuccess, request, m_executor.get());
 }
 
 void SageMakerClient::SendPipelineExecutionStepSuccessAsync(const SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendPipelineExecutionStepSuccess(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendPipelineExecutionStepSuccess, request, handler, context, m_executor.get());
 }
 
 StartEdgeDeploymentStageOutcome SageMakerClient::StartEdgeDeploymentStage(const StartEdgeDeploymentStageRequest& request) const
@@ -5703,18 +4384,12 @@ StartEdgeDeploymentStageOutcome SageMakerClient::StartEdgeDeploymentStage(const 
 
 StartEdgeDeploymentStageOutcomeCallable SageMakerClient::StartEdgeDeploymentStageCallable(const StartEdgeDeploymentStageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartEdgeDeploymentStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartEdgeDeploymentStage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartEdgeDeploymentStage, request, m_executor.get());
 }
 
 void SageMakerClient::StartEdgeDeploymentStageAsync(const StartEdgeDeploymentStageRequest& request, const StartEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartEdgeDeploymentStage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartEdgeDeploymentStage, request, handler, context, m_executor.get());
 }
 
 StartMonitoringScheduleOutcome SageMakerClient::StartMonitoringSchedule(const StartMonitoringScheduleRequest& request) const
@@ -5727,18 +4402,12 @@ StartMonitoringScheduleOutcome SageMakerClient::StartMonitoringSchedule(const St
 
 StartMonitoringScheduleOutcomeCallable SageMakerClient::StartMonitoringScheduleCallable(const StartMonitoringScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartMonitoringScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMonitoringSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartMonitoringSchedule, request, m_executor.get());
 }
 
 void SageMakerClient::StartMonitoringScheduleAsync(const StartMonitoringScheduleRequest& request, const StartMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartMonitoringSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartMonitoringSchedule, request, handler, context, m_executor.get());
 }
 
 StartNotebookInstanceOutcome SageMakerClient::StartNotebookInstance(const StartNotebookInstanceRequest& request) const
@@ -5751,18 +4420,12 @@ StartNotebookInstanceOutcome SageMakerClient::StartNotebookInstance(const StartN
 
 StartNotebookInstanceOutcomeCallable SageMakerClient::StartNotebookInstanceCallable(const StartNotebookInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartNotebookInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartNotebookInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartNotebookInstance, request, m_executor.get());
 }
 
 void SageMakerClient::StartNotebookInstanceAsync(const StartNotebookInstanceRequest& request, const StartNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartNotebookInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartNotebookInstance, request, handler, context, m_executor.get());
 }
 
 StartPipelineExecutionOutcome SageMakerClient::StartPipelineExecution(const StartPipelineExecutionRequest& request) const
@@ -5775,18 +4438,12 @@ StartPipelineExecutionOutcome SageMakerClient::StartPipelineExecution(const Star
 
 StartPipelineExecutionOutcomeCallable SageMakerClient::StartPipelineExecutionCallable(const StartPipelineExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartPipelineExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartPipelineExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartPipelineExecution, request, m_executor.get());
 }
 
 void SageMakerClient::StartPipelineExecutionAsync(const StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartPipelineExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartPipelineExecution, request, handler, context, m_executor.get());
 }
 
 StopAutoMLJobOutcome SageMakerClient::StopAutoMLJob(const StopAutoMLJobRequest& request) const
@@ -5799,18 +4456,12 @@ StopAutoMLJobOutcome SageMakerClient::StopAutoMLJob(const StopAutoMLJobRequest& 
 
 StopAutoMLJobOutcomeCallable SageMakerClient::StopAutoMLJobCallable(const StopAutoMLJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopAutoMLJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopAutoMLJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopAutoMLJob, request, m_executor.get());
 }
 
 void SageMakerClient::StopAutoMLJobAsync(const StopAutoMLJobRequest& request, const StopAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopAutoMLJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopAutoMLJob, request, handler, context, m_executor.get());
 }
 
 StopCompilationJobOutcome SageMakerClient::StopCompilationJob(const StopCompilationJobRequest& request) const
@@ -5823,18 +4474,12 @@ StopCompilationJobOutcome SageMakerClient::StopCompilationJob(const StopCompilat
 
 StopCompilationJobOutcomeCallable SageMakerClient::StopCompilationJobCallable(const StopCompilationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopCompilationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopCompilationJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopCompilationJob, request, m_executor.get());
 }
 
 void SageMakerClient::StopCompilationJobAsync(const StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopCompilationJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopCompilationJob, request, handler, context, m_executor.get());
 }
 
 StopEdgeDeploymentStageOutcome SageMakerClient::StopEdgeDeploymentStage(const StopEdgeDeploymentStageRequest& request) const
@@ -5847,18 +4492,12 @@ StopEdgeDeploymentStageOutcome SageMakerClient::StopEdgeDeploymentStage(const St
 
 StopEdgeDeploymentStageOutcomeCallable SageMakerClient::StopEdgeDeploymentStageCallable(const StopEdgeDeploymentStageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopEdgeDeploymentStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopEdgeDeploymentStage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopEdgeDeploymentStage, request, m_executor.get());
 }
 
 void SageMakerClient::StopEdgeDeploymentStageAsync(const StopEdgeDeploymentStageRequest& request, const StopEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopEdgeDeploymentStage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopEdgeDeploymentStage, request, handler, context, m_executor.get());
 }
 
 StopEdgePackagingJobOutcome SageMakerClient::StopEdgePackagingJob(const StopEdgePackagingJobRequest& request) const
@@ -5871,18 +4510,12 @@ StopEdgePackagingJobOutcome SageMakerClient::StopEdgePackagingJob(const StopEdge
 
 StopEdgePackagingJobOutcomeCallable SageMakerClient::StopEdgePackagingJobCallable(const StopEdgePackagingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopEdgePackagingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopEdgePackagingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopEdgePackagingJob, request, m_executor.get());
 }
 
 void SageMakerClient::StopEdgePackagingJobAsync(const StopEdgePackagingJobRequest& request, const StopEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopEdgePackagingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopEdgePackagingJob, request, handler, context, m_executor.get());
 }
 
 StopHyperParameterTuningJobOutcome SageMakerClient::StopHyperParameterTuningJob(const StopHyperParameterTuningJobRequest& request) const
@@ -5895,18 +4528,12 @@ StopHyperParameterTuningJobOutcome SageMakerClient::StopHyperParameterTuningJob(
 
 StopHyperParameterTuningJobOutcomeCallable SageMakerClient::StopHyperParameterTuningJobCallable(const StopHyperParameterTuningJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopHyperParameterTuningJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopHyperParameterTuningJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopHyperParameterTuningJob, request, m_executor.get());
 }
 
 void SageMakerClient::StopHyperParameterTuningJobAsync(const StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopHyperParameterTuningJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopHyperParameterTuningJob, request, handler, context, m_executor.get());
 }
 
 StopInferenceRecommendationsJobOutcome SageMakerClient::StopInferenceRecommendationsJob(const StopInferenceRecommendationsJobRequest& request) const
@@ -5919,18 +4546,12 @@ StopInferenceRecommendationsJobOutcome SageMakerClient::StopInferenceRecommendat
 
 StopInferenceRecommendationsJobOutcomeCallable SageMakerClient::StopInferenceRecommendationsJobCallable(const StopInferenceRecommendationsJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopInferenceRecommendationsJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopInferenceRecommendationsJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopInferenceRecommendationsJob, request, m_executor.get());
 }
 
 void SageMakerClient::StopInferenceRecommendationsJobAsync(const StopInferenceRecommendationsJobRequest& request, const StopInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopInferenceRecommendationsJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopInferenceRecommendationsJob, request, handler, context, m_executor.get());
 }
 
 StopLabelingJobOutcome SageMakerClient::StopLabelingJob(const StopLabelingJobRequest& request) const
@@ -5943,18 +4564,12 @@ StopLabelingJobOutcome SageMakerClient::StopLabelingJob(const StopLabelingJobReq
 
 StopLabelingJobOutcomeCallable SageMakerClient::StopLabelingJobCallable(const StopLabelingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopLabelingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopLabelingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopLabelingJob, request, m_executor.get());
 }
 
 void SageMakerClient::StopLabelingJobAsync(const StopLabelingJobRequest& request, const StopLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopLabelingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopLabelingJob, request, handler, context, m_executor.get());
 }
 
 StopMonitoringScheduleOutcome SageMakerClient::StopMonitoringSchedule(const StopMonitoringScheduleRequest& request) const
@@ -5967,18 +4582,12 @@ StopMonitoringScheduleOutcome SageMakerClient::StopMonitoringSchedule(const Stop
 
 StopMonitoringScheduleOutcomeCallable SageMakerClient::StopMonitoringScheduleCallable(const StopMonitoringScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopMonitoringScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopMonitoringSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopMonitoringSchedule, request, m_executor.get());
 }
 
 void SageMakerClient::StopMonitoringScheduleAsync(const StopMonitoringScheduleRequest& request, const StopMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopMonitoringSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopMonitoringSchedule, request, handler, context, m_executor.get());
 }
 
 StopNotebookInstanceOutcome SageMakerClient::StopNotebookInstance(const StopNotebookInstanceRequest& request) const
@@ -5991,18 +4600,12 @@ StopNotebookInstanceOutcome SageMakerClient::StopNotebookInstance(const StopNote
 
 StopNotebookInstanceOutcomeCallable SageMakerClient::StopNotebookInstanceCallable(const StopNotebookInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopNotebookInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopNotebookInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopNotebookInstance, request, m_executor.get());
 }
 
 void SageMakerClient::StopNotebookInstanceAsync(const StopNotebookInstanceRequest& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopNotebookInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopNotebookInstance, request, handler, context, m_executor.get());
 }
 
 StopPipelineExecutionOutcome SageMakerClient::StopPipelineExecution(const StopPipelineExecutionRequest& request) const
@@ -6015,18 +4618,12 @@ StopPipelineExecutionOutcome SageMakerClient::StopPipelineExecution(const StopPi
 
 StopPipelineExecutionOutcomeCallable SageMakerClient::StopPipelineExecutionCallable(const StopPipelineExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopPipelineExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopPipelineExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopPipelineExecution, request, m_executor.get());
 }
 
 void SageMakerClient::StopPipelineExecutionAsync(const StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopPipelineExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopPipelineExecution, request, handler, context, m_executor.get());
 }
 
 StopProcessingJobOutcome SageMakerClient::StopProcessingJob(const StopProcessingJobRequest& request) const
@@ -6039,18 +4636,12 @@ StopProcessingJobOutcome SageMakerClient::StopProcessingJob(const StopProcessing
 
 StopProcessingJobOutcomeCallable SageMakerClient::StopProcessingJobCallable(const StopProcessingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopProcessingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopProcessingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopProcessingJob, request, m_executor.get());
 }
 
 void SageMakerClient::StopProcessingJobAsync(const StopProcessingJobRequest& request, const StopProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopProcessingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopProcessingJob, request, handler, context, m_executor.get());
 }
 
 StopTrainingJobOutcome SageMakerClient::StopTrainingJob(const StopTrainingJobRequest& request) const
@@ -6063,18 +4654,12 @@ StopTrainingJobOutcome SageMakerClient::StopTrainingJob(const StopTrainingJobReq
 
 StopTrainingJobOutcomeCallable SageMakerClient::StopTrainingJobCallable(const StopTrainingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopTrainingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopTrainingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopTrainingJob, request, m_executor.get());
 }
 
 void SageMakerClient::StopTrainingJobAsync(const StopTrainingJobRequest& request, const StopTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopTrainingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopTrainingJob, request, handler, context, m_executor.get());
 }
 
 StopTransformJobOutcome SageMakerClient::StopTransformJob(const StopTransformJobRequest& request) const
@@ -6087,18 +4672,12 @@ StopTransformJobOutcome SageMakerClient::StopTransformJob(const StopTransformJob
 
 StopTransformJobOutcomeCallable SageMakerClient::StopTransformJobCallable(const StopTransformJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopTransformJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopTransformJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopTransformJob, request, m_executor.get());
 }
 
 void SageMakerClient::StopTransformJobAsync(const StopTransformJobRequest& request, const StopTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopTransformJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopTransformJob, request, handler, context, m_executor.get());
 }
 
 UpdateActionOutcome SageMakerClient::UpdateAction(const UpdateActionRequest& request) const
@@ -6111,18 +4690,12 @@ UpdateActionOutcome SageMakerClient::UpdateAction(const UpdateActionRequest& req
 
 UpdateActionOutcomeCallable SageMakerClient::UpdateActionCallable(const UpdateActionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAction, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateActionAsync(const UpdateActionRequest& request, const UpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAction, request, handler, context, m_executor.get());
 }
 
 UpdateAppImageConfigOutcome SageMakerClient::UpdateAppImageConfig(const UpdateAppImageConfigRequest& request) const
@@ -6135,18 +4708,12 @@ UpdateAppImageConfigOutcome SageMakerClient::UpdateAppImageConfig(const UpdateAp
 
 UpdateAppImageConfigOutcomeCallable SageMakerClient::UpdateAppImageConfigCallable(const UpdateAppImageConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAppImageConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAppImageConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAppImageConfig, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateAppImageConfigAsync(const UpdateAppImageConfigRequest& request, const UpdateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAppImageConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAppImageConfig, request, handler, context, m_executor.get());
 }
 
 UpdateArtifactOutcome SageMakerClient::UpdateArtifact(const UpdateArtifactRequest& request) const
@@ -6159,18 +4726,12 @@ UpdateArtifactOutcome SageMakerClient::UpdateArtifact(const UpdateArtifactReques
 
 UpdateArtifactOutcomeCallable SageMakerClient::UpdateArtifactCallable(const UpdateArtifactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateArtifactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateArtifact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateArtifact, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateArtifactAsync(const UpdateArtifactRequest& request, const UpdateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateArtifact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateArtifact, request, handler, context, m_executor.get());
 }
 
 UpdateCodeRepositoryOutcome SageMakerClient::UpdateCodeRepository(const UpdateCodeRepositoryRequest& request) const
@@ -6183,18 +4744,12 @@ UpdateCodeRepositoryOutcome SageMakerClient::UpdateCodeRepository(const UpdateCo
 
 UpdateCodeRepositoryOutcomeCallable SageMakerClient::UpdateCodeRepositoryCallable(const UpdateCodeRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCodeRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCodeRepository(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCodeRepository, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateCodeRepositoryAsync(const UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCodeRepository(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCodeRepository, request, handler, context, m_executor.get());
 }
 
 UpdateContextOutcome SageMakerClient::UpdateContext(const UpdateContextRequest& request) const
@@ -6207,18 +4762,12 @@ UpdateContextOutcome SageMakerClient::UpdateContext(const UpdateContextRequest& 
 
 UpdateContextOutcomeCallable SageMakerClient::UpdateContextCallable(const UpdateContextRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateContextOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContext(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateContext, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateContextAsync(const UpdateContextRequest& request, const UpdateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateContext(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateContext, request, handler, context, m_executor.get());
 }
 
 UpdateDeviceFleetOutcome SageMakerClient::UpdateDeviceFleet(const UpdateDeviceFleetRequest& request) const
@@ -6231,18 +4780,12 @@ UpdateDeviceFleetOutcome SageMakerClient::UpdateDeviceFleet(const UpdateDeviceFl
 
 UpdateDeviceFleetOutcomeCallable SageMakerClient::UpdateDeviceFleetCallable(const UpdateDeviceFleetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDeviceFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDeviceFleet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDeviceFleet, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateDeviceFleetAsync(const UpdateDeviceFleetRequest& request, const UpdateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDeviceFleet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDeviceFleet, request, handler, context, m_executor.get());
 }
 
 UpdateDevicesOutcome SageMakerClient::UpdateDevices(const UpdateDevicesRequest& request) const
@@ -6255,18 +4798,12 @@ UpdateDevicesOutcome SageMakerClient::UpdateDevices(const UpdateDevicesRequest& 
 
 UpdateDevicesOutcomeCallable SageMakerClient::UpdateDevicesCallable(const UpdateDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDevices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDevices, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateDevicesAsync(const UpdateDevicesRequest& request, const UpdateDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDevices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDevices, request, handler, context, m_executor.get());
 }
 
 UpdateDomainOutcome SageMakerClient::UpdateDomain(const UpdateDomainRequest& request) const
@@ -6279,18 +4816,12 @@ UpdateDomainOutcome SageMakerClient::UpdateDomain(const UpdateDomainRequest& req
 
 UpdateDomainOutcomeCallable SageMakerClient::UpdateDomainCallable(const UpdateDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDomain, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateDomainAsync(const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDomain, request, handler, context, m_executor.get());
 }
 
 UpdateEndpointOutcome SageMakerClient::UpdateEndpoint(const UpdateEndpointRequest& request) const
@@ -6303,18 +4834,12 @@ UpdateEndpointOutcome SageMakerClient::UpdateEndpoint(const UpdateEndpointReques
 
 UpdateEndpointOutcomeCallable SageMakerClient::UpdateEndpointCallable(const UpdateEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateEndpoint, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateEndpointAsync(const UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateEndpoint, request, handler, context, m_executor.get());
 }
 
 UpdateEndpointWeightsAndCapacitiesOutcome SageMakerClient::UpdateEndpointWeightsAndCapacities(const UpdateEndpointWeightsAndCapacitiesRequest& request) const
@@ -6327,18 +4852,12 @@ UpdateEndpointWeightsAndCapacitiesOutcome SageMakerClient::UpdateEndpointWeights
 
 UpdateEndpointWeightsAndCapacitiesOutcomeCallable SageMakerClient::UpdateEndpointWeightsAndCapacitiesCallable(const UpdateEndpointWeightsAndCapacitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEndpointWeightsAndCapacitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEndpointWeightsAndCapacities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateEndpointWeightsAndCapacities, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateEndpointWeightsAndCapacitiesAsync(const UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateEndpointWeightsAndCapacities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateEndpointWeightsAndCapacities, request, handler, context, m_executor.get());
 }
 
 UpdateExperimentOutcome SageMakerClient::UpdateExperiment(const UpdateExperimentRequest& request) const
@@ -6351,18 +4870,12 @@ UpdateExperimentOutcome SageMakerClient::UpdateExperiment(const UpdateExperiment
 
 UpdateExperimentOutcomeCallable SageMakerClient::UpdateExperimentCallable(const UpdateExperimentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExperiment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateExperiment, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateExperimentAsync(const UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateExperiment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateExperiment, request, handler, context, m_executor.get());
 }
 
 UpdateFeatureGroupOutcome SageMakerClient::UpdateFeatureGroup(const UpdateFeatureGroupRequest& request) const
@@ -6375,18 +4888,12 @@ UpdateFeatureGroupOutcome SageMakerClient::UpdateFeatureGroup(const UpdateFeatur
 
 UpdateFeatureGroupOutcomeCallable SageMakerClient::UpdateFeatureGroupCallable(const UpdateFeatureGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFeatureGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFeatureGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFeatureGroup, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateFeatureGroupAsync(const UpdateFeatureGroupRequest& request, const UpdateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFeatureGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFeatureGroup, request, handler, context, m_executor.get());
 }
 
 UpdateFeatureMetadataOutcome SageMakerClient::UpdateFeatureMetadata(const UpdateFeatureMetadataRequest& request) const
@@ -6399,18 +4906,12 @@ UpdateFeatureMetadataOutcome SageMakerClient::UpdateFeatureMetadata(const Update
 
 UpdateFeatureMetadataOutcomeCallable SageMakerClient::UpdateFeatureMetadataCallable(const UpdateFeatureMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFeatureMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFeatureMetadata(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFeatureMetadata, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateFeatureMetadataAsync(const UpdateFeatureMetadataRequest& request, const UpdateFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFeatureMetadata(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFeatureMetadata, request, handler, context, m_executor.get());
 }
 
 UpdateImageOutcome SageMakerClient::UpdateImage(const UpdateImageRequest& request) const
@@ -6423,18 +4924,12 @@ UpdateImageOutcome SageMakerClient::UpdateImage(const UpdateImageRequest& reques
 
 UpdateImageOutcomeCallable SageMakerClient::UpdateImageCallable(const UpdateImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateImage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateImage, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateImageAsync(const UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateImage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateImage, request, handler, context, m_executor.get());
 }
 
 UpdateModelPackageOutcome SageMakerClient::UpdateModelPackage(const UpdateModelPackageRequest& request) const
@@ -6447,18 +4942,12 @@ UpdateModelPackageOutcome SageMakerClient::UpdateModelPackage(const UpdateModelP
 
 UpdateModelPackageOutcomeCallable SageMakerClient::UpdateModelPackageCallable(const UpdateModelPackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateModelPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateModelPackage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateModelPackage, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateModelPackageAsync(const UpdateModelPackageRequest& request, const UpdateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateModelPackage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateModelPackage, request, handler, context, m_executor.get());
 }
 
 UpdateMonitoringScheduleOutcome SageMakerClient::UpdateMonitoringSchedule(const UpdateMonitoringScheduleRequest& request) const
@@ -6471,18 +4960,12 @@ UpdateMonitoringScheduleOutcome SageMakerClient::UpdateMonitoringSchedule(const 
 
 UpdateMonitoringScheduleOutcomeCallable SageMakerClient::UpdateMonitoringScheduleCallable(const UpdateMonitoringScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMonitoringScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMonitoringSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateMonitoringSchedule, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateMonitoringScheduleAsync(const UpdateMonitoringScheduleRequest& request, const UpdateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateMonitoringSchedule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateMonitoringSchedule, request, handler, context, m_executor.get());
 }
 
 UpdateNotebookInstanceOutcome SageMakerClient::UpdateNotebookInstance(const UpdateNotebookInstanceRequest& request) const
@@ -6495,18 +4978,12 @@ UpdateNotebookInstanceOutcome SageMakerClient::UpdateNotebookInstance(const Upda
 
 UpdateNotebookInstanceOutcomeCallable SageMakerClient::UpdateNotebookInstanceCallable(const UpdateNotebookInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNotebookInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNotebookInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateNotebookInstance, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateNotebookInstanceAsync(const UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateNotebookInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateNotebookInstance, request, handler, context, m_executor.get());
 }
 
 UpdateNotebookInstanceLifecycleConfigOutcome SageMakerClient::UpdateNotebookInstanceLifecycleConfig(const UpdateNotebookInstanceLifecycleConfigRequest& request) const
@@ -6519,18 +4996,12 @@ UpdateNotebookInstanceLifecycleConfigOutcome SageMakerClient::UpdateNotebookInst
 
 UpdateNotebookInstanceLifecycleConfigOutcomeCallable SageMakerClient::UpdateNotebookInstanceLifecycleConfigCallable(const UpdateNotebookInstanceLifecycleConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNotebookInstanceLifecycleConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNotebookInstanceLifecycleConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateNotebookInstanceLifecycleConfig, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateNotebookInstanceLifecycleConfigAsync(const UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateNotebookInstanceLifecycleConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateNotebookInstanceLifecycleConfig, request, handler, context, m_executor.get());
 }
 
 UpdatePipelineOutcome SageMakerClient::UpdatePipeline(const UpdatePipelineRequest& request) const
@@ -6543,18 +5014,12 @@ UpdatePipelineOutcome SageMakerClient::UpdatePipeline(const UpdatePipelineReques
 
 UpdatePipelineOutcomeCallable SageMakerClient::UpdatePipelineCallable(const UpdatePipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePipeline, request, m_executor.get());
 }
 
 void SageMakerClient::UpdatePipelineAsync(const UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePipeline, request, handler, context, m_executor.get());
 }
 
 UpdatePipelineExecutionOutcome SageMakerClient::UpdatePipelineExecution(const UpdatePipelineExecutionRequest& request) const
@@ -6567,18 +5032,12 @@ UpdatePipelineExecutionOutcome SageMakerClient::UpdatePipelineExecution(const Up
 
 UpdatePipelineExecutionOutcomeCallable SageMakerClient::UpdatePipelineExecutionCallable(const UpdatePipelineExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePipelineExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePipelineExecution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePipelineExecution, request, m_executor.get());
 }
 
 void SageMakerClient::UpdatePipelineExecutionAsync(const UpdatePipelineExecutionRequest& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePipelineExecution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePipelineExecution, request, handler, context, m_executor.get());
 }
 
 UpdateProjectOutcome SageMakerClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -6591,18 +5050,12 @@ UpdateProjectOutcome SageMakerClient::UpdateProject(const UpdateProjectRequest& 
 
 UpdateProjectOutcomeCallable SageMakerClient::UpdateProjectCallable(const UpdateProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateProject, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateProject, request, handler, context, m_executor.get());
 }
 
 UpdateTrainingJobOutcome SageMakerClient::UpdateTrainingJob(const UpdateTrainingJobRequest& request) const
@@ -6615,18 +5068,12 @@ UpdateTrainingJobOutcome SageMakerClient::UpdateTrainingJob(const UpdateTraining
 
 UpdateTrainingJobOutcomeCallable SageMakerClient::UpdateTrainingJobCallable(const UpdateTrainingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTrainingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTrainingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTrainingJob, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateTrainingJobAsync(const UpdateTrainingJobRequest& request, const UpdateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTrainingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTrainingJob, request, handler, context, m_executor.get());
 }
 
 UpdateTrialOutcome SageMakerClient::UpdateTrial(const UpdateTrialRequest& request) const
@@ -6639,18 +5086,12 @@ UpdateTrialOutcome SageMakerClient::UpdateTrial(const UpdateTrialRequest& reques
 
 UpdateTrialOutcomeCallable SageMakerClient::UpdateTrialCallable(const UpdateTrialRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTrialOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTrial(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTrial, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateTrialAsync(const UpdateTrialRequest& request, const UpdateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTrial(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTrial, request, handler, context, m_executor.get());
 }
 
 UpdateTrialComponentOutcome SageMakerClient::UpdateTrialComponent(const UpdateTrialComponentRequest& request) const
@@ -6663,18 +5104,12 @@ UpdateTrialComponentOutcome SageMakerClient::UpdateTrialComponent(const UpdateTr
 
 UpdateTrialComponentOutcomeCallable SageMakerClient::UpdateTrialComponentCallable(const UpdateTrialComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTrialComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTrialComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTrialComponent, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateTrialComponentAsync(const UpdateTrialComponentRequest& request, const UpdateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTrialComponent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTrialComponent, request, handler, context, m_executor.get());
 }
 
 UpdateUserProfileOutcome SageMakerClient::UpdateUserProfile(const UpdateUserProfileRequest& request) const
@@ -6687,18 +5122,12 @@ UpdateUserProfileOutcome SageMakerClient::UpdateUserProfile(const UpdateUserProf
 
 UpdateUserProfileOutcomeCallable SageMakerClient::UpdateUserProfileCallable(const UpdateUserProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateUserProfile, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateUserProfileAsync(const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateUserProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateUserProfile, request, handler, context, m_executor.get());
 }
 
 UpdateWorkforceOutcome SageMakerClient::UpdateWorkforce(const UpdateWorkforceRequest& request) const
@@ -6711,18 +5140,12 @@ UpdateWorkforceOutcome SageMakerClient::UpdateWorkforce(const UpdateWorkforceReq
 
 UpdateWorkforceOutcomeCallable SageMakerClient::UpdateWorkforceCallable(const UpdateWorkforceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkforceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkforce(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateWorkforce, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateWorkforceAsync(const UpdateWorkforceRequest& request, const UpdateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateWorkforce(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateWorkforce, request, handler, context, m_executor.get());
 }
 
 UpdateWorkteamOutcome SageMakerClient::UpdateWorkteam(const UpdateWorkteamRequest& request) const
@@ -6735,17 +5158,11 @@ UpdateWorkteamOutcome SageMakerClient::UpdateWorkteam(const UpdateWorkteamReques
 
 UpdateWorkteamOutcomeCallable SageMakerClient::UpdateWorkteamCallable(const UpdateWorkteamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkteamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkteam(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateWorkteam, request, m_executor.get());
 }
 
 void SageMakerClient::UpdateWorkteamAsync(const UpdateWorkteamRequest& request, const UpdateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateWorkteam(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateWorkteam, request, handler, context, m_executor.get());
 }
 

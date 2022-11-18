@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -163,18 +164,12 @@ CreateTokenOutcome SSOOIDCClient::CreateToken(const CreateTokenRequest& request)
 
 CreateTokenOutcomeCallable SSOOIDCClient::CreateTokenCallable(const CreateTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateToken, request, m_executor.get());
 }
 
 void SSOOIDCClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateToken, request, handler, context, m_executor.get());
 }
 
 RegisterClientOutcome SSOOIDCClient::RegisterClient(const RegisterClientRequest& request) const
@@ -188,18 +183,12 @@ RegisterClientOutcome SSOOIDCClient::RegisterClient(const RegisterClientRequest&
 
 RegisterClientOutcomeCallable SSOOIDCClient::RegisterClientCallable(const RegisterClientRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterClient(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RegisterClient, request, m_executor.get());
 }
 
 void SSOOIDCClient::RegisterClientAsync(const RegisterClientRequest& request, const RegisterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterClient(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RegisterClient, request, handler, context, m_executor.get());
 }
 
 StartDeviceAuthorizationOutcome SSOOIDCClient::StartDeviceAuthorization(const StartDeviceAuthorizationRequest& request) const
@@ -213,17 +202,11 @@ StartDeviceAuthorizationOutcome SSOOIDCClient::StartDeviceAuthorization(const St
 
 StartDeviceAuthorizationOutcomeCallable SSOOIDCClient::StartDeviceAuthorizationCallable(const StartDeviceAuthorizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDeviceAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDeviceAuthorization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartDeviceAuthorization, request, m_executor.get());
 }
 
 void SSOOIDCClient::StartDeviceAuthorizationAsync(const StartDeviceAuthorizationRequest& request, const StartDeviceAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartDeviceAuthorization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartDeviceAuthorization, request, handler, context, m_executor.get());
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -178,18 +179,12 @@ AssociateGatewayToServerOutcome BackupGatewayClient::AssociateGatewayToServer(co
 
 AssociateGatewayToServerOutcomeCallable BackupGatewayClient::AssociateGatewayToServerCallable(const AssociateGatewayToServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateGatewayToServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateGatewayToServer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateGatewayToServer, request, m_executor.get());
 }
 
 void BackupGatewayClient::AssociateGatewayToServerAsync(const AssociateGatewayToServerRequest& request, const AssociateGatewayToServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateGatewayToServer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateGatewayToServer, request, handler, context, m_executor.get());
 }
 
 CreateGatewayOutcome BackupGatewayClient::CreateGateway(const CreateGatewayRequest& request) const
@@ -202,18 +197,12 @@ CreateGatewayOutcome BackupGatewayClient::CreateGateway(const CreateGatewayReque
 
 CreateGatewayOutcomeCallable BackupGatewayClient::CreateGatewayCallable(const CreateGatewayRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGateway(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateGateway, request, m_executor.get());
 }
 
 void BackupGatewayClient::CreateGatewayAsync(const CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateGateway(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateGateway, request, handler, context, m_executor.get());
 }
 
 DeleteGatewayOutcome BackupGatewayClient::DeleteGateway(const DeleteGatewayRequest& request) const
@@ -226,18 +215,12 @@ DeleteGatewayOutcome BackupGatewayClient::DeleteGateway(const DeleteGatewayReque
 
 DeleteGatewayOutcomeCallable BackupGatewayClient::DeleteGatewayCallable(const DeleteGatewayRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGateway(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteGateway, request, m_executor.get());
 }
 
 void BackupGatewayClient::DeleteGatewayAsync(const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteGateway(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteGateway, request, handler, context, m_executor.get());
 }
 
 DeleteHypervisorOutcome BackupGatewayClient::DeleteHypervisor(const DeleteHypervisorRequest& request) const
@@ -250,18 +233,12 @@ DeleteHypervisorOutcome BackupGatewayClient::DeleteHypervisor(const DeleteHyperv
 
 DeleteHypervisorOutcomeCallable BackupGatewayClient::DeleteHypervisorCallable(const DeleteHypervisorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteHypervisorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHypervisor(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteHypervisor, request, m_executor.get());
 }
 
 void BackupGatewayClient::DeleteHypervisorAsync(const DeleteHypervisorRequest& request, const DeleteHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteHypervisor(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteHypervisor, request, handler, context, m_executor.get());
 }
 
 DisassociateGatewayFromServerOutcome BackupGatewayClient::DisassociateGatewayFromServer(const DisassociateGatewayFromServerRequest& request) const
@@ -274,18 +251,12 @@ DisassociateGatewayFromServerOutcome BackupGatewayClient::DisassociateGatewayFro
 
 DisassociateGatewayFromServerOutcomeCallable BackupGatewayClient::DisassociateGatewayFromServerCallable(const DisassociateGatewayFromServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateGatewayFromServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateGatewayFromServer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateGatewayFromServer, request, m_executor.get());
 }
 
 void BackupGatewayClient::DisassociateGatewayFromServerAsync(const DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateGatewayFromServer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateGatewayFromServer, request, handler, context, m_executor.get());
 }
 
 GetGatewayOutcome BackupGatewayClient::GetGateway(const GetGatewayRequest& request) const
@@ -298,18 +269,12 @@ GetGatewayOutcome BackupGatewayClient::GetGateway(const GetGatewayRequest& reque
 
 GetGatewayOutcomeCallable BackupGatewayClient::GetGatewayCallable(const GetGatewayRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGateway(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetGateway, request, m_executor.get());
 }
 
 void BackupGatewayClient::GetGatewayAsync(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetGateway(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetGateway, request, handler, context, m_executor.get());
 }
 
 GetVirtualMachineOutcome BackupGatewayClient::GetVirtualMachine(const GetVirtualMachineRequest& request) const
@@ -322,18 +287,12 @@ GetVirtualMachineOutcome BackupGatewayClient::GetVirtualMachine(const GetVirtual
 
 GetVirtualMachineOutcomeCallable BackupGatewayClient::GetVirtualMachineCallable(const GetVirtualMachineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetVirtualMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVirtualMachine(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetVirtualMachine, request, m_executor.get());
 }
 
 void BackupGatewayClient::GetVirtualMachineAsync(const GetVirtualMachineRequest& request, const GetVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetVirtualMachine(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetVirtualMachine, request, handler, context, m_executor.get());
 }
 
 ImportHypervisorConfigurationOutcome BackupGatewayClient::ImportHypervisorConfiguration(const ImportHypervisorConfigurationRequest& request) const
@@ -346,18 +305,12 @@ ImportHypervisorConfigurationOutcome BackupGatewayClient::ImportHypervisorConfig
 
 ImportHypervisorConfigurationOutcomeCallable BackupGatewayClient::ImportHypervisorConfigurationCallable(const ImportHypervisorConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportHypervisorConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportHypervisorConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportHypervisorConfiguration, request, m_executor.get());
 }
 
 void BackupGatewayClient::ImportHypervisorConfigurationAsync(const ImportHypervisorConfigurationRequest& request, const ImportHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportHypervisorConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportHypervisorConfiguration, request, handler, context, m_executor.get());
 }
 
 ListGatewaysOutcome BackupGatewayClient::ListGateways(const ListGatewaysRequest& request) const
@@ -370,18 +323,12 @@ ListGatewaysOutcome BackupGatewayClient::ListGateways(const ListGatewaysRequest&
 
 ListGatewaysOutcomeCallable BackupGatewayClient::ListGatewaysCallable(const ListGatewaysRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGatewaysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGateways(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListGateways, request, m_executor.get());
 }
 
 void BackupGatewayClient::ListGatewaysAsync(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListGateways(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListGateways, request, handler, context, m_executor.get());
 }
 
 ListHypervisorsOutcome BackupGatewayClient::ListHypervisors(const ListHypervisorsRequest& request) const
@@ -394,18 +341,12 @@ ListHypervisorsOutcome BackupGatewayClient::ListHypervisors(const ListHypervisor
 
 ListHypervisorsOutcomeCallable BackupGatewayClient::ListHypervisorsCallable(const ListHypervisorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListHypervisorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHypervisors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListHypervisors, request, m_executor.get());
 }
 
 void BackupGatewayClient::ListHypervisorsAsync(const ListHypervisorsRequest& request, const ListHypervisorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListHypervisors(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListHypervisors, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome BackupGatewayClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -418,18 +359,12 @@ ListTagsForResourceOutcome BackupGatewayClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable BackupGatewayClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void BackupGatewayClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListVirtualMachinesOutcome BackupGatewayClient::ListVirtualMachines(const ListVirtualMachinesRequest& request) const
@@ -442,18 +377,12 @@ ListVirtualMachinesOutcome BackupGatewayClient::ListVirtualMachines(const ListVi
 
 ListVirtualMachinesOutcomeCallable BackupGatewayClient::ListVirtualMachinesCallable(const ListVirtualMachinesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVirtualMachinesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVirtualMachines(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListVirtualMachines, request, m_executor.get());
 }
 
 void BackupGatewayClient::ListVirtualMachinesAsync(const ListVirtualMachinesRequest& request, const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListVirtualMachines(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListVirtualMachines, request, handler, context, m_executor.get());
 }
 
 PutMaintenanceStartTimeOutcome BackupGatewayClient::PutMaintenanceStartTime(const PutMaintenanceStartTimeRequest& request) const
@@ -466,18 +395,12 @@ PutMaintenanceStartTimeOutcome BackupGatewayClient::PutMaintenanceStartTime(cons
 
 PutMaintenanceStartTimeOutcomeCallable BackupGatewayClient::PutMaintenanceStartTimeCallable(const PutMaintenanceStartTimeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutMaintenanceStartTimeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutMaintenanceStartTime(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutMaintenanceStartTime, request, m_executor.get());
 }
 
 void BackupGatewayClient::PutMaintenanceStartTimeAsync(const PutMaintenanceStartTimeRequest& request, const PutMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutMaintenanceStartTime(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutMaintenanceStartTime, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome BackupGatewayClient::TagResource(const TagResourceRequest& request) const
@@ -490,18 +413,12 @@ TagResourceOutcome BackupGatewayClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable BackupGatewayClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void BackupGatewayClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 TestHypervisorConfigurationOutcome BackupGatewayClient::TestHypervisorConfiguration(const TestHypervisorConfigurationRequest& request) const
@@ -514,18 +431,12 @@ TestHypervisorConfigurationOutcome BackupGatewayClient::TestHypervisorConfigurat
 
 TestHypervisorConfigurationOutcomeCallable BackupGatewayClient::TestHypervisorConfigurationCallable(const TestHypervisorConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TestHypervisorConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestHypervisorConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TestHypervisorConfiguration, request, m_executor.get());
 }
 
 void BackupGatewayClient::TestHypervisorConfigurationAsync(const TestHypervisorConfigurationRequest& request, const TestHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TestHypervisorConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TestHypervisorConfiguration, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome BackupGatewayClient::UntagResource(const UntagResourceRequest& request) const
@@ -538,18 +449,12 @@ UntagResourceOutcome BackupGatewayClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable BackupGatewayClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void BackupGatewayClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateGatewayInformationOutcome BackupGatewayClient::UpdateGatewayInformation(const UpdateGatewayInformationRequest& request) const
@@ -562,18 +467,12 @@ UpdateGatewayInformationOutcome BackupGatewayClient::UpdateGatewayInformation(co
 
 UpdateGatewayInformationOutcomeCallable BackupGatewayClient::UpdateGatewayInformationCallable(const UpdateGatewayInformationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewayInformationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGatewayInformation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateGatewayInformation, request, m_executor.get());
 }
 
 void BackupGatewayClient::UpdateGatewayInformationAsync(const UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateGatewayInformation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateGatewayInformation, request, handler, context, m_executor.get());
 }
 
 UpdateGatewaySoftwareNowOutcome BackupGatewayClient::UpdateGatewaySoftwareNow(const UpdateGatewaySoftwareNowRequest& request) const
@@ -586,18 +485,12 @@ UpdateGatewaySoftwareNowOutcome BackupGatewayClient::UpdateGatewaySoftwareNow(co
 
 UpdateGatewaySoftwareNowOutcomeCallable BackupGatewayClient::UpdateGatewaySoftwareNowCallable(const UpdateGatewaySoftwareNowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewaySoftwareNowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGatewaySoftwareNow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateGatewaySoftwareNow, request, m_executor.get());
 }
 
 void BackupGatewayClient::UpdateGatewaySoftwareNowAsync(const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateGatewaySoftwareNow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateGatewaySoftwareNow, request, handler, context, m_executor.get());
 }
 
 UpdateHypervisorOutcome BackupGatewayClient::UpdateHypervisor(const UpdateHypervisorRequest& request) const
@@ -610,17 +503,11 @@ UpdateHypervisorOutcome BackupGatewayClient::UpdateHypervisor(const UpdateHyperv
 
 UpdateHypervisorOutcomeCallable BackupGatewayClient::UpdateHypervisorCallable(const UpdateHypervisorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateHypervisorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateHypervisor(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateHypervisor, request, m_executor.get());
 }
 
 void BackupGatewayClient::UpdateHypervisorAsync(const UpdateHypervisorRequest& request, const UpdateHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateHypervisor(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateHypervisor, request, handler, context, m_executor.get());
 }
 

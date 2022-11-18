@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -163,18 +164,12 @@ GetDeploymentsOutcome SagemakerEdgeManagerClient::GetDeployments(const GetDeploy
 
 GetDeploymentsOutcomeCallable SagemakerEdgeManagerClient::GetDeploymentsCallable(const GetDeploymentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeployments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDeployments, request, m_executor.get());
 }
 
 void SagemakerEdgeManagerClient::GetDeploymentsAsync(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDeployments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDeployments, request, handler, context, m_executor.get());
 }
 
 GetDeviceRegistrationOutcome SagemakerEdgeManagerClient::GetDeviceRegistration(const GetDeviceRegistrationRequest& request) const
@@ -188,18 +183,12 @@ GetDeviceRegistrationOutcome SagemakerEdgeManagerClient::GetDeviceRegistration(c
 
 GetDeviceRegistrationOutcomeCallable SagemakerEdgeManagerClient::GetDeviceRegistrationCallable(const GetDeviceRegistrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeviceRegistrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeviceRegistration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDeviceRegistration, request, m_executor.get());
 }
 
 void SagemakerEdgeManagerClient::GetDeviceRegistrationAsync(const GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDeviceRegistration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDeviceRegistration, request, handler, context, m_executor.get());
 }
 
 SendHeartbeatOutcome SagemakerEdgeManagerClient::SendHeartbeat(const SendHeartbeatRequest& request) const
@@ -213,17 +202,11 @@ SendHeartbeatOutcome SagemakerEdgeManagerClient::SendHeartbeat(const SendHeartbe
 
 SendHeartbeatOutcomeCallable SagemakerEdgeManagerClient::SendHeartbeatCallable(const SendHeartbeatRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendHeartbeatOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendHeartbeat(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendHeartbeat, request, m_executor.get());
 }
 
 void SagemakerEdgeManagerClient::SendHeartbeatAsync(const SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendHeartbeat(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendHeartbeat, request, handler, context, m_executor.get());
 }
 

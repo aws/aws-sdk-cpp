@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -198,18 +199,12 @@ AcceptQualificationRequestOutcome MTurkClient::AcceptQualificationRequest(const 
 
 AcceptQualificationRequestOutcomeCallable MTurkClient::AcceptQualificationRequestCallable(const AcceptQualificationRequestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcceptQualificationRequestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptQualificationRequest(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AcceptQualificationRequest, request, m_executor.get());
 }
 
 void MTurkClient::AcceptQualificationRequestAsync(const AcceptQualificationRequestRequest& request, const AcceptQualificationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AcceptQualificationRequest(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AcceptQualificationRequest, request, handler, context, m_executor.get());
 }
 
 ApproveAssignmentOutcome MTurkClient::ApproveAssignment(const ApproveAssignmentRequest& request) const
@@ -222,18 +217,12 @@ ApproveAssignmentOutcome MTurkClient::ApproveAssignment(const ApproveAssignmentR
 
 ApproveAssignmentOutcomeCallable MTurkClient::ApproveAssignmentCallable(const ApproveAssignmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ApproveAssignmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ApproveAssignment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ApproveAssignment, request, m_executor.get());
 }
 
 void MTurkClient::ApproveAssignmentAsync(const ApproveAssignmentRequest& request, const ApproveAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ApproveAssignment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ApproveAssignment, request, handler, context, m_executor.get());
 }
 
 AssociateQualificationWithWorkerOutcome MTurkClient::AssociateQualificationWithWorker(const AssociateQualificationWithWorkerRequest& request) const
@@ -246,18 +235,12 @@ AssociateQualificationWithWorkerOutcome MTurkClient::AssociateQualificationWithW
 
 AssociateQualificationWithWorkerOutcomeCallable MTurkClient::AssociateQualificationWithWorkerCallable(const AssociateQualificationWithWorkerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateQualificationWithWorkerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateQualificationWithWorker(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateQualificationWithWorker, request, m_executor.get());
 }
 
 void MTurkClient::AssociateQualificationWithWorkerAsync(const AssociateQualificationWithWorkerRequest& request, const AssociateQualificationWithWorkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateQualificationWithWorker(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateQualificationWithWorker, request, handler, context, m_executor.get());
 }
 
 CreateAdditionalAssignmentsForHITOutcome MTurkClient::CreateAdditionalAssignmentsForHIT(const CreateAdditionalAssignmentsForHITRequest& request) const
@@ -270,18 +253,12 @@ CreateAdditionalAssignmentsForHITOutcome MTurkClient::CreateAdditionalAssignment
 
 CreateAdditionalAssignmentsForHITOutcomeCallable MTurkClient::CreateAdditionalAssignmentsForHITCallable(const CreateAdditionalAssignmentsForHITRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAdditionalAssignmentsForHITOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAdditionalAssignmentsForHIT(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAdditionalAssignmentsForHIT, request, m_executor.get());
 }
 
 void MTurkClient::CreateAdditionalAssignmentsForHITAsync(const CreateAdditionalAssignmentsForHITRequest& request, const CreateAdditionalAssignmentsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAdditionalAssignmentsForHIT(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAdditionalAssignmentsForHIT, request, handler, context, m_executor.get());
 }
 
 CreateHITOutcome MTurkClient::CreateHIT(const CreateHITRequest& request) const
@@ -294,18 +271,12 @@ CreateHITOutcome MTurkClient::CreateHIT(const CreateHITRequest& request) const
 
 CreateHITOutcomeCallable MTurkClient::CreateHITCallable(const CreateHITRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHITOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHIT(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateHIT, request, m_executor.get());
 }
 
 void MTurkClient::CreateHITAsync(const CreateHITRequest& request, const CreateHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateHIT(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateHIT, request, handler, context, m_executor.get());
 }
 
 CreateHITTypeOutcome MTurkClient::CreateHITType(const CreateHITTypeRequest& request) const
@@ -318,18 +289,12 @@ CreateHITTypeOutcome MTurkClient::CreateHITType(const CreateHITTypeRequest& requ
 
 CreateHITTypeOutcomeCallable MTurkClient::CreateHITTypeCallable(const CreateHITTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHITTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHITType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateHITType, request, m_executor.get());
 }
 
 void MTurkClient::CreateHITTypeAsync(const CreateHITTypeRequest& request, const CreateHITTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateHITType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateHITType, request, handler, context, m_executor.get());
 }
 
 CreateHITWithHITTypeOutcome MTurkClient::CreateHITWithHITType(const CreateHITWithHITTypeRequest& request) const
@@ -342,18 +307,12 @@ CreateHITWithHITTypeOutcome MTurkClient::CreateHITWithHITType(const CreateHITWit
 
 CreateHITWithHITTypeOutcomeCallable MTurkClient::CreateHITWithHITTypeCallable(const CreateHITWithHITTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHITWithHITTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHITWithHITType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateHITWithHITType, request, m_executor.get());
 }
 
 void MTurkClient::CreateHITWithHITTypeAsync(const CreateHITWithHITTypeRequest& request, const CreateHITWithHITTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateHITWithHITType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateHITWithHITType, request, handler, context, m_executor.get());
 }
 
 CreateQualificationTypeOutcome MTurkClient::CreateQualificationType(const CreateQualificationTypeRequest& request) const
@@ -366,18 +325,12 @@ CreateQualificationTypeOutcome MTurkClient::CreateQualificationType(const Create
 
 CreateQualificationTypeOutcomeCallable MTurkClient::CreateQualificationTypeCallable(const CreateQualificationTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateQualificationTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateQualificationType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateQualificationType, request, m_executor.get());
 }
 
 void MTurkClient::CreateQualificationTypeAsync(const CreateQualificationTypeRequest& request, const CreateQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateQualificationType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateQualificationType, request, handler, context, m_executor.get());
 }
 
 CreateWorkerBlockOutcome MTurkClient::CreateWorkerBlock(const CreateWorkerBlockRequest& request) const
@@ -390,18 +343,12 @@ CreateWorkerBlockOutcome MTurkClient::CreateWorkerBlock(const CreateWorkerBlockR
 
 CreateWorkerBlockOutcomeCallable MTurkClient::CreateWorkerBlockCallable(const CreateWorkerBlockRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkerBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkerBlock(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateWorkerBlock, request, m_executor.get());
 }
 
 void MTurkClient::CreateWorkerBlockAsync(const CreateWorkerBlockRequest& request, const CreateWorkerBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateWorkerBlock(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateWorkerBlock, request, handler, context, m_executor.get());
 }
 
 DeleteHITOutcome MTurkClient::DeleteHIT(const DeleteHITRequest& request) const
@@ -414,18 +361,12 @@ DeleteHITOutcome MTurkClient::DeleteHIT(const DeleteHITRequest& request) const
 
 DeleteHITOutcomeCallable MTurkClient::DeleteHITCallable(const DeleteHITRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteHITOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHIT(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteHIT, request, m_executor.get());
 }
 
 void MTurkClient::DeleteHITAsync(const DeleteHITRequest& request, const DeleteHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteHIT(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteHIT, request, handler, context, m_executor.get());
 }
 
 DeleteQualificationTypeOutcome MTurkClient::DeleteQualificationType(const DeleteQualificationTypeRequest& request) const
@@ -438,18 +379,12 @@ DeleteQualificationTypeOutcome MTurkClient::DeleteQualificationType(const Delete
 
 DeleteQualificationTypeOutcomeCallable MTurkClient::DeleteQualificationTypeCallable(const DeleteQualificationTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteQualificationTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteQualificationType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteQualificationType, request, m_executor.get());
 }
 
 void MTurkClient::DeleteQualificationTypeAsync(const DeleteQualificationTypeRequest& request, const DeleteQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteQualificationType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteQualificationType, request, handler, context, m_executor.get());
 }
 
 DeleteWorkerBlockOutcome MTurkClient::DeleteWorkerBlock(const DeleteWorkerBlockRequest& request) const
@@ -462,18 +397,12 @@ DeleteWorkerBlockOutcome MTurkClient::DeleteWorkerBlock(const DeleteWorkerBlockR
 
 DeleteWorkerBlockOutcomeCallable MTurkClient::DeleteWorkerBlockCallable(const DeleteWorkerBlockRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkerBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkerBlock(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteWorkerBlock, request, m_executor.get());
 }
 
 void MTurkClient::DeleteWorkerBlockAsync(const DeleteWorkerBlockRequest& request, const DeleteWorkerBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteWorkerBlock(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteWorkerBlock, request, handler, context, m_executor.get());
 }
 
 DisassociateQualificationFromWorkerOutcome MTurkClient::DisassociateQualificationFromWorker(const DisassociateQualificationFromWorkerRequest& request) const
@@ -486,18 +415,12 @@ DisassociateQualificationFromWorkerOutcome MTurkClient::DisassociateQualificatio
 
 DisassociateQualificationFromWorkerOutcomeCallable MTurkClient::DisassociateQualificationFromWorkerCallable(const DisassociateQualificationFromWorkerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateQualificationFromWorkerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateQualificationFromWorker(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateQualificationFromWorker, request, m_executor.get());
 }
 
 void MTurkClient::DisassociateQualificationFromWorkerAsync(const DisassociateQualificationFromWorkerRequest& request, const DisassociateQualificationFromWorkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateQualificationFromWorker(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateQualificationFromWorker, request, handler, context, m_executor.get());
 }
 
 GetAccountBalanceOutcome MTurkClient::GetAccountBalance(const GetAccountBalanceRequest& request) const
@@ -510,18 +433,12 @@ GetAccountBalanceOutcome MTurkClient::GetAccountBalance(const GetAccountBalanceR
 
 GetAccountBalanceOutcomeCallable MTurkClient::GetAccountBalanceCallable(const GetAccountBalanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccountBalanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccountBalance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccountBalance, request, m_executor.get());
 }
 
 void MTurkClient::GetAccountBalanceAsync(const GetAccountBalanceRequest& request, const GetAccountBalanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccountBalance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccountBalance, request, handler, context, m_executor.get());
 }
 
 GetAssignmentOutcome MTurkClient::GetAssignment(const GetAssignmentRequest& request) const
@@ -534,18 +451,12 @@ GetAssignmentOutcome MTurkClient::GetAssignment(const GetAssignmentRequest& requ
 
 GetAssignmentOutcomeCallable MTurkClient::GetAssignmentCallable(const GetAssignmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAssignmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssignment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAssignment, request, m_executor.get());
 }
 
 void MTurkClient::GetAssignmentAsync(const GetAssignmentRequest& request, const GetAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAssignment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAssignment, request, handler, context, m_executor.get());
 }
 
 GetFileUploadURLOutcome MTurkClient::GetFileUploadURL(const GetFileUploadURLRequest& request) const
@@ -558,18 +469,12 @@ GetFileUploadURLOutcome MTurkClient::GetFileUploadURL(const GetFileUploadURLRequ
 
 GetFileUploadURLOutcomeCallable MTurkClient::GetFileUploadURLCallable(const GetFileUploadURLRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFileUploadURLOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFileUploadURL(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFileUploadURL, request, m_executor.get());
 }
 
 void MTurkClient::GetFileUploadURLAsync(const GetFileUploadURLRequest& request, const GetFileUploadURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFileUploadURL(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFileUploadURL, request, handler, context, m_executor.get());
 }
 
 GetHITOutcome MTurkClient::GetHIT(const GetHITRequest& request) const
@@ -582,18 +487,12 @@ GetHITOutcome MTurkClient::GetHIT(const GetHITRequest& request) const
 
 GetHITOutcomeCallable MTurkClient::GetHITCallable(const GetHITRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetHITOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHIT(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetHIT, request, m_executor.get());
 }
 
 void MTurkClient::GetHITAsync(const GetHITRequest& request, const GetHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetHIT(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetHIT, request, handler, context, m_executor.get());
 }
 
 GetQualificationScoreOutcome MTurkClient::GetQualificationScore(const GetQualificationScoreRequest& request) const
@@ -606,18 +505,12 @@ GetQualificationScoreOutcome MTurkClient::GetQualificationScore(const GetQualifi
 
 GetQualificationScoreOutcomeCallable MTurkClient::GetQualificationScoreCallable(const GetQualificationScoreRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetQualificationScoreOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetQualificationScore(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetQualificationScore, request, m_executor.get());
 }
 
 void MTurkClient::GetQualificationScoreAsync(const GetQualificationScoreRequest& request, const GetQualificationScoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetQualificationScore(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetQualificationScore, request, handler, context, m_executor.get());
 }
 
 GetQualificationTypeOutcome MTurkClient::GetQualificationType(const GetQualificationTypeRequest& request) const
@@ -630,18 +523,12 @@ GetQualificationTypeOutcome MTurkClient::GetQualificationType(const GetQualifica
 
 GetQualificationTypeOutcomeCallable MTurkClient::GetQualificationTypeCallable(const GetQualificationTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetQualificationTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetQualificationType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetQualificationType, request, m_executor.get());
 }
 
 void MTurkClient::GetQualificationTypeAsync(const GetQualificationTypeRequest& request, const GetQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetQualificationType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetQualificationType, request, handler, context, m_executor.get());
 }
 
 ListAssignmentsForHITOutcome MTurkClient::ListAssignmentsForHIT(const ListAssignmentsForHITRequest& request) const
@@ -654,18 +541,12 @@ ListAssignmentsForHITOutcome MTurkClient::ListAssignmentsForHIT(const ListAssign
 
 ListAssignmentsForHITOutcomeCallable MTurkClient::ListAssignmentsForHITCallable(const ListAssignmentsForHITRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssignmentsForHITOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssignmentsForHIT(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAssignmentsForHIT, request, m_executor.get());
 }
 
 void MTurkClient::ListAssignmentsForHITAsync(const ListAssignmentsForHITRequest& request, const ListAssignmentsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAssignmentsForHIT(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAssignmentsForHIT, request, handler, context, m_executor.get());
 }
 
 ListBonusPaymentsOutcome MTurkClient::ListBonusPayments(const ListBonusPaymentsRequest& request) const
@@ -678,18 +559,12 @@ ListBonusPaymentsOutcome MTurkClient::ListBonusPayments(const ListBonusPaymentsR
 
 ListBonusPaymentsOutcomeCallable MTurkClient::ListBonusPaymentsCallable(const ListBonusPaymentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBonusPaymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBonusPayments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBonusPayments, request, m_executor.get());
 }
 
 void MTurkClient::ListBonusPaymentsAsync(const ListBonusPaymentsRequest& request, const ListBonusPaymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBonusPayments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBonusPayments, request, handler, context, m_executor.get());
 }
 
 ListHITsOutcome MTurkClient::ListHITs(const ListHITsRequest& request) const
@@ -702,18 +577,12 @@ ListHITsOutcome MTurkClient::ListHITs(const ListHITsRequest& request) const
 
 ListHITsOutcomeCallable MTurkClient::ListHITsCallable(const ListHITsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListHITsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHITs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListHITs, request, m_executor.get());
 }
 
 void MTurkClient::ListHITsAsync(const ListHITsRequest& request, const ListHITsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListHITs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListHITs, request, handler, context, m_executor.get());
 }
 
 ListHITsForQualificationTypeOutcome MTurkClient::ListHITsForQualificationType(const ListHITsForQualificationTypeRequest& request) const
@@ -726,18 +595,12 @@ ListHITsForQualificationTypeOutcome MTurkClient::ListHITsForQualificationType(co
 
 ListHITsForQualificationTypeOutcomeCallable MTurkClient::ListHITsForQualificationTypeCallable(const ListHITsForQualificationTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListHITsForQualificationTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHITsForQualificationType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListHITsForQualificationType, request, m_executor.get());
 }
 
 void MTurkClient::ListHITsForQualificationTypeAsync(const ListHITsForQualificationTypeRequest& request, const ListHITsForQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListHITsForQualificationType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListHITsForQualificationType, request, handler, context, m_executor.get());
 }
 
 ListQualificationRequestsOutcome MTurkClient::ListQualificationRequests(const ListQualificationRequestsRequest& request) const
@@ -750,18 +613,12 @@ ListQualificationRequestsOutcome MTurkClient::ListQualificationRequests(const Li
 
 ListQualificationRequestsOutcomeCallable MTurkClient::ListQualificationRequestsCallable(const ListQualificationRequestsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListQualificationRequestsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListQualificationRequests(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListQualificationRequests, request, m_executor.get());
 }
 
 void MTurkClient::ListQualificationRequestsAsync(const ListQualificationRequestsRequest& request, const ListQualificationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListQualificationRequests(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListQualificationRequests, request, handler, context, m_executor.get());
 }
 
 ListQualificationTypesOutcome MTurkClient::ListQualificationTypes(const ListQualificationTypesRequest& request) const
@@ -774,18 +631,12 @@ ListQualificationTypesOutcome MTurkClient::ListQualificationTypes(const ListQual
 
 ListQualificationTypesOutcomeCallable MTurkClient::ListQualificationTypesCallable(const ListQualificationTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListQualificationTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListQualificationTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListQualificationTypes, request, m_executor.get());
 }
 
 void MTurkClient::ListQualificationTypesAsync(const ListQualificationTypesRequest& request, const ListQualificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListQualificationTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListQualificationTypes, request, handler, context, m_executor.get());
 }
 
 ListReviewPolicyResultsForHITOutcome MTurkClient::ListReviewPolicyResultsForHIT(const ListReviewPolicyResultsForHITRequest& request) const
@@ -798,18 +649,12 @@ ListReviewPolicyResultsForHITOutcome MTurkClient::ListReviewPolicyResultsForHIT(
 
 ListReviewPolicyResultsForHITOutcomeCallable MTurkClient::ListReviewPolicyResultsForHITCallable(const ListReviewPolicyResultsForHITRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReviewPolicyResultsForHITOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReviewPolicyResultsForHIT(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListReviewPolicyResultsForHIT, request, m_executor.get());
 }
 
 void MTurkClient::ListReviewPolicyResultsForHITAsync(const ListReviewPolicyResultsForHITRequest& request, const ListReviewPolicyResultsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListReviewPolicyResultsForHIT(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListReviewPolicyResultsForHIT, request, handler, context, m_executor.get());
 }
 
 ListReviewableHITsOutcome MTurkClient::ListReviewableHITs(const ListReviewableHITsRequest& request) const
@@ -822,18 +667,12 @@ ListReviewableHITsOutcome MTurkClient::ListReviewableHITs(const ListReviewableHI
 
 ListReviewableHITsOutcomeCallable MTurkClient::ListReviewableHITsCallable(const ListReviewableHITsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReviewableHITsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReviewableHITs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListReviewableHITs, request, m_executor.get());
 }
 
 void MTurkClient::ListReviewableHITsAsync(const ListReviewableHITsRequest& request, const ListReviewableHITsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListReviewableHITs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListReviewableHITs, request, handler, context, m_executor.get());
 }
 
 ListWorkerBlocksOutcome MTurkClient::ListWorkerBlocks(const ListWorkerBlocksRequest& request) const
@@ -846,18 +685,12 @@ ListWorkerBlocksOutcome MTurkClient::ListWorkerBlocks(const ListWorkerBlocksRequ
 
 ListWorkerBlocksOutcomeCallable MTurkClient::ListWorkerBlocksCallable(const ListWorkerBlocksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkerBlocksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkerBlocks(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkerBlocks, request, m_executor.get());
 }
 
 void MTurkClient::ListWorkerBlocksAsync(const ListWorkerBlocksRequest& request, const ListWorkerBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkerBlocks(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkerBlocks, request, handler, context, m_executor.get());
 }
 
 ListWorkersWithQualificationTypeOutcome MTurkClient::ListWorkersWithQualificationType(const ListWorkersWithQualificationTypeRequest& request) const
@@ -870,18 +703,12 @@ ListWorkersWithQualificationTypeOutcome MTurkClient::ListWorkersWithQualificatio
 
 ListWorkersWithQualificationTypeOutcomeCallable MTurkClient::ListWorkersWithQualificationTypeCallable(const ListWorkersWithQualificationTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkersWithQualificationTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkersWithQualificationType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListWorkersWithQualificationType, request, m_executor.get());
 }
 
 void MTurkClient::ListWorkersWithQualificationTypeAsync(const ListWorkersWithQualificationTypeRequest& request, const ListWorkersWithQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListWorkersWithQualificationType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListWorkersWithQualificationType, request, handler, context, m_executor.get());
 }
 
 NotifyWorkersOutcome MTurkClient::NotifyWorkers(const NotifyWorkersRequest& request) const
@@ -894,18 +721,12 @@ NotifyWorkersOutcome MTurkClient::NotifyWorkers(const NotifyWorkersRequest& requ
 
 NotifyWorkersOutcomeCallable MTurkClient::NotifyWorkersCallable(const NotifyWorkersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< NotifyWorkersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->NotifyWorkers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(NotifyWorkers, request, m_executor.get());
 }
 
 void MTurkClient::NotifyWorkersAsync(const NotifyWorkersRequest& request, const NotifyWorkersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, NotifyWorkers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(NotifyWorkers, request, handler, context, m_executor.get());
 }
 
 RejectAssignmentOutcome MTurkClient::RejectAssignment(const RejectAssignmentRequest& request) const
@@ -918,18 +739,12 @@ RejectAssignmentOutcome MTurkClient::RejectAssignment(const RejectAssignmentRequ
 
 RejectAssignmentOutcomeCallable MTurkClient::RejectAssignmentCallable(const RejectAssignmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RejectAssignmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectAssignment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RejectAssignment, request, m_executor.get());
 }
 
 void MTurkClient::RejectAssignmentAsync(const RejectAssignmentRequest& request, const RejectAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RejectAssignment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RejectAssignment, request, handler, context, m_executor.get());
 }
 
 RejectQualificationRequestOutcome MTurkClient::RejectQualificationRequest(const RejectQualificationRequestRequest& request) const
@@ -942,18 +757,12 @@ RejectQualificationRequestOutcome MTurkClient::RejectQualificationRequest(const 
 
 RejectQualificationRequestOutcomeCallable MTurkClient::RejectQualificationRequestCallable(const RejectQualificationRequestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RejectQualificationRequestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectQualificationRequest(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RejectQualificationRequest, request, m_executor.get());
 }
 
 void MTurkClient::RejectQualificationRequestAsync(const RejectQualificationRequestRequest& request, const RejectQualificationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RejectQualificationRequest(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RejectQualificationRequest, request, handler, context, m_executor.get());
 }
 
 SendBonusOutcome MTurkClient::SendBonus(const SendBonusRequest& request) const
@@ -966,18 +775,12 @@ SendBonusOutcome MTurkClient::SendBonus(const SendBonusRequest& request) const
 
 SendBonusOutcomeCallable MTurkClient::SendBonusCallable(const SendBonusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendBonusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendBonus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendBonus, request, m_executor.get());
 }
 
 void MTurkClient::SendBonusAsync(const SendBonusRequest& request, const SendBonusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendBonus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendBonus, request, handler, context, m_executor.get());
 }
 
 SendTestEventNotificationOutcome MTurkClient::SendTestEventNotification(const SendTestEventNotificationRequest& request) const
@@ -990,18 +793,12 @@ SendTestEventNotificationOutcome MTurkClient::SendTestEventNotification(const Se
 
 SendTestEventNotificationOutcomeCallable MTurkClient::SendTestEventNotificationCallable(const SendTestEventNotificationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendTestEventNotificationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendTestEventNotification(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendTestEventNotification, request, m_executor.get());
 }
 
 void MTurkClient::SendTestEventNotificationAsync(const SendTestEventNotificationRequest& request, const SendTestEventNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendTestEventNotification(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendTestEventNotification, request, handler, context, m_executor.get());
 }
 
 UpdateExpirationForHITOutcome MTurkClient::UpdateExpirationForHIT(const UpdateExpirationForHITRequest& request) const
@@ -1014,18 +811,12 @@ UpdateExpirationForHITOutcome MTurkClient::UpdateExpirationForHIT(const UpdateEx
 
 UpdateExpirationForHITOutcomeCallable MTurkClient::UpdateExpirationForHITCallable(const UpdateExpirationForHITRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateExpirationForHITOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExpirationForHIT(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateExpirationForHIT, request, m_executor.get());
 }
 
 void MTurkClient::UpdateExpirationForHITAsync(const UpdateExpirationForHITRequest& request, const UpdateExpirationForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateExpirationForHIT(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateExpirationForHIT, request, handler, context, m_executor.get());
 }
 
 UpdateHITReviewStatusOutcome MTurkClient::UpdateHITReviewStatus(const UpdateHITReviewStatusRequest& request) const
@@ -1038,18 +829,12 @@ UpdateHITReviewStatusOutcome MTurkClient::UpdateHITReviewStatus(const UpdateHITR
 
 UpdateHITReviewStatusOutcomeCallable MTurkClient::UpdateHITReviewStatusCallable(const UpdateHITReviewStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateHITReviewStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateHITReviewStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateHITReviewStatus, request, m_executor.get());
 }
 
 void MTurkClient::UpdateHITReviewStatusAsync(const UpdateHITReviewStatusRequest& request, const UpdateHITReviewStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateHITReviewStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateHITReviewStatus, request, handler, context, m_executor.get());
 }
 
 UpdateHITTypeOfHITOutcome MTurkClient::UpdateHITTypeOfHIT(const UpdateHITTypeOfHITRequest& request) const
@@ -1062,18 +847,12 @@ UpdateHITTypeOfHITOutcome MTurkClient::UpdateHITTypeOfHIT(const UpdateHITTypeOfH
 
 UpdateHITTypeOfHITOutcomeCallable MTurkClient::UpdateHITTypeOfHITCallable(const UpdateHITTypeOfHITRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateHITTypeOfHITOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateHITTypeOfHIT(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateHITTypeOfHIT, request, m_executor.get());
 }
 
 void MTurkClient::UpdateHITTypeOfHITAsync(const UpdateHITTypeOfHITRequest& request, const UpdateHITTypeOfHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateHITTypeOfHIT(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateHITTypeOfHIT, request, handler, context, m_executor.get());
 }
 
 UpdateNotificationSettingsOutcome MTurkClient::UpdateNotificationSettings(const UpdateNotificationSettingsRequest& request) const
@@ -1086,18 +865,12 @@ UpdateNotificationSettingsOutcome MTurkClient::UpdateNotificationSettings(const 
 
 UpdateNotificationSettingsOutcomeCallable MTurkClient::UpdateNotificationSettingsCallable(const UpdateNotificationSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNotificationSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNotificationSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateNotificationSettings, request, m_executor.get());
 }
 
 void MTurkClient::UpdateNotificationSettingsAsync(const UpdateNotificationSettingsRequest& request, const UpdateNotificationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateNotificationSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateNotificationSettings, request, handler, context, m_executor.get());
 }
 
 UpdateQualificationTypeOutcome MTurkClient::UpdateQualificationType(const UpdateQualificationTypeRequest& request) const
@@ -1110,17 +883,11 @@ UpdateQualificationTypeOutcome MTurkClient::UpdateQualificationType(const Update
 
 UpdateQualificationTypeOutcomeCallable MTurkClient::UpdateQualificationTypeCallable(const UpdateQualificationTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateQualificationTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateQualificationType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateQualificationType, request, m_executor.get());
 }
 
 void MTurkClient::UpdateQualificationTypeAsync(const UpdateQualificationTypeRequest& request, const UpdateQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateQualificationType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateQualificationType, request, handler, context, m_executor.get());
 }
 

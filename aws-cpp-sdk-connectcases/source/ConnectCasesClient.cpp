@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -196,18 +197,12 @@ BatchGetFieldOutcome ConnectCasesClient::BatchGetField(const BatchGetFieldReques
 
 BatchGetFieldOutcomeCallable ConnectCasesClient::BatchGetFieldCallable(const BatchGetFieldRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetFieldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetField(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetField, request, m_executor.get());
 }
 
 void ConnectCasesClient::BatchGetFieldAsync(const BatchGetFieldRequest& request, const BatchGetFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetField(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetField, request, handler, context, m_executor.get());
 }
 
 BatchPutFieldOptionsOutcome ConnectCasesClient::BatchPutFieldOptions(const BatchPutFieldOptionsRequest& request) const
@@ -235,18 +230,12 @@ BatchPutFieldOptionsOutcome ConnectCasesClient::BatchPutFieldOptions(const Batch
 
 BatchPutFieldOptionsOutcomeCallable ConnectCasesClient::BatchPutFieldOptionsCallable(const BatchPutFieldOptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchPutFieldOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchPutFieldOptions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchPutFieldOptions, request, m_executor.get());
 }
 
 void ConnectCasesClient::BatchPutFieldOptionsAsync(const BatchPutFieldOptionsRequest& request, const BatchPutFieldOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchPutFieldOptions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchPutFieldOptions, request, handler, context, m_executor.get());
 }
 
 CreateCaseOutcome ConnectCasesClient::CreateCase(const CreateCaseRequest& request) const
@@ -267,18 +256,12 @@ CreateCaseOutcome ConnectCasesClient::CreateCase(const CreateCaseRequest& reques
 
 CreateCaseOutcomeCallable ConnectCasesClient::CreateCaseCallable(const CreateCaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCase, request, m_executor.get());
 }
 
 void ConnectCasesClient::CreateCaseAsync(const CreateCaseRequest& request, const CreateCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCase, request, handler, context, m_executor.get());
 }
 
 CreateDomainOutcome ConnectCasesClient::CreateDomain(const CreateDomainRequest& request) const
@@ -292,18 +275,12 @@ CreateDomainOutcome ConnectCasesClient::CreateDomain(const CreateDomainRequest& 
 
 CreateDomainOutcomeCallable ConnectCasesClient::CreateDomainCallable(const CreateDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDomain, request, m_executor.get());
 }
 
 void ConnectCasesClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDomain, request, handler, context, m_executor.get());
 }
 
 CreateFieldOutcome ConnectCasesClient::CreateField(const CreateFieldRequest& request) const
@@ -324,18 +301,12 @@ CreateFieldOutcome ConnectCasesClient::CreateField(const CreateFieldRequest& req
 
 CreateFieldOutcomeCallable ConnectCasesClient::CreateFieldCallable(const CreateFieldRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFieldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateField(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateField, request, m_executor.get());
 }
 
 void ConnectCasesClient::CreateFieldAsync(const CreateFieldRequest& request, const CreateFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateField(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateField, request, handler, context, m_executor.get());
 }
 
 CreateLayoutOutcome ConnectCasesClient::CreateLayout(const CreateLayoutRequest& request) const
@@ -356,18 +327,12 @@ CreateLayoutOutcome ConnectCasesClient::CreateLayout(const CreateLayoutRequest& 
 
 CreateLayoutOutcomeCallable ConnectCasesClient::CreateLayoutCallable(const CreateLayoutRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLayoutOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLayout(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLayout, request, m_executor.get());
 }
 
 void ConnectCasesClient::CreateLayoutAsync(const CreateLayoutRequest& request, const CreateLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLayout(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLayout, request, handler, context, m_executor.get());
 }
 
 CreateRelatedItemOutcome ConnectCasesClient::CreateRelatedItem(const CreateRelatedItemRequest& request) const
@@ -395,18 +360,12 @@ CreateRelatedItemOutcome ConnectCasesClient::CreateRelatedItem(const CreateRelat
 
 CreateRelatedItemOutcomeCallable ConnectCasesClient::CreateRelatedItemCallable(const CreateRelatedItemRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRelatedItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRelatedItem(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRelatedItem, request, m_executor.get());
 }
 
 void ConnectCasesClient::CreateRelatedItemAsync(const CreateRelatedItemRequest& request, const CreateRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRelatedItem(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRelatedItem, request, handler, context, m_executor.get());
 }
 
 CreateTemplateOutcome ConnectCasesClient::CreateTemplate(const CreateTemplateRequest& request) const
@@ -427,18 +386,12 @@ CreateTemplateOutcome ConnectCasesClient::CreateTemplate(const CreateTemplateReq
 
 CreateTemplateOutcomeCallable ConnectCasesClient::CreateTemplateCallable(const CreateTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTemplate, request, m_executor.get());
 }
 
 void ConnectCasesClient::CreateTemplateAsync(const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTemplate, request, handler, context, m_executor.get());
 }
 
 GetCaseOutcome ConnectCasesClient::GetCase(const GetCaseRequest& request) const
@@ -465,18 +418,12 @@ GetCaseOutcome ConnectCasesClient::GetCase(const GetCaseRequest& request) const
 
 GetCaseOutcomeCallable ConnectCasesClient::GetCaseCallable(const GetCaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCase, request, m_executor.get());
 }
 
 void ConnectCasesClient::GetCaseAsync(const GetCaseRequest& request, const GetCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCase, request, handler, context, m_executor.get());
 }
 
 GetCaseEventConfigurationOutcome ConnectCasesClient::GetCaseEventConfiguration(const GetCaseEventConfigurationRequest& request) const
@@ -497,18 +444,12 @@ GetCaseEventConfigurationOutcome ConnectCasesClient::GetCaseEventConfiguration(c
 
 GetCaseEventConfigurationOutcomeCallable ConnectCasesClient::GetCaseEventConfigurationCallable(const GetCaseEventConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCaseEventConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCaseEventConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCaseEventConfiguration, request, m_executor.get());
 }
 
 void ConnectCasesClient::GetCaseEventConfigurationAsync(const GetCaseEventConfigurationRequest& request, const GetCaseEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCaseEventConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCaseEventConfiguration, request, handler, context, m_executor.get());
 }
 
 GetDomainOutcome ConnectCasesClient::GetDomain(const GetDomainRequest& request) const
@@ -528,18 +469,12 @@ GetDomainOutcome ConnectCasesClient::GetDomain(const GetDomainRequest& request) 
 
 GetDomainOutcomeCallable ConnectCasesClient::GetDomainCallable(const GetDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDomain, request, m_executor.get());
 }
 
 void ConnectCasesClient::GetDomainAsync(const GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDomain, request, handler, context, m_executor.get());
 }
 
 GetLayoutOutcome ConnectCasesClient::GetLayout(const GetLayoutRequest& request) const
@@ -566,18 +501,12 @@ GetLayoutOutcome ConnectCasesClient::GetLayout(const GetLayoutRequest& request) 
 
 GetLayoutOutcomeCallable ConnectCasesClient::GetLayoutCallable(const GetLayoutRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLayoutOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLayout(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLayout, request, m_executor.get());
 }
 
 void ConnectCasesClient::GetLayoutAsync(const GetLayoutRequest& request, const GetLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLayout(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLayout, request, handler, context, m_executor.get());
 }
 
 GetTemplateOutcome ConnectCasesClient::GetTemplate(const GetTemplateRequest& request) const
@@ -604,18 +533,12 @@ GetTemplateOutcome ConnectCasesClient::GetTemplate(const GetTemplateRequest& req
 
 GetTemplateOutcomeCallable ConnectCasesClient::GetTemplateCallable(const GetTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTemplate, request, m_executor.get());
 }
 
 void ConnectCasesClient::GetTemplateAsync(const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTemplate, request, handler, context, m_executor.get());
 }
 
 ListCasesForContactOutcome ConnectCasesClient::ListCasesForContact(const ListCasesForContactRequest& request) const
@@ -636,18 +559,12 @@ ListCasesForContactOutcome ConnectCasesClient::ListCasesForContact(const ListCas
 
 ListCasesForContactOutcomeCallable ConnectCasesClient::ListCasesForContactCallable(const ListCasesForContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCasesForContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCasesForContact(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCasesForContact, request, m_executor.get());
 }
 
 void ConnectCasesClient::ListCasesForContactAsync(const ListCasesForContactRequest& request, const ListCasesForContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCasesForContact(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCasesForContact, request, handler, context, m_executor.get());
 }
 
 ListDomainsOutcome ConnectCasesClient::ListDomains(const ListDomainsRequest& request) const
@@ -661,18 +578,12 @@ ListDomainsOutcome ConnectCasesClient::ListDomains(const ListDomainsRequest& req
 
 ListDomainsOutcomeCallable ConnectCasesClient::ListDomainsCallable(const ListDomainsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomains(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDomains, request, m_executor.get());
 }
 
 void ConnectCasesClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDomains(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDomains, request, handler, context, m_executor.get());
 }
 
 ListFieldOptionsOutcome ConnectCasesClient::ListFieldOptions(const ListFieldOptionsRequest& request) const
@@ -700,18 +611,12 @@ ListFieldOptionsOutcome ConnectCasesClient::ListFieldOptions(const ListFieldOpti
 
 ListFieldOptionsOutcomeCallable ConnectCasesClient::ListFieldOptionsCallable(const ListFieldOptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFieldOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFieldOptions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFieldOptions, request, m_executor.get());
 }
 
 void ConnectCasesClient::ListFieldOptionsAsync(const ListFieldOptionsRequest& request, const ListFieldOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFieldOptions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFieldOptions, request, handler, context, m_executor.get());
 }
 
 ListFieldsOutcome ConnectCasesClient::ListFields(const ListFieldsRequest& request) const
@@ -732,18 +637,12 @@ ListFieldsOutcome ConnectCasesClient::ListFields(const ListFieldsRequest& reques
 
 ListFieldsOutcomeCallable ConnectCasesClient::ListFieldsCallable(const ListFieldsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFieldsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFields(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFields, request, m_executor.get());
 }
 
 void ConnectCasesClient::ListFieldsAsync(const ListFieldsRequest& request, const ListFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFields(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFields, request, handler, context, m_executor.get());
 }
 
 ListLayoutsOutcome ConnectCasesClient::ListLayouts(const ListLayoutsRequest& request) const
@@ -764,18 +663,12 @@ ListLayoutsOutcome ConnectCasesClient::ListLayouts(const ListLayoutsRequest& req
 
 ListLayoutsOutcomeCallable ConnectCasesClient::ListLayoutsCallable(const ListLayoutsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLayoutsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLayouts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLayouts, request, m_executor.get());
 }
 
 void ConnectCasesClient::ListLayoutsAsync(const ListLayoutsRequest& request, const ListLayoutsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLayouts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLayouts, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ConnectCasesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -795,18 +688,12 @@ ListTagsForResourceOutcome ConnectCasesClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable ConnectCasesClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ConnectCasesClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTemplatesOutcome ConnectCasesClient::ListTemplates(const ListTemplatesRequest& request) const
@@ -827,18 +714,12 @@ ListTemplatesOutcome ConnectCasesClient::ListTemplates(const ListTemplatesReques
 
 ListTemplatesOutcomeCallable ConnectCasesClient::ListTemplatesCallable(const ListTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTemplates, request, m_executor.get());
 }
 
 void ConnectCasesClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTemplates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTemplates, request, handler, context, m_executor.get());
 }
 
 PutCaseEventConfigurationOutcome ConnectCasesClient::PutCaseEventConfiguration(const PutCaseEventConfigurationRequest& request) const
@@ -859,18 +740,12 @@ PutCaseEventConfigurationOutcome ConnectCasesClient::PutCaseEventConfiguration(c
 
 PutCaseEventConfigurationOutcomeCallable ConnectCasesClient::PutCaseEventConfigurationCallable(const PutCaseEventConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutCaseEventConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutCaseEventConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutCaseEventConfiguration, request, m_executor.get());
 }
 
 void ConnectCasesClient::PutCaseEventConfigurationAsync(const PutCaseEventConfigurationRequest& request, const PutCaseEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutCaseEventConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutCaseEventConfiguration, request, handler, context, m_executor.get());
 }
 
 SearchCasesOutcome ConnectCasesClient::SearchCases(const SearchCasesRequest& request) const
@@ -891,18 +766,12 @@ SearchCasesOutcome ConnectCasesClient::SearchCases(const SearchCasesRequest& req
 
 SearchCasesOutcomeCallable ConnectCasesClient::SearchCasesCallable(const SearchCasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchCasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchCases(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchCases, request, m_executor.get());
 }
 
 void ConnectCasesClient::SearchCasesAsync(const SearchCasesRequest& request, const SearchCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchCases(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchCases, request, handler, context, m_executor.get());
 }
 
 SearchRelatedItemsOutcome ConnectCasesClient::SearchRelatedItems(const SearchRelatedItemsRequest& request) const
@@ -930,18 +799,12 @@ SearchRelatedItemsOutcome ConnectCasesClient::SearchRelatedItems(const SearchRel
 
 SearchRelatedItemsOutcomeCallable ConnectCasesClient::SearchRelatedItemsCallable(const SearchRelatedItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchRelatedItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchRelatedItems(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchRelatedItems, request, m_executor.get());
 }
 
 void ConnectCasesClient::SearchRelatedItemsAsync(const SearchRelatedItemsRequest& request, const SearchRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchRelatedItems(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchRelatedItems, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ConnectCasesClient::TagResource(const TagResourceRequest& request) const
@@ -961,18 +824,12 @@ TagResourceOutcome ConnectCasesClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable ConnectCasesClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ConnectCasesClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ConnectCasesClient::UntagResource(const UntagResourceRequest& request) const
@@ -997,18 +854,12 @@ UntagResourceOutcome ConnectCasesClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable ConnectCasesClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ConnectCasesClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateCaseOutcome ConnectCasesClient::UpdateCase(const UpdateCaseRequest& request) const
@@ -1035,18 +886,12 @@ UpdateCaseOutcome ConnectCasesClient::UpdateCase(const UpdateCaseRequest& reques
 
 UpdateCaseOutcomeCallable ConnectCasesClient::UpdateCaseCallable(const UpdateCaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCase, request, m_executor.get());
 }
 
 void ConnectCasesClient::UpdateCaseAsync(const UpdateCaseRequest& request, const UpdateCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCase(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCase, request, handler, context, m_executor.get());
 }
 
 UpdateFieldOutcome ConnectCasesClient::UpdateField(const UpdateFieldRequest& request) const
@@ -1073,18 +918,12 @@ UpdateFieldOutcome ConnectCasesClient::UpdateField(const UpdateFieldRequest& req
 
 UpdateFieldOutcomeCallable ConnectCasesClient::UpdateFieldCallable(const UpdateFieldRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFieldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateField(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateField, request, m_executor.get());
 }
 
 void ConnectCasesClient::UpdateFieldAsync(const UpdateFieldRequest& request, const UpdateFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateField(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateField, request, handler, context, m_executor.get());
 }
 
 UpdateLayoutOutcome ConnectCasesClient::UpdateLayout(const UpdateLayoutRequest& request) const
@@ -1111,18 +950,12 @@ UpdateLayoutOutcome ConnectCasesClient::UpdateLayout(const UpdateLayoutRequest& 
 
 UpdateLayoutOutcomeCallable ConnectCasesClient::UpdateLayoutCallable(const UpdateLayoutRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLayoutOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLayout(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLayout, request, m_executor.get());
 }
 
 void ConnectCasesClient::UpdateLayoutAsync(const UpdateLayoutRequest& request, const UpdateLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLayout(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLayout, request, handler, context, m_executor.get());
 }
 
 UpdateTemplateOutcome ConnectCasesClient::UpdateTemplate(const UpdateTemplateRequest& request) const
@@ -1149,17 +982,11 @@ UpdateTemplateOutcome ConnectCasesClient::UpdateTemplate(const UpdateTemplateReq
 
 UpdateTemplateOutcomeCallable ConnectCasesClient::UpdateTemplateCallable(const UpdateTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTemplate, request, m_executor.get());
 }
 
 void ConnectCasesClient::UpdateTemplateAsync(const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTemplate, request, handler, context, m_executor.get());
 }
 

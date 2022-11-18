@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -186,18 +187,12 @@ GetApplicationComponentDetailsOutcome MigrationHubStrategyRecommendationsClient:
 
 GetApplicationComponentDetailsOutcomeCallable MigrationHubStrategyRecommendationsClient::GetApplicationComponentDetailsCallable(const GetApplicationComponentDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApplicationComponentDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplicationComponentDetails(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetApplicationComponentDetails, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::GetApplicationComponentDetailsAsync(const GetApplicationComponentDetailsRequest& request, const GetApplicationComponentDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetApplicationComponentDetails(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetApplicationComponentDetails, request, handler, context, m_executor.get());
 }
 
 GetApplicationComponentStrategiesOutcome MigrationHubStrategyRecommendationsClient::GetApplicationComponentStrategies(const GetApplicationComponentStrategiesRequest& request) const
@@ -217,18 +212,12 @@ GetApplicationComponentStrategiesOutcome MigrationHubStrategyRecommendationsClie
 
 GetApplicationComponentStrategiesOutcomeCallable MigrationHubStrategyRecommendationsClient::GetApplicationComponentStrategiesCallable(const GetApplicationComponentStrategiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApplicationComponentStrategiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplicationComponentStrategies(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetApplicationComponentStrategies, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::GetApplicationComponentStrategiesAsync(const GetApplicationComponentStrategiesRequest& request, const GetApplicationComponentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetApplicationComponentStrategies(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetApplicationComponentStrategies, request, handler, context, m_executor.get());
 }
 
 GetAssessmentOutcome MigrationHubStrategyRecommendationsClient::GetAssessment(const GetAssessmentRequest& request) const
@@ -248,18 +237,12 @@ GetAssessmentOutcome MigrationHubStrategyRecommendationsClient::GetAssessment(co
 
 GetAssessmentOutcomeCallable MigrationHubStrategyRecommendationsClient::GetAssessmentCallable(const GetAssessmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssessment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAssessment, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::GetAssessmentAsync(const GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAssessment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAssessment, request, handler, context, m_executor.get());
 }
 
 GetImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::GetImportFileTask(const GetImportFileTaskRequest& request) const
@@ -279,18 +262,12 @@ GetImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::GetImportFil
 
 GetImportFileTaskOutcomeCallable MigrationHubStrategyRecommendationsClient::GetImportFileTaskCallable(const GetImportFileTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetImportFileTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImportFileTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetImportFileTask, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::GetImportFileTaskAsync(const GetImportFileTaskRequest& request, const GetImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetImportFileTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetImportFileTask, request, handler, context, m_executor.get());
 }
 
 GetPortfolioPreferencesOutcome MigrationHubStrategyRecommendationsClient::GetPortfolioPreferences(const GetPortfolioPreferencesRequest& request) const
@@ -304,18 +281,12 @@ GetPortfolioPreferencesOutcome MigrationHubStrategyRecommendationsClient::GetPor
 
 GetPortfolioPreferencesOutcomeCallable MigrationHubStrategyRecommendationsClient::GetPortfolioPreferencesCallable(const GetPortfolioPreferencesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPortfolioPreferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPortfolioPreferences(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPortfolioPreferences, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::GetPortfolioPreferencesAsync(const GetPortfolioPreferencesRequest& request, const GetPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPortfolioPreferences(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPortfolioPreferences, request, handler, context, m_executor.get());
 }
 
 GetPortfolioSummaryOutcome MigrationHubStrategyRecommendationsClient::GetPortfolioSummary(const GetPortfolioSummaryRequest& request) const
@@ -329,18 +300,12 @@ GetPortfolioSummaryOutcome MigrationHubStrategyRecommendationsClient::GetPortfol
 
 GetPortfolioSummaryOutcomeCallable MigrationHubStrategyRecommendationsClient::GetPortfolioSummaryCallable(const GetPortfolioSummaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPortfolioSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPortfolioSummary(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPortfolioSummary, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::GetPortfolioSummaryAsync(const GetPortfolioSummaryRequest& request, const GetPortfolioSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPortfolioSummary(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPortfolioSummary, request, handler, context, m_executor.get());
 }
 
 GetRecommendationReportDetailsOutcome MigrationHubStrategyRecommendationsClient::GetRecommendationReportDetails(const GetRecommendationReportDetailsRequest& request) const
@@ -360,18 +325,12 @@ GetRecommendationReportDetailsOutcome MigrationHubStrategyRecommendationsClient:
 
 GetRecommendationReportDetailsOutcomeCallable MigrationHubStrategyRecommendationsClient::GetRecommendationReportDetailsCallable(const GetRecommendationReportDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecommendationReportDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecommendationReportDetails(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRecommendationReportDetails, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::GetRecommendationReportDetailsAsync(const GetRecommendationReportDetailsRequest& request, const GetRecommendationReportDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRecommendationReportDetails(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRecommendationReportDetails, request, handler, context, m_executor.get());
 }
 
 GetServerDetailsOutcome MigrationHubStrategyRecommendationsClient::GetServerDetails(const GetServerDetailsRequest& request) const
@@ -391,18 +350,12 @@ GetServerDetailsOutcome MigrationHubStrategyRecommendationsClient::GetServerDeta
 
 GetServerDetailsOutcomeCallable MigrationHubStrategyRecommendationsClient::GetServerDetailsCallable(const GetServerDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetServerDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServerDetails(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetServerDetails, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::GetServerDetailsAsync(const GetServerDetailsRequest& request, const GetServerDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetServerDetails(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetServerDetails, request, handler, context, m_executor.get());
 }
 
 GetServerStrategiesOutcome MigrationHubStrategyRecommendationsClient::GetServerStrategies(const GetServerStrategiesRequest& request) const
@@ -422,18 +375,12 @@ GetServerStrategiesOutcome MigrationHubStrategyRecommendationsClient::GetServerS
 
 GetServerStrategiesOutcomeCallable MigrationHubStrategyRecommendationsClient::GetServerStrategiesCallable(const GetServerStrategiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetServerStrategiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServerStrategies(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetServerStrategies, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::GetServerStrategiesAsync(const GetServerStrategiesRequest& request, const GetServerStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetServerStrategies(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetServerStrategies, request, handler, context, m_executor.get());
 }
 
 ListApplicationComponentsOutcome MigrationHubStrategyRecommendationsClient::ListApplicationComponents(const ListApplicationComponentsRequest& request) const
@@ -447,18 +394,12 @@ ListApplicationComponentsOutcome MigrationHubStrategyRecommendationsClient::List
 
 ListApplicationComponentsOutcomeCallable MigrationHubStrategyRecommendationsClient::ListApplicationComponentsCallable(const ListApplicationComponentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplicationComponents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListApplicationComponents, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::ListApplicationComponentsAsync(const ListApplicationComponentsRequest& request, const ListApplicationComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListApplicationComponents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListApplicationComponents, request, handler, context, m_executor.get());
 }
 
 ListCollectorsOutcome MigrationHubStrategyRecommendationsClient::ListCollectors(const ListCollectorsRequest& request) const
@@ -472,18 +413,12 @@ ListCollectorsOutcome MigrationHubStrategyRecommendationsClient::ListCollectors(
 
 ListCollectorsOutcomeCallable MigrationHubStrategyRecommendationsClient::ListCollectorsCallable(const ListCollectorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCollectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCollectors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCollectors, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::ListCollectorsAsync(const ListCollectorsRequest& request, const ListCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCollectors(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCollectors, request, handler, context, m_executor.get());
 }
 
 ListImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::ListImportFileTask(const ListImportFileTaskRequest& request) const
@@ -497,18 +432,12 @@ ListImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::ListImportF
 
 ListImportFileTaskOutcomeCallable MigrationHubStrategyRecommendationsClient::ListImportFileTaskCallable(const ListImportFileTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListImportFileTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImportFileTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListImportFileTask, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::ListImportFileTaskAsync(const ListImportFileTaskRequest& request, const ListImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListImportFileTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListImportFileTask, request, handler, context, m_executor.get());
 }
 
 ListServersOutcome MigrationHubStrategyRecommendationsClient::ListServers(const ListServersRequest& request) const
@@ -522,18 +451,12 @@ ListServersOutcome MigrationHubStrategyRecommendationsClient::ListServers(const 
 
 ListServersOutcomeCallable MigrationHubStrategyRecommendationsClient::ListServersCallable(const ListServersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListServers, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::ListServersAsync(const ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListServers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListServers, request, handler, context, m_executor.get());
 }
 
 PutPortfolioPreferencesOutcome MigrationHubStrategyRecommendationsClient::PutPortfolioPreferences(const PutPortfolioPreferencesRequest& request) const
@@ -547,18 +470,12 @@ PutPortfolioPreferencesOutcome MigrationHubStrategyRecommendationsClient::PutPor
 
 PutPortfolioPreferencesOutcomeCallable MigrationHubStrategyRecommendationsClient::PutPortfolioPreferencesCallable(const PutPortfolioPreferencesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutPortfolioPreferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPortfolioPreferences(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutPortfolioPreferences, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::PutPortfolioPreferencesAsync(const PutPortfolioPreferencesRequest& request, const PutPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutPortfolioPreferences(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutPortfolioPreferences, request, handler, context, m_executor.get());
 }
 
 StartAssessmentOutcome MigrationHubStrategyRecommendationsClient::StartAssessment(const StartAssessmentRequest& request) const
@@ -572,18 +489,12 @@ StartAssessmentOutcome MigrationHubStrategyRecommendationsClient::StartAssessmen
 
 StartAssessmentOutcomeCallable MigrationHubStrategyRecommendationsClient::StartAssessmentCallable(const StartAssessmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartAssessment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartAssessment, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::StartAssessmentAsync(const StartAssessmentRequest& request, const StartAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartAssessment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartAssessment, request, handler, context, m_executor.get());
 }
 
 StartImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::StartImportFileTask(const StartImportFileTaskRequest& request) const
@@ -597,18 +508,12 @@ StartImportFileTaskOutcome MigrationHubStrategyRecommendationsClient::StartImpor
 
 StartImportFileTaskOutcomeCallable MigrationHubStrategyRecommendationsClient::StartImportFileTaskCallable(const StartImportFileTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartImportFileTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartImportFileTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartImportFileTask, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::StartImportFileTaskAsync(const StartImportFileTaskRequest& request, const StartImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartImportFileTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartImportFileTask, request, handler, context, m_executor.get());
 }
 
 StartRecommendationReportGenerationOutcome MigrationHubStrategyRecommendationsClient::StartRecommendationReportGeneration(const StartRecommendationReportGenerationRequest& request) const
@@ -622,18 +527,12 @@ StartRecommendationReportGenerationOutcome MigrationHubStrategyRecommendationsCl
 
 StartRecommendationReportGenerationOutcomeCallable MigrationHubStrategyRecommendationsClient::StartRecommendationReportGenerationCallable(const StartRecommendationReportGenerationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartRecommendationReportGenerationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartRecommendationReportGeneration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartRecommendationReportGeneration, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::StartRecommendationReportGenerationAsync(const StartRecommendationReportGenerationRequest& request, const StartRecommendationReportGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartRecommendationReportGeneration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartRecommendationReportGeneration, request, handler, context, m_executor.get());
 }
 
 StopAssessmentOutcome MigrationHubStrategyRecommendationsClient::StopAssessment(const StopAssessmentRequest& request) const
@@ -647,18 +546,12 @@ StopAssessmentOutcome MigrationHubStrategyRecommendationsClient::StopAssessment(
 
 StopAssessmentOutcomeCallable MigrationHubStrategyRecommendationsClient::StopAssessmentCallable(const StopAssessmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopAssessment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopAssessment, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::StopAssessmentAsync(const StopAssessmentRequest& request, const StopAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopAssessment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopAssessment, request, handler, context, m_executor.get());
 }
 
 UpdateApplicationComponentConfigOutcome MigrationHubStrategyRecommendationsClient::UpdateApplicationComponentConfig(const UpdateApplicationComponentConfigRequest& request) const
@@ -672,18 +565,12 @@ UpdateApplicationComponentConfigOutcome MigrationHubStrategyRecommendationsClien
 
 UpdateApplicationComponentConfigOutcomeCallable MigrationHubStrategyRecommendationsClient::UpdateApplicationComponentConfigCallable(const UpdateApplicationComponentConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationComponentConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplicationComponentConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateApplicationComponentConfig, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::UpdateApplicationComponentConfigAsync(const UpdateApplicationComponentConfigRequest& request, const UpdateApplicationComponentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateApplicationComponentConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateApplicationComponentConfig, request, handler, context, m_executor.get());
 }
 
 UpdateServerConfigOutcome MigrationHubStrategyRecommendationsClient::UpdateServerConfig(const UpdateServerConfigRequest& request) const
@@ -697,17 +584,11 @@ UpdateServerConfigOutcome MigrationHubStrategyRecommendationsClient::UpdateServe
 
 UpdateServerConfigOutcomeCallable MigrationHubStrategyRecommendationsClient::UpdateServerConfigCallable(const UpdateServerConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateServerConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateServerConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateServerConfig, request, m_executor.get());
 }
 
 void MigrationHubStrategyRecommendationsClient::UpdateServerConfigAsync(const UpdateServerConfigRequest& request, const UpdateServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateServerConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateServerConfig, request, handler, context, m_executor.get());
 }
 

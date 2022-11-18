@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -168,18 +169,12 @@ CreateRuleOutcome RecycleBinClient::CreateRule(const CreateRuleRequest& request)
 
 CreateRuleOutcomeCallable RecycleBinClient::CreateRuleCallable(const CreateRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRule, request, m_executor.get());
 }
 
 void RecycleBinClient::CreateRuleAsync(const CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRule, request, handler, context, m_executor.get());
 }
 
 DeleteRuleOutcome RecycleBinClient::DeleteRule(const DeleteRuleRequest& request) const
@@ -199,18 +194,12 @@ DeleteRuleOutcome RecycleBinClient::DeleteRule(const DeleteRuleRequest& request)
 
 DeleteRuleOutcomeCallable RecycleBinClient::DeleteRuleCallable(const DeleteRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRule, request, m_executor.get());
 }
 
 void RecycleBinClient::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRule, request, handler, context, m_executor.get());
 }
 
 GetRuleOutcome RecycleBinClient::GetRule(const GetRuleRequest& request) const
@@ -230,18 +219,12 @@ GetRuleOutcome RecycleBinClient::GetRule(const GetRuleRequest& request) const
 
 GetRuleOutcomeCallable RecycleBinClient::GetRuleCallable(const GetRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRule, request, m_executor.get());
 }
 
 void RecycleBinClient::GetRuleAsync(const GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRule, request, handler, context, m_executor.get());
 }
 
 ListRulesOutcome RecycleBinClient::ListRules(const ListRulesRequest& request) const
@@ -255,18 +238,12 @@ ListRulesOutcome RecycleBinClient::ListRules(const ListRulesRequest& request) co
 
 ListRulesOutcomeCallable RecycleBinClient::ListRulesCallable(const ListRulesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRules(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRules, request, m_executor.get());
 }
 
 void RecycleBinClient::ListRulesAsync(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRules(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRules, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome RecycleBinClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -286,18 +263,12 @@ ListTagsForResourceOutcome RecycleBinClient::ListTagsForResource(const ListTagsF
 
 ListTagsForResourceOutcomeCallable RecycleBinClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void RecycleBinClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome RecycleBinClient::TagResource(const TagResourceRequest& request) const
@@ -317,18 +288,12 @@ TagResourceOutcome RecycleBinClient::TagResource(const TagResourceRequest& reque
 
 TagResourceOutcomeCallable RecycleBinClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void RecycleBinClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome RecycleBinClient::UntagResource(const UntagResourceRequest& request) const
@@ -353,18 +318,12 @@ UntagResourceOutcome RecycleBinClient::UntagResource(const UntagResourceRequest&
 
 UntagResourceOutcomeCallable RecycleBinClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void RecycleBinClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateRuleOutcome RecycleBinClient::UpdateRule(const UpdateRuleRequest& request) const
@@ -384,17 +343,11 @@ UpdateRuleOutcome RecycleBinClient::UpdateRule(const UpdateRuleRequest& request)
 
 UpdateRuleOutcomeCallable RecycleBinClient::UpdateRuleCallable(const UpdateRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRule, request, m_executor.get());
 }
 
 void RecycleBinClient::UpdateRuleAsync(const UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRule, request, handler, context, m_executor.get());
 }
 

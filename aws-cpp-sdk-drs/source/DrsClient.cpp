@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -192,18 +193,12 @@ CreateExtendedSourceServerOutcome DrsClient::CreateExtendedSourceServer(const Cr
 
 CreateExtendedSourceServerOutcomeCallable DrsClient::CreateExtendedSourceServerCallable(const CreateExtendedSourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateExtendedSourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExtendedSourceServer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateExtendedSourceServer, request, m_executor.get());
 }
 
 void DrsClient::CreateExtendedSourceServerAsync(const CreateExtendedSourceServerRequest& request, const CreateExtendedSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateExtendedSourceServer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateExtendedSourceServer, request, handler, context, m_executor.get());
 }
 
 CreateReplicationConfigurationTemplateOutcome DrsClient::CreateReplicationConfigurationTemplate(const CreateReplicationConfigurationTemplateRequest& request) const
@@ -217,18 +212,12 @@ CreateReplicationConfigurationTemplateOutcome DrsClient::CreateReplicationConfig
 
 CreateReplicationConfigurationTemplateOutcomeCallable DrsClient::CreateReplicationConfigurationTemplateCallable(const CreateReplicationConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateReplicationConfigurationTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateReplicationConfigurationTemplate, request, m_executor.get());
 }
 
 void DrsClient::CreateReplicationConfigurationTemplateAsync(const CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateReplicationConfigurationTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateReplicationConfigurationTemplate, request, handler, context, m_executor.get());
 }
 
 DeleteJobOutcome DrsClient::DeleteJob(const DeleteJobRequest& request) const
@@ -242,18 +231,12 @@ DeleteJobOutcome DrsClient::DeleteJob(const DeleteJobRequest& request) const
 
 DeleteJobOutcomeCallable DrsClient::DeleteJobCallable(const DeleteJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteJob, request, m_executor.get());
 }
 
 void DrsClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteJob, request, handler, context, m_executor.get());
 }
 
 DeleteRecoveryInstanceOutcome DrsClient::DeleteRecoveryInstance(const DeleteRecoveryInstanceRequest& request) const
@@ -267,18 +250,12 @@ DeleteRecoveryInstanceOutcome DrsClient::DeleteRecoveryInstance(const DeleteReco
 
 DeleteRecoveryInstanceOutcomeCallable DrsClient::DeleteRecoveryInstanceCallable(const DeleteRecoveryInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRecoveryInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecoveryInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRecoveryInstance, request, m_executor.get());
 }
 
 void DrsClient::DeleteRecoveryInstanceAsync(const DeleteRecoveryInstanceRequest& request, const DeleteRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRecoveryInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRecoveryInstance, request, handler, context, m_executor.get());
 }
 
 DeleteReplicationConfigurationTemplateOutcome DrsClient::DeleteReplicationConfigurationTemplate(const DeleteReplicationConfigurationTemplateRequest& request) const
@@ -292,18 +269,12 @@ DeleteReplicationConfigurationTemplateOutcome DrsClient::DeleteReplicationConfig
 
 DeleteReplicationConfigurationTemplateOutcomeCallable DrsClient::DeleteReplicationConfigurationTemplateCallable(const DeleteReplicationConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReplicationConfigurationTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteReplicationConfigurationTemplate, request, m_executor.get());
 }
 
 void DrsClient::DeleteReplicationConfigurationTemplateAsync(const DeleteReplicationConfigurationTemplateRequest& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteReplicationConfigurationTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteReplicationConfigurationTemplate, request, handler, context, m_executor.get());
 }
 
 DeleteSourceServerOutcome DrsClient::DeleteSourceServer(const DeleteSourceServerRequest& request) const
@@ -317,18 +288,12 @@ DeleteSourceServerOutcome DrsClient::DeleteSourceServer(const DeleteSourceServer
 
 DeleteSourceServerOutcomeCallable DrsClient::DeleteSourceServerCallable(const DeleteSourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSourceServer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSourceServer, request, m_executor.get());
 }
 
 void DrsClient::DeleteSourceServerAsync(const DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSourceServer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSourceServer, request, handler, context, m_executor.get());
 }
 
 DescribeJobLogItemsOutcome DrsClient::DescribeJobLogItems(const DescribeJobLogItemsRequest& request) const
@@ -342,18 +307,12 @@ DescribeJobLogItemsOutcome DrsClient::DescribeJobLogItems(const DescribeJobLogIt
 
 DescribeJobLogItemsOutcomeCallable DrsClient::DescribeJobLogItemsCallable(const DescribeJobLogItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobLogItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobLogItems(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJobLogItems, request, m_executor.get());
 }
 
 void DrsClient::DescribeJobLogItemsAsync(const DescribeJobLogItemsRequest& request, const DescribeJobLogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJobLogItems(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJobLogItems, request, handler, context, m_executor.get());
 }
 
 DescribeJobsOutcome DrsClient::DescribeJobs(const DescribeJobsRequest& request) const
@@ -367,18 +326,12 @@ DescribeJobsOutcome DrsClient::DescribeJobs(const DescribeJobsRequest& request) 
 
 DescribeJobsOutcomeCallable DrsClient::DescribeJobsCallable(const DescribeJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJobs, request, m_executor.get());
 }
 
 void DrsClient::DescribeJobsAsync(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJobs, request, handler, context, m_executor.get());
 }
 
 DescribeRecoveryInstancesOutcome DrsClient::DescribeRecoveryInstances(const DescribeRecoveryInstancesRequest& request) const
@@ -392,18 +345,12 @@ DescribeRecoveryInstancesOutcome DrsClient::DescribeRecoveryInstances(const Desc
 
 DescribeRecoveryInstancesOutcomeCallable DrsClient::DescribeRecoveryInstancesCallable(const DescribeRecoveryInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRecoveryInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRecoveryInstances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRecoveryInstances, request, m_executor.get());
 }
 
 void DrsClient::DescribeRecoveryInstancesAsync(const DescribeRecoveryInstancesRequest& request, const DescribeRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRecoveryInstances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRecoveryInstances, request, handler, context, m_executor.get());
 }
 
 DescribeRecoverySnapshotsOutcome DrsClient::DescribeRecoverySnapshots(const DescribeRecoverySnapshotsRequest& request) const
@@ -417,18 +364,12 @@ DescribeRecoverySnapshotsOutcome DrsClient::DescribeRecoverySnapshots(const Desc
 
 DescribeRecoverySnapshotsOutcomeCallable DrsClient::DescribeRecoverySnapshotsCallable(const DescribeRecoverySnapshotsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRecoverySnapshotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRecoverySnapshots(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRecoverySnapshots, request, m_executor.get());
 }
 
 void DrsClient::DescribeRecoverySnapshotsAsync(const DescribeRecoverySnapshotsRequest& request, const DescribeRecoverySnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRecoverySnapshots(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRecoverySnapshots, request, handler, context, m_executor.get());
 }
 
 DescribeReplicationConfigurationTemplatesOutcome DrsClient::DescribeReplicationConfigurationTemplates(const DescribeReplicationConfigurationTemplatesRequest& request) const
@@ -442,18 +383,12 @@ DescribeReplicationConfigurationTemplatesOutcome DrsClient::DescribeReplicationC
 
 DescribeReplicationConfigurationTemplatesOutcomeCallable DrsClient::DescribeReplicationConfigurationTemplatesCallable(const DescribeReplicationConfigurationTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeReplicationConfigurationTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReplicationConfigurationTemplates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeReplicationConfigurationTemplates, request, m_executor.get());
 }
 
 void DrsClient::DescribeReplicationConfigurationTemplatesAsync(const DescribeReplicationConfigurationTemplatesRequest& request, const DescribeReplicationConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeReplicationConfigurationTemplates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeReplicationConfigurationTemplates, request, handler, context, m_executor.get());
 }
 
 DescribeSourceServersOutcome DrsClient::DescribeSourceServers(const DescribeSourceServersRequest& request) const
@@ -467,18 +402,12 @@ DescribeSourceServersOutcome DrsClient::DescribeSourceServers(const DescribeSour
 
 DescribeSourceServersOutcomeCallable DrsClient::DescribeSourceServersCallable(const DescribeSourceServersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSourceServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSourceServers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSourceServers, request, m_executor.get());
 }
 
 void DrsClient::DescribeSourceServersAsync(const DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSourceServers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSourceServers, request, handler, context, m_executor.get());
 }
 
 DisconnectRecoveryInstanceOutcome DrsClient::DisconnectRecoveryInstance(const DisconnectRecoveryInstanceRequest& request) const
@@ -492,18 +421,12 @@ DisconnectRecoveryInstanceOutcome DrsClient::DisconnectRecoveryInstance(const Di
 
 DisconnectRecoveryInstanceOutcomeCallable DrsClient::DisconnectRecoveryInstanceCallable(const DisconnectRecoveryInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisconnectRecoveryInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisconnectRecoveryInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisconnectRecoveryInstance, request, m_executor.get());
 }
 
 void DrsClient::DisconnectRecoveryInstanceAsync(const DisconnectRecoveryInstanceRequest& request, const DisconnectRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisconnectRecoveryInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisconnectRecoveryInstance, request, handler, context, m_executor.get());
 }
 
 DisconnectSourceServerOutcome DrsClient::DisconnectSourceServer(const DisconnectSourceServerRequest& request) const
@@ -517,18 +440,12 @@ DisconnectSourceServerOutcome DrsClient::DisconnectSourceServer(const Disconnect
 
 DisconnectSourceServerOutcomeCallable DrsClient::DisconnectSourceServerCallable(const DisconnectSourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisconnectSourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisconnectSourceServer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisconnectSourceServer, request, m_executor.get());
 }
 
 void DrsClient::DisconnectSourceServerAsync(const DisconnectSourceServerRequest& request, const DisconnectSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisconnectSourceServer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisconnectSourceServer, request, handler, context, m_executor.get());
 }
 
 GetFailbackReplicationConfigurationOutcome DrsClient::GetFailbackReplicationConfiguration(const GetFailbackReplicationConfigurationRequest& request) const
@@ -542,18 +459,12 @@ GetFailbackReplicationConfigurationOutcome DrsClient::GetFailbackReplicationConf
 
 GetFailbackReplicationConfigurationOutcomeCallable DrsClient::GetFailbackReplicationConfigurationCallable(const GetFailbackReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFailbackReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFailbackReplicationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFailbackReplicationConfiguration, request, m_executor.get());
 }
 
 void DrsClient::GetFailbackReplicationConfigurationAsync(const GetFailbackReplicationConfigurationRequest& request, const GetFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFailbackReplicationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFailbackReplicationConfiguration, request, handler, context, m_executor.get());
 }
 
 GetLaunchConfigurationOutcome DrsClient::GetLaunchConfiguration(const GetLaunchConfigurationRequest& request) const
@@ -567,18 +478,12 @@ GetLaunchConfigurationOutcome DrsClient::GetLaunchConfiguration(const GetLaunchC
 
 GetLaunchConfigurationOutcomeCallable DrsClient::GetLaunchConfigurationCallable(const GetLaunchConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLaunchConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLaunchConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLaunchConfiguration, request, m_executor.get());
 }
 
 void DrsClient::GetLaunchConfigurationAsync(const GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLaunchConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLaunchConfiguration, request, handler, context, m_executor.get());
 }
 
 GetReplicationConfigurationOutcome DrsClient::GetReplicationConfiguration(const GetReplicationConfigurationRequest& request) const
@@ -592,18 +497,12 @@ GetReplicationConfigurationOutcome DrsClient::GetReplicationConfiguration(const 
 
 GetReplicationConfigurationOutcomeCallable DrsClient::GetReplicationConfigurationCallable(const GetReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReplicationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetReplicationConfiguration, request, m_executor.get());
 }
 
 void DrsClient::GetReplicationConfigurationAsync(const GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetReplicationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetReplicationConfiguration, request, handler, context, m_executor.get());
 }
 
 InitializeServiceOutcome DrsClient::InitializeService(const InitializeServiceRequest& request) const
@@ -617,18 +516,12 @@ InitializeServiceOutcome DrsClient::InitializeService(const InitializeServiceReq
 
 InitializeServiceOutcomeCallable DrsClient::InitializeServiceCallable(const InitializeServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InitializeServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InitializeService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(InitializeService, request, m_executor.get());
 }
 
 void DrsClient::InitializeServiceAsync(const InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, InitializeService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(InitializeService, request, handler, context, m_executor.get());
 }
 
 ListExtensibleSourceServersOutcome DrsClient::ListExtensibleSourceServers(const ListExtensibleSourceServersRequest& request) const
@@ -642,18 +535,12 @@ ListExtensibleSourceServersOutcome DrsClient::ListExtensibleSourceServers(const 
 
 ListExtensibleSourceServersOutcomeCallable DrsClient::ListExtensibleSourceServersCallable(const ListExtensibleSourceServersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExtensibleSourceServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExtensibleSourceServers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExtensibleSourceServers, request, m_executor.get());
 }
 
 void DrsClient::ListExtensibleSourceServersAsync(const ListExtensibleSourceServersRequest& request, const ListExtensibleSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExtensibleSourceServers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExtensibleSourceServers, request, handler, context, m_executor.get());
 }
 
 ListStagingAccountsOutcome DrsClient::ListStagingAccounts(const ListStagingAccountsRequest& request) const
@@ -667,18 +554,12 @@ ListStagingAccountsOutcome DrsClient::ListStagingAccounts(const ListStagingAccou
 
 ListStagingAccountsOutcomeCallable DrsClient::ListStagingAccountsCallable(const ListStagingAccountsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStagingAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStagingAccounts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStagingAccounts, request, m_executor.get());
 }
 
 void DrsClient::ListStagingAccountsAsync(const ListStagingAccountsRequest& request, const ListStagingAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStagingAccounts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStagingAccounts, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome DrsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -698,18 +579,12 @@ ListTagsForResourceOutcome DrsClient::ListTagsForResource(const ListTagsForResou
 
 ListTagsForResourceOutcomeCallable DrsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void DrsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 RetryDataReplicationOutcome DrsClient::RetryDataReplication(const RetryDataReplicationRequest& request) const
@@ -723,18 +598,12 @@ RetryDataReplicationOutcome DrsClient::RetryDataReplication(const RetryDataRepli
 
 RetryDataReplicationOutcomeCallable DrsClient::RetryDataReplicationCallable(const RetryDataReplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RetryDataReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RetryDataReplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RetryDataReplication, request, m_executor.get());
 }
 
 void DrsClient::RetryDataReplicationAsync(const RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RetryDataReplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RetryDataReplication, request, handler, context, m_executor.get());
 }
 
 StartFailbackLaunchOutcome DrsClient::StartFailbackLaunch(const StartFailbackLaunchRequest& request) const
@@ -748,18 +617,12 @@ StartFailbackLaunchOutcome DrsClient::StartFailbackLaunch(const StartFailbackLau
 
 StartFailbackLaunchOutcomeCallable DrsClient::StartFailbackLaunchCallable(const StartFailbackLaunchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartFailbackLaunchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartFailbackLaunch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartFailbackLaunch, request, m_executor.get());
 }
 
 void DrsClient::StartFailbackLaunchAsync(const StartFailbackLaunchRequest& request, const StartFailbackLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartFailbackLaunch(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartFailbackLaunch, request, handler, context, m_executor.get());
 }
 
 StartRecoveryOutcome DrsClient::StartRecovery(const StartRecoveryRequest& request) const
@@ -773,18 +636,12 @@ StartRecoveryOutcome DrsClient::StartRecovery(const StartRecoveryRequest& reques
 
 StartRecoveryOutcomeCallable DrsClient::StartRecoveryCallable(const StartRecoveryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartRecoveryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartRecovery(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartRecovery, request, m_executor.get());
 }
 
 void DrsClient::StartRecoveryAsync(const StartRecoveryRequest& request, const StartRecoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartRecovery(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartRecovery, request, handler, context, m_executor.get());
 }
 
 StopFailbackOutcome DrsClient::StopFailback(const StopFailbackRequest& request) const
@@ -798,18 +655,12 @@ StopFailbackOutcome DrsClient::StopFailback(const StopFailbackRequest& request) 
 
 StopFailbackOutcomeCallable DrsClient::StopFailbackCallable(const StopFailbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopFailbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopFailback(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopFailback, request, m_executor.get());
 }
 
 void DrsClient::StopFailbackAsync(const StopFailbackRequest& request, const StopFailbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopFailback(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopFailback, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome DrsClient::TagResource(const TagResourceRequest& request) const
@@ -829,18 +680,12 @@ TagResourceOutcome DrsClient::TagResource(const TagResourceRequest& request) con
 
 TagResourceOutcomeCallable DrsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void DrsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 TerminateRecoveryInstancesOutcome DrsClient::TerminateRecoveryInstances(const TerminateRecoveryInstancesRequest& request) const
@@ -854,18 +699,12 @@ TerminateRecoveryInstancesOutcome DrsClient::TerminateRecoveryInstances(const Te
 
 TerminateRecoveryInstancesOutcomeCallable DrsClient::TerminateRecoveryInstancesCallable(const TerminateRecoveryInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TerminateRecoveryInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TerminateRecoveryInstances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TerminateRecoveryInstances, request, m_executor.get());
 }
 
 void DrsClient::TerminateRecoveryInstancesAsync(const TerminateRecoveryInstancesRequest& request, const TerminateRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TerminateRecoveryInstances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TerminateRecoveryInstances, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome DrsClient::UntagResource(const UntagResourceRequest& request) const
@@ -890,18 +729,12 @@ UntagResourceOutcome DrsClient::UntagResource(const UntagResourceRequest& reques
 
 UntagResourceOutcomeCallable DrsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void DrsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateFailbackReplicationConfigurationOutcome DrsClient::UpdateFailbackReplicationConfiguration(const UpdateFailbackReplicationConfigurationRequest& request) const
@@ -915,18 +748,12 @@ UpdateFailbackReplicationConfigurationOutcome DrsClient::UpdateFailbackReplicati
 
 UpdateFailbackReplicationConfigurationOutcomeCallable DrsClient::UpdateFailbackReplicationConfigurationCallable(const UpdateFailbackReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFailbackReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFailbackReplicationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFailbackReplicationConfiguration, request, m_executor.get());
 }
 
 void DrsClient::UpdateFailbackReplicationConfigurationAsync(const UpdateFailbackReplicationConfigurationRequest& request, const UpdateFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFailbackReplicationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFailbackReplicationConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateLaunchConfigurationOutcome DrsClient::UpdateLaunchConfiguration(const UpdateLaunchConfigurationRequest& request) const
@@ -940,18 +767,12 @@ UpdateLaunchConfigurationOutcome DrsClient::UpdateLaunchConfiguration(const Upda
 
 UpdateLaunchConfigurationOutcomeCallable DrsClient::UpdateLaunchConfigurationCallable(const UpdateLaunchConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLaunchConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLaunchConfiguration, request, m_executor.get());
 }
 
 void DrsClient::UpdateLaunchConfigurationAsync(const UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLaunchConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLaunchConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateReplicationConfigurationOutcome DrsClient::UpdateReplicationConfiguration(const UpdateReplicationConfigurationRequest& request) const
@@ -965,18 +786,12 @@ UpdateReplicationConfigurationOutcome DrsClient::UpdateReplicationConfiguration(
 
 UpdateReplicationConfigurationOutcomeCallable DrsClient::UpdateReplicationConfigurationCallable(const UpdateReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReplicationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateReplicationConfiguration, request, m_executor.get());
 }
 
 void DrsClient::UpdateReplicationConfigurationAsync(const UpdateReplicationConfigurationRequest& request, const UpdateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateReplicationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateReplicationConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateReplicationConfigurationTemplateOutcome DrsClient::UpdateReplicationConfigurationTemplate(const UpdateReplicationConfigurationTemplateRequest& request) const
@@ -990,17 +805,11 @@ UpdateReplicationConfigurationTemplateOutcome DrsClient::UpdateReplicationConfig
 
 UpdateReplicationConfigurationTemplateOutcomeCallable DrsClient::UpdateReplicationConfigurationTemplateCallable(const UpdateReplicationConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReplicationConfigurationTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateReplicationConfigurationTemplate, request, m_executor.get());
 }
 
 void DrsClient::UpdateReplicationConfigurationTemplateAsync(const UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateReplicationConfigurationTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateReplicationConfigurationTemplate, request, handler, context, m_executor.get());
 }
 

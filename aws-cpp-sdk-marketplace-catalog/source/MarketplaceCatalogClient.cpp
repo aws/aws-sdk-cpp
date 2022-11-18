@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -179,18 +180,12 @@ CancelChangeSetOutcome MarketplaceCatalogClient::CancelChangeSet(const CancelCha
 
 CancelChangeSetOutcomeCallable MarketplaceCatalogClient::CancelChangeSetCallable(const CancelChangeSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelChangeSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelChangeSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelChangeSet, request, m_executor.get());
 }
 
 void MarketplaceCatalogClient::CancelChangeSetAsync(const CancelChangeSetRequest& request, const CancelChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelChangeSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelChangeSet, request, handler, context, m_executor.get());
 }
 
 DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const DescribeChangeSetRequest& request) const
@@ -214,18 +209,12 @@ DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const Descr
 
 DescribeChangeSetOutcomeCallable MarketplaceCatalogClient::DescribeChangeSetCallable(const DescribeChangeSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeChangeSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChangeSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeChangeSet, request, m_executor.get());
 }
 
 void MarketplaceCatalogClient::DescribeChangeSetAsync(const DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeChangeSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeChangeSet, request, handler, context, m_executor.get());
 }
 
 DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEntityRequest& request) const
@@ -249,18 +238,12 @@ DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEnt
 
 DescribeEntityOutcomeCallable MarketplaceCatalogClient::DescribeEntityCallable(const DescribeEntityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEntityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEntity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEntity, request, m_executor.get());
 }
 
 void MarketplaceCatalogClient::DescribeEntityAsync(const DescribeEntityRequest& request, const DescribeEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEntity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEntity, request, handler, context, m_executor.get());
 }
 
 ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeSetsRequest& request) const
@@ -274,18 +257,12 @@ ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeS
 
 ListChangeSetsOutcomeCallable MarketplaceCatalogClient::ListChangeSetsCallable(const ListChangeSetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListChangeSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChangeSets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListChangeSets, request, m_executor.get());
 }
 
 void MarketplaceCatalogClient::ListChangeSetsAsync(const ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListChangeSets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListChangeSets, request, handler, context, m_executor.get());
 }
 
 ListEntitiesOutcome MarketplaceCatalogClient::ListEntities(const ListEntitiesRequest& request) const
@@ -299,18 +276,12 @@ ListEntitiesOutcome MarketplaceCatalogClient::ListEntities(const ListEntitiesReq
 
 ListEntitiesOutcomeCallable MarketplaceCatalogClient::ListEntitiesCallable(const ListEntitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEntities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEntities, request, m_executor.get());
 }
 
 void MarketplaceCatalogClient::ListEntitiesAsync(const ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEntities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEntities, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome MarketplaceCatalogClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -324,18 +295,12 @@ ListTagsForResourceOutcome MarketplaceCatalogClient::ListTagsForResource(const L
 
 ListTagsForResourceOutcomeCallable MarketplaceCatalogClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void MarketplaceCatalogClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChangeSetRequest& request) const
@@ -349,18 +314,12 @@ StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChange
 
 StartChangeSetOutcomeCallable MarketplaceCatalogClient::StartChangeSetCallable(const StartChangeSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartChangeSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartChangeSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartChangeSet, request, m_executor.get());
 }
 
 void MarketplaceCatalogClient::StartChangeSetAsync(const StartChangeSetRequest& request, const StartChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartChangeSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartChangeSet, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome MarketplaceCatalogClient::TagResource(const TagResourceRequest& request) const
@@ -374,18 +333,12 @@ TagResourceOutcome MarketplaceCatalogClient::TagResource(const TagResourceReques
 
 TagResourceOutcomeCallable MarketplaceCatalogClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void MarketplaceCatalogClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome MarketplaceCatalogClient::UntagResource(const UntagResourceRequest& request) const
@@ -399,17 +352,11 @@ UntagResourceOutcome MarketplaceCatalogClient::UntagResource(const UntagResource
 
 UntagResourceOutcomeCallable MarketplaceCatalogClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void MarketplaceCatalogClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 

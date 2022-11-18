@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -172,18 +173,12 @@ DeleteReportDefinitionOutcome ApplicationCostProfilerClient::DeleteReportDefinit
 
 DeleteReportDefinitionOutcomeCallable ApplicationCostProfilerClient::DeleteReportDefinitionCallable(const DeleteReportDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReportDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteReportDefinition, request, m_executor.get());
 }
 
 void ApplicationCostProfilerClient::DeleteReportDefinitionAsync(const DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteReportDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteReportDefinition, request, handler, context, m_executor.get());
 }
 
 GetReportDefinitionOutcome ApplicationCostProfilerClient::GetReportDefinition(const GetReportDefinitionRequest& request) const
@@ -203,18 +198,12 @@ GetReportDefinitionOutcome ApplicationCostProfilerClient::GetReportDefinition(co
 
 GetReportDefinitionOutcomeCallable ApplicationCostProfilerClient::GetReportDefinitionCallable(const GetReportDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReportDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetReportDefinition, request, m_executor.get());
 }
 
 void ApplicationCostProfilerClient::GetReportDefinitionAsync(const GetReportDefinitionRequest& request, const GetReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetReportDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetReportDefinition, request, handler, context, m_executor.get());
 }
 
 ImportApplicationUsageOutcome ApplicationCostProfilerClient::ImportApplicationUsage(const ImportApplicationUsageRequest& request) const
@@ -228,18 +217,12 @@ ImportApplicationUsageOutcome ApplicationCostProfilerClient::ImportApplicationUs
 
 ImportApplicationUsageOutcomeCallable ApplicationCostProfilerClient::ImportApplicationUsageCallable(const ImportApplicationUsageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportApplicationUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportApplicationUsage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportApplicationUsage, request, m_executor.get());
 }
 
 void ApplicationCostProfilerClient::ImportApplicationUsageAsync(const ImportApplicationUsageRequest& request, const ImportApplicationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportApplicationUsage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportApplicationUsage, request, handler, context, m_executor.get());
 }
 
 ListReportDefinitionsOutcome ApplicationCostProfilerClient::ListReportDefinitions(const ListReportDefinitionsRequest& request) const
@@ -253,18 +236,12 @@ ListReportDefinitionsOutcome ApplicationCostProfilerClient::ListReportDefinition
 
 ListReportDefinitionsOutcomeCallable ApplicationCostProfilerClient::ListReportDefinitionsCallable(const ListReportDefinitionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReportDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReportDefinitions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListReportDefinitions, request, m_executor.get());
 }
 
 void ApplicationCostProfilerClient::ListReportDefinitionsAsync(const ListReportDefinitionsRequest& request, const ListReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListReportDefinitions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListReportDefinitions, request, handler, context, m_executor.get());
 }
 
 PutReportDefinitionOutcome ApplicationCostProfilerClient::PutReportDefinition(const PutReportDefinitionRequest& request) const
@@ -278,18 +255,12 @@ PutReportDefinitionOutcome ApplicationCostProfilerClient::PutReportDefinition(co
 
 PutReportDefinitionOutcomeCallable ApplicationCostProfilerClient::PutReportDefinitionCallable(const PutReportDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutReportDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutReportDefinition, request, m_executor.get());
 }
 
 void ApplicationCostProfilerClient::PutReportDefinitionAsync(const PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutReportDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutReportDefinition, request, handler, context, m_executor.get());
 }
 
 UpdateReportDefinitionOutcome ApplicationCostProfilerClient::UpdateReportDefinition(const UpdateReportDefinitionRequest& request) const
@@ -309,17 +280,11 @@ UpdateReportDefinitionOutcome ApplicationCostProfilerClient::UpdateReportDefinit
 
 UpdateReportDefinitionOutcomeCallable ApplicationCostProfilerClient::UpdateReportDefinitionCallable(const UpdateReportDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReportDefinition(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateReportDefinition, request, m_executor.get());
 }
 
 void ApplicationCostProfilerClient::UpdateReportDefinitionAsync(const UpdateReportDefinitionRequest& request, const UpdateReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateReportDefinition(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateReportDefinition, request, handler, context, m_executor.get());
 }
 

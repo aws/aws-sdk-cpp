@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -187,18 +188,12 @@ CreateAccessorOutcome ManagedBlockchainClient::CreateAccessor(const CreateAccess
 
 CreateAccessorOutcomeCallable ManagedBlockchainClient::CreateAccessorCallable(const CreateAccessorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAccessorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccessor(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAccessor, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::CreateAccessorAsync(const CreateAccessorRequest& request, const CreateAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAccessor(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAccessor, request, handler, context, m_executor.get());
 }
 
 CreateMemberOutcome ManagedBlockchainClient::CreateMember(const CreateMemberRequest& request) const
@@ -219,18 +214,12 @@ CreateMemberOutcome ManagedBlockchainClient::CreateMember(const CreateMemberRequ
 
 CreateMemberOutcomeCallable ManagedBlockchainClient::CreateMemberCallable(const CreateMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMember(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMember, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::CreateMemberAsync(const CreateMemberRequest& request, const CreateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMember(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMember, request, handler, context, m_executor.get());
 }
 
 CreateNetworkOutcome ManagedBlockchainClient::CreateNetwork(const CreateNetworkRequest& request) const
@@ -244,18 +233,12 @@ CreateNetworkOutcome ManagedBlockchainClient::CreateNetwork(const CreateNetworkR
 
 CreateNetworkOutcomeCallable ManagedBlockchainClient::CreateNetworkCallable(const CreateNetworkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNetwork(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateNetwork, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::CreateNetworkAsync(const CreateNetworkRequest& request, const CreateNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateNetwork(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateNetwork, request, handler, context, m_executor.get());
 }
 
 CreateNodeOutcome ManagedBlockchainClient::CreateNode(const CreateNodeRequest& request) const
@@ -276,18 +259,12 @@ CreateNodeOutcome ManagedBlockchainClient::CreateNode(const CreateNodeRequest& r
 
 CreateNodeOutcomeCallable ManagedBlockchainClient::CreateNodeCallable(const CreateNodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNode(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateNode, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::CreateNodeAsync(const CreateNodeRequest& request, const CreateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateNode(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateNode, request, handler, context, m_executor.get());
 }
 
 CreateProposalOutcome ManagedBlockchainClient::CreateProposal(const CreateProposalRequest& request) const
@@ -308,18 +285,12 @@ CreateProposalOutcome ManagedBlockchainClient::CreateProposal(const CreatePropos
 
 CreateProposalOutcomeCallable ManagedBlockchainClient::CreateProposalCallable(const CreateProposalRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProposalOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProposal(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateProposal, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::CreateProposalAsync(const CreateProposalRequest& request, const CreateProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateProposal(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateProposal, request, handler, context, m_executor.get());
 }
 
 DeleteAccessorOutcome ManagedBlockchainClient::DeleteAccessor(const DeleteAccessorRequest& request) const
@@ -339,18 +310,12 @@ DeleteAccessorOutcome ManagedBlockchainClient::DeleteAccessor(const DeleteAccess
 
 DeleteAccessorOutcomeCallable ManagedBlockchainClient::DeleteAccessorCallable(const DeleteAccessorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessor(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAccessor, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::DeleteAccessorAsync(const DeleteAccessorRequest& request, const DeleteAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAccessor(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAccessor, request, handler, context, m_executor.get());
 }
 
 DeleteMemberOutcome ManagedBlockchainClient::DeleteMember(const DeleteMemberRequest& request) const
@@ -377,18 +342,12 @@ DeleteMemberOutcome ManagedBlockchainClient::DeleteMember(const DeleteMemberRequ
 
 DeleteMemberOutcomeCallable ManagedBlockchainClient::DeleteMemberCallable(const DeleteMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMember(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMember, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::DeleteMemberAsync(const DeleteMemberRequest& request, const DeleteMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMember(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMember, request, handler, context, m_executor.get());
 }
 
 DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& request) const
@@ -415,18 +374,12 @@ DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& r
 
 DeleteNodeOutcomeCallable ManagedBlockchainClient::DeleteNodeCallable(const DeleteNodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNode(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteNode, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::DeleteNodeAsync(const DeleteNodeRequest& request, const DeleteNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteNode(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteNode, request, handler, context, m_executor.get());
 }
 
 GetAccessorOutcome ManagedBlockchainClient::GetAccessor(const GetAccessorRequest& request) const
@@ -446,18 +399,12 @@ GetAccessorOutcome ManagedBlockchainClient::GetAccessor(const GetAccessorRequest
 
 GetAccessorOutcomeCallable ManagedBlockchainClient::GetAccessorCallable(const GetAccessorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessor(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccessor, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::GetAccessorAsync(const GetAccessorRequest& request, const GetAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccessor(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccessor, request, handler, context, m_executor.get());
 }
 
 GetMemberOutcome ManagedBlockchainClient::GetMember(const GetMemberRequest& request) const
@@ -484,18 +431,12 @@ GetMemberOutcome ManagedBlockchainClient::GetMember(const GetMemberRequest& requ
 
 GetMemberOutcomeCallable ManagedBlockchainClient::GetMemberCallable(const GetMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMember(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMember, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::GetMemberAsync(const GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMember(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMember, request, handler, context, m_executor.get());
 }
 
 GetNetworkOutcome ManagedBlockchainClient::GetNetwork(const GetNetworkRequest& request) const
@@ -515,18 +456,12 @@ GetNetworkOutcome ManagedBlockchainClient::GetNetwork(const GetNetworkRequest& r
 
 GetNetworkOutcomeCallable ManagedBlockchainClient::GetNetworkCallable(const GetNetworkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNetworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetwork(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetNetwork, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::GetNetworkAsync(const GetNetworkRequest& request, const GetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetNetwork(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetNetwork, request, handler, context, m_executor.get());
 }
 
 GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) const
@@ -553,18 +488,12 @@ GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) c
 
 GetNodeOutcomeCallable ManagedBlockchainClient::GetNodeCallable(const GetNodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNode(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetNode, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::GetNodeAsync(const GetNodeRequest& request, const GetNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetNode(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetNode, request, handler, context, m_executor.get());
 }
 
 GetProposalOutcome ManagedBlockchainClient::GetProposal(const GetProposalRequest& request) const
@@ -591,18 +520,12 @@ GetProposalOutcome ManagedBlockchainClient::GetProposal(const GetProposalRequest
 
 GetProposalOutcomeCallable ManagedBlockchainClient::GetProposalCallable(const GetProposalRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetProposalOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProposal(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetProposal, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::GetProposalAsync(const GetProposalRequest& request, const GetProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetProposal(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetProposal, request, handler, context, m_executor.get());
 }
 
 ListAccessorsOutcome ManagedBlockchainClient::ListAccessors(const ListAccessorsRequest& request) const
@@ -616,18 +539,12 @@ ListAccessorsOutcome ManagedBlockchainClient::ListAccessors(const ListAccessorsR
 
 ListAccessorsOutcomeCallable ManagedBlockchainClient::ListAccessorsCallable(const ListAccessorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAccessorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAccessors, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::ListAccessorsAsync(const ListAccessorsRequest& request, const ListAccessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAccessors(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAccessors, request, handler, context, m_executor.get());
 }
 
 ListInvitationsOutcome ManagedBlockchainClient::ListInvitations(const ListInvitationsRequest& request) const
@@ -641,18 +558,12 @@ ListInvitationsOutcome ManagedBlockchainClient::ListInvitations(const ListInvita
 
 ListInvitationsOutcomeCallable ManagedBlockchainClient::ListInvitationsCallable(const ListInvitationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInvitationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInvitations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInvitations, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::ListInvitationsAsync(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInvitations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInvitations, request, handler, context, m_executor.get());
 }
 
 ListMembersOutcome ManagedBlockchainClient::ListMembers(const ListMembersRequest& request) const
@@ -673,18 +584,12 @@ ListMembersOutcome ManagedBlockchainClient::ListMembers(const ListMembersRequest
 
 ListMembersOutcomeCallable ManagedBlockchainClient::ListMembersCallable(const ListMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMembers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMembers, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::ListMembersAsync(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMembers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMembers, request, handler, context, m_executor.get());
 }
 
 ListNetworksOutcome ManagedBlockchainClient::ListNetworks(const ListNetworksRequest& request) const
@@ -698,18 +603,12 @@ ListNetworksOutcome ManagedBlockchainClient::ListNetworks(const ListNetworksRequ
 
 ListNetworksOutcomeCallable ManagedBlockchainClient::ListNetworksCallable(const ListNetworksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNetworksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNetworks(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNetworks, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::ListNetworksAsync(const ListNetworksRequest& request, const ListNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNetworks(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNetworks, request, handler, context, m_executor.get());
 }
 
 ListNodesOutcome ManagedBlockchainClient::ListNodes(const ListNodesRequest& request) const
@@ -730,18 +629,12 @@ ListNodesOutcome ManagedBlockchainClient::ListNodes(const ListNodesRequest& requ
 
 ListNodesOutcomeCallable ManagedBlockchainClient::ListNodesCallable(const ListNodesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNodesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNodes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNodes, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::ListNodesAsync(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNodes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNodes, request, handler, context, m_executor.get());
 }
 
 ListProposalVotesOutcome ManagedBlockchainClient::ListProposalVotes(const ListProposalVotesRequest& request) const
@@ -769,18 +662,12 @@ ListProposalVotesOutcome ManagedBlockchainClient::ListProposalVotes(const ListPr
 
 ListProposalVotesOutcomeCallable ManagedBlockchainClient::ListProposalVotesCallable(const ListProposalVotesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProposalVotesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProposalVotes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListProposalVotes, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::ListProposalVotesAsync(const ListProposalVotesRequest& request, const ListProposalVotesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListProposalVotes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListProposalVotes, request, handler, context, m_executor.get());
 }
 
 ListProposalsOutcome ManagedBlockchainClient::ListProposals(const ListProposalsRequest& request) const
@@ -801,18 +688,12 @@ ListProposalsOutcome ManagedBlockchainClient::ListProposals(const ListProposalsR
 
 ListProposalsOutcomeCallable ManagedBlockchainClient::ListProposalsCallable(const ListProposalsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProposalsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProposals(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListProposals, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::ListProposalsAsync(const ListProposalsRequest& request, const ListProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListProposals(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListProposals, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ManagedBlockchainClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -832,18 +713,12 @@ ListTagsForResourceOutcome ManagedBlockchainClient::ListTagsForResource(const Li
 
 ListTagsForResourceOutcomeCallable ManagedBlockchainClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 RejectInvitationOutcome ManagedBlockchainClient::RejectInvitation(const RejectInvitationRequest& request) const
@@ -863,18 +738,12 @@ RejectInvitationOutcome ManagedBlockchainClient::RejectInvitation(const RejectIn
 
 RejectInvitationOutcomeCallable ManagedBlockchainClient::RejectInvitationCallable(const RejectInvitationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RejectInvitationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectInvitation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RejectInvitation, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::RejectInvitationAsync(const RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RejectInvitation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RejectInvitation, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ManagedBlockchainClient::TagResource(const TagResourceRequest& request) const
@@ -894,18 +763,12 @@ TagResourceOutcome ManagedBlockchainClient::TagResource(const TagResourceRequest
 
 TagResourceOutcomeCallable ManagedBlockchainClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ManagedBlockchainClient::UntagResource(const UntagResourceRequest& request) const
@@ -930,18 +793,12 @@ UntagResourceOutcome ManagedBlockchainClient::UntagResource(const UntagResourceR
 
 UntagResourceOutcomeCallable ManagedBlockchainClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateMemberOutcome ManagedBlockchainClient::UpdateMember(const UpdateMemberRequest& request) const
@@ -968,18 +825,12 @@ UpdateMemberOutcome ManagedBlockchainClient::UpdateMember(const UpdateMemberRequ
 
 UpdateMemberOutcomeCallable ManagedBlockchainClient::UpdateMemberCallable(const UpdateMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMember(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateMember, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::UpdateMemberAsync(const UpdateMemberRequest& request, const UpdateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateMember(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateMember, request, handler, context, m_executor.get());
 }
 
 UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& request) const
@@ -1006,18 +857,12 @@ UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& r
 
 UpdateNodeOutcomeCallable ManagedBlockchainClient::UpdateNodeCallable(const UpdateNodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNode(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateNode, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::UpdateNodeAsync(const UpdateNodeRequest& request, const UpdateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateNode(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateNode, request, handler, context, m_executor.get());
 }
 
 VoteOnProposalOutcome ManagedBlockchainClient::VoteOnProposal(const VoteOnProposalRequest& request) const
@@ -1045,17 +890,11 @@ VoteOnProposalOutcome ManagedBlockchainClient::VoteOnProposal(const VoteOnPropos
 
 VoteOnProposalOutcomeCallable ManagedBlockchainClient::VoteOnProposalCallable(const VoteOnProposalRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< VoteOnProposalOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->VoteOnProposal(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(VoteOnProposal, request, m_executor.get());
 }
 
 void ManagedBlockchainClient::VoteOnProposalAsync(const VoteOnProposalRequest& request, const VoteOnProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, VoteOnProposal(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(VoteOnProposal, request, handler, context, m_executor.get());
 }
 

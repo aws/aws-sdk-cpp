@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -164,18 +165,12 @@ DisableControlOutcome ControlTowerClient::DisableControl(const DisableControlReq
 
 DisableControlOutcomeCallable ControlTowerClient::DisableControlCallable(const DisableControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableControl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisableControl, request, m_executor.get());
 }
 
 void ControlTowerClient::DisableControlAsync(const DisableControlRequest& request, const DisableControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisableControl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisableControl, request, handler, context, m_executor.get());
 }
 
 EnableControlOutcome ControlTowerClient::EnableControl(const EnableControlRequest& request) const
@@ -189,18 +184,12 @@ EnableControlOutcome ControlTowerClient::EnableControl(const EnableControlReques
 
 EnableControlOutcomeCallable ControlTowerClient::EnableControlCallable(const EnableControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableControl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(EnableControl, request, m_executor.get());
 }
 
 void ControlTowerClient::EnableControlAsync(const EnableControlRequest& request, const EnableControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, EnableControl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(EnableControl, request, handler, context, m_executor.get());
 }
 
 GetControlOperationOutcome ControlTowerClient::GetControlOperation(const GetControlOperationRequest& request) const
@@ -214,18 +203,12 @@ GetControlOperationOutcome ControlTowerClient::GetControlOperation(const GetCont
 
 GetControlOperationOutcomeCallable ControlTowerClient::GetControlOperationCallable(const GetControlOperationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetControlOperationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetControlOperation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetControlOperation, request, m_executor.get());
 }
 
 void ControlTowerClient::GetControlOperationAsync(const GetControlOperationRequest& request, const GetControlOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetControlOperation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetControlOperation, request, handler, context, m_executor.get());
 }
 
 ListEnabledControlsOutcome ControlTowerClient::ListEnabledControls(const ListEnabledControlsRequest& request) const
@@ -239,17 +222,11 @@ ListEnabledControlsOutcome ControlTowerClient::ListEnabledControls(const ListEna
 
 ListEnabledControlsOutcomeCallable ControlTowerClient::ListEnabledControlsCallable(const ListEnabledControlsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEnabledControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEnabledControls(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEnabledControls, request, m_executor.get());
 }
 
 void ControlTowerClient::ListEnabledControlsAsync(const ListEnabledControlsRequest& request, const ListEnabledControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEnabledControls(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEnabledControls, request, handler, context, m_executor.get());
 }
 

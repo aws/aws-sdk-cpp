@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -205,18 +206,12 @@ CloneBackendOutcome AmplifyBackendClient::CloneBackend(const CloneBackendRequest
 
 CloneBackendOutcomeCallable AmplifyBackendClient::CloneBackendCallable(const CloneBackendRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CloneBackendOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CloneBackend(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CloneBackend, request, m_executor.get());
 }
 
 void AmplifyBackendClient::CloneBackendAsync(const CloneBackendRequest& request, const CloneBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CloneBackend(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CloneBackend, request, handler, context, m_executor.get());
 }
 
 CreateBackendOutcome AmplifyBackendClient::CreateBackend(const CreateBackendRequest& request) const
@@ -230,18 +225,12 @@ CreateBackendOutcome AmplifyBackendClient::CreateBackend(const CreateBackendRequ
 
 CreateBackendOutcomeCallable AmplifyBackendClient::CreateBackendCallable(const CreateBackendRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackendOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackend(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBackend, request, m_executor.get());
 }
 
 void AmplifyBackendClient::CreateBackendAsync(const CreateBackendRequest& request, const CreateBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBackend(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBackend, request, handler, context, m_executor.get());
 }
 
 CreateBackendAPIOutcome AmplifyBackendClient::CreateBackendAPI(const CreateBackendAPIRequest& request) const
@@ -262,18 +251,12 @@ CreateBackendAPIOutcome AmplifyBackendClient::CreateBackendAPI(const CreateBacke
 
 CreateBackendAPIOutcomeCallable AmplifyBackendClient::CreateBackendAPICallable(const CreateBackendAPIRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackendAPIOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackendAPI(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBackendAPI, request, m_executor.get());
 }
 
 void AmplifyBackendClient::CreateBackendAPIAsync(const CreateBackendAPIRequest& request, const CreateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBackendAPI(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBackendAPI, request, handler, context, m_executor.get());
 }
 
 CreateBackendAuthOutcome AmplifyBackendClient::CreateBackendAuth(const CreateBackendAuthRequest& request) const
@@ -294,18 +277,12 @@ CreateBackendAuthOutcome AmplifyBackendClient::CreateBackendAuth(const CreateBac
 
 CreateBackendAuthOutcomeCallable AmplifyBackendClient::CreateBackendAuthCallable(const CreateBackendAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackendAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackendAuth(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBackendAuth, request, m_executor.get());
 }
 
 void AmplifyBackendClient::CreateBackendAuthAsync(const CreateBackendAuthRequest& request, const CreateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBackendAuth(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBackendAuth, request, handler, context, m_executor.get());
 }
 
 CreateBackendConfigOutcome AmplifyBackendClient::CreateBackendConfig(const CreateBackendConfigRequest& request) const
@@ -326,18 +303,12 @@ CreateBackendConfigOutcome AmplifyBackendClient::CreateBackendConfig(const Creat
 
 CreateBackendConfigOutcomeCallable AmplifyBackendClient::CreateBackendConfigCallable(const CreateBackendConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackendConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackendConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBackendConfig, request, m_executor.get());
 }
 
 void AmplifyBackendClient::CreateBackendConfigAsync(const CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBackendConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBackendConfig, request, handler, context, m_executor.get());
 }
 
 CreateBackendStorageOutcome AmplifyBackendClient::CreateBackendStorage(const CreateBackendStorageRequest& request) const
@@ -358,18 +329,12 @@ CreateBackendStorageOutcome AmplifyBackendClient::CreateBackendStorage(const Cre
 
 CreateBackendStorageOutcomeCallable AmplifyBackendClient::CreateBackendStorageCallable(const CreateBackendStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackendStorage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBackendStorage, request, m_executor.get());
 }
 
 void AmplifyBackendClient::CreateBackendStorageAsync(const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBackendStorage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBackendStorage, request, handler, context, m_executor.get());
 }
 
 CreateTokenOutcome AmplifyBackendClient::CreateToken(const CreateTokenRequest& request) const
@@ -390,18 +355,12 @@ CreateTokenOutcome AmplifyBackendClient::CreateToken(const CreateTokenRequest& r
 
 CreateTokenOutcomeCallable AmplifyBackendClient::CreateTokenCallable(const CreateTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateToken, request, m_executor.get());
 }
 
 void AmplifyBackendClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateToken, request, handler, context, m_executor.get());
 }
 
 DeleteBackendOutcome AmplifyBackendClient::DeleteBackend(const DeleteBackendRequest& request) const
@@ -429,18 +388,12 @@ DeleteBackendOutcome AmplifyBackendClient::DeleteBackend(const DeleteBackendRequ
 
 DeleteBackendOutcomeCallable AmplifyBackendClient::DeleteBackendCallable(const DeleteBackendRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackend(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBackend, request, m_executor.get());
 }
 
 void AmplifyBackendClient::DeleteBackendAsync(const DeleteBackendRequest& request, const DeleteBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBackend(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBackend, request, handler, context, m_executor.get());
 }
 
 DeleteBackendAPIOutcome AmplifyBackendClient::DeleteBackendAPI(const DeleteBackendAPIRequest& request) const
@@ -468,18 +421,12 @@ DeleteBackendAPIOutcome AmplifyBackendClient::DeleteBackendAPI(const DeleteBacke
 
 DeleteBackendAPIOutcomeCallable AmplifyBackendClient::DeleteBackendAPICallable(const DeleteBackendAPIRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendAPIOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackendAPI(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBackendAPI, request, m_executor.get());
 }
 
 void AmplifyBackendClient::DeleteBackendAPIAsync(const DeleteBackendAPIRequest& request, const DeleteBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBackendAPI(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBackendAPI, request, handler, context, m_executor.get());
 }
 
 DeleteBackendAuthOutcome AmplifyBackendClient::DeleteBackendAuth(const DeleteBackendAuthRequest& request) const
@@ -507,18 +454,12 @@ DeleteBackendAuthOutcome AmplifyBackendClient::DeleteBackendAuth(const DeleteBac
 
 DeleteBackendAuthOutcomeCallable AmplifyBackendClient::DeleteBackendAuthCallable(const DeleteBackendAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackendAuth(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBackendAuth, request, m_executor.get());
 }
 
 void AmplifyBackendClient::DeleteBackendAuthAsync(const DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBackendAuth(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBackendAuth, request, handler, context, m_executor.get());
 }
 
 DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const DeleteBackendStorageRequest& request) const
@@ -546,18 +487,12 @@ DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const Del
 
 DeleteBackendStorageOutcomeCallable AmplifyBackendClient::DeleteBackendStorageCallable(const DeleteBackendStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackendStorage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBackendStorage, request, m_executor.get());
 }
 
 void AmplifyBackendClient::DeleteBackendStorageAsync(const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBackendStorage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBackendStorage, request, handler, context, m_executor.get());
 }
 
 DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& request) const
@@ -585,18 +520,12 @@ DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& r
 
 DeleteTokenOutcomeCallable AmplifyBackendClient::DeleteTokenCallable(const DeleteTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteToken, request, m_executor.get());
 }
 
 void AmplifyBackendClient::DeleteTokenAsync(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteToken, request, handler, context, m_executor.get());
 }
 
 GenerateBackendAPIModelsOutcome AmplifyBackendClient::GenerateBackendAPIModels(const GenerateBackendAPIModelsRequest& request) const
@@ -624,18 +553,12 @@ GenerateBackendAPIModelsOutcome AmplifyBackendClient::GenerateBackendAPIModels(c
 
 GenerateBackendAPIModelsOutcomeCallable AmplifyBackendClient::GenerateBackendAPIModelsCallable(const GenerateBackendAPIModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GenerateBackendAPIModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateBackendAPIModels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GenerateBackendAPIModels, request, m_executor.get());
 }
 
 void AmplifyBackendClient::GenerateBackendAPIModelsAsync(const GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GenerateBackendAPIModels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GenerateBackendAPIModels, request, handler, context, m_executor.get());
 }
 
 GetBackendOutcome AmplifyBackendClient::GetBackend(const GetBackendRequest& request) const
@@ -656,18 +579,12 @@ GetBackendOutcome AmplifyBackendClient::GetBackend(const GetBackendRequest& requ
 
 GetBackendOutcomeCallable AmplifyBackendClient::GetBackendCallable(const GetBackendRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackend(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBackend, request, m_executor.get());
 }
 
 void AmplifyBackendClient::GetBackendAsync(const GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBackend(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBackend, request, handler, context, m_executor.get());
 }
 
 GetBackendAPIOutcome AmplifyBackendClient::GetBackendAPI(const GetBackendAPIRequest& request) const
@@ -695,18 +612,12 @@ GetBackendAPIOutcome AmplifyBackendClient::GetBackendAPI(const GetBackendAPIRequ
 
 GetBackendAPIOutcomeCallable AmplifyBackendClient::GetBackendAPICallable(const GetBackendAPIRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendAPIOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendAPI(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBackendAPI, request, m_executor.get());
 }
 
 void AmplifyBackendClient::GetBackendAPIAsync(const GetBackendAPIRequest& request, const GetBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBackendAPI(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBackendAPI, request, handler, context, m_executor.get());
 }
 
 GetBackendAPIModelsOutcome AmplifyBackendClient::GetBackendAPIModels(const GetBackendAPIModelsRequest& request) const
@@ -734,18 +645,12 @@ GetBackendAPIModelsOutcome AmplifyBackendClient::GetBackendAPIModels(const GetBa
 
 GetBackendAPIModelsOutcomeCallable AmplifyBackendClient::GetBackendAPIModelsCallable(const GetBackendAPIModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendAPIModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendAPIModels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBackendAPIModels, request, m_executor.get());
 }
 
 void AmplifyBackendClient::GetBackendAPIModelsAsync(const GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBackendAPIModels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBackendAPIModels, request, handler, context, m_executor.get());
 }
 
 GetBackendAuthOutcome AmplifyBackendClient::GetBackendAuth(const GetBackendAuthRequest& request) const
@@ -773,18 +678,12 @@ GetBackendAuthOutcome AmplifyBackendClient::GetBackendAuth(const GetBackendAuthR
 
 GetBackendAuthOutcomeCallable AmplifyBackendClient::GetBackendAuthCallable(const GetBackendAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendAuth(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBackendAuth, request, m_executor.get());
 }
 
 void AmplifyBackendClient::GetBackendAuthAsync(const GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBackendAuth(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBackendAuth, request, handler, context, m_executor.get());
 }
 
 GetBackendJobOutcome AmplifyBackendClient::GetBackendJob(const GetBackendJobRequest& request) const
@@ -817,18 +716,12 @@ GetBackendJobOutcome AmplifyBackendClient::GetBackendJob(const GetBackendJobRequ
 
 GetBackendJobOutcomeCallable AmplifyBackendClient::GetBackendJobCallable(const GetBackendJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBackendJob, request, m_executor.get());
 }
 
 void AmplifyBackendClient::GetBackendJobAsync(const GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBackendJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBackendJob, request, handler, context, m_executor.get());
 }
 
 GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBackendStorageRequest& request) const
@@ -856,18 +749,12 @@ GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBacken
 
 GetBackendStorageOutcomeCallable AmplifyBackendClient::GetBackendStorageCallable(const GetBackendStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendStorage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBackendStorage, request, m_executor.get());
 }
 
 void AmplifyBackendClient::GetBackendStorageAsync(const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBackendStorage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBackendStorage, request, handler, context, m_executor.get());
 }
 
 GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) const
@@ -894,18 +781,12 @@ GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) c
 
 GetTokenOutcomeCallable AmplifyBackendClient::GetTokenCallable(const GetTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetToken, request, m_executor.get());
 }
 
 void AmplifyBackendClient::GetTokenAsync(const GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetToken, request, handler, context, m_executor.get());
 }
 
 ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBackendAuthRequest& request) const
@@ -933,18 +814,12 @@ ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBac
 
 ImportBackendAuthOutcomeCallable AmplifyBackendClient::ImportBackendAuthCallable(const ImportBackendAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportBackendAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportBackendAuth(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportBackendAuth, request, m_executor.get());
 }
 
 void AmplifyBackendClient::ImportBackendAuthAsync(const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportBackendAuth(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportBackendAuth, request, handler, context, m_executor.get());
 }
 
 ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const ImportBackendStorageRequest& request) const
@@ -972,18 +847,12 @@ ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const Imp
 
 ImportBackendStorageOutcomeCallable AmplifyBackendClient::ImportBackendStorageCallable(const ImportBackendStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportBackendStorage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportBackendStorage, request, m_executor.get());
 }
 
 void AmplifyBackendClient::ImportBackendStorageAsync(const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportBackendStorage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportBackendStorage, request, handler, context, m_executor.get());
 }
 
 ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJobsRequest& request) const
@@ -1010,18 +879,12 @@ ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJo
 
 ListBackendJobsOutcomeCallable AmplifyBackendClient::ListBackendJobsCallable(const ListBackendJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBackendJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBackendJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBackendJobs, request, m_executor.get());
 }
 
 void AmplifyBackendClient::ListBackendJobsAsync(const ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBackendJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBackendJobs, request, handler, context, m_executor.get());
 }
 
 ListS3BucketsOutcome AmplifyBackendClient::ListS3Buckets(const ListS3BucketsRequest& request) const
@@ -1035,18 +898,12 @@ ListS3BucketsOutcome AmplifyBackendClient::ListS3Buckets(const ListS3BucketsRequ
 
 ListS3BucketsOutcomeCallable AmplifyBackendClient::ListS3BucketsCallable(const ListS3BucketsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListS3BucketsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListS3Buckets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListS3Buckets, request, m_executor.get());
 }
 
 void AmplifyBackendClient::ListS3BucketsAsync(const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListS3Buckets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListS3Buckets, request, handler, context, m_executor.get());
 }
 
 RemoveAllBackendsOutcome AmplifyBackendClient::RemoveAllBackends(const RemoveAllBackendsRequest& request) const
@@ -1067,18 +924,12 @@ RemoveAllBackendsOutcome AmplifyBackendClient::RemoveAllBackends(const RemoveAll
 
 RemoveAllBackendsOutcomeCallable AmplifyBackendClient::RemoveAllBackendsCallable(const RemoveAllBackendsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveAllBackendsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveAllBackends(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveAllBackends, request, m_executor.get());
 }
 
 void AmplifyBackendClient::RemoveAllBackendsAsync(const RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveAllBackends(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveAllBackends, request, handler, context, m_executor.get());
 }
 
 RemoveBackendConfigOutcome AmplifyBackendClient::RemoveBackendConfig(const RemoveBackendConfigRequest& request) const
@@ -1099,18 +950,12 @@ RemoveBackendConfigOutcome AmplifyBackendClient::RemoveBackendConfig(const Remov
 
 RemoveBackendConfigOutcomeCallable AmplifyBackendClient::RemoveBackendConfigCallable(const RemoveBackendConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveBackendConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveBackendConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveBackendConfig, request, m_executor.get());
 }
 
 void AmplifyBackendClient::RemoveBackendConfigAsync(const RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveBackendConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveBackendConfig, request, handler, context, m_executor.get());
 }
 
 UpdateBackendAPIOutcome AmplifyBackendClient::UpdateBackendAPI(const UpdateBackendAPIRequest& request) const
@@ -1137,18 +982,12 @@ UpdateBackendAPIOutcome AmplifyBackendClient::UpdateBackendAPI(const UpdateBacke
 
 UpdateBackendAPIOutcomeCallable AmplifyBackendClient::UpdateBackendAPICallable(const UpdateBackendAPIRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendAPIOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBackendAPI(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBackendAPI, request, m_executor.get());
 }
 
 void AmplifyBackendClient::UpdateBackendAPIAsync(const UpdateBackendAPIRequest& request, const UpdateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBackendAPI(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBackendAPI, request, handler, context, m_executor.get());
 }
 
 UpdateBackendAuthOutcome AmplifyBackendClient::UpdateBackendAuth(const UpdateBackendAuthRequest& request) const
@@ -1175,18 +1014,12 @@ UpdateBackendAuthOutcome AmplifyBackendClient::UpdateBackendAuth(const UpdateBac
 
 UpdateBackendAuthOutcomeCallable AmplifyBackendClient::UpdateBackendAuthCallable(const UpdateBackendAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBackendAuth(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBackendAuth, request, m_executor.get());
 }
 
 void AmplifyBackendClient::UpdateBackendAuthAsync(const UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBackendAuth(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBackendAuth, request, handler, context, m_executor.get());
 }
 
 UpdateBackendConfigOutcome AmplifyBackendClient::UpdateBackendConfig(const UpdateBackendConfigRequest& request) const
@@ -1207,18 +1040,12 @@ UpdateBackendConfigOutcome AmplifyBackendClient::UpdateBackendConfig(const Updat
 
 UpdateBackendConfigOutcomeCallable AmplifyBackendClient::UpdateBackendConfigCallable(const UpdateBackendConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBackendConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBackendConfig, request, m_executor.get());
 }
 
 void AmplifyBackendClient::UpdateBackendConfigAsync(const UpdateBackendConfigRequest& request, const UpdateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBackendConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBackendConfig, request, handler, context, m_executor.get());
 }
 
 UpdateBackendJobOutcome AmplifyBackendClient::UpdateBackendJob(const UpdateBackendJobRequest& request) const
@@ -1251,18 +1078,12 @@ UpdateBackendJobOutcome AmplifyBackendClient::UpdateBackendJob(const UpdateBacke
 
 UpdateBackendJobOutcomeCallable AmplifyBackendClient::UpdateBackendJobCallable(const UpdateBackendJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBackendJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBackendJob, request, m_executor.get());
 }
 
 void AmplifyBackendClient::UpdateBackendJobAsync(const UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBackendJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBackendJob, request, handler, context, m_executor.get());
 }
 
 UpdateBackendStorageOutcome AmplifyBackendClient::UpdateBackendStorage(const UpdateBackendStorageRequest& request) const
@@ -1289,17 +1110,11 @@ UpdateBackendStorageOutcome AmplifyBackendClient::UpdateBackendStorage(const Upd
 
 UpdateBackendStorageOutcomeCallable AmplifyBackendClient::UpdateBackendStorageCallable(const UpdateBackendStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBackendStorage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateBackendStorage, request, m_executor.get());
 }
 
 void AmplifyBackendClient::UpdateBackendStorageAsync(const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateBackendStorage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateBackendStorage, request, handler, context, m_executor.get());
 }
 

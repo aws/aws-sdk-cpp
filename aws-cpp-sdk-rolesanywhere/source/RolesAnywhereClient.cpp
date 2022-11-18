@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -186,18 +187,12 @@ CreateProfileOutcome RolesAnywhereClient::CreateProfile(const CreateProfileReque
 
 CreateProfileOutcomeCallable RolesAnywhereClient::CreateProfileCallable(const CreateProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateProfile, request, m_executor.get());
 }
 
 void RolesAnywhereClient::CreateProfileAsync(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateProfile, request, handler, context, m_executor.get());
 }
 
 CreateTrustAnchorOutcome RolesAnywhereClient::CreateTrustAnchor(const CreateTrustAnchorRequest& request) const
@@ -211,18 +206,12 @@ CreateTrustAnchorOutcome RolesAnywhereClient::CreateTrustAnchor(const CreateTrus
 
 CreateTrustAnchorOutcomeCallable RolesAnywhereClient::CreateTrustAnchorCallable(const CreateTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTrustAnchor(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTrustAnchor, request, m_executor.get());
 }
 
 void RolesAnywhereClient::CreateTrustAnchorAsync(const CreateTrustAnchorRequest& request, const CreateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTrustAnchor(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTrustAnchor, request, handler, context, m_executor.get());
 }
 
 DeleteCrlOutcome RolesAnywhereClient::DeleteCrl(const DeleteCrlRequest& request) const
@@ -242,18 +231,12 @@ DeleteCrlOutcome RolesAnywhereClient::DeleteCrl(const DeleteCrlRequest& request)
 
 DeleteCrlOutcomeCallable RolesAnywhereClient::DeleteCrlCallable(const DeleteCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCrl, request, m_executor.get());
 }
 
 void RolesAnywhereClient::DeleteCrlAsync(const DeleteCrlRequest& request, const DeleteCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCrl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCrl, request, handler, context, m_executor.get());
 }
 
 DeleteProfileOutcome RolesAnywhereClient::DeleteProfile(const DeleteProfileRequest& request) const
@@ -273,18 +256,12 @@ DeleteProfileOutcome RolesAnywhereClient::DeleteProfile(const DeleteProfileReque
 
 DeleteProfileOutcomeCallable RolesAnywhereClient::DeleteProfileCallable(const DeleteProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteProfile, request, m_executor.get());
 }
 
 void RolesAnywhereClient::DeleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteProfile, request, handler, context, m_executor.get());
 }
 
 DeleteTrustAnchorOutcome RolesAnywhereClient::DeleteTrustAnchor(const DeleteTrustAnchorRequest& request) const
@@ -304,18 +281,12 @@ DeleteTrustAnchorOutcome RolesAnywhereClient::DeleteTrustAnchor(const DeleteTrus
 
 DeleteTrustAnchorOutcomeCallable RolesAnywhereClient::DeleteTrustAnchorCallable(const DeleteTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTrustAnchor(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTrustAnchor, request, m_executor.get());
 }
 
 void RolesAnywhereClient::DeleteTrustAnchorAsync(const DeleteTrustAnchorRequest& request, const DeleteTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTrustAnchor(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTrustAnchor, request, handler, context, m_executor.get());
 }
 
 DisableCrlOutcome RolesAnywhereClient::DisableCrl(const DisableCrlRequest& request) const
@@ -336,18 +307,12 @@ DisableCrlOutcome RolesAnywhereClient::DisableCrl(const DisableCrlRequest& reque
 
 DisableCrlOutcomeCallable RolesAnywhereClient::DisableCrlCallable(const DisableCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableCrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisableCrl, request, m_executor.get());
 }
 
 void RolesAnywhereClient::DisableCrlAsync(const DisableCrlRequest& request, const DisableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisableCrl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisableCrl, request, handler, context, m_executor.get());
 }
 
 DisableProfileOutcome RolesAnywhereClient::DisableProfile(const DisableProfileRequest& request) const
@@ -368,18 +333,12 @@ DisableProfileOutcome RolesAnywhereClient::DisableProfile(const DisableProfileRe
 
 DisableProfileOutcomeCallable RolesAnywhereClient::DisableProfileCallable(const DisableProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisableProfile, request, m_executor.get());
 }
 
 void RolesAnywhereClient::DisableProfileAsync(const DisableProfileRequest& request, const DisableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisableProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisableProfile, request, handler, context, m_executor.get());
 }
 
 DisableTrustAnchorOutcome RolesAnywhereClient::DisableTrustAnchor(const DisableTrustAnchorRequest& request) const
@@ -400,18 +359,12 @@ DisableTrustAnchorOutcome RolesAnywhereClient::DisableTrustAnchor(const DisableT
 
 DisableTrustAnchorOutcomeCallable RolesAnywhereClient::DisableTrustAnchorCallable(const DisableTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableTrustAnchor(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisableTrustAnchor, request, m_executor.get());
 }
 
 void RolesAnywhereClient::DisableTrustAnchorAsync(const DisableTrustAnchorRequest& request, const DisableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisableTrustAnchor(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisableTrustAnchor, request, handler, context, m_executor.get());
 }
 
 EnableCrlOutcome RolesAnywhereClient::EnableCrl(const EnableCrlRequest& request) const
@@ -432,18 +385,12 @@ EnableCrlOutcome RolesAnywhereClient::EnableCrl(const EnableCrlRequest& request)
 
 EnableCrlOutcomeCallable RolesAnywhereClient::EnableCrlCallable(const EnableCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableCrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(EnableCrl, request, m_executor.get());
 }
 
 void RolesAnywhereClient::EnableCrlAsync(const EnableCrlRequest& request, const EnableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, EnableCrl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(EnableCrl, request, handler, context, m_executor.get());
 }
 
 EnableProfileOutcome RolesAnywhereClient::EnableProfile(const EnableProfileRequest& request) const
@@ -464,18 +411,12 @@ EnableProfileOutcome RolesAnywhereClient::EnableProfile(const EnableProfileReque
 
 EnableProfileOutcomeCallable RolesAnywhereClient::EnableProfileCallable(const EnableProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(EnableProfile, request, m_executor.get());
 }
 
 void RolesAnywhereClient::EnableProfileAsync(const EnableProfileRequest& request, const EnableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, EnableProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(EnableProfile, request, handler, context, m_executor.get());
 }
 
 EnableTrustAnchorOutcome RolesAnywhereClient::EnableTrustAnchor(const EnableTrustAnchorRequest& request) const
@@ -496,18 +437,12 @@ EnableTrustAnchorOutcome RolesAnywhereClient::EnableTrustAnchor(const EnableTrus
 
 EnableTrustAnchorOutcomeCallable RolesAnywhereClient::EnableTrustAnchorCallable(const EnableTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableTrustAnchor(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(EnableTrustAnchor, request, m_executor.get());
 }
 
 void RolesAnywhereClient::EnableTrustAnchorAsync(const EnableTrustAnchorRequest& request, const EnableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, EnableTrustAnchor(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(EnableTrustAnchor, request, handler, context, m_executor.get());
 }
 
 GetCrlOutcome RolesAnywhereClient::GetCrl(const GetCrlRequest& request) const
@@ -527,18 +462,12 @@ GetCrlOutcome RolesAnywhereClient::GetCrl(const GetCrlRequest& request) const
 
 GetCrlOutcomeCallable RolesAnywhereClient::GetCrlCallable(const GetCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCrl, request, m_executor.get());
 }
 
 void RolesAnywhereClient::GetCrlAsync(const GetCrlRequest& request, const GetCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCrl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCrl, request, handler, context, m_executor.get());
 }
 
 GetProfileOutcome RolesAnywhereClient::GetProfile(const GetProfileRequest& request) const
@@ -558,18 +487,12 @@ GetProfileOutcome RolesAnywhereClient::GetProfile(const GetProfileRequest& reque
 
 GetProfileOutcomeCallable RolesAnywhereClient::GetProfileCallable(const GetProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetProfile, request, m_executor.get());
 }
 
 void RolesAnywhereClient::GetProfileAsync(const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetProfile, request, handler, context, m_executor.get());
 }
 
 GetSubjectOutcome RolesAnywhereClient::GetSubject(const GetSubjectRequest& request) const
@@ -589,18 +512,12 @@ GetSubjectOutcome RolesAnywhereClient::GetSubject(const GetSubjectRequest& reque
 
 GetSubjectOutcomeCallable RolesAnywhereClient::GetSubjectCallable(const GetSubjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSubjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSubject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSubject, request, m_executor.get());
 }
 
 void RolesAnywhereClient::GetSubjectAsync(const GetSubjectRequest& request, const GetSubjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSubject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSubject, request, handler, context, m_executor.get());
 }
 
 GetTrustAnchorOutcome RolesAnywhereClient::GetTrustAnchor(const GetTrustAnchorRequest& request) const
@@ -620,18 +537,12 @@ GetTrustAnchorOutcome RolesAnywhereClient::GetTrustAnchor(const GetTrustAnchorRe
 
 GetTrustAnchorOutcomeCallable RolesAnywhereClient::GetTrustAnchorCallable(const GetTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTrustAnchor(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTrustAnchor, request, m_executor.get());
 }
 
 void RolesAnywhereClient::GetTrustAnchorAsync(const GetTrustAnchorRequest& request, const GetTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTrustAnchor(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTrustAnchor, request, handler, context, m_executor.get());
 }
 
 ImportCrlOutcome RolesAnywhereClient::ImportCrl(const ImportCrlRequest& request) const
@@ -645,18 +556,12 @@ ImportCrlOutcome RolesAnywhereClient::ImportCrl(const ImportCrlRequest& request)
 
 ImportCrlOutcomeCallable RolesAnywhereClient::ImportCrlCallable(const ImportCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportCrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportCrl, request, m_executor.get());
 }
 
 void RolesAnywhereClient::ImportCrlAsync(const ImportCrlRequest& request, const ImportCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportCrl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportCrl, request, handler, context, m_executor.get());
 }
 
 ListCrlsOutcome RolesAnywhereClient::ListCrls(const ListCrlsRequest& request) const
@@ -670,18 +575,12 @@ ListCrlsOutcome RolesAnywhereClient::ListCrls(const ListCrlsRequest& request) co
 
 ListCrlsOutcomeCallable RolesAnywhereClient::ListCrlsCallable(const ListCrlsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCrlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCrls(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCrls, request, m_executor.get());
 }
 
 void RolesAnywhereClient::ListCrlsAsync(const ListCrlsRequest& request, const ListCrlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCrls(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCrls, request, handler, context, m_executor.get());
 }
 
 ListProfilesOutcome RolesAnywhereClient::ListProfiles(const ListProfilesRequest& request) const
@@ -695,18 +594,12 @@ ListProfilesOutcome RolesAnywhereClient::ListProfiles(const ListProfilesRequest&
 
 ListProfilesOutcomeCallable RolesAnywhereClient::ListProfilesCallable(const ListProfilesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProfiles(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListProfiles, request, m_executor.get());
 }
 
 void RolesAnywhereClient::ListProfilesAsync(const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListProfiles(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListProfiles, request, handler, context, m_executor.get());
 }
 
 ListSubjectsOutcome RolesAnywhereClient::ListSubjects(const ListSubjectsRequest& request) const
@@ -720,18 +613,12 @@ ListSubjectsOutcome RolesAnywhereClient::ListSubjects(const ListSubjectsRequest&
 
 ListSubjectsOutcomeCallable RolesAnywhereClient::ListSubjectsCallable(const ListSubjectsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSubjectsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSubjects(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSubjects, request, m_executor.get());
 }
 
 void RolesAnywhereClient::ListSubjectsAsync(const ListSubjectsRequest& request, const ListSubjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSubjects(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSubjects, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome RolesAnywhereClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -750,18 +637,12 @@ ListTagsForResourceOutcome RolesAnywhereClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable RolesAnywhereClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void RolesAnywhereClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTrustAnchorsOutcome RolesAnywhereClient::ListTrustAnchors(const ListTrustAnchorsRequest& request) const
@@ -775,18 +656,12 @@ ListTrustAnchorsOutcome RolesAnywhereClient::ListTrustAnchors(const ListTrustAnc
 
 ListTrustAnchorsOutcomeCallable RolesAnywhereClient::ListTrustAnchorsCallable(const ListTrustAnchorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTrustAnchorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTrustAnchors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTrustAnchors, request, m_executor.get());
 }
 
 void RolesAnywhereClient::ListTrustAnchorsAsync(const ListTrustAnchorsRequest& request, const ListTrustAnchorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTrustAnchors(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTrustAnchors, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome RolesAnywhereClient::TagResource(const TagResourceRequest& request) const
@@ -800,18 +675,12 @@ TagResourceOutcome RolesAnywhereClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable RolesAnywhereClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void RolesAnywhereClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome RolesAnywhereClient::UntagResource(const UntagResourceRequest& request) const
@@ -825,18 +694,12 @@ UntagResourceOutcome RolesAnywhereClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable RolesAnywhereClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void RolesAnywhereClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateCrlOutcome RolesAnywhereClient::UpdateCrl(const UpdateCrlRequest& request) const
@@ -856,18 +719,12 @@ UpdateCrlOutcome RolesAnywhereClient::UpdateCrl(const UpdateCrlRequest& request)
 
 UpdateCrlOutcomeCallable RolesAnywhereClient::UpdateCrlCallable(const UpdateCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCrl, request, m_executor.get());
 }
 
 void RolesAnywhereClient::UpdateCrlAsync(const UpdateCrlRequest& request, const UpdateCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCrl(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCrl, request, handler, context, m_executor.get());
 }
 
 UpdateProfileOutcome RolesAnywhereClient::UpdateProfile(const UpdateProfileRequest& request) const
@@ -887,18 +744,12 @@ UpdateProfileOutcome RolesAnywhereClient::UpdateProfile(const UpdateProfileReque
 
 UpdateProfileOutcomeCallable RolesAnywhereClient::UpdateProfileCallable(const UpdateProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateProfile, request, m_executor.get());
 }
 
 void RolesAnywhereClient::UpdateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateProfile, request, handler, context, m_executor.get());
 }
 
 UpdateTrustAnchorOutcome RolesAnywhereClient::UpdateTrustAnchor(const UpdateTrustAnchorRequest& request) const
@@ -918,17 +769,11 @@ UpdateTrustAnchorOutcome RolesAnywhereClient::UpdateTrustAnchor(const UpdateTrus
 
 UpdateTrustAnchorOutcomeCallable RolesAnywhereClient::UpdateTrustAnchorCallable(const UpdateTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTrustAnchor(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTrustAnchor, request, m_executor.get());
 }
 
 void RolesAnywhereClient::UpdateTrustAnchorAsync(const UpdateTrustAnchorRequest& request, const UpdateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTrustAnchor(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTrustAnchor, request, handler, context, m_executor.get());
 }
 

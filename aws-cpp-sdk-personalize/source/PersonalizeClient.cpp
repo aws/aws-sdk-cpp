@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -225,18 +226,12 @@ CreateBatchInferenceJobOutcome PersonalizeClient::CreateBatchInferenceJob(const 
 
 CreateBatchInferenceJobOutcomeCallable PersonalizeClient::CreateBatchInferenceJobCallable(const CreateBatchInferenceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBatchInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBatchInferenceJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBatchInferenceJob, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateBatchInferenceJobAsync(const CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBatchInferenceJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBatchInferenceJob, request, handler, context, m_executor.get());
 }
 
 CreateBatchSegmentJobOutcome PersonalizeClient::CreateBatchSegmentJob(const CreateBatchSegmentJobRequest& request) const
@@ -249,18 +244,12 @@ CreateBatchSegmentJobOutcome PersonalizeClient::CreateBatchSegmentJob(const Crea
 
 CreateBatchSegmentJobOutcomeCallable PersonalizeClient::CreateBatchSegmentJobCallable(const CreateBatchSegmentJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBatchSegmentJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBatchSegmentJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBatchSegmentJob, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateBatchSegmentJobAsync(const CreateBatchSegmentJobRequest& request, const CreateBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBatchSegmentJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBatchSegmentJob, request, handler, context, m_executor.get());
 }
 
 CreateCampaignOutcome PersonalizeClient::CreateCampaign(const CreateCampaignRequest& request) const
@@ -273,18 +262,12 @@ CreateCampaignOutcome PersonalizeClient::CreateCampaign(const CreateCampaignRequ
 
 CreateCampaignOutcomeCallable PersonalizeClient::CreateCampaignCallable(const CreateCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCampaign(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateCampaign, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateCampaignAsync(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateCampaign(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateCampaign, request, handler, context, m_executor.get());
 }
 
 CreateDatasetOutcome PersonalizeClient::CreateDataset(const CreateDatasetRequest& request) const
@@ -297,18 +280,12 @@ CreateDatasetOutcome PersonalizeClient::CreateDataset(const CreateDatasetRequest
 
 CreateDatasetOutcomeCallable PersonalizeClient::CreateDatasetCallable(const CreateDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataset, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataset, request, handler, context, m_executor.get());
 }
 
 CreateDatasetExportJobOutcome PersonalizeClient::CreateDatasetExportJob(const CreateDatasetExportJobRequest& request) const
@@ -321,18 +298,12 @@ CreateDatasetExportJobOutcome PersonalizeClient::CreateDatasetExportJob(const Cr
 
 CreateDatasetExportJobOutcomeCallable PersonalizeClient::CreateDatasetExportJobCallable(const CreateDatasetExportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDatasetExportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDatasetExportJob, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateDatasetExportJobAsync(const CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDatasetExportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDatasetExportJob, request, handler, context, m_executor.get());
 }
 
 CreateDatasetGroupOutcome PersonalizeClient::CreateDatasetGroup(const CreateDatasetGroupRequest& request) const
@@ -345,18 +316,12 @@ CreateDatasetGroupOutcome PersonalizeClient::CreateDatasetGroup(const CreateData
 
 CreateDatasetGroupOutcomeCallable PersonalizeClient::CreateDatasetGroupCallable(const CreateDatasetGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDatasetGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDatasetGroup, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateDatasetGroupAsync(const CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDatasetGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDatasetGroup, request, handler, context, m_executor.get());
 }
 
 CreateDatasetImportJobOutcome PersonalizeClient::CreateDatasetImportJob(const CreateDatasetImportJobRequest& request) const
@@ -369,18 +334,12 @@ CreateDatasetImportJobOutcome PersonalizeClient::CreateDatasetImportJob(const Cr
 
 CreateDatasetImportJobOutcomeCallable PersonalizeClient::CreateDatasetImportJobCallable(const CreateDatasetImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDatasetImportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDatasetImportJob, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateDatasetImportJobAsync(const CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDatasetImportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDatasetImportJob, request, handler, context, m_executor.get());
 }
 
 CreateEventTrackerOutcome PersonalizeClient::CreateEventTracker(const CreateEventTrackerRequest& request) const
@@ -393,18 +352,12 @@ CreateEventTrackerOutcome PersonalizeClient::CreateEventTracker(const CreateEven
 
 CreateEventTrackerOutcomeCallable PersonalizeClient::CreateEventTrackerCallable(const CreateEventTrackerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEventTrackerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEventTracker(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEventTracker, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateEventTrackerAsync(const CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEventTracker(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEventTracker, request, handler, context, m_executor.get());
 }
 
 CreateFilterOutcome PersonalizeClient::CreateFilter(const CreateFilterRequest& request) const
@@ -417,18 +370,12 @@ CreateFilterOutcome PersonalizeClient::CreateFilter(const CreateFilterRequest& r
 
 CreateFilterOutcomeCallable PersonalizeClient::CreateFilterCallable(const CreateFilterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFilter(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFilter, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateFilterAsync(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFilter(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFilter, request, handler, context, m_executor.get());
 }
 
 CreateMetricAttributionOutcome PersonalizeClient::CreateMetricAttribution(const CreateMetricAttributionRequest& request) const
@@ -441,18 +388,12 @@ CreateMetricAttributionOutcome PersonalizeClient::CreateMetricAttribution(const 
 
 CreateMetricAttributionOutcomeCallable PersonalizeClient::CreateMetricAttributionCallable(const CreateMetricAttributionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMetricAttributionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMetricAttribution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMetricAttribution, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateMetricAttributionAsync(const CreateMetricAttributionRequest& request, const CreateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMetricAttribution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMetricAttribution, request, handler, context, m_executor.get());
 }
 
 CreateRecommenderOutcome PersonalizeClient::CreateRecommender(const CreateRecommenderRequest& request) const
@@ -465,18 +406,12 @@ CreateRecommenderOutcome PersonalizeClient::CreateRecommender(const CreateRecomm
 
 CreateRecommenderOutcomeCallable PersonalizeClient::CreateRecommenderCallable(const CreateRecommenderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRecommender(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateRecommender, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateRecommenderAsync(const CreateRecommenderRequest& request, const CreateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateRecommender(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateRecommender, request, handler, context, m_executor.get());
 }
 
 CreateSchemaOutcome PersonalizeClient::CreateSchema(const CreateSchemaRequest& request) const
@@ -489,18 +424,12 @@ CreateSchemaOutcome PersonalizeClient::CreateSchema(const CreateSchemaRequest& r
 
 CreateSchemaOutcomeCallable PersonalizeClient::CreateSchemaCallable(const CreateSchemaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSchemaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSchema(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSchema, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateSchemaAsync(const CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSchema(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSchema, request, handler, context, m_executor.get());
 }
 
 CreateSolutionOutcome PersonalizeClient::CreateSolution(const CreateSolutionRequest& request) const
@@ -513,18 +442,12 @@ CreateSolutionOutcome PersonalizeClient::CreateSolution(const CreateSolutionRequ
 
 CreateSolutionOutcomeCallable PersonalizeClient::CreateSolutionCallable(const CreateSolutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSolutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSolution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSolution, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateSolutionAsync(const CreateSolutionRequest& request, const CreateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSolution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSolution, request, handler, context, m_executor.get());
 }
 
 CreateSolutionVersionOutcome PersonalizeClient::CreateSolutionVersion(const CreateSolutionVersionRequest& request) const
@@ -537,18 +460,12 @@ CreateSolutionVersionOutcome PersonalizeClient::CreateSolutionVersion(const Crea
 
 CreateSolutionVersionOutcomeCallable PersonalizeClient::CreateSolutionVersionCallable(const CreateSolutionVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSolutionVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSolutionVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSolutionVersion, request, m_executor.get());
 }
 
 void PersonalizeClient::CreateSolutionVersionAsync(const CreateSolutionVersionRequest& request, const CreateSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSolutionVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSolutionVersion, request, handler, context, m_executor.get());
 }
 
 DeleteCampaignOutcome PersonalizeClient::DeleteCampaign(const DeleteCampaignRequest& request) const
@@ -561,18 +478,12 @@ DeleteCampaignOutcome PersonalizeClient::DeleteCampaign(const DeleteCampaignRequ
 
 DeleteCampaignOutcomeCallable PersonalizeClient::DeleteCampaignCallable(const DeleteCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCampaign(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteCampaign, request, m_executor.get());
 }
 
 void PersonalizeClient::DeleteCampaignAsync(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteCampaign(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteCampaign, request, handler, context, m_executor.get());
 }
 
 DeleteDatasetOutcome PersonalizeClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -585,18 +496,12 @@ DeleteDatasetOutcome PersonalizeClient::DeleteDataset(const DeleteDatasetRequest
 
 DeleteDatasetOutcomeCallable PersonalizeClient::DeleteDatasetCallable(const DeleteDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDataset, request, m_executor.get());
 }
 
 void PersonalizeClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDataset, request, handler, context, m_executor.get());
 }
 
 DeleteDatasetGroupOutcome PersonalizeClient::DeleteDatasetGroup(const DeleteDatasetGroupRequest& request) const
@@ -609,18 +514,12 @@ DeleteDatasetGroupOutcome PersonalizeClient::DeleteDatasetGroup(const DeleteData
 
 DeleteDatasetGroupOutcomeCallable PersonalizeClient::DeleteDatasetGroupCallable(const DeleteDatasetGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDatasetGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDatasetGroup, request, m_executor.get());
 }
 
 void PersonalizeClient::DeleteDatasetGroupAsync(const DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDatasetGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDatasetGroup, request, handler, context, m_executor.get());
 }
 
 DeleteEventTrackerOutcome PersonalizeClient::DeleteEventTracker(const DeleteEventTrackerRequest& request) const
@@ -633,18 +532,12 @@ DeleteEventTrackerOutcome PersonalizeClient::DeleteEventTracker(const DeleteEven
 
 DeleteEventTrackerOutcomeCallable PersonalizeClient::DeleteEventTrackerCallable(const DeleteEventTrackerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEventTrackerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEventTracker(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEventTracker, request, m_executor.get());
 }
 
 void PersonalizeClient::DeleteEventTrackerAsync(const DeleteEventTrackerRequest& request, const DeleteEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEventTracker(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEventTracker, request, handler, context, m_executor.get());
 }
 
 DeleteFilterOutcome PersonalizeClient::DeleteFilter(const DeleteFilterRequest& request) const
@@ -657,18 +550,12 @@ DeleteFilterOutcome PersonalizeClient::DeleteFilter(const DeleteFilterRequest& r
 
 DeleteFilterOutcomeCallable PersonalizeClient::DeleteFilterCallable(const DeleteFilterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFilter(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFilter, request, m_executor.get());
 }
 
 void PersonalizeClient::DeleteFilterAsync(const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFilter(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFilter, request, handler, context, m_executor.get());
 }
 
 DeleteMetricAttributionOutcome PersonalizeClient::DeleteMetricAttribution(const DeleteMetricAttributionRequest& request) const
@@ -681,18 +568,12 @@ DeleteMetricAttributionOutcome PersonalizeClient::DeleteMetricAttribution(const 
 
 DeleteMetricAttributionOutcomeCallable PersonalizeClient::DeleteMetricAttributionCallable(const DeleteMetricAttributionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMetricAttributionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMetricAttribution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMetricAttribution, request, m_executor.get());
 }
 
 void PersonalizeClient::DeleteMetricAttributionAsync(const DeleteMetricAttributionRequest& request, const DeleteMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMetricAttribution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMetricAttribution, request, handler, context, m_executor.get());
 }
 
 DeleteRecommenderOutcome PersonalizeClient::DeleteRecommender(const DeleteRecommenderRequest& request) const
@@ -705,18 +586,12 @@ DeleteRecommenderOutcome PersonalizeClient::DeleteRecommender(const DeleteRecomm
 
 DeleteRecommenderOutcomeCallable PersonalizeClient::DeleteRecommenderCallable(const DeleteRecommenderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecommender(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteRecommender, request, m_executor.get());
 }
 
 void PersonalizeClient::DeleteRecommenderAsync(const DeleteRecommenderRequest& request, const DeleteRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteRecommender(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteRecommender, request, handler, context, m_executor.get());
 }
 
 DeleteSchemaOutcome PersonalizeClient::DeleteSchema(const DeleteSchemaRequest& request) const
@@ -729,18 +604,12 @@ DeleteSchemaOutcome PersonalizeClient::DeleteSchema(const DeleteSchemaRequest& r
 
 DeleteSchemaOutcomeCallable PersonalizeClient::DeleteSchemaCallable(const DeleteSchemaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSchemaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSchema(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSchema, request, m_executor.get());
 }
 
 void PersonalizeClient::DeleteSchemaAsync(const DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSchema(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSchema, request, handler, context, m_executor.get());
 }
 
 DeleteSolutionOutcome PersonalizeClient::DeleteSolution(const DeleteSolutionRequest& request) const
@@ -753,18 +622,12 @@ DeleteSolutionOutcome PersonalizeClient::DeleteSolution(const DeleteSolutionRequ
 
 DeleteSolutionOutcomeCallable PersonalizeClient::DeleteSolutionCallable(const DeleteSolutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSolutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSolution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSolution, request, m_executor.get());
 }
 
 void PersonalizeClient::DeleteSolutionAsync(const DeleteSolutionRequest& request, const DeleteSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSolution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSolution, request, handler, context, m_executor.get());
 }
 
 DescribeAlgorithmOutcome PersonalizeClient::DescribeAlgorithm(const DescribeAlgorithmRequest& request) const
@@ -777,18 +640,12 @@ DescribeAlgorithmOutcome PersonalizeClient::DescribeAlgorithm(const DescribeAlgo
 
 DescribeAlgorithmOutcomeCallable PersonalizeClient::DescribeAlgorithmCallable(const DescribeAlgorithmRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAlgorithmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAlgorithm(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAlgorithm, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeAlgorithmAsync(const DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAlgorithm(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAlgorithm, request, handler, context, m_executor.get());
 }
 
 DescribeBatchInferenceJobOutcome PersonalizeClient::DescribeBatchInferenceJob(const DescribeBatchInferenceJobRequest& request) const
@@ -801,18 +658,12 @@ DescribeBatchInferenceJobOutcome PersonalizeClient::DescribeBatchInferenceJob(co
 
 DescribeBatchInferenceJobOutcomeCallable PersonalizeClient::DescribeBatchInferenceJobCallable(const DescribeBatchInferenceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBatchInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBatchInferenceJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeBatchInferenceJob, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeBatchInferenceJobAsync(const DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeBatchInferenceJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeBatchInferenceJob, request, handler, context, m_executor.get());
 }
 
 DescribeBatchSegmentJobOutcome PersonalizeClient::DescribeBatchSegmentJob(const DescribeBatchSegmentJobRequest& request) const
@@ -825,18 +676,12 @@ DescribeBatchSegmentJobOutcome PersonalizeClient::DescribeBatchSegmentJob(const 
 
 DescribeBatchSegmentJobOutcomeCallable PersonalizeClient::DescribeBatchSegmentJobCallable(const DescribeBatchSegmentJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBatchSegmentJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBatchSegmentJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeBatchSegmentJob, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeBatchSegmentJobAsync(const DescribeBatchSegmentJobRequest& request, const DescribeBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeBatchSegmentJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeBatchSegmentJob, request, handler, context, m_executor.get());
 }
 
 DescribeCampaignOutcome PersonalizeClient::DescribeCampaign(const DescribeCampaignRequest& request) const
@@ -849,18 +694,12 @@ DescribeCampaignOutcome PersonalizeClient::DescribeCampaign(const DescribeCampai
 
 DescribeCampaignOutcomeCallable PersonalizeClient::DescribeCampaignCallable(const DescribeCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCampaign(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeCampaign, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeCampaignAsync(const DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeCampaign(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeCampaign, request, handler, context, m_executor.get());
 }
 
 DescribeDatasetOutcome PersonalizeClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -873,18 +712,12 @@ DescribeDatasetOutcome PersonalizeClient::DescribeDataset(const DescribeDatasetR
 
 DescribeDatasetOutcomeCallable PersonalizeClient::DescribeDatasetCallable(const DescribeDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDataset, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDataset, request, handler, context, m_executor.get());
 }
 
 DescribeDatasetExportJobOutcome PersonalizeClient::DescribeDatasetExportJob(const DescribeDatasetExportJobRequest& request) const
@@ -897,18 +730,12 @@ DescribeDatasetExportJobOutcome PersonalizeClient::DescribeDatasetExportJob(cons
 
 DescribeDatasetExportJobOutcomeCallable PersonalizeClient::DescribeDatasetExportJobCallable(const DescribeDatasetExportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDatasetExportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDatasetExportJob, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeDatasetExportJobAsync(const DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDatasetExportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDatasetExportJob, request, handler, context, m_executor.get());
 }
 
 DescribeDatasetGroupOutcome PersonalizeClient::DescribeDatasetGroup(const DescribeDatasetGroupRequest& request) const
@@ -921,18 +748,12 @@ DescribeDatasetGroupOutcome PersonalizeClient::DescribeDatasetGroup(const Descri
 
 DescribeDatasetGroupOutcomeCallable PersonalizeClient::DescribeDatasetGroupCallable(const DescribeDatasetGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDatasetGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDatasetGroup, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeDatasetGroupAsync(const DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDatasetGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDatasetGroup, request, handler, context, m_executor.get());
 }
 
 DescribeDatasetImportJobOutcome PersonalizeClient::DescribeDatasetImportJob(const DescribeDatasetImportJobRequest& request) const
@@ -945,18 +766,12 @@ DescribeDatasetImportJobOutcome PersonalizeClient::DescribeDatasetImportJob(cons
 
 DescribeDatasetImportJobOutcomeCallable PersonalizeClient::DescribeDatasetImportJobCallable(const DescribeDatasetImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDatasetImportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDatasetImportJob, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeDatasetImportJobAsync(const DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDatasetImportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDatasetImportJob, request, handler, context, m_executor.get());
 }
 
 DescribeEventTrackerOutcome PersonalizeClient::DescribeEventTracker(const DescribeEventTrackerRequest& request) const
@@ -969,18 +784,12 @@ DescribeEventTrackerOutcome PersonalizeClient::DescribeEventTracker(const Descri
 
 DescribeEventTrackerOutcomeCallable PersonalizeClient::DescribeEventTrackerCallable(const DescribeEventTrackerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEventTrackerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventTracker(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEventTracker, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeEventTrackerAsync(const DescribeEventTrackerRequest& request, const DescribeEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEventTracker(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEventTracker, request, handler, context, m_executor.get());
 }
 
 DescribeFeatureTransformationOutcome PersonalizeClient::DescribeFeatureTransformation(const DescribeFeatureTransformationRequest& request) const
@@ -993,18 +802,12 @@ DescribeFeatureTransformationOutcome PersonalizeClient::DescribeFeatureTransform
 
 DescribeFeatureTransformationOutcomeCallable PersonalizeClient::DescribeFeatureTransformationCallable(const DescribeFeatureTransformationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFeatureTransformationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFeatureTransformation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFeatureTransformation, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeFeatureTransformationAsync(const DescribeFeatureTransformationRequest& request, const DescribeFeatureTransformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFeatureTransformation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFeatureTransformation, request, handler, context, m_executor.get());
 }
 
 DescribeFilterOutcome PersonalizeClient::DescribeFilter(const DescribeFilterRequest& request) const
@@ -1017,18 +820,12 @@ DescribeFilterOutcome PersonalizeClient::DescribeFilter(const DescribeFilterRequ
 
 DescribeFilterOutcomeCallable PersonalizeClient::DescribeFilterCallable(const DescribeFilterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFilter(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFilter, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeFilterAsync(const DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFilter(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFilter, request, handler, context, m_executor.get());
 }
 
 DescribeMetricAttributionOutcome PersonalizeClient::DescribeMetricAttribution(const DescribeMetricAttributionRequest& request) const
@@ -1041,18 +838,12 @@ DescribeMetricAttributionOutcome PersonalizeClient::DescribeMetricAttribution(co
 
 DescribeMetricAttributionOutcomeCallable PersonalizeClient::DescribeMetricAttributionCallable(const DescribeMetricAttributionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeMetricAttributionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMetricAttribution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeMetricAttribution, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeMetricAttributionAsync(const DescribeMetricAttributionRequest& request, const DescribeMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeMetricAttribution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeMetricAttribution, request, handler, context, m_executor.get());
 }
 
 DescribeRecipeOutcome PersonalizeClient::DescribeRecipe(const DescribeRecipeRequest& request) const
@@ -1065,18 +856,12 @@ DescribeRecipeOutcome PersonalizeClient::DescribeRecipe(const DescribeRecipeRequ
 
 DescribeRecipeOutcomeCallable PersonalizeClient::DescribeRecipeCallable(const DescribeRecipeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRecipeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRecipe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRecipe, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeRecipeAsync(const DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRecipe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRecipe, request, handler, context, m_executor.get());
 }
 
 DescribeRecommenderOutcome PersonalizeClient::DescribeRecommender(const DescribeRecommenderRequest& request) const
@@ -1089,18 +874,12 @@ DescribeRecommenderOutcome PersonalizeClient::DescribeRecommender(const Describe
 
 DescribeRecommenderOutcomeCallable PersonalizeClient::DescribeRecommenderCallable(const DescribeRecommenderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRecommender(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRecommender, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeRecommenderAsync(const DescribeRecommenderRequest& request, const DescribeRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRecommender(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRecommender, request, handler, context, m_executor.get());
 }
 
 DescribeSchemaOutcome PersonalizeClient::DescribeSchema(const DescribeSchemaRequest& request) const
@@ -1113,18 +892,12 @@ DescribeSchemaOutcome PersonalizeClient::DescribeSchema(const DescribeSchemaRequ
 
 DescribeSchemaOutcomeCallable PersonalizeClient::DescribeSchemaCallable(const DescribeSchemaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSchemaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSchema(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSchema, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeSchemaAsync(const DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSchema(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSchema, request, handler, context, m_executor.get());
 }
 
 DescribeSolutionOutcome PersonalizeClient::DescribeSolution(const DescribeSolutionRequest& request) const
@@ -1137,18 +910,12 @@ DescribeSolutionOutcome PersonalizeClient::DescribeSolution(const DescribeSoluti
 
 DescribeSolutionOutcomeCallable PersonalizeClient::DescribeSolutionCallable(const DescribeSolutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSolutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSolution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSolution, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeSolutionAsync(const DescribeSolutionRequest& request, const DescribeSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSolution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSolution, request, handler, context, m_executor.get());
 }
 
 DescribeSolutionVersionOutcome PersonalizeClient::DescribeSolutionVersion(const DescribeSolutionVersionRequest& request) const
@@ -1161,18 +928,12 @@ DescribeSolutionVersionOutcome PersonalizeClient::DescribeSolutionVersion(const 
 
 DescribeSolutionVersionOutcomeCallable PersonalizeClient::DescribeSolutionVersionCallable(const DescribeSolutionVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSolutionVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSolutionVersion(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSolutionVersion, request, m_executor.get());
 }
 
 void PersonalizeClient::DescribeSolutionVersionAsync(const DescribeSolutionVersionRequest& request, const DescribeSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSolutionVersion(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSolutionVersion, request, handler, context, m_executor.get());
 }
 
 GetSolutionMetricsOutcome PersonalizeClient::GetSolutionMetrics(const GetSolutionMetricsRequest& request) const
@@ -1185,18 +946,12 @@ GetSolutionMetricsOutcome PersonalizeClient::GetSolutionMetrics(const GetSolutio
 
 GetSolutionMetricsOutcomeCallable PersonalizeClient::GetSolutionMetricsCallable(const GetSolutionMetricsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSolutionMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSolutionMetrics(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSolutionMetrics, request, m_executor.get());
 }
 
 void PersonalizeClient::GetSolutionMetricsAsync(const GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSolutionMetrics(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSolutionMetrics, request, handler, context, m_executor.get());
 }
 
 ListBatchInferenceJobsOutcome PersonalizeClient::ListBatchInferenceJobs(const ListBatchInferenceJobsRequest& request) const
@@ -1209,18 +964,12 @@ ListBatchInferenceJobsOutcome PersonalizeClient::ListBatchInferenceJobs(const Li
 
 ListBatchInferenceJobsOutcomeCallable PersonalizeClient::ListBatchInferenceJobsCallable(const ListBatchInferenceJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBatchInferenceJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBatchInferenceJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBatchInferenceJobs, request, m_executor.get());
 }
 
 void PersonalizeClient::ListBatchInferenceJobsAsync(const ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBatchInferenceJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBatchInferenceJobs, request, handler, context, m_executor.get());
 }
 
 ListBatchSegmentJobsOutcome PersonalizeClient::ListBatchSegmentJobs(const ListBatchSegmentJobsRequest& request) const
@@ -1233,18 +982,12 @@ ListBatchSegmentJobsOutcome PersonalizeClient::ListBatchSegmentJobs(const ListBa
 
 ListBatchSegmentJobsOutcomeCallable PersonalizeClient::ListBatchSegmentJobsCallable(const ListBatchSegmentJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBatchSegmentJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBatchSegmentJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBatchSegmentJobs, request, m_executor.get());
 }
 
 void PersonalizeClient::ListBatchSegmentJobsAsync(const ListBatchSegmentJobsRequest& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBatchSegmentJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBatchSegmentJobs, request, handler, context, m_executor.get());
 }
 
 ListCampaignsOutcome PersonalizeClient::ListCampaigns(const ListCampaignsRequest& request) const
@@ -1257,18 +1000,12 @@ ListCampaignsOutcome PersonalizeClient::ListCampaigns(const ListCampaignsRequest
 
 ListCampaignsOutcomeCallable PersonalizeClient::ListCampaignsCallable(const ListCampaignsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCampaignsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCampaigns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListCampaigns, request, m_executor.get());
 }
 
 void PersonalizeClient::ListCampaignsAsync(const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListCampaigns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListCampaigns, request, handler, context, m_executor.get());
 }
 
 ListDatasetExportJobsOutcome PersonalizeClient::ListDatasetExportJobs(const ListDatasetExportJobsRequest& request) const
@@ -1281,18 +1018,12 @@ ListDatasetExportJobsOutcome PersonalizeClient::ListDatasetExportJobs(const List
 
 ListDatasetExportJobsOutcomeCallable PersonalizeClient::ListDatasetExportJobsCallable(const ListDatasetExportJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasetExportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasetExportJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDatasetExportJobs, request, m_executor.get());
 }
 
 void PersonalizeClient::ListDatasetExportJobsAsync(const ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatasetExportJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDatasetExportJobs, request, handler, context, m_executor.get());
 }
 
 ListDatasetGroupsOutcome PersonalizeClient::ListDatasetGroups(const ListDatasetGroupsRequest& request) const
@@ -1305,18 +1036,12 @@ ListDatasetGroupsOutcome PersonalizeClient::ListDatasetGroups(const ListDatasetG
 
 ListDatasetGroupsOutcomeCallable PersonalizeClient::ListDatasetGroupsCallable(const ListDatasetGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasetGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasetGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDatasetGroups, request, m_executor.get());
 }
 
 void PersonalizeClient::ListDatasetGroupsAsync(const ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatasetGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDatasetGroups, request, handler, context, m_executor.get());
 }
 
 ListDatasetImportJobsOutcome PersonalizeClient::ListDatasetImportJobs(const ListDatasetImportJobsRequest& request) const
@@ -1329,18 +1054,12 @@ ListDatasetImportJobsOutcome PersonalizeClient::ListDatasetImportJobs(const List
 
 ListDatasetImportJobsOutcomeCallable PersonalizeClient::ListDatasetImportJobsCallable(const ListDatasetImportJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasetImportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasetImportJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDatasetImportJobs, request, m_executor.get());
 }
 
 void PersonalizeClient::ListDatasetImportJobsAsync(const ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatasetImportJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDatasetImportJobs, request, handler, context, m_executor.get());
 }
 
 ListDatasetsOutcome PersonalizeClient::ListDatasets(const ListDatasetsRequest& request) const
@@ -1353,18 +1072,12 @@ ListDatasetsOutcome PersonalizeClient::ListDatasets(const ListDatasetsRequest& r
 
 ListDatasetsOutcomeCallable PersonalizeClient::ListDatasetsCallable(const ListDatasetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDatasets, request, m_executor.get());
 }
 
 void PersonalizeClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatasets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDatasets, request, handler, context, m_executor.get());
 }
 
 ListEventTrackersOutcome PersonalizeClient::ListEventTrackers(const ListEventTrackersRequest& request) const
@@ -1377,18 +1090,12 @@ ListEventTrackersOutcome PersonalizeClient::ListEventTrackers(const ListEventTra
 
 ListEventTrackersOutcomeCallable PersonalizeClient::ListEventTrackersCallable(const ListEventTrackersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEventTrackersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventTrackers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEventTrackers, request, m_executor.get());
 }
 
 void PersonalizeClient::ListEventTrackersAsync(const ListEventTrackersRequest& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEventTrackers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEventTrackers, request, handler, context, m_executor.get());
 }
 
 ListFiltersOutcome PersonalizeClient::ListFilters(const ListFiltersRequest& request) const
@@ -1401,18 +1108,12 @@ ListFiltersOutcome PersonalizeClient::ListFilters(const ListFiltersRequest& requ
 
 ListFiltersOutcomeCallable PersonalizeClient::ListFiltersCallable(const ListFiltersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFiltersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFilters(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFilters, request, m_executor.get());
 }
 
 void PersonalizeClient::ListFiltersAsync(const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFilters(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFilters, request, handler, context, m_executor.get());
 }
 
 ListMetricAttributionMetricsOutcome PersonalizeClient::ListMetricAttributionMetrics(const ListMetricAttributionMetricsRequest& request) const
@@ -1425,18 +1126,12 @@ ListMetricAttributionMetricsOutcome PersonalizeClient::ListMetricAttributionMetr
 
 ListMetricAttributionMetricsOutcomeCallable PersonalizeClient::ListMetricAttributionMetricsCallable(const ListMetricAttributionMetricsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMetricAttributionMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMetricAttributionMetrics(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMetricAttributionMetrics, request, m_executor.get());
 }
 
 void PersonalizeClient::ListMetricAttributionMetricsAsync(const ListMetricAttributionMetricsRequest& request, const ListMetricAttributionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMetricAttributionMetrics(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMetricAttributionMetrics, request, handler, context, m_executor.get());
 }
 
 ListMetricAttributionsOutcome PersonalizeClient::ListMetricAttributions(const ListMetricAttributionsRequest& request) const
@@ -1449,18 +1144,12 @@ ListMetricAttributionsOutcome PersonalizeClient::ListMetricAttributions(const Li
 
 ListMetricAttributionsOutcomeCallable PersonalizeClient::ListMetricAttributionsCallable(const ListMetricAttributionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMetricAttributionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMetricAttributions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMetricAttributions, request, m_executor.get());
 }
 
 void PersonalizeClient::ListMetricAttributionsAsync(const ListMetricAttributionsRequest& request, const ListMetricAttributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMetricAttributions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMetricAttributions, request, handler, context, m_executor.get());
 }
 
 ListRecipesOutcome PersonalizeClient::ListRecipes(const ListRecipesRequest& request) const
@@ -1473,18 +1162,12 @@ ListRecipesOutcome PersonalizeClient::ListRecipes(const ListRecipesRequest& requ
 
 ListRecipesOutcomeCallable PersonalizeClient::ListRecipesCallable(const ListRecipesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRecipesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecipes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRecipes, request, m_executor.get());
 }
 
 void PersonalizeClient::ListRecipesAsync(const ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRecipes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRecipes, request, handler, context, m_executor.get());
 }
 
 ListRecommendersOutcome PersonalizeClient::ListRecommenders(const ListRecommendersRequest& request) const
@@ -1497,18 +1180,12 @@ ListRecommendersOutcome PersonalizeClient::ListRecommenders(const ListRecommende
 
 ListRecommendersOutcomeCallable PersonalizeClient::ListRecommendersCallable(const ListRecommendersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRecommendersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecommenders(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRecommenders, request, m_executor.get());
 }
 
 void PersonalizeClient::ListRecommendersAsync(const ListRecommendersRequest& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRecommenders(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRecommenders, request, handler, context, m_executor.get());
 }
 
 ListSchemasOutcome PersonalizeClient::ListSchemas(const ListSchemasRequest& request) const
@@ -1521,18 +1198,12 @@ ListSchemasOutcome PersonalizeClient::ListSchemas(const ListSchemasRequest& requ
 
 ListSchemasOutcomeCallable PersonalizeClient::ListSchemasCallable(const ListSchemasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSchemasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSchemas(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSchemas, request, m_executor.get());
 }
 
 void PersonalizeClient::ListSchemasAsync(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSchemas(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSchemas, request, handler, context, m_executor.get());
 }
 
 ListSolutionVersionsOutcome PersonalizeClient::ListSolutionVersions(const ListSolutionVersionsRequest& request) const
@@ -1545,18 +1216,12 @@ ListSolutionVersionsOutcome PersonalizeClient::ListSolutionVersions(const ListSo
 
 ListSolutionVersionsOutcomeCallable PersonalizeClient::ListSolutionVersionsCallable(const ListSolutionVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSolutionVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSolutionVersions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSolutionVersions, request, m_executor.get());
 }
 
 void PersonalizeClient::ListSolutionVersionsAsync(const ListSolutionVersionsRequest& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSolutionVersions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSolutionVersions, request, handler, context, m_executor.get());
 }
 
 ListSolutionsOutcome PersonalizeClient::ListSolutions(const ListSolutionsRequest& request) const
@@ -1569,18 +1234,12 @@ ListSolutionsOutcome PersonalizeClient::ListSolutions(const ListSolutionsRequest
 
 ListSolutionsOutcomeCallable PersonalizeClient::ListSolutionsCallable(const ListSolutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSolutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSolutions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSolutions, request, m_executor.get());
 }
 
 void PersonalizeClient::ListSolutionsAsync(const ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSolutions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSolutions, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome PersonalizeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1593,18 +1252,12 @@ ListTagsForResourceOutcome PersonalizeClient::ListTagsForResource(const ListTags
 
 ListTagsForResourceOutcomeCallable PersonalizeClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void PersonalizeClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartRecommenderOutcome PersonalizeClient::StartRecommender(const StartRecommenderRequest& request) const
@@ -1617,18 +1270,12 @@ StartRecommenderOutcome PersonalizeClient::StartRecommender(const StartRecommend
 
 StartRecommenderOutcomeCallable PersonalizeClient::StartRecommenderCallable(const StartRecommenderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartRecommender(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartRecommender, request, m_executor.get());
 }
 
 void PersonalizeClient::StartRecommenderAsync(const StartRecommenderRequest& request, const StartRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartRecommender(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartRecommender, request, handler, context, m_executor.get());
 }
 
 StopRecommenderOutcome PersonalizeClient::StopRecommender(const StopRecommenderRequest& request) const
@@ -1641,18 +1288,12 @@ StopRecommenderOutcome PersonalizeClient::StopRecommender(const StopRecommenderR
 
 StopRecommenderOutcomeCallable PersonalizeClient::StopRecommenderCallable(const StopRecommenderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopRecommender(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopRecommender, request, m_executor.get());
 }
 
 void PersonalizeClient::StopRecommenderAsync(const StopRecommenderRequest& request, const StopRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopRecommender(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopRecommender, request, handler, context, m_executor.get());
 }
 
 StopSolutionVersionCreationOutcome PersonalizeClient::StopSolutionVersionCreation(const StopSolutionVersionCreationRequest& request) const
@@ -1665,18 +1306,12 @@ StopSolutionVersionCreationOutcome PersonalizeClient::StopSolutionVersionCreatio
 
 StopSolutionVersionCreationOutcomeCallable PersonalizeClient::StopSolutionVersionCreationCallable(const StopSolutionVersionCreationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopSolutionVersionCreationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopSolutionVersionCreation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopSolutionVersionCreation, request, m_executor.get());
 }
 
 void PersonalizeClient::StopSolutionVersionCreationAsync(const StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopSolutionVersionCreation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopSolutionVersionCreation, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome PersonalizeClient::TagResource(const TagResourceRequest& request) const
@@ -1689,18 +1324,12 @@ TagResourceOutcome PersonalizeClient::TagResource(const TagResourceRequest& requ
 
 TagResourceOutcomeCallable PersonalizeClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void PersonalizeClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome PersonalizeClient::UntagResource(const UntagResourceRequest& request) const
@@ -1713,18 +1342,12 @@ UntagResourceOutcome PersonalizeClient::UntagResource(const UntagResourceRequest
 
 UntagResourceOutcomeCallable PersonalizeClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void PersonalizeClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateCampaignOutcome PersonalizeClient::UpdateCampaign(const UpdateCampaignRequest& request) const
@@ -1737,18 +1360,12 @@ UpdateCampaignOutcome PersonalizeClient::UpdateCampaign(const UpdateCampaignRequ
 
 UpdateCampaignOutcomeCallable PersonalizeClient::UpdateCampaignCallable(const UpdateCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCampaign(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateCampaign, request, m_executor.get());
 }
 
 void PersonalizeClient::UpdateCampaignAsync(const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateCampaign(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateCampaign, request, handler, context, m_executor.get());
 }
 
 UpdateMetricAttributionOutcome PersonalizeClient::UpdateMetricAttribution(const UpdateMetricAttributionRequest& request) const
@@ -1761,18 +1378,12 @@ UpdateMetricAttributionOutcome PersonalizeClient::UpdateMetricAttribution(const 
 
 UpdateMetricAttributionOutcomeCallable PersonalizeClient::UpdateMetricAttributionCallable(const UpdateMetricAttributionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMetricAttributionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMetricAttribution(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateMetricAttribution, request, m_executor.get());
 }
 
 void PersonalizeClient::UpdateMetricAttributionAsync(const UpdateMetricAttributionRequest& request, const UpdateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateMetricAttribution(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateMetricAttribution, request, handler, context, m_executor.get());
 }
 
 UpdateRecommenderOutcome PersonalizeClient::UpdateRecommender(const UpdateRecommenderRequest& request) const
@@ -1785,17 +1396,11 @@ UpdateRecommenderOutcome PersonalizeClient::UpdateRecommender(const UpdateRecomm
 
 UpdateRecommenderOutcomeCallable PersonalizeClient::UpdateRecommenderCallable(const UpdateRecommenderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRecommender(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateRecommender, request, m_executor.get());
 }
 
 void PersonalizeClient::UpdateRecommenderAsync(const UpdateRecommenderRequest& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRecommender(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateRecommender, request, handler, context, m_executor.get());
 }
 

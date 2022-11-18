@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -162,18 +163,12 @@ GetIceServerConfigOutcome KinesisVideoSignalingChannelsClient::GetIceServerConfi
 
 GetIceServerConfigOutcomeCallable KinesisVideoSignalingChannelsClient::GetIceServerConfigCallable(const GetIceServerConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetIceServerConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIceServerConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetIceServerConfig, request, m_executor.get());
 }
 
 void KinesisVideoSignalingChannelsClient::GetIceServerConfigAsync(const GetIceServerConfigRequest& request, const GetIceServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetIceServerConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetIceServerConfig, request, handler, context, m_executor.get());
 }
 
 SendAlexaOfferToMasterOutcome KinesisVideoSignalingChannelsClient::SendAlexaOfferToMaster(const SendAlexaOfferToMasterRequest& request) const
@@ -187,17 +182,11 @@ SendAlexaOfferToMasterOutcome KinesisVideoSignalingChannelsClient::SendAlexaOffe
 
 SendAlexaOfferToMasterOutcomeCallable KinesisVideoSignalingChannelsClient::SendAlexaOfferToMasterCallable(const SendAlexaOfferToMasterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendAlexaOfferToMasterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendAlexaOfferToMaster(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendAlexaOfferToMaster, request, m_executor.get());
 }
 
 void KinesisVideoSignalingChannelsClient::SendAlexaOfferToMasterAsync(const SendAlexaOfferToMasterRequest& request, const SendAlexaOfferToMasterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendAlexaOfferToMaster(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendAlexaOfferToMaster, request, handler, context, m_executor.get());
 }
 

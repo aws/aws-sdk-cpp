@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -91,10 +92,10 @@ LexRuntimeV2Client::LexRuntimeV2Client(const std::shared_ptr<AWSCredentialsProvi
     /* Legacy constructors due deprecation */
   LexRuntimeV2Client::LexRuntimeV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LexRuntimeV2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -106,10 +107,10 @@ LexRuntimeV2Client::LexRuntimeV2Client(const std::shared_ptr<AWSCredentialsProvi
 LexRuntimeV2Client::LexRuntimeV2Client(const AWSCredentials& credentials,
                                        const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LexRuntimeV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -121,10 +122,10 @@ LexRuntimeV2Client::LexRuntimeV2Client(const AWSCredentials& credentials,
 LexRuntimeV2Client::LexRuntimeV2Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                        const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LexRuntimeV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -194,18 +195,12 @@ DeleteSessionOutcome LexRuntimeV2Client::DeleteSession(const DeleteSessionReques
 
 DeleteSessionOutcomeCallable LexRuntimeV2Client::DeleteSessionCallable(const DeleteSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSession, request, m_executor.get());
 }
 
 void LexRuntimeV2Client::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSession, request, handler, context, m_executor.get());
 }
 
 GetSessionOutcome LexRuntimeV2Client::GetSession(const GetSessionRequest& request) const
@@ -246,18 +241,12 @@ GetSessionOutcome LexRuntimeV2Client::GetSession(const GetSessionRequest& reques
 
 GetSessionOutcomeCallable LexRuntimeV2Client::GetSessionCallable(const GetSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSession, request, m_executor.get());
 }
 
 void LexRuntimeV2Client::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSession, request, handler, context, m_executor.get());
 }
 
 PutSessionOutcome LexRuntimeV2Client::PutSession(const PutSessionRequest& request) const
@@ -298,18 +287,12 @@ PutSessionOutcome LexRuntimeV2Client::PutSession(const PutSessionRequest& reques
 
 PutSessionOutcomeCallable LexRuntimeV2Client::PutSessionCallable(const PutSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutSession(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutSession, request, m_executor.get());
 }
 
 void LexRuntimeV2Client::PutSessionAsync(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutSession(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutSession, request, handler, context, m_executor.get());
 }
 
 RecognizeTextOutcome LexRuntimeV2Client::RecognizeText(const RecognizeTextRequest& request) const
@@ -351,18 +334,12 @@ RecognizeTextOutcome LexRuntimeV2Client::RecognizeText(const RecognizeTextReques
 
 RecognizeTextOutcomeCallable LexRuntimeV2Client::RecognizeTextCallable(const RecognizeTextRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RecognizeTextOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RecognizeText(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RecognizeText, request, m_executor.get());
 }
 
 void LexRuntimeV2Client::RecognizeTextAsync(const RecognizeTextRequest& request, const RecognizeTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RecognizeText(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RecognizeText, request, handler, context, m_executor.get());
 }
 
 RecognizeUtteranceOutcome LexRuntimeV2Client::RecognizeUtterance(const RecognizeUtteranceRequest& request) const
@@ -409,18 +386,12 @@ RecognizeUtteranceOutcome LexRuntimeV2Client::RecognizeUtterance(const Recognize
 
 RecognizeUtteranceOutcomeCallable LexRuntimeV2Client::RecognizeUtteranceCallable(const RecognizeUtteranceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RecognizeUtteranceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RecognizeUtterance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RecognizeUtterance, request, m_executor.get());
 }
 
 void LexRuntimeV2Client::RecognizeUtteranceAsync(const RecognizeUtteranceRequest& request, const RecognizeUtteranceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RecognizeUtterance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RecognizeUtterance, request, handler, context, m_executor.get());
 }
 
 void LexRuntimeV2Client::StartConversationAsync(Model::StartConversationRequest& request,

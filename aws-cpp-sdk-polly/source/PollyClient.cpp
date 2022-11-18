@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -175,18 +176,12 @@ DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& requ
 
 DeleteLexiconOutcomeCallable PollyClient::DeleteLexiconCallable(const DeleteLexiconRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLexiconOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLexicon(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLexicon, request, m_executor.get());
 }
 
 void PollyClient::DeleteLexiconAsync(const DeleteLexiconRequest& request, const DeleteLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLexicon(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLexicon, request, handler, context, m_executor.get());
 }
 
 DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& request) const
@@ -200,18 +195,12 @@ DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& r
 
 DescribeVoicesOutcomeCallable PollyClient::DescribeVoicesCallable(const DescribeVoicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeVoicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVoices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeVoices, request, m_executor.get());
 }
 
 void PollyClient::DescribeVoicesAsync(const DescribeVoicesRequest& request, const DescribeVoicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeVoices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeVoices, request, handler, context, m_executor.get());
 }
 
 GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) const
@@ -231,18 +220,12 @@ GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) cons
 
 GetLexiconOutcomeCallable PollyClient::GetLexiconCallable(const GetLexiconRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLexiconOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLexicon(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLexicon, request, m_executor.get());
 }
 
 void PollyClient::GetLexiconAsync(const GetLexiconRequest& request, const GetLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLexicon(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLexicon, request, handler, context, m_executor.get());
 }
 
 GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeechSynthesisTaskRequest& request) const
@@ -262,18 +245,12 @@ GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeec
 
 GetSpeechSynthesisTaskOutcomeCallable PollyClient::GetSpeechSynthesisTaskCallable(const GetSpeechSynthesisTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSpeechSynthesisTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSpeechSynthesisTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSpeechSynthesisTask, request, m_executor.get());
 }
 
 void PollyClient::GetSpeechSynthesisTaskAsync(const GetSpeechSynthesisTaskRequest& request, const GetSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSpeechSynthesisTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSpeechSynthesisTask, request, handler, context, m_executor.get());
 }
 
 ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request) const
@@ -287,18 +264,12 @@ ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request
 
 ListLexiconsOutcomeCallable PollyClient::ListLexiconsCallable(const ListLexiconsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLexiconsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLexicons(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListLexicons, request, m_executor.get());
 }
 
 void PollyClient::ListLexiconsAsync(const ListLexiconsRequest& request, const ListLexiconsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListLexicons(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListLexicons, request, handler, context, m_executor.get());
 }
 
 ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const ListSpeechSynthesisTasksRequest& request) const
@@ -312,18 +283,12 @@ ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const List
 
 ListSpeechSynthesisTasksOutcomeCallable PollyClient::ListSpeechSynthesisTasksCallable(const ListSpeechSynthesisTasksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSpeechSynthesisTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSpeechSynthesisTasks(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSpeechSynthesisTasks, request, m_executor.get());
 }
 
 void PollyClient::ListSpeechSynthesisTasksAsync(const ListSpeechSynthesisTasksRequest& request, const ListSpeechSynthesisTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSpeechSynthesisTasks(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSpeechSynthesisTasks, request, handler, context, m_executor.get());
 }
 
 PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) const
@@ -343,18 +308,12 @@ PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) cons
 
 PutLexiconOutcomeCallable PollyClient::PutLexiconCallable(const PutLexiconRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutLexiconOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutLexicon(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutLexicon, request, m_executor.get());
 }
 
 void PollyClient::PutLexiconAsync(const PutLexiconRequest& request, const PutLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutLexicon(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutLexicon, request, handler, context, m_executor.get());
 }
 
 StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const StartSpeechSynthesisTaskRequest& request) const
@@ -368,18 +327,12 @@ StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const Star
 
 StartSpeechSynthesisTaskOutcomeCallable PollyClient::StartSpeechSynthesisTaskCallable(const StartSpeechSynthesisTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartSpeechSynthesisTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSpeechSynthesisTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartSpeechSynthesisTask, request, m_executor.get());
 }
 
 void PollyClient::StartSpeechSynthesisTaskAsync(const StartSpeechSynthesisTaskRequest& request, const StartSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartSpeechSynthesisTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartSpeechSynthesisTask, request, handler, context, m_executor.get());
 }
 
 SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequest& request) const
@@ -393,17 +346,11 @@ SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequ
 
 SynthesizeSpeechOutcomeCallable PollyClient::SynthesizeSpeechCallable(const SynthesizeSpeechRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SynthesizeSpeechOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SynthesizeSpeech(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SynthesizeSpeech, request, m_executor.get());
 }
 
 void PollyClient::SynthesizeSpeechAsync(const SynthesizeSpeechRequest& request, const SynthesizeSpeechResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SynthesizeSpeech(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SynthesizeSpeech, request, handler, context, m_executor.get());
 }
 

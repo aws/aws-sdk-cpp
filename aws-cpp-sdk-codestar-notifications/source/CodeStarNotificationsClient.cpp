@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -173,18 +174,12 @@ CreateNotificationRuleOutcome CodeStarNotificationsClient::CreateNotificationRul
 
 CreateNotificationRuleOutcomeCallable CodeStarNotificationsClient::CreateNotificationRuleCallable(const CreateNotificationRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNotificationRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateNotificationRule, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::CreateNotificationRuleAsync(const CreateNotificationRuleRequest& request, const CreateNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateNotificationRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateNotificationRule, request, handler, context, m_executor.get());
 }
 
 DeleteNotificationRuleOutcome CodeStarNotificationsClient::DeleteNotificationRule(const DeleteNotificationRuleRequest& request) const
@@ -198,18 +193,12 @@ DeleteNotificationRuleOutcome CodeStarNotificationsClient::DeleteNotificationRul
 
 DeleteNotificationRuleOutcomeCallable CodeStarNotificationsClient::DeleteNotificationRuleCallable(const DeleteNotificationRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNotificationRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteNotificationRule, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::DeleteNotificationRuleAsync(const DeleteNotificationRuleRequest& request, const DeleteNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteNotificationRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteNotificationRule, request, handler, context, m_executor.get());
 }
 
 DeleteTargetOutcome CodeStarNotificationsClient::DeleteTarget(const DeleteTargetRequest& request) const
@@ -223,18 +212,12 @@ DeleteTargetOutcome CodeStarNotificationsClient::DeleteTarget(const DeleteTarget
 
 DeleteTargetOutcomeCallable CodeStarNotificationsClient::DeleteTargetCallable(const DeleteTargetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTarget(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTarget, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::DeleteTargetAsync(const DeleteTargetRequest& request, const DeleteTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTarget(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTarget, request, handler, context, m_executor.get());
 }
 
 DescribeNotificationRuleOutcome CodeStarNotificationsClient::DescribeNotificationRule(const DescribeNotificationRuleRequest& request) const
@@ -248,18 +231,12 @@ DescribeNotificationRuleOutcome CodeStarNotificationsClient::DescribeNotificatio
 
 DescribeNotificationRuleOutcomeCallable CodeStarNotificationsClient::DescribeNotificationRuleCallable(const DescribeNotificationRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNotificationRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeNotificationRule, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::DescribeNotificationRuleAsync(const DescribeNotificationRuleRequest& request, const DescribeNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeNotificationRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeNotificationRule, request, handler, context, m_executor.get());
 }
 
 ListEventTypesOutcome CodeStarNotificationsClient::ListEventTypes(const ListEventTypesRequest& request) const
@@ -273,18 +250,12 @@ ListEventTypesOutcome CodeStarNotificationsClient::ListEventTypes(const ListEven
 
 ListEventTypesOutcomeCallable CodeStarNotificationsClient::ListEventTypesCallable(const ListEventTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEventTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventTypes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEventTypes, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::ListEventTypesAsync(const ListEventTypesRequest& request, const ListEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEventTypes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEventTypes, request, handler, context, m_executor.get());
 }
 
 ListNotificationRulesOutcome CodeStarNotificationsClient::ListNotificationRules(const ListNotificationRulesRequest& request) const
@@ -298,18 +269,12 @@ ListNotificationRulesOutcome CodeStarNotificationsClient::ListNotificationRules(
 
 ListNotificationRulesOutcomeCallable CodeStarNotificationsClient::ListNotificationRulesCallable(const ListNotificationRulesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNotificationRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNotificationRules(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNotificationRules, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::ListNotificationRulesAsync(const ListNotificationRulesRequest& request, const ListNotificationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNotificationRules(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNotificationRules, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome CodeStarNotificationsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -323,18 +288,12 @@ ListTagsForResourceOutcome CodeStarNotificationsClient::ListTagsForResource(cons
 
 ListTagsForResourceOutcomeCallable CodeStarNotificationsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTargetsOutcome CodeStarNotificationsClient::ListTargets(const ListTargetsRequest& request) const
@@ -348,18 +307,12 @@ ListTargetsOutcome CodeStarNotificationsClient::ListTargets(const ListTargetsReq
 
 ListTargetsOutcomeCallable CodeStarNotificationsClient::ListTargetsCallable(const ListTargetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTargetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTargets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTargets, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::ListTargetsAsync(const ListTargetsRequest& request, const ListTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTargets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTargets, request, handler, context, m_executor.get());
 }
 
 SubscribeOutcome CodeStarNotificationsClient::Subscribe(const SubscribeRequest& request) const
@@ -373,18 +326,12 @@ SubscribeOutcome CodeStarNotificationsClient::Subscribe(const SubscribeRequest& 
 
 SubscribeOutcomeCallable CodeStarNotificationsClient::SubscribeCallable(const SubscribeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SubscribeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Subscribe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(Subscribe, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::SubscribeAsync(const SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, Subscribe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(Subscribe, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome CodeStarNotificationsClient::TagResource(const TagResourceRequest& request) const
@@ -398,18 +345,12 @@ TagResourceOutcome CodeStarNotificationsClient::TagResource(const TagResourceReq
 
 TagResourceOutcomeCallable CodeStarNotificationsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UnsubscribeOutcome CodeStarNotificationsClient::Unsubscribe(const UnsubscribeRequest& request) const
@@ -423,18 +364,12 @@ UnsubscribeOutcome CodeStarNotificationsClient::Unsubscribe(const UnsubscribeReq
 
 UnsubscribeOutcomeCallable CodeStarNotificationsClient::UnsubscribeCallable(const UnsubscribeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UnsubscribeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Unsubscribe(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(Unsubscribe, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::UnsubscribeAsync(const UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, Unsubscribe(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(Unsubscribe, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome CodeStarNotificationsClient::UntagResource(const UntagResourceRequest& request) const
@@ -459,18 +394,12 @@ UntagResourceOutcome CodeStarNotificationsClient::UntagResource(const UntagResou
 
 UntagResourceOutcomeCallable CodeStarNotificationsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateNotificationRuleOutcome CodeStarNotificationsClient::UpdateNotificationRule(const UpdateNotificationRuleRequest& request) const
@@ -484,17 +413,11 @@ UpdateNotificationRuleOutcome CodeStarNotificationsClient::UpdateNotificationRul
 
 UpdateNotificationRuleOutcomeCallable CodeStarNotificationsClient::UpdateNotificationRuleCallable(const UpdateNotificationRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNotificationRule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateNotificationRule, request, m_executor.get());
 }
 
 void CodeStarNotificationsClient::UpdateNotificationRuleAsync(const UpdateNotificationRuleRequest& request, const UpdateNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateNotificationRule(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateNotificationRule, request, handler, context, m_executor.get());
 }
 

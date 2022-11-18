@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -173,18 +174,12 @@ CompleteAttachmentUploadOutcome ConnectParticipantClient::CompleteAttachmentUplo
 
 CompleteAttachmentUploadOutcomeCallable ConnectParticipantClient::CompleteAttachmentUploadCallable(const CompleteAttachmentUploadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CompleteAttachmentUploadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CompleteAttachmentUpload(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CompleteAttachmentUpload, request, m_executor.get());
 }
 
 void ConnectParticipantClient::CompleteAttachmentUploadAsync(const CompleteAttachmentUploadRequest& request, const CompleteAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CompleteAttachmentUpload(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CompleteAttachmentUpload, request, handler, context, m_executor.get());
 }
 
 CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantConnection(const CreateParticipantConnectionRequest& request) const
@@ -203,18 +198,12 @@ CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantCo
 
 CreateParticipantConnectionOutcomeCallable ConnectParticipantClient::CreateParticipantConnectionCallable(const CreateParticipantConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateParticipantConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateParticipantConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateParticipantConnection, request, m_executor.get());
 }
 
 void ConnectParticipantClient::CreateParticipantConnectionAsync(const CreateParticipantConnectionRequest& request, const CreateParticipantConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateParticipantConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateParticipantConnection, request, handler, context, m_executor.get());
 }
 
 DisconnectParticipantOutcome ConnectParticipantClient::DisconnectParticipant(const DisconnectParticipantRequest& request) const
@@ -233,18 +222,12 @@ DisconnectParticipantOutcome ConnectParticipantClient::DisconnectParticipant(con
 
 DisconnectParticipantOutcomeCallable ConnectParticipantClient::DisconnectParticipantCallable(const DisconnectParticipantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisconnectParticipantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisconnectParticipant(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisconnectParticipant, request, m_executor.get());
 }
 
 void ConnectParticipantClient::DisconnectParticipantAsync(const DisconnectParticipantRequest& request, const DisconnectParticipantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisconnectParticipant(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisconnectParticipant, request, handler, context, m_executor.get());
 }
 
 GetAttachmentOutcome ConnectParticipantClient::GetAttachment(const GetAttachmentRequest& request) const
@@ -263,18 +246,12 @@ GetAttachmentOutcome ConnectParticipantClient::GetAttachment(const GetAttachment
 
 GetAttachmentOutcomeCallable ConnectParticipantClient::GetAttachmentCallable(const GetAttachmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAttachmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAttachment(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAttachment, request, m_executor.get());
 }
 
 void ConnectParticipantClient::GetAttachmentAsync(const GetAttachmentRequest& request, const GetAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAttachment(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAttachment, request, handler, context, m_executor.get());
 }
 
 GetTranscriptOutcome ConnectParticipantClient::GetTranscript(const GetTranscriptRequest& request) const
@@ -293,18 +270,12 @@ GetTranscriptOutcome ConnectParticipantClient::GetTranscript(const GetTranscript
 
 GetTranscriptOutcomeCallable ConnectParticipantClient::GetTranscriptCallable(const GetTranscriptRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTranscriptOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTranscript(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetTranscript, request, m_executor.get());
 }
 
 void ConnectParticipantClient::GetTranscriptAsync(const GetTranscriptRequest& request, const GetTranscriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetTranscript(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetTranscript, request, handler, context, m_executor.get());
 }
 
 SendEventOutcome ConnectParticipantClient::SendEvent(const SendEventRequest& request) const
@@ -323,18 +294,12 @@ SendEventOutcome ConnectParticipantClient::SendEvent(const SendEventRequest& req
 
 SendEventOutcomeCallable ConnectParticipantClient::SendEventCallable(const SendEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendEvent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendEvent, request, m_executor.get());
 }
 
 void ConnectParticipantClient::SendEventAsync(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendEvent(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendEvent, request, handler, context, m_executor.get());
 }
 
 SendMessageOutcome ConnectParticipantClient::SendMessage(const SendMessageRequest& request) const
@@ -353,18 +318,12 @@ SendMessageOutcome ConnectParticipantClient::SendMessage(const SendMessageReques
 
 SendMessageOutcomeCallable ConnectParticipantClient::SendMessageCallable(const SendMessageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendMessage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SendMessage, request, m_executor.get());
 }
 
 void ConnectParticipantClient::SendMessageAsync(const SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SendMessage(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SendMessage, request, handler, context, m_executor.get());
 }
 
 StartAttachmentUploadOutcome ConnectParticipantClient::StartAttachmentUpload(const StartAttachmentUploadRequest& request) const
@@ -383,17 +342,11 @@ StartAttachmentUploadOutcome ConnectParticipantClient::StartAttachmentUpload(con
 
 StartAttachmentUploadOutcomeCallable ConnectParticipantClient::StartAttachmentUploadCallable(const StartAttachmentUploadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartAttachmentUploadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartAttachmentUpload(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartAttachmentUpload, request, m_executor.get());
 }
 
 void ConnectParticipantClient::StartAttachmentUploadAsync(const StartAttachmentUploadRequest& request, const StartAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartAttachmentUpload(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartAttachmentUpload, request, handler, context, m_executor.get());
 }
 

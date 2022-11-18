@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -167,18 +168,12 @@ CloseTunnelOutcome IoTSecureTunnelingClient::CloseTunnel(const CloseTunnelReques
 
 CloseTunnelOutcomeCallable IoTSecureTunnelingClient::CloseTunnelCallable(const CloseTunnelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CloseTunnelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CloseTunnel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CloseTunnel, request, m_executor.get());
 }
 
 void IoTSecureTunnelingClient::CloseTunnelAsync(const CloseTunnelRequest& request, const CloseTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CloseTunnel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CloseTunnel, request, handler, context, m_executor.get());
 }
 
 DescribeTunnelOutcome IoTSecureTunnelingClient::DescribeTunnel(const DescribeTunnelRequest& request) const
@@ -191,18 +186,12 @@ DescribeTunnelOutcome IoTSecureTunnelingClient::DescribeTunnel(const DescribeTun
 
 DescribeTunnelOutcomeCallable IoTSecureTunnelingClient::DescribeTunnelCallable(const DescribeTunnelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTunnelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTunnel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTunnel, request, m_executor.get());
 }
 
 void IoTSecureTunnelingClient::DescribeTunnelAsync(const DescribeTunnelRequest& request, const DescribeTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTunnel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTunnel, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome IoTSecureTunnelingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -215,18 +204,12 @@ ListTagsForResourceOutcome IoTSecureTunnelingClient::ListTagsForResource(const L
 
 ListTagsForResourceOutcomeCallable IoTSecureTunnelingClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void IoTSecureTunnelingClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTunnelsOutcome IoTSecureTunnelingClient::ListTunnels(const ListTunnelsRequest& request) const
@@ -239,18 +222,12 @@ ListTunnelsOutcome IoTSecureTunnelingClient::ListTunnels(const ListTunnelsReques
 
 ListTunnelsOutcomeCallable IoTSecureTunnelingClient::ListTunnelsCallable(const ListTunnelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTunnelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTunnels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTunnels, request, m_executor.get());
 }
 
 void IoTSecureTunnelingClient::ListTunnelsAsync(const ListTunnelsRequest& request, const ListTunnelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTunnels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTunnels, request, handler, context, m_executor.get());
 }
 
 OpenTunnelOutcome IoTSecureTunnelingClient::OpenTunnel(const OpenTunnelRequest& request) const
@@ -263,18 +240,12 @@ OpenTunnelOutcome IoTSecureTunnelingClient::OpenTunnel(const OpenTunnelRequest& 
 
 OpenTunnelOutcomeCallable IoTSecureTunnelingClient::OpenTunnelCallable(const OpenTunnelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< OpenTunnelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->OpenTunnel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(OpenTunnel, request, m_executor.get());
 }
 
 void IoTSecureTunnelingClient::OpenTunnelAsync(const OpenTunnelRequest& request, const OpenTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, OpenTunnel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(OpenTunnel, request, handler, context, m_executor.get());
 }
 
 RotateTunnelAccessTokenOutcome IoTSecureTunnelingClient::RotateTunnelAccessToken(const RotateTunnelAccessTokenRequest& request) const
@@ -287,18 +258,12 @@ RotateTunnelAccessTokenOutcome IoTSecureTunnelingClient::RotateTunnelAccessToken
 
 RotateTunnelAccessTokenOutcomeCallable IoTSecureTunnelingClient::RotateTunnelAccessTokenCallable(const RotateTunnelAccessTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RotateTunnelAccessTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RotateTunnelAccessToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RotateTunnelAccessToken, request, m_executor.get());
 }
 
 void IoTSecureTunnelingClient::RotateTunnelAccessTokenAsync(const RotateTunnelAccessTokenRequest& request, const RotateTunnelAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RotateTunnelAccessToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RotateTunnelAccessToken, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome IoTSecureTunnelingClient::TagResource(const TagResourceRequest& request) const
@@ -311,18 +276,12 @@ TagResourceOutcome IoTSecureTunnelingClient::TagResource(const TagResourceReques
 
 TagResourceOutcomeCallable IoTSecureTunnelingClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void IoTSecureTunnelingClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome IoTSecureTunnelingClient::UntagResource(const UntagResourceRequest& request) const
@@ -335,17 +294,11 @@ UntagResourceOutcome IoTSecureTunnelingClient::UntagResource(const UntagResource
 
 UntagResourceOutcomeCallable IoTSecureTunnelingClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void IoTSecureTunnelingClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 

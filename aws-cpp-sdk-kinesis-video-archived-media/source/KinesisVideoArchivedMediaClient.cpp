@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -166,18 +167,12 @@ GetClipOutcome KinesisVideoArchivedMediaClient::GetClip(const GetClipRequest& re
 
 GetClipOutcomeCallable KinesisVideoArchivedMediaClient::GetClipCallable(const GetClipRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetClipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetClip(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetClip, request, m_executor.get());
 }
 
 void KinesisVideoArchivedMediaClient::GetClipAsync(const GetClipRequest& request, const GetClipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetClip(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetClip, request, handler, context, m_executor.get());
 }
 
 GetDASHStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURL(const GetDASHStreamingSessionURLRequest& request) const
@@ -191,18 +186,12 @@ GetDASHStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetDASHStream
 
 GetDASHStreamingSessionURLOutcomeCallable KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURLCallable(const GetDASHStreamingSessionURLRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDASHStreamingSessionURLOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDASHStreamingSessionURL(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDASHStreamingSessionURL, request, m_executor.get());
 }
 
 void KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURLAsync(const GetDASHStreamingSessionURLRequest& request, const GetDASHStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDASHStreamingSessionURL(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDASHStreamingSessionURL, request, handler, context, m_executor.get());
 }
 
 GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURL(const GetHLSStreamingSessionURLRequest& request) const
@@ -216,18 +205,12 @@ GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamin
 
 GetHLSStreamingSessionURLOutcomeCallable KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURLCallable(const GetHLSStreamingSessionURLRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetHLSStreamingSessionURLOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHLSStreamingSessionURL(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetHLSStreamingSessionURL, request, m_executor.get());
 }
 
 void KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURLAsync(const GetHLSStreamingSessionURLRequest& request, const GetHLSStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetHLSStreamingSessionURL(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetHLSStreamingSessionURL, request, handler, context, m_executor.get());
 }
 
 GetImagesOutcome KinesisVideoArchivedMediaClient::GetImages(const GetImagesRequest& request) const
@@ -241,18 +224,12 @@ GetImagesOutcome KinesisVideoArchivedMediaClient::GetImages(const GetImagesReque
 
 GetImagesOutcomeCallable KinesisVideoArchivedMediaClient::GetImagesCallable(const GetImagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetImagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImages(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetImages, request, m_executor.get());
 }
 
 void KinesisVideoArchivedMediaClient::GetImagesAsync(const GetImagesRequest& request, const GetImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetImages(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetImages, request, handler, context, m_executor.get());
 }
 
 GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragmentList(const GetMediaForFragmentListRequest& request) const
@@ -266,18 +243,12 @@ GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragm
 
 GetMediaForFragmentListOutcomeCallable KinesisVideoArchivedMediaClient::GetMediaForFragmentListCallable(const GetMediaForFragmentListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMediaForFragmentListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMediaForFragmentList(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMediaForFragmentList, request, m_executor.get());
 }
 
 void KinesisVideoArchivedMediaClient::GetMediaForFragmentListAsync(const GetMediaForFragmentListRequest& request, const GetMediaForFragmentListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMediaForFragmentList(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMediaForFragmentList, request, handler, context, m_executor.get());
 }
 
 ListFragmentsOutcome KinesisVideoArchivedMediaClient::ListFragments(const ListFragmentsRequest& request) const
@@ -291,17 +262,11 @@ ListFragmentsOutcome KinesisVideoArchivedMediaClient::ListFragments(const ListFr
 
 ListFragmentsOutcomeCallable KinesisVideoArchivedMediaClient::ListFragmentsCallable(const ListFragmentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFragmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFragments(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFragments, request, m_executor.get());
 }
 
 void KinesisVideoArchivedMediaClient::ListFragmentsAsync(const ListFragmentsRequest& request, const ListFragmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFragments(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFragments, request, handler, context, m_executor.get());
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -172,18 +173,12 @@ CreateMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaCaptu
 
 CreateMediaCapturePipelineOutcomeCallable ChimeSDKMediaPipelinesClient::CreateMediaCapturePipelineCallable(const CreateMediaCapturePipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMediaCapturePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMediaCapturePipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMediaCapturePipeline, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::CreateMediaCapturePipelineAsync(const CreateMediaCapturePipelineRequest& request, const CreateMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMediaCapturePipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMediaCapturePipeline, request, handler, context, m_executor.get());
 }
 
 CreateMediaConcatenationPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaConcatenationPipeline(const CreateMediaConcatenationPipelineRequest& request) const
@@ -197,18 +192,12 @@ CreateMediaConcatenationPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMedi
 
 CreateMediaConcatenationPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::CreateMediaConcatenationPipelineCallable(const CreateMediaConcatenationPipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMediaConcatenationPipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMediaConcatenationPipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMediaConcatenationPipeline, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::CreateMediaConcatenationPipelineAsync(const CreateMediaConcatenationPipelineRequest& request, const CreateMediaConcatenationPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMediaConcatenationPipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMediaConcatenationPipeline, request, handler, context, m_executor.get());
 }
 
 CreateMediaLiveConnectorPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipeline(const CreateMediaLiveConnectorPipelineRequest& request) const
@@ -222,18 +211,12 @@ CreateMediaLiveConnectorPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMedi
 
 CreateMediaLiveConnectorPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipelineCallable(const CreateMediaLiveConnectorPipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMediaLiveConnectorPipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMediaLiveConnectorPipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMediaLiveConnectorPipeline, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipelineAsync(const CreateMediaLiveConnectorPipelineRequest& request, const CreateMediaLiveConnectorPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMediaLiveConnectorPipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMediaLiveConnectorPipeline, request, handler, context, m_executor.get());
 }
 
 DeleteMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipeline(const DeleteMediaCapturePipelineRequest& request) const
@@ -253,18 +236,12 @@ DeleteMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaCaptu
 
 DeleteMediaCapturePipelineOutcomeCallable ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipelineCallable(const DeleteMediaCapturePipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMediaCapturePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMediaCapturePipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMediaCapturePipeline, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipelineAsync(const DeleteMediaCapturePipelineRequest& request, const DeleteMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMediaCapturePipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMediaCapturePipeline, request, handler, context, m_executor.get());
 }
 
 DeleteMediaPipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipeline(const DeleteMediaPipelineRequest& request) const
@@ -284,18 +261,12 @@ DeleteMediaPipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipeline(con
 
 DeleteMediaPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::DeleteMediaPipelineCallable(const DeleteMediaPipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMediaPipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMediaPipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMediaPipeline, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::DeleteMediaPipelineAsync(const DeleteMediaPipelineRequest& request, const DeleteMediaPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMediaPipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMediaPipeline, request, handler, context, m_executor.get());
 }
 
 GetMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaCapturePipeline(const GetMediaCapturePipelineRequest& request) const
@@ -315,18 +286,12 @@ GetMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaCapturePipe
 
 GetMediaCapturePipelineOutcomeCallable ChimeSDKMediaPipelinesClient::GetMediaCapturePipelineCallable(const GetMediaCapturePipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMediaCapturePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMediaCapturePipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMediaCapturePipeline, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::GetMediaCapturePipelineAsync(const GetMediaCapturePipelineRequest& request, const GetMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMediaCapturePipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMediaCapturePipeline, request, handler, context, m_executor.get());
 }
 
 GetMediaPipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaPipeline(const GetMediaPipelineRequest& request) const
@@ -346,18 +311,12 @@ GetMediaPipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaPipeline(const Get
 
 GetMediaPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::GetMediaPipelineCallable(const GetMediaPipelineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMediaPipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMediaPipeline(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMediaPipeline, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::GetMediaPipelineAsync(const GetMediaPipelineRequest& request, const GetMediaPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMediaPipeline(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMediaPipeline, request, handler, context, m_executor.get());
 }
 
 ListMediaCapturePipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaCapturePipelines(const ListMediaCapturePipelinesRequest& request) const
@@ -371,18 +330,12 @@ ListMediaCapturePipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaCaptureP
 
 ListMediaCapturePipelinesOutcomeCallable ChimeSDKMediaPipelinesClient::ListMediaCapturePipelinesCallable(const ListMediaCapturePipelinesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMediaCapturePipelinesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMediaCapturePipelines(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMediaCapturePipelines, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::ListMediaCapturePipelinesAsync(const ListMediaCapturePipelinesRequest& request, const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMediaCapturePipelines(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMediaCapturePipelines, request, handler, context, m_executor.get());
 }
 
 ListMediaPipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaPipelines(const ListMediaPipelinesRequest& request) const
@@ -396,18 +349,12 @@ ListMediaPipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaPipelines(const
 
 ListMediaPipelinesOutcomeCallable ChimeSDKMediaPipelinesClient::ListMediaPipelinesCallable(const ListMediaPipelinesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMediaPipelinesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMediaPipelines(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMediaPipelines, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::ListMediaPipelinesAsync(const ListMediaPipelinesRequest& request, const ListMediaPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMediaPipelines(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMediaPipelines, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ChimeSDKMediaPipelinesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -426,18 +373,12 @@ ListTagsForResourceOutcome ChimeSDKMediaPipelinesClient::ListTagsForResource(con
 
 ListTagsForResourceOutcomeCallable ChimeSDKMediaPipelinesClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ChimeSDKMediaPipelinesClient::TagResource(const TagResourceRequest& request) const
@@ -454,18 +395,12 @@ TagResourceOutcome ChimeSDKMediaPipelinesClient::TagResource(const TagResourceRe
 
 TagResourceOutcomeCallable ChimeSDKMediaPipelinesClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ChimeSDKMediaPipelinesClient::UntagResource(const UntagResourceRequest& request) const
@@ -482,17 +417,11 @@ UntagResourceOutcome ChimeSDKMediaPipelinesClient::UntagResource(const UntagReso
 
 UntagResourceOutcomeCallable ChimeSDKMediaPipelinesClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ChimeSDKMediaPipelinesClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 

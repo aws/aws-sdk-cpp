@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -190,18 +191,12 @@ ActivateAnomalyDetectorOutcome LookoutMetricsClient::ActivateAnomalyDetector(con
 
 ActivateAnomalyDetectorOutcomeCallable LookoutMetricsClient::ActivateAnomalyDetectorCallable(const ActivateAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ActivateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ActivateAnomalyDetector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ActivateAnomalyDetector, request, m_executor.get());
 }
 
 void LookoutMetricsClient::ActivateAnomalyDetectorAsync(const ActivateAnomalyDetectorRequest& request, const ActivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ActivateAnomalyDetector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ActivateAnomalyDetector, request, handler, context, m_executor.get());
 }
 
 BackTestAnomalyDetectorOutcome LookoutMetricsClient::BackTestAnomalyDetector(const BackTestAnomalyDetectorRequest& request) const
@@ -215,18 +210,12 @@ BackTestAnomalyDetectorOutcome LookoutMetricsClient::BackTestAnomalyDetector(con
 
 BackTestAnomalyDetectorOutcomeCallable LookoutMetricsClient::BackTestAnomalyDetectorCallable(const BackTestAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BackTestAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BackTestAnomalyDetector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BackTestAnomalyDetector, request, m_executor.get());
 }
 
 void LookoutMetricsClient::BackTestAnomalyDetectorAsync(const BackTestAnomalyDetectorRequest& request, const BackTestAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BackTestAnomalyDetector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BackTestAnomalyDetector, request, handler, context, m_executor.get());
 }
 
 CreateAlertOutcome LookoutMetricsClient::CreateAlert(const CreateAlertRequest& request) const
@@ -240,18 +229,12 @@ CreateAlertOutcome LookoutMetricsClient::CreateAlert(const CreateAlertRequest& r
 
 CreateAlertOutcomeCallable LookoutMetricsClient::CreateAlertCallable(const CreateAlertRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAlertOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAlert(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAlert, request, m_executor.get());
 }
 
 void LookoutMetricsClient::CreateAlertAsync(const CreateAlertRequest& request, const CreateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAlert(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAlert, request, handler, context, m_executor.get());
 }
 
 CreateAnomalyDetectorOutcome LookoutMetricsClient::CreateAnomalyDetector(const CreateAnomalyDetectorRequest& request) const
@@ -265,18 +248,12 @@ CreateAnomalyDetectorOutcome LookoutMetricsClient::CreateAnomalyDetector(const C
 
 CreateAnomalyDetectorOutcomeCallable LookoutMetricsClient::CreateAnomalyDetectorCallable(const CreateAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAnomalyDetector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAnomalyDetector, request, m_executor.get());
 }
 
 void LookoutMetricsClient::CreateAnomalyDetectorAsync(const CreateAnomalyDetectorRequest& request, const CreateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAnomalyDetector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAnomalyDetector, request, handler, context, m_executor.get());
 }
 
 CreateMetricSetOutcome LookoutMetricsClient::CreateMetricSet(const CreateMetricSetRequest& request) const
@@ -290,18 +267,12 @@ CreateMetricSetOutcome LookoutMetricsClient::CreateMetricSet(const CreateMetricS
 
 CreateMetricSetOutcomeCallable LookoutMetricsClient::CreateMetricSetCallable(const CreateMetricSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMetricSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMetricSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMetricSet, request, m_executor.get());
 }
 
 void LookoutMetricsClient::CreateMetricSetAsync(const CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMetricSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMetricSet, request, handler, context, m_executor.get());
 }
 
 DeactivateAnomalyDetectorOutcome LookoutMetricsClient::DeactivateAnomalyDetector(const DeactivateAnomalyDetectorRequest& request) const
@@ -315,18 +286,12 @@ DeactivateAnomalyDetectorOutcome LookoutMetricsClient::DeactivateAnomalyDetector
 
 DeactivateAnomalyDetectorOutcomeCallable LookoutMetricsClient::DeactivateAnomalyDetectorCallable(const DeactivateAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeactivateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeactivateAnomalyDetector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeactivateAnomalyDetector, request, m_executor.get());
 }
 
 void LookoutMetricsClient::DeactivateAnomalyDetectorAsync(const DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeactivateAnomalyDetector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeactivateAnomalyDetector, request, handler, context, m_executor.get());
 }
 
 DeleteAlertOutcome LookoutMetricsClient::DeleteAlert(const DeleteAlertRequest& request) const
@@ -340,18 +305,12 @@ DeleteAlertOutcome LookoutMetricsClient::DeleteAlert(const DeleteAlertRequest& r
 
 DeleteAlertOutcomeCallable LookoutMetricsClient::DeleteAlertCallable(const DeleteAlertRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAlertOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAlert(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAlert, request, m_executor.get());
 }
 
 void LookoutMetricsClient::DeleteAlertAsync(const DeleteAlertRequest& request, const DeleteAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAlert(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAlert, request, handler, context, m_executor.get());
 }
 
 DeleteAnomalyDetectorOutcome LookoutMetricsClient::DeleteAnomalyDetector(const DeleteAnomalyDetectorRequest& request) const
@@ -365,18 +324,12 @@ DeleteAnomalyDetectorOutcome LookoutMetricsClient::DeleteAnomalyDetector(const D
 
 DeleteAnomalyDetectorOutcomeCallable LookoutMetricsClient::DeleteAnomalyDetectorCallable(const DeleteAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAnomalyDetector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAnomalyDetector, request, m_executor.get());
 }
 
 void LookoutMetricsClient::DeleteAnomalyDetectorAsync(const DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAnomalyDetector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAnomalyDetector, request, handler, context, m_executor.get());
 }
 
 DescribeAlertOutcome LookoutMetricsClient::DescribeAlert(const DescribeAlertRequest& request) const
@@ -390,18 +343,12 @@ DescribeAlertOutcome LookoutMetricsClient::DescribeAlert(const DescribeAlertRequ
 
 DescribeAlertOutcomeCallable LookoutMetricsClient::DescribeAlertCallable(const DescribeAlertRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAlertOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAlert(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAlert, request, m_executor.get());
 }
 
 void LookoutMetricsClient::DescribeAlertAsync(const DescribeAlertRequest& request, const DescribeAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAlert(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAlert, request, handler, context, m_executor.get());
 }
 
 DescribeAnomalyDetectionExecutionsOutcome LookoutMetricsClient::DescribeAnomalyDetectionExecutions(const DescribeAnomalyDetectionExecutionsRequest& request) const
@@ -415,18 +362,12 @@ DescribeAnomalyDetectionExecutionsOutcome LookoutMetricsClient::DescribeAnomalyD
 
 DescribeAnomalyDetectionExecutionsOutcomeCallable LookoutMetricsClient::DescribeAnomalyDetectionExecutionsCallable(const DescribeAnomalyDetectionExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAnomalyDetectionExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAnomalyDetectionExecutions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAnomalyDetectionExecutions, request, m_executor.get());
 }
 
 void LookoutMetricsClient::DescribeAnomalyDetectionExecutionsAsync(const DescribeAnomalyDetectionExecutionsRequest& request, const DescribeAnomalyDetectionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAnomalyDetectionExecutions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAnomalyDetectionExecutions, request, handler, context, m_executor.get());
 }
 
 DescribeAnomalyDetectorOutcome LookoutMetricsClient::DescribeAnomalyDetector(const DescribeAnomalyDetectorRequest& request) const
@@ -440,18 +381,12 @@ DescribeAnomalyDetectorOutcome LookoutMetricsClient::DescribeAnomalyDetector(con
 
 DescribeAnomalyDetectorOutcomeCallable LookoutMetricsClient::DescribeAnomalyDetectorCallable(const DescribeAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAnomalyDetector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAnomalyDetector, request, m_executor.get());
 }
 
 void LookoutMetricsClient::DescribeAnomalyDetectorAsync(const DescribeAnomalyDetectorRequest& request, const DescribeAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAnomalyDetector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAnomalyDetector, request, handler, context, m_executor.get());
 }
 
 DescribeMetricSetOutcome LookoutMetricsClient::DescribeMetricSet(const DescribeMetricSetRequest& request) const
@@ -465,18 +400,12 @@ DescribeMetricSetOutcome LookoutMetricsClient::DescribeMetricSet(const DescribeM
 
 DescribeMetricSetOutcomeCallable LookoutMetricsClient::DescribeMetricSetCallable(const DescribeMetricSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeMetricSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMetricSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeMetricSet, request, m_executor.get());
 }
 
 void LookoutMetricsClient::DescribeMetricSetAsync(const DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeMetricSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeMetricSet, request, handler, context, m_executor.get());
 }
 
 DetectMetricSetConfigOutcome LookoutMetricsClient::DetectMetricSetConfig(const DetectMetricSetConfigRequest& request) const
@@ -490,18 +419,12 @@ DetectMetricSetConfigOutcome LookoutMetricsClient::DetectMetricSetConfig(const D
 
 DetectMetricSetConfigOutcomeCallable LookoutMetricsClient::DetectMetricSetConfigCallable(const DetectMetricSetConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DetectMetricSetConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectMetricSetConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DetectMetricSetConfig, request, m_executor.get());
 }
 
 void LookoutMetricsClient::DetectMetricSetConfigAsync(const DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DetectMetricSetConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DetectMetricSetConfig, request, handler, context, m_executor.get());
 }
 
 GetAnomalyGroupOutcome LookoutMetricsClient::GetAnomalyGroup(const GetAnomalyGroupRequest& request) const
@@ -515,18 +438,12 @@ GetAnomalyGroupOutcome LookoutMetricsClient::GetAnomalyGroup(const GetAnomalyGro
 
 GetAnomalyGroupOutcomeCallable LookoutMetricsClient::GetAnomalyGroupCallable(const GetAnomalyGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAnomalyGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAnomalyGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAnomalyGroup, request, m_executor.get());
 }
 
 void LookoutMetricsClient::GetAnomalyGroupAsync(const GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAnomalyGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAnomalyGroup, request, handler, context, m_executor.get());
 }
 
 GetDataQualityMetricsOutcome LookoutMetricsClient::GetDataQualityMetrics(const GetDataQualityMetricsRequest& request) const
@@ -540,18 +457,12 @@ GetDataQualityMetricsOutcome LookoutMetricsClient::GetDataQualityMetrics(const G
 
 GetDataQualityMetricsOutcomeCallable LookoutMetricsClient::GetDataQualityMetricsCallable(const GetDataQualityMetricsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataQualityMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataQualityMetrics(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDataQualityMetrics, request, m_executor.get());
 }
 
 void LookoutMetricsClient::GetDataQualityMetricsAsync(const GetDataQualityMetricsRequest& request, const GetDataQualityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDataQualityMetrics(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDataQualityMetrics, request, handler, context, m_executor.get());
 }
 
 GetFeedbackOutcome LookoutMetricsClient::GetFeedback(const GetFeedbackRequest& request) const
@@ -565,18 +476,12 @@ GetFeedbackOutcome LookoutMetricsClient::GetFeedback(const GetFeedbackRequest& r
 
 GetFeedbackOutcomeCallable LookoutMetricsClient::GetFeedbackCallable(const GetFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFeedback(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetFeedback, request, m_executor.get());
 }
 
 void LookoutMetricsClient::GetFeedbackAsync(const GetFeedbackRequest& request, const GetFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetFeedback(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetFeedback, request, handler, context, m_executor.get());
 }
 
 GetSampleDataOutcome LookoutMetricsClient::GetSampleData(const GetSampleDataRequest& request) const
@@ -590,18 +495,12 @@ GetSampleDataOutcome LookoutMetricsClient::GetSampleData(const GetSampleDataRequ
 
 GetSampleDataOutcomeCallable LookoutMetricsClient::GetSampleDataCallable(const GetSampleDataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSampleDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSampleData(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSampleData, request, m_executor.get());
 }
 
 void LookoutMetricsClient::GetSampleDataAsync(const GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSampleData(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSampleData, request, handler, context, m_executor.get());
 }
 
 ListAlertsOutcome LookoutMetricsClient::ListAlerts(const ListAlertsRequest& request) const
@@ -615,18 +514,12 @@ ListAlertsOutcome LookoutMetricsClient::ListAlerts(const ListAlertsRequest& requ
 
 ListAlertsOutcomeCallable LookoutMetricsClient::ListAlertsCallable(const ListAlertsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAlertsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAlerts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAlerts, request, m_executor.get());
 }
 
 void LookoutMetricsClient::ListAlertsAsync(const ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAlerts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAlerts, request, handler, context, m_executor.get());
 }
 
 ListAnomalyDetectorsOutcome LookoutMetricsClient::ListAnomalyDetectors(const ListAnomalyDetectorsRequest& request) const
@@ -640,18 +533,12 @@ ListAnomalyDetectorsOutcome LookoutMetricsClient::ListAnomalyDetectors(const Lis
 
 ListAnomalyDetectorsOutcomeCallable LookoutMetricsClient::ListAnomalyDetectorsCallable(const ListAnomalyDetectorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyDetectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnomalyDetectors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAnomalyDetectors, request, m_executor.get());
 }
 
 void LookoutMetricsClient::ListAnomalyDetectorsAsync(const ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAnomalyDetectors(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAnomalyDetectors, request, handler, context, m_executor.get());
 }
 
 ListAnomalyGroupRelatedMetricsOutcome LookoutMetricsClient::ListAnomalyGroupRelatedMetrics(const ListAnomalyGroupRelatedMetricsRequest& request) const
@@ -665,18 +552,12 @@ ListAnomalyGroupRelatedMetricsOutcome LookoutMetricsClient::ListAnomalyGroupRela
 
 ListAnomalyGroupRelatedMetricsOutcomeCallable LookoutMetricsClient::ListAnomalyGroupRelatedMetricsCallable(const ListAnomalyGroupRelatedMetricsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyGroupRelatedMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnomalyGroupRelatedMetrics(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAnomalyGroupRelatedMetrics, request, m_executor.get());
 }
 
 void LookoutMetricsClient::ListAnomalyGroupRelatedMetricsAsync(const ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAnomalyGroupRelatedMetrics(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAnomalyGroupRelatedMetrics, request, handler, context, m_executor.get());
 }
 
 ListAnomalyGroupSummariesOutcome LookoutMetricsClient::ListAnomalyGroupSummaries(const ListAnomalyGroupSummariesRequest& request) const
@@ -690,18 +571,12 @@ ListAnomalyGroupSummariesOutcome LookoutMetricsClient::ListAnomalyGroupSummaries
 
 ListAnomalyGroupSummariesOutcomeCallable LookoutMetricsClient::ListAnomalyGroupSummariesCallable(const ListAnomalyGroupSummariesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyGroupSummariesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnomalyGroupSummaries(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAnomalyGroupSummaries, request, m_executor.get());
 }
 
 void LookoutMetricsClient::ListAnomalyGroupSummariesAsync(const ListAnomalyGroupSummariesRequest& request, const ListAnomalyGroupSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAnomalyGroupSummaries(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAnomalyGroupSummaries, request, handler, context, m_executor.get());
 }
 
 ListAnomalyGroupTimeSeriesOutcome LookoutMetricsClient::ListAnomalyGroupTimeSeries(const ListAnomalyGroupTimeSeriesRequest& request) const
@@ -715,18 +590,12 @@ ListAnomalyGroupTimeSeriesOutcome LookoutMetricsClient::ListAnomalyGroupTimeSeri
 
 ListAnomalyGroupTimeSeriesOutcomeCallable LookoutMetricsClient::ListAnomalyGroupTimeSeriesCallable(const ListAnomalyGroupTimeSeriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyGroupTimeSeriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnomalyGroupTimeSeries(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAnomalyGroupTimeSeries, request, m_executor.get());
 }
 
 void LookoutMetricsClient::ListAnomalyGroupTimeSeriesAsync(const ListAnomalyGroupTimeSeriesRequest& request, const ListAnomalyGroupTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAnomalyGroupTimeSeries(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAnomalyGroupTimeSeries, request, handler, context, m_executor.get());
 }
 
 ListMetricSetsOutcome LookoutMetricsClient::ListMetricSets(const ListMetricSetsRequest& request) const
@@ -740,18 +609,12 @@ ListMetricSetsOutcome LookoutMetricsClient::ListMetricSets(const ListMetricSetsR
 
 ListMetricSetsOutcomeCallable LookoutMetricsClient::ListMetricSetsCallable(const ListMetricSetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMetricSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMetricSets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMetricSets, request, m_executor.get());
 }
 
 void LookoutMetricsClient::ListMetricSetsAsync(const ListMetricSetsRequest& request, const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMetricSets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMetricSets, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome LookoutMetricsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -771,18 +634,12 @@ ListTagsForResourceOutcome LookoutMetricsClient::ListTagsForResource(const ListT
 
 ListTagsForResourceOutcomeCallable LookoutMetricsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void LookoutMetricsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutFeedbackOutcome LookoutMetricsClient::PutFeedback(const PutFeedbackRequest& request) const
@@ -796,18 +653,12 @@ PutFeedbackOutcome LookoutMetricsClient::PutFeedback(const PutFeedbackRequest& r
 
 PutFeedbackOutcomeCallable LookoutMetricsClient::PutFeedbackCallable(const PutFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutFeedback(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutFeedback, request, m_executor.get());
 }
 
 void LookoutMetricsClient::PutFeedbackAsync(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutFeedback(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutFeedback, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome LookoutMetricsClient::TagResource(const TagResourceRequest& request) const
@@ -827,18 +678,12 @@ TagResourceOutcome LookoutMetricsClient::TagResource(const TagResourceRequest& r
 
 TagResourceOutcomeCallable LookoutMetricsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void LookoutMetricsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome LookoutMetricsClient::UntagResource(const UntagResourceRequest& request) const
@@ -863,18 +708,12 @@ UntagResourceOutcome LookoutMetricsClient::UntagResource(const UntagResourceRequ
 
 UntagResourceOutcomeCallable LookoutMetricsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void LookoutMetricsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateAlertOutcome LookoutMetricsClient::UpdateAlert(const UpdateAlertRequest& request) const
@@ -888,18 +727,12 @@ UpdateAlertOutcome LookoutMetricsClient::UpdateAlert(const UpdateAlertRequest& r
 
 UpdateAlertOutcomeCallable LookoutMetricsClient::UpdateAlertCallable(const UpdateAlertRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAlertOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAlert(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAlert, request, m_executor.get());
 }
 
 void LookoutMetricsClient::UpdateAlertAsync(const UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAlert(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAlert, request, handler, context, m_executor.get());
 }
 
 UpdateAnomalyDetectorOutcome LookoutMetricsClient::UpdateAnomalyDetector(const UpdateAnomalyDetectorRequest& request) const
@@ -913,18 +746,12 @@ UpdateAnomalyDetectorOutcome LookoutMetricsClient::UpdateAnomalyDetector(const U
 
 UpdateAnomalyDetectorOutcomeCallable LookoutMetricsClient::UpdateAnomalyDetectorCallable(const UpdateAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAnomalyDetector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAnomalyDetector, request, m_executor.get());
 }
 
 void LookoutMetricsClient::UpdateAnomalyDetectorAsync(const UpdateAnomalyDetectorRequest& request, const UpdateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAnomalyDetector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAnomalyDetector, request, handler, context, m_executor.get());
 }
 
 UpdateMetricSetOutcome LookoutMetricsClient::UpdateMetricSet(const UpdateMetricSetRequest& request) const
@@ -938,17 +765,11 @@ UpdateMetricSetOutcome LookoutMetricsClient::UpdateMetricSet(const UpdateMetricS
 
 UpdateMetricSetOutcomeCallable LookoutMetricsClient::UpdateMetricSetCallable(const UpdateMetricSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMetricSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMetricSet(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateMetricSet, request, m_executor.get());
 }
 
 void LookoutMetricsClient::UpdateMetricSetAsync(const UpdateMetricSetRequest& request, const UpdateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateMetricSet(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateMetricSet, request, handler, context, m_executor.get());
 }
 

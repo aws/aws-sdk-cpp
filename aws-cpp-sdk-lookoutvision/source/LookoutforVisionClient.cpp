@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -106,10 +107,10 @@ LookoutforVisionClient::LookoutforVisionClient(const std::shared_ptr<AWSCredenti
     /* Legacy constructors due deprecation */
   LookoutforVisionClient::LookoutforVisionClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LookoutforVisionErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -121,10 +122,10 @@ LookoutforVisionClient::LookoutforVisionClient(const std::shared_ptr<AWSCredenti
 LookoutforVisionClient::LookoutforVisionClient(const AWSCredentials& credentials,
                                                const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LookoutforVisionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -136,10 +137,10 @@ LookoutforVisionClient::LookoutforVisionClient(const AWSCredentials& credentials
 LookoutforVisionClient::LookoutforVisionClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                                const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LookoutforVisionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -189,18 +190,12 @@ CreateDatasetOutcome LookoutforVisionClient::CreateDataset(const CreateDatasetRe
 
 CreateDatasetOutcomeCallable LookoutforVisionClient::CreateDatasetCallable(const CreateDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateDataset, request, m_executor.get());
 }
 
 void LookoutforVisionClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateDataset, request, handler, context, m_executor.get());
 }
 
 CreateModelOutcome LookoutforVisionClient::CreateModel(const CreateModelRequest& request) const
@@ -221,18 +216,12 @@ CreateModelOutcome LookoutforVisionClient::CreateModel(const CreateModelRequest&
 
 CreateModelOutcomeCallable LookoutforVisionClient::CreateModelCallable(const CreateModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateModel, request, m_executor.get());
 }
 
 void LookoutforVisionClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateModel, request, handler, context, m_executor.get());
 }
 
 CreateProjectOutcome LookoutforVisionClient::CreateProject(const CreateProjectRequest& request) const
@@ -246,18 +235,12 @@ CreateProjectOutcome LookoutforVisionClient::CreateProject(const CreateProjectRe
 
 CreateProjectOutcomeCallable LookoutforVisionClient::CreateProjectCallable(const CreateProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateProject, request, m_executor.get());
 }
 
 void LookoutforVisionClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateProject, request, handler, context, m_executor.get());
 }
 
 DeleteDatasetOutcome LookoutforVisionClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -284,18 +267,12 @@ DeleteDatasetOutcome LookoutforVisionClient::DeleteDataset(const DeleteDatasetRe
 
 DeleteDatasetOutcomeCallable LookoutforVisionClient::DeleteDatasetCallable(const DeleteDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteDataset, request, m_executor.get());
 }
 
 void LookoutforVisionClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteDataset, request, handler, context, m_executor.get());
 }
 
 DeleteModelOutcome LookoutforVisionClient::DeleteModel(const DeleteModelRequest& request) const
@@ -322,18 +299,12 @@ DeleteModelOutcome LookoutforVisionClient::DeleteModel(const DeleteModelRequest&
 
 DeleteModelOutcomeCallable LookoutforVisionClient::DeleteModelCallable(const DeleteModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteModel, request, m_executor.get());
 }
 
 void LookoutforVisionClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteModel, request, handler, context, m_executor.get());
 }
 
 DeleteProjectOutcome LookoutforVisionClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -353,18 +324,12 @@ DeleteProjectOutcome LookoutforVisionClient::DeleteProject(const DeleteProjectRe
 
 DeleteProjectOutcomeCallable LookoutforVisionClient::DeleteProjectCallable(const DeleteProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteProject, request, m_executor.get());
 }
 
 void LookoutforVisionClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteProject, request, handler, context, m_executor.get());
 }
 
 DescribeDatasetOutcome LookoutforVisionClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -391,18 +356,12 @@ DescribeDatasetOutcome LookoutforVisionClient::DescribeDataset(const DescribeDat
 
 DescribeDatasetOutcomeCallable LookoutforVisionClient::DescribeDatasetCallable(const DescribeDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataset(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeDataset, request, m_executor.get());
 }
 
 void LookoutforVisionClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeDataset(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeDataset, request, handler, context, m_executor.get());
 }
 
 DescribeModelOutcome LookoutforVisionClient::DescribeModel(const DescribeModelRequest& request) const
@@ -429,18 +388,12 @@ DescribeModelOutcome LookoutforVisionClient::DescribeModel(const DescribeModelRe
 
 DescribeModelOutcomeCallable LookoutforVisionClient::DescribeModelCallable(const DescribeModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeModel, request, m_executor.get());
 }
 
 void LookoutforVisionClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeModel, request, handler, context, m_executor.get());
 }
 
 DescribeModelPackagingJobOutcome LookoutforVisionClient::DescribeModelPackagingJob(const DescribeModelPackagingJobRequest& request) const
@@ -467,18 +420,12 @@ DescribeModelPackagingJobOutcome LookoutforVisionClient::DescribeModelPackagingJ
 
 DescribeModelPackagingJobOutcomeCallable LookoutforVisionClient::DescribeModelPackagingJobCallable(const DescribeModelPackagingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelPackagingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModelPackagingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeModelPackagingJob, request, m_executor.get());
 }
 
 void LookoutforVisionClient::DescribeModelPackagingJobAsync(const DescribeModelPackagingJobRequest& request, const DescribeModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeModelPackagingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeModelPackagingJob, request, handler, context, m_executor.get());
 }
 
 DescribeProjectOutcome LookoutforVisionClient::DescribeProject(const DescribeProjectRequest& request) const
@@ -498,18 +445,12 @@ DescribeProjectOutcome LookoutforVisionClient::DescribeProject(const DescribePro
 
 DescribeProjectOutcomeCallable LookoutforVisionClient::DescribeProjectCallable(const DescribeProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProject(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeProject, request, m_executor.get());
 }
 
 void LookoutforVisionClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeProject(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeProject, request, handler, context, m_executor.get());
 }
 
 DetectAnomaliesOutcome LookoutforVisionClient::DetectAnomalies(const DetectAnomaliesRequest& request) const
@@ -537,18 +478,12 @@ DetectAnomaliesOutcome LookoutforVisionClient::DetectAnomalies(const DetectAnoma
 
 DetectAnomaliesOutcomeCallable LookoutforVisionClient::DetectAnomaliesCallable(const DetectAnomaliesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DetectAnomaliesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectAnomalies(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DetectAnomalies, request, m_executor.get());
 }
 
 void LookoutforVisionClient::DetectAnomaliesAsync(const DetectAnomaliesRequest& request, const DetectAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DetectAnomalies(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DetectAnomalies, request, handler, context, m_executor.get());
 }
 
 ListDatasetEntriesOutcome LookoutforVisionClient::ListDatasetEntries(const ListDatasetEntriesRequest& request) const
@@ -576,18 +511,12 @@ ListDatasetEntriesOutcome LookoutforVisionClient::ListDatasetEntries(const ListD
 
 ListDatasetEntriesOutcomeCallable LookoutforVisionClient::ListDatasetEntriesCallable(const ListDatasetEntriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasetEntriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasetEntries(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDatasetEntries, request, m_executor.get());
 }
 
 void LookoutforVisionClient::ListDatasetEntriesAsync(const ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatasetEntries(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDatasetEntries, request, handler, context, m_executor.get());
 }
 
 ListModelPackagingJobsOutcome LookoutforVisionClient::ListModelPackagingJobs(const ListModelPackagingJobsRequest& request) const
@@ -608,18 +537,12 @@ ListModelPackagingJobsOutcome LookoutforVisionClient::ListModelPackagingJobs(con
 
 ListModelPackagingJobsOutcomeCallable LookoutforVisionClient::ListModelPackagingJobsCallable(const ListModelPackagingJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelPackagingJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelPackagingJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListModelPackagingJobs, request, m_executor.get());
 }
 
 void LookoutforVisionClient::ListModelPackagingJobsAsync(const ListModelPackagingJobsRequest& request, const ListModelPackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListModelPackagingJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListModelPackagingJobs, request, handler, context, m_executor.get());
 }
 
 ListModelsOutcome LookoutforVisionClient::ListModels(const ListModelsRequest& request) const
@@ -640,18 +563,12 @@ ListModelsOutcome LookoutforVisionClient::ListModels(const ListModelsRequest& re
 
 ListModelsOutcomeCallable LookoutforVisionClient::ListModelsCallable(const ListModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListModels, request, m_executor.get());
 }
 
 void LookoutforVisionClient::ListModelsAsync(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListModels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListModels, request, handler, context, m_executor.get());
 }
 
 ListProjectsOutcome LookoutforVisionClient::ListProjects(const ListProjectsRequest& request) const
@@ -665,18 +582,12 @@ ListProjectsOutcome LookoutforVisionClient::ListProjects(const ListProjectsReque
 
 ListProjectsOutcomeCallable LookoutforVisionClient::ListProjectsCallable(const ListProjectsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProjectsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProjects(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListProjects, request, m_executor.get());
 }
 
 void LookoutforVisionClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListProjects(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListProjects, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome LookoutforVisionClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -696,18 +607,12 @@ ListTagsForResourceOutcome LookoutforVisionClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable LookoutforVisionClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void LookoutforVisionClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 StartModelOutcome LookoutforVisionClient::StartModel(const StartModelRequest& request) const
@@ -735,18 +640,12 @@ StartModelOutcome LookoutforVisionClient::StartModel(const StartModelRequest& re
 
 StartModelOutcomeCallable LookoutforVisionClient::StartModelCallable(const StartModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartModel, request, m_executor.get());
 }
 
 void LookoutforVisionClient::StartModelAsync(const StartModelRequest& request, const StartModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartModel, request, handler, context, m_executor.get());
 }
 
 StartModelPackagingJobOutcome LookoutforVisionClient::StartModelPackagingJob(const StartModelPackagingJobRequest& request) const
@@ -767,18 +666,12 @@ StartModelPackagingJobOutcome LookoutforVisionClient::StartModelPackagingJob(con
 
 StartModelPackagingJobOutcomeCallable LookoutforVisionClient::StartModelPackagingJobCallable(const StartModelPackagingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartModelPackagingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartModelPackagingJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartModelPackagingJob, request, m_executor.get());
 }
 
 void LookoutforVisionClient::StartModelPackagingJobAsync(const StartModelPackagingJobRequest& request, const StartModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartModelPackagingJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartModelPackagingJob, request, handler, context, m_executor.get());
 }
 
 StopModelOutcome LookoutforVisionClient::StopModel(const StopModelRequest& request) const
@@ -806,18 +699,12 @@ StopModelOutcome LookoutforVisionClient::StopModel(const StopModelRequest& reque
 
 StopModelOutcomeCallable LookoutforVisionClient::StopModelCallable(const StopModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopModel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopModel, request, m_executor.get());
 }
 
 void LookoutforVisionClient::StopModelAsync(const StopModelRequest& request, const StopModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopModel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopModel, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome LookoutforVisionClient::TagResource(const TagResourceRequest& request) const
@@ -837,18 +724,12 @@ TagResourceOutcome LookoutforVisionClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable LookoutforVisionClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void LookoutforVisionClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome LookoutforVisionClient::UntagResource(const UntagResourceRequest& request) const
@@ -873,18 +754,12 @@ UntagResourceOutcome LookoutforVisionClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable LookoutforVisionClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void LookoutforVisionClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateDatasetEntriesOutcome LookoutforVisionClient::UpdateDatasetEntries(const UpdateDatasetEntriesRequest& request) const
@@ -912,17 +787,11 @@ UpdateDatasetEntriesOutcome LookoutforVisionClient::UpdateDatasetEntries(const U
 
 UpdateDatasetEntriesOutcomeCallable LookoutforVisionClient::UpdateDatasetEntriesCallable(const UpdateDatasetEntriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDatasetEntriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDatasetEntries(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDatasetEntries, request, m_executor.get());
 }
 
 void LookoutforVisionClient::UpdateDatasetEntriesAsync(const UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDatasetEntries(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDatasetEntries, request, handler, context, m_executor.get());
 }
 

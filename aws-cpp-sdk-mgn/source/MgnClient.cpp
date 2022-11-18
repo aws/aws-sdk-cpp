@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -193,18 +194,12 @@ ChangeServerLifeCycleStateOutcome MgnClient::ChangeServerLifeCycleState(const Ch
 
 ChangeServerLifeCycleStateOutcomeCallable MgnClient::ChangeServerLifeCycleStateCallable(const ChangeServerLifeCycleStateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ChangeServerLifeCycleStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ChangeServerLifeCycleState(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ChangeServerLifeCycleState, request, m_executor.get());
 }
 
 void MgnClient::ChangeServerLifeCycleStateAsync(const ChangeServerLifeCycleStateRequest& request, const ChangeServerLifeCycleStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ChangeServerLifeCycleState(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ChangeServerLifeCycleState, request, handler, context, m_executor.get());
 }
 
 CreateLaunchConfigurationTemplateOutcome MgnClient::CreateLaunchConfigurationTemplate(const CreateLaunchConfigurationTemplateRequest& request) const
@@ -218,18 +213,12 @@ CreateLaunchConfigurationTemplateOutcome MgnClient::CreateLaunchConfigurationTem
 
 CreateLaunchConfigurationTemplateOutcomeCallable MgnClient::CreateLaunchConfigurationTemplateCallable(const CreateLaunchConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLaunchConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLaunchConfigurationTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateLaunchConfigurationTemplate, request, m_executor.get());
 }
 
 void MgnClient::CreateLaunchConfigurationTemplateAsync(const CreateLaunchConfigurationTemplateRequest& request, const CreateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateLaunchConfigurationTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateLaunchConfigurationTemplate, request, handler, context, m_executor.get());
 }
 
 CreateReplicationConfigurationTemplateOutcome MgnClient::CreateReplicationConfigurationTemplate(const CreateReplicationConfigurationTemplateRequest& request) const
@@ -243,18 +232,12 @@ CreateReplicationConfigurationTemplateOutcome MgnClient::CreateReplicationConfig
 
 CreateReplicationConfigurationTemplateOutcomeCallable MgnClient::CreateReplicationConfigurationTemplateCallable(const CreateReplicationConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateReplicationConfigurationTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateReplicationConfigurationTemplate, request, m_executor.get());
 }
 
 void MgnClient::CreateReplicationConfigurationTemplateAsync(const CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateReplicationConfigurationTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateReplicationConfigurationTemplate, request, handler, context, m_executor.get());
 }
 
 DeleteJobOutcome MgnClient::DeleteJob(const DeleteJobRequest& request) const
@@ -268,18 +251,12 @@ DeleteJobOutcome MgnClient::DeleteJob(const DeleteJobRequest& request) const
 
 DeleteJobOutcomeCallable MgnClient::DeleteJobCallable(const DeleteJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteJob, request, m_executor.get());
 }
 
 void MgnClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteJob, request, handler, context, m_executor.get());
 }
 
 DeleteLaunchConfigurationTemplateOutcome MgnClient::DeleteLaunchConfigurationTemplate(const DeleteLaunchConfigurationTemplateRequest& request) const
@@ -293,18 +270,12 @@ DeleteLaunchConfigurationTemplateOutcome MgnClient::DeleteLaunchConfigurationTem
 
 DeleteLaunchConfigurationTemplateOutcomeCallable MgnClient::DeleteLaunchConfigurationTemplateCallable(const DeleteLaunchConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLaunchConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLaunchConfigurationTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteLaunchConfigurationTemplate, request, m_executor.get());
 }
 
 void MgnClient::DeleteLaunchConfigurationTemplateAsync(const DeleteLaunchConfigurationTemplateRequest& request, const DeleteLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteLaunchConfigurationTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteLaunchConfigurationTemplate, request, handler, context, m_executor.get());
 }
 
 DeleteReplicationConfigurationTemplateOutcome MgnClient::DeleteReplicationConfigurationTemplate(const DeleteReplicationConfigurationTemplateRequest& request) const
@@ -318,18 +289,12 @@ DeleteReplicationConfigurationTemplateOutcome MgnClient::DeleteReplicationConfig
 
 DeleteReplicationConfigurationTemplateOutcomeCallable MgnClient::DeleteReplicationConfigurationTemplateCallable(const DeleteReplicationConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReplicationConfigurationTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteReplicationConfigurationTemplate, request, m_executor.get());
 }
 
 void MgnClient::DeleteReplicationConfigurationTemplateAsync(const DeleteReplicationConfigurationTemplateRequest& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteReplicationConfigurationTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteReplicationConfigurationTemplate, request, handler, context, m_executor.get());
 }
 
 DeleteSourceServerOutcome MgnClient::DeleteSourceServer(const DeleteSourceServerRequest& request) const
@@ -343,18 +308,12 @@ DeleteSourceServerOutcome MgnClient::DeleteSourceServer(const DeleteSourceServer
 
 DeleteSourceServerOutcomeCallable MgnClient::DeleteSourceServerCallable(const DeleteSourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSourceServer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSourceServer, request, m_executor.get());
 }
 
 void MgnClient::DeleteSourceServerAsync(const DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSourceServer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSourceServer, request, handler, context, m_executor.get());
 }
 
 DeleteVcenterClientOutcome MgnClient::DeleteVcenterClient(const DeleteVcenterClientRequest& request) const
@@ -368,18 +327,12 @@ DeleteVcenterClientOutcome MgnClient::DeleteVcenterClient(const DeleteVcenterCli
 
 DeleteVcenterClientOutcomeCallable MgnClient::DeleteVcenterClientCallable(const DeleteVcenterClientRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteVcenterClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVcenterClient(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteVcenterClient, request, m_executor.get());
 }
 
 void MgnClient::DeleteVcenterClientAsync(const DeleteVcenterClientRequest& request, const DeleteVcenterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteVcenterClient(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteVcenterClient, request, handler, context, m_executor.get());
 }
 
 DescribeJobLogItemsOutcome MgnClient::DescribeJobLogItems(const DescribeJobLogItemsRequest& request) const
@@ -393,18 +346,12 @@ DescribeJobLogItemsOutcome MgnClient::DescribeJobLogItems(const DescribeJobLogIt
 
 DescribeJobLogItemsOutcomeCallable MgnClient::DescribeJobLogItemsCallable(const DescribeJobLogItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobLogItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobLogItems(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJobLogItems, request, m_executor.get());
 }
 
 void MgnClient::DescribeJobLogItemsAsync(const DescribeJobLogItemsRequest& request, const DescribeJobLogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJobLogItems(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJobLogItems, request, handler, context, m_executor.get());
 }
 
 DescribeJobsOutcome MgnClient::DescribeJobs(const DescribeJobsRequest& request) const
@@ -418,18 +365,12 @@ DescribeJobsOutcome MgnClient::DescribeJobs(const DescribeJobsRequest& request) 
 
 DescribeJobsOutcomeCallable MgnClient::DescribeJobsCallable(const DescribeJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJobs, request, m_executor.get());
 }
 
 void MgnClient::DescribeJobsAsync(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJobs, request, handler, context, m_executor.get());
 }
 
 DescribeLaunchConfigurationTemplatesOutcome MgnClient::DescribeLaunchConfigurationTemplates(const DescribeLaunchConfigurationTemplatesRequest& request) const
@@ -443,18 +384,12 @@ DescribeLaunchConfigurationTemplatesOutcome MgnClient::DescribeLaunchConfigurati
 
 DescribeLaunchConfigurationTemplatesOutcomeCallable MgnClient::DescribeLaunchConfigurationTemplatesCallable(const DescribeLaunchConfigurationTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLaunchConfigurationTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLaunchConfigurationTemplates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLaunchConfigurationTemplates, request, m_executor.get());
 }
 
 void MgnClient::DescribeLaunchConfigurationTemplatesAsync(const DescribeLaunchConfigurationTemplatesRequest& request, const DescribeLaunchConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLaunchConfigurationTemplates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLaunchConfigurationTemplates, request, handler, context, m_executor.get());
 }
 
 DescribeReplicationConfigurationTemplatesOutcome MgnClient::DescribeReplicationConfigurationTemplates(const DescribeReplicationConfigurationTemplatesRequest& request) const
@@ -468,18 +403,12 @@ DescribeReplicationConfigurationTemplatesOutcome MgnClient::DescribeReplicationC
 
 DescribeReplicationConfigurationTemplatesOutcomeCallable MgnClient::DescribeReplicationConfigurationTemplatesCallable(const DescribeReplicationConfigurationTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeReplicationConfigurationTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReplicationConfigurationTemplates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeReplicationConfigurationTemplates, request, m_executor.get());
 }
 
 void MgnClient::DescribeReplicationConfigurationTemplatesAsync(const DescribeReplicationConfigurationTemplatesRequest& request, const DescribeReplicationConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeReplicationConfigurationTemplates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeReplicationConfigurationTemplates, request, handler, context, m_executor.get());
 }
 
 DescribeSourceServersOutcome MgnClient::DescribeSourceServers(const DescribeSourceServersRequest& request) const
@@ -493,18 +422,12 @@ DescribeSourceServersOutcome MgnClient::DescribeSourceServers(const DescribeSour
 
 DescribeSourceServersOutcomeCallable MgnClient::DescribeSourceServersCallable(const DescribeSourceServersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSourceServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSourceServers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSourceServers, request, m_executor.get());
 }
 
 void MgnClient::DescribeSourceServersAsync(const DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSourceServers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSourceServers, request, handler, context, m_executor.get());
 }
 
 DescribeVcenterClientsOutcome MgnClient::DescribeVcenterClients(const DescribeVcenterClientsRequest& request) const
@@ -518,18 +441,12 @@ DescribeVcenterClientsOutcome MgnClient::DescribeVcenterClients(const DescribeVc
 
 DescribeVcenterClientsOutcomeCallable MgnClient::DescribeVcenterClientsCallable(const DescribeVcenterClientsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeVcenterClientsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVcenterClients(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeVcenterClients, request, m_executor.get());
 }
 
 void MgnClient::DescribeVcenterClientsAsync(const DescribeVcenterClientsRequest& request, const DescribeVcenterClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeVcenterClients(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeVcenterClients, request, handler, context, m_executor.get());
 }
 
 DisconnectFromServiceOutcome MgnClient::DisconnectFromService(const DisconnectFromServiceRequest& request) const
@@ -543,18 +460,12 @@ DisconnectFromServiceOutcome MgnClient::DisconnectFromService(const DisconnectFr
 
 DisconnectFromServiceOutcomeCallable MgnClient::DisconnectFromServiceCallable(const DisconnectFromServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisconnectFromServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisconnectFromService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisconnectFromService, request, m_executor.get());
 }
 
 void MgnClient::DisconnectFromServiceAsync(const DisconnectFromServiceRequest& request, const DisconnectFromServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisconnectFromService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisconnectFromService, request, handler, context, m_executor.get());
 }
 
 FinalizeCutoverOutcome MgnClient::FinalizeCutover(const FinalizeCutoverRequest& request) const
@@ -568,18 +479,12 @@ FinalizeCutoverOutcome MgnClient::FinalizeCutover(const FinalizeCutoverRequest& 
 
 FinalizeCutoverOutcomeCallable MgnClient::FinalizeCutoverCallable(const FinalizeCutoverRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< FinalizeCutoverOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->FinalizeCutover(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(FinalizeCutover, request, m_executor.get());
 }
 
 void MgnClient::FinalizeCutoverAsync(const FinalizeCutoverRequest& request, const FinalizeCutoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, FinalizeCutover(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(FinalizeCutover, request, handler, context, m_executor.get());
 }
 
 GetLaunchConfigurationOutcome MgnClient::GetLaunchConfiguration(const GetLaunchConfigurationRequest& request) const
@@ -593,18 +498,12 @@ GetLaunchConfigurationOutcome MgnClient::GetLaunchConfiguration(const GetLaunchC
 
 GetLaunchConfigurationOutcomeCallable MgnClient::GetLaunchConfigurationCallable(const GetLaunchConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLaunchConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLaunchConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetLaunchConfiguration, request, m_executor.get());
 }
 
 void MgnClient::GetLaunchConfigurationAsync(const GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetLaunchConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetLaunchConfiguration, request, handler, context, m_executor.get());
 }
 
 GetReplicationConfigurationOutcome MgnClient::GetReplicationConfiguration(const GetReplicationConfigurationRequest& request) const
@@ -618,18 +517,12 @@ GetReplicationConfigurationOutcome MgnClient::GetReplicationConfiguration(const 
 
 GetReplicationConfigurationOutcomeCallable MgnClient::GetReplicationConfigurationCallable(const GetReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReplicationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetReplicationConfiguration, request, m_executor.get());
 }
 
 void MgnClient::GetReplicationConfigurationAsync(const GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetReplicationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetReplicationConfiguration, request, handler, context, m_executor.get());
 }
 
 InitializeServiceOutcome MgnClient::InitializeService(const InitializeServiceRequest& request) const
@@ -643,18 +536,12 @@ InitializeServiceOutcome MgnClient::InitializeService(const InitializeServiceReq
 
 InitializeServiceOutcomeCallable MgnClient::InitializeServiceCallable(const InitializeServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InitializeServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InitializeService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(InitializeService, request, m_executor.get());
 }
 
 void MgnClient::InitializeServiceAsync(const InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, InitializeService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(InitializeService, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome MgnClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -674,18 +561,12 @@ ListTagsForResourceOutcome MgnClient::ListTagsForResource(const ListTagsForResou
 
 ListTagsForResourceOutcomeCallable MgnClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void MgnClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 MarkAsArchivedOutcome MgnClient::MarkAsArchived(const MarkAsArchivedRequest& request) const
@@ -699,18 +580,12 @@ MarkAsArchivedOutcome MgnClient::MarkAsArchived(const MarkAsArchivedRequest& req
 
 MarkAsArchivedOutcomeCallable MgnClient::MarkAsArchivedCallable(const MarkAsArchivedRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< MarkAsArchivedOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->MarkAsArchived(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(MarkAsArchived, request, m_executor.get());
 }
 
 void MgnClient::MarkAsArchivedAsync(const MarkAsArchivedRequest& request, const MarkAsArchivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, MarkAsArchived(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(MarkAsArchived, request, handler, context, m_executor.get());
 }
 
 RetryDataReplicationOutcome MgnClient::RetryDataReplication(const RetryDataReplicationRequest& request) const
@@ -724,18 +599,12 @@ RetryDataReplicationOutcome MgnClient::RetryDataReplication(const RetryDataRepli
 
 RetryDataReplicationOutcomeCallable MgnClient::RetryDataReplicationCallable(const RetryDataReplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RetryDataReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RetryDataReplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RetryDataReplication, request, m_executor.get());
 }
 
 void MgnClient::RetryDataReplicationAsync(const RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RetryDataReplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RetryDataReplication, request, handler, context, m_executor.get());
 }
 
 StartCutoverOutcome MgnClient::StartCutover(const StartCutoverRequest& request) const
@@ -749,18 +618,12 @@ StartCutoverOutcome MgnClient::StartCutover(const StartCutoverRequest& request) 
 
 StartCutoverOutcomeCallable MgnClient::StartCutoverCallable(const StartCutoverRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartCutoverOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartCutover(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartCutover, request, m_executor.get());
 }
 
 void MgnClient::StartCutoverAsync(const StartCutoverRequest& request, const StartCutoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartCutover(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartCutover, request, handler, context, m_executor.get());
 }
 
 StartReplicationOutcome MgnClient::StartReplication(const StartReplicationRequest& request) const
@@ -774,18 +637,12 @@ StartReplicationOutcome MgnClient::StartReplication(const StartReplicationReques
 
 StartReplicationOutcomeCallable MgnClient::StartReplicationCallable(const StartReplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartReplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartReplication, request, m_executor.get());
 }
 
 void MgnClient::StartReplicationAsync(const StartReplicationRequest& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartReplication(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartReplication, request, handler, context, m_executor.get());
 }
 
 StartTestOutcome MgnClient::StartTest(const StartTestRequest& request) const
@@ -799,18 +656,12 @@ StartTestOutcome MgnClient::StartTest(const StartTestRequest& request) const
 
 StartTestOutcomeCallable MgnClient::StartTestCallable(const StartTestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartTestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartTest(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartTest, request, m_executor.get());
 }
 
 void MgnClient::StartTestAsync(const StartTestRequest& request, const StartTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartTest(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartTest, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome MgnClient::TagResource(const TagResourceRequest& request) const
@@ -830,18 +681,12 @@ TagResourceOutcome MgnClient::TagResource(const TagResourceRequest& request) con
 
 TagResourceOutcomeCallable MgnClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void MgnClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 TerminateTargetInstancesOutcome MgnClient::TerminateTargetInstances(const TerminateTargetInstancesRequest& request) const
@@ -855,18 +700,12 @@ TerminateTargetInstancesOutcome MgnClient::TerminateTargetInstances(const Termin
 
 TerminateTargetInstancesOutcomeCallable MgnClient::TerminateTargetInstancesCallable(const TerminateTargetInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TerminateTargetInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TerminateTargetInstances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TerminateTargetInstances, request, m_executor.get());
 }
 
 void MgnClient::TerminateTargetInstancesAsync(const TerminateTargetInstancesRequest& request, const TerminateTargetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TerminateTargetInstances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TerminateTargetInstances, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome MgnClient::UntagResource(const UntagResourceRequest& request) const
@@ -891,18 +730,12 @@ UntagResourceOutcome MgnClient::UntagResource(const UntagResourceRequest& reques
 
 UntagResourceOutcomeCallable MgnClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void MgnClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateLaunchConfigurationOutcome MgnClient::UpdateLaunchConfiguration(const UpdateLaunchConfigurationRequest& request) const
@@ -916,18 +749,12 @@ UpdateLaunchConfigurationOutcome MgnClient::UpdateLaunchConfiguration(const Upda
 
 UpdateLaunchConfigurationOutcomeCallable MgnClient::UpdateLaunchConfigurationCallable(const UpdateLaunchConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLaunchConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLaunchConfiguration, request, m_executor.get());
 }
 
 void MgnClient::UpdateLaunchConfigurationAsync(const UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLaunchConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLaunchConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateLaunchConfigurationTemplateOutcome MgnClient::UpdateLaunchConfigurationTemplate(const UpdateLaunchConfigurationTemplateRequest& request) const
@@ -941,18 +768,12 @@ UpdateLaunchConfigurationTemplateOutcome MgnClient::UpdateLaunchConfigurationTem
 
 UpdateLaunchConfigurationTemplateOutcomeCallable MgnClient::UpdateLaunchConfigurationTemplateCallable(const UpdateLaunchConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLaunchConfigurationTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateLaunchConfigurationTemplate, request, m_executor.get());
 }
 
 void MgnClient::UpdateLaunchConfigurationTemplateAsync(const UpdateLaunchConfigurationTemplateRequest& request, const UpdateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateLaunchConfigurationTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateLaunchConfigurationTemplate, request, handler, context, m_executor.get());
 }
 
 UpdateReplicationConfigurationOutcome MgnClient::UpdateReplicationConfiguration(const UpdateReplicationConfigurationRequest& request) const
@@ -966,18 +787,12 @@ UpdateReplicationConfigurationOutcome MgnClient::UpdateReplicationConfiguration(
 
 UpdateReplicationConfigurationOutcomeCallable MgnClient::UpdateReplicationConfigurationCallable(const UpdateReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReplicationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateReplicationConfiguration, request, m_executor.get());
 }
 
 void MgnClient::UpdateReplicationConfigurationAsync(const UpdateReplicationConfigurationRequest& request, const UpdateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateReplicationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateReplicationConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateReplicationConfigurationTemplateOutcome MgnClient::UpdateReplicationConfigurationTemplate(const UpdateReplicationConfigurationTemplateRequest& request) const
@@ -991,18 +806,12 @@ UpdateReplicationConfigurationTemplateOutcome MgnClient::UpdateReplicationConfig
 
 UpdateReplicationConfigurationTemplateOutcomeCallable MgnClient::UpdateReplicationConfigurationTemplateCallable(const UpdateReplicationConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReplicationConfigurationTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateReplicationConfigurationTemplate, request, m_executor.get());
 }
 
 void MgnClient::UpdateReplicationConfigurationTemplateAsync(const UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateReplicationConfigurationTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateReplicationConfigurationTemplate, request, handler, context, m_executor.get());
 }
 
 UpdateSourceServerReplicationTypeOutcome MgnClient::UpdateSourceServerReplicationType(const UpdateSourceServerReplicationTypeRequest& request) const
@@ -1016,17 +825,11 @@ UpdateSourceServerReplicationTypeOutcome MgnClient::UpdateSourceServerReplicatio
 
 UpdateSourceServerReplicationTypeOutcomeCallable MgnClient::UpdateSourceServerReplicationTypeCallable(const UpdateSourceServerReplicationTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSourceServerReplicationTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSourceServerReplicationType(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSourceServerReplicationType, request, m_executor.get());
 }
 
 void MgnClient::UpdateSourceServerReplicationTypeAsync(const UpdateSourceServerReplicationTypeRequest& request, const UpdateSourceServerReplicationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSourceServerReplicationType(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSourceServerReplicationType, request, handler, context, m_executor.get());
 }
 

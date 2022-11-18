@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -185,18 +186,12 @@ CreateHttpNamespaceOutcome ServiceDiscoveryClient::CreateHttpNamespace(const Cre
 
 CreateHttpNamespaceOutcomeCallable ServiceDiscoveryClient::CreateHttpNamespaceCallable(const CreateHttpNamespaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHttpNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHttpNamespace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateHttpNamespace, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::CreateHttpNamespaceAsync(const CreateHttpNamespaceRequest& request, const CreateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateHttpNamespace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateHttpNamespace, request, handler, context, m_executor.get());
 }
 
 CreatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::CreatePrivateDnsNamespace(const CreatePrivateDnsNamespaceRequest& request) const
@@ -209,18 +204,12 @@ CreatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::CreatePrivateDnsNamespa
 
 CreatePrivateDnsNamespaceOutcomeCallable ServiceDiscoveryClient::CreatePrivateDnsNamespaceCallable(const CreatePrivateDnsNamespaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePrivateDnsNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePrivateDnsNamespace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePrivateDnsNamespace, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::CreatePrivateDnsNamespaceAsync(const CreatePrivateDnsNamespaceRequest& request, const CreatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePrivateDnsNamespace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePrivateDnsNamespace, request, handler, context, m_executor.get());
 }
 
 CreatePublicDnsNamespaceOutcome ServiceDiscoveryClient::CreatePublicDnsNamespace(const CreatePublicDnsNamespaceRequest& request) const
@@ -233,18 +222,12 @@ CreatePublicDnsNamespaceOutcome ServiceDiscoveryClient::CreatePublicDnsNamespace
 
 CreatePublicDnsNamespaceOutcomeCallable ServiceDiscoveryClient::CreatePublicDnsNamespaceCallable(const CreatePublicDnsNamespaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePublicDnsNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePublicDnsNamespace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreatePublicDnsNamespace, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::CreatePublicDnsNamespaceAsync(const CreatePublicDnsNamespaceRequest& request, const CreatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreatePublicDnsNamespace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreatePublicDnsNamespace, request, handler, context, m_executor.get());
 }
 
 CreateServiceOutcome ServiceDiscoveryClient::CreateService(const CreateServiceRequest& request) const
@@ -257,18 +240,12 @@ CreateServiceOutcome ServiceDiscoveryClient::CreateService(const CreateServiceRe
 
 CreateServiceOutcomeCallable ServiceDiscoveryClient::CreateServiceCallable(const CreateServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateService, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateService, request, handler, context, m_executor.get());
 }
 
 DeleteNamespaceOutcome ServiceDiscoveryClient::DeleteNamespace(const DeleteNamespaceRequest& request) const
@@ -281,18 +258,12 @@ DeleteNamespaceOutcome ServiceDiscoveryClient::DeleteNamespace(const DeleteNames
 
 DeleteNamespaceOutcomeCallable ServiceDiscoveryClient::DeleteNamespaceCallable(const DeleteNamespaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNamespace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteNamespace, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::DeleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteNamespace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteNamespace, request, handler, context, m_executor.get());
 }
 
 DeleteServiceOutcome ServiceDiscoveryClient::DeleteService(const DeleteServiceRequest& request) const
@@ -305,18 +276,12 @@ DeleteServiceOutcome ServiceDiscoveryClient::DeleteService(const DeleteServiceRe
 
 DeleteServiceOutcomeCallable ServiceDiscoveryClient::DeleteServiceCallable(const DeleteServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteService, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteService, request, handler, context, m_executor.get());
 }
 
 DeregisterInstanceOutcome ServiceDiscoveryClient::DeregisterInstance(const DeregisterInstanceRequest& request) const
@@ -329,18 +294,12 @@ DeregisterInstanceOutcome ServiceDiscoveryClient::DeregisterInstance(const Dereg
 
 DeregisterInstanceOutcomeCallable ServiceDiscoveryClient::DeregisterInstanceCallable(const DeregisterInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeregisterInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeregisterInstance, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::DeregisterInstanceAsync(const DeregisterInstanceRequest& request, const DeregisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeregisterInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeregisterInstance, request, handler, context, m_executor.get());
 }
 
 DiscoverInstancesOutcome ServiceDiscoveryClient::DiscoverInstances(const DiscoverInstancesRequest& request) const
@@ -355,18 +314,12 @@ DiscoverInstancesOutcome ServiceDiscoveryClient::DiscoverInstances(const Discove
 
 DiscoverInstancesOutcomeCallable ServiceDiscoveryClient::DiscoverInstancesCallable(const DiscoverInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DiscoverInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DiscoverInstances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DiscoverInstances, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::DiscoverInstancesAsync(const DiscoverInstancesRequest& request, const DiscoverInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DiscoverInstances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DiscoverInstances, request, handler, context, m_executor.get());
 }
 
 GetInstanceOutcome ServiceDiscoveryClient::GetInstance(const GetInstanceRequest& request) const
@@ -379,18 +332,12 @@ GetInstanceOutcome ServiceDiscoveryClient::GetInstance(const GetInstanceRequest&
 
 GetInstanceOutcomeCallable ServiceDiscoveryClient::GetInstanceCallable(const GetInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetInstance, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::GetInstanceAsync(const GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetInstance, request, handler, context, m_executor.get());
 }
 
 GetInstancesHealthStatusOutcome ServiceDiscoveryClient::GetInstancesHealthStatus(const GetInstancesHealthStatusRequest& request) const
@@ -403,18 +350,12 @@ GetInstancesHealthStatusOutcome ServiceDiscoveryClient::GetInstancesHealthStatus
 
 GetInstancesHealthStatusOutcomeCallable ServiceDiscoveryClient::GetInstancesHealthStatusCallable(const GetInstancesHealthStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetInstancesHealthStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInstancesHealthStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetInstancesHealthStatus, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::GetInstancesHealthStatusAsync(const GetInstancesHealthStatusRequest& request, const GetInstancesHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetInstancesHealthStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetInstancesHealthStatus, request, handler, context, m_executor.get());
 }
 
 GetNamespaceOutcome ServiceDiscoveryClient::GetNamespace(const GetNamespaceRequest& request) const
@@ -427,18 +368,12 @@ GetNamespaceOutcome ServiceDiscoveryClient::GetNamespace(const GetNamespaceReque
 
 GetNamespaceOutcomeCallable ServiceDiscoveryClient::GetNamespaceCallable(const GetNamespaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNamespace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetNamespace, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::GetNamespaceAsync(const GetNamespaceRequest& request, const GetNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetNamespace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetNamespace, request, handler, context, m_executor.get());
 }
 
 GetOperationOutcome ServiceDiscoveryClient::GetOperation(const GetOperationRequest& request) const
@@ -451,18 +386,12 @@ GetOperationOutcome ServiceDiscoveryClient::GetOperation(const GetOperationReque
 
 GetOperationOutcomeCallable ServiceDiscoveryClient::GetOperationCallable(const GetOperationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetOperationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOperation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetOperation, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::GetOperationAsync(const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetOperation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetOperation, request, handler, context, m_executor.get());
 }
 
 GetServiceOutcome ServiceDiscoveryClient::GetService(const GetServiceRequest& request) const
@@ -475,18 +404,12 @@ GetServiceOutcome ServiceDiscoveryClient::GetService(const GetServiceRequest& re
 
 GetServiceOutcomeCallable ServiceDiscoveryClient::GetServiceCallable(const GetServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetService, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::GetServiceAsync(const GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetService, request, handler, context, m_executor.get());
 }
 
 ListInstancesOutcome ServiceDiscoveryClient::ListInstances(const ListInstancesRequest& request) const
@@ -499,18 +422,12 @@ ListInstancesOutcome ServiceDiscoveryClient::ListInstances(const ListInstancesRe
 
 ListInstancesOutcomeCallable ServiceDiscoveryClient::ListInstancesCallable(const ListInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInstances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInstances, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInstances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInstances, request, handler, context, m_executor.get());
 }
 
 ListNamespacesOutcome ServiceDiscoveryClient::ListNamespaces(const ListNamespacesRequest& request) const
@@ -523,18 +440,12 @@ ListNamespacesOutcome ServiceDiscoveryClient::ListNamespaces(const ListNamespace
 
 ListNamespacesOutcomeCallable ServiceDiscoveryClient::ListNamespacesCallable(const ListNamespacesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNamespacesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNamespaces(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListNamespaces, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::ListNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListNamespaces(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListNamespaces, request, handler, context, m_executor.get());
 }
 
 ListOperationsOutcome ServiceDiscoveryClient::ListOperations(const ListOperationsRequest& request) const
@@ -547,18 +458,12 @@ ListOperationsOutcome ServiceDiscoveryClient::ListOperations(const ListOperation
 
 ListOperationsOutcomeCallable ServiceDiscoveryClient::ListOperationsCallable(const ListOperationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListOperationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOperations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListOperations, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::ListOperationsAsync(const ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListOperations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListOperations, request, handler, context, m_executor.get());
 }
 
 ListServicesOutcome ServiceDiscoveryClient::ListServices(const ListServicesRequest& request) const
@@ -571,18 +476,12 @@ ListServicesOutcome ServiceDiscoveryClient::ListServices(const ListServicesReque
 
 ListServicesOutcomeCallable ServiceDiscoveryClient::ListServicesCallable(const ListServicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListServicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListServices, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListServices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListServices, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ServiceDiscoveryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -595,18 +494,12 @@ ListTagsForResourceOutcome ServiceDiscoveryClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable ServiceDiscoveryClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 RegisterInstanceOutcome ServiceDiscoveryClient::RegisterInstance(const RegisterInstanceRequest& request) const
@@ -619,18 +512,12 @@ RegisterInstanceOutcome ServiceDiscoveryClient::RegisterInstance(const RegisterI
 
 RegisterInstanceOutcomeCallable ServiceDiscoveryClient::RegisterInstanceCallable(const RegisterInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RegisterInstance, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::RegisterInstanceAsync(const RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RegisterInstance, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ServiceDiscoveryClient::TagResource(const TagResourceRequest& request) const
@@ -643,18 +530,12 @@ TagResourceOutcome ServiceDiscoveryClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable ServiceDiscoveryClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ServiceDiscoveryClient::UntagResource(const UntagResourceRequest& request) const
@@ -667,18 +548,12 @@ UntagResourceOutcome ServiceDiscoveryClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable ServiceDiscoveryClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateHttpNamespaceOutcome ServiceDiscoveryClient::UpdateHttpNamespace(const UpdateHttpNamespaceRequest& request) const
@@ -691,18 +566,12 @@ UpdateHttpNamespaceOutcome ServiceDiscoveryClient::UpdateHttpNamespace(const Upd
 
 UpdateHttpNamespaceOutcomeCallable ServiceDiscoveryClient::UpdateHttpNamespaceCallable(const UpdateHttpNamespaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateHttpNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateHttpNamespace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateHttpNamespace, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::UpdateHttpNamespaceAsync(const UpdateHttpNamespaceRequest& request, const UpdateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateHttpNamespace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateHttpNamespace, request, handler, context, m_executor.get());
 }
 
 UpdateInstanceCustomHealthStatusOutcome ServiceDiscoveryClient::UpdateInstanceCustomHealthStatus(const UpdateInstanceCustomHealthStatusRequest& request) const
@@ -715,18 +584,12 @@ UpdateInstanceCustomHealthStatusOutcome ServiceDiscoveryClient::UpdateInstanceCu
 
 UpdateInstanceCustomHealthStatusOutcomeCallable ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusCallable(const UpdateInstanceCustomHealthStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateInstanceCustomHealthStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInstanceCustomHealthStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateInstanceCustomHealthStatus, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusAsync(const UpdateInstanceCustomHealthStatusRequest& request, const UpdateInstanceCustomHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateInstanceCustomHealthStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateInstanceCustomHealthStatus, request, handler, context, m_executor.get());
 }
 
 UpdatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePrivateDnsNamespace(const UpdatePrivateDnsNamespaceRequest& request) const
@@ -739,18 +602,12 @@ UpdatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePrivateDnsNamespa
 
 UpdatePrivateDnsNamespaceOutcomeCallable ServiceDiscoveryClient::UpdatePrivateDnsNamespaceCallable(const UpdatePrivateDnsNamespaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePrivateDnsNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePrivateDnsNamespace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePrivateDnsNamespace, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::UpdatePrivateDnsNamespaceAsync(const UpdatePrivateDnsNamespaceRequest& request, const UpdatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePrivateDnsNamespace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePrivateDnsNamespace, request, handler, context, m_executor.get());
 }
 
 UpdatePublicDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePublicDnsNamespace(const UpdatePublicDnsNamespaceRequest& request) const
@@ -763,18 +620,12 @@ UpdatePublicDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePublicDnsNamespace
 
 UpdatePublicDnsNamespaceOutcomeCallable ServiceDiscoveryClient::UpdatePublicDnsNamespaceCallable(const UpdatePublicDnsNamespaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePublicDnsNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePublicDnsNamespace(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdatePublicDnsNamespace, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::UpdatePublicDnsNamespaceAsync(const UpdatePublicDnsNamespaceRequest& request, const UpdatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdatePublicDnsNamespace(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdatePublicDnsNamespace, request, handler, context, m_executor.get());
 }
 
 UpdateServiceOutcome ServiceDiscoveryClient::UpdateService(const UpdateServiceRequest& request) const
@@ -787,17 +638,11 @@ UpdateServiceOutcome ServiceDiscoveryClient::UpdateService(const UpdateServiceRe
 
 UpdateServiceOutcomeCallable ServiceDiscoveryClient::UpdateServiceCallable(const UpdateServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateService(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateService, request, m_executor.get());
 }
 
 void ServiceDiscoveryClient::UpdateServiceAsync(const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateService(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateService, request, handler, context, m_executor.get());
 }
 

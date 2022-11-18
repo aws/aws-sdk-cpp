@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -182,18 +183,12 @@ CreateConnectorProfileOutcome AppflowClient::CreateConnectorProfile(const Create
 
 CreateConnectorProfileOutcomeCallable AppflowClient::CreateConnectorProfileCallable(const CreateConnectorProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConnectorProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnectorProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateConnectorProfile, request, m_executor.get());
 }
 
 void AppflowClient::CreateConnectorProfileAsync(const CreateConnectorProfileRequest& request, const CreateConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateConnectorProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateConnectorProfile, request, handler, context, m_executor.get());
 }
 
 CreateFlowOutcome AppflowClient::CreateFlow(const CreateFlowRequest& request) const
@@ -207,18 +202,12 @@ CreateFlowOutcome AppflowClient::CreateFlow(const CreateFlowRequest& request) co
 
 CreateFlowOutcomeCallable AppflowClient::CreateFlowCallable(const CreateFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFlow, request, m_executor.get());
 }
 
 void AppflowClient::CreateFlowAsync(const CreateFlowRequest& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFlow, request, handler, context, m_executor.get());
 }
 
 DeleteConnectorProfileOutcome AppflowClient::DeleteConnectorProfile(const DeleteConnectorProfileRequest& request) const
@@ -232,18 +221,12 @@ DeleteConnectorProfileOutcome AppflowClient::DeleteConnectorProfile(const Delete
 
 DeleteConnectorProfileOutcomeCallable AppflowClient::DeleteConnectorProfileCallable(const DeleteConnectorProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectorProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnectorProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteConnectorProfile, request, m_executor.get());
 }
 
 void AppflowClient::DeleteConnectorProfileAsync(const DeleteConnectorProfileRequest& request, const DeleteConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteConnectorProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteConnectorProfile, request, handler, context, m_executor.get());
 }
 
 DeleteFlowOutcome AppflowClient::DeleteFlow(const DeleteFlowRequest& request) const
@@ -257,18 +240,12 @@ DeleteFlowOutcome AppflowClient::DeleteFlow(const DeleteFlowRequest& request) co
 
 DeleteFlowOutcomeCallable AppflowClient::DeleteFlowCallable(const DeleteFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFlow, request, m_executor.get());
 }
 
 void AppflowClient::DeleteFlowAsync(const DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFlow, request, handler, context, m_executor.get());
 }
 
 DescribeConnectorOutcome AppflowClient::DescribeConnector(const DescribeConnectorRequest& request) const
@@ -282,18 +259,12 @@ DescribeConnectorOutcome AppflowClient::DescribeConnector(const DescribeConnecto
 
 DescribeConnectorOutcomeCallable AppflowClient::DescribeConnectorCallable(const DescribeConnectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeConnector, request, m_executor.get());
 }
 
 void AppflowClient::DescribeConnectorAsync(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeConnector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeConnector, request, handler, context, m_executor.get());
 }
 
 DescribeConnectorEntityOutcome AppflowClient::DescribeConnectorEntity(const DescribeConnectorEntityRequest& request) const
@@ -307,18 +278,12 @@ DescribeConnectorEntityOutcome AppflowClient::DescribeConnectorEntity(const Desc
 
 DescribeConnectorEntityOutcomeCallable AppflowClient::DescribeConnectorEntityCallable(const DescribeConnectorEntityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectorEntityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnectorEntity(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeConnectorEntity, request, m_executor.get());
 }
 
 void AppflowClient::DescribeConnectorEntityAsync(const DescribeConnectorEntityRequest& request, const DescribeConnectorEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeConnectorEntity(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeConnectorEntity, request, handler, context, m_executor.get());
 }
 
 DescribeConnectorProfilesOutcome AppflowClient::DescribeConnectorProfiles(const DescribeConnectorProfilesRequest& request) const
@@ -332,18 +297,12 @@ DescribeConnectorProfilesOutcome AppflowClient::DescribeConnectorProfiles(const 
 
 DescribeConnectorProfilesOutcomeCallable AppflowClient::DescribeConnectorProfilesCallable(const DescribeConnectorProfilesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectorProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnectorProfiles(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeConnectorProfiles, request, m_executor.get());
 }
 
 void AppflowClient::DescribeConnectorProfilesAsync(const DescribeConnectorProfilesRequest& request, const DescribeConnectorProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeConnectorProfiles(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeConnectorProfiles, request, handler, context, m_executor.get());
 }
 
 DescribeConnectorsOutcome AppflowClient::DescribeConnectors(const DescribeConnectorsRequest& request) const
@@ -357,18 +316,12 @@ DescribeConnectorsOutcome AppflowClient::DescribeConnectors(const DescribeConnec
 
 DescribeConnectorsOutcomeCallable AppflowClient::DescribeConnectorsCallable(const DescribeConnectorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnectors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeConnectors, request, m_executor.get());
 }
 
 void AppflowClient::DescribeConnectorsAsync(const DescribeConnectorsRequest& request, const DescribeConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeConnectors(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeConnectors, request, handler, context, m_executor.get());
 }
 
 DescribeFlowOutcome AppflowClient::DescribeFlow(const DescribeFlowRequest& request) const
@@ -382,18 +335,12 @@ DescribeFlowOutcome AppflowClient::DescribeFlow(const DescribeFlowRequest& reque
 
 DescribeFlowOutcomeCallable AppflowClient::DescribeFlowCallable(const DescribeFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFlow, request, m_executor.get());
 }
 
 void AppflowClient::DescribeFlowAsync(const DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFlow, request, handler, context, m_executor.get());
 }
 
 DescribeFlowExecutionRecordsOutcome AppflowClient::DescribeFlowExecutionRecords(const DescribeFlowExecutionRecordsRequest& request) const
@@ -407,18 +354,12 @@ DescribeFlowExecutionRecordsOutcome AppflowClient::DescribeFlowExecutionRecords(
 
 DescribeFlowExecutionRecordsOutcomeCallable AppflowClient::DescribeFlowExecutionRecordsCallable(const DescribeFlowExecutionRecordsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFlowExecutionRecordsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFlowExecutionRecords(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFlowExecutionRecords, request, m_executor.get());
 }
 
 void AppflowClient::DescribeFlowExecutionRecordsAsync(const DescribeFlowExecutionRecordsRequest& request, const DescribeFlowExecutionRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFlowExecutionRecords(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFlowExecutionRecords, request, handler, context, m_executor.get());
 }
 
 ListConnectorEntitiesOutcome AppflowClient::ListConnectorEntities(const ListConnectorEntitiesRequest& request) const
@@ -432,18 +373,12 @@ ListConnectorEntitiesOutcome AppflowClient::ListConnectorEntities(const ListConn
 
 ListConnectorEntitiesOutcomeCallable AppflowClient::ListConnectorEntitiesCallable(const ListConnectorEntitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConnectorEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnectorEntities(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListConnectorEntities, request, m_executor.get());
 }
 
 void AppflowClient::ListConnectorEntitiesAsync(const ListConnectorEntitiesRequest& request, const ListConnectorEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListConnectorEntities(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListConnectorEntities, request, handler, context, m_executor.get());
 }
 
 ListConnectorsOutcome AppflowClient::ListConnectors(const ListConnectorsRequest& request) const
@@ -457,18 +392,12 @@ ListConnectorsOutcome AppflowClient::ListConnectors(const ListConnectorsRequest&
 
 ListConnectorsOutcomeCallable AppflowClient::ListConnectorsCallable(const ListConnectorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConnectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnectors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListConnectors, request, m_executor.get());
 }
 
 void AppflowClient::ListConnectorsAsync(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListConnectors(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListConnectors, request, handler, context, m_executor.get());
 }
 
 ListFlowsOutcome AppflowClient::ListFlows(const ListFlowsRequest& request) const
@@ -482,18 +411,12 @@ ListFlowsOutcome AppflowClient::ListFlows(const ListFlowsRequest& request) const
 
 ListFlowsOutcomeCallable AppflowClient::ListFlowsCallable(const ListFlowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFlowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFlows(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFlows, request, m_executor.get());
 }
 
 void AppflowClient::ListFlowsAsync(const ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFlows(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFlows, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome AppflowClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -513,18 +436,12 @@ ListTagsForResourceOutcome AppflowClient::ListTagsForResource(const ListTagsForR
 
 ListTagsForResourceOutcomeCallable AppflowClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void AppflowClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 RegisterConnectorOutcome AppflowClient::RegisterConnector(const RegisterConnectorRequest& request) const
@@ -538,18 +455,12 @@ RegisterConnectorOutcome AppflowClient::RegisterConnector(const RegisterConnecto
 
 RegisterConnectorOutcomeCallable AppflowClient::RegisterConnectorCallable(const RegisterConnectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterConnector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RegisterConnector, request, m_executor.get());
 }
 
 void AppflowClient::RegisterConnectorAsync(const RegisterConnectorRequest& request, const RegisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterConnector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RegisterConnector, request, handler, context, m_executor.get());
 }
 
 StartFlowOutcome AppflowClient::StartFlow(const StartFlowRequest& request) const
@@ -563,18 +474,12 @@ StartFlowOutcome AppflowClient::StartFlow(const StartFlowRequest& request) const
 
 StartFlowOutcomeCallable AppflowClient::StartFlowCallable(const StartFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartFlow, request, m_executor.get());
 }
 
 void AppflowClient::StartFlowAsync(const StartFlowRequest& request, const StartFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartFlow, request, handler, context, m_executor.get());
 }
 
 StopFlowOutcome AppflowClient::StopFlow(const StopFlowRequest& request) const
@@ -588,18 +493,12 @@ StopFlowOutcome AppflowClient::StopFlow(const StopFlowRequest& request) const
 
 StopFlowOutcomeCallable AppflowClient::StopFlowCallable(const StopFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopFlow, request, m_executor.get());
 }
 
 void AppflowClient::StopFlowAsync(const StopFlowRequest& request, const StopFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopFlow, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome AppflowClient::TagResource(const TagResourceRequest& request) const
@@ -619,18 +518,12 @@ TagResourceOutcome AppflowClient::TagResource(const TagResourceRequest& request)
 
 TagResourceOutcomeCallable AppflowClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void AppflowClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UnregisterConnectorOutcome AppflowClient::UnregisterConnector(const UnregisterConnectorRequest& request) const
@@ -644,18 +537,12 @@ UnregisterConnectorOutcome AppflowClient::UnregisterConnector(const UnregisterCo
 
 UnregisterConnectorOutcomeCallable AppflowClient::UnregisterConnectorCallable(const UnregisterConnectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UnregisterConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnregisterConnector(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UnregisterConnector, request, m_executor.get());
 }
 
 void AppflowClient::UnregisterConnectorAsync(const UnregisterConnectorRequest& request, const UnregisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UnregisterConnector(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UnregisterConnector, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome AppflowClient::UntagResource(const UntagResourceRequest& request) const
@@ -680,18 +567,12 @@ UntagResourceOutcome AppflowClient::UntagResource(const UntagResourceRequest& re
 
 UntagResourceOutcomeCallable AppflowClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void AppflowClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateConnectorProfileOutcome AppflowClient::UpdateConnectorProfile(const UpdateConnectorProfileRequest& request) const
@@ -705,18 +586,12 @@ UpdateConnectorProfileOutcome AppflowClient::UpdateConnectorProfile(const Update
 
 UpdateConnectorProfileOutcomeCallable AppflowClient::UpdateConnectorProfileCallable(const UpdateConnectorProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectorProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnectorProfile(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateConnectorProfile, request, m_executor.get());
 }
 
 void AppflowClient::UpdateConnectorProfileAsync(const UpdateConnectorProfileRequest& request, const UpdateConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateConnectorProfile(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateConnectorProfile, request, handler, context, m_executor.get());
 }
 
 UpdateFlowOutcome AppflowClient::UpdateFlow(const UpdateFlowRequest& request) const
@@ -730,17 +605,11 @@ UpdateFlowOutcome AppflowClient::UpdateFlow(const UpdateFlowRequest& request) co
 
 UpdateFlowOutcomeCallable AppflowClient::UpdateFlowCallable(const UpdateFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFlow, request, m_executor.get());
 }
 
 void AppflowClient::UpdateFlowAsync(const UpdateFlowRequest& request, const UpdateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFlow, request, handler, context, m_executor.get());
 }
 

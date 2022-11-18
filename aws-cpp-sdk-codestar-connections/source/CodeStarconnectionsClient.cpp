@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -171,18 +172,12 @@ CreateConnectionOutcome CodeStarconnectionsClient::CreateConnection(const Create
 
 CreateConnectionOutcomeCallable CodeStarconnectionsClient::CreateConnectionCallable(const CreateConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateConnection, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateConnection, request, handler, context, m_executor.get());
 }
 
 CreateHostOutcome CodeStarconnectionsClient::CreateHost(const CreateHostRequest& request) const
@@ -195,18 +190,12 @@ CreateHostOutcome CodeStarconnectionsClient::CreateHost(const CreateHostRequest&
 
 CreateHostOutcomeCallable CodeStarconnectionsClient::CreateHostCallable(const CreateHostRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHost(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateHost, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::CreateHostAsync(const CreateHostRequest& request, const CreateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateHost(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateHost, request, handler, context, m_executor.get());
 }
 
 DeleteConnectionOutcome CodeStarconnectionsClient::DeleteConnection(const DeleteConnectionRequest& request) const
@@ -219,18 +208,12 @@ DeleteConnectionOutcome CodeStarconnectionsClient::DeleteConnection(const Delete
 
 DeleteConnectionOutcomeCallable CodeStarconnectionsClient::DeleteConnectionCallable(const DeleteConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteConnection, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteConnection, request, handler, context, m_executor.get());
 }
 
 DeleteHostOutcome CodeStarconnectionsClient::DeleteHost(const DeleteHostRequest& request) const
@@ -243,18 +226,12 @@ DeleteHostOutcome CodeStarconnectionsClient::DeleteHost(const DeleteHostRequest&
 
 DeleteHostOutcomeCallable CodeStarconnectionsClient::DeleteHostCallable(const DeleteHostRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHost(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteHost, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::DeleteHostAsync(const DeleteHostRequest& request, const DeleteHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteHost(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteHost, request, handler, context, m_executor.get());
 }
 
 GetConnectionOutcome CodeStarconnectionsClient::GetConnection(const GetConnectionRequest& request) const
@@ -267,18 +244,12 @@ GetConnectionOutcome CodeStarconnectionsClient::GetConnection(const GetConnectio
 
 GetConnectionOutcomeCallable CodeStarconnectionsClient::GetConnectionCallable(const GetConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnection(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetConnection, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetConnection(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetConnection, request, handler, context, m_executor.get());
 }
 
 GetHostOutcome CodeStarconnectionsClient::GetHost(const GetHostRequest& request) const
@@ -291,18 +262,12 @@ GetHostOutcome CodeStarconnectionsClient::GetHost(const GetHostRequest& request)
 
 GetHostOutcomeCallable CodeStarconnectionsClient::GetHostCallable(const GetHostRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHost(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetHost, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::GetHostAsync(const GetHostRequest& request, const GetHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetHost(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetHost, request, handler, context, m_executor.get());
 }
 
 ListConnectionsOutcome CodeStarconnectionsClient::ListConnections(const ListConnectionsRequest& request) const
@@ -315,18 +280,12 @@ ListConnectionsOutcome CodeStarconnectionsClient::ListConnections(const ListConn
 
 ListConnectionsOutcomeCallable CodeStarconnectionsClient::ListConnectionsCallable(const ListConnectionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnections(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListConnections, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::ListConnectionsAsync(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListConnections(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListConnections, request, handler, context, m_executor.get());
 }
 
 ListHostsOutcome CodeStarconnectionsClient::ListHosts(const ListHostsRequest& request) const
@@ -339,18 +298,12 @@ ListHostsOutcome CodeStarconnectionsClient::ListHosts(const ListHostsRequest& re
 
 ListHostsOutcomeCallable CodeStarconnectionsClient::ListHostsCallable(const ListHostsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListHostsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHosts(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListHosts, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::ListHostsAsync(const ListHostsRequest& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListHosts(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListHosts, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome CodeStarconnectionsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -363,18 +316,12 @@ ListTagsForResourceOutcome CodeStarconnectionsClient::ListTagsForResource(const 
 
 ListTagsForResourceOutcomeCallable CodeStarconnectionsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome CodeStarconnectionsClient::TagResource(const TagResourceRequest& request) const
@@ -387,18 +334,12 @@ TagResourceOutcome CodeStarconnectionsClient::TagResource(const TagResourceReque
 
 TagResourceOutcomeCallable CodeStarconnectionsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome CodeStarconnectionsClient::UntagResource(const UntagResourceRequest& request) const
@@ -411,18 +352,12 @@ UntagResourceOutcome CodeStarconnectionsClient::UntagResource(const UntagResourc
 
 UntagResourceOutcomeCallable CodeStarconnectionsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateHostOutcome CodeStarconnectionsClient::UpdateHost(const UpdateHostRequest& request) const
@@ -435,17 +370,11 @@ UpdateHostOutcome CodeStarconnectionsClient::UpdateHost(const UpdateHostRequest&
 
 UpdateHostOutcomeCallable CodeStarconnectionsClient::UpdateHostCallable(const UpdateHostRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateHost(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateHost, request, m_executor.get());
 }
 
 void CodeStarconnectionsClient::UpdateHostAsync(const UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateHost(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateHost, request, handler, context, m_executor.get());
 }
 

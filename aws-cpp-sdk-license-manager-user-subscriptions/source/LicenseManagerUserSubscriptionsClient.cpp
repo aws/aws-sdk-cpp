@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -170,18 +171,12 @@ AssociateUserOutcome LicenseManagerUserSubscriptionsClient::AssociateUser(const 
 
 AssociateUserOutcomeCallable LicenseManagerUserSubscriptionsClient::AssociateUserCallable(const AssociateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateUser, request, m_executor.get());
 }
 
 void LicenseManagerUserSubscriptionsClient::AssociateUserAsync(const AssociateUserRequest& request, const AssociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateUser, request, handler, context, m_executor.get());
 }
 
 DeregisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::DeregisterIdentityProvider(const DeregisterIdentityProviderRequest& request) const
@@ -195,18 +190,12 @@ DeregisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::Deregis
 
 DeregisterIdentityProviderOutcomeCallable LicenseManagerUserSubscriptionsClient::DeregisterIdentityProviderCallable(const DeregisterIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeregisterIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterIdentityProvider(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeregisterIdentityProvider, request, m_executor.get());
 }
 
 void LicenseManagerUserSubscriptionsClient::DeregisterIdentityProviderAsync(const DeregisterIdentityProviderRequest& request, const DeregisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeregisterIdentityProvider(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeregisterIdentityProvider, request, handler, context, m_executor.get());
 }
 
 DisassociateUserOutcome LicenseManagerUserSubscriptionsClient::DisassociateUser(const DisassociateUserRequest& request) const
@@ -220,18 +209,12 @@ DisassociateUserOutcome LicenseManagerUserSubscriptionsClient::DisassociateUser(
 
 DisassociateUserOutcomeCallable LicenseManagerUserSubscriptionsClient::DisassociateUserCallable(const DisassociateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisassociateUser, request, m_executor.get());
 }
 
 void LicenseManagerUserSubscriptionsClient::DisassociateUserAsync(const DisassociateUserRequest& request, const DisassociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisassociateUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisassociateUser, request, handler, context, m_executor.get());
 }
 
 ListIdentityProvidersOutcome LicenseManagerUserSubscriptionsClient::ListIdentityProviders(const ListIdentityProvidersRequest& request) const
@@ -245,18 +228,12 @@ ListIdentityProvidersOutcome LicenseManagerUserSubscriptionsClient::ListIdentity
 
 ListIdentityProvidersOutcomeCallable LicenseManagerUserSubscriptionsClient::ListIdentityProvidersCallable(const ListIdentityProvidersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListIdentityProvidersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIdentityProviders(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListIdentityProviders, request, m_executor.get());
 }
 
 void LicenseManagerUserSubscriptionsClient::ListIdentityProvidersAsync(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListIdentityProviders(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListIdentityProviders, request, handler, context, m_executor.get());
 }
 
 ListInstancesOutcome LicenseManagerUserSubscriptionsClient::ListInstances(const ListInstancesRequest& request) const
@@ -270,18 +247,12 @@ ListInstancesOutcome LicenseManagerUserSubscriptionsClient::ListInstances(const 
 
 ListInstancesOutcomeCallable LicenseManagerUserSubscriptionsClient::ListInstancesCallable(const ListInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInstances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListInstances, request, m_executor.get());
 }
 
 void LicenseManagerUserSubscriptionsClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListInstances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListInstances, request, handler, context, m_executor.get());
 }
 
 ListProductSubscriptionsOutcome LicenseManagerUserSubscriptionsClient::ListProductSubscriptions(const ListProductSubscriptionsRequest& request) const
@@ -295,18 +266,12 @@ ListProductSubscriptionsOutcome LicenseManagerUserSubscriptionsClient::ListProdu
 
 ListProductSubscriptionsOutcomeCallable LicenseManagerUserSubscriptionsClient::ListProductSubscriptionsCallable(const ListProductSubscriptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProductSubscriptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProductSubscriptions(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListProductSubscriptions, request, m_executor.get());
 }
 
 void LicenseManagerUserSubscriptionsClient::ListProductSubscriptionsAsync(const ListProductSubscriptionsRequest& request, const ListProductSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListProductSubscriptions(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListProductSubscriptions, request, handler, context, m_executor.get());
 }
 
 ListUserAssociationsOutcome LicenseManagerUserSubscriptionsClient::ListUserAssociations(const ListUserAssociationsRequest& request) const
@@ -320,18 +285,12 @@ ListUserAssociationsOutcome LicenseManagerUserSubscriptionsClient::ListUserAssoc
 
 ListUserAssociationsOutcomeCallable LicenseManagerUserSubscriptionsClient::ListUserAssociationsCallable(const ListUserAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUserAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserAssociations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUserAssociations, request, m_executor.get());
 }
 
 void LicenseManagerUserSubscriptionsClient::ListUserAssociationsAsync(const ListUserAssociationsRequest& request, const ListUserAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUserAssociations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUserAssociations, request, handler, context, m_executor.get());
 }
 
 RegisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::RegisterIdentityProvider(const RegisterIdentityProviderRequest& request) const
@@ -345,18 +304,12 @@ RegisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::RegisterI
 
 RegisterIdentityProviderOutcomeCallable LicenseManagerUserSubscriptionsClient::RegisterIdentityProviderCallable(const RegisterIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterIdentityProvider(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RegisterIdentityProvider, request, m_executor.get());
 }
 
 void LicenseManagerUserSubscriptionsClient::RegisterIdentityProviderAsync(const RegisterIdentityProviderRequest& request, const RegisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterIdentityProvider(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RegisterIdentityProvider, request, handler, context, m_executor.get());
 }
 
 StartProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StartProductSubscription(const StartProductSubscriptionRequest& request) const
@@ -370,18 +323,12 @@ StartProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StartProd
 
 StartProductSubscriptionOutcomeCallable LicenseManagerUserSubscriptionsClient::StartProductSubscriptionCallable(const StartProductSubscriptionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartProductSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartProductSubscription(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartProductSubscription, request, m_executor.get());
 }
 
 void LicenseManagerUserSubscriptionsClient::StartProductSubscriptionAsync(const StartProductSubscriptionRequest& request, const StartProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartProductSubscription(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartProductSubscription, request, handler, context, m_executor.get());
 }
 
 StopProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StopProductSubscription(const StopProductSubscriptionRequest& request) const
@@ -395,17 +342,11 @@ StopProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StopProduc
 
 StopProductSubscriptionOutcomeCallable LicenseManagerUserSubscriptionsClient::StopProductSubscriptionCallable(const StopProductSubscriptionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopProductSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopProductSubscription(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopProductSubscription, request, m_executor.get());
 }
 
 void LicenseManagerUserSubscriptionsClient::StopProductSubscriptionAsync(const StopProductSubscriptionRequest& request, const StopProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopProductSubscription(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopProductSubscription, request, handler, context, m_executor.get());
 }
 

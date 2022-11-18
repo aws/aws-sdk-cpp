@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -183,18 +184,12 @@ CreateSignalingChannelOutcome KinesisVideoClient::CreateSignalingChannel(const C
 
 CreateSignalingChannelOutcomeCallable KinesisVideoClient::CreateSignalingChannelCallable(const CreateSignalingChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSignalingChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSignalingChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateSignalingChannel, request, m_executor.get());
 }
 
 void KinesisVideoClient::CreateSignalingChannelAsync(const CreateSignalingChannelRequest& request, const CreateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateSignalingChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateSignalingChannel, request, handler, context, m_executor.get());
 }
 
 CreateStreamOutcome KinesisVideoClient::CreateStream(const CreateStreamRequest& request) const
@@ -208,18 +203,12 @@ CreateStreamOutcome KinesisVideoClient::CreateStream(const CreateStreamRequest& 
 
 CreateStreamOutcomeCallable KinesisVideoClient::CreateStreamCallable(const CreateStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateStream, request, m_executor.get());
 }
 
 void KinesisVideoClient::CreateStreamAsync(const CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateStream, request, handler, context, m_executor.get());
 }
 
 DeleteSignalingChannelOutcome KinesisVideoClient::DeleteSignalingChannel(const DeleteSignalingChannelRequest& request) const
@@ -233,18 +222,12 @@ DeleteSignalingChannelOutcome KinesisVideoClient::DeleteSignalingChannel(const D
 
 DeleteSignalingChannelOutcomeCallable KinesisVideoClient::DeleteSignalingChannelCallable(const DeleteSignalingChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSignalingChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSignalingChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteSignalingChannel, request, m_executor.get());
 }
 
 void KinesisVideoClient::DeleteSignalingChannelAsync(const DeleteSignalingChannelRequest& request, const DeleteSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteSignalingChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteSignalingChannel, request, handler, context, m_executor.get());
 }
 
 DeleteStreamOutcome KinesisVideoClient::DeleteStream(const DeleteStreamRequest& request) const
@@ -258,18 +241,12 @@ DeleteStreamOutcome KinesisVideoClient::DeleteStream(const DeleteStreamRequest& 
 
 DeleteStreamOutcomeCallable KinesisVideoClient::DeleteStreamCallable(const DeleteStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteStream, request, m_executor.get());
 }
 
 void KinesisVideoClient::DeleteStreamAsync(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteStream, request, handler, context, m_executor.get());
 }
 
 DescribeImageGenerationConfigurationOutcome KinesisVideoClient::DescribeImageGenerationConfiguration(const DescribeImageGenerationConfigurationRequest& request) const
@@ -283,18 +260,12 @@ DescribeImageGenerationConfigurationOutcome KinesisVideoClient::DescribeImageGen
 
 DescribeImageGenerationConfigurationOutcomeCallable KinesisVideoClient::DescribeImageGenerationConfigurationCallable(const DescribeImageGenerationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeImageGenerationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImageGenerationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeImageGenerationConfiguration, request, m_executor.get());
 }
 
 void KinesisVideoClient::DescribeImageGenerationConfigurationAsync(const DescribeImageGenerationConfigurationRequest& request, const DescribeImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeImageGenerationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeImageGenerationConfiguration, request, handler, context, m_executor.get());
 }
 
 DescribeNotificationConfigurationOutcome KinesisVideoClient::DescribeNotificationConfiguration(const DescribeNotificationConfigurationRequest& request) const
@@ -308,18 +279,12 @@ DescribeNotificationConfigurationOutcome KinesisVideoClient::DescribeNotificatio
 
 DescribeNotificationConfigurationOutcomeCallable KinesisVideoClient::DescribeNotificationConfigurationCallable(const DescribeNotificationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeNotificationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNotificationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeNotificationConfiguration, request, m_executor.get());
 }
 
 void KinesisVideoClient::DescribeNotificationConfigurationAsync(const DescribeNotificationConfigurationRequest& request, const DescribeNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeNotificationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeNotificationConfiguration, request, handler, context, m_executor.get());
 }
 
 DescribeSignalingChannelOutcome KinesisVideoClient::DescribeSignalingChannel(const DescribeSignalingChannelRequest& request) const
@@ -333,18 +298,12 @@ DescribeSignalingChannelOutcome KinesisVideoClient::DescribeSignalingChannel(con
 
 DescribeSignalingChannelOutcomeCallable KinesisVideoClient::DescribeSignalingChannelCallable(const DescribeSignalingChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSignalingChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSignalingChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeSignalingChannel, request, m_executor.get());
 }
 
 void KinesisVideoClient::DescribeSignalingChannelAsync(const DescribeSignalingChannelRequest& request, const DescribeSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeSignalingChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeSignalingChannel, request, handler, context, m_executor.get());
 }
 
 DescribeStreamOutcome KinesisVideoClient::DescribeStream(const DescribeStreamRequest& request) const
@@ -358,18 +317,12 @@ DescribeStreamOutcome KinesisVideoClient::DescribeStream(const DescribeStreamReq
 
 DescribeStreamOutcomeCallable KinesisVideoClient::DescribeStreamCallable(const DescribeStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeStream, request, m_executor.get());
 }
 
 void KinesisVideoClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeStream, request, handler, context, m_executor.get());
 }
 
 GetDataEndpointOutcome KinesisVideoClient::GetDataEndpoint(const GetDataEndpointRequest& request) const
@@ -383,18 +336,12 @@ GetDataEndpointOutcome KinesisVideoClient::GetDataEndpoint(const GetDataEndpoint
 
 GetDataEndpointOutcomeCallable KinesisVideoClient::GetDataEndpointCallable(const GetDataEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDataEndpoint, request, m_executor.get());
 }
 
 void KinesisVideoClient::GetDataEndpointAsync(const GetDataEndpointRequest& request, const GetDataEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDataEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDataEndpoint, request, handler, context, m_executor.get());
 }
 
 GetSignalingChannelEndpointOutcome KinesisVideoClient::GetSignalingChannelEndpoint(const GetSignalingChannelEndpointRequest& request) const
@@ -408,18 +355,12 @@ GetSignalingChannelEndpointOutcome KinesisVideoClient::GetSignalingChannelEndpoi
 
 GetSignalingChannelEndpointOutcomeCallable KinesisVideoClient::GetSignalingChannelEndpointCallable(const GetSignalingChannelEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSignalingChannelEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSignalingChannelEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSignalingChannelEndpoint, request, m_executor.get());
 }
 
 void KinesisVideoClient::GetSignalingChannelEndpointAsync(const GetSignalingChannelEndpointRequest& request, const GetSignalingChannelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSignalingChannelEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSignalingChannelEndpoint, request, handler, context, m_executor.get());
 }
 
 ListSignalingChannelsOutcome KinesisVideoClient::ListSignalingChannels(const ListSignalingChannelsRequest& request) const
@@ -433,18 +374,12 @@ ListSignalingChannelsOutcome KinesisVideoClient::ListSignalingChannels(const Lis
 
 ListSignalingChannelsOutcomeCallable KinesisVideoClient::ListSignalingChannelsCallable(const ListSignalingChannelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSignalingChannelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSignalingChannels(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSignalingChannels, request, m_executor.get());
 }
 
 void KinesisVideoClient::ListSignalingChannelsAsync(const ListSignalingChannelsRequest& request, const ListSignalingChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSignalingChannels(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSignalingChannels, request, handler, context, m_executor.get());
 }
 
 ListStreamsOutcome KinesisVideoClient::ListStreams(const ListStreamsRequest& request) const
@@ -458,18 +393,12 @@ ListStreamsOutcome KinesisVideoClient::ListStreams(const ListStreamsRequest& req
 
 ListStreamsOutcomeCallable KinesisVideoClient::ListStreamsCallable(const ListStreamsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStreamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreams(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStreams, request, m_executor.get());
 }
 
 void KinesisVideoClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStreams(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStreams, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome KinesisVideoClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -483,18 +412,12 @@ ListTagsForResourceOutcome KinesisVideoClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable KinesisVideoClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void KinesisVideoClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListTagsForStreamOutcome KinesisVideoClient::ListTagsForStream(const ListTagsForStreamRequest& request) const
@@ -508,18 +431,12 @@ ListTagsForStreamOutcome KinesisVideoClient::ListTagsForStream(const ListTagsFor
 
 ListTagsForStreamOutcomeCallable KinesisVideoClient::ListTagsForStreamCallable(const ListTagsForStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForStream, request, m_executor.get());
 }
 
 void KinesisVideoClient::ListTagsForStreamAsync(const ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForStream, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome KinesisVideoClient::TagResource(const TagResourceRequest& request) const
@@ -533,18 +450,12 @@ TagResourceOutcome KinesisVideoClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable KinesisVideoClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void KinesisVideoClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 TagStreamOutcome KinesisVideoClient::TagStream(const TagStreamRequest& request) const
@@ -558,18 +469,12 @@ TagStreamOutcome KinesisVideoClient::TagStream(const TagStreamRequest& request) 
 
 TagStreamOutcomeCallable KinesisVideoClient::TagStreamCallable(const TagStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagStream, request, m_executor.get());
 }
 
 void KinesisVideoClient::TagStreamAsync(const TagStreamRequest& request, const TagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagStream, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome KinesisVideoClient::UntagResource(const UntagResourceRequest& request) const
@@ -583,18 +488,12 @@ UntagResourceOutcome KinesisVideoClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable KinesisVideoClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void KinesisVideoClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UntagStreamOutcome KinesisVideoClient::UntagStream(const UntagStreamRequest& request) const
@@ -608,18 +507,12 @@ UntagStreamOutcome KinesisVideoClient::UntagStream(const UntagStreamRequest& req
 
 UntagStreamOutcomeCallable KinesisVideoClient::UntagStreamCallable(const UntagStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagStream, request, m_executor.get());
 }
 
 void KinesisVideoClient::UntagStreamAsync(const UntagStreamRequest& request, const UntagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagStream, request, handler, context, m_executor.get());
 }
 
 UpdateDataRetentionOutcome KinesisVideoClient::UpdateDataRetention(const UpdateDataRetentionRequest& request) const
@@ -633,18 +526,12 @@ UpdateDataRetentionOutcome KinesisVideoClient::UpdateDataRetention(const UpdateD
 
 UpdateDataRetentionOutcomeCallable KinesisVideoClient::UpdateDataRetentionCallable(const UpdateDataRetentionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDataRetentionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDataRetention(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDataRetention, request, m_executor.get());
 }
 
 void KinesisVideoClient::UpdateDataRetentionAsync(const UpdateDataRetentionRequest& request, const UpdateDataRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDataRetention(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDataRetention, request, handler, context, m_executor.get());
 }
 
 UpdateImageGenerationConfigurationOutcome KinesisVideoClient::UpdateImageGenerationConfiguration(const UpdateImageGenerationConfigurationRequest& request) const
@@ -658,18 +545,12 @@ UpdateImageGenerationConfigurationOutcome KinesisVideoClient::UpdateImageGenerat
 
 UpdateImageGenerationConfigurationOutcomeCallable KinesisVideoClient::UpdateImageGenerationConfigurationCallable(const UpdateImageGenerationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateImageGenerationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateImageGenerationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateImageGenerationConfiguration, request, m_executor.get());
 }
 
 void KinesisVideoClient::UpdateImageGenerationConfigurationAsync(const UpdateImageGenerationConfigurationRequest& request, const UpdateImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateImageGenerationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateImageGenerationConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateNotificationConfigurationOutcome KinesisVideoClient::UpdateNotificationConfiguration(const UpdateNotificationConfigurationRequest& request) const
@@ -683,18 +564,12 @@ UpdateNotificationConfigurationOutcome KinesisVideoClient::UpdateNotificationCon
 
 UpdateNotificationConfigurationOutcomeCallable KinesisVideoClient::UpdateNotificationConfigurationCallable(const UpdateNotificationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNotificationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNotificationConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateNotificationConfiguration, request, m_executor.get());
 }
 
 void KinesisVideoClient::UpdateNotificationConfigurationAsync(const UpdateNotificationConfigurationRequest& request, const UpdateNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateNotificationConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateNotificationConfiguration, request, handler, context, m_executor.get());
 }
 
 UpdateSignalingChannelOutcome KinesisVideoClient::UpdateSignalingChannel(const UpdateSignalingChannelRequest& request) const
@@ -708,18 +583,12 @@ UpdateSignalingChannelOutcome KinesisVideoClient::UpdateSignalingChannel(const U
 
 UpdateSignalingChannelOutcomeCallable KinesisVideoClient::UpdateSignalingChannelCallable(const UpdateSignalingChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSignalingChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSignalingChannel(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateSignalingChannel, request, m_executor.get());
 }
 
 void KinesisVideoClient::UpdateSignalingChannelAsync(const UpdateSignalingChannelRequest& request, const UpdateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateSignalingChannel(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateSignalingChannel, request, handler, context, m_executor.get());
 }
 
 UpdateStreamOutcome KinesisVideoClient::UpdateStream(const UpdateStreamRequest& request) const
@@ -733,17 +602,11 @@ UpdateStreamOutcome KinesisVideoClient::UpdateStream(const UpdateStreamRequest& 
 
 UpdateStreamOutcomeCallable KinesisVideoClient::UpdateStreamCallable(const UpdateStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateStream, request, m_executor.get());
 }
 
 void KinesisVideoClient::UpdateStreamAsync(const UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateStream, request, handler, context, m_executor.get());
 }
 

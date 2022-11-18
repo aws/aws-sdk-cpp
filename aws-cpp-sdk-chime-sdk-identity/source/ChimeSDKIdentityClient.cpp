@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -184,18 +185,12 @@ CreateAppInstanceOutcome ChimeSDKIdentityClient::CreateAppInstance(const CreateA
 
 CreateAppInstanceOutcomeCallable ChimeSDKIdentityClient::CreateAppInstanceCallable(const CreateAppInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAppInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAppInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAppInstance, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::CreateAppInstanceAsync(const CreateAppInstanceRequest& request, const CreateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAppInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAppInstance, request, handler, context, m_executor.get());
 }
 
 CreateAppInstanceAdminOutcome ChimeSDKIdentityClient::CreateAppInstanceAdmin(const CreateAppInstanceAdminRequest& request) const
@@ -216,18 +211,12 @@ CreateAppInstanceAdminOutcome ChimeSDKIdentityClient::CreateAppInstanceAdmin(con
 
 CreateAppInstanceAdminOutcomeCallable ChimeSDKIdentityClient::CreateAppInstanceAdminCallable(const CreateAppInstanceAdminRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAppInstanceAdminOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAppInstanceAdmin(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAppInstanceAdmin, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::CreateAppInstanceAdminAsync(const CreateAppInstanceAdminRequest& request, const CreateAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAppInstanceAdmin(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAppInstanceAdmin, request, handler, context, m_executor.get());
 }
 
 CreateAppInstanceUserOutcome ChimeSDKIdentityClient::CreateAppInstanceUser(const CreateAppInstanceUserRequest& request) const
@@ -241,18 +230,12 @@ CreateAppInstanceUserOutcome ChimeSDKIdentityClient::CreateAppInstanceUser(const
 
 CreateAppInstanceUserOutcomeCallable ChimeSDKIdentityClient::CreateAppInstanceUserCallable(const CreateAppInstanceUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAppInstanceUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAppInstanceUser, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::CreateAppInstanceUserAsync(const CreateAppInstanceUserRequest& request, const CreateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAppInstanceUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAppInstanceUser, request, handler, context, m_executor.get());
 }
 
 DeleteAppInstanceOutcome ChimeSDKIdentityClient::DeleteAppInstance(const DeleteAppInstanceRequest& request) const
@@ -272,18 +255,12 @@ DeleteAppInstanceOutcome ChimeSDKIdentityClient::DeleteAppInstance(const DeleteA
 
 DeleteAppInstanceOutcomeCallable ChimeSDKIdentityClient::DeleteAppInstanceCallable(const DeleteAppInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAppInstance, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::DeleteAppInstanceAsync(const DeleteAppInstanceRequest& request, const DeleteAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAppInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAppInstance, request, handler, context, m_executor.get());
 }
 
 DeleteAppInstanceAdminOutcome ChimeSDKIdentityClient::DeleteAppInstanceAdmin(const DeleteAppInstanceAdminRequest& request) const
@@ -310,18 +287,12 @@ DeleteAppInstanceAdminOutcome ChimeSDKIdentityClient::DeleteAppInstanceAdmin(con
 
 DeleteAppInstanceAdminOutcomeCallable ChimeSDKIdentityClient::DeleteAppInstanceAdminCallable(const DeleteAppInstanceAdminRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppInstanceAdminOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppInstanceAdmin(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAppInstanceAdmin, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::DeleteAppInstanceAdminAsync(const DeleteAppInstanceAdminRequest& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAppInstanceAdmin(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAppInstanceAdmin, request, handler, context, m_executor.get());
 }
 
 DeleteAppInstanceUserOutcome ChimeSDKIdentityClient::DeleteAppInstanceUser(const DeleteAppInstanceUserRequest& request) const
@@ -341,18 +312,12 @@ DeleteAppInstanceUserOutcome ChimeSDKIdentityClient::DeleteAppInstanceUser(const
 
 DeleteAppInstanceUserOutcomeCallable ChimeSDKIdentityClient::DeleteAppInstanceUserCallable(const DeleteAppInstanceUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppInstanceUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAppInstanceUser, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::DeleteAppInstanceUserAsync(const DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAppInstanceUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAppInstanceUser, request, handler, context, m_executor.get());
 }
 
 DeregisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpoint(const DeregisterAppInstanceUserEndpointRequest& request) const
@@ -379,18 +344,12 @@ DeregisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DeregisterAppIn
 
 DeregisterAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpointCallable(const DeregisterAppInstanceUserEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeregisterAppInstanceUserEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterAppInstanceUserEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeregisterAppInstanceUserEndpoint, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpointAsync(const DeregisterAppInstanceUserEndpointRequest& request, const DeregisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeregisterAppInstanceUserEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeregisterAppInstanceUserEndpoint, request, handler, context, m_executor.get());
 }
 
 DescribeAppInstanceOutcome ChimeSDKIdentityClient::DescribeAppInstance(const DescribeAppInstanceRequest& request) const
@@ -410,18 +369,12 @@ DescribeAppInstanceOutcome ChimeSDKIdentityClient::DescribeAppInstance(const Des
 
 DescribeAppInstanceOutcomeCallable ChimeSDKIdentityClient::DescribeAppInstanceCallable(const DescribeAppInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAppInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAppInstance, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::DescribeAppInstanceAsync(const DescribeAppInstanceRequest& request, const DescribeAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAppInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAppInstance, request, handler, context, m_executor.get());
 }
 
 DescribeAppInstanceAdminOutcome ChimeSDKIdentityClient::DescribeAppInstanceAdmin(const DescribeAppInstanceAdminRequest& request) const
@@ -448,18 +401,12 @@ DescribeAppInstanceAdminOutcome ChimeSDKIdentityClient::DescribeAppInstanceAdmin
 
 DescribeAppInstanceAdminOutcomeCallable ChimeSDKIdentityClient::DescribeAppInstanceAdminCallable(const DescribeAppInstanceAdminRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAppInstanceAdminOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppInstanceAdmin(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAppInstanceAdmin, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::DescribeAppInstanceAdminAsync(const DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAppInstanceAdmin(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAppInstanceAdmin, request, handler, context, m_executor.get());
 }
 
 DescribeAppInstanceUserOutcome ChimeSDKIdentityClient::DescribeAppInstanceUser(const DescribeAppInstanceUserRequest& request) const
@@ -479,18 +426,12 @@ DescribeAppInstanceUserOutcome ChimeSDKIdentityClient::DescribeAppInstanceUser(c
 
 DescribeAppInstanceUserOutcomeCallable ChimeSDKIdentityClient::DescribeAppInstanceUserCallable(const DescribeAppInstanceUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppInstanceUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAppInstanceUser, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::DescribeAppInstanceUserAsync(const DescribeAppInstanceUserRequest& request, const DescribeAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAppInstanceUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAppInstanceUser, request, handler, context, m_executor.get());
 }
 
 DescribeAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DescribeAppInstanceUserEndpoint(const DescribeAppInstanceUserEndpointRequest& request) const
@@ -517,18 +458,12 @@ DescribeAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DescribeAppInstan
 
 DescribeAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::DescribeAppInstanceUserEndpointCallable(const DescribeAppInstanceUserEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAppInstanceUserEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppInstanceUserEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeAppInstanceUserEndpoint, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::DescribeAppInstanceUserEndpointAsync(const DescribeAppInstanceUserEndpointRequest& request, const DescribeAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeAppInstanceUserEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeAppInstanceUserEndpoint, request, handler, context, m_executor.get());
 }
 
 GetAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::GetAppInstanceRetentionSettings(const GetAppInstanceRetentionSettingsRequest& request) const
@@ -549,18 +484,12 @@ GetAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::GetAppInstanceRet
 
 GetAppInstanceRetentionSettingsOutcomeCallable ChimeSDKIdentityClient::GetAppInstanceRetentionSettingsCallable(const GetAppInstanceRetentionSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAppInstanceRetentionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppInstanceRetentionSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAppInstanceRetentionSettings, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::GetAppInstanceRetentionSettingsAsync(const GetAppInstanceRetentionSettingsRequest& request, const GetAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAppInstanceRetentionSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAppInstanceRetentionSettings, request, handler, context, m_executor.get());
 }
 
 ListAppInstanceAdminsOutcome ChimeSDKIdentityClient::ListAppInstanceAdmins(const ListAppInstanceAdminsRequest& request) const
@@ -581,18 +510,12 @@ ListAppInstanceAdminsOutcome ChimeSDKIdentityClient::ListAppInstanceAdmins(const
 
 ListAppInstanceAdminsOutcomeCallable ChimeSDKIdentityClient::ListAppInstanceAdminsCallable(const ListAppInstanceAdminsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppInstanceAdminsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppInstanceAdmins(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAppInstanceAdmins, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::ListAppInstanceAdminsAsync(const ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAppInstanceAdmins(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAppInstanceAdmins, request, handler, context, m_executor.get());
 }
 
 ListAppInstanceUserEndpointsOutcome ChimeSDKIdentityClient::ListAppInstanceUserEndpoints(const ListAppInstanceUserEndpointsRequest& request) const
@@ -613,18 +536,12 @@ ListAppInstanceUserEndpointsOutcome ChimeSDKIdentityClient::ListAppInstanceUserE
 
 ListAppInstanceUserEndpointsOutcomeCallable ChimeSDKIdentityClient::ListAppInstanceUserEndpointsCallable(const ListAppInstanceUserEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppInstanceUserEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppInstanceUserEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAppInstanceUserEndpoints, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::ListAppInstanceUserEndpointsAsync(const ListAppInstanceUserEndpointsRequest& request, const ListAppInstanceUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAppInstanceUserEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAppInstanceUserEndpoints, request, handler, context, m_executor.get());
 }
 
 ListAppInstanceUsersOutcome ChimeSDKIdentityClient::ListAppInstanceUsers(const ListAppInstanceUsersRequest& request) const
@@ -643,18 +560,12 @@ ListAppInstanceUsersOutcome ChimeSDKIdentityClient::ListAppInstanceUsers(const L
 
 ListAppInstanceUsersOutcomeCallable ChimeSDKIdentityClient::ListAppInstanceUsersCallable(const ListAppInstanceUsersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppInstanceUsersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppInstanceUsers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAppInstanceUsers, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::ListAppInstanceUsersAsync(const ListAppInstanceUsersRequest& request, const ListAppInstanceUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAppInstanceUsers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAppInstanceUsers, request, handler, context, m_executor.get());
 }
 
 ListAppInstancesOutcome ChimeSDKIdentityClient::ListAppInstances(const ListAppInstancesRequest& request) const
@@ -668,18 +579,12 @@ ListAppInstancesOutcome ChimeSDKIdentityClient::ListAppInstances(const ListAppIn
 
 ListAppInstancesOutcomeCallable ChimeSDKIdentityClient::ListAppInstancesCallable(const ListAppInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppInstances(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAppInstances, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::ListAppInstancesAsync(const ListAppInstancesRequest& request, const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAppInstances(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAppInstances, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome ChimeSDKIdentityClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -698,18 +603,12 @@ ListTagsForResourceOutcome ChimeSDKIdentityClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable ChimeSDKIdentityClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PutAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceRetentionSettings(const PutAppInstanceRetentionSettingsRequest& request) const
@@ -730,18 +629,12 @@ PutAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceRet
 
 PutAppInstanceRetentionSettingsOutcomeCallable ChimeSDKIdentityClient::PutAppInstanceRetentionSettingsCallable(const PutAppInstanceRetentionSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAppInstanceRetentionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAppInstanceRetentionSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutAppInstanceRetentionSettings, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::PutAppInstanceRetentionSettingsAsync(const PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutAppInstanceRetentionSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutAppInstanceRetentionSettings, request, handler, context, m_executor.get());
 }
 
 RegisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::RegisterAppInstanceUserEndpoint(const RegisterAppInstanceUserEndpointRequest& request) const
@@ -762,18 +655,12 @@ RegisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::RegisterAppInstan
 
 RegisterAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::RegisterAppInstanceUserEndpointCallable(const RegisterAppInstanceUserEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterAppInstanceUserEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterAppInstanceUserEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RegisterAppInstanceUserEndpoint, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::RegisterAppInstanceUserEndpointAsync(const RegisterAppInstanceUserEndpointRequest& request, const RegisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterAppInstanceUserEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RegisterAppInstanceUserEndpoint, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome ChimeSDKIdentityClient::TagResource(const TagResourceRequest& request) const
@@ -790,18 +677,12 @@ TagResourceOutcome ChimeSDKIdentityClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable ChimeSDKIdentityClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome ChimeSDKIdentityClient::UntagResource(const UntagResourceRequest& request) const
@@ -818,18 +699,12 @@ UntagResourceOutcome ChimeSDKIdentityClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable ChimeSDKIdentityClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateAppInstanceOutcome ChimeSDKIdentityClient::UpdateAppInstance(const UpdateAppInstanceRequest& request) const
@@ -849,18 +724,12 @@ UpdateAppInstanceOutcome ChimeSDKIdentityClient::UpdateAppInstance(const UpdateA
 
 UpdateAppInstanceOutcomeCallable ChimeSDKIdentityClient::UpdateAppInstanceCallable(const UpdateAppInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAppInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAppInstance(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAppInstance, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::UpdateAppInstanceAsync(const UpdateAppInstanceRequest& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAppInstance(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAppInstance, request, handler, context, m_executor.get());
 }
 
 UpdateAppInstanceUserOutcome ChimeSDKIdentityClient::UpdateAppInstanceUser(const UpdateAppInstanceUserRequest& request) const
@@ -880,18 +749,12 @@ UpdateAppInstanceUserOutcome ChimeSDKIdentityClient::UpdateAppInstanceUser(const
 
 UpdateAppInstanceUserOutcomeCallable ChimeSDKIdentityClient::UpdateAppInstanceUserCallable(const UpdateAppInstanceUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAppInstanceUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAppInstanceUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAppInstanceUser, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::UpdateAppInstanceUserAsync(const UpdateAppInstanceUserRequest& request, const UpdateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAppInstanceUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAppInstanceUser, request, handler, context, m_executor.get());
 }
 
 UpdateAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::UpdateAppInstanceUserEndpoint(const UpdateAppInstanceUserEndpointRequest& request) const
@@ -918,17 +781,11 @@ UpdateAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::UpdateAppInstanceUs
 
 UpdateAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::UpdateAppInstanceUserEndpointCallable(const UpdateAppInstanceUserEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAppInstanceUserEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAppInstanceUserEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAppInstanceUserEndpoint, request, m_executor.get());
 }
 
 void ChimeSDKIdentityClient::UpdateAppInstanceUserEndpointAsync(const UpdateAppInstanceUserEndpointRequest& request, const UpdateAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAppInstanceUserEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAppInstanceUserEndpoint, request, handler, context, m_executor.get());
 }
 

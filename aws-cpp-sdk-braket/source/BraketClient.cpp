@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -180,18 +181,12 @@ CancelJobOutcome BraketClient::CancelJob(const CancelJobRequest& request) const
 
 CancelJobOutcomeCallable BraketClient::CancelJobCallable(const CancelJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelJob, request, m_executor.get());
 }
 
 void BraketClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelJob, request, handler, context, m_executor.get());
 }
 
 CancelQuantumTaskOutcome BraketClient::CancelQuantumTask(const CancelQuantumTaskRequest& request) const
@@ -212,18 +207,12 @@ CancelQuantumTaskOutcome BraketClient::CancelQuantumTask(const CancelQuantumTask
 
 CancelQuantumTaskOutcomeCallable BraketClient::CancelQuantumTaskCallable(const CancelQuantumTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelQuantumTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelQuantumTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelQuantumTask, request, m_executor.get());
 }
 
 void BraketClient::CancelQuantumTaskAsync(const CancelQuantumTaskRequest& request, const CancelQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelQuantumTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelQuantumTask, request, handler, context, m_executor.get());
 }
 
 CreateJobOutcome BraketClient::CreateJob(const CreateJobRequest& request) const
@@ -237,18 +226,12 @@ CreateJobOutcome BraketClient::CreateJob(const CreateJobRequest& request) const
 
 CreateJobOutcomeCallable BraketClient::CreateJobCallable(const CreateJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateJob, request, m_executor.get());
 }
 
 void BraketClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateJob, request, handler, context, m_executor.get());
 }
 
 CreateQuantumTaskOutcome BraketClient::CreateQuantumTask(const CreateQuantumTaskRequest& request) const
@@ -262,18 +245,12 @@ CreateQuantumTaskOutcome BraketClient::CreateQuantumTask(const CreateQuantumTask
 
 CreateQuantumTaskOutcomeCallable BraketClient::CreateQuantumTaskCallable(const CreateQuantumTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateQuantumTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateQuantumTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateQuantumTask, request, m_executor.get());
 }
 
 void BraketClient::CreateQuantumTaskAsync(const CreateQuantumTaskRequest& request, const CreateQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateQuantumTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateQuantumTask, request, handler, context, m_executor.get());
 }
 
 GetDeviceOutcome BraketClient::GetDevice(const GetDeviceRequest& request) const
@@ -293,18 +270,12 @@ GetDeviceOutcome BraketClient::GetDevice(const GetDeviceRequest& request) const
 
 GetDeviceOutcomeCallable BraketClient::GetDeviceCallable(const GetDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDevice, request, m_executor.get());
 }
 
 void BraketClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDevice, request, handler, context, m_executor.get());
 }
 
 GetJobOutcome BraketClient::GetJob(const GetJobRequest& request) const
@@ -324,18 +295,12 @@ GetJobOutcome BraketClient::GetJob(const GetJobRequest& request) const
 
 GetJobOutcomeCallable BraketClient::GetJobCallable(const GetJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetJob, request, m_executor.get());
 }
 
 void BraketClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetJob, request, handler, context, m_executor.get());
 }
 
 GetQuantumTaskOutcome BraketClient::GetQuantumTask(const GetQuantumTaskRequest& request) const
@@ -355,18 +320,12 @@ GetQuantumTaskOutcome BraketClient::GetQuantumTask(const GetQuantumTaskRequest& 
 
 GetQuantumTaskOutcomeCallable BraketClient::GetQuantumTaskCallable(const GetQuantumTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetQuantumTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetQuantumTask(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetQuantumTask, request, m_executor.get());
 }
 
 void BraketClient::GetQuantumTaskAsync(const GetQuantumTaskRequest& request, const GetQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetQuantumTask(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetQuantumTask, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome BraketClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -386,18 +345,12 @@ ListTagsForResourceOutcome BraketClient::ListTagsForResource(const ListTagsForRe
 
 ListTagsForResourceOutcomeCallable BraketClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void BraketClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 SearchDevicesOutcome BraketClient::SearchDevices(const SearchDevicesRequest& request) const
@@ -411,18 +364,12 @@ SearchDevicesOutcome BraketClient::SearchDevices(const SearchDevicesRequest& req
 
 SearchDevicesOutcomeCallable BraketClient::SearchDevicesCallable(const SearchDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchDevices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchDevices, request, m_executor.get());
 }
 
 void BraketClient::SearchDevicesAsync(const SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchDevices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchDevices, request, handler, context, m_executor.get());
 }
 
 SearchJobsOutcome BraketClient::SearchJobs(const SearchJobsRequest& request) const
@@ -436,18 +383,12 @@ SearchJobsOutcome BraketClient::SearchJobs(const SearchJobsRequest& request) con
 
 SearchJobsOutcomeCallable BraketClient::SearchJobsCallable(const SearchJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchJobs, request, m_executor.get());
 }
 
 void BraketClient::SearchJobsAsync(const SearchJobsRequest& request, const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchJobs, request, handler, context, m_executor.get());
 }
 
 SearchQuantumTasksOutcome BraketClient::SearchQuantumTasks(const SearchQuantumTasksRequest& request) const
@@ -461,18 +402,12 @@ SearchQuantumTasksOutcome BraketClient::SearchQuantumTasks(const SearchQuantumTa
 
 SearchQuantumTasksOutcomeCallable BraketClient::SearchQuantumTasksCallable(const SearchQuantumTasksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchQuantumTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchQuantumTasks(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SearchQuantumTasks, request, m_executor.get());
 }
 
 void BraketClient::SearchQuantumTasksAsync(const SearchQuantumTasksRequest& request, const SearchQuantumTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SearchQuantumTasks(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SearchQuantumTasks, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome BraketClient::TagResource(const TagResourceRequest& request) const
@@ -492,18 +427,12 @@ TagResourceOutcome BraketClient::TagResource(const TagResourceRequest& request) 
 
 TagResourceOutcomeCallable BraketClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void BraketClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome BraketClient::UntagResource(const UntagResourceRequest& request) const
@@ -528,17 +457,11 @@ UntagResourceOutcome BraketClient::UntagResource(const UntagResourceRequest& req
 
 UntagResourceOutcomeCallable BraketClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void BraketClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 

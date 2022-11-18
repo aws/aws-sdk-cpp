@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -192,18 +193,12 @@ CancelJobRunOutcome EMRContainersClient::CancelJobRun(const CancelJobRunRequest&
 
 CancelJobRunOutcomeCallable EMRContainersClient::CancelJobRunCallable(const CancelJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CancelJobRun, request, m_executor.get());
 }
 
 void EMRContainersClient::CancelJobRunAsync(const CancelJobRunRequest& request, const CancelJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CancelJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CancelJobRun, request, handler, context, m_executor.get());
 }
 
 CreateJobTemplateOutcome EMRContainersClient::CreateJobTemplate(const CreateJobTemplateRequest& request) const
@@ -217,18 +212,12 @@ CreateJobTemplateOutcome EMRContainersClient::CreateJobTemplate(const CreateJobT
 
 CreateJobTemplateOutcomeCallable EMRContainersClient::CreateJobTemplateCallable(const CreateJobTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateJobTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateJobTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateJobTemplate, request, m_executor.get());
 }
 
 void EMRContainersClient::CreateJobTemplateAsync(const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateJobTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateJobTemplate, request, handler, context, m_executor.get());
 }
 
 CreateManagedEndpointOutcome EMRContainersClient::CreateManagedEndpoint(const CreateManagedEndpointRequest& request) const
@@ -249,18 +238,12 @@ CreateManagedEndpointOutcome EMRContainersClient::CreateManagedEndpoint(const Cr
 
 CreateManagedEndpointOutcomeCallable EMRContainersClient::CreateManagedEndpointCallable(const CreateManagedEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateManagedEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateManagedEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateManagedEndpoint, request, m_executor.get());
 }
 
 void EMRContainersClient::CreateManagedEndpointAsync(const CreateManagedEndpointRequest& request, const CreateManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateManagedEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateManagedEndpoint, request, handler, context, m_executor.get());
 }
 
 CreateVirtualClusterOutcome EMRContainersClient::CreateVirtualCluster(const CreateVirtualClusterRequest& request) const
@@ -274,18 +257,12 @@ CreateVirtualClusterOutcome EMRContainersClient::CreateVirtualCluster(const Crea
 
 CreateVirtualClusterOutcomeCallable EMRContainersClient::CreateVirtualClusterCallable(const CreateVirtualClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateVirtualClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVirtualCluster(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateVirtualCluster, request, m_executor.get());
 }
 
 void EMRContainersClient::CreateVirtualClusterAsync(const CreateVirtualClusterRequest& request, const CreateVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateVirtualCluster(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateVirtualCluster, request, handler, context, m_executor.get());
 }
 
 DeleteJobTemplateOutcome EMRContainersClient::DeleteJobTemplate(const DeleteJobTemplateRequest& request) const
@@ -305,18 +282,12 @@ DeleteJobTemplateOutcome EMRContainersClient::DeleteJobTemplate(const DeleteJobT
 
 DeleteJobTemplateOutcomeCallable EMRContainersClient::DeleteJobTemplateCallable(const DeleteJobTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteJobTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJobTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteJobTemplate, request, m_executor.get());
 }
 
 void EMRContainersClient::DeleteJobTemplateAsync(const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteJobTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteJobTemplate, request, handler, context, m_executor.get());
 }
 
 DeleteManagedEndpointOutcome EMRContainersClient::DeleteManagedEndpoint(const DeleteManagedEndpointRequest& request) const
@@ -343,18 +314,12 @@ DeleteManagedEndpointOutcome EMRContainersClient::DeleteManagedEndpoint(const De
 
 DeleteManagedEndpointOutcomeCallable EMRContainersClient::DeleteManagedEndpointCallable(const DeleteManagedEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteManagedEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteManagedEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteManagedEndpoint, request, m_executor.get());
 }
 
 void EMRContainersClient::DeleteManagedEndpointAsync(const DeleteManagedEndpointRequest& request, const DeleteManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteManagedEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteManagedEndpoint, request, handler, context, m_executor.get());
 }
 
 DeleteVirtualClusterOutcome EMRContainersClient::DeleteVirtualCluster(const DeleteVirtualClusterRequest& request) const
@@ -374,18 +339,12 @@ DeleteVirtualClusterOutcome EMRContainersClient::DeleteVirtualCluster(const Dele
 
 DeleteVirtualClusterOutcomeCallable EMRContainersClient::DeleteVirtualClusterCallable(const DeleteVirtualClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteVirtualClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVirtualCluster(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteVirtualCluster, request, m_executor.get());
 }
 
 void EMRContainersClient::DeleteVirtualClusterAsync(const DeleteVirtualClusterRequest& request, const DeleteVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteVirtualCluster(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteVirtualCluster, request, handler, context, m_executor.get());
 }
 
 DescribeJobRunOutcome EMRContainersClient::DescribeJobRun(const DescribeJobRunRequest& request) const
@@ -412,18 +371,12 @@ DescribeJobRunOutcome EMRContainersClient::DescribeJobRun(const DescribeJobRunRe
 
 DescribeJobRunOutcomeCallable EMRContainersClient::DescribeJobRunCallable(const DescribeJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJobRun, request, m_executor.get());
 }
 
 void EMRContainersClient::DescribeJobRunAsync(const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJobRun, request, handler, context, m_executor.get());
 }
 
 DescribeJobTemplateOutcome EMRContainersClient::DescribeJobTemplate(const DescribeJobTemplateRequest& request) const
@@ -443,18 +396,12 @@ DescribeJobTemplateOutcome EMRContainersClient::DescribeJobTemplate(const Descri
 
 DescribeJobTemplateOutcomeCallable EMRContainersClient::DescribeJobTemplateCallable(const DescribeJobTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobTemplate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJobTemplate, request, m_executor.get());
 }
 
 void EMRContainersClient::DescribeJobTemplateAsync(const DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJobTemplate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJobTemplate, request, handler, context, m_executor.get());
 }
 
 DescribeManagedEndpointOutcome EMRContainersClient::DescribeManagedEndpoint(const DescribeManagedEndpointRequest& request) const
@@ -481,18 +428,12 @@ DescribeManagedEndpointOutcome EMRContainersClient::DescribeManagedEndpoint(cons
 
 DescribeManagedEndpointOutcomeCallable EMRContainersClient::DescribeManagedEndpointCallable(const DescribeManagedEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeManagedEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeManagedEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeManagedEndpoint, request, m_executor.get());
 }
 
 void EMRContainersClient::DescribeManagedEndpointAsync(const DescribeManagedEndpointRequest& request, const DescribeManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeManagedEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeManagedEndpoint, request, handler, context, m_executor.get());
 }
 
 DescribeVirtualClusterOutcome EMRContainersClient::DescribeVirtualCluster(const DescribeVirtualClusterRequest& request) const
@@ -512,18 +453,12 @@ DescribeVirtualClusterOutcome EMRContainersClient::DescribeVirtualCluster(const 
 
 DescribeVirtualClusterOutcomeCallable EMRContainersClient::DescribeVirtualClusterCallable(const DescribeVirtualClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeVirtualClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVirtualCluster(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeVirtualCluster, request, m_executor.get());
 }
 
 void EMRContainersClient::DescribeVirtualClusterAsync(const DescribeVirtualClusterRequest& request, const DescribeVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeVirtualCluster(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeVirtualCluster, request, handler, context, m_executor.get());
 }
 
 ListJobRunsOutcome EMRContainersClient::ListJobRuns(const ListJobRunsRequest& request) const
@@ -544,18 +479,12 @@ ListJobRunsOutcome EMRContainersClient::ListJobRuns(const ListJobRunsRequest& re
 
 ListJobRunsOutcomeCallable EMRContainersClient::ListJobRunsCallable(const ListJobRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListJobRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobRuns(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListJobRuns, request, m_executor.get());
 }
 
 void EMRContainersClient::ListJobRunsAsync(const ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListJobRuns(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListJobRuns, request, handler, context, m_executor.get());
 }
 
 ListJobTemplatesOutcome EMRContainersClient::ListJobTemplates(const ListJobTemplatesRequest& request) const
@@ -569,18 +498,12 @@ ListJobTemplatesOutcome EMRContainersClient::ListJobTemplates(const ListJobTempl
 
 ListJobTemplatesOutcomeCallable EMRContainersClient::ListJobTemplatesCallable(const ListJobTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListJobTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobTemplates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListJobTemplates, request, m_executor.get());
 }
 
 void EMRContainersClient::ListJobTemplatesAsync(const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListJobTemplates(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListJobTemplates, request, handler, context, m_executor.get());
 }
 
 ListManagedEndpointsOutcome EMRContainersClient::ListManagedEndpoints(const ListManagedEndpointsRequest& request) const
@@ -601,18 +524,12 @@ ListManagedEndpointsOutcome EMRContainersClient::ListManagedEndpoints(const List
 
 ListManagedEndpointsOutcomeCallable EMRContainersClient::ListManagedEndpointsCallable(const ListManagedEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListManagedEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListManagedEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListManagedEndpoints, request, m_executor.get());
 }
 
 void EMRContainersClient::ListManagedEndpointsAsync(const ListManagedEndpointsRequest& request, const ListManagedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListManagedEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListManagedEndpoints, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome EMRContainersClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -632,18 +549,12 @@ ListTagsForResourceOutcome EMRContainersClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable EMRContainersClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void EMRContainersClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListVirtualClustersOutcome EMRContainersClient::ListVirtualClusters(const ListVirtualClustersRequest& request) const
@@ -657,18 +568,12 @@ ListVirtualClustersOutcome EMRContainersClient::ListVirtualClusters(const ListVi
 
 ListVirtualClustersOutcomeCallable EMRContainersClient::ListVirtualClustersCallable(const ListVirtualClustersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVirtualClustersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVirtualClusters(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListVirtualClusters, request, m_executor.get());
 }
 
 void EMRContainersClient::ListVirtualClustersAsync(const ListVirtualClustersRequest& request, const ListVirtualClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListVirtualClusters(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListVirtualClusters, request, handler, context, m_executor.get());
 }
 
 StartJobRunOutcome EMRContainersClient::StartJobRun(const StartJobRunRequest& request) const
@@ -689,18 +594,12 @@ StartJobRunOutcome EMRContainersClient::StartJobRun(const StartJobRunRequest& re
 
 StartJobRunOutcomeCallable EMRContainersClient::StartJobRunCallable(const StartJobRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartJobRun(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartJobRun, request, m_executor.get());
 }
 
 void EMRContainersClient::StartJobRunAsync(const StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartJobRun(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartJobRun, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome EMRContainersClient::TagResource(const TagResourceRequest& request) const
@@ -720,18 +619,12 @@ TagResourceOutcome EMRContainersClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable EMRContainersClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void EMRContainersClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome EMRContainersClient::UntagResource(const UntagResourceRequest& request) const
@@ -756,17 +649,11 @@ UntagResourceOutcome EMRContainersClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable EMRContainersClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void EMRContainersClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 

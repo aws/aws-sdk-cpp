@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -197,18 +198,12 @@ AddFlowMediaStreamsOutcome MediaConnectClient::AddFlowMediaStreams(const AddFlow
 
 AddFlowMediaStreamsOutcomeCallable MediaConnectClient::AddFlowMediaStreamsCallable(const AddFlowMediaStreamsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddFlowMediaStreamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddFlowMediaStreams(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddFlowMediaStreams, request, m_executor.get());
 }
 
 void MediaConnectClient::AddFlowMediaStreamsAsync(const AddFlowMediaStreamsRequest& request, const AddFlowMediaStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddFlowMediaStreams(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddFlowMediaStreams, request, handler, context, m_executor.get());
 }
 
 AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsRequest& request) const
@@ -229,18 +224,12 @@ AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsReq
 
 AddFlowOutputsOutcomeCallable MediaConnectClient::AddFlowOutputsCallable(const AddFlowOutputsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddFlowOutputsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddFlowOutputs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddFlowOutputs, request, m_executor.get());
 }
 
 void MediaConnectClient::AddFlowOutputsAsync(const AddFlowOutputsRequest& request, const AddFlowOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddFlowOutputs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddFlowOutputs, request, handler, context, m_executor.get());
 }
 
 AddFlowSourcesOutcome MediaConnectClient::AddFlowSources(const AddFlowSourcesRequest& request) const
@@ -261,18 +250,12 @@ AddFlowSourcesOutcome MediaConnectClient::AddFlowSources(const AddFlowSourcesReq
 
 AddFlowSourcesOutcomeCallable MediaConnectClient::AddFlowSourcesCallable(const AddFlowSourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddFlowSourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddFlowSources(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddFlowSources, request, m_executor.get());
 }
 
 void MediaConnectClient::AddFlowSourcesAsync(const AddFlowSourcesRequest& request, const AddFlowSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddFlowSources(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddFlowSources, request, handler, context, m_executor.get());
 }
 
 AddFlowVpcInterfacesOutcome MediaConnectClient::AddFlowVpcInterfaces(const AddFlowVpcInterfacesRequest& request) const
@@ -293,18 +276,12 @@ AddFlowVpcInterfacesOutcome MediaConnectClient::AddFlowVpcInterfaces(const AddFl
 
 AddFlowVpcInterfacesOutcomeCallable MediaConnectClient::AddFlowVpcInterfacesCallable(const AddFlowVpcInterfacesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddFlowVpcInterfacesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddFlowVpcInterfaces(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddFlowVpcInterfaces, request, m_executor.get());
 }
 
 void MediaConnectClient::AddFlowVpcInterfacesAsync(const AddFlowVpcInterfacesRequest& request, const AddFlowVpcInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddFlowVpcInterfaces(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddFlowVpcInterfaces, request, handler, context, m_executor.get());
 }
 
 CreateFlowOutcome MediaConnectClient::CreateFlow(const CreateFlowRequest& request) const
@@ -318,18 +295,12 @@ CreateFlowOutcome MediaConnectClient::CreateFlow(const CreateFlowRequest& reques
 
 CreateFlowOutcomeCallable MediaConnectClient::CreateFlowCallable(const CreateFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateFlow, request, m_executor.get());
 }
 
 void MediaConnectClient::CreateFlowAsync(const CreateFlowRequest& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateFlow, request, handler, context, m_executor.get());
 }
 
 DeleteFlowOutcome MediaConnectClient::DeleteFlow(const DeleteFlowRequest& request) const
@@ -349,18 +320,12 @@ DeleteFlowOutcome MediaConnectClient::DeleteFlow(const DeleteFlowRequest& reques
 
 DeleteFlowOutcomeCallable MediaConnectClient::DeleteFlowCallable(const DeleteFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteFlow, request, m_executor.get());
 }
 
 void MediaConnectClient::DeleteFlowAsync(const DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteFlow, request, handler, context, m_executor.get());
 }
 
 DescribeFlowOutcome MediaConnectClient::DescribeFlow(const DescribeFlowRequest& request) const
@@ -380,18 +345,12 @@ DescribeFlowOutcome MediaConnectClient::DescribeFlow(const DescribeFlowRequest& 
 
 DescribeFlowOutcomeCallable MediaConnectClient::DescribeFlowCallable(const DescribeFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeFlow, request, m_executor.get());
 }
 
 void MediaConnectClient::DescribeFlowAsync(const DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeFlow, request, handler, context, m_executor.get());
 }
 
 DescribeOfferingOutcome MediaConnectClient::DescribeOffering(const DescribeOfferingRequest& request) const
@@ -411,18 +370,12 @@ DescribeOfferingOutcome MediaConnectClient::DescribeOffering(const DescribeOffer
 
 DescribeOfferingOutcomeCallable MediaConnectClient::DescribeOfferingCallable(const DescribeOfferingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeOfferingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOffering(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeOffering, request, m_executor.get());
 }
 
 void MediaConnectClient::DescribeOfferingAsync(const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeOffering(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeOffering, request, handler, context, m_executor.get());
 }
 
 DescribeReservationOutcome MediaConnectClient::DescribeReservation(const DescribeReservationRequest& request) const
@@ -442,18 +395,12 @@ DescribeReservationOutcome MediaConnectClient::DescribeReservation(const Describ
 
 DescribeReservationOutcomeCallable MediaConnectClient::DescribeReservationCallable(const DescribeReservationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeReservationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReservation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeReservation, request, m_executor.get());
 }
 
 void MediaConnectClient::DescribeReservationAsync(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeReservation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeReservation, request, handler, context, m_executor.get());
 }
 
 GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const GrantFlowEntitlementsRequest& request) const
@@ -474,18 +421,12 @@ GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const Gra
 
 GrantFlowEntitlementsOutcomeCallable MediaConnectClient::GrantFlowEntitlementsCallable(const GrantFlowEntitlementsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GrantFlowEntitlementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GrantFlowEntitlements(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GrantFlowEntitlements, request, m_executor.get());
 }
 
 void MediaConnectClient::GrantFlowEntitlementsAsync(const GrantFlowEntitlementsRequest& request, const GrantFlowEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GrantFlowEntitlements(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GrantFlowEntitlements, request, handler, context, m_executor.get());
 }
 
 ListEntitlementsOutcome MediaConnectClient::ListEntitlements(const ListEntitlementsRequest& request) const
@@ -499,18 +440,12 @@ ListEntitlementsOutcome MediaConnectClient::ListEntitlements(const ListEntitleme
 
 ListEntitlementsOutcomeCallable MediaConnectClient::ListEntitlementsCallable(const ListEntitlementsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEntitlementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEntitlements(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEntitlements, request, m_executor.get());
 }
 
 void MediaConnectClient::ListEntitlementsAsync(const ListEntitlementsRequest& request, const ListEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEntitlements(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEntitlements, request, handler, context, m_executor.get());
 }
 
 ListFlowsOutcome MediaConnectClient::ListFlows(const ListFlowsRequest& request) const
@@ -524,18 +459,12 @@ ListFlowsOutcome MediaConnectClient::ListFlows(const ListFlowsRequest& request) 
 
 ListFlowsOutcomeCallable MediaConnectClient::ListFlowsCallable(const ListFlowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFlowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFlows(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListFlows, request, m_executor.get());
 }
 
 void MediaConnectClient::ListFlowsAsync(const ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListFlows(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListFlows, request, handler, context, m_executor.get());
 }
 
 ListOfferingsOutcome MediaConnectClient::ListOfferings(const ListOfferingsRequest& request) const
@@ -549,18 +478,12 @@ ListOfferingsOutcome MediaConnectClient::ListOfferings(const ListOfferingsReques
 
 ListOfferingsOutcomeCallable MediaConnectClient::ListOfferingsCallable(const ListOfferingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOfferings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListOfferings, request, m_executor.get());
 }
 
 void MediaConnectClient::ListOfferingsAsync(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListOfferings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListOfferings, request, handler, context, m_executor.get());
 }
 
 ListReservationsOutcome MediaConnectClient::ListReservations(const ListReservationsRequest& request) const
@@ -574,18 +497,12 @@ ListReservationsOutcome MediaConnectClient::ListReservations(const ListReservati
 
 ListReservationsOutcomeCallable MediaConnectClient::ListReservationsCallable(const ListReservationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReservationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReservations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListReservations, request, m_executor.get());
 }
 
 void MediaConnectClient::ListReservationsAsync(const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListReservations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListReservations, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome MediaConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -605,18 +522,12 @@ ListTagsForResourceOutcome MediaConnectClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable MediaConnectClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void MediaConnectClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 PurchaseOfferingOutcome MediaConnectClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
@@ -636,18 +547,12 @@ PurchaseOfferingOutcome MediaConnectClient::PurchaseOffering(const PurchaseOffer
 
 PurchaseOfferingOutcomeCallable MediaConnectClient::PurchaseOfferingCallable(const PurchaseOfferingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PurchaseOfferingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PurchaseOffering(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PurchaseOffering, request, m_executor.get());
 }
 
 void MediaConnectClient::PurchaseOfferingAsync(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PurchaseOffering(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PurchaseOffering, request, handler, context, m_executor.get());
 }
 
 RemoveFlowMediaStreamOutcome MediaConnectClient::RemoveFlowMediaStream(const RemoveFlowMediaStreamRequest& request) const
@@ -674,18 +579,12 @@ RemoveFlowMediaStreamOutcome MediaConnectClient::RemoveFlowMediaStream(const Rem
 
 RemoveFlowMediaStreamOutcomeCallable MediaConnectClient::RemoveFlowMediaStreamCallable(const RemoveFlowMediaStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveFlowMediaStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveFlowMediaStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveFlowMediaStream, request, m_executor.get());
 }
 
 void MediaConnectClient::RemoveFlowMediaStreamAsync(const RemoveFlowMediaStreamRequest& request, const RemoveFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveFlowMediaStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveFlowMediaStream, request, handler, context, m_executor.get());
 }
 
 RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOutputRequest& request) const
@@ -712,18 +611,12 @@ RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOut
 
 RemoveFlowOutputOutcomeCallable MediaConnectClient::RemoveFlowOutputCallable(const RemoveFlowOutputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveFlowOutputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveFlowOutput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveFlowOutput, request, m_executor.get());
 }
 
 void MediaConnectClient::RemoveFlowOutputAsync(const RemoveFlowOutputRequest& request, const RemoveFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveFlowOutput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveFlowOutput, request, handler, context, m_executor.get());
 }
 
 RemoveFlowSourceOutcome MediaConnectClient::RemoveFlowSource(const RemoveFlowSourceRequest& request) const
@@ -750,18 +643,12 @@ RemoveFlowSourceOutcome MediaConnectClient::RemoveFlowSource(const RemoveFlowSou
 
 RemoveFlowSourceOutcomeCallable MediaConnectClient::RemoveFlowSourceCallable(const RemoveFlowSourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveFlowSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveFlowSource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveFlowSource, request, m_executor.get());
 }
 
 void MediaConnectClient::RemoveFlowSourceAsync(const RemoveFlowSourceRequest& request, const RemoveFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveFlowSource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveFlowSource, request, handler, context, m_executor.get());
 }
 
 RemoveFlowVpcInterfaceOutcome MediaConnectClient::RemoveFlowVpcInterface(const RemoveFlowVpcInterfaceRequest& request) const
@@ -788,18 +675,12 @@ RemoveFlowVpcInterfaceOutcome MediaConnectClient::RemoveFlowVpcInterface(const R
 
 RemoveFlowVpcInterfaceOutcomeCallable MediaConnectClient::RemoveFlowVpcInterfaceCallable(const RemoveFlowVpcInterfaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveFlowVpcInterfaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveFlowVpcInterface(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RemoveFlowVpcInterface, request, m_executor.get());
 }
 
 void MediaConnectClient::RemoveFlowVpcInterfaceAsync(const RemoveFlowVpcInterfaceRequest& request, const RemoveFlowVpcInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RemoveFlowVpcInterface(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RemoveFlowVpcInterface, request, handler, context, m_executor.get());
 }
 
 RevokeFlowEntitlementOutcome MediaConnectClient::RevokeFlowEntitlement(const RevokeFlowEntitlementRequest& request) const
@@ -826,18 +707,12 @@ RevokeFlowEntitlementOutcome MediaConnectClient::RevokeFlowEntitlement(const Rev
 
 RevokeFlowEntitlementOutcomeCallable MediaConnectClient::RevokeFlowEntitlementCallable(const RevokeFlowEntitlementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RevokeFlowEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeFlowEntitlement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RevokeFlowEntitlement, request, m_executor.get());
 }
 
 void MediaConnectClient::RevokeFlowEntitlementAsync(const RevokeFlowEntitlementRequest& request, const RevokeFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RevokeFlowEntitlement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RevokeFlowEntitlement, request, handler, context, m_executor.get());
 }
 
 StartFlowOutcome MediaConnectClient::StartFlow(const StartFlowRequest& request) const
@@ -857,18 +732,12 @@ StartFlowOutcome MediaConnectClient::StartFlow(const StartFlowRequest& request) 
 
 StartFlowOutcomeCallable MediaConnectClient::StartFlowCallable(const StartFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartFlow, request, m_executor.get());
 }
 
 void MediaConnectClient::StartFlowAsync(const StartFlowRequest& request, const StartFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartFlow, request, handler, context, m_executor.get());
 }
 
 StopFlowOutcome MediaConnectClient::StopFlow(const StopFlowRequest& request) const
@@ -888,18 +757,12 @@ StopFlowOutcome MediaConnectClient::StopFlow(const StopFlowRequest& request) con
 
 StopFlowOutcomeCallable MediaConnectClient::StopFlowCallable(const StopFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopFlow, request, m_executor.get());
 }
 
 void MediaConnectClient::StopFlowAsync(const StopFlowRequest& request, const StopFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopFlow, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome MediaConnectClient::TagResource(const TagResourceRequest& request) const
@@ -919,18 +782,12 @@ TagResourceOutcome MediaConnectClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable MediaConnectClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void MediaConnectClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome MediaConnectClient::UntagResource(const UntagResourceRequest& request) const
@@ -955,18 +812,12 @@ UntagResourceOutcome MediaConnectClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable MediaConnectClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void MediaConnectClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateFlowOutcome MediaConnectClient::UpdateFlow(const UpdateFlowRequest& request) const
@@ -986,18 +837,12 @@ UpdateFlowOutcome MediaConnectClient::UpdateFlow(const UpdateFlowRequest& reques
 
 UpdateFlowOutcomeCallable MediaConnectClient::UpdateFlowCallable(const UpdateFlowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFlow(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFlow, request, m_executor.get());
 }
 
 void MediaConnectClient::UpdateFlowAsync(const UpdateFlowRequest& request, const UpdateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFlow(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFlow, request, handler, context, m_executor.get());
 }
 
 UpdateFlowEntitlementOutcome MediaConnectClient::UpdateFlowEntitlement(const UpdateFlowEntitlementRequest& request) const
@@ -1024,18 +869,12 @@ UpdateFlowEntitlementOutcome MediaConnectClient::UpdateFlowEntitlement(const Upd
 
 UpdateFlowEntitlementOutcomeCallable MediaConnectClient::UpdateFlowEntitlementCallable(const UpdateFlowEntitlementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFlowEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFlowEntitlement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFlowEntitlement, request, m_executor.get());
 }
 
 void MediaConnectClient::UpdateFlowEntitlementAsync(const UpdateFlowEntitlementRequest& request, const UpdateFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFlowEntitlement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFlowEntitlement, request, handler, context, m_executor.get());
 }
 
 UpdateFlowMediaStreamOutcome MediaConnectClient::UpdateFlowMediaStream(const UpdateFlowMediaStreamRequest& request) const
@@ -1062,18 +901,12 @@ UpdateFlowMediaStreamOutcome MediaConnectClient::UpdateFlowMediaStream(const Upd
 
 UpdateFlowMediaStreamOutcomeCallable MediaConnectClient::UpdateFlowMediaStreamCallable(const UpdateFlowMediaStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFlowMediaStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFlowMediaStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFlowMediaStream, request, m_executor.get());
 }
 
 void MediaConnectClient::UpdateFlowMediaStreamAsync(const UpdateFlowMediaStreamRequest& request, const UpdateFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFlowMediaStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFlowMediaStream, request, handler, context, m_executor.get());
 }
 
 UpdateFlowOutputOutcome MediaConnectClient::UpdateFlowOutput(const UpdateFlowOutputRequest& request) const
@@ -1100,18 +933,12 @@ UpdateFlowOutputOutcome MediaConnectClient::UpdateFlowOutput(const UpdateFlowOut
 
 UpdateFlowOutputOutcomeCallable MediaConnectClient::UpdateFlowOutputCallable(const UpdateFlowOutputRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFlowOutputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFlowOutput(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFlowOutput, request, m_executor.get());
 }
 
 void MediaConnectClient::UpdateFlowOutputAsync(const UpdateFlowOutputRequest& request, const UpdateFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFlowOutput(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFlowOutput, request, handler, context, m_executor.get());
 }
 
 UpdateFlowSourceOutcome MediaConnectClient::UpdateFlowSource(const UpdateFlowSourceRequest& request) const
@@ -1138,17 +965,11 @@ UpdateFlowSourceOutcome MediaConnectClient::UpdateFlowSource(const UpdateFlowSou
 
 UpdateFlowSourceOutcomeCallable MediaConnectClient::UpdateFlowSourceCallable(const UpdateFlowSourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFlowSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFlowSource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateFlowSource, request, m_executor.get());
 }
 
 void MediaConnectClient::UpdateFlowSourceAsync(const UpdateFlowSourceRequest& request, const UpdateFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateFlowSource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateFlowSource, request, handler, context, m_executor.get());
 }
 
