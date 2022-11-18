@@ -7,10 +7,12 @@
 #include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/s3control/S3ControlEndpointProvider.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/s3control/S3ControlServiceClientModel.h>
+#include <aws/s3control/S3ControlLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace S3Control
         virtual ~S3ControlClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an access point and associates it with the specified bucket. For more
          * information, see <a
@@ -107,15 +150,6 @@ namespace S3Control
          */
         virtual Model::CreateAccessPointOutcome CreateAccessPoint(const Model::CreateAccessPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccessPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAccessPointOutcomeCallable CreateAccessPointCallable(const Model::CreateAccessPointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccessPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAccessPointAsync(const Model::CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Object Lambda Access Point. For more information, see <a
@@ -134,15 +168,6 @@ namespace S3Control
          */
         virtual Model::CreateAccessPointForObjectLambdaOutcome CreateAccessPointForObjectLambda(const Model::CreateAccessPointForObjectLambdaRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccessPointForObjectLambda that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAccessPointForObjectLambdaOutcomeCallable CreateAccessPointForObjectLambdaCallable(const Model::CreateAccessPointForObjectLambdaRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccessPointForObjectLambda that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAccessPointForObjectLambdaAsync(const Model::CreateAccessPointForObjectLambdaRequest& request, const CreateAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action creates an Amazon S3 on Outposts bucket. To create an S3
@@ -183,15 +208,6 @@ namespace S3Control
          */
         virtual Model::CreateBucketOutcome CreateBucket(const Model::CreateBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBucketOutcomeCallable CreateBucketCallable(const Model::CreateBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBucketAsync(const Model::CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>You can use S3 Batch Operations to perform large-scale batch actions on
@@ -216,15 +232,6 @@ namespace S3Control
          */
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Multi-Region Access Point and associates it with the specified
@@ -255,15 +262,6 @@ namespace S3Control
          */
         virtual Model::CreateMultiRegionAccessPointOutcome CreateMultiRegionAccessPoint(const Model::CreateMultiRegionAccessPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMultiRegionAccessPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMultiRegionAccessPointOutcomeCallable CreateMultiRegionAccessPointCallable(const Model::CreateMultiRegionAccessPointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMultiRegionAccessPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMultiRegionAccessPointAsync(const Model::CreateMultiRegionAccessPointRequest& request, const CreateMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified access point.</p> <p>All Amazon S3 on Outposts REST API
@@ -287,15 +285,6 @@ namespace S3Control
          */
         virtual Model::DeleteAccessPointOutcome DeleteAccessPoint(const Model::DeleteAccessPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccessPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccessPointOutcomeCallable DeleteAccessPointCallable(const Model::DeleteAccessPointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccessPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccessPointAsync(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Object Lambda Access Point.</p> <p>The following
@@ -312,15 +301,6 @@ namespace S3Control
          */
         virtual Model::DeleteAccessPointForObjectLambdaOutcome DeleteAccessPointForObjectLambda(const Model::DeleteAccessPointForObjectLambdaRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccessPointForObjectLambda that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccessPointForObjectLambdaOutcomeCallable DeleteAccessPointForObjectLambdaCallable(const Model::DeleteAccessPointForObjectLambdaRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccessPointForObjectLambda that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccessPointForObjectLambdaAsync(const Model::DeleteAccessPointForObjectLambdaRequest& request, const DeleteAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the access point policy for the specified access point.</p> <p/>
@@ -343,15 +323,6 @@ namespace S3Control
          */
         virtual Model::DeleteAccessPointPolicyOutcome DeleteAccessPointPolicy(const Model::DeleteAccessPointPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccessPointPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccessPointPolicyOutcomeCallable DeleteAccessPointPolicyCallable(const Model::DeleteAccessPointPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccessPointPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccessPointPolicyAsync(const Model::DeleteAccessPointPolicyRequest& request, const DeleteAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the resource policy for an Object Lambda Access Point.</p> <p>The
@@ -366,15 +337,6 @@ namespace S3Control
          */
         virtual Model::DeleteAccessPointPolicyForObjectLambdaOutcome DeleteAccessPointPolicyForObjectLambda(const Model::DeleteAccessPointPolicyForObjectLambdaRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccessPointPolicyForObjectLambda that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccessPointPolicyForObjectLambdaOutcomeCallable DeleteAccessPointPolicyForObjectLambdaCallable(const Model::DeleteAccessPointPolicyForObjectLambdaRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccessPointPolicyForObjectLambda that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccessPointPolicyForObjectLambdaAsync(const Model::DeleteAccessPointPolicyForObjectLambdaRequest& request, const DeleteAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action deletes an Amazon S3 on Outposts bucket. To delete an S3
@@ -405,15 +367,6 @@ namespace S3Control
          */
         virtual Model::DeleteBucketOutcome DeleteBucket(const Model::DeleteBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketOutcomeCallable DeleteBucketCallable(const Model::DeleteBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketAsync(const Model::DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action deletes an Amazon S3 on Outposts bucket's lifecycle
@@ -451,15 +404,6 @@ namespace S3Control
          */
         virtual Model::DeleteBucketLifecycleConfigurationOutcome DeleteBucketLifecycleConfiguration(const Model::DeleteBucketLifecycleConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketLifecycleConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketLifecycleConfigurationOutcomeCallable DeleteBucketLifecycleConfigurationCallable(const Model::DeleteBucketLifecycleConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketLifecycleConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketLifecycleConfigurationAsync(const Model::DeleteBucketLifecycleConfigurationRequest& request, const DeleteBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action deletes an Amazon S3 on Outposts bucket policy. To delete
@@ -502,15 +446,6 @@ namespace S3Control
          */
         virtual Model::DeleteBucketPolicyOutcome DeleteBucketPolicy(const Model::DeleteBucketPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketPolicyOutcomeCallable DeleteBucketPolicyCallable(const Model::DeleteBucketPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketPolicyAsync(const Model::DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action deletes an Amazon S3 on Outposts bucket's tags. To delete
@@ -541,15 +476,6 @@ namespace S3Control
          */
         virtual Model::DeleteBucketTaggingOutcome DeleteBucketTagging(const Model::DeleteBucketTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketTaggingOutcomeCallable DeleteBucketTaggingCallable(const Model::DeleteBucketTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketTaggingAsync(const Model::DeleteBucketTaggingRequest& request, const DeleteBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the entire tag set from the specified S3 Batch Operations job. To use
@@ -569,15 +495,6 @@ namespace S3Control
          */
         virtual Model::DeleteJobTaggingOutcome DeleteJobTagging(const Model::DeleteJobTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteJobTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteJobTaggingOutcomeCallable DeleteJobTaggingCallable(const Model::DeleteJobTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteJobTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteJobTaggingAsync(const Model::DeleteJobTaggingRequest& request, const DeleteJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Multi-Region Access Point. This action does not delete the buckets
@@ -606,15 +523,6 @@ namespace S3Control
          */
         virtual Model::DeleteMultiRegionAccessPointOutcome DeleteMultiRegionAccessPoint(const Model::DeleteMultiRegionAccessPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMultiRegionAccessPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMultiRegionAccessPointOutcomeCallable DeleteMultiRegionAccessPointCallable(const Model::DeleteMultiRegionAccessPointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMultiRegionAccessPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMultiRegionAccessPointAsync(const Model::DeleteMultiRegionAccessPointRequest& request, const DeleteMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web
@@ -631,15 +539,6 @@ namespace S3Control
          */
         virtual Model::DeletePublicAccessBlockOutcome DeletePublicAccessBlock(const Model::DeletePublicAccessBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePublicAccessBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePublicAccessBlockOutcomeCallable DeletePublicAccessBlockCallable(const Model::DeletePublicAccessBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePublicAccessBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePublicAccessBlockAsync(const Model::DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the Amazon S3 Storage Lens configuration. For more information about
@@ -657,15 +556,6 @@ namespace S3Control
          */
         virtual Model::DeleteStorageLensConfigurationOutcome DeleteStorageLensConfiguration(const Model::DeleteStorageLensConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStorageLensConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStorageLensConfigurationOutcomeCallable DeleteStorageLensConfigurationCallable(const Model::DeleteStorageLensConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStorageLensConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStorageLensConfigurationAsync(const Model::DeleteStorageLensConfigurationRequest& request, const DeleteStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the Amazon S3 Storage Lens configuration tags. For more information
@@ -683,15 +573,6 @@ namespace S3Control
          */
         virtual Model::DeleteStorageLensConfigurationTaggingOutcome DeleteStorageLensConfigurationTagging(const Model::DeleteStorageLensConfigurationTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStorageLensConfigurationTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStorageLensConfigurationTaggingOutcomeCallable DeleteStorageLensConfigurationTaggingCallable(const Model::DeleteStorageLensConfigurationTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStorageLensConfigurationTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStorageLensConfigurationTaggingAsync(const Model::DeleteStorageLensConfigurationTaggingRequest& request, const DeleteStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the configuration parameters and status for a Batch Operations job.
@@ -712,15 +593,6 @@ namespace S3Control
          */
         virtual Model::DescribeJobOutcome DescribeJob(const Model::DescribeJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeJobOutcomeCallable DescribeJobCallable(const Model::DescribeJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeJobAsync(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the status of an asynchronous request to manage a Multi-Region
@@ -743,15 +615,6 @@ namespace S3Control
          */
         virtual Model::DescribeMultiRegionAccessPointOperationOutcome DescribeMultiRegionAccessPointOperation(const Model::DescribeMultiRegionAccessPointOperationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMultiRegionAccessPointOperation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMultiRegionAccessPointOperationOutcomeCallable DescribeMultiRegionAccessPointOperationCallable(const Model::DescribeMultiRegionAccessPointOperationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMultiRegionAccessPointOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMultiRegionAccessPointOperationAsync(const Model::DescribeMultiRegionAccessPointOperationRequest& request, const DescribeMultiRegionAccessPointOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns configuration information about the specified access point.</p> <p/>
@@ -776,15 +639,6 @@ namespace S3Control
          */
         virtual Model::GetAccessPointOutcome GetAccessPoint(const Model::GetAccessPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccessPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccessPointOutcomeCallable GetAccessPointCallable(const Model::GetAccessPointRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccessPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccessPointAsync(const Model::GetAccessPointRequest& request, const GetAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns configuration for an Object Lambda Access Point.</p> <p>The following
@@ -797,15 +651,6 @@ namespace S3Control
          */
         virtual Model::GetAccessPointConfigurationForObjectLambdaOutcome GetAccessPointConfigurationForObjectLambda(const Model::GetAccessPointConfigurationForObjectLambdaRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccessPointConfigurationForObjectLambda that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccessPointConfigurationForObjectLambdaOutcomeCallable GetAccessPointConfigurationForObjectLambdaCallable(const Model::GetAccessPointConfigurationForObjectLambdaRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccessPointConfigurationForObjectLambda that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccessPointConfigurationForObjectLambdaAsync(const Model::GetAccessPointConfigurationForObjectLambdaRequest& request, const GetAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns configuration information about the specified Object Lambda Access
@@ -822,15 +667,6 @@ namespace S3Control
          */
         virtual Model::GetAccessPointForObjectLambdaOutcome GetAccessPointForObjectLambda(const Model::GetAccessPointForObjectLambdaRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccessPointForObjectLambda that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccessPointForObjectLambdaOutcomeCallable GetAccessPointForObjectLambdaCallable(const Model::GetAccessPointForObjectLambdaRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccessPointForObjectLambda that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccessPointForObjectLambdaAsync(const Model::GetAccessPointForObjectLambdaRequest& request, const GetAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the access point policy associated with the specified access
@@ -845,15 +681,6 @@ namespace S3Control
          */
         virtual Model::GetAccessPointPolicyOutcome GetAccessPointPolicy(const Model::GetAccessPointPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccessPointPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccessPointPolicyOutcomeCallable GetAccessPointPolicyCallable(const Model::GetAccessPointPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccessPointPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccessPointPolicyAsync(const Model::GetAccessPointPolicyRequest& request, const GetAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the resource policy for an Object Lambda Access Point.</p> <p>The
@@ -868,15 +695,6 @@ namespace S3Control
          */
         virtual Model::GetAccessPointPolicyForObjectLambdaOutcome GetAccessPointPolicyForObjectLambda(const Model::GetAccessPointPolicyForObjectLambdaRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccessPointPolicyForObjectLambda that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccessPointPolicyForObjectLambdaOutcomeCallable GetAccessPointPolicyForObjectLambdaCallable(const Model::GetAccessPointPolicyForObjectLambdaRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccessPointPolicyForObjectLambda that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccessPointPolicyForObjectLambdaAsync(const Model::GetAccessPointPolicyForObjectLambdaRequest& request, const GetAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Indicates whether the specified access point currently has a policy that
@@ -890,15 +708,6 @@ namespace S3Control
          */
         virtual Model::GetAccessPointPolicyStatusOutcome GetAccessPointPolicyStatus(const Model::GetAccessPointPolicyStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccessPointPolicyStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccessPointPolicyStatusOutcomeCallable GetAccessPointPolicyStatusCallable(const Model::GetAccessPointPolicyStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccessPointPolicyStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccessPointPolicyStatusAsync(const Model::GetAccessPointPolicyStatusRequest& request, const GetAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the status of the resource policy associated with an Object Lambda
@@ -908,15 +717,6 @@ namespace S3Control
          */
         virtual Model::GetAccessPointPolicyStatusForObjectLambdaOutcome GetAccessPointPolicyStatusForObjectLambda(const Model::GetAccessPointPolicyStatusForObjectLambdaRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccessPointPolicyStatusForObjectLambda that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccessPointPolicyStatusForObjectLambdaOutcomeCallable GetAccessPointPolicyStatusForObjectLambdaCallable(const Model::GetAccessPointPolicyStatusForObjectLambdaRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccessPointPolicyStatusForObjectLambda that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccessPointPolicyStatusForObjectLambdaAsync(const Model::GetAccessPointPolicyStatusForObjectLambdaRequest& request, const GetAccessPointPolicyStatusForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
@@ -951,15 +751,6 @@ namespace S3Control
          */
         virtual Model::GetBucketOutcome GetBucket(const Model::GetBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketOutcomeCallable GetBucketCallable(const Model::GetBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketAsync(const Model::GetBucketRequest& request, const GetBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action gets an Amazon S3 on Outposts bucket's lifecycle
@@ -1004,15 +795,6 @@ namespace S3Control
          */
         virtual Model::GetBucketLifecycleConfigurationOutcome GetBucketLifecycleConfiguration(const Model::GetBucketLifecycleConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketLifecycleConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketLifecycleConfigurationOutcomeCallable GetBucketLifecycleConfigurationCallable(const Model::GetBucketLifecycleConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketLifecycleConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketLifecycleConfigurationAsync(const Model::GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action gets a bucket policy for an Amazon S3 on Outposts bucket.
@@ -1056,15 +838,6 @@ namespace S3Control
          */
         virtual Model::GetBucketPolicyOutcome GetBucketPolicy(const Model::GetBucketPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketPolicyOutcomeCallable GetBucketPolicyCallable(const Model::GetBucketPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action gets an Amazon S3 on Outposts bucket's tags. To get an S3
@@ -1098,15 +871,6 @@ namespace S3Control
          */
         virtual Model::GetBucketTaggingOutcome GetBucketTagging(const Model::GetBucketTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketTaggingOutcomeCallable GetBucketTaggingCallable(const Model::GetBucketTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketTaggingAsync(const Model::GetBucketTaggingRequest& request, const GetBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This operation returns the versioning state only for S3 on Outposts
@@ -1141,15 +905,6 @@ namespace S3Control
          */
         virtual Model::GetBucketVersioningOutcome GetBucketVersioning(const Model::GetBucketVersioningRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketVersioning that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketVersioningOutcomeCallable GetBucketVersioningCallable(const Model::GetBucketVersioningRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketVersioning that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketVersioningAsync(const Model::GetBucketVersioningRequest& request, const GetBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the tags on an S3 Batch Operations job. To use this operation, you
@@ -1169,15 +924,6 @@ namespace S3Control
          */
         virtual Model::GetJobTaggingOutcome GetJobTagging(const Model::GetJobTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetJobTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetJobTaggingOutcomeCallable GetJobTaggingCallable(const Model::GetJobTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetJobTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetJobTaggingAsync(const Model::GetJobTaggingRequest& request, const GetJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns configuration information about the specified Multi-Region Access
@@ -1201,15 +947,6 @@ namespace S3Control
          */
         virtual Model::GetMultiRegionAccessPointOutcome GetMultiRegionAccessPoint(const Model::GetMultiRegionAccessPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMultiRegionAccessPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMultiRegionAccessPointOutcomeCallable GetMultiRegionAccessPointCallable(const Model::GetMultiRegionAccessPointRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMultiRegionAccessPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMultiRegionAccessPointAsync(const Model::GetMultiRegionAccessPointRequest& request, const GetMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the access control policy of the specified Multi-Region Access
@@ -1229,15 +966,6 @@ namespace S3Control
          */
         virtual Model::GetMultiRegionAccessPointPolicyOutcome GetMultiRegionAccessPointPolicy(const Model::GetMultiRegionAccessPointPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMultiRegionAccessPointPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMultiRegionAccessPointPolicyOutcomeCallable GetMultiRegionAccessPointPolicyCallable(const Model::GetMultiRegionAccessPointPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMultiRegionAccessPointPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMultiRegionAccessPointPolicyAsync(const Model::GetMultiRegionAccessPointPolicyRequest& request, const GetMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Indicates whether the specified Multi-Region Access Point has an access
@@ -1257,15 +985,6 @@ namespace S3Control
          */
         virtual Model::GetMultiRegionAccessPointPolicyStatusOutcome GetMultiRegionAccessPointPolicyStatus(const Model::GetMultiRegionAccessPointPolicyStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMultiRegionAccessPointPolicyStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMultiRegionAccessPointPolicyStatusOutcomeCallable GetMultiRegionAccessPointPolicyStatusCallable(const Model::GetMultiRegionAccessPointPolicyStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMultiRegionAccessPointPolicyStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMultiRegionAccessPointPolicyStatusAsync(const Model::GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web
@@ -1282,15 +1001,6 @@ namespace S3Control
          */
         virtual Model::GetPublicAccessBlockOutcome GetPublicAccessBlock(const Model::GetPublicAccessBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPublicAccessBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPublicAccessBlockOutcomeCallable GetPublicAccessBlockCallable(const Model::GetPublicAccessBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPublicAccessBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPublicAccessBlockAsync(const Model::GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the Amazon S3 Storage Lens configuration. For more information, see <a
@@ -1310,15 +1020,6 @@ namespace S3Control
          */
         virtual Model::GetStorageLensConfigurationOutcome GetStorageLensConfiguration(const Model::GetStorageLensConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStorageLensConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStorageLensConfigurationOutcomeCallable GetStorageLensConfigurationCallable(const Model::GetStorageLensConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStorageLensConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStorageLensConfigurationAsync(const Model::GetStorageLensConfigurationRequest& request, const GetStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the tags of Amazon S3 Storage Lens configuration. For more information
@@ -1336,15 +1037,6 @@ namespace S3Control
          */
         virtual Model::GetStorageLensConfigurationTaggingOutcome GetStorageLensConfigurationTagging(const Model::GetStorageLensConfigurationTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStorageLensConfigurationTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStorageLensConfigurationTaggingOutcomeCallable GetStorageLensConfigurationTaggingCallable(const Model::GetStorageLensConfigurationTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStorageLensConfigurationTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStorageLensConfigurationTaggingAsync(const Model::GetStorageLensConfigurationTaggingRequest& request, const GetStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the access points currently associated with the specified
@@ -1373,15 +1065,6 @@ namespace S3Control
          */
         virtual Model::ListAccessPointsOutcome ListAccessPoints(const Model::ListAccessPointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccessPoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccessPointsOutcomeCallable ListAccessPointsCallable(const Model::ListAccessPointsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccessPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccessPointsAsync(const Model::ListAccessPointsRequest& request, const ListAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns some or all (up to 1,000) access points associated with the Object
@@ -1400,15 +1083,6 @@ namespace S3Control
          */
         virtual Model::ListAccessPointsForObjectLambdaOutcome ListAccessPointsForObjectLambda(const Model::ListAccessPointsForObjectLambdaRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccessPointsForObjectLambda that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccessPointsForObjectLambdaOutcomeCallable ListAccessPointsForObjectLambdaCallable(const Model::ListAccessPointsForObjectLambdaRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccessPointsForObjectLambda that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccessPointsForObjectLambdaAsync(const Model::ListAccessPointsForObjectLambdaRequest& request, const ListAccessPointsForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists current S3 Batch Operations jobs and jobs that have ended within the
@@ -1430,15 +1104,6 @@ namespace S3Control
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the Multi-Region Access Points currently associated with
@@ -1464,15 +1129,6 @@ namespace S3Control
          */
         virtual Model::ListMultiRegionAccessPointsOutcome ListMultiRegionAccessPoints(const Model::ListMultiRegionAccessPointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMultiRegionAccessPoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMultiRegionAccessPointsOutcomeCallable ListMultiRegionAccessPointsCallable(const Model::ListMultiRegionAccessPointsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMultiRegionAccessPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMultiRegionAccessPointsAsync(const Model::ListMultiRegionAccessPointsRequest& request, const ListMultiRegionAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all Outposts buckets in an Outpost that are owned by the
@@ -1489,15 +1145,6 @@ namespace S3Control
          */
         virtual Model::ListRegionalBucketsOutcome ListRegionalBuckets(const Model::ListRegionalBucketsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRegionalBuckets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRegionalBucketsOutcomeCallable ListRegionalBucketsCallable(const Model::ListRegionalBucketsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRegionalBuckets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRegionalBucketsAsync(const Model::ListRegionalBucketsRequest& request, const ListRegionalBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of Amazon S3 Storage Lens configurations. For more information
@@ -1515,15 +1162,6 @@ namespace S3Control
          */
         virtual Model::ListStorageLensConfigurationsOutcome ListStorageLensConfigurations(const Model::ListStorageLensConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStorageLensConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStorageLensConfigurationsOutcomeCallable ListStorageLensConfigurationsCallable(const Model::ListStorageLensConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStorageLensConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStorageLensConfigurationsAsync(const Model::ListStorageLensConfigurationsRequest& request, const ListStorageLensConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces configuration for an Object Lambda Access Point.</p> <p>The
@@ -1536,15 +1174,6 @@ namespace S3Control
          */
         virtual Model::PutAccessPointConfigurationForObjectLambdaOutcome PutAccessPointConfigurationForObjectLambda(const Model::PutAccessPointConfigurationForObjectLambdaRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAccessPointConfigurationForObjectLambda that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAccessPointConfigurationForObjectLambdaOutcomeCallable PutAccessPointConfigurationForObjectLambdaCallable(const Model::PutAccessPointConfigurationForObjectLambdaRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAccessPointConfigurationForObjectLambda that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAccessPointConfigurationForObjectLambdaAsync(const Model::PutAccessPointConfigurationForObjectLambdaRequest& request, const PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an access policy with the specified access point. Each access
@@ -1568,15 +1197,6 @@ namespace S3Control
          */
         virtual Model::PutAccessPointPolicyOutcome PutAccessPointPolicy(const Model::PutAccessPointPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAccessPointPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAccessPointPolicyOutcomeCallable PutAccessPointPolicyCallable(const Model::PutAccessPointPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAccessPointPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAccessPointPolicyAsync(const Model::PutAccessPointPolicyRequest& request, const PutAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or replaces resource policy for an Object Lambda Access Point. For an
@@ -1594,15 +1214,6 @@ namespace S3Control
          */
         virtual Model::PutAccessPointPolicyForObjectLambdaOutcome PutAccessPointPolicyForObjectLambda(const Model::PutAccessPointPolicyForObjectLambdaRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAccessPointPolicyForObjectLambda that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAccessPointPolicyForObjectLambdaOutcomeCallable PutAccessPointPolicyForObjectLambdaCallable(const Model::PutAccessPointPolicyForObjectLambdaRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAccessPointPolicyForObjectLambda that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAccessPointPolicyForObjectLambdaAsync(const Model::PutAccessPointPolicyForObjectLambdaRequest& request, const PutAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action puts a lifecycle configuration to an Amazon S3 on Outposts
@@ -1631,15 +1242,6 @@ namespace S3Control
          */
         virtual Model::PutBucketLifecycleConfigurationOutcome PutBucketLifecycleConfiguration(const Model::PutBucketLifecycleConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketLifecycleConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketLifecycleConfigurationOutcomeCallable PutBucketLifecycleConfigurationCallable(const Model::PutBucketLifecycleConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketLifecycleConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketLifecycleConfigurationAsync(const Model::PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action puts a bucket policy to an Amazon S3 on Outposts bucket.
@@ -1681,15 +1283,6 @@ namespace S3Control
          */
         virtual Model::PutBucketPolicyOutcome PutBucketPolicy(const Model::PutBucketPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketPolicyOutcomeCallable PutBucketPolicyCallable(const Model::PutBucketPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketPolicyAsync(const Model::PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action puts tags on an Amazon S3 on Outposts bucket. To put tags
@@ -1753,15 +1346,6 @@ namespace S3Control
          */
         virtual Model::PutBucketTaggingOutcome PutBucketTagging(const Model::PutBucketTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketTaggingOutcomeCallable PutBucketTaggingCallable(const Model::PutBucketTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketTaggingAsync(const Model::PutBucketTaggingRequest& request, const PutBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This operation sets the versioning state only for S3 on Outposts
@@ -1813,15 +1397,6 @@ namespace S3Control
          */
         virtual Model::PutBucketVersioningOutcome PutBucketVersioning(const Model::PutBucketVersioningRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketVersioning that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketVersioningOutcomeCallable PutBucketVersioningCallable(const Model::PutBucketVersioningRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketVersioning that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketVersioningAsync(const Model::PutBucketVersioningRequest& request, const PutBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the supplied tag-set on an S3 Batch Operations job.</p> <p>A tag is a
@@ -1865,15 +1440,6 @@ namespace S3Control
          */
         virtual Model::PutJobTaggingOutcome PutJobTagging(const Model::PutJobTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutJobTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutJobTaggingOutcomeCallable PutJobTaggingCallable(const Model::PutJobTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for PutJobTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutJobTaggingAsync(const Model::PutJobTaggingRequest& request, const PutJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an access control policy with the specified Multi-Region Access
@@ -1895,15 +1461,6 @@ namespace S3Control
          */
         virtual Model::PutMultiRegionAccessPointPolicyOutcome PutMultiRegionAccessPointPolicy(const Model::PutMultiRegionAccessPointPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutMultiRegionAccessPointPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutMultiRegionAccessPointPolicyOutcomeCallable PutMultiRegionAccessPointPolicyCallable(const Model::PutMultiRegionAccessPointPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutMultiRegionAccessPointPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutMultiRegionAccessPointPolicyAsync(const Model::PutMultiRegionAccessPointPolicyRequest& request, const PutMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
@@ -1922,15 +1479,6 @@ namespace S3Control
          */
         virtual Model::PutPublicAccessBlockOutcome PutPublicAccessBlock(const Model::PutPublicAccessBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPublicAccessBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPublicAccessBlockOutcomeCallable PutPublicAccessBlockCallable(const Model::PutPublicAccessBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPublicAccessBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPublicAccessBlockAsync(const Model::PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Puts an Amazon S3 Storage Lens configuration. For more information about S3
@@ -1950,15 +1498,6 @@ namespace S3Control
          */
         virtual Model::PutStorageLensConfigurationOutcome PutStorageLensConfiguration(const Model::PutStorageLensConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutStorageLensConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutStorageLensConfigurationOutcomeCallable PutStorageLensConfigurationCallable(const Model::PutStorageLensConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutStorageLensConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutStorageLensConfigurationAsync(const Model::PutStorageLensConfigurationRequest& request, const PutStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Put or replace tags on an existing Amazon S3 Storage Lens configuration. For
@@ -1976,15 +1515,6 @@ namespace S3Control
          */
         virtual Model::PutStorageLensConfigurationTaggingOutcome PutStorageLensConfigurationTagging(const Model::PutStorageLensConfigurationTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutStorageLensConfigurationTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutStorageLensConfigurationTaggingOutcomeCallable PutStorageLensConfigurationTaggingCallable(const Model::PutStorageLensConfigurationTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for PutStorageLensConfigurationTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutStorageLensConfigurationTaggingAsync(const Model::PutStorageLensConfigurationTaggingRequest& request, const PutStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing S3 Batch Operations job's priority. For more information,
@@ -2005,15 +1535,6 @@ namespace S3Control
          */
         virtual Model::UpdateJobPriorityOutcome UpdateJobPriority(const Model::UpdateJobPriorityRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateJobPriority that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateJobPriorityOutcomeCallable UpdateJobPriorityCallable(const Model::UpdateJobPriorityRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateJobPriority that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateJobPriorityAsync(const Model::UpdateJobPriorityRequest& request, const UpdateJobPriorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the status for the specified job. Use this action to confirm that you
@@ -2034,15 +1555,6 @@ namespace S3Control
          */
         virtual Model::UpdateJobStatusOutcome UpdateJobStatus(const Model::UpdateJobStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateJobStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateJobStatusOutcomeCallable UpdateJobStatusCallable(const Model::UpdateJobStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateJobStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateJobStatusAsync(const Model::UpdateJobStatusRequest& request, const UpdateJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

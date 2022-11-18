@@ -14,10 +14,12 @@
 #include <aws/crt/auth/Sigv4Signing.h>
 #include <aws/crt/http/HttpRequestResponse.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/s3-crt/S3CrtServiceClientModel.h>
+#include <aws/s3-crt/S3CrtLegacyAsyncMacros.h>
 
 struct aws_s3_client;
 // TODO: temporary fix for naming conflicts on Windows.
@@ -88,6 +90,47 @@ namespace Aws
         /* End of legacy constructors due deprecation */
         virtual ~S3CrtClient();
 
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
         /**
          * <p>This action aborts a multipart upload. After a multipart upload is aborted,
          * no additional parts can be uploaded using that upload ID. The storage consumed
@@ -118,15 +161,6 @@ namespace Aws
          */
         virtual Model::AbortMultipartUploadOutcome AbortMultipartUpload(const Model::AbortMultipartUploadRequest& request) const;
 
-        /**
-         * A Callable wrapper for AbortMultipartUpload that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AbortMultipartUploadOutcomeCallable AbortMultipartUploadCallable(const Model::AbortMultipartUploadRequest& request) const;
-
-        /**
-         * An Async wrapper for AbortMultipartUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AbortMultipartUploadAsync(const Model::AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Completes a multipart upload by assembling previously uploaded parts.</p>
@@ -192,15 +226,6 @@ namespace Aws
          */
         virtual Model::CompleteMultipartUploadOutcome CompleteMultipartUpload(const Model::CompleteMultipartUploadRequest& request) const;
 
-        /**
-         * A Callable wrapper for CompleteMultipartUpload that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CompleteMultipartUploadOutcomeCallable CompleteMultipartUploadCallable(const Model::CompleteMultipartUploadRequest& request) const;
-
-        /**
-         * An Async wrapper for CompleteMultipartUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CompleteMultipartUploadAsync(const Model::CompleteMultipartUploadRequest& request, const CompleteMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a copy of an object that is already stored in Amazon S3.</p> 
@@ -341,15 +366,6 @@ namespace Aws
          */
         virtual Model::CopyObjectOutcome CopyObject(const Model::CopyObjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopyObject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopyObjectOutcomeCallable CopyObjectCallable(const Model::CopyObjectRequest& request) const;
-
-        /**
-         * An Async wrapper for CopyObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopyObjectAsync(const Model::CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new S3 bucket. To create a bucket, you must register with Amazon S3
@@ -446,15 +462,6 @@ namespace Aws
          */
         virtual Model::CreateBucketOutcome CreateBucket(const Model::CreateBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBucketOutcomeCallable CreateBucketCallable(const Model::CreateBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBucketAsync(const Model::CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This action initiates a multipart upload and returns an upload ID. This
@@ -619,15 +626,6 @@ namespace Aws
          */
         virtual Model::CreateMultipartUploadOutcome CreateMultipartUpload(const Model::CreateMultipartUploadRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMultipartUpload that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMultipartUploadOutcomeCallable CreateMultipartUploadCallable(const Model::CreateMultipartUploadRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMultipartUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMultipartUploadAsync(const Model::CreateMultipartUploadRequest& request, const CreateMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the S3 bucket. All objects (including all object versions and delete
@@ -642,15 +640,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketOutcome DeleteBucket(const Model::DeleteBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketOutcomeCallable DeleteBucketCallable(const Model::DeleteBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketAsync(const Model::DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an analytics configuration for the bucket (specified by the analytics
@@ -677,15 +666,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketAnalyticsConfigurationOutcome DeleteBucketAnalyticsConfiguration(const Model::DeleteBucketAnalyticsConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketAnalyticsConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketAnalyticsConfigurationOutcomeCallable DeleteBucketAnalyticsConfigurationCallable(const Model::DeleteBucketAnalyticsConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketAnalyticsConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketAnalyticsConfigurationAsync(const Model::DeleteBucketAnalyticsConfigurationRequest& request, const DeleteBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the <code>cors</code> configuration information set for the
@@ -705,15 +685,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketCorsOutcome DeleteBucketCors(const Model::DeleteBucketCorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketCors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketCorsOutcomeCallable DeleteBucketCorsCallable(const Model::DeleteBucketCorsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketCors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketCorsAsync(const Model::DeleteBucketCorsRequest& request, const DeleteBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This implementation of the DELETE action removes default encryption from the
@@ -738,15 +709,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketEncryptionOutcome DeleteBucketEncryption(const Model::DeleteBucketEncryptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketEncryption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketEncryptionOutcomeCallable DeleteBucketEncryptionCallable(const Model::DeleteBucketEncryptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketEncryption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketEncryptionAsync(const Model::DeleteBucketEncryptionRequest& request, const DeleteBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the S3 Intelligent-Tiering configuration from the specified
@@ -779,15 +741,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketIntelligentTieringConfigurationOutcome DeleteBucketIntelligentTieringConfiguration(const Model::DeleteBucketIntelligentTieringConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketIntelligentTieringConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketIntelligentTieringConfigurationOutcomeCallable DeleteBucketIntelligentTieringConfigurationCallable(const Model::DeleteBucketIntelligentTieringConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketIntelligentTieringConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketIntelligentTieringConfigurationAsync(const Model::DeleteBucketIntelligentTieringConfigurationRequest& request, const DeleteBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an inventory configuration (identified by the inventory ID) from the
@@ -814,15 +767,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketInventoryConfigurationOutcome DeleteBucketInventoryConfiguration(const Model::DeleteBucketInventoryConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketInventoryConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketInventoryConfigurationOutcomeCallable DeleteBucketInventoryConfigurationCallable(const Model::DeleteBucketInventoryConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketInventoryConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketInventoryConfigurationAsync(const Model::DeleteBucketInventoryConfigurationRequest& request, const DeleteBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the lifecycle configuration from the specified bucket. Amazon S3
@@ -847,15 +791,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketLifecycleOutcome DeleteBucketLifecycle(const Model::DeleteBucketLifecycleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketLifecycle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketLifecycleOutcomeCallable DeleteBucketLifecycleCallable(const Model::DeleteBucketLifecycleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketLifecycle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketLifecycleAsync(const Model::DeleteBucketLifecycleRequest& request, const DeleteBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a metrics configuration for the Amazon CloudWatch request metrics
@@ -885,15 +820,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketMetricsConfigurationOutcome DeleteBucketMetricsConfiguration(const Model::DeleteBucketMetricsConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketMetricsConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketMetricsConfigurationOutcomeCallable DeleteBucketMetricsConfigurationCallable(const Model::DeleteBucketMetricsConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketMetricsConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketMetricsConfigurationAsync(const Model::DeleteBucketMetricsConfigurationRequest& request, const DeleteBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes <code>OwnershipControls</code> for an Amazon S3 bucket. To use this
@@ -912,15 +838,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketOwnershipControlsOutcome DeleteBucketOwnershipControls(const Model::DeleteBucketOwnershipControlsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketOwnershipControls that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketOwnershipControlsOutcomeCallable DeleteBucketOwnershipControlsCallable(const Model::DeleteBucketOwnershipControlsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketOwnershipControls that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketOwnershipControlsAsync(const Model::DeleteBucketOwnershipControlsRequest& request, const DeleteBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This implementation of the DELETE action uses the policy subresource to
@@ -949,15 +866,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketPolicyOutcome DeleteBucketPolicy(const Model::DeleteBucketPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketPolicyOutcomeCallable DeleteBucketPolicyCallable(const Model::DeleteBucketPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketPolicyAsync(const Model::DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes the replication configuration from the bucket.</p> <p>To use this
@@ -983,15 +891,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketReplicationOutcome DeleteBucketReplication(const Model::DeleteBucketReplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketReplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketReplicationOutcomeCallable DeleteBucketReplicationCallable(const Model::DeleteBucketReplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketReplicationAsync(const Model::DeleteBucketReplicationRequest& request, const DeleteBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the tags from the bucket.</p> <p>To use this operation, you must have
@@ -1008,15 +907,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketTaggingOutcome DeleteBucketTagging(const Model::DeleteBucketTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketTaggingOutcomeCallable DeleteBucketTaggingCallable(const Model::DeleteBucketTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketTaggingAsync(const Model::DeleteBucketTaggingRequest& request, const DeleteBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This action removes the website configuration for a bucket. Amazon S3 returns
@@ -1042,15 +932,6 @@ namespace Aws
          */
         virtual Model::DeleteBucketWebsiteOutcome DeleteBucketWebsite(const Model::DeleteBucketWebsiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketWebsite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketWebsiteOutcomeCallable DeleteBucketWebsiteCallable(const Model::DeleteBucketWebsiteRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketWebsite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketWebsiteAsync(const Model::DeleteBucketWebsiteRequest& request, const DeleteBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the null version (if there is one) of an object and inserts a delete
@@ -1083,15 +964,6 @@ namespace Aws
          */
         virtual Model::DeleteObjectOutcome DeleteObject(const Model::DeleteObjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteObject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteObjectOutcomeCallable DeleteObjectCallable(const Model::DeleteObjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteObjectAsync(const Model::DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the entire tag set from the specified object. For more information
@@ -1113,15 +985,6 @@ namespace Aws
          */
         virtual Model::DeleteObjectTaggingOutcome DeleteObjectTagging(const Model::DeleteObjectTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteObjectTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteObjectTaggingOutcomeCallable DeleteObjectTaggingCallable(const Model::DeleteObjectTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteObjectTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteObjectTaggingAsync(const Model::DeleteObjectTaggingRequest& request, const DeleteObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This action enables you to delete multiple objects from a bucket using a
@@ -1165,15 +1028,6 @@ namespace Aws
          */
         virtual Model::DeleteObjectsOutcome DeleteObjects(const Model::DeleteObjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteObjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteObjectsOutcomeCallable DeleteObjectsCallable(const Model::DeleteObjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteObjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteObjectsAsync(const Model::DeleteObjectsRequest& request, const DeleteObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon S3
@@ -1199,15 +1053,6 @@ namespace Aws
          */
         virtual Model::DeletePublicAccessBlockOutcome DeletePublicAccessBlock(const Model::DeletePublicAccessBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePublicAccessBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePublicAccessBlockOutcomeCallable DeletePublicAccessBlockCallable(const Model::DeletePublicAccessBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePublicAccessBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePublicAccessBlockAsync(const Model::DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This implementation of the GET action uses the <code>accelerate</code>
@@ -1239,15 +1084,6 @@ namespace Aws
          */
         virtual Model::GetBucketAccelerateConfigurationOutcome GetBucketAccelerateConfiguration(const Model::GetBucketAccelerateConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketAccelerateConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketAccelerateConfigurationOutcomeCallable GetBucketAccelerateConfigurationCallable(const Model::GetBucketAccelerateConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketAccelerateConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketAccelerateConfigurationAsync(const Model::GetBucketAccelerateConfigurationRequest& request, const GetBucketAccelerateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This implementation of the <code>GET</code> action uses the <code>acl</code>
@@ -1270,15 +1106,6 @@ namespace Aws
          */
         virtual Model::GetBucketAclOutcome GetBucketAcl(const Model::GetBucketAclRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketAcl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketAclOutcomeCallable GetBucketAclCallable(const Model::GetBucketAclRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketAcl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketAclAsync(const Model::GetBucketAclRequest& request, const GetBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This implementation of the GET action returns an analytics configuration
@@ -1306,15 +1133,6 @@ namespace Aws
          */
         virtual Model::GetBucketAnalyticsConfigurationOutcome GetBucketAnalyticsConfiguration(const Model::GetBucketAnalyticsConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketAnalyticsConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketAnalyticsConfigurationOutcomeCallable GetBucketAnalyticsConfigurationCallable(const Model::GetBucketAnalyticsConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketAnalyticsConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketAnalyticsConfigurationAsync(const Model::GetBucketAnalyticsConfigurationRequest& request, const GetBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the Cross-Origin Resource Sharing (CORS) configuration information
@@ -1334,15 +1152,6 @@ namespace Aws
          */
         virtual Model::GetBucketCorsOutcome GetBucketCors(const Model::GetBucketCorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketCors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketCorsOutcomeCallable GetBucketCorsCallable(const Model::GetBucketCorsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketCors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketCorsAsync(const Model::GetBucketCorsRequest& request, const GetBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the default encryption configuration for an Amazon S3 bucket. If the
@@ -1368,15 +1177,6 @@ namespace Aws
          */
         virtual Model::GetBucketEncryptionOutcome GetBucketEncryption(const Model::GetBucketEncryptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketEncryption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketEncryptionOutcomeCallable GetBucketEncryptionCallable(const Model::GetBucketEncryptionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketEncryption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketEncryptionAsync(const Model::GetBucketEncryptionRequest& request, const GetBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the S3 Intelligent-Tiering configuration from the specified bucket.</p>
@@ -1408,15 +1208,6 @@ namespace Aws
          */
         virtual Model::GetBucketIntelligentTieringConfigurationOutcome GetBucketIntelligentTieringConfiguration(const Model::GetBucketIntelligentTieringConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketIntelligentTieringConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketIntelligentTieringConfigurationOutcomeCallable GetBucketIntelligentTieringConfigurationCallable(const Model::GetBucketIntelligentTieringConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketIntelligentTieringConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketIntelligentTieringConfigurationAsync(const Model::GetBucketIntelligentTieringConfigurationRequest& request, const GetBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an inventory configuration (identified by the inventory configuration
@@ -1443,15 +1234,6 @@ namespace Aws
          */
         virtual Model::GetBucketInventoryConfigurationOutcome GetBucketInventoryConfiguration(const Model::GetBucketInventoryConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketInventoryConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketInventoryConfigurationOutcomeCallable GetBucketInventoryConfigurationCallable(const Model::GetBucketInventoryConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketInventoryConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketInventoryConfigurationAsync(const Model::GetBucketInventoryConfigurationRequest& request, const GetBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>Bucket lifecycle configuration now supports specifying a lifecycle
@@ -1490,15 +1272,6 @@ namespace Aws
          */
         virtual Model::GetBucketLifecycleConfigurationOutcome GetBucketLifecycleConfiguration(const Model::GetBucketLifecycleConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketLifecycleConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketLifecycleConfigurationOutcomeCallable GetBucketLifecycleConfigurationCallable(const Model::GetBucketLifecycleConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketLifecycleConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketLifecycleConfigurationAsync(const Model::GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the Region the bucket resides in. You set the bucket's Region using
@@ -1518,15 +1291,6 @@ namespace Aws
          */
         virtual Model::GetBucketLocationOutcome GetBucketLocation(const Model::GetBucketLocationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketLocation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketLocationOutcomeCallable GetBucketLocationCallable(const Model::GetBucketLocationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketLocation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketLocationAsync(const Model::GetBucketLocationRequest& request, const GetBucketLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the logging status of a bucket and the permissions users have to view
@@ -1542,15 +1306,6 @@ namespace Aws
          */
         virtual Model::GetBucketLoggingOutcome GetBucketLogging(const Model::GetBucketLoggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketLogging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketLoggingOutcomeCallable GetBucketLoggingCallable(const Model::GetBucketLoggingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketLogging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketLoggingAsync(const Model::GetBucketLoggingRequest& request, const GetBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a metrics configuration (specified by the metrics configuration ID) from
@@ -1580,15 +1335,6 @@ namespace Aws
          */
         virtual Model::GetBucketMetricsConfigurationOutcome GetBucketMetricsConfiguration(const Model::GetBucketMetricsConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketMetricsConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketMetricsConfigurationOutcomeCallable GetBucketMetricsConfigurationCallable(const Model::GetBucketMetricsConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketMetricsConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketMetricsConfigurationAsync(const Model::GetBucketMetricsConfigurationRequest& request, const GetBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the notification configuration of a bucket.</p> <p>If notifications
@@ -1612,15 +1358,6 @@ namespace Aws
          */
         virtual Model::GetBucketNotificationConfigurationOutcome GetBucketNotificationConfiguration(const Model::GetBucketNotificationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketNotificationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketNotificationConfigurationOutcomeCallable GetBucketNotificationConfigurationCallable(const Model::GetBucketNotificationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketNotificationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketNotificationConfigurationAsync(const Model::GetBucketNotificationConfigurationRequest& request, const GetBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves <code>OwnershipControls</code> for an Amazon S3 bucket. To use this
@@ -1639,15 +1376,6 @@ namespace Aws
          */
         virtual Model::GetBucketOwnershipControlsOutcome GetBucketOwnershipControls(const Model::GetBucketOwnershipControlsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketOwnershipControls that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketOwnershipControlsOutcomeCallable GetBucketOwnershipControlsCallable(const Model::GetBucketOwnershipControlsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketOwnershipControls that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketOwnershipControlsAsync(const Model::GetBucketOwnershipControlsRequest& request, const GetBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the policy of a specified bucket. If you are using an identity other
@@ -1672,15 +1400,6 @@ namespace Aws
          */
         virtual Model::GetBucketPolicyOutcome GetBucketPolicy(const Model::GetBucketPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketPolicyOutcomeCallable GetBucketPolicyCallable(const Model::GetBucketPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the policy status for an Amazon S3 bucket, indicating whether the
@@ -1706,15 +1425,6 @@ namespace Aws
          */
         virtual Model::GetBucketPolicyStatusOutcome GetBucketPolicyStatus(const Model::GetBucketPolicyStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketPolicyStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketPolicyStatusOutcomeCallable GetBucketPolicyStatusCallable(const Model::GetBucketPolicyStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketPolicyStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketPolicyStatusAsync(const Model::GetBucketPolicyStatusRequest& request, const GetBucketPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the replication configuration of a bucket.</p>  <p> It can take
@@ -1743,15 +1453,6 @@ namespace Aws
          */
         virtual Model::GetBucketReplicationOutcome GetBucketReplication(const Model::GetBucketReplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketReplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketReplicationOutcomeCallable GetBucketReplicationCallable(const Model::GetBucketReplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketReplicationAsync(const Model::GetBucketReplicationRequest& request, const GetBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the request payment configuration of a bucket. To use this version of
@@ -1766,15 +1467,6 @@ namespace Aws
          */
         virtual Model::GetBucketRequestPaymentOutcome GetBucketRequestPayment(const Model::GetBucketRequestPaymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketRequestPayment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketRequestPaymentOutcomeCallable GetBucketRequestPaymentCallable(const Model::GetBucketRequestPaymentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketRequestPayment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketRequestPaymentAsync(const Model::GetBucketRequestPaymentRequest& request, const GetBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the tag set associated with the bucket.</p> <p>To use this operation,
@@ -1794,15 +1486,6 @@ namespace Aws
          */
         virtual Model::GetBucketTaggingOutcome GetBucketTagging(const Model::GetBucketTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketTaggingOutcomeCallable GetBucketTaggingCallable(const Model::GetBucketTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketTaggingAsync(const Model::GetBucketTaggingRequest& request, const GetBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the versioning state of a bucket.</p> <p>To retrieve the versioning
@@ -1822,15 +1505,6 @@ namespace Aws
          */
         virtual Model::GetBucketVersioningOutcome GetBucketVersioning(const Model::GetBucketVersioningRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketVersioning that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketVersioningOutcomeCallable GetBucketVersioningCallable(const Model::GetBucketVersioningRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketVersioning that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketVersioningAsync(const Model::GetBucketVersioningRequest& request, const GetBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the website configuration for a bucket. To host website on Amazon S3,
@@ -1853,15 +1527,6 @@ namespace Aws
          */
         virtual Model::GetBucketWebsiteOutcome GetBucketWebsite(const Model::GetBucketWebsiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketWebsite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketWebsiteOutcomeCallable GetBucketWebsiteCallable(const Model::GetBucketWebsiteRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketWebsite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketWebsiteAsync(const Model::GetBucketWebsiteRequest& request, const GetBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves objects from Amazon S3. To use <code>GET</code>, you must have
@@ -1976,11 +1641,6 @@ namespace Aws
 
 
         /**
-         * An Async wrapper for GetObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetObjectAsync(const Model::GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Returns the access control list (ACL) of an object. To use this operation,
          * you must have <code>s3:GetObjectAcl</code> permissions or <code>READ_ACP</code>
          * access to the object. For more information, see <a
@@ -2011,15 +1671,6 @@ namespace Aws
          */
         virtual Model::GetObjectAclOutcome GetObjectAcl(const Model::GetObjectAclRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetObjectAcl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetObjectAclOutcomeCallable GetObjectAclCallable(const Model::GetObjectAclRequest& request) const;
-
-        /**
-         * An Async wrapper for GetObjectAcl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetObjectAclAsync(const Model::GetObjectAclRequest& request, const GetObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all the metadata from an object without returning the object
@@ -2100,15 +1751,6 @@ namespace Aws
          */
         virtual Model::GetObjectAttributesOutcome GetObjectAttributes(const Model::GetObjectAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetObjectAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetObjectAttributesOutcomeCallable GetObjectAttributesCallable(const Model::GetObjectAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetObjectAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetObjectAttributesAsync(const Model::GetObjectAttributesRequest& request, const GetObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets an object's current legal hold status. For more information, see <a
@@ -2123,15 +1765,6 @@ namespace Aws
          */
         virtual Model::GetObjectLegalHoldOutcome GetObjectLegalHold(const Model::GetObjectLegalHoldRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetObjectLegalHold that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetObjectLegalHoldOutcomeCallable GetObjectLegalHoldCallable(const Model::GetObjectLegalHoldRequest& request) const;
-
-        /**
-         * An Async wrapper for GetObjectLegalHold that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetObjectLegalHoldAsync(const Model::GetObjectLegalHoldRequest& request, const GetObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the Object Lock configuration for a bucket. The rule specified in the
@@ -2147,15 +1780,6 @@ namespace Aws
          */
         virtual Model::GetObjectLockConfigurationOutcome GetObjectLockConfiguration(const Model::GetObjectLockConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetObjectLockConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetObjectLockConfigurationOutcomeCallable GetObjectLockConfigurationCallable(const Model::GetObjectLockConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetObjectLockConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetObjectLockConfigurationAsync(const Model::GetObjectLockConfigurationRequest& request, const GetObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an object's retention settings. For more information, see <a
@@ -2170,15 +1794,6 @@ namespace Aws
          */
         virtual Model::GetObjectRetentionOutcome GetObjectRetention(const Model::GetObjectRetentionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetObjectRetention that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetObjectRetentionOutcomeCallable GetObjectRetentionCallable(const Model::GetObjectRetentionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetObjectRetention that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetObjectRetentionAsync(const Model::GetObjectRetentionRequest& request, const GetObjectRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the tag-set of an object. You send the GET request against the
@@ -2205,15 +1820,6 @@ namespace Aws
          */
         virtual Model::GetObjectTaggingOutcome GetObjectTagging(const Model::GetObjectTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetObjectTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetObjectTaggingOutcomeCallable GetObjectTaggingCallable(const Model::GetObjectTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetObjectTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetObjectTaggingAsync(const Model::GetObjectTaggingRequest& request, const GetObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns torrent files from a bucket. BitTorrent can save you bandwidth when
@@ -2232,15 +1838,6 @@ namespace Aws
          */
         virtual Model::GetObjectTorrentOutcome GetObjectTorrent(const Model::GetObjectTorrentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetObjectTorrent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetObjectTorrentOutcomeCallable GetObjectTorrentCallable(const Model::GetObjectTorrentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetObjectTorrent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetObjectTorrentAsync(const Model::GetObjectTorrentRequest& request, const GetObjectTorrentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon S3
@@ -2272,15 +1869,6 @@ namespace Aws
          */
         virtual Model::GetPublicAccessBlockOutcome GetPublicAccessBlock(const Model::GetPublicAccessBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPublicAccessBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPublicAccessBlockOutcomeCallable GetPublicAccessBlockCallable(const Model::GetPublicAccessBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPublicAccessBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPublicAccessBlockAsync(const Model::GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This action is useful to determine if a bucket exists and you have permission
@@ -2311,15 +1899,6 @@ namespace Aws
          */
         virtual Model::HeadBucketOutcome HeadBucket(const Model::HeadBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for HeadBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::HeadBucketOutcomeCallable HeadBucketCallable(const Model::HeadBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for HeadBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void HeadBucketAsync(const Model::HeadBucketRequest& request, const HeadBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The HEAD action retrieves metadata from an object without returning the
@@ -2383,15 +1962,6 @@ namespace Aws
          */
         virtual Model::HeadObjectOutcome HeadObject(const Model::HeadObjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for HeadObject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::HeadObjectOutcomeCallable HeadObjectCallable(const Model::HeadObjectRequest& request) const;
-
-        /**
-         * An Async wrapper for HeadObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void HeadObjectAsync(const Model::HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the analytics configurations for the bucket. You can have up to 1,000
@@ -2426,15 +1996,6 @@ namespace Aws
          */
         virtual Model::ListBucketAnalyticsConfigurationsOutcome ListBucketAnalyticsConfigurations(const Model::ListBucketAnalyticsConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBucketAnalyticsConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBucketAnalyticsConfigurationsOutcomeCallable ListBucketAnalyticsConfigurationsCallable(const Model::ListBucketAnalyticsConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBucketAnalyticsConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBucketAnalyticsConfigurationsAsync(const Model::ListBucketAnalyticsConfigurationsRequest& request, const ListBucketAnalyticsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the S3 Intelligent-Tiering configuration from the specified bucket.</p>
@@ -2466,15 +2027,6 @@ namespace Aws
          */
         virtual Model::ListBucketIntelligentTieringConfigurationsOutcome ListBucketIntelligentTieringConfigurations(const Model::ListBucketIntelligentTieringConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBucketIntelligentTieringConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBucketIntelligentTieringConfigurationsOutcomeCallable ListBucketIntelligentTieringConfigurationsCallable(const Model::ListBucketIntelligentTieringConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBucketIntelligentTieringConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBucketIntelligentTieringConfigurationsAsync(const Model::ListBucketIntelligentTieringConfigurationsRequest& request, const ListBucketIntelligentTieringConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of inventory configurations for the bucket. You can have up to
@@ -2509,15 +2061,6 @@ namespace Aws
          */
         virtual Model::ListBucketInventoryConfigurationsOutcome ListBucketInventoryConfigurations(const Model::ListBucketInventoryConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBucketInventoryConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBucketInventoryConfigurationsOutcomeCallable ListBucketInventoryConfigurationsCallable(const Model::ListBucketInventoryConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBucketInventoryConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBucketInventoryConfigurationsAsync(const Model::ListBucketInventoryConfigurationsRequest& request, const ListBucketInventoryConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the metrics configurations for the bucket. The metrics configurations
@@ -2554,15 +2097,6 @@ namespace Aws
          */
         virtual Model::ListBucketMetricsConfigurationsOutcome ListBucketMetricsConfigurations(const Model::ListBucketMetricsConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBucketMetricsConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBucketMetricsConfigurationsOutcomeCallable ListBucketMetricsConfigurationsCallable(const Model::ListBucketMetricsConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBucketMetricsConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBucketMetricsConfigurationsAsync(const Model::ListBucketMetricsConfigurationsRequest& request, const ListBucketMetricsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all buckets owned by the authenticated sender of the
@@ -2620,15 +2154,6 @@ namespace Aws
          */
         virtual Model::ListMultipartUploadsOutcome ListMultipartUploads(const Model::ListMultipartUploadsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMultipartUploads that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMultipartUploadsOutcomeCallable ListMultipartUploadsCallable(const Model::ListMultipartUploadsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMultipartUploads that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMultipartUploadsAsync(const Model::ListMultipartUploadsRequest& request, const ListMultipartUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata about all versions of the objects in a bucket. You can also
@@ -2654,15 +2179,6 @@ namespace Aws
          */
         virtual Model::ListObjectVersionsOutcome ListObjectVersions(const Model::ListObjectVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListObjectVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListObjectVersionsOutcomeCallable ListObjectVersionsCallable(const Model::ListObjectVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListObjectVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListObjectVersionsAsync(const Model::ListObjectVersionsRequest& request, const ListObjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns some or all (up to 1,000) of the objects in a bucket. You can use the
@@ -2690,15 +2206,6 @@ namespace Aws
          */
         virtual Model::ListObjectsOutcome ListObjects(const Model::ListObjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListObjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListObjectsOutcomeCallable ListObjectsCallable(const Model::ListObjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListObjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListObjectsAsync(const Model::ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns some or all (up to 1,000) of the objects in a bucket with each
@@ -2738,15 +2245,6 @@ namespace Aws
          */
         virtual Model::ListObjectsV2Outcome ListObjectsV2(const Model::ListObjectsV2Request& request) const;
 
-        /**
-         * A Callable wrapper for ListObjectsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListObjectsV2OutcomeCallable ListObjectsV2Callable(const Model::ListObjectsV2Request& request) const;
-
-        /**
-         * An Async wrapper for ListObjectsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListObjectsV2Async(const Model::ListObjectsV2Request& request, const ListObjectsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the parts that have been uploaded for a specific multipart upload. This
@@ -2787,15 +2285,6 @@ namespace Aws
          */
         virtual Model::ListPartsOutcome ListParts(const Model::ListPartsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListParts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPartsOutcomeCallable ListPartsCallable(const Model::ListPartsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListParts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPartsAsync(const Model::ListPartsRequest& request, const ListPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the accelerate configuration of an existing bucket. Amazon S3 Transfer
@@ -2831,15 +2320,6 @@ namespace Aws
          */
         virtual Model::PutBucketAccelerateConfigurationOutcome PutBucketAccelerateConfiguration(const Model::PutBucketAccelerateConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketAccelerateConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketAccelerateConfigurationOutcomeCallable PutBucketAccelerateConfigurationCallable(const Model::PutBucketAccelerateConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketAccelerateConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketAccelerateConfigurationAsync(const Model::PutBucketAccelerateConfigurationRequest& request, const PutBucketAccelerateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the permissions on an existing bucket using access control lists (ACL).
@@ -2936,15 +2416,6 @@ namespace Aws
          */
         virtual Model::PutBucketAclOutcome PutBucketAcl(const Model::PutBucketAclRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketAcl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketAclOutcomeCallable PutBucketAclCallable(const Model::PutBucketAclRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketAcl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketAclAsync(const Model::PutBucketAclRequest& request, const PutBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets an analytics configuration for the bucket (specified by the analytics
@@ -2996,15 +2467,6 @@ namespace Aws
          */
         virtual Model::PutBucketAnalyticsConfigurationOutcome PutBucketAnalyticsConfiguration(const Model::PutBucketAnalyticsConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketAnalyticsConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketAnalyticsConfigurationOutcomeCallable PutBucketAnalyticsConfigurationCallable(const Model::PutBucketAnalyticsConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketAnalyticsConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketAnalyticsConfigurationAsync(const Model::PutBucketAnalyticsConfigurationRequest& request, const PutBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the <code>cors</code> configuration for your bucket. If the
@@ -3047,15 +2509,6 @@ namespace Aws
          */
         virtual Model::PutBucketCorsOutcome PutBucketCors(const Model::PutBucketCorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketCors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketCorsOutcomeCallable PutBucketCorsCallable(const Model::PutBucketCorsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketCors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketCorsAsync(const Model::PutBucketCorsRequest& request, const PutBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This action uses the <code>encryption</code> subresource to configure default
@@ -3094,15 +2547,6 @@ namespace Aws
          */
         virtual Model::PutBucketEncryptionOutcome PutBucketEncryption(const Model::PutBucketEncryptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketEncryption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketEncryptionOutcomeCallable PutBucketEncryptionCallable(const Model::PutBucketEncryptionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketEncryption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketEncryptionAsync(const Model::PutBucketEncryptionRequest& request, const PutBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Puts a S3 Intelligent-Tiering configuration to the specified bucket. You can
@@ -3149,15 +2593,6 @@ namespace Aws
          */
         virtual Model::PutBucketIntelligentTieringConfigurationOutcome PutBucketIntelligentTieringConfiguration(const Model::PutBucketIntelligentTieringConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketIntelligentTieringConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketIntelligentTieringConfigurationOutcomeCallable PutBucketIntelligentTieringConfigurationCallable(const Model::PutBucketIntelligentTieringConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketIntelligentTieringConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketIntelligentTieringConfigurationAsync(const Model::PutBucketIntelligentTieringConfigurationRequest& request, const PutBucketIntelligentTieringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This implementation of the <code>PUT</code> action adds an inventory
@@ -3211,15 +2646,6 @@ namespace Aws
          */
         virtual Model::PutBucketInventoryConfigurationOutcome PutBucketInventoryConfiguration(const Model::PutBucketInventoryConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketInventoryConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketInventoryConfigurationOutcomeCallable PutBucketInventoryConfigurationCallable(const Model::PutBucketInventoryConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketInventoryConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketInventoryConfigurationAsync(const Model::PutBucketInventoryConfigurationRequest& request, const PutBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new lifecycle configuration for the bucket or replaces an existing
@@ -3279,15 +2705,6 @@ namespace Aws
          */
         virtual Model::PutBucketLifecycleConfigurationOutcome PutBucketLifecycleConfiguration(const Model::PutBucketLifecycleConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketLifecycleConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketLifecycleConfigurationOutcomeCallable PutBucketLifecycleConfigurationCallable(const Model::PutBucketLifecycleConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketLifecycleConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketLifecycleConfigurationAsync(const Model::PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Set the logging parameters for a bucket and to specify permissions for who
@@ -3342,15 +2759,6 @@ namespace Aws
          */
         virtual Model::PutBucketLoggingOutcome PutBucketLogging(const Model::PutBucketLoggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketLogging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketLoggingOutcomeCallable PutBucketLoggingCallable(const Model::PutBucketLoggingRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketLogging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketLoggingAsync(const Model::PutBucketLoggingRequest& request, const PutBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets a metrics configuration (specified by the metrics configuration ID) for
@@ -3384,15 +2792,6 @@ namespace Aws
          */
         virtual Model::PutBucketMetricsConfigurationOutcome PutBucketMetricsConfiguration(const Model::PutBucketMetricsConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketMetricsConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketMetricsConfigurationOutcomeCallable PutBucketMetricsConfigurationCallable(const Model::PutBucketMetricsConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketMetricsConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketMetricsConfigurationAsync(const Model::PutBucketMetricsConfigurationRequest& request, const PutBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables notifications of specified events for a bucket. For more information
@@ -3444,15 +2843,6 @@ namespace Aws
          */
         virtual Model::PutBucketNotificationConfigurationOutcome PutBucketNotificationConfiguration(const Model::PutBucketNotificationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketNotificationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketNotificationConfigurationOutcomeCallable PutBucketNotificationConfigurationCallable(const Model::PutBucketNotificationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketNotificationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketNotificationConfigurationAsync(const Model::PutBucketNotificationConfigurationRequest& request, const PutBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket.
@@ -3472,15 +2862,6 @@ namespace Aws
          */
         virtual Model::PutBucketOwnershipControlsOutcome PutBucketOwnershipControls(const Model::PutBucketOwnershipControlsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketOwnershipControls that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketOwnershipControlsOutcomeCallable PutBucketOwnershipControlsCallable(const Model::PutBucketOwnershipControlsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketOwnershipControls that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketOwnershipControlsAsync(const Model::PutBucketOwnershipControlsRequest& request, const PutBucketOwnershipControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using
@@ -3508,15 +2889,6 @@ namespace Aws
          */
         virtual Model::PutBucketPolicyOutcome PutBucketPolicy(const Model::PutBucketPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketPolicyOutcomeCallable PutBucketPolicyCallable(const Model::PutBucketPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketPolicyAsync(const Model::PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a replication configuration or replaces an existing one. For more
@@ -3578,15 +2950,6 @@ namespace Aws
          */
         virtual Model::PutBucketReplicationOutcome PutBucketReplication(const Model::PutBucketReplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketReplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketReplicationOutcomeCallable PutBucketReplicationCallable(const Model::PutBucketReplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketReplicationAsync(const Model::PutBucketReplicationRequest& request, const PutBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the request payment configuration for a bucket. By default, the bucket
@@ -3605,15 +2968,6 @@ namespace Aws
          */
         virtual Model::PutBucketRequestPaymentOutcome PutBucketRequestPayment(const Model::PutBucketRequestPaymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketRequestPayment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketRequestPaymentOutcomeCallable PutBucketRequestPaymentCallable(const Model::PutBucketRequestPaymentRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketRequestPayment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketRequestPaymentAsync(const Model::PutBucketRequestPaymentRequest& request, const PutBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the tags for a bucket.</p> <p>Use tags to organize your Amazon Web
@@ -3664,15 +3018,6 @@ namespace Aws
          */
         virtual Model::PutBucketTaggingOutcome PutBucketTagging(const Model::PutBucketTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketTaggingOutcomeCallable PutBucketTaggingCallable(const Model::PutBucketTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketTaggingAsync(const Model::PutBucketTaggingRequest& request, const PutBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the versioning state of an existing bucket.</p> <p>You can set the
@@ -3709,15 +3054,6 @@ namespace Aws
          */
         virtual Model::PutBucketVersioningOutcome PutBucketVersioning(const Model::PutBucketVersioningRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketVersioning that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketVersioningOutcomeCallable PutBucketVersioningCallable(const Model::PutBucketVersioningRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketVersioning that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketVersioningAsync(const Model::PutBucketVersioningRequest& request, const PutBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the configuration of the website that is specified in the
@@ -3762,15 +3098,6 @@ namespace Aws
          */
         virtual Model::PutBucketWebsiteOutcome PutBucketWebsite(const Model::PutBucketWebsiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBucketWebsite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBucketWebsiteOutcomeCallable PutBucketWebsiteCallable(const Model::PutBucketWebsiteRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBucketWebsite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBucketWebsiteAsync(const Model::PutBucketWebsiteRequest& request, const PutBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds an object to a bucket. You must have WRITE permissions on a bucket to
@@ -3856,11 +3183,6 @@ namespace Aws
          */
         virtual Model::PutObjectOutcome PutObject(const Model::PutObjectRequest& request) const;
 
-
-        /**
-         * An Async wrapper for PutObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutObjectAsync(const Model::PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uses the <code>acl</code> subresource to set the access control list (ACL)
@@ -3960,15 +3282,6 @@ namespace Aws
          */
         virtual Model::PutObjectAclOutcome PutObjectAcl(const Model::PutObjectAclRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutObjectAcl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutObjectAclOutcomeCallable PutObjectAclCallable(const Model::PutObjectAclRequest& request) const;
-
-        /**
-         * An Async wrapper for PutObjectAcl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutObjectAclAsync(const Model::PutObjectAclRequest& request, const PutObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies a legal hold configuration to the specified object. For more
@@ -3981,15 +3294,6 @@ namespace Aws
          */
         virtual Model::PutObjectLegalHoldOutcome PutObjectLegalHold(const Model::PutObjectLegalHoldRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutObjectLegalHold that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutObjectLegalHoldOutcomeCallable PutObjectLegalHoldCallable(const Model::PutObjectLegalHoldRequest& request) const;
-
-        /**
-         * An Async wrapper for PutObjectLegalHold that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutObjectLegalHoldAsync(const Model::PutObjectLegalHoldRequest& request, const PutObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Places an Object Lock configuration on the specified bucket. The rule
@@ -4009,15 +3313,6 @@ namespace Aws
          */
         virtual Model::PutObjectLockConfigurationOutcome PutObjectLockConfiguration(const Model::PutObjectLockConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutObjectLockConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutObjectLockConfigurationOutcomeCallable PutObjectLockConfigurationCallable(const Model::PutObjectLockConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutObjectLockConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutObjectLockConfigurationAsync(const Model::PutObjectLockConfigurationRequest& request, const PutObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Places an Object Retention configuration on an object. For more information,
@@ -4033,15 +3328,6 @@ namespace Aws
          */
         virtual Model::PutObjectRetentionOutcome PutObjectRetention(const Model::PutObjectRetentionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutObjectRetention that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutObjectRetentionOutcomeCallable PutObjectRetentionCallable(const Model::PutObjectRetentionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutObjectRetention that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutObjectRetentionAsync(const Model::PutObjectRetentionRequest& request, const PutObjectRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the supplied tag-set to an object that already exists in a bucket.</p>
@@ -4082,15 +3368,6 @@ namespace Aws
          */
         virtual Model::PutObjectTaggingOutcome PutObjectTagging(const Model::PutObjectTaggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutObjectTagging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutObjectTaggingOutcomeCallable PutObjectTaggingCallable(const Model::PutObjectTaggingRequest& request) const;
-
-        /**
-         * An Async wrapper for PutObjectTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutObjectTaggingAsync(const Model::PutObjectTaggingRequest& request, const PutObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
@@ -4122,15 +3399,6 @@ namespace Aws
          */
         virtual Model::PutPublicAccessBlockOutcome PutPublicAccessBlock(const Model::PutPublicAccessBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPublicAccessBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPublicAccessBlockOutcomeCallable PutPublicAccessBlockCallable(const Model::PutPublicAccessBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPublicAccessBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPublicAccessBlockAsync(const Model::PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores an archived copy of an object back into Amazon S3</p> <p>This action
@@ -4297,15 +3565,6 @@ namespace Aws
          */
         virtual Model::RestoreObjectOutcome RestoreObject(const Model::RestoreObjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreObject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreObjectOutcomeCallable RestoreObjectCallable(const Model::RestoreObjectRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreObjectAsync(const Model::RestoreObjectRequest& request, const RestoreObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This action filters the contents of an Amazon S3 object based on a simple
@@ -4387,15 +3646,6 @@ namespace Aws
          */
         virtual Model::SelectObjectContentOutcome SelectObjectContent(Model::SelectObjectContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for SelectObjectContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SelectObjectContentOutcomeCallable SelectObjectContentCallable(Model::SelectObjectContentRequest& request) const;
-
-        /**
-         * An Async wrapper for SelectObjectContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SelectObjectContentAsync(Model::SelectObjectContentRequest& request, const SelectObjectContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads a part in a multipart upload.</p>  <p>In this operation, you
@@ -4478,15 +3728,6 @@ namespace Aws
          */
         virtual Model::UploadPartOutcome UploadPart(const Model::UploadPartRequest& request) const;
 
-        /**
-         * A Callable wrapper for UploadPart that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UploadPartOutcomeCallable UploadPartCallable(const Model::UploadPartRequest& request) const;
-
-        /**
-         * An Async wrapper for UploadPart that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UploadPartAsync(const Model::UploadPartRequest& request, const UploadPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads a part by copying data from an existing object as data source. You
@@ -4576,15 +3817,6 @@ namespace Aws
          */
         virtual Model::UploadPartCopyOutcome UploadPartCopy(const Model::UploadPartCopyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UploadPartCopy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UploadPartCopyOutcomeCallable UploadPartCopyCallable(const Model::UploadPartCopyRequest& request) const;
-
-        /**
-         * An Async wrapper for UploadPartCopy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UploadPartCopyAsync(const Model::UploadPartCopyRequest& request, const UploadPartCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Passes transformed objects to a <code>GetObject</code> operation when using
@@ -4634,15 +3866,6 @@ namespace Aws
          */
         virtual Model::WriteGetObjectResponseOutcome WriteGetObjectResponse(const Model::WriteGetObjectResponseRequest& request) const;
 
-        /**
-         * A Callable wrapper for WriteGetObjectResponse that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::WriteGetObjectResponseOutcomeCallable WriteGetObjectResponseCallable(const Model::WriteGetObjectResponseRequest& request) const;
-
-        /**
-         * An Async wrapper for WriteGetObjectResponse that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void WriteGetObjectResponseAsync(const Model::WriteGetObjectResponseRequest& request, const WriteGetObjectResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         Aws::String GeneratePresignedUrl(const Aws::String& bucket,

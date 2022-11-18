@@ -7,8 +7,10 @@
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/s3outposts/S3OutpostsServiceClientModel.h>
+#include <aws/s3outposts/S3OutpostsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace S3Outposts
         virtual ~S3OutpostsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an endpoint and associates it with the specified Outpost.</p> 
          * <p>It can take up to 5 minutes for this action to finish.</p>  <p/>
@@ -86,15 +129,6 @@ namespace S3Outposts
          */
         virtual Model::CreateEndpointOutcome CreateEndpoint(const Model::CreateEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEndpointOutcomeCallable CreateEndpointCallable(const Model::CreateEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEndpointAsync(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an endpoint.</p>  <p>It can take up to 5 minutes for this
@@ -109,15 +143,6 @@ namespace S3Outposts
          */
         virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEndpointOutcomeCallable DeleteEndpointCallable(const Model::DeleteEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEndpointAsync(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists endpoints associated with the specified Outpost. </p> <p>Related
@@ -131,15 +156,6 @@ namespace S3Outposts
          */
         virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const Model::ListEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEndpointsAsync(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all endpoints associated with an Outpost that has been shared by Amazon
@@ -154,15 +170,6 @@ namespace S3Outposts
          */
         virtual Model::ListSharedEndpointsOutcome ListSharedEndpoints(const Model::ListSharedEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSharedEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSharedEndpointsOutcomeCallable ListSharedEndpointsCallable(const Model::ListSharedEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSharedEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSharedEndpointsAsync(const Model::ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
