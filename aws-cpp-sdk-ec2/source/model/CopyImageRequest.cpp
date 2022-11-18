@@ -21,7 +21,9 @@ CopyImageRequest::CopyImageRequest() :
     m_sourceRegionHasBeenSet(false),
     m_destinationOutpostArnHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_copyImageTags(false),
+    m_copyImageTagsHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,11 @@ Aws::String CopyImageRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_copyImageTagsHasBeenSet)
+  {
+    ss << "CopyImageTags=" << std::boolalpha << m_copyImageTags << "&";
   }
 
   ss << "Version=2016-11-15";

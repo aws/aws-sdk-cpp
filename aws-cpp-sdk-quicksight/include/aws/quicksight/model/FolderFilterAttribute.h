@@ -16,7 +16,13 @@ namespace Model
   enum class FolderFilterAttribute
   {
     NOT_SET,
-    PARENT_FOLDER_ARN
+    PARENT_FOLDER_ARN,
+    DIRECT_QUICKSIGHT_OWNER,
+    DIRECT_QUICKSIGHT_SOLE_OWNER,
+    DIRECT_QUICKSIGHT_VIEWER_OR_OWNER,
+    QUICKSIGHT_OWNER,
+    QUICKSIGHT_VIEWER_OR_OWNER,
+    FOLDER_NAME
   };
 
 namespace FolderFilterAttributeMapper

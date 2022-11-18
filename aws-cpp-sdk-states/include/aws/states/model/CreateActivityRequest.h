@@ -37,10 +37,10 @@ namespace Model
 
 
     /**
-     * <p>The name of the activity to create. This name must be unique for your AWS
-     * account and region for 90 days. For more information, see <a
+     * <p>The name of the activity to create. This name must be unique for your Amazon
+     * Web Services account and region for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
@@ -52,10 +52,10 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the activity to create. This name must be unique for your AWS
-     * account and region for 90 days. For more information, see <a
+     * <p>The name of the activity to create. This name must be unique for your Amazon
+     * Web Services account and region for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
@@ -67,10 +67,10 @@ namespace Model
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the activity to create. This name must be unique for your AWS
-     * account and region for 90 days. For more information, see <a
+     * <p>The name of the activity to create. This name must be unique for your Amazon
+     * Web Services account and region for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
@@ -82,10 +82,10 @@ namespace Model
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the activity to create. This name must be unique for your AWS
-     * account and region for 90 days. For more information, see <a
+     * <p>The name of the activity to create. This name must be unique for your Amazon
+     * Web Services account and region for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
@@ -97,10 +97,10 @@ namespace Model
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the activity to create. This name must be unique for your AWS
-     * account and region for 90 days. For more information, see <a
+     * <p>The name of the activity to create. This name must be unique for your Amazon
+     * Web Services account and region for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
@@ -112,10 +112,10 @@ namespace Model
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the activity to create. This name must be unique for your AWS
-     * account and region for 90 days. For more information, see <a
+     * <p>The name of the activity to create. This name must be unique for your Amazon
+     * Web Services account and region for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
@@ -127,10 +127,10 @@ namespace Model
     inline CreateActivityRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the activity to create. This name must be unique for your AWS
-     * account and region for 90 days. For more information, see <a
+     * <p>The name of the activity to create. This name must be unique for your Amazon
+     * Web Services account and region for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
@@ -142,10 +142,10 @@ namespace Model
     inline CreateActivityRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the activity to create. This name must be unique for your AWS
-     * account and region for 90 days. For more information, see <a
+     * <p>The name of the activity to create. This name must be unique for your Amazon
+     * Web Services account and region for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
@@ -161,8 +161,8 @@ namespace Model
      * <p>The list of tags to add to a resource.</p> <p>An array of key-value pairs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -173,8 +173,8 @@ namespace Model
      * <p>The list of tags to add to a resource.</p> <p>An array of key-value pairs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -185,8 +185,8 @@ namespace Model
      * <p>The list of tags to add to a resource.</p> <p>An array of key-value pairs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -197,8 +197,8 @@ namespace Model
      * <p>The list of tags to add to a resource.</p> <p>An array of key-value pairs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -209,8 +209,8 @@ namespace Model
      * <p>The list of tags to add to a resource.</p> <p>An array of key-value pairs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -221,8 +221,8 @@ namespace Model
      * <p>The list of tags to add to a resource.</p> <p>An array of key-value pairs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -233,8 +233,8 @@ namespace Model
      * <p>The list of tags to add to a resource.</p> <p>An array of key-value pairs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -245,8 +245,8 @@ namespace Model
      * <p>The list of tags to add to a resource.</p> <p>An array of key-value pairs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>

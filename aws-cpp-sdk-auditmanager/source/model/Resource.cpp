@@ -20,13 +20,15 @@ namespace Model
 
 Resource::Resource() : 
     m_arnHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_complianceCheckHasBeenSet(false)
 {
 }
 
 Resource::Resource(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_complianceCheckHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_valueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("complianceCheck"))
+  {
+    m_complianceCheck = jsonValue.GetString("complianceCheck");
+
+    m_complianceCheckHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue Resource::Jsonize() const
   if(m_valueHasBeenSet)
   {
    payload.WithString("value", m_value);
+
+  }
+
+  if(m_complianceCheckHasBeenSet)
+  {
+   payload.WithString("complianceCheck", m_complianceCheck);
 
   }
 

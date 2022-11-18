@@ -25,7 +25,9 @@ AccountSettings::AccountSettings() :
     m_defaultNamespaceHasBeenSet(false),
     m_notificationEmailHasBeenSet(false),
     m_publicSharingEnabled(false),
-    m_publicSharingEnabledHasBeenSet(false)
+    m_publicSharingEnabledHasBeenSet(false),
+    m_terminationProtectionEnabled(false),
+    m_terminationProtectionEnabledHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ AccountSettings::AccountSettings(JsonView jsonValue) :
     m_defaultNamespaceHasBeenSet(false),
     m_notificationEmailHasBeenSet(false),
     m_publicSharingEnabled(false),
-    m_publicSharingEnabledHasBeenSet(false)
+    m_publicSharingEnabledHasBeenSet(false),
+    m_terminationProtectionEnabled(false),
+    m_terminationProtectionEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +82,13 @@ AccountSettings& AccountSettings::operator =(JsonView jsonValue)
     m_publicSharingEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TerminationProtectionEnabled"))
+  {
+    m_terminationProtectionEnabled = jsonValue.GetBool("TerminationProtectionEnabled");
+
+    m_terminationProtectionEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +122,12 @@ JsonValue AccountSettings::Jsonize() const
   if(m_publicSharingEnabledHasBeenSet)
   {
    payload.WithBool("PublicSharingEnabled", m_publicSharingEnabled);
+
+  }
+
+  if(m_terminationProtectionEnabledHasBeenSet)
+  {
+   payload.WithBool("TerminationProtectionEnabled", m_terminationProtectionEnabled);
 
   }
 

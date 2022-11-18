@@ -37,6 +37,7 @@
 #include <aws/quicksight/model/CreateThemeResult.h>
 #include <aws/quicksight/model/CreateThemeAliasResult.h>
 #include <aws/quicksight/model/DeleteAccountCustomizationResult.h>
+#include <aws/quicksight/model/DeleteAccountSubscriptionResult.h>
 #include <aws/quicksight/model/DeleteAnalysisResult.h>
 #include <aws/quicksight/model/DeleteDashboardResult.h>
 #include <aws/quicksight/model/DeleteDataSetResult.h>
@@ -110,6 +111,8 @@
 #include <aws/quicksight/model/RestoreAnalysisResult.h>
 #include <aws/quicksight/model/SearchAnalysesResult.h>
 #include <aws/quicksight/model/SearchDashboardsResult.h>
+#include <aws/quicksight/model/SearchDataSetsResult.h>
+#include <aws/quicksight/model/SearchDataSourcesResult.h>
 #include <aws/quicksight/model/SearchFoldersResult.h>
 #include <aws/quicksight/model/SearchGroupsResult.h>
 #include <aws/quicksight/model/TagResourceResult.h>
@@ -197,6 +200,7 @@ namespace Aws
       class CreateThemeRequest;
       class CreateThemeAliasRequest;
       class DeleteAccountCustomizationRequest;
+      class DeleteAccountSubscriptionRequest;
       class DeleteAnalysisRequest;
       class DeleteDashboardRequest;
       class DeleteDataSetRequest;
@@ -270,6 +274,8 @@ namespace Aws
       class RestoreAnalysisRequest;
       class SearchAnalysesRequest;
       class SearchDashboardsRequest;
+      class SearchDataSetsRequest;
+      class SearchDataSourcesRequest;
       class SearchFoldersRequest;
       class SearchGroupsRequest;
       class TagResourceRequest;
@@ -320,6 +326,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateThemeResult, QuickSightError> CreateThemeOutcome;
       typedef Aws::Utils::Outcome<CreateThemeAliasResult, QuickSightError> CreateThemeAliasOutcome;
       typedef Aws::Utils::Outcome<DeleteAccountCustomizationResult, QuickSightError> DeleteAccountCustomizationOutcome;
+      typedef Aws::Utils::Outcome<DeleteAccountSubscriptionResult, QuickSightError> DeleteAccountSubscriptionOutcome;
       typedef Aws::Utils::Outcome<DeleteAnalysisResult, QuickSightError> DeleteAnalysisOutcome;
       typedef Aws::Utils::Outcome<DeleteDashboardResult, QuickSightError> DeleteDashboardOutcome;
       typedef Aws::Utils::Outcome<DeleteDataSetResult, QuickSightError> DeleteDataSetOutcome;
@@ -393,6 +400,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<RestoreAnalysisResult, QuickSightError> RestoreAnalysisOutcome;
       typedef Aws::Utils::Outcome<SearchAnalysesResult, QuickSightError> SearchAnalysesOutcome;
       typedef Aws::Utils::Outcome<SearchDashboardsResult, QuickSightError> SearchDashboardsOutcome;
+      typedef Aws::Utils::Outcome<SearchDataSetsResult, QuickSightError> SearchDataSetsOutcome;
+      typedef Aws::Utils::Outcome<SearchDataSourcesResult, QuickSightError> SearchDataSourcesOutcome;
       typedef Aws::Utils::Outcome<SearchFoldersResult, QuickSightError> SearchFoldersOutcome;
       typedef Aws::Utils::Outcome<SearchGroupsResult, QuickSightError> SearchGroupsOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, QuickSightError> TagResourceOutcome;
@@ -443,6 +452,7 @@ namespace Aws
       typedef std::future<CreateThemeOutcome> CreateThemeOutcomeCallable;
       typedef std::future<CreateThemeAliasOutcome> CreateThemeAliasOutcomeCallable;
       typedef std::future<DeleteAccountCustomizationOutcome> DeleteAccountCustomizationOutcomeCallable;
+      typedef std::future<DeleteAccountSubscriptionOutcome> DeleteAccountSubscriptionOutcomeCallable;
       typedef std::future<DeleteAnalysisOutcome> DeleteAnalysisOutcomeCallable;
       typedef std::future<DeleteDashboardOutcome> DeleteDashboardOutcomeCallable;
       typedef std::future<DeleteDataSetOutcome> DeleteDataSetOutcomeCallable;
@@ -516,6 +526,8 @@ namespace Aws
       typedef std::future<RestoreAnalysisOutcome> RestoreAnalysisOutcomeCallable;
       typedef std::future<SearchAnalysesOutcome> SearchAnalysesOutcomeCallable;
       typedef std::future<SearchDashboardsOutcome> SearchDashboardsOutcomeCallable;
+      typedef std::future<SearchDataSetsOutcome> SearchDataSetsOutcomeCallable;
+      typedef std::future<SearchDataSourcesOutcome> SearchDataSourcesOutcomeCallable;
       typedef std::future<SearchFoldersOutcome> SearchFoldersOutcomeCallable;
       typedef std::future<SearchGroupsOutcome> SearchGroupsOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -569,6 +581,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::CreateThemeRequest&, const Model::CreateThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThemeResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateThemeAliasRequest&, const Model::CreateThemeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThemeAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAccountCustomizationRequest&, const Model::DeleteAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountCustomizationResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteAccountSubscriptionRequest&, const Model::DeleteAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountSubscriptionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAnalysisRequest&, const Model::DeleteAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnalysisResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteDashboardRequest&, const Model::DeleteDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDashboardResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteDataSetRequest&, const Model::DeleteDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSetResponseReceivedHandler;
@@ -642,6 +655,8 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::RestoreAnalysisRequest&, const Model::RestoreAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreAnalysisResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchAnalysesRequest&, const Model::SearchAnalysesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAnalysesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchDashboardsRequest&, const Model::SearchDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDashboardsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::SearchDataSetsRequest&, const Model::SearchDataSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDataSetsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::SearchDataSourcesRequest&, const Model::SearchDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDataSourcesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchFoldersRequest&, const Model::SearchFoldersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFoldersResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchGroupsRequest&, const Model::SearchGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchGroupsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

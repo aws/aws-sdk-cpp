@@ -26,7 +26,8 @@ CreateProductRequest::CreateProductRequest() :
     m_tagsHasBeenSet(false),
     m_provisioningArtifactParametersHasBeenSet(false),
     m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
+    m_idempotencyTokenHasBeenSet(true),
+    m_sourceConnectionHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,12 @@ Aws::String CreateProductRequest::SerializePayload() const
   if(m_idempotencyTokenHasBeenSet)
   {
    payload.WithString("IdempotencyToken", m_idempotencyToken);
+
+  }
+
+  if(m_sourceConnectionHasBeenSet)
+  {
+   payload.WithObject("SourceConnection", m_sourceConnection.Jsonize());
 
   }
 

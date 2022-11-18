@@ -156,7 +156,7 @@ namespace Model
      * REST API. By choosing this option, you ensure that your flow writes consistent
      * output, but you decrease performance for large data transfers that are better
      * suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary
-     * large set of data, it might fail with a timed out error.</p> </dd> </dl>
+     * large set of data, it might fail wituh a timed out error.</p> </dd> </dl>
      */
     inline const SalesforceDataTransferApi& GetDataTransferApi() const{ return m_dataTransferApi; }
 
@@ -186,7 +186,7 @@ namespace Model
      * REST API. By choosing this option, you ensure that your flow writes consistent
      * output, but you decrease performance for large data transfers that are better
      * suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary
-     * large set of data, it might fail with a timed out error.</p> </dd> </dl>
+     * large set of data, it might fail wituh a timed out error.</p> </dd> </dl>
      */
     inline bool DataTransferApiHasBeenSet() const { return m_dataTransferApiHasBeenSet; }
 
@@ -216,7 +216,7 @@ namespace Model
      * REST API. By choosing this option, you ensure that your flow writes consistent
      * output, but you decrease performance for large data transfers that are better
      * suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary
-     * large set of data, it might fail with a timed out error.</p> </dd> </dl>
+     * large set of data, it might fail wituh a timed out error.</p> </dd> </dl>
      */
     inline void SetDataTransferApi(const SalesforceDataTransferApi& value) { m_dataTransferApiHasBeenSet = true; m_dataTransferApi = value; }
 
@@ -246,7 +246,7 @@ namespace Model
      * REST API. By choosing this option, you ensure that your flow writes consistent
      * output, but you decrease performance for large data transfers that are better
      * suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary
-     * large set of data, it might fail with a timed out error.</p> </dd> </dl>
+     * large set of data, it might fail wituh a timed out error.</p> </dd> </dl>
      */
     inline void SetDataTransferApi(SalesforceDataTransferApi&& value) { m_dataTransferApiHasBeenSet = true; m_dataTransferApi = std::move(value); }
 
@@ -276,7 +276,7 @@ namespace Model
      * REST API. By choosing this option, you ensure that your flow writes consistent
      * output, but you decrease performance for large data transfers that are better
      * suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary
-     * large set of data, it might fail with a timed out error.</p> </dd> </dl>
+     * large set of data, it might fail wituh a timed out error.</p> </dd> </dl>
      */
     inline SalesforceSourceProperties& WithDataTransferApi(const SalesforceDataTransferApi& value) { SetDataTransferApi(value); return *this;}
 
@@ -306,7 +306,7 @@ namespace Model
      * REST API. By choosing this option, you ensure that your flow writes consistent
      * output, but you decrease performance for large data transfers that are better
      * suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary
-     * large set of data, it might fail with a timed out error.</p> </dd> </dl>
+     * large set of data, it might fail wituh a timed out error.</p> </dd> </dl>
      */
     inline SalesforceSourceProperties& WithDataTransferApi(SalesforceDataTransferApi&& value) { SetDataTransferApi(std::move(value)); return *this;}
 

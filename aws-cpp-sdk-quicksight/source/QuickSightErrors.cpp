@@ -24,6 +24,7 @@
 #include <aws/quicksight/model/PreconditionNotMetException.h>
 #include <aws/quicksight/model/ResourceUnavailableException.h>
 #include <aws/quicksight/model/ConcurrentUpdatingException.h>
+#include <aws/quicksight/model/InvalidRequestException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -142,6 +143,12 @@ template<> AWS_QUICKSIGHT_API ConcurrentUpdatingException QuickSightError::GetMo
   return ConcurrentUpdatingException(this->GetJsonPayload().View());
 }
 
+template<> AWS_QUICKSIGHT_API InvalidRequestException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::INVALID_REQUEST);
+  return InvalidRequestException(this->GetJsonPayload().View());
+}
+
 namespace QuickSightErrorMapper
 {
 
@@ -158,6 +165,7 @@ static const int SESSION_LIFETIME_IN_MINUTES_INVALID_HASH = HashingUtils::HashSt
 static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
 static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
 static const int CONCURRENT_UPDATING_HASH = HashingUtils::HashString("ConcurrentUpdatingException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -215,6 +223,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONCURRENT_UPDATING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CONCURRENT_UPDATING), false);
+  }
+  else if (hashCode == INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INVALID_REQUEST), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

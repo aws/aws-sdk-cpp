@@ -40,6 +40,7 @@
 #include <aws/quicksight/model/CreateThemeRequest.h>
 #include <aws/quicksight/model/CreateThemeAliasRequest.h>
 #include <aws/quicksight/model/DeleteAccountCustomizationRequest.h>
+#include <aws/quicksight/model/DeleteAccountSubscriptionRequest.h>
 #include <aws/quicksight/model/DeleteAnalysisRequest.h>
 #include <aws/quicksight/model/DeleteDashboardRequest.h>
 #include <aws/quicksight/model/DeleteDataSetRequest.h>
@@ -113,6 +114,8 @@
 #include <aws/quicksight/model/RestoreAnalysisRequest.h>
 #include <aws/quicksight/model/SearchAnalysesRequest.h>
 #include <aws/quicksight/model/SearchDashboardsRequest.h>
+#include <aws/quicksight/model/SearchDataSetsRequest.h>
+#include <aws/quicksight/model/SearchDataSourcesRequest.h>
 #include <aws/quicksight/model/SearchFoldersRequest.h>
 #include <aws/quicksight/model/SearchGroupsRequest.h>
 #include <aws/quicksight/model/TagResourceRequest.h>
@@ -1007,6 +1010,37 @@ void QuickSightClient::DeleteAccountCustomizationAsync(const DeleteAccountCustom
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteAccountCustomization(request), context);
+    } );
+}
+
+DeleteAccountSubscriptionOutcome QuickSightClient::DeleteAccountSubscription(const DeleteAccountSubscriptionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccountSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAccountSubscription", "Required field: AwsAccountId, is not set");
+    return DeleteAccountSubscriptionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAccountSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/account/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  return DeleteAccountSubscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAccountSubscriptionOutcomeCallable QuickSightClient::DeleteAccountSubscriptionCallable(const DeleteAccountSubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccountSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccountSubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DeleteAccountSubscriptionAsync(const DeleteAccountSubscriptionRequest& request, const DeleteAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAccountSubscription(request), context);
     } );
 }
 
@@ -3846,6 +3880,70 @@ void QuickSightClient::SearchDashboardsAsync(const SearchDashboardsRequest& requ
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, SearchDashboards(request), context);
+    } );
+}
+
+SearchDataSetsOutcome QuickSightClient::SearchDataSets(const SearchDataSetsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchDataSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchDataSets", "Required field: AwsAccountId, is not set");
+    return SearchDataSetsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchDataSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/search/data-sets");
+  return SearchDataSetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchDataSetsOutcomeCallable QuickSightClient::SearchDataSetsCallable(const SearchDataSetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchDataSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchDataSets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::SearchDataSetsAsync(const SearchDataSetsRequest& request, const SearchDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchDataSets(request), context);
+    } );
+}
+
+SearchDataSourcesOutcome QuickSightClient::SearchDataSources(const SearchDataSourcesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchDataSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchDataSources", "Required field: AwsAccountId, is not set");
+    return SearchDataSourcesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchDataSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/search/data-sources");
+  return SearchDataSourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchDataSourcesOutcomeCallable QuickSightClient::SearchDataSourcesCallable(const SearchDataSourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchDataSourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchDataSources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::SearchDataSourcesAsync(const SearchDataSourcesRequest& request, const SearchDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchDataSources(request), context);
     } );
 }
 

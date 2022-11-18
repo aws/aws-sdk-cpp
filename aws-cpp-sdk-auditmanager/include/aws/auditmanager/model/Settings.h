@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/auditmanager/model/AssessmentReportsDestination.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/auditmanager/model/EvidenceFinderEnablement.h>
 #include <aws/auditmanager/model/Role.h>
 #include <utility>
 
@@ -215,6 +216,37 @@ namespace Model
      */
     inline Settings& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
 
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline const EvidenceFinderEnablement& GetEvidenceFinderEnablement() const{ return m_evidenceFinderEnablement; }
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline bool EvidenceFinderEnablementHasBeenSet() const { return m_evidenceFinderEnablementHasBeenSet; }
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline void SetEvidenceFinderEnablement(const EvidenceFinderEnablement& value) { m_evidenceFinderEnablementHasBeenSet = true; m_evidenceFinderEnablement = value; }
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline void SetEvidenceFinderEnablement(EvidenceFinderEnablement&& value) { m_evidenceFinderEnablementHasBeenSet = true; m_evidenceFinderEnablement = std::move(value); }
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline Settings& WithEvidenceFinderEnablement(const EvidenceFinderEnablement& value) { SetEvidenceFinderEnablement(value); return *this;}
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline Settings& WithEvidenceFinderEnablement(EvidenceFinderEnablement&& value) { SetEvidenceFinderEnablement(std::move(value)); return *this;}
+
   private:
 
     bool m_isAwsOrgEnabled;
@@ -231,6 +263,9 @@ namespace Model
 
     Aws::String m_kmsKey;
     bool m_kmsKeyHasBeenSet = false;
+
+    EvidenceFinderEnablement m_evidenceFinderEnablement;
+    bool m_evidenceFinderEnablementHasBeenSet = false;
   };
 
 } // namespace Model

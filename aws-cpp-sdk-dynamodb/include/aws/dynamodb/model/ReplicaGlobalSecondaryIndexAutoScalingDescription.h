@@ -84,54 +84,60 @@ namespace Model
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline const IndexStatus& GetIndexStatus() const{ return m_indexStatus; }
 
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline bool IndexStatusHasBeenSet() const { return m_indexStatusHasBeenSet; }
 
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline void SetIndexStatus(const IndexStatus& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
 
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline void SetIndexStatus(IndexStatus&& value) { m_indexStatusHasBeenSet = true; m_indexStatus = std::move(value); }
 
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline ReplicaGlobalSecondaryIndexAutoScalingDescription& WithIndexStatus(const IndexStatus& value) { SetIndexStatus(value); return *this;}
 
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline ReplicaGlobalSecondaryIndexAutoScalingDescription& WithIndexStatus(IndexStatus&& value) { SetIndexStatus(std::move(value)); return *this;}
 

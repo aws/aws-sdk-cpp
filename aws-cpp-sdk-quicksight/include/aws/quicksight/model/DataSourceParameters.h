@@ -27,6 +27,7 @@
 #include <aws/quicksight/model/TwitterParameters.h>
 #include <aws/quicksight/model/AmazonOpenSearchParameters.h>
 #include <aws/quicksight/model/ExasolParameters.h>
+#include <aws/quicksight/model/DatabricksParameters.h>
 #include <utility>
 
 namespace Aws
@@ -741,6 +742,43 @@ namespace Model
      */
     inline DataSourceParameters& WithExasolParameters(ExasolParameters&& value) { SetExasolParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline const DatabricksParameters& GetDatabricksParameters() const{ return m_databricksParameters; }
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline bool DatabricksParametersHasBeenSet() const { return m_databricksParametersHasBeenSet; }
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline void SetDatabricksParameters(const DatabricksParameters& value) { m_databricksParametersHasBeenSet = true; m_databricksParameters = value; }
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline void SetDatabricksParameters(DatabricksParameters&& value) { m_databricksParametersHasBeenSet = true; m_databricksParameters = std::move(value); }
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline DataSourceParameters& WithDatabricksParameters(const DatabricksParameters& value) { SetDatabricksParameters(value); return *this;}
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline DataSourceParameters& WithDatabricksParameters(DatabricksParameters&& value) { SetDatabricksParameters(std::move(value)); return *this;}
+
   private:
 
     AmazonElasticsearchParameters m_amazonElasticsearchParameters;
@@ -808,6 +846,9 @@ namespace Model
 
     ExasolParameters m_exasolParameters;
     bool m_exasolParametersHasBeenSet = false;
+
+    DatabricksParameters m_databricksParameters;
+    bool m_databricksParametersHasBeenSet = false;
   };
 
 } // namespace Model

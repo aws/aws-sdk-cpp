@@ -9,6 +9,7 @@
 #include <aws/servicecatalog/model/Status.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/servicecatalog/model/SourceConnectionDetail.h>
 #include <utility>
 
 namespace Aws
@@ -191,6 +192,67 @@ namespace Model
      */
     inline ProductViewDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A top level <code>ProductViewDetail</code> response containing details about
+     * the product’s connection. Service Catalog returns this field for the
+     * <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     * <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs.
+     * This response contains the same fields as the <code>ConnectionParameters</code>
+     * request, with the addition of the <code>LastSync</code> response.</p>
+     */
+    inline const SourceConnectionDetail& GetSourceConnection() const{ return m_sourceConnection; }
+
+    /**
+     * <p>A top level <code>ProductViewDetail</code> response containing details about
+     * the product’s connection. Service Catalog returns this field for the
+     * <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     * <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs.
+     * This response contains the same fields as the <code>ConnectionParameters</code>
+     * request, with the addition of the <code>LastSync</code> response.</p>
+     */
+    inline bool SourceConnectionHasBeenSet() const { return m_sourceConnectionHasBeenSet; }
+
+    /**
+     * <p>A top level <code>ProductViewDetail</code> response containing details about
+     * the product’s connection. Service Catalog returns this field for the
+     * <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     * <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs.
+     * This response contains the same fields as the <code>ConnectionParameters</code>
+     * request, with the addition of the <code>LastSync</code> response.</p>
+     */
+    inline void SetSourceConnection(const SourceConnectionDetail& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = value; }
+
+    /**
+     * <p>A top level <code>ProductViewDetail</code> response containing details about
+     * the product’s connection. Service Catalog returns this field for the
+     * <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     * <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs.
+     * This response contains the same fields as the <code>ConnectionParameters</code>
+     * request, with the addition of the <code>LastSync</code> response.</p>
+     */
+    inline void SetSourceConnection(SourceConnectionDetail&& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = std::move(value); }
+
+    /**
+     * <p>A top level <code>ProductViewDetail</code> response containing details about
+     * the product’s connection. Service Catalog returns this field for the
+     * <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     * <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs.
+     * This response contains the same fields as the <code>ConnectionParameters</code>
+     * request, with the addition of the <code>LastSync</code> response.</p>
+     */
+    inline ProductViewDetail& WithSourceConnection(const SourceConnectionDetail& value) { SetSourceConnection(value); return *this;}
+
+    /**
+     * <p>A top level <code>ProductViewDetail</code> response containing details about
+     * the product’s connection. Service Catalog returns this field for the
+     * <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     * <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs.
+     * This response contains the same fields as the <code>ConnectionParameters</code>
+     * request, with the addition of the <code>LastSync</code> response.</p>
+     */
+    inline ProductViewDetail& WithSourceConnection(SourceConnectionDetail&& value) { SetSourceConnection(std::move(value)); return *this;}
+
   private:
 
     ProductViewSummary m_productViewSummary;
@@ -204,6 +266,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet = false;
+
+    SourceConnectionDetail m_sourceConnection;
+    bool m_sourceConnectionHasBeenSet = false;
   };
 
 } // namespace Model

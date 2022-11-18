@@ -282,7 +282,7 @@ namespace Model
      * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> 
+     * Levels</a> in the Step Functions User Guide.</p> 
      */
     inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
 
@@ -291,7 +291,7 @@ namespace Model
      * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> 
+     * Levels</a> in the Step Functions User Guide.</p> 
      */
     inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
 
@@ -300,7 +300,7 @@ namespace Model
      * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> 
+     * Levels</a> in the Step Functions User Guide.</p> 
      */
     inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
 
@@ -309,7 +309,7 @@ namespace Model
      * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> 
+     * Levels</a> in the Step Functions User Guide.</p> 
      */
     inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
 
@@ -318,7 +318,7 @@ namespace Model
      * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> 
+     * Levels</a> in the Step Functions User Guide.</p> 
      */
     inline CreateStateMachineRequest& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
 
@@ -327,7 +327,7 @@ namespace Model
      * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> 
+     * Levels</a> in the Step Functions User Guide.</p> 
      */
     inline CreateStateMachineRequest& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 
@@ -336,8 +336,8 @@ namespace Model
      * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
      * pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -348,8 +348,8 @@ namespace Model
      * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
      * pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -360,8 +360,8 @@ namespace Model
      * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
      * pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -372,8 +372,8 @@ namespace Model
      * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
      * pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -384,8 +384,8 @@ namespace Model
      * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
      * pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -396,8 +396,8 @@ namespace Model
      * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
      * pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -408,8 +408,8 @@ namespace Model
      * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
      * pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -420,8 +420,8 @@ namespace Model
      * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
      * pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>, and <a
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
      * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -430,32 +430,32 @@ namespace Model
 
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline const TracingConfiguration& GetTracingConfiguration() const{ return m_tracingConfiguration; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline bool TracingConfigurationHasBeenSet() const { return m_tracingConfigurationHasBeenSet; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline void SetTracingConfiguration(const TracingConfiguration& value) { m_tracingConfigurationHasBeenSet = true; m_tracingConfiguration = value; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline void SetTracingConfiguration(TracingConfiguration&& value) { m_tracingConfigurationHasBeenSet = true; m_tracingConfiguration = std::move(value); }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline CreateStateMachineRequest& WithTracingConfiguration(const TracingConfiguration& value) { SetTracingConfiguration(value); return *this;}
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline CreateStateMachineRequest& WithTracingConfiguration(TracingConfiguration&& value) { SetTracingConfiguration(std::move(value)); return *this;}
 

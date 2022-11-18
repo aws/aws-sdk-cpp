@@ -24,7 +24,8 @@ Settings::Settings() :
     m_snsTopicHasBeenSet(false),
     m_defaultAssessmentReportsDestinationHasBeenSet(false),
     m_defaultProcessOwnersHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false)
+    m_kmsKeyHasBeenSet(false),
+    m_evidenceFinderEnablementHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ Settings::Settings(JsonView jsonValue) :
     m_snsTopicHasBeenSet(false),
     m_defaultAssessmentReportsDestinationHasBeenSet(false),
     m_defaultProcessOwnersHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false)
+    m_kmsKeyHasBeenSet(false),
+    m_evidenceFinderEnablementHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +81,13 @@ Settings& Settings::operator =(JsonView jsonValue)
     m_kmsKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("evidenceFinderEnablement"))
+  {
+    m_evidenceFinderEnablement = jsonValue.GetObject("evidenceFinderEnablement");
+
+    m_evidenceFinderEnablementHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +127,12 @@ JsonValue Settings::Jsonize() const
   if(m_kmsKeyHasBeenSet)
   {
    payload.WithString("kmsKey", m_kmsKey);
+
+  }
+
+  if(m_evidenceFinderEnablementHasBeenSet)
+  {
+   payload.WithObject("evidenceFinderEnablement", m_evidenceFinderEnablement.Jsonize());
 
   }
 

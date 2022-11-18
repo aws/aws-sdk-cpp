@@ -24,7 +24,9 @@ SecurityProfile::SecurityProfile() :
     m_arnHasBeenSet(false),
     m_securityProfileNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_allowedAccessControlTagsHasBeenSet(false),
+    m_tagRestrictedResourcesHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ SecurityProfile::SecurityProfile(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_securityProfileNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_allowedAccessControlTagsHasBeenSet(false),
+    m_tagRestrictedResourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +90,26 @@ SecurityProfile& SecurityProfile::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AllowedAccessControlTags"))
+  {
+    Aws::Map<Aws::String, JsonView> allowedAccessControlTagsJsonMap = jsonValue.GetObject("AllowedAccessControlTags").GetAllObjects();
+    for(auto& allowedAccessControlTagsItem : allowedAccessControlTagsJsonMap)
+    {
+      m_allowedAccessControlTags[allowedAccessControlTagsItem.first] = allowedAccessControlTagsItem.second.AsString();
+    }
+    m_allowedAccessControlTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TagRestrictedResources"))
+  {
+    Aws::Utils::Array<JsonView> tagRestrictedResourcesJsonList = jsonValue.GetArray("TagRestrictedResources");
+    for(unsigned tagRestrictedResourcesIndex = 0; tagRestrictedResourcesIndex < tagRestrictedResourcesJsonList.GetLength(); ++tagRestrictedResourcesIndex)
+    {
+      m_tagRestrictedResources.push_back(tagRestrictedResourcesJsonList[tagRestrictedResourcesIndex].AsString());
+    }
+    m_tagRestrictedResourcesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +155,28 @@ JsonValue SecurityProfile::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_allowedAccessControlTagsHasBeenSet)
+  {
+   JsonValue allowedAccessControlTagsJsonMap;
+   for(auto& allowedAccessControlTagsItem : m_allowedAccessControlTags)
+   {
+     allowedAccessControlTagsJsonMap.WithString(allowedAccessControlTagsItem.first, allowedAccessControlTagsItem.second);
+   }
+   payload.WithObject("AllowedAccessControlTags", std::move(allowedAccessControlTagsJsonMap));
+
+  }
+
+  if(m_tagRestrictedResourcesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagRestrictedResourcesJsonList(m_tagRestrictedResources.size());
+   for(unsigned tagRestrictedResourcesIndex = 0; tagRestrictedResourcesIndex < tagRestrictedResourcesJsonList.GetLength(); ++tagRestrictedResourcesIndex)
+   {
+     tagRestrictedResourcesJsonList[tagRestrictedResourcesIndex].AsString(m_tagRestrictedResources[tagRestrictedResourcesIndex]);
+   }
+   payload.WithArray("TagRestrictedResources", std::move(tagRestrictedResourcesJsonList));
 
   }
 

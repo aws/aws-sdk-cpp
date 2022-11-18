@@ -108,9 +108,6 @@ namespace Model
      * rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p>
      * <code>keywordValue</code>:
      * <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li> <li>
-     * <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p>
-     * <code>keywordValue</code>:
-     * <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li> <li>
      * <p>Service-linked rule name:
      * OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p>
      * <code>keywordValue</code>:
@@ -146,9 +143,6 @@ namespace Model
      * rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p>
      * <code>keywordValue</code>:
      * <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li> <li>
-     * <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p>
-     * <code>keywordValue</code>:
-     * <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li> <li>
      * <p>Service-linked rule name:
      * OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p>
      * <code>keywordValue</code>:
@@ -184,9 +178,6 @@ namespace Model
      * rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p>
      * <code>keywordValue</code>:
      * <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li> <li>
-     * <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p>
-     * <code>keywordValue</code>:
-     * <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li> <li>
      * <p>Service-linked rule name:
      * OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p>
      * <code>keywordValue</code>:
@@ -222,9 +213,6 @@ namespace Model
      * rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p>
      * <code>keywordValue</code>:
      * <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li> <li>
-     * <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p>
-     * <code>keywordValue</code>:
-     * <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li> <li>
      * <p>Service-linked rule name:
      * OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p>
      * <code>keywordValue</code>:
@@ -260,9 +248,6 @@ namespace Model
      * rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p>
      * <code>keywordValue</code>:
      * <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li> <li>
-     * <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p>
-     * <code>keywordValue</code>:
-     * <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li> <li>
      * <p>Service-linked rule name:
      * OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p>
      * <code>keywordValue</code>:
@@ -298,9 +283,6 @@ namespace Model
      * rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p>
      * <code>keywordValue</code>:
      * <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li> <li>
-     * <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p>
-     * <code>keywordValue</code>:
-     * <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li> <li>
      * <p>Service-linked rule name:
      * OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p>
      * <code>keywordValue</code>:
@@ -336,9 +318,6 @@ namespace Model
      * rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p>
      * <code>keywordValue</code>:
      * <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li> <li>
-     * <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p>
-     * <code>keywordValue</code>:
-     * <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li> <li>
      * <p>Service-linked rule name:
      * OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p>
      * <code>keywordValue</code>:
@@ -374,9 +353,6 @@ namespace Model
      * rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w</p> <p>
      * <code>keywordValue</code>:
      * <code>Custom_CustomRuleForAccount-conformance-pack</code> </p> </li> <li>
-     * <p>Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1</p> <p>
-     * <code>keywordValue</code>:
-     * <code>Custom_securityhub-api-gw-cache-encrypted</code> </p> </li> <li>
      * <p>Service-linked rule name:
      * OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p>
      * <code>keywordValue</code>:

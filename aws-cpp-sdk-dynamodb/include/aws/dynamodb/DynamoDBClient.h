@@ -187,15 +187,17 @@ namespace DynamoDB
          * this distinction, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html">Naming
          * Rules and Data Types</a>.</p>  <p> <code>BatchWriteItem</code> cannot
-         * update items. To update items, use the <code>UpdateItem</code> action.</p>
-         *  <p>The individual <code>PutItem</code> and <code>DeleteItem</code>
-         * operations specified in <code>BatchWriteItem</code> are atomic; however
-         * <code>BatchWriteItem</code> as a whole is not. If any requested operations fail
-         * because the table's provisioned throughput is exceeded or an internal processing
-         * failure occurs, the failed operations are returned in the
-         * <code>UnprocessedItems</code> response parameter. You can investigate and
-         * optionally resend the requests. Typically, you would call
-         * <code>BatchWriteItem</code> in a loop. Each iteration would check for
+         * update items. If you perform a <code>BatchWriteItem</code> operation on an
+         * existing item, that item's values will be overwritten by the operation and it
+         * will appear like it was updated. To update items, we recommend you use the
+         * <code>UpdateItem</code> action.</p>  <p>The individual
+         * <code>PutItem</code> and <code>DeleteItem</code> operations specified in
+         * <code>BatchWriteItem</code> are atomic; however <code>BatchWriteItem</code> as a
+         * whole is not. If any requested operations fail because the table's provisioned
+         * throughput is exceeded or an internal processing failure occurs, the failed
+         * operations are returned in the <code>UnprocessedItems</code> response parameter.
+         * You can investigate and optionally resend the requests. Typically, you would
+         * call <code>BatchWriteItem</code> in a loop. Each iteration would check for
          * unprocessed items and submit a new <code>BatchWriteItem</code> request with
          * those unprocessed items until all items have been processed.</p> <p>If
          * <i>none</i> of the items can be processed due to insufficient provisioned
@@ -1035,18 +1037,17 @@ namespace DynamoDB
          * doesn't exist), or replace an existing item if it has certain attribute values.
          * You can return the item's attribute values in the same operation, using the
          * <code>ReturnValues</code> parameter.</p> <p>When you add an item, the primary
-         * key attributes are the only required attributes. Attribute values cannot be
-         * null.</p> <p>Empty String and Binary attribute values are allowed. Attribute
-         * values of type String and Binary must have a length greater than zero if the
-         * attribute is used as a key attribute for a table or index. Set type attributes
-         * cannot be empty. </p> <p>Invalid Requests with empty values will be rejected
-         * with a <code>ValidationException</code> exception.</p>  <p>To prevent a
-         * new item from replacing an existing item, use a conditional expression that
-         * contains the <code>attribute_not_exists</code> function with the name of the
-         * attribute being used as the partition key for the table. Since every record must
-         * contain that attribute, the <code>attribute_not_exists</code> function will only
-         * succeed if no matching item exists.</p>  <p>For more information about
-         * <code>PutItem</code>, see <a
+         * key attributes are the only required attributes. </p> <p>Empty String and Binary
+         * attribute values are allowed. Attribute values of type String and Binary must
+         * have a length greater than zero if the attribute is used as a key attribute for
+         * a table or index. Set type attributes cannot be empty. </p> <p>Invalid Requests
+         * with empty values will be rejected with a <code>ValidationException</code>
+         * exception.</p>  <p>To prevent a new item from replacing an existing item,
+         * use a conditional expression that contains the <code>attribute_not_exists</code>
+         * function with the name of the attribute being used as the partition key for the
+         * table. Since every record must contain that attribute, the
+         * <code>attribute_not_exists</code> function will only succeed if no matching item
+         * exists.</p>  <p>For more information about <code>PutItem</code>, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a

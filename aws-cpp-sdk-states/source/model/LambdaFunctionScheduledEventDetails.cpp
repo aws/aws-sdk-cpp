@@ -23,7 +23,8 @@ LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails() :
     m_inputHasBeenSet(false),
     m_inputDetailsHasBeenSet(false),
     m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
+    m_timeoutInSecondsHasBeenSet(false),
+    m_taskCredentialsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails(JsonVie
     m_inputHasBeenSet(false),
     m_inputDetailsHasBeenSet(false),
     m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
+    m_timeoutInSecondsHasBeenSet(false),
+    m_taskCredentialsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ LambdaFunctionScheduledEventDetails& LambdaFunctionScheduledEventDetails::operat
     m_timeoutInSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("taskCredentials"))
+  {
+    m_taskCredentials = jsonValue.GetObject("taskCredentials");
+
+    m_taskCredentialsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +104,12 @@ JsonValue LambdaFunctionScheduledEventDetails::Jsonize() const
   if(m_timeoutInSecondsHasBeenSet)
   {
    payload.WithInt64("timeoutInSeconds", m_timeoutInSeconds);
+
+  }
+
+  if(m_taskCredentialsHasBeenSet)
+  {
+   payload.WithObject("taskCredentials", m_taskCredentials.Jsonize());
 
   }
 

@@ -23,7 +23,8 @@ ProductViewDetail::ProductViewDetail() :
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_productARNHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_sourceConnectionHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ ProductViewDetail::ProductViewDetail(JsonView jsonValue) :
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_productARNHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_sourceConnectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ ProductViewDetail& ProductViewDetail::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceConnection"))
+  {
+    m_sourceConnection = jsonValue.GetObject("SourceConnection");
+
+    m_sourceConnectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +103,12 @@ JsonValue ProductViewDetail::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  }
+
+  if(m_sourceConnectionHasBeenSet)
+  {
+   payload.WithObject("SourceConnection", m_sourceConnection.Jsonize());
+
   }
 
   return payload;

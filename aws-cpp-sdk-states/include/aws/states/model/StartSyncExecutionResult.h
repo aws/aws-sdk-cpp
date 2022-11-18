@@ -434,37 +434,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline const Aws::String& GetTraceHeader() const{ return m_traceHeader; }
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline void SetTraceHeader(const Aws::String& value) { m_traceHeader = value; }
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline void SetTraceHeader(Aws::String&& value) { m_traceHeader = std::move(value); }
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline void SetTraceHeader(const char* value) { m_traceHeader.assign(value); }
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline StartSyncExecutionResult& WithTraceHeader(const Aws::String& value) { SetTraceHeader(value); return *this;}
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline StartSyncExecutionResult& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline StartSyncExecutionResult& WithTraceHeader(const char* value) { SetTraceHeader(value); return *this;}
 

@@ -398,64 +398,72 @@ namespace Model
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
-     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
+     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformDetails() const{ return m_platformDetails; }
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
-     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
+     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline bool PlatformDetailsHasBeenSet() const { return m_platformDetailsHasBeenSet; }
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
-     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
+     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline void SetPlatformDetails(const Aws::String& value) { m_platformDetailsHasBeenSet = true; m_platformDetails = value; }
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
-     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
+     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline void SetPlatformDetails(Aws::String&& value) { m_platformDetailsHasBeenSet = true; m_platformDetails = std::move(value); }
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
-     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
+     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline void SetPlatformDetails(const char* value) { m_platformDetailsHasBeenSet = true; m_platformDetails.assign(value); }
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
-     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
+     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline Image& WithPlatformDetails(const Aws::String& value) { SetPlatformDetails(value); return *this;}
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
-     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
+     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline Image& WithPlatformDetails(Aws::String&& value) { SetPlatformDetails(std::move(value)); return *this;}
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
-     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
+     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline Image& WithPlatformDetails(const char* value) { SetPlatformDetails(value); return *this;}
 

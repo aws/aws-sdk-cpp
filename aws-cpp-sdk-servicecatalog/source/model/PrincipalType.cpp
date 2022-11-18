@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int IAM_HASH = HashingUtils::HashString("IAM");
+        static const int IAM_PATTERN_HASH = HashingUtils::HashString("IAM_PATTERN");
 
 
         PrincipalType GetPrincipalTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == IAM_HASH)
           {
             return PrincipalType::IAM;
+          }
+          else if (hashCode == IAM_PATTERN_HASH)
+          {
+            return PrincipalType::IAM_PATTERN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case PrincipalType::IAM:
             return "IAM";
+          case PrincipalType::IAM_PATTERN:
+            return "IAM_PATTERN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

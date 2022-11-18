@@ -26,7 +26,8 @@ TaskScheduledEventDetails::TaskScheduledEventDetails() :
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
     m_heartbeatInSeconds(0),
-    m_heartbeatInSecondsHasBeenSet(false)
+    m_heartbeatInSecondsHasBeenSet(false),
+    m_taskCredentialsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ TaskScheduledEventDetails::TaskScheduledEventDetails(JsonView jsonValue) :
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
     m_heartbeatInSeconds(0),
-    m_heartbeatInSecondsHasBeenSet(false)
+    m_heartbeatInSecondsHasBeenSet(false),
+    m_taskCredentialsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,13 @@ TaskScheduledEventDetails& TaskScheduledEventDetails::operator =(JsonView jsonVa
     m_heartbeatInSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("taskCredentials"))
+  {
+    m_taskCredentials = jsonValue.GetObject("taskCredentials");
+
+    m_taskCredentialsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -127,6 +136,12 @@ JsonValue TaskScheduledEventDetails::Jsonize() const
   if(m_heartbeatInSecondsHasBeenSet)
   {
    payload.WithInt64("heartbeatInSeconds", m_heartbeatInSeconds);
+
+  }
+
+  if(m_taskCredentialsHasBeenSet)
+  {
+   payload.WithObject("taskCredentials", m_taskCredentials.Jsonize());
 
   }
 

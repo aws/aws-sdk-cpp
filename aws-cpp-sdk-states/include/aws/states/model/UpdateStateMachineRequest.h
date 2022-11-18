@@ -213,32 +213,32 @@ namespace Model
 
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline const TracingConfiguration& GetTracingConfiguration() const{ return m_tracingConfiguration; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline bool TracingConfigurationHasBeenSet() const { return m_tracingConfigurationHasBeenSet; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline void SetTracingConfiguration(const TracingConfiguration& value) { m_tracingConfigurationHasBeenSet = true; m_tracingConfiguration = value; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline void SetTracingConfiguration(TracingConfiguration&& value) { m_tracingConfigurationHasBeenSet = true; m_tracingConfiguration = std::move(value); }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline UpdateStateMachineRequest& WithTracingConfiguration(const TracingConfiguration& value) { SetTracingConfiguration(value); return *this;}
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline UpdateStateMachineRequest& WithTracingConfiguration(TracingConfiguration&& value) { SetTracingConfiguration(std::move(value)); return *this;}
 

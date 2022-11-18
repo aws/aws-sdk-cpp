@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Selects whether or not the state machine's AWS X-Ray tracing is enabled.
-   * Default is <code>false</code> </p><p><h3>See Also:</h3>   <a
+   * <p>Selects whether or not the state machine's X-Ray tracing is enabled. Default
+   * is <code>false</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TracingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -37,22 +37,22 @@ namespace Model
 
 
     /**
-     * <p>When set to <code>true</code>, AWS X-Ray tracing is enabled.</p>
+     * <p>When set to <code>true</code>, X-Ray tracing is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>When set to <code>true</code>, AWS X-Ray tracing is enabled.</p>
+     * <p>When set to <code>true</code>, X-Ray tracing is enabled.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>When set to <code>true</code>, AWS X-Ray tracing is enabled.</p>
+     * <p>When set to <code>true</code>, X-Ray tracing is enabled.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>When set to <code>true</code>, AWS X-Ray tracing is enabled.</p>
+     * <p>When set to <code>true</code>, X-Ray tracing is enabled.</p>
      */
     inline TracingConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

@@ -10,6 +10,7 @@
 #include <aws/servicecatalog/model/ProductType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/ProvisioningArtifactProperties.h>
+#include <aws/servicecatalog/model/SourceConnection.h>
 #include <aws/servicecatalog/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -550,6 +551,67 @@ namespace Model
      */
     inline CreateProductRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline const SourceConnection& GetSourceConnection() const{ return m_sourceConnection; }
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline bool SourceConnectionHasBeenSet() const { return m_sourceConnectionHasBeenSet; }
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline void SetSourceConnection(const SourceConnection& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = value; }
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline void SetSourceConnection(SourceConnection&& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = std::move(value); }
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline CreateProductRequest& WithSourceConnection(const SourceConnection& value) { SetSourceConnection(value); return *this;}
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline CreateProductRequest& WithSourceConnection(SourceConnection&& value) { SetSourceConnection(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
@@ -587,6 +649,9 @@ namespace Model
 
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet = false;
+
+    SourceConnection m_sourceConnection;
+    bool m_sourceConnectionHasBeenSet = false;
   };
 
 } // namespace Model

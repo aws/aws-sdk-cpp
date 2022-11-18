@@ -39,6 +39,7 @@
 #include <aws/appflow/model/UnregisterConnectorResult.h>
 #include <aws/appflow/model/UntagResourceResult.h>
 #include <aws/appflow/model/UpdateConnectorProfileResult.h>
+#include <aws/appflow/model/UpdateConnectorRegistrationResult.h>
 #include <aws/appflow/model/UpdateFlowResult.h>
 /* End of service model headers required in AppflowClient header */
 
@@ -101,6 +102,7 @@ namespace Aws
       class UnregisterConnectorRequest;
       class UntagResourceRequest;
       class UpdateConnectorProfileRequest;
+      class UpdateConnectorRegistrationRequest;
       class UpdateFlowRequest;
       /* End of service model forward declarations required in AppflowClient header */
 
@@ -126,6 +128,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UnregisterConnectorResult, AppflowError> UnregisterConnectorOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, AppflowError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateConnectorProfileResult, AppflowError> UpdateConnectorProfileOutcome;
+      typedef Aws::Utils::Outcome<UpdateConnectorRegistrationResult, AppflowError> UpdateConnectorRegistrationOutcome;
       typedef Aws::Utils::Outcome<UpdateFlowResult, AppflowError> UpdateFlowOutcome;
       /* End of service model Outcome class definitions */
 
@@ -151,6 +154,7 @@ namespace Aws
       typedef std::future<UnregisterConnectorOutcome> UnregisterConnectorOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateConnectorProfileOutcome> UpdateConnectorProfileOutcomeCallable;
+      typedef std::future<UpdateConnectorRegistrationOutcome> UpdateConnectorRegistrationOutcomeCallable;
       typedef std::future<UpdateFlowOutcome> UpdateFlowOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -179,6 +183,7 @@ namespace Aws
     typedef std::function<void(const AppflowClient*, const Model::UnregisterConnectorRequest&, const Model::UnregisterConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnregisterConnectorResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::UpdateConnectorProfileRequest&, const Model::UpdateConnectorProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectorProfileResponseReceivedHandler;
+    typedef std::function<void(const AppflowClient*, const Model::UpdateConnectorRegistrationRequest&, const Model::UpdateConnectorRegistrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectorRegistrationResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::UpdateFlowRequest&, const Model::UpdateFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFlowResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Appflow

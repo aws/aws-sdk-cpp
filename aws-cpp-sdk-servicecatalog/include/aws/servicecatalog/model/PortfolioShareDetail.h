@@ -40,73 +40,73 @@ namespace Model
 
     /**
      * <p>The identifier of the recipient entity that received the portfolio share. The
-     * recipient entities can be one of the following: </p> <p>1. An external
-     * account.</p> <p>2. An organziation member account.</p> <p>3. An organzational
-     * unit (OU).</p> <p>4. The organization itself. (This shares with every account in
-     * the organization).</p>
+     * recipient entity can be one of the following:</p> <p>1. An external account.</p>
+     * <p>2. An organziation member account.</p> <p>3. An organzational unit (OU).</p>
+     * <p>4. The organization itself. (This shares with every account in the
+     * organization).</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
 
     /**
      * <p>The identifier of the recipient entity that received the portfolio share. The
-     * recipient entities can be one of the following: </p> <p>1. An external
-     * account.</p> <p>2. An organziation member account.</p> <p>3. An organzational
-     * unit (OU).</p> <p>4. The organization itself. (This shares with every account in
-     * the organization).</p>
+     * recipient entity can be one of the following:</p> <p>1. An external account.</p>
+     * <p>2. An organziation member account.</p> <p>3. An organzational unit (OU).</p>
+     * <p>4. The organization itself. (This shares with every account in the
+     * organization).</p>
      */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
      * <p>The identifier of the recipient entity that received the portfolio share. The
-     * recipient entities can be one of the following: </p> <p>1. An external
-     * account.</p> <p>2. An organziation member account.</p> <p>3. An organzational
-     * unit (OU).</p> <p>4. The organization itself. (This shares with every account in
-     * the organization).</p>
+     * recipient entity can be one of the following:</p> <p>1. An external account.</p>
+     * <p>2. An organziation member account.</p> <p>3. An organzational unit (OU).</p>
+     * <p>4. The organization itself. (This shares with every account in the
+     * organization).</p>
      */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
      * <p>The identifier of the recipient entity that received the portfolio share. The
-     * recipient entities can be one of the following: </p> <p>1. An external
-     * account.</p> <p>2. An organziation member account.</p> <p>3. An organzational
-     * unit (OU).</p> <p>4. The organization itself. (This shares with every account in
-     * the organization).</p>
+     * recipient entity can be one of the following:</p> <p>1. An external account.</p>
+     * <p>2. An organziation member account.</p> <p>3. An organzational unit (OU).</p>
+     * <p>4. The organization itself. (This shares with every account in the
+     * organization).</p>
      */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
 
     /**
      * <p>The identifier of the recipient entity that received the portfolio share. The
-     * recipient entities can be one of the following: </p> <p>1. An external
-     * account.</p> <p>2. An organziation member account.</p> <p>3. An organzational
-     * unit (OU).</p> <p>4. The organization itself. (This shares with every account in
-     * the organization).</p>
+     * recipient entity can be one of the following:</p> <p>1. An external account.</p>
+     * <p>2. An organziation member account.</p> <p>3. An organzational unit (OU).</p>
+     * <p>4. The organization itself. (This shares with every account in the
+     * organization).</p>
      */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
 
     /**
      * <p>The identifier of the recipient entity that received the portfolio share. The
-     * recipient entities can be one of the following: </p> <p>1. An external
-     * account.</p> <p>2. An organziation member account.</p> <p>3. An organzational
-     * unit (OU).</p> <p>4. The organization itself. (This shares with every account in
-     * the organization).</p>
+     * recipient entity can be one of the following:</p> <p>1. An external account.</p>
+     * <p>2. An organziation member account.</p> <p>3. An organzational unit (OU).</p>
+     * <p>4. The organization itself. (This shares with every account in the
+     * organization).</p>
      */
     inline PortfolioShareDetail& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
 
     /**
      * <p>The identifier of the recipient entity that received the portfolio share. The
-     * recipient entities can be one of the following: </p> <p>1. An external
-     * account.</p> <p>2. An organziation member account.</p> <p>3. An organzational
-     * unit (OU).</p> <p>4. The organization itself. (This shares with every account in
-     * the organization).</p>
+     * recipient entity can be one of the following:</p> <p>1. An external account.</p>
+     * <p>2. An organziation member account.</p> <p>3. An organzational unit (OU).</p>
+     * <p>4. The organization itself. (This shares with every account in the
+     * organization).</p>
      */
     inline PortfolioShareDetail& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the recipient entity that received the portfolio share. The
-     * recipient entities can be one of the following: </p> <p>1. An external
-     * account.</p> <p>2. An organziation member account.</p> <p>3. An organzational
-     * unit (OU).</p> <p>4. The organization itself. (This shares with every account in
-     * the organization).</p>
+     * recipient entity can be one of the following:</p> <p>1. An external account.</p>
+     * <p>2. An organziation member account.</p> <p>3. An organzational unit (OU).</p>
+     * <p>4. The organization itself. (This shares with every account in the
+     * organization).</p>
      */
     inline PortfolioShareDetail& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
@@ -195,6 +195,31 @@ namespace Model
      */
     inline PortfolioShareDetail& WithShareTagOptions(bool value) { SetShareTagOptions(value); return *this;}
 
+
+    /**
+     * <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the
+     * portfolio share. </p>
+     */
+    inline bool GetSharePrincipals() const{ return m_sharePrincipals; }
+
+    /**
+     * <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the
+     * portfolio share. </p>
+     */
+    inline bool SharePrincipalsHasBeenSet() const { return m_sharePrincipalsHasBeenSet; }
+
+    /**
+     * <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the
+     * portfolio share. </p>
+     */
+    inline void SetSharePrincipals(bool value) { m_sharePrincipalsHasBeenSet = true; m_sharePrincipals = value; }
+
+    /**
+     * <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the
+     * portfolio share. </p>
+     */
+    inline PortfolioShareDetail& WithSharePrincipals(bool value) { SetSharePrincipals(value); return *this;}
+
   private:
 
     Aws::String m_principalId;
@@ -208,6 +233,9 @@ namespace Model
 
     bool m_shareTagOptions;
     bool m_shareTagOptionsHasBeenSet = false;
+
+    bool m_sharePrincipals;
+    bool m_sharePrincipalsHasBeenSet = false;
   };
 
 } // namespace Model

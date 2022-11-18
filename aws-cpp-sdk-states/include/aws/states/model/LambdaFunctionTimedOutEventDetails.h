@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about a lambda function timeout that occurred during an
+   * <p>Contains details about a Lambda function timeout that occurred during an
    * execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionTimedOutEventDetails">AWS
    * API Reference</a></p>

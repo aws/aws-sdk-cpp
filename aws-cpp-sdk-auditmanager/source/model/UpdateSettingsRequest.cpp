@@ -16,7 +16,9 @@ UpdateSettingsRequest::UpdateSettingsRequest() :
     m_snsTopicHasBeenSet(false),
     m_defaultAssessmentReportsDestinationHasBeenSet(false),
     m_defaultProcessOwnersHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false)
+    m_kmsKeyHasBeenSet(false),
+    m_evidenceFinderEnabled(false),
+    m_evidenceFinderEnabledHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,12 @@ Aws::String UpdateSettingsRequest::SerializePayload() const
   if(m_kmsKeyHasBeenSet)
   {
    payload.WithString("kmsKey", m_kmsKey);
+
+  }
+
+  if(m_evidenceFinderEnabledHasBeenSet)
+  {
+   payload.WithBool("evidenceFinderEnabled", m_evidenceFinderEnabled);
 
   }
 

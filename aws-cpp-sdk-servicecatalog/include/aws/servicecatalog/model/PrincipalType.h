@@ -16,7 +16,8 @@ namespace Model
   enum class PrincipalType
   {
     NOT_SET,
-    IAM
+    IAM,
+    IAM_PATTERN
   };
 
 namespace PrincipalTypeMapper

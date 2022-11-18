@@ -505,6 +505,30 @@ namespace QuickSight
         virtual void DeleteAccountCustomizationAsync(const Model::DeleteAccountCustomizationRequest& request, const DeleteAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon
+         * QuickSight account. This operation will result in an error message if you have
+         * configured your account termination protection settings to <code>True</code>. To
+         * change this setting and delete your account, call the
+         * <code>UpdateAccountSettings</code> API and set the value of the
+         * <code>TerminationProtectionEnabled</code> parameter to <code>False</code>, then
+         * make another call to the <code>DeleteAccountSubscription</code>
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccountSubscriptionOutcome DeleteAccountSubscription(const Model::DeleteAccountSubscriptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAccountSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAccountSubscriptionOutcomeCallable DeleteAccountSubscriptionCallable(const Model::DeleteAccountSubscriptionRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteAccountSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAccountSubscriptionAsync(const Model::DeleteAccountSubscriptionRequest& request, const DeleteAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an analysis from Amazon QuickSight. You can optionally include a
          * recovery window during which you can restore the analysis. If you don't specify
          * a recovery window value, the operation defaults to 30 days. Amazon QuickSight
@@ -879,7 +903,7 @@ namespace QuickSight
         virtual void DescribeAccountSettingsAsync(const Model::DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use the DescribeAccountSubscription operation to receive a description of a
+         * <p>Use the DescribeAccountSubscription operation to receive a description of an
          * Amazon QuickSight account's subscription. A successful API call returns an
          * <code>AccountInfo</code> object that includes an account's name, subscription
          * status, authentication type, edition, and notification email
@@ -1932,6 +1956,42 @@ namespace QuickSight
          * An Async wrapper for SearchDashboards that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchDashboardsAsync(const Model::SearchDashboardsRequest& request, const SearchDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Use the <code>SearchDataSets</code> operation to search for datasets that
+         * belong to an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchDataSetsOutcome SearchDataSets(const Model::SearchDataSetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchDataSets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchDataSetsOutcomeCallable SearchDataSetsCallable(const Model::SearchDataSetsRequest& request) const;
+
+        /**
+         * An Async wrapper for SearchDataSets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchDataSetsAsync(const Model::SearchDataSetsRequest& request, const SearchDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Use the <code>SearchDataSources</code> operation to search for data sources
+         * that belong to an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchDataSourcesOutcome SearchDataSources(const Model::SearchDataSourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchDataSources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchDataSourcesOutcomeCallable SearchDataSourcesCallable(const Model::SearchDataSourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for SearchDataSources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchDataSourcesAsync(const Model::SearchDataSourcesRequest& request, const SearchDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches the subfolders in a folder.</p><p><h3>See Also:</h3>   <a

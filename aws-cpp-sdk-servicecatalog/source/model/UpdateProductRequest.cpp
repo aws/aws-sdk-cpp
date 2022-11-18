@@ -23,7 +23,8 @@ UpdateProductRequest::UpdateProductRequest() :
     m_supportEmailHasBeenSet(false),
     m_supportUrlHasBeenSet(false),
     m_addTagsHasBeenSet(false),
-    m_removeTagsHasBeenSet(false)
+    m_removeTagsHasBeenSet(false),
+    m_sourceConnectionHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,12 @@ Aws::String UpdateProductRequest::SerializePayload() const
      removeTagsJsonList[removeTagsIndex].AsString(m_removeTags[removeTagsIndex]);
    }
    payload.WithArray("RemoveTags", std::move(removeTagsJsonList));
+
+  }
+
+  if(m_sourceConnectionHasBeenSet)
+  {
+   payload.WithObject("SourceConnection", m_sourceConnection.Jsonize());
 
   }
 

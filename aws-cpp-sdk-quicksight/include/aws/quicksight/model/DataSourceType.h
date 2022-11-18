@@ -40,7 +40,8 @@ namespace Model
     TWITTER,
     TIMESTREAM,
     AMAZON_OPENSEARCH,
-    EXASOL
+    EXASOL,
+    DATABRICKS
   };
 
 namespace DataSourceTypeMapper

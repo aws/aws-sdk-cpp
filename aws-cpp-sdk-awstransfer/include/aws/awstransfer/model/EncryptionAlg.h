@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     AES128_CBC,
     AES192_CBC,
-    AES256_CBC
+    AES256_CBC,
+    NONE
   };
 
 namespace EncryptionAlgMapper

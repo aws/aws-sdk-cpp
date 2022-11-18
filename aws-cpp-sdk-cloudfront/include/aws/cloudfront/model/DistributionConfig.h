@@ -169,8 +169,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -189,8 +189,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -209,8 +209,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -229,8 +229,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -249,8 +249,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -269,8 +269,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -289,8 +289,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -309,8 +309,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>

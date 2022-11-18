@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateAssessmentReportRequest::CreateAssessmentReportRequest() : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_assessmentIdHasBeenSet(false)
+    m_assessmentIdHasBeenSet(false),
+    m_queryStatementHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String CreateAssessmentReportRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_queryStatementHasBeenSet)
+  {
+   payload.WithString("queryStatement", m_queryStatement);
 
   }
 
