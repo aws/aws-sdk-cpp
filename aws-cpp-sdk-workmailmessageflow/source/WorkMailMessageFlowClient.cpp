@@ -168,17 +168,18 @@ GetRawMessageContentOutcome WorkMailMessageFlowClient::GetRawMessageContent(cons
 
 GetRawMessageContentOutcomeCallable WorkMailMessageFlowClient::GetRawMessageContentCallable(const GetRawMessageContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRawMessageContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRawMessageContent(request); } );
+  std::shared_ptr<GetRawMessageContentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRawMessageContentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRawMessageContent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void WorkMailMessageFlowClient::GetRawMessageContentAsync(const GetRawMessageContentRequest& request, const GetRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRawMessageContentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRawMessageContent(request), context);
+      handler(this, *pRequest, GetRawMessageContent(*pRequest), context);
     } );
 }
 
@@ -199,17 +200,18 @@ PutRawMessageContentOutcome WorkMailMessageFlowClient::PutRawMessageContent(cons
 
 PutRawMessageContentOutcomeCallable WorkMailMessageFlowClient::PutRawMessageContentCallable(const PutRawMessageContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutRawMessageContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRawMessageContent(request); } );
+  std::shared_ptr<PutRawMessageContentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutRawMessageContentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutRawMessageContent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void WorkMailMessageFlowClient::PutRawMessageContentAsync(const PutRawMessageContentRequest& request, const PutRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutRawMessageContentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutRawMessageContent(request), context);
+      handler(this, *pRequest, PutRawMessageContent(*pRequest), context);
     } );
 }
 

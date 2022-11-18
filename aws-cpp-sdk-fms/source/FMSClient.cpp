@@ -197,17 +197,18 @@ AssociateAdminAccountOutcome FMSClient::AssociateAdminAccount(const AssociateAdm
 
 AssociateAdminAccountOutcomeCallable FMSClient::AssociateAdminAccountCallable(const AssociateAdminAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateAdminAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateAdminAccount(request); } );
+  std::shared_ptr<AssociateAdminAccountRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateAdminAccountOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateAdminAccount(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::AssociateAdminAccountAsync(const AssociateAdminAccountRequest& request, const AssociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateAdminAccountRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateAdminAccount(request), context);
+      handler(this, *pRequest, AssociateAdminAccount(*pRequest), context);
     } );
 }
 
@@ -221,17 +222,18 @@ AssociateThirdPartyFirewallOutcome FMSClient::AssociateThirdPartyFirewall(const 
 
 AssociateThirdPartyFirewallOutcomeCallable FMSClient::AssociateThirdPartyFirewallCallable(const AssociateThirdPartyFirewallRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateThirdPartyFirewallOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateThirdPartyFirewall(request); } );
+  std::shared_ptr<AssociateThirdPartyFirewallRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateThirdPartyFirewallOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateThirdPartyFirewall(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::AssociateThirdPartyFirewallAsync(const AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateThirdPartyFirewallRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateThirdPartyFirewall(request), context);
+      handler(this, *pRequest, AssociateThirdPartyFirewall(*pRequest), context);
     } );
 }
 
@@ -245,17 +247,18 @@ BatchAssociateResourceOutcome FMSClient::BatchAssociateResource(const BatchAssoc
 
 BatchAssociateResourceOutcomeCallable FMSClient::BatchAssociateResourceCallable(const BatchAssociateResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchAssociateResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchAssociateResource(request); } );
+  std::shared_ptr<BatchAssociateResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchAssociateResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchAssociateResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::BatchAssociateResourceAsync(const BatchAssociateResourceRequest& request, const BatchAssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchAssociateResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchAssociateResource(request), context);
+      handler(this, *pRequest, BatchAssociateResource(*pRequest), context);
     } );
 }
 
@@ -269,17 +272,18 @@ BatchDisassociateResourceOutcome FMSClient::BatchDisassociateResource(const Batc
 
 BatchDisassociateResourceOutcomeCallable FMSClient::BatchDisassociateResourceCallable(const BatchDisassociateResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDisassociateResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDisassociateResource(request); } );
+  std::shared_ptr<BatchDisassociateResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchDisassociateResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchDisassociateResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::BatchDisassociateResourceAsync(const BatchDisassociateResourceRequest& request, const BatchDisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchDisassociateResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchDisassociateResource(request), context);
+      handler(this, *pRequest, BatchDisassociateResource(*pRequest), context);
     } );
 }
 
@@ -293,17 +297,18 @@ DeleteAppsListOutcome FMSClient::DeleteAppsList(const DeleteAppsListRequest& req
 
 DeleteAppsListOutcomeCallable FMSClient::DeleteAppsListCallable(const DeleteAppsListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAppsListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppsList(request); } );
+  std::shared_ptr<DeleteAppsListRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAppsListOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAppsList(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::DeleteAppsListAsync(const DeleteAppsListRequest& request, const DeleteAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAppsListRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAppsList(request), context);
+      handler(this, *pRequest, DeleteAppsList(*pRequest), context);
     } );
 }
 
@@ -317,17 +322,18 @@ DeleteNotificationChannelOutcome FMSClient::DeleteNotificationChannel(const Dele
 
 DeleteNotificationChannelOutcomeCallable FMSClient::DeleteNotificationChannelCallable(const DeleteNotificationChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNotificationChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNotificationChannel(request); } );
+  std::shared_ptr<DeleteNotificationChannelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNotificationChannelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteNotificationChannel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::DeleteNotificationChannelAsync(const DeleteNotificationChannelRequest& request, const DeleteNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteNotificationChannelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteNotificationChannel(request), context);
+      handler(this, *pRequest, DeleteNotificationChannel(*pRequest), context);
     } );
 }
 
@@ -341,17 +347,18 @@ DeletePolicyOutcome FMSClient::DeletePolicy(const DeletePolicyRequest& request) 
 
 DeletePolicyOutcomeCallable FMSClient::DeletePolicyCallable(const DeletePolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePolicy(request); } );
+  std::shared_ptr<DeletePolicyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeletePolicyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeletePolicy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeletePolicyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeletePolicy(request), context);
+      handler(this, *pRequest, DeletePolicy(*pRequest), context);
     } );
 }
 
@@ -365,17 +372,18 @@ DeleteProtocolsListOutcome FMSClient::DeleteProtocolsList(const DeleteProtocolsL
 
 DeleteProtocolsListOutcomeCallable FMSClient::DeleteProtocolsListCallable(const DeleteProtocolsListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteProtocolsListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProtocolsList(request); } );
+  std::shared_ptr<DeleteProtocolsListRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProtocolsListOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteProtocolsList(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::DeleteProtocolsListAsync(const DeleteProtocolsListRequest& request, const DeleteProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteProtocolsListRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteProtocolsList(request), context);
+      handler(this, *pRequest, DeleteProtocolsList(*pRequest), context);
     } );
 }
 
@@ -389,17 +397,18 @@ DeleteResourceSetOutcome FMSClient::DeleteResourceSet(const DeleteResourceSetReq
 
 DeleteResourceSetOutcomeCallable FMSClient::DeleteResourceSetCallable(const DeleteResourceSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourceSet(request); } );
+  std::shared_ptr<DeleteResourceSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteResourceSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::DeleteResourceSetAsync(const DeleteResourceSetRequest& request, const DeleteResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteResourceSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteResourceSet(request), context);
+      handler(this, *pRequest, DeleteResourceSet(*pRequest), context);
     } );
 }
 
@@ -413,17 +422,18 @@ DisassociateAdminAccountOutcome FMSClient::DisassociateAdminAccount(const Disass
 
 DisassociateAdminAccountOutcomeCallable FMSClient::DisassociateAdminAccountCallable(const DisassociateAdminAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateAdminAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateAdminAccount(request); } );
+  std::shared_ptr<DisassociateAdminAccountRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateAdminAccountOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateAdminAccount(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::DisassociateAdminAccountAsync(const DisassociateAdminAccountRequest& request, const DisassociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateAdminAccountRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateAdminAccount(request), context);
+      handler(this, *pRequest, DisassociateAdminAccount(*pRequest), context);
     } );
 }
 
@@ -437,17 +447,18 @@ DisassociateThirdPartyFirewallOutcome FMSClient::DisassociateThirdPartyFirewall(
 
 DisassociateThirdPartyFirewallOutcomeCallable FMSClient::DisassociateThirdPartyFirewallCallable(const DisassociateThirdPartyFirewallRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateThirdPartyFirewallOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateThirdPartyFirewall(request); } );
+  std::shared_ptr<DisassociateThirdPartyFirewallRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateThirdPartyFirewallOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateThirdPartyFirewall(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::DisassociateThirdPartyFirewallAsync(const DisassociateThirdPartyFirewallRequest& request, const DisassociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateThirdPartyFirewallRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateThirdPartyFirewall(request), context);
+      handler(this, *pRequest, DisassociateThirdPartyFirewall(*pRequest), context);
     } );
 }
 
@@ -461,17 +472,18 @@ GetAdminAccountOutcome FMSClient::GetAdminAccount(const GetAdminAccountRequest& 
 
 GetAdminAccountOutcomeCallable FMSClient::GetAdminAccountCallable(const GetAdminAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAdminAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAdminAccount(request); } );
+  std::shared_ptr<GetAdminAccountRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAdminAccountOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAdminAccount(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::GetAdminAccountAsync(const GetAdminAccountRequest& request, const GetAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAdminAccountRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAdminAccount(request), context);
+      handler(this, *pRequest, GetAdminAccount(*pRequest), context);
     } );
 }
 
@@ -485,17 +497,18 @@ GetAppsListOutcome FMSClient::GetAppsList(const GetAppsListRequest& request) con
 
 GetAppsListOutcomeCallable FMSClient::GetAppsListCallable(const GetAppsListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAppsListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppsList(request); } );
+  std::shared_ptr<GetAppsListRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAppsListOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAppsList(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::GetAppsListAsync(const GetAppsListRequest& request, const GetAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAppsListRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAppsList(request), context);
+      handler(this, *pRequest, GetAppsList(*pRequest), context);
     } );
 }
 
@@ -509,17 +522,18 @@ GetComplianceDetailOutcome FMSClient::GetComplianceDetail(const GetComplianceDet
 
 GetComplianceDetailOutcomeCallable FMSClient::GetComplianceDetailCallable(const GetComplianceDetailRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetComplianceDetailOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComplianceDetail(request); } );
+  std::shared_ptr<GetComplianceDetailRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetComplianceDetailOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetComplianceDetail(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::GetComplianceDetailAsync(const GetComplianceDetailRequest& request, const GetComplianceDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetComplianceDetailRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetComplianceDetail(request), context);
+      handler(this, *pRequest, GetComplianceDetail(*pRequest), context);
     } );
 }
 
@@ -533,17 +547,18 @@ GetNotificationChannelOutcome FMSClient::GetNotificationChannel(const GetNotific
 
 GetNotificationChannelOutcomeCallable FMSClient::GetNotificationChannelCallable(const GetNotificationChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNotificationChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNotificationChannel(request); } );
+  std::shared_ptr<GetNotificationChannelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetNotificationChannelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetNotificationChannel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::GetNotificationChannelAsync(const GetNotificationChannelRequest& request, const GetNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetNotificationChannelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetNotificationChannel(request), context);
+      handler(this, *pRequest, GetNotificationChannel(*pRequest), context);
     } );
 }
 
@@ -557,17 +572,18 @@ GetPolicyOutcome FMSClient::GetPolicy(const GetPolicyRequest& request) const
 
 GetPolicyOutcomeCallable FMSClient::GetPolicyCallable(const GetPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPolicy(request); } );
+  std::shared_ptr<GetPolicyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetPolicyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetPolicy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetPolicyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetPolicy(request), context);
+      handler(this, *pRequest, GetPolicy(*pRequest), context);
     } );
 }
 
@@ -581,17 +597,18 @@ GetProtectionStatusOutcome FMSClient::GetProtectionStatus(const GetProtectionSta
 
 GetProtectionStatusOutcomeCallable FMSClient::GetProtectionStatusCallable(const GetProtectionStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetProtectionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProtectionStatus(request); } );
+  std::shared_ptr<GetProtectionStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetProtectionStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetProtectionStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::GetProtectionStatusAsync(const GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetProtectionStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetProtectionStatus(request), context);
+      handler(this, *pRequest, GetProtectionStatus(*pRequest), context);
     } );
 }
 
@@ -605,17 +622,18 @@ GetProtocolsListOutcome FMSClient::GetProtocolsList(const GetProtocolsListReques
 
 GetProtocolsListOutcomeCallable FMSClient::GetProtocolsListCallable(const GetProtocolsListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetProtocolsListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProtocolsList(request); } );
+  std::shared_ptr<GetProtocolsListRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetProtocolsListOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetProtocolsList(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::GetProtocolsListAsync(const GetProtocolsListRequest& request, const GetProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetProtocolsListRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetProtocolsList(request), context);
+      handler(this, *pRequest, GetProtocolsList(*pRequest), context);
     } );
 }
 
@@ -629,17 +647,18 @@ GetResourceSetOutcome FMSClient::GetResourceSet(const GetResourceSetRequest& req
 
 GetResourceSetOutcomeCallable FMSClient::GetResourceSetCallable(const GetResourceSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceSet(request); } );
+  std::shared_ptr<GetResourceSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetResourceSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::GetResourceSetAsync(const GetResourceSetRequest& request, const GetResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetResourceSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetResourceSet(request), context);
+      handler(this, *pRequest, GetResourceSet(*pRequest), context);
     } );
 }
 
@@ -653,17 +672,18 @@ GetThirdPartyFirewallAssociationStatusOutcome FMSClient::GetThirdPartyFirewallAs
 
 GetThirdPartyFirewallAssociationStatusOutcomeCallable FMSClient::GetThirdPartyFirewallAssociationStatusCallable(const GetThirdPartyFirewallAssociationStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetThirdPartyFirewallAssociationStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetThirdPartyFirewallAssociationStatus(request); } );
+  std::shared_ptr<GetThirdPartyFirewallAssociationStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetThirdPartyFirewallAssociationStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetThirdPartyFirewallAssociationStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::GetThirdPartyFirewallAssociationStatusAsync(const GetThirdPartyFirewallAssociationStatusRequest& request, const GetThirdPartyFirewallAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetThirdPartyFirewallAssociationStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetThirdPartyFirewallAssociationStatus(request), context);
+      handler(this, *pRequest, GetThirdPartyFirewallAssociationStatus(*pRequest), context);
     } );
 }
 
@@ -677,17 +697,18 @@ GetViolationDetailsOutcome FMSClient::GetViolationDetails(const GetViolationDeta
 
 GetViolationDetailsOutcomeCallable FMSClient::GetViolationDetailsCallable(const GetViolationDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetViolationDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetViolationDetails(request); } );
+  std::shared_ptr<GetViolationDetailsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetViolationDetailsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetViolationDetails(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::GetViolationDetailsAsync(const GetViolationDetailsRequest& request, const GetViolationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetViolationDetailsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetViolationDetails(request), context);
+      handler(this, *pRequest, GetViolationDetails(*pRequest), context);
     } );
 }
 
@@ -701,17 +722,18 @@ ListAppsListsOutcome FMSClient::ListAppsLists(const ListAppsListsRequest& reques
 
 ListAppsListsOutcomeCallable FMSClient::ListAppsListsCallable(const ListAppsListsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAppsListsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppsLists(request); } );
+  std::shared_ptr<ListAppsListsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAppsListsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAppsLists(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::ListAppsListsAsync(const ListAppsListsRequest& request, const ListAppsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAppsListsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAppsLists(request), context);
+      handler(this, *pRequest, ListAppsLists(*pRequest), context);
     } );
 }
 
@@ -725,17 +747,18 @@ ListComplianceStatusOutcome FMSClient::ListComplianceStatus(const ListCompliance
 
 ListComplianceStatusOutcomeCallable FMSClient::ListComplianceStatusCallable(const ListComplianceStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListComplianceStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComplianceStatus(request); } );
+  std::shared_ptr<ListComplianceStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListComplianceStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListComplianceStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::ListComplianceStatusAsync(const ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListComplianceStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListComplianceStatus(request), context);
+      handler(this, *pRequest, ListComplianceStatus(*pRequest), context);
     } );
 }
 
@@ -749,17 +772,18 @@ ListDiscoveredResourcesOutcome FMSClient::ListDiscoveredResources(const ListDisc
 
 ListDiscoveredResourcesOutcomeCallable FMSClient::ListDiscoveredResourcesCallable(const ListDiscoveredResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDiscoveredResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDiscoveredResources(request); } );
+  std::shared_ptr<ListDiscoveredResourcesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDiscoveredResourcesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDiscoveredResources(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::ListDiscoveredResourcesAsync(const ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDiscoveredResourcesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDiscoveredResources(request), context);
+      handler(this, *pRequest, ListDiscoveredResources(*pRequest), context);
     } );
 }
 
@@ -773,17 +797,18 @@ ListMemberAccountsOutcome FMSClient::ListMemberAccounts(const ListMemberAccounts
 
 ListMemberAccountsOutcomeCallable FMSClient::ListMemberAccountsCallable(const ListMemberAccountsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMemberAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMemberAccounts(request); } );
+  std::shared_ptr<ListMemberAccountsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListMemberAccountsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListMemberAccounts(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::ListMemberAccountsAsync(const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListMemberAccountsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListMemberAccounts(request), context);
+      handler(this, *pRequest, ListMemberAccounts(*pRequest), context);
     } );
 }
 
@@ -797,17 +822,18 @@ ListPoliciesOutcome FMSClient::ListPolicies(const ListPoliciesRequest& request) 
 
 ListPoliciesOutcomeCallable FMSClient::ListPoliciesCallable(const ListPoliciesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPolicies(request); } );
+  std::shared_ptr<ListPoliciesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPoliciesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPolicies(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::ListPoliciesAsync(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPoliciesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPolicies(request), context);
+      handler(this, *pRequest, ListPolicies(*pRequest), context);
     } );
 }
 
@@ -821,17 +847,18 @@ ListProtocolsListsOutcome FMSClient::ListProtocolsLists(const ListProtocolsLists
 
 ListProtocolsListsOutcomeCallable FMSClient::ListProtocolsListsCallable(const ListProtocolsListsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProtocolsListsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProtocolsLists(request); } );
+  std::shared_ptr<ListProtocolsListsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListProtocolsListsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListProtocolsLists(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::ListProtocolsListsAsync(const ListProtocolsListsRequest& request, const ListProtocolsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListProtocolsListsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListProtocolsLists(request), context);
+      handler(this, *pRequest, ListProtocolsLists(*pRequest), context);
     } );
 }
 
@@ -845,17 +872,18 @@ ListResourceSetResourcesOutcome FMSClient::ListResourceSetResources(const ListRe
 
 ListResourceSetResourcesOutcomeCallable FMSClient::ListResourceSetResourcesCallable(const ListResourceSetResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListResourceSetResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceSetResources(request); } );
+  std::shared_ptr<ListResourceSetResourcesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceSetResourcesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListResourceSetResources(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::ListResourceSetResourcesAsync(const ListResourceSetResourcesRequest& request, const ListResourceSetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListResourceSetResourcesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListResourceSetResources(request), context);
+      handler(this, *pRequest, ListResourceSetResources(*pRequest), context);
     } );
 }
 
@@ -869,17 +897,18 @@ ListResourceSetsOutcome FMSClient::ListResourceSets(const ListResourceSetsReques
 
 ListResourceSetsOutcomeCallable FMSClient::ListResourceSetsCallable(const ListResourceSetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListResourceSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceSets(request); } );
+  std::shared_ptr<ListResourceSetsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceSetsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListResourceSets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::ListResourceSetsAsync(const ListResourceSetsRequest& request, const ListResourceSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListResourceSetsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListResourceSets(request), context);
+      handler(this, *pRequest, ListResourceSets(*pRequest), context);
     } );
 }
 
@@ -893,17 +922,18 @@ ListTagsForResourceOutcome FMSClient::ListTagsForResource(const ListTagsForResou
 
 ListTagsForResourceOutcomeCallable FMSClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -917,17 +947,18 @@ ListThirdPartyFirewallFirewallPoliciesOutcome FMSClient::ListThirdPartyFirewallF
 
 ListThirdPartyFirewallFirewallPoliciesOutcomeCallable FMSClient::ListThirdPartyFirewallFirewallPoliciesCallable(const ListThirdPartyFirewallFirewallPoliciesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListThirdPartyFirewallFirewallPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListThirdPartyFirewallFirewallPolicies(request); } );
+  std::shared_ptr<ListThirdPartyFirewallFirewallPoliciesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListThirdPartyFirewallFirewallPoliciesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListThirdPartyFirewallFirewallPolicies(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::ListThirdPartyFirewallFirewallPoliciesAsync(const ListThirdPartyFirewallFirewallPoliciesRequest& request, const ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListThirdPartyFirewallFirewallPoliciesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListThirdPartyFirewallFirewallPolicies(request), context);
+      handler(this, *pRequest, ListThirdPartyFirewallFirewallPolicies(*pRequest), context);
     } );
 }
 
@@ -941,17 +972,18 @@ PutAppsListOutcome FMSClient::PutAppsList(const PutAppsListRequest& request) con
 
 PutAppsListOutcomeCallable FMSClient::PutAppsListCallable(const PutAppsListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAppsListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAppsList(request); } );
+  std::shared_ptr<PutAppsListRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutAppsListOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutAppsList(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::PutAppsListAsync(const PutAppsListRequest& request, const PutAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutAppsListRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutAppsList(request), context);
+      handler(this, *pRequest, PutAppsList(*pRequest), context);
     } );
 }
 
@@ -965,17 +997,18 @@ PutNotificationChannelOutcome FMSClient::PutNotificationChannel(const PutNotific
 
 PutNotificationChannelOutcomeCallable FMSClient::PutNotificationChannelCallable(const PutNotificationChannelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutNotificationChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutNotificationChannel(request); } );
+  std::shared_ptr<PutNotificationChannelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutNotificationChannelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutNotificationChannel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::PutNotificationChannelAsync(const PutNotificationChannelRequest& request, const PutNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutNotificationChannelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutNotificationChannel(request), context);
+      handler(this, *pRequest, PutNotificationChannel(*pRequest), context);
     } );
 }
 
@@ -989,17 +1022,18 @@ PutPolicyOutcome FMSClient::PutPolicy(const PutPolicyRequest& request) const
 
 PutPolicyOutcomeCallable FMSClient::PutPolicyCallable(const PutPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPolicy(request); } );
+  std::shared_ptr<PutPolicyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutPolicyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutPolicy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::PutPolicyAsync(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutPolicyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutPolicy(request), context);
+      handler(this, *pRequest, PutPolicy(*pRequest), context);
     } );
 }
 
@@ -1013,17 +1047,18 @@ PutProtocolsListOutcome FMSClient::PutProtocolsList(const PutProtocolsListReques
 
 PutProtocolsListOutcomeCallable FMSClient::PutProtocolsListCallable(const PutProtocolsListRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutProtocolsListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutProtocolsList(request); } );
+  std::shared_ptr<PutProtocolsListRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutProtocolsListOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutProtocolsList(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::PutProtocolsListAsync(const PutProtocolsListRequest& request, const PutProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutProtocolsListRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutProtocolsList(request), context);
+      handler(this, *pRequest, PutProtocolsList(*pRequest), context);
     } );
 }
 
@@ -1037,17 +1072,18 @@ PutResourceSetOutcome FMSClient::PutResourceSet(const PutResourceSetRequest& req
 
 PutResourceSetOutcomeCallable FMSClient::PutResourceSetCallable(const PutResourceSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourceSet(request); } );
+  std::shared_ptr<PutResourceSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutResourceSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutResourceSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::PutResourceSetAsync(const PutResourceSetRequest& request, const PutResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutResourceSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutResourceSet(request), context);
+      handler(this, *pRequest, PutResourceSet(*pRequest), context);
     } );
 }
 
@@ -1061,17 +1097,18 @@ TagResourceOutcome FMSClient::TagResource(const TagResourceRequest& request) con
 
 TagResourceOutcomeCallable FMSClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -1085,17 +1122,18 @@ UntagResourceOutcome FMSClient::UntagResource(const UntagResourceRequest& reques
 
 UntagResourceOutcomeCallable FMSClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FMSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 

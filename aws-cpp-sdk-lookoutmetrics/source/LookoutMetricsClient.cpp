@@ -190,17 +190,18 @@ ActivateAnomalyDetectorOutcome LookoutMetricsClient::ActivateAnomalyDetector(con
 
 ActivateAnomalyDetectorOutcomeCallable LookoutMetricsClient::ActivateAnomalyDetectorCallable(const ActivateAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ActivateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ActivateAnomalyDetector(request); } );
+  std::shared_ptr<ActivateAnomalyDetectorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ActivateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ActivateAnomalyDetector(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::ActivateAnomalyDetectorAsync(const ActivateAnomalyDetectorRequest& request, const ActivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ActivateAnomalyDetectorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ActivateAnomalyDetector(request), context);
+      handler(this, *pRequest, ActivateAnomalyDetector(*pRequest), context);
     } );
 }
 
@@ -215,17 +216,18 @@ BackTestAnomalyDetectorOutcome LookoutMetricsClient::BackTestAnomalyDetector(con
 
 BackTestAnomalyDetectorOutcomeCallable LookoutMetricsClient::BackTestAnomalyDetectorCallable(const BackTestAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BackTestAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BackTestAnomalyDetector(request); } );
+  std::shared_ptr<BackTestAnomalyDetectorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BackTestAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BackTestAnomalyDetector(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::BackTestAnomalyDetectorAsync(const BackTestAnomalyDetectorRequest& request, const BackTestAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BackTestAnomalyDetectorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BackTestAnomalyDetector(request), context);
+      handler(this, *pRequest, BackTestAnomalyDetector(*pRequest), context);
     } );
 }
 
@@ -240,17 +242,18 @@ CreateAlertOutcome LookoutMetricsClient::CreateAlert(const CreateAlertRequest& r
 
 CreateAlertOutcomeCallable LookoutMetricsClient::CreateAlertCallable(const CreateAlertRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAlertOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAlert(request); } );
+  std::shared_ptr<CreateAlertRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateAlertOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateAlert(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::CreateAlertAsync(const CreateAlertRequest& request, const CreateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateAlertRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateAlert(request), context);
+      handler(this, *pRequest, CreateAlert(*pRequest), context);
     } );
 }
 
@@ -265,17 +268,18 @@ CreateAnomalyDetectorOutcome LookoutMetricsClient::CreateAnomalyDetector(const C
 
 CreateAnomalyDetectorOutcomeCallable LookoutMetricsClient::CreateAnomalyDetectorCallable(const CreateAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAnomalyDetector(request); } );
+  std::shared_ptr<CreateAnomalyDetectorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateAnomalyDetector(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::CreateAnomalyDetectorAsync(const CreateAnomalyDetectorRequest& request, const CreateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateAnomalyDetectorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateAnomalyDetector(request), context);
+      handler(this, *pRequest, CreateAnomalyDetector(*pRequest), context);
     } );
 }
 
@@ -290,17 +294,18 @@ CreateMetricSetOutcome LookoutMetricsClient::CreateMetricSet(const CreateMetricS
 
 CreateMetricSetOutcomeCallable LookoutMetricsClient::CreateMetricSetCallable(const CreateMetricSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMetricSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMetricSet(request); } );
+  std::shared_ptr<CreateMetricSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateMetricSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateMetricSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::CreateMetricSetAsync(const CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateMetricSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateMetricSet(request), context);
+      handler(this, *pRequest, CreateMetricSet(*pRequest), context);
     } );
 }
 
@@ -315,17 +320,18 @@ DeactivateAnomalyDetectorOutcome LookoutMetricsClient::DeactivateAnomalyDetector
 
 DeactivateAnomalyDetectorOutcomeCallable LookoutMetricsClient::DeactivateAnomalyDetectorCallable(const DeactivateAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeactivateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeactivateAnomalyDetector(request); } );
+  std::shared_ptr<DeactivateAnomalyDetectorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeactivateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeactivateAnomalyDetector(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::DeactivateAnomalyDetectorAsync(const DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeactivateAnomalyDetectorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeactivateAnomalyDetector(request), context);
+      handler(this, *pRequest, DeactivateAnomalyDetector(*pRequest), context);
     } );
 }
 
@@ -340,17 +346,18 @@ DeleteAlertOutcome LookoutMetricsClient::DeleteAlert(const DeleteAlertRequest& r
 
 DeleteAlertOutcomeCallable LookoutMetricsClient::DeleteAlertCallable(const DeleteAlertRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAlertOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAlert(request); } );
+  std::shared_ptr<DeleteAlertRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAlertOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAlert(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::DeleteAlertAsync(const DeleteAlertRequest& request, const DeleteAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAlertRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAlert(request), context);
+      handler(this, *pRequest, DeleteAlert(*pRequest), context);
     } );
 }
 
@@ -365,17 +372,18 @@ DeleteAnomalyDetectorOutcome LookoutMetricsClient::DeleteAnomalyDetector(const D
 
 DeleteAnomalyDetectorOutcomeCallable LookoutMetricsClient::DeleteAnomalyDetectorCallable(const DeleteAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAnomalyDetector(request); } );
+  std::shared_ptr<DeleteAnomalyDetectorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAnomalyDetector(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::DeleteAnomalyDetectorAsync(const DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAnomalyDetectorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAnomalyDetector(request), context);
+      handler(this, *pRequest, DeleteAnomalyDetector(*pRequest), context);
     } );
 }
 
@@ -390,17 +398,18 @@ DescribeAlertOutcome LookoutMetricsClient::DescribeAlert(const DescribeAlertRequ
 
 DescribeAlertOutcomeCallable LookoutMetricsClient::DescribeAlertCallable(const DescribeAlertRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAlertOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAlert(request); } );
+  std::shared_ptr<DescribeAlertRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAlertOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeAlert(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::DescribeAlertAsync(const DescribeAlertRequest& request, const DescribeAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeAlertRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeAlert(request), context);
+      handler(this, *pRequest, DescribeAlert(*pRequest), context);
     } );
 }
 
@@ -415,17 +424,18 @@ DescribeAnomalyDetectionExecutionsOutcome LookoutMetricsClient::DescribeAnomalyD
 
 DescribeAnomalyDetectionExecutionsOutcomeCallable LookoutMetricsClient::DescribeAnomalyDetectionExecutionsCallable(const DescribeAnomalyDetectionExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAnomalyDetectionExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAnomalyDetectionExecutions(request); } );
+  std::shared_ptr<DescribeAnomalyDetectionExecutionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAnomalyDetectionExecutionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeAnomalyDetectionExecutions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::DescribeAnomalyDetectionExecutionsAsync(const DescribeAnomalyDetectionExecutionsRequest& request, const DescribeAnomalyDetectionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeAnomalyDetectionExecutionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeAnomalyDetectionExecutions(request), context);
+      handler(this, *pRequest, DescribeAnomalyDetectionExecutions(*pRequest), context);
     } );
 }
 
@@ -440,17 +450,18 @@ DescribeAnomalyDetectorOutcome LookoutMetricsClient::DescribeAnomalyDetector(con
 
 DescribeAnomalyDetectorOutcomeCallable LookoutMetricsClient::DescribeAnomalyDetectorCallable(const DescribeAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAnomalyDetector(request); } );
+  std::shared_ptr<DescribeAnomalyDetectorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeAnomalyDetector(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::DescribeAnomalyDetectorAsync(const DescribeAnomalyDetectorRequest& request, const DescribeAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeAnomalyDetectorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeAnomalyDetector(request), context);
+      handler(this, *pRequest, DescribeAnomalyDetector(*pRequest), context);
     } );
 }
 
@@ -465,17 +476,18 @@ DescribeMetricSetOutcome LookoutMetricsClient::DescribeMetricSet(const DescribeM
 
 DescribeMetricSetOutcomeCallable LookoutMetricsClient::DescribeMetricSetCallable(const DescribeMetricSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeMetricSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMetricSet(request); } );
+  std::shared_ptr<DescribeMetricSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMetricSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeMetricSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::DescribeMetricSetAsync(const DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeMetricSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeMetricSet(request), context);
+      handler(this, *pRequest, DescribeMetricSet(*pRequest), context);
     } );
 }
 
@@ -490,17 +502,18 @@ DetectMetricSetConfigOutcome LookoutMetricsClient::DetectMetricSetConfig(const D
 
 DetectMetricSetConfigOutcomeCallable LookoutMetricsClient::DetectMetricSetConfigCallable(const DetectMetricSetConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DetectMetricSetConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectMetricSetConfig(request); } );
+  std::shared_ptr<DetectMetricSetConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DetectMetricSetConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DetectMetricSetConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::DetectMetricSetConfigAsync(const DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DetectMetricSetConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DetectMetricSetConfig(request), context);
+      handler(this, *pRequest, DetectMetricSetConfig(*pRequest), context);
     } );
 }
 
@@ -515,17 +528,18 @@ GetAnomalyGroupOutcome LookoutMetricsClient::GetAnomalyGroup(const GetAnomalyGro
 
 GetAnomalyGroupOutcomeCallable LookoutMetricsClient::GetAnomalyGroupCallable(const GetAnomalyGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAnomalyGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAnomalyGroup(request); } );
+  std::shared_ptr<GetAnomalyGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAnomalyGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAnomalyGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::GetAnomalyGroupAsync(const GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAnomalyGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAnomalyGroup(request), context);
+      handler(this, *pRequest, GetAnomalyGroup(*pRequest), context);
     } );
 }
 
@@ -540,17 +554,18 @@ GetDataQualityMetricsOutcome LookoutMetricsClient::GetDataQualityMetrics(const G
 
 GetDataQualityMetricsOutcomeCallable LookoutMetricsClient::GetDataQualityMetricsCallable(const GetDataQualityMetricsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataQualityMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataQualityMetrics(request); } );
+  std::shared_ptr<GetDataQualityMetricsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDataQualityMetricsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDataQualityMetrics(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::GetDataQualityMetricsAsync(const GetDataQualityMetricsRequest& request, const GetDataQualityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDataQualityMetricsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDataQualityMetrics(request), context);
+      handler(this, *pRequest, GetDataQualityMetrics(*pRequest), context);
     } );
 }
 
@@ -565,17 +580,18 @@ GetFeedbackOutcome LookoutMetricsClient::GetFeedback(const GetFeedbackRequest& r
 
 GetFeedbackOutcomeCallable LookoutMetricsClient::GetFeedbackCallable(const GetFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFeedback(request); } );
+  std::shared_ptr<GetFeedbackRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetFeedbackOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetFeedback(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::GetFeedbackAsync(const GetFeedbackRequest& request, const GetFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetFeedbackRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetFeedback(request), context);
+      handler(this, *pRequest, GetFeedback(*pRequest), context);
     } );
 }
 
@@ -590,17 +606,18 @@ GetSampleDataOutcome LookoutMetricsClient::GetSampleData(const GetSampleDataRequ
 
 GetSampleDataOutcomeCallable LookoutMetricsClient::GetSampleDataCallable(const GetSampleDataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSampleDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSampleData(request); } );
+  std::shared_ptr<GetSampleDataRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSampleDataOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSampleData(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::GetSampleDataAsync(const GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSampleDataRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSampleData(request), context);
+      handler(this, *pRequest, GetSampleData(*pRequest), context);
     } );
 }
 
@@ -615,17 +632,18 @@ ListAlertsOutcome LookoutMetricsClient::ListAlerts(const ListAlertsRequest& requ
 
 ListAlertsOutcomeCallable LookoutMetricsClient::ListAlertsCallable(const ListAlertsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAlertsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAlerts(request); } );
+  std::shared_ptr<ListAlertsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAlertsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAlerts(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::ListAlertsAsync(const ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAlertsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAlerts(request), context);
+      handler(this, *pRequest, ListAlerts(*pRequest), context);
     } );
 }
 
@@ -640,17 +658,18 @@ ListAnomalyDetectorsOutcome LookoutMetricsClient::ListAnomalyDetectors(const Lis
 
 ListAnomalyDetectorsOutcomeCallable LookoutMetricsClient::ListAnomalyDetectorsCallable(const ListAnomalyDetectorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyDetectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnomalyDetectors(request); } );
+  std::shared_ptr<ListAnomalyDetectorsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyDetectorsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAnomalyDetectors(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::ListAnomalyDetectorsAsync(const ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAnomalyDetectorsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAnomalyDetectors(request), context);
+      handler(this, *pRequest, ListAnomalyDetectors(*pRequest), context);
     } );
 }
 
@@ -665,17 +684,18 @@ ListAnomalyGroupRelatedMetricsOutcome LookoutMetricsClient::ListAnomalyGroupRela
 
 ListAnomalyGroupRelatedMetricsOutcomeCallable LookoutMetricsClient::ListAnomalyGroupRelatedMetricsCallable(const ListAnomalyGroupRelatedMetricsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyGroupRelatedMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnomalyGroupRelatedMetrics(request); } );
+  std::shared_ptr<ListAnomalyGroupRelatedMetricsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyGroupRelatedMetricsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAnomalyGroupRelatedMetrics(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::ListAnomalyGroupRelatedMetricsAsync(const ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAnomalyGroupRelatedMetricsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAnomalyGroupRelatedMetrics(request), context);
+      handler(this, *pRequest, ListAnomalyGroupRelatedMetrics(*pRequest), context);
     } );
 }
 
@@ -690,17 +710,18 @@ ListAnomalyGroupSummariesOutcome LookoutMetricsClient::ListAnomalyGroupSummaries
 
 ListAnomalyGroupSummariesOutcomeCallable LookoutMetricsClient::ListAnomalyGroupSummariesCallable(const ListAnomalyGroupSummariesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyGroupSummariesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnomalyGroupSummaries(request); } );
+  std::shared_ptr<ListAnomalyGroupSummariesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyGroupSummariesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAnomalyGroupSummaries(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::ListAnomalyGroupSummariesAsync(const ListAnomalyGroupSummariesRequest& request, const ListAnomalyGroupSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAnomalyGroupSummariesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAnomalyGroupSummaries(request), context);
+      handler(this, *pRequest, ListAnomalyGroupSummaries(*pRequest), context);
     } );
 }
 
@@ -715,17 +736,18 @@ ListAnomalyGroupTimeSeriesOutcome LookoutMetricsClient::ListAnomalyGroupTimeSeri
 
 ListAnomalyGroupTimeSeriesOutcomeCallable LookoutMetricsClient::ListAnomalyGroupTimeSeriesCallable(const ListAnomalyGroupTimeSeriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyGroupTimeSeriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnomalyGroupTimeSeries(request); } );
+  std::shared_ptr<ListAnomalyGroupTimeSeriesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyGroupTimeSeriesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAnomalyGroupTimeSeries(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::ListAnomalyGroupTimeSeriesAsync(const ListAnomalyGroupTimeSeriesRequest& request, const ListAnomalyGroupTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAnomalyGroupTimeSeriesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAnomalyGroupTimeSeries(request), context);
+      handler(this, *pRequest, ListAnomalyGroupTimeSeries(*pRequest), context);
     } );
 }
 
@@ -740,17 +762,18 @@ ListMetricSetsOutcome LookoutMetricsClient::ListMetricSets(const ListMetricSetsR
 
 ListMetricSetsOutcomeCallable LookoutMetricsClient::ListMetricSetsCallable(const ListMetricSetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMetricSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMetricSets(request); } );
+  std::shared_ptr<ListMetricSetsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListMetricSetsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListMetricSets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::ListMetricSetsAsync(const ListMetricSetsRequest& request, const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListMetricSetsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListMetricSets(request), context);
+      handler(this, *pRequest, ListMetricSets(*pRequest), context);
     } );
 }
 
@@ -771,17 +794,18 @@ ListTagsForResourceOutcome LookoutMetricsClient::ListTagsForResource(const ListT
 
 ListTagsForResourceOutcomeCallable LookoutMetricsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -796,17 +820,18 @@ PutFeedbackOutcome LookoutMetricsClient::PutFeedback(const PutFeedbackRequest& r
 
 PutFeedbackOutcomeCallable LookoutMetricsClient::PutFeedbackCallable(const PutFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutFeedback(request); } );
+  std::shared_ptr<PutFeedbackRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutFeedbackOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutFeedback(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::PutFeedbackAsync(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutFeedbackRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutFeedback(request), context);
+      handler(this, *pRequest, PutFeedback(*pRequest), context);
     } );
 }
 
@@ -827,17 +852,18 @@ TagResourceOutcome LookoutMetricsClient::TagResource(const TagResourceRequest& r
 
 TagResourceOutcomeCallable LookoutMetricsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -863,17 +889,18 @@ UntagResourceOutcome LookoutMetricsClient::UntagResource(const UntagResourceRequ
 
 UntagResourceOutcomeCallable LookoutMetricsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -888,17 +915,18 @@ UpdateAlertOutcome LookoutMetricsClient::UpdateAlert(const UpdateAlertRequest& r
 
 UpdateAlertOutcomeCallable LookoutMetricsClient::UpdateAlertCallable(const UpdateAlertRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAlertOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAlert(request); } );
+  std::shared_ptr<UpdateAlertRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAlertOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateAlert(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::UpdateAlertAsync(const UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateAlertRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateAlert(request), context);
+      handler(this, *pRequest, UpdateAlert(*pRequest), context);
     } );
 }
 
@@ -913,17 +941,18 @@ UpdateAnomalyDetectorOutcome LookoutMetricsClient::UpdateAnomalyDetector(const U
 
 UpdateAnomalyDetectorOutcomeCallable LookoutMetricsClient::UpdateAnomalyDetectorCallable(const UpdateAnomalyDetectorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAnomalyDetector(request); } );
+  std::shared_ptr<UpdateAnomalyDetectorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateAnomalyDetector(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::UpdateAnomalyDetectorAsync(const UpdateAnomalyDetectorRequest& request, const UpdateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateAnomalyDetectorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateAnomalyDetector(request), context);
+      handler(this, *pRequest, UpdateAnomalyDetector(*pRequest), context);
     } );
 }
 
@@ -938,17 +967,18 @@ UpdateMetricSetOutcome LookoutMetricsClient::UpdateMetricSet(const UpdateMetricS
 
 UpdateMetricSetOutcomeCallable LookoutMetricsClient::UpdateMetricSetCallable(const UpdateMetricSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMetricSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMetricSet(request); } );
+  std::shared_ptr<UpdateMetricSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMetricSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateMetricSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutMetricsClient::UpdateMetricSetAsync(const UpdateMetricSetRequest& request, const UpdateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateMetricSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateMetricSet(request), context);
+      handler(this, *pRequest, UpdateMetricSet(*pRequest), context);
     } );
 }
 

@@ -216,17 +216,18 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
 
 CreateDatabaseOutcomeCallable TimestreamWriteClient::CreateDatabaseCallable(const CreateDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDatabase(request); } );
+  std::shared_ptr<CreateDatabaseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDatabaseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDatabase(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::CreateDatabaseAsync(const CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDatabaseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDatabase(request), context);
+      handler(this, *pRequest, CreateDatabase(*pRequest), context);
     } );
 }
 
@@ -281,17 +282,18 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
 
 CreateTableOutcomeCallable TimestreamWriteClient::CreateTableCallable(const CreateTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTable(request); } );
+  std::shared_ptr<CreateTableRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateTableOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateTable(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateTableRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateTable(request), context);
+      handler(this, *pRequest, CreateTable(*pRequest), context);
     } );
 }
 
@@ -346,17 +348,18 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
 
 DeleteDatabaseOutcomeCallable TimestreamWriteClient::DeleteDatabaseCallable(const DeleteDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDatabase(request); } );
+  std::shared_ptr<DeleteDatabaseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDatabaseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDatabase(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::DeleteDatabaseAsync(const DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDatabaseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDatabase(request), context);
+      handler(this, *pRequest, DeleteDatabase(*pRequest), context);
     } );
 }
 
@@ -411,17 +414,18 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
 
 DeleteTableOutcomeCallable TimestreamWriteClient::DeleteTableCallable(const DeleteTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTable(request); } );
+  std::shared_ptr<DeleteTableRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTableOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteTable(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteTableRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteTable(request), context);
+      handler(this, *pRequest, DeleteTable(*pRequest), context);
     } );
 }
 
@@ -476,17 +480,18 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
 
 DescribeDatabaseOutcomeCallable TimestreamWriteClient::DescribeDatabaseCallable(const DescribeDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDatabase(request); } );
+  std::shared_ptr<DescribeDatabaseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDatabaseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDatabase(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::DescribeDatabaseAsync(const DescribeDatabaseRequest& request, const DescribeDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDatabaseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDatabase(request), context);
+      handler(this, *pRequest, DescribeDatabase(*pRequest), context);
     } );
 }
 
@@ -500,17 +505,18 @@ DescribeEndpointsOutcome TimestreamWriteClient::DescribeEndpoints(const Describe
 
 DescribeEndpointsOutcomeCallable TimestreamWriteClient::DescribeEndpointsCallable(const DescribeEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpoints(request); } );
+  std::shared_ptr<DescribeEndpointsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeEndpoints(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeEndpointsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeEndpoints(request), context);
+      handler(this, *pRequest, DescribeEndpoints(*pRequest), context);
     } );
 }
 
@@ -565,17 +571,18 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
 
 DescribeTableOutcomeCallable TimestreamWriteClient::DescribeTableCallable(const DescribeTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTable(request); } );
+  std::shared_ptr<DescribeTableRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTableOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeTable(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeTableRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeTable(request), context);
+      handler(this, *pRequest, DescribeTable(*pRequest), context);
     } );
 }
 
@@ -630,17 +637,18 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
 
 ListDatabasesOutcomeCallable TimestreamWriteClient::ListDatabasesCallable(const ListDatabasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatabasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatabases(request); } );
+  std::shared_ptr<ListDatabasesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDatabasesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDatabases(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDatabasesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDatabases(request), context);
+      handler(this, *pRequest, ListDatabases(*pRequest), context);
     } );
 }
 
@@ -695,17 +703,18 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
 
 ListTablesOutcomeCallable TimestreamWriteClient::ListTablesCallable(const ListTablesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTablesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTables(request); } );
+  std::shared_ptr<ListTablesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTablesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTables(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTablesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTables(request), context);
+      handler(this, *pRequest, ListTables(*pRequest), context);
     } );
 }
 
@@ -760,17 +769,18 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
 
 ListTagsForResourceOutcomeCallable TimestreamWriteClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -825,17 +835,18 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
 
 TagResourceOutcomeCallable TimestreamWriteClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -890,17 +901,18 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
 
 UntagResourceOutcomeCallable TimestreamWriteClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -955,17 +967,18 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
 
 UpdateDatabaseOutcomeCallable TimestreamWriteClient::UpdateDatabaseCallable(const UpdateDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDatabase(request); } );
+  std::shared_ptr<UpdateDatabaseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDatabaseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDatabase(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::UpdateDatabaseAsync(const UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDatabaseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDatabase(request), context);
+      handler(this, *pRequest, UpdateDatabase(*pRequest), context);
     } );
 }
 
@@ -1020,17 +1033,18 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
 
 UpdateTableOutcomeCallable TimestreamWriteClient::UpdateTableCallable(const UpdateTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTable(request); } );
+  std::shared_ptr<UpdateTableRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTableOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateTable(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateTableRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateTable(request), context);
+      handler(this, *pRequest, UpdateTable(*pRequest), context);
     } );
 }
 
@@ -1085,17 +1099,18 @@ WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsReques
 
 WriteRecordsOutcomeCallable TimestreamWriteClient::WriteRecordsCallable(const WriteRecordsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< WriteRecordsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->WriteRecords(request); } );
+  std::shared_ptr<WriteRecordsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< WriteRecordsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->WriteRecords(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamWriteClient::WriteRecordsAsync(const WriteRecordsRequest& request, const WriteRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<WriteRecordsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, WriteRecords(request), context);
+      handler(this, *pRequest, WriteRecords(*pRequest), context);
     } );
 }
 

@@ -174,17 +174,18 @@ CopyBackupToRegionOutcome CloudHSMV2Client::CopyBackupToRegion(const CopyBackupT
 
 CopyBackupToRegionOutcomeCallable CloudHSMV2Client::CopyBackupToRegionCallable(const CopyBackupToRegionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CopyBackupToRegionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyBackupToRegion(request); } );
+  std::shared_ptr<CopyBackupToRegionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CopyBackupToRegionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CopyBackupToRegion(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::CopyBackupToRegionAsync(const CopyBackupToRegionRequest& request, const CopyBackupToRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CopyBackupToRegionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CopyBackupToRegion(request), context);
+      handler(this, *pRequest, CopyBackupToRegion(*pRequest), context);
     } );
 }
 
@@ -198,17 +199,18 @@ CreateClusterOutcome CloudHSMV2Client::CreateCluster(const CreateClusterRequest&
 
 CreateClusterOutcomeCallable CloudHSMV2Client::CreateClusterCallable(const CreateClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCluster(request); } );
+  std::shared_ptr<CreateClusterRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateClusterOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateCluster(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateClusterRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateCluster(request), context);
+      handler(this, *pRequest, CreateCluster(*pRequest), context);
     } );
 }
 
@@ -222,17 +224,18 @@ CreateHsmOutcome CloudHSMV2Client::CreateHsm(const CreateHsmRequest& request) co
 
 CreateHsmOutcomeCallable CloudHSMV2Client::CreateHsmCallable(const CreateHsmRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHsmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHsm(request); } );
+  std::shared_ptr<CreateHsmRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateHsmOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateHsm(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::CreateHsmAsync(const CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateHsmRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateHsm(request), context);
+      handler(this, *pRequest, CreateHsm(*pRequest), context);
     } );
 }
 
@@ -246,17 +249,18 @@ DeleteBackupOutcome CloudHSMV2Client::DeleteBackup(const DeleteBackupRequest& re
 
 DeleteBackupOutcomeCallable CloudHSMV2Client::DeleteBackupCallable(const DeleteBackupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackup(request); } );
+  std::shared_ptr<DeleteBackupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBackupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteBackup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteBackupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteBackup(request), context);
+      handler(this, *pRequest, DeleteBackup(*pRequest), context);
     } );
 }
 
@@ -270,17 +274,18 @@ DeleteClusterOutcome CloudHSMV2Client::DeleteCluster(const DeleteClusterRequest&
 
 DeleteClusterOutcomeCallable CloudHSMV2Client::DeleteClusterCallable(const DeleteClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCluster(request); } );
+  std::shared_ptr<DeleteClusterRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteClusterOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteCluster(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteClusterRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteCluster(request), context);
+      handler(this, *pRequest, DeleteCluster(*pRequest), context);
     } );
 }
 
@@ -294,17 +299,18 @@ DeleteHsmOutcome CloudHSMV2Client::DeleteHsm(const DeleteHsmRequest& request) co
 
 DeleteHsmOutcomeCallable CloudHSMV2Client::DeleteHsmCallable(const DeleteHsmRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteHsmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHsm(request); } );
+  std::shared_ptr<DeleteHsmRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteHsmOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteHsm(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::DeleteHsmAsync(const DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteHsmRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteHsm(request), context);
+      handler(this, *pRequest, DeleteHsm(*pRequest), context);
     } );
 }
 
@@ -318,17 +324,18 @@ DescribeBackupsOutcome CloudHSMV2Client::DescribeBackups(const DescribeBackupsRe
 
 DescribeBackupsOutcomeCallable CloudHSMV2Client::DescribeBackupsCallable(const DescribeBackupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBackupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBackups(request); } );
+  std::shared_ptr<DescribeBackupsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBackupsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeBackups(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::DescribeBackupsAsync(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeBackupsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeBackups(request), context);
+      handler(this, *pRequest, DescribeBackups(*pRequest), context);
     } );
 }
 
@@ -342,17 +349,18 @@ DescribeClustersOutcome CloudHSMV2Client::DescribeClusters(const DescribeCluster
 
 DescribeClustersOutcomeCallable CloudHSMV2Client::DescribeClustersCallable(const DescribeClustersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeClustersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeClusters(request); } );
+  std::shared_ptr<DescribeClustersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeClustersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeClusters(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeClustersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeClusters(request), context);
+      handler(this, *pRequest, DescribeClusters(*pRequest), context);
     } );
 }
 
@@ -366,17 +374,18 @@ InitializeClusterOutcome CloudHSMV2Client::InitializeCluster(const InitializeClu
 
 InitializeClusterOutcomeCallable CloudHSMV2Client::InitializeClusterCallable(const InitializeClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InitializeClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InitializeCluster(request); } );
+  std::shared_ptr<InitializeClusterRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< InitializeClusterOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->InitializeCluster(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::InitializeClusterAsync(const InitializeClusterRequest& request, const InitializeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<InitializeClusterRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, InitializeCluster(request), context);
+      handler(this, *pRequest, InitializeCluster(*pRequest), context);
     } );
 }
 
@@ -390,17 +399,18 @@ ListTagsOutcome CloudHSMV2Client::ListTags(const ListTagsRequest& request) const
 
 ListTagsOutcomeCallable CloudHSMV2Client::ListTagsCallable(const ListTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTags(request); } );
+  std::shared_ptr<ListTagsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTags(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTags(request), context);
+      handler(this, *pRequest, ListTags(*pRequest), context);
     } );
 }
 
@@ -414,17 +424,18 @@ ModifyBackupAttributesOutcome CloudHSMV2Client::ModifyBackupAttributes(const Mod
 
 ModifyBackupAttributesOutcomeCallable CloudHSMV2Client::ModifyBackupAttributesCallable(const ModifyBackupAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ModifyBackupAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyBackupAttributes(request); } );
+  std::shared_ptr<ModifyBackupAttributesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ModifyBackupAttributesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ModifyBackupAttributes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::ModifyBackupAttributesAsync(const ModifyBackupAttributesRequest& request, const ModifyBackupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ModifyBackupAttributesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ModifyBackupAttributes(request), context);
+      handler(this, *pRequest, ModifyBackupAttributes(*pRequest), context);
     } );
 }
 
@@ -438,17 +449,18 @@ ModifyClusterOutcome CloudHSMV2Client::ModifyCluster(const ModifyClusterRequest&
 
 ModifyClusterOutcomeCallable CloudHSMV2Client::ModifyClusterCallable(const ModifyClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ModifyClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyCluster(request); } );
+  std::shared_ptr<ModifyClusterRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ModifyClusterOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ModifyCluster(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::ModifyClusterAsync(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ModifyClusterRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ModifyCluster(request), context);
+      handler(this, *pRequest, ModifyCluster(*pRequest), context);
     } );
 }
 
@@ -462,17 +474,18 @@ RestoreBackupOutcome CloudHSMV2Client::RestoreBackup(const RestoreBackupRequest&
 
 RestoreBackupOutcomeCallable CloudHSMV2Client::RestoreBackupCallable(const RestoreBackupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RestoreBackupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreBackup(request); } );
+  std::shared_ptr<RestoreBackupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RestoreBackupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RestoreBackup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::RestoreBackupAsync(const RestoreBackupRequest& request, const RestoreBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RestoreBackupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RestoreBackup(request), context);
+      handler(this, *pRequest, RestoreBackup(*pRequest), context);
     } );
 }
 
@@ -486,17 +499,18 @@ TagResourceOutcome CloudHSMV2Client::TagResource(const TagResourceRequest& reque
 
 TagResourceOutcomeCallable CloudHSMV2Client::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -510,17 +524,18 @@ UntagResourceOutcome CloudHSMV2Client::UntagResource(const UntagResourceRequest&
 
 UntagResourceOutcomeCallable CloudHSMV2Client::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CloudHSMV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 

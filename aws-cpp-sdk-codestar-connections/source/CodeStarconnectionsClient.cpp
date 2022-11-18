@@ -171,17 +171,18 @@ CreateConnectionOutcome CodeStarconnectionsClient::CreateConnection(const Create
 
 CreateConnectionOutcomeCallable CodeStarconnectionsClient::CreateConnectionCallable(const CreateConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnection(request); } );
+  std::shared_ptr<CreateConnectionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateConnectionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateConnection(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateConnectionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateConnection(request), context);
+      handler(this, *pRequest, CreateConnection(*pRequest), context);
     } );
 }
 
@@ -195,17 +196,18 @@ CreateHostOutcome CodeStarconnectionsClient::CreateHost(const CreateHostRequest&
 
 CreateHostOutcomeCallable CodeStarconnectionsClient::CreateHostCallable(const CreateHostRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHost(request); } );
+  std::shared_ptr<CreateHostRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateHostOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateHost(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::CreateHostAsync(const CreateHostRequest& request, const CreateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateHostRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateHost(request), context);
+      handler(this, *pRequest, CreateHost(*pRequest), context);
     } );
 }
 
@@ -219,17 +221,18 @@ DeleteConnectionOutcome CodeStarconnectionsClient::DeleteConnection(const Delete
 
 DeleteConnectionOutcomeCallable CodeStarconnectionsClient::DeleteConnectionCallable(const DeleteConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnection(request); } );
+  std::shared_ptr<DeleteConnectionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteConnection(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteConnectionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteConnection(request), context);
+      handler(this, *pRequest, DeleteConnection(*pRequest), context);
     } );
 }
 
@@ -243,17 +246,18 @@ DeleteHostOutcome CodeStarconnectionsClient::DeleteHost(const DeleteHostRequest&
 
 DeleteHostOutcomeCallable CodeStarconnectionsClient::DeleteHostCallable(const DeleteHostRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHost(request); } );
+  std::shared_ptr<DeleteHostRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteHostOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteHost(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::DeleteHostAsync(const DeleteHostRequest& request, const DeleteHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteHostRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteHost(request), context);
+      handler(this, *pRequest, DeleteHost(*pRequest), context);
     } );
 }
 
@@ -267,17 +271,18 @@ GetConnectionOutcome CodeStarconnectionsClient::GetConnection(const GetConnectio
 
 GetConnectionOutcomeCallable CodeStarconnectionsClient::GetConnectionCallable(const GetConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnection(request); } );
+  std::shared_ptr<GetConnectionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetConnectionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetConnection(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetConnectionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetConnection(request), context);
+      handler(this, *pRequest, GetConnection(*pRequest), context);
     } );
 }
 
@@ -291,17 +296,18 @@ GetHostOutcome CodeStarconnectionsClient::GetHost(const GetHostRequest& request)
 
 GetHostOutcomeCallable CodeStarconnectionsClient::GetHostCallable(const GetHostRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHost(request); } );
+  std::shared_ptr<GetHostRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetHostOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetHost(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::GetHostAsync(const GetHostRequest& request, const GetHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetHostRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetHost(request), context);
+      handler(this, *pRequest, GetHost(*pRequest), context);
     } );
 }
 
@@ -315,17 +321,18 @@ ListConnectionsOutcome CodeStarconnectionsClient::ListConnections(const ListConn
 
 ListConnectionsOutcomeCallable CodeStarconnectionsClient::ListConnectionsCallable(const ListConnectionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnections(request); } );
+  std::shared_ptr<ListConnectionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListConnectionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListConnections(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::ListConnectionsAsync(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListConnectionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListConnections(request), context);
+      handler(this, *pRequest, ListConnections(*pRequest), context);
     } );
 }
 
@@ -339,17 +346,18 @@ ListHostsOutcome CodeStarconnectionsClient::ListHosts(const ListHostsRequest& re
 
 ListHostsOutcomeCallable CodeStarconnectionsClient::ListHostsCallable(const ListHostsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListHostsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHosts(request); } );
+  std::shared_ptr<ListHostsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListHostsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListHosts(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::ListHostsAsync(const ListHostsRequest& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListHostsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListHosts(request), context);
+      handler(this, *pRequest, ListHosts(*pRequest), context);
     } );
 }
 
@@ -363,17 +371,18 @@ ListTagsForResourceOutcome CodeStarconnectionsClient::ListTagsForResource(const 
 
 ListTagsForResourceOutcomeCallable CodeStarconnectionsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -387,17 +396,18 @@ TagResourceOutcome CodeStarconnectionsClient::TagResource(const TagResourceReque
 
 TagResourceOutcomeCallable CodeStarconnectionsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -411,17 +421,18 @@ UntagResourceOutcome CodeStarconnectionsClient::UntagResource(const UntagResourc
 
 UntagResourceOutcomeCallable CodeStarconnectionsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -435,17 +446,18 @@ UpdateHostOutcome CodeStarconnectionsClient::UpdateHost(const UpdateHostRequest&
 
 UpdateHostOutcomeCallable CodeStarconnectionsClient::UpdateHostCallable(const UpdateHostRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateHost(request); } );
+  std::shared_ptr<UpdateHostRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateHostOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateHost(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarconnectionsClient::UpdateHostAsync(const UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateHostRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateHost(request), context);
+      handler(this, *pRequest, UpdateHost(*pRequest), context);
     } );
 }
 

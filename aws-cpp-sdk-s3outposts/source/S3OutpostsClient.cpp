@@ -164,17 +164,18 @@ CreateEndpointOutcome S3OutpostsClient::CreateEndpoint(const CreateEndpointReque
 
 CreateEndpointOutcomeCallable S3OutpostsClient::CreateEndpointCallable(const CreateEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEndpoint(request); } );
+  std::shared_ptr<CreateEndpointRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateEndpointOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateEndpoint(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void S3OutpostsClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateEndpointRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateEndpoint(request), context);
+      handler(this, *pRequest, CreateEndpoint(*pRequest), context);
     } );
 }
 
@@ -199,17 +200,18 @@ DeleteEndpointOutcome S3OutpostsClient::DeleteEndpoint(const DeleteEndpointReque
 
 DeleteEndpointOutcomeCallable S3OutpostsClient::DeleteEndpointCallable(const DeleteEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEndpoint(request); } );
+  std::shared_ptr<DeleteEndpointRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEndpointOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteEndpoint(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void S3OutpostsClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteEndpointRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteEndpoint(request), context);
+      handler(this, *pRequest, DeleteEndpoint(*pRequest), context);
     } );
 }
 
@@ -224,17 +226,18 @@ ListEndpointsOutcome S3OutpostsClient::ListEndpoints(const ListEndpointsRequest&
 
 ListEndpointsOutcomeCallable S3OutpostsClient::ListEndpointsCallable(const ListEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEndpoints(request); } );
+  std::shared_ptr<ListEndpointsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEndpointsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEndpoints(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void S3OutpostsClient::ListEndpointsAsync(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEndpointsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEndpoints(request), context);
+      handler(this, *pRequest, ListEndpoints(*pRequest), context);
     } );
 }
 
@@ -254,17 +257,18 @@ ListSharedEndpointsOutcome S3OutpostsClient::ListSharedEndpoints(const ListShare
 
 ListSharedEndpointsOutcomeCallable S3OutpostsClient::ListSharedEndpointsCallable(const ListSharedEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSharedEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSharedEndpoints(request); } );
+  std::shared_ptr<ListSharedEndpointsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSharedEndpointsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSharedEndpoints(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void S3OutpostsClient::ListSharedEndpointsAsync(const ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSharedEndpointsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSharedEndpoints(request), context);
+      handler(this, *pRequest, ListSharedEndpoints(*pRequest), context);
     } );
 }
 

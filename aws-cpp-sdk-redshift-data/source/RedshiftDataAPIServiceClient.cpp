@@ -169,17 +169,18 @@ BatchExecuteStatementOutcome RedshiftDataAPIServiceClient::BatchExecuteStatement
 
 BatchExecuteStatementOutcomeCallable RedshiftDataAPIServiceClient::BatchExecuteStatementCallable(const BatchExecuteStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchExecuteStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchExecuteStatement(request); } );
+  std::shared_ptr<BatchExecuteStatementRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchExecuteStatementOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchExecuteStatement(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RedshiftDataAPIServiceClient::BatchExecuteStatementAsync(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchExecuteStatementRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchExecuteStatement(request), context);
+      handler(this, *pRequest, BatchExecuteStatement(*pRequest), context);
     } );
 }
 
@@ -193,17 +194,18 @@ CancelStatementOutcome RedshiftDataAPIServiceClient::CancelStatement(const Cance
 
 CancelStatementOutcomeCallable RedshiftDataAPIServiceClient::CancelStatementCallable(const CancelStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelStatement(request); } );
+  std::shared_ptr<CancelStatementRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CancelStatementOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CancelStatement(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RedshiftDataAPIServiceClient::CancelStatementAsync(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CancelStatementRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CancelStatement(request), context);
+      handler(this, *pRequest, CancelStatement(*pRequest), context);
     } );
 }
 
@@ -217,17 +219,18 @@ DescribeStatementOutcome RedshiftDataAPIServiceClient::DescribeStatement(const D
 
 DescribeStatementOutcomeCallable RedshiftDataAPIServiceClient::DescribeStatementCallable(const DescribeStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStatement(request); } );
+  std::shared_ptr<DescribeStatementRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStatementOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeStatement(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RedshiftDataAPIServiceClient::DescribeStatementAsync(const DescribeStatementRequest& request, const DescribeStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeStatementRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeStatement(request), context);
+      handler(this, *pRequest, DescribeStatement(*pRequest), context);
     } );
 }
 
@@ -241,17 +244,18 @@ DescribeTableOutcome RedshiftDataAPIServiceClient::DescribeTable(const DescribeT
 
 DescribeTableOutcomeCallable RedshiftDataAPIServiceClient::DescribeTableCallable(const DescribeTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTable(request); } );
+  std::shared_ptr<DescribeTableRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTableOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeTable(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RedshiftDataAPIServiceClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeTableRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeTable(request), context);
+      handler(this, *pRequest, DescribeTable(*pRequest), context);
     } );
 }
 
@@ -265,17 +269,18 @@ ExecuteStatementOutcome RedshiftDataAPIServiceClient::ExecuteStatement(const Exe
 
 ExecuteStatementOutcomeCallable RedshiftDataAPIServiceClient::ExecuteStatementCallable(const ExecuteStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExecuteStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteStatement(request); } );
+  std::shared_ptr<ExecuteStatementRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ExecuteStatementOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ExecuteStatement(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RedshiftDataAPIServiceClient::ExecuteStatementAsync(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ExecuteStatementRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ExecuteStatement(request), context);
+      handler(this, *pRequest, ExecuteStatement(*pRequest), context);
     } );
 }
 
@@ -289,17 +294,18 @@ GetStatementResultOutcome RedshiftDataAPIServiceClient::GetStatementResult(const
 
 GetStatementResultOutcomeCallable RedshiftDataAPIServiceClient::GetStatementResultCallable(const GetStatementResultRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStatementResultOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStatementResult(request); } );
+  std::shared_ptr<GetStatementResultRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetStatementResultOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetStatementResult(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RedshiftDataAPIServiceClient::GetStatementResultAsync(const GetStatementResultRequest& request, const GetStatementResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetStatementResultRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetStatementResult(request), context);
+      handler(this, *pRequest, GetStatementResult(*pRequest), context);
     } );
 }
 
@@ -313,17 +319,18 @@ ListDatabasesOutcome RedshiftDataAPIServiceClient::ListDatabases(const ListDatab
 
 ListDatabasesOutcomeCallable RedshiftDataAPIServiceClient::ListDatabasesCallable(const ListDatabasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatabasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatabases(request); } );
+  std::shared_ptr<ListDatabasesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDatabasesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDatabases(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RedshiftDataAPIServiceClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDatabasesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDatabases(request), context);
+      handler(this, *pRequest, ListDatabases(*pRequest), context);
     } );
 }
 
@@ -337,17 +344,18 @@ ListSchemasOutcome RedshiftDataAPIServiceClient::ListSchemas(const ListSchemasRe
 
 ListSchemasOutcomeCallable RedshiftDataAPIServiceClient::ListSchemasCallable(const ListSchemasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSchemasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSchemas(request); } );
+  std::shared_ptr<ListSchemasRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSchemasOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSchemas(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RedshiftDataAPIServiceClient::ListSchemasAsync(const ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSchemasRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSchemas(request), context);
+      handler(this, *pRequest, ListSchemas(*pRequest), context);
     } );
 }
 
@@ -361,17 +369,18 @@ ListStatementsOutcome RedshiftDataAPIServiceClient::ListStatements(const ListSta
 
 ListStatementsOutcomeCallable RedshiftDataAPIServiceClient::ListStatementsCallable(const ListStatementsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStatementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStatements(request); } );
+  std::shared_ptr<ListStatementsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListStatementsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListStatements(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RedshiftDataAPIServiceClient::ListStatementsAsync(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListStatementsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListStatements(request), context);
+      handler(this, *pRequest, ListStatements(*pRequest), context);
     } );
 }
 
@@ -385,17 +394,18 @@ ListTablesOutcome RedshiftDataAPIServiceClient::ListTables(const ListTablesReque
 
 ListTablesOutcomeCallable RedshiftDataAPIServiceClient::ListTablesCallable(const ListTablesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTablesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTables(request); } );
+  std::shared_ptr<ListTablesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTablesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTables(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RedshiftDataAPIServiceClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTablesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTables(request), context);
+      handler(this, *pRequest, ListTables(*pRequest), context);
     } );
 }
 

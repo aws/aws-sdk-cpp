@@ -204,17 +204,18 @@ AssociateUserToPermissionGroupOutcome FinSpaceDataClient::AssociateUserToPermiss
 
 AssociateUserToPermissionGroupOutcomeCallable FinSpaceDataClient::AssociateUserToPermissionGroupCallable(const AssociateUserToPermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateUserToPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateUserToPermissionGroup(request); } );
+  std::shared_ptr<AssociateUserToPermissionGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateUserToPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateUserToPermissionGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::AssociateUserToPermissionGroupAsync(const AssociateUserToPermissionGroupRequest& request, const AssociateUserToPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateUserToPermissionGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateUserToPermissionGroup(request), context);
+      handler(this, *pRequest, AssociateUserToPermissionGroup(*pRequest), context);
     } );
 }
 
@@ -236,17 +237,18 @@ CreateChangesetOutcome FinSpaceDataClient::CreateChangeset(const CreateChangeset
 
 CreateChangesetOutcomeCallable FinSpaceDataClient::CreateChangesetCallable(const CreateChangesetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateChangesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateChangeset(request); } );
+  std::shared_ptr<CreateChangesetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateChangesetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateChangeset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::CreateChangesetAsync(const CreateChangesetRequest& request, const CreateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateChangesetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateChangeset(request), context);
+      handler(this, *pRequest, CreateChangeset(*pRequest), context);
     } );
 }
 
@@ -268,17 +270,18 @@ CreateDataViewOutcome FinSpaceDataClient::CreateDataView(const CreateDataViewReq
 
 CreateDataViewOutcomeCallable FinSpaceDataClient::CreateDataViewCallable(const CreateDataViewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDataViewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataView(request); } );
+  std::shared_ptr<CreateDataViewRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDataViewOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDataView(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::CreateDataViewAsync(const CreateDataViewRequest& request, const CreateDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDataViewRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDataView(request), context);
+      handler(this, *pRequest, CreateDataView(*pRequest), context);
     } );
 }
 
@@ -293,17 +296,18 @@ CreateDatasetOutcome FinSpaceDataClient::CreateDataset(const CreateDatasetReques
 
 CreateDatasetOutcomeCallable FinSpaceDataClient::CreateDatasetCallable(const CreateDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataset(request); } );
+  std::shared_ptr<CreateDatasetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDataset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDatasetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDataset(request), context);
+      handler(this, *pRequest, CreateDataset(*pRequest), context);
     } );
 }
 
@@ -318,17 +322,18 @@ CreatePermissionGroupOutcome FinSpaceDataClient::CreatePermissionGroup(const Cre
 
 CreatePermissionGroupOutcomeCallable FinSpaceDataClient::CreatePermissionGroupCallable(const CreatePermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePermissionGroup(request); } );
+  std::shared_ptr<CreatePermissionGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreatePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreatePermissionGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::CreatePermissionGroupAsync(const CreatePermissionGroupRequest& request, const CreatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreatePermissionGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreatePermissionGroup(request), context);
+      handler(this, *pRequest, CreatePermissionGroup(*pRequest), context);
     } );
 }
 
@@ -343,17 +348,18 @@ CreateUserOutcome FinSpaceDataClient::CreateUser(const CreateUserRequest& reques
 
 CreateUserOutcomeCallable FinSpaceDataClient::CreateUserCallable(const CreateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUser(request); } );
+  std::shared_ptr<CreateUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateUser(request), context);
+      handler(this, *pRequest, CreateUser(*pRequest), context);
     } );
 }
 
@@ -374,17 +380,18 @@ DeleteDatasetOutcome FinSpaceDataClient::DeleteDataset(const DeleteDatasetReques
 
 DeleteDatasetOutcomeCallable FinSpaceDataClient::DeleteDatasetCallable(const DeleteDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataset(request); } );
+  std::shared_ptr<DeleteDatasetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDataset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDatasetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDataset(request), context);
+      handler(this, *pRequest, DeleteDataset(*pRequest), context);
     } );
 }
 
@@ -405,17 +412,18 @@ DeletePermissionGroupOutcome FinSpaceDataClient::DeletePermissionGroup(const Del
 
 DeletePermissionGroupOutcomeCallable FinSpaceDataClient::DeletePermissionGroupCallable(const DeletePermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePermissionGroup(request); } );
+  std::shared_ptr<DeletePermissionGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeletePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeletePermissionGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::DeletePermissionGroupAsync(const DeletePermissionGroupRequest& request, const DeletePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeletePermissionGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeletePermissionGroup(request), context);
+      handler(this, *pRequest, DeletePermissionGroup(*pRequest), context);
     } );
 }
 
@@ -437,17 +445,18 @@ DisableUserOutcome FinSpaceDataClient::DisableUser(const DisableUserRequest& req
 
 DisableUserOutcomeCallable FinSpaceDataClient::DisableUserCallable(const DisableUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableUser(request); } );
+  std::shared_ptr<DisableUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisableUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisableUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::DisableUserAsync(const DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisableUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisableUser(request), context);
+      handler(this, *pRequest, DisableUser(*pRequest), context);
     } );
 }
 
@@ -475,17 +484,18 @@ DisassociateUserFromPermissionGroupOutcome FinSpaceDataClient::DisassociateUserF
 
 DisassociateUserFromPermissionGroupOutcomeCallable FinSpaceDataClient::DisassociateUserFromPermissionGroupCallable(const DisassociateUserFromPermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateUserFromPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateUserFromPermissionGroup(request); } );
+  std::shared_ptr<DisassociateUserFromPermissionGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateUserFromPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateUserFromPermissionGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::DisassociateUserFromPermissionGroupAsync(const DisassociateUserFromPermissionGroupRequest& request, const DisassociateUserFromPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateUserFromPermissionGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateUserFromPermissionGroup(request), context);
+      handler(this, *pRequest, DisassociateUserFromPermissionGroup(*pRequest), context);
     } );
 }
 
@@ -507,17 +517,18 @@ EnableUserOutcome FinSpaceDataClient::EnableUser(const EnableUserRequest& reques
 
 EnableUserOutcomeCallable FinSpaceDataClient::EnableUserCallable(const EnableUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableUser(request); } );
+  std::shared_ptr<EnableUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< EnableUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->EnableUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::EnableUserAsync(const EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<EnableUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, EnableUser(request), context);
+      handler(this, *pRequest, EnableUser(*pRequest), context);
     } );
 }
 
@@ -545,17 +556,18 @@ GetChangesetOutcome FinSpaceDataClient::GetChangeset(const GetChangesetRequest& 
 
 GetChangesetOutcomeCallable FinSpaceDataClient::GetChangesetCallable(const GetChangesetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetChangesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetChangeset(request); } );
+  std::shared_ptr<GetChangesetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetChangesetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetChangeset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::GetChangesetAsync(const GetChangesetRequest& request, const GetChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetChangesetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetChangeset(request), context);
+      handler(this, *pRequest, GetChangeset(*pRequest), context);
     } );
 }
 
@@ -583,17 +595,18 @@ GetDataViewOutcome FinSpaceDataClient::GetDataView(const GetDataViewRequest& req
 
 GetDataViewOutcomeCallable FinSpaceDataClient::GetDataViewCallable(const GetDataViewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataViewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataView(request); } );
+  std::shared_ptr<GetDataViewRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDataViewOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDataView(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::GetDataViewAsync(const GetDataViewRequest& request, const GetDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDataViewRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDataView(request), context);
+      handler(this, *pRequest, GetDataView(*pRequest), context);
     } );
 }
 
@@ -614,17 +627,18 @@ GetDatasetOutcome FinSpaceDataClient::GetDataset(const GetDatasetRequest& reques
 
 GetDatasetOutcomeCallable FinSpaceDataClient::GetDatasetCallable(const GetDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataset(request); } );
+  std::shared_ptr<GetDatasetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDatasetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDataset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::GetDatasetAsync(const GetDatasetRequest& request, const GetDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDatasetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDataset(request), context);
+      handler(this, *pRequest, GetDataset(*pRequest), context);
     } );
 }
 
@@ -653,17 +667,18 @@ GetExternalDataViewAccessDetailsOutcome FinSpaceDataClient::GetExternalDataViewA
 
 GetExternalDataViewAccessDetailsOutcomeCallable FinSpaceDataClient::GetExternalDataViewAccessDetailsCallable(const GetExternalDataViewAccessDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExternalDataViewAccessDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExternalDataViewAccessDetails(request); } );
+  std::shared_ptr<GetExternalDataViewAccessDetailsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetExternalDataViewAccessDetailsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetExternalDataViewAccessDetails(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::GetExternalDataViewAccessDetailsAsync(const GetExternalDataViewAccessDetailsRequest& request, const GetExternalDataViewAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetExternalDataViewAccessDetailsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetExternalDataViewAccessDetails(request), context);
+      handler(this, *pRequest, GetExternalDataViewAccessDetails(*pRequest), context);
     } );
 }
 
@@ -684,17 +699,18 @@ GetPermissionGroupOutcome FinSpaceDataClient::GetPermissionGroup(const GetPermis
 
 GetPermissionGroupOutcomeCallable FinSpaceDataClient::GetPermissionGroupCallable(const GetPermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPermissionGroup(request); } );
+  std::shared_ptr<GetPermissionGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetPermissionGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::GetPermissionGroupAsync(const GetPermissionGroupRequest& request, const GetPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetPermissionGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetPermissionGroup(request), context);
+      handler(this, *pRequest, GetPermissionGroup(*pRequest), context);
     } );
 }
 
@@ -714,17 +730,18 @@ GetProgrammaticAccessCredentialsOutcome FinSpaceDataClient::GetProgrammaticAcces
 
 GetProgrammaticAccessCredentialsOutcomeCallable FinSpaceDataClient::GetProgrammaticAccessCredentialsCallable(const GetProgrammaticAccessCredentialsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetProgrammaticAccessCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProgrammaticAccessCredentials(request); } );
+  std::shared_ptr<GetProgrammaticAccessCredentialsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetProgrammaticAccessCredentialsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetProgrammaticAccessCredentials(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::GetProgrammaticAccessCredentialsAsync(const GetProgrammaticAccessCredentialsRequest& request, const GetProgrammaticAccessCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetProgrammaticAccessCredentialsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetProgrammaticAccessCredentials(request), context);
+      handler(this, *pRequest, GetProgrammaticAccessCredentials(*pRequest), context);
     } );
 }
 
@@ -745,17 +762,18 @@ GetUserOutcome FinSpaceDataClient::GetUser(const GetUserRequest& request) const
 
 GetUserOutcomeCallable FinSpaceDataClient::GetUserCallable(const GetUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUser(request); } );
+  std::shared_ptr<GetUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::GetUserAsync(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetUser(request), context);
+      handler(this, *pRequest, GetUser(*pRequest), context);
     } );
 }
 
@@ -770,17 +788,18 @@ GetWorkingLocationOutcome FinSpaceDataClient::GetWorkingLocation(const GetWorkin
 
 GetWorkingLocationOutcomeCallable FinSpaceDataClient::GetWorkingLocationCallable(const GetWorkingLocationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkingLocationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkingLocation(request); } );
+  std::shared_ptr<GetWorkingLocationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetWorkingLocationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetWorkingLocation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::GetWorkingLocationAsync(const GetWorkingLocationRequest& request, const GetWorkingLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetWorkingLocationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetWorkingLocation(request), context);
+      handler(this, *pRequest, GetWorkingLocation(*pRequest), context);
     } );
 }
 
@@ -802,17 +821,18 @@ ListChangesetsOutcome FinSpaceDataClient::ListChangesets(const ListChangesetsReq
 
 ListChangesetsOutcomeCallable FinSpaceDataClient::ListChangesetsCallable(const ListChangesetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListChangesetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChangesets(request); } );
+  std::shared_ptr<ListChangesetsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListChangesetsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListChangesets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::ListChangesetsAsync(const ListChangesetsRequest& request, const ListChangesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListChangesetsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListChangesets(request), context);
+      handler(this, *pRequest, ListChangesets(*pRequest), context);
     } );
 }
 
@@ -834,17 +854,18 @@ ListDataViewsOutcome FinSpaceDataClient::ListDataViews(const ListDataViewsReques
 
 ListDataViewsOutcomeCallable FinSpaceDataClient::ListDataViewsCallable(const ListDataViewsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataViewsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataViews(request); } );
+  std::shared_ptr<ListDataViewsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDataViewsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDataViews(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::ListDataViewsAsync(const ListDataViewsRequest& request, const ListDataViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDataViewsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDataViews(request), context);
+      handler(this, *pRequest, ListDataViews(*pRequest), context);
     } );
 }
 
@@ -859,17 +880,18 @@ ListDatasetsOutcome FinSpaceDataClient::ListDatasets(const ListDatasetsRequest& 
 
 ListDatasetsOutcomeCallable FinSpaceDataClient::ListDatasetsCallable(const ListDatasetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasets(request); } );
+  std::shared_ptr<ListDatasetsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDatasetsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDatasets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDatasetsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDatasets(request), context);
+      handler(this, *pRequest, ListDatasets(*pRequest), context);
     } );
 }
 
@@ -889,17 +911,18 @@ ListPermissionGroupsOutcome FinSpaceDataClient::ListPermissionGroups(const ListP
 
 ListPermissionGroupsOutcomeCallable FinSpaceDataClient::ListPermissionGroupsCallable(const ListPermissionGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPermissionGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissionGroups(request); } );
+  std::shared_ptr<ListPermissionGroupsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPermissionGroupsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPermissionGroups(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::ListPermissionGroupsAsync(const ListPermissionGroupsRequest& request, const ListPermissionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPermissionGroupsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPermissionGroups(request), context);
+      handler(this, *pRequest, ListPermissionGroups(*pRequest), context);
     } );
 }
 
@@ -926,17 +949,18 @@ ListPermissionGroupsByUserOutcome FinSpaceDataClient::ListPermissionGroupsByUser
 
 ListPermissionGroupsByUserOutcomeCallable FinSpaceDataClient::ListPermissionGroupsByUserCallable(const ListPermissionGroupsByUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPermissionGroupsByUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissionGroupsByUser(request); } );
+  std::shared_ptr<ListPermissionGroupsByUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPermissionGroupsByUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPermissionGroupsByUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::ListPermissionGroupsByUserAsync(const ListPermissionGroupsByUserRequest& request, const ListPermissionGroupsByUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPermissionGroupsByUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPermissionGroupsByUser(request), context);
+      handler(this, *pRequest, ListPermissionGroupsByUser(*pRequest), context);
     } );
 }
 
@@ -956,17 +980,18 @@ ListUsersOutcome FinSpaceDataClient::ListUsers(const ListUsersRequest& request) 
 
 ListUsersOutcomeCallable FinSpaceDataClient::ListUsersCallable(const ListUsersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUsersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUsers(request); } );
+  std::shared_ptr<ListUsersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListUsersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListUsers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListUsersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListUsers(request), context);
+      handler(this, *pRequest, ListUsers(*pRequest), context);
     } );
 }
 
@@ -993,17 +1018,18 @@ ListUsersByPermissionGroupOutcome FinSpaceDataClient::ListUsersByPermissionGroup
 
 ListUsersByPermissionGroupOutcomeCallable FinSpaceDataClient::ListUsersByPermissionGroupCallable(const ListUsersByPermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUsersByPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUsersByPermissionGroup(request); } );
+  std::shared_ptr<ListUsersByPermissionGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListUsersByPermissionGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListUsersByPermissionGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::ListUsersByPermissionGroupAsync(const ListUsersByPermissionGroupRequest& request, const ListUsersByPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListUsersByPermissionGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListUsersByPermissionGroup(request), context);
+      handler(this, *pRequest, ListUsersByPermissionGroup(*pRequest), context);
     } );
 }
 
@@ -1025,17 +1051,18 @@ ResetUserPasswordOutcome FinSpaceDataClient::ResetUserPassword(const ResetUserPa
 
 ResetUserPasswordOutcomeCallable FinSpaceDataClient::ResetUserPasswordCallable(const ResetUserPasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResetUserPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetUserPassword(request); } );
+  std::shared_ptr<ResetUserPasswordRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ResetUserPasswordOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ResetUserPassword(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::ResetUserPasswordAsync(const ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ResetUserPasswordRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ResetUserPassword(request), context);
+      handler(this, *pRequest, ResetUserPassword(*pRequest), context);
     } );
 }
 
@@ -1063,17 +1090,18 @@ UpdateChangesetOutcome FinSpaceDataClient::UpdateChangeset(const UpdateChangeset
 
 UpdateChangesetOutcomeCallable FinSpaceDataClient::UpdateChangesetCallable(const UpdateChangesetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateChangesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateChangeset(request); } );
+  std::shared_ptr<UpdateChangesetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateChangesetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateChangeset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::UpdateChangesetAsync(const UpdateChangesetRequest& request, const UpdateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateChangesetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateChangeset(request), context);
+      handler(this, *pRequest, UpdateChangeset(*pRequest), context);
     } );
 }
 
@@ -1094,17 +1122,18 @@ UpdateDatasetOutcome FinSpaceDataClient::UpdateDataset(const UpdateDatasetReques
 
 UpdateDatasetOutcomeCallable FinSpaceDataClient::UpdateDatasetCallable(const UpdateDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDataset(request); } );
+  std::shared_ptr<UpdateDatasetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDatasetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDataset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::UpdateDatasetAsync(const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDatasetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDataset(request), context);
+      handler(this, *pRequest, UpdateDataset(*pRequest), context);
     } );
 }
 
@@ -1125,17 +1154,18 @@ UpdatePermissionGroupOutcome FinSpaceDataClient::UpdatePermissionGroup(const Upd
 
 UpdatePermissionGroupOutcomeCallable FinSpaceDataClient::UpdatePermissionGroupCallable(const UpdatePermissionGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePermissionGroup(request); } );
+  std::shared_ptr<UpdatePermissionGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePermissionGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdatePermissionGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::UpdatePermissionGroupAsync(const UpdatePermissionGroupRequest& request, const UpdatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdatePermissionGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdatePermissionGroup(request), context);
+      handler(this, *pRequest, UpdatePermissionGroup(*pRequest), context);
     } );
 }
 
@@ -1156,17 +1186,18 @@ UpdateUserOutcome FinSpaceDataClient::UpdateUser(const UpdateUserRequest& reques
 
 UpdateUserOutcomeCallable FinSpaceDataClient::UpdateUserCallable(const UpdateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUser(request); } );
+  std::shared_ptr<UpdateUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void FinSpaceDataClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateUser(request), context);
+      handler(this, *pRequest, UpdateUser(*pRequest), context);
     } );
 }
 

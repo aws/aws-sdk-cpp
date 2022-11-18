@@ -216,17 +216,18 @@ AcceptInboundConnectionOutcome OpenSearchServiceClient::AcceptInboundConnection(
 
 AcceptInboundConnectionOutcomeCallable OpenSearchServiceClient::AcceptInboundConnectionCallable(const AcceptInboundConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcceptInboundConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptInboundConnection(request); } );
+  std::shared_ptr<AcceptInboundConnectionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AcceptInboundConnectionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AcceptInboundConnection(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::AcceptInboundConnectionAsync(const AcceptInboundConnectionRequest& request, const AcceptInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AcceptInboundConnectionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AcceptInboundConnection(request), context);
+      handler(this, *pRequest, AcceptInboundConnection(*pRequest), context);
     } );
 }
 
@@ -241,17 +242,18 @@ AddTagsOutcome OpenSearchServiceClient::AddTags(const AddTagsRequest& request) c
 
 AddTagsOutcomeCallable OpenSearchServiceClient::AddTagsCallable(const AddTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddTags(request); } );
+  std::shared_ptr<AddTagsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AddTagsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AddTags(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AddTagsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AddTags(request), context);
+      handler(this, *pRequest, AddTags(*pRequest), context);
     } );
 }
 
@@ -278,17 +280,18 @@ AssociatePackageOutcome OpenSearchServiceClient::AssociatePackage(const Associat
 
 AssociatePackageOutcomeCallable OpenSearchServiceClient::AssociatePackageCallable(const AssociatePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociatePackage(request); } );
+  std::shared_ptr<AssociatePackageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociatePackageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociatePackage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::AssociatePackageAsync(const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociatePackageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociatePackage(request), context);
+      handler(this, *pRequest, AssociatePackage(*pRequest), context);
     } );
 }
 
@@ -310,17 +313,18 @@ AuthorizeVpcEndpointAccessOutcome OpenSearchServiceClient::AuthorizeVpcEndpointA
 
 AuthorizeVpcEndpointAccessOutcomeCallable OpenSearchServiceClient::AuthorizeVpcEndpointAccessCallable(const AuthorizeVpcEndpointAccessRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AuthorizeVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AuthorizeVpcEndpointAccess(request); } );
+  std::shared_ptr<AuthorizeVpcEndpointAccessRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AuthorizeVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AuthorizeVpcEndpointAccess(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::AuthorizeVpcEndpointAccessAsync(const AuthorizeVpcEndpointAccessRequest& request, const AuthorizeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AuthorizeVpcEndpointAccessRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AuthorizeVpcEndpointAccess(request), context);
+      handler(this, *pRequest, AuthorizeVpcEndpointAccess(*pRequest), context);
     } );
 }
 
@@ -335,17 +339,18 @@ CancelServiceSoftwareUpdateOutcome OpenSearchServiceClient::CancelServiceSoftwar
 
 CancelServiceSoftwareUpdateOutcomeCallable OpenSearchServiceClient::CancelServiceSoftwareUpdateCallable(const CancelServiceSoftwareUpdateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelServiceSoftwareUpdateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelServiceSoftwareUpdate(request); } );
+  std::shared_ptr<CancelServiceSoftwareUpdateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CancelServiceSoftwareUpdateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CancelServiceSoftwareUpdate(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::CancelServiceSoftwareUpdateAsync(const CancelServiceSoftwareUpdateRequest& request, const CancelServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CancelServiceSoftwareUpdateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CancelServiceSoftwareUpdate(request), context);
+      handler(this, *pRequest, CancelServiceSoftwareUpdate(*pRequest), context);
     } );
 }
 
@@ -360,17 +365,18 @@ CreateDomainOutcome OpenSearchServiceClient::CreateDomain(const CreateDomainRequ
 
 CreateDomainOutcomeCallable OpenSearchServiceClient::CreateDomainCallable(const CreateDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDomain(request); } );
+  std::shared_ptr<CreateDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDomain(request), context);
+      handler(this, *pRequest, CreateDomain(*pRequest), context);
     } );
 }
 
@@ -385,17 +391,18 @@ CreateOutboundConnectionOutcome OpenSearchServiceClient::CreateOutboundConnectio
 
 CreateOutboundConnectionOutcomeCallable OpenSearchServiceClient::CreateOutboundConnectionCallable(const CreateOutboundConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateOutboundConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateOutboundConnection(request); } );
+  std::shared_ptr<CreateOutboundConnectionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateOutboundConnectionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateOutboundConnection(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::CreateOutboundConnectionAsync(const CreateOutboundConnectionRequest& request, const CreateOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateOutboundConnectionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateOutboundConnection(request), context);
+      handler(this, *pRequest, CreateOutboundConnection(*pRequest), context);
     } );
 }
 
@@ -410,17 +417,18 @@ CreatePackageOutcome OpenSearchServiceClient::CreatePackage(const CreatePackageR
 
 CreatePackageOutcomeCallable OpenSearchServiceClient::CreatePackageCallable(const CreatePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePackage(request); } );
+  std::shared_ptr<CreatePackageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreatePackageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreatePackage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::CreatePackageAsync(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreatePackageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreatePackage(request), context);
+      handler(this, *pRequest, CreatePackage(*pRequest), context);
     } );
 }
 
@@ -435,17 +443,18 @@ CreateVpcEndpointOutcome OpenSearchServiceClient::CreateVpcEndpoint(const Create
 
 CreateVpcEndpointOutcomeCallable OpenSearchServiceClient::CreateVpcEndpointCallable(const CreateVpcEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVpcEndpoint(request); } );
+  std::shared_ptr<CreateVpcEndpointRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateVpcEndpoint(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::CreateVpcEndpointAsync(const CreateVpcEndpointRequest& request, const CreateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateVpcEndpointRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateVpcEndpoint(request), context);
+      handler(this, *pRequest, CreateVpcEndpoint(*pRequest), context);
     } );
 }
 
@@ -466,17 +475,18 @@ DeleteDomainOutcome OpenSearchServiceClient::DeleteDomain(const DeleteDomainRequ
 
 DeleteDomainOutcomeCallable OpenSearchServiceClient::DeleteDomainCallable(const DeleteDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDomain(request); } );
+  std::shared_ptr<DeleteDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDomain(request), context);
+      handler(this, *pRequest, DeleteDomain(*pRequest), context);
     } );
 }
 
@@ -497,17 +507,18 @@ DeleteInboundConnectionOutcome OpenSearchServiceClient::DeleteInboundConnection(
 
 DeleteInboundConnectionOutcomeCallable OpenSearchServiceClient::DeleteInboundConnectionCallable(const DeleteInboundConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteInboundConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInboundConnection(request); } );
+  std::shared_ptr<DeleteInboundConnectionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteInboundConnectionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteInboundConnection(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DeleteInboundConnectionAsync(const DeleteInboundConnectionRequest& request, const DeleteInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteInboundConnectionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteInboundConnection(request), context);
+      handler(this, *pRequest, DeleteInboundConnection(*pRequest), context);
     } );
 }
 
@@ -528,17 +539,18 @@ DeleteOutboundConnectionOutcome OpenSearchServiceClient::DeleteOutboundConnectio
 
 DeleteOutboundConnectionOutcomeCallable OpenSearchServiceClient::DeleteOutboundConnectionCallable(const DeleteOutboundConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteOutboundConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOutboundConnection(request); } );
+  std::shared_ptr<DeleteOutboundConnectionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteOutboundConnectionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteOutboundConnection(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DeleteOutboundConnectionAsync(const DeleteOutboundConnectionRequest& request, const DeleteOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteOutboundConnectionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteOutboundConnection(request), context);
+      handler(this, *pRequest, DeleteOutboundConnection(*pRequest), context);
     } );
 }
 
@@ -559,17 +571,18 @@ DeletePackageOutcome OpenSearchServiceClient::DeletePackage(const DeletePackageR
 
 DeletePackageOutcomeCallable OpenSearchServiceClient::DeletePackageCallable(const DeletePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePackage(request); } );
+  std::shared_ptr<DeletePackageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeletePackageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeletePackage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DeletePackageAsync(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeletePackageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeletePackage(request), context);
+      handler(this, *pRequest, DeletePackage(*pRequest), context);
     } );
 }
 
@@ -590,17 +603,18 @@ DeleteVpcEndpointOutcome OpenSearchServiceClient::DeleteVpcEndpoint(const Delete
 
 DeleteVpcEndpointOutcomeCallable OpenSearchServiceClient::DeleteVpcEndpointCallable(const DeleteVpcEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVpcEndpoint(request); } );
+  std::shared_ptr<DeleteVpcEndpointRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteVpcEndpoint(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DeleteVpcEndpointAsync(const DeleteVpcEndpointRequest& request, const DeleteVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteVpcEndpointRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteVpcEndpoint(request), context);
+      handler(this, *pRequest, DeleteVpcEndpoint(*pRequest), context);
     } );
 }
 
@@ -621,17 +635,18 @@ DescribeDomainOutcome OpenSearchServiceClient::DescribeDomain(const DescribeDoma
 
 DescribeDomainOutcomeCallable OpenSearchServiceClient::DescribeDomainCallable(const DescribeDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomain(request); } );
+  std::shared_ptr<DescribeDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDomain(request), context);
+      handler(this, *pRequest, DescribeDomain(*pRequest), context);
     } );
 }
 
@@ -653,17 +668,18 @@ DescribeDomainAutoTunesOutcome OpenSearchServiceClient::DescribeDomainAutoTunes(
 
 DescribeDomainAutoTunesOutcomeCallable OpenSearchServiceClient::DescribeDomainAutoTunesCallable(const DescribeDomainAutoTunesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainAutoTunesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomainAutoTunes(request); } );
+  std::shared_ptr<DescribeDomainAutoTunesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainAutoTunesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDomainAutoTunes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribeDomainAutoTunesAsync(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDomainAutoTunesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDomainAutoTunes(request), context);
+      handler(this, *pRequest, DescribeDomainAutoTunes(*pRequest), context);
     } );
 }
 
@@ -685,17 +701,18 @@ DescribeDomainChangeProgressOutcome OpenSearchServiceClient::DescribeDomainChang
 
 DescribeDomainChangeProgressOutcomeCallable OpenSearchServiceClient::DescribeDomainChangeProgressCallable(const DescribeDomainChangeProgressRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainChangeProgressOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomainChangeProgress(request); } );
+  std::shared_ptr<DescribeDomainChangeProgressRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainChangeProgressOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDomainChangeProgress(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribeDomainChangeProgressAsync(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDomainChangeProgressRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDomainChangeProgress(request), context);
+      handler(this, *pRequest, DescribeDomainChangeProgress(*pRequest), context);
     } );
 }
 
@@ -717,17 +734,18 @@ DescribeDomainConfigOutcome OpenSearchServiceClient::DescribeDomainConfig(const 
 
 DescribeDomainConfigOutcomeCallable OpenSearchServiceClient::DescribeDomainConfigCallable(const DescribeDomainConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomainConfig(request); } );
+  std::shared_ptr<DescribeDomainConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDomainConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribeDomainConfigAsync(const DescribeDomainConfigRequest& request, const DescribeDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDomainConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDomainConfig(request), context);
+      handler(this, *pRequest, DescribeDomainConfig(*pRequest), context);
     } );
 }
 
@@ -742,17 +760,18 @@ DescribeDomainsOutcome OpenSearchServiceClient::DescribeDomains(const DescribeDo
 
 DescribeDomainsOutcomeCallable OpenSearchServiceClient::DescribeDomainsCallable(const DescribeDomainsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomains(request); } );
+  std::shared_ptr<DescribeDomainsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDomains(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDomainsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDomains(request), context);
+      handler(this, *pRequest, DescribeDomains(*pRequest), context);
     } );
 }
 
@@ -767,17 +786,18 @@ DescribeInboundConnectionsOutcome OpenSearchServiceClient::DescribeInboundConnec
 
 DescribeInboundConnectionsOutcomeCallable OpenSearchServiceClient::DescribeInboundConnectionsCallable(const DescribeInboundConnectionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInboundConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInboundConnections(request); } );
+  std::shared_ptr<DescribeInboundConnectionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInboundConnectionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeInboundConnections(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribeInboundConnectionsAsync(const DescribeInboundConnectionsRequest& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeInboundConnectionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeInboundConnections(request), context);
+      handler(this, *pRequest, DescribeInboundConnections(*pRequest), context);
     } );
 }
 
@@ -804,17 +824,18 @@ DescribeInstanceTypeLimitsOutcome OpenSearchServiceClient::DescribeInstanceTypeL
 
 DescribeInstanceTypeLimitsOutcomeCallable OpenSearchServiceClient::DescribeInstanceTypeLimitsCallable(const DescribeInstanceTypeLimitsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInstanceTypeLimitsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInstanceTypeLimits(request); } );
+  std::shared_ptr<DescribeInstanceTypeLimitsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInstanceTypeLimitsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeInstanceTypeLimits(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribeInstanceTypeLimitsAsync(const DescribeInstanceTypeLimitsRequest& request, const DescribeInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeInstanceTypeLimitsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeInstanceTypeLimits(request), context);
+      handler(this, *pRequest, DescribeInstanceTypeLimits(*pRequest), context);
     } );
 }
 
@@ -829,17 +850,18 @@ DescribeOutboundConnectionsOutcome OpenSearchServiceClient::DescribeOutboundConn
 
 DescribeOutboundConnectionsOutcomeCallable OpenSearchServiceClient::DescribeOutboundConnectionsCallable(const DescribeOutboundConnectionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeOutboundConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOutboundConnections(request); } );
+  std::shared_ptr<DescribeOutboundConnectionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOutboundConnectionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeOutboundConnections(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribeOutboundConnectionsAsync(const DescribeOutboundConnectionsRequest& request, const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeOutboundConnectionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeOutboundConnections(request), context);
+      handler(this, *pRequest, DescribeOutboundConnections(*pRequest), context);
     } );
 }
 
@@ -854,17 +876,18 @@ DescribePackagesOutcome OpenSearchServiceClient::DescribePackages(const Describe
 
 DescribePackagesOutcomeCallable OpenSearchServiceClient::DescribePackagesCallable(const DescribePackagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePackages(request); } );
+  std::shared_ptr<DescribePackagesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribePackagesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribePackages(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribePackagesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribePackages(request), context);
+      handler(this, *pRequest, DescribePackages(*pRequest), context);
     } );
 }
 
@@ -879,17 +902,18 @@ DescribeReservedInstanceOfferingsOutcome OpenSearchServiceClient::DescribeReserv
 
 DescribeReservedInstanceOfferingsOutcomeCallable OpenSearchServiceClient::DescribeReservedInstanceOfferingsCallable(const DescribeReservedInstanceOfferingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeReservedInstanceOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReservedInstanceOfferings(request); } );
+  std::shared_ptr<DescribeReservedInstanceOfferingsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReservedInstanceOfferingsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeReservedInstanceOfferings(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribeReservedInstanceOfferingsAsync(const DescribeReservedInstanceOfferingsRequest& request, const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeReservedInstanceOfferingsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeReservedInstanceOfferings(request), context);
+      handler(this, *pRequest, DescribeReservedInstanceOfferings(*pRequest), context);
     } );
 }
 
@@ -904,17 +928,18 @@ DescribeReservedInstancesOutcome OpenSearchServiceClient::DescribeReservedInstan
 
 DescribeReservedInstancesOutcomeCallable OpenSearchServiceClient::DescribeReservedInstancesCallable(const DescribeReservedInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeReservedInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReservedInstances(request); } );
+  std::shared_ptr<DescribeReservedInstancesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReservedInstancesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeReservedInstances(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribeReservedInstancesAsync(const DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeReservedInstancesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeReservedInstances(request), context);
+      handler(this, *pRequest, DescribeReservedInstances(*pRequest), context);
     } );
 }
 
@@ -929,17 +954,18 @@ DescribeVpcEndpointsOutcome OpenSearchServiceClient::DescribeVpcEndpoints(const 
 
 DescribeVpcEndpointsOutcomeCallable OpenSearchServiceClient::DescribeVpcEndpointsCallable(const DescribeVpcEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeVpcEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVpcEndpoints(request); } );
+  std::shared_ptr<DescribeVpcEndpointsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVpcEndpointsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeVpcEndpoints(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DescribeVpcEndpointsAsync(const DescribeVpcEndpointsRequest& request, const DescribeVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeVpcEndpointsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeVpcEndpoints(request), context);
+      handler(this, *pRequest, DescribeVpcEndpoints(*pRequest), context);
     } );
 }
 
@@ -966,17 +992,18 @@ DissociatePackageOutcome OpenSearchServiceClient::DissociatePackage(const Dissoc
 
 DissociatePackageOutcomeCallable OpenSearchServiceClient::DissociatePackageCallable(const DissociatePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DissociatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DissociatePackage(request); } );
+  std::shared_ptr<DissociatePackageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DissociatePackageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DissociatePackage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::DissociatePackageAsync(const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DissociatePackageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DissociatePackage(request), context);
+      handler(this, *pRequest, DissociatePackage(*pRequest), context);
     } );
 }
 
@@ -991,17 +1018,18 @@ GetCompatibleVersionsOutcome OpenSearchServiceClient::GetCompatibleVersions(cons
 
 GetCompatibleVersionsOutcomeCallable OpenSearchServiceClient::GetCompatibleVersionsCallable(const GetCompatibleVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCompatibleVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCompatibleVersions(request); } );
+  std::shared_ptr<GetCompatibleVersionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCompatibleVersionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCompatibleVersions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::GetCompatibleVersionsAsync(const GetCompatibleVersionsRequest& request, const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCompatibleVersionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCompatibleVersions(request), context);
+      handler(this, *pRequest, GetCompatibleVersions(*pRequest), context);
     } );
 }
 
@@ -1023,17 +1051,18 @@ GetPackageVersionHistoryOutcome OpenSearchServiceClient::GetPackageVersionHistor
 
 GetPackageVersionHistoryOutcomeCallable OpenSearchServiceClient::GetPackageVersionHistoryCallable(const GetPackageVersionHistoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPackageVersionHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPackageVersionHistory(request); } );
+  std::shared_ptr<GetPackageVersionHistoryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetPackageVersionHistoryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetPackageVersionHistory(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::GetPackageVersionHistoryAsync(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetPackageVersionHistoryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetPackageVersionHistory(request), context);
+      handler(this, *pRequest, GetPackageVersionHistory(*pRequest), context);
     } );
 }
 
@@ -1055,17 +1084,18 @@ GetUpgradeHistoryOutcome OpenSearchServiceClient::GetUpgradeHistory(const GetUpg
 
 GetUpgradeHistoryOutcomeCallable OpenSearchServiceClient::GetUpgradeHistoryCallable(const GetUpgradeHistoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUpgradeHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUpgradeHistory(request); } );
+  std::shared_ptr<GetUpgradeHistoryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetUpgradeHistoryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetUpgradeHistory(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::GetUpgradeHistoryAsync(const GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetUpgradeHistoryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetUpgradeHistory(request), context);
+      handler(this, *pRequest, GetUpgradeHistory(*pRequest), context);
     } );
 }
 
@@ -1087,17 +1117,18 @@ GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgra
 
 GetUpgradeStatusOutcomeCallable OpenSearchServiceClient::GetUpgradeStatusCallable(const GetUpgradeStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUpgradeStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUpgradeStatus(request); } );
+  std::shared_ptr<GetUpgradeStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetUpgradeStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetUpgradeStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::GetUpgradeStatusAsync(const GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetUpgradeStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetUpgradeStatus(request), context);
+      handler(this, *pRequest, GetUpgradeStatus(*pRequest), context);
     } );
 }
 
@@ -1112,17 +1143,18 @@ ListDomainNamesOutcome OpenSearchServiceClient::ListDomainNames(const ListDomain
 
 ListDomainNamesOutcomeCallable OpenSearchServiceClient::ListDomainNamesCallable(const ListDomainNamesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDomainNamesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomainNames(request); } );
+  std::shared_ptr<ListDomainNamesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainNamesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDomainNames(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDomainNamesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDomainNames(request), context);
+      handler(this, *pRequest, ListDomainNames(*pRequest), context);
     } );
 }
 
@@ -1144,17 +1176,18 @@ ListDomainsForPackageOutcome OpenSearchServiceClient::ListDomainsForPackage(cons
 
 ListDomainsForPackageOutcomeCallable OpenSearchServiceClient::ListDomainsForPackageCallable(const ListDomainsForPackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDomainsForPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomainsForPackage(request); } );
+  std::shared_ptr<ListDomainsForPackageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainsForPackageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDomainsForPackage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::ListDomainsForPackageAsync(const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDomainsForPackageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDomainsForPackage(request), context);
+      handler(this, *pRequest, ListDomainsForPackage(*pRequest), context);
     } );
 }
 
@@ -1175,17 +1208,18 @@ ListInstanceTypeDetailsOutcome OpenSearchServiceClient::ListInstanceTypeDetails(
 
 ListInstanceTypeDetailsOutcomeCallable OpenSearchServiceClient::ListInstanceTypeDetailsCallable(const ListInstanceTypeDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInstanceTypeDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInstanceTypeDetails(request); } );
+  std::shared_ptr<ListInstanceTypeDetailsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListInstanceTypeDetailsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListInstanceTypeDetails(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::ListInstanceTypeDetailsAsync(const ListInstanceTypeDetailsRequest& request, const ListInstanceTypeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListInstanceTypeDetailsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListInstanceTypeDetails(request), context);
+      handler(this, *pRequest, ListInstanceTypeDetails(*pRequest), context);
     } );
 }
 
@@ -1207,17 +1241,18 @@ ListPackagesForDomainOutcome OpenSearchServiceClient::ListPackagesForDomain(cons
 
 ListPackagesForDomainOutcomeCallable OpenSearchServiceClient::ListPackagesForDomainCallable(const ListPackagesForDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPackagesForDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPackagesForDomain(request); } );
+  std::shared_ptr<ListPackagesForDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPackagesForDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPackagesForDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::ListPackagesForDomainAsync(const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPackagesForDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPackagesForDomain(request), context);
+      handler(this, *pRequest, ListPackagesForDomain(*pRequest), context);
     } );
 }
 
@@ -1237,17 +1272,18 @@ ListTagsOutcome OpenSearchServiceClient::ListTags(const ListTagsRequest& request
 
 ListTagsOutcomeCallable OpenSearchServiceClient::ListTagsCallable(const ListTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTags(request); } );
+  std::shared_ptr<ListTagsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTags(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTags(request), context);
+      handler(this, *pRequest, ListTags(*pRequest), context);
     } );
 }
 
@@ -1262,17 +1298,18 @@ ListVersionsOutcome OpenSearchServiceClient::ListVersions(const ListVersionsRequ
 
 ListVersionsOutcomeCallable OpenSearchServiceClient::ListVersionsCallable(const ListVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVersions(request); } );
+  std::shared_ptr<ListVersionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListVersionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListVersions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::ListVersionsAsync(const ListVersionsRequest& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListVersionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListVersions(request), context);
+      handler(this, *pRequest, ListVersions(*pRequest), context);
     } );
 }
 
@@ -1294,17 +1331,18 @@ ListVpcEndpointAccessOutcome OpenSearchServiceClient::ListVpcEndpointAccess(cons
 
 ListVpcEndpointAccessOutcomeCallable OpenSearchServiceClient::ListVpcEndpointAccessCallable(const ListVpcEndpointAccessRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcEndpointAccess(request); } );
+  std::shared_ptr<ListVpcEndpointAccessRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListVpcEndpointAccess(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::ListVpcEndpointAccessAsync(const ListVpcEndpointAccessRequest& request, const ListVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListVpcEndpointAccessRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListVpcEndpointAccess(request), context);
+      handler(this, *pRequest, ListVpcEndpointAccess(*pRequest), context);
     } );
 }
 
@@ -1319,17 +1357,18 @@ ListVpcEndpointsOutcome OpenSearchServiceClient::ListVpcEndpoints(const ListVpcE
 
 ListVpcEndpointsOutcomeCallable OpenSearchServiceClient::ListVpcEndpointsCallable(const ListVpcEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcEndpoints(request); } );
+  std::shared_ptr<ListVpcEndpointsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListVpcEndpoints(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::ListVpcEndpointsAsync(const ListVpcEndpointsRequest& request, const ListVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListVpcEndpointsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListVpcEndpoints(request), context);
+      handler(this, *pRequest, ListVpcEndpoints(*pRequest), context);
     } );
 }
 
@@ -1351,17 +1390,18 @@ ListVpcEndpointsForDomainOutcome OpenSearchServiceClient::ListVpcEndpointsForDom
 
 ListVpcEndpointsForDomainOutcomeCallable OpenSearchServiceClient::ListVpcEndpointsForDomainCallable(const ListVpcEndpointsForDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointsForDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcEndpointsForDomain(request); } );
+  std::shared_ptr<ListVpcEndpointsForDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListVpcEndpointsForDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListVpcEndpointsForDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::ListVpcEndpointsForDomainAsync(const ListVpcEndpointsForDomainRequest& request, const ListVpcEndpointsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListVpcEndpointsForDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListVpcEndpointsForDomain(request), context);
+      handler(this, *pRequest, ListVpcEndpointsForDomain(*pRequest), context);
     } );
 }
 
@@ -1376,17 +1416,18 @@ PurchaseReservedInstanceOfferingOutcome OpenSearchServiceClient::PurchaseReserve
 
 PurchaseReservedInstanceOfferingOutcomeCallable OpenSearchServiceClient::PurchaseReservedInstanceOfferingCallable(const PurchaseReservedInstanceOfferingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PurchaseReservedInstanceOfferingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PurchaseReservedInstanceOffering(request); } );
+  std::shared_ptr<PurchaseReservedInstanceOfferingRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PurchaseReservedInstanceOfferingOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PurchaseReservedInstanceOffering(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::PurchaseReservedInstanceOfferingAsync(const PurchaseReservedInstanceOfferingRequest& request, const PurchaseReservedInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PurchaseReservedInstanceOfferingRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PurchaseReservedInstanceOffering(request), context);
+      handler(this, *pRequest, PurchaseReservedInstanceOffering(*pRequest), context);
     } );
 }
 
@@ -1408,17 +1449,18 @@ RejectInboundConnectionOutcome OpenSearchServiceClient::RejectInboundConnection(
 
 RejectInboundConnectionOutcomeCallable OpenSearchServiceClient::RejectInboundConnectionCallable(const RejectInboundConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RejectInboundConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectInboundConnection(request); } );
+  std::shared_ptr<RejectInboundConnectionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RejectInboundConnectionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RejectInboundConnection(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::RejectInboundConnectionAsync(const RejectInboundConnectionRequest& request, const RejectInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RejectInboundConnectionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RejectInboundConnection(request), context);
+      handler(this, *pRequest, RejectInboundConnection(*pRequest), context);
     } );
 }
 
@@ -1433,17 +1475,18 @@ RemoveTagsOutcome OpenSearchServiceClient::RemoveTags(const RemoveTagsRequest& r
 
 RemoveTagsOutcomeCallable OpenSearchServiceClient::RemoveTagsCallable(const RemoveTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveTags(request); } );
+  std::shared_ptr<RemoveTagsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RemoveTagsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RemoveTags(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RemoveTagsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RemoveTags(request), context);
+      handler(this, *pRequest, RemoveTags(*pRequest), context);
     } );
 }
 
@@ -1465,17 +1508,18 @@ RevokeVpcEndpointAccessOutcome OpenSearchServiceClient::RevokeVpcEndpointAccess(
 
 RevokeVpcEndpointAccessOutcomeCallable OpenSearchServiceClient::RevokeVpcEndpointAccessCallable(const RevokeVpcEndpointAccessRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RevokeVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeVpcEndpointAccess(request); } );
+  std::shared_ptr<RevokeVpcEndpointAccessRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RevokeVpcEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RevokeVpcEndpointAccess(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::RevokeVpcEndpointAccessAsync(const RevokeVpcEndpointAccessRequest& request, const RevokeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RevokeVpcEndpointAccessRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RevokeVpcEndpointAccess(request), context);
+      handler(this, *pRequest, RevokeVpcEndpointAccess(*pRequest), context);
     } );
 }
 
@@ -1490,17 +1534,18 @@ StartServiceSoftwareUpdateOutcome OpenSearchServiceClient::StartServiceSoftwareU
 
 StartServiceSoftwareUpdateOutcomeCallable OpenSearchServiceClient::StartServiceSoftwareUpdateCallable(const StartServiceSoftwareUpdateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartServiceSoftwareUpdateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartServiceSoftwareUpdate(request); } );
+  std::shared_ptr<StartServiceSoftwareUpdateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartServiceSoftwareUpdateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartServiceSoftwareUpdate(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::StartServiceSoftwareUpdateAsync(const StartServiceSoftwareUpdateRequest& request, const StartServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartServiceSoftwareUpdateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartServiceSoftwareUpdate(request), context);
+      handler(this, *pRequest, StartServiceSoftwareUpdate(*pRequest), context);
     } );
 }
 
@@ -1522,17 +1567,18 @@ UpdateDomainConfigOutcome OpenSearchServiceClient::UpdateDomainConfig(const Upda
 
 UpdateDomainConfigOutcomeCallable OpenSearchServiceClient::UpdateDomainConfigCallable(const UpdateDomainConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDomainConfig(request); } );
+  std::shared_ptr<UpdateDomainConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDomainConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::UpdateDomainConfigAsync(const UpdateDomainConfigRequest& request, const UpdateDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDomainConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDomainConfig(request), context);
+      handler(this, *pRequest, UpdateDomainConfig(*pRequest), context);
     } );
 }
 
@@ -1547,17 +1593,18 @@ UpdatePackageOutcome OpenSearchServiceClient::UpdatePackage(const UpdatePackageR
 
 UpdatePackageOutcomeCallable OpenSearchServiceClient::UpdatePackageCallable(const UpdatePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePackage(request); } );
+  std::shared_ptr<UpdatePackageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePackageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdatePackage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::UpdatePackageAsync(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdatePackageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdatePackage(request), context);
+      handler(this, *pRequest, UpdatePackage(*pRequest), context);
     } );
 }
 
@@ -1572,17 +1619,18 @@ UpdateVpcEndpointOutcome OpenSearchServiceClient::UpdateVpcEndpoint(const Update
 
 UpdateVpcEndpointOutcomeCallable OpenSearchServiceClient::UpdateVpcEndpointCallable(const UpdateVpcEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVpcEndpoint(request); } );
+  std::shared_ptr<UpdateVpcEndpointRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVpcEndpointOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateVpcEndpoint(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::UpdateVpcEndpointAsync(const UpdateVpcEndpointRequest& request, const UpdateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateVpcEndpointRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateVpcEndpoint(request), context);
+      handler(this, *pRequest, UpdateVpcEndpoint(*pRequest), context);
     } );
 }
 
@@ -1597,17 +1645,18 @@ UpgradeDomainOutcome OpenSearchServiceClient::UpgradeDomain(const UpgradeDomainR
 
 UpgradeDomainOutcomeCallable OpenSearchServiceClient::UpgradeDomainCallable(const UpgradeDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpgradeDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpgradeDomain(request); } );
+  std::shared_ptr<UpgradeDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpgradeDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpgradeDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void OpenSearchServiceClient::UpgradeDomainAsync(const UpgradeDomainRequest& request, const UpgradeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpgradeDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpgradeDomain(request), context);
+      handler(this, *pRequest, UpgradeDomain(*pRequest), context);
     } );
 }
 

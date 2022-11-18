@@ -183,17 +183,18 @@ CreateClusterOutcome Route53RecoveryControlConfigClient::CreateCluster(const Cre
 
 CreateClusterOutcomeCallable Route53RecoveryControlConfigClient::CreateClusterCallable(const CreateClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCluster(request); } );
+  std::shared_ptr<CreateClusterRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateClusterOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateCluster(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateClusterRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateCluster(request), context);
+      handler(this, *pRequest, CreateCluster(*pRequest), context);
     } );
 }
 
@@ -208,17 +209,18 @@ CreateControlPanelOutcome Route53RecoveryControlConfigClient::CreateControlPanel
 
 CreateControlPanelOutcomeCallable Route53RecoveryControlConfigClient::CreateControlPanelCallable(const CreateControlPanelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateControlPanelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateControlPanel(request); } );
+  std::shared_ptr<CreateControlPanelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateControlPanelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateControlPanel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::CreateControlPanelAsync(const CreateControlPanelRequest& request, const CreateControlPanelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateControlPanelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateControlPanel(request), context);
+      handler(this, *pRequest, CreateControlPanel(*pRequest), context);
     } );
 }
 
@@ -233,17 +235,18 @@ CreateRoutingControlOutcome Route53RecoveryControlConfigClient::CreateRoutingCon
 
 CreateRoutingControlOutcomeCallable Route53RecoveryControlConfigClient::CreateRoutingControlCallable(const CreateRoutingControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRoutingControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRoutingControl(request); } );
+  std::shared_ptr<CreateRoutingControlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateRoutingControlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateRoutingControl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::CreateRoutingControlAsync(const CreateRoutingControlRequest& request, const CreateRoutingControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateRoutingControlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateRoutingControl(request), context);
+      handler(this, *pRequest, CreateRoutingControl(*pRequest), context);
     } );
 }
 
@@ -258,17 +261,18 @@ CreateSafetyRuleOutcome Route53RecoveryControlConfigClient::CreateSafetyRule(con
 
 CreateSafetyRuleOutcomeCallable Route53RecoveryControlConfigClient::CreateSafetyRuleCallable(const CreateSafetyRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSafetyRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSafetyRule(request); } );
+  std::shared_ptr<CreateSafetyRuleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateSafetyRuleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateSafetyRule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::CreateSafetyRuleAsync(const CreateSafetyRuleRequest& request, const CreateSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateSafetyRuleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateSafetyRule(request), context);
+      handler(this, *pRequest, CreateSafetyRule(*pRequest), context);
     } );
 }
 
@@ -289,17 +293,18 @@ DeleteClusterOutcome Route53RecoveryControlConfigClient::DeleteCluster(const Del
 
 DeleteClusterOutcomeCallable Route53RecoveryControlConfigClient::DeleteClusterCallable(const DeleteClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCluster(request); } );
+  std::shared_ptr<DeleteClusterRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteClusterOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteCluster(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteClusterRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteCluster(request), context);
+      handler(this, *pRequest, DeleteCluster(*pRequest), context);
     } );
 }
 
@@ -320,17 +325,18 @@ DeleteControlPanelOutcome Route53RecoveryControlConfigClient::DeleteControlPanel
 
 DeleteControlPanelOutcomeCallable Route53RecoveryControlConfigClient::DeleteControlPanelCallable(const DeleteControlPanelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteControlPanelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteControlPanel(request); } );
+  std::shared_ptr<DeleteControlPanelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteControlPanelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteControlPanel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::DeleteControlPanelAsync(const DeleteControlPanelRequest& request, const DeleteControlPanelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteControlPanelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteControlPanel(request), context);
+      handler(this, *pRequest, DeleteControlPanel(*pRequest), context);
     } );
 }
 
@@ -351,17 +357,18 @@ DeleteRoutingControlOutcome Route53RecoveryControlConfigClient::DeleteRoutingCon
 
 DeleteRoutingControlOutcomeCallable Route53RecoveryControlConfigClient::DeleteRoutingControlCallable(const DeleteRoutingControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRoutingControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRoutingControl(request); } );
+  std::shared_ptr<DeleteRoutingControlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRoutingControlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteRoutingControl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::DeleteRoutingControlAsync(const DeleteRoutingControlRequest& request, const DeleteRoutingControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteRoutingControlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteRoutingControl(request), context);
+      handler(this, *pRequest, DeleteRoutingControl(*pRequest), context);
     } );
 }
 
@@ -382,17 +389,18 @@ DeleteSafetyRuleOutcome Route53RecoveryControlConfigClient::DeleteSafetyRule(con
 
 DeleteSafetyRuleOutcomeCallable Route53RecoveryControlConfigClient::DeleteSafetyRuleCallable(const DeleteSafetyRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSafetyRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSafetyRule(request); } );
+  std::shared_ptr<DeleteSafetyRuleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSafetyRuleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteSafetyRule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::DeleteSafetyRuleAsync(const DeleteSafetyRuleRequest& request, const DeleteSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteSafetyRuleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteSafetyRule(request), context);
+      handler(this, *pRequest, DeleteSafetyRule(*pRequest), context);
     } );
 }
 
@@ -413,17 +421,18 @@ DescribeClusterOutcome Route53RecoveryControlConfigClient::DescribeCluster(const
 
 DescribeClusterOutcomeCallable Route53RecoveryControlConfigClient::DescribeClusterCallable(const DescribeClusterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCluster(request); } );
+  std::shared_ptr<DescribeClusterRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeClusterOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeCluster(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::DescribeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeClusterRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeCluster(request), context);
+      handler(this, *pRequest, DescribeCluster(*pRequest), context);
     } );
 }
 
@@ -444,17 +453,18 @@ DescribeControlPanelOutcome Route53RecoveryControlConfigClient::DescribeControlP
 
 DescribeControlPanelOutcomeCallable Route53RecoveryControlConfigClient::DescribeControlPanelCallable(const DescribeControlPanelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeControlPanelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeControlPanel(request); } );
+  std::shared_ptr<DescribeControlPanelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeControlPanelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeControlPanel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::DescribeControlPanelAsync(const DescribeControlPanelRequest& request, const DescribeControlPanelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeControlPanelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeControlPanel(request), context);
+      handler(this, *pRequest, DescribeControlPanel(*pRequest), context);
     } );
 }
 
@@ -475,17 +485,18 @@ DescribeRoutingControlOutcome Route53RecoveryControlConfigClient::DescribeRoutin
 
 DescribeRoutingControlOutcomeCallable Route53RecoveryControlConfigClient::DescribeRoutingControlCallable(const DescribeRoutingControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRoutingControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRoutingControl(request); } );
+  std::shared_ptr<DescribeRoutingControlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRoutingControlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeRoutingControl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::DescribeRoutingControlAsync(const DescribeRoutingControlRequest& request, const DescribeRoutingControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeRoutingControlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeRoutingControl(request), context);
+      handler(this, *pRequest, DescribeRoutingControl(*pRequest), context);
     } );
 }
 
@@ -506,17 +517,18 @@ DescribeSafetyRuleOutcome Route53RecoveryControlConfigClient::DescribeSafetyRule
 
 DescribeSafetyRuleOutcomeCallable Route53RecoveryControlConfigClient::DescribeSafetyRuleCallable(const DescribeSafetyRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSafetyRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSafetyRule(request); } );
+  std::shared_ptr<DescribeSafetyRuleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSafetyRuleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeSafetyRule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::DescribeSafetyRuleAsync(const DescribeSafetyRuleRequest& request, const DescribeSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeSafetyRuleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeSafetyRule(request), context);
+      handler(this, *pRequest, DescribeSafetyRule(*pRequest), context);
     } );
 }
 
@@ -538,17 +550,18 @@ ListAssociatedRoute53HealthChecksOutcome Route53RecoveryControlConfigClient::Lis
 
 ListAssociatedRoute53HealthChecksOutcomeCallable Route53RecoveryControlConfigClient::ListAssociatedRoute53HealthChecksCallable(const ListAssociatedRoute53HealthChecksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssociatedRoute53HealthChecksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssociatedRoute53HealthChecks(request); } );
+  std::shared_ptr<ListAssociatedRoute53HealthChecksRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAssociatedRoute53HealthChecksOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAssociatedRoute53HealthChecks(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::ListAssociatedRoute53HealthChecksAsync(const ListAssociatedRoute53HealthChecksRequest& request, const ListAssociatedRoute53HealthChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAssociatedRoute53HealthChecksRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAssociatedRoute53HealthChecks(request), context);
+      handler(this, *pRequest, ListAssociatedRoute53HealthChecks(*pRequest), context);
     } );
 }
 
@@ -563,17 +576,18 @@ ListClustersOutcome Route53RecoveryControlConfigClient::ListClusters(const ListC
 
 ListClustersOutcomeCallable Route53RecoveryControlConfigClient::ListClustersCallable(const ListClustersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListClustersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListClusters(request); } );
+  std::shared_ptr<ListClustersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListClustersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListClusters(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::ListClustersAsync(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListClustersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListClusters(request), context);
+      handler(this, *pRequest, ListClusters(*pRequest), context);
     } );
 }
 
@@ -588,17 +602,18 @@ ListControlPanelsOutcome Route53RecoveryControlConfigClient::ListControlPanels(c
 
 ListControlPanelsOutcomeCallable Route53RecoveryControlConfigClient::ListControlPanelsCallable(const ListControlPanelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListControlPanelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListControlPanels(request); } );
+  std::shared_ptr<ListControlPanelsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListControlPanelsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListControlPanels(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::ListControlPanelsAsync(const ListControlPanelsRequest& request, const ListControlPanelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListControlPanelsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListControlPanels(request), context);
+      handler(this, *pRequest, ListControlPanels(*pRequest), context);
     } );
 }
 
@@ -620,17 +635,18 @@ ListRoutingControlsOutcome Route53RecoveryControlConfigClient::ListRoutingContro
 
 ListRoutingControlsOutcomeCallable Route53RecoveryControlConfigClient::ListRoutingControlsCallable(const ListRoutingControlsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRoutingControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRoutingControls(request); } );
+  std::shared_ptr<ListRoutingControlsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListRoutingControlsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListRoutingControls(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::ListRoutingControlsAsync(const ListRoutingControlsRequest& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListRoutingControlsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListRoutingControls(request), context);
+      handler(this, *pRequest, ListRoutingControls(*pRequest), context);
     } );
 }
 
@@ -652,17 +668,18 @@ ListSafetyRulesOutcome Route53RecoveryControlConfigClient::ListSafetyRules(const
 
 ListSafetyRulesOutcomeCallable Route53RecoveryControlConfigClient::ListSafetyRulesCallable(const ListSafetyRulesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSafetyRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSafetyRules(request); } );
+  std::shared_ptr<ListSafetyRulesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSafetyRulesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSafetyRules(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::ListSafetyRulesAsync(const ListSafetyRulesRequest& request, const ListSafetyRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSafetyRulesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSafetyRules(request), context);
+      handler(this, *pRequest, ListSafetyRules(*pRequest), context);
     } );
 }
 
@@ -683,17 +700,18 @@ ListTagsForResourceOutcome Route53RecoveryControlConfigClient::ListTagsForResour
 
 ListTagsForResourceOutcomeCallable Route53RecoveryControlConfigClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -714,17 +732,18 @@ TagResourceOutcome Route53RecoveryControlConfigClient::TagResource(const TagReso
 
 TagResourceOutcomeCallable Route53RecoveryControlConfigClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -750,17 +769,18 @@ UntagResourceOutcome Route53RecoveryControlConfigClient::UntagResource(const Unt
 
 UntagResourceOutcomeCallable Route53RecoveryControlConfigClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -775,17 +795,18 @@ UpdateControlPanelOutcome Route53RecoveryControlConfigClient::UpdateControlPanel
 
 UpdateControlPanelOutcomeCallable Route53RecoveryControlConfigClient::UpdateControlPanelCallable(const UpdateControlPanelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateControlPanelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateControlPanel(request); } );
+  std::shared_ptr<UpdateControlPanelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateControlPanelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateControlPanel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::UpdateControlPanelAsync(const UpdateControlPanelRequest& request, const UpdateControlPanelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateControlPanelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateControlPanel(request), context);
+      handler(this, *pRequest, UpdateControlPanel(*pRequest), context);
     } );
 }
 
@@ -800,17 +821,18 @@ UpdateRoutingControlOutcome Route53RecoveryControlConfigClient::UpdateRoutingCon
 
 UpdateRoutingControlOutcomeCallable Route53RecoveryControlConfigClient::UpdateRoutingControlCallable(const UpdateRoutingControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRoutingControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRoutingControl(request); } );
+  std::shared_ptr<UpdateRoutingControlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRoutingControlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateRoutingControl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::UpdateRoutingControlAsync(const UpdateRoutingControlRequest& request, const UpdateRoutingControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateRoutingControlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateRoutingControl(request), context);
+      handler(this, *pRequest, UpdateRoutingControl(*pRequest), context);
     } );
 }
 
@@ -825,17 +847,18 @@ UpdateSafetyRuleOutcome Route53RecoveryControlConfigClient::UpdateSafetyRule(con
 
 UpdateSafetyRuleOutcomeCallable Route53RecoveryControlConfigClient::UpdateSafetyRuleCallable(const UpdateSafetyRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSafetyRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSafetyRule(request); } );
+  std::shared_ptr<UpdateSafetyRuleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSafetyRuleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateSafetyRule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryControlConfigClient::UpdateSafetyRuleAsync(const UpdateSafetyRuleRequest& request, const UpdateSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateSafetyRuleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateSafetyRule(request), context);
+      handler(this, *pRequest, UpdateSafetyRule(*pRequest), context);
     } );
 }
 

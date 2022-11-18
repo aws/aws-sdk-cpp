@@ -178,17 +178,18 @@ AssociateGatewayToServerOutcome BackupGatewayClient::AssociateGatewayToServer(co
 
 AssociateGatewayToServerOutcomeCallable BackupGatewayClient::AssociateGatewayToServerCallable(const AssociateGatewayToServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateGatewayToServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateGatewayToServer(request); } );
+  std::shared_ptr<AssociateGatewayToServerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateGatewayToServerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateGatewayToServer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::AssociateGatewayToServerAsync(const AssociateGatewayToServerRequest& request, const AssociateGatewayToServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateGatewayToServerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateGatewayToServer(request), context);
+      handler(this, *pRequest, AssociateGatewayToServer(*pRequest), context);
     } );
 }
 
@@ -202,17 +203,18 @@ CreateGatewayOutcome BackupGatewayClient::CreateGateway(const CreateGatewayReque
 
 CreateGatewayOutcomeCallable BackupGatewayClient::CreateGatewayCallable(const CreateGatewayRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGateway(request); } );
+  std::shared_ptr<CreateGatewayRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateGatewayOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateGateway(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::CreateGatewayAsync(const CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateGatewayRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateGateway(request), context);
+      handler(this, *pRequest, CreateGateway(*pRequest), context);
     } );
 }
 
@@ -226,17 +228,18 @@ DeleteGatewayOutcome BackupGatewayClient::DeleteGateway(const DeleteGatewayReque
 
 DeleteGatewayOutcomeCallable BackupGatewayClient::DeleteGatewayCallable(const DeleteGatewayRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGateway(request); } );
+  std::shared_ptr<DeleteGatewayRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGatewayOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteGateway(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::DeleteGatewayAsync(const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteGatewayRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteGateway(request), context);
+      handler(this, *pRequest, DeleteGateway(*pRequest), context);
     } );
 }
 
@@ -250,17 +253,18 @@ DeleteHypervisorOutcome BackupGatewayClient::DeleteHypervisor(const DeleteHyperv
 
 DeleteHypervisorOutcomeCallable BackupGatewayClient::DeleteHypervisorCallable(const DeleteHypervisorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteHypervisorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHypervisor(request); } );
+  std::shared_ptr<DeleteHypervisorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteHypervisorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteHypervisor(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::DeleteHypervisorAsync(const DeleteHypervisorRequest& request, const DeleteHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteHypervisorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteHypervisor(request), context);
+      handler(this, *pRequest, DeleteHypervisor(*pRequest), context);
     } );
 }
 
@@ -274,17 +278,18 @@ DisassociateGatewayFromServerOutcome BackupGatewayClient::DisassociateGatewayFro
 
 DisassociateGatewayFromServerOutcomeCallable BackupGatewayClient::DisassociateGatewayFromServerCallable(const DisassociateGatewayFromServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateGatewayFromServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateGatewayFromServer(request); } );
+  std::shared_ptr<DisassociateGatewayFromServerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateGatewayFromServerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateGatewayFromServer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::DisassociateGatewayFromServerAsync(const DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateGatewayFromServerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateGatewayFromServer(request), context);
+      handler(this, *pRequest, DisassociateGatewayFromServer(*pRequest), context);
     } );
 }
 
@@ -298,17 +303,18 @@ GetGatewayOutcome BackupGatewayClient::GetGateway(const GetGatewayRequest& reque
 
 GetGatewayOutcomeCallable BackupGatewayClient::GetGatewayCallable(const GetGatewayRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGateway(request); } );
+  std::shared_ptr<GetGatewayRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetGatewayOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetGateway(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::GetGatewayAsync(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetGatewayRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetGateway(request), context);
+      handler(this, *pRequest, GetGateway(*pRequest), context);
     } );
 }
 
@@ -322,17 +328,18 @@ GetVirtualMachineOutcome BackupGatewayClient::GetVirtualMachine(const GetVirtual
 
 GetVirtualMachineOutcomeCallable BackupGatewayClient::GetVirtualMachineCallable(const GetVirtualMachineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetVirtualMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVirtualMachine(request); } );
+  std::shared_ptr<GetVirtualMachineRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetVirtualMachineOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetVirtualMachine(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::GetVirtualMachineAsync(const GetVirtualMachineRequest& request, const GetVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetVirtualMachineRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetVirtualMachine(request), context);
+      handler(this, *pRequest, GetVirtualMachine(*pRequest), context);
     } );
 }
 
@@ -346,17 +353,18 @@ ImportHypervisorConfigurationOutcome BackupGatewayClient::ImportHypervisorConfig
 
 ImportHypervisorConfigurationOutcomeCallable BackupGatewayClient::ImportHypervisorConfigurationCallable(const ImportHypervisorConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportHypervisorConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportHypervisorConfiguration(request); } );
+  std::shared_ptr<ImportHypervisorConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ImportHypervisorConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ImportHypervisorConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::ImportHypervisorConfigurationAsync(const ImportHypervisorConfigurationRequest& request, const ImportHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ImportHypervisorConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ImportHypervisorConfiguration(request), context);
+      handler(this, *pRequest, ImportHypervisorConfiguration(*pRequest), context);
     } );
 }
 
@@ -370,17 +378,18 @@ ListGatewaysOutcome BackupGatewayClient::ListGateways(const ListGatewaysRequest&
 
 ListGatewaysOutcomeCallable BackupGatewayClient::ListGatewaysCallable(const ListGatewaysRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGatewaysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGateways(request); } );
+  std::shared_ptr<ListGatewaysRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListGatewaysOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListGateways(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::ListGatewaysAsync(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListGatewaysRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListGateways(request), context);
+      handler(this, *pRequest, ListGateways(*pRequest), context);
     } );
 }
 
@@ -394,17 +403,18 @@ ListHypervisorsOutcome BackupGatewayClient::ListHypervisors(const ListHypervisor
 
 ListHypervisorsOutcomeCallable BackupGatewayClient::ListHypervisorsCallable(const ListHypervisorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListHypervisorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHypervisors(request); } );
+  std::shared_ptr<ListHypervisorsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListHypervisorsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListHypervisors(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::ListHypervisorsAsync(const ListHypervisorsRequest& request, const ListHypervisorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListHypervisorsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListHypervisors(request), context);
+      handler(this, *pRequest, ListHypervisors(*pRequest), context);
     } );
 }
 
@@ -418,17 +428,18 @@ ListTagsForResourceOutcome BackupGatewayClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable BackupGatewayClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -442,17 +453,18 @@ ListVirtualMachinesOutcome BackupGatewayClient::ListVirtualMachines(const ListVi
 
 ListVirtualMachinesOutcomeCallable BackupGatewayClient::ListVirtualMachinesCallable(const ListVirtualMachinesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVirtualMachinesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVirtualMachines(request); } );
+  std::shared_ptr<ListVirtualMachinesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListVirtualMachinesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListVirtualMachines(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::ListVirtualMachinesAsync(const ListVirtualMachinesRequest& request, const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListVirtualMachinesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListVirtualMachines(request), context);
+      handler(this, *pRequest, ListVirtualMachines(*pRequest), context);
     } );
 }
 
@@ -466,17 +478,18 @@ PutMaintenanceStartTimeOutcome BackupGatewayClient::PutMaintenanceStartTime(cons
 
 PutMaintenanceStartTimeOutcomeCallable BackupGatewayClient::PutMaintenanceStartTimeCallable(const PutMaintenanceStartTimeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutMaintenanceStartTimeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutMaintenanceStartTime(request); } );
+  std::shared_ptr<PutMaintenanceStartTimeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutMaintenanceStartTimeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutMaintenanceStartTime(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::PutMaintenanceStartTimeAsync(const PutMaintenanceStartTimeRequest& request, const PutMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutMaintenanceStartTimeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutMaintenanceStartTime(request), context);
+      handler(this, *pRequest, PutMaintenanceStartTime(*pRequest), context);
     } );
 }
 
@@ -490,17 +503,18 @@ TagResourceOutcome BackupGatewayClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable BackupGatewayClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -514,17 +528,18 @@ TestHypervisorConfigurationOutcome BackupGatewayClient::TestHypervisorConfigurat
 
 TestHypervisorConfigurationOutcomeCallable BackupGatewayClient::TestHypervisorConfigurationCallable(const TestHypervisorConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TestHypervisorConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestHypervisorConfiguration(request); } );
+  std::shared_ptr<TestHypervisorConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TestHypervisorConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TestHypervisorConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::TestHypervisorConfigurationAsync(const TestHypervisorConfigurationRequest& request, const TestHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TestHypervisorConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TestHypervisorConfiguration(request), context);
+      handler(this, *pRequest, TestHypervisorConfiguration(*pRequest), context);
     } );
 }
 
@@ -538,17 +553,18 @@ UntagResourceOutcome BackupGatewayClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable BackupGatewayClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -562,17 +578,18 @@ UpdateGatewayInformationOutcome BackupGatewayClient::UpdateGatewayInformation(co
 
 UpdateGatewayInformationOutcomeCallable BackupGatewayClient::UpdateGatewayInformationCallable(const UpdateGatewayInformationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewayInformationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGatewayInformation(request); } );
+  std::shared_ptr<UpdateGatewayInformationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewayInformationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateGatewayInformation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::UpdateGatewayInformationAsync(const UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateGatewayInformationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateGatewayInformation(request), context);
+      handler(this, *pRequest, UpdateGatewayInformation(*pRequest), context);
     } );
 }
 
@@ -586,17 +603,18 @@ UpdateGatewaySoftwareNowOutcome BackupGatewayClient::UpdateGatewaySoftwareNow(co
 
 UpdateGatewaySoftwareNowOutcomeCallable BackupGatewayClient::UpdateGatewaySoftwareNowCallable(const UpdateGatewaySoftwareNowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewaySoftwareNowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGatewaySoftwareNow(request); } );
+  std::shared_ptr<UpdateGatewaySoftwareNowRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewaySoftwareNowOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateGatewaySoftwareNow(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::UpdateGatewaySoftwareNowAsync(const UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateGatewaySoftwareNowRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateGatewaySoftwareNow(request), context);
+      handler(this, *pRequest, UpdateGatewaySoftwareNow(*pRequest), context);
     } );
 }
 
@@ -610,17 +628,18 @@ UpdateHypervisorOutcome BackupGatewayClient::UpdateHypervisor(const UpdateHyperv
 
 UpdateHypervisorOutcomeCallable BackupGatewayClient::UpdateHypervisorCallable(const UpdateHypervisorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateHypervisorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateHypervisor(request); } );
+  std::shared_ptr<UpdateHypervisorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateHypervisorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateHypervisor(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BackupGatewayClient::UpdateHypervisorAsync(const UpdateHypervisorRequest& request, const UpdateHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateHypervisorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateHypervisor(request), context);
+      handler(this, *pRequest, UpdateHypervisor(*pRequest), context);
     } );
 }
 

@@ -182,17 +182,18 @@ CreateActivityOutcome SFNClient::CreateActivity(const CreateActivityRequest& req
 
 CreateActivityOutcomeCallable SFNClient::CreateActivityCallable(const CreateActivityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateActivityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateActivity(request); } );
+  std::shared_ptr<CreateActivityRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateActivityOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateActivity(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::CreateActivityAsync(const CreateActivityRequest& request, const CreateActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateActivityRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateActivity(request), context);
+      handler(this, *pRequest, CreateActivity(*pRequest), context);
     } );
 }
 
@@ -206,17 +207,18 @@ CreateStateMachineOutcome SFNClient::CreateStateMachine(const CreateStateMachine
 
 CreateStateMachineOutcomeCallable SFNClient::CreateStateMachineCallable(const CreateStateMachineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStateMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStateMachine(request); } );
+  std::shared_ptr<CreateStateMachineRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateStateMachineOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateStateMachine(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::CreateStateMachineAsync(const CreateStateMachineRequest& request, const CreateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateStateMachineRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateStateMachine(request), context);
+      handler(this, *pRequest, CreateStateMachine(*pRequest), context);
     } );
 }
 
@@ -230,17 +232,18 @@ DeleteActivityOutcome SFNClient::DeleteActivity(const DeleteActivityRequest& req
 
 DeleteActivityOutcomeCallable SFNClient::DeleteActivityCallable(const DeleteActivityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteActivityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteActivity(request); } );
+  std::shared_ptr<DeleteActivityRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteActivityOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteActivity(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::DeleteActivityAsync(const DeleteActivityRequest& request, const DeleteActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteActivityRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteActivity(request), context);
+      handler(this, *pRequest, DeleteActivity(*pRequest), context);
     } );
 }
 
@@ -254,17 +257,18 @@ DeleteStateMachineOutcome SFNClient::DeleteStateMachine(const DeleteStateMachine
 
 DeleteStateMachineOutcomeCallable SFNClient::DeleteStateMachineCallable(const DeleteStateMachineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStateMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStateMachine(request); } );
+  std::shared_ptr<DeleteStateMachineRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStateMachineOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteStateMachine(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::DeleteStateMachineAsync(const DeleteStateMachineRequest& request, const DeleteStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteStateMachineRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteStateMachine(request), context);
+      handler(this, *pRequest, DeleteStateMachine(*pRequest), context);
     } );
 }
 
@@ -278,17 +282,18 @@ DescribeActivityOutcome SFNClient::DescribeActivity(const DescribeActivityReques
 
 DescribeActivityOutcomeCallable SFNClient::DescribeActivityCallable(const DescribeActivityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeActivityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeActivity(request); } );
+  std::shared_ptr<DescribeActivityRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeActivityOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeActivity(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::DescribeActivityAsync(const DescribeActivityRequest& request, const DescribeActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeActivityRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeActivity(request), context);
+      handler(this, *pRequest, DescribeActivity(*pRequest), context);
     } );
 }
 
@@ -302,17 +307,18 @@ DescribeExecutionOutcome SFNClient::DescribeExecution(const DescribeExecutionReq
 
 DescribeExecutionOutcomeCallable SFNClient::DescribeExecutionCallable(const DescribeExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExecution(request); } );
+  std::shared_ptr<DescribeExecutionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeExecutionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeExecution(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeExecutionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeExecution(request), context);
+      handler(this, *pRequest, DescribeExecution(*pRequest), context);
     } );
 }
 
@@ -326,17 +332,18 @@ DescribeStateMachineOutcome SFNClient::DescribeStateMachine(const DescribeStateM
 
 DescribeStateMachineOutcomeCallable SFNClient::DescribeStateMachineCallable(const DescribeStateMachineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeStateMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStateMachine(request); } );
+  std::shared_ptr<DescribeStateMachineRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStateMachineOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeStateMachine(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::DescribeStateMachineAsync(const DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeStateMachineRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeStateMachine(request), context);
+      handler(this, *pRequest, DescribeStateMachine(*pRequest), context);
     } );
 }
 
@@ -350,17 +357,18 @@ DescribeStateMachineForExecutionOutcome SFNClient::DescribeStateMachineForExecut
 
 DescribeStateMachineForExecutionOutcomeCallable SFNClient::DescribeStateMachineForExecutionCallable(const DescribeStateMachineForExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeStateMachineForExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStateMachineForExecution(request); } );
+  std::shared_ptr<DescribeStateMachineForExecutionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStateMachineForExecutionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeStateMachineForExecution(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::DescribeStateMachineForExecutionAsync(const DescribeStateMachineForExecutionRequest& request, const DescribeStateMachineForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeStateMachineForExecutionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeStateMachineForExecution(request), context);
+      handler(this, *pRequest, DescribeStateMachineForExecution(*pRequest), context);
     } );
 }
 
@@ -374,17 +382,18 @@ GetActivityTaskOutcome SFNClient::GetActivityTask(const GetActivityTaskRequest& 
 
 GetActivityTaskOutcomeCallable SFNClient::GetActivityTaskCallable(const GetActivityTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetActivityTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetActivityTask(request); } );
+  std::shared_ptr<GetActivityTaskRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetActivityTaskOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetActivityTask(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::GetActivityTaskAsync(const GetActivityTaskRequest& request, const GetActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetActivityTaskRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetActivityTask(request), context);
+      handler(this, *pRequest, GetActivityTask(*pRequest), context);
     } );
 }
 
@@ -398,17 +407,18 @@ GetExecutionHistoryOutcome SFNClient::GetExecutionHistory(const GetExecutionHist
 
 GetExecutionHistoryOutcomeCallable SFNClient::GetExecutionHistoryCallable(const GetExecutionHistoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExecutionHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExecutionHistory(request); } );
+  std::shared_ptr<GetExecutionHistoryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetExecutionHistoryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetExecutionHistory(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::GetExecutionHistoryAsync(const GetExecutionHistoryRequest& request, const GetExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetExecutionHistoryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetExecutionHistory(request), context);
+      handler(this, *pRequest, GetExecutionHistory(*pRequest), context);
     } );
 }
 
@@ -422,17 +432,18 @@ ListActivitiesOutcome SFNClient::ListActivities(const ListActivitiesRequest& req
 
 ListActivitiesOutcomeCallable SFNClient::ListActivitiesCallable(const ListActivitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListActivitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListActivities(request); } );
+  std::shared_ptr<ListActivitiesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListActivitiesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListActivities(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::ListActivitiesAsync(const ListActivitiesRequest& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListActivitiesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListActivities(request), context);
+      handler(this, *pRequest, ListActivities(*pRequest), context);
     } );
 }
 
@@ -446,17 +457,18 @@ ListExecutionsOutcome SFNClient::ListExecutions(const ListExecutionsRequest& req
 
 ListExecutionsOutcomeCallable SFNClient::ListExecutionsCallable(const ListExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExecutions(request); } );
+  std::shared_ptr<ListExecutionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListExecutionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListExecutions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::ListExecutionsAsync(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListExecutionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListExecutions(request), context);
+      handler(this, *pRequest, ListExecutions(*pRequest), context);
     } );
 }
 
@@ -470,17 +482,18 @@ ListStateMachinesOutcome SFNClient::ListStateMachines(const ListStateMachinesReq
 
 ListStateMachinesOutcomeCallable SFNClient::ListStateMachinesCallable(const ListStateMachinesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStateMachinesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStateMachines(request); } );
+  std::shared_ptr<ListStateMachinesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListStateMachinesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListStateMachines(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::ListStateMachinesAsync(const ListStateMachinesRequest& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListStateMachinesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListStateMachines(request), context);
+      handler(this, *pRequest, ListStateMachines(*pRequest), context);
     } );
 }
 
@@ -494,17 +507,18 @@ ListTagsForResourceOutcome SFNClient::ListTagsForResource(const ListTagsForResou
 
 ListTagsForResourceOutcomeCallable SFNClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -518,17 +532,18 @@ SendTaskFailureOutcome SFNClient::SendTaskFailure(const SendTaskFailureRequest& 
 
 SendTaskFailureOutcomeCallable SFNClient::SendTaskFailureCallable(const SendTaskFailureRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendTaskFailureOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendTaskFailure(request); } );
+  std::shared_ptr<SendTaskFailureRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SendTaskFailureOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SendTaskFailure(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::SendTaskFailureAsync(const SendTaskFailureRequest& request, const SendTaskFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SendTaskFailureRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SendTaskFailure(request), context);
+      handler(this, *pRequest, SendTaskFailure(*pRequest), context);
     } );
 }
 
@@ -542,17 +557,18 @@ SendTaskHeartbeatOutcome SFNClient::SendTaskHeartbeat(const SendTaskHeartbeatReq
 
 SendTaskHeartbeatOutcomeCallable SFNClient::SendTaskHeartbeatCallable(const SendTaskHeartbeatRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendTaskHeartbeatOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendTaskHeartbeat(request); } );
+  std::shared_ptr<SendTaskHeartbeatRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SendTaskHeartbeatOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SendTaskHeartbeat(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::SendTaskHeartbeatAsync(const SendTaskHeartbeatRequest& request, const SendTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SendTaskHeartbeatRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SendTaskHeartbeat(request), context);
+      handler(this, *pRequest, SendTaskHeartbeat(*pRequest), context);
     } );
 }
 
@@ -566,17 +582,18 @@ SendTaskSuccessOutcome SFNClient::SendTaskSuccess(const SendTaskSuccessRequest& 
 
 SendTaskSuccessOutcomeCallable SFNClient::SendTaskSuccessCallable(const SendTaskSuccessRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendTaskSuccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendTaskSuccess(request); } );
+  std::shared_ptr<SendTaskSuccessRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SendTaskSuccessOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SendTaskSuccess(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::SendTaskSuccessAsync(const SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SendTaskSuccessRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SendTaskSuccess(request), context);
+      handler(this, *pRequest, SendTaskSuccess(*pRequest), context);
     } );
 }
 
@@ -590,17 +607,18 @@ StartExecutionOutcome SFNClient::StartExecution(const StartExecutionRequest& req
 
 StartExecutionOutcomeCallable SFNClient::StartExecutionCallable(const StartExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartExecution(request); } );
+  std::shared_ptr<StartExecutionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartExecutionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartExecution(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::StartExecutionAsync(const StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartExecutionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartExecution(request), context);
+      handler(this, *pRequest, StartExecution(*pRequest), context);
     } );
 }
 
@@ -616,17 +634,18 @@ StartSyncExecutionOutcome SFNClient::StartSyncExecution(const StartSyncExecution
 
 StartSyncExecutionOutcomeCallable SFNClient::StartSyncExecutionCallable(const StartSyncExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartSyncExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSyncExecution(request); } );
+  std::shared_ptr<StartSyncExecutionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartSyncExecutionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartSyncExecution(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::StartSyncExecutionAsync(const StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartSyncExecutionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartSyncExecution(request), context);
+      handler(this, *pRequest, StartSyncExecution(*pRequest), context);
     } );
 }
 
@@ -640,17 +659,18 @@ StopExecutionOutcome SFNClient::StopExecution(const StopExecutionRequest& reques
 
 StopExecutionOutcomeCallable SFNClient::StopExecutionCallable(const StopExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopExecution(request); } );
+  std::shared_ptr<StopExecutionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopExecutionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopExecution(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::StopExecutionAsync(const StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopExecutionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopExecution(request), context);
+      handler(this, *pRequest, StopExecution(*pRequest), context);
     } );
 }
 
@@ -664,17 +684,18 @@ TagResourceOutcome SFNClient::TagResource(const TagResourceRequest& request) con
 
 TagResourceOutcomeCallable SFNClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -688,17 +709,18 @@ UntagResourceOutcome SFNClient::UntagResource(const UntagResourceRequest& reques
 
 UntagResourceOutcomeCallable SFNClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -712,17 +734,18 @@ UpdateStateMachineOutcome SFNClient::UpdateStateMachine(const UpdateStateMachine
 
 UpdateStateMachineOutcomeCallable SFNClient::UpdateStateMachineCallable(const UpdateStateMachineRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStateMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStateMachine(request); } );
+  std::shared_ptr<UpdateStateMachineRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStateMachineOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateStateMachine(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SFNClient::UpdateStateMachineAsync(const UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateStateMachineRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateStateMachine(request), context);
+      handler(this, *pRequest, UpdateStateMachine(*pRequest), context);
     } );
 }
 

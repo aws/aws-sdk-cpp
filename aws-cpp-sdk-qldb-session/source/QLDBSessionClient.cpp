@@ -160,17 +160,18 @@ SendCommandOutcome QLDBSessionClient::SendCommand(const SendCommandRequest& requ
 
 SendCommandOutcomeCallable QLDBSessionClient::SendCommandCallable(const SendCommandRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendCommandOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendCommand(request); } );
+  std::shared_ptr<SendCommandRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SendCommandOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SendCommand(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void QLDBSessionClient::SendCommandAsync(const SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SendCommandRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SendCommand(request), context);
+      handler(this, *pRequest, SendCommand(*pRequest), context);
     } );
 }
 

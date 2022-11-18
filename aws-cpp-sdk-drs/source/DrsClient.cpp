@@ -192,17 +192,18 @@ CreateExtendedSourceServerOutcome DrsClient::CreateExtendedSourceServer(const Cr
 
 CreateExtendedSourceServerOutcomeCallable DrsClient::CreateExtendedSourceServerCallable(const CreateExtendedSourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateExtendedSourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExtendedSourceServer(request); } );
+  std::shared_ptr<CreateExtendedSourceServerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateExtendedSourceServerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateExtendedSourceServer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::CreateExtendedSourceServerAsync(const CreateExtendedSourceServerRequest& request, const CreateExtendedSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateExtendedSourceServerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateExtendedSourceServer(request), context);
+      handler(this, *pRequest, CreateExtendedSourceServer(*pRequest), context);
     } );
 }
 
@@ -217,17 +218,18 @@ CreateReplicationConfigurationTemplateOutcome DrsClient::CreateReplicationConfig
 
 CreateReplicationConfigurationTemplateOutcomeCallable DrsClient::CreateReplicationConfigurationTemplateCallable(const CreateReplicationConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateReplicationConfigurationTemplate(request); } );
+  std::shared_ptr<CreateReplicationConfigurationTemplateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateReplicationConfigurationTemplate(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::CreateReplicationConfigurationTemplateAsync(const CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateReplicationConfigurationTemplateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateReplicationConfigurationTemplate(request), context);
+      handler(this, *pRequest, CreateReplicationConfigurationTemplate(*pRequest), context);
     } );
 }
 
@@ -242,17 +244,18 @@ DeleteJobOutcome DrsClient::DeleteJob(const DeleteJobRequest& request) const
 
 DeleteJobOutcomeCallable DrsClient::DeleteJobCallable(const DeleteJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJob(request); } );
+  std::shared_ptr<DeleteJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteJob(request), context);
+      handler(this, *pRequest, DeleteJob(*pRequest), context);
     } );
 }
 
@@ -267,17 +270,18 @@ DeleteRecoveryInstanceOutcome DrsClient::DeleteRecoveryInstance(const DeleteReco
 
 DeleteRecoveryInstanceOutcomeCallable DrsClient::DeleteRecoveryInstanceCallable(const DeleteRecoveryInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRecoveryInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecoveryInstance(request); } );
+  std::shared_ptr<DeleteRecoveryInstanceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRecoveryInstanceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteRecoveryInstance(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DeleteRecoveryInstanceAsync(const DeleteRecoveryInstanceRequest& request, const DeleteRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteRecoveryInstanceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteRecoveryInstance(request), context);
+      handler(this, *pRequest, DeleteRecoveryInstance(*pRequest), context);
     } );
 }
 
@@ -292,17 +296,18 @@ DeleteReplicationConfigurationTemplateOutcome DrsClient::DeleteReplicationConfig
 
 DeleteReplicationConfigurationTemplateOutcomeCallable DrsClient::DeleteReplicationConfigurationTemplateCallable(const DeleteReplicationConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReplicationConfigurationTemplate(request); } );
+  std::shared_ptr<DeleteReplicationConfigurationTemplateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteReplicationConfigurationTemplate(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DeleteReplicationConfigurationTemplateAsync(const DeleteReplicationConfigurationTemplateRequest& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteReplicationConfigurationTemplateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteReplicationConfigurationTemplate(request), context);
+      handler(this, *pRequest, DeleteReplicationConfigurationTemplate(*pRequest), context);
     } );
 }
 
@@ -317,17 +322,18 @@ DeleteSourceServerOutcome DrsClient::DeleteSourceServer(const DeleteSourceServer
 
 DeleteSourceServerOutcomeCallable DrsClient::DeleteSourceServerCallable(const DeleteSourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSourceServer(request); } );
+  std::shared_ptr<DeleteSourceServerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSourceServerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteSourceServer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DeleteSourceServerAsync(const DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteSourceServerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteSourceServer(request), context);
+      handler(this, *pRequest, DeleteSourceServer(*pRequest), context);
     } );
 }
 
@@ -342,17 +348,18 @@ DescribeJobLogItemsOutcome DrsClient::DescribeJobLogItems(const DescribeJobLogIt
 
 DescribeJobLogItemsOutcomeCallable DrsClient::DescribeJobLogItemsCallable(const DescribeJobLogItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobLogItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobLogItems(request); } );
+  std::shared_ptr<DescribeJobLogItemsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeJobLogItemsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeJobLogItems(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DescribeJobLogItemsAsync(const DescribeJobLogItemsRequest& request, const DescribeJobLogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeJobLogItemsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeJobLogItems(request), context);
+      handler(this, *pRequest, DescribeJobLogItems(*pRequest), context);
     } );
 }
 
@@ -367,17 +374,18 @@ DescribeJobsOutcome DrsClient::DescribeJobs(const DescribeJobsRequest& request) 
 
 DescribeJobsOutcomeCallable DrsClient::DescribeJobsCallable(const DescribeJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobs(request); } );
+  std::shared_ptr<DescribeJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DescribeJobsAsync(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeJobs(request), context);
+      handler(this, *pRequest, DescribeJobs(*pRequest), context);
     } );
 }
 
@@ -392,17 +400,18 @@ DescribeRecoveryInstancesOutcome DrsClient::DescribeRecoveryInstances(const Desc
 
 DescribeRecoveryInstancesOutcomeCallable DrsClient::DescribeRecoveryInstancesCallable(const DescribeRecoveryInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRecoveryInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRecoveryInstances(request); } );
+  std::shared_ptr<DescribeRecoveryInstancesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRecoveryInstancesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeRecoveryInstances(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DescribeRecoveryInstancesAsync(const DescribeRecoveryInstancesRequest& request, const DescribeRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeRecoveryInstancesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeRecoveryInstances(request), context);
+      handler(this, *pRequest, DescribeRecoveryInstances(*pRequest), context);
     } );
 }
 
@@ -417,17 +426,18 @@ DescribeRecoverySnapshotsOutcome DrsClient::DescribeRecoverySnapshots(const Desc
 
 DescribeRecoverySnapshotsOutcomeCallable DrsClient::DescribeRecoverySnapshotsCallable(const DescribeRecoverySnapshotsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRecoverySnapshotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRecoverySnapshots(request); } );
+  std::shared_ptr<DescribeRecoverySnapshotsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRecoverySnapshotsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeRecoverySnapshots(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DescribeRecoverySnapshotsAsync(const DescribeRecoverySnapshotsRequest& request, const DescribeRecoverySnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeRecoverySnapshotsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeRecoverySnapshots(request), context);
+      handler(this, *pRequest, DescribeRecoverySnapshots(*pRequest), context);
     } );
 }
 
@@ -442,17 +452,18 @@ DescribeReplicationConfigurationTemplatesOutcome DrsClient::DescribeReplicationC
 
 DescribeReplicationConfigurationTemplatesOutcomeCallable DrsClient::DescribeReplicationConfigurationTemplatesCallable(const DescribeReplicationConfigurationTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeReplicationConfigurationTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReplicationConfigurationTemplates(request); } );
+  std::shared_ptr<DescribeReplicationConfigurationTemplatesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReplicationConfigurationTemplatesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeReplicationConfigurationTemplates(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DescribeReplicationConfigurationTemplatesAsync(const DescribeReplicationConfigurationTemplatesRequest& request, const DescribeReplicationConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeReplicationConfigurationTemplatesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeReplicationConfigurationTemplates(request), context);
+      handler(this, *pRequest, DescribeReplicationConfigurationTemplates(*pRequest), context);
     } );
 }
 
@@ -467,17 +478,18 @@ DescribeSourceServersOutcome DrsClient::DescribeSourceServers(const DescribeSour
 
 DescribeSourceServersOutcomeCallable DrsClient::DescribeSourceServersCallable(const DescribeSourceServersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSourceServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSourceServers(request); } );
+  std::shared_ptr<DescribeSourceServersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSourceServersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeSourceServers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DescribeSourceServersAsync(const DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeSourceServersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeSourceServers(request), context);
+      handler(this, *pRequest, DescribeSourceServers(*pRequest), context);
     } );
 }
 
@@ -492,17 +504,18 @@ DisconnectRecoveryInstanceOutcome DrsClient::DisconnectRecoveryInstance(const Di
 
 DisconnectRecoveryInstanceOutcomeCallable DrsClient::DisconnectRecoveryInstanceCallable(const DisconnectRecoveryInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisconnectRecoveryInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisconnectRecoveryInstance(request); } );
+  std::shared_ptr<DisconnectRecoveryInstanceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisconnectRecoveryInstanceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisconnectRecoveryInstance(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DisconnectRecoveryInstanceAsync(const DisconnectRecoveryInstanceRequest& request, const DisconnectRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisconnectRecoveryInstanceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisconnectRecoveryInstance(request), context);
+      handler(this, *pRequest, DisconnectRecoveryInstance(*pRequest), context);
     } );
 }
 
@@ -517,17 +530,18 @@ DisconnectSourceServerOutcome DrsClient::DisconnectSourceServer(const Disconnect
 
 DisconnectSourceServerOutcomeCallable DrsClient::DisconnectSourceServerCallable(const DisconnectSourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisconnectSourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisconnectSourceServer(request); } );
+  std::shared_ptr<DisconnectSourceServerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisconnectSourceServerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisconnectSourceServer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::DisconnectSourceServerAsync(const DisconnectSourceServerRequest& request, const DisconnectSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisconnectSourceServerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisconnectSourceServer(request), context);
+      handler(this, *pRequest, DisconnectSourceServer(*pRequest), context);
     } );
 }
 
@@ -542,17 +556,18 @@ GetFailbackReplicationConfigurationOutcome DrsClient::GetFailbackReplicationConf
 
 GetFailbackReplicationConfigurationOutcomeCallable DrsClient::GetFailbackReplicationConfigurationCallable(const GetFailbackReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFailbackReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFailbackReplicationConfiguration(request); } );
+  std::shared_ptr<GetFailbackReplicationConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetFailbackReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetFailbackReplicationConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::GetFailbackReplicationConfigurationAsync(const GetFailbackReplicationConfigurationRequest& request, const GetFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetFailbackReplicationConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetFailbackReplicationConfiguration(request), context);
+      handler(this, *pRequest, GetFailbackReplicationConfiguration(*pRequest), context);
     } );
 }
 
@@ -567,17 +582,18 @@ GetLaunchConfigurationOutcome DrsClient::GetLaunchConfiguration(const GetLaunchC
 
 GetLaunchConfigurationOutcomeCallable DrsClient::GetLaunchConfigurationCallable(const GetLaunchConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLaunchConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLaunchConfiguration(request); } );
+  std::shared_ptr<GetLaunchConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetLaunchConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetLaunchConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::GetLaunchConfigurationAsync(const GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetLaunchConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetLaunchConfiguration(request), context);
+      handler(this, *pRequest, GetLaunchConfiguration(*pRequest), context);
     } );
 }
 
@@ -592,17 +608,18 @@ GetReplicationConfigurationOutcome DrsClient::GetReplicationConfiguration(const 
 
 GetReplicationConfigurationOutcomeCallable DrsClient::GetReplicationConfigurationCallable(const GetReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReplicationConfiguration(request); } );
+  std::shared_ptr<GetReplicationConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetReplicationConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::GetReplicationConfigurationAsync(const GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetReplicationConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetReplicationConfiguration(request), context);
+      handler(this, *pRequest, GetReplicationConfiguration(*pRequest), context);
     } );
 }
 
@@ -617,17 +634,18 @@ InitializeServiceOutcome DrsClient::InitializeService(const InitializeServiceReq
 
 InitializeServiceOutcomeCallable DrsClient::InitializeServiceCallable(const InitializeServiceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InitializeServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InitializeService(request); } );
+  std::shared_ptr<InitializeServiceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< InitializeServiceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->InitializeService(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::InitializeServiceAsync(const InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<InitializeServiceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, InitializeService(request), context);
+      handler(this, *pRequest, InitializeService(*pRequest), context);
     } );
 }
 
@@ -642,17 +660,18 @@ ListExtensibleSourceServersOutcome DrsClient::ListExtensibleSourceServers(const 
 
 ListExtensibleSourceServersOutcomeCallable DrsClient::ListExtensibleSourceServersCallable(const ListExtensibleSourceServersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExtensibleSourceServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExtensibleSourceServers(request); } );
+  std::shared_ptr<ListExtensibleSourceServersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListExtensibleSourceServersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListExtensibleSourceServers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::ListExtensibleSourceServersAsync(const ListExtensibleSourceServersRequest& request, const ListExtensibleSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListExtensibleSourceServersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListExtensibleSourceServers(request), context);
+      handler(this, *pRequest, ListExtensibleSourceServers(*pRequest), context);
     } );
 }
 
@@ -667,17 +686,18 @@ ListStagingAccountsOutcome DrsClient::ListStagingAccounts(const ListStagingAccou
 
 ListStagingAccountsOutcomeCallable DrsClient::ListStagingAccountsCallable(const ListStagingAccountsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStagingAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStagingAccounts(request); } );
+  std::shared_ptr<ListStagingAccountsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListStagingAccountsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListStagingAccounts(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::ListStagingAccountsAsync(const ListStagingAccountsRequest& request, const ListStagingAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListStagingAccountsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListStagingAccounts(request), context);
+      handler(this, *pRequest, ListStagingAccounts(*pRequest), context);
     } );
 }
 
@@ -698,17 +718,18 @@ ListTagsForResourceOutcome DrsClient::ListTagsForResource(const ListTagsForResou
 
 ListTagsForResourceOutcomeCallable DrsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -723,17 +744,18 @@ RetryDataReplicationOutcome DrsClient::RetryDataReplication(const RetryDataRepli
 
 RetryDataReplicationOutcomeCallable DrsClient::RetryDataReplicationCallable(const RetryDataReplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RetryDataReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RetryDataReplication(request); } );
+  std::shared_ptr<RetryDataReplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RetryDataReplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RetryDataReplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::RetryDataReplicationAsync(const RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RetryDataReplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RetryDataReplication(request), context);
+      handler(this, *pRequest, RetryDataReplication(*pRequest), context);
     } );
 }
 
@@ -748,17 +770,18 @@ StartFailbackLaunchOutcome DrsClient::StartFailbackLaunch(const StartFailbackLau
 
 StartFailbackLaunchOutcomeCallable DrsClient::StartFailbackLaunchCallable(const StartFailbackLaunchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartFailbackLaunchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartFailbackLaunch(request); } );
+  std::shared_ptr<StartFailbackLaunchRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartFailbackLaunchOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartFailbackLaunch(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::StartFailbackLaunchAsync(const StartFailbackLaunchRequest& request, const StartFailbackLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartFailbackLaunchRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartFailbackLaunch(request), context);
+      handler(this, *pRequest, StartFailbackLaunch(*pRequest), context);
     } );
 }
 
@@ -773,17 +796,18 @@ StartRecoveryOutcome DrsClient::StartRecovery(const StartRecoveryRequest& reques
 
 StartRecoveryOutcomeCallable DrsClient::StartRecoveryCallable(const StartRecoveryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartRecoveryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartRecovery(request); } );
+  std::shared_ptr<StartRecoveryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartRecoveryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartRecovery(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::StartRecoveryAsync(const StartRecoveryRequest& request, const StartRecoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartRecoveryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartRecovery(request), context);
+      handler(this, *pRequest, StartRecovery(*pRequest), context);
     } );
 }
 
@@ -798,17 +822,18 @@ StopFailbackOutcome DrsClient::StopFailback(const StopFailbackRequest& request) 
 
 StopFailbackOutcomeCallable DrsClient::StopFailbackCallable(const StopFailbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopFailbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopFailback(request); } );
+  std::shared_ptr<StopFailbackRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopFailbackOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopFailback(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::StopFailbackAsync(const StopFailbackRequest& request, const StopFailbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopFailbackRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopFailback(request), context);
+      handler(this, *pRequest, StopFailback(*pRequest), context);
     } );
 }
 
@@ -829,17 +854,18 @@ TagResourceOutcome DrsClient::TagResource(const TagResourceRequest& request) con
 
 TagResourceOutcomeCallable DrsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -854,17 +880,18 @@ TerminateRecoveryInstancesOutcome DrsClient::TerminateRecoveryInstances(const Te
 
 TerminateRecoveryInstancesOutcomeCallable DrsClient::TerminateRecoveryInstancesCallable(const TerminateRecoveryInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TerminateRecoveryInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TerminateRecoveryInstances(request); } );
+  std::shared_ptr<TerminateRecoveryInstancesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TerminateRecoveryInstancesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TerminateRecoveryInstances(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::TerminateRecoveryInstancesAsync(const TerminateRecoveryInstancesRequest& request, const TerminateRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TerminateRecoveryInstancesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TerminateRecoveryInstances(request), context);
+      handler(this, *pRequest, TerminateRecoveryInstances(*pRequest), context);
     } );
 }
 
@@ -890,17 +917,18 @@ UntagResourceOutcome DrsClient::UntagResource(const UntagResourceRequest& reques
 
 UntagResourceOutcomeCallable DrsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -915,17 +943,18 @@ UpdateFailbackReplicationConfigurationOutcome DrsClient::UpdateFailbackReplicati
 
 UpdateFailbackReplicationConfigurationOutcomeCallable DrsClient::UpdateFailbackReplicationConfigurationCallable(const UpdateFailbackReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFailbackReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFailbackReplicationConfiguration(request); } );
+  std::shared_ptr<UpdateFailbackReplicationConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFailbackReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateFailbackReplicationConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::UpdateFailbackReplicationConfigurationAsync(const UpdateFailbackReplicationConfigurationRequest& request, const UpdateFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateFailbackReplicationConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateFailbackReplicationConfiguration(request), context);
+      handler(this, *pRequest, UpdateFailbackReplicationConfiguration(*pRequest), context);
     } );
 }
 
@@ -940,17 +969,18 @@ UpdateLaunchConfigurationOutcome DrsClient::UpdateLaunchConfiguration(const Upda
 
 UpdateLaunchConfigurationOutcomeCallable DrsClient::UpdateLaunchConfigurationCallable(const UpdateLaunchConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLaunchConfiguration(request); } );
+  std::shared_ptr<UpdateLaunchConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateLaunchConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::UpdateLaunchConfigurationAsync(const UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateLaunchConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateLaunchConfiguration(request), context);
+      handler(this, *pRequest, UpdateLaunchConfiguration(*pRequest), context);
     } );
 }
 
@@ -965,17 +995,18 @@ UpdateReplicationConfigurationOutcome DrsClient::UpdateReplicationConfiguration(
 
 UpdateReplicationConfigurationOutcomeCallable DrsClient::UpdateReplicationConfigurationCallable(const UpdateReplicationConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReplicationConfiguration(request); } );
+  std::shared_ptr<UpdateReplicationConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateReplicationConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::UpdateReplicationConfigurationAsync(const UpdateReplicationConfigurationRequest& request, const UpdateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateReplicationConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateReplicationConfiguration(request), context);
+      handler(this, *pRequest, UpdateReplicationConfiguration(*pRequest), context);
     } );
 }
 
@@ -990,17 +1021,18 @@ UpdateReplicationConfigurationTemplateOutcome DrsClient::UpdateReplicationConfig
 
 UpdateReplicationConfigurationTemplateOutcomeCallable DrsClient::UpdateReplicationConfigurationTemplateCallable(const UpdateReplicationConfigurationTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReplicationConfigurationTemplate(request); } );
+  std::shared_ptr<UpdateReplicationConfigurationTemplateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateReplicationConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateReplicationConfigurationTemplate(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DrsClient::UpdateReplicationConfigurationTemplateAsync(const UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateReplicationConfigurationTemplateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateReplicationConfigurationTemplate(request), context);
+      handler(this, *pRequest, UpdateReplicationConfigurationTemplate(*pRequest), context);
     } );
 }
 

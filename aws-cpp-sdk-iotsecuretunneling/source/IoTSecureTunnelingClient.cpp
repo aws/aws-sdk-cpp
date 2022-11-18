@@ -167,17 +167,18 @@ CloseTunnelOutcome IoTSecureTunnelingClient::CloseTunnel(const CloseTunnelReques
 
 CloseTunnelOutcomeCallable IoTSecureTunnelingClient::CloseTunnelCallable(const CloseTunnelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CloseTunnelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CloseTunnel(request); } );
+  std::shared_ptr<CloseTunnelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CloseTunnelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CloseTunnel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTSecureTunnelingClient::CloseTunnelAsync(const CloseTunnelRequest& request, const CloseTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CloseTunnelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CloseTunnel(request), context);
+      handler(this, *pRequest, CloseTunnel(*pRequest), context);
     } );
 }
 
@@ -191,17 +192,18 @@ DescribeTunnelOutcome IoTSecureTunnelingClient::DescribeTunnel(const DescribeTun
 
 DescribeTunnelOutcomeCallable IoTSecureTunnelingClient::DescribeTunnelCallable(const DescribeTunnelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTunnelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTunnel(request); } );
+  std::shared_ptr<DescribeTunnelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTunnelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeTunnel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTSecureTunnelingClient::DescribeTunnelAsync(const DescribeTunnelRequest& request, const DescribeTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeTunnelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeTunnel(request), context);
+      handler(this, *pRequest, DescribeTunnel(*pRequest), context);
     } );
 }
 
@@ -215,17 +217,18 @@ ListTagsForResourceOutcome IoTSecureTunnelingClient::ListTagsForResource(const L
 
 ListTagsForResourceOutcomeCallable IoTSecureTunnelingClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTSecureTunnelingClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -239,17 +242,18 @@ ListTunnelsOutcome IoTSecureTunnelingClient::ListTunnels(const ListTunnelsReques
 
 ListTunnelsOutcomeCallable IoTSecureTunnelingClient::ListTunnelsCallable(const ListTunnelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTunnelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTunnels(request); } );
+  std::shared_ptr<ListTunnelsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTunnelsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTunnels(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTSecureTunnelingClient::ListTunnelsAsync(const ListTunnelsRequest& request, const ListTunnelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTunnelsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTunnels(request), context);
+      handler(this, *pRequest, ListTunnels(*pRequest), context);
     } );
 }
 
@@ -263,17 +267,18 @@ OpenTunnelOutcome IoTSecureTunnelingClient::OpenTunnel(const OpenTunnelRequest& 
 
 OpenTunnelOutcomeCallable IoTSecureTunnelingClient::OpenTunnelCallable(const OpenTunnelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< OpenTunnelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->OpenTunnel(request); } );
+  std::shared_ptr<OpenTunnelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< OpenTunnelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->OpenTunnel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTSecureTunnelingClient::OpenTunnelAsync(const OpenTunnelRequest& request, const OpenTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<OpenTunnelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, OpenTunnel(request), context);
+      handler(this, *pRequest, OpenTunnel(*pRequest), context);
     } );
 }
 
@@ -287,17 +292,18 @@ RotateTunnelAccessTokenOutcome IoTSecureTunnelingClient::RotateTunnelAccessToken
 
 RotateTunnelAccessTokenOutcomeCallable IoTSecureTunnelingClient::RotateTunnelAccessTokenCallable(const RotateTunnelAccessTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RotateTunnelAccessTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RotateTunnelAccessToken(request); } );
+  std::shared_ptr<RotateTunnelAccessTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RotateTunnelAccessTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RotateTunnelAccessToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTSecureTunnelingClient::RotateTunnelAccessTokenAsync(const RotateTunnelAccessTokenRequest& request, const RotateTunnelAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RotateTunnelAccessTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RotateTunnelAccessToken(request), context);
+      handler(this, *pRequest, RotateTunnelAccessToken(*pRequest), context);
     } );
 }
 
@@ -311,17 +317,18 @@ TagResourceOutcome IoTSecureTunnelingClient::TagResource(const TagResourceReques
 
 TagResourceOutcomeCallable IoTSecureTunnelingClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTSecureTunnelingClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -335,17 +342,18 @@ UntagResourceOutcome IoTSecureTunnelingClient::UntagResource(const UntagResource
 
 UntagResourceOutcomeCallable IoTSecureTunnelingClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTSecureTunnelingClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 

@@ -166,17 +166,18 @@ DescribeAcceleratorOfferingsOutcome ElasticInferenceClient::DescribeAcceleratorO
 
 DescribeAcceleratorOfferingsOutcomeCallable ElasticInferenceClient::DescribeAcceleratorOfferingsCallable(const DescribeAcceleratorOfferingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAcceleratorOfferings(request); } );
+  std::shared_ptr<DescribeAcceleratorOfferingsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorOfferingsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeAcceleratorOfferings(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ElasticInferenceClient::DescribeAcceleratorOfferingsAsync(const DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeAcceleratorOfferingsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeAcceleratorOfferings(request), context);
+      handler(this, *pRequest, DescribeAcceleratorOfferings(*pRequest), context);
     } );
 }
 
@@ -191,17 +192,18 @@ DescribeAcceleratorTypesOutcome ElasticInferenceClient::DescribeAcceleratorTypes
 
 DescribeAcceleratorTypesOutcomeCallable ElasticInferenceClient::DescribeAcceleratorTypesCallable(const DescribeAcceleratorTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAcceleratorTypes(request); } );
+  std::shared_ptr<DescribeAcceleratorTypesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorTypesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeAcceleratorTypes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ElasticInferenceClient::DescribeAcceleratorTypesAsync(const DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeAcceleratorTypesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeAcceleratorTypes(request), context);
+      handler(this, *pRequest, DescribeAcceleratorTypes(*pRequest), context);
     } );
 }
 
@@ -216,17 +218,18 @@ DescribeAcceleratorsOutcome ElasticInferenceClient::DescribeAccelerators(const D
 
 DescribeAcceleratorsOutcomeCallable ElasticInferenceClient::DescribeAcceleratorsCallable(const DescribeAcceleratorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccelerators(request); } );
+  std::shared_ptr<DescribeAcceleratorsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeAccelerators(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ElasticInferenceClient::DescribeAcceleratorsAsync(const DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeAcceleratorsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeAccelerators(request), context);
+      handler(this, *pRequest, DescribeAccelerators(*pRequest), context);
     } );
 }
 
@@ -247,17 +250,18 @@ ListTagsForResourceOutcome ElasticInferenceClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable ElasticInferenceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ElasticInferenceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -278,17 +282,18 @@ TagResourceOutcome ElasticInferenceClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable ElasticInferenceClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ElasticInferenceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -314,17 +319,18 @@ UntagResourceOutcome ElasticInferenceClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable ElasticInferenceClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ElasticInferenceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 

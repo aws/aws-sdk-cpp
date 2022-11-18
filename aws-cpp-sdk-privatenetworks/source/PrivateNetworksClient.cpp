@@ -184,17 +184,18 @@ AcknowledgeOrderReceiptOutcome PrivateNetworksClient::AcknowledgeOrderReceipt(co
 
 AcknowledgeOrderReceiptOutcomeCallable PrivateNetworksClient::AcknowledgeOrderReceiptCallable(const AcknowledgeOrderReceiptRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcknowledgeOrderReceiptOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcknowledgeOrderReceipt(request); } );
+  std::shared_ptr<AcknowledgeOrderReceiptRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AcknowledgeOrderReceiptOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AcknowledgeOrderReceipt(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::AcknowledgeOrderReceiptAsync(const AcknowledgeOrderReceiptRequest& request, const AcknowledgeOrderReceiptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AcknowledgeOrderReceiptRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AcknowledgeOrderReceipt(request), context);
+      handler(this, *pRequest, AcknowledgeOrderReceipt(*pRequest), context);
     } );
 }
 
@@ -209,17 +210,18 @@ ActivateDeviceIdentifierOutcome PrivateNetworksClient::ActivateDeviceIdentifier(
 
 ActivateDeviceIdentifierOutcomeCallable PrivateNetworksClient::ActivateDeviceIdentifierCallable(const ActivateDeviceIdentifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ActivateDeviceIdentifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ActivateDeviceIdentifier(request); } );
+  std::shared_ptr<ActivateDeviceIdentifierRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ActivateDeviceIdentifierOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ActivateDeviceIdentifier(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::ActivateDeviceIdentifierAsync(const ActivateDeviceIdentifierRequest& request, const ActivateDeviceIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ActivateDeviceIdentifierRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ActivateDeviceIdentifier(request), context);
+      handler(this, *pRequest, ActivateDeviceIdentifier(*pRequest), context);
     } );
 }
 
@@ -234,17 +236,18 @@ ActivateNetworkSiteOutcome PrivateNetworksClient::ActivateNetworkSite(const Acti
 
 ActivateNetworkSiteOutcomeCallable PrivateNetworksClient::ActivateNetworkSiteCallable(const ActivateNetworkSiteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ActivateNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ActivateNetworkSite(request); } );
+  std::shared_ptr<ActivateNetworkSiteRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ActivateNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ActivateNetworkSite(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::ActivateNetworkSiteAsync(const ActivateNetworkSiteRequest& request, const ActivateNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ActivateNetworkSiteRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ActivateNetworkSite(request), context);
+      handler(this, *pRequest, ActivateNetworkSite(*pRequest), context);
     } );
 }
 
@@ -259,17 +262,18 @@ ConfigureAccessPointOutcome PrivateNetworksClient::ConfigureAccessPoint(const Co
 
 ConfigureAccessPointOutcomeCallable PrivateNetworksClient::ConfigureAccessPointCallable(const ConfigureAccessPointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ConfigureAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfigureAccessPoint(request); } );
+  std::shared_ptr<ConfigureAccessPointRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ConfigureAccessPointOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ConfigureAccessPoint(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::ConfigureAccessPointAsync(const ConfigureAccessPointRequest& request, const ConfigureAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ConfigureAccessPointRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ConfigureAccessPoint(request), context);
+      handler(this, *pRequest, ConfigureAccessPoint(*pRequest), context);
     } );
 }
 
@@ -284,17 +288,18 @@ CreateNetworkOutcome PrivateNetworksClient::CreateNetwork(const CreateNetworkReq
 
 CreateNetworkOutcomeCallable PrivateNetworksClient::CreateNetworkCallable(const CreateNetworkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNetwork(request); } );
+  std::shared_ptr<CreateNetworkRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateNetwork(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::CreateNetworkAsync(const CreateNetworkRequest& request, const CreateNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateNetworkRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateNetwork(request), context);
+      handler(this, *pRequest, CreateNetwork(*pRequest), context);
     } );
 }
 
@@ -309,17 +314,18 @@ CreateNetworkSiteOutcome PrivateNetworksClient::CreateNetworkSite(const CreateNe
 
 CreateNetworkSiteOutcomeCallable PrivateNetworksClient::CreateNetworkSiteCallable(const CreateNetworkSiteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNetworkSite(request); } );
+  std::shared_ptr<CreateNetworkSiteRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateNetworkSite(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::CreateNetworkSiteAsync(const CreateNetworkSiteRequest& request, const CreateNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateNetworkSiteRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateNetworkSite(request), context);
+      handler(this, *pRequest, CreateNetworkSite(*pRequest), context);
     } );
 }
 
@@ -334,17 +340,18 @@ DeactivateDeviceIdentifierOutcome PrivateNetworksClient::DeactivateDeviceIdentif
 
 DeactivateDeviceIdentifierOutcomeCallable PrivateNetworksClient::DeactivateDeviceIdentifierCallable(const DeactivateDeviceIdentifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeactivateDeviceIdentifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeactivateDeviceIdentifier(request); } );
+  std::shared_ptr<DeactivateDeviceIdentifierRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeactivateDeviceIdentifierOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeactivateDeviceIdentifier(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::DeactivateDeviceIdentifierAsync(const DeactivateDeviceIdentifierRequest& request, const DeactivateDeviceIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeactivateDeviceIdentifierRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeactivateDeviceIdentifier(request), context);
+      handler(this, *pRequest, DeactivateDeviceIdentifier(*pRequest), context);
     } );
 }
 
@@ -365,17 +372,18 @@ DeleteNetworkOutcome PrivateNetworksClient::DeleteNetwork(const DeleteNetworkReq
 
 DeleteNetworkOutcomeCallable PrivateNetworksClient::DeleteNetworkCallable(const DeleteNetworkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNetworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNetwork(request); } );
+  std::shared_ptr<DeleteNetworkRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNetworkOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteNetwork(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::DeleteNetworkAsync(const DeleteNetworkRequest& request, const DeleteNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteNetworkRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteNetwork(request), context);
+      handler(this, *pRequest, DeleteNetwork(*pRequest), context);
     } );
 }
 
@@ -396,17 +404,18 @@ DeleteNetworkSiteOutcome PrivateNetworksClient::DeleteNetworkSite(const DeleteNe
 
 DeleteNetworkSiteOutcomeCallable PrivateNetworksClient::DeleteNetworkSiteCallable(const DeleteNetworkSiteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNetworkSite(request); } );
+  std::shared_ptr<DeleteNetworkSiteRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteNetworkSite(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::DeleteNetworkSiteAsync(const DeleteNetworkSiteRequest& request, const DeleteNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteNetworkSiteRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteNetworkSite(request), context);
+      handler(this, *pRequest, DeleteNetworkSite(*pRequest), context);
     } );
 }
 
@@ -427,17 +436,18 @@ GetDeviceIdentifierOutcome PrivateNetworksClient::GetDeviceIdentifier(const GetD
 
 GetDeviceIdentifierOutcomeCallable PrivateNetworksClient::GetDeviceIdentifierCallable(const GetDeviceIdentifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeviceIdentifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeviceIdentifier(request); } );
+  std::shared_ptr<GetDeviceIdentifierRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDeviceIdentifierOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDeviceIdentifier(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::GetDeviceIdentifierAsync(const GetDeviceIdentifierRequest& request, const GetDeviceIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDeviceIdentifierRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDeviceIdentifier(request), context);
+      handler(this, *pRequest, GetDeviceIdentifier(*pRequest), context);
     } );
 }
 
@@ -458,17 +468,18 @@ GetNetworkOutcome PrivateNetworksClient::GetNetwork(const GetNetworkRequest& req
 
 GetNetworkOutcomeCallable PrivateNetworksClient::GetNetworkCallable(const GetNetworkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNetworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetwork(request); } );
+  std::shared_ptr<GetNetworkRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetNetworkOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetNetwork(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::GetNetworkAsync(const GetNetworkRequest& request, const GetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetNetworkRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetNetwork(request), context);
+      handler(this, *pRequest, GetNetwork(*pRequest), context);
     } );
 }
 
@@ -489,17 +500,18 @@ GetNetworkResourceOutcome PrivateNetworksClient::GetNetworkResource(const GetNet
 
 GetNetworkResourceOutcomeCallable PrivateNetworksClient::GetNetworkResourceCallable(const GetNetworkResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNetworkResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkResource(request); } );
+  std::shared_ptr<GetNetworkResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetNetworkResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetNetworkResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::GetNetworkResourceAsync(const GetNetworkResourceRequest& request, const GetNetworkResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetNetworkResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetNetworkResource(request), context);
+      handler(this, *pRequest, GetNetworkResource(*pRequest), context);
     } );
 }
 
@@ -520,17 +532,18 @@ GetNetworkSiteOutcome PrivateNetworksClient::GetNetworkSite(const GetNetworkSite
 
 GetNetworkSiteOutcomeCallable PrivateNetworksClient::GetNetworkSiteCallable(const GetNetworkSiteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkSite(request); } );
+  std::shared_ptr<GetNetworkSiteRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetNetworkSite(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::GetNetworkSiteAsync(const GetNetworkSiteRequest& request, const GetNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetNetworkSiteRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetNetworkSite(request), context);
+      handler(this, *pRequest, GetNetworkSite(*pRequest), context);
     } );
 }
 
@@ -551,17 +564,18 @@ GetOrderOutcome PrivateNetworksClient::GetOrder(const GetOrderRequest& request) 
 
 GetOrderOutcomeCallable PrivateNetworksClient::GetOrderCallable(const GetOrderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetOrderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOrder(request); } );
+  std::shared_ptr<GetOrderRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetOrderOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetOrder(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::GetOrderAsync(const GetOrderRequest& request, const GetOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetOrderRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetOrder(request), context);
+      handler(this, *pRequest, GetOrder(*pRequest), context);
     } );
 }
 
@@ -576,17 +590,18 @@ ListDeviceIdentifiersOutcome PrivateNetworksClient::ListDeviceIdentifiers(const 
 
 ListDeviceIdentifiersOutcomeCallable PrivateNetworksClient::ListDeviceIdentifiersCallable(const ListDeviceIdentifiersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDeviceIdentifiersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeviceIdentifiers(request); } );
+  std::shared_ptr<ListDeviceIdentifiersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDeviceIdentifiersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDeviceIdentifiers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::ListDeviceIdentifiersAsync(const ListDeviceIdentifiersRequest& request, const ListDeviceIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDeviceIdentifiersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDeviceIdentifiers(request), context);
+      handler(this, *pRequest, ListDeviceIdentifiers(*pRequest), context);
     } );
 }
 
@@ -601,17 +616,18 @@ ListNetworkResourcesOutcome PrivateNetworksClient::ListNetworkResources(const Li
 
 ListNetworkResourcesOutcomeCallable PrivateNetworksClient::ListNetworkResourcesCallable(const ListNetworkResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNetworkResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNetworkResources(request); } );
+  std::shared_ptr<ListNetworkResourcesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListNetworkResourcesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListNetworkResources(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::ListNetworkResourcesAsync(const ListNetworkResourcesRequest& request, const ListNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListNetworkResourcesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListNetworkResources(request), context);
+      handler(this, *pRequest, ListNetworkResources(*pRequest), context);
     } );
 }
 
@@ -626,17 +642,18 @@ ListNetworkSitesOutcome PrivateNetworksClient::ListNetworkSites(const ListNetwor
 
 ListNetworkSitesOutcomeCallable PrivateNetworksClient::ListNetworkSitesCallable(const ListNetworkSitesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNetworkSitesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNetworkSites(request); } );
+  std::shared_ptr<ListNetworkSitesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListNetworkSitesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListNetworkSites(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::ListNetworkSitesAsync(const ListNetworkSitesRequest& request, const ListNetworkSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListNetworkSitesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListNetworkSites(request), context);
+      handler(this, *pRequest, ListNetworkSites(*pRequest), context);
     } );
 }
 
@@ -651,17 +668,18 @@ ListNetworksOutcome PrivateNetworksClient::ListNetworks(const ListNetworksReques
 
 ListNetworksOutcomeCallable PrivateNetworksClient::ListNetworksCallable(const ListNetworksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNetworksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNetworks(request); } );
+  std::shared_ptr<ListNetworksRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListNetworksOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListNetworks(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::ListNetworksAsync(const ListNetworksRequest& request, const ListNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListNetworksRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListNetworks(request), context);
+      handler(this, *pRequest, ListNetworks(*pRequest), context);
     } );
 }
 
@@ -676,17 +694,18 @@ ListOrdersOutcome PrivateNetworksClient::ListOrders(const ListOrdersRequest& req
 
 ListOrdersOutcomeCallable PrivateNetworksClient::ListOrdersCallable(const ListOrdersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListOrdersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOrders(request); } );
+  std::shared_ptr<ListOrdersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListOrdersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListOrders(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::ListOrdersAsync(const ListOrdersRequest& request, const ListOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListOrdersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListOrders(request), context);
+      handler(this, *pRequest, ListOrders(*pRequest), context);
     } );
 }
 
@@ -707,17 +726,18 @@ ListTagsForResourceOutcome PrivateNetworksClient::ListTagsForResource(const List
 
 ListTagsForResourceOutcomeCallable PrivateNetworksClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -764,17 +784,18 @@ TagResourceOutcome PrivateNetworksClient::TagResource(const TagResourceRequest& 
 
 TagResourceOutcomeCallable PrivateNetworksClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -800,17 +821,18 @@ UntagResourceOutcome PrivateNetworksClient::UntagResource(const UntagResourceReq
 
 UntagResourceOutcomeCallable PrivateNetworksClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -825,17 +847,18 @@ UpdateNetworkSiteOutcome PrivateNetworksClient::UpdateNetworkSite(const UpdateNe
 
 UpdateNetworkSiteOutcomeCallable PrivateNetworksClient::UpdateNetworkSiteCallable(const UpdateNetworkSiteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNetworkSite(request); } );
+  std::shared_ptr<UpdateNetworkSiteRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNetworkSiteOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateNetworkSite(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::UpdateNetworkSiteAsync(const UpdateNetworkSiteRequest& request, const UpdateNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateNetworkSiteRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateNetworkSite(request), context);
+      handler(this, *pRequest, UpdateNetworkSite(*pRequest), context);
     } );
 }
 
@@ -850,17 +873,18 @@ UpdateNetworkSitePlanOutcome PrivateNetworksClient::UpdateNetworkSitePlan(const 
 
 UpdateNetworkSitePlanOutcomeCallable PrivateNetworksClient::UpdateNetworkSitePlanCallable(const UpdateNetworkSitePlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNetworkSitePlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNetworkSitePlan(request); } );
+  std::shared_ptr<UpdateNetworkSitePlanRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNetworkSitePlanOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateNetworkSitePlan(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PrivateNetworksClient::UpdateNetworkSitePlanAsync(const UpdateNetworkSitePlanRequest& request, const UpdateNetworkSitePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateNetworkSitePlanRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateNetworkSitePlan(request), context);
+      handler(this, *pRequest, UpdateNetworkSitePlan(*pRequest), context);
     } );
 }
 

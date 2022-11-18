@@ -126,10 +126,10 @@ AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& 
     /* Legacy constructors due deprecation */
   AppConfigClient::AppConfigClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -141,10 +141,10 @@ AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& 
 AppConfigClient::AppConfigClient(const AWSCredentials& credentials,
                                  const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -156,10 +156,10 @@ AppConfigClient::AppConfigClient(const AWSCredentials& credentials,
 AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                  const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -202,17 +202,18 @@ CreateApplicationOutcome AppConfigClient::CreateApplication(const CreateApplicat
 
 CreateApplicationOutcomeCallable AppConfigClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApplication(request); } );
+  std::shared_ptr<CreateApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateApplication(request), context);
+      handler(this, *pRequest, CreateApplication(*pRequest), context);
     } );
 }
 
@@ -234,17 +235,18 @@ CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(co
 
 CreateConfigurationProfileOutcomeCallable AppConfigClient::CreateConfigurationProfileCallable(const CreateConfigurationProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConfigurationProfile(request); } );
+  std::shared_ptr<CreateConfigurationProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateConfigurationProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::CreateConfigurationProfileAsync(const CreateConfigurationProfileRequest& request, const CreateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateConfigurationProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateConfigurationProfile(request), context);
+      handler(this, *pRequest, CreateConfigurationProfile(*pRequest), context);
     } );
 }
 
@@ -259,17 +261,18 @@ CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const 
 
 CreateDeploymentStrategyOutcomeCallable AppConfigClient::CreateDeploymentStrategyCallable(const CreateDeploymentStrategyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDeploymentStrategy(request); } );
+  std::shared_ptr<CreateDeploymentStrategyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDeploymentStrategy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::CreateDeploymentStrategyAsync(const CreateDeploymentStrategyRequest& request, const CreateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDeploymentStrategyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDeploymentStrategy(request), context);
+      handler(this, *pRequest, CreateDeploymentStrategy(*pRequest), context);
     } );
 }
 
@@ -291,17 +294,18 @@ CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironm
 
 CreateEnvironmentOutcomeCallable AppConfigClient::CreateEnvironmentCallable(const CreateEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEnvironment(request); } );
+  std::shared_ptr<CreateEnvironmentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateEnvironmentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateEnvironment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateEnvironmentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateEnvironment(request), context);
+      handler(this, *pRequest, CreateEnvironment(*pRequest), context);
     } );
 }
 
@@ -316,17 +320,18 @@ CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionReq
 
 CreateExtensionOutcomeCallable AppConfigClient::CreateExtensionCallable(const CreateExtensionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExtension(request); } );
+  std::shared_ptr<CreateExtensionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateExtensionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateExtension(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::CreateExtensionAsync(const CreateExtensionRequest& request, const CreateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateExtensionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateExtension(request), context);
+      handler(this, *pRequest, CreateExtension(*pRequest), context);
     } );
 }
 
@@ -341,17 +346,18 @@ CreateExtensionAssociationOutcome AppConfigClient::CreateExtensionAssociation(co
 
 CreateExtensionAssociationOutcomeCallable AppConfigClient::CreateExtensionAssociationCallable(const CreateExtensionAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExtensionAssociation(request); } );
+  std::shared_ptr<CreateExtensionAssociationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateExtensionAssociation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::CreateExtensionAssociationAsync(const CreateExtensionAssociationRequest& request, const CreateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateExtensionAssociationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateExtensionAssociation(request), context);
+      handler(this, *pRequest, CreateExtensionAssociation(*pRequest), context);
     } );
 }
 
@@ -380,17 +386,18 @@ CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurati
 
 CreateHostedConfigurationVersionOutcomeCallable AppConfigClient::CreateHostedConfigurationVersionCallable(const CreateHostedConfigurationVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHostedConfigurationVersion(request); } );
+  std::shared_ptr<CreateHostedConfigurationVersionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateHostedConfigurationVersion(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::CreateHostedConfigurationVersionAsync(const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateHostedConfigurationVersionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateHostedConfigurationVersion(request), context);
+      handler(this, *pRequest, CreateHostedConfigurationVersion(*pRequest), context);
     } );
 }
 
@@ -411,17 +418,18 @@ DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicat
 
 DeleteApplicationOutcomeCallable AppConfigClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplication(request); } );
+  std::shared_ptr<DeleteApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteApplication(request), context);
+      handler(this, *pRequest, DeleteApplication(*pRequest), context);
     } );
 }
 
@@ -449,17 +457,18 @@ DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(co
 
 DeleteConfigurationProfileOutcomeCallable AppConfigClient::DeleteConfigurationProfileCallable(const DeleteConfigurationProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConfigurationProfile(request); } );
+  std::shared_ptr<DeleteConfigurationProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteConfigurationProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::DeleteConfigurationProfileAsync(const DeleteConfigurationProfileRequest& request, const DeleteConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteConfigurationProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteConfigurationProfile(request), context);
+      handler(this, *pRequest, DeleteConfigurationProfile(*pRequest), context);
     } );
 }
 
@@ -480,17 +489,18 @@ DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const 
 
 DeleteDeploymentStrategyOutcomeCallable AppConfigClient::DeleteDeploymentStrategyCallable(const DeleteDeploymentStrategyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDeploymentStrategy(request); } );
+  std::shared_ptr<DeleteDeploymentStrategyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDeploymentStrategy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::DeleteDeploymentStrategyAsync(const DeleteDeploymentStrategyRequest& request, const DeleteDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDeploymentStrategyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDeploymentStrategy(request), context);
+      handler(this, *pRequest, DeleteDeploymentStrategy(*pRequest), context);
     } );
 }
 
@@ -518,17 +528,18 @@ DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironm
 
 DeleteEnvironmentOutcomeCallable AppConfigClient::DeleteEnvironmentCallable(const DeleteEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEnvironment(request); } );
+  std::shared_ptr<DeleteEnvironmentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEnvironmentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteEnvironment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteEnvironmentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteEnvironment(request), context);
+      handler(this, *pRequest, DeleteEnvironment(*pRequest), context);
     } );
 }
 
@@ -549,17 +560,18 @@ DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionReq
 
 DeleteExtensionOutcomeCallable AppConfigClient::DeleteExtensionCallable(const DeleteExtensionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExtension(request); } );
+  std::shared_ptr<DeleteExtensionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteExtensionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteExtension(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::DeleteExtensionAsync(const DeleteExtensionRequest& request, const DeleteExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteExtensionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteExtension(request), context);
+      handler(this, *pRequest, DeleteExtension(*pRequest), context);
     } );
 }
 
@@ -580,17 +592,18 @@ DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(co
 
 DeleteExtensionAssociationOutcomeCallable AppConfigClient::DeleteExtensionAssociationCallable(const DeleteExtensionAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExtensionAssociation(request); } );
+  std::shared_ptr<DeleteExtensionAssociationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteExtensionAssociation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::DeleteExtensionAssociationAsync(const DeleteExtensionAssociationRequest& request, const DeleteExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteExtensionAssociationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteExtensionAssociation(request), context);
+      handler(this, *pRequest, DeleteExtensionAssociation(*pRequest), context);
     } );
 }
 
@@ -625,17 +638,18 @@ DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurati
 
 DeleteHostedConfigurationVersionOutcomeCallable AppConfigClient::DeleteHostedConfigurationVersionCallable(const DeleteHostedConfigurationVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHostedConfigurationVersion(request); } );
+  std::shared_ptr<DeleteHostedConfigurationVersionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteHostedConfigurationVersion(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::DeleteHostedConfigurationVersionAsync(const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteHostedConfigurationVersionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteHostedConfigurationVersion(request), context);
+      handler(this, *pRequest, DeleteHostedConfigurationVersion(*pRequest), context);
     } );
 }
 
@@ -656,17 +670,18 @@ GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationReques
 
 GetApplicationOutcomeCallable AppConfigClient::GetApplicationCallable(const GetApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplication(request); } );
+  std::shared_ptr<GetApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetApplication(request), context);
+      handler(this, *pRequest, GetApplication(*pRequest), context);
     } );
 }
 
@@ -694,17 +709,18 @@ GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const Ge
 
 GetConfigurationProfileOutcomeCallable AppConfigClient::GetConfigurationProfileCallable(const GetConfigurationProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConfigurationProfile(request); } );
+  std::shared_ptr<GetConfigurationProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetConfigurationProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::GetConfigurationProfileAsync(const GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetConfigurationProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetConfigurationProfile(request), context);
+      handler(this, *pRequest, GetConfigurationProfile(*pRequest), context);
     } );
 }
 
@@ -739,17 +755,18 @@ GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& 
 
 GetDeploymentOutcomeCallable AppConfigClient::GetDeploymentCallable(const GetDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeployment(request); } );
+  std::shared_ptr<GetDeploymentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDeployment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDeploymentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDeployment(request), context);
+      handler(this, *pRequest, GetDeployment(*pRequest), context);
     } );
 }
 
@@ -770,17 +787,18 @@ GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDep
 
 GetDeploymentStrategyOutcomeCallable AppConfigClient::GetDeploymentStrategyCallable(const GetDeploymentStrategyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeploymentStrategy(request); } );
+  std::shared_ptr<GetDeploymentStrategyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDeploymentStrategy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::GetDeploymentStrategyAsync(const GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDeploymentStrategyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDeploymentStrategy(request), context);
+      handler(this, *pRequest, GetDeploymentStrategy(*pRequest), context);
     } );
 }
 
@@ -808,17 +826,18 @@ GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentReques
 
 GetEnvironmentOutcomeCallable AppConfigClient::GetEnvironmentCallable(const GetEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEnvironment(request); } );
+  std::shared_ptr<GetEnvironmentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetEnvironmentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetEnvironment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetEnvironmentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetEnvironment(request), context);
+      handler(this, *pRequest, GetEnvironment(*pRequest), context);
     } );
 }
 
@@ -839,17 +858,18 @@ GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& req
 
 GetExtensionOutcomeCallable AppConfigClient::GetExtensionCallable(const GetExtensionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExtension(request); } );
+  std::shared_ptr<GetExtensionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetExtensionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetExtension(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::GetExtensionAsync(const GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetExtensionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetExtension(request), context);
+      handler(this, *pRequest, GetExtension(*pRequest), context);
     } );
 }
 
@@ -870,17 +890,18 @@ GetExtensionAssociationOutcome AppConfigClient::GetExtensionAssociation(const Ge
 
 GetExtensionAssociationOutcomeCallable AppConfigClient::GetExtensionAssociationCallable(const GetExtensionAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExtensionAssociation(request); } );
+  std::shared_ptr<GetExtensionAssociationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetExtensionAssociation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::GetExtensionAssociationAsync(const GetExtensionAssociationRequest& request, const GetExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetExtensionAssociationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetExtensionAssociation(request), context);
+      handler(this, *pRequest, GetExtensionAssociation(*pRequest), context);
     } );
 }
 
@@ -915,17 +936,18 @@ GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVers
 
 GetHostedConfigurationVersionOutcomeCallable AppConfigClient::GetHostedConfigurationVersionCallable(const GetHostedConfigurationVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHostedConfigurationVersion(request); } );
+  std::shared_ptr<GetHostedConfigurationVersionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetHostedConfigurationVersion(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::GetHostedConfigurationVersionAsync(const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetHostedConfigurationVersionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetHostedConfigurationVersion(request), context);
+      handler(this, *pRequest, GetHostedConfigurationVersion(*pRequest), context);
     } );
 }
 
@@ -940,17 +962,18 @@ ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplications
 
 ListApplicationsOutcomeCallable AppConfigClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplications(request); } );
+  std::shared_ptr<ListApplicationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListApplications(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListApplicationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListApplications(request), context);
+      handler(this, *pRequest, ListApplications(*pRequest), context);
     } );
 }
 
@@ -972,17 +995,18 @@ ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(cons
 
 ListConfigurationProfilesOutcomeCallable AppConfigClient::ListConfigurationProfilesCallable(const ListConfigurationProfilesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConfigurationProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConfigurationProfiles(request); } );
+  std::shared_ptr<ListConfigurationProfilesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListConfigurationProfilesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListConfigurationProfiles(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::ListConfigurationProfilesAsync(const ListConfigurationProfilesRequest& request, const ListConfigurationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListConfigurationProfilesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListConfigurationProfiles(request), context);
+      handler(this, *pRequest, ListConfigurationProfiles(*pRequest), context);
     } );
 }
 
@@ -997,17 +1021,18 @@ ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const 
 
 ListDeploymentStrategiesOutcomeCallable AppConfigClient::ListDeploymentStrategiesCallable(const ListDeploymentStrategiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentStrategiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeploymentStrategies(request); } );
+  std::shared_ptr<ListDeploymentStrategiesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentStrategiesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDeploymentStrategies(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::ListDeploymentStrategiesAsync(const ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDeploymentStrategiesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDeploymentStrategies(request), context);
+      handler(this, *pRequest, ListDeploymentStrategies(*pRequest), context);
     } );
 }
 
@@ -1036,17 +1061,18 @@ ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsReq
 
 ListDeploymentsOutcomeCallable AppConfigClient::ListDeploymentsCallable(const ListDeploymentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeployments(request); } );
+  std::shared_ptr<ListDeploymentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDeployments(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDeploymentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDeployments(request), context);
+      handler(this, *pRequest, ListDeployments(*pRequest), context);
     } );
 }
 
@@ -1068,17 +1094,18 @@ ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironments
 
 ListEnvironmentsOutcomeCallable AppConfigClient::ListEnvironmentsCallable(const ListEnvironmentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEnvironmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEnvironments(request); } );
+  std::shared_ptr<ListEnvironmentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEnvironmentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEnvironments(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEnvironmentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEnvironments(request), context);
+      handler(this, *pRequest, ListEnvironments(*pRequest), context);
     } );
 }
 
@@ -1093,17 +1120,18 @@ ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(cons
 
 ListExtensionAssociationsOutcomeCallable AppConfigClient::ListExtensionAssociationsCallable(const ListExtensionAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExtensionAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExtensionAssociations(request); } );
+  std::shared_ptr<ListExtensionAssociationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListExtensionAssociationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListExtensionAssociations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::ListExtensionAssociationsAsync(const ListExtensionAssociationsRequest& request, const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListExtensionAssociationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListExtensionAssociations(request), context);
+      handler(this, *pRequest, ListExtensionAssociations(*pRequest), context);
     } );
 }
 
@@ -1118,17 +1146,18 @@ ListExtensionsOutcome AppConfigClient::ListExtensions(const ListExtensionsReques
 
 ListExtensionsOutcomeCallable AppConfigClient::ListExtensionsCallable(const ListExtensionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExtensionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExtensions(request); } );
+  std::shared_ptr<ListExtensionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListExtensionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListExtensions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::ListExtensionsAsync(const ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListExtensionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListExtensions(request), context);
+      handler(this, *pRequest, ListExtensions(*pRequest), context);
     } );
 }
 
@@ -1157,17 +1186,18 @@ ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationV
 
 ListHostedConfigurationVersionsOutcomeCallable AppConfigClient::ListHostedConfigurationVersionsCallable(const ListHostedConfigurationVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListHostedConfigurationVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHostedConfigurationVersions(request); } );
+  std::shared_ptr<ListHostedConfigurationVersionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListHostedConfigurationVersionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListHostedConfigurationVersions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::ListHostedConfigurationVersionsAsync(const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListHostedConfigurationVersionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListHostedConfigurationVersions(request), context);
+      handler(this, *pRequest, ListHostedConfigurationVersions(*pRequest), context);
     } );
 }
 
@@ -1188,17 +1218,18 @@ ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsFo
 
 ListTagsForResourceOutcomeCallable AppConfigClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -1227,17 +1258,18 @@ StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentReq
 
 StartDeploymentOutcomeCallable AppConfigClient::StartDeploymentCallable(const StartDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDeployment(request); } );
+  std::shared_ptr<StartDeploymentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartDeploymentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartDeployment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::StartDeploymentAsync(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartDeploymentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartDeployment(request), context);
+      handler(this, *pRequest, StartDeployment(*pRequest), context);
     } );
 }
 
@@ -1272,17 +1304,18 @@ StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentReques
 
 StopDeploymentOutcomeCallable AppConfigClient::StopDeploymentCallable(const StopDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopDeployment(request); } );
+  std::shared_ptr<StopDeploymentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopDeploymentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopDeployment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::StopDeploymentAsync(const StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopDeploymentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopDeployment(request), context);
+      handler(this, *pRequest, StopDeployment(*pRequest), context);
     } );
 }
 
@@ -1303,17 +1336,18 @@ TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& reques
 
 TagResourceOutcomeCallable AppConfigClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -1339,17 +1373,18 @@ UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& 
 
 UntagResourceOutcomeCallable AppConfigClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -1370,17 +1405,18 @@ UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicat
 
 UpdateApplicationOutcomeCallable AppConfigClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplication(request); } );
+  std::shared_ptr<UpdateApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateApplication(request), context);
+      handler(this, *pRequest, UpdateApplication(*pRequest), context);
     } );
 }
 
@@ -1408,17 +1444,18 @@ UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(co
 
 UpdateConfigurationProfileOutcomeCallable AppConfigClient::UpdateConfigurationProfileCallable(const UpdateConfigurationProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConfigurationProfile(request); } );
+  std::shared_ptr<UpdateConfigurationProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConfigurationProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateConfigurationProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::UpdateConfigurationProfileAsync(const UpdateConfigurationProfileRequest& request, const UpdateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateConfigurationProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateConfigurationProfile(request), context);
+      handler(this, *pRequest, UpdateConfigurationProfile(*pRequest), context);
     } );
 }
 
@@ -1439,17 +1476,18 @@ UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const 
 
 UpdateDeploymentStrategyOutcomeCallable AppConfigClient::UpdateDeploymentStrategyCallable(const UpdateDeploymentStrategyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDeploymentStrategy(request); } );
+  std::shared_ptr<UpdateDeploymentStrategyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDeploymentStrategyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDeploymentStrategy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::UpdateDeploymentStrategyAsync(const UpdateDeploymentStrategyRequest& request, const UpdateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDeploymentStrategyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDeploymentStrategy(request), context);
+      handler(this, *pRequest, UpdateDeploymentStrategy(*pRequest), context);
     } );
 }
 
@@ -1477,17 +1515,18 @@ UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironm
 
 UpdateEnvironmentOutcomeCallable AppConfigClient::UpdateEnvironmentCallable(const UpdateEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEnvironment(request); } );
+  std::shared_ptr<UpdateEnvironmentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEnvironmentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateEnvironment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateEnvironmentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateEnvironment(request), context);
+      handler(this, *pRequest, UpdateEnvironment(*pRequest), context);
     } );
 }
 
@@ -1508,17 +1547,18 @@ UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionReq
 
 UpdateExtensionOutcomeCallable AppConfigClient::UpdateExtensionCallable(const UpdateExtensionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExtension(request); } );
+  std::shared_ptr<UpdateExtensionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateExtensionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateExtension(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::UpdateExtensionAsync(const UpdateExtensionRequest& request, const UpdateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateExtensionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateExtension(request), context);
+      handler(this, *pRequest, UpdateExtension(*pRequest), context);
     } );
 }
 
@@ -1539,17 +1579,18 @@ UpdateExtensionAssociationOutcome AppConfigClient::UpdateExtensionAssociation(co
 
 UpdateExtensionAssociationOutcomeCallable AppConfigClient::UpdateExtensionAssociationCallable(const UpdateExtensionAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExtensionAssociation(request); } );
+  std::shared_ptr<UpdateExtensionAssociationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateExtensionAssociation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::UpdateExtensionAssociationAsync(const UpdateExtensionAssociationRequest& request, const UpdateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateExtensionAssociationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateExtensionAssociation(request), context);
+      handler(this, *pRequest, UpdateExtensionAssociation(*pRequest), context);
     } );
 }
 
@@ -1583,17 +1624,18 @@ ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const Valida
 
 ValidateConfigurationOutcomeCallable AppConfigClient::ValidateConfigurationCallable(const ValidateConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ValidateConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ValidateConfiguration(request); } );
+  std::shared_ptr<ValidateConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ValidateConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ValidateConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigClient::ValidateConfigurationAsync(const ValidateConfigurationRequest& request, const ValidateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ValidateConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ValidateConfiguration(request), context);
+      handler(this, *pRequest, ValidateConfiguration(*pRequest), context);
     } );
 }
 

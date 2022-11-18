@@ -190,20 +190,20 @@ AssumeRoleOutcome STSClient::AssumeRole(const AssumeRoleRequest& request) const
 
 AssumeRoleOutcomeCallable STSClient::AssumeRoleCallable(const AssumeRoleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssumeRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssumeRole(request); } );
+  std::shared_ptr<AssumeRoleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssumeRoleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssumeRole(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void STSClient::AssumeRoleAsync(const AssumeRoleRequest& request, const AssumeRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssumeRoleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssumeRole(request), context);
+      handler(this, *pRequest, AssumeRole(*pRequest), context);
     } );
 }
-
 AssumeRoleWithSAMLOutcome STSClient::AssumeRoleWithSAML(const AssumeRoleWithSAMLRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssumeRoleWithSAML, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -214,20 +214,20 @@ AssumeRoleWithSAMLOutcome STSClient::AssumeRoleWithSAML(const AssumeRoleWithSAML
 
 AssumeRoleWithSAMLOutcomeCallable STSClient::AssumeRoleWithSAMLCallable(const AssumeRoleWithSAMLRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssumeRoleWithSAMLOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssumeRoleWithSAML(request); } );
+  std::shared_ptr<AssumeRoleWithSAMLRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssumeRoleWithSAMLOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssumeRoleWithSAML(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void STSClient::AssumeRoleWithSAMLAsync(const AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssumeRoleWithSAMLRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssumeRoleWithSAML(request), context);
+      handler(this, *pRequest, AssumeRoleWithSAML(*pRequest), context);
     } );
 }
-
 AssumeRoleWithWebIdentityOutcome STSClient::AssumeRoleWithWebIdentity(const AssumeRoleWithWebIdentityRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssumeRoleWithWebIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -238,20 +238,20 @@ AssumeRoleWithWebIdentityOutcome STSClient::AssumeRoleWithWebIdentity(const Assu
 
 AssumeRoleWithWebIdentityOutcomeCallable STSClient::AssumeRoleWithWebIdentityCallable(const AssumeRoleWithWebIdentityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssumeRoleWithWebIdentityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssumeRoleWithWebIdentity(request); } );
+  std::shared_ptr<AssumeRoleWithWebIdentityRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssumeRoleWithWebIdentityOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssumeRoleWithWebIdentity(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void STSClient::AssumeRoleWithWebIdentityAsync(const AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssumeRoleWithWebIdentityRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssumeRoleWithWebIdentity(request), context);
+      handler(this, *pRequest, AssumeRoleWithWebIdentity(*pRequest), context);
     } );
 }
-
 DecodeAuthorizationMessageOutcome STSClient::DecodeAuthorizationMessage(const DecodeAuthorizationMessageRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DecodeAuthorizationMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -262,20 +262,20 @@ DecodeAuthorizationMessageOutcome STSClient::DecodeAuthorizationMessage(const De
 
 DecodeAuthorizationMessageOutcomeCallable STSClient::DecodeAuthorizationMessageCallable(const DecodeAuthorizationMessageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DecodeAuthorizationMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DecodeAuthorizationMessage(request); } );
+  std::shared_ptr<DecodeAuthorizationMessageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DecodeAuthorizationMessageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DecodeAuthorizationMessage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void STSClient::DecodeAuthorizationMessageAsync(const DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DecodeAuthorizationMessageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DecodeAuthorizationMessage(request), context);
+      handler(this, *pRequest, DecodeAuthorizationMessage(*pRequest), context);
     } );
 }
-
 GetAccessKeyInfoOutcome STSClient::GetAccessKeyInfo(const GetAccessKeyInfoRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessKeyInfo, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -286,20 +286,20 @@ GetAccessKeyInfoOutcome STSClient::GetAccessKeyInfo(const GetAccessKeyInfoReques
 
 GetAccessKeyInfoOutcomeCallable STSClient::GetAccessKeyInfoCallable(const GetAccessKeyInfoRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessKeyInfoOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessKeyInfo(request); } );
+  std::shared_ptr<GetAccessKeyInfoRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAccessKeyInfoOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAccessKeyInfo(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void STSClient::GetAccessKeyInfoAsync(const GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAccessKeyInfoRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAccessKeyInfo(request), context);
+      handler(this, *pRequest, GetAccessKeyInfo(*pRequest), context);
     } );
 }
-
 GetCallerIdentityOutcome STSClient::GetCallerIdentity(const GetCallerIdentityRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCallerIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -310,20 +310,20 @@ GetCallerIdentityOutcome STSClient::GetCallerIdentity(const GetCallerIdentityReq
 
 GetCallerIdentityOutcomeCallable STSClient::GetCallerIdentityCallable(const GetCallerIdentityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCallerIdentityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCallerIdentity(request); } );
+  std::shared_ptr<GetCallerIdentityRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCallerIdentityOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCallerIdentity(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void STSClient::GetCallerIdentityAsync(const GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCallerIdentityRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCallerIdentity(request), context);
+      handler(this, *pRequest, GetCallerIdentity(*pRequest), context);
     } );
 }
-
 GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationTokenRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFederationToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -334,20 +334,20 @@ GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationToken
 
 GetFederationTokenOutcomeCallable STSClient::GetFederationTokenCallable(const GetFederationTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFederationTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFederationToken(request); } );
+  std::shared_ptr<GetFederationTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetFederationTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetFederationToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void STSClient::GetFederationTokenAsync(const GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetFederationTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetFederationToken(request), context);
+      handler(this, *pRequest, GetFederationToken(*pRequest), context);
     } );
 }
-
 GetSessionTokenOutcome STSClient::GetSessionToken(const GetSessionTokenRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSessionToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -358,17 +358,17 @@ GetSessionTokenOutcome STSClient::GetSessionToken(const GetSessionTokenRequest& 
 
 GetSessionTokenOutcomeCallable STSClient::GetSessionTokenCallable(const GetSessionTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSessionTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSessionToken(request); } );
+  std::shared_ptr<GetSessionTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSessionTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSessionToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void STSClient::GetSessionTokenAsync(const GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSessionTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSessionToken(request), context);
+      handler(this, *pRequest, GetSessionToken(*pRequest), context);
     } );
 }
-

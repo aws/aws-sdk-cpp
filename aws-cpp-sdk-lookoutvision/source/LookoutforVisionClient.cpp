@@ -106,10 +106,10 @@ LookoutforVisionClient::LookoutforVisionClient(const std::shared_ptr<AWSCredenti
     /* Legacy constructors due deprecation */
   LookoutforVisionClient::LookoutforVisionClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LookoutforVisionErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -121,10 +121,10 @@ LookoutforVisionClient::LookoutforVisionClient(const std::shared_ptr<AWSCredenti
 LookoutforVisionClient::LookoutforVisionClient(const AWSCredentials& credentials,
                                                const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LookoutforVisionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -136,10 +136,10 @@ LookoutforVisionClient::LookoutforVisionClient(const AWSCredentials& credentials
 LookoutforVisionClient::LookoutforVisionClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                                const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LookoutforVisionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -189,17 +189,18 @@ CreateDatasetOutcome LookoutforVisionClient::CreateDataset(const CreateDatasetRe
 
 CreateDatasetOutcomeCallable LookoutforVisionClient::CreateDatasetCallable(const CreateDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataset(request); } );
+  std::shared_ptr<CreateDatasetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDataset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDatasetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDataset(request), context);
+      handler(this, *pRequest, CreateDataset(*pRequest), context);
     } );
 }
 
@@ -221,17 +222,18 @@ CreateModelOutcome LookoutforVisionClient::CreateModel(const CreateModelRequest&
 
 CreateModelOutcomeCallable LookoutforVisionClient::CreateModelCallable(const CreateModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModel(request); } );
+  std::shared_ptr<CreateModelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateModelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateModel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateModelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateModel(request), context);
+      handler(this, *pRequest, CreateModel(*pRequest), context);
     } );
 }
 
@@ -246,17 +248,18 @@ CreateProjectOutcome LookoutforVisionClient::CreateProject(const CreateProjectRe
 
 CreateProjectOutcomeCallable LookoutforVisionClient::CreateProjectCallable(const CreateProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProject(request); } );
+  std::shared_ptr<CreateProjectRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateProjectOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateProject(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateProjectRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateProject(request), context);
+      handler(this, *pRequest, CreateProject(*pRequest), context);
     } );
 }
 
@@ -284,17 +287,18 @@ DeleteDatasetOutcome LookoutforVisionClient::DeleteDataset(const DeleteDatasetRe
 
 DeleteDatasetOutcomeCallable LookoutforVisionClient::DeleteDatasetCallable(const DeleteDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataset(request); } );
+  std::shared_ptr<DeleteDatasetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDataset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDatasetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDataset(request), context);
+      handler(this, *pRequest, DeleteDataset(*pRequest), context);
     } );
 }
 
@@ -322,17 +326,18 @@ DeleteModelOutcome LookoutforVisionClient::DeleteModel(const DeleteModelRequest&
 
 DeleteModelOutcomeCallable LookoutforVisionClient::DeleteModelCallable(const DeleteModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModel(request); } );
+  std::shared_ptr<DeleteModelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteModelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteModel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteModelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteModel(request), context);
+      handler(this, *pRequest, DeleteModel(*pRequest), context);
     } );
 }
 
@@ -353,17 +358,18 @@ DeleteProjectOutcome LookoutforVisionClient::DeleteProject(const DeleteProjectRe
 
 DeleteProjectOutcomeCallable LookoutforVisionClient::DeleteProjectCallable(const DeleteProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProject(request); } );
+  std::shared_ptr<DeleteProjectRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProjectOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteProject(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteProjectRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteProject(request), context);
+      handler(this, *pRequest, DeleteProject(*pRequest), context);
     } );
 }
 
@@ -391,17 +397,18 @@ DescribeDatasetOutcome LookoutforVisionClient::DescribeDataset(const DescribeDat
 
 DescribeDatasetOutcomeCallable LookoutforVisionClient::DescribeDatasetCallable(const DescribeDatasetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataset(request); } );
+  std::shared_ptr<DescribeDatasetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDataset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDatasetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDataset(request), context);
+      handler(this, *pRequest, DescribeDataset(*pRequest), context);
     } );
 }
 
@@ -429,17 +436,18 @@ DescribeModelOutcome LookoutforVisionClient::DescribeModel(const DescribeModelRe
 
 DescribeModelOutcomeCallable LookoutforVisionClient::DescribeModelCallable(const DescribeModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModel(request); } );
+  std::shared_ptr<DescribeModelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeModelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeModel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::DescribeModelAsync(const DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeModelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeModel(request), context);
+      handler(this, *pRequest, DescribeModel(*pRequest), context);
     } );
 }
 
@@ -467,17 +475,18 @@ DescribeModelPackagingJobOutcome LookoutforVisionClient::DescribeModelPackagingJ
 
 DescribeModelPackagingJobOutcomeCallable LookoutforVisionClient::DescribeModelPackagingJobCallable(const DescribeModelPackagingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeModelPackagingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModelPackagingJob(request); } );
+  std::shared_ptr<DescribeModelPackagingJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeModelPackagingJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeModelPackagingJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::DescribeModelPackagingJobAsync(const DescribeModelPackagingJobRequest& request, const DescribeModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeModelPackagingJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeModelPackagingJob(request), context);
+      handler(this, *pRequest, DescribeModelPackagingJob(*pRequest), context);
     } );
 }
 
@@ -498,17 +507,18 @@ DescribeProjectOutcome LookoutforVisionClient::DescribeProject(const DescribePro
 
 DescribeProjectOutcomeCallable LookoutforVisionClient::DescribeProjectCallable(const DescribeProjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProject(request); } );
+  std::shared_ptr<DescribeProjectRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeProjectOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeProject(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeProjectRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeProject(request), context);
+      handler(this, *pRequest, DescribeProject(*pRequest), context);
     } );
 }
 
@@ -537,17 +547,18 @@ DetectAnomaliesOutcome LookoutforVisionClient::DetectAnomalies(const DetectAnoma
 
 DetectAnomaliesOutcomeCallable LookoutforVisionClient::DetectAnomaliesCallable(const DetectAnomaliesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DetectAnomaliesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectAnomalies(request); } );
+  std::shared_ptr<DetectAnomaliesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DetectAnomaliesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DetectAnomalies(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::DetectAnomaliesAsync(const DetectAnomaliesRequest& request, const DetectAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DetectAnomaliesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DetectAnomalies(request), context);
+      handler(this, *pRequest, DetectAnomalies(*pRequest), context);
     } );
 }
 
@@ -576,17 +587,18 @@ ListDatasetEntriesOutcome LookoutforVisionClient::ListDatasetEntries(const ListD
 
 ListDatasetEntriesOutcomeCallable LookoutforVisionClient::ListDatasetEntriesCallable(const ListDatasetEntriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatasetEntriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasetEntries(request); } );
+  std::shared_ptr<ListDatasetEntriesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDatasetEntriesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDatasetEntries(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::ListDatasetEntriesAsync(const ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDatasetEntriesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDatasetEntries(request), context);
+      handler(this, *pRequest, ListDatasetEntries(*pRequest), context);
     } );
 }
 
@@ -608,17 +620,18 @@ ListModelPackagingJobsOutcome LookoutforVisionClient::ListModelPackagingJobs(con
 
 ListModelPackagingJobsOutcomeCallable LookoutforVisionClient::ListModelPackagingJobsCallable(const ListModelPackagingJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelPackagingJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelPackagingJobs(request); } );
+  std::shared_ptr<ListModelPackagingJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListModelPackagingJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListModelPackagingJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::ListModelPackagingJobsAsync(const ListModelPackagingJobsRequest& request, const ListModelPackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListModelPackagingJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListModelPackagingJobs(request), context);
+      handler(this, *pRequest, ListModelPackagingJobs(*pRequest), context);
     } );
 }
 
@@ -640,17 +653,18 @@ ListModelsOutcome LookoutforVisionClient::ListModels(const ListModelsRequest& re
 
 ListModelsOutcomeCallable LookoutforVisionClient::ListModelsCallable(const ListModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModels(request); } );
+  std::shared_ptr<ListModelsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListModelsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListModels(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::ListModelsAsync(const ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListModelsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListModels(request), context);
+      handler(this, *pRequest, ListModels(*pRequest), context);
     } );
 }
 
@@ -665,17 +679,18 @@ ListProjectsOutcome LookoutforVisionClient::ListProjects(const ListProjectsReque
 
 ListProjectsOutcomeCallable LookoutforVisionClient::ListProjectsCallable(const ListProjectsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProjectsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProjects(request); } );
+  std::shared_ptr<ListProjectsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListProjectsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListProjects(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListProjectsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListProjects(request), context);
+      handler(this, *pRequest, ListProjects(*pRequest), context);
     } );
 }
 
@@ -696,17 +711,18 @@ ListTagsForResourceOutcome LookoutforVisionClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable LookoutforVisionClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -735,17 +751,18 @@ StartModelOutcome LookoutforVisionClient::StartModel(const StartModelRequest& re
 
 StartModelOutcomeCallable LookoutforVisionClient::StartModelCallable(const StartModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartModel(request); } );
+  std::shared_ptr<StartModelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartModelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartModel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::StartModelAsync(const StartModelRequest& request, const StartModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartModelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartModel(request), context);
+      handler(this, *pRequest, StartModel(*pRequest), context);
     } );
 }
 
@@ -767,17 +784,18 @@ StartModelPackagingJobOutcome LookoutforVisionClient::StartModelPackagingJob(con
 
 StartModelPackagingJobOutcomeCallable LookoutforVisionClient::StartModelPackagingJobCallable(const StartModelPackagingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartModelPackagingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartModelPackagingJob(request); } );
+  std::shared_ptr<StartModelPackagingJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartModelPackagingJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartModelPackagingJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::StartModelPackagingJobAsync(const StartModelPackagingJobRequest& request, const StartModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartModelPackagingJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartModelPackagingJob(request), context);
+      handler(this, *pRequest, StartModelPackagingJob(*pRequest), context);
     } );
 }
 
@@ -806,17 +824,18 @@ StopModelOutcome LookoutforVisionClient::StopModel(const StopModelRequest& reque
 
 StopModelOutcomeCallable LookoutforVisionClient::StopModelCallable(const StopModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopModel(request); } );
+  std::shared_ptr<StopModelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopModelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopModel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::StopModelAsync(const StopModelRequest& request, const StopModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopModelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopModel(request), context);
+      handler(this, *pRequest, StopModel(*pRequest), context);
     } );
 }
 
@@ -837,17 +856,18 @@ TagResourceOutcome LookoutforVisionClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable LookoutforVisionClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -873,17 +893,18 @@ UntagResourceOutcome LookoutforVisionClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable LookoutforVisionClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -912,17 +933,18 @@ UpdateDatasetEntriesOutcome LookoutforVisionClient::UpdateDatasetEntries(const U
 
 UpdateDatasetEntriesOutcomeCallable LookoutforVisionClient::UpdateDatasetEntriesCallable(const UpdateDatasetEntriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDatasetEntriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDatasetEntries(request); } );
+  std::shared_ptr<UpdateDatasetEntriesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDatasetEntriesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDatasetEntries(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LookoutforVisionClient::UpdateDatasetEntriesAsync(const UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDatasetEntriesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDatasetEntries(request), context);
+      handler(this, *pRequest, UpdateDatasetEntries(*pRequest), context);
     } );
 }
 

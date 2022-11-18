@@ -189,17 +189,18 @@ BatchCreateTableRowsOutcome HoneycodeClient::BatchCreateTableRows(const BatchCre
 
 BatchCreateTableRowsOutcomeCallable HoneycodeClient::BatchCreateTableRowsCallable(const BatchCreateTableRowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchCreateTableRowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchCreateTableRows(request); } );
+  std::shared_ptr<BatchCreateTableRowsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchCreateTableRowsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchCreateTableRows(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::BatchCreateTableRowsAsync(const BatchCreateTableRowsRequest& request, const BatchCreateTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchCreateTableRowsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchCreateTableRows(request), context);
+      handler(this, *pRequest, BatchCreateTableRows(*pRequest), context);
     } );
 }
 
@@ -228,17 +229,18 @@ BatchDeleteTableRowsOutcome HoneycodeClient::BatchDeleteTableRows(const BatchDel
 
 BatchDeleteTableRowsOutcomeCallable HoneycodeClient::BatchDeleteTableRowsCallable(const BatchDeleteTableRowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteTableRowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteTableRows(request); } );
+  std::shared_ptr<BatchDeleteTableRowsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteTableRowsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchDeleteTableRows(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::BatchDeleteTableRowsAsync(const BatchDeleteTableRowsRequest& request, const BatchDeleteTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchDeleteTableRowsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchDeleteTableRows(request), context);
+      handler(this, *pRequest, BatchDeleteTableRows(*pRequest), context);
     } );
 }
 
@@ -267,17 +269,18 @@ BatchUpdateTableRowsOutcome HoneycodeClient::BatchUpdateTableRows(const BatchUpd
 
 BatchUpdateTableRowsOutcomeCallable HoneycodeClient::BatchUpdateTableRowsCallable(const BatchUpdateTableRowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateTableRowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdateTableRows(request); } );
+  std::shared_ptr<BatchUpdateTableRowsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateTableRowsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchUpdateTableRows(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::BatchUpdateTableRowsAsync(const BatchUpdateTableRowsRequest& request, const BatchUpdateTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchUpdateTableRowsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchUpdateTableRows(request), context);
+      handler(this, *pRequest, BatchUpdateTableRows(*pRequest), context);
     } );
 }
 
@@ -306,17 +309,18 @@ BatchUpsertTableRowsOutcome HoneycodeClient::BatchUpsertTableRows(const BatchUps
 
 BatchUpsertTableRowsOutcomeCallable HoneycodeClient::BatchUpsertTableRowsCallable(const BatchUpsertTableRowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchUpsertTableRowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpsertTableRows(request); } );
+  std::shared_ptr<BatchUpsertTableRowsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchUpsertTableRowsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchUpsertTableRows(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::BatchUpsertTableRowsAsync(const BatchUpsertTableRowsRequest& request, const BatchUpsertTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchUpsertTableRowsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchUpsertTableRows(request), context);
+      handler(this, *pRequest, BatchUpsertTableRows(*pRequest), context);
     } );
 }
 
@@ -351,17 +355,18 @@ DescribeTableDataImportJobOutcome HoneycodeClient::DescribeTableDataImportJob(co
 
 DescribeTableDataImportJobOutcomeCallable HoneycodeClient::DescribeTableDataImportJobCallable(const DescribeTableDataImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTableDataImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTableDataImportJob(request); } );
+  std::shared_ptr<DescribeTableDataImportJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTableDataImportJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeTableDataImportJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::DescribeTableDataImportJobAsync(const DescribeTableDataImportJobRequest& request, const DescribeTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeTableDataImportJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeTableDataImportJob(request), context);
+      handler(this, *pRequest, DescribeTableDataImportJob(*pRequest), context);
     } );
 }
 
@@ -376,17 +381,18 @@ GetScreenDataOutcome HoneycodeClient::GetScreenData(const GetScreenDataRequest& 
 
 GetScreenDataOutcomeCallable HoneycodeClient::GetScreenDataCallable(const GetScreenDataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetScreenDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetScreenData(request); } );
+  std::shared_ptr<GetScreenDataRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetScreenDataOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetScreenData(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::GetScreenDataAsync(const GetScreenDataRequest& request, const GetScreenDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetScreenDataRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetScreenData(request), context);
+      handler(this, *pRequest, GetScreenData(*pRequest), context);
     } );
 }
 
@@ -428,17 +434,18 @@ InvokeScreenAutomationOutcome HoneycodeClient::InvokeScreenAutomation(const Invo
 
 InvokeScreenAutomationOutcomeCallable HoneycodeClient::InvokeScreenAutomationCallable(const InvokeScreenAutomationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InvokeScreenAutomationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InvokeScreenAutomation(request); } );
+  std::shared_ptr<InvokeScreenAutomationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< InvokeScreenAutomationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->InvokeScreenAutomation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::InvokeScreenAutomationAsync(const InvokeScreenAutomationRequest& request, const InvokeScreenAutomationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<InvokeScreenAutomationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, InvokeScreenAutomation(request), context);
+      handler(this, *pRequest, InvokeScreenAutomation(*pRequest), context);
     } );
 }
 
@@ -467,17 +474,18 @@ ListTableColumnsOutcome HoneycodeClient::ListTableColumns(const ListTableColumns
 
 ListTableColumnsOutcomeCallable HoneycodeClient::ListTableColumnsCallable(const ListTableColumnsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTableColumnsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTableColumns(request); } );
+  std::shared_ptr<ListTableColumnsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTableColumnsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTableColumns(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::ListTableColumnsAsync(const ListTableColumnsRequest& request, const ListTableColumnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTableColumnsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTableColumns(request), context);
+      handler(this, *pRequest, ListTableColumns(*pRequest), context);
     } );
 }
 
@@ -506,17 +514,18 @@ ListTableRowsOutcome HoneycodeClient::ListTableRows(const ListTableRowsRequest& 
 
 ListTableRowsOutcomeCallable HoneycodeClient::ListTableRowsCallable(const ListTableRowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTableRowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTableRows(request); } );
+  std::shared_ptr<ListTableRowsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTableRowsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTableRows(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::ListTableRowsAsync(const ListTableRowsRequest& request, const ListTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTableRowsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTableRows(request), context);
+      handler(this, *pRequest, ListTableRows(*pRequest), context);
     } );
 }
 
@@ -538,17 +547,18 @@ ListTablesOutcome HoneycodeClient::ListTables(const ListTablesRequest& request) 
 
 ListTablesOutcomeCallable HoneycodeClient::ListTablesCallable(const ListTablesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTablesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTables(request); } );
+  std::shared_ptr<ListTablesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTablesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTables(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTablesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTables(request), context);
+      handler(this, *pRequest, ListTables(*pRequest), context);
     } );
 }
 
@@ -569,17 +579,18 @@ ListTagsForResourceOutcome HoneycodeClient::ListTagsForResource(const ListTagsFo
 
 ListTagsForResourceOutcomeCallable HoneycodeClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -608,17 +619,18 @@ QueryTableRowsOutcome HoneycodeClient::QueryTableRows(const QueryTableRowsReques
 
 QueryTableRowsOutcomeCallable HoneycodeClient::QueryTableRowsCallable(const QueryTableRowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryTableRowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QueryTableRows(request); } );
+  std::shared_ptr<QueryTableRowsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< QueryTableRowsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->QueryTableRows(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::QueryTableRowsAsync(const QueryTableRowsRequest& request, const QueryTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<QueryTableRowsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, QueryTableRows(request), context);
+      handler(this, *pRequest, QueryTableRows(*pRequest), context);
     } );
 }
 
@@ -647,17 +659,18 @@ StartTableDataImportJobOutcome HoneycodeClient::StartTableDataImportJob(const St
 
 StartTableDataImportJobOutcomeCallable HoneycodeClient::StartTableDataImportJobCallable(const StartTableDataImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartTableDataImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartTableDataImportJob(request); } );
+  std::shared_ptr<StartTableDataImportJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartTableDataImportJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartTableDataImportJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::StartTableDataImportJobAsync(const StartTableDataImportJobRequest& request, const StartTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartTableDataImportJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartTableDataImportJob(request), context);
+      handler(this, *pRequest, StartTableDataImportJob(*pRequest), context);
     } );
 }
 
@@ -678,17 +691,18 @@ TagResourceOutcome HoneycodeClient::TagResource(const TagResourceRequest& reques
 
 TagResourceOutcomeCallable HoneycodeClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -714,17 +728,18 @@ UntagResourceOutcome HoneycodeClient::UntagResource(const UntagResourceRequest& 
 
 UntagResourceOutcomeCallable HoneycodeClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void HoneycodeClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 

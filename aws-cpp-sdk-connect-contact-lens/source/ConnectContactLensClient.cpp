@@ -161,17 +161,18 @@ ListRealtimeContactAnalysisSegmentsOutcome ConnectContactLensClient::ListRealtim
 
 ListRealtimeContactAnalysisSegmentsOutcomeCallable ConnectContactLensClient::ListRealtimeContactAnalysisSegmentsCallable(const ListRealtimeContactAnalysisSegmentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRealtimeContactAnalysisSegmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRealtimeContactAnalysisSegments(request); } );
+  std::shared_ptr<ListRealtimeContactAnalysisSegmentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListRealtimeContactAnalysisSegmentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListRealtimeContactAnalysisSegments(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectContactLensClient::ListRealtimeContactAnalysisSegmentsAsync(const ListRealtimeContactAnalysisSegmentsRequest& request, const ListRealtimeContactAnalysisSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListRealtimeContactAnalysisSegmentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListRealtimeContactAnalysisSegments(request), context);
+      handler(this, *pRequest, ListRealtimeContactAnalysisSegments(*pRequest), context);
     } );
 }
 

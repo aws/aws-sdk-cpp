@@ -189,17 +189,18 @@ AssociateLicenseOutcome ManagedGrafanaClient::AssociateLicense(const AssociateLi
 
 AssociateLicenseOutcomeCallable ManagedGrafanaClient::AssociateLicenseCallable(const AssociateLicenseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateLicenseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateLicense(request); } );
+  std::shared_ptr<AssociateLicenseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateLicenseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateLicense(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::AssociateLicenseAsync(const AssociateLicenseRequest& request, const AssociateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateLicenseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateLicense(request), context);
+      handler(this, *pRequest, AssociateLicense(*pRequest), context);
     } );
 }
 
@@ -214,17 +215,18 @@ CreateWorkspaceOutcome ManagedGrafanaClient::CreateWorkspace(const CreateWorkspa
 
 CreateWorkspaceOutcomeCallable ManagedGrafanaClient::CreateWorkspaceCallable(const CreateWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkspace(request); } );
+  std::shared_ptr<CreateWorkspaceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorkspaceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateWorkspace(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::CreateWorkspaceAsync(const CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateWorkspaceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateWorkspace(request), context);
+      handler(this, *pRequest, CreateWorkspace(*pRequest), context);
     } );
 }
 
@@ -246,17 +248,18 @@ CreateWorkspaceApiKeyOutcome ManagedGrafanaClient::CreateWorkspaceApiKey(const C
 
 CreateWorkspaceApiKeyOutcomeCallable ManagedGrafanaClient::CreateWorkspaceApiKeyCallable(const CreateWorkspaceApiKeyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkspaceApiKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkspaceApiKey(request); } );
+  std::shared_ptr<CreateWorkspaceApiKeyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorkspaceApiKeyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateWorkspaceApiKey(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::CreateWorkspaceApiKeyAsync(const CreateWorkspaceApiKeyRequest& request, const CreateWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateWorkspaceApiKeyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateWorkspaceApiKey(request), context);
+      handler(this, *pRequest, CreateWorkspaceApiKey(*pRequest), context);
     } );
 }
 
@@ -277,17 +280,18 @@ DeleteWorkspaceOutcome ManagedGrafanaClient::DeleteWorkspace(const DeleteWorkspa
 
 DeleteWorkspaceOutcomeCallable ManagedGrafanaClient::DeleteWorkspaceCallable(const DeleteWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkspace(request); } );
+  std::shared_ptr<DeleteWorkspaceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkspaceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteWorkspace(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::DeleteWorkspaceAsync(const DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteWorkspaceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteWorkspace(request), context);
+      handler(this, *pRequest, DeleteWorkspace(*pRequest), context);
     } );
 }
 
@@ -315,17 +319,18 @@ DeleteWorkspaceApiKeyOutcome ManagedGrafanaClient::DeleteWorkspaceApiKey(const D
 
 DeleteWorkspaceApiKeyOutcomeCallable ManagedGrafanaClient::DeleteWorkspaceApiKeyCallable(const DeleteWorkspaceApiKeyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkspaceApiKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkspaceApiKey(request); } );
+  std::shared_ptr<DeleteWorkspaceApiKeyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkspaceApiKeyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteWorkspaceApiKey(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::DeleteWorkspaceApiKeyAsync(const DeleteWorkspaceApiKeyRequest& request, const DeleteWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteWorkspaceApiKeyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteWorkspaceApiKey(request), context);
+      handler(this, *pRequest, DeleteWorkspaceApiKey(*pRequest), context);
     } );
 }
 
@@ -346,17 +351,18 @@ DescribeWorkspaceOutcome ManagedGrafanaClient::DescribeWorkspace(const DescribeW
 
 DescribeWorkspaceOutcomeCallable ManagedGrafanaClient::DescribeWorkspaceCallable(const DescribeWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkspace(request); } );
+  std::shared_ptr<DescribeWorkspaceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkspaceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeWorkspace(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::DescribeWorkspaceAsync(const DescribeWorkspaceRequest& request, const DescribeWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeWorkspaceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeWorkspace(request), context);
+      handler(this, *pRequest, DescribeWorkspace(*pRequest), context);
     } );
 }
 
@@ -378,17 +384,18 @@ DescribeWorkspaceAuthenticationOutcome ManagedGrafanaClient::DescribeWorkspaceAu
 
 DescribeWorkspaceAuthenticationOutcomeCallable ManagedGrafanaClient::DescribeWorkspaceAuthenticationCallable(const DescribeWorkspaceAuthenticationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkspaceAuthenticationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkspaceAuthentication(request); } );
+  std::shared_ptr<DescribeWorkspaceAuthenticationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkspaceAuthenticationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeWorkspaceAuthentication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::DescribeWorkspaceAuthenticationAsync(const DescribeWorkspaceAuthenticationRequest& request, const DescribeWorkspaceAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeWorkspaceAuthenticationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeWorkspaceAuthentication(request), context);
+      handler(this, *pRequest, DescribeWorkspaceAuthentication(*pRequest), context);
     } );
 }
 
@@ -416,17 +423,18 @@ DisassociateLicenseOutcome ManagedGrafanaClient::DisassociateLicense(const Disas
 
 DisassociateLicenseOutcomeCallable ManagedGrafanaClient::DisassociateLicenseCallable(const DisassociateLicenseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateLicenseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateLicense(request); } );
+  std::shared_ptr<DisassociateLicenseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateLicenseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateLicense(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::DisassociateLicenseAsync(const DisassociateLicenseRequest& request, const DisassociateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateLicenseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateLicense(request), context);
+      handler(this, *pRequest, DisassociateLicense(*pRequest), context);
     } );
 }
 
@@ -448,17 +456,18 @@ ListPermissionsOutcome ManagedGrafanaClient::ListPermissions(const ListPermissio
 
 ListPermissionsOutcomeCallable ManagedGrafanaClient::ListPermissionsCallable(const ListPermissionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissions(request); } );
+  std::shared_ptr<ListPermissionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPermissionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPermissions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::ListPermissionsAsync(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPermissionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPermissions(request), context);
+      handler(this, *pRequest, ListPermissions(*pRequest), context);
     } );
 }
 
@@ -479,17 +488,18 @@ ListTagsForResourceOutcome ManagedGrafanaClient::ListTagsForResource(const ListT
 
 ListTagsForResourceOutcomeCallable ManagedGrafanaClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -504,17 +514,18 @@ ListWorkspacesOutcome ManagedGrafanaClient::ListWorkspaces(const ListWorkspacesR
 
 ListWorkspacesOutcomeCallable ManagedGrafanaClient::ListWorkspacesCallable(const ListWorkspacesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkspacesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkspaces(request); } );
+  std::shared_ptr<ListWorkspacesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListWorkspacesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListWorkspaces(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::ListWorkspacesAsync(const ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListWorkspacesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListWorkspaces(request), context);
+      handler(this, *pRequest, ListWorkspaces(*pRequest), context);
     } );
 }
 
@@ -535,17 +546,18 @@ TagResourceOutcome ManagedGrafanaClient::TagResource(const TagResourceRequest& r
 
 TagResourceOutcomeCallable ManagedGrafanaClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -571,17 +583,18 @@ UntagResourceOutcome ManagedGrafanaClient::UntagResource(const UntagResourceRequ
 
 UntagResourceOutcomeCallable ManagedGrafanaClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -603,17 +616,18 @@ UpdatePermissionsOutcome ManagedGrafanaClient::UpdatePermissions(const UpdatePer
 
 UpdatePermissionsOutcomeCallable ManagedGrafanaClient::UpdatePermissionsCallable(const UpdatePermissionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePermissions(request); } );
+  std::shared_ptr<UpdatePermissionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePermissionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdatePermissions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::UpdatePermissionsAsync(const UpdatePermissionsRequest& request, const UpdatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdatePermissionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdatePermissions(request), context);
+      handler(this, *pRequest, UpdatePermissions(*pRequest), context);
     } );
 }
 
@@ -634,17 +648,18 @@ UpdateWorkspaceOutcome ManagedGrafanaClient::UpdateWorkspace(const UpdateWorkspa
 
 UpdateWorkspaceOutcomeCallable ManagedGrafanaClient::UpdateWorkspaceCallable(const UpdateWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkspace(request); } );
+  std::shared_ptr<UpdateWorkspaceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkspaceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateWorkspace(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::UpdateWorkspaceAsync(const UpdateWorkspaceRequest& request, const UpdateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateWorkspaceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateWorkspace(request), context);
+      handler(this, *pRequest, UpdateWorkspace(*pRequest), context);
     } );
 }
 
@@ -666,17 +681,18 @@ UpdateWorkspaceAuthenticationOutcome ManagedGrafanaClient::UpdateWorkspaceAuthen
 
 UpdateWorkspaceAuthenticationOutcomeCallable ManagedGrafanaClient::UpdateWorkspaceAuthenticationCallable(const UpdateWorkspaceAuthenticationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkspaceAuthenticationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkspaceAuthentication(request); } );
+  std::shared_ptr<UpdateWorkspaceAuthenticationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkspaceAuthenticationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateWorkspaceAuthentication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedGrafanaClient::UpdateWorkspaceAuthenticationAsync(const UpdateWorkspaceAuthenticationRequest& request, const UpdateWorkspaceAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateWorkspaceAuthenticationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateWorkspaceAuthentication(request), context);
+      handler(this, *pRequest, UpdateWorkspaceAuthentication(*pRequest), context);
     } );
 }
 

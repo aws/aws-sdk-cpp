@@ -180,17 +180,18 @@ CreateDomainOutcome VoiceIDClient::CreateDomain(const CreateDomainRequest& reque
 
 CreateDomainOutcomeCallable VoiceIDClient::CreateDomainCallable(const CreateDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDomain(request); } );
+  std::shared_ptr<CreateDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDomain(request), context);
+      handler(this, *pRequest, CreateDomain(*pRequest), context);
     } );
 }
 
@@ -204,17 +205,18 @@ DeleteDomainOutcome VoiceIDClient::DeleteDomain(const DeleteDomainRequest& reque
 
 DeleteDomainOutcomeCallable VoiceIDClient::DeleteDomainCallable(const DeleteDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDomain(request); } );
+  std::shared_ptr<DeleteDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDomain(request), context);
+      handler(this, *pRequest, DeleteDomain(*pRequest), context);
     } );
 }
 
@@ -228,17 +230,18 @@ DeleteFraudsterOutcome VoiceIDClient::DeleteFraudster(const DeleteFraudsterReque
 
 DeleteFraudsterOutcomeCallable VoiceIDClient::DeleteFraudsterCallable(const DeleteFraudsterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFraudsterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFraudster(request); } );
+  std::shared_ptr<DeleteFraudsterRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFraudsterOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteFraudster(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::DeleteFraudsterAsync(const DeleteFraudsterRequest& request, const DeleteFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteFraudsterRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteFraudster(request), context);
+      handler(this, *pRequest, DeleteFraudster(*pRequest), context);
     } );
 }
 
@@ -252,17 +255,18 @@ DeleteSpeakerOutcome VoiceIDClient::DeleteSpeaker(const DeleteSpeakerRequest& re
 
 DeleteSpeakerOutcomeCallable VoiceIDClient::DeleteSpeakerCallable(const DeleteSpeakerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSpeakerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSpeaker(request); } );
+  std::shared_ptr<DeleteSpeakerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSpeakerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteSpeaker(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::DeleteSpeakerAsync(const DeleteSpeakerRequest& request, const DeleteSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteSpeakerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteSpeaker(request), context);
+      handler(this, *pRequest, DeleteSpeaker(*pRequest), context);
     } );
 }
 
@@ -276,17 +280,18 @@ DescribeDomainOutcome VoiceIDClient::DescribeDomain(const DescribeDomainRequest&
 
 DescribeDomainOutcomeCallable VoiceIDClient::DescribeDomainCallable(const DescribeDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomain(request); } );
+  std::shared_ptr<DescribeDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDomain(request), context);
+      handler(this, *pRequest, DescribeDomain(*pRequest), context);
     } );
 }
 
@@ -300,17 +305,18 @@ DescribeFraudsterOutcome VoiceIDClient::DescribeFraudster(const DescribeFraudste
 
 DescribeFraudsterOutcomeCallable VoiceIDClient::DescribeFraudsterCallable(const DescribeFraudsterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFraudsterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFraudster(request); } );
+  std::shared_ptr<DescribeFraudsterRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFraudsterOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeFraudster(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::DescribeFraudsterAsync(const DescribeFraudsterRequest& request, const DescribeFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeFraudsterRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeFraudster(request), context);
+      handler(this, *pRequest, DescribeFraudster(*pRequest), context);
     } );
 }
 
@@ -324,17 +330,18 @@ DescribeFraudsterRegistrationJobOutcome VoiceIDClient::DescribeFraudsterRegistra
 
 DescribeFraudsterRegistrationJobOutcomeCallable VoiceIDClient::DescribeFraudsterRegistrationJobCallable(const DescribeFraudsterRegistrationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeFraudsterRegistrationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFraudsterRegistrationJob(request); } );
+  std::shared_ptr<DescribeFraudsterRegistrationJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFraudsterRegistrationJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeFraudsterRegistrationJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::DescribeFraudsterRegistrationJobAsync(const DescribeFraudsterRegistrationJobRequest& request, const DescribeFraudsterRegistrationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeFraudsterRegistrationJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeFraudsterRegistrationJob(request), context);
+      handler(this, *pRequest, DescribeFraudsterRegistrationJob(*pRequest), context);
     } );
 }
 
@@ -348,17 +355,18 @@ DescribeSpeakerOutcome VoiceIDClient::DescribeSpeaker(const DescribeSpeakerReque
 
 DescribeSpeakerOutcomeCallable VoiceIDClient::DescribeSpeakerCallable(const DescribeSpeakerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSpeakerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSpeaker(request); } );
+  std::shared_ptr<DescribeSpeakerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSpeakerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeSpeaker(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::DescribeSpeakerAsync(const DescribeSpeakerRequest& request, const DescribeSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeSpeakerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeSpeaker(request), context);
+      handler(this, *pRequest, DescribeSpeaker(*pRequest), context);
     } );
 }
 
@@ -372,17 +380,18 @@ DescribeSpeakerEnrollmentJobOutcome VoiceIDClient::DescribeSpeakerEnrollmentJob(
 
 DescribeSpeakerEnrollmentJobOutcomeCallable VoiceIDClient::DescribeSpeakerEnrollmentJobCallable(const DescribeSpeakerEnrollmentJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSpeakerEnrollmentJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSpeakerEnrollmentJob(request); } );
+  std::shared_ptr<DescribeSpeakerEnrollmentJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSpeakerEnrollmentJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeSpeakerEnrollmentJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::DescribeSpeakerEnrollmentJobAsync(const DescribeSpeakerEnrollmentJobRequest& request, const DescribeSpeakerEnrollmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeSpeakerEnrollmentJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeSpeakerEnrollmentJob(request), context);
+      handler(this, *pRequest, DescribeSpeakerEnrollmentJob(*pRequest), context);
     } );
 }
 
@@ -396,17 +405,18 @@ EvaluateSessionOutcome VoiceIDClient::EvaluateSession(const EvaluateSessionReque
 
 EvaluateSessionOutcomeCallable VoiceIDClient::EvaluateSessionCallable(const EvaluateSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EvaluateSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EvaluateSession(request); } );
+  std::shared_ptr<EvaluateSessionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< EvaluateSessionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->EvaluateSession(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::EvaluateSessionAsync(const EvaluateSessionRequest& request, const EvaluateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<EvaluateSessionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, EvaluateSession(request), context);
+      handler(this, *pRequest, EvaluateSession(*pRequest), context);
     } );
 }
 
@@ -420,17 +430,18 @@ ListDomainsOutcome VoiceIDClient::ListDomains(const ListDomainsRequest& request)
 
 ListDomainsOutcomeCallable VoiceIDClient::ListDomainsCallable(const ListDomainsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomains(request); } );
+  std::shared_ptr<ListDomainsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDomains(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDomainsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDomains(request), context);
+      handler(this, *pRequest, ListDomains(*pRequest), context);
     } );
 }
 
@@ -444,17 +455,18 @@ ListFraudsterRegistrationJobsOutcome VoiceIDClient::ListFraudsterRegistrationJob
 
 ListFraudsterRegistrationJobsOutcomeCallable VoiceIDClient::ListFraudsterRegistrationJobsCallable(const ListFraudsterRegistrationJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFraudsterRegistrationJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFraudsterRegistrationJobs(request); } );
+  std::shared_ptr<ListFraudsterRegistrationJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListFraudsterRegistrationJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListFraudsterRegistrationJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::ListFraudsterRegistrationJobsAsync(const ListFraudsterRegistrationJobsRequest& request, const ListFraudsterRegistrationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListFraudsterRegistrationJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListFraudsterRegistrationJobs(request), context);
+      handler(this, *pRequest, ListFraudsterRegistrationJobs(*pRequest), context);
     } );
 }
 
@@ -468,17 +480,18 @@ ListSpeakerEnrollmentJobsOutcome VoiceIDClient::ListSpeakerEnrollmentJobs(const 
 
 ListSpeakerEnrollmentJobsOutcomeCallable VoiceIDClient::ListSpeakerEnrollmentJobsCallable(const ListSpeakerEnrollmentJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSpeakerEnrollmentJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSpeakerEnrollmentJobs(request); } );
+  std::shared_ptr<ListSpeakerEnrollmentJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSpeakerEnrollmentJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSpeakerEnrollmentJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::ListSpeakerEnrollmentJobsAsync(const ListSpeakerEnrollmentJobsRequest& request, const ListSpeakerEnrollmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSpeakerEnrollmentJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSpeakerEnrollmentJobs(request), context);
+      handler(this, *pRequest, ListSpeakerEnrollmentJobs(*pRequest), context);
     } );
 }
 
@@ -492,17 +505,18 @@ ListSpeakersOutcome VoiceIDClient::ListSpeakers(const ListSpeakersRequest& reque
 
 ListSpeakersOutcomeCallable VoiceIDClient::ListSpeakersCallable(const ListSpeakersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSpeakersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSpeakers(request); } );
+  std::shared_ptr<ListSpeakersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSpeakersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSpeakers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::ListSpeakersAsync(const ListSpeakersRequest& request, const ListSpeakersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSpeakersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSpeakers(request), context);
+      handler(this, *pRequest, ListSpeakers(*pRequest), context);
     } );
 }
 
@@ -516,17 +530,18 @@ ListTagsForResourceOutcome VoiceIDClient::ListTagsForResource(const ListTagsForR
 
 ListTagsForResourceOutcomeCallable VoiceIDClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -540,17 +555,18 @@ OptOutSpeakerOutcome VoiceIDClient::OptOutSpeaker(const OptOutSpeakerRequest& re
 
 OptOutSpeakerOutcomeCallable VoiceIDClient::OptOutSpeakerCallable(const OptOutSpeakerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< OptOutSpeakerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->OptOutSpeaker(request); } );
+  std::shared_ptr<OptOutSpeakerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< OptOutSpeakerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->OptOutSpeaker(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::OptOutSpeakerAsync(const OptOutSpeakerRequest& request, const OptOutSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<OptOutSpeakerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, OptOutSpeaker(request), context);
+      handler(this, *pRequest, OptOutSpeaker(*pRequest), context);
     } );
 }
 
@@ -564,17 +580,18 @@ StartFraudsterRegistrationJobOutcome VoiceIDClient::StartFraudsterRegistrationJo
 
 StartFraudsterRegistrationJobOutcomeCallable VoiceIDClient::StartFraudsterRegistrationJobCallable(const StartFraudsterRegistrationJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartFraudsterRegistrationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartFraudsterRegistrationJob(request); } );
+  std::shared_ptr<StartFraudsterRegistrationJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartFraudsterRegistrationJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartFraudsterRegistrationJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::StartFraudsterRegistrationJobAsync(const StartFraudsterRegistrationJobRequest& request, const StartFraudsterRegistrationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartFraudsterRegistrationJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartFraudsterRegistrationJob(request), context);
+      handler(this, *pRequest, StartFraudsterRegistrationJob(*pRequest), context);
     } );
 }
 
@@ -588,17 +605,18 @@ StartSpeakerEnrollmentJobOutcome VoiceIDClient::StartSpeakerEnrollmentJob(const 
 
 StartSpeakerEnrollmentJobOutcomeCallable VoiceIDClient::StartSpeakerEnrollmentJobCallable(const StartSpeakerEnrollmentJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartSpeakerEnrollmentJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSpeakerEnrollmentJob(request); } );
+  std::shared_ptr<StartSpeakerEnrollmentJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartSpeakerEnrollmentJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartSpeakerEnrollmentJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::StartSpeakerEnrollmentJobAsync(const StartSpeakerEnrollmentJobRequest& request, const StartSpeakerEnrollmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartSpeakerEnrollmentJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartSpeakerEnrollmentJob(request), context);
+      handler(this, *pRequest, StartSpeakerEnrollmentJob(*pRequest), context);
     } );
 }
 
@@ -612,17 +630,18 @@ TagResourceOutcome VoiceIDClient::TagResource(const TagResourceRequest& request)
 
 TagResourceOutcomeCallable VoiceIDClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -636,17 +655,18 @@ UntagResourceOutcome VoiceIDClient::UntagResource(const UntagResourceRequest& re
 
 UntagResourceOutcomeCallable VoiceIDClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -660,17 +680,18 @@ UpdateDomainOutcome VoiceIDClient::UpdateDomain(const UpdateDomainRequest& reque
 
 UpdateDomainOutcomeCallable VoiceIDClient::UpdateDomainCallable(const UpdateDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDomain(request); } );
+  std::shared_ptr<UpdateDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void VoiceIDClient::UpdateDomainAsync(const UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDomain(request), context);
+      handler(this, *pRequest, UpdateDomain(*pRequest), context);
     } );
 }
 

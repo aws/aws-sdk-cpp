@@ -176,17 +176,18 @@ AssociateDefaultViewOutcome ResourceExplorer2Client::AssociateDefaultView(const 
 
 AssociateDefaultViewOutcomeCallable ResourceExplorer2Client::AssociateDefaultViewCallable(const AssociateDefaultViewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateDefaultViewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateDefaultView(request); } );
+  std::shared_ptr<AssociateDefaultViewRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateDefaultViewOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateDefaultView(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::AssociateDefaultViewAsync(const AssociateDefaultViewRequest& request, const AssociateDefaultViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateDefaultViewRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateDefaultView(request), context);
+      handler(this, *pRequest, AssociateDefaultView(*pRequest), context);
     } );
 }
 
@@ -201,17 +202,18 @@ BatchGetViewOutcome ResourceExplorer2Client::BatchGetView(const BatchGetViewRequ
 
 BatchGetViewOutcomeCallable ResourceExplorer2Client::BatchGetViewCallable(const BatchGetViewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetViewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetView(request); } );
+  std::shared_ptr<BatchGetViewRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetViewOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchGetView(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::BatchGetViewAsync(const BatchGetViewRequest& request, const BatchGetViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchGetViewRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchGetView(request), context);
+      handler(this, *pRequest, BatchGetView(*pRequest), context);
     } );
 }
 
@@ -226,17 +228,18 @@ CreateIndexOutcome ResourceExplorer2Client::CreateIndex(const CreateIndexRequest
 
 CreateIndexOutcomeCallable ResourceExplorer2Client::CreateIndexCallable(const CreateIndexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateIndex(request); } );
+  std::shared_ptr<CreateIndexRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateIndexOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateIndex(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::CreateIndexAsync(const CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateIndexRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateIndex(request), context);
+      handler(this, *pRequest, CreateIndex(*pRequest), context);
     } );
 }
 
@@ -251,17 +254,18 @@ CreateViewOutcome ResourceExplorer2Client::CreateView(const CreateViewRequest& r
 
 CreateViewOutcomeCallable ResourceExplorer2Client::CreateViewCallable(const CreateViewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateViewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateView(request); } );
+  std::shared_ptr<CreateViewRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateViewOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateView(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::CreateViewAsync(const CreateViewRequest& request, const CreateViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateViewRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateView(request), context);
+      handler(this, *pRequest, CreateView(*pRequest), context);
     } );
 }
 
@@ -276,17 +280,18 @@ DeleteIndexOutcome ResourceExplorer2Client::DeleteIndex(const DeleteIndexRequest
 
 DeleteIndexOutcomeCallable ResourceExplorer2Client::DeleteIndexCallable(const DeleteIndexRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteIndex(request); } );
+  std::shared_ptr<DeleteIndexRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteIndexOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteIndex(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::DeleteIndexAsync(const DeleteIndexRequest& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteIndexRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteIndex(request), context);
+      handler(this, *pRequest, DeleteIndex(*pRequest), context);
     } );
 }
 
@@ -301,17 +306,18 @@ DeleteViewOutcome ResourceExplorer2Client::DeleteView(const DeleteViewRequest& r
 
 DeleteViewOutcomeCallable ResourceExplorer2Client::DeleteViewCallable(const DeleteViewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteViewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteView(request); } );
+  std::shared_ptr<DeleteViewRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteViewOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteView(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::DeleteViewAsync(const DeleteViewRequest& request, const DeleteViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteViewRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteView(request), context);
+      handler(this, *pRequest, DeleteView(*pRequest), context);
     } );
 }
 
@@ -404,17 +410,18 @@ GetViewOutcome ResourceExplorer2Client::GetView(const GetViewRequest& request) c
 
 GetViewOutcomeCallable ResourceExplorer2Client::GetViewCallable(const GetViewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetViewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetView(request); } );
+  std::shared_ptr<GetViewRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetViewOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetView(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::GetViewAsync(const GetViewRequest& request, const GetViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetViewRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetView(request), context);
+      handler(this, *pRequest, GetView(*pRequest), context);
     } );
 }
 
@@ -429,17 +436,18 @@ ListIndexesOutcome ResourceExplorer2Client::ListIndexes(const ListIndexesRequest
 
 ListIndexesOutcomeCallable ResourceExplorer2Client::ListIndexesCallable(const ListIndexesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListIndexesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIndexes(request); } );
+  std::shared_ptr<ListIndexesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListIndexesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListIndexes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::ListIndexesAsync(const ListIndexesRequest& request, const ListIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListIndexesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListIndexes(request), context);
+      handler(this, *pRequest, ListIndexes(*pRequest), context);
     } );
 }
 
@@ -454,17 +462,18 @@ ListSupportedResourceTypesOutcome ResourceExplorer2Client::ListSupportedResource
 
 ListSupportedResourceTypesOutcomeCallable ResourceExplorer2Client::ListSupportedResourceTypesCallable(const ListSupportedResourceTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSupportedResourceTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSupportedResourceTypes(request); } );
+  std::shared_ptr<ListSupportedResourceTypesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSupportedResourceTypesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSupportedResourceTypes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::ListSupportedResourceTypesAsync(const ListSupportedResourceTypesRequest& request, const ListSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSupportedResourceTypesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSupportedResourceTypes(request), context);
+      handler(this, *pRequest, ListSupportedResourceTypes(*pRequest), context);
     } );
 }
 
@@ -485,17 +494,18 @@ ListTagsForResourceOutcome ResourceExplorer2Client::ListTagsForResource(const Li
 
 ListTagsForResourceOutcomeCallable ResourceExplorer2Client::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -510,17 +520,18 @@ ListViewsOutcome ResourceExplorer2Client::ListViews(const ListViewsRequest& requ
 
 ListViewsOutcomeCallable ResourceExplorer2Client::ListViewsCallable(const ListViewsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListViewsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListViews(request); } );
+  std::shared_ptr<ListViewsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListViewsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListViews(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::ListViewsAsync(const ListViewsRequest& request, const ListViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListViewsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListViews(request), context);
+      handler(this, *pRequest, ListViews(*pRequest), context);
     } );
 }
 
@@ -535,17 +546,18 @@ SearchOutcome ResourceExplorer2Client::Search(const SearchRequest& request) cons
 
 SearchOutcomeCallable ResourceExplorer2Client::SearchCallable(const SearchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Search(request); } );
+  std::shared_ptr<SearchRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SearchOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->Search(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::SearchAsync(const SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SearchRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, Search(request), context);
+      handler(this, *pRequest, Search(*pRequest), context);
     } );
 }
 
@@ -566,17 +578,18 @@ TagResourceOutcome ResourceExplorer2Client::TagResource(const TagResourceRequest
 
 TagResourceOutcomeCallable ResourceExplorer2Client::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -602,17 +615,18 @@ UntagResourceOutcome ResourceExplorer2Client::UntagResource(const UntagResourceR
 
 UntagResourceOutcomeCallable ResourceExplorer2Client::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -627,17 +641,18 @@ UpdateIndexTypeOutcome ResourceExplorer2Client::UpdateIndexType(const UpdateInde
 
 UpdateIndexTypeOutcomeCallable ResourceExplorer2Client::UpdateIndexTypeCallable(const UpdateIndexTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateIndexTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIndexType(request); } );
+  std::shared_ptr<UpdateIndexTypeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateIndexTypeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateIndexType(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::UpdateIndexTypeAsync(const UpdateIndexTypeRequest& request, const UpdateIndexTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateIndexTypeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateIndexType(request), context);
+      handler(this, *pRequest, UpdateIndexType(*pRequest), context);
     } );
 }
 
@@ -652,17 +667,18 @@ UpdateViewOutcome ResourceExplorer2Client::UpdateView(const UpdateViewRequest& r
 
 UpdateViewOutcomeCallable ResourceExplorer2Client::UpdateViewCallable(const UpdateViewRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateViewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateView(request); } );
+  std::shared_ptr<UpdateViewRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateViewOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateView(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ResourceExplorer2Client::UpdateViewAsync(const UpdateViewRequest& request, const UpdateViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateViewRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateView(request), context);
+      handler(this, *pRequest, UpdateView(*pRequest), context);
     } );
 }
 

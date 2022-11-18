@@ -205,17 +205,18 @@ CloneBackendOutcome AmplifyBackendClient::CloneBackend(const CloneBackendRequest
 
 CloneBackendOutcomeCallable AmplifyBackendClient::CloneBackendCallable(const CloneBackendRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CloneBackendOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CloneBackend(request); } );
+  std::shared_ptr<CloneBackendRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CloneBackendOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CloneBackend(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::CloneBackendAsync(const CloneBackendRequest& request, const CloneBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CloneBackendRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CloneBackend(request), context);
+      handler(this, *pRequest, CloneBackend(*pRequest), context);
     } );
 }
 
@@ -230,17 +231,18 @@ CreateBackendOutcome AmplifyBackendClient::CreateBackend(const CreateBackendRequ
 
 CreateBackendOutcomeCallable AmplifyBackendClient::CreateBackendCallable(const CreateBackendRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackendOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackend(request); } );
+  std::shared_ptr<CreateBackendRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateBackendOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateBackend(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::CreateBackendAsync(const CreateBackendRequest& request, const CreateBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateBackendRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateBackend(request), context);
+      handler(this, *pRequest, CreateBackend(*pRequest), context);
     } );
 }
 
@@ -262,17 +264,18 @@ CreateBackendAPIOutcome AmplifyBackendClient::CreateBackendAPI(const CreateBacke
 
 CreateBackendAPIOutcomeCallable AmplifyBackendClient::CreateBackendAPICallable(const CreateBackendAPIRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackendAPIOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackendAPI(request); } );
+  std::shared_ptr<CreateBackendAPIRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateBackendAPIOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateBackendAPI(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::CreateBackendAPIAsync(const CreateBackendAPIRequest& request, const CreateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateBackendAPIRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateBackendAPI(request), context);
+      handler(this, *pRequest, CreateBackendAPI(*pRequest), context);
     } );
 }
 
@@ -294,17 +297,18 @@ CreateBackendAuthOutcome AmplifyBackendClient::CreateBackendAuth(const CreateBac
 
 CreateBackendAuthOutcomeCallable AmplifyBackendClient::CreateBackendAuthCallable(const CreateBackendAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackendAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackendAuth(request); } );
+  std::shared_ptr<CreateBackendAuthRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateBackendAuthOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateBackendAuth(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::CreateBackendAuthAsync(const CreateBackendAuthRequest& request, const CreateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateBackendAuthRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateBackendAuth(request), context);
+      handler(this, *pRequest, CreateBackendAuth(*pRequest), context);
     } );
 }
 
@@ -326,17 +330,18 @@ CreateBackendConfigOutcome AmplifyBackendClient::CreateBackendConfig(const Creat
 
 CreateBackendConfigOutcomeCallable AmplifyBackendClient::CreateBackendConfigCallable(const CreateBackendConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackendConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackendConfig(request); } );
+  std::shared_ptr<CreateBackendConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateBackendConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateBackendConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::CreateBackendConfigAsync(const CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateBackendConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateBackendConfig(request), context);
+      handler(this, *pRequest, CreateBackendConfig(*pRequest), context);
     } );
 }
 
@@ -358,17 +363,18 @@ CreateBackendStorageOutcome AmplifyBackendClient::CreateBackendStorage(const Cre
 
 CreateBackendStorageOutcomeCallable AmplifyBackendClient::CreateBackendStorageCallable(const CreateBackendStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackendStorage(request); } );
+  std::shared_ptr<CreateBackendStorageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateBackendStorageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateBackendStorage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::CreateBackendStorageAsync(const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateBackendStorageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateBackendStorage(request), context);
+      handler(this, *pRequest, CreateBackendStorage(*pRequest), context);
     } );
 }
 
@@ -390,17 +396,18 @@ CreateTokenOutcome AmplifyBackendClient::CreateToken(const CreateTokenRequest& r
 
 CreateTokenOutcomeCallable AmplifyBackendClient::CreateTokenCallable(const CreateTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateToken(request); } );
+  std::shared_ptr<CreateTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateToken(request), context);
+      handler(this, *pRequest, CreateToken(*pRequest), context);
     } );
 }
 
@@ -429,17 +436,18 @@ DeleteBackendOutcome AmplifyBackendClient::DeleteBackend(const DeleteBackendRequ
 
 DeleteBackendOutcomeCallable AmplifyBackendClient::DeleteBackendCallable(const DeleteBackendRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackend(request); } );
+  std::shared_ptr<DeleteBackendRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteBackend(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::DeleteBackendAsync(const DeleteBackendRequest& request, const DeleteBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteBackendRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteBackend(request), context);
+      handler(this, *pRequest, DeleteBackend(*pRequest), context);
     } );
 }
 
@@ -468,17 +476,18 @@ DeleteBackendAPIOutcome AmplifyBackendClient::DeleteBackendAPI(const DeleteBacke
 
 DeleteBackendAPIOutcomeCallable AmplifyBackendClient::DeleteBackendAPICallable(const DeleteBackendAPIRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendAPIOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackendAPI(request); } );
+  std::shared_ptr<DeleteBackendAPIRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendAPIOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteBackendAPI(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::DeleteBackendAPIAsync(const DeleteBackendAPIRequest& request, const DeleteBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteBackendAPIRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteBackendAPI(request), context);
+      handler(this, *pRequest, DeleteBackendAPI(*pRequest), context);
     } );
 }
 
@@ -507,17 +516,18 @@ DeleteBackendAuthOutcome AmplifyBackendClient::DeleteBackendAuth(const DeleteBac
 
 DeleteBackendAuthOutcomeCallable AmplifyBackendClient::DeleteBackendAuthCallable(const DeleteBackendAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackendAuth(request); } );
+  std::shared_ptr<DeleteBackendAuthRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendAuthOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteBackendAuth(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::DeleteBackendAuthAsync(const DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteBackendAuthRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteBackendAuth(request), context);
+      handler(this, *pRequest, DeleteBackendAuth(*pRequest), context);
     } );
 }
 
@@ -546,17 +556,18 @@ DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const Del
 
 DeleteBackendStorageOutcomeCallable AmplifyBackendClient::DeleteBackendStorageCallable(const DeleteBackendStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackendStorage(request); } );
+  std::shared_ptr<DeleteBackendStorageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendStorageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteBackendStorage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::DeleteBackendStorageAsync(const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteBackendStorageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteBackendStorage(request), context);
+      handler(this, *pRequest, DeleteBackendStorage(*pRequest), context);
     } );
 }
 
@@ -585,17 +596,18 @@ DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& r
 
 DeleteTokenOutcomeCallable AmplifyBackendClient::DeleteTokenCallable(const DeleteTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteToken(request); } );
+  std::shared_ptr<DeleteTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::DeleteTokenAsync(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteToken(request), context);
+      handler(this, *pRequest, DeleteToken(*pRequest), context);
     } );
 }
 
@@ -624,17 +636,18 @@ GenerateBackendAPIModelsOutcome AmplifyBackendClient::GenerateBackendAPIModels(c
 
 GenerateBackendAPIModelsOutcomeCallable AmplifyBackendClient::GenerateBackendAPIModelsCallable(const GenerateBackendAPIModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GenerateBackendAPIModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateBackendAPIModels(request); } );
+  std::shared_ptr<GenerateBackendAPIModelsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GenerateBackendAPIModelsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GenerateBackendAPIModels(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::GenerateBackendAPIModelsAsync(const GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GenerateBackendAPIModelsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GenerateBackendAPIModels(request), context);
+      handler(this, *pRequest, GenerateBackendAPIModels(*pRequest), context);
     } );
 }
 
@@ -656,17 +669,18 @@ GetBackendOutcome AmplifyBackendClient::GetBackend(const GetBackendRequest& requ
 
 GetBackendOutcomeCallable AmplifyBackendClient::GetBackendCallable(const GetBackendRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackend(request); } );
+  std::shared_ptr<GetBackendRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetBackendOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetBackend(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::GetBackendAsync(const GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetBackendRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetBackend(request), context);
+      handler(this, *pRequest, GetBackend(*pRequest), context);
     } );
 }
 
@@ -695,17 +709,18 @@ GetBackendAPIOutcome AmplifyBackendClient::GetBackendAPI(const GetBackendAPIRequ
 
 GetBackendAPIOutcomeCallable AmplifyBackendClient::GetBackendAPICallable(const GetBackendAPIRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendAPIOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendAPI(request); } );
+  std::shared_ptr<GetBackendAPIRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetBackendAPIOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetBackendAPI(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::GetBackendAPIAsync(const GetBackendAPIRequest& request, const GetBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetBackendAPIRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetBackendAPI(request), context);
+      handler(this, *pRequest, GetBackendAPI(*pRequest), context);
     } );
 }
 
@@ -734,17 +749,18 @@ GetBackendAPIModelsOutcome AmplifyBackendClient::GetBackendAPIModels(const GetBa
 
 GetBackendAPIModelsOutcomeCallable AmplifyBackendClient::GetBackendAPIModelsCallable(const GetBackendAPIModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendAPIModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendAPIModels(request); } );
+  std::shared_ptr<GetBackendAPIModelsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetBackendAPIModelsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetBackendAPIModels(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::GetBackendAPIModelsAsync(const GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetBackendAPIModelsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetBackendAPIModels(request), context);
+      handler(this, *pRequest, GetBackendAPIModels(*pRequest), context);
     } );
 }
 
@@ -773,17 +789,18 @@ GetBackendAuthOutcome AmplifyBackendClient::GetBackendAuth(const GetBackendAuthR
 
 GetBackendAuthOutcomeCallable AmplifyBackendClient::GetBackendAuthCallable(const GetBackendAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendAuth(request); } );
+  std::shared_ptr<GetBackendAuthRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetBackendAuthOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetBackendAuth(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::GetBackendAuthAsync(const GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetBackendAuthRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetBackendAuth(request), context);
+      handler(this, *pRequest, GetBackendAuth(*pRequest), context);
     } );
 }
 
@@ -817,17 +834,18 @@ GetBackendJobOutcome AmplifyBackendClient::GetBackendJob(const GetBackendJobRequ
 
 GetBackendJobOutcomeCallable AmplifyBackendClient::GetBackendJobCallable(const GetBackendJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendJob(request); } );
+  std::shared_ptr<GetBackendJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetBackendJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetBackendJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::GetBackendJobAsync(const GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetBackendJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetBackendJob(request), context);
+      handler(this, *pRequest, GetBackendJob(*pRequest), context);
     } );
 }
 
@@ -856,17 +874,18 @@ GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBacken
 
 GetBackendStorageOutcomeCallable AmplifyBackendClient::GetBackendStorageCallable(const GetBackendStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendStorage(request); } );
+  std::shared_ptr<GetBackendStorageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetBackendStorageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetBackendStorage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::GetBackendStorageAsync(const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetBackendStorageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetBackendStorage(request), context);
+      handler(this, *pRequest, GetBackendStorage(*pRequest), context);
     } );
 }
 
@@ -894,17 +913,18 @@ GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) c
 
 GetTokenOutcomeCallable AmplifyBackendClient::GetTokenCallable(const GetTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetToken(request); } );
+  std::shared_ptr<GetTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::GetTokenAsync(const GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetToken(request), context);
+      handler(this, *pRequest, GetToken(*pRequest), context);
     } );
 }
 
@@ -933,17 +953,18 @@ ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBac
 
 ImportBackendAuthOutcomeCallable AmplifyBackendClient::ImportBackendAuthCallable(const ImportBackendAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportBackendAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportBackendAuth(request); } );
+  std::shared_ptr<ImportBackendAuthRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ImportBackendAuthOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ImportBackendAuth(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::ImportBackendAuthAsync(const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ImportBackendAuthRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ImportBackendAuth(request), context);
+      handler(this, *pRequest, ImportBackendAuth(*pRequest), context);
     } );
 }
 
@@ -972,17 +993,18 @@ ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const Imp
 
 ImportBackendStorageOutcomeCallable AmplifyBackendClient::ImportBackendStorageCallable(const ImportBackendStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportBackendStorage(request); } );
+  std::shared_ptr<ImportBackendStorageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ImportBackendStorageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ImportBackendStorage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::ImportBackendStorageAsync(const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ImportBackendStorageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ImportBackendStorage(request), context);
+      handler(this, *pRequest, ImportBackendStorage(*pRequest), context);
     } );
 }
 
@@ -1010,17 +1032,18 @@ ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJo
 
 ListBackendJobsOutcomeCallable AmplifyBackendClient::ListBackendJobsCallable(const ListBackendJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBackendJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBackendJobs(request); } );
+  std::shared_ptr<ListBackendJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListBackendJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListBackendJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::ListBackendJobsAsync(const ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListBackendJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListBackendJobs(request), context);
+      handler(this, *pRequest, ListBackendJobs(*pRequest), context);
     } );
 }
 
@@ -1035,17 +1058,18 @@ ListS3BucketsOutcome AmplifyBackendClient::ListS3Buckets(const ListS3BucketsRequ
 
 ListS3BucketsOutcomeCallable AmplifyBackendClient::ListS3BucketsCallable(const ListS3BucketsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListS3BucketsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListS3Buckets(request); } );
+  std::shared_ptr<ListS3BucketsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListS3BucketsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListS3Buckets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::ListS3BucketsAsync(const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListS3BucketsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListS3Buckets(request), context);
+      handler(this, *pRequest, ListS3Buckets(*pRequest), context);
     } );
 }
 
@@ -1067,17 +1091,18 @@ RemoveAllBackendsOutcome AmplifyBackendClient::RemoveAllBackends(const RemoveAll
 
 RemoveAllBackendsOutcomeCallable AmplifyBackendClient::RemoveAllBackendsCallable(const RemoveAllBackendsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveAllBackendsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveAllBackends(request); } );
+  std::shared_ptr<RemoveAllBackendsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RemoveAllBackendsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RemoveAllBackends(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::RemoveAllBackendsAsync(const RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RemoveAllBackendsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RemoveAllBackends(request), context);
+      handler(this, *pRequest, RemoveAllBackends(*pRequest), context);
     } );
 }
 
@@ -1099,17 +1124,18 @@ RemoveBackendConfigOutcome AmplifyBackendClient::RemoveBackendConfig(const Remov
 
 RemoveBackendConfigOutcomeCallable AmplifyBackendClient::RemoveBackendConfigCallable(const RemoveBackendConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveBackendConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveBackendConfig(request); } );
+  std::shared_ptr<RemoveBackendConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RemoveBackendConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RemoveBackendConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::RemoveBackendConfigAsync(const RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RemoveBackendConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RemoveBackendConfig(request), context);
+      handler(this, *pRequest, RemoveBackendConfig(*pRequest), context);
     } );
 }
 
@@ -1137,17 +1163,18 @@ UpdateBackendAPIOutcome AmplifyBackendClient::UpdateBackendAPI(const UpdateBacke
 
 UpdateBackendAPIOutcomeCallable AmplifyBackendClient::UpdateBackendAPICallable(const UpdateBackendAPIRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendAPIOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBackendAPI(request); } );
+  std::shared_ptr<UpdateBackendAPIRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendAPIOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateBackendAPI(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::UpdateBackendAPIAsync(const UpdateBackendAPIRequest& request, const UpdateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateBackendAPIRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateBackendAPI(request), context);
+      handler(this, *pRequest, UpdateBackendAPI(*pRequest), context);
     } );
 }
 
@@ -1175,17 +1202,18 @@ UpdateBackendAuthOutcome AmplifyBackendClient::UpdateBackendAuth(const UpdateBac
 
 UpdateBackendAuthOutcomeCallable AmplifyBackendClient::UpdateBackendAuthCallable(const UpdateBackendAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBackendAuth(request); } );
+  std::shared_ptr<UpdateBackendAuthRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendAuthOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateBackendAuth(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::UpdateBackendAuthAsync(const UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateBackendAuthRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateBackendAuth(request), context);
+      handler(this, *pRequest, UpdateBackendAuth(*pRequest), context);
     } );
 }
 
@@ -1207,17 +1235,18 @@ UpdateBackendConfigOutcome AmplifyBackendClient::UpdateBackendConfig(const Updat
 
 UpdateBackendConfigOutcomeCallable AmplifyBackendClient::UpdateBackendConfigCallable(const UpdateBackendConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBackendConfig(request); } );
+  std::shared_ptr<UpdateBackendConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateBackendConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::UpdateBackendConfigAsync(const UpdateBackendConfigRequest& request, const UpdateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateBackendConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateBackendConfig(request), context);
+      handler(this, *pRequest, UpdateBackendConfig(*pRequest), context);
     } );
 }
 
@@ -1251,17 +1280,18 @@ UpdateBackendJobOutcome AmplifyBackendClient::UpdateBackendJob(const UpdateBacke
 
 UpdateBackendJobOutcomeCallable AmplifyBackendClient::UpdateBackendJobCallable(const UpdateBackendJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBackendJob(request); } );
+  std::shared_ptr<UpdateBackendJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateBackendJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::UpdateBackendJobAsync(const UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateBackendJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateBackendJob(request), context);
+      handler(this, *pRequest, UpdateBackendJob(*pRequest), context);
     } );
 }
 
@@ -1289,17 +1319,18 @@ UpdateBackendStorageOutcome AmplifyBackendClient::UpdateBackendStorage(const Upd
 
 UpdateBackendStorageOutcomeCallable AmplifyBackendClient::UpdateBackendStorageCallable(const UpdateBackendStorageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBackendStorage(request); } );
+  std::shared_ptr<UpdateBackendStorageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendStorageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateBackendStorage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AmplifyBackendClient::UpdateBackendStorageAsync(const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateBackendStorageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateBackendStorage(request), context);
+      handler(this, *pRequest, UpdateBackendStorage(*pRequest), context);
     } );
 }
 

@@ -175,17 +175,18 @@ CreateDataIntegrationOutcome AppIntegrationsServiceClient::CreateDataIntegration
 
 CreateDataIntegrationOutcomeCallable AppIntegrationsServiceClient::CreateDataIntegrationCallable(const CreateDataIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataIntegration(request); } );
+  std::shared_ptr<CreateDataIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDataIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::CreateDataIntegrationAsync(const CreateDataIntegrationRequest& request, const CreateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDataIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDataIntegration(request), context);
+      handler(this, *pRequest, CreateDataIntegration(*pRequest), context);
     } );
 }
 
@@ -200,17 +201,18 @@ CreateEventIntegrationOutcome AppIntegrationsServiceClient::CreateEventIntegrati
 
 CreateEventIntegrationOutcomeCallable AppIntegrationsServiceClient::CreateEventIntegrationCallable(const CreateEventIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEventIntegration(request); } );
+  std::shared_ptr<CreateEventIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateEventIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::CreateEventIntegrationAsync(const CreateEventIntegrationRequest& request, const CreateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateEventIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateEventIntegration(request), context);
+      handler(this, *pRequest, CreateEventIntegration(*pRequest), context);
     } );
 }
 
@@ -231,17 +233,18 @@ DeleteDataIntegrationOutcome AppIntegrationsServiceClient::DeleteDataIntegration
 
 DeleteDataIntegrationOutcomeCallable AppIntegrationsServiceClient::DeleteDataIntegrationCallable(const DeleteDataIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataIntegration(request); } );
+  std::shared_ptr<DeleteDataIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDataIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::DeleteDataIntegrationAsync(const DeleteDataIntegrationRequest& request, const DeleteDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDataIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDataIntegration(request), context);
+      handler(this, *pRequest, DeleteDataIntegration(*pRequest), context);
     } );
 }
 
@@ -262,17 +265,18 @@ DeleteEventIntegrationOutcome AppIntegrationsServiceClient::DeleteEventIntegrati
 
 DeleteEventIntegrationOutcomeCallable AppIntegrationsServiceClient::DeleteEventIntegrationCallable(const DeleteEventIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEventIntegration(request); } );
+  std::shared_ptr<DeleteEventIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteEventIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::DeleteEventIntegrationAsync(const DeleteEventIntegrationRequest& request, const DeleteEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteEventIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteEventIntegration(request), context);
+      handler(this, *pRequest, DeleteEventIntegration(*pRequest), context);
     } );
 }
 
@@ -293,17 +297,18 @@ GetDataIntegrationOutcome AppIntegrationsServiceClient::GetDataIntegration(const
 
 GetDataIntegrationOutcomeCallable AppIntegrationsServiceClient::GetDataIntegrationCallable(const GetDataIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataIntegration(request); } );
+  std::shared_ptr<GetDataIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDataIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::GetDataIntegrationAsync(const GetDataIntegrationRequest& request, const GetDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDataIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDataIntegration(request), context);
+      handler(this, *pRequest, GetDataIntegration(*pRequest), context);
     } );
 }
 
@@ -324,17 +329,18 @@ GetEventIntegrationOutcome AppIntegrationsServiceClient::GetEventIntegration(con
 
 GetEventIntegrationOutcomeCallable AppIntegrationsServiceClient::GetEventIntegrationCallable(const GetEventIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEventIntegration(request); } );
+  std::shared_ptr<GetEventIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetEventIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::GetEventIntegrationAsync(const GetEventIntegrationRequest& request, const GetEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetEventIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetEventIntegration(request), context);
+      handler(this, *pRequest, GetEventIntegration(*pRequest), context);
     } );
 }
 
@@ -356,17 +362,18 @@ ListDataIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListDataInt
 
 ListDataIntegrationAssociationsOutcomeCallable AppIntegrationsServiceClient::ListDataIntegrationAssociationsCallable(const ListDataIntegrationAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataIntegrationAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataIntegrationAssociations(request); } );
+  std::shared_ptr<ListDataIntegrationAssociationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDataIntegrationAssociationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDataIntegrationAssociations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::ListDataIntegrationAssociationsAsync(const ListDataIntegrationAssociationsRequest& request, const ListDataIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDataIntegrationAssociationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDataIntegrationAssociations(request), context);
+      handler(this, *pRequest, ListDataIntegrationAssociations(*pRequest), context);
     } );
 }
 
@@ -381,17 +388,18 @@ ListDataIntegrationsOutcome AppIntegrationsServiceClient::ListDataIntegrations(c
 
 ListDataIntegrationsOutcomeCallable AppIntegrationsServiceClient::ListDataIntegrationsCallable(const ListDataIntegrationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataIntegrationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataIntegrations(request); } );
+  std::shared_ptr<ListDataIntegrationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDataIntegrationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDataIntegrations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::ListDataIntegrationsAsync(const ListDataIntegrationsRequest& request, const ListDataIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDataIntegrationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDataIntegrations(request), context);
+      handler(this, *pRequest, ListDataIntegrations(*pRequest), context);
     } );
 }
 
@@ -413,17 +421,18 @@ ListEventIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListEventI
 
 ListEventIntegrationAssociationsOutcomeCallable AppIntegrationsServiceClient::ListEventIntegrationAssociationsCallable(const ListEventIntegrationAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEventIntegrationAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventIntegrationAssociations(request); } );
+  std::shared_ptr<ListEventIntegrationAssociationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEventIntegrationAssociationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEventIntegrationAssociations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::ListEventIntegrationAssociationsAsync(const ListEventIntegrationAssociationsRequest& request, const ListEventIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEventIntegrationAssociationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEventIntegrationAssociations(request), context);
+      handler(this, *pRequest, ListEventIntegrationAssociations(*pRequest), context);
     } );
 }
 
@@ -438,17 +447,18 @@ ListEventIntegrationsOutcome AppIntegrationsServiceClient::ListEventIntegrations
 
 ListEventIntegrationsOutcomeCallable AppIntegrationsServiceClient::ListEventIntegrationsCallable(const ListEventIntegrationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEventIntegrationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventIntegrations(request); } );
+  std::shared_ptr<ListEventIntegrationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEventIntegrationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEventIntegrations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::ListEventIntegrationsAsync(const ListEventIntegrationsRequest& request, const ListEventIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEventIntegrationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEventIntegrations(request), context);
+      handler(this, *pRequest, ListEventIntegrations(*pRequest), context);
     } );
 }
 
@@ -469,17 +479,18 @@ ListTagsForResourceOutcome AppIntegrationsServiceClient::ListTagsForResource(con
 
 ListTagsForResourceOutcomeCallable AppIntegrationsServiceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -500,17 +511,18 @@ TagResourceOutcome AppIntegrationsServiceClient::TagResource(const TagResourceRe
 
 TagResourceOutcomeCallable AppIntegrationsServiceClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -536,17 +548,18 @@ UntagResourceOutcome AppIntegrationsServiceClient::UntagResource(const UntagReso
 
 UntagResourceOutcomeCallable AppIntegrationsServiceClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -567,17 +580,18 @@ UpdateDataIntegrationOutcome AppIntegrationsServiceClient::UpdateDataIntegration
 
 UpdateDataIntegrationOutcomeCallable AppIntegrationsServiceClient::UpdateDataIntegrationCallable(const UpdateDataIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDataIntegration(request); } );
+  std::shared_ptr<UpdateDataIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDataIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDataIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::UpdateDataIntegrationAsync(const UpdateDataIntegrationRequest& request, const UpdateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDataIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDataIntegration(request), context);
+      handler(this, *pRequest, UpdateDataIntegration(*pRequest), context);
     } );
 }
 
@@ -598,17 +612,18 @@ UpdateEventIntegrationOutcome AppIntegrationsServiceClient::UpdateEventIntegrati
 
 UpdateEventIntegrationOutcomeCallable AppIntegrationsServiceClient::UpdateEventIntegrationCallable(const UpdateEventIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEventIntegration(request); } );
+  std::shared_ptr<UpdateEventIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEventIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateEventIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppIntegrationsServiceClient::UpdateEventIntegrationAsync(const UpdateEventIntegrationRequest& request, const UpdateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateEventIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateEventIntegration(request), context);
+      handler(this, *pRequest, UpdateEventIntegration(*pRequest), context);
     } );
 }
 

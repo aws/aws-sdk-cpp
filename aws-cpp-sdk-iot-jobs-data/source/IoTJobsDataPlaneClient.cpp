@@ -177,17 +177,18 @@ DescribeJobExecutionOutcome IoTJobsDataPlaneClient::DescribeJobExecution(const D
 
 DescribeJobExecutionOutcomeCallable IoTJobsDataPlaneClient::DescribeJobExecutionCallable(const DescribeJobExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobExecution(request); } );
+  std::shared_ptr<DescribeJobExecutionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeJobExecutionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeJobExecution(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTJobsDataPlaneClient::DescribeJobExecutionAsync(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeJobExecutionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeJobExecution(request), context);
+      handler(this, *pRequest, DescribeJobExecution(*pRequest), context);
     } );
 }
 
@@ -209,17 +210,18 @@ GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(c
 
 GetPendingJobExecutionsOutcomeCallable IoTJobsDataPlaneClient::GetPendingJobExecutionsCallable(const GetPendingJobExecutionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPendingJobExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPendingJobExecutions(request); } );
+  std::shared_ptr<GetPendingJobExecutionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetPendingJobExecutionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetPendingJobExecutions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTJobsDataPlaneClient::GetPendingJobExecutionsAsync(const GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetPendingJobExecutionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetPendingJobExecutions(request), context);
+      handler(this, *pRequest, GetPendingJobExecutions(*pRequest), context);
     } );
 }
 
@@ -241,17 +243,18 @@ StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobE
 
 StartNextPendingJobExecutionOutcomeCallable IoTJobsDataPlaneClient::StartNextPendingJobExecutionCallable(const StartNextPendingJobExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartNextPendingJobExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartNextPendingJobExecution(request); } );
+  std::shared_ptr<StartNextPendingJobExecutionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartNextPendingJobExecutionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartNextPendingJobExecution(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTJobsDataPlaneClient::StartNextPendingJobExecutionAsync(const StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartNextPendingJobExecutionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartNextPendingJobExecution(request), context);
+      handler(this, *pRequest, StartNextPendingJobExecution(*pRequest), context);
     } );
 }
 
@@ -279,17 +282,18 @@ UpdateJobExecutionOutcome IoTJobsDataPlaneClient::UpdateJobExecution(const Updat
 
 UpdateJobExecutionOutcomeCallable IoTJobsDataPlaneClient::UpdateJobExecutionCallable(const UpdateJobExecutionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateJobExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJobExecution(request); } );
+  std::shared_ptr<UpdateJobExecutionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateJobExecutionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateJobExecution(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTJobsDataPlaneClient::UpdateJobExecutionAsync(const UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateJobExecutionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateJobExecution(request), context);
+      handler(this, *pRequest, UpdateJobExecution(*pRequest), context);
     } );
 }
 

@@ -89,10 +89,10 @@ MediaStoreDataClient::MediaStoreDataClient(const std::shared_ptr<AWSCredentialsP
     /* Legacy constructors due deprecation */
   MediaStoreDataClient::MediaStoreDataClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -104,10 +104,10 @@ MediaStoreDataClient::MediaStoreDataClient(const std::shared_ptr<AWSCredentialsP
 MediaStoreDataClient::MediaStoreDataClient(const AWSCredentials& credentials,
                                            const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -119,10 +119,10 @@ MediaStoreDataClient::MediaStoreDataClient(const AWSCredentials& credentials,
 MediaStoreDataClient::MediaStoreDataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                            const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -170,17 +170,18 @@ DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest
 
 DeleteObjectOutcomeCallable MediaStoreDataClient::DeleteObjectCallable(const DeleteObjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteObjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteObject(request); } );
+  std::shared_ptr<DeleteObjectRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteObjectOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteObject(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaStoreDataClient::DeleteObjectAsync(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteObjectRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteObject(request), context);
+      handler(this, *pRequest, DeleteObject(*pRequest), context);
     } );
 }
 
@@ -200,17 +201,18 @@ DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectR
 
 DescribeObjectOutcomeCallable MediaStoreDataClient::DescribeObjectCallable(const DescribeObjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeObjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeObject(request); } );
+  std::shared_ptr<DescribeObjectRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeObjectOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeObject(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaStoreDataClient::DescribeObjectAsync(const DescribeObjectRequest& request, const DescribeObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeObjectRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeObject(request), context);
+      handler(this, *pRequest, DescribeObject(*pRequest), context);
     } );
 }
 
@@ -230,17 +232,18 @@ GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request
 
 GetObjectOutcomeCallable MediaStoreDataClient::GetObjectCallable(const GetObjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetObjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetObject(request); } );
+  std::shared_ptr<GetObjectRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetObjectOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetObject(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaStoreDataClient::GetObjectAsync(const GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetObjectRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetObject(request), context);
+      handler(this, *pRequest, GetObject(*pRequest), context);
     } );
 }
 
@@ -254,17 +257,18 @@ ListItemsOutcome MediaStoreDataClient::ListItems(const ListItemsRequest& request
 
 ListItemsOutcomeCallable MediaStoreDataClient::ListItemsCallable(const ListItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListItems(request); } );
+  std::shared_ptr<ListItemsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListItemsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListItems(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaStoreDataClient::ListItemsAsync(const ListItemsRequest& request, const ListItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListItemsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListItems(request), context);
+      handler(this, *pRequest, ListItems(*pRequest), context);
     } );
 }
 
@@ -284,17 +288,18 @@ PutObjectOutcome MediaStoreDataClient::PutObject(const PutObjectRequest& request
 
 PutObjectOutcomeCallable MediaStoreDataClient::PutObjectCallable(const PutObjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutObjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutObject(request); } );
+  std::shared_ptr<PutObjectRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutObjectOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutObject(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaStoreDataClient::PutObjectAsync(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutObjectRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutObject(request), context);
+      handler(this, *pRequest, PutObject(*pRequest), context);
     } );
 }
 

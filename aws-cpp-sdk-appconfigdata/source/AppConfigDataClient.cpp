@@ -167,17 +167,18 @@ GetLatestConfigurationOutcome AppConfigDataClient::GetLatestConfiguration(const 
 
 GetLatestConfigurationOutcomeCallable AppConfigDataClient::GetLatestConfigurationCallable(const GetLatestConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLatestConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLatestConfiguration(request); } );
+  std::shared_ptr<GetLatestConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetLatestConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetLatestConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigDataClient::GetLatestConfigurationAsync(const GetLatestConfigurationRequest& request, const GetLatestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetLatestConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetLatestConfiguration(request), context);
+      handler(this, *pRequest, GetLatestConfiguration(*pRequest), context);
     } );
 }
 
@@ -192,17 +193,18 @@ StartConfigurationSessionOutcome AppConfigDataClient::StartConfigurationSession(
 
 StartConfigurationSessionOutcomeCallable AppConfigDataClient::StartConfigurationSessionCallable(const StartConfigurationSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartConfigurationSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartConfigurationSession(request); } );
+  std::shared_ptr<StartConfigurationSessionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartConfigurationSessionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartConfigurationSession(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppConfigDataClient::StartConfigurationSessionAsync(const StartConfigurationSessionRequest& request, const StartConfigurationSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartConfigurationSessionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartConfigurationSession(request), context);
+      handler(this, *pRequest, StartConfigurationSession(*pRequest), context);
     } );
 }
 

@@ -163,17 +163,18 @@ GetRoutingControlStateOutcome Route53RecoveryClusterClient::GetRoutingControlSta
 
 GetRoutingControlStateOutcomeCallable Route53RecoveryClusterClient::GetRoutingControlStateCallable(const GetRoutingControlStateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRoutingControlStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRoutingControlState(request); } );
+  std::shared_ptr<GetRoutingControlStateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRoutingControlStateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRoutingControlState(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryClusterClient::GetRoutingControlStateAsync(const GetRoutingControlStateRequest& request, const GetRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRoutingControlStateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRoutingControlState(request), context);
+      handler(this, *pRequest, GetRoutingControlState(*pRequest), context);
     } );
 }
 
@@ -187,17 +188,18 @@ ListRoutingControlsOutcome Route53RecoveryClusterClient::ListRoutingControls(con
 
 ListRoutingControlsOutcomeCallable Route53RecoveryClusterClient::ListRoutingControlsCallable(const ListRoutingControlsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRoutingControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRoutingControls(request); } );
+  std::shared_ptr<ListRoutingControlsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListRoutingControlsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListRoutingControls(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryClusterClient::ListRoutingControlsAsync(const ListRoutingControlsRequest& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListRoutingControlsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListRoutingControls(request), context);
+      handler(this, *pRequest, ListRoutingControls(*pRequest), context);
     } );
 }
 
@@ -211,17 +213,18 @@ UpdateRoutingControlStateOutcome Route53RecoveryClusterClient::UpdateRoutingCont
 
 UpdateRoutingControlStateOutcomeCallable Route53RecoveryClusterClient::UpdateRoutingControlStateCallable(const UpdateRoutingControlStateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRoutingControlStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRoutingControlState(request); } );
+  std::shared_ptr<UpdateRoutingControlStateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRoutingControlStateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateRoutingControlState(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryClusterClient::UpdateRoutingControlStateAsync(const UpdateRoutingControlStateRequest& request, const UpdateRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateRoutingControlStateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateRoutingControlState(request), context);
+      handler(this, *pRequest, UpdateRoutingControlState(*pRequest), context);
     } );
 }
 
@@ -235,17 +238,18 @@ UpdateRoutingControlStatesOutcome Route53RecoveryClusterClient::UpdateRoutingCon
 
 UpdateRoutingControlStatesOutcomeCallable Route53RecoveryClusterClient::UpdateRoutingControlStatesCallable(const UpdateRoutingControlStatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRoutingControlStatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRoutingControlStates(request); } );
+  std::shared_ptr<UpdateRoutingControlStatesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRoutingControlStatesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateRoutingControlStates(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryClusterClient::UpdateRoutingControlStatesAsync(const UpdateRoutingControlStatesRequest& request, const UpdateRoutingControlStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateRoutingControlStatesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateRoutingControlStates(request), context);
+      handler(this, *pRequest, UpdateRoutingControlStates(*pRequest), context);
     } );
 }
 

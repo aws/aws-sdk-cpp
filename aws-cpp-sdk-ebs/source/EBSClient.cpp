@@ -90,10 +90,10 @@ EBSClient::EBSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* Legacy constructors due deprecation */
   EBSClient::EBSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -105,10 +105,10 @@ EBSClient::EBSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
 EBSClient::EBSClient(const AWSCredentials& credentials,
                      const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -120,10 +120,10 @@ EBSClient::EBSClient(const AWSCredentials& credentials,
 EBSClient::EBSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                      const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -177,17 +177,18 @@ CompleteSnapshotOutcome EBSClient::CompleteSnapshot(const CompleteSnapshotReques
 
 CompleteSnapshotOutcomeCallable EBSClient::CompleteSnapshotCallable(const CompleteSnapshotRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CompleteSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CompleteSnapshot(request); } );
+  std::shared_ptr<CompleteSnapshotRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CompleteSnapshotOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CompleteSnapshot(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void EBSClient::CompleteSnapshotAsync(const CompleteSnapshotRequest& request, const CompleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CompleteSnapshotRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CompleteSnapshot(request), context);
+      handler(this, *pRequest, CompleteSnapshot(*pRequest), context);
     } );
 }
 
@@ -220,17 +221,18 @@ GetSnapshotBlockOutcome EBSClient::GetSnapshotBlock(const GetSnapshotBlockReques
 
 GetSnapshotBlockOutcomeCallable EBSClient::GetSnapshotBlockCallable(const GetSnapshotBlockRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSnapshotBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSnapshotBlock(request); } );
+  std::shared_ptr<GetSnapshotBlockRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSnapshotBlockOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSnapshotBlock(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void EBSClient::GetSnapshotBlockAsync(const GetSnapshotBlockRequest& request, const GetSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSnapshotBlockRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSnapshotBlock(request), context);
+      handler(this, *pRequest, GetSnapshotBlock(*pRequest), context);
     } );
 }
 
@@ -252,17 +254,18 @@ ListChangedBlocksOutcome EBSClient::ListChangedBlocks(const ListChangedBlocksReq
 
 ListChangedBlocksOutcomeCallable EBSClient::ListChangedBlocksCallable(const ListChangedBlocksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListChangedBlocksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChangedBlocks(request); } );
+  std::shared_ptr<ListChangedBlocksRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListChangedBlocksOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListChangedBlocks(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void EBSClient::ListChangedBlocksAsync(const ListChangedBlocksRequest& request, const ListChangedBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListChangedBlocksRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListChangedBlocks(request), context);
+      handler(this, *pRequest, ListChangedBlocks(*pRequest), context);
     } );
 }
 
@@ -284,17 +287,18 @@ ListSnapshotBlocksOutcome EBSClient::ListSnapshotBlocks(const ListSnapshotBlocks
 
 ListSnapshotBlocksOutcomeCallable EBSClient::ListSnapshotBlocksCallable(const ListSnapshotBlocksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSnapshotBlocksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSnapshotBlocks(request); } );
+  std::shared_ptr<ListSnapshotBlocksRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSnapshotBlocksOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSnapshotBlocks(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void EBSClient::ListSnapshotBlocksAsync(const ListSnapshotBlocksRequest& request, const ListSnapshotBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSnapshotBlocksRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSnapshotBlocks(request), context);
+      handler(this, *pRequest, ListSnapshotBlocks(*pRequest), context);
     } );
 }
 
@@ -337,17 +341,18 @@ PutSnapshotBlockOutcome EBSClient::PutSnapshotBlock(const PutSnapshotBlockReques
 
 PutSnapshotBlockOutcomeCallable EBSClient::PutSnapshotBlockCallable(const PutSnapshotBlockRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutSnapshotBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutSnapshotBlock(request); } );
+  std::shared_ptr<PutSnapshotBlockRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutSnapshotBlockOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutSnapshotBlock(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void EBSClient::PutSnapshotBlockAsync(const PutSnapshotBlockRequest& request, const PutSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutSnapshotBlockRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutSnapshotBlock(request), context);
+      handler(this, *pRequest, PutSnapshotBlock(*pRequest), context);
     } );
 }
 
@@ -362,17 +367,18 @@ StartSnapshotOutcome EBSClient::StartSnapshot(const StartSnapshotRequest& reques
 
 StartSnapshotOutcomeCallable EBSClient::StartSnapshotCallable(const StartSnapshotRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSnapshot(request); } );
+  std::shared_ptr<StartSnapshotRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartSnapshotOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartSnapshot(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void EBSClient::StartSnapshotAsync(const StartSnapshotRequest& request, const StartSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartSnapshotRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartSnapshot(request), context);
+      handler(this, *pRequest, StartSnapshot(*pRequest), context);
     } );
 }
 

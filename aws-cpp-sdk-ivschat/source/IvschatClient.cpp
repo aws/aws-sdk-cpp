@@ -177,17 +177,18 @@ CreateChatTokenOutcome IvschatClient::CreateChatToken(const CreateChatTokenReque
 
 CreateChatTokenOutcomeCallable IvschatClient::CreateChatTokenCallable(const CreateChatTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateChatTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateChatToken(request); } );
+  std::shared_ptr<CreateChatTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateChatTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateChatToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::CreateChatTokenAsync(const CreateChatTokenRequest& request, const CreateChatTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateChatTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateChatToken(request), context);
+      handler(this, *pRequest, CreateChatToken(*pRequest), context);
     } );
 }
 
@@ -202,17 +203,18 @@ CreateLoggingConfigurationOutcome IvschatClient::CreateLoggingConfiguration(cons
 
 CreateLoggingConfigurationOutcomeCallable IvschatClient::CreateLoggingConfigurationCallable(const CreateLoggingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLoggingConfiguration(request); } );
+  std::shared_ptr<CreateLoggingConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateLoggingConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::CreateLoggingConfigurationAsync(const CreateLoggingConfigurationRequest& request, const CreateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateLoggingConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateLoggingConfiguration(request), context);
+      handler(this, *pRequest, CreateLoggingConfiguration(*pRequest), context);
     } );
 }
 
@@ -227,17 +229,18 @@ CreateRoomOutcome IvschatClient::CreateRoom(const CreateRoomRequest& request) co
 
 CreateRoomOutcomeCallable IvschatClient::CreateRoomCallable(const CreateRoomRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRoomOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRoom(request); } );
+  std::shared_ptr<CreateRoomRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateRoomOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateRoom(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::CreateRoomAsync(const CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateRoomRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateRoom(request), context);
+      handler(this, *pRequest, CreateRoom(*pRequest), context);
     } );
 }
 
@@ -252,17 +255,18 @@ DeleteLoggingConfigurationOutcome IvschatClient::DeleteLoggingConfiguration(cons
 
 DeleteLoggingConfigurationOutcomeCallable IvschatClient::DeleteLoggingConfigurationCallable(const DeleteLoggingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLoggingConfiguration(request); } );
+  std::shared_ptr<DeleteLoggingConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteLoggingConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::DeleteLoggingConfigurationAsync(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteLoggingConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteLoggingConfiguration(request), context);
+      handler(this, *pRequest, DeleteLoggingConfiguration(*pRequest), context);
     } );
 }
 
@@ -277,17 +281,18 @@ DeleteMessageOutcome IvschatClient::DeleteMessage(const DeleteMessageRequest& re
 
 DeleteMessageOutcomeCallable IvschatClient::DeleteMessageCallable(const DeleteMessageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMessage(request); } );
+  std::shared_ptr<DeleteMessageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMessageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteMessage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::DeleteMessageAsync(const DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteMessageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteMessage(request), context);
+      handler(this, *pRequest, DeleteMessage(*pRequest), context);
     } );
 }
 
@@ -302,17 +307,18 @@ DeleteRoomOutcome IvschatClient::DeleteRoom(const DeleteRoomRequest& request) co
 
 DeleteRoomOutcomeCallable IvschatClient::DeleteRoomCallable(const DeleteRoomRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRoomOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRoom(request); } );
+  std::shared_ptr<DeleteRoomRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRoomOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteRoom(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::DeleteRoomAsync(const DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteRoomRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteRoom(request), context);
+      handler(this, *pRequest, DeleteRoom(*pRequest), context);
     } );
 }
 
@@ -327,17 +333,18 @@ DisconnectUserOutcome IvschatClient::DisconnectUser(const DisconnectUserRequest&
 
 DisconnectUserOutcomeCallable IvschatClient::DisconnectUserCallable(const DisconnectUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisconnectUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisconnectUser(request); } );
+  std::shared_ptr<DisconnectUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisconnectUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisconnectUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::DisconnectUserAsync(const DisconnectUserRequest& request, const DisconnectUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisconnectUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisconnectUser(request), context);
+      handler(this, *pRequest, DisconnectUser(*pRequest), context);
     } );
 }
 
@@ -352,17 +359,18 @@ GetLoggingConfigurationOutcome IvschatClient::GetLoggingConfiguration(const GetL
 
 GetLoggingConfigurationOutcomeCallable IvschatClient::GetLoggingConfigurationCallable(const GetLoggingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLoggingConfiguration(request); } );
+  std::shared_ptr<GetLoggingConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetLoggingConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::GetLoggingConfigurationAsync(const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetLoggingConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetLoggingConfiguration(request), context);
+      handler(this, *pRequest, GetLoggingConfiguration(*pRequest), context);
     } );
 }
 
@@ -377,17 +385,18 @@ GetRoomOutcome IvschatClient::GetRoom(const GetRoomRequest& request) const
 
 GetRoomOutcomeCallable IvschatClient::GetRoomCallable(const GetRoomRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRoomOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRoom(request); } );
+  std::shared_ptr<GetRoomRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRoomOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRoom(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::GetRoomAsync(const GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRoomRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRoom(request), context);
+      handler(this, *pRequest, GetRoom(*pRequest), context);
     } );
 }
 
@@ -402,17 +411,18 @@ ListLoggingConfigurationsOutcome IvschatClient::ListLoggingConfigurations(const 
 
 ListLoggingConfigurationsOutcomeCallable IvschatClient::ListLoggingConfigurationsCallable(const ListLoggingConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLoggingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLoggingConfigurations(request); } );
+  std::shared_ptr<ListLoggingConfigurationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListLoggingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListLoggingConfigurations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::ListLoggingConfigurationsAsync(const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListLoggingConfigurationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListLoggingConfigurations(request), context);
+      handler(this, *pRequest, ListLoggingConfigurations(*pRequest), context);
     } );
 }
 
@@ -427,17 +437,18 @@ ListRoomsOutcome IvschatClient::ListRooms(const ListRoomsRequest& request) const
 
 ListRoomsOutcomeCallable IvschatClient::ListRoomsCallable(const ListRoomsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRoomsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRooms(request); } );
+  std::shared_ptr<ListRoomsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListRoomsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListRooms(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::ListRoomsAsync(const ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListRoomsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListRooms(request), context);
+      handler(this, *pRequest, ListRooms(*pRequest), context);
     } );
 }
 
@@ -458,17 +469,18 @@ ListTagsForResourceOutcome IvschatClient::ListTagsForResource(const ListTagsForR
 
 ListTagsForResourceOutcomeCallable IvschatClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -483,17 +495,18 @@ SendEventOutcome IvschatClient::SendEvent(const SendEventRequest& request) const
 
 SendEventOutcomeCallable IvschatClient::SendEventCallable(const SendEventRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendEventOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendEvent(request); } );
+  std::shared_ptr<SendEventRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SendEventOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SendEvent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::SendEventAsync(const SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SendEventRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SendEvent(request), context);
+      handler(this, *pRequest, SendEvent(*pRequest), context);
     } );
 }
 
@@ -514,17 +527,18 @@ TagResourceOutcome IvschatClient::TagResource(const TagResourceRequest& request)
 
 TagResourceOutcomeCallable IvschatClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -550,17 +564,18 @@ UntagResourceOutcome IvschatClient::UntagResource(const UntagResourceRequest& re
 
 UntagResourceOutcomeCallable IvschatClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -575,17 +590,18 @@ UpdateLoggingConfigurationOutcome IvschatClient::UpdateLoggingConfiguration(cons
 
 UpdateLoggingConfigurationOutcomeCallable IvschatClient::UpdateLoggingConfigurationCallable(const UpdateLoggingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLoggingConfiguration(request); } );
+  std::shared_ptr<UpdateLoggingConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateLoggingConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::UpdateLoggingConfigurationAsync(const UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateLoggingConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateLoggingConfiguration(request), context);
+      handler(this, *pRequest, UpdateLoggingConfiguration(*pRequest), context);
     } );
 }
 
@@ -600,17 +616,18 @@ UpdateRoomOutcome IvschatClient::UpdateRoom(const UpdateRoomRequest& request) co
 
 UpdateRoomOutcomeCallable IvschatClient::UpdateRoomCallable(const UpdateRoomRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRoomOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRoom(request); } );
+  std::shared_ptr<UpdateRoomRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRoomOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateRoom(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IvschatClient::UpdateRoomAsync(const UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateRoomRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateRoom(request), context);
+      handler(this, *pRequest, UpdateRoom(*pRequest), context);
     } );
 }
 

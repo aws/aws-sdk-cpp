@@ -196,17 +196,18 @@ CancelContactOutcome GroundStationClient::CancelContact(const CancelContactReque
 
 CancelContactOutcomeCallable GroundStationClient::CancelContactCallable(const CancelContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelContact(request); } );
+  std::shared_ptr<CancelContactRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CancelContactOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CancelContact(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::CancelContactAsync(const CancelContactRequest& request, const CancelContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CancelContactRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CancelContact(request), context);
+      handler(this, *pRequest, CancelContact(*pRequest), context);
     } );
 }
 
@@ -221,17 +222,18 @@ CreateConfigOutcome GroundStationClient::CreateConfig(const CreateConfigRequest&
 
 CreateConfigOutcomeCallable GroundStationClient::CreateConfigCallable(const CreateConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConfig(request); } );
+  std::shared_ptr<CreateConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::CreateConfigAsync(const CreateConfigRequest& request, const CreateConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateConfig(request), context);
+      handler(this, *pRequest, CreateConfig(*pRequest), context);
     } );
 }
 
@@ -246,17 +248,18 @@ CreateDataflowEndpointGroupOutcome GroundStationClient::CreateDataflowEndpointGr
 
 CreateDataflowEndpointGroupOutcomeCallable GroundStationClient::CreateDataflowEndpointGroupCallable(const CreateDataflowEndpointGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDataflowEndpointGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataflowEndpointGroup(request); } );
+  std::shared_ptr<CreateDataflowEndpointGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDataflowEndpointGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDataflowEndpointGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::CreateDataflowEndpointGroupAsync(const CreateDataflowEndpointGroupRequest& request, const CreateDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDataflowEndpointGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDataflowEndpointGroup(request), context);
+      handler(this, *pRequest, CreateDataflowEndpointGroup(*pRequest), context);
     } );
 }
 
@@ -271,17 +274,18 @@ CreateEphemerisOutcome GroundStationClient::CreateEphemeris(const CreateEphemeri
 
 CreateEphemerisOutcomeCallable GroundStationClient::CreateEphemerisCallable(const CreateEphemerisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEphemeris(request); } );
+  std::shared_ptr<CreateEphemerisRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateEphemerisOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateEphemeris(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::CreateEphemerisAsync(const CreateEphemerisRequest& request, const CreateEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateEphemerisRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateEphemeris(request), context);
+      handler(this, *pRequest, CreateEphemeris(*pRequest), context);
     } );
 }
 
@@ -296,17 +300,18 @@ CreateMissionProfileOutcome GroundStationClient::CreateMissionProfile(const Crea
 
 CreateMissionProfileOutcomeCallable GroundStationClient::CreateMissionProfileCallable(const CreateMissionProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMissionProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMissionProfile(request); } );
+  std::shared_ptr<CreateMissionProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateMissionProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateMissionProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::CreateMissionProfileAsync(const CreateMissionProfileRequest& request, const CreateMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateMissionProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateMissionProfile(request), context);
+      handler(this, *pRequest, CreateMissionProfile(*pRequest), context);
     } );
 }
 
@@ -333,17 +338,18 @@ DeleteConfigOutcome GroundStationClient::DeleteConfig(const DeleteConfigRequest&
 
 DeleteConfigOutcomeCallable GroundStationClient::DeleteConfigCallable(const DeleteConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConfig(request); } );
+  std::shared_ptr<DeleteConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::DeleteConfigAsync(const DeleteConfigRequest& request, const DeleteConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteConfig(request), context);
+      handler(this, *pRequest, DeleteConfig(*pRequest), context);
     } );
 }
 
@@ -364,17 +370,18 @@ DeleteDataflowEndpointGroupOutcome GroundStationClient::DeleteDataflowEndpointGr
 
 DeleteDataflowEndpointGroupOutcomeCallable GroundStationClient::DeleteDataflowEndpointGroupCallable(const DeleteDataflowEndpointGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDataflowEndpointGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataflowEndpointGroup(request); } );
+  std::shared_ptr<DeleteDataflowEndpointGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDataflowEndpointGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDataflowEndpointGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::DeleteDataflowEndpointGroupAsync(const DeleteDataflowEndpointGroupRequest& request, const DeleteDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDataflowEndpointGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDataflowEndpointGroup(request), context);
+      handler(this, *pRequest, DeleteDataflowEndpointGroup(*pRequest), context);
     } );
 }
 
@@ -395,17 +402,18 @@ DeleteEphemerisOutcome GroundStationClient::DeleteEphemeris(const DeleteEphemeri
 
 DeleteEphemerisOutcomeCallable GroundStationClient::DeleteEphemerisCallable(const DeleteEphemerisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEphemeris(request); } );
+  std::shared_ptr<DeleteEphemerisRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEphemerisOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteEphemeris(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::DeleteEphemerisAsync(const DeleteEphemerisRequest& request, const DeleteEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteEphemerisRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteEphemeris(request), context);
+      handler(this, *pRequest, DeleteEphemeris(*pRequest), context);
     } );
 }
 
@@ -426,17 +434,18 @@ DeleteMissionProfileOutcome GroundStationClient::DeleteMissionProfile(const Dele
 
 DeleteMissionProfileOutcomeCallable GroundStationClient::DeleteMissionProfileCallable(const DeleteMissionProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMissionProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMissionProfile(request); } );
+  std::shared_ptr<DeleteMissionProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMissionProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteMissionProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::DeleteMissionProfileAsync(const DeleteMissionProfileRequest& request, const DeleteMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteMissionProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteMissionProfile(request), context);
+      handler(this, *pRequest, DeleteMissionProfile(*pRequest), context);
     } );
 }
 
@@ -457,17 +466,18 @@ DescribeContactOutcome GroundStationClient::DescribeContact(const DescribeContac
 
 DescribeContactOutcomeCallable GroundStationClient::DescribeContactCallable(const DescribeContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeContact(request); } );
+  std::shared_ptr<DescribeContactRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeContactOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeContact(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::DescribeContactAsync(const DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeContactRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeContact(request), context);
+      handler(this, *pRequest, DescribeContact(*pRequest), context);
     } );
 }
 
@@ -488,17 +498,18 @@ DescribeEphemerisOutcome GroundStationClient::DescribeEphemeris(const DescribeEp
 
 DescribeEphemerisOutcomeCallable GroundStationClient::DescribeEphemerisCallable(const DescribeEphemerisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEphemeris(request); } );
+  std::shared_ptr<DescribeEphemerisRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEphemerisOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeEphemeris(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::DescribeEphemerisAsync(const DescribeEphemerisRequest& request, const DescribeEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeEphemerisRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeEphemeris(request), context);
+      handler(this, *pRequest, DescribeEphemeris(*pRequest), context);
     } );
 }
 
@@ -525,17 +536,18 @@ GetConfigOutcome GroundStationClient::GetConfig(const GetConfigRequest& request)
 
 GetConfigOutcomeCallable GroundStationClient::GetConfigCallable(const GetConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConfig(request); } );
+  std::shared_ptr<GetConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::GetConfigAsync(const GetConfigRequest& request, const GetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetConfig(request), context);
+      handler(this, *pRequest, GetConfig(*pRequest), context);
     } );
 }
 
@@ -556,17 +568,18 @@ GetDataflowEndpointGroupOutcome GroundStationClient::GetDataflowEndpointGroup(co
 
 GetDataflowEndpointGroupOutcomeCallable GroundStationClient::GetDataflowEndpointGroupCallable(const GetDataflowEndpointGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDataflowEndpointGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataflowEndpointGroup(request); } );
+  std::shared_ptr<GetDataflowEndpointGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDataflowEndpointGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDataflowEndpointGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::GetDataflowEndpointGroupAsync(const GetDataflowEndpointGroupRequest& request, const GetDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDataflowEndpointGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDataflowEndpointGroup(request), context);
+      handler(this, *pRequest, GetDataflowEndpointGroup(*pRequest), context);
     } );
 }
 
@@ -581,17 +594,18 @@ GetMinuteUsageOutcome GroundStationClient::GetMinuteUsage(const GetMinuteUsageRe
 
 GetMinuteUsageOutcomeCallable GroundStationClient::GetMinuteUsageCallable(const GetMinuteUsageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMinuteUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMinuteUsage(request); } );
+  std::shared_ptr<GetMinuteUsageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetMinuteUsageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetMinuteUsage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::GetMinuteUsageAsync(const GetMinuteUsageRequest& request, const GetMinuteUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetMinuteUsageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetMinuteUsage(request), context);
+      handler(this, *pRequest, GetMinuteUsage(*pRequest), context);
     } );
 }
 
@@ -612,17 +626,18 @@ GetMissionProfileOutcome GroundStationClient::GetMissionProfile(const GetMission
 
 GetMissionProfileOutcomeCallable GroundStationClient::GetMissionProfileCallable(const GetMissionProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMissionProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMissionProfile(request); } );
+  std::shared_ptr<GetMissionProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetMissionProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetMissionProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::GetMissionProfileAsync(const GetMissionProfileRequest& request, const GetMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetMissionProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetMissionProfile(request), context);
+      handler(this, *pRequest, GetMissionProfile(*pRequest), context);
     } );
 }
 
@@ -643,17 +658,18 @@ GetSatelliteOutcome GroundStationClient::GetSatellite(const GetSatelliteRequest&
 
 GetSatelliteOutcomeCallable GroundStationClient::GetSatelliteCallable(const GetSatelliteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSatelliteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSatellite(request); } );
+  std::shared_ptr<GetSatelliteRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSatelliteOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSatellite(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::GetSatelliteAsync(const GetSatelliteRequest& request, const GetSatelliteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSatelliteRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSatellite(request), context);
+      handler(this, *pRequest, GetSatellite(*pRequest), context);
     } );
 }
 
@@ -668,17 +684,18 @@ ListConfigsOutcome GroundStationClient::ListConfigs(const ListConfigsRequest& re
 
 ListConfigsOutcomeCallable GroundStationClient::ListConfigsCallable(const ListConfigsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConfigs(request); } );
+  std::shared_ptr<ListConfigsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListConfigsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListConfigs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::ListConfigsAsync(const ListConfigsRequest& request, const ListConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListConfigsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListConfigs(request), context);
+      handler(this, *pRequest, ListConfigs(*pRequest), context);
     } );
 }
 
@@ -693,17 +710,18 @@ ListContactsOutcome GroundStationClient::ListContacts(const ListContactsRequest&
 
 ListContactsOutcomeCallable GroundStationClient::ListContactsCallable(const ListContactsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListContactsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContacts(request); } );
+  std::shared_ptr<ListContactsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListContactsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListContacts(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::ListContactsAsync(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListContactsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListContacts(request), context);
+      handler(this, *pRequest, ListContacts(*pRequest), context);
     } );
 }
 
@@ -718,17 +736,18 @@ ListDataflowEndpointGroupsOutcome GroundStationClient::ListDataflowEndpointGroup
 
 ListDataflowEndpointGroupsOutcomeCallable GroundStationClient::ListDataflowEndpointGroupsCallable(const ListDataflowEndpointGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDataflowEndpointGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataflowEndpointGroups(request); } );
+  std::shared_ptr<ListDataflowEndpointGroupsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDataflowEndpointGroupsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDataflowEndpointGroups(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::ListDataflowEndpointGroupsAsync(const ListDataflowEndpointGroupsRequest& request, const ListDataflowEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDataflowEndpointGroupsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDataflowEndpointGroups(request), context);
+      handler(this, *pRequest, ListDataflowEndpointGroups(*pRequest), context);
     } );
 }
 
@@ -743,17 +762,18 @@ ListEphemeridesOutcome GroundStationClient::ListEphemerides(const ListEphemeride
 
 ListEphemeridesOutcomeCallable GroundStationClient::ListEphemeridesCallable(const ListEphemeridesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEphemeridesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEphemerides(request); } );
+  std::shared_ptr<ListEphemeridesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEphemeridesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEphemerides(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::ListEphemeridesAsync(const ListEphemeridesRequest& request, const ListEphemeridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEphemeridesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEphemerides(request), context);
+      handler(this, *pRequest, ListEphemerides(*pRequest), context);
     } );
 }
 
@@ -768,17 +788,18 @@ ListGroundStationsOutcome GroundStationClient::ListGroundStations(const ListGrou
 
 ListGroundStationsOutcomeCallable GroundStationClient::ListGroundStationsCallable(const ListGroundStationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGroundStationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroundStations(request); } );
+  std::shared_ptr<ListGroundStationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListGroundStationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListGroundStations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::ListGroundStationsAsync(const ListGroundStationsRequest& request, const ListGroundStationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListGroundStationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListGroundStations(request), context);
+      handler(this, *pRequest, ListGroundStations(*pRequest), context);
     } );
 }
 
@@ -793,17 +814,18 @@ ListMissionProfilesOutcome GroundStationClient::ListMissionProfiles(const ListMi
 
 ListMissionProfilesOutcomeCallable GroundStationClient::ListMissionProfilesCallable(const ListMissionProfilesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMissionProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMissionProfiles(request); } );
+  std::shared_ptr<ListMissionProfilesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListMissionProfilesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListMissionProfiles(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::ListMissionProfilesAsync(const ListMissionProfilesRequest& request, const ListMissionProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListMissionProfilesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListMissionProfiles(request), context);
+      handler(this, *pRequest, ListMissionProfiles(*pRequest), context);
     } );
 }
 
@@ -818,17 +840,18 @@ ListSatellitesOutcome GroundStationClient::ListSatellites(const ListSatellitesRe
 
 ListSatellitesOutcomeCallable GroundStationClient::ListSatellitesCallable(const ListSatellitesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSatellitesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSatellites(request); } );
+  std::shared_ptr<ListSatellitesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSatellitesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSatellites(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::ListSatellitesAsync(const ListSatellitesRequest& request, const ListSatellitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSatellitesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSatellites(request), context);
+      handler(this, *pRequest, ListSatellites(*pRequest), context);
     } );
 }
 
@@ -849,17 +872,18 @@ ListTagsForResourceOutcome GroundStationClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable GroundStationClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -874,17 +898,18 @@ ReserveContactOutcome GroundStationClient::ReserveContact(const ReserveContactRe
 
 ReserveContactOutcomeCallable GroundStationClient::ReserveContactCallable(const ReserveContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ReserveContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReserveContact(request); } );
+  std::shared_ptr<ReserveContactRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ReserveContactOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ReserveContact(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::ReserveContactAsync(const ReserveContactRequest& request, const ReserveContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ReserveContactRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ReserveContact(request), context);
+      handler(this, *pRequest, ReserveContact(*pRequest), context);
     } );
 }
 
@@ -905,17 +930,18 @@ TagResourceOutcome GroundStationClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable GroundStationClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -941,17 +967,18 @@ UntagResourceOutcome GroundStationClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable GroundStationClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -978,17 +1005,18 @@ UpdateConfigOutcome GroundStationClient::UpdateConfig(const UpdateConfigRequest&
 
 UpdateConfigOutcomeCallable GroundStationClient::UpdateConfigCallable(const UpdateConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConfig(request); } );
+  std::shared_ptr<UpdateConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::UpdateConfigAsync(const UpdateConfigRequest& request, const UpdateConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateConfig(request), context);
+      handler(this, *pRequest, UpdateConfig(*pRequest), context);
     } );
 }
 
@@ -1009,17 +1037,18 @@ UpdateEphemerisOutcome GroundStationClient::UpdateEphemeris(const UpdateEphemeri
 
 UpdateEphemerisOutcomeCallable GroundStationClient::UpdateEphemerisCallable(const UpdateEphemerisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEphemerisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEphemeris(request); } );
+  std::shared_ptr<UpdateEphemerisRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEphemerisOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateEphemeris(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::UpdateEphemerisAsync(const UpdateEphemerisRequest& request, const UpdateEphemerisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateEphemerisRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateEphemeris(request), context);
+      handler(this, *pRequest, UpdateEphemeris(*pRequest), context);
     } );
 }
 
@@ -1040,17 +1069,18 @@ UpdateMissionProfileOutcome GroundStationClient::UpdateMissionProfile(const Upda
 
 UpdateMissionProfileOutcomeCallable GroundStationClient::UpdateMissionProfileCallable(const UpdateMissionProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMissionProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMissionProfile(request); } );
+  std::shared_ptr<UpdateMissionProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMissionProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateMissionProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GroundStationClient::UpdateMissionProfileAsync(const UpdateMissionProfileRequest& request, const UpdateMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateMissionProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateMissionProfile(request), context);
+      handler(this, *pRequest, UpdateMissionProfile(*pRequest), context);
     } );
 }
 

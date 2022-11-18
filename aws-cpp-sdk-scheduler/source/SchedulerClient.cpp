@@ -178,17 +178,18 @@ CreateScheduleOutcome SchedulerClient::CreateSchedule(const CreateScheduleReques
 
 CreateScheduleOutcomeCallable SchedulerClient::CreateScheduleCallable(const CreateScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSchedule(request); } );
+  std::shared_ptr<CreateScheduleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateScheduleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateSchedule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::CreateScheduleAsync(const CreateScheduleRequest& request, const CreateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateScheduleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateSchedule(request), context);
+      handler(this, *pRequest, CreateSchedule(*pRequest), context);
     } );
 }
 
@@ -209,17 +210,18 @@ CreateScheduleGroupOutcome SchedulerClient::CreateScheduleGroup(const CreateSche
 
 CreateScheduleGroupOutcomeCallable SchedulerClient::CreateScheduleGroupCallable(const CreateScheduleGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateScheduleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateScheduleGroup(request); } );
+  std::shared_ptr<CreateScheduleGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateScheduleGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateScheduleGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::CreateScheduleGroupAsync(const CreateScheduleGroupRequest& request, const CreateScheduleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateScheduleGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateScheduleGroup(request), context);
+      handler(this, *pRequest, CreateScheduleGroup(*pRequest), context);
     } );
 }
 
@@ -240,17 +242,18 @@ DeleteScheduleOutcome SchedulerClient::DeleteSchedule(const DeleteScheduleReques
 
 DeleteScheduleOutcomeCallable SchedulerClient::DeleteScheduleCallable(const DeleteScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSchedule(request); } );
+  std::shared_ptr<DeleteScheduleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteScheduleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteSchedule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::DeleteScheduleAsync(const DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteScheduleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteSchedule(request), context);
+      handler(this, *pRequest, DeleteSchedule(*pRequest), context);
     } );
 }
 
@@ -271,17 +274,18 @@ DeleteScheduleGroupOutcome SchedulerClient::DeleteScheduleGroup(const DeleteSche
 
 DeleteScheduleGroupOutcomeCallable SchedulerClient::DeleteScheduleGroupCallable(const DeleteScheduleGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteScheduleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteScheduleGroup(request); } );
+  std::shared_ptr<DeleteScheduleGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteScheduleGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteScheduleGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::DeleteScheduleGroupAsync(const DeleteScheduleGroupRequest& request, const DeleteScheduleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteScheduleGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteScheduleGroup(request), context);
+      handler(this, *pRequest, DeleteScheduleGroup(*pRequest), context);
     } );
 }
 
@@ -302,17 +306,18 @@ GetScheduleOutcome SchedulerClient::GetSchedule(const GetScheduleRequest& reques
 
 GetScheduleOutcomeCallable SchedulerClient::GetScheduleCallable(const GetScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSchedule(request); } );
+  std::shared_ptr<GetScheduleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetScheduleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSchedule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::GetScheduleAsync(const GetScheduleRequest& request, const GetScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetScheduleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSchedule(request), context);
+      handler(this, *pRequest, GetSchedule(*pRequest), context);
     } );
 }
 
@@ -333,17 +338,18 @@ GetScheduleGroupOutcome SchedulerClient::GetScheduleGroup(const GetScheduleGroup
 
 GetScheduleGroupOutcomeCallable SchedulerClient::GetScheduleGroupCallable(const GetScheduleGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetScheduleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetScheduleGroup(request); } );
+  std::shared_ptr<GetScheduleGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetScheduleGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetScheduleGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::GetScheduleGroupAsync(const GetScheduleGroupRequest& request, const GetScheduleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetScheduleGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetScheduleGroup(request), context);
+      handler(this, *pRequest, GetScheduleGroup(*pRequest), context);
     } );
 }
 
@@ -358,17 +364,18 @@ ListScheduleGroupsOutcome SchedulerClient::ListScheduleGroups(const ListSchedule
 
 ListScheduleGroupsOutcomeCallable SchedulerClient::ListScheduleGroupsCallable(const ListScheduleGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListScheduleGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListScheduleGroups(request); } );
+  std::shared_ptr<ListScheduleGroupsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListScheduleGroupsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListScheduleGroups(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::ListScheduleGroupsAsync(const ListScheduleGroupsRequest& request, const ListScheduleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListScheduleGroupsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListScheduleGroups(request), context);
+      handler(this, *pRequest, ListScheduleGroups(*pRequest), context);
     } );
 }
 
@@ -383,17 +390,18 @@ ListSchedulesOutcome SchedulerClient::ListSchedules(const ListSchedulesRequest& 
 
 ListSchedulesOutcomeCallable SchedulerClient::ListSchedulesCallable(const ListSchedulesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSchedulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSchedules(request); } );
+  std::shared_ptr<ListSchedulesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSchedulesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSchedules(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::ListSchedulesAsync(const ListSchedulesRequest& request, const ListSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSchedulesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSchedules(request), context);
+      handler(this, *pRequest, ListSchedules(*pRequest), context);
     } );
 }
 
@@ -414,17 +422,18 @@ ListTagsForResourceOutcome SchedulerClient::ListTagsForResource(const ListTagsFo
 
 ListTagsForResourceOutcomeCallable SchedulerClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -445,17 +454,18 @@ TagResourceOutcome SchedulerClient::TagResource(const TagResourceRequest& reques
 
 TagResourceOutcomeCallable SchedulerClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -481,17 +491,18 @@ UntagResourceOutcome SchedulerClient::UntagResource(const UntagResourceRequest& 
 
 UntagResourceOutcomeCallable SchedulerClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -512,17 +523,18 @@ UpdateScheduleOutcome SchedulerClient::UpdateSchedule(const UpdateScheduleReques
 
 UpdateScheduleOutcomeCallable SchedulerClient::UpdateScheduleCallable(const UpdateScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSchedule(request); } );
+  std::shared_ptr<UpdateScheduleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateScheduleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateSchedule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SchedulerClient::UpdateScheduleAsync(const UpdateScheduleRequest& request, const UpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateScheduleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateSchedule(request), context);
+      handler(this, *pRequest, UpdateSchedule(*pRequest), context);
     } );
 }
 

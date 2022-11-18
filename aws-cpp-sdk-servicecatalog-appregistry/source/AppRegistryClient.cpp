@@ -196,17 +196,18 @@ AssociateAttributeGroupOutcome AppRegistryClient::AssociateAttributeGroup(const 
 
 AssociateAttributeGroupOutcomeCallable AppRegistryClient::AssociateAttributeGroupCallable(const AssociateAttributeGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateAttributeGroup(request); } );
+  std::shared_ptr<AssociateAttributeGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateAttributeGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::AssociateAttributeGroupAsync(const AssociateAttributeGroupRequest& request, const AssociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateAttributeGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateAttributeGroup(request), context);
+      handler(this, *pRequest, AssociateAttributeGroup(*pRequest), context);
     } );
 }
 
@@ -240,17 +241,18 @@ AssociateResourceOutcome AppRegistryClient::AssociateResource(const AssociateRes
 
 AssociateResourceOutcomeCallable AppRegistryClient::AssociateResourceCallable(const AssociateResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateResource(request); } );
+  std::shared_ptr<AssociateResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::AssociateResourceAsync(const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateResource(request), context);
+      handler(this, *pRequest, AssociateResource(*pRequest), context);
     } );
 }
 
@@ -265,17 +267,18 @@ CreateApplicationOutcome AppRegistryClient::CreateApplication(const CreateApplic
 
 CreateApplicationOutcomeCallable AppRegistryClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApplication(request); } );
+  std::shared_ptr<CreateApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateApplication(request), context);
+      handler(this, *pRequest, CreateApplication(*pRequest), context);
     } );
 }
 
@@ -290,17 +293,18 @@ CreateAttributeGroupOutcome AppRegistryClient::CreateAttributeGroup(const Create
 
 CreateAttributeGroupOutcomeCallable AppRegistryClient::CreateAttributeGroupCallable(const CreateAttributeGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAttributeGroup(request); } );
+  std::shared_ptr<CreateAttributeGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateAttributeGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::CreateAttributeGroupAsync(const CreateAttributeGroupRequest& request, const CreateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateAttributeGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateAttributeGroup(request), context);
+      handler(this, *pRequest, CreateAttributeGroup(*pRequest), context);
     } );
 }
 
@@ -321,17 +325,18 @@ DeleteApplicationOutcome AppRegistryClient::DeleteApplication(const DeleteApplic
 
 DeleteApplicationOutcomeCallable AppRegistryClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplication(request); } );
+  std::shared_ptr<DeleteApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteApplication(request), context);
+      handler(this, *pRequest, DeleteApplication(*pRequest), context);
     } );
 }
 
@@ -352,17 +357,18 @@ DeleteAttributeGroupOutcome AppRegistryClient::DeleteAttributeGroup(const Delete
 
 DeleteAttributeGroupOutcomeCallable AppRegistryClient::DeleteAttributeGroupCallable(const DeleteAttributeGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAttributeGroup(request); } );
+  std::shared_ptr<DeleteAttributeGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAttributeGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::DeleteAttributeGroupAsync(const DeleteAttributeGroupRequest& request, const DeleteAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAttributeGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAttributeGroup(request), context);
+      handler(this, *pRequest, DeleteAttributeGroup(*pRequest), context);
     } );
 }
 
@@ -390,17 +396,18 @@ DisassociateAttributeGroupOutcome AppRegistryClient::DisassociateAttributeGroup(
 
 DisassociateAttributeGroupOutcomeCallable AppRegistryClient::DisassociateAttributeGroupCallable(const DisassociateAttributeGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateAttributeGroup(request); } );
+  std::shared_ptr<DisassociateAttributeGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateAttributeGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::DisassociateAttributeGroupAsync(const DisassociateAttributeGroupRequest& request, const DisassociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateAttributeGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateAttributeGroup(request), context);
+      handler(this, *pRequest, DisassociateAttributeGroup(*pRequest), context);
     } );
 }
 
@@ -434,17 +441,18 @@ DisassociateResourceOutcome AppRegistryClient::DisassociateResource(const Disass
 
 DisassociateResourceOutcomeCallable AppRegistryClient::DisassociateResourceCallable(const DisassociateResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateResource(request); } );
+  std::shared_ptr<DisassociateResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::DisassociateResourceAsync(const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateResource(request), context);
+      handler(this, *pRequest, DisassociateResource(*pRequest), context);
     } );
 }
 
@@ -465,17 +473,18 @@ GetApplicationOutcome AppRegistryClient::GetApplication(const GetApplicationRequ
 
 GetApplicationOutcomeCallable AppRegistryClient::GetApplicationCallable(const GetApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplication(request); } );
+  std::shared_ptr<GetApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetApplication(request), context);
+      handler(this, *pRequest, GetApplication(*pRequest), context);
     } );
 }
 
@@ -509,17 +518,18 @@ GetAssociatedResourceOutcome AppRegistryClient::GetAssociatedResource(const GetA
 
 GetAssociatedResourceOutcomeCallable AppRegistryClient::GetAssociatedResourceCallable(const GetAssociatedResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAssociatedResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssociatedResource(request); } );
+  std::shared_ptr<GetAssociatedResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAssociatedResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAssociatedResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::GetAssociatedResourceAsync(const GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAssociatedResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAssociatedResource(request), context);
+      handler(this, *pRequest, GetAssociatedResource(*pRequest), context);
     } );
 }
 
@@ -540,17 +550,18 @@ GetAttributeGroupOutcome AppRegistryClient::GetAttributeGroup(const GetAttribute
 
 GetAttributeGroupOutcomeCallable AppRegistryClient::GetAttributeGroupCallable(const GetAttributeGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAttributeGroup(request); } );
+  std::shared_ptr<GetAttributeGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAttributeGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::GetAttributeGroupAsync(const GetAttributeGroupRequest& request, const GetAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAttributeGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAttributeGroup(request), context);
+      handler(this, *pRequest, GetAttributeGroup(*pRequest), context);
     } );
 }
 
@@ -591,17 +602,18 @@ ListApplicationsOutcome AppRegistryClient::ListApplications(const ListApplicatio
 
 ListApplicationsOutcomeCallable AppRegistryClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplications(request); } );
+  std::shared_ptr<ListApplicationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListApplications(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListApplicationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListApplications(request), context);
+      handler(this, *pRequest, ListApplications(*pRequest), context);
     } );
 }
 
@@ -623,17 +635,18 @@ ListAssociatedAttributeGroupsOutcome AppRegistryClient::ListAssociatedAttributeG
 
 ListAssociatedAttributeGroupsOutcomeCallable AppRegistryClient::ListAssociatedAttributeGroupsCallable(const ListAssociatedAttributeGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssociatedAttributeGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssociatedAttributeGroups(request); } );
+  std::shared_ptr<ListAssociatedAttributeGroupsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAssociatedAttributeGroupsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAssociatedAttributeGroups(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::ListAssociatedAttributeGroupsAsync(const ListAssociatedAttributeGroupsRequest& request, const ListAssociatedAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAssociatedAttributeGroupsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAssociatedAttributeGroups(request), context);
+      handler(this, *pRequest, ListAssociatedAttributeGroups(*pRequest), context);
     } );
 }
 
@@ -655,17 +668,18 @@ ListAssociatedResourcesOutcome AppRegistryClient::ListAssociatedResources(const 
 
 ListAssociatedResourcesOutcomeCallable AppRegistryClient::ListAssociatedResourcesCallable(const ListAssociatedResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssociatedResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssociatedResources(request); } );
+  std::shared_ptr<ListAssociatedResourcesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAssociatedResourcesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAssociatedResources(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::ListAssociatedResourcesAsync(const ListAssociatedResourcesRequest& request, const ListAssociatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAssociatedResourcesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAssociatedResources(request), context);
+      handler(this, *pRequest, ListAssociatedResources(*pRequest), context);
     } );
 }
 
@@ -680,17 +694,18 @@ ListAttributeGroupsOutcome AppRegistryClient::ListAttributeGroups(const ListAttr
 
 ListAttributeGroupsOutcomeCallable AppRegistryClient::ListAttributeGroupsCallable(const ListAttributeGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAttributeGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAttributeGroups(request); } );
+  std::shared_ptr<ListAttributeGroupsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAttributeGroupsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAttributeGroups(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::ListAttributeGroupsAsync(const ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAttributeGroupsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAttributeGroups(request), context);
+      handler(this, *pRequest, ListAttributeGroups(*pRequest), context);
     } );
 }
 
@@ -712,17 +727,18 @@ ListAttributeGroupsForApplicationOutcome AppRegistryClient::ListAttributeGroupsF
 
 ListAttributeGroupsForApplicationOutcomeCallable AppRegistryClient::ListAttributeGroupsForApplicationCallable(const ListAttributeGroupsForApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAttributeGroupsForApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAttributeGroupsForApplication(request); } );
+  std::shared_ptr<ListAttributeGroupsForApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAttributeGroupsForApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAttributeGroupsForApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::ListAttributeGroupsForApplicationAsync(const ListAttributeGroupsForApplicationRequest& request, const ListAttributeGroupsForApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAttributeGroupsForApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAttributeGroupsForApplication(request), context);
+      handler(this, *pRequest, ListAttributeGroupsForApplication(*pRequest), context);
     } );
 }
 
@@ -743,17 +759,18 @@ ListTagsForResourceOutcome AppRegistryClient::ListTagsForResource(const ListTags
 
 ListTagsForResourceOutcomeCallable AppRegistryClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -768,17 +785,18 @@ PutConfigurationOutcome AppRegistryClient::PutConfiguration(const PutConfigurati
 
 PutConfigurationOutcomeCallable AppRegistryClient::PutConfigurationCallable(const PutConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutConfiguration(request); } );
+  std::shared_ptr<PutConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::PutConfigurationAsync(const PutConfigurationRequest& request, const PutConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutConfiguration(request), context);
+      handler(this, *pRequest, PutConfiguration(*pRequest), context);
     } );
 }
 
@@ -805,17 +823,18 @@ SyncResourceOutcome AppRegistryClient::SyncResource(const SyncResourceRequest& r
 
 SyncResourceOutcomeCallable AppRegistryClient::SyncResourceCallable(const SyncResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SyncResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SyncResource(request); } );
+  std::shared_ptr<SyncResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SyncResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SyncResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::SyncResourceAsync(const SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SyncResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SyncResource(request), context);
+      handler(this, *pRequest, SyncResource(*pRequest), context);
     } );
 }
 
@@ -836,17 +855,18 @@ TagResourceOutcome AppRegistryClient::TagResource(const TagResourceRequest& requ
 
 TagResourceOutcomeCallable AppRegistryClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -872,17 +892,18 @@ UntagResourceOutcome AppRegistryClient::UntagResource(const UntagResourceRequest
 
 UntagResourceOutcomeCallable AppRegistryClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -903,17 +924,18 @@ UpdateApplicationOutcome AppRegistryClient::UpdateApplication(const UpdateApplic
 
 UpdateApplicationOutcomeCallable AppRegistryClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplication(request); } );
+  std::shared_ptr<UpdateApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateApplication(request), context);
+      handler(this, *pRequest, UpdateApplication(*pRequest), context);
     } );
 }
 
@@ -934,17 +956,18 @@ UpdateAttributeGroupOutcome AppRegistryClient::UpdateAttributeGroup(const Update
 
 UpdateAttributeGroupOutcomeCallable AppRegistryClient::UpdateAttributeGroupCallable(const UpdateAttributeGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAttributeGroup(request); } );
+  std::shared_ptr<UpdateAttributeGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAttributeGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateAttributeGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AppRegistryClient::UpdateAttributeGroupAsync(const UpdateAttributeGroupRequest& request, const UpdateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateAttributeGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateAttributeGroup(request), context);
+      handler(this, *pRequest, UpdateAttributeGroup(*pRequest), context);
     } );
 }
 

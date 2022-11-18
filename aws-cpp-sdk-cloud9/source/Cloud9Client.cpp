@@ -172,17 +172,18 @@ CreateEnvironmentEC2Outcome Cloud9Client::CreateEnvironmentEC2(const CreateEnvir
 
 CreateEnvironmentEC2OutcomeCallable Cloud9Client::CreateEnvironmentEC2Callable(const CreateEnvironmentEC2Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEnvironmentEC2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEnvironmentEC2(request); } );
+  std::shared_ptr<CreateEnvironmentEC2Request> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateEnvironmentEC2Outcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateEnvironmentEC2(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::CreateEnvironmentEC2Async(const CreateEnvironmentEC2Request& request, const CreateEnvironmentEC2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateEnvironmentEC2Request> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateEnvironmentEC2(request), context);
+      handler(this, *pRequest, CreateEnvironmentEC2(*pRequest), context);
     } );
 }
 
@@ -196,17 +197,18 @@ CreateEnvironmentMembershipOutcome Cloud9Client::CreateEnvironmentMembership(con
 
 CreateEnvironmentMembershipOutcomeCallable Cloud9Client::CreateEnvironmentMembershipCallable(const CreateEnvironmentMembershipRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEnvironmentMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEnvironmentMembership(request); } );
+  std::shared_ptr<CreateEnvironmentMembershipRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateEnvironmentMembershipOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateEnvironmentMembership(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::CreateEnvironmentMembershipAsync(const CreateEnvironmentMembershipRequest& request, const CreateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateEnvironmentMembershipRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateEnvironmentMembership(request), context);
+      handler(this, *pRequest, CreateEnvironmentMembership(*pRequest), context);
     } );
 }
 
@@ -220,17 +222,18 @@ DeleteEnvironmentOutcome Cloud9Client::DeleteEnvironment(const DeleteEnvironment
 
 DeleteEnvironmentOutcomeCallable Cloud9Client::DeleteEnvironmentCallable(const DeleteEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEnvironment(request); } );
+  std::shared_ptr<DeleteEnvironmentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEnvironmentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteEnvironment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteEnvironmentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteEnvironment(request), context);
+      handler(this, *pRequest, DeleteEnvironment(*pRequest), context);
     } );
 }
 
@@ -244,17 +247,18 @@ DeleteEnvironmentMembershipOutcome Cloud9Client::DeleteEnvironmentMembership(con
 
 DeleteEnvironmentMembershipOutcomeCallable Cloud9Client::DeleteEnvironmentMembershipCallable(const DeleteEnvironmentMembershipRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEnvironmentMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEnvironmentMembership(request); } );
+  std::shared_ptr<DeleteEnvironmentMembershipRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEnvironmentMembershipOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteEnvironmentMembership(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::DeleteEnvironmentMembershipAsync(const DeleteEnvironmentMembershipRequest& request, const DeleteEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteEnvironmentMembershipRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteEnvironmentMembership(request), context);
+      handler(this, *pRequest, DeleteEnvironmentMembership(*pRequest), context);
     } );
 }
 
@@ -268,17 +272,18 @@ DescribeEnvironmentMembershipsOutcome Cloud9Client::DescribeEnvironmentMembershi
 
 DescribeEnvironmentMembershipsOutcomeCallable Cloud9Client::DescribeEnvironmentMembershipsCallable(const DescribeEnvironmentMembershipsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEnvironmentMembershipsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEnvironmentMemberships(request); } );
+  std::shared_ptr<DescribeEnvironmentMembershipsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEnvironmentMembershipsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeEnvironmentMemberships(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::DescribeEnvironmentMembershipsAsync(const DescribeEnvironmentMembershipsRequest& request, const DescribeEnvironmentMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeEnvironmentMembershipsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeEnvironmentMemberships(request), context);
+      handler(this, *pRequest, DescribeEnvironmentMemberships(*pRequest), context);
     } );
 }
 
@@ -292,17 +297,18 @@ DescribeEnvironmentStatusOutcome Cloud9Client::DescribeEnvironmentStatus(const D
 
 DescribeEnvironmentStatusOutcomeCallable Cloud9Client::DescribeEnvironmentStatusCallable(const DescribeEnvironmentStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEnvironmentStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEnvironmentStatus(request); } );
+  std::shared_ptr<DescribeEnvironmentStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEnvironmentStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeEnvironmentStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::DescribeEnvironmentStatusAsync(const DescribeEnvironmentStatusRequest& request, const DescribeEnvironmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeEnvironmentStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeEnvironmentStatus(request), context);
+      handler(this, *pRequest, DescribeEnvironmentStatus(*pRequest), context);
     } );
 }
 
@@ -316,17 +322,18 @@ DescribeEnvironmentsOutcome Cloud9Client::DescribeEnvironments(const DescribeEnv
 
 DescribeEnvironmentsOutcomeCallable Cloud9Client::DescribeEnvironmentsCallable(const DescribeEnvironmentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEnvironmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEnvironments(request); } );
+  std::shared_ptr<DescribeEnvironmentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEnvironmentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeEnvironments(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::DescribeEnvironmentsAsync(const DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeEnvironmentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeEnvironments(request), context);
+      handler(this, *pRequest, DescribeEnvironments(*pRequest), context);
     } );
 }
 
@@ -340,17 +347,18 @@ ListEnvironmentsOutcome Cloud9Client::ListEnvironments(const ListEnvironmentsReq
 
 ListEnvironmentsOutcomeCallable Cloud9Client::ListEnvironmentsCallable(const ListEnvironmentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEnvironmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEnvironments(request); } );
+  std::shared_ptr<ListEnvironmentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEnvironmentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEnvironments(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEnvironmentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEnvironments(request), context);
+      handler(this, *pRequest, ListEnvironments(*pRequest), context);
     } );
 }
 
@@ -364,17 +372,18 @@ ListTagsForResourceOutcome Cloud9Client::ListTagsForResource(const ListTagsForRe
 
 ListTagsForResourceOutcomeCallable Cloud9Client::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -388,17 +397,18 @@ TagResourceOutcome Cloud9Client::TagResource(const TagResourceRequest& request) 
 
 TagResourceOutcomeCallable Cloud9Client::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -412,17 +422,18 @@ UntagResourceOutcome Cloud9Client::UntagResource(const UntagResourceRequest& req
 
 UntagResourceOutcomeCallable Cloud9Client::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -436,17 +447,18 @@ UpdateEnvironmentOutcome Cloud9Client::UpdateEnvironment(const UpdateEnvironment
 
 UpdateEnvironmentOutcomeCallable Cloud9Client::UpdateEnvironmentCallable(const UpdateEnvironmentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEnvironment(request); } );
+  std::shared_ptr<UpdateEnvironmentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEnvironmentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateEnvironment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateEnvironmentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateEnvironment(request), context);
+      handler(this, *pRequest, UpdateEnvironment(*pRequest), context);
     } );
 }
 
@@ -460,17 +472,18 @@ UpdateEnvironmentMembershipOutcome Cloud9Client::UpdateEnvironmentMembership(con
 
 UpdateEnvironmentMembershipOutcomeCallable Cloud9Client::UpdateEnvironmentMembershipCallable(const UpdateEnvironmentMembershipRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEnvironmentMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEnvironmentMembership(request); } );
+  std::shared_ptr<UpdateEnvironmentMembershipRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEnvironmentMembershipOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateEnvironmentMembership(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Cloud9Client::UpdateEnvironmentMembershipAsync(const UpdateEnvironmentMembershipRequest& request, const UpdateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateEnvironmentMembershipRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateEnvironmentMembership(request), context);
+      handler(this, *pRequest, UpdateEnvironmentMembership(*pRequest), context);
     } );
 }
 

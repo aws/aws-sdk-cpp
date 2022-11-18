@@ -196,17 +196,18 @@ BatchGetFieldOutcome ConnectCasesClient::BatchGetField(const BatchGetFieldReques
 
 BatchGetFieldOutcomeCallable ConnectCasesClient::BatchGetFieldCallable(const BatchGetFieldRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetFieldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetField(request); } );
+  std::shared_ptr<BatchGetFieldRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetFieldOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchGetField(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::BatchGetFieldAsync(const BatchGetFieldRequest& request, const BatchGetFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchGetFieldRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchGetField(request), context);
+      handler(this, *pRequest, BatchGetField(*pRequest), context);
     } );
 }
 
@@ -235,17 +236,18 @@ BatchPutFieldOptionsOutcome ConnectCasesClient::BatchPutFieldOptions(const Batch
 
 BatchPutFieldOptionsOutcomeCallable ConnectCasesClient::BatchPutFieldOptionsCallable(const BatchPutFieldOptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchPutFieldOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchPutFieldOptions(request); } );
+  std::shared_ptr<BatchPutFieldOptionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchPutFieldOptionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchPutFieldOptions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::BatchPutFieldOptionsAsync(const BatchPutFieldOptionsRequest& request, const BatchPutFieldOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchPutFieldOptionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchPutFieldOptions(request), context);
+      handler(this, *pRequest, BatchPutFieldOptions(*pRequest), context);
     } );
 }
 
@@ -267,17 +269,18 @@ CreateCaseOutcome ConnectCasesClient::CreateCase(const CreateCaseRequest& reques
 
 CreateCaseOutcomeCallable ConnectCasesClient::CreateCaseCallable(const CreateCaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCase(request); } );
+  std::shared_ptr<CreateCaseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateCaseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateCase(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::CreateCaseAsync(const CreateCaseRequest& request, const CreateCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateCaseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateCase(request), context);
+      handler(this, *pRequest, CreateCase(*pRequest), context);
     } );
 }
 
@@ -292,17 +295,18 @@ CreateDomainOutcome ConnectCasesClient::CreateDomain(const CreateDomainRequest& 
 
 CreateDomainOutcomeCallable ConnectCasesClient::CreateDomainCallable(const CreateDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDomain(request); } );
+  std::shared_ptr<CreateDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDomain(request), context);
+      handler(this, *pRequest, CreateDomain(*pRequest), context);
     } );
 }
 
@@ -324,17 +328,18 @@ CreateFieldOutcome ConnectCasesClient::CreateField(const CreateFieldRequest& req
 
 CreateFieldOutcomeCallable ConnectCasesClient::CreateFieldCallable(const CreateFieldRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFieldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateField(request); } );
+  std::shared_ptr<CreateFieldRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateFieldOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateField(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::CreateFieldAsync(const CreateFieldRequest& request, const CreateFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateFieldRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateField(request), context);
+      handler(this, *pRequest, CreateField(*pRequest), context);
     } );
 }
 
@@ -356,17 +361,18 @@ CreateLayoutOutcome ConnectCasesClient::CreateLayout(const CreateLayoutRequest& 
 
 CreateLayoutOutcomeCallable ConnectCasesClient::CreateLayoutCallable(const CreateLayoutRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLayoutOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLayout(request); } );
+  std::shared_ptr<CreateLayoutRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateLayoutOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateLayout(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::CreateLayoutAsync(const CreateLayoutRequest& request, const CreateLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateLayoutRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateLayout(request), context);
+      handler(this, *pRequest, CreateLayout(*pRequest), context);
     } );
 }
 
@@ -395,17 +401,18 @@ CreateRelatedItemOutcome ConnectCasesClient::CreateRelatedItem(const CreateRelat
 
 CreateRelatedItemOutcomeCallable ConnectCasesClient::CreateRelatedItemCallable(const CreateRelatedItemRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRelatedItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRelatedItem(request); } );
+  std::shared_ptr<CreateRelatedItemRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateRelatedItemOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateRelatedItem(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::CreateRelatedItemAsync(const CreateRelatedItemRequest& request, const CreateRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateRelatedItemRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateRelatedItem(request), context);
+      handler(this, *pRequest, CreateRelatedItem(*pRequest), context);
     } );
 }
 
@@ -427,17 +434,18 @@ CreateTemplateOutcome ConnectCasesClient::CreateTemplate(const CreateTemplateReq
 
 CreateTemplateOutcomeCallable ConnectCasesClient::CreateTemplateCallable(const CreateTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTemplate(request); } );
+  std::shared_ptr<CreateTemplateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateTemplateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateTemplate(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::CreateTemplateAsync(const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateTemplateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateTemplate(request), context);
+      handler(this, *pRequest, CreateTemplate(*pRequest), context);
     } );
 }
 
@@ -465,17 +473,18 @@ GetCaseOutcome ConnectCasesClient::GetCase(const GetCaseRequest& request) const
 
 GetCaseOutcomeCallable ConnectCasesClient::GetCaseCallable(const GetCaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCase(request); } );
+  std::shared_ptr<GetCaseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCaseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCase(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::GetCaseAsync(const GetCaseRequest& request, const GetCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCaseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCase(request), context);
+      handler(this, *pRequest, GetCase(*pRequest), context);
     } );
 }
 
@@ -497,17 +506,18 @@ GetCaseEventConfigurationOutcome ConnectCasesClient::GetCaseEventConfiguration(c
 
 GetCaseEventConfigurationOutcomeCallable ConnectCasesClient::GetCaseEventConfigurationCallable(const GetCaseEventConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCaseEventConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCaseEventConfiguration(request); } );
+  std::shared_ptr<GetCaseEventConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCaseEventConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCaseEventConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::GetCaseEventConfigurationAsync(const GetCaseEventConfigurationRequest& request, const GetCaseEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCaseEventConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCaseEventConfiguration(request), context);
+      handler(this, *pRequest, GetCaseEventConfiguration(*pRequest), context);
     } );
 }
 
@@ -528,17 +538,18 @@ GetDomainOutcome ConnectCasesClient::GetDomain(const GetDomainRequest& request) 
 
 GetDomainOutcomeCallable ConnectCasesClient::GetDomainCallable(const GetDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDomain(request); } );
+  std::shared_ptr<GetDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::GetDomainAsync(const GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDomain(request), context);
+      handler(this, *pRequest, GetDomain(*pRequest), context);
     } );
 }
 
@@ -566,17 +577,18 @@ GetLayoutOutcome ConnectCasesClient::GetLayout(const GetLayoutRequest& request) 
 
 GetLayoutOutcomeCallable ConnectCasesClient::GetLayoutCallable(const GetLayoutRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLayoutOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLayout(request); } );
+  std::shared_ptr<GetLayoutRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetLayoutOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetLayout(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::GetLayoutAsync(const GetLayoutRequest& request, const GetLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetLayoutRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetLayout(request), context);
+      handler(this, *pRequest, GetLayout(*pRequest), context);
     } );
 }
 
@@ -604,17 +616,18 @@ GetTemplateOutcome ConnectCasesClient::GetTemplate(const GetTemplateRequest& req
 
 GetTemplateOutcomeCallable ConnectCasesClient::GetTemplateCallable(const GetTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemplate(request); } );
+  std::shared_ptr<GetTemplateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetTemplateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetTemplate(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::GetTemplateAsync(const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetTemplateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetTemplate(request), context);
+      handler(this, *pRequest, GetTemplate(*pRequest), context);
     } );
 }
 
@@ -636,17 +649,18 @@ ListCasesForContactOutcome ConnectCasesClient::ListCasesForContact(const ListCas
 
 ListCasesForContactOutcomeCallable ConnectCasesClient::ListCasesForContactCallable(const ListCasesForContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCasesForContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCasesForContact(request); } );
+  std::shared_ptr<ListCasesForContactRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListCasesForContactOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListCasesForContact(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::ListCasesForContactAsync(const ListCasesForContactRequest& request, const ListCasesForContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListCasesForContactRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListCasesForContact(request), context);
+      handler(this, *pRequest, ListCasesForContact(*pRequest), context);
     } );
 }
 
@@ -661,17 +675,18 @@ ListDomainsOutcome ConnectCasesClient::ListDomains(const ListDomainsRequest& req
 
 ListDomainsOutcomeCallable ConnectCasesClient::ListDomainsCallable(const ListDomainsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomains(request); } );
+  std::shared_ptr<ListDomainsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDomains(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDomainsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDomains(request), context);
+      handler(this, *pRequest, ListDomains(*pRequest), context);
     } );
 }
 
@@ -700,17 +715,18 @@ ListFieldOptionsOutcome ConnectCasesClient::ListFieldOptions(const ListFieldOpti
 
 ListFieldOptionsOutcomeCallable ConnectCasesClient::ListFieldOptionsCallable(const ListFieldOptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFieldOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFieldOptions(request); } );
+  std::shared_ptr<ListFieldOptionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListFieldOptionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListFieldOptions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::ListFieldOptionsAsync(const ListFieldOptionsRequest& request, const ListFieldOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListFieldOptionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListFieldOptions(request), context);
+      handler(this, *pRequest, ListFieldOptions(*pRequest), context);
     } );
 }
 
@@ -732,17 +748,18 @@ ListFieldsOutcome ConnectCasesClient::ListFields(const ListFieldsRequest& reques
 
 ListFieldsOutcomeCallable ConnectCasesClient::ListFieldsCallable(const ListFieldsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFieldsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFields(request); } );
+  std::shared_ptr<ListFieldsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListFieldsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListFields(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::ListFieldsAsync(const ListFieldsRequest& request, const ListFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListFieldsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListFields(request), context);
+      handler(this, *pRequest, ListFields(*pRequest), context);
     } );
 }
 
@@ -764,17 +781,18 @@ ListLayoutsOutcome ConnectCasesClient::ListLayouts(const ListLayoutsRequest& req
 
 ListLayoutsOutcomeCallable ConnectCasesClient::ListLayoutsCallable(const ListLayoutsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLayoutsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLayouts(request); } );
+  std::shared_ptr<ListLayoutsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListLayoutsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListLayouts(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::ListLayoutsAsync(const ListLayoutsRequest& request, const ListLayoutsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListLayoutsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListLayouts(request), context);
+      handler(this, *pRequest, ListLayouts(*pRequest), context);
     } );
 }
 
@@ -795,17 +813,18 @@ ListTagsForResourceOutcome ConnectCasesClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable ConnectCasesClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -827,17 +846,18 @@ ListTemplatesOutcome ConnectCasesClient::ListTemplates(const ListTemplatesReques
 
 ListTemplatesOutcomeCallable ConnectCasesClient::ListTemplatesCallable(const ListTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplates(request); } );
+  std::shared_ptr<ListTemplatesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTemplatesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTemplates(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTemplatesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTemplates(request), context);
+      handler(this, *pRequest, ListTemplates(*pRequest), context);
     } );
 }
 
@@ -859,17 +879,18 @@ PutCaseEventConfigurationOutcome ConnectCasesClient::PutCaseEventConfiguration(c
 
 PutCaseEventConfigurationOutcomeCallable ConnectCasesClient::PutCaseEventConfigurationCallable(const PutCaseEventConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutCaseEventConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutCaseEventConfiguration(request); } );
+  std::shared_ptr<PutCaseEventConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutCaseEventConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutCaseEventConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::PutCaseEventConfigurationAsync(const PutCaseEventConfigurationRequest& request, const PutCaseEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutCaseEventConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutCaseEventConfiguration(request), context);
+      handler(this, *pRequest, PutCaseEventConfiguration(*pRequest), context);
     } );
 }
 
@@ -891,17 +912,18 @@ SearchCasesOutcome ConnectCasesClient::SearchCases(const SearchCasesRequest& req
 
 SearchCasesOutcomeCallable ConnectCasesClient::SearchCasesCallable(const SearchCasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchCasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchCases(request); } );
+  std::shared_ptr<SearchCasesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SearchCasesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SearchCases(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::SearchCasesAsync(const SearchCasesRequest& request, const SearchCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SearchCasesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SearchCases(request), context);
+      handler(this, *pRequest, SearchCases(*pRequest), context);
     } );
 }
 
@@ -930,17 +952,18 @@ SearchRelatedItemsOutcome ConnectCasesClient::SearchRelatedItems(const SearchRel
 
 SearchRelatedItemsOutcomeCallable ConnectCasesClient::SearchRelatedItemsCallable(const SearchRelatedItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchRelatedItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchRelatedItems(request); } );
+  std::shared_ptr<SearchRelatedItemsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SearchRelatedItemsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SearchRelatedItems(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::SearchRelatedItemsAsync(const SearchRelatedItemsRequest& request, const SearchRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SearchRelatedItemsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SearchRelatedItems(request), context);
+      handler(this, *pRequest, SearchRelatedItems(*pRequest), context);
     } );
 }
 
@@ -961,17 +984,18 @@ TagResourceOutcome ConnectCasesClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable ConnectCasesClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -997,17 +1021,18 @@ UntagResourceOutcome ConnectCasesClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable ConnectCasesClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -1035,17 +1060,18 @@ UpdateCaseOutcome ConnectCasesClient::UpdateCase(const UpdateCaseRequest& reques
 
 UpdateCaseOutcomeCallable ConnectCasesClient::UpdateCaseCallable(const UpdateCaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCase(request); } );
+  std::shared_ptr<UpdateCaseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCaseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateCase(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::UpdateCaseAsync(const UpdateCaseRequest& request, const UpdateCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateCaseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateCase(request), context);
+      handler(this, *pRequest, UpdateCase(*pRequest), context);
     } );
 }
 
@@ -1073,17 +1099,18 @@ UpdateFieldOutcome ConnectCasesClient::UpdateField(const UpdateFieldRequest& req
 
 UpdateFieldOutcomeCallable ConnectCasesClient::UpdateFieldCallable(const UpdateFieldRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFieldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateField(request); } );
+  std::shared_ptr<UpdateFieldRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFieldOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateField(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::UpdateFieldAsync(const UpdateFieldRequest& request, const UpdateFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateFieldRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateField(request), context);
+      handler(this, *pRequest, UpdateField(*pRequest), context);
     } );
 }
 
@@ -1111,17 +1138,18 @@ UpdateLayoutOutcome ConnectCasesClient::UpdateLayout(const UpdateLayoutRequest& 
 
 UpdateLayoutOutcomeCallable ConnectCasesClient::UpdateLayoutCallable(const UpdateLayoutRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLayoutOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLayout(request); } );
+  std::shared_ptr<UpdateLayoutRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLayoutOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateLayout(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::UpdateLayoutAsync(const UpdateLayoutRequest& request, const UpdateLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateLayoutRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateLayout(request), context);
+      handler(this, *pRequest, UpdateLayout(*pRequest), context);
     } );
 }
 
@@ -1149,17 +1177,18 @@ UpdateTemplateOutcome ConnectCasesClient::UpdateTemplate(const UpdateTemplateReq
 
 UpdateTemplateOutcomeCallable ConnectCasesClient::UpdateTemplateCallable(const UpdateTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTemplate(request); } );
+  std::shared_ptr<UpdateTemplateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTemplateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateTemplate(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCasesClient::UpdateTemplateAsync(const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateTemplateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateTemplate(request), context);
+      handler(this, *pRequest, UpdateTemplate(*pRequest), context);
     } );
 }
 

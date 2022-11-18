@@ -176,17 +176,18 @@ DeleteResourcePermissionOutcome SsmSapClient::DeleteResourcePermission(const Del
 
 DeleteResourcePermissionOutcomeCallable SsmSapClient::DeleteResourcePermissionCallable(const DeleteResourcePermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePermission(request); } );
+  std::shared_ptr<DeleteResourcePermissionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteResourcePermission(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::DeleteResourcePermissionAsync(const DeleteResourcePermissionRequest& request, const DeleteResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteResourcePermissionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteResourcePermission(request), context);
+      handler(this, *pRequest, DeleteResourcePermission(*pRequest), context);
     } );
 }
 
@@ -201,17 +202,18 @@ DeregisterApplicationOutcome SsmSapClient::DeregisterApplication(const Deregiste
 
 DeregisterApplicationOutcomeCallable SsmSapClient::DeregisterApplicationCallable(const DeregisterApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeregisterApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterApplication(request); } );
+  std::shared_ptr<DeregisterApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeregisterApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::DeregisterApplicationAsync(const DeregisterApplicationRequest& request, const DeregisterApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeregisterApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeregisterApplication(request), context);
+      handler(this, *pRequest, DeregisterApplication(*pRequest), context);
     } );
 }
 
@@ -226,17 +228,18 @@ GetApplicationOutcome SsmSapClient::GetApplication(const GetApplicationRequest& 
 
 GetApplicationOutcomeCallable SsmSapClient::GetApplicationCallable(const GetApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplication(request); } );
+  std::shared_ptr<GetApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetApplication(request), context);
+      handler(this, *pRequest, GetApplication(*pRequest), context);
     } );
 }
 
@@ -251,17 +254,18 @@ GetComponentOutcome SsmSapClient::GetComponent(const GetComponentRequest& reques
 
 GetComponentOutcomeCallable SsmSapClient::GetComponentCallable(const GetComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComponent(request); } );
+  std::shared_ptr<GetComponentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetComponentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetComponent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetComponentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetComponent(request), context);
+      handler(this, *pRequest, GetComponent(*pRequest), context);
     } );
 }
 
@@ -276,17 +280,18 @@ GetDatabaseOutcome SsmSapClient::GetDatabase(const GetDatabaseRequest& request) 
 
 GetDatabaseOutcomeCallable SsmSapClient::GetDatabaseCallable(const GetDatabaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDatabase(request); } );
+  std::shared_ptr<GetDatabaseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDatabaseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDatabase(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::GetDatabaseAsync(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDatabaseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDatabase(request), context);
+      handler(this, *pRequest, GetDatabase(*pRequest), context);
     } );
 }
 
@@ -301,17 +306,18 @@ GetOperationOutcome SsmSapClient::GetOperation(const GetOperationRequest& reques
 
 GetOperationOutcomeCallable SsmSapClient::GetOperationCallable(const GetOperationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetOperationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOperation(request); } );
+  std::shared_ptr<GetOperationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetOperationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetOperation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::GetOperationAsync(const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetOperationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetOperation(request), context);
+      handler(this, *pRequest, GetOperation(*pRequest), context);
     } );
 }
 
@@ -326,17 +332,18 @@ GetResourcePermissionOutcome SsmSapClient::GetResourcePermission(const GetResour
 
 GetResourcePermissionOutcomeCallable SsmSapClient::GetResourcePermissionCallable(const GetResourcePermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourcePermission(request); } );
+  std::shared_ptr<GetResourcePermissionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetResourcePermission(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::GetResourcePermissionAsync(const GetResourcePermissionRequest& request, const GetResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetResourcePermissionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetResourcePermission(request), context);
+      handler(this, *pRequest, GetResourcePermission(*pRequest), context);
     } );
 }
 
@@ -351,17 +358,18 @@ ListApplicationsOutcome SsmSapClient::ListApplications(const ListApplicationsReq
 
 ListApplicationsOutcomeCallable SsmSapClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplications(request); } );
+  std::shared_ptr<ListApplicationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListApplications(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListApplicationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListApplications(request), context);
+      handler(this, *pRequest, ListApplications(*pRequest), context);
     } );
 }
 
@@ -376,17 +384,18 @@ ListComponentsOutcome SsmSapClient::ListComponents(const ListComponentsRequest& 
 
 ListComponentsOutcomeCallable SsmSapClient::ListComponentsCallable(const ListComponentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComponents(request); } );
+  std::shared_ptr<ListComponentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListComponentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListComponents(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListComponentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListComponents(request), context);
+      handler(this, *pRequest, ListComponents(*pRequest), context);
     } );
 }
 
@@ -401,17 +410,18 @@ ListDatabasesOutcome SsmSapClient::ListDatabases(const ListDatabasesRequest& req
 
 ListDatabasesOutcomeCallable SsmSapClient::ListDatabasesCallable(const ListDatabasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDatabasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatabases(request); } );
+  std::shared_ptr<ListDatabasesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDatabasesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDatabases(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDatabasesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDatabases(request), context);
+      handler(this, *pRequest, ListDatabases(*pRequest), context);
     } );
 }
 
@@ -432,17 +442,18 @@ ListTagsForResourceOutcome SsmSapClient::ListTagsForResource(const ListTagsForRe
 
 ListTagsForResourceOutcomeCallable SsmSapClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -457,17 +468,18 @@ PutResourcePermissionOutcome SsmSapClient::PutResourcePermission(const PutResour
 
 PutResourcePermissionOutcomeCallable SsmSapClient::PutResourcePermissionCallable(const PutResourcePermissionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourcePermission(request); } );
+  std::shared_ptr<PutResourcePermissionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutResourcePermission(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::PutResourcePermissionAsync(const PutResourcePermissionRequest& request, const PutResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutResourcePermissionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutResourcePermission(request), context);
+      handler(this, *pRequest, PutResourcePermission(*pRequest), context);
     } );
 }
 
@@ -482,17 +494,18 @@ RegisterApplicationOutcome SsmSapClient::RegisterApplication(const RegisterAppli
 
 RegisterApplicationOutcomeCallable SsmSapClient::RegisterApplicationCallable(const RegisterApplicationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterApplication(request); } );
+  std::shared_ptr<RegisterApplicationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RegisterApplicationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RegisterApplication(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::RegisterApplicationAsync(const RegisterApplicationRequest& request, const RegisterApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RegisterApplicationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RegisterApplication(request), context);
+      handler(this, *pRequest, RegisterApplication(*pRequest), context);
     } );
 }
 
@@ -513,17 +526,18 @@ TagResourceOutcome SsmSapClient::TagResource(const TagResourceRequest& request) 
 
 TagResourceOutcomeCallable SsmSapClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -549,17 +563,18 @@ UntagResourceOutcome SsmSapClient::UntagResource(const UntagResourceRequest& req
 
 UntagResourceOutcomeCallable SsmSapClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -574,17 +589,18 @@ UpdateApplicationSettingsOutcome SsmSapClient::UpdateApplicationSettings(const U
 
 UpdateApplicationSettingsOutcomeCallable SsmSapClient::UpdateApplicationSettingsCallable(const UpdateApplicationSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplicationSettings(request); } );
+  std::shared_ptr<UpdateApplicationSettingsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationSettingsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateApplicationSettings(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SsmSapClient::UpdateApplicationSettingsAsync(const UpdateApplicationSettingsRequest& request, const UpdateApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateApplicationSettingsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateApplicationSettings(request), context);
+      handler(this, *pRequest, UpdateApplicationSettings(*pRequest), context);
     } );
 }
 

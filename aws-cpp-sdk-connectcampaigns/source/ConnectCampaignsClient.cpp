@@ -182,17 +182,18 @@ CreateCampaignOutcome ConnectCampaignsClient::CreateCampaign(const CreateCampaig
 
 CreateCampaignOutcomeCallable ConnectCampaignsClient::CreateCampaignCallable(const CreateCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCampaign(request); } );
+  std::shared_ptr<CreateCampaignRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateCampaignOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateCampaign(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::CreateCampaignAsync(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateCampaignRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateCampaign(request), context);
+      handler(this, *pRequest, CreateCampaign(*pRequest), context);
     } );
 }
 
@@ -213,17 +214,18 @@ DeleteCampaignOutcome ConnectCampaignsClient::DeleteCampaign(const DeleteCampaig
 
 DeleteCampaignOutcomeCallable ConnectCampaignsClient::DeleteCampaignCallable(const DeleteCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCampaign(request); } );
+  std::shared_ptr<DeleteCampaignRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCampaignOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteCampaign(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::DeleteCampaignAsync(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteCampaignRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteCampaign(request), context);
+      handler(this, *pRequest, DeleteCampaign(*pRequest), context);
     } );
 }
 
@@ -245,17 +247,18 @@ DeleteConnectInstanceConfigOutcome ConnectCampaignsClient::DeleteConnectInstance
 
 DeleteConnectInstanceConfigOutcomeCallable ConnectCampaignsClient::DeleteConnectInstanceConfigCallable(const DeleteConnectInstanceConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectInstanceConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnectInstanceConfig(request); } );
+  std::shared_ptr<DeleteConnectInstanceConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectInstanceConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteConnectInstanceConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::DeleteConnectInstanceConfigAsync(const DeleteConnectInstanceConfigRequest& request, const DeleteConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteConnectInstanceConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteConnectInstanceConfig(request), context);
+      handler(this, *pRequest, DeleteConnectInstanceConfig(*pRequest), context);
     } );
 }
 
@@ -277,17 +280,18 @@ DeleteInstanceOnboardingJobOutcome ConnectCampaignsClient::DeleteInstanceOnboard
 
 DeleteInstanceOnboardingJobOutcomeCallable ConnectCampaignsClient::DeleteInstanceOnboardingJobCallable(const DeleteInstanceOnboardingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteInstanceOnboardingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInstanceOnboardingJob(request); } );
+  std::shared_ptr<DeleteInstanceOnboardingJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteInstanceOnboardingJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteInstanceOnboardingJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::DeleteInstanceOnboardingJobAsync(const DeleteInstanceOnboardingJobRequest& request, const DeleteInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteInstanceOnboardingJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteInstanceOnboardingJob(request), context);
+      handler(this, *pRequest, DeleteInstanceOnboardingJob(*pRequest), context);
     } );
 }
 
@@ -308,17 +312,18 @@ DescribeCampaignOutcome ConnectCampaignsClient::DescribeCampaign(const DescribeC
 
 DescribeCampaignOutcomeCallable ConnectCampaignsClient::DescribeCampaignCallable(const DescribeCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCampaign(request); } );
+  std::shared_ptr<DescribeCampaignRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCampaignOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeCampaign(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::DescribeCampaignAsync(const DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeCampaignRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeCampaign(request), context);
+      handler(this, *pRequest, DescribeCampaign(*pRequest), context);
     } );
 }
 
@@ -340,17 +345,18 @@ GetCampaignStateOutcome ConnectCampaignsClient::GetCampaignState(const GetCampai
 
 GetCampaignStateOutcomeCallable ConnectCampaignsClient::GetCampaignStateCallable(const GetCampaignStateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCampaignStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCampaignState(request); } );
+  std::shared_ptr<GetCampaignStateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCampaignStateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCampaignState(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::GetCampaignStateAsync(const GetCampaignStateRequest& request, const GetCampaignStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCampaignStateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCampaignState(request), context);
+      handler(this, *pRequest, GetCampaignState(*pRequest), context);
     } );
 }
 
@@ -365,17 +371,18 @@ GetCampaignStateBatchOutcome ConnectCampaignsClient::GetCampaignStateBatch(const
 
 GetCampaignStateBatchOutcomeCallable ConnectCampaignsClient::GetCampaignStateBatchCallable(const GetCampaignStateBatchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCampaignStateBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCampaignStateBatch(request); } );
+  std::shared_ptr<GetCampaignStateBatchRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCampaignStateBatchOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCampaignStateBatch(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::GetCampaignStateBatchAsync(const GetCampaignStateBatchRequest& request, const GetCampaignStateBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCampaignStateBatchRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCampaignStateBatch(request), context);
+      handler(this, *pRequest, GetCampaignStateBatch(*pRequest), context);
     } );
 }
 
@@ -397,17 +404,18 @@ GetConnectInstanceConfigOutcome ConnectCampaignsClient::GetConnectInstanceConfig
 
 GetConnectInstanceConfigOutcomeCallable ConnectCampaignsClient::GetConnectInstanceConfigCallable(const GetConnectInstanceConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConnectInstanceConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnectInstanceConfig(request); } );
+  std::shared_ptr<GetConnectInstanceConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetConnectInstanceConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetConnectInstanceConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::GetConnectInstanceConfigAsync(const GetConnectInstanceConfigRequest& request, const GetConnectInstanceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetConnectInstanceConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetConnectInstanceConfig(request), context);
+      handler(this, *pRequest, GetConnectInstanceConfig(*pRequest), context);
     } );
 }
 
@@ -429,17 +437,18 @@ GetInstanceOnboardingJobStatusOutcome ConnectCampaignsClient::GetInstanceOnboard
 
 GetInstanceOnboardingJobStatusOutcomeCallable ConnectCampaignsClient::GetInstanceOnboardingJobStatusCallable(const GetInstanceOnboardingJobStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetInstanceOnboardingJobStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInstanceOnboardingJobStatus(request); } );
+  std::shared_ptr<GetInstanceOnboardingJobStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetInstanceOnboardingJobStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetInstanceOnboardingJobStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::GetInstanceOnboardingJobStatusAsync(const GetInstanceOnboardingJobStatusRequest& request, const GetInstanceOnboardingJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetInstanceOnboardingJobStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetInstanceOnboardingJobStatus(request), context);
+      handler(this, *pRequest, GetInstanceOnboardingJobStatus(*pRequest), context);
     } );
 }
 
@@ -454,17 +463,18 @@ ListCampaignsOutcome ConnectCampaignsClient::ListCampaigns(const ListCampaignsRe
 
 ListCampaignsOutcomeCallable ConnectCampaignsClient::ListCampaignsCallable(const ListCampaignsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCampaignsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCampaigns(request); } );
+  std::shared_ptr<ListCampaignsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListCampaignsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListCampaigns(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::ListCampaignsAsync(const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListCampaignsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListCampaigns(request), context);
+      handler(this, *pRequest, ListCampaigns(*pRequest), context);
     } );
 }
 
@@ -485,17 +495,18 @@ ListTagsForResourceOutcome ConnectCampaignsClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable ConnectCampaignsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -517,17 +528,18 @@ PauseCampaignOutcome ConnectCampaignsClient::PauseCampaign(const PauseCampaignRe
 
 PauseCampaignOutcomeCallable ConnectCampaignsClient::PauseCampaignCallable(const PauseCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PauseCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PauseCampaign(request); } );
+  std::shared_ptr<PauseCampaignRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PauseCampaignOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PauseCampaign(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::PauseCampaignAsync(const PauseCampaignRequest& request, const PauseCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PauseCampaignRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PauseCampaign(request), context);
+      handler(this, *pRequest, PauseCampaign(*pRequest), context);
     } );
 }
 
@@ -549,17 +561,18 @@ PutDialRequestBatchOutcome ConnectCampaignsClient::PutDialRequestBatch(const Put
 
 PutDialRequestBatchOutcomeCallable ConnectCampaignsClient::PutDialRequestBatchCallable(const PutDialRequestBatchRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutDialRequestBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutDialRequestBatch(request); } );
+  std::shared_ptr<PutDialRequestBatchRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutDialRequestBatchOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutDialRequestBatch(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::PutDialRequestBatchAsync(const PutDialRequestBatchRequest& request, const PutDialRequestBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutDialRequestBatchRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutDialRequestBatch(request), context);
+      handler(this, *pRequest, PutDialRequestBatch(*pRequest), context);
     } );
 }
 
@@ -581,17 +594,18 @@ ResumeCampaignOutcome ConnectCampaignsClient::ResumeCampaign(const ResumeCampaig
 
 ResumeCampaignOutcomeCallable ConnectCampaignsClient::ResumeCampaignCallable(const ResumeCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResumeCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResumeCampaign(request); } );
+  std::shared_ptr<ResumeCampaignRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ResumeCampaignOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ResumeCampaign(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::ResumeCampaignAsync(const ResumeCampaignRequest& request, const ResumeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ResumeCampaignRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ResumeCampaign(request), context);
+      handler(this, *pRequest, ResumeCampaign(*pRequest), context);
     } );
 }
 
@@ -613,17 +627,18 @@ StartCampaignOutcome ConnectCampaignsClient::StartCampaign(const StartCampaignRe
 
 StartCampaignOutcomeCallable ConnectCampaignsClient::StartCampaignCallable(const StartCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartCampaign(request); } );
+  std::shared_ptr<StartCampaignRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartCampaignOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartCampaign(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::StartCampaignAsync(const StartCampaignRequest& request, const StartCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartCampaignRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartCampaign(request), context);
+      handler(this, *pRequest, StartCampaign(*pRequest), context);
     } );
 }
 
@@ -645,17 +660,18 @@ StartInstanceOnboardingJobOutcome ConnectCampaignsClient::StartInstanceOnboardin
 
 StartInstanceOnboardingJobOutcomeCallable ConnectCampaignsClient::StartInstanceOnboardingJobCallable(const StartInstanceOnboardingJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartInstanceOnboardingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartInstanceOnboardingJob(request); } );
+  std::shared_ptr<StartInstanceOnboardingJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartInstanceOnboardingJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartInstanceOnboardingJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::StartInstanceOnboardingJobAsync(const StartInstanceOnboardingJobRequest& request, const StartInstanceOnboardingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartInstanceOnboardingJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartInstanceOnboardingJob(request), context);
+      handler(this, *pRequest, StartInstanceOnboardingJob(*pRequest), context);
     } );
 }
 
@@ -677,17 +693,18 @@ StopCampaignOutcome ConnectCampaignsClient::StopCampaign(const StopCampaignReque
 
 StopCampaignOutcomeCallable ConnectCampaignsClient::StopCampaignCallable(const StopCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopCampaign(request); } );
+  std::shared_ptr<StopCampaignRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopCampaignOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopCampaign(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::StopCampaignAsync(const StopCampaignRequest& request, const StopCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopCampaignRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopCampaign(request), context);
+      handler(this, *pRequest, StopCampaign(*pRequest), context);
     } );
 }
 
@@ -708,17 +725,18 @@ TagResourceOutcome ConnectCampaignsClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable ConnectCampaignsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -744,17 +762,18 @@ UntagResourceOutcome ConnectCampaignsClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable ConnectCampaignsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -776,17 +795,18 @@ UpdateCampaignDialerConfigOutcome ConnectCampaignsClient::UpdateCampaignDialerCo
 
 UpdateCampaignDialerConfigOutcomeCallable ConnectCampaignsClient::UpdateCampaignDialerConfigCallable(const UpdateCampaignDialerConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignDialerConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCampaignDialerConfig(request); } );
+  std::shared_ptr<UpdateCampaignDialerConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignDialerConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateCampaignDialerConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::UpdateCampaignDialerConfigAsync(const UpdateCampaignDialerConfigRequest& request, const UpdateCampaignDialerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateCampaignDialerConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateCampaignDialerConfig(request), context);
+      handler(this, *pRequest, UpdateCampaignDialerConfig(*pRequest), context);
     } );
 }
 
@@ -808,17 +828,18 @@ UpdateCampaignNameOutcome ConnectCampaignsClient::UpdateCampaignName(const Updat
 
 UpdateCampaignNameOutcomeCallable ConnectCampaignsClient::UpdateCampaignNameCallable(const UpdateCampaignNameRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCampaignName(request); } );
+  std::shared_ptr<UpdateCampaignNameRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignNameOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateCampaignName(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::UpdateCampaignNameAsync(const UpdateCampaignNameRequest& request, const UpdateCampaignNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateCampaignNameRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateCampaignName(request), context);
+      handler(this, *pRequest, UpdateCampaignName(*pRequest), context);
     } );
 }
 
@@ -840,17 +861,18 @@ UpdateCampaignOutboundCallConfigOutcome ConnectCampaignsClient::UpdateCampaignOu
 
 UpdateCampaignOutboundCallConfigOutcomeCallable ConnectCampaignsClient::UpdateCampaignOutboundCallConfigCallable(const UpdateCampaignOutboundCallConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignOutboundCallConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCampaignOutboundCallConfig(request); } );
+  std::shared_ptr<UpdateCampaignOutboundCallConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignOutboundCallConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateCampaignOutboundCallConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectCampaignsClient::UpdateCampaignOutboundCallConfigAsync(const UpdateCampaignOutboundCallConfigRequest& request, const UpdateCampaignOutboundCallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateCampaignOutboundCallConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateCampaignOutboundCallConfig(request), context);
+      handler(this, *pRequest, UpdateCampaignOutboundCallConfig(*pRequest), context);
     } );
 }
 

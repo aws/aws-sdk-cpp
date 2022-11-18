@@ -187,17 +187,18 @@ CreateAccessorOutcome ManagedBlockchainClient::CreateAccessor(const CreateAccess
 
 CreateAccessorOutcomeCallable ManagedBlockchainClient::CreateAccessorCallable(const CreateAccessorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAccessorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccessor(request); } );
+  std::shared_ptr<CreateAccessorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateAccessorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateAccessor(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::CreateAccessorAsync(const CreateAccessorRequest& request, const CreateAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateAccessorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateAccessor(request), context);
+      handler(this, *pRequest, CreateAccessor(*pRequest), context);
     } );
 }
 
@@ -219,17 +220,18 @@ CreateMemberOutcome ManagedBlockchainClient::CreateMember(const CreateMemberRequ
 
 CreateMemberOutcomeCallable ManagedBlockchainClient::CreateMemberCallable(const CreateMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMember(request); } );
+  std::shared_ptr<CreateMemberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateMemberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateMember(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::CreateMemberAsync(const CreateMemberRequest& request, const CreateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateMemberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateMember(request), context);
+      handler(this, *pRequest, CreateMember(*pRequest), context);
     } );
 }
 
@@ -244,17 +246,18 @@ CreateNetworkOutcome ManagedBlockchainClient::CreateNetwork(const CreateNetworkR
 
 CreateNetworkOutcomeCallable ManagedBlockchainClient::CreateNetworkCallable(const CreateNetworkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNetwork(request); } );
+  std::shared_ptr<CreateNetworkRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateNetwork(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::CreateNetworkAsync(const CreateNetworkRequest& request, const CreateNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateNetworkRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateNetwork(request), context);
+      handler(this, *pRequest, CreateNetwork(*pRequest), context);
     } );
 }
 
@@ -276,17 +279,18 @@ CreateNodeOutcome ManagedBlockchainClient::CreateNode(const CreateNodeRequest& r
 
 CreateNodeOutcomeCallable ManagedBlockchainClient::CreateNodeCallable(const CreateNodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNode(request); } );
+  std::shared_ptr<CreateNodeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateNodeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateNode(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::CreateNodeAsync(const CreateNodeRequest& request, const CreateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateNodeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateNode(request), context);
+      handler(this, *pRequest, CreateNode(*pRequest), context);
     } );
 }
 
@@ -308,17 +312,18 @@ CreateProposalOutcome ManagedBlockchainClient::CreateProposal(const CreatePropos
 
 CreateProposalOutcomeCallable ManagedBlockchainClient::CreateProposalCallable(const CreateProposalRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProposalOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProposal(request); } );
+  std::shared_ptr<CreateProposalRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateProposalOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateProposal(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::CreateProposalAsync(const CreateProposalRequest& request, const CreateProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateProposalRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateProposal(request), context);
+      handler(this, *pRequest, CreateProposal(*pRequest), context);
     } );
 }
 
@@ -339,17 +344,18 @@ DeleteAccessorOutcome ManagedBlockchainClient::DeleteAccessor(const DeleteAccess
 
 DeleteAccessorOutcomeCallable ManagedBlockchainClient::DeleteAccessorCallable(const DeleteAccessorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessor(request); } );
+  std::shared_ptr<DeleteAccessorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAccessor(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::DeleteAccessorAsync(const DeleteAccessorRequest& request, const DeleteAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAccessorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAccessor(request), context);
+      handler(this, *pRequest, DeleteAccessor(*pRequest), context);
     } );
 }
 
@@ -377,17 +383,18 @@ DeleteMemberOutcome ManagedBlockchainClient::DeleteMember(const DeleteMemberRequ
 
 DeleteMemberOutcomeCallable ManagedBlockchainClient::DeleteMemberCallable(const DeleteMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMember(request); } );
+  std::shared_ptr<DeleteMemberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMemberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteMember(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::DeleteMemberAsync(const DeleteMemberRequest& request, const DeleteMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteMemberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteMember(request), context);
+      handler(this, *pRequest, DeleteMember(*pRequest), context);
     } );
 }
 
@@ -415,17 +422,18 @@ DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& r
 
 DeleteNodeOutcomeCallable ManagedBlockchainClient::DeleteNodeCallable(const DeleteNodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNode(request); } );
+  std::shared_ptr<DeleteNodeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNodeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteNode(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::DeleteNodeAsync(const DeleteNodeRequest& request, const DeleteNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteNodeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteNode(request), context);
+      handler(this, *pRequest, DeleteNode(*pRequest), context);
     } );
 }
 
@@ -446,17 +454,18 @@ GetAccessorOutcome ManagedBlockchainClient::GetAccessor(const GetAccessorRequest
 
 GetAccessorOutcomeCallable ManagedBlockchainClient::GetAccessorCallable(const GetAccessorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessor(request); } );
+  std::shared_ptr<GetAccessorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAccessorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAccessor(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::GetAccessorAsync(const GetAccessorRequest& request, const GetAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAccessorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAccessor(request), context);
+      handler(this, *pRequest, GetAccessor(*pRequest), context);
     } );
 }
 
@@ -484,17 +493,18 @@ GetMemberOutcome ManagedBlockchainClient::GetMember(const GetMemberRequest& requ
 
 GetMemberOutcomeCallable ManagedBlockchainClient::GetMemberCallable(const GetMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMember(request); } );
+  std::shared_ptr<GetMemberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetMemberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetMember(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::GetMemberAsync(const GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetMemberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetMember(request), context);
+      handler(this, *pRequest, GetMember(*pRequest), context);
     } );
 }
 
@@ -515,17 +525,18 @@ GetNetworkOutcome ManagedBlockchainClient::GetNetwork(const GetNetworkRequest& r
 
 GetNetworkOutcomeCallable ManagedBlockchainClient::GetNetworkCallable(const GetNetworkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNetworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetwork(request); } );
+  std::shared_ptr<GetNetworkRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetNetworkOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetNetwork(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::GetNetworkAsync(const GetNetworkRequest& request, const GetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetNetworkRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetNetwork(request), context);
+      handler(this, *pRequest, GetNetwork(*pRequest), context);
     } );
 }
 
@@ -553,17 +564,18 @@ GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) c
 
 GetNodeOutcomeCallable ManagedBlockchainClient::GetNodeCallable(const GetNodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetNodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNode(request); } );
+  std::shared_ptr<GetNodeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetNodeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetNode(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::GetNodeAsync(const GetNodeRequest& request, const GetNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetNodeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetNode(request), context);
+      handler(this, *pRequest, GetNode(*pRequest), context);
     } );
 }
 
@@ -591,17 +603,18 @@ GetProposalOutcome ManagedBlockchainClient::GetProposal(const GetProposalRequest
 
 GetProposalOutcomeCallable ManagedBlockchainClient::GetProposalCallable(const GetProposalRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetProposalOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProposal(request); } );
+  std::shared_ptr<GetProposalRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetProposalOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetProposal(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::GetProposalAsync(const GetProposalRequest& request, const GetProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetProposalRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetProposal(request), context);
+      handler(this, *pRequest, GetProposal(*pRequest), context);
     } );
 }
 
@@ -616,17 +629,18 @@ ListAccessorsOutcome ManagedBlockchainClient::ListAccessors(const ListAccessorsR
 
 ListAccessorsOutcomeCallable ManagedBlockchainClient::ListAccessorsCallable(const ListAccessorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAccessorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessors(request); } );
+  std::shared_ptr<ListAccessorsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAccessorsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAccessors(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::ListAccessorsAsync(const ListAccessorsRequest& request, const ListAccessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAccessorsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAccessors(request), context);
+      handler(this, *pRequest, ListAccessors(*pRequest), context);
     } );
 }
 
@@ -641,17 +655,18 @@ ListInvitationsOutcome ManagedBlockchainClient::ListInvitations(const ListInvita
 
 ListInvitationsOutcomeCallable ManagedBlockchainClient::ListInvitationsCallable(const ListInvitationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInvitationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInvitations(request); } );
+  std::shared_ptr<ListInvitationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListInvitationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListInvitations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::ListInvitationsAsync(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListInvitationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListInvitations(request), context);
+      handler(this, *pRequest, ListInvitations(*pRequest), context);
     } );
 }
 
@@ -673,17 +688,18 @@ ListMembersOutcome ManagedBlockchainClient::ListMembers(const ListMembersRequest
 
 ListMembersOutcomeCallable ManagedBlockchainClient::ListMembersCallable(const ListMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMembers(request); } );
+  std::shared_ptr<ListMembersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListMembersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListMembers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::ListMembersAsync(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListMembersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListMembers(request), context);
+      handler(this, *pRequest, ListMembers(*pRequest), context);
     } );
 }
 
@@ -698,17 +714,18 @@ ListNetworksOutcome ManagedBlockchainClient::ListNetworks(const ListNetworksRequ
 
 ListNetworksOutcomeCallable ManagedBlockchainClient::ListNetworksCallable(const ListNetworksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNetworksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNetworks(request); } );
+  std::shared_ptr<ListNetworksRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListNetworksOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListNetworks(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::ListNetworksAsync(const ListNetworksRequest& request, const ListNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListNetworksRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListNetworks(request), context);
+      handler(this, *pRequest, ListNetworks(*pRequest), context);
     } );
 }
 
@@ -730,17 +747,18 @@ ListNodesOutcome ManagedBlockchainClient::ListNodes(const ListNodesRequest& requ
 
 ListNodesOutcomeCallable ManagedBlockchainClient::ListNodesCallable(const ListNodesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNodesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNodes(request); } );
+  std::shared_ptr<ListNodesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListNodesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListNodes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::ListNodesAsync(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListNodesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListNodes(request), context);
+      handler(this, *pRequest, ListNodes(*pRequest), context);
     } );
 }
 
@@ -769,17 +787,18 @@ ListProposalVotesOutcome ManagedBlockchainClient::ListProposalVotes(const ListPr
 
 ListProposalVotesOutcomeCallable ManagedBlockchainClient::ListProposalVotesCallable(const ListProposalVotesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProposalVotesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProposalVotes(request); } );
+  std::shared_ptr<ListProposalVotesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListProposalVotesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListProposalVotes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::ListProposalVotesAsync(const ListProposalVotesRequest& request, const ListProposalVotesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListProposalVotesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListProposalVotes(request), context);
+      handler(this, *pRequest, ListProposalVotes(*pRequest), context);
     } );
 }
 
@@ -801,17 +820,18 @@ ListProposalsOutcome ManagedBlockchainClient::ListProposals(const ListProposalsR
 
 ListProposalsOutcomeCallable ManagedBlockchainClient::ListProposalsCallable(const ListProposalsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProposalsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProposals(request); } );
+  std::shared_ptr<ListProposalsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListProposalsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListProposals(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::ListProposalsAsync(const ListProposalsRequest& request, const ListProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListProposalsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListProposals(request), context);
+      handler(this, *pRequest, ListProposals(*pRequest), context);
     } );
 }
 
@@ -832,17 +852,18 @@ ListTagsForResourceOutcome ManagedBlockchainClient::ListTagsForResource(const Li
 
 ListTagsForResourceOutcomeCallable ManagedBlockchainClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -863,17 +884,18 @@ RejectInvitationOutcome ManagedBlockchainClient::RejectInvitation(const RejectIn
 
 RejectInvitationOutcomeCallable ManagedBlockchainClient::RejectInvitationCallable(const RejectInvitationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RejectInvitationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectInvitation(request); } );
+  std::shared_ptr<RejectInvitationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RejectInvitationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RejectInvitation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::RejectInvitationAsync(const RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RejectInvitationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RejectInvitation(request), context);
+      handler(this, *pRequest, RejectInvitation(*pRequest), context);
     } );
 }
 
@@ -894,17 +916,18 @@ TagResourceOutcome ManagedBlockchainClient::TagResource(const TagResourceRequest
 
 TagResourceOutcomeCallable ManagedBlockchainClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -930,17 +953,18 @@ UntagResourceOutcome ManagedBlockchainClient::UntagResource(const UntagResourceR
 
 UntagResourceOutcomeCallable ManagedBlockchainClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -968,17 +992,18 @@ UpdateMemberOutcome ManagedBlockchainClient::UpdateMember(const UpdateMemberRequ
 
 UpdateMemberOutcomeCallable ManagedBlockchainClient::UpdateMemberCallable(const UpdateMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMember(request); } );
+  std::shared_ptr<UpdateMemberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMemberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateMember(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::UpdateMemberAsync(const UpdateMemberRequest& request, const UpdateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateMemberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateMember(request), context);
+      handler(this, *pRequest, UpdateMember(*pRequest), context);
     } );
 }
 
@@ -1006,17 +1031,18 @@ UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& r
 
 UpdateNodeOutcomeCallable ManagedBlockchainClient::UpdateNodeCallable(const UpdateNodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNode(request); } );
+  std::shared_ptr<UpdateNodeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNodeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateNode(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::UpdateNodeAsync(const UpdateNodeRequest& request, const UpdateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateNodeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateNode(request), context);
+      handler(this, *pRequest, UpdateNode(*pRequest), context);
     } );
 }
 
@@ -1045,17 +1071,18 @@ VoteOnProposalOutcome ManagedBlockchainClient::VoteOnProposal(const VoteOnPropos
 
 VoteOnProposalOutcomeCallable ManagedBlockchainClient::VoteOnProposalCallable(const VoteOnProposalRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< VoteOnProposalOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->VoteOnProposal(request); } );
+  std::shared_ptr<VoteOnProposalRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< VoteOnProposalOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->VoteOnProposal(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ManagedBlockchainClient::VoteOnProposalAsync(const VoteOnProposalRequest& request, const VoteOnProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<VoteOnProposalRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, VoteOnProposal(request), context);
+      handler(this, *pRequest, VoteOnProposal(*pRequest), context);
     } );
 }
 

@@ -184,17 +184,18 @@ DescribeEntitiesDetectionV2JobOutcome ComprehendMedicalClient::DescribeEntitiesD
 
 DescribeEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::DescribeEntitiesDetectionV2JobCallable(const DescribeEntitiesDetectionV2JobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEntitiesDetectionV2JobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEntitiesDetectionV2Job(request); } );
+  std::shared_ptr<DescribeEntitiesDetectionV2JobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEntitiesDetectionV2JobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeEntitiesDetectionV2Job(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::DescribeEntitiesDetectionV2JobAsync(const DescribeEntitiesDetectionV2JobRequest& request, const DescribeEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeEntitiesDetectionV2JobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeEntitiesDetectionV2Job(request), context);
+      handler(this, *pRequest, DescribeEntitiesDetectionV2Job(*pRequest), context);
     } );
 }
 
@@ -208,17 +209,18 @@ DescribeICD10CMInferenceJobOutcome ComprehendMedicalClient::DescribeICD10CMInfer
 
 DescribeICD10CMInferenceJobOutcomeCallable ComprehendMedicalClient::DescribeICD10CMInferenceJobCallable(const DescribeICD10CMInferenceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeICD10CMInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeICD10CMInferenceJob(request); } );
+  std::shared_ptr<DescribeICD10CMInferenceJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeICD10CMInferenceJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeICD10CMInferenceJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::DescribeICD10CMInferenceJobAsync(const DescribeICD10CMInferenceJobRequest& request, const DescribeICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeICD10CMInferenceJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeICD10CMInferenceJob(request), context);
+      handler(this, *pRequest, DescribeICD10CMInferenceJob(*pRequest), context);
     } );
 }
 
@@ -232,17 +234,18 @@ DescribePHIDetectionJobOutcome ComprehendMedicalClient::DescribePHIDetectionJob(
 
 DescribePHIDetectionJobOutcomeCallable ComprehendMedicalClient::DescribePHIDetectionJobCallable(const DescribePHIDetectionJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePHIDetectionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePHIDetectionJob(request); } );
+  std::shared_ptr<DescribePHIDetectionJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribePHIDetectionJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribePHIDetectionJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::DescribePHIDetectionJobAsync(const DescribePHIDetectionJobRequest& request, const DescribePHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribePHIDetectionJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribePHIDetectionJob(request), context);
+      handler(this, *pRequest, DescribePHIDetectionJob(*pRequest), context);
     } );
 }
 
@@ -256,17 +259,18 @@ DescribeRxNormInferenceJobOutcome ComprehendMedicalClient::DescribeRxNormInferen
 
 DescribeRxNormInferenceJobOutcomeCallable ComprehendMedicalClient::DescribeRxNormInferenceJobCallable(const DescribeRxNormInferenceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRxNormInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRxNormInferenceJob(request); } );
+  std::shared_ptr<DescribeRxNormInferenceJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRxNormInferenceJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeRxNormInferenceJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::DescribeRxNormInferenceJobAsync(const DescribeRxNormInferenceJobRequest& request, const DescribeRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeRxNormInferenceJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeRxNormInferenceJob(request), context);
+      handler(this, *pRequest, DescribeRxNormInferenceJob(*pRequest), context);
     } );
 }
 
@@ -280,17 +284,18 @@ DescribeSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::DescribeSNOMEDCTInf
 
 DescribeSNOMEDCTInferenceJobOutcomeCallable ComprehendMedicalClient::DescribeSNOMEDCTInferenceJobCallable(const DescribeSNOMEDCTInferenceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSNOMEDCTInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSNOMEDCTInferenceJob(request); } );
+  std::shared_ptr<DescribeSNOMEDCTInferenceJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSNOMEDCTInferenceJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeSNOMEDCTInferenceJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::DescribeSNOMEDCTInferenceJobAsync(const DescribeSNOMEDCTInferenceJobRequest& request, const DescribeSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeSNOMEDCTInferenceJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeSNOMEDCTInferenceJob(request), context);
+      handler(this, *pRequest, DescribeSNOMEDCTInferenceJob(*pRequest), context);
     } );
 }
 
@@ -304,17 +309,18 @@ DetectEntitiesV2Outcome ComprehendMedicalClient::DetectEntitiesV2(const DetectEn
 
 DetectEntitiesV2OutcomeCallable ComprehendMedicalClient::DetectEntitiesV2Callable(const DetectEntitiesV2Request& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DetectEntitiesV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectEntitiesV2(request); } );
+  std::shared_ptr<DetectEntitiesV2Request> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DetectEntitiesV2Outcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DetectEntitiesV2(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::DetectEntitiesV2Async(const DetectEntitiesV2Request& request, const DetectEntitiesV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DetectEntitiesV2Request> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DetectEntitiesV2(request), context);
+      handler(this, *pRequest, DetectEntitiesV2(*pRequest), context);
     } );
 }
 
@@ -328,17 +334,18 @@ DetectPHIOutcome ComprehendMedicalClient::DetectPHI(const DetectPHIRequest& requ
 
 DetectPHIOutcomeCallable ComprehendMedicalClient::DetectPHICallable(const DetectPHIRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DetectPHIOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectPHI(request); } );
+  std::shared_ptr<DetectPHIRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DetectPHIOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DetectPHI(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::DetectPHIAsync(const DetectPHIRequest& request, const DetectPHIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DetectPHIRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DetectPHI(request), context);
+      handler(this, *pRequest, DetectPHI(*pRequest), context);
     } );
 }
 
@@ -352,17 +359,18 @@ InferICD10CMOutcome ComprehendMedicalClient::InferICD10CM(const InferICD10CMRequ
 
 InferICD10CMOutcomeCallable ComprehendMedicalClient::InferICD10CMCallable(const InferICD10CMRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InferICD10CMOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InferICD10CM(request); } );
+  std::shared_ptr<InferICD10CMRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< InferICD10CMOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->InferICD10CM(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::InferICD10CMAsync(const InferICD10CMRequest& request, const InferICD10CMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<InferICD10CMRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, InferICD10CM(request), context);
+      handler(this, *pRequest, InferICD10CM(*pRequest), context);
     } );
 }
 
@@ -376,17 +384,18 @@ InferRxNormOutcome ComprehendMedicalClient::InferRxNorm(const InferRxNormRequest
 
 InferRxNormOutcomeCallable ComprehendMedicalClient::InferRxNormCallable(const InferRxNormRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InferRxNormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InferRxNorm(request); } );
+  std::shared_ptr<InferRxNormRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< InferRxNormOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->InferRxNorm(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::InferRxNormAsync(const InferRxNormRequest& request, const InferRxNormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<InferRxNormRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, InferRxNorm(request), context);
+      handler(this, *pRequest, InferRxNorm(*pRequest), context);
     } );
 }
 
@@ -400,17 +409,18 @@ InferSNOMEDCTOutcome ComprehendMedicalClient::InferSNOMEDCT(const InferSNOMEDCTR
 
 InferSNOMEDCTOutcomeCallable ComprehendMedicalClient::InferSNOMEDCTCallable(const InferSNOMEDCTRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InferSNOMEDCTOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InferSNOMEDCT(request); } );
+  std::shared_ptr<InferSNOMEDCTRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< InferSNOMEDCTOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->InferSNOMEDCT(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::InferSNOMEDCTAsync(const InferSNOMEDCTRequest& request, const InferSNOMEDCTResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<InferSNOMEDCTRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, InferSNOMEDCT(request), context);
+      handler(this, *pRequest, InferSNOMEDCT(*pRequest), context);
     } );
 }
 
@@ -424,17 +434,18 @@ ListEntitiesDetectionV2JobsOutcome ComprehendMedicalClient::ListEntitiesDetectio
 
 ListEntitiesDetectionV2JobsOutcomeCallable ComprehendMedicalClient::ListEntitiesDetectionV2JobsCallable(const ListEntitiesDetectionV2JobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEntitiesDetectionV2JobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEntitiesDetectionV2Jobs(request); } );
+  std::shared_ptr<ListEntitiesDetectionV2JobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEntitiesDetectionV2JobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEntitiesDetectionV2Jobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::ListEntitiesDetectionV2JobsAsync(const ListEntitiesDetectionV2JobsRequest& request, const ListEntitiesDetectionV2JobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEntitiesDetectionV2JobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEntitiesDetectionV2Jobs(request), context);
+      handler(this, *pRequest, ListEntitiesDetectionV2Jobs(*pRequest), context);
     } );
 }
 
@@ -448,17 +459,18 @@ ListICD10CMInferenceJobsOutcome ComprehendMedicalClient::ListICD10CMInferenceJob
 
 ListICD10CMInferenceJobsOutcomeCallable ComprehendMedicalClient::ListICD10CMInferenceJobsCallable(const ListICD10CMInferenceJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListICD10CMInferenceJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListICD10CMInferenceJobs(request); } );
+  std::shared_ptr<ListICD10CMInferenceJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListICD10CMInferenceJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListICD10CMInferenceJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::ListICD10CMInferenceJobsAsync(const ListICD10CMInferenceJobsRequest& request, const ListICD10CMInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListICD10CMInferenceJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListICD10CMInferenceJobs(request), context);
+      handler(this, *pRequest, ListICD10CMInferenceJobs(*pRequest), context);
     } );
 }
 
@@ -472,17 +484,18 @@ ListPHIDetectionJobsOutcome ComprehendMedicalClient::ListPHIDetectionJobs(const 
 
 ListPHIDetectionJobsOutcomeCallable ComprehendMedicalClient::ListPHIDetectionJobsCallable(const ListPHIDetectionJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPHIDetectionJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPHIDetectionJobs(request); } );
+  std::shared_ptr<ListPHIDetectionJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPHIDetectionJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPHIDetectionJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::ListPHIDetectionJobsAsync(const ListPHIDetectionJobsRequest& request, const ListPHIDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPHIDetectionJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPHIDetectionJobs(request), context);
+      handler(this, *pRequest, ListPHIDetectionJobs(*pRequest), context);
     } );
 }
 
@@ -496,17 +509,18 @@ ListRxNormInferenceJobsOutcome ComprehendMedicalClient::ListRxNormInferenceJobs(
 
 ListRxNormInferenceJobsOutcomeCallable ComprehendMedicalClient::ListRxNormInferenceJobsCallable(const ListRxNormInferenceJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRxNormInferenceJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRxNormInferenceJobs(request); } );
+  std::shared_ptr<ListRxNormInferenceJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListRxNormInferenceJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListRxNormInferenceJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::ListRxNormInferenceJobsAsync(const ListRxNormInferenceJobsRequest& request, const ListRxNormInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListRxNormInferenceJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListRxNormInferenceJobs(request), context);
+      handler(this, *pRequest, ListRxNormInferenceJobs(*pRequest), context);
     } );
 }
 
@@ -520,17 +534,18 @@ ListSNOMEDCTInferenceJobsOutcome ComprehendMedicalClient::ListSNOMEDCTInferenceJ
 
 ListSNOMEDCTInferenceJobsOutcomeCallable ComprehendMedicalClient::ListSNOMEDCTInferenceJobsCallable(const ListSNOMEDCTInferenceJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSNOMEDCTInferenceJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSNOMEDCTInferenceJobs(request); } );
+  std::shared_ptr<ListSNOMEDCTInferenceJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSNOMEDCTInferenceJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSNOMEDCTInferenceJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::ListSNOMEDCTInferenceJobsAsync(const ListSNOMEDCTInferenceJobsRequest& request, const ListSNOMEDCTInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSNOMEDCTInferenceJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSNOMEDCTInferenceJobs(request), context);
+      handler(this, *pRequest, ListSNOMEDCTInferenceJobs(*pRequest), context);
     } );
 }
 
@@ -544,17 +559,18 @@ StartEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StartEntitiesDetecti
 
 StartEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::StartEntitiesDetectionV2JobCallable(const StartEntitiesDetectionV2JobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartEntitiesDetectionV2JobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartEntitiesDetectionV2Job(request); } );
+  std::shared_ptr<StartEntitiesDetectionV2JobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartEntitiesDetectionV2JobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartEntitiesDetectionV2Job(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::StartEntitiesDetectionV2JobAsync(const StartEntitiesDetectionV2JobRequest& request, const StartEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartEntitiesDetectionV2JobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartEntitiesDetectionV2Job(request), context);
+      handler(this, *pRequest, StartEntitiesDetectionV2Job(*pRequest), context);
     } );
 }
 
@@ -568,17 +584,18 @@ StartICD10CMInferenceJobOutcome ComprehendMedicalClient::StartICD10CMInferenceJo
 
 StartICD10CMInferenceJobOutcomeCallable ComprehendMedicalClient::StartICD10CMInferenceJobCallable(const StartICD10CMInferenceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartICD10CMInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartICD10CMInferenceJob(request); } );
+  std::shared_ptr<StartICD10CMInferenceJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartICD10CMInferenceJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartICD10CMInferenceJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::StartICD10CMInferenceJobAsync(const StartICD10CMInferenceJobRequest& request, const StartICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartICD10CMInferenceJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartICD10CMInferenceJob(request), context);
+      handler(this, *pRequest, StartICD10CMInferenceJob(*pRequest), context);
     } );
 }
 
@@ -592,17 +609,18 @@ StartPHIDetectionJobOutcome ComprehendMedicalClient::StartPHIDetectionJob(const 
 
 StartPHIDetectionJobOutcomeCallable ComprehendMedicalClient::StartPHIDetectionJobCallable(const StartPHIDetectionJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartPHIDetectionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartPHIDetectionJob(request); } );
+  std::shared_ptr<StartPHIDetectionJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartPHIDetectionJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartPHIDetectionJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::StartPHIDetectionJobAsync(const StartPHIDetectionJobRequest& request, const StartPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartPHIDetectionJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartPHIDetectionJob(request), context);
+      handler(this, *pRequest, StartPHIDetectionJob(*pRequest), context);
     } );
 }
 
@@ -616,17 +634,18 @@ StartRxNormInferenceJobOutcome ComprehendMedicalClient::StartRxNormInferenceJob(
 
 StartRxNormInferenceJobOutcomeCallable ComprehendMedicalClient::StartRxNormInferenceJobCallable(const StartRxNormInferenceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartRxNormInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartRxNormInferenceJob(request); } );
+  std::shared_ptr<StartRxNormInferenceJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartRxNormInferenceJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartRxNormInferenceJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::StartRxNormInferenceJobAsync(const StartRxNormInferenceJobRequest& request, const StartRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartRxNormInferenceJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartRxNormInferenceJob(request), context);
+      handler(this, *pRequest, StartRxNormInferenceJob(*pRequest), context);
     } );
 }
 
@@ -640,17 +659,18 @@ StartSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::StartSNOMEDCTInference
 
 StartSNOMEDCTInferenceJobOutcomeCallable ComprehendMedicalClient::StartSNOMEDCTInferenceJobCallable(const StartSNOMEDCTInferenceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartSNOMEDCTInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSNOMEDCTInferenceJob(request); } );
+  std::shared_ptr<StartSNOMEDCTInferenceJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartSNOMEDCTInferenceJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartSNOMEDCTInferenceJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::StartSNOMEDCTInferenceJobAsync(const StartSNOMEDCTInferenceJobRequest& request, const StartSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartSNOMEDCTInferenceJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartSNOMEDCTInferenceJob(request), context);
+      handler(this, *pRequest, StartSNOMEDCTInferenceJob(*pRequest), context);
     } );
 }
 
@@ -664,17 +684,18 @@ StopEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StopEntitiesDetection
 
 StopEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::StopEntitiesDetectionV2JobCallable(const StopEntitiesDetectionV2JobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopEntitiesDetectionV2JobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopEntitiesDetectionV2Job(request); } );
+  std::shared_ptr<StopEntitiesDetectionV2JobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopEntitiesDetectionV2JobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopEntitiesDetectionV2Job(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::StopEntitiesDetectionV2JobAsync(const StopEntitiesDetectionV2JobRequest& request, const StopEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopEntitiesDetectionV2JobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopEntitiesDetectionV2Job(request), context);
+      handler(this, *pRequest, StopEntitiesDetectionV2Job(*pRequest), context);
     } );
 }
 
@@ -688,17 +709,18 @@ StopICD10CMInferenceJobOutcome ComprehendMedicalClient::StopICD10CMInferenceJob(
 
 StopICD10CMInferenceJobOutcomeCallable ComprehendMedicalClient::StopICD10CMInferenceJobCallable(const StopICD10CMInferenceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopICD10CMInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopICD10CMInferenceJob(request); } );
+  std::shared_ptr<StopICD10CMInferenceJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopICD10CMInferenceJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopICD10CMInferenceJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::StopICD10CMInferenceJobAsync(const StopICD10CMInferenceJobRequest& request, const StopICD10CMInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopICD10CMInferenceJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopICD10CMInferenceJob(request), context);
+      handler(this, *pRequest, StopICD10CMInferenceJob(*pRequest), context);
     } );
 }
 
@@ -712,17 +734,18 @@ StopPHIDetectionJobOutcome ComprehendMedicalClient::StopPHIDetectionJob(const St
 
 StopPHIDetectionJobOutcomeCallable ComprehendMedicalClient::StopPHIDetectionJobCallable(const StopPHIDetectionJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopPHIDetectionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopPHIDetectionJob(request); } );
+  std::shared_ptr<StopPHIDetectionJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopPHIDetectionJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopPHIDetectionJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::StopPHIDetectionJobAsync(const StopPHIDetectionJobRequest& request, const StopPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopPHIDetectionJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopPHIDetectionJob(request), context);
+      handler(this, *pRequest, StopPHIDetectionJob(*pRequest), context);
     } );
 }
 
@@ -736,17 +759,18 @@ StopRxNormInferenceJobOutcome ComprehendMedicalClient::StopRxNormInferenceJob(co
 
 StopRxNormInferenceJobOutcomeCallable ComprehendMedicalClient::StopRxNormInferenceJobCallable(const StopRxNormInferenceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopRxNormInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopRxNormInferenceJob(request); } );
+  std::shared_ptr<StopRxNormInferenceJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopRxNormInferenceJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopRxNormInferenceJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::StopRxNormInferenceJobAsync(const StopRxNormInferenceJobRequest& request, const StopRxNormInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopRxNormInferenceJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopRxNormInferenceJob(request), context);
+      handler(this, *pRequest, StopRxNormInferenceJob(*pRequest), context);
     } );
 }
 
@@ -760,17 +784,18 @@ StopSNOMEDCTInferenceJobOutcome ComprehendMedicalClient::StopSNOMEDCTInferenceJo
 
 StopSNOMEDCTInferenceJobOutcomeCallable ComprehendMedicalClient::StopSNOMEDCTInferenceJobCallable(const StopSNOMEDCTInferenceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopSNOMEDCTInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopSNOMEDCTInferenceJob(request); } );
+  std::shared_ptr<StopSNOMEDCTInferenceJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopSNOMEDCTInferenceJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopSNOMEDCTInferenceJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ComprehendMedicalClient::StopSNOMEDCTInferenceJobAsync(const StopSNOMEDCTInferenceJobRequest& request, const StopSNOMEDCTInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopSNOMEDCTInferenceJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopSNOMEDCTInferenceJob(request), context);
+      handler(this, *pRequest, StopSNOMEDCTInferenceJob(*pRequest), context);
     } );
 }
 

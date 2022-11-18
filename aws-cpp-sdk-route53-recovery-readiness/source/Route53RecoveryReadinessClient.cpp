@@ -192,17 +192,18 @@ CreateCellOutcome Route53RecoveryReadinessClient::CreateCell(const CreateCellReq
 
 CreateCellOutcomeCallable Route53RecoveryReadinessClient::CreateCellCallable(const CreateCellRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCellOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCell(request); } );
+  std::shared_ptr<CreateCellRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateCellOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateCell(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::CreateCellAsync(const CreateCellRequest& request, const CreateCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateCellRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateCell(request), context);
+      handler(this, *pRequest, CreateCell(*pRequest), context);
     } );
 }
 
@@ -217,17 +218,18 @@ CreateCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::CreateCro
 
 CreateCrossAccountAuthorizationOutcomeCallable Route53RecoveryReadinessClient::CreateCrossAccountAuthorizationCallable(const CreateCrossAccountAuthorizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCrossAccountAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCrossAccountAuthorization(request); } );
+  std::shared_ptr<CreateCrossAccountAuthorizationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateCrossAccountAuthorizationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateCrossAccountAuthorization(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::CreateCrossAccountAuthorizationAsync(const CreateCrossAccountAuthorizationRequest& request, const CreateCrossAccountAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateCrossAccountAuthorizationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateCrossAccountAuthorization(request), context);
+      handler(this, *pRequest, CreateCrossAccountAuthorization(*pRequest), context);
     } );
 }
 
@@ -242,17 +244,18 @@ CreateReadinessCheckOutcome Route53RecoveryReadinessClient::CreateReadinessCheck
 
 CreateReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::CreateReadinessCheckCallable(const CreateReadinessCheckRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateReadinessCheck(request); } );
+  std::shared_ptr<CreateReadinessCheckRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateReadinessCheck(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::CreateReadinessCheckAsync(const CreateReadinessCheckRequest& request, const CreateReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateReadinessCheckRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateReadinessCheck(request), context);
+      handler(this, *pRequest, CreateReadinessCheck(*pRequest), context);
     } );
 }
 
@@ -267,17 +270,18 @@ CreateRecoveryGroupOutcome Route53RecoveryReadinessClient::CreateRecoveryGroup(c
 
 CreateRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::CreateRecoveryGroupCallable(const CreateRecoveryGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRecoveryGroup(request); } );
+  std::shared_ptr<CreateRecoveryGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateRecoveryGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::CreateRecoveryGroupAsync(const CreateRecoveryGroupRequest& request, const CreateRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateRecoveryGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateRecoveryGroup(request), context);
+      handler(this, *pRequest, CreateRecoveryGroup(*pRequest), context);
     } );
 }
 
@@ -292,17 +296,18 @@ CreateResourceSetOutcome Route53RecoveryReadinessClient::CreateResourceSet(const
 
 CreateResourceSetOutcomeCallable Route53RecoveryReadinessClient::CreateResourceSetCallable(const CreateResourceSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourceSet(request); } );
+  std::shared_ptr<CreateResourceSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateResourceSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateResourceSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::CreateResourceSetAsync(const CreateResourceSetRequest& request, const CreateResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateResourceSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateResourceSet(request), context);
+      handler(this, *pRequest, CreateResourceSet(*pRequest), context);
     } );
 }
 
@@ -323,17 +328,18 @@ DeleteCellOutcome Route53RecoveryReadinessClient::DeleteCell(const DeleteCellReq
 
 DeleteCellOutcomeCallable Route53RecoveryReadinessClient::DeleteCellCallable(const DeleteCellRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCellOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCell(request); } );
+  std::shared_ptr<DeleteCellRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCellOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteCell(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::DeleteCellAsync(const DeleteCellRequest& request, const DeleteCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteCellRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteCell(request), context);
+      handler(this, *pRequest, DeleteCell(*pRequest), context);
     } );
 }
 
@@ -354,17 +360,18 @@ DeleteCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::DeleteCro
 
 DeleteCrossAccountAuthorizationOutcomeCallable Route53RecoveryReadinessClient::DeleteCrossAccountAuthorizationCallable(const DeleteCrossAccountAuthorizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCrossAccountAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCrossAccountAuthorization(request); } );
+  std::shared_ptr<DeleteCrossAccountAuthorizationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCrossAccountAuthorizationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteCrossAccountAuthorization(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::DeleteCrossAccountAuthorizationAsync(const DeleteCrossAccountAuthorizationRequest& request, const DeleteCrossAccountAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteCrossAccountAuthorizationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteCrossAccountAuthorization(request), context);
+      handler(this, *pRequest, DeleteCrossAccountAuthorization(*pRequest), context);
     } );
 }
 
@@ -385,17 +392,18 @@ DeleteReadinessCheckOutcome Route53RecoveryReadinessClient::DeleteReadinessCheck
 
 DeleteReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::DeleteReadinessCheckCallable(const DeleteReadinessCheckRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReadinessCheck(request); } );
+  std::shared_ptr<DeleteReadinessCheckRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteReadinessCheck(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::DeleteReadinessCheckAsync(const DeleteReadinessCheckRequest& request, const DeleteReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteReadinessCheckRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteReadinessCheck(request), context);
+      handler(this, *pRequest, DeleteReadinessCheck(*pRequest), context);
     } );
 }
 
@@ -416,17 +424,18 @@ DeleteRecoveryGroupOutcome Route53RecoveryReadinessClient::DeleteRecoveryGroup(c
 
 DeleteRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::DeleteRecoveryGroupCallable(const DeleteRecoveryGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecoveryGroup(request); } );
+  std::shared_ptr<DeleteRecoveryGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteRecoveryGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::DeleteRecoveryGroupAsync(const DeleteRecoveryGroupRequest& request, const DeleteRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteRecoveryGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteRecoveryGroup(request), context);
+      handler(this, *pRequest, DeleteRecoveryGroup(*pRequest), context);
     } );
 }
 
@@ -447,17 +456,18 @@ DeleteResourceSetOutcome Route53RecoveryReadinessClient::DeleteResourceSet(const
 
 DeleteResourceSetOutcomeCallable Route53RecoveryReadinessClient::DeleteResourceSetCallable(const DeleteResourceSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourceSet(request); } );
+  std::shared_ptr<DeleteResourceSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteResourceSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::DeleteResourceSetAsync(const DeleteResourceSetRequest& request, const DeleteResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteResourceSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteResourceSet(request), context);
+      handler(this, *pRequest, DeleteResourceSet(*pRequest), context);
     } );
 }
 
@@ -479,17 +489,18 @@ GetArchitectureRecommendationsOutcome Route53RecoveryReadinessClient::GetArchite
 
 GetArchitectureRecommendationsOutcomeCallable Route53RecoveryReadinessClient::GetArchitectureRecommendationsCallable(const GetArchitectureRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetArchitectureRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetArchitectureRecommendations(request); } );
+  std::shared_ptr<GetArchitectureRecommendationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetArchitectureRecommendationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetArchitectureRecommendations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::GetArchitectureRecommendationsAsync(const GetArchitectureRecommendationsRequest& request, const GetArchitectureRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetArchitectureRecommendationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetArchitectureRecommendations(request), context);
+      handler(this, *pRequest, GetArchitectureRecommendations(*pRequest), context);
     } );
 }
 
@@ -510,17 +521,18 @@ GetCellOutcome Route53RecoveryReadinessClient::GetCell(const GetCellRequest& req
 
 GetCellOutcomeCallable Route53RecoveryReadinessClient::GetCellCallable(const GetCellRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCellOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCell(request); } );
+  std::shared_ptr<GetCellRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCellOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCell(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::GetCellAsync(const GetCellRequest& request, const GetCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCellRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCell(request), context);
+      handler(this, *pRequest, GetCell(*pRequest), context);
     } );
 }
 
@@ -541,17 +553,18 @@ GetCellReadinessSummaryOutcome Route53RecoveryReadinessClient::GetCellReadinessS
 
 GetCellReadinessSummaryOutcomeCallable Route53RecoveryReadinessClient::GetCellReadinessSummaryCallable(const GetCellReadinessSummaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCellReadinessSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCellReadinessSummary(request); } );
+  std::shared_ptr<GetCellReadinessSummaryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCellReadinessSummaryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCellReadinessSummary(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::GetCellReadinessSummaryAsync(const GetCellReadinessSummaryRequest& request, const GetCellReadinessSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCellReadinessSummaryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCellReadinessSummary(request), context);
+      handler(this, *pRequest, GetCellReadinessSummary(*pRequest), context);
     } );
 }
 
@@ -572,17 +585,18 @@ GetReadinessCheckOutcome Route53RecoveryReadinessClient::GetReadinessCheck(const
 
 GetReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::GetReadinessCheckCallable(const GetReadinessCheckRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReadinessCheck(request); } );
+  std::shared_ptr<GetReadinessCheckRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetReadinessCheck(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::GetReadinessCheckAsync(const GetReadinessCheckRequest& request, const GetReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetReadinessCheckRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetReadinessCheck(request), context);
+      handler(this, *pRequest, GetReadinessCheck(*pRequest), context);
     } );
 }
 
@@ -611,17 +625,18 @@ GetReadinessCheckResourceStatusOutcome Route53RecoveryReadinessClient::GetReadin
 
 GetReadinessCheckResourceStatusOutcomeCallable Route53RecoveryReadinessClient::GetReadinessCheckResourceStatusCallable(const GetReadinessCheckResourceStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReadinessCheckResourceStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReadinessCheckResourceStatus(request); } );
+  std::shared_ptr<GetReadinessCheckResourceStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetReadinessCheckResourceStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetReadinessCheckResourceStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::GetReadinessCheckResourceStatusAsync(const GetReadinessCheckResourceStatusRequest& request, const GetReadinessCheckResourceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetReadinessCheckResourceStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetReadinessCheckResourceStatus(request), context);
+      handler(this, *pRequest, GetReadinessCheckResourceStatus(*pRequest), context);
     } );
 }
 
@@ -643,17 +658,18 @@ GetReadinessCheckStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheck
 
 GetReadinessCheckStatusOutcomeCallable Route53RecoveryReadinessClient::GetReadinessCheckStatusCallable(const GetReadinessCheckStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReadinessCheckStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReadinessCheckStatus(request); } );
+  std::shared_ptr<GetReadinessCheckStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetReadinessCheckStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetReadinessCheckStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::GetReadinessCheckStatusAsync(const GetReadinessCheckStatusRequest& request, const GetReadinessCheckStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetReadinessCheckStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetReadinessCheckStatus(request), context);
+      handler(this, *pRequest, GetReadinessCheckStatus(*pRequest), context);
     } );
 }
 
@@ -674,17 +690,18 @@ GetRecoveryGroupOutcome Route53RecoveryReadinessClient::GetRecoveryGroup(const G
 
 GetRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::GetRecoveryGroupCallable(const GetRecoveryGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecoveryGroup(request); } );
+  std::shared_ptr<GetRecoveryGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRecoveryGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::GetRecoveryGroupAsync(const GetRecoveryGroupRequest& request, const GetRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRecoveryGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRecoveryGroup(request), context);
+      handler(this, *pRequest, GetRecoveryGroup(*pRequest), context);
     } );
 }
 
@@ -705,17 +722,18 @@ GetRecoveryGroupReadinessSummaryOutcome Route53RecoveryReadinessClient::GetRecov
 
 GetRecoveryGroupReadinessSummaryOutcomeCallable Route53RecoveryReadinessClient::GetRecoveryGroupReadinessSummaryCallable(const GetRecoveryGroupReadinessSummaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecoveryGroupReadinessSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecoveryGroupReadinessSummary(request); } );
+  std::shared_ptr<GetRecoveryGroupReadinessSummaryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRecoveryGroupReadinessSummaryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRecoveryGroupReadinessSummary(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::GetRecoveryGroupReadinessSummaryAsync(const GetRecoveryGroupReadinessSummaryRequest& request, const GetRecoveryGroupReadinessSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRecoveryGroupReadinessSummaryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRecoveryGroupReadinessSummary(request), context);
+      handler(this, *pRequest, GetRecoveryGroupReadinessSummary(*pRequest), context);
     } );
 }
 
@@ -736,17 +754,18 @@ GetResourceSetOutcome Route53RecoveryReadinessClient::GetResourceSet(const GetRe
 
 GetResourceSetOutcomeCallable Route53RecoveryReadinessClient::GetResourceSetCallable(const GetResourceSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceSet(request); } );
+  std::shared_ptr<GetResourceSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetResourceSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::GetResourceSetAsync(const GetResourceSetRequest& request, const GetResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetResourceSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetResourceSet(request), context);
+      handler(this, *pRequest, GetResourceSet(*pRequest), context);
     } );
 }
 
@@ -761,17 +780,18 @@ ListCellsOutcome Route53RecoveryReadinessClient::ListCells(const ListCellsReques
 
 ListCellsOutcomeCallable Route53RecoveryReadinessClient::ListCellsCallable(const ListCellsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCellsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCells(request); } );
+  std::shared_ptr<ListCellsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListCellsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListCells(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::ListCellsAsync(const ListCellsRequest& request, const ListCellsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListCellsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListCells(request), context);
+      handler(this, *pRequest, ListCells(*pRequest), context);
     } );
 }
 
@@ -786,17 +806,18 @@ ListCrossAccountAuthorizationsOutcome Route53RecoveryReadinessClient::ListCrossA
 
 ListCrossAccountAuthorizationsOutcomeCallable Route53RecoveryReadinessClient::ListCrossAccountAuthorizationsCallable(const ListCrossAccountAuthorizationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCrossAccountAuthorizationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCrossAccountAuthorizations(request); } );
+  std::shared_ptr<ListCrossAccountAuthorizationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListCrossAccountAuthorizationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListCrossAccountAuthorizations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::ListCrossAccountAuthorizationsAsync(const ListCrossAccountAuthorizationsRequest& request, const ListCrossAccountAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListCrossAccountAuthorizationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListCrossAccountAuthorizations(request), context);
+      handler(this, *pRequest, ListCrossAccountAuthorizations(*pRequest), context);
     } );
 }
 
@@ -811,17 +832,18 @@ ListReadinessChecksOutcome Route53RecoveryReadinessClient::ListReadinessChecks(c
 
 ListReadinessChecksOutcomeCallable Route53RecoveryReadinessClient::ListReadinessChecksCallable(const ListReadinessChecksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReadinessChecksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReadinessChecks(request); } );
+  std::shared_ptr<ListReadinessChecksRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListReadinessChecksOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListReadinessChecks(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::ListReadinessChecksAsync(const ListReadinessChecksRequest& request, const ListReadinessChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListReadinessChecksRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListReadinessChecks(request), context);
+      handler(this, *pRequest, ListReadinessChecks(*pRequest), context);
     } );
 }
 
@@ -836,17 +858,18 @@ ListRecoveryGroupsOutcome Route53RecoveryReadinessClient::ListRecoveryGroups(con
 
 ListRecoveryGroupsOutcomeCallable Route53RecoveryReadinessClient::ListRecoveryGroupsCallable(const ListRecoveryGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRecoveryGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecoveryGroups(request); } );
+  std::shared_ptr<ListRecoveryGroupsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListRecoveryGroupsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListRecoveryGroups(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::ListRecoveryGroupsAsync(const ListRecoveryGroupsRequest& request, const ListRecoveryGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListRecoveryGroupsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListRecoveryGroups(request), context);
+      handler(this, *pRequest, ListRecoveryGroups(*pRequest), context);
     } );
 }
 
@@ -861,17 +884,18 @@ ListResourceSetsOutcome Route53RecoveryReadinessClient::ListResourceSets(const L
 
 ListResourceSetsOutcomeCallable Route53RecoveryReadinessClient::ListResourceSetsCallable(const ListResourceSetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListResourceSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceSets(request); } );
+  std::shared_ptr<ListResourceSetsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceSetsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListResourceSets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::ListResourceSetsAsync(const ListResourceSetsRequest& request, const ListResourceSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListResourceSetsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListResourceSets(request), context);
+      handler(this, *pRequest, ListResourceSets(*pRequest), context);
     } );
 }
 
@@ -886,17 +910,18 @@ ListRulesOutcome Route53RecoveryReadinessClient::ListRules(const ListRulesReques
 
 ListRulesOutcomeCallable Route53RecoveryReadinessClient::ListRulesCallable(const ListRulesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRules(request); } );
+  std::shared_ptr<ListRulesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListRulesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListRules(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::ListRulesAsync(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListRulesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListRules(request), context);
+      handler(this, *pRequest, ListRules(*pRequest), context);
     } );
 }
 
@@ -917,17 +942,18 @@ ListTagsForResourcesOutcome Route53RecoveryReadinessClient::ListTagsForResources
 
 ListTagsForResourcesOutcomeCallable Route53RecoveryReadinessClient::ListTagsForResourcesCallable(const ListTagsForResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResources(request); } );
+  std::shared_ptr<ListTagsForResourcesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourcesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResources(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::ListTagsForResourcesAsync(const ListTagsForResourcesRequest& request, const ListTagsForResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourcesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResources(request), context);
+      handler(this, *pRequest, ListTagsForResources(*pRequest), context);
     } );
 }
 
@@ -948,17 +974,18 @@ TagResourceOutcome Route53RecoveryReadinessClient::TagResource(const TagResource
 
 TagResourceOutcomeCallable Route53RecoveryReadinessClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -984,17 +1011,18 @@ UntagResourceOutcome Route53RecoveryReadinessClient::UntagResource(const UntagRe
 
 UntagResourceOutcomeCallable Route53RecoveryReadinessClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -1015,17 +1043,18 @@ UpdateCellOutcome Route53RecoveryReadinessClient::UpdateCell(const UpdateCellReq
 
 UpdateCellOutcomeCallable Route53RecoveryReadinessClient::UpdateCellCallable(const UpdateCellRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCellOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCell(request); } );
+  std::shared_ptr<UpdateCellRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCellOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateCell(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::UpdateCellAsync(const UpdateCellRequest& request, const UpdateCellResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateCellRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateCell(request), context);
+      handler(this, *pRequest, UpdateCell(*pRequest), context);
     } );
 }
 
@@ -1046,17 +1075,18 @@ UpdateReadinessCheckOutcome Route53RecoveryReadinessClient::UpdateReadinessCheck
 
 UpdateReadinessCheckOutcomeCallable Route53RecoveryReadinessClient::UpdateReadinessCheckCallable(const UpdateReadinessCheckRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReadinessCheck(request); } );
+  std::shared_ptr<UpdateReadinessCheckRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateReadinessCheckOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateReadinessCheck(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::UpdateReadinessCheckAsync(const UpdateReadinessCheckRequest& request, const UpdateReadinessCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateReadinessCheckRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateReadinessCheck(request), context);
+      handler(this, *pRequest, UpdateReadinessCheck(*pRequest), context);
     } );
 }
 
@@ -1077,17 +1107,18 @@ UpdateRecoveryGroupOutcome Route53RecoveryReadinessClient::UpdateRecoveryGroup(c
 
 UpdateRecoveryGroupOutcomeCallable Route53RecoveryReadinessClient::UpdateRecoveryGroupCallable(const UpdateRecoveryGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRecoveryGroup(request); } );
+  std::shared_ptr<UpdateRecoveryGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRecoveryGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateRecoveryGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::UpdateRecoveryGroupAsync(const UpdateRecoveryGroupRequest& request, const UpdateRecoveryGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateRecoveryGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateRecoveryGroup(request), context);
+      handler(this, *pRequest, UpdateRecoveryGroup(*pRequest), context);
     } );
 }
 
@@ -1108,17 +1139,18 @@ UpdateResourceSetOutcome Route53RecoveryReadinessClient::UpdateResourceSet(const
 
 UpdateResourceSetOutcomeCallable Route53RecoveryReadinessClient::UpdateResourceSetCallable(const UpdateResourceSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourceSet(request); } );
+  std::shared_ptr<UpdateResourceSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateResourceSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void Route53RecoveryReadinessClient::UpdateResourceSetAsync(const UpdateResourceSetRequest& request, const UpdateResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateResourceSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateResourceSet(request), context);
+      handler(this, *pRequest, UpdateResourceSet(*pRequest), context);
     } );
 }
 

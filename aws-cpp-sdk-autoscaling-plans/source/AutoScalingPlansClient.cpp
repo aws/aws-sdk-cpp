@@ -165,17 +165,18 @@ CreateScalingPlanOutcome AutoScalingPlansClient::CreateScalingPlan(const CreateS
 
 CreateScalingPlanOutcomeCallable AutoScalingPlansClient::CreateScalingPlanCallable(const CreateScalingPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateScalingPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateScalingPlan(request); } );
+  std::shared_ptr<CreateScalingPlanRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateScalingPlanOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateScalingPlan(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AutoScalingPlansClient::CreateScalingPlanAsync(const CreateScalingPlanRequest& request, const CreateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateScalingPlanRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateScalingPlan(request), context);
+      handler(this, *pRequest, CreateScalingPlan(*pRequest), context);
     } );
 }
 
@@ -189,17 +190,18 @@ DeleteScalingPlanOutcome AutoScalingPlansClient::DeleteScalingPlan(const DeleteS
 
 DeleteScalingPlanOutcomeCallable AutoScalingPlansClient::DeleteScalingPlanCallable(const DeleteScalingPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteScalingPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteScalingPlan(request); } );
+  std::shared_ptr<DeleteScalingPlanRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteScalingPlanOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteScalingPlan(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AutoScalingPlansClient::DeleteScalingPlanAsync(const DeleteScalingPlanRequest& request, const DeleteScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteScalingPlanRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteScalingPlan(request), context);
+      handler(this, *pRequest, DeleteScalingPlan(*pRequest), context);
     } );
 }
 
@@ -213,17 +215,18 @@ DescribeScalingPlanResourcesOutcome AutoScalingPlansClient::DescribeScalingPlanR
 
 DescribeScalingPlanResourcesOutcomeCallable AutoScalingPlansClient::DescribeScalingPlanResourcesCallable(const DescribeScalingPlanResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeScalingPlanResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeScalingPlanResources(request); } );
+  std::shared_ptr<DescribeScalingPlanResourcesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeScalingPlanResourcesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeScalingPlanResources(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AutoScalingPlansClient::DescribeScalingPlanResourcesAsync(const DescribeScalingPlanResourcesRequest& request, const DescribeScalingPlanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeScalingPlanResourcesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeScalingPlanResources(request), context);
+      handler(this, *pRequest, DescribeScalingPlanResources(*pRequest), context);
     } );
 }
 
@@ -237,17 +240,18 @@ DescribeScalingPlansOutcome AutoScalingPlansClient::DescribeScalingPlans(const D
 
 DescribeScalingPlansOutcomeCallable AutoScalingPlansClient::DescribeScalingPlansCallable(const DescribeScalingPlansRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeScalingPlansOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeScalingPlans(request); } );
+  std::shared_ptr<DescribeScalingPlansRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeScalingPlansOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeScalingPlans(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AutoScalingPlansClient::DescribeScalingPlansAsync(const DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeScalingPlansRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeScalingPlans(request), context);
+      handler(this, *pRequest, DescribeScalingPlans(*pRequest), context);
     } );
 }
 
@@ -261,17 +265,18 @@ GetScalingPlanResourceForecastDataOutcome AutoScalingPlansClient::GetScalingPlan
 
 GetScalingPlanResourceForecastDataOutcomeCallable AutoScalingPlansClient::GetScalingPlanResourceForecastDataCallable(const GetScalingPlanResourceForecastDataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetScalingPlanResourceForecastDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetScalingPlanResourceForecastData(request); } );
+  std::shared_ptr<GetScalingPlanResourceForecastDataRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetScalingPlanResourceForecastDataOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetScalingPlanResourceForecastData(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AutoScalingPlansClient::GetScalingPlanResourceForecastDataAsync(const GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetScalingPlanResourceForecastDataRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetScalingPlanResourceForecastData(request), context);
+      handler(this, *pRequest, GetScalingPlanResourceForecastData(*pRequest), context);
     } );
 }
 
@@ -285,17 +290,18 @@ UpdateScalingPlanOutcome AutoScalingPlansClient::UpdateScalingPlan(const UpdateS
 
 UpdateScalingPlanOutcomeCallable AutoScalingPlansClient::UpdateScalingPlanCallable(const UpdateScalingPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateScalingPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateScalingPlan(request); } );
+  std::shared_ptr<UpdateScalingPlanRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateScalingPlanOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateScalingPlan(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AutoScalingPlansClient::UpdateScalingPlanAsync(const UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateScalingPlanRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateScalingPlan(request), context);
+      handler(this, *pRequest, UpdateScalingPlan(*pRequest), context);
     } );
 }
 

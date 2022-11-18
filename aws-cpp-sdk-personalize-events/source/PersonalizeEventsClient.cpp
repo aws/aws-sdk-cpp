@@ -163,17 +163,18 @@ PutEventsOutcome PersonalizeEventsClient::PutEvents(const PutEventsRequest& requ
 
 PutEventsOutcomeCallable PersonalizeEventsClient::PutEventsCallable(const PutEventsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutEvents(request); } );
+  std::shared_ptr<PutEventsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutEventsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutEvents(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PersonalizeEventsClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutEventsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutEvents(request), context);
+      handler(this, *pRequest, PutEvents(*pRequest), context);
     } );
 }
 
@@ -188,17 +189,18 @@ PutItemsOutcome PersonalizeEventsClient::PutItems(const PutItemsRequest& request
 
 PutItemsOutcomeCallable PersonalizeEventsClient::PutItemsCallable(const PutItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutItems(request); } );
+  std::shared_ptr<PutItemsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutItemsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutItems(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PersonalizeEventsClient::PutItemsAsync(const PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutItemsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutItems(request), context);
+      handler(this, *pRequest, PutItems(*pRequest), context);
     } );
 }
 
@@ -213,17 +215,18 @@ PutUsersOutcome PersonalizeEventsClient::PutUsers(const PutUsersRequest& request
 
 PutUsersOutcomeCallable PersonalizeEventsClient::PutUsersCallable(const PutUsersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutUsersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutUsers(request); } );
+  std::shared_ptr<PutUsersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutUsersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutUsers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PersonalizeEventsClient::PutUsersAsync(const PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutUsersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutUsers(request), context);
+      handler(this, *pRequest, PutUsers(*pRequest), context);
     } );
 }
 

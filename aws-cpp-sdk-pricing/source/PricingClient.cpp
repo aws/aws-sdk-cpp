@@ -162,17 +162,18 @@ DescribeServicesOutcome PricingClient::DescribeServices(const DescribeServicesRe
 
 DescribeServicesOutcomeCallable PricingClient::DescribeServicesCallable(const DescribeServicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeServicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeServices(request); } );
+  std::shared_ptr<DescribeServicesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeServicesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeServices(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PricingClient::DescribeServicesAsync(const DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeServicesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeServices(request), context);
+      handler(this, *pRequest, DescribeServices(*pRequest), context);
     } );
 }
 
@@ -186,17 +187,18 @@ GetAttributeValuesOutcome PricingClient::GetAttributeValues(const GetAttributeVa
 
 GetAttributeValuesOutcomeCallable PricingClient::GetAttributeValuesCallable(const GetAttributeValuesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAttributeValuesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAttributeValues(request); } );
+  std::shared_ptr<GetAttributeValuesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAttributeValuesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAttributeValues(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PricingClient::GetAttributeValuesAsync(const GetAttributeValuesRequest& request, const GetAttributeValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAttributeValuesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAttributeValues(request), context);
+      handler(this, *pRequest, GetAttributeValues(*pRequest), context);
     } );
 }
 
@@ -210,17 +212,18 @@ GetProductsOutcome PricingClient::GetProducts(const GetProductsRequest& request)
 
 GetProductsOutcomeCallable PricingClient::GetProductsCallable(const GetProductsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetProductsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProducts(request); } );
+  std::shared_ptr<GetProductsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetProductsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetProducts(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PricingClient::GetProductsAsync(const GetProductsRequest& request, const GetProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetProductsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetProducts(request), context);
+      handler(this, *pRequest, GetProducts(*pRequest), context);
     } );
 }
 

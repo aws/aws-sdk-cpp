@@ -164,17 +164,18 @@ DisableControlOutcome ControlTowerClient::DisableControl(const DisableControlReq
 
 DisableControlOutcomeCallable ControlTowerClient::DisableControlCallable(const DisableControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableControl(request); } );
+  std::shared_ptr<DisableControlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisableControlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisableControl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ControlTowerClient::DisableControlAsync(const DisableControlRequest& request, const DisableControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisableControlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisableControl(request), context);
+      handler(this, *pRequest, DisableControl(*pRequest), context);
     } );
 }
 
@@ -189,17 +190,18 @@ EnableControlOutcome ControlTowerClient::EnableControl(const EnableControlReques
 
 EnableControlOutcomeCallable ControlTowerClient::EnableControlCallable(const EnableControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableControl(request); } );
+  std::shared_ptr<EnableControlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< EnableControlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->EnableControl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ControlTowerClient::EnableControlAsync(const EnableControlRequest& request, const EnableControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<EnableControlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, EnableControl(request), context);
+      handler(this, *pRequest, EnableControl(*pRequest), context);
     } );
 }
 
@@ -214,17 +216,18 @@ GetControlOperationOutcome ControlTowerClient::GetControlOperation(const GetCont
 
 GetControlOperationOutcomeCallable ControlTowerClient::GetControlOperationCallable(const GetControlOperationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetControlOperationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetControlOperation(request); } );
+  std::shared_ptr<GetControlOperationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetControlOperationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetControlOperation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ControlTowerClient::GetControlOperationAsync(const GetControlOperationRequest& request, const GetControlOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetControlOperationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetControlOperation(request), context);
+      handler(this, *pRequest, GetControlOperation(*pRequest), context);
     } );
 }
 
@@ -239,17 +242,18 @@ ListEnabledControlsOutcome ControlTowerClient::ListEnabledControls(const ListEna
 
 ListEnabledControlsOutcomeCallable ControlTowerClient::ListEnabledControlsCallable(const ListEnabledControlsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEnabledControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEnabledControls(request); } );
+  std::shared_ptr<ListEnabledControlsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEnabledControlsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEnabledControls(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ControlTowerClient::ListEnabledControlsAsync(const ListEnabledControlsRequest& request, const ListEnabledControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEnabledControlsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEnabledControls(request), context);
+      handler(this, *pRequest, ListEnabledControls(*pRequest), context);
     } );
 }
 

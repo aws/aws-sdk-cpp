@@ -161,17 +161,18 @@ QueryForecastOutcome ForecastQueryServiceClient::QueryForecast(const QueryForeca
 
 QueryForecastOutcomeCallable ForecastQueryServiceClient::QueryForecastCallable(const QueryForecastRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QueryForecast(request); } );
+  std::shared_ptr<QueryForecastRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< QueryForecastOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->QueryForecast(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ForecastQueryServiceClient::QueryForecastAsync(const QueryForecastRequest& request, const QueryForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<QueryForecastRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, QueryForecast(request), context);
+      handler(this, *pRequest, QueryForecast(*pRequest), context);
     } );
 }
 
@@ -185,17 +186,18 @@ QueryWhatIfForecastOutcome ForecastQueryServiceClient::QueryWhatIfForecast(const
 
 QueryWhatIfForecastOutcomeCallable ForecastQueryServiceClient::QueryWhatIfForecastCallable(const QueryWhatIfForecastRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryWhatIfForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QueryWhatIfForecast(request); } );
+  std::shared_ptr<QueryWhatIfForecastRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< QueryWhatIfForecastOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->QueryWhatIfForecast(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ForecastQueryServiceClient::QueryWhatIfForecastAsync(const QueryWhatIfForecastRequest& request, const QueryWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<QueryWhatIfForecastRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, QueryWhatIfForecast(request), context);
+      handler(this, *pRequest, QueryWhatIfForecast(*pRequest), context);
     } );
 }
 

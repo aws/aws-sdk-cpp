@@ -214,17 +214,18 @@ AcceptEulasOutcome NimbleStudioClient::AcceptEulas(const AcceptEulasRequest& req
 
 AcceptEulasOutcomeCallable NimbleStudioClient::AcceptEulasCallable(const AcceptEulasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcceptEulasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptEulas(request); } );
+  std::shared_ptr<AcceptEulasRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AcceptEulasOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AcceptEulas(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::AcceptEulasAsync(const AcceptEulasRequest& request, const AcceptEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AcceptEulasRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AcceptEulas(request), context);
+      handler(this, *pRequest, AcceptEulas(*pRequest), context);
     } );
 }
 
@@ -246,17 +247,18 @@ CreateLaunchProfileOutcome NimbleStudioClient::CreateLaunchProfile(const CreateL
 
 CreateLaunchProfileOutcomeCallable NimbleStudioClient::CreateLaunchProfileCallable(const CreateLaunchProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLaunchProfile(request); } );
+  std::shared_ptr<CreateLaunchProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateLaunchProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::CreateLaunchProfileAsync(const CreateLaunchProfileRequest& request, const CreateLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateLaunchProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateLaunchProfile(request), context);
+      handler(this, *pRequest, CreateLaunchProfile(*pRequest), context);
     } );
 }
 
@@ -278,17 +280,18 @@ CreateStreamingImageOutcome NimbleStudioClient::CreateStreamingImage(const Creat
 
 CreateStreamingImageOutcomeCallable NimbleStudioClient::CreateStreamingImageCallable(const CreateStreamingImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStreamingImage(request); } );
+  std::shared_ptr<CreateStreamingImageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingImageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateStreamingImage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::CreateStreamingImageAsync(const CreateStreamingImageRequest& request, const CreateStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateStreamingImageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateStreamingImage(request), context);
+      handler(this, *pRequest, CreateStreamingImage(*pRequest), context);
     } );
 }
 
@@ -310,17 +313,18 @@ CreateStreamingSessionOutcome NimbleStudioClient::CreateStreamingSession(const C
 
 CreateStreamingSessionOutcomeCallable NimbleStudioClient::CreateStreamingSessionCallable(const CreateStreamingSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStreamingSession(request); } );
+  std::shared_ptr<CreateStreamingSessionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateStreamingSession(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::CreateStreamingSessionAsync(const CreateStreamingSessionRequest& request, const CreateStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateStreamingSessionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateStreamingSession(request), context);
+      handler(this, *pRequest, CreateStreamingSession(*pRequest), context);
     } );
 }
 
@@ -349,17 +353,18 @@ CreateStreamingSessionStreamOutcome NimbleStudioClient::CreateStreamingSessionSt
 
 CreateStreamingSessionStreamOutcomeCallable NimbleStudioClient::CreateStreamingSessionStreamCallable(const CreateStreamingSessionStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingSessionStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStreamingSessionStream(request); } );
+  std::shared_ptr<CreateStreamingSessionStreamRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingSessionStreamOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateStreamingSessionStream(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::CreateStreamingSessionStreamAsync(const CreateStreamingSessionStreamRequest& request, const CreateStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateStreamingSessionStreamRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateStreamingSessionStream(request), context);
+      handler(this, *pRequest, CreateStreamingSessionStream(*pRequest), context);
     } );
 }
 
@@ -374,17 +379,18 @@ CreateStudioOutcome NimbleStudioClient::CreateStudio(const CreateStudioRequest& 
 
 CreateStudioOutcomeCallable NimbleStudioClient::CreateStudioCallable(const CreateStudioRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStudio(request); } );
+  std::shared_ptr<CreateStudioRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateStudioOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateStudio(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::CreateStudioAsync(const CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateStudioRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateStudio(request), context);
+      handler(this, *pRequest, CreateStudio(*pRequest), context);
     } );
 }
 
@@ -406,17 +412,18 @@ CreateStudioComponentOutcome NimbleStudioClient::CreateStudioComponent(const Cre
 
 CreateStudioComponentOutcomeCallable NimbleStudioClient::CreateStudioComponentCallable(const CreateStudioComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStudioComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStudioComponent(request); } );
+  std::shared_ptr<CreateStudioComponentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateStudioComponentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateStudioComponent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::CreateStudioComponentAsync(const CreateStudioComponentRequest& request, const CreateStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateStudioComponentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateStudioComponent(request), context);
+      handler(this, *pRequest, CreateStudioComponent(*pRequest), context);
     } );
 }
 
@@ -444,17 +451,18 @@ DeleteLaunchProfileOutcome NimbleStudioClient::DeleteLaunchProfile(const DeleteL
 
 DeleteLaunchProfileOutcomeCallable NimbleStudioClient::DeleteLaunchProfileCallable(const DeleteLaunchProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLaunchProfile(request); } );
+  std::shared_ptr<DeleteLaunchProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteLaunchProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::DeleteLaunchProfileAsync(const DeleteLaunchProfileRequest& request, const DeleteLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteLaunchProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteLaunchProfile(request), context);
+      handler(this, *pRequest, DeleteLaunchProfile(*pRequest), context);
     } );
 }
 
@@ -489,17 +497,18 @@ DeleteLaunchProfileMemberOutcome NimbleStudioClient::DeleteLaunchProfileMember(c
 
 DeleteLaunchProfileMemberOutcomeCallable NimbleStudioClient::DeleteLaunchProfileMemberCallable(const DeleteLaunchProfileMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteLaunchProfileMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLaunchProfileMember(request); } );
+  std::shared_ptr<DeleteLaunchProfileMemberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLaunchProfileMemberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteLaunchProfileMember(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::DeleteLaunchProfileMemberAsync(const DeleteLaunchProfileMemberRequest& request, const DeleteLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteLaunchProfileMemberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteLaunchProfileMember(request), context);
+      handler(this, *pRequest, DeleteLaunchProfileMember(*pRequest), context);
     } );
 }
 
@@ -527,17 +536,18 @@ DeleteStreamingImageOutcome NimbleStudioClient::DeleteStreamingImage(const Delet
 
 DeleteStreamingImageOutcomeCallable NimbleStudioClient::DeleteStreamingImageCallable(const DeleteStreamingImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStreamingImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStreamingImage(request); } );
+  std::shared_ptr<DeleteStreamingImageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStreamingImageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteStreamingImage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::DeleteStreamingImageAsync(const DeleteStreamingImageRequest& request, const DeleteStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteStreamingImageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteStreamingImage(request), context);
+      handler(this, *pRequest, DeleteStreamingImage(*pRequest), context);
     } );
 }
 
@@ -565,17 +575,18 @@ DeleteStreamingSessionOutcome NimbleStudioClient::DeleteStreamingSession(const D
 
 DeleteStreamingSessionOutcomeCallable NimbleStudioClient::DeleteStreamingSessionCallable(const DeleteStreamingSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStreamingSession(request); } );
+  std::shared_ptr<DeleteStreamingSessionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteStreamingSession(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::DeleteStreamingSessionAsync(const DeleteStreamingSessionRequest& request, const DeleteStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteStreamingSessionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteStreamingSession(request), context);
+      handler(this, *pRequest, DeleteStreamingSession(*pRequest), context);
     } );
 }
 
@@ -596,17 +607,18 @@ DeleteStudioOutcome NimbleStudioClient::DeleteStudio(const DeleteStudioRequest& 
 
 DeleteStudioOutcomeCallable NimbleStudioClient::DeleteStudioCallable(const DeleteStudioRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStudio(request); } );
+  std::shared_ptr<DeleteStudioRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteStudio(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::DeleteStudioAsync(const DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteStudioRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteStudio(request), context);
+      handler(this, *pRequest, DeleteStudio(*pRequest), context);
     } );
 }
 
@@ -634,17 +646,18 @@ DeleteStudioComponentOutcome NimbleStudioClient::DeleteStudioComponent(const Del
 
 DeleteStudioComponentOutcomeCallable NimbleStudioClient::DeleteStudioComponentCallable(const DeleteStudioComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStudioComponent(request); } );
+  std::shared_ptr<DeleteStudioComponentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioComponentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteStudioComponent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::DeleteStudioComponentAsync(const DeleteStudioComponentRequest& request, const DeleteStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteStudioComponentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteStudioComponent(request), context);
+      handler(this, *pRequest, DeleteStudioComponent(*pRequest), context);
     } );
 }
 
@@ -672,17 +685,18 @@ DeleteStudioMemberOutcome NimbleStudioClient::DeleteStudioMember(const DeleteStu
 
 DeleteStudioMemberOutcomeCallable NimbleStudioClient::DeleteStudioMemberCallable(const DeleteStudioMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStudioMember(request); } );
+  std::shared_ptr<DeleteStudioMemberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioMemberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteStudioMember(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::DeleteStudioMemberAsync(const DeleteStudioMemberRequest& request, const DeleteStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteStudioMemberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteStudioMember(request), context);
+      handler(this, *pRequest, DeleteStudioMember(*pRequest), context);
     } );
 }
 
@@ -703,17 +717,18 @@ GetEulaOutcome NimbleStudioClient::GetEula(const GetEulaRequest& request) const
 
 GetEulaOutcomeCallable NimbleStudioClient::GetEulaCallable(const GetEulaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEulaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEula(request); } );
+  std::shared_ptr<GetEulaRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetEulaOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetEula(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::GetEulaAsync(const GetEulaRequest& request, const GetEulaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetEulaRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetEula(request), context);
+      handler(this, *pRequest, GetEula(*pRequest), context);
     } );
 }
 
@@ -741,17 +756,18 @@ GetLaunchProfileOutcome NimbleStudioClient::GetLaunchProfile(const GetLaunchProf
 
 GetLaunchProfileOutcomeCallable NimbleStudioClient::GetLaunchProfileCallable(const GetLaunchProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLaunchProfile(request); } );
+  std::shared_ptr<GetLaunchProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetLaunchProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::GetLaunchProfileAsync(const GetLaunchProfileRequest& request, const GetLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetLaunchProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetLaunchProfile(request), context);
+      handler(this, *pRequest, GetLaunchProfile(*pRequest), context);
     } );
 }
 
@@ -780,17 +796,18 @@ GetLaunchProfileDetailsOutcome NimbleStudioClient::GetLaunchProfileDetails(const
 
 GetLaunchProfileDetailsOutcomeCallable NimbleStudioClient::GetLaunchProfileDetailsCallable(const GetLaunchProfileDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLaunchProfileDetails(request); } );
+  std::shared_ptr<GetLaunchProfileDetailsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileDetailsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetLaunchProfileDetails(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::GetLaunchProfileDetailsAsync(const GetLaunchProfileDetailsRequest& request, const GetLaunchProfileDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetLaunchProfileDetailsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetLaunchProfileDetails(request), context);
+      handler(this, *pRequest, GetLaunchProfileDetails(*pRequest), context);
     } );
 }
 
@@ -834,17 +851,18 @@ GetLaunchProfileInitializationOutcome NimbleStudioClient::GetLaunchProfileInitia
 
 GetLaunchProfileInitializationOutcomeCallable NimbleStudioClient::GetLaunchProfileInitializationCallable(const GetLaunchProfileInitializationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileInitializationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLaunchProfileInitialization(request); } );
+  std::shared_ptr<GetLaunchProfileInitializationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileInitializationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetLaunchProfileInitialization(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::GetLaunchProfileInitializationAsync(const GetLaunchProfileInitializationRequest& request, const GetLaunchProfileInitializationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetLaunchProfileInitializationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetLaunchProfileInitialization(request), context);
+      handler(this, *pRequest, GetLaunchProfileInitialization(*pRequest), context);
     } );
 }
 
@@ -879,17 +897,18 @@ GetLaunchProfileMemberOutcome NimbleStudioClient::GetLaunchProfileMember(const G
 
 GetLaunchProfileMemberOutcomeCallable NimbleStudioClient::GetLaunchProfileMemberCallable(const GetLaunchProfileMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLaunchProfileMember(request); } );
+  std::shared_ptr<GetLaunchProfileMemberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetLaunchProfileMemberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetLaunchProfileMember(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::GetLaunchProfileMemberAsync(const GetLaunchProfileMemberRequest& request, const GetLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetLaunchProfileMemberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetLaunchProfileMember(request), context);
+      handler(this, *pRequest, GetLaunchProfileMember(*pRequest), context);
     } );
 }
 
@@ -917,17 +936,18 @@ GetStreamingImageOutcome NimbleStudioClient::GetStreamingImage(const GetStreamin
 
 GetStreamingImageOutcomeCallable NimbleStudioClient::GetStreamingImageCallable(const GetStreamingImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStreamingImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamingImage(request); } );
+  std::shared_ptr<GetStreamingImageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetStreamingImageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetStreamingImage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::GetStreamingImageAsync(const GetStreamingImageRequest& request, const GetStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetStreamingImageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetStreamingImage(request), context);
+      handler(this, *pRequest, GetStreamingImage(*pRequest), context);
     } );
 }
 
@@ -955,17 +975,18 @@ GetStreamingSessionOutcome NimbleStudioClient::GetStreamingSession(const GetStre
 
 GetStreamingSessionOutcomeCallable NimbleStudioClient::GetStreamingSessionCallable(const GetStreamingSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamingSession(request); } );
+  std::shared_ptr<GetStreamingSessionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetStreamingSession(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::GetStreamingSessionAsync(const GetStreamingSessionRequest& request, const GetStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetStreamingSessionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetStreamingSession(request), context);
+      handler(this, *pRequest, GetStreamingSession(*pRequest), context);
     } );
 }
 
@@ -1000,17 +1021,18 @@ GetStreamingSessionStreamOutcome NimbleStudioClient::GetStreamingSessionStream(c
 
 GetStreamingSessionStreamOutcomeCallable NimbleStudioClient::GetStreamingSessionStreamCallable(const GetStreamingSessionStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStreamingSessionStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamingSessionStream(request); } );
+  std::shared_ptr<GetStreamingSessionStreamRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetStreamingSessionStreamOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetStreamingSessionStream(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::GetStreamingSessionStreamAsync(const GetStreamingSessionStreamRequest& request, const GetStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetStreamingSessionStreamRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetStreamingSessionStream(request), context);
+      handler(this, *pRequest, GetStreamingSessionStream(*pRequest), context);
     } );
 }
 
@@ -1031,17 +1053,18 @@ GetStudioOutcome NimbleStudioClient::GetStudio(const GetStudioRequest& request) 
 
 GetStudioOutcomeCallable NimbleStudioClient::GetStudioCallable(const GetStudioRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStudio(request); } );
+  std::shared_ptr<GetStudioRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetStudioOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetStudio(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::GetStudioAsync(const GetStudioRequest& request, const GetStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetStudioRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetStudio(request), context);
+      handler(this, *pRequest, GetStudio(*pRequest), context);
     } );
 }
 
@@ -1069,17 +1092,18 @@ GetStudioComponentOutcome NimbleStudioClient::GetStudioComponent(const GetStudio
 
 GetStudioComponentOutcomeCallable NimbleStudioClient::GetStudioComponentCallable(const GetStudioComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStudioComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStudioComponent(request); } );
+  std::shared_ptr<GetStudioComponentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetStudioComponentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetStudioComponent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::GetStudioComponentAsync(const GetStudioComponentRequest& request, const GetStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetStudioComponentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetStudioComponent(request), context);
+      handler(this, *pRequest, GetStudioComponent(*pRequest), context);
     } );
 }
 
@@ -1107,17 +1131,18 @@ GetStudioMemberOutcome NimbleStudioClient::GetStudioMember(const GetStudioMember
 
 GetStudioMemberOutcomeCallable NimbleStudioClient::GetStudioMemberCallable(const GetStudioMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStudioMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStudioMember(request); } );
+  std::shared_ptr<GetStudioMemberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetStudioMemberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetStudioMember(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::GetStudioMemberAsync(const GetStudioMemberRequest& request, const GetStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetStudioMemberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetStudioMember(request), context);
+      handler(this, *pRequest, GetStudioMember(*pRequest), context);
     } );
 }
 
@@ -1139,17 +1164,18 @@ ListEulaAcceptancesOutcome NimbleStudioClient::ListEulaAcceptances(const ListEul
 
 ListEulaAcceptancesOutcomeCallable NimbleStudioClient::ListEulaAcceptancesCallable(const ListEulaAcceptancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEulaAcceptancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEulaAcceptances(request); } );
+  std::shared_ptr<ListEulaAcceptancesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEulaAcceptancesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEulaAcceptances(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::ListEulaAcceptancesAsync(const ListEulaAcceptancesRequest& request, const ListEulaAcceptancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEulaAcceptancesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEulaAcceptances(request), context);
+      handler(this, *pRequest, ListEulaAcceptances(*pRequest), context);
     } );
 }
 
@@ -1164,17 +1190,18 @@ ListEulasOutcome NimbleStudioClient::ListEulas(const ListEulasRequest& request) 
 
 ListEulasOutcomeCallable NimbleStudioClient::ListEulasCallable(const ListEulasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEulasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEulas(request); } );
+  std::shared_ptr<ListEulasRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEulasOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEulas(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::ListEulasAsync(const ListEulasRequest& request, const ListEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEulasRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEulas(request), context);
+      handler(this, *pRequest, ListEulas(*pRequest), context);
     } );
 }
 
@@ -1203,17 +1230,18 @@ ListLaunchProfileMembersOutcome NimbleStudioClient::ListLaunchProfileMembers(con
 
 ListLaunchProfileMembersOutcomeCallable NimbleStudioClient::ListLaunchProfileMembersCallable(const ListLaunchProfileMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLaunchProfileMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLaunchProfileMembers(request); } );
+  std::shared_ptr<ListLaunchProfileMembersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListLaunchProfileMembersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListLaunchProfileMembers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::ListLaunchProfileMembersAsync(const ListLaunchProfileMembersRequest& request, const ListLaunchProfileMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListLaunchProfileMembersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListLaunchProfileMembers(request), context);
+      handler(this, *pRequest, ListLaunchProfileMembers(*pRequest), context);
     } );
 }
 
@@ -1235,17 +1263,18 @@ ListLaunchProfilesOutcome NimbleStudioClient::ListLaunchProfiles(const ListLaunc
 
 ListLaunchProfilesOutcomeCallable NimbleStudioClient::ListLaunchProfilesCallable(const ListLaunchProfilesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListLaunchProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLaunchProfiles(request); } );
+  std::shared_ptr<ListLaunchProfilesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListLaunchProfilesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListLaunchProfiles(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::ListLaunchProfilesAsync(const ListLaunchProfilesRequest& request, const ListLaunchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListLaunchProfilesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListLaunchProfiles(request), context);
+      handler(this, *pRequest, ListLaunchProfiles(*pRequest), context);
     } );
 }
 
@@ -1267,17 +1296,18 @@ ListStreamingImagesOutcome NimbleStudioClient::ListStreamingImages(const ListStr
 
 ListStreamingImagesOutcomeCallable NimbleStudioClient::ListStreamingImagesCallable(const ListStreamingImagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStreamingImagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreamingImages(request); } );
+  std::shared_ptr<ListStreamingImagesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListStreamingImagesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListStreamingImages(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::ListStreamingImagesAsync(const ListStreamingImagesRequest& request, const ListStreamingImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListStreamingImagesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListStreamingImages(request), context);
+      handler(this, *pRequest, ListStreamingImages(*pRequest), context);
     } );
 }
 
@@ -1299,17 +1329,18 @@ ListStreamingSessionsOutcome NimbleStudioClient::ListStreamingSessions(const Lis
 
 ListStreamingSessionsOutcomeCallable NimbleStudioClient::ListStreamingSessionsCallable(const ListStreamingSessionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStreamingSessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreamingSessions(request); } );
+  std::shared_ptr<ListStreamingSessionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListStreamingSessionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListStreamingSessions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::ListStreamingSessionsAsync(const ListStreamingSessionsRequest& request, const ListStreamingSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListStreamingSessionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListStreamingSessions(request), context);
+      handler(this, *pRequest, ListStreamingSessions(*pRequest), context);
     } );
 }
 
@@ -1331,17 +1362,18 @@ ListStudioComponentsOutcome NimbleStudioClient::ListStudioComponents(const ListS
 
 ListStudioComponentsOutcomeCallable NimbleStudioClient::ListStudioComponentsCallable(const ListStudioComponentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStudioComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStudioComponents(request); } );
+  std::shared_ptr<ListStudioComponentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListStudioComponentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListStudioComponents(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::ListStudioComponentsAsync(const ListStudioComponentsRequest& request, const ListStudioComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListStudioComponentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListStudioComponents(request), context);
+      handler(this, *pRequest, ListStudioComponents(*pRequest), context);
     } );
 }
 
@@ -1363,17 +1395,18 @@ ListStudioMembersOutcome NimbleStudioClient::ListStudioMembers(const ListStudioM
 
 ListStudioMembersOutcomeCallable NimbleStudioClient::ListStudioMembersCallable(const ListStudioMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStudioMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStudioMembers(request); } );
+  std::shared_ptr<ListStudioMembersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListStudioMembersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListStudioMembers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::ListStudioMembersAsync(const ListStudioMembersRequest& request, const ListStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListStudioMembersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListStudioMembers(request), context);
+      handler(this, *pRequest, ListStudioMembers(*pRequest), context);
     } );
 }
 
@@ -1388,17 +1421,18 @@ ListStudiosOutcome NimbleStudioClient::ListStudios(const ListStudiosRequest& req
 
 ListStudiosOutcomeCallable NimbleStudioClient::ListStudiosCallable(const ListStudiosRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStudiosOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStudios(request); } );
+  std::shared_ptr<ListStudiosRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListStudiosOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListStudios(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::ListStudiosAsync(const ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListStudiosRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListStudios(request), context);
+      handler(this, *pRequest, ListStudios(*pRequest), context);
     } );
 }
 
@@ -1419,17 +1453,18 @@ ListTagsForResourceOutcome NimbleStudioClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable NimbleStudioClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -1458,17 +1493,18 @@ PutLaunchProfileMembersOutcome NimbleStudioClient::PutLaunchProfileMembers(const
 
 PutLaunchProfileMembersOutcomeCallable NimbleStudioClient::PutLaunchProfileMembersCallable(const PutLaunchProfileMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutLaunchProfileMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutLaunchProfileMembers(request); } );
+  std::shared_ptr<PutLaunchProfileMembersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutLaunchProfileMembersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutLaunchProfileMembers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::PutLaunchProfileMembersAsync(const PutLaunchProfileMembersRequest& request, const PutLaunchProfileMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutLaunchProfileMembersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutLaunchProfileMembers(request), context);
+      handler(this, *pRequest, PutLaunchProfileMembers(*pRequest), context);
     } );
 }
 
@@ -1490,17 +1526,18 @@ PutStudioMembersOutcome NimbleStudioClient::PutStudioMembers(const PutStudioMemb
 
 PutStudioMembersOutcomeCallable NimbleStudioClient::PutStudioMembersCallable(const PutStudioMembersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutStudioMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutStudioMembers(request); } );
+  std::shared_ptr<PutStudioMembersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutStudioMembersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutStudioMembers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::PutStudioMembersAsync(const PutStudioMembersRequest& request, const PutStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutStudioMembersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutStudioMembers(request), context);
+      handler(this, *pRequest, PutStudioMembers(*pRequest), context);
     } );
 }
 
@@ -1529,17 +1566,18 @@ StartStreamingSessionOutcome NimbleStudioClient::StartStreamingSession(const Sta
 
 StartStreamingSessionOutcomeCallable NimbleStudioClient::StartStreamingSessionCallable(const StartStreamingSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartStreamingSession(request); } );
+  std::shared_ptr<StartStreamingSessionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartStreamingSession(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::StartStreamingSessionAsync(const StartStreamingSessionRequest& request, const StartStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartStreamingSessionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartStreamingSession(request), context);
+      handler(this, *pRequest, StartStreamingSession(*pRequest), context);
     } );
 }
 
@@ -1561,17 +1599,18 @@ StartStudioSSOConfigurationRepairOutcome NimbleStudioClient::StartStudioSSOConfi
 
 StartStudioSSOConfigurationRepairOutcomeCallable NimbleStudioClient::StartStudioSSOConfigurationRepairCallable(const StartStudioSSOConfigurationRepairRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartStudioSSOConfigurationRepairOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartStudioSSOConfigurationRepair(request); } );
+  std::shared_ptr<StartStudioSSOConfigurationRepairRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartStudioSSOConfigurationRepairOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartStudioSSOConfigurationRepair(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::StartStudioSSOConfigurationRepairAsync(const StartStudioSSOConfigurationRepairRequest& request, const StartStudioSSOConfigurationRepairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartStudioSSOConfigurationRepairRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartStudioSSOConfigurationRepair(request), context);
+      handler(this, *pRequest, StartStudioSSOConfigurationRepair(*pRequest), context);
     } );
 }
 
@@ -1600,17 +1639,18 @@ StopStreamingSessionOutcome NimbleStudioClient::StopStreamingSession(const StopS
 
 StopStreamingSessionOutcomeCallable NimbleStudioClient::StopStreamingSessionCallable(const StopStreamingSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopStreamingSession(request); } );
+  std::shared_ptr<StopStreamingSessionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopStreamingSession(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::StopStreamingSessionAsync(const StopStreamingSessionRequest& request, const StopStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopStreamingSessionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopStreamingSession(request), context);
+      handler(this, *pRequest, StopStreamingSession(*pRequest), context);
     } );
 }
 
@@ -1631,17 +1671,18 @@ TagResourceOutcome NimbleStudioClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable NimbleStudioClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -1667,17 +1708,18 @@ UntagResourceOutcome NimbleStudioClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable NimbleStudioClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -1705,17 +1747,18 @@ UpdateLaunchProfileOutcome NimbleStudioClient::UpdateLaunchProfile(const UpdateL
 
 UpdateLaunchProfileOutcomeCallable NimbleStudioClient::UpdateLaunchProfileCallable(const UpdateLaunchProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLaunchProfile(request); } );
+  std::shared_ptr<UpdateLaunchProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateLaunchProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::UpdateLaunchProfileAsync(const UpdateLaunchProfileRequest& request, const UpdateLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateLaunchProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateLaunchProfile(request), context);
+      handler(this, *pRequest, UpdateLaunchProfile(*pRequest), context);
     } );
 }
 
@@ -1750,17 +1793,18 @@ UpdateLaunchProfileMemberOutcome NimbleStudioClient::UpdateLaunchProfileMember(c
 
 UpdateLaunchProfileMemberOutcomeCallable NimbleStudioClient::UpdateLaunchProfileMemberCallable(const UpdateLaunchProfileMemberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchProfileMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLaunchProfileMember(request); } );
+  std::shared_ptr<UpdateLaunchProfileMemberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchProfileMemberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateLaunchProfileMember(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::UpdateLaunchProfileMemberAsync(const UpdateLaunchProfileMemberRequest& request, const UpdateLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateLaunchProfileMemberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateLaunchProfileMember(request), context);
+      handler(this, *pRequest, UpdateLaunchProfileMember(*pRequest), context);
     } );
 }
 
@@ -1788,17 +1832,18 @@ UpdateStreamingImageOutcome NimbleStudioClient::UpdateStreamingImage(const Updat
 
 UpdateStreamingImageOutcomeCallable NimbleStudioClient::UpdateStreamingImageCallable(const UpdateStreamingImageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStreamingImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStreamingImage(request); } );
+  std::shared_ptr<UpdateStreamingImageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStreamingImageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateStreamingImage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::UpdateStreamingImageAsync(const UpdateStreamingImageRequest& request, const UpdateStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateStreamingImageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateStreamingImage(request), context);
+      handler(this, *pRequest, UpdateStreamingImage(*pRequest), context);
     } );
 }
 
@@ -1819,17 +1864,18 @@ UpdateStudioOutcome NimbleStudioClient::UpdateStudio(const UpdateStudioRequest& 
 
 UpdateStudioOutcomeCallable NimbleStudioClient::UpdateStudioCallable(const UpdateStudioRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStudio(request); } );
+  std::shared_ptr<UpdateStudioRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStudioOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateStudio(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::UpdateStudioAsync(const UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateStudioRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateStudio(request), context);
+      handler(this, *pRequest, UpdateStudio(*pRequest), context);
     } );
 }
 
@@ -1857,17 +1903,18 @@ UpdateStudioComponentOutcome NimbleStudioClient::UpdateStudioComponent(const Upd
 
 UpdateStudioComponentOutcomeCallable NimbleStudioClient::UpdateStudioComponentCallable(const UpdateStudioComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStudioComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStudioComponent(request); } );
+  std::shared_ptr<UpdateStudioComponentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStudioComponentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateStudioComponent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void NimbleStudioClient::UpdateStudioComponentAsync(const UpdateStudioComponentRequest& request, const UpdateStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateStudioComponentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateStudioComponent(request), context);
+      handler(this, *pRequest, UpdateStudioComponent(*pRequest), context);
     } );
 }
 

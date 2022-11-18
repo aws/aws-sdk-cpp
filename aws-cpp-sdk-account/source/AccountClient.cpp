@@ -165,17 +165,18 @@ DeleteAlternateContactOutcome AccountClient::DeleteAlternateContact(const Delete
 
 DeleteAlternateContactOutcomeCallable AccountClient::DeleteAlternateContactCallable(const DeleteAlternateContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAlternateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAlternateContact(request); } );
+  std::shared_ptr<DeleteAlternateContactRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAlternateContactOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAlternateContact(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AccountClient::DeleteAlternateContactAsync(const DeleteAlternateContactRequest& request, const DeleteAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAlternateContactRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAlternateContact(request), context);
+      handler(this, *pRequest, DeleteAlternateContact(*pRequest), context);
     } );
 }
 
@@ -190,17 +191,18 @@ GetAlternateContactOutcome AccountClient::GetAlternateContact(const GetAlternate
 
 GetAlternateContactOutcomeCallable AccountClient::GetAlternateContactCallable(const GetAlternateContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAlternateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAlternateContact(request); } );
+  std::shared_ptr<GetAlternateContactRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAlternateContactOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAlternateContact(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AccountClient::GetAlternateContactAsync(const GetAlternateContactRequest& request, const GetAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAlternateContactRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAlternateContact(request), context);
+      handler(this, *pRequest, GetAlternateContact(*pRequest), context);
     } );
 }
 
@@ -215,17 +217,18 @@ GetContactInformationOutcome AccountClient::GetContactInformation(const GetConta
 
 GetContactInformationOutcomeCallable AccountClient::GetContactInformationCallable(const GetContactInformationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetContactInformationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContactInformation(request); } );
+  std::shared_ptr<GetContactInformationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetContactInformationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetContactInformation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AccountClient::GetContactInformationAsync(const GetContactInformationRequest& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetContactInformationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetContactInformation(request), context);
+      handler(this, *pRequest, GetContactInformation(*pRequest), context);
     } );
 }
 
@@ -240,17 +243,18 @@ PutAlternateContactOutcome AccountClient::PutAlternateContact(const PutAlternate
 
 PutAlternateContactOutcomeCallable AccountClient::PutAlternateContactCallable(const PutAlternateContactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAlternateContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAlternateContact(request); } );
+  std::shared_ptr<PutAlternateContactRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutAlternateContactOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutAlternateContact(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AccountClient::PutAlternateContactAsync(const PutAlternateContactRequest& request, const PutAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutAlternateContactRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutAlternateContact(request), context);
+      handler(this, *pRequest, PutAlternateContact(*pRequest), context);
     } );
 }
 
@@ -265,17 +269,18 @@ PutContactInformationOutcome AccountClient::PutContactInformation(const PutConta
 
 PutContactInformationOutcomeCallable AccountClient::PutContactInformationCallable(const PutContactInformationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutContactInformationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutContactInformation(request); } );
+  std::shared_ptr<PutContactInformationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutContactInformationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutContactInformation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void AccountClient::PutContactInformationAsync(const PutContactInformationRequest& request, const PutContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutContactInformationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutContactInformation(request), context);
+      handler(this, *pRequest, PutContactInformation(*pRequest), context);
     } );
 }
 

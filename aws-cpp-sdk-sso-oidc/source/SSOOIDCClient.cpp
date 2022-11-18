@@ -163,17 +163,18 @@ CreateTokenOutcome SSOOIDCClient::CreateToken(const CreateTokenRequest& request)
 
 CreateTokenOutcomeCallable SSOOIDCClient::CreateTokenCallable(const CreateTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateToken(request); } );
+  std::shared_ptr<CreateTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SSOOIDCClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateToken(request), context);
+      handler(this, *pRequest, CreateToken(*pRequest), context);
     } );
 }
 
@@ -188,17 +189,18 @@ RegisterClientOutcome SSOOIDCClient::RegisterClient(const RegisterClientRequest&
 
 RegisterClientOutcomeCallable SSOOIDCClient::RegisterClientCallable(const RegisterClientRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterClient(request); } );
+  std::shared_ptr<RegisterClientRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RegisterClientOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RegisterClient(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SSOOIDCClient::RegisterClientAsync(const RegisterClientRequest& request, const RegisterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RegisterClientRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RegisterClient(request), context);
+      handler(this, *pRequest, RegisterClient(*pRequest), context);
     } );
 }
 
@@ -213,17 +215,18 @@ StartDeviceAuthorizationOutcome SSOOIDCClient::StartDeviceAuthorization(const St
 
 StartDeviceAuthorizationOutcomeCallable SSOOIDCClient::StartDeviceAuthorizationCallable(const StartDeviceAuthorizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartDeviceAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDeviceAuthorization(request); } );
+  std::shared_ptr<StartDeviceAuthorizationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartDeviceAuthorizationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartDeviceAuthorization(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SSOOIDCClient::StartDeviceAuthorizationAsync(const StartDeviceAuthorizationRequest& request, const StartDeviceAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartDeviceAuthorizationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartDeviceAuthorization(request), context);
+      handler(this, *pRequest, StartDeviceAuthorization(*pRequest), context);
     } );
 }
 

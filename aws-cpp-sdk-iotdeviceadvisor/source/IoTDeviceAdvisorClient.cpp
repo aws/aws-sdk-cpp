@@ -174,17 +174,18 @@ CreateSuiteDefinitionOutcome IoTDeviceAdvisorClient::CreateSuiteDefinition(const
 
 CreateSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::CreateSuiteDefinitionCallable(const CreateSuiteDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSuiteDefinition(request); } );
+  std::shared_ptr<CreateSuiteDefinitionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateSuiteDefinition(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::CreateSuiteDefinitionAsync(const CreateSuiteDefinitionRequest& request, const CreateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateSuiteDefinitionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateSuiteDefinition(request), context);
+      handler(this, *pRequest, CreateSuiteDefinition(*pRequest), context);
     } );
 }
 
@@ -205,17 +206,18 @@ DeleteSuiteDefinitionOutcome IoTDeviceAdvisorClient::DeleteSuiteDefinition(const
 
 DeleteSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::DeleteSuiteDefinitionCallable(const DeleteSuiteDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSuiteDefinition(request); } );
+  std::shared_ptr<DeleteSuiteDefinitionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteSuiteDefinition(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::DeleteSuiteDefinitionAsync(const DeleteSuiteDefinitionRequest& request, const DeleteSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteSuiteDefinitionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteSuiteDefinition(request), context);
+      handler(this, *pRequest, DeleteSuiteDefinition(*pRequest), context);
     } );
 }
 
@@ -230,17 +232,18 @@ GetEndpointOutcome IoTDeviceAdvisorClient::GetEndpoint(const GetEndpointRequest&
 
 GetEndpointOutcomeCallable IoTDeviceAdvisorClient::GetEndpointCallable(const GetEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEndpoint(request); } );
+  std::shared_ptr<GetEndpointRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetEndpointOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetEndpoint(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::GetEndpointAsync(const GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetEndpointRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetEndpoint(request), context);
+      handler(this, *pRequest, GetEndpoint(*pRequest), context);
     } );
 }
 
@@ -261,17 +264,18 @@ GetSuiteDefinitionOutcome IoTDeviceAdvisorClient::GetSuiteDefinition(const GetSu
 
 GetSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::GetSuiteDefinitionCallable(const GetSuiteDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSuiteDefinition(request); } );
+  std::shared_ptr<GetSuiteDefinitionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSuiteDefinition(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::GetSuiteDefinitionAsync(const GetSuiteDefinitionRequest& request, const GetSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSuiteDefinitionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSuiteDefinition(request), context);
+      handler(this, *pRequest, GetSuiteDefinition(*pRequest), context);
     } );
 }
 
@@ -299,17 +303,18 @@ GetSuiteRunOutcome IoTDeviceAdvisorClient::GetSuiteRun(const GetSuiteRunRequest&
 
 GetSuiteRunOutcomeCallable IoTDeviceAdvisorClient::GetSuiteRunCallable(const GetSuiteRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSuiteRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSuiteRun(request); } );
+  std::shared_ptr<GetSuiteRunRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSuiteRunOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSuiteRun(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::GetSuiteRunAsync(const GetSuiteRunRequest& request, const GetSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSuiteRunRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSuiteRun(request), context);
+      handler(this, *pRequest, GetSuiteRun(*pRequest), context);
     } );
 }
 
@@ -338,17 +343,18 @@ GetSuiteRunReportOutcome IoTDeviceAdvisorClient::GetSuiteRunReport(const GetSuit
 
 GetSuiteRunReportOutcomeCallable IoTDeviceAdvisorClient::GetSuiteRunReportCallable(const GetSuiteRunReportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSuiteRunReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSuiteRunReport(request); } );
+  std::shared_ptr<GetSuiteRunReportRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSuiteRunReportOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSuiteRunReport(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::GetSuiteRunReportAsync(const GetSuiteRunReportRequest& request, const GetSuiteRunReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSuiteRunReportRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSuiteRunReport(request), context);
+      handler(this, *pRequest, GetSuiteRunReport(*pRequest), context);
     } );
 }
 
@@ -363,17 +369,18 @@ ListSuiteDefinitionsOutcome IoTDeviceAdvisorClient::ListSuiteDefinitions(const L
 
 ListSuiteDefinitionsOutcomeCallable IoTDeviceAdvisorClient::ListSuiteDefinitionsCallable(const ListSuiteDefinitionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSuiteDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSuiteDefinitions(request); } );
+  std::shared_ptr<ListSuiteDefinitionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSuiteDefinitionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSuiteDefinitions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::ListSuiteDefinitionsAsync(const ListSuiteDefinitionsRequest& request, const ListSuiteDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSuiteDefinitionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSuiteDefinitions(request), context);
+      handler(this, *pRequest, ListSuiteDefinitions(*pRequest), context);
     } );
 }
 
@@ -388,17 +395,18 @@ ListSuiteRunsOutcome IoTDeviceAdvisorClient::ListSuiteRuns(const ListSuiteRunsRe
 
 ListSuiteRunsOutcomeCallable IoTDeviceAdvisorClient::ListSuiteRunsCallable(const ListSuiteRunsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSuiteRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSuiteRuns(request); } );
+  std::shared_ptr<ListSuiteRunsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSuiteRunsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSuiteRuns(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::ListSuiteRunsAsync(const ListSuiteRunsRequest& request, const ListSuiteRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSuiteRunsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSuiteRuns(request), context);
+      handler(this, *pRequest, ListSuiteRuns(*pRequest), context);
     } );
 }
 
@@ -419,17 +427,18 @@ ListTagsForResourceOutcome IoTDeviceAdvisorClient::ListTagsForResource(const Lis
 
 ListTagsForResourceOutcomeCallable IoTDeviceAdvisorClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -451,17 +460,18 @@ StartSuiteRunOutcome IoTDeviceAdvisorClient::StartSuiteRun(const StartSuiteRunRe
 
 StartSuiteRunOutcomeCallable IoTDeviceAdvisorClient::StartSuiteRunCallable(const StartSuiteRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartSuiteRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSuiteRun(request); } );
+  std::shared_ptr<StartSuiteRunRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartSuiteRunOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartSuiteRun(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::StartSuiteRunAsync(const StartSuiteRunRequest& request, const StartSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartSuiteRunRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartSuiteRun(request), context);
+      handler(this, *pRequest, StartSuiteRun(*pRequest), context);
     } );
 }
 
@@ -490,17 +500,18 @@ StopSuiteRunOutcome IoTDeviceAdvisorClient::StopSuiteRun(const StopSuiteRunReque
 
 StopSuiteRunOutcomeCallable IoTDeviceAdvisorClient::StopSuiteRunCallable(const StopSuiteRunRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopSuiteRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopSuiteRun(request); } );
+  std::shared_ptr<StopSuiteRunRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopSuiteRunOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopSuiteRun(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::StopSuiteRunAsync(const StopSuiteRunRequest& request, const StopSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopSuiteRunRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopSuiteRun(request), context);
+      handler(this, *pRequest, StopSuiteRun(*pRequest), context);
     } );
 }
 
@@ -521,17 +532,18 @@ TagResourceOutcome IoTDeviceAdvisorClient::TagResource(const TagResourceRequest&
 
 TagResourceOutcomeCallable IoTDeviceAdvisorClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -557,17 +569,18 @@ UntagResourceOutcome IoTDeviceAdvisorClient::UntagResource(const UntagResourceRe
 
 UntagResourceOutcomeCallable IoTDeviceAdvisorClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -588,17 +601,18 @@ UpdateSuiteDefinitionOutcome IoTDeviceAdvisorClient::UpdateSuiteDefinition(const
 
 UpdateSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::UpdateSuiteDefinitionCallable(const UpdateSuiteDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSuiteDefinition(request); } );
+  std::shared_ptr<UpdateSuiteDefinitionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSuiteDefinitionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateSuiteDefinition(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTDeviceAdvisorClient::UpdateSuiteDefinitionAsync(const UpdateSuiteDefinitionRequest& request, const UpdateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateSuiteDefinitionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateSuiteDefinition(request), context);
+      handler(this, *pRequest, UpdateSuiteDefinition(*pRequest), context);
     } );
 }
 

@@ -186,17 +186,18 @@ CreateProfileOutcome RolesAnywhereClient::CreateProfile(const CreateProfileReque
 
 CreateProfileOutcomeCallable RolesAnywhereClient::CreateProfileCallable(const CreateProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProfile(request); } );
+  std::shared_ptr<CreateProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::CreateProfileAsync(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateProfile(request), context);
+      handler(this, *pRequest, CreateProfile(*pRequest), context);
     } );
 }
 
@@ -211,17 +212,18 @@ CreateTrustAnchorOutcome RolesAnywhereClient::CreateTrustAnchor(const CreateTrus
 
 CreateTrustAnchorOutcomeCallable RolesAnywhereClient::CreateTrustAnchorCallable(const CreateTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTrustAnchor(request); } );
+  std::shared_ptr<CreateTrustAnchorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateTrustAnchor(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::CreateTrustAnchorAsync(const CreateTrustAnchorRequest& request, const CreateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateTrustAnchorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateTrustAnchor(request), context);
+      handler(this, *pRequest, CreateTrustAnchor(*pRequest), context);
     } );
 }
 
@@ -242,17 +244,18 @@ DeleteCrlOutcome RolesAnywhereClient::DeleteCrl(const DeleteCrlRequest& request)
 
 DeleteCrlOutcomeCallable RolesAnywhereClient::DeleteCrlCallable(const DeleteCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCrl(request); } );
+  std::shared_ptr<DeleteCrlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCrlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteCrl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::DeleteCrlAsync(const DeleteCrlRequest& request, const DeleteCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteCrlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteCrl(request), context);
+      handler(this, *pRequest, DeleteCrl(*pRequest), context);
     } );
 }
 
@@ -273,17 +276,18 @@ DeleteProfileOutcome RolesAnywhereClient::DeleteProfile(const DeleteProfileReque
 
 DeleteProfileOutcomeCallable RolesAnywhereClient::DeleteProfileCallable(const DeleteProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProfile(request); } );
+  std::shared_ptr<DeleteProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::DeleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteProfile(request), context);
+      handler(this, *pRequest, DeleteProfile(*pRequest), context);
     } );
 }
 
@@ -304,17 +308,18 @@ DeleteTrustAnchorOutcome RolesAnywhereClient::DeleteTrustAnchor(const DeleteTrus
 
 DeleteTrustAnchorOutcomeCallable RolesAnywhereClient::DeleteTrustAnchorCallable(const DeleteTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTrustAnchor(request); } );
+  std::shared_ptr<DeleteTrustAnchorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteTrustAnchor(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::DeleteTrustAnchorAsync(const DeleteTrustAnchorRequest& request, const DeleteTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteTrustAnchorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteTrustAnchor(request), context);
+      handler(this, *pRequest, DeleteTrustAnchor(*pRequest), context);
     } );
 }
 
@@ -336,17 +341,18 @@ DisableCrlOutcome RolesAnywhereClient::DisableCrl(const DisableCrlRequest& reque
 
 DisableCrlOutcomeCallable RolesAnywhereClient::DisableCrlCallable(const DisableCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableCrl(request); } );
+  std::shared_ptr<DisableCrlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisableCrlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisableCrl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::DisableCrlAsync(const DisableCrlRequest& request, const DisableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisableCrlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisableCrl(request), context);
+      handler(this, *pRequest, DisableCrl(*pRequest), context);
     } );
 }
 
@@ -368,17 +374,18 @@ DisableProfileOutcome RolesAnywhereClient::DisableProfile(const DisableProfileRe
 
 DisableProfileOutcomeCallable RolesAnywhereClient::DisableProfileCallable(const DisableProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableProfile(request); } );
+  std::shared_ptr<DisableProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisableProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisableProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::DisableProfileAsync(const DisableProfileRequest& request, const DisableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisableProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisableProfile(request), context);
+      handler(this, *pRequest, DisableProfile(*pRequest), context);
     } );
 }
 
@@ -400,17 +407,18 @@ DisableTrustAnchorOutcome RolesAnywhereClient::DisableTrustAnchor(const DisableT
 
 DisableTrustAnchorOutcomeCallable RolesAnywhereClient::DisableTrustAnchorCallable(const DisableTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableTrustAnchor(request); } );
+  std::shared_ptr<DisableTrustAnchorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisableTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisableTrustAnchor(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::DisableTrustAnchorAsync(const DisableTrustAnchorRequest& request, const DisableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisableTrustAnchorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisableTrustAnchor(request), context);
+      handler(this, *pRequest, DisableTrustAnchor(*pRequest), context);
     } );
 }
 
@@ -432,17 +440,18 @@ EnableCrlOutcome RolesAnywhereClient::EnableCrl(const EnableCrlRequest& request)
 
 EnableCrlOutcomeCallable RolesAnywhereClient::EnableCrlCallable(const EnableCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableCrl(request); } );
+  std::shared_ptr<EnableCrlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< EnableCrlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->EnableCrl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::EnableCrlAsync(const EnableCrlRequest& request, const EnableCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<EnableCrlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, EnableCrl(request), context);
+      handler(this, *pRequest, EnableCrl(*pRequest), context);
     } );
 }
 
@@ -464,17 +473,18 @@ EnableProfileOutcome RolesAnywhereClient::EnableProfile(const EnableProfileReque
 
 EnableProfileOutcomeCallable RolesAnywhereClient::EnableProfileCallable(const EnableProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableProfile(request); } );
+  std::shared_ptr<EnableProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< EnableProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->EnableProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::EnableProfileAsync(const EnableProfileRequest& request, const EnableProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<EnableProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, EnableProfile(request), context);
+      handler(this, *pRequest, EnableProfile(*pRequest), context);
     } );
 }
 
@@ -496,17 +506,18 @@ EnableTrustAnchorOutcome RolesAnywhereClient::EnableTrustAnchor(const EnableTrus
 
 EnableTrustAnchorOutcomeCallable RolesAnywhereClient::EnableTrustAnchorCallable(const EnableTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableTrustAnchor(request); } );
+  std::shared_ptr<EnableTrustAnchorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< EnableTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->EnableTrustAnchor(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::EnableTrustAnchorAsync(const EnableTrustAnchorRequest& request, const EnableTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<EnableTrustAnchorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, EnableTrustAnchor(request), context);
+      handler(this, *pRequest, EnableTrustAnchor(*pRequest), context);
     } );
 }
 
@@ -527,17 +538,18 @@ GetCrlOutcome RolesAnywhereClient::GetCrl(const GetCrlRequest& request) const
 
 GetCrlOutcomeCallable RolesAnywhereClient::GetCrlCallable(const GetCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCrl(request); } );
+  std::shared_ptr<GetCrlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCrlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCrl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::GetCrlAsync(const GetCrlRequest& request, const GetCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCrlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCrl(request), context);
+      handler(this, *pRequest, GetCrl(*pRequest), context);
     } );
 }
 
@@ -558,17 +570,18 @@ GetProfileOutcome RolesAnywhereClient::GetProfile(const GetProfileRequest& reque
 
 GetProfileOutcomeCallable RolesAnywhereClient::GetProfileCallable(const GetProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProfile(request); } );
+  std::shared_ptr<GetProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::GetProfileAsync(const GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetProfile(request), context);
+      handler(this, *pRequest, GetProfile(*pRequest), context);
     } );
 }
 
@@ -589,17 +602,18 @@ GetSubjectOutcome RolesAnywhereClient::GetSubject(const GetSubjectRequest& reque
 
 GetSubjectOutcomeCallable RolesAnywhereClient::GetSubjectCallable(const GetSubjectRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSubjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSubject(request); } );
+  std::shared_ptr<GetSubjectRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSubjectOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSubject(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::GetSubjectAsync(const GetSubjectRequest& request, const GetSubjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSubjectRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSubject(request), context);
+      handler(this, *pRequest, GetSubject(*pRequest), context);
     } );
 }
 
@@ -620,17 +634,18 @@ GetTrustAnchorOutcome RolesAnywhereClient::GetTrustAnchor(const GetTrustAnchorRe
 
 GetTrustAnchorOutcomeCallable RolesAnywhereClient::GetTrustAnchorCallable(const GetTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTrustAnchor(request); } );
+  std::shared_ptr<GetTrustAnchorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetTrustAnchor(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::GetTrustAnchorAsync(const GetTrustAnchorRequest& request, const GetTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetTrustAnchorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetTrustAnchor(request), context);
+      handler(this, *pRequest, GetTrustAnchor(*pRequest), context);
     } );
 }
 
@@ -645,17 +660,18 @@ ImportCrlOutcome RolesAnywhereClient::ImportCrl(const ImportCrlRequest& request)
 
 ImportCrlOutcomeCallable RolesAnywhereClient::ImportCrlCallable(const ImportCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportCrl(request); } );
+  std::shared_ptr<ImportCrlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ImportCrlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ImportCrl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::ImportCrlAsync(const ImportCrlRequest& request, const ImportCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ImportCrlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ImportCrl(request), context);
+      handler(this, *pRequest, ImportCrl(*pRequest), context);
     } );
 }
 
@@ -670,17 +686,18 @@ ListCrlsOutcome RolesAnywhereClient::ListCrls(const ListCrlsRequest& request) co
 
 ListCrlsOutcomeCallable RolesAnywhereClient::ListCrlsCallable(const ListCrlsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCrlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCrls(request); } );
+  std::shared_ptr<ListCrlsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListCrlsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListCrls(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::ListCrlsAsync(const ListCrlsRequest& request, const ListCrlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListCrlsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListCrls(request), context);
+      handler(this, *pRequest, ListCrls(*pRequest), context);
     } );
 }
 
@@ -695,17 +712,18 @@ ListProfilesOutcome RolesAnywhereClient::ListProfiles(const ListProfilesRequest&
 
 ListProfilesOutcomeCallable RolesAnywhereClient::ListProfilesCallable(const ListProfilesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProfiles(request); } );
+  std::shared_ptr<ListProfilesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListProfilesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListProfiles(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::ListProfilesAsync(const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListProfilesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListProfiles(request), context);
+      handler(this, *pRequest, ListProfiles(*pRequest), context);
     } );
 }
 
@@ -720,17 +738,18 @@ ListSubjectsOutcome RolesAnywhereClient::ListSubjects(const ListSubjectsRequest&
 
 ListSubjectsOutcomeCallable RolesAnywhereClient::ListSubjectsCallable(const ListSubjectsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSubjectsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSubjects(request); } );
+  std::shared_ptr<ListSubjectsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSubjectsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSubjects(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::ListSubjectsAsync(const ListSubjectsRequest& request, const ListSubjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSubjectsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSubjects(request), context);
+      handler(this, *pRequest, ListSubjects(*pRequest), context);
     } );
 }
 
@@ -750,17 +769,18 @@ ListTagsForResourceOutcome RolesAnywhereClient::ListTagsForResource(const ListTa
 
 ListTagsForResourceOutcomeCallable RolesAnywhereClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -775,17 +795,18 @@ ListTrustAnchorsOutcome RolesAnywhereClient::ListTrustAnchors(const ListTrustAnc
 
 ListTrustAnchorsOutcomeCallable RolesAnywhereClient::ListTrustAnchorsCallable(const ListTrustAnchorsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTrustAnchorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTrustAnchors(request); } );
+  std::shared_ptr<ListTrustAnchorsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTrustAnchorsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTrustAnchors(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::ListTrustAnchorsAsync(const ListTrustAnchorsRequest& request, const ListTrustAnchorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTrustAnchorsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTrustAnchors(request), context);
+      handler(this, *pRequest, ListTrustAnchors(*pRequest), context);
     } );
 }
 
@@ -800,17 +821,18 @@ TagResourceOutcome RolesAnywhereClient::TagResource(const TagResourceRequest& re
 
 TagResourceOutcomeCallable RolesAnywhereClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -825,17 +847,18 @@ UntagResourceOutcome RolesAnywhereClient::UntagResource(const UntagResourceReque
 
 UntagResourceOutcomeCallable RolesAnywhereClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -856,17 +879,18 @@ UpdateCrlOutcome RolesAnywhereClient::UpdateCrl(const UpdateCrlRequest& request)
 
 UpdateCrlOutcomeCallable RolesAnywhereClient::UpdateCrlCallable(const UpdateCrlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCrl(request); } );
+  std::shared_ptr<UpdateCrlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCrlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateCrl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::UpdateCrlAsync(const UpdateCrlRequest& request, const UpdateCrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateCrlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateCrl(request), context);
+      handler(this, *pRequest, UpdateCrl(*pRequest), context);
     } );
 }
 
@@ -887,17 +911,18 @@ UpdateProfileOutcome RolesAnywhereClient::UpdateProfile(const UpdateProfileReque
 
 UpdateProfileOutcomeCallable RolesAnywhereClient::UpdateProfileCallable(const UpdateProfileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProfile(request); } );
+  std::shared_ptr<UpdateProfileRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateProfileOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateProfile(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::UpdateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateProfileRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateProfile(request), context);
+      handler(this, *pRequest, UpdateProfile(*pRequest), context);
     } );
 }
 
@@ -918,17 +943,18 @@ UpdateTrustAnchorOutcome RolesAnywhereClient::UpdateTrustAnchor(const UpdateTrus
 
 UpdateTrustAnchorOutcomeCallable RolesAnywhereClient::UpdateTrustAnchorCallable(const UpdateTrustAnchorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTrustAnchor(request); } );
+  std::shared_ptr<UpdateTrustAnchorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTrustAnchorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateTrustAnchor(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void RolesAnywhereClient::UpdateTrustAnchorAsync(const UpdateTrustAnchorRequest& request, const UpdateTrustAnchorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateTrustAnchorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateTrustAnchor(request), context);
+      handler(this, *pRequest, UpdateTrustAnchor(*pRequest), context);
     } );
 }
 

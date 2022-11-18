@@ -214,17 +214,18 @@ CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& 
 
 CancelQueryOutcomeCallable TimestreamQueryClient::CancelQueryCallable(const CancelQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelQuery(request); } );
+  std::shared_ptr<CancelQueryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CancelQueryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CancelQuery(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::CancelQueryAsync(const CancelQueryRequest& request, const CancelQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CancelQueryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CancelQuery(request), context);
+      handler(this, *pRequest, CancelQuery(*pRequest), context);
     } );
 }
 
@@ -279,17 +280,18 @@ CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const Cr
 
 CreateScheduledQueryOutcomeCallable TimestreamQueryClient::CreateScheduledQueryCallable(const CreateScheduledQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateScheduledQuery(request); } );
+  std::shared_ptr<CreateScheduledQueryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateScheduledQuery(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::CreateScheduledQueryAsync(const CreateScheduledQueryRequest& request, const CreateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateScheduledQueryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateScheduledQuery(request), context);
+      handler(this, *pRequest, CreateScheduledQuery(*pRequest), context);
     } );
 }
 
@@ -344,17 +346,18 @@ DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const De
 
 DeleteScheduledQueryOutcomeCallable TimestreamQueryClient::DeleteScheduledQueryCallable(const DeleteScheduledQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteScheduledQuery(request); } );
+  std::shared_ptr<DeleteScheduledQueryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteScheduledQuery(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::DeleteScheduledQueryAsync(const DeleteScheduledQueryRequest& request, const DeleteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteScheduledQueryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteScheduledQuery(request), context);
+      handler(this, *pRequest, DeleteScheduledQuery(*pRequest), context);
     } );
 }
 
@@ -368,17 +371,18 @@ DescribeEndpointsOutcome TimestreamQueryClient::DescribeEndpoints(const Describe
 
 DescribeEndpointsOutcomeCallable TimestreamQueryClient::DescribeEndpointsCallable(const DescribeEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpoints(request); } );
+  std::shared_ptr<DescribeEndpointsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeEndpoints(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeEndpointsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeEndpoints(request), context);
+      handler(this, *pRequest, DescribeEndpoints(*pRequest), context);
     } );
 }
 
@@ -433,17 +437,18 @@ DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(cons
 
 DescribeScheduledQueryOutcomeCallable TimestreamQueryClient::DescribeScheduledQueryCallable(const DescribeScheduledQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeScheduledQuery(request); } );
+  std::shared_ptr<DescribeScheduledQueryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeScheduledQuery(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::DescribeScheduledQueryAsync(const DescribeScheduledQueryRequest& request, const DescribeScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeScheduledQueryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeScheduledQuery(request), context);
+      handler(this, *pRequest, DescribeScheduledQuery(*pRequest), context);
     } );
 }
 
@@ -498,17 +503,18 @@ ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const 
 
 ExecuteScheduledQueryOutcomeCallable TimestreamQueryClient::ExecuteScheduledQueryCallable(const ExecuteScheduledQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExecuteScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteScheduledQuery(request); } );
+  std::shared_ptr<ExecuteScheduledQueryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ExecuteScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ExecuteScheduledQuery(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::ExecuteScheduledQueryAsync(const ExecuteScheduledQueryRequest& request, const ExecuteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ExecuteScheduledQueryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ExecuteScheduledQuery(request), context);
+      handler(this, *pRequest, ExecuteScheduledQuery(*pRequest), context);
     } );
 }
 
@@ -563,17 +569,18 @@ ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const Li
 
 ListScheduledQueriesOutcomeCallable TimestreamQueryClient::ListScheduledQueriesCallable(const ListScheduledQueriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListScheduledQueriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListScheduledQueries(request); } );
+  std::shared_ptr<ListScheduledQueriesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListScheduledQueriesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListScheduledQueries(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::ListScheduledQueriesAsync(const ListScheduledQueriesRequest& request, const ListScheduledQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListScheduledQueriesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListScheduledQueries(request), context);
+      handler(this, *pRequest, ListScheduledQueries(*pRequest), context);
     } );
 }
 
@@ -628,17 +635,18 @@ ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const List
 
 ListTagsForResourceOutcomeCallable TimestreamQueryClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -693,17 +701,18 @@ PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryReques
 
 PrepareQueryOutcomeCallable TimestreamQueryClient::PrepareQueryCallable(const PrepareQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PrepareQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PrepareQuery(request); } );
+  std::shared_ptr<PrepareQueryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PrepareQueryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PrepareQuery(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::PrepareQueryAsync(const PrepareQueryRequest& request, const PrepareQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PrepareQueryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PrepareQuery(request), context);
+      handler(this, *pRequest, PrepareQuery(*pRequest), context);
     } );
 }
 
@@ -758,17 +767,18 @@ QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
 
 QueryOutcomeCallable TimestreamQueryClient::QueryCallable(const QueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Query(request); } );
+  std::shared_ptr<QueryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< QueryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->Query(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::QueryAsync(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<QueryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, Query(request), context);
+      handler(this, *pRequest, Query(*pRequest), context);
     } );
 }
 
@@ -823,17 +833,18 @@ TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& 
 
 TagResourceOutcomeCallable TimestreamQueryClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -888,17 +899,18 @@ UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceReq
 
 UntagResourceOutcomeCallable TimestreamQueryClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -953,17 +965,18 @@ UpdateScheduledQueryOutcome TimestreamQueryClient::UpdateScheduledQuery(const Up
 
 UpdateScheduledQueryOutcomeCallable TimestreamQueryClient::UpdateScheduledQueryCallable(const UpdateScheduledQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateScheduledQuery(request); } );
+  std::shared_ptr<UpdateScheduledQueryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateScheduledQueryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateScheduledQuery(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void TimestreamQueryClient::UpdateScheduledQueryAsync(const UpdateScheduledQueryRequest& request, const UpdateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateScheduledQueryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateScheduledQuery(request), context);
+      handler(this, *pRequest, UpdateScheduledQuery(*pRequest), context);
     } );
 }
 

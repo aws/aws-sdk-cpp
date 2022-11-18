@@ -166,17 +166,18 @@ AssociateMemberAccountOutcome MacieClient::AssociateMemberAccount(const Associat
 
 AssociateMemberAccountOutcomeCallable MacieClient::AssociateMemberAccountCallable(const AssociateMemberAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateMemberAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateMemberAccount(request); } );
+  std::shared_ptr<AssociateMemberAccountRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateMemberAccountOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateMemberAccount(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MacieClient::AssociateMemberAccountAsync(const AssociateMemberAccountRequest& request, const AssociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateMemberAccountRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateMemberAccount(request), context);
+      handler(this, *pRequest, AssociateMemberAccount(*pRequest), context);
     } );
 }
 
@@ -190,17 +191,18 @@ AssociateS3ResourcesOutcome MacieClient::AssociateS3Resources(const AssociateS3R
 
 AssociateS3ResourcesOutcomeCallable MacieClient::AssociateS3ResourcesCallable(const AssociateS3ResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateS3ResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateS3Resources(request); } );
+  std::shared_ptr<AssociateS3ResourcesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateS3ResourcesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateS3Resources(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MacieClient::AssociateS3ResourcesAsync(const AssociateS3ResourcesRequest& request, const AssociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateS3ResourcesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateS3Resources(request), context);
+      handler(this, *pRequest, AssociateS3Resources(*pRequest), context);
     } );
 }
 
@@ -214,17 +216,18 @@ DisassociateMemberAccountOutcome MacieClient::DisassociateMemberAccount(const Di
 
 DisassociateMemberAccountOutcomeCallable MacieClient::DisassociateMemberAccountCallable(const DisassociateMemberAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateMemberAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateMemberAccount(request); } );
+  std::shared_ptr<DisassociateMemberAccountRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateMemberAccountOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateMemberAccount(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MacieClient::DisassociateMemberAccountAsync(const DisassociateMemberAccountRequest& request, const DisassociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateMemberAccountRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateMemberAccount(request), context);
+      handler(this, *pRequest, DisassociateMemberAccount(*pRequest), context);
     } );
 }
 
@@ -238,17 +241,18 @@ DisassociateS3ResourcesOutcome MacieClient::DisassociateS3Resources(const Disass
 
 DisassociateS3ResourcesOutcomeCallable MacieClient::DisassociateS3ResourcesCallable(const DisassociateS3ResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateS3ResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateS3Resources(request); } );
+  std::shared_ptr<DisassociateS3ResourcesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateS3ResourcesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateS3Resources(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MacieClient::DisassociateS3ResourcesAsync(const DisassociateS3ResourcesRequest& request, const DisassociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateS3ResourcesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateS3Resources(request), context);
+      handler(this, *pRequest, DisassociateS3Resources(*pRequest), context);
     } );
 }
 
@@ -262,17 +266,18 @@ ListMemberAccountsOutcome MacieClient::ListMemberAccounts(const ListMemberAccoun
 
 ListMemberAccountsOutcomeCallable MacieClient::ListMemberAccountsCallable(const ListMemberAccountsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMemberAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMemberAccounts(request); } );
+  std::shared_ptr<ListMemberAccountsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListMemberAccountsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListMemberAccounts(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MacieClient::ListMemberAccountsAsync(const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListMemberAccountsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListMemberAccounts(request), context);
+      handler(this, *pRequest, ListMemberAccounts(*pRequest), context);
     } );
 }
 
@@ -286,17 +291,18 @@ ListS3ResourcesOutcome MacieClient::ListS3Resources(const ListS3ResourcesRequest
 
 ListS3ResourcesOutcomeCallable MacieClient::ListS3ResourcesCallable(const ListS3ResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListS3ResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListS3Resources(request); } );
+  std::shared_ptr<ListS3ResourcesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListS3ResourcesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListS3Resources(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MacieClient::ListS3ResourcesAsync(const ListS3ResourcesRequest& request, const ListS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListS3ResourcesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListS3Resources(request), context);
+      handler(this, *pRequest, ListS3Resources(*pRequest), context);
     } );
 }
 
@@ -310,17 +316,18 @@ UpdateS3ResourcesOutcome MacieClient::UpdateS3Resources(const UpdateS3ResourcesR
 
 UpdateS3ResourcesOutcomeCallable MacieClient::UpdateS3ResourcesCallable(const UpdateS3ResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateS3ResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateS3Resources(request); } );
+  std::shared_ptr<UpdateS3ResourcesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateS3ResourcesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateS3Resources(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MacieClient::UpdateS3ResourcesAsync(const UpdateS3ResourcesRequest& request, const UpdateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateS3ResourcesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateS3Resources(request), context);
+      handler(this, *pRequest, UpdateS3Resources(*pRequest), context);
     } );
 }
 

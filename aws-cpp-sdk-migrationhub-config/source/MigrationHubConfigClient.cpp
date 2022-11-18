@@ -162,17 +162,18 @@ CreateHomeRegionControlOutcome MigrationHubConfigClient::CreateHomeRegionControl
 
 CreateHomeRegionControlOutcomeCallable MigrationHubConfigClient::CreateHomeRegionControlCallable(const CreateHomeRegionControlRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateHomeRegionControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHomeRegionControl(request); } );
+  std::shared_ptr<CreateHomeRegionControlRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateHomeRegionControlOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateHomeRegionControl(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubConfigClient::CreateHomeRegionControlAsync(const CreateHomeRegionControlRequest& request, const CreateHomeRegionControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateHomeRegionControlRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateHomeRegionControl(request), context);
+      handler(this, *pRequest, CreateHomeRegionControl(*pRequest), context);
     } );
 }
 
@@ -186,17 +187,18 @@ DescribeHomeRegionControlsOutcome MigrationHubConfigClient::DescribeHomeRegionCo
 
 DescribeHomeRegionControlsOutcomeCallable MigrationHubConfigClient::DescribeHomeRegionControlsCallable(const DescribeHomeRegionControlsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeHomeRegionControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHomeRegionControls(request); } );
+  std::shared_ptr<DescribeHomeRegionControlsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeHomeRegionControlsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeHomeRegionControls(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubConfigClient::DescribeHomeRegionControlsAsync(const DescribeHomeRegionControlsRequest& request, const DescribeHomeRegionControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeHomeRegionControlsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeHomeRegionControls(request), context);
+      handler(this, *pRequest, DescribeHomeRegionControls(*pRequest), context);
     } );
 }
 
@@ -210,17 +212,18 @@ GetHomeRegionOutcome MigrationHubConfigClient::GetHomeRegion(const GetHomeRegion
 
 GetHomeRegionOutcomeCallable MigrationHubConfigClient::GetHomeRegionCallable(const GetHomeRegionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetHomeRegionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHomeRegion(request); } );
+  std::shared_ptr<GetHomeRegionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetHomeRegionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetHomeRegion(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubConfigClient::GetHomeRegionAsync(const GetHomeRegionRequest& request, const GetHomeRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetHomeRegionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetHomeRegion(request), context);
+      handler(this, *pRequest, GetHomeRegion(*pRequest), context);
     } );
 }
 

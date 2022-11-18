@@ -191,17 +191,18 @@ CreateAssistantOutcome ConnectWisdomServiceClient::CreateAssistant(const CreateA
 
 CreateAssistantOutcomeCallable ConnectWisdomServiceClient::CreateAssistantCallable(const CreateAssistantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAssistantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAssistant(request); } );
+  std::shared_ptr<CreateAssistantRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateAssistantOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateAssistant(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::CreateAssistantAsync(const CreateAssistantRequest& request, const CreateAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateAssistantRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateAssistant(request), context);
+      handler(this, *pRequest, CreateAssistant(*pRequest), context);
     } );
 }
 
@@ -223,17 +224,18 @@ CreateAssistantAssociationOutcome ConnectWisdomServiceClient::CreateAssistantAss
 
 CreateAssistantAssociationOutcomeCallable ConnectWisdomServiceClient::CreateAssistantAssociationCallable(const CreateAssistantAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAssistantAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAssistantAssociation(request); } );
+  std::shared_ptr<CreateAssistantAssociationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateAssistantAssociationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateAssistantAssociation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::CreateAssistantAssociationAsync(const CreateAssistantAssociationRequest& request, const CreateAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateAssistantAssociationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateAssistantAssociation(request), context);
+      handler(this, *pRequest, CreateAssistantAssociation(*pRequest), context);
     } );
 }
 
@@ -255,17 +257,18 @@ CreateContentOutcome ConnectWisdomServiceClient::CreateContent(const CreateConte
 
 CreateContentOutcomeCallable ConnectWisdomServiceClient::CreateContentCallable(const CreateContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContent(request); } );
+  std::shared_ptr<CreateContentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateContentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateContent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::CreateContentAsync(const CreateContentRequest& request, const CreateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateContentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateContent(request), context);
+      handler(this, *pRequest, CreateContent(*pRequest), context);
     } );
 }
 
@@ -280,17 +283,18 @@ CreateKnowledgeBaseOutcome ConnectWisdomServiceClient::CreateKnowledgeBase(const
 
 CreateKnowledgeBaseOutcomeCallable ConnectWisdomServiceClient::CreateKnowledgeBaseCallable(const CreateKnowledgeBaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateKnowledgeBaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateKnowledgeBase(request); } );
+  std::shared_ptr<CreateKnowledgeBaseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateKnowledgeBaseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateKnowledgeBase(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::CreateKnowledgeBaseAsync(const CreateKnowledgeBaseRequest& request, const CreateKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateKnowledgeBaseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateKnowledgeBase(request), context);
+      handler(this, *pRequest, CreateKnowledgeBase(*pRequest), context);
     } );
 }
 
@@ -312,17 +316,18 @@ CreateSessionOutcome ConnectWisdomServiceClient::CreateSession(const CreateSessi
 
 CreateSessionOutcomeCallable ConnectWisdomServiceClient::CreateSessionCallable(const CreateSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSession(request); } );
+  std::shared_ptr<CreateSessionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateSessionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateSession(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateSessionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateSession(request), context);
+      handler(this, *pRequest, CreateSession(*pRequest), context);
     } );
 }
 
@@ -343,17 +348,18 @@ DeleteAssistantOutcome ConnectWisdomServiceClient::DeleteAssistant(const DeleteA
 
 DeleteAssistantOutcomeCallable ConnectWisdomServiceClient::DeleteAssistantCallable(const DeleteAssistantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAssistantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssistant(request); } );
+  std::shared_ptr<DeleteAssistantRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAssistantOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAssistant(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::DeleteAssistantAsync(const DeleteAssistantRequest& request, const DeleteAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAssistantRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAssistant(request), context);
+      handler(this, *pRequest, DeleteAssistant(*pRequest), context);
     } );
 }
 
@@ -381,17 +387,18 @@ DeleteAssistantAssociationOutcome ConnectWisdomServiceClient::DeleteAssistantAss
 
 DeleteAssistantAssociationOutcomeCallable ConnectWisdomServiceClient::DeleteAssistantAssociationCallable(const DeleteAssistantAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAssistantAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssistantAssociation(request); } );
+  std::shared_ptr<DeleteAssistantAssociationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAssistantAssociationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAssistantAssociation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::DeleteAssistantAssociationAsync(const DeleteAssistantAssociationRequest& request, const DeleteAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAssistantAssociationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAssistantAssociation(request), context);
+      handler(this, *pRequest, DeleteAssistantAssociation(*pRequest), context);
     } );
 }
 
@@ -419,17 +426,18 @@ DeleteContentOutcome ConnectWisdomServiceClient::DeleteContent(const DeleteConte
 
 DeleteContentOutcomeCallable ConnectWisdomServiceClient::DeleteContentCallable(const DeleteContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContent(request); } );
+  std::shared_ptr<DeleteContentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteContentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteContent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::DeleteContentAsync(const DeleteContentRequest& request, const DeleteContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteContentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteContent(request), context);
+      handler(this, *pRequest, DeleteContent(*pRequest), context);
     } );
 }
 
@@ -450,17 +458,18 @@ DeleteKnowledgeBaseOutcome ConnectWisdomServiceClient::DeleteKnowledgeBase(const
 
 DeleteKnowledgeBaseOutcomeCallable ConnectWisdomServiceClient::DeleteKnowledgeBaseCallable(const DeleteKnowledgeBaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteKnowledgeBaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteKnowledgeBase(request); } );
+  std::shared_ptr<DeleteKnowledgeBaseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteKnowledgeBaseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteKnowledgeBase(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::DeleteKnowledgeBaseAsync(const DeleteKnowledgeBaseRequest& request, const DeleteKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteKnowledgeBaseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteKnowledgeBase(request), context);
+      handler(this, *pRequest, DeleteKnowledgeBase(*pRequest), context);
     } );
 }
 
@@ -481,17 +490,18 @@ GetAssistantOutcome ConnectWisdomServiceClient::GetAssistant(const GetAssistantR
 
 GetAssistantOutcomeCallable ConnectWisdomServiceClient::GetAssistantCallable(const GetAssistantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAssistantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssistant(request); } );
+  std::shared_ptr<GetAssistantRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAssistantOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAssistant(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::GetAssistantAsync(const GetAssistantRequest& request, const GetAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAssistantRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAssistant(request), context);
+      handler(this, *pRequest, GetAssistant(*pRequest), context);
     } );
 }
 
@@ -519,17 +529,18 @@ GetAssistantAssociationOutcome ConnectWisdomServiceClient::GetAssistantAssociati
 
 GetAssistantAssociationOutcomeCallable ConnectWisdomServiceClient::GetAssistantAssociationCallable(const GetAssistantAssociationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAssistantAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssistantAssociation(request); } );
+  std::shared_ptr<GetAssistantAssociationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAssistantAssociationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAssistantAssociation(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::GetAssistantAssociationAsync(const GetAssistantAssociationRequest& request, const GetAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAssistantAssociationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAssistantAssociation(request), context);
+      handler(this, *pRequest, GetAssistantAssociation(*pRequest), context);
     } );
 }
 
@@ -557,17 +568,18 @@ GetContentOutcome ConnectWisdomServiceClient::GetContent(const GetContentRequest
 
 GetContentOutcomeCallable ConnectWisdomServiceClient::GetContentCallable(const GetContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContent(request); } );
+  std::shared_ptr<GetContentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetContentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetContent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::GetContentAsync(const GetContentRequest& request, const GetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetContentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetContent(request), context);
+      handler(this, *pRequest, GetContent(*pRequest), context);
     } );
 }
 
@@ -596,17 +608,18 @@ GetContentSummaryOutcome ConnectWisdomServiceClient::GetContentSummary(const Get
 
 GetContentSummaryOutcomeCallable ConnectWisdomServiceClient::GetContentSummaryCallable(const GetContentSummaryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetContentSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContentSummary(request); } );
+  std::shared_ptr<GetContentSummaryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetContentSummaryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetContentSummary(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::GetContentSummaryAsync(const GetContentSummaryRequest& request, const GetContentSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetContentSummaryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetContentSummary(request), context);
+      handler(this, *pRequest, GetContentSummary(*pRequest), context);
     } );
 }
 
@@ -627,17 +640,18 @@ GetKnowledgeBaseOutcome ConnectWisdomServiceClient::GetKnowledgeBase(const GetKn
 
 GetKnowledgeBaseOutcomeCallable ConnectWisdomServiceClient::GetKnowledgeBaseCallable(const GetKnowledgeBaseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetKnowledgeBaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetKnowledgeBase(request); } );
+  std::shared_ptr<GetKnowledgeBaseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetKnowledgeBaseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetKnowledgeBase(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::GetKnowledgeBaseAsync(const GetKnowledgeBaseRequest& request, const GetKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetKnowledgeBaseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetKnowledgeBase(request), context);
+      handler(this, *pRequest, GetKnowledgeBase(*pRequest), context);
     } );
 }
 
@@ -666,17 +680,18 @@ GetRecommendationsOutcome ConnectWisdomServiceClient::GetRecommendations(const G
 
 GetRecommendationsOutcomeCallable ConnectWisdomServiceClient::GetRecommendationsCallable(const GetRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecommendations(request); } );
+  std::shared_ptr<GetRecommendationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRecommendationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRecommendations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::GetRecommendationsAsync(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRecommendationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRecommendations(request), context);
+      handler(this, *pRequest, GetRecommendations(*pRequest), context);
     } );
 }
 
@@ -704,17 +719,18 @@ GetSessionOutcome ConnectWisdomServiceClient::GetSession(const GetSessionRequest
 
 GetSessionOutcomeCallable ConnectWisdomServiceClient::GetSessionCallable(const GetSessionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSession(request); } );
+  std::shared_ptr<GetSessionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSessionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSession(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSessionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSession(request), context);
+      handler(this, *pRequest, GetSession(*pRequest), context);
     } );
 }
 
@@ -736,17 +752,18 @@ ListAssistantAssociationsOutcome ConnectWisdomServiceClient::ListAssistantAssoci
 
 ListAssistantAssociationsOutcomeCallable ConnectWisdomServiceClient::ListAssistantAssociationsCallable(const ListAssistantAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssistantAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssistantAssociations(request); } );
+  std::shared_ptr<ListAssistantAssociationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAssistantAssociationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAssistantAssociations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::ListAssistantAssociationsAsync(const ListAssistantAssociationsRequest& request, const ListAssistantAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAssistantAssociationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAssistantAssociations(request), context);
+      handler(this, *pRequest, ListAssistantAssociations(*pRequest), context);
     } );
 }
 
@@ -761,17 +778,18 @@ ListAssistantsOutcome ConnectWisdomServiceClient::ListAssistants(const ListAssis
 
 ListAssistantsOutcomeCallable ConnectWisdomServiceClient::ListAssistantsCallable(const ListAssistantsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssistantsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssistants(request); } );
+  std::shared_ptr<ListAssistantsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAssistantsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAssistants(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::ListAssistantsAsync(const ListAssistantsRequest& request, const ListAssistantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAssistantsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAssistants(request), context);
+      handler(this, *pRequest, ListAssistants(*pRequest), context);
     } );
 }
 
@@ -793,17 +811,18 @@ ListContentsOutcome ConnectWisdomServiceClient::ListContents(const ListContentsR
 
 ListContentsOutcomeCallable ConnectWisdomServiceClient::ListContentsCallable(const ListContentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListContentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContents(request); } );
+  std::shared_ptr<ListContentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListContentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListContents(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::ListContentsAsync(const ListContentsRequest& request, const ListContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListContentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListContents(request), context);
+      handler(this, *pRequest, ListContents(*pRequest), context);
     } );
 }
 
@@ -818,17 +837,18 @@ ListKnowledgeBasesOutcome ConnectWisdomServiceClient::ListKnowledgeBases(const L
 
 ListKnowledgeBasesOutcomeCallable ConnectWisdomServiceClient::ListKnowledgeBasesCallable(const ListKnowledgeBasesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListKnowledgeBasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListKnowledgeBases(request); } );
+  std::shared_ptr<ListKnowledgeBasesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListKnowledgeBasesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListKnowledgeBases(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::ListKnowledgeBasesAsync(const ListKnowledgeBasesRequest& request, const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListKnowledgeBasesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListKnowledgeBases(request), context);
+      handler(this, *pRequest, ListKnowledgeBases(*pRequest), context);
     } );
 }
 
@@ -849,17 +869,18 @@ ListTagsForResourceOutcome ConnectWisdomServiceClient::ListTagsForResource(const
 
 ListTagsForResourceOutcomeCallable ConnectWisdomServiceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -888,17 +909,18 @@ NotifyRecommendationsReceivedOutcome ConnectWisdomServiceClient::NotifyRecommend
 
 NotifyRecommendationsReceivedOutcomeCallable ConnectWisdomServiceClient::NotifyRecommendationsReceivedCallable(const NotifyRecommendationsReceivedRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< NotifyRecommendationsReceivedOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->NotifyRecommendationsReceived(request); } );
+  std::shared_ptr<NotifyRecommendationsReceivedRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< NotifyRecommendationsReceivedOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->NotifyRecommendationsReceived(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::NotifyRecommendationsReceivedAsync(const NotifyRecommendationsReceivedRequest& request, const NotifyRecommendationsReceivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<NotifyRecommendationsReceivedRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, NotifyRecommendationsReceived(request), context);
+      handler(this, *pRequest, NotifyRecommendationsReceived(*pRequest), context);
     } );
 }
 
@@ -920,17 +942,18 @@ QueryAssistantOutcome ConnectWisdomServiceClient::QueryAssistant(const QueryAssi
 
 QueryAssistantOutcomeCallable ConnectWisdomServiceClient::QueryAssistantCallable(const QueryAssistantRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryAssistantOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QueryAssistant(request); } );
+  std::shared_ptr<QueryAssistantRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< QueryAssistantOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->QueryAssistant(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::QueryAssistantAsync(const QueryAssistantRequest& request, const QueryAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<QueryAssistantRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, QueryAssistant(request), context);
+      handler(this, *pRequest, QueryAssistant(*pRequest), context);
     } );
 }
 
@@ -952,17 +975,18 @@ RemoveKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::RemoveKnowledg
 
 RemoveKnowledgeBaseTemplateUriOutcomeCallable ConnectWisdomServiceClient::RemoveKnowledgeBaseTemplateUriCallable(const RemoveKnowledgeBaseTemplateUriRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveKnowledgeBaseTemplateUriOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveKnowledgeBaseTemplateUri(request); } );
+  std::shared_ptr<RemoveKnowledgeBaseTemplateUriRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RemoveKnowledgeBaseTemplateUriOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RemoveKnowledgeBaseTemplateUri(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::RemoveKnowledgeBaseTemplateUriAsync(const RemoveKnowledgeBaseTemplateUriRequest& request, const RemoveKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RemoveKnowledgeBaseTemplateUriRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RemoveKnowledgeBaseTemplateUri(request), context);
+      handler(this, *pRequest, RemoveKnowledgeBaseTemplateUri(*pRequest), context);
     } );
 }
 
@@ -984,17 +1008,18 @@ SearchContentOutcome ConnectWisdomServiceClient::SearchContent(const SearchConte
 
 SearchContentOutcomeCallable ConnectWisdomServiceClient::SearchContentCallable(const SearchContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchContent(request); } );
+  std::shared_ptr<SearchContentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SearchContentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SearchContent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::SearchContentAsync(const SearchContentRequest& request, const SearchContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SearchContentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SearchContent(request), context);
+      handler(this, *pRequest, SearchContent(*pRequest), context);
     } );
 }
 
@@ -1016,17 +1041,18 @@ SearchSessionsOutcome ConnectWisdomServiceClient::SearchSessions(const SearchSes
 
 SearchSessionsOutcomeCallable ConnectWisdomServiceClient::SearchSessionsCallable(const SearchSessionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SearchSessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchSessions(request); } );
+  std::shared_ptr<SearchSessionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SearchSessionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SearchSessions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::SearchSessionsAsync(const SearchSessionsRequest& request, const SearchSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SearchSessionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SearchSessions(request), context);
+      handler(this, *pRequest, SearchSessions(*pRequest), context);
     } );
 }
 
@@ -1048,17 +1074,18 @@ StartContentUploadOutcome ConnectWisdomServiceClient::StartContentUpload(const S
 
 StartContentUploadOutcomeCallable ConnectWisdomServiceClient::StartContentUploadCallable(const StartContentUploadRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartContentUploadOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartContentUpload(request); } );
+  std::shared_ptr<StartContentUploadRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartContentUploadOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartContentUpload(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::StartContentUploadAsync(const StartContentUploadRequest& request, const StartContentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartContentUploadRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartContentUpload(request), context);
+      handler(this, *pRequest, StartContentUpload(*pRequest), context);
     } );
 }
 
@@ -1079,17 +1106,18 @@ TagResourceOutcome ConnectWisdomServiceClient::TagResource(const TagResourceRequ
 
 TagResourceOutcomeCallable ConnectWisdomServiceClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -1115,17 +1143,18 @@ UntagResourceOutcome ConnectWisdomServiceClient::UntagResource(const UntagResour
 
 UntagResourceOutcomeCallable ConnectWisdomServiceClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -1153,17 +1182,18 @@ UpdateContentOutcome ConnectWisdomServiceClient::UpdateContent(const UpdateConte
 
 UpdateContentOutcomeCallable ConnectWisdomServiceClient::UpdateContentCallable(const UpdateContentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContent(request); } );
+  std::shared_ptr<UpdateContentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateContentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateContent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::UpdateContentAsync(const UpdateContentRequest& request, const UpdateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateContentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateContent(request), context);
+      handler(this, *pRequest, UpdateContent(*pRequest), context);
     } );
 }
 
@@ -1185,17 +1215,18 @@ UpdateKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::UpdateKnowledg
 
 UpdateKnowledgeBaseTemplateUriOutcomeCallable ConnectWisdomServiceClient::UpdateKnowledgeBaseTemplateUriCallable(const UpdateKnowledgeBaseTemplateUriRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateKnowledgeBaseTemplateUriOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateKnowledgeBaseTemplateUri(request); } );
+  std::shared_ptr<UpdateKnowledgeBaseTemplateUriRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateKnowledgeBaseTemplateUriOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateKnowledgeBaseTemplateUri(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ConnectWisdomServiceClient::UpdateKnowledgeBaseTemplateUriAsync(const UpdateKnowledgeBaseTemplateUriRequest& request, const UpdateKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateKnowledgeBaseTemplateUriRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateKnowledgeBaseTemplateUri(request), context);
+      handler(this, *pRequest, UpdateKnowledgeBaseTemplateUri(*pRequest), context);
     } );
 }
 

@@ -232,17 +232,18 @@ CreateApiOutcome ApiGatewayV2Client::CreateApi(const CreateApiRequest& request) 
 
 CreateApiOutcomeCallable ApiGatewayV2Client::CreateApiCallable(const CreateApiRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApi(request); } );
+  std::shared_ptr<CreateApiRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateApiOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateApi(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateApiAsync(const CreateApiRequest& request, const CreateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateApiRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateApi(request), context);
+      handler(this, *pRequest, CreateApi(*pRequest), context);
     } );
 }
 
@@ -264,17 +265,18 @@ CreateApiMappingOutcome ApiGatewayV2Client::CreateApiMapping(const CreateApiMapp
 
 CreateApiMappingOutcomeCallable ApiGatewayV2Client::CreateApiMappingCallable(const CreateApiMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateApiMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApiMapping(request); } );
+  std::shared_ptr<CreateApiMappingRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateApiMappingOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateApiMapping(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateApiMappingAsync(const CreateApiMappingRequest& request, const CreateApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateApiMappingRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateApiMapping(request), context);
+      handler(this, *pRequest, CreateApiMapping(*pRequest), context);
     } );
 }
 
@@ -296,17 +298,18 @@ CreateAuthorizerOutcome ApiGatewayV2Client::CreateAuthorizer(const CreateAuthori
 
 CreateAuthorizerOutcomeCallable ApiGatewayV2Client::CreateAuthorizerCallable(const CreateAuthorizerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAuthorizer(request); } );
+  std::shared_ptr<CreateAuthorizerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateAuthorizerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateAuthorizer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateAuthorizerAsync(const CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateAuthorizerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateAuthorizer(request), context);
+      handler(this, *pRequest, CreateAuthorizer(*pRequest), context);
     } );
 }
 
@@ -328,17 +331,18 @@ CreateDeploymentOutcome ApiGatewayV2Client::CreateDeployment(const CreateDeploym
 
 CreateDeploymentOutcomeCallable ApiGatewayV2Client::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDeployment(request); } );
+  std::shared_ptr<CreateDeploymentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDeployment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDeploymentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDeployment(request), context);
+      handler(this, *pRequest, CreateDeployment(*pRequest), context);
     } );
 }
 
@@ -353,17 +357,18 @@ CreateDomainNameOutcome ApiGatewayV2Client::CreateDomainName(const CreateDomainN
 
 CreateDomainNameOutcomeCallable ApiGatewayV2Client::CreateDomainNameCallable(const CreateDomainNameRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDomainName(request); } );
+  std::shared_ptr<CreateDomainNameRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDomainNameOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDomainName(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateDomainNameAsync(const CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDomainNameRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDomainName(request), context);
+      handler(this, *pRequest, CreateDomainName(*pRequest), context);
     } );
 }
 
@@ -385,17 +390,18 @@ CreateIntegrationOutcome ApiGatewayV2Client::CreateIntegration(const CreateInteg
 
 CreateIntegrationOutcomeCallable ApiGatewayV2Client::CreateIntegrationCallable(const CreateIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateIntegration(request); } );
+  std::shared_ptr<CreateIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateIntegrationAsync(const CreateIntegrationRequest& request, const CreateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateIntegration(request), context);
+      handler(this, *pRequest, CreateIntegration(*pRequest), context);
     } );
 }
 
@@ -424,17 +430,18 @@ CreateIntegrationResponseOutcome ApiGatewayV2Client::CreateIntegrationResponse(c
 
 CreateIntegrationResponseOutcomeCallable ApiGatewayV2Client::CreateIntegrationResponseCallable(const CreateIntegrationResponseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateIntegrationResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateIntegrationResponse(request); } );
+  std::shared_ptr<CreateIntegrationResponseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateIntegrationResponseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateIntegrationResponse(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateIntegrationResponseAsync(const CreateIntegrationResponseRequest& request, const CreateIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateIntegrationResponseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateIntegrationResponse(request), context);
+      handler(this, *pRequest, CreateIntegrationResponse(*pRequest), context);
     } );
 }
 
@@ -456,17 +463,18 @@ CreateModelOutcome ApiGatewayV2Client::CreateModel(const CreateModelRequest& req
 
 CreateModelOutcomeCallable ApiGatewayV2Client::CreateModelCallable(const CreateModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModel(request); } );
+  std::shared_ptr<CreateModelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateModelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateModel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateModelAsync(const CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateModelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateModel(request), context);
+      handler(this, *pRequest, CreateModel(*pRequest), context);
     } );
 }
 
@@ -488,17 +496,18 @@ CreateRouteOutcome ApiGatewayV2Client::CreateRoute(const CreateRouteRequest& req
 
 CreateRouteOutcomeCallable ApiGatewayV2Client::CreateRouteCallable(const CreateRouteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRoute(request); } );
+  std::shared_ptr<CreateRouteRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateRouteOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateRoute(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateRouteAsync(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateRouteRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateRoute(request), context);
+      handler(this, *pRequest, CreateRoute(*pRequest), context);
     } );
 }
 
@@ -527,17 +536,18 @@ CreateRouteResponseOutcome ApiGatewayV2Client::CreateRouteResponse(const CreateR
 
 CreateRouteResponseOutcomeCallable ApiGatewayV2Client::CreateRouteResponseCallable(const CreateRouteResponseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRouteResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRouteResponse(request); } );
+  std::shared_ptr<CreateRouteResponseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateRouteResponseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateRouteResponse(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateRouteResponseAsync(const CreateRouteResponseRequest& request, const CreateRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateRouteResponseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateRouteResponse(request), context);
+      handler(this, *pRequest, CreateRouteResponse(*pRequest), context);
     } );
 }
 
@@ -559,17 +569,18 @@ CreateStageOutcome ApiGatewayV2Client::CreateStage(const CreateStageRequest& req
 
 CreateStageOutcomeCallable ApiGatewayV2Client::CreateStageCallable(const CreateStageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStage(request); } );
+  std::shared_ptr<CreateStageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateStageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateStage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateStageAsync(const CreateStageRequest& request, const CreateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateStageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateStage(request), context);
+      handler(this, *pRequest, CreateStage(*pRequest), context);
     } );
 }
 
@@ -584,17 +595,18 @@ CreateVpcLinkOutcome ApiGatewayV2Client::CreateVpcLink(const CreateVpcLinkReques
 
 CreateVpcLinkOutcomeCallable ApiGatewayV2Client::CreateVpcLinkCallable(const CreateVpcLinkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateVpcLinkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVpcLink(request); } );
+  std::shared_ptr<CreateVpcLinkRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateVpcLinkOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateVpcLink(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::CreateVpcLinkAsync(const CreateVpcLinkRequest& request, const CreateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateVpcLinkRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateVpcLink(request), context);
+      handler(this, *pRequest, CreateVpcLink(*pRequest), context);
     } );
 }
 
@@ -623,17 +635,18 @@ DeleteAccessLogSettingsOutcome ApiGatewayV2Client::DeleteAccessLogSettings(const
 
 DeleteAccessLogSettingsOutcomeCallable ApiGatewayV2Client::DeleteAccessLogSettingsCallable(const DeleteAccessLogSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessLogSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessLogSettings(request); } );
+  std::shared_ptr<DeleteAccessLogSettingsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessLogSettingsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAccessLogSettings(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteAccessLogSettingsAsync(const DeleteAccessLogSettingsRequest& request, const DeleteAccessLogSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAccessLogSettingsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAccessLogSettings(request), context);
+      handler(this, *pRequest, DeleteAccessLogSettings(*pRequest), context);
     } );
 }
 
@@ -654,17 +667,18 @@ DeleteApiOutcome ApiGatewayV2Client::DeleteApi(const DeleteApiRequest& request) 
 
 DeleteApiOutcomeCallable ApiGatewayV2Client::DeleteApiCallable(const DeleteApiRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApi(request); } );
+  std::shared_ptr<DeleteApiRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApiOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteApi(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteApiAsync(const DeleteApiRequest& request, const DeleteApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteApiRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteApi(request), context);
+      handler(this, *pRequest, DeleteApi(*pRequest), context);
     } );
 }
 
@@ -692,17 +706,18 @@ DeleteApiMappingOutcome ApiGatewayV2Client::DeleteApiMapping(const DeleteApiMapp
 
 DeleteApiMappingOutcomeCallable ApiGatewayV2Client::DeleteApiMappingCallable(const DeleteApiMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteApiMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApiMapping(request); } );
+  std::shared_ptr<DeleteApiMappingRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApiMappingOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteApiMapping(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteApiMappingAsync(const DeleteApiMappingRequest& request, const DeleteApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteApiMappingRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteApiMapping(request), context);
+      handler(this, *pRequest, DeleteApiMapping(*pRequest), context);
     } );
 }
 
@@ -730,17 +745,18 @@ DeleteAuthorizerOutcome ApiGatewayV2Client::DeleteAuthorizer(const DeleteAuthori
 
 DeleteAuthorizerOutcomeCallable ApiGatewayV2Client::DeleteAuthorizerCallable(const DeleteAuthorizerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAuthorizer(request); } );
+  std::shared_ptr<DeleteAuthorizerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAuthorizerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAuthorizer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteAuthorizerAsync(const DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAuthorizerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAuthorizer(request), context);
+      handler(this, *pRequest, DeleteAuthorizer(*pRequest), context);
     } );
 }
 
@@ -762,17 +778,18 @@ DeleteCorsConfigurationOutcome ApiGatewayV2Client::DeleteCorsConfiguration(const
 
 DeleteCorsConfigurationOutcomeCallable ApiGatewayV2Client::DeleteCorsConfigurationCallable(const DeleteCorsConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCorsConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCorsConfiguration(request); } );
+  std::shared_ptr<DeleteCorsConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCorsConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteCorsConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteCorsConfigurationAsync(const DeleteCorsConfigurationRequest& request, const DeleteCorsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteCorsConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteCorsConfiguration(request), context);
+      handler(this, *pRequest, DeleteCorsConfiguration(*pRequest), context);
     } );
 }
 
@@ -800,17 +817,18 @@ DeleteDeploymentOutcome ApiGatewayV2Client::DeleteDeployment(const DeleteDeploym
 
 DeleteDeploymentOutcomeCallable ApiGatewayV2Client::DeleteDeploymentCallable(const DeleteDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDeployment(request); } );
+  std::shared_ptr<DeleteDeploymentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDeploymentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDeployment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteDeploymentAsync(const DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDeploymentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDeployment(request), context);
+      handler(this, *pRequest, DeleteDeployment(*pRequest), context);
     } );
 }
 
@@ -831,17 +849,18 @@ DeleteDomainNameOutcome ApiGatewayV2Client::DeleteDomainName(const DeleteDomainN
 
 DeleteDomainNameOutcomeCallable ApiGatewayV2Client::DeleteDomainNameCallable(const DeleteDomainNameRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDomainName(request); } );
+  std::shared_ptr<DeleteDomainNameRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainNameOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDomainName(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteDomainNameAsync(const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDomainNameRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDomainName(request), context);
+      handler(this, *pRequest, DeleteDomainName(*pRequest), context);
     } );
 }
 
@@ -869,17 +888,18 @@ DeleteIntegrationOutcome ApiGatewayV2Client::DeleteIntegration(const DeleteInteg
 
 DeleteIntegrationOutcomeCallable ApiGatewayV2Client::DeleteIntegrationCallable(const DeleteIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteIntegration(request); } );
+  std::shared_ptr<DeleteIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteIntegrationAsync(const DeleteIntegrationRequest& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteIntegration(request), context);
+      handler(this, *pRequest, DeleteIntegration(*pRequest), context);
     } );
 }
 
@@ -914,17 +934,18 @@ DeleteIntegrationResponseOutcome ApiGatewayV2Client::DeleteIntegrationResponse(c
 
 DeleteIntegrationResponseOutcomeCallable ApiGatewayV2Client::DeleteIntegrationResponseCallable(const DeleteIntegrationResponseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteIntegrationResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteIntegrationResponse(request); } );
+  std::shared_ptr<DeleteIntegrationResponseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteIntegrationResponseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteIntegrationResponse(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteIntegrationResponseAsync(const DeleteIntegrationResponseRequest& request, const DeleteIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteIntegrationResponseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteIntegrationResponse(request), context);
+      handler(this, *pRequest, DeleteIntegrationResponse(*pRequest), context);
     } );
 }
 
@@ -952,17 +973,18 @@ DeleteModelOutcome ApiGatewayV2Client::DeleteModel(const DeleteModelRequest& req
 
 DeleteModelOutcomeCallable ApiGatewayV2Client::DeleteModelCallable(const DeleteModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModel(request); } );
+  std::shared_ptr<DeleteModelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteModelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteModel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteModelAsync(const DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteModelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteModel(request), context);
+      handler(this, *pRequest, DeleteModel(*pRequest), context);
     } );
 }
 
@@ -990,17 +1012,18 @@ DeleteRouteOutcome ApiGatewayV2Client::DeleteRoute(const DeleteRouteRequest& req
 
 DeleteRouteOutcomeCallable ApiGatewayV2Client::DeleteRouteCallable(const DeleteRouteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRoute(request); } );
+  std::shared_ptr<DeleteRouteRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRouteOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteRoute(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteRouteAsync(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteRouteRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteRoute(request), context);
+      handler(this, *pRequest, DeleteRoute(*pRequest), context);
     } );
 }
 
@@ -1035,17 +1058,18 @@ DeleteRouteRequestParameterOutcome ApiGatewayV2Client::DeleteRouteRequestParamet
 
 DeleteRouteRequestParameterOutcomeCallable ApiGatewayV2Client::DeleteRouteRequestParameterCallable(const DeleteRouteRequestParameterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRouteRequestParameterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRouteRequestParameter(request); } );
+  std::shared_ptr<DeleteRouteRequestParameterRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRouteRequestParameterOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteRouteRequestParameter(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteRouteRequestParameterAsync(const DeleteRouteRequestParameterRequest& request, const DeleteRouteRequestParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteRouteRequestParameterRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteRouteRequestParameter(request), context);
+      handler(this, *pRequest, DeleteRouteRequestParameter(*pRequest), context);
     } );
 }
 
@@ -1080,17 +1104,18 @@ DeleteRouteResponseOutcome ApiGatewayV2Client::DeleteRouteResponse(const DeleteR
 
 DeleteRouteResponseOutcomeCallable ApiGatewayV2Client::DeleteRouteResponseCallable(const DeleteRouteResponseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRouteResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRouteResponse(request); } );
+  std::shared_ptr<DeleteRouteResponseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRouteResponseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteRouteResponse(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteRouteResponseAsync(const DeleteRouteResponseRequest& request, const DeleteRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteRouteResponseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteRouteResponse(request), context);
+      handler(this, *pRequest, DeleteRouteResponse(*pRequest), context);
     } );
 }
 
@@ -1125,17 +1150,18 @@ DeleteRouteSettingsOutcome ApiGatewayV2Client::DeleteRouteSettings(const DeleteR
 
 DeleteRouteSettingsOutcomeCallable ApiGatewayV2Client::DeleteRouteSettingsCallable(const DeleteRouteSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRouteSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRouteSettings(request); } );
+  std::shared_ptr<DeleteRouteSettingsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRouteSettingsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteRouteSettings(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteRouteSettingsAsync(const DeleteRouteSettingsRequest& request, const DeleteRouteSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteRouteSettingsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteRouteSettings(request), context);
+      handler(this, *pRequest, DeleteRouteSettings(*pRequest), context);
     } );
 }
 
@@ -1163,17 +1189,18 @@ DeleteStageOutcome ApiGatewayV2Client::DeleteStage(const DeleteStageRequest& req
 
 DeleteStageOutcomeCallable ApiGatewayV2Client::DeleteStageCallable(const DeleteStageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStage(request); } );
+  std::shared_ptr<DeleteStageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteStage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteStageAsync(const DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteStageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteStage(request), context);
+      handler(this, *pRequest, DeleteStage(*pRequest), context);
     } );
 }
 
@@ -1194,17 +1221,18 @@ DeleteVpcLinkOutcome ApiGatewayV2Client::DeleteVpcLink(const DeleteVpcLinkReques
 
 DeleteVpcLinkOutcomeCallable ApiGatewayV2Client::DeleteVpcLinkCallable(const DeleteVpcLinkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcLinkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVpcLink(request); } );
+  std::shared_ptr<DeleteVpcLinkRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcLinkOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteVpcLink(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::DeleteVpcLinkAsync(const DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteVpcLinkRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteVpcLink(request), context);
+      handler(this, *pRequest, DeleteVpcLink(*pRequest), context);
     } );
 }
 
@@ -1237,17 +1265,18 @@ ExportApiOutcome ApiGatewayV2Client::ExportApi(const ExportApiRequest& request) 
 
 ExportApiOutcomeCallable ApiGatewayV2Client::ExportApiCallable(const ExportApiRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExportApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportApi(request); } );
+  std::shared_ptr<ExportApiRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ExportApiOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ExportApi(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::ExportApiAsync(const ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ExportApiRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ExportApi(request), context);
+      handler(this, *pRequest, ExportApi(*pRequest), context);
     } );
 }
 
@@ -1276,17 +1305,18 @@ ResetAuthorizersCacheOutcome ApiGatewayV2Client::ResetAuthorizersCache(const Res
 
 ResetAuthorizersCacheOutcomeCallable ApiGatewayV2Client::ResetAuthorizersCacheCallable(const ResetAuthorizersCacheRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResetAuthorizersCacheOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetAuthorizersCache(request); } );
+  std::shared_ptr<ResetAuthorizersCacheRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ResetAuthorizersCacheOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ResetAuthorizersCache(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::ResetAuthorizersCacheAsync(const ResetAuthorizersCacheRequest& request, const ResetAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ResetAuthorizersCacheRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ResetAuthorizersCache(request), context);
+      handler(this, *pRequest, ResetAuthorizersCache(*pRequest), context);
     } );
 }
 
@@ -1307,17 +1337,18 @@ GetApiOutcome ApiGatewayV2Client::GetApi(const GetApiRequest& request) const
 
 GetApiOutcomeCallable ApiGatewayV2Client::GetApiCallable(const GetApiRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApi(request); } );
+  std::shared_ptr<GetApiRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetApiOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetApi(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetApiAsync(const GetApiRequest& request, const GetApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetApiRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetApi(request), context);
+      handler(this, *pRequest, GetApi(*pRequest), context);
     } );
 }
 
@@ -1345,17 +1376,18 @@ GetApiMappingOutcome ApiGatewayV2Client::GetApiMapping(const GetApiMappingReques
 
 GetApiMappingOutcomeCallable ApiGatewayV2Client::GetApiMappingCallable(const GetApiMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApiMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApiMapping(request); } );
+  std::shared_ptr<GetApiMappingRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetApiMappingOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetApiMapping(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetApiMappingAsync(const GetApiMappingRequest& request, const GetApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetApiMappingRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetApiMapping(request), context);
+      handler(this, *pRequest, GetApiMapping(*pRequest), context);
     } );
 }
 
@@ -1377,17 +1409,18 @@ GetApiMappingsOutcome ApiGatewayV2Client::GetApiMappings(const GetApiMappingsReq
 
 GetApiMappingsOutcomeCallable ApiGatewayV2Client::GetApiMappingsCallable(const GetApiMappingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApiMappingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApiMappings(request); } );
+  std::shared_ptr<GetApiMappingsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetApiMappingsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetApiMappings(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetApiMappingsAsync(const GetApiMappingsRequest& request, const GetApiMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetApiMappingsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetApiMappings(request), context);
+      handler(this, *pRequest, GetApiMappings(*pRequest), context);
     } );
 }
 
@@ -1402,17 +1435,18 @@ GetApisOutcome ApiGatewayV2Client::GetApis(const GetApisRequest& request) const
 
 GetApisOutcomeCallable ApiGatewayV2Client::GetApisCallable(const GetApisRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetApisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApis(request); } );
+  std::shared_ptr<GetApisRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetApisOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetApis(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetApisAsync(const GetApisRequest& request, const GetApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetApisRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetApis(request), context);
+      handler(this, *pRequest, GetApis(*pRequest), context);
     } );
 }
 
@@ -1440,17 +1474,18 @@ GetAuthorizerOutcome ApiGatewayV2Client::GetAuthorizer(const GetAuthorizerReques
 
 GetAuthorizerOutcomeCallable ApiGatewayV2Client::GetAuthorizerCallable(const GetAuthorizerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAuthorizer(request); } );
+  std::shared_ptr<GetAuthorizerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAuthorizerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAuthorizer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetAuthorizerAsync(const GetAuthorizerRequest& request, const GetAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAuthorizerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAuthorizer(request), context);
+      handler(this, *pRequest, GetAuthorizer(*pRequest), context);
     } );
 }
 
@@ -1472,17 +1507,18 @@ GetAuthorizersOutcome ApiGatewayV2Client::GetAuthorizers(const GetAuthorizersReq
 
 GetAuthorizersOutcomeCallable ApiGatewayV2Client::GetAuthorizersCallable(const GetAuthorizersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAuthorizersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAuthorizers(request); } );
+  std::shared_ptr<GetAuthorizersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAuthorizersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAuthorizers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetAuthorizersAsync(const GetAuthorizersRequest& request, const GetAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAuthorizersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAuthorizers(request), context);
+      handler(this, *pRequest, GetAuthorizers(*pRequest), context);
     } );
 }
 
@@ -1510,17 +1546,18 @@ GetDeploymentOutcome ApiGatewayV2Client::GetDeployment(const GetDeploymentReques
 
 GetDeploymentOutcomeCallable ApiGatewayV2Client::GetDeploymentCallable(const GetDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeployment(request); } );
+  std::shared_ptr<GetDeploymentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDeployment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDeploymentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDeployment(request), context);
+      handler(this, *pRequest, GetDeployment(*pRequest), context);
     } );
 }
 
@@ -1542,17 +1579,18 @@ GetDeploymentsOutcome ApiGatewayV2Client::GetDeployments(const GetDeploymentsReq
 
 GetDeploymentsOutcomeCallable ApiGatewayV2Client::GetDeploymentsCallable(const GetDeploymentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeployments(request); } );
+  std::shared_ptr<GetDeploymentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDeployments(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetDeploymentsAsync(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDeploymentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDeployments(request), context);
+      handler(this, *pRequest, GetDeployments(*pRequest), context);
     } );
 }
 
@@ -1573,17 +1611,18 @@ GetDomainNameOutcome ApiGatewayV2Client::GetDomainName(const GetDomainNameReques
 
 GetDomainNameOutcomeCallable ApiGatewayV2Client::GetDomainNameCallable(const GetDomainNameRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDomainName(request); } );
+  std::shared_ptr<GetDomainNameRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDomainNameOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDomainName(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetDomainNameAsync(const GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDomainNameRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDomainName(request), context);
+      handler(this, *pRequest, GetDomainName(*pRequest), context);
     } );
 }
 
@@ -1598,17 +1637,18 @@ GetDomainNamesOutcome ApiGatewayV2Client::GetDomainNames(const GetDomainNamesReq
 
 GetDomainNamesOutcomeCallable ApiGatewayV2Client::GetDomainNamesCallable(const GetDomainNamesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDomainNamesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDomainNames(request); } );
+  std::shared_ptr<GetDomainNamesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDomainNamesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDomainNames(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetDomainNamesAsync(const GetDomainNamesRequest& request, const GetDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDomainNamesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDomainNames(request), context);
+      handler(this, *pRequest, GetDomainNames(*pRequest), context);
     } );
 }
 
@@ -1636,17 +1676,18 @@ GetIntegrationOutcome ApiGatewayV2Client::GetIntegration(const GetIntegrationReq
 
 GetIntegrationOutcomeCallable ApiGatewayV2Client::GetIntegrationCallable(const GetIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIntegration(request); } );
+  std::shared_ptr<GetIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetIntegrationAsync(const GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetIntegration(request), context);
+      handler(this, *pRequest, GetIntegration(*pRequest), context);
     } );
 }
 
@@ -1681,17 +1722,18 @@ GetIntegrationResponseOutcome ApiGatewayV2Client::GetIntegrationResponse(const G
 
 GetIntegrationResponseOutcomeCallable ApiGatewayV2Client::GetIntegrationResponseCallable(const GetIntegrationResponseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetIntegrationResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIntegrationResponse(request); } );
+  std::shared_ptr<GetIntegrationResponseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetIntegrationResponseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetIntegrationResponse(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetIntegrationResponseAsync(const GetIntegrationResponseRequest& request, const GetIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetIntegrationResponseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetIntegrationResponse(request), context);
+      handler(this, *pRequest, GetIntegrationResponse(*pRequest), context);
     } );
 }
 
@@ -1720,17 +1762,18 @@ GetIntegrationResponsesOutcome ApiGatewayV2Client::GetIntegrationResponses(const
 
 GetIntegrationResponsesOutcomeCallable ApiGatewayV2Client::GetIntegrationResponsesCallable(const GetIntegrationResponsesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetIntegrationResponsesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIntegrationResponses(request); } );
+  std::shared_ptr<GetIntegrationResponsesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetIntegrationResponsesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetIntegrationResponses(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetIntegrationResponsesAsync(const GetIntegrationResponsesRequest& request, const GetIntegrationResponsesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetIntegrationResponsesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetIntegrationResponses(request), context);
+      handler(this, *pRequest, GetIntegrationResponses(*pRequest), context);
     } );
 }
 
@@ -1752,17 +1795,18 @@ GetIntegrationsOutcome ApiGatewayV2Client::GetIntegrations(const GetIntegrations
 
 GetIntegrationsOutcomeCallable ApiGatewayV2Client::GetIntegrationsCallable(const GetIntegrationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetIntegrationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIntegrations(request); } );
+  std::shared_ptr<GetIntegrationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetIntegrationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetIntegrations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetIntegrationsAsync(const GetIntegrationsRequest& request, const GetIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetIntegrationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetIntegrations(request), context);
+      handler(this, *pRequest, GetIntegrations(*pRequest), context);
     } );
 }
 
@@ -1790,17 +1834,18 @@ GetModelOutcome ApiGatewayV2Client::GetModel(const GetModelRequest& request) con
 
 GetModelOutcomeCallable ApiGatewayV2Client::GetModelCallable(const GetModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetModel(request); } );
+  std::shared_ptr<GetModelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetModelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetModel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetModelAsync(const GetModelRequest& request, const GetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetModelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetModel(request), context);
+      handler(this, *pRequest, GetModel(*pRequest), context);
     } );
 }
 
@@ -1829,17 +1874,18 @@ GetModelTemplateOutcome ApiGatewayV2Client::GetModelTemplate(const GetModelTempl
 
 GetModelTemplateOutcomeCallable ApiGatewayV2Client::GetModelTemplateCallable(const GetModelTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetModelTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetModelTemplate(request); } );
+  std::shared_ptr<GetModelTemplateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetModelTemplateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetModelTemplate(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetModelTemplateAsync(const GetModelTemplateRequest& request, const GetModelTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetModelTemplateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetModelTemplate(request), context);
+      handler(this, *pRequest, GetModelTemplate(*pRequest), context);
     } );
 }
 
@@ -1861,17 +1907,18 @@ GetModelsOutcome ApiGatewayV2Client::GetModels(const GetModelsRequest& request) 
 
 GetModelsOutcomeCallable ApiGatewayV2Client::GetModelsCallable(const GetModelsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetModels(request); } );
+  std::shared_ptr<GetModelsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetModelsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetModels(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetModelsAsync(const GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetModelsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetModels(request), context);
+      handler(this, *pRequest, GetModels(*pRequest), context);
     } );
 }
 
@@ -1899,17 +1946,18 @@ GetRouteOutcome ApiGatewayV2Client::GetRoute(const GetRouteRequest& request) con
 
 GetRouteOutcomeCallable ApiGatewayV2Client::GetRouteCallable(const GetRouteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRoute(request); } );
+  std::shared_ptr<GetRouteRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRouteOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRoute(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetRouteAsync(const GetRouteRequest& request, const GetRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRouteRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRoute(request), context);
+      handler(this, *pRequest, GetRoute(*pRequest), context);
     } );
 }
 
@@ -1944,17 +1992,18 @@ GetRouteResponseOutcome ApiGatewayV2Client::GetRouteResponse(const GetRouteRespo
 
 GetRouteResponseOutcomeCallable ApiGatewayV2Client::GetRouteResponseCallable(const GetRouteResponseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRouteResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRouteResponse(request); } );
+  std::shared_ptr<GetRouteResponseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRouteResponseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRouteResponse(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetRouteResponseAsync(const GetRouteResponseRequest& request, const GetRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRouteResponseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRouteResponse(request), context);
+      handler(this, *pRequest, GetRouteResponse(*pRequest), context);
     } );
 }
 
@@ -1983,17 +2032,18 @@ GetRouteResponsesOutcome ApiGatewayV2Client::GetRouteResponses(const GetRouteRes
 
 GetRouteResponsesOutcomeCallable ApiGatewayV2Client::GetRouteResponsesCallable(const GetRouteResponsesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRouteResponsesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRouteResponses(request); } );
+  std::shared_ptr<GetRouteResponsesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRouteResponsesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRouteResponses(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetRouteResponsesAsync(const GetRouteResponsesRequest& request, const GetRouteResponsesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRouteResponsesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRouteResponses(request), context);
+      handler(this, *pRequest, GetRouteResponses(*pRequest), context);
     } );
 }
 
@@ -2015,17 +2065,18 @@ GetRoutesOutcome ApiGatewayV2Client::GetRoutes(const GetRoutesRequest& request) 
 
 GetRoutesOutcomeCallable ApiGatewayV2Client::GetRoutesCallable(const GetRoutesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRoutesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRoutes(request); } );
+  std::shared_ptr<GetRoutesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRoutesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRoutes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetRoutesAsync(const GetRoutesRequest& request, const GetRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRoutesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRoutes(request), context);
+      handler(this, *pRequest, GetRoutes(*pRequest), context);
     } );
 }
 
@@ -2053,17 +2104,18 @@ GetStageOutcome ApiGatewayV2Client::GetStage(const GetStageRequest& request) con
 
 GetStageOutcomeCallable ApiGatewayV2Client::GetStageCallable(const GetStageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStage(request); } );
+  std::shared_ptr<GetStageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetStageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetStage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetStageAsync(const GetStageRequest& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetStageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetStage(request), context);
+      handler(this, *pRequest, GetStage(*pRequest), context);
     } );
 }
 
@@ -2085,17 +2137,18 @@ GetStagesOutcome ApiGatewayV2Client::GetStages(const GetStagesRequest& request) 
 
 GetStagesOutcomeCallable ApiGatewayV2Client::GetStagesCallable(const GetStagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStages(request); } );
+  std::shared_ptr<GetStagesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetStagesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetStages(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetStagesAsync(const GetStagesRequest& request, const GetStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetStagesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetStages(request), context);
+      handler(this, *pRequest, GetStages(*pRequest), context);
     } );
 }
 
@@ -2116,17 +2169,18 @@ GetTagsOutcome ApiGatewayV2Client::GetTags(const GetTagsRequest& request) const
 
 GetTagsOutcomeCallable ApiGatewayV2Client::GetTagsCallable(const GetTagsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTags(request); } );
+  std::shared_ptr<GetTagsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetTagsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetTags(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetTagsAsync(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetTagsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetTags(request), context);
+      handler(this, *pRequest, GetTags(*pRequest), context);
     } );
 }
 
@@ -2147,17 +2201,18 @@ GetVpcLinkOutcome ApiGatewayV2Client::GetVpcLink(const GetVpcLinkRequest& reques
 
 GetVpcLinkOutcomeCallable ApiGatewayV2Client::GetVpcLinkCallable(const GetVpcLinkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetVpcLinkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVpcLink(request); } );
+  std::shared_ptr<GetVpcLinkRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetVpcLinkOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetVpcLink(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetVpcLinkAsync(const GetVpcLinkRequest& request, const GetVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetVpcLinkRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetVpcLink(request), context);
+      handler(this, *pRequest, GetVpcLink(*pRequest), context);
     } );
 }
 
@@ -2172,17 +2227,18 @@ GetVpcLinksOutcome ApiGatewayV2Client::GetVpcLinks(const GetVpcLinksRequest& req
 
 GetVpcLinksOutcomeCallable ApiGatewayV2Client::GetVpcLinksCallable(const GetVpcLinksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetVpcLinksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVpcLinks(request); } );
+  std::shared_ptr<GetVpcLinksRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetVpcLinksOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetVpcLinks(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::GetVpcLinksAsync(const GetVpcLinksRequest& request, const GetVpcLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetVpcLinksRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetVpcLinks(request), context);
+      handler(this, *pRequest, GetVpcLinks(*pRequest), context);
     } );
 }
 
@@ -2197,17 +2253,18 @@ ImportApiOutcome ApiGatewayV2Client::ImportApi(const ImportApiRequest& request) 
 
 ImportApiOutcomeCallable ApiGatewayV2Client::ImportApiCallable(const ImportApiRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportApi(request); } );
+  std::shared_ptr<ImportApiRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ImportApiOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ImportApi(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::ImportApiAsync(const ImportApiRequest& request, const ImportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ImportApiRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ImportApi(request), context);
+      handler(this, *pRequest, ImportApi(*pRequest), context);
     } );
 }
 
@@ -2228,17 +2285,18 @@ ReimportApiOutcome ApiGatewayV2Client::ReimportApi(const ReimportApiRequest& req
 
 ReimportApiOutcomeCallable ApiGatewayV2Client::ReimportApiCallable(const ReimportApiRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ReimportApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReimportApi(request); } );
+  std::shared_ptr<ReimportApiRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ReimportApiOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ReimportApi(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::ReimportApiAsync(const ReimportApiRequest& request, const ReimportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ReimportApiRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ReimportApi(request), context);
+      handler(this, *pRequest, ReimportApi(*pRequest), context);
     } );
 }
 
@@ -2259,17 +2317,18 @@ TagResourceOutcome ApiGatewayV2Client::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable ApiGatewayV2Client::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -2295,17 +2354,18 @@ UntagResourceOutcome ApiGatewayV2Client::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable ApiGatewayV2Client::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -2326,17 +2386,18 @@ UpdateApiOutcome ApiGatewayV2Client::UpdateApi(const UpdateApiRequest& request) 
 
 UpdateApiOutcomeCallable ApiGatewayV2Client::UpdateApiCallable(const UpdateApiRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApi(request); } );
+  std::shared_ptr<UpdateApiRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApiOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateApi(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateApiAsync(const UpdateApiRequest& request, const UpdateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateApiRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateApi(request), context);
+      handler(this, *pRequest, UpdateApi(*pRequest), context);
     } );
 }
 
@@ -2364,17 +2425,18 @@ UpdateApiMappingOutcome ApiGatewayV2Client::UpdateApiMapping(const UpdateApiMapp
 
 UpdateApiMappingOutcomeCallable ApiGatewayV2Client::UpdateApiMappingCallable(const UpdateApiMappingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApiMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApiMapping(request); } );
+  std::shared_ptr<UpdateApiMappingRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApiMappingOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateApiMapping(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateApiMappingAsync(const UpdateApiMappingRequest& request, const UpdateApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateApiMappingRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateApiMapping(request), context);
+      handler(this, *pRequest, UpdateApiMapping(*pRequest), context);
     } );
 }
 
@@ -2402,17 +2464,18 @@ UpdateAuthorizerOutcome ApiGatewayV2Client::UpdateAuthorizer(const UpdateAuthori
 
 UpdateAuthorizerOutcomeCallable ApiGatewayV2Client::UpdateAuthorizerCallable(const UpdateAuthorizerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAuthorizerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAuthorizer(request); } );
+  std::shared_ptr<UpdateAuthorizerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAuthorizerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateAuthorizer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateAuthorizerAsync(const UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateAuthorizerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateAuthorizer(request), context);
+      handler(this, *pRequest, UpdateAuthorizer(*pRequest), context);
     } );
 }
 
@@ -2440,17 +2503,18 @@ UpdateDeploymentOutcome ApiGatewayV2Client::UpdateDeployment(const UpdateDeploym
 
 UpdateDeploymentOutcomeCallable ApiGatewayV2Client::UpdateDeploymentCallable(const UpdateDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDeployment(request); } );
+  std::shared_ptr<UpdateDeploymentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDeploymentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDeployment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateDeploymentAsync(const UpdateDeploymentRequest& request, const UpdateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDeploymentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDeployment(request), context);
+      handler(this, *pRequest, UpdateDeployment(*pRequest), context);
     } );
 }
 
@@ -2471,17 +2535,18 @@ UpdateDomainNameOutcome ApiGatewayV2Client::UpdateDomainName(const UpdateDomainN
 
 UpdateDomainNameOutcomeCallable ApiGatewayV2Client::UpdateDomainNameCallable(const UpdateDomainNameRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDomainName(request); } );
+  std::shared_ptr<UpdateDomainNameRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainNameOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDomainName(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateDomainNameAsync(const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDomainNameRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDomainName(request), context);
+      handler(this, *pRequest, UpdateDomainName(*pRequest), context);
     } );
 }
 
@@ -2509,17 +2574,18 @@ UpdateIntegrationOutcome ApiGatewayV2Client::UpdateIntegration(const UpdateInteg
 
 UpdateIntegrationOutcomeCallable ApiGatewayV2Client::UpdateIntegrationCallable(const UpdateIntegrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateIntegrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIntegration(request); } );
+  std::shared_ptr<UpdateIntegrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateIntegrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateIntegration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateIntegrationAsync(const UpdateIntegrationRequest& request, const UpdateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateIntegrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateIntegration(request), context);
+      handler(this, *pRequest, UpdateIntegration(*pRequest), context);
     } );
 }
 
@@ -2554,17 +2620,18 @@ UpdateIntegrationResponseOutcome ApiGatewayV2Client::UpdateIntegrationResponse(c
 
 UpdateIntegrationResponseOutcomeCallable ApiGatewayV2Client::UpdateIntegrationResponseCallable(const UpdateIntegrationResponseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateIntegrationResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIntegrationResponse(request); } );
+  std::shared_ptr<UpdateIntegrationResponseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateIntegrationResponseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateIntegrationResponse(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateIntegrationResponseAsync(const UpdateIntegrationResponseRequest& request, const UpdateIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateIntegrationResponseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateIntegrationResponse(request), context);
+      handler(this, *pRequest, UpdateIntegrationResponse(*pRequest), context);
     } );
 }
 
@@ -2592,17 +2659,18 @@ UpdateModelOutcome ApiGatewayV2Client::UpdateModel(const UpdateModelRequest& req
 
 UpdateModelOutcomeCallable ApiGatewayV2Client::UpdateModelCallable(const UpdateModelRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateModel(request); } );
+  std::shared_ptr<UpdateModelRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateModelOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateModel(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateModelAsync(const UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateModelRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateModel(request), context);
+      handler(this, *pRequest, UpdateModel(*pRequest), context);
     } );
 }
 
@@ -2630,17 +2698,18 @@ UpdateRouteOutcome ApiGatewayV2Client::UpdateRoute(const UpdateRouteRequest& req
 
 UpdateRouteOutcomeCallable ApiGatewayV2Client::UpdateRouteCallable(const UpdateRouteRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRoute(request); } );
+  std::shared_ptr<UpdateRouteRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRouteOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateRoute(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateRouteAsync(const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateRouteRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateRoute(request), context);
+      handler(this, *pRequest, UpdateRoute(*pRequest), context);
     } );
 }
 
@@ -2675,17 +2744,18 @@ UpdateRouteResponseOutcome ApiGatewayV2Client::UpdateRouteResponse(const UpdateR
 
 UpdateRouteResponseOutcomeCallable ApiGatewayV2Client::UpdateRouteResponseCallable(const UpdateRouteResponseRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRouteResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRouteResponse(request); } );
+  std::shared_ptr<UpdateRouteResponseRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRouteResponseOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateRouteResponse(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateRouteResponseAsync(const UpdateRouteResponseRequest& request, const UpdateRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateRouteResponseRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateRouteResponse(request), context);
+      handler(this, *pRequest, UpdateRouteResponse(*pRequest), context);
     } );
 }
 
@@ -2713,17 +2783,18 @@ UpdateStageOutcome ApiGatewayV2Client::UpdateStage(const UpdateStageRequest& req
 
 UpdateStageOutcomeCallable ApiGatewayV2Client::UpdateStageCallable(const UpdateStageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStage(request); } );
+  std::shared_ptr<UpdateStageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateStage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateStageAsync(const UpdateStageRequest& request, const UpdateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateStageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateStage(request), context);
+      handler(this, *pRequest, UpdateStage(*pRequest), context);
     } );
 }
 
@@ -2744,17 +2815,18 @@ UpdateVpcLinkOutcome ApiGatewayV2Client::UpdateVpcLink(const UpdateVpcLinkReques
 
 UpdateVpcLinkOutcomeCallable ApiGatewayV2Client::UpdateVpcLinkCallable(const UpdateVpcLinkRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateVpcLinkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVpcLink(request); } );
+  std::shared_ptr<UpdateVpcLinkRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVpcLinkOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateVpcLink(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApiGatewayV2Client::UpdateVpcLinkAsync(const UpdateVpcLinkRequest& request, const UpdateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateVpcLinkRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateVpcLink(request), context);
+      handler(this, *pRequest, UpdateVpcLink(*pRequest), context);
     } );
 }
 

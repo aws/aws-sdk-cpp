@@ -194,17 +194,18 @@ CreateApplicationInstanceOutcome PanoramaClient::CreateApplicationInstance(const
 
 CreateApplicationInstanceOutcomeCallable PanoramaClient::CreateApplicationInstanceCallable(const CreateApplicationInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApplicationInstance(request); } );
+  std::shared_ptr<CreateApplicationInstanceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationInstanceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateApplicationInstance(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::CreateApplicationInstanceAsync(const CreateApplicationInstanceRequest& request, const CreateApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateApplicationInstanceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateApplicationInstance(request), context);
+      handler(this, *pRequest, CreateApplicationInstance(*pRequest), context);
     } );
 }
 
@@ -219,17 +220,18 @@ CreateJobForDevicesOutcome PanoramaClient::CreateJobForDevices(const CreateJobFo
 
 CreateJobForDevicesOutcomeCallable PanoramaClient::CreateJobForDevicesCallable(const CreateJobForDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateJobForDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateJobForDevices(request); } );
+  std::shared_ptr<CreateJobForDevicesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateJobForDevicesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateJobForDevices(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::CreateJobForDevicesAsync(const CreateJobForDevicesRequest& request, const CreateJobForDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateJobForDevicesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateJobForDevices(request), context);
+      handler(this, *pRequest, CreateJobForDevices(*pRequest), context);
     } );
 }
 
@@ -244,17 +246,18 @@ CreateNodeFromTemplateJobOutcome PanoramaClient::CreateNodeFromTemplateJob(const
 
 CreateNodeFromTemplateJobOutcomeCallable PanoramaClient::CreateNodeFromTemplateJobCallable(const CreateNodeFromTemplateJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNodeFromTemplateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNodeFromTemplateJob(request); } );
+  std::shared_ptr<CreateNodeFromTemplateJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateNodeFromTemplateJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateNodeFromTemplateJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::CreateNodeFromTemplateJobAsync(const CreateNodeFromTemplateJobRequest& request, const CreateNodeFromTemplateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateNodeFromTemplateJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateNodeFromTemplateJob(request), context);
+      handler(this, *pRequest, CreateNodeFromTemplateJob(*pRequest), context);
     } );
 }
 
@@ -269,17 +272,18 @@ CreatePackageOutcome PanoramaClient::CreatePackage(const CreatePackageRequest& r
 
 CreatePackageOutcomeCallable PanoramaClient::CreatePackageCallable(const CreatePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePackage(request); } );
+  std::shared_ptr<CreatePackageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreatePackageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreatePackage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::CreatePackageAsync(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreatePackageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreatePackage(request), context);
+      handler(this, *pRequest, CreatePackage(*pRequest), context);
     } );
 }
 
@@ -294,17 +298,18 @@ CreatePackageImportJobOutcome PanoramaClient::CreatePackageImportJob(const Creat
 
 CreatePackageImportJobOutcomeCallable PanoramaClient::CreatePackageImportJobCallable(const CreatePackageImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePackageImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePackageImportJob(request); } );
+  std::shared_ptr<CreatePackageImportJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreatePackageImportJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreatePackageImportJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::CreatePackageImportJobAsync(const CreatePackageImportJobRequest& request, const CreatePackageImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreatePackageImportJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreatePackageImportJob(request), context);
+      handler(this, *pRequest, CreatePackageImportJob(*pRequest), context);
     } );
 }
 
@@ -325,17 +330,18 @@ DeleteDeviceOutcome PanoramaClient::DeleteDevice(const DeleteDeviceRequest& requ
 
 DeleteDeviceOutcomeCallable PanoramaClient::DeleteDeviceCallable(const DeleteDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDevice(request); } );
+  std::shared_ptr<DeleteDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DeleteDeviceAsync(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDevice(request), context);
+      handler(this, *pRequest, DeleteDevice(*pRequest), context);
     } );
 }
 
@@ -356,17 +362,18 @@ DeletePackageOutcome PanoramaClient::DeletePackage(const DeletePackageRequest& r
 
 DeletePackageOutcomeCallable PanoramaClient::DeletePackageCallable(const DeletePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePackage(request); } );
+  std::shared_ptr<DeletePackageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeletePackageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeletePackage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DeletePackageAsync(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeletePackageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeletePackage(request), context);
+      handler(this, *pRequest, DeletePackage(*pRequest), context);
     } );
 }
 
@@ -401,17 +408,18 @@ DeregisterPackageVersionOutcome PanoramaClient::DeregisterPackageVersion(const D
 
 DeregisterPackageVersionOutcomeCallable PanoramaClient::DeregisterPackageVersionCallable(const DeregisterPackageVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeregisterPackageVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterPackageVersion(request); } );
+  std::shared_ptr<DeregisterPackageVersionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterPackageVersionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeregisterPackageVersion(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DeregisterPackageVersionAsync(const DeregisterPackageVersionRequest& request, const DeregisterPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeregisterPackageVersionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeregisterPackageVersion(request), context);
+      handler(this, *pRequest, DeregisterPackageVersion(*pRequest), context);
     } );
 }
 
@@ -432,17 +440,18 @@ DescribeApplicationInstanceOutcome PanoramaClient::DescribeApplicationInstance(c
 
 DescribeApplicationInstanceOutcomeCallable PanoramaClient::DescribeApplicationInstanceCallable(const DescribeApplicationInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeApplicationInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApplicationInstance(request); } );
+  std::shared_ptr<DescribeApplicationInstanceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeApplicationInstanceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeApplicationInstance(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DescribeApplicationInstanceAsync(const DescribeApplicationInstanceRequest& request, const DescribeApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeApplicationInstanceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeApplicationInstance(request), context);
+      handler(this, *pRequest, DescribeApplicationInstance(*pRequest), context);
     } );
 }
 
@@ -464,17 +473,18 @@ DescribeApplicationInstanceDetailsOutcome PanoramaClient::DescribeApplicationIns
 
 DescribeApplicationInstanceDetailsOutcomeCallable PanoramaClient::DescribeApplicationInstanceDetailsCallable(const DescribeApplicationInstanceDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeApplicationInstanceDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApplicationInstanceDetails(request); } );
+  std::shared_ptr<DescribeApplicationInstanceDetailsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeApplicationInstanceDetailsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeApplicationInstanceDetails(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DescribeApplicationInstanceDetailsAsync(const DescribeApplicationInstanceDetailsRequest& request, const DescribeApplicationInstanceDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeApplicationInstanceDetailsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeApplicationInstanceDetails(request), context);
+      handler(this, *pRequest, DescribeApplicationInstanceDetails(*pRequest), context);
     } );
 }
 
@@ -495,17 +505,18 @@ DescribeDeviceOutcome PanoramaClient::DescribeDevice(const DescribeDeviceRequest
 
 DescribeDeviceOutcomeCallable PanoramaClient::DescribeDeviceCallable(const DescribeDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDevice(request); } );
+  std::shared_ptr<DescribeDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDevice(request), context);
+      handler(this, *pRequest, DescribeDevice(*pRequest), context);
     } );
 }
 
@@ -526,17 +537,18 @@ DescribeDeviceJobOutcome PanoramaClient::DescribeDeviceJob(const DescribeDeviceJ
 
 DescribeDeviceJobOutcomeCallable PanoramaClient::DescribeDeviceJobCallable(const DescribeDeviceJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDeviceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDeviceJob(request); } );
+  std::shared_ptr<DescribeDeviceJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDeviceJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDeviceJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DescribeDeviceJobAsync(const DescribeDeviceJobRequest& request, const DescribeDeviceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDeviceJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDeviceJob(request), context);
+      handler(this, *pRequest, DescribeDeviceJob(*pRequest), context);
     } );
 }
 
@@ -557,17 +569,18 @@ DescribeNodeOutcome PanoramaClient::DescribeNode(const DescribeNodeRequest& requ
 
 DescribeNodeOutcomeCallable PanoramaClient::DescribeNodeCallable(const DescribeNodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeNodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNode(request); } );
+  std::shared_ptr<DescribeNodeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeNodeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeNode(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DescribeNodeAsync(const DescribeNodeRequest& request, const DescribeNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeNodeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeNode(request), context);
+      handler(this, *pRequest, DescribeNode(*pRequest), context);
     } );
 }
 
@@ -588,17 +601,18 @@ DescribeNodeFromTemplateJobOutcome PanoramaClient::DescribeNodeFromTemplateJob(c
 
 DescribeNodeFromTemplateJobOutcomeCallable PanoramaClient::DescribeNodeFromTemplateJobCallable(const DescribeNodeFromTemplateJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeNodeFromTemplateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNodeFromTemplateJob(request); } );
+  std::shared_ptr<DescribeNodeFromTemplateJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeNodeFromTemplateJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeNodeFromTemplateJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DescribeNodeFromTemplateJobAsync(const DescribeNodeFromTemplateJobRequest& request, const DescribeNodeFromTemplateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeNodeFromTemplateJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeNodeFromTemplateJob(request), context);
+      handler(this, *pRequest, DescribeNodeFromTemplateJob(*pRequest), context);
     } );
 }
 
@@ -619,17 +633,18 @@ DescribePackageOutcome PanoramaClient::DescribePackage(const DescribePackageRequ
 
 DescribePackageOutcomeCallable PanoramaClient::DescribePackageCallable(const DescribePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePackage(request); } );
+  std::shared_ptr<DescribePackageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribePackageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribePackage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DescribePackageAsync(const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribePackageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribePackage(request), context);
+      handler(this, *pRequest, DescribePackage(*pRequest), context);
     } );
 }
 
@@ -650,17 +665,18 @@ DescribePackageImportJobOutcome PanoramaClient::DescribePackageImportJob(const D
 
 DescribePackageImportJobOutcomeCallable PanoramaClient::DescribePackageImportJobCallable(const DescribePackageImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePackageImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePackageImportJob(request); } );
+  std::shared_ptr<DescribePackageImportJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribePackageImportJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribePackageImportJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DescribePackageImportJobAsync(const DescribePackageImportJobRequest& request, const DescribePackageImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribePackageImportJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribePackageImportJob(request), context);
+      handler(this, *pRequest, DescribePackageImportJob(*pRequest), context);
     } );
 }
 
@@ -688,17 +704,18 @@ DescribePackageVersionOutcome PanoramaClient::DescribePackageVersion(const Descr
 
 DescribePackageVersionOutcomeCallable PanoramaClient::DescribePackageVersionCallable(const DescribePackageVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePackageVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePackageVersion(request); } );
+  std::shared_ptr<DescribePackageVersionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribePackageVersionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribePackageVersion(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::DescribePackageVersionAsync(const DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribePackageVersionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribePackageVersion(request), context);
+      handler(this, *pRequest, DescribePackageVersion(*pRequest), context);
     } );
 }
 
@@ -720,17 +737,18 @@ ListApplicationInstanceDependenciesOutcome PanoramaClient::ListApplicationInstan
 
 ListApplicationInstanceDependenciesOutcomeCallable PanoramaClient::ListApplicationInstanceDependenciesCallable(const ListApplicationInstanceDependenciesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationInstanceDependenciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplicationInstanceDependencies(request); } );
+  std::shared_ptr<ListApplicationInstanceDependenciesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationInstanceDependenciesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListApplicationInstanceDependencies(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::ListApplicationInstanceDependenciesAsync(const ListApplicationInstanceDependenciesRequest& request, const ListApplicationInstanceDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListApplicationInstanceDependenciesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListApplicationInstanceDependencies(request), context);
+      handler(this, *pRequest, ListApplicationInstanceDependencies(*pRequest), context);
     } );
 }
 
@@ -752,17 +770,18 @@ ListApplicationInstanceNodeInstancesOutcome PanoramaClient::ListApplicationInsta
 
 ListApplicationInstanceNodeInstancesOutcomeCallable PanoramaClient::ListApplicationInstanceNodeInstancesCallable(const ListApplicationInstanceNodeInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationInstanceNodeInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplicationInstanceNodeInstances(request); } );
+  std::shared_ptr<ListApplicationInstanceNodeInstancesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationInstanceNodeInstancesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListApplicationInstanceNodeInstances(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::ListApplicationInstanceNodeInstancesAsync(const ListApplicationInstanceNodeInstancesRequest& request, const ListApplicationInstanceNodeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListApplicationInstanceNodeInstancesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListApplicationInstanceNodeInstances(request), context);
+      handler(this, *pRequest, ListApplicationInstanceNodeInstances(*pRequest), context);
     } );
 }
 
@@ -777,17 +796,18 @@ ListApplicationInstancesOutcome PanoramaClient::ListApplicationInstances(const L
 
 ListApplicationInstancesOutcomeCallable PanoramaClient::ListApplicationInstancesCallable(const ListApplicationInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplicationInstances(request); } );
+  std::shared_ptr<ListApplicationInstancesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationInstancesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListApplicationInstances(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::ListApplicationInstancesAsync(const ListApplicationInstancesRequest& request, const ListApplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListApplicationInstancesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListApplicationInstances(request), context);
+      handler(this, *pRequest, ListApplicationInstances(*pRequest), context);
     } );
 }
 
@@ -802,17 +822,18 @@ ListDevicesOutcome PanoramaClient::ListDevices(const ListDevicesRequest& request
 
 ListDevicesOutcomeCallable PanoramaClient::ListDevicesCallable(const ListDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDevices(request); } );
+  std::shared_ptr<ListDevicesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDevicesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDevices(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDevicesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDevices(request), context);
+      handler(this, *pRequest, ListDevices(*pRequest), context);
     } );
 }
 
@@ -827,17 +848,18 @@ ListDevicesJobsOutcome PanoramaClient::ListDevicesJobs(const ListDevicesJobsRequ
 
 ListDevicesJobsOutcomeCallable PanoramaClient::ListDevicesJobsCallable(const ListDevicesJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDevicesJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDevicesJobs(request); } );
+  std::shared_ptr<ListDevicesJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDevicesJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDevicesJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::ListDevicesJobsAsync(const ListDevicesJobsRequest& request, const ListDevicesJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDevicesJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDevicesJobs(request), context);
+      handler(this, *pRequest, ListDevicesJobs(*pRequest), context);
     } );
 }
 
@@ -852,17 +874,18 @@ ListNodeFromTemplateJobsOutcome PanoramaClient::ListNodeFromTemplateJobs(const L
 
 ListNodeFromTemplateJobsOutcomeCallable PanoramaClient::ListNodeFromTemplateJobsCallable(const ListNodeFromTemplateJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNodeFromTemplateJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNodeFromTemplateJobs(request); } );
+  std::shared_ptr<ListNodeFromTemplateJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListNodeFromTemplateJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListNodeFromTemplateJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::ListNodeFromTemplateJobsAsync(const ListNodeFromTemplateJobsRequest& request, const ListNodeFromTemplateJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListNodeFromTemplateJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListNodeFromTemplateJobs(request), context);
+      handler(this, *pRequest, ListNodeFromTemplateJobs(*pRequest), context);
     } );
 }
 
@@ -877,17 +900,18 @@ ListNodesOutcome PanoramaClient::ListNodes(const ListNodesRequest& request) cons
 
 ListNodesOutcomeCallable PanoramaClient::ListNodesCallable(const ListNodesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNodesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNodes(request); } );
+  std::shared_ptr<ListNodesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListNodesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListNodes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::ListNodesAsync(const ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListNodesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListNodes(request), context);
+      handler(this, *pRequest, ListNodes(*pRequest), context);
     } );
 }
 
@@ -902,17 +926,18 @@ ListPackageImportJobsOutcome PanoramaClient::ListPackageImportJobs(const ListPac
 
 ListPackageImportJobsOutcomeCallable PanoramaClient::ListPackageImportJobsCallable(const ListPackageImportJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPackageImportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPackageImportJobs(request); } );
+  std::shared_ptr<ListPackageImportJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPackageImportJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPackageImportJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::ListPackageImportJobsAsync(const ListPackageImportJobsRequest& request, const ListPackageImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPackageImportJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPackageImportJobs(request), context);
+      handler(this, *pRequest, ListPackageImportJobs(*pRequest), context);
     } );
 }
 
@@ -927,17 +952,18 @@ ListPackagesOutcome PanoramaClient::ListPackages(const ListPackagesRequest& requ
 
 ListPackagesOutcomeCallable PanoramaClient::ListPackagesCallable(const ListPackagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPackages(request); } );
+  std::shared_ptr<ListPackagesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPackagesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPackages(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::ListPackagesAsync(const ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPackagesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPackages(request), context);
+      handler(this, *pRequest, ListPackages(*pRequest), context);
     } );
 }
 
@@ -958,17 +984,18 @@ ListTagsForResourceOutcome PanoramaClient::ListTagsForResource(const ListTagsFor
 
 ListTagsForResourceOutcomeCallable PanoramaClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -983,17 +1010,18 @@ ProvisionDeviceOutcome PanoramaClient::ProvisionDevice(const ProvisionDeviceRequ
 
 ProvisionDeviceOutcomeCallable PanoramaClient::ProvisionDeviceCallable(const ProvisionDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ProvisionDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ProvisionDevice(request); } );
+  std::shared_ptr<ProvisionDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ProvisionDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ProvisionDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::ProvisionDeviceAsync(const ProvisionDeviceRequest& request, const ProvisionDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ProvisionDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ProvisionDevice(request), context);
+      handler(this, *pRequest, ProvisionDevice(*pRequest), context);
     } );
 }
 
@@ -1028,17 +1056,18 @@ RegisterPackageVersionOutcome PanoramaClient::RegisterPackageVersion(const Regis
 
 RegisterPackageVersionOutcomeCallable PanoramaClient::RegisterPackageVersionCallable(const RegisterPackageVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterPackageVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterPackageVersion(request); } );
+  std::shared_ptr<RegisterPackageVersionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RegisterPackageVersionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RegisterPackageVersion(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::RegisterPackageVersionAsync(const RegisterPackageVersionRequest& request, const RegisterPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RegisterPackageVersionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RegisterPackageVersion(request), context);
+      handler(this, *pRequest, RegisterPackageVersion(*pRequest), context);
     } );
 }
 
@@ -1059,17 +1088,18 @@ RemoveApplicationInstanceOutcome PanoramaClient::RemoveApplicationInstance(const
 
 RemoveApplicationInstanceOutcomeCallable PanoramaClient::RemoveApplicationInstanceCallable(const RemoveApplicationInstanceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RemoveApplicationInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveApplicationInstance(request); } );
+  std::shared_ptr<RemoveApplicationInstanceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RemoveApplicationInstanceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RemoveApplicationInstance(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::RemoveApplicationInstanceAsync(const RemoveApplicationInstanceRequest& request, const RemoveApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RemoveApplicationInstanceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RemoveApplicationInstance(request), context);
+      handler(this, *pRequest, RemoveApplicationInstance(*pRequest), context);
     } );
 }
 
@@ -1091,17 +1121,18 @@ SignalApplicationInstanceNodeInstancesOutcome PanoramaClient::SignalApplicationI
 
 SignalApplicationInstanceNodeInstancesOutcomeCallable PanoramaClient::SignalApplicationInstanceNodeInstancesCallable(const SignalApplicationInstanceNodeInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SignalApplicationInstanceNodeInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SignalApplicationInstanceNodeInstances(request); } );
+  std::shared_ptr<SignalApplicationInstanceNodeInstancesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SignalApplicationInstanceNodeInstancesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SignalApplicationInstanceNodeInstances(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::SignalApplicationInstanceNodeInstancesAsync(const SignalApplicationInstanceNodeInstancesRequest& request, const SignalApplicationInstanceNodeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SignalApplicationInstanceNodeInstancesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SignalApplicationInstanceNodeInstances(request), context);
+      handler(this, *pRequest, SignalApplicationInstanceNodeInstances(*pRequest), context);
     } );
 }
 
@@ -1122,17 +1153,18 @@ TagResourceOutcome PanoramaClient::TagResource(const TagResourceRequest& request
 
 TagResourceOutcomeCallable PanoramaClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -1158,17 +1190,18 @@ UntagResourceOutcome PanoramaClient::UntagResource(const UntagResourceRequest& r
 
 UntagResourceOutcomeCallable PanoramaClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -1189,17 +1222,18 @@ UpdateDeviceMetadataOutcome PanoramaClient::UpdateDeviceMetadata(const UpdateDev
 
 UpdateDeviceMetadataOutcomeCallable PanoramaClient::UpdateDeviceMetadataCallable(const UpdateDeviceMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDeviceMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDeviceMetadata(request); } );
+  std::shared_ptr<UpdateDeviceMetadataRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDeviceMetadataOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDeviceMetadata(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PanoramaClient::UpdateDeviceMetadataAsync(const UpdateDeviceMetadataRequest& request, const UpdateDeviceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDeviceMetadataRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDeviceMetadata(request), context);
+      handler(this, *pRequest, UpdateDeviceMetadata(*pRequest), context);
     } );
 }
 

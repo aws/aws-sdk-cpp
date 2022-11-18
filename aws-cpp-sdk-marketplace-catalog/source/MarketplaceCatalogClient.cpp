@@ -179,17 +179,18 @@ CancelChangeSetOutcome MarketplaceCatalogClient::CancelChangeSet(const CancelCha
 
 CancelChangeSetOutcomeCallable MarketplaceCatalogClient::CancelChangeSetCallable(const CancelChangeSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelChangeSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelChangeSet(request); } );
+  std::shared_ptr<CancelChangeSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CancelChangeSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CancelChangeSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MarketplaceCatalogClient::CancelChangeSetAsync(const CancelChangeSetRequest& request, const CancelChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CancelChangeSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CancelChangeSet(request), context);
+      handler(this, *pRequest, CancelChangeSet(*pRequest), context);
     } );
 }
 
@@ -214,17 +215,18 @@ DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const Descr
 
 DescribeChangeSetOutcomeCallable MarketplaceCatalogClient::DescribeChangeSetCallable(const DescribeChangeSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeChangeSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeChangeSet(request); } );
+  std::shared_ptr<DescribeChangeSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeChangeSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeChangeSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MarketplaceCatalogClient::DescribeChangeSetAsync(const DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeChangeSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeChangeSet(request), context);
+      handler(this, *pRequest, DescribeChangeSet(*pRequest), context);
     } );
 }
 
@@ -249,17 +251,18 @@ DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEnt
 
 DescribeEntityOutcomeCallable MarketplaceCatalogClient::DescribeEntityCallable(const DescribeEntityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEntityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEntity(request); } );
+  std::shared_ptr<DescribeEntityRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEntityOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeEntity(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MarketplaceCatalogClient::DescribeEntityAsync(const DescribeEntityRequest& request, const DescribeEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeEntityRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeEntity(request), context);
+      handler(this, *pRequest, DescribeEntity(*pRequest), context);
     } );
 }
 
@@ -274,17 +277,18 @@ ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeS
 
 ListChangeSetsOutcomeCallable MarketplaceCatalogClient::ListChangeSetsCallable(const ListChangeSetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListChangeSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChangeSets(request); } );
+  std::shared_ptr<ListChangeSetsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListChangeSetsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListChangeSets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MarketplaceCatalogClient::ListChangeSetsAsync(const ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListChangeSetsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListChangeSets(request), context);
+      handler(this, *pRequest, ListChangeSets(*pRequest), context);
     } );
 }
 
@@ -299,17 +303,18 @@ ListEntitiesOutcome MarketplaceCatalogClient::ListEntities(const ListEntitiesReq
 
 ListEntitiesOutcomeCallable MarketplaceCatalogClient::ListEntitiesCallable(const ListEntitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEntities(request); } );
+  std::shared_ptr<ListEntitiesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEntitiesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEntities(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MarketplaceCatalogClient::ListEntitiesAsync(const ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEntitiesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEntities(request), context);
+      handler(this, *pRequest, ListEntities(*pRequest), context);
     } );
 }
 
@@ -324,17 +329,18 @@ ListTagsForResourceOutcome MarketplaceCatalogClient::ListTagsForResource(const L
 
 ListTagsForResourceOutcomeCallable MarketplaceCatalogClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MarketplaceCatalogClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -349,17 +355,18 @@ StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChange
 
 StartChangeSetOutcomeCallable MarketplaceCatalogClient::StartChangeSetCallable(const StartChangeSetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartChangeSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartChangeSet(request); } );
+  std::shared_ptr<StartChangeSetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartChangeSetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartChangeSet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MarketplaceCatalogClient::StartChangeSetAsync(const StartChangeSetRequest& request, const StartChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartChangeSetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartChangeSet(request), context);
+      handler(this, *pRequest, StartChangeSet(*pRequest), context);
     } );
 }
 
@@ -374,17 +381,18 @@ TagResourceOutcome MarketplaceCatalogClient::TagResource(const TagResourceReques
 
 TagResourceOutcomeCallable MarketplaceCatalogClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MarketplaceCatalogClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -399,17 +407,18 @@ UntagResourceOutcome MarketplaceCatalogClient::UntagResource(const UntagResource
 
 UntagResourceOutcomeCallable MarketplaceCatalogClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MarketplaceCatalogClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 

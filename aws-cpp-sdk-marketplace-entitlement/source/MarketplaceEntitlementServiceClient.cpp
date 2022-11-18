@@ -160,17 +160,18 @@ GetEntitlementsOutcome MarketplaceEntitlementServiceClient::GetEntitlements(cons
 
 GetEntitlementsOutcomeCallable MarketplaceEntitlementServiceClient::GetEntitlementsCallable(const GetEntitlementsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEntitlementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEntitlements(request); } );
+  std::shared_ptr<GetEntitlementsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetEntitlementsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetEntitlements(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MarketplaceEntitlementServiceClient::GetEntitlementsAsync(const GetEntitlementsRequest& request, const GetEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetEntitlementsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetEntitlements(request), context);
+      handler(this, *pRequest, GetEntitlements(*pRequest), context);
     } );
 }
 

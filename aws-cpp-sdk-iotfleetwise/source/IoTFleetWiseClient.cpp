@@ -209,17 +209,18 @@ AssociateVehicleFleetOutcome IoTFleetWiseClient::AssociateVehicleFleet(const Ass
 
 AssociateVehicleFleetOutcomeCallable IoTFleetWiseClient::AssociateVehicleFleetCallable(const AssociateVehicleFleetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateVehicleFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateVehicleFleet(request); } );
+  std::shared_ptr<AssociateVehicleFleetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateVehicleFleetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateVehicleFleet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::AssociateVehicleFleetAsync(const AssociateVehicleFleetRequest& request, const AssociateVehicleFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateVehicleFleetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateVehicleFleet(request), context);
+      handler(this, *pRequest, AssociateVehicleFleet(*pRequest), context);
     } );
 }
 
@@ -233,17 +234,18 @@ BatchCreateVehicleOutcome IoTFleetWiseClient::BatchCreateVehicle(const BatchCrea
 
 BatchCreateVehicleOutcomeCallable IoTFleetWiseClient::BatchCreateVehicleCallable(const BatchCreateVehicleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchCreateVehicleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchCreateVehicle(request); } );
+  std::shared_ptr<BatchCreateVehicleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchCreateVehicleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchCreateVehicle(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::BatchCreateVehicleAsync(const BatchCreateVehicleRequest& request, const BatchCreateVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchCreateVehicleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchCreateVehicle(request), context);
+      handler(this, *pRequest, BatchCreateVehicle(*pRequest), context);
     } );
 }
 
@@ -257,17 +259,18 @@ BatchUpdateVehicleOutcome IoTFleetWiseClient::BatchUpdateVehicle(const BatchUpda
 
 BatchUpdateVehicleOutcomeCallable IoTFleetWiseClient::BatchUpdateVehicleCallable(const BatchUpdateVehicleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateVehicleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdateVehicle(request); } );
+  std::shared_ptr<BatchUpdateVehicleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateVehicleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchUpdateVehicle(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::BatchUpdateVehicleAsync(const BatchUpdateVehicleRequest& request, const BatchUpdateVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchUpdateVehicleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchUpdateVehicle(request), context);
+      handler(this, *pRequest, BatchUpdateVehicle(*pRequest), context);
     } );
 }
 
@@ -281,17 +284,18 @@ CreateCampaignOutcome IoTFleetWiseClient::CreateCampaign(const CreateCampaignReq
 
 CreateCampaignOutcomeCallable IoTFleetWiseClient::CreateCampaignCallable(const CreateCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCampaign(request); } );
+  std::shared_ptr<CreateCampaignRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateCampaignOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateCampaign(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::CreateCampaignAsync(const CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateCampaignRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateCampaign(request), context);
+      handler(this, *pRequest, CreateCampaign(*pRequest), context);
     } );
 }
 
@@ -305,17 +309,18 @@ CreateDecoderManifestOutcome IoTFleetWiseClient::CreateDecoderManifest(const Cre
 
 CreateDecoderManifestOutcomeCallable IoTFleetWiseClient::CreateDecoderManifestCallable(const CreateDecoderManifestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDecoderManifestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDecoderManifest(request); } );
+  std::shared_ptr<CreateDecoderManifestRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDecoderManifestOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDecoderManifest(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::CreateDecoderManifestAsync(const CreateDecoderManifestRequest& request, const CreateDecoderManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDecoderManifestRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDecoderManifest(request), context);
+      handler(this, *pRequest, CreateDecoderManifest(*pRequest), context);
     } );
 }
 
@@ -329,17 +334,18 @@ CreateFleetOutcome IoTFleetWiseClient::CreateFleet(const CreateFleetRequest& req
 
 CreateFleetOutcomeCallable IoTFleetWiseClient::CreateFleetCallable(const CreateFleetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFleet(request); } );
+  std::shared_ptr<CreateFleetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateFleetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateFleet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::CreateFleetAsync(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateFleetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateFleet(request), context);
+      handler(this, *pRequest, CreateFleet(*pRequest), context);
     } );
 }
 
@@ -353,17 +359,18 @@ CreateModelManifestOutcome IoTFleetWiseClient::CreateModelManifest(const CreateM
 
 CreateModelManifestOutcomeCallable IoTFleetWiseClient::CreateModelManifestCallable(const CreateModelManifestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateModelManifestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModelManifest(request); } );
+  std::shared_ptr<CreateModelManifestRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateModelManifestOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateModelManifest(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::CreateModelManifestAsync(const CreateModelManifestRequest& request, const CreateModelManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateModelManifestRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateModelManifest(request), context);
+      handler(this, *pRequest, CreateModelManifest(*pRequest), context);
     } );
 }
 
@@ -377,17 +384,18 @@ CreateSignalCatalogOutcome IoTFleetWiseClient::CreateSignalCatalog(const CreateS
 
 CreateSignalCatalogOutcomeCallable IoTFleetWiseClient::CreateSignalCatalogCallable(const CreateSignalCatalogRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSignalCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSignalCatalog(request); } );
+  std::shared_ptr<CreateSignalCatalogRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateSignalCatalogOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateSignalCatalog(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::CreateSignalCatalogAsync(const CreateSignalCatalogRequest& request, const CreateSignalCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateSignalCatalogRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateSignalCatalog(request), context);
+      handler(this, *pRequest, CreateSignalCatalog(*pRequest), context);
     } );
 }
 
@@ -401,17 +409,18 @@ CreateVehicleOutcome IoTFleetWiseClient::CreateVehicle(const CreateVehicleReques
 
 CreateVehicleOutcomeCallable IoTFleetWiseClient::CreateVehicleCallable(const CreateVehicleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateVehicleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVehicle(request); } );
+  std::shared_ptr<CreateVehicleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateVehicleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateVehicle(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::CreateVehicleAsync(const CreateVehicleRequest& request, const CreateVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateVehicleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateVehicle(request), context);
+      handler(this, *pRequest, CreateVehicle(*pRequest), context);
     } );
 }
 
@@ -425,17 +434,18 @@ DeleteCampaignOutcome IoTFleetWiseClient::DeleteCampaign(const DeleteCampaignReq
 
 DeleteCampaignOutcomeCallable IoTFleetWiseClient::DeleteCampaignCallable(const DeleteCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCampaign(request); } );
+  std::shared_ptr<DeleteCampaignRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCampaignOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteCampaign(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::DeleteCampaignAsync(const DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteCampaignRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteCampaign(request), context);
+      handler(this, *pRequest, DeleteCampaign(*pRequest), context);
     } );
 }
 
@@ -449,17 +459,18 @@ DeleteDecoderManifestOutcome IoTFleetWiseClient::DeleteDecoderManifest(const Del
 
 DeleteDecoderManifestOutcomeCallable IoTFleetWiseClient::DeleteDecoderManifestCallable(const DeleteDecoderManifestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDecoderManifestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDecoderManifest(request); } );
+  std::shared_ptr<DeleteDecoderManifestRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDecoderManifestOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDecoderManifest(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::DeleteDecoderManifestAsync(const DeleteDecoderManifestRequest& request, const DeleteDecoderManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDecoderManifestRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDecoderManifest(request), context);
+      handler(this, *pRequest, DeleteDecoderManifest(*pRequest), context);
     } );
 }
 
@@ -473,17 +484,18 @@ DeleteFleetOutcome IoTFleetWiseClient::DeleteFleet(const DeleteFleetRequest& req
 
 DeleteFleetOutcomeCallable IoTFleetWiseClient::DeleteFleetCallable(const DeleteFleetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFleet(request); } );
+  std::shared_ptr<DeleteFleetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFleetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteFleet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::DeleteFleetAsync(const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteFleetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteFleet(request), context);
+      handler(this, *pRequest, DeleteFleet(*pRequest), context);
     } );
 }
 
@@ -497,17 +509,18 @@ DeleteModelManifestOutcome IoTFleetWiseClient::DeleteModelManifest(const DeleteM
 
 DeleteModelManifestOutcomeCallable IoTFleetWiseClient::DeleteModelManifestCallable(const DeleteModelManifestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteModelManifestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModelManifest(request); } );
+  std::shared_ptr<DeleteModelManifestRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteModelManifestOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteModelManifest(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::DeleteModelManifestAsync(const DeleteModelManifestRequest& request, const DeleteModelManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteModelManifestRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteModelManifest(request), context);
+      handler(this, *pRequest, DeleteModelManifest(*pRequest), context);
     } );
 }
 
@@ -521,17 +534,18 @@ DeleteSignalCatalogOutcome IoTFleetWiseClient::DeleteSignalCatalog(const DeleteS
 
 DeleteSignalCatalogOutcomeCallable IoTFleetWiseClient::DeleteSignalCatalogCallable(const DeleteSignalCatalogRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSignalCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSignalCatalog(request); } );
+  std::shared_ptr<DeleteSignalCatalogRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSignalCatalogOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteSignalCatalog(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::DeleteSignalCatalogAsync(const DeleteSignalCatalogRequest& request, const DeleteSignalCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteSignalCatalogRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteSignalCatalog(request), context);
+      handler(this, *pRequest, DeleteSignalCatalog(*pRequest), context);
     } );
 }
 
@@ -545,17 +559,18 @@ DeleteVehicleOutcome IoTFleetWiseClient::DeleteVehicle(const DeleteVehicleReques
 
 DeleteVehicleOutcomeCallable IoTFleetWiseClient::DeleteVehicleCallable(const DeleteVehicleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteVehicleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVehicle(request); } );
+  std::shared_ptr<DeleteVehicleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVehicleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteVehicle(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::DeleteVehicleAsync(const DeleteVehicleRequest& request, const DeleteVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteVehicleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteVehicle(request), context);
+      handler(this, *pRequest, DeleteVehicle(*pRequest), context);
     } );
 }
 
@@ -569,17 +584,18 @@ DisassociateVehicleFleetOutcome IoTFleetWiseClient::DisassociateVehicleFleet(con
 
 DisassociateVehicleFleetOutcomeCallable IoTFleetWiseClient::DisassociateVehicleFleetCallable(const DisassociateVehicleFleetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateVehicleFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateVehicleFleet(request); } );
+  std::shared_ptr<DisassociateVehicleFleetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateVehicleFleetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateVehicleFleet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::DisassociateVehicleFleetAsync(const DisassociateVehicleFleetRequest& request, const DisassociateVehicleFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateVehicleFleetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateVehicleFleet(request), context);
+      handler(this, *pRequest, DisassociateVehicleFleet(*pRequest), context);
     } );
 }
 
@@ -593,17 +609,18 @@ GetCampaignOutcome IoTFleetWiseClient::GetCampaign(const GetCampaignRequest& req
 
 GetCampaignOutcomeCallable IoTFleetWiseClient::GetCampaignCallable(const GetCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCampaign(request); } );
+  std::shared_ptr<GetCampaignRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCampaignOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCampaign(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::GetCampaignAsync(const GetCampaignRequest& request, const GetCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCampaignRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCampaign(request), context);
+      handler(this, *pRequest, GetCampaign(*pRequest), context);
     } );
 }
 
@@ -617,17 +634,18 @@ GetDecoderManifestOutcome IoTFleetWiseClient::GetDecoderManifest(const GetDecode
 
 GetDecoderManifestOutcomeCallable IoTFleetWiseClient::GetDecoderManifestCallable(const GetDecoderManifestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDecoderManifestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDecoderManifest(request); } );
+  std::shared_ptr<GetDecoderManifestRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDecoderManifestOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDecoderManifest(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::GetDecoderManifestAsync(const GetDecoderManifestRequest& request, const GetDecoderManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDecoderManifestRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDecoderManifest(request), context);
+      handler(this, *pRequest, GetDecoderManifest(*pRequest), context);
     } );
 }
 
@@ -641,17 +659,18 @@ GetFleetOutcome IoTFleetWiseClient::GetFleet(const GetFleetRequest& request) con
 
 GetFleetOutcomeCallable IoTFleetWiseClient::GetFleetCallable(const GetFleetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFleet(request); } );
+  std::shared_ptr<GetFleetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetFleetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetFleet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::GetFleetAsync(const GetFleetRequest& request, const GetFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetFleetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetFleet(request), context);
+      handler(this, *pRequest, GetFleet(*pRequest), context);
     } );
 }
 
@@ -665,17 +684,18 @@ GetLoggingOptionsOutcome IoTFleetWiseClient::GetLoggingOptions(const GetLoggingO
 
 GetLoggingOptionsOutcomeCallable IoTFleetWiseClient::GetLoggingOptionsCallable(const GetLoggingOptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetLoggingOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLoggingOptions(request); } );
+  std::shared_ptr<GetLoggingOptionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetLoggingOptionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetLoggingOptions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::GetLoggingOptionsAsync(const GetLoggingOptionsRequest& request, const GetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetLoggingOptionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetLoggingOptions(request), context);
+      handler(this, *pRequest, GetLoggingOptions(*pRequest), context);
     } );
 }
 
@@ -689,17 +709,18 @@ GetModelManifestOutcome IoTFleetWiseClient::GetModelManifest(const GetModelManif
 
 GetModelManifestOutcomeCallable IoTFleetWiseClient::GetModelManifestCallable(const GetModelManifestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetModelManifestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetModelManifest(request); } );
+  std::shared_ptr<GetModelManifestRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetModelManifestOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetModelManifest(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::GetModelManifestAsync(const GetModelManifestRequest& request, const GetModelManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetModelManifestRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetModelManifest(request), context);
+      handler(this, *pRequest, GetModelManifest(*pRequest), context);
     } );
 }
 
@@ -713,17 +734,18 @@ GetRegisterAccountStatusOutcome IoTFleetWiseClient::GetRegisterAccountStatus(con
 
 GetRegisterAccountStatusOutcomeCallable IoTFleetWiseClient::GetRegisterAccountStatusCallable(const GetRegisterAccountStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRegisterAccountStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRegisterAccountStatus(request); } );
+  std::shared_ptr<GetRegisterAccountStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRegisterAccountStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRegisterAccountStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::GetRegisterAccountStatusAsync(const GetRegisterAccountStatusRequest& request, const GetRegisterAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRegisterAccountStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRegisterAccountStatus(request), context);
+      handler(this, *pRequest, GetRegisterAccountStatus(*pRequest), context);
     } );
 }
 
@@ -737,17 +759,18 @@ GetSignalCatalogOutcome IoTFleetWiseClient::GetSignalCatalog(const GetSignalCata
 
 GetSignalCatalogOutcomeCallable IoTFleetWiseClient::GetSignalCatalogCallable(const GetSignalCatalogRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSignalCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSignalCatalog(request); } );
+  std::shared_ptr<GetSignalCatalogRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSignalCatalogOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSignalCatalog(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::GetSignalCatalogAsync(const GetSignalCatalogRequest& request, const GetSignalCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSignalCatalogRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSignalCatalog(request), context);
+      handler(this, *pRequest, GetSignalCatalog(*pRequest), context);
     } );
 }
 
@@ -761,17 +784,18 @@ GetVehicleOutcome IoTFleetWiseClient::GetVehicle(const GetVehicleRequest& reques
 
 GetVehicleOutcomeCallable IoTFleetWiseClient::GetVehicleCallable(const GetVehicleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetVehicleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVehicle(request); } );
+  std::shared_ptr<GetVehicleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetVehicleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetVehicle(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::GetVehicleAsync(const GetVehicleRequest& request, const GetVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetVehicleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetVehicle(request), context);
+      handler(this, *pRequest, GetVehicle(*pRequest), context);
     } );
 }
 
@@ -785,17 +809,18 @@ GetVehicleStatusOutcome IoTFleetWiseClient::GetVehicleStatus(const GetVehicleSta
 
 GetVehicleStatusOutcomeCallable IoTFleetWiseClient::GetVehicleStatusCallable(const GetVehicleStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetVehicleStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVehicleStatus(request); } );
+  std::shared_ptr<GetVehicleStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetVehicleStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetVehicleStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::GetVehicleStatusAsync(const GetVehicleStatusRequest& request, const GetVehicleStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetVehicleStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetVehicleStatus(request), context);
+      handler(this, *pRequest, GetVehicleStatus(*pRequest), context);
     } );
 }
 
@@ -809,17 +834,18 @@ ImportDecoderManifestOutcome IoTFleetWiseClient::ImportDecoderManifest(const Imp
 
 ImportDecoderManifestOutcomeCallable IoTFleetWiseClient::ImportDecoderManifestCallable(const ImportDecoderManifestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportDecoderManifestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportDecoderManifest(request); } );
+  std::shared_ptr<ImportDecoderManifestRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ImportDecoderManifestOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ImportDecoderManifest(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ImportDecoderManifestAsync(const ImportDecoderManifestRequest& request, const ImportDecoderManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ImportDecoderManifestRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ImportDecoderManifest(request), context);
+      handler(this, *pRequest, ImportDecoderManifest(*pRequest), context);
     } );
 }
 
@@ -833,17 +859,18 @@ ImportSignalCatalogOutcome IoTFleetWiseClient::ImportSignalCatalog(const ImportS
 
 ImportSignalCatalogOutcomeCallable IoTFleetWiseClient::ImportSignalCatalogCallable(const ImportSignalCatalogRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportSignalCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportSignalCatalog(request); } );
+  std::shared_ptr<ImportSignalCatalogRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ImportSignalCatalogOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ImportSignalCatalog(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ImportSignalCatalogAsync(const ImportSignalCatalogRequest& request, const ImportSignalCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ImportSignalCatalogRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ImportSignalCatalog(request), context);
+      handler(this, *pRequest, ImportSignalCatalog(*pRequest), context);
     } );
 }
 
@@ -857,17 +884,18 @@ ListCampaignsOutcome IoTFleetWiseClient::ListCampaigns(const ListCampaignsReques
 
 ListCampaignsOutcomeCallable IoTFleetWiseClient::ListCampaignsCallable(const ListCampaignsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCampaignsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCampaigns(request); } );
+  std::shared_ptr<ListCampaignsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListCampaignsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListCampaigns(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListCampaignsAsync(const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListCampaignsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListCampaigns(request), context);
+      handler(this, *pRequest, ListCampaigns(*pRequest), context);
     } );
 }
 
@@ -881,17 +909,18 @@ ListDecoderManifestNetworkInterfacesOutcome IoTFleetWiseClient::ListDecoderManif
 
 ListDecoderManifestNetworkInterfacesOutcomeCallable IoTFleetWiseClient::ListDecoderManifestNetworkInterfacesCallable(const ListDecoderManifestNetworkInterfacesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDecoderManifestNetworkInterfacesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDecoderManifestNetworkInterfaces(request); } );
+  std::shared_ptr<ListDecoderManifestNetworkInterfacesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDecoderManifestNetworkInterfacesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDecoderManifestNetworkInterfaces(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListDecoderManifestNetworkInterfacesAsync(const ListDecoderManifestNetworkInterfacesRequest& request, const ListDecoderManifestNetworkInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDecoderManifestNetworkInterfacesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDecoderManifestNetworkInterfaces(request), context);
+      handler(this, *pRequest, ListDecoderManifestNetworkInterfaces(*pRequest), context);
     } );
 }
 
@@ -905,17 +934,18 @@ ListDecoderManifestSignalsOutcome IoTFleetWiseClient::ListDecoderManifestSignals
 
 ListDecoderManifestSignalsOutcomeCallable IoTFleetWiseClient::ListDecoderManifestSignalsCallable(const ListDecoderManifestSignalsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDecoderManifestSignalsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDecoderManifestSignals(request); } );
+  std::shared_ptr<ListDecoderManifestSignalsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDecoderManifestSignalsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDecoderManifestSignals(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListDecoderManifestSignalsAsync(const ListDecoderManifestSignalsRequest& request, const ListDecoderManifestSignalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDecoderManifestSignalsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDecoderManifestSignals(request), context);
+      handler(this, *pRequest, ListDecoderManifestSignals(*pRequest), context);
     } );
 }
 
@@ -929,17 +959,18 @@ ListDecoderManifestsOutcome IoTFleetWiseClient::ListDecoderManifests(const ListD
 
 ListDecoderManifestsOutcomeCallable IoTFleetWiseClient::ListDecoderManifestsCallable(const ListDecoderManifestsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDecoderManifestsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDecoderManifests(request); } );
+  std::shared_ptr<ListDecoderManifestsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDecoderManifestsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDecoderManifests(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListDecoderManifestsAsync(const ListDecoderManifestsRequest& request, const ListDecoderManifestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDecoderManifestsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDecoderManifests(request), context);
+      handler(this, *pRequest, ListDecoderManifests(*pRequest), context);
     } );
 }
 
@@ -953,17 +984,18 @@ ListFleetsOutcome IoTFleetWiseClient::ListFleets(const ListFleetsRequest& reques
 
 ListFleetsOutcomeCallable IoTFleetWiseClient::ListFleetsCallable(const ListFleetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFleetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFleets(request); } );
+  std::shared_ptr<ListFleetsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListFleetsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListFleets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListFleetsAsync(const ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListFleetsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListFleets(request), context);
+      handler(this, *pRequest, ListFleets(*pRequest), context);
     } );
 }
 
@@ -977,17 +1009,18 @@ ListFleetsForVehicleOutcome IoTFleetWiseClient::ListFleetsForVehicle(const ListF
 
 ListFleetsForVehicleOutcomeCallable IoTFleetWiseClient::ListFleetsForVehicleCallable(const ListFleetsForVehicleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListFleetsForVehicleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFleetsForVehicle(request); } );
+  std::shared_ptr<ListFleetsForVehicleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListFleetsForVehicleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListFleetsForVehicle(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListFleetsForVehicleAsync(const ListFleetsForVehicleRequest& request, const ListFleetsForVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListFleetsForVehicleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListFleetsForVehicle(request), context);
+      handler(this, *pRequest, ListFleetsForVehicle(*pRequest), context);
     } );
 }
 
@@ -1001,17 +1034,18 @@ ListModelManifestNodesOutcome IoTFleetWiseClient::ListModelManifestNodes(const L
 
 ListModelManifestNodesOutcomeCallable IoTFleetWiseClient::ListModelManifestNodesCallable(const ListModelManifestNodesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelManifestNodesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelManifestNodes(request); } );
+  std::shared_ptr<ListModelManifestNodesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListModelManifestNodesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListModelManifestNodes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListModelManifestNodesAsync(const ListModelManifestNodesRequest& request, const ListModelManifestNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListModelManifestNodesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListModelManifestNodes(request), context);
+      handler(this, *pRequest, ListModelManifestNodes(*pRequest), context);
     } );
 }
 
@@ -1025,17 +1059,18 @@ ListModelManifestsOutcome IoTFleetWiseClient::ListModelManifests(const ListModel
 
 ListModelManifestsOutcomeCallable IoTFleetWiseClient::ListModelManifestsCallable(const ListModelManifestsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListModelManifestsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelManifests(request); } );
+  std::shared_ptr<ListModelManifestsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListModelManifestsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListModelManifests(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListModelManifestsAsync(const ListModelManifestsRequest& request, const ListModelManifestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListModelManifestsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListModelManifests(request), context);
+      handler(this, *pRequest, ListModelManifests(*pRequest), context);
     } );
 }
 
@@ -1049,17 +1084,18 @@ ListSignalCatalogNodesOutcome IoTFleetWiseClient::ListSignalCatalogNodes(const L
 
 ListSignalCatalogNodesOutcomeCallable IoTFleetWiseClient::ListSignalCatalogNodesCallable(const ListSignalCatalogNodesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSignalCatalogNodesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSignalCatalogNodes(request); } );
+  std::shared_ptr<ListSignalCatalogNodesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSignalCatalogNodesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSignalCatalogNodes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListSignalCatalogNodesAsync(const ListSignalCatalogNodesRequest& request, const ListSignalCatalogNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSignalCatalogNodesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSignalCatalogNodes(request), context);
+      handler(this, *pRequest, ListSignalCatalogNodes(*pRequest), context);
     } );
 }
 
@@ -1073,17 +1109,18 @@ ListSignalCatalogsOutcome IoTFleetWiseClient::ListSignalCatalogs(const ListSigna
 
 ListSignalCatalogsOutcomeCallable IoTFleetWiseClient::ListSignalCatalogsCallable(const ListSignalCatalogsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSignalCatalogsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSignalCatalogs(request); } );
+  std::shared_ptr<ListSignalCatalogsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSignalCatalogsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSignalCatalogs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListSignalCatalogsAsync(const ListSignalCatalogsRequest& request, const ListSignalCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSignalCatalogsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSignalCatalogs(request), context);
+      handler(this, *pRequest, ListSignalCatalogs(*pRequest), context);
     } );
 }
 
@@ -1097,17 +1134,18 @@ ListTagsForResourceOutcome IoTFleetWiseClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable IoTFleetWiseClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -1121,17 +1159,18 @@ ListVehiclesOutcome IoTFleetWiseClient::ListVehicles(const ListVehiclesRequest& 
 
 ListVehiclesOutcomeCallable IoTFleetWiseClient::ListVehiclesCallable(const ListVehiclesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVehiclesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVehicles(request); } );
+  std::shared_ptr<ListVehiclesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListVehiclesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListVehicles(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListVehiclesAsync(const ListVehiclesRequest& request, const ListVehiclesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListVehiclesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListVehicles(request), context);
+      handler(this, *pRequest, ListVehicles(*pRequest), context);
     } );
 }
 
@@ -1145,17 +1184,18 @@ ListVehiclesInFleetOutcome IoTFleetWiseClient::ListVehiclesInFleet(const ListVeh
 
 ListVehiclesInFleetOutcomeCallable IoTFleetWiseClient::ListVehiclesInFleetCallable(const ListVehiclesInFleetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListVehiclesInFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVehiclesInFleet(request); } );
+  std::shared_ptr<ListVehiclesInFleetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListVehiclesInFleetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListVehiclesInFleet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::ListVehiclesInFleetAsync(const ListVehiclesInFleetRequest& request, const ListVehiclesInFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListVehiclesInFleetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListVehiclesInFleet(request), context);
+      handler(this, *pRequest, ListVehiclesInFleet(*pRequest), context);
     } );
 }
 
@@ -1169,17 +1209,18 @@ PutLoggingOptionsOutcome IoTFleetWiseClient::PutLoggingOptions(const PutLoggingO
 
 PutLoggingOptionsOutcomeCallable IoTFleetWiseClient::PutLoggingOptionsCallable(const PutLoggingOptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutLoggingOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutLoggingOptions(request); } );
+  std::shared_ptr<PutLoggingOptionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutLoggingOptionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutLoggingOptions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::PutLoggingOptionsAsync(const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutLoggingOptionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutLoggingOptions(request), context);
+      handler(this, *pRequest, PutLoggingOptions(*pRequest), context);
     } );
 }
 
@@ -1193,17 +1234,18 @@ RegisterAccountOutcome IoTFleetWiseClient::RegisterAccount(const RegisterAccount
 
 RegisterAccountOutcomeCallable IoTFleetWiseClient::RegisterAccountCallable(const RegisterAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterAccount(request); } );
+  std::shared_ptr<RegisterAccountRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RegisterAccountOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RegisterAccount(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::RegisterAccountAsync(const RegisterAccountRequest& request, const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RegisterAccountRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RegisterAccount(request), context);
+      handler(this, *pRequest, RegisterAccount(*pRequest), context);
     } );
 }
 
@@ -1217,17 +1259,18 @@ TagResourceOutcome IoTFleetWiseClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable IoTFleetWiseClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -1241,17 +1284,18 @@ UntagResourceOutcome IoTFleetWiseClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable IoTFleetWiseClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -1265,17 +1309,18 @@ UpdateCampaignOutcome IoTFleetWiseClient::UpdateCampaign(const UpdateCampaignReq
 
 UpdateCampaignOutcomeCallable IoTFleetWiseClient::UpdateCampaignCallable(const UpdateCampaignRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCampaign(request); } );
+  std::shared_ptr<UpdateCampaignRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCampaignOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateCampaign(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::UpdateCampaignAsync(const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateCampaignRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateCampaign(request), context);
+      handler(this, *pRequest, UpdateCampaign(*pRequest), context);
     } );
 }
 
@@ -1289,17 +1334,18 @@ UpdateDecoderManifestOutcome IoTFleetWiseClient::UpdateDecoderManifest(const Upd
 
 UpdateDecoderManifestOutcomeCallable IoTFleetWiseClient::UpdateDecoderManifestCallable(const UpdateDecoderManifestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDecoderManifestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDecoderManifest(request); } );
+  std::shared_ptr<UpdateDecoderManifestRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDecoderManifestOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDecoderManifest(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::UpdateDecoderManifestAsync(const UpdateDecoderManifestRequest& request, const UpdateDecoderManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDecoderManifestRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDecoderManifest(request), context);
+      handler(this, *pRequest, UpdateDecoderManifest(*pRequest), context);
     } );
 }
 
@@ -1313,17 +1359,18 @@ UpdateFleetOutcome IoTFleetWiseClient::UpdateFleet(const UpdateFleetRequest& req
 
 UpdateFleetOutcomeCallable IoTFleetWiseClient::UpdateFleetCallable(const UpdateFleetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFleet(request); } );
+  std::shared_ptr<UpdateFleetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFleetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateFleet(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::UpdateFleetAsync(const UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateFleetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateFleet(request), context);
+      handler(this, *pRequest, UpdateFleet(*pRequest), context);
     } );
 }
 
@@ -1337,17 +1384,18 @@ UpdateModelManifestOutcome IoTFleetWiseClient::UpdateModelManifest(const UpdateM
 
 UpdateModelManifestOutcomeCallable IoTFleetWiseClient::UpdateModelManifestCallable(const UpdateModelManifestRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateModelManifestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateModelManifest(request); } );
+  std::shared_ptr<UpdateModelManifestRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateModelManifestOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateModelManifest(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::UpdateModelManifestAsync(const UpdateModelManifestRequest& request, const UpdateModelManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateModelManifestRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateModelManifest(request), context);
+      handler(this, *pRequest, UpdateModelManifest(*pRequest), context);
     } );
 }
 
@@ -1361,17 +1409,18 @@ UpdateSignalCatalogOutcome IoTFleetWiseClient::UpdateSignalCatalog(const UpdateS
 
 UpdateSignalCatalogOutcomeCallable IoTFleetWiseClient::UpdateSignalCatalogCallable(const UpdateSignalCatalogRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSignalCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSignalCatalog(request); } );
+  std::shared_ptr<UpdateSignalCatalogRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSignalCatalogOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateSignalCatalog(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::UpdateSignalCatalogAsync(const UpdateSignalCatalogRequest& request, const UpdateSignalCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateSignalCatalogRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateSignalCatalog(request), context);
+      handler(this, *pRequest, UpdateSignalCatalog(*pRequest), context);
     } );
 }
 
@@ -1385,17 +1434,18 @@ UpdateVehicleOutcome IoTFleetWiseClient::UpdateVehicle(const UpdateVehicleReques
 
 UpdateVehicleOutcomeCallable IoTFleetWiseClient::UpdateVehicleCallable(const UpdateVehicleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateVehicleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVehicle(request); } );
+  std::shared_ptr<UpdateVehicleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVehicleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateVehicle(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTFleetWiseClient::UpdateVehicleAsync(const UpdateVehicleRequest& request, const UpdateVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateVehicleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateVehicle(request), context);
+      handler(this, *pRequest, UpdateVehicle(*pRequest), context);
     } );
 }
 

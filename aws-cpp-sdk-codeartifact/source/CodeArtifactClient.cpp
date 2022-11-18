@@ -211,17 +211,18 @@ AssociateExternalConnectionOutcome CodeArtifactClient::AssociateExternalConnecti
 
 AssociateExternalConnectionOutcomeCallable CodeArtifactClient::AssociateExternalConnectionCallable(const AssociateExternalConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateExternalConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateExternalConnection(request); } );
+  std::shared_ptr<AssociateExternalConnectionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateExternalConnectionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateExternalConnection(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::AssociateExternalConnectionAsync(const AssociateExternalConnectionRequest& request, const AssociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateExternalConnectionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateExternalConnection(request), context);
+      handler(this, *pRequest, AssociateExternalConnection(*pRequest), context);
     } );
 }
 
@@ -261,17 +262,18 @@ CopyPackageVersionsOutcome CodeArtifactClient::CopyPackageVersions(const CopyPac
 
 CopyPackageVersionsOutcomeCallable CodeArtifactClient::CopyPackageVersionsCallable(const CopyPackageVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CopyPackageVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyPackageVersions(request); } );
+  std::shared_ptr<CopyPackageVersionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CopyPackageVersionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CopyPackageVersions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::CopyPackageVersionsAsync(const CopyPackageVersionsRequest& request, const CopyPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CopyPackageVersionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CopyPackageVersions(request), context);
+      handler(this, *pRequest, CopyPackageVersions(*pRequest), context);
     } );
 }
 
@@ -291,17 +293,18 @@ CreateDomainOutcome CodeArtifactClient::CreateDomain(const CreateDomainRequest& 
 
 CreateDomainOutcomeCallable CodeArtifactClient::CreateDomainCallable(const CreateDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDomain(request); } );
+  std::shared_ptr<CreateDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDomain(request), context);
+      handler(this, *pRequest, CreateDomain(*pRequest), context);
     } );
 }
 
@@ -326,17 +329,18 @@ CreateRepositoryOutcome CodeArtifactClient::CreateRepository(const CreateReposit
 
 CreateRepositoryOutcomeCallable CodeArtifactClient::CreateRepositoryCallable(const CreateRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRepository(request); } );
+  std::shared_ptr<CreateRepositoryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateRepositoryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateRepository(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::CreateRepositoryAsync(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateRepositoryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateRepository(request), context);
+      handler(this, *pRequest, CreateRepository(*pRequest), context);
     } );
 }
 
@@ -356,17 +360,18 @@ DeleteDomainOutcome CodeArtifactClient::DeleteDomain(const DeleteDomainRequest& 
 
 DeleteDomainOutcomeCallable CodeArtifactClient::DeleteDomainCallable(const DeleteDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDomain(request); } );
+  std::shared_ptr<DeleteDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDomain(request), context);
+      handler(this, *pRequest, DeleteDomain(*pRequest), context);
     } );
 }
 
@@ -386,17 +391,18 @@ DeleteDomainPermissionsPolicyOutcome CodeArtifactClient::DeleteDomainPermissions
 
 DeleteDomainPermissionsPolicyOutcomeCallable CodeArtifactClient::DeleteDomainPermissionsPolicyCallable(const DeleteDomainPermissionsPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDomainPermissionsPolicy(request); } );
+  std::shared_ptr<DeleteDomainPermissionsPolicyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDomainPermissionsPolicy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::DeleteDomainPermissionsPolicyAsync(const DeleteDomainPermissionsPolicyRequest& request, const DeleteDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDomainPermissionsPolicyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDomainPermissionsPolicy(request), context);
+      handler(this, *pRequest, DeleteDomainPermissionsPolicy(*pRequest), context);
     } );
 }
 
@@ -431,17 +437,18 @@ DeletePackageVersionsOutcome CodeArtifactClient::DeletePackageVersions(const Del
 
 DeletePackageVersionsOutcomeCallable CodeArtifactClient::DeletePackageVersionsCallable(const DeletePackageVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePackageVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePackageVersions(request); } );
+  std::shared_ptr<DeletePackageVersionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeletePackageVersionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeletePackageVersions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::DeletePackageVersionsAsync(const DeletePackageVersionsRequest& request, const DeletePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeletePackageVersionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeletePackageVersions(request), context);
+      handler(this, *pRequest, DeletePackageVersions(*pRequest), context);
     } );
 }
 
@@ -466,17 +473,18 @@ DeleteRepositoryOutcome CodeArtifactClient::DeleteRepository(const DeleteReposit
 
 DeleteRepositoryOutcomeCallable CodeArtifactClient::DeleteRepositoryCallable(const DeleteRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRepository(request); } );
+  std::shared_ptr<DeleteRepositoryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRepositoryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteRepository(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteRepositoryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteRepository(request), context);
+      handler(this, *pRequest, DeleteRepository(*pRequest), context);
     } );
 }
 
@@ -501,17 +509,18 @@ DeleteRepositoryPermissionsPolicyOutcome CodeArtifactClient::DeleteRepositoryPer
 
 DeleteRepositoryPermissionsPolicyOutcomeCallable CodeArtifactClient::DeleteRepositoryPermissionsPolicyCallable(const DeleteRepositoryPermissionsPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRepositoryPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRepositoryPermissionsPolicy(request); } );
+  std::shared_ptr<DeleteRepositoryPermissionsPolicyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRepositoryPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteRepositoryPermissionsPolicy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::DeleteRepositoryPermissionsPolicyAsync(const DeleteRepositoryPermissionsPolicyRequest& request, const DeleteRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteRepositoryPermissionsPolicyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteRepositoryPermissionsPolicy(request), context);
+      handler(this, *pRequest, DeleteRepositoryPermissionsPolicy(*pRequest), context);
     } );
 }
 
@@ -531,17 +540,18 @@ DescribeDomainOutcome CodeArtifactClient::DescribeDomain(const DescribeDomainReq
 
 DescribeDomainOutcomeCallable CodeArtifactClient::DescribeDomainCallable(const DescribeDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomain(request); } );
+  std::shared_ptr<DescribeDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDomain(request), context);
+      handler(this, *pRequest, DescribeDomain(*pRequest), context);
     } );
 }
 
@@ -576,17 +586,18 @@ DescribePackageOutcome CodeArtifactClient::DescribePackage(const DescribePackage
 
 DescribePackageOutcomeCallable CodeArtifactClient::DescribePackageCallable(const DescribePackageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePackage(request); } );
+  std::shared_ptr<DescribePackageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribePackageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribePackage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::DescribePackageAsync(const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribePackageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribePackage(request), context);
+      handler(this, *pRequest, DescribePackage(*pRequest), context);
     } );
 }
 
@@ -626,17 +637,18 @@ DescribePackageVersionOutcome CodeArtifactClient::DescribePackageVersion(const D
 
 DescribePackageVersionOutcomeCallable CodeArtifactClient::DescribePackageVersionCallable(const DescribePackageVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePackageVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePackageVersion(request); } );
+  std::shared_ptr<DescribePackageVersionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribePackageVersionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribePackageVersion(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::DescribePackageVersionAsync(const DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribePackageVersionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribePackageVersion(request), context);
+      handler(this, *pRequest, DescribePackageVersion(*pRequest), context);
     } );
 }
 
@@ -661,17 +673,18 @@ DescribeRepositoryOutcome CodeArtifactClient::DescribeRepository(const DescribeR
 
 DescribeRepositoryOutcomeCallable CodeArtifactClient::DescribeRepositoryCallable(const DescribeRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRepository(request); } );
+  std::shared_ptr<DescribeRepositoryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRepositoryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeRepository(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::DescribeRepositoryAsync(const DescribeRepositoryRequest& request, const DescribeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeRepositoryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeRepository(request), context);
+      handler(this, *pRequest, DescribeRepository(*pRequest), context);
     } );
 }
 
@@ -701,17 +714,18 @@ DisassociateExternalConnectionOutcome CodeArtifactClient::DisassociateExternalCo
 
 DisassociateExternalConnectionOutcomeCallable CodeArtifactClient::DisassociateExternalConnectionCallable(const DisassociateExternalConnectionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateExternalConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateExternalConnection(request); } );
+  std::shared_ptr<DisassociateExternalConnectionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateExternalConnectionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateExternalConnection(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::DisassociateExternalConnectionAsync(const DisassociateExternalConnectionRequest& request, const DisassociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateExternalConnectionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateExternalConnection(request), context);
+      handler(this, *pRequest, DisassociateExternalConnection(*pRequest), context);
     } );
 }
 
@@ -746,17 +760,18 @@ DisposePackageVersionsOutcome CodeArtifactClient::DisposePackageVersions(const D
 
 DisposePackageVersionsOutcomeCallable CodeArtifactClient::DisposePackageVersionsCallable(const DisposePackageVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisposePackageVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisposePackageVersions(request); } );
+  std::shared_ptr<DisposePackageVersionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisposePackageVersionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisposePackageVersions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::DisposePackageVersionsAsync(const DisposePackageVersionsRequest& request, const DisposePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisposePackageVersionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisposePackageVersions(request), context);
+      handler(this, *pRequest, DisposePackageVersions(*pRequest), context);
     } );
 }
 
@@ -776,17 +791,18 @@ GetAuthorizationTokenOutcome CodeArtifactClient::GetAuthorizationToken(const Get
 
 GetAuthorizationTokenOutcomeCallable CodeArtifactClient::GetAuthorizationTokenCallable(const GetAuthorizationTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAuthorizationTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAuthorizationToken(request); } );
+  std::shared_ptr<GetAuthorizationTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAuthorizationTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAuthorizationToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::GetAuthorizationTokenAsync(const GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAuthorizationTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAuthorizationToken(request), context);
+      handler(this, *pRequest, GetAuthorizationToken(*pRequest), context);
     } );
 }
 
@@ -806,17 +822,18 @@ GetDomainPermissionsPolicyOutcome CodeArtifactClient::GetDomainPermissionsPolicy
 
 GetDomainPermissionsPolicyOutcomeCallable CodeArtifactClient::GetDomainPermissionsPolicyCallable(const GetDomainPermissionsPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDomainPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDomainPermissionsPolicy(request); } );
+  std::shared_ptr<GetDomainPermissionsPolicyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDomainPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDomainPermissionsPolicy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::GetDomainPermissionsPolicyAsync(const GetDomainPermissionsPolicyRequest& request, const GetDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDomainPermissionsPolicyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDomainPermissionsPolicy(request), context);
+      handler(this, *pRequest, GetDomainPermissionsPolicy(*pRequest), context);
     } );
 }
 
@@ -861,17 +878,18 @@ GetPackageVersionAssetOutcome CodeArtifactClient::GetPackageVersionAsset(const G
 
 GetPackageVersionAssetOutcomeCallable CodeArtifactClient::GetPackageVersionAssetCallable(const GetPackageVersionAssetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPackageVersionAssetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPackageVersionAsset(request); } );
+  std::shared_ptr<GetPackageVersionAssetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetPackageVersionAssetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetPackageVersionAsset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::GetPackageVersionAssetAsync(const GetPackageVersionAssetRequest& request, const GetPackageVersionAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetPackageVersionAssetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetPackageVersionAsset(request), context);
+      handler(this, *pRequest, GetPackageVersionAsset(*pRequest), context);
     } );
 }
 
@@ -911,17 +929,18 @@ GetPackageVersionReadmeOutcome CodeArtifactClient::GetPackageVersionReadme(const
 
 GetPackageVersionReadmeOutcomeCallable CodeArtifactClient::GetPackageVersionReadmeCallable(const GetPackageVersionReadmeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPackageVersionReadmeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPackageVersionReadme(request); } );
+  std::shared_ptr<GetPackageVersionReadmeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetPackageVersionReadmeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetPackageVersionReadme(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::GetPackageVersionReadmeAsync(const GetPackageVersionReadmeRequest& request, const GetPackageVersionReadmeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetPackageVersionReadmeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetPackageVersionReadme(request), context);
+      handler(this, *pRequest, GetPackageVersionReadme(*pRequest), context);
     } );
 }
 
@@ -951,17 +970,18 @@ GetRepositoryEndpointOutcome CodeArtifactClient::GetRepositoryEndpoint(const Get
 
 GetRepositoryEndpointOutcomeCallable CodeArtifactClient::GetRepositoryEndpointCallable(const GetRepositoryEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRepositoryEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRepositoryEndpoint(request); } );
+  std::shared_ptr<GetRepositoryEndpointRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRepositoryEndpointOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRepositoryEndpoint(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::GetRepositoryEndpointAsync(const GetRepositoryEndpointRequest& request, const GetRepositoryEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRepositoryEndpointRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRepositoryEndpoint(request), context);
+      handler(this, *pRequest, GetRepositoryEndpoint(*pRequest), context);
     } );
 }
 
@@ -986,17 +1006,18 @@ GetRepositoryPermissionsPolicyOutcome CodeArtifactClient::GetRepositoryPermissio
 
 GetRepositoryPermissionsPolicyOutcomeCallable CodeArtifactClient::GetRepositoryPermissionsPolicyCallable(const GetRepositoryPermissionsPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRepositoryPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRepositoryPermissionsPolicy(request); } );
+  std::shared_ptr<GetRepositoryPermissionsPolicyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRepositoryPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRepositoryPermissionsPolicy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::GetRepositoryPermissionsPolicyAsync(const GetRepositoryPermissionsPolicyRequest& request, const GetRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRepositoryPermissionsPolicyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRepositoryPermissionsPolicy(request), context);
+      handler(this, *pRequest, GetRepositoryPermissionsPolicy(*pRequest), context);
     } );
 }
 
@@ -1011,17 +1032,18 @@ ListDomainsOutcome CodeArtifactClient::ListDomains(const ListDomainsRequest& req
 
 ListDomainsOutcomeCallable CodeArtifactClient::ListDomainsCallable(const ListDomainsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomains(request); } );
+  std::shared_ptr<ListDomainsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDomains(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDomainsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDomains(request), context);
+      handler(this, *pRequest, ListDomains(*pRequest), context);
     } );
 }
 
@@ -1061,17 +1083,18 @@ ListPackageVersionAssetsOutcome CodeArtifactClient::ListPackageVersionAssets(con
 
 ListPackageVersionAssetsOutcomeCallable CodeArtifactClient::ListPackageVersionAssetsCallable(const ListPackageVersionAssetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPackageVersionAssetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPackageVersionAssets(request); } );
+  std::shared_ptr<ListPackageVersionAssetsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPackageVersionAssetsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPackageVersionAssets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::ListPackageVersionAssetsAsync(const ListPackageVersionAssetsRequest& request, const ListPackageVersionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPackageVersionAssetsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPackageVersionAssets(request), context);
+      handler(this, *pRequest, ListPackageVersionAssets(*pRequest), context);
     } );
 }
 
@@ -1111,17 +1134,18 @@ ListPackageVersionDependenciesOutcome CodeArtifactClient::ListPackageVersionDepe
 
 ListPackageVersionDependenciesOutcomeCallable CodeArtifactClient::ListPackageVersionDependenciesCallable(const ListPackageVersionDependenciesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPackageVersionDependenciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPackageVersionDependencies(request); } );
+  std::shared_ptr<ListPackageVersionDependenciesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPackageVersionDependenciesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPackageVersionDependencies(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::ListPackageVersionDependenciesAsync(const ListPackageVersionDependenciesRequest& request, const ListPackageVersionDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPackageVersionDependenciesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPackageVersionDependencies(request), context);
+      handler(this, *pRequest, ListPackageVersionDependencies(*pRequest), context);
     } );
 }
 
@@ -1156,17 +1180,18 @@ ListPackageVersionsOutcome CodeArtifactClient::ListPackageVersions(const ListPac
 
 ListPackageVersionsOutcomeCallable CodeArtifactClient::ListPackageVersionsCallable(const ListPackageVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPackageVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPackageVersions(request); } );
+  std::shared_ptr<ListPackageVersionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPackageVersionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPackageVersions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::ListPackageVersionsAsync(const ListPackageVersionsRequest& request, const ListPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPackageVersionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPackageVersions(request), context);
+      handler(this, *pRequest, ListPackageVersions(*pRequest), context);
     } );
 }
 
@@ -1191,17 +1216,18 @@ ListPackagesOutcome CodeArtifactClient::ListPackages(const ListPackagesRequest& 
 
 ListPackagesOutcomeCallable CodeArtifactClient::ListPackagesCallable(const ListPackagesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPackages(request); } );
+  std::shared_ptr<ListPackagesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPackagesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPackages(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::ListPackagesAsync(const ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPackagesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPackages(request), context);
+      handler(this, *pRequest, ListPackages(*pRequest), context);
     } );
 }
 
@@ -1216,17 +1242,18 @@ ListRepositoriesOutcome CodeArtifactClient::ListRepositories(const ListRepositor
 
 ListRepositoriesOutcomeCallable CodeArtifactClient::ListRepositoriesCallable(const ListRepositoriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRepositoriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRepositories(request); } );
+  std::shared_ptr<ListRepositoriesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListRepositoriesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListRepositories(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::ListRepositoriesAsync(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListRepositoriesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListRepositories(request), context);
+      handler(this, *pRequest, ListRepositories(*pRequest), context);
     } );
 }
 
@@ -1246,17 +1273,18 @@ ListRepositoriesInDomainOutcome CodeArtifactClient::ListRepositoriesInDomain(con
 
 ListRepositoriesInDomainOutcomeCallable CodeArtifactClient::ListRepositoriesInDomainCallable(const ListRepositoriesInDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRepositoriesInDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRepositoriesInDomain(request); } );
+  std::shared_ptr<ListRepositoriesInDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListRepositoriesInDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListRepositoriesInDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::ListRepositoriesInDomainAsync(const ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListRepositoriesInDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListRepositoriesInDomain(request), context);
+      handler(this, *pRequest, ListRepositoriesInDomain(*pRequest), context);
     } );
 }
 
@@ -1276,17 +1304,18 @@ ListTagsForResourceOutcome CodeArtifactClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable CodeArtifactClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -1301,17 +1330,18 @@ PutDomainPermissionsPolicyOutcome CodeArtifactClient::PutDomainPermissionsPolicy
 
 PutDomainPermissionsPolicyOutcomeCallable CodeArtifactClient::PutDomainPermissionsPolicyCallable(const PutDomainPermissionsPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutDomainPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutDomainPermissionsPolicy(request); } );
+  std::shared_ptr<PutDomainPermissionsPolicyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutDomainPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutDomainPermissionsPolicy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::PutDomainPermissionsPolicyAsync(const PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutDomainPermissionsPolicyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutDomainPermissionsPolicy(request), context);
+      handler(this, *pRequest, PutDomainPermissionsPolicy(*pRequest), context);
     } );
 }
 
@@ -1346,17 +1376,18 @@ PutPackageOriginConfigurationOutcome CodeArtifactClient::PutPackageOriginConfigu
 
 PutPackageOriginConfigurationOutcomeCallable CodeArtifactClient::PutPackageOriginConfigurationCallable(const PutPackageOriginConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutPackageOriginConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPackageOriginConfiguration(request); } );
+  std::shared_ptr<PutPackageOriginConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutPackageOriginConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutPackageOriginConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::PutPackageOriginConfigurationAsync(const PutPackageOriginConfigurationRequest& request, const PutPackageOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutPackageOriginConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutPackageOriginConfiguration(request), context);
+      handler(this, *pRequest, PutPackageOriginConfiguration(*pRequest), context);
     } );
 }
 
@@ -1381,17 +1412,18 @@ PutRepositoryPermissionsPolicyOutcome CodeArtifactClient::PutRepositoryPermissio
 
 PutRepositoryPermissionsPolicyOutcomeCallable CodeArtifactClient::PutRepositoryPermissionsPolicyCallable(const PutRepositoryPermissionsPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutRepositoryPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRepositoryPermissionsPolicy(request); } );
+  std::shared_ptr<PutRepositoryPermissionsPolicyRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutRepositoryPermissionsPolicyOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutRepositoryPermissionsPolicy(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::PutRepositoryPermissionsPolicyAsync(const PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutRepositoryPermissionsPolicyRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutRepositoryPermissionsPolicy(request), context);
+      handler(this, *pRequest, PutRepositoryPermissionsPolicy(*pRequest), context);
     } );
 }
 
@@ -1411,17 +1443,18 @@ TagResourceOutcome CodeArtifactClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable CodeArtifactClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -1441,17 +1474,18 @@ UntagResourceOutcome CodeArtifactClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable CodeArtifactClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -1486,17 +1520,18 @@ UpdatePackageVersionsStatusOutcome CodeArtifactClient::UpdatePackageVersionsStat
 
 UpdatePackageVersionsStatusOutcomeCallable CodeArtifactClient::UpdatePackageVersionsStatusCallable(const UpdatePackageVersionsStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePackageVersionsStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePackageVersionsStatus(request); } );
+  std::shared_ptr<UpdatePackageVersionsStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePackageVersionsStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdatePackageVersionsStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::UpdatePackageVersionsStatusAsync(const UpdatePackageVersionsStatusRequest& request, const UpdatePackageVersionsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdatePackageVersionsStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdatePackageVersionsStatus(request), context);
+      handler(this, *pRequest, UpdatePackageVersionsStatus(*pRequest), context);
     } );
 }
 
@@ -1521,17 +1556,18 @@ UpdateRepositoryOutcome CodeArtifactClient::UpdateRepository(const UpdateReposit
 
 UpdateRepositoryOutcomeCallable CodeArtifactClient::UpdateRepositoryCallable(const UpdateRepositoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRepository(request); } );
+  std::shared_ptr<UpdateRepositoryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRepositoryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateRepository(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeArtifactClient::UpdateRepositoryAsync(const UpdateRepositoryRequest& request, const UpdateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateRepositoryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateRepository(request), context);
+      handler(this, *pRequest, UpdateRepository(*pRequest), context);
     } );
 }
 

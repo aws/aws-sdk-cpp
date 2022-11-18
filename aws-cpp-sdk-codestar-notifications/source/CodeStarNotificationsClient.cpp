@@ -173,17 +173,18 @@ CreateNotificationRuleOutcome CodeStarNotificationsClient::CreateNotificationRul
 
 CreateNotificationRuleOutcomeCallable CodeStarNotificationsClient::CreateNotificationRuleCallable(const CreateNotificationRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNotificationRule(request); } );
+  std::shared_ptr<CreateNotificationRuleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateNotificationRule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::CreateNotificationRuleAsync(const CreateNotificationRuleRequest& request, const CreateNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateNotificationRuleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateNotificationRule(request), context);
+      handler(this, *pRequest, CreateNotificationRule(*pRequest), context);
     } );
 }
 
@@ -198,17 +199,18 @@ DeleteNotificationRuleOutcome CodeStarNotificationsClient::DeleteNotificationRul
 
 DeleteNotificationRuleOutcomeCallable CodeStarNotificationsClient::DeleteNotificationRuleCallable(const DeleteNotificationRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNotificationRule(request); } );
+  std::shared_ptr<DeleteNotificationRuleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteNotificationRule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::DeleteNotificationRuleAsync(const DeleteNotificationRuleRequest& request, const DeleteNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteNotificationRuleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteNotificationRule(request), context);
+      handler(this, *pRequest, DeleteNotificationRule(*pRequest), context);
     } );
 }
 
@@ -223,17 +225,18 @@ DeleteTargetOutcome CodeStarNotificationsClient::DeleteTarget(const DeleteTarget
 
 DeleteTargetOutcomeCallable CodeStarNotificationsClient::DeleteTargetCallable(const DeleteTargetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTarget(request); } );
+  std::shared_ptr<DeleteTargetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTargetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteTarget(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::DeleteTargetAsync(const DeleteTargetRequest& request, const DeleteTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteTargetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteTarget(request), context);
+      handler(this, *pRequest, DeleteTarget(*pRequest), context);
     } );
 }
 
@@ -248,17 +251,18 @@ DescribeNotificationRuleOutcome CodeStarNotificationsClient::DescribeNotificatio
 
 DescribeNotificationRuleOutcomeCallable CodeStarNotificationsClient::DescribeNotificationRuleCallable(const DescribeNotificationRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNotificationRule(request); } );
+  std::shared_ptr<DescribeNotificationRuleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeNotificationRule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::DescribeNotificationRuleAsync(const DescribeNotificationRuleRequest& request, const DescribeNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeNotificationRuleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeNotificationRule(request), context);
+      handler(this, *pRequest, DescribeNotificationRule(*pRequest), context);
     } );
 }
 
@@ -273,17 +277,18 @@ ListEventTypesOutcome CodeStarNotificationsClient::ListEventTypes(const ListEven
 
 ListEventTypesOutcomeCallable CodeStarNotificationsClient::ListEventTypesCallable(const ListEventTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEventTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventTypes(request); } );
+  std::shared_ptr<ListEventTypesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEventTypesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEventTypes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::ListEventTypesAsync(const ListEventTypesRequest& request, const ListEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEventTypesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEventTypes(request), context);
+      handler(this, *pRequest, ListEventTypes(*pRequest), context);
     } );
 }
 
@@ -298,17 +303,18 @@ ListNotificationRulesOutcome CodeStarNotificationsClient::ListNotificationRules(
 
 ListNotificationRulesOutcomeCallable CodeStarNotificationsClient::ListNotificationRulesCallable(const ListNotificationRulesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListNotificationRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNotificationRules(request); } );
+  std::shared_ptr<ListNotificationRulesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListNotificationRulesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListNotificationRules(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::ListNotificationRulesAsync(const ListNotificationRulesRequest& request, const ListNotificationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListNotificationRulesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListNotificationRules(request), context);
+      handler(this, *pRequest, ListNotificationRules(*pRequest), context);
     } );
 }
 
@@ -323,17 +329,18 @@ ListTagsForResourceOutcome CodeStarNotificationsClient::ListTagsForResource(cons
 
 ListTagsForResourceOutcomeCallable CodeStarNotificationsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -348,17 +355,18 @@ ListTargetsOutcome CodeStarNotificationsClient::ListTargets(const ListTargetsReq
 
 ListTargetsOutcomeCallable CodeStarNotificationsClient::ListTargetsCallable(const ListTargetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTargetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTargets(request); } );
+  std::shared_ptr<ListTargetsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTargetsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTargets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::ListTargetsAsync(const ListTargetsRequest& request, const ListTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTargetsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTargets(request), context);
+      handler(this, *pRequest, ListTargets(*pRequest), context);
     } );
 }
 
@@ -373,17 +381,18 @@ SubscribeOutcome CodeStarNotificationsClient::Subscribe(const SubscribeRequest& 
 
 SubscribeOutcomeCallable CodeStarNotificationsClient::SubscribeCallable(const SubscribeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SubscribeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Subscribe(request); } );
+  std::shared_ptr<SubscribeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SubscribeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->Subscribe(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::SubscribeAsync(const SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SubscribeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, Subscribe(request), context);
+      handler(this, *pRequest, Subscribe(*pRequest), context);
     } );
 }
 
@@ -398,17 +407,18 @@ TagResourceOutcome CodeStarNotificationsClient::TagResource(const TagResourceReq
 
 TagResourceOutcomeCallable CodeStarNotificationsClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -423,17 +433,18 @@ UnsubscribeOutcome CodeStarNotificationsClient::Unsubscribe(const UnsubscribeReq
 
 UnsubscribeOutcomeCallable CodeStarNotificationsClient::UnsubscribeCallable(const UnsubscribeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UnsubscribeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Unsubscribe(request); } );
+  std::shared_ptr<UnsubscribeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UnsubscribeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->Unsubscribe(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::UnsubscribeAsync(const UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UnsubscribeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, Unsubscribe(request), context);
+      handler(this, *pRequest, Unsubscribe(*pRequest), context);
     } );
 }
 
@@ -459,17 +470,18 @@ UntagResourceOutcome CodeStarNotificationsClient::UntagResource(const UntagResou
 
 UntagResourceOutcomeCallable CodeStarNotificationsClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -484,17 +496,18 @@ UpdateNotificationRuleOutcome CodeStarNotificationsClient::UpdateNotificationRul
 
 UpdateNotificationRuleOutcomeCallable CodeStarNotificationsClient::UpdateNotificationRuleCallable(const UpdateNotificationRuleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNotificationRule(request); } );
+  std::shared_ptr<UpdateNotificationRuleRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNotificationRuleOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateNotificationRule(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CodeStarNotificationsClient::UpdateNotificationRuleAsync(const UpdateNotificationRuleRequest& request, const UpdateNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateNotificationRuleRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateNotificationRule(request), context);
+      handler(this, *pRequest, UpdateNotificationRule(*pRequest), context);
     } );
 }
 

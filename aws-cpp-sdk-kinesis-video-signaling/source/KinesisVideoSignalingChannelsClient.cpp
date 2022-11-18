@@ -162,17 +162,18 @@ GetIceServerConfigOutcome KinesisVideoSignalingChannelsClient::GetIceServerConfi
 
 GetIceServerConfigOutcomeCallable KinesisVideoSignalingChannelsClient::GetIceServerConfigCallable(const GetIceServerConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetIceServerConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIceServerConfig(request); } );
+  std::shared_ptr<GetIceServerConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetIceServerConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetIceServerConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void KinesisVideoSignalingChannelsClient::GetIceServerConfigAsync(const GetIceServerConfigRequest& request, const GetIceServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetIceServerConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetIceServerConfig(request), context);
+      handler(this, *pRequest, GetIceServerConfig(*pRequest), context);
     } );
 }
 
@@ -187,17 +188,18 @@ SendAlexaOfferToMasterOutcome KinesisVideoSignalingChannelsClient::SendAlexaOffe
 
 SendAlexaOfferToMasterOutcomeCallable KinesisVideoSignalingChannelsClient::SendAlexaOfferToMasterCallable(const SendAlexaOfferToMasterRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendAlexaOfferToMasterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendAlexaOfferToMaster(request); } );
+  std::shared_ptr<SendAlexaOfferToMasterRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SendAlexaOfferToMasterOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SendAlexaOfferToMaster(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void KinesisVideoSignalingChannelsClient::SendAlexaOfferToMasterAsync(const SendAlexaOfferToMasterRequest& request, const SendAlexaOfferToMasterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SendAlexaOfferToMasterRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SendAlexaOfferToMaster(request), context);
+      handler(this, *pRequest, SendAlexaOfferToMaster(*pRequest), context);
     } );
 }
 

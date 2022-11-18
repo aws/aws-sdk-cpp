@@ -170,17 +170,18 @@ AssociateUserOutcome LicenseManagerUserSubscriptionsClient::AssociateUser(const 
 
 AssociateUserOutcomeCallable LicenseManagerUserSubscriptionsClient::AssociateUserCallable(const AssociateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateUser(request); } );
+  std::shared_ptr<AssociateUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LicenseManagerUserSubscriptionsClient::AssociateUserAsync(const AssociateUserRequest& request, const AssociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateUser(request), context);
+      handler(this, *pRequest, AssociateUser(*pRequest), context);
     } );
 }
 
@@ -195,17 +196,18 @@ DeregisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::Deregis
 
 DeregisterIdentityProviderOutcomeCallable LicenseManagerUserSubscriptionsClient::DeregisterIdentityProviderCallable(const DeregisterIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeregisterIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterIdentityProvider(request); } );
+  std::shared_ptr<DeregisterIdentityProviderRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeregisterIdentityProvider(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LicenseManagerUserSubscriptionsClient::DeregisterIdentityProviderAsync(const DeregisterIdentityProviderRequest& request, const DeregisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeregisterIdentityProviderRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeregisterIdentityProvider(request), context);
+      handler(this, *pRequest, DeregisterIdentityProvider(*pRequest), context);
     } );
 }
 
@@ -220,17 +222,18 @@ DisassociateUserOutcome LicenseManagerUserSubscriptionsClient::DisassociateUser(
 
 DisassociateUserOutcomeCallable LicenseManagerUserSubscriptionsClient::DisassociateUserCallable(const DisassociateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateUser(request); } );
+  std::shared_ptr<DisassociateUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LicenseManagerUserSubscriptionsClient::DisassociateUserAsync(const DisassociateUserRequest& request, const DisassociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateUser(request), context);
+      handler(this, *pRequest, DisassociateUser(*pRequest), context);
     } );
 }
 
@@ -245,17 +248,18 @@ ListIdentityProvidersOutcome LicenseManagerUserSubscriptionsClient::ListIdentity
 
 ListIdentityProvidersOutcomeCallable LicenseManagerUserSubscriptionsClient::ListIdentityProvidersCallable(const ListIdentityProvidersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListIdentityProvidersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIdentityProviders(request); } );
+  std::shared_ptr<ListIdentityProvidersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListIdentityProvidersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListIdentityProviders(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LicenseManagerUserSubscriptionsClient::ListIdentityProvidersAsync(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListIdentityProvidersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListIdentityProviders(request), context);
+      handler(this, *pRequest, ListIdentityProviders(*pRequest), context);
     } );
 }
 
@@ -270,17 +274,18 @@ ListInstancesOutcome LicenseManagerUserSubscriptionsClient::ListInstances(const 
 
 ListInstancesOutcomeCallable LicenseManagerUserSubscriptionsClient::ListInstancesCallable(const ListInstancesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInstances(request); } );
+  std::shared_ptr<ListInstancesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListInstancesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListInstances(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LicenseManagerUserSubscriptionsClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListInstancesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListInstances(request), context);
+      handler(this, *pRequest, ListInstances(*pRequest), context);
     } );
 }
 
@@ -295,17 +300,18 @@ ListProductSubscriptionsOutcome LicenseManagerUserSubscriptionsClient::ListProdu
 
 ListProductSubscriptionsOutcomeCallable LicenseManagerUserSubscriptionsClient::ListProductSubscriptionsCallable(const ListProductSubscriptionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProductSubscriptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProductSubscriptions(request); } );
+  std::shared_ptr<ListProductSubscriptionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListProductSubscriptionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListProductSubscriptions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LicenseManagerUserSubscriptionsClient::ListProductSubscriptionsAsync(const ListProductSubscriptionsRequest& request, const ListProductSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListProductSubscriptionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListProductSubscriptions(request), context);
+      handler(this, *pRequest, ListProductSubscriptions(*pRequest), context);
     } );
 }
 
@@ -320,17 +326,18 @@ ListUserAssociationsOutcome LicenseManagerUserSubscriptionsClient::ListUserAssoc
 
 ListUserAssociationsOutcomeCallable LicenseManagerUserSubscriptionsClient::ListUserAssociationsCallable(const ListUserAssociationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUserAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserAssociations(request); } );
+  std::shared_ptr<ListUserAssociationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListUserAssociationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListUserAssociations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LicenseManagerUserSubscriptionsClient::ListUserAssociationsAsync(const ListUserAssociationsRequest& request, const ListUserAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListUserAssociationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListUserAssociations(request), context);
+      handler(this, *pRequest, ListUserAssociations(*pRequest), context);
     } );
 }
 
@@ -345,17 +352,18 @@ RegisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::RegisterI
 
 RegisterIdentityProviderOutcomeCallable LicenseManagerUserSubscriptionsClient::RegisterIdentityProviderCallable(const RegisterIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterIdentityProvider(request); } );
+  std::shared_ptr<RegisterIdentityProviderRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RegisterIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RegisterIdentityProvider(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LicenseManagerUserSubscriptionsClient::RegisterIdentityProviderAsync(const RegisterIdentityProviderRequest& request, const RegisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RegisterIdentityProviderRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RegisterIdentityProvider(request), context);
+      handler(this, *pRequest, RegisterIdentityProvider(*pRequest), context);
     } );
 }
 
@@ -370,17 +378,18 @@ StartProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StartProd
 
 StartProductSubscriptionOutcomeCallable LicenseManagerUserSubscriptionsClient::StartProductSubscriptionCallable(const StartProductSubscriptionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartProductSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartProductSubscription(request); } );
+  std::shared_ptr<StartProductSubscriptionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartProductSubscriptionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartProductSubscription(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LicenseManagerUserSubscriptionsClient::StartProductSubscriptionAsync(const StartProductSubscriptionRequest& request, const StartProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartProductSubscriptionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartProductSubscription(request), context);
+      handler(this, *pRequest, StartProductSubscription(*pRequest), context);
     } );
 }
 
@@ -395,17 +404,18 @@ StopProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StopProduc
 
 StopProductSubscriptionOutcomeCallable LicenseManagerUserSubscriptionsClient::StopProductSubscriptionCallable(const StopProductSubscriptionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopProductSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopProductSubscription(request); } );
+  std::shared_ptr<StopProductSubscriptionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopProductSubscriptionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopProductSubscription(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void LicenseManagerUserSubscriptionsClient::StopProductSubscriptionAsync(const StopProductSubscriptionRequest& request, const StopProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopProductSubscriptionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopProductSubscription(request), context);
+      handler(this, *pRequest, StopProductSubscription(*pRequest), context);
     } );
 }
 

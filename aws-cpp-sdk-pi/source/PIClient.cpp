@@ -165,17 +165,18 @@ DescribeDimensionKeysOutcome PIClient::DescribeDimensionKeys(const DescribeDimen
 
 DescribeDimensionKeysOutcomeCallable PIClient::DescribeDimensionKeysCallable(const DescribeDimensionKeysRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeDimensionKeysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDimensionKeys(request); } );
+  std::shared_ptr<DescribeDimensionKeysRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDimensionKeysOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeDimensionKeys(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PIClient::DescribeDimensionKeysAsync(const DescribeDimensionKeysRequest& request, const DescribeDimensionKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeDimensionKeysRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeDimensionKeys(request), context);
+      handler(this, *pRequest, DescribeDimensionKeys(*pRequest), context);
     } );
 }
 
@@ -189,17 +190,18 @@ GetDimensionKeyDetailsOutcome PIClient::GetDimensionKeyDetails(const GetDimensio
 
 GetDimensionKeyDetailsOutcomeCallable PIClient::GetDimensionKeyDetailsCallable(const GetDimensionKeyDetailsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDimensionKeyDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDimensionKeyDetails(request); } );
+  std::shared_ptr<GetDimensionKeyDetailsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDimensionKeyDetailsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDimensionKeyDetails(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PIClient::GetDimensionKeyDetailsAsync(const GetDimensionKeyDetailsRequest& request, const GetDimensionKeyDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDimensionKeyDetailsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDimensionKeyDetails(request), context);
+      handler(this, *pRequest, GetDimensionKeyDetails(*pRequest), context);
     } );
 }
 
@@ -213,17 +215,18 @@ GetResourceMetadataOutcome PIClient::GetResourceMetadata(const GetResourceMetada
 
 GetResourceMetadataOutcomeCallable PIClient::GetResourceMetadataCallable(const GetResourceMetadataRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourceMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceMetadata(request); } );
+  std::shared_ptr<GetResourceMetadataRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceMetadataOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetResourceMetadata(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PIClient::GetResourceMetadataAsync(const GetResourceMetadataRequest& request, const GetResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetResourceMetadataRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetResourceMetadata(request), context);
+      handler(this, *pRequest, GetResourceMetadata(*pRequest), context);
     } );
 }
 
@@ -237,17 +240,18 @@ GetResourceMetricsOutcome PIClient::GetResourceMetrics(const GetResourceMetricsR
 
 GetResourceMetricsOutcomeCallable PIClient::GetResourceMetricsCallable(const GetResourceMetricsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetResourceMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceMetrics(request); } );
+  std::shared_ptr<GetResourceMetricsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceMetricsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetResourceMetrics(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PIClient::GetResourceMetricsAsync(const GetResourceMetricsRequest& request, const GetResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetResourceMetricsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetResourceMetrics(request), context);
+      handler(this, *pRequest, GetResourceMetrics(*pRequest), context);
     } );
 }
 
@@ -261,17 +265,18 @@ ListAvailableResourceDimensionsOutcome PIClient::ListAvailableResourceDimensions
 
 ListAvailableResourceDimensionsOutcomeCallable PIClient::ListAvailableResourceDimensionsCallable(const ListAvailableResourceDimensionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAvailableResourceDimensionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAvailableResourceDimensions(request); } );
+  std::shared_ptr<ListAvailableResourceDimensionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAvailableResourceDimensionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAvailableResourceDimensions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PIClient::ListAvailableResourceDimensionsAsync(const ListAvailableResourceDimensionsRequest& request, const ListAvailableResourceDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAvailableResourceDimensionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAvailableResourceDimensions(request), context);
+      handler(this, *pRequest, ListAvailableResourceDimensions(*pRequest), context);
     } );
 }
 
@@ -285,17 +290,18 @@ ListAvailableResourceMetricsOutcome PIClient::ListAvailableResourceMetrics(const
 
 ListAvailableResourceMetricsOutcomeCallable PIClient::ListAvailableResourceMetricsCallable(const ListAvailableResourceMetricsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAvailableResourceMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAvailableResourceMetrics(request); } );
+  std::shared_ptr<ListAvailableResourceMetricsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAvailableResourceMetricsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAvailableResourceMetrics(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PIClient::ListAvailableResourceMetricsAsync(const ListAvailableResourceMetricsRequest& request, const ListAvailableResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAvailableResourceMetricsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAvailableResourceMetrics(request), context);
+      handler(this, *pRequest, ListAvailableResourceMetrics(*pRequest), context);
     } );
 }
 

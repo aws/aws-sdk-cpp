@@ -170,17 +170,18 @@ CreateSlackChannelConfigurationOutcome SupportAppClient::CreateSlackChannelConfi
 
 CreateSlackChannelConfigurationOutcomeCallable SupportAppClient::CreateSlackChannelConfigurationCallable(const CreateSlackChannelConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSlackChannelConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSlackChannelConfiguration(request); } );
+  std::shared_ptr<CreateSlackChannelConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateSlackChannelConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateSlackChannelConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SupportAppClient::CreateSlackChannelConfigurationAsync(const CreateSlackChannelConfigurationRequest& request, const CreateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateSlackChannelConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateSlackChannelConfiguration(request), context);
+      handler(this, *pRequest, CreateSlackChannelConfiguration(*pRequest), context);
     } );
 }
 
@@ -195,17 +196,18 @@ DeleteAccountAliasOutcome SupportAppClient::DeleteAccountAlias(const DeleteAccou
 
 DeleteAccountAliasOutcomeCallable SupportAppClient::DeleteAccountAliasCallable(const DeleteAccountAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAccountAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccountAlias(request); } );
+  std::shared_ptr<DeleteAccountAliasRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccountAliasOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAccountAlias(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SupportAppClient::DeleteAccountAliasAsync(const DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAccountAliasRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAccountAlias(request), context);
+      handler(this, *pRequest, DeleteAccountAlias(*pRequest), context);
     } );
 }
 
@@ -220,17 +222,18 @@ DeleteSlackChannelConfigurationOutcome SupportAppClient::DeleteSlackChannelConfi
 
 DeleteSlackChannelConfigurationOutcomeCallable SupportAppClient::DeleteSlackChannelConfigurationCallable(const DeleteSlackChannelConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSlackChannelConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSlackChannelConfiguration(request); } );
+  std::shared_ptr<DeleteSlackChannelConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSlackChannelConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteSlackChannelConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SupportAppClient::DeleteSlackChannelConfigurationAsync(const DeleteSlackChannelConfigurationRequest& request, const DeleteSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteSlackChannelConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteSlackChannelConfiguration(request), context);
+      handler(this, *pRequest, DeleteSlackChannelConfiguration(*pRequest), context);
     } );
 }
 
@@ -245,17 +248,18 @@ DeleteSlackWorkspaceConfigurationOutcome SupportAppClient::DeleteSlackWorkspaceC
 
 DeleteSlackWorkspaceConfigurationOutcomeCallable SupportAppClient::DeleteSlackWorkspaceConfigurationCallable(const DeleteSlackWorkspaceConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSlackWorkspaceConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSlackWorkspaceConfiguration(request); } );
+  std::shared_ptr<DeleteSlackWorkspaceConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSlackWorkspaceConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteSlackWorkspaceConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SupportAppClient::DeleteSlackWorkspaceConfigurationAsync(const DeleteSlackWorkspaceConfigurationRequest& request, const DeleteSlackWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteSlackWorkspaceConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteSlackWorkspaceConfiguration(request), context);
+      handler(this, *pRequest, DeleteSlackWorkspaceConfiguration(*pRequest), context);
     } );
 }
 
@@ -270,17 +274,18 @@ GetAccountAliasOutcome SupportAppClient::GetAccountAlias(const GetAccountAliasRe
 
 GetAccountAliasOutcomeCallable SupportAppClient::GetAccountAliasCallable(const GetAccountAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccountAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccountAlias(request); } );
+  std::shared_ptr<GetAccountAliasRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetAccountAliasOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetAccountAlias(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SupportAppClient::GetAccountAliasAsync(const GetAccountAliasRequest& request, const GetAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetAccountAliasRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetAccountAlias(request), context);
+      handler(this, *pRequest, GetAccountAlias(*pRequest), context);
     } );
 }
 
@@ -295,17 +300,18 @@ ListSlackChannelConfigurationsOutcome SupportAppClient::ListSlackChannelConfigur
 
 ListSlackChannelConfigurationsOutcomeCallable SupportAppClient::ListSlackChannelConfigurationsCallable(const ListSlackChannelConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSlackChannelConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSlackChannelConfigurations(request); } );
+  std::shared_ptr<ListSlackChannelConfigurationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSlackChannelConfigurationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSlackChannelConfigurations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SupportAppClient::ListSlackChannelConfigurationsAsync(const ListSlackChannelConfigurationsRequest& request, const ListSlackChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSlackChannelConfigurationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSlackChannelConfigurations(request), context);
+      handler(this, *pRequest, ListSlackChannelConfigurations(*pRequest), context);
     } );
 }
 
@@ -320,17 +326,18 @@ ListSlackWorkspaceConfigurationsOutcome SupportAppClient::ListSlackWorkspaceConf
 
 ListSlackWorkspaceConfigurationsOutcomeCallable SupportAppClient::ListSlackWorkspaceConfigurationsCallable(const ListSlackWorkspaceConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSlackWorkspaceConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSlackWorkspaceConfigurations(request); } );
+  std::shared_ptr<ListSlackWorkspaceConfigurationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListSlackWorkspaceConfigurationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListSlackWorkspaceConfigurations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SupportAppClient::ListSlackWorkspaceConfigurationsAsync(const ListSlackWorkspaceConfigurationsRequest& request, const ListSlackWorkspaceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListSlackWorkspaceConfigurationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListSlackWorkspaceConfigurations(request), context);
+      handler(this, *pRequest, ListSlackWorkspaceConfigurations(*pRequest), context);
     } );
 }
 
@@ -345,17 +352,18 @@ PutAccountAliasOutcome SupportAppClient::PutAccountAlias(const PutAccountAliasRe
 
 PutAccountAliasOutcomeCallable SupportAppClient::PutAccountAliasCallable(const PutAccountAliasRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAccountAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccountAlias(request); } );
+  std::shared_ptr<PutAccountAliasRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutAccountAliasOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutAccountAlias(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SupportAppClient::PutAccountAliasAsync(const PutAccountAliasRequest& request, const PutAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutAccountAliasRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutAccountAlias(request), context);
+      handler(this, *pRequest, PutAccountAlias(*pRequest), context);
     } );
 }
 
@@ -370,17 +378,18 @@ RegisterSlackWorkspaceForOrganizationOutcome SupportAppClient::RegisterSlackWork
 
 RegisterSlackWorkspaceForOrganizationOutcomeCallable SupportAppClient::RegisterSlackWorkspaceForOrganizationCallable(const RegisterSlackWorkspaceForOrganizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RegisterSlackWorkspaceForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterSlackWorkspaceForOrganization(request); } );
+  std::shared_ptr<RegisterSlackWorkspaceForOrganizationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RegisterSlackWorkspaceForOrganizationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RegisterSlackWorkspaceForOrganization(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SupportAppClient::RegisterSlackWorkspaceForOrganizationAsync(const RegisterSlackWorkspaceForOrganizationRequest& request, const RegisterSlackWorkspaceForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RegisterSlackWorkspaceForOrganizationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RegisterSlackWorkspaceForOrganization(request), context);
+      handler(this, *pRequest, RegisterSlackWorkspaceForOrganization(*pRequest), context);
     } );
 }
 
@@ -395,17 +404,18 @@ UpdateSlackChannelConfigurationOutcome SupportAppClient::UpdateSlackChannelConfi
 
 UpdateSlackChannelConfigurationOutcomeCallable SupportAppClient::UpdateSlackChannelConfigurationCallable(const UpdateSlackChannelConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSlackChannelConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSlackChannelConfiguration(request); } );
+  std::shared_ptr<UpdateSlackChannelConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSlackChannelConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateSlackChannelConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SupportAppClient::UpdateSlackChannelConfigurationAsync(const UpdateSlackChannelConfigurationRequest& request, const UpdateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateSlackChannelConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateSlackChannelConfiguration(request), context);
+      handler(this, *pRequest, UpdateSlackChannelConfiguration(*pRequest), context);
     } );
 }
 

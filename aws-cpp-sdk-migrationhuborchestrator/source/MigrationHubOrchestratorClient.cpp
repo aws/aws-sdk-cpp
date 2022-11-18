@@ -188,17 +188,18 @@ CreateWorkflowOutcome MigrationHubOrchestratorClient::CreateWorkflow(const Creat
 
 CreateWorkflowOutcomeCallable MigrationHubOrchestratorClient::CreateWorkflowCallable(const CreateWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkflow(request); } );
+  std::shared_ptr<CreateWorkflowRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateWorkflow(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::CreateWorkflowAsync(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateWorkflowRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateWorkflow(request), context);
+      handler(this, *pRequest, CreateWorkflow(*pRequest), context);
     } );
 }
 
@@ -213,17 +214,18 @@ CreateWorkflowStepOutcome MigrationHubOrchestratorClient::CreateWorkflowStep(con
 
 CreateWorkflowStepOutcomeCallable MigrationHubOrchestratorClient::CreateWorkflowStepCallable(const CreateWorkflowStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkflowStep(request); } );
+  std::shared_ptr<CreateWorkflowStepRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateWorkflowStep(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::CreateWorkflowStepAsync(const CreateWorkflowStepRequest& request, const CreateWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateWorkflowStepRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateWorkflowStep(request), context);
+      handler(this, *pRequest, CreateWorkflowStep(*pRequest), context);
     } );
 }
 
@@ -238,17 +240,18 @@ CreateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::CreateWorkflowSte
 
 CreateWorkflowStepGroupOutcomeCallable MigrationHubOrchestratorClient::CreateWorkflowStepGroupCallable(const CreateWorkflowStepGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkflowStepGroup(request); } );
+  std::shared_ptr<CreateWorkflowStepGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateWorkflowStepGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::CreateWorkflowStepGroupAsync(const CreateWorkflowStepGroupRequest& request, const CreateWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateWorkflowStepGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateWorkflowStepGroup(request), context);
+      handler(this, *pRequest, CreateWorkflowStepGroup(*pRequest), context);
     } );
 }
 
@@ -269,17 +272,18 @@ DeleteWorkflowOutcome MigrationHubOrchestratorClient::DeleteWorkflow(const Delet
 
 DeleteWorkflowOutcomeCallable MigrationHubOrchestratorClient::DeleteWorkflowCallable(const DeleteWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkflow(request); } );
+  std::shared_ptr<DeleteWorkflowRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteWorkflow(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteWorkflowRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteWorkflow(request), context);
+      handler(this, *pRequest, DeleteWorkflow(*pRequest), context);
     } );
 }
 
@@ -310,17 +314,18 @@ DeleteWorkflowStepOutcome MigrationHubOrchestratorClient::DeleteWorkflowStep(con
 
 DeleteWorkflowStepOutcomeCallable MigrationHubOrchestratorClient::DeleteWorkflowStepCallable(const DeleteWorkflowStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkflowStep(request); } );
+  std::shared_ptr<DeleteWorkflowStepRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteWorkflowStep(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::DeleteWorkflowStepAsync(const DeleteWorkflowStepRequest& request, const DeleteWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteWorkflowStepRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteWorkflowStep(request), context);
+      handler(this, *pRequest, DeleteWorkflowStep(*pRequest), context);
     } );
 }
 
@@ -346,17 +351,18 @@ DeleteWorkflowStepGroupOutcome MigrationHubOrchestratorClient::DeleteWorkflowSte
 
 DeleteWorkflowStepGroupOutcomeCallable MigrationHubOrchestratorClient::DeleteWorkflowStepGroupCallable(const DeleteWorkflowStepGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkflowStepGroup(request); } );
+  std::shared_ptr<DeleteWorkflowStepGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteWorkflowStepGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::DeleteWorkflowStepGroupAsync(const DeleteWorkflowStepGroupRequest& request, const DeleteWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteWorkflowStepGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteWorkflowStepGroup(request), context);
+      handler(this, *pRequest, DeleteWorkflowStepGroup(*pRequest), context);
     } );
 }
 
@@ -377,17 +383,18 @@ GetTemplateOutcome MigrationHubOrchestratorClient::GetTemplate(const GetTemplate
 
 GetTemplateOutcomeCallable MigrationHubOrchestratorClient::GetTemplateCallable(const GetTemplateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemplate(request); } );
+  std::shared_ptr<GetTemplateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetTemplateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetTemplate(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::GetTemplateAsync(const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetTemplateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetTemplate(request), context);
+      handler(this, *pRequest, GetTemplate(*pRequest), context);
     } );
 }
 
@@ -418,17 +425,18 @@ GetTemplateStepOutcome MigrationHubOrchestratorClient::GetTemplateStep(const Get
 
 GetTemplateStepOutcomeCallable MigrationHubOrchestratorClient::GetTemplateStepCallable(const GetTemplateStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTemplateStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemplateStep(request); } );
+  std::shared_ptr<GetTemplateStepRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetTemplateStepOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetTemplateStep(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::GetTemplateStepAsync(const GetTemplateStepRequest& request, const GetTemplateStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetTemplateStepRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetTemplateStep(request), context);
+      handler(this, *pRequest, GetTemplateStep(*pRequest), context);
     } );
 }
 
@@ -456,17 +464,18 @@ GetTemplateStepGroupOutcome MigrationHubOrchestratorClient::GetTemplateStepGroup
 
 GetTemplateStepGroupOutcomeCallable MigrationHubOrchestratorClient::GetTemplateStepGroupCallable(const GetTemplateStepGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetTemplateStepGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemplateStepGroup(request); } );
+  std::shared_ptr<GetTemplateStepGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetTemplateStepGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetTemplateStepGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::GetTemplateStepGroupAsync(const GetTemplateStepGroupRequest& request, const GetTemplateStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetTemplateStepGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetTemplateStepGroup(request), context);
+      handler(this, *pRequest, GetTemplateStepGroup(*pRequest), context);
     } );
 }
 
@@ -487,17 +496,18 @@ GetWorkflowOutcome MigrationHubOrchestratorClient::GetWorkflow(const GetWorkflow
 
 GetWorkflowOutcomeCallable MigrationHubOrchestratorClient::GetWorkflowCallable(const GetWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflow(request); } );
+  std::shared_ptr<GetWorkflowRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetWorkflow(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::GetWorkflowAsync(const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetWorkflowRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetWorkflow(request), context);
+      handler(this, *pRequest, GetWorkflow(*pRequest), context);
     } );
 }
 
@@ -528,17 +538,18 @@ GetWorkflowStepOutcome MigrationHubOrchestratorClient::GetWorkflowStep(const Get
 
 GetWorkflowStepOutcomeCallable MigrationHubOrchestratorClient::GetWorkflowStepCallable(const GetWorkflowStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflowStep(request); } );
+  std::shared_ptr<GetWorkflowStepRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetWorkflowStep(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::GetWorkflowStepAsync(const GetWorkflowStepRequest& request, const GetWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetWorkflowStepRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetWorkflowStep(request), context);
+      handler(this, *pRequest, GetWorkflowStep(*pRequest), context);
     } );
 }
 
@@ -564,17 +575,18 @@ GetWorkflowStepGroupOutcome MigrationHubOrchestratorClient::GetWorkflowStepGroup
 
 GetWorkflowStepGroupOutcomeCallable MigrationHubOrchestratorClient::GetWorkflowStepGroupCallable(const GetWorkflowStepGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflowStepGroup(request); } );
+  std::shared_ptr<GetWorkflowStepGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetWorkflowStepGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::GetWorkflowStepGroupAsync(const GetWorkflowStepGroupRequest& request, const GetWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetWorkflowStepGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetWorkflowStepGroup(request), context);
+      handler(this, *pRequest, GetWorkflowStepGroup(*pRequest), context);
     } );
 }
 
@@ -589,17 +601,18 @@ ListPluginsOutcome MigrationHubOrchestratorClient::ListPlugins(const ListPlugins
 
 ListPluginsOutcomeCallable MigrationHubOrchestratorClient::ListPluginsCallable(const ListPluginsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPluginsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPlugins(request); } );
+  std::shared_ptr<ListPluginsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPluginsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPlugins(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::ListPluginsAsync(const ListPluginsRequest& request, const ListPluginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPluginsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPlugins(request), context);
+      handler(this, *pRequest, ListPlugins(*pRequest), context);
     } );
 }
 
@@ -620,17 +633,18 @@ ListTagsForResourceOutcome MigrationHubOrchestratorClient::ListTagsForResource(c
 
 ListTagsForResourceOutcomeCallable MigrationHubOrchestratorClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -651,17 +665,18 @@ ListTemplateStepGroupsOutcome MigrationHubOrchestratorClient::ListTemplateStepGr
 
 ListTemplateStepGroupsOutcomeCallable MigrationHubOrchestratorClient::ListTemplateStepGroupsCallable(const ListTemplateStepGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTemplateStepGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplateStepGroups(request); } );
+  std::shared_ptr<ListTemplateStepGroupsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTemplateStepGroupsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTemplateStepGroups(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::ListTemplateStepGroupsAsync(const ListTemplateStepGroupsRequest& request, const ListTemplateStepGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTemplateStepGroupsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTemplateStepGroups(request), context);
+      handler(this, *pRequest, ListTemplateStepGroups(*pRequest), context);
     } );
 }
 
@@ -686,17 +701,18 @@ ListTemplateStepsOutcome MigrationHubOrchestratorClient::ListTemplateSteps(const
 
 ListTemplateStepsOutcomeCallable MigrationHubOrchestratorClient::ListTemplateStepsCallable(const ListTemplateStepsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTemplateStepsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplateSteps(request); } );
+  std::shared_ptr<ListTemplateStepsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTemplateStepsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTemplateSteps(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::ListTemplateStepsAsync(const ListTemplateStepsRequest& request, const ListTemplateStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTemplateStepsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTemplateSteps(request), context);
+      handler(this, *pRequest, ListTemplateSteps(*pRequest), context);
     } );
 }
 
@@ -711,17 +727,18 @@ ListTemplatesOutcome MigrationHubOrchestratorClient::ListTemplates(const ListTem
 
 ListTemplatesOutcomeCallable MigrationHubOrchestratorClient::ListTemplatesCallable(const ListTemplatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplates(request); } );
+  std::shared_ptr<ListTemplatesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTemplatesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTemplates(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTemplatesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTemplates(request), context);
+      handler(this, *pRequest, ListTemplates(*pRequest), context);
     } );
 }
 
@@ -741,17 +758,18 @@ ListWorkflowStepGroupsOutcome MigrationHubOrchestratorClient::ListWorkflowStepGr
 
 ListWorkflowStepGroupsOutcomeCallable MigrationHubOrchestratorClient::ListWorkflowStepGroupsCallable(const ListWorkflowStepGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowStepGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkflowStepGroups(request); } );
+  std::shared_ptr<ListWorkflowStepGroupsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowStepGroupsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListWorkflowStepGroups(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::ListWorkflowStepGroupsAsync(const ListWorkflowStepGroupsRequest& request, const ListWorkflowStepGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListWorkflowStepGroupsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListWorkflowStepGroups(request), context);
+      handler(this, *pRequest, ListWorkflowStepGroups(*pRequest), context);
     } );
 }
 
@@ -780,17 +798,18 @@ ListWorkflowStepsOutcome MigrationHubOrchestratorClient::ListWorkflowSteps(const
 
 ListWorkflowStepsOutcomeCallable MigrationHubOrchestratorClient::ListWorkflowStepsCallable(const ListWorkflowStepsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowStepsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkflowSteps(request); } );
+  std::shared_ptr<ListWorkflowStepsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowStepsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListWorkflowSteps(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::ListWorkflowStepsAsync(const ListWorkflowStepsRequest& request, const ListWorkflowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListWorkflowStepsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListWorkflowSteps(request), context);
+      handler(this, *pRequest, ListWorkflowSteps(*pRequest), context);
     } );
 }
 
@@ -805,17 +824,18 @@ ListWorkflowsOutcome MigrationHubOrchestratorClient::ListWorkflows(const ListWor
 
 ListWorkflowsOutcomeCallable MigrationHubOrchestratorClient::ListWorkflowsCallable(const ListWorkflowsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkflows(request); } );
+  std::shared_ptr<ListWorkflowsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListWorkflows(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListWorkflowsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListWorkflows(request), context);
+      handler(this, *pRequest, ListWorkflows(*pRequest), context);
     } );
 }
 
@@ -846,17 +866,18 @@ RetryWorkflowStepOutcome MigrationHubOrchestratorClient::RetryWorkflowStep(const
 
 RetryWorkflowStepOutcomeCallable MigrationHubOrchestratorClient::RetryWorkflowStepCallable(const RetryWorkflowStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RetryWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RetryWorkflowStep(request); } );
+  std::shared_ptr<RetryWorkflowStepRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RetryWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RetryWorkflowStep(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::RetryWorkflowStepAsync(const RetryWorkflowStepRequest& request, const RetryWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RetryWorkflowStepRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RetryWorkflowStep(request), context);
+      handler(this, *pRequest, RetryWorkflowStep(*pRequest), context);
     } );
 }
 
@@ -878,17 +899,18 @@ StartWorkflowOutcome MigrationHubOrchestratorClient::StartWorkflow(const StartWo
 
 StartWorkflowOutcomeCallable MigrationHubOrchestratorClient::StartWorkflowCallable(const StartWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartWorkflow(request); } );
+  std::shared_ptr<StartWorkflowRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartWorkflowOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartWorkflow(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::StartWorkflowAsync(const StartWorkflowRequest& request, const StartWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartWorkflowRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartWorkflow(request), context);
+      handler(this, *pRequest, StartWorkflow(*pRequest), context);
     } );
 }
 
@@ -910,17 +932,18 @@ StopWorkflowOutcome MigrationHubOrchestratorClient::StopWorkflow(const StopWorkf
 
 StopWorkflowOutcomeCallable MigrationHubOrchestratorClient::StopWorkflowCallable(const StopWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopWorkflow(request); } );
+  std::shared_ptr<StopWorkflowRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopWorkflowOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopWorkflow(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::StopWorkflowAsync(const StopWorkflowRequest& request, const StopWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopWorkflowRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopWorkflow(request), context);
+      handler(this, *pRequest, StopWorkflow(*pRequest), context);
     } );
 }
 
@@ -941,17 +964,18 @@ TagResourceOutcome MigrationHubOrchestratorClient::TagResource(const TagResource
 
 TagResourceOutcomeCallable MigrationHubOrchestratorClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -977,17 +1001,18 @@ UntagResourceOutcome MigrationHubOrchestratorClient::UntagResource(const UntagRe
 
 UntagResourceOutcomeCallable MigrationHubOrchestratorClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -1008,17 +1033,18 @@ UpdateWorkflowOutcome MigrationHubOrchestratorClient::UpdateWorkflow(const Updat
 
 UpdateWorkflowOutcomeCallable MigrationHubOrchestratorClient::UpdateWorkflowCallable(const UpdateWorkflowRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkflow(request); } );
+  std::shared_ptr<UpdateWorkflowRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkflowOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateWorkflow(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::UpdateWorkflowAsync(const UpdateWorkflowRequest& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateWorkflowRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateWorkflow(request), context);
+      handler(this, *pRequest, UpdateWorkflow(*pRequest), context);
     } );
 }
 
@@ -1039,17 +1065,18 @@ UpdateWorkflowStepOutcome MigrationHubOrchestratorClient::UpdateWorkflowStep(con
 
 UpdateWorkflowStepOutcomeCallable MigrationHubOrchestratorClient::UpdateWorkflowStepCallable(const UpdateWorkflowStepRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkflowStep(request); } );
+  std::shared_ptr<UpdateWorkflowStepRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkflowStepOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateWorkflowStep(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::UpdateWorkflowStepAsync(const UpdateWorkflowStepRequest& request, const UpdateWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateWorkflowStepRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateWorkflowStep(request), context);
+      handler(this, *pRequest, UpdateWorkflowStep(*pRequest), context);
     } );
 }
 
@@ -1075,17 +1102,18 @@ UpdateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::UpdateWorkflowSte
 
 UpdateWorkflowStepGroupOutcomeCallable MigrationHubOrchestratorClient::UpdateWorkflowStepGroupCallable(const UpdateWorkflowStepGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkflowStepGroup(request); } );
+  std::shared_ptr<UpdateWorkflowStepGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkflowStepGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateWorkflowStepGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubOrchestratorClient::UpdateWorkflowStepGroupAsync(const UpdateWorkflowStepGroupRequest& request, const UpdateWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateWorkflowStepGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateWorkflowStepGroup(request), context);
+      handler(this, *pRequest, UpdateWorkflowStepGroup(*pRequest), context);
     } );
 }
 

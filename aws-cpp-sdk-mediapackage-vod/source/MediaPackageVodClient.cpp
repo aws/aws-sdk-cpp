@@ -184,17 +184,18 @@ ConfigureLogsOutcome MediaPackageVodClient::ConfigureLogs(const ConfigureLogsReq
 
 ConfigureLogsOutcomeCallable MediaPackageVodClient::ConfigureLogsCallable(const ConfigureLogsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ConfigureLogsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfigureLogs(request); } );
+  std::shared_ptr<ConfigureLogsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ConfigureLogsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ConfigureLogs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::ConfigureLogsAsync(const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ConfigureLogsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ConfigureLogs(request), context);
+      handler(this, *pRequest, ConfigureLogs(*pRequest), context);
     } );
 }
 
@@ -209,17 +210,18 @@ CreateAssetOutcome MediaPackageVodClient::CreateAsset(const CreateAssetRequest& 
 
 CreateAssetOutcomeCallable MediaPackageVodClient::CreateAssetCallable(const CreateAssetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAssetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAsset(request); } );
+  std::shared_ptr<CreateAssetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateAssetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateAsset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::CreateAssetAsync(const CreateAssetRequest& request, const CreateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateAssetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateAsset(request), context);
+      handler(this, *pRequest, CreateAsset(*pRequest), context);
     } );
 }
 
@@ -234,17 +236,18 @@ CreatePackagingConfigurationOutcome MediaPackageVodClient::CreatePackagingConfig
 
 CreatePackagingConfigurationOutcomeCallable MediaPackageVodClient::CreatePackagingConfigurationCallable(const CreatePackagingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePackagingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePackagingConfiguration(request); } );
+  std::shared_ptr<CreatePackagingConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreatePackagingConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreatePackagingConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::CreatePackagingConfigurationAsync(const CreatePackagingConfigurationRequest& request, const CreatePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreatePackagingConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreatePackagingConfiguration(request), context);
+      handler(this, *pRequest, CreatePackagingConfiguration(*pRequest), context);
     } );
 }
 
@@ -259,17 +262,18 @@ CreatePackagingGroupOutcome MediaPackageVodClient::CreatePackagingGroup(const Cr
 
 CreatePackagingGroupOutcomeCallable MediaPackageVodClient::CreatePackagingGroupCallable(const CreatePackagingGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreatePackagingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePackagingGroup(request); } );
+  std::shared_ptr<CreatePackagingGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreatePackagingGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreatePackagingGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::CreatePackagingGroupAsync(const CreatePackagingGroupRequest& request, const CreatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreatePackagingGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreatePackagingGroup(request), context);
+      handler(this, *pRequest, CreatePackagingGroup(*pRequest), context);
     } );
 }
 
@@ -290,17 +294,18 @@ DeleteAssetOutcome MediaPackageVodClient::DeleteAsset(const DeleteAssetRequest& 
 
 DeleteAssetOutcomeCallable MediaPackageVodClient::DeleteAssetCallable(const DeleteAssetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAssetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAsset(request); } );
+  std::shared_ptr<DeleteAssetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAssetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteAsset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::DeleteAssetAsync(const DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteAssetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteAsset(request), context);
+      handler(this, *pRequest, DeleteAsset(*pRequest), context);
     } );
 }
 
@@ -321,17 +326,18 @@ DeletePackagingConfigurationOutcome MediaPackageVodClient::DeletePackagingConfig
 
 DeletePackagingConfigurationOutcomeCallable MediaPackageVodClient::DeletePackagingConfigurationCallable(const DeletePackagingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePackagingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePackagingConfiguration(request); } );
+  std::shared_ptr<DeletePackagingConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeletePackagingConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeletePackagingConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::DeletePackagingConfigurationAsync(const DeletePackagingConfigurationRequest& request, const DeletePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeletePackagingConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeletePackagingConfiguration(request), context);
+      handler(this, *pRequest, DeletePackagingConfiguration(*pRequest), context);
     } );
 }
 
@@ -352,17 +358,18 @@ DeletePackagingGroupOutcome MediaPackageVodClient::DeletePackagingGroup(const De
 
 DeletePackagingGroupOutcomeCallable MediaPackageVodClient::DeletePackagingGroupCallable(const DeletePackagingGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePackagingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePackagingGroup(request); } );
+  std::shared_ptr<DeletePackagingGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeletePackagingGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeletePackagingGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::DeletePackagingGroupAsync(const DeletePackagingGroupRequest& request, const DeletePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeletePackagingGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeletePackagingGroup(request), context);
+      handler(this, *pRequest, DeletePackagingGroup(*pRequest), context);
     } );
 }
 
@@ -383,17 +390,18 @@ DescribeAssetOutcome MediaPackageVodClient::DescribeAsset(const DescribeAssetReq
 
 DescribeAssetOutcomeCallable MediaPackageVodClient::DescribeAssetCallable(const DescribeAssetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeAssetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAsset(request); } );
+  std::shared_ptr<DescribeAssetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAssetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeAsset(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::DescribeAssetAsync(const DescribeAssetRequest& request, const DescribeAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeAssetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeAsset(request), context);
+      handler(this, *pRequest, DescribeAsset(*pRequest), context);
     } );
 }
 
@@ -414,17 +422,18 @@ DescribePackagingConfigurationOutcome MediaPackageVodClient::DescribePackagingCo
 
 DescribePackagingConfigurationOutcomeCallable MediaPackageVodClient::DescribePackagingConfigurationCallable(const DescribePackagingConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePackagingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePackagingConfiguration(request); } );
+  std::shared_ptr<DescribePackagingConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribePackagingConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribePackagingConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::DescribePackagingConfigurationAsync(const DescribePackagingConfigurationRequest& request, const DescribePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribePackagingConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribePackagingConfiguration(request), context);
+      handler(this, *pRequest, DescribePackagingConfiguration(*pRequest), context);
     } );
 }
 
@@ -445,17 +454,18 @@ DescribePackagingGroupOutcome MediaPackageVodClient::DescribePackagingGroup(cons
 
 DescribePackagingGroupOutcomeCallable MediaPackageVodClient::DescribePackagingGroupCallable(const DescribePackagingGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribePackagingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePackagingGroup(request); } );
+  std::shared_ptr<DescribePackagingGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribePackagingGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribePackagingGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::DescribePackagingGroupAsync(const DescribePackagingGroupRequest& request, const DescribePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribePackagingGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribePackagingGroup(request), context);
+      handler(this, *pRequest, DescribePackagingGroup(*pRequest), context);
     } );
 }
 
@@ -470,17 +480,18 @@ ListAssetsOutcome MediaPackageVodClient::ListAssets(const ListAssetsRequest& req
 
 ListAssetsOutcomeCallable MediaPackageVodClient::ListAssetsCallable(const ListAssetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAssetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssets(request); } );
+  std::shared_ptr<ListAssetsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListAssetsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListAssets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::ListAssetsAsync(const ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListAssetsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListAssets(request), context);
+      handler(this, *pRequest, ListAssets(*pRequest), context);
     } );
 }
 
@@ -495,17 +506,18 @@ ListPackagingConfigurationsOutcome MediaPackageVodClient::ListPackagingConfigura
 
 ListPackagingConfigurationsOutcomeCallable MediaPackageVodClient::ListPackagingConfigurationsCallable(const ListPackagingConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPackagingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPackagingConfigurations(request); } );
+  std::shared_ptr<ListPackagingConfigurationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPackagingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPackagingConfigurations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::ListPackagingConfigurationsAsync(const ListPackagingConfigurationsRequest& request, const ListPackagingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPackagingConfigurationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPackagingConfigurations(request), context);
+      handler(this, *pRequest, ListPackagingConfigurations(*pRequest), context);
     } );
 }
 
@@ -520,17 +532,18 @@ ListPackagingGroupsOutcome MediaPackageVodClient::ListPackagingGroups(const List
 
 ListPackagingGroupsOutcomeCallable MediaPackageVodClient::ListPackagingGroupsCallable(const ListPackagingGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListPackagingGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPackagingGroups(request); } );
+  std::shared_ptr<ListPackagingGroupsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListPackagingGroupsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListPackagingGroups(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::ListPackagingGroupsAsync(const ListPackagingGroupsRequest& request, const ListPackagingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListPackagingGroupsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListPackagingGroups(request), context);
+      handler(this, *pRequest, ListPackagingGroups(*pRequest), context);
     } );
 }
 
@@ -551,17 +564,18 @@ ListTagsForResourceOutcome MediaPackageVodClient::ListTagsForResource(const List
 
 ListTagsForResourceOutcomeCallable MediaPackageVodClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -582,17 +596,18 @@ TagResourceOutcome MediaPackageVodClient::TagResource(const TagResourceRequest& 
 
 TagResourceOutcomeCallable MediaPackageVodClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -618,17 +633,18 @@ UntagResourceOutcome MediaPackageVodClient::UntagResource(const UntagResourceReq
 
 UntagResourceOutcomeCallable MediaPackageVodClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -649,17 +665,18 @@ UpdatePackagingGroupOutcome MediaPackageVodClient::UpdatePackagingGroup(const Up
 
 UpdatePackagingGroupOutcomeCallable MediaPackageVodClient::UpdatePackagingGroupCallable(const UpdatePackagingGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePackagingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePackagingGroup(request); } );
+  std::shared_ptr<UpdatePackagingGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePackagingGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdatePackagingGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MediaPackageVodClient::UpdatePackagingGroupAsync(const UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdatePackagingGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdatePackagingGroup(request), context);
+      handler(this, *pRequest, UpdatePackagingGroup(*pRequest), context);
     } );
 }
 

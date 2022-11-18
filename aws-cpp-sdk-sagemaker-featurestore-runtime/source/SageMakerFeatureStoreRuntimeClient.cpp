@@ -164,17 +164,18 @@ BatchGetRecordOutcome SageMakerFeatureStoreRuntimeClient::BatchGetRecord(const B
 
 BatchGetRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::BatchGetRecordCallable(const BatchGetRecordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetRecord(request); } );
+  std::shared_ptr<BatchGetRecordRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetRecordOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchGetRecord(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SageMakerFeatureStoreRuntimeClient::BatchGetRecordAsync(const BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchGetRecordRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchGetRecord(request), context);
+      handler(this, *pRequest, BatchGetRecord(*pRequest), context);
     } );
 }
 
@@ -205,17 +206,18 @@ DeleteRecordOutcome SageMakerFeatureStoreRuntimeClient::DeleteRecord(const Delet
 
 DeleteRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::DeleteRecordCallable(const DeleteRecordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecord(request); } );
+  std::shared_ptr<DeleteRecordRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRecordOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteRecord(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SageMakerFeatureStoreRuntimeClient::DeleteRecordAsync(const DeleteRecordRequest& request, const DeleteRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteRecordRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteRecord(request), context);
+      handler(this, *pRequest, DeleteRecord(*pRequest), context);
     } );
 }
 
@@ -241,17 +243,18 @@ GetRecordOutcome SageMakerFeatureStoreRuntimeClient::GetRecord(const GetRecordRe
 
 GetRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::GetRecordCallable(const GetRecordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecord(request); } );
+  std::shared_ptr<GetRecordRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRecordOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRecord(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SageMakerFeatureStoreRuntimeClient::GetRecordAsync(const GetRecordRequest& request, const GetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRecordRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRecord(request), context);
+      handler(this, *pRequest, GetRecord(*pRequest), context);
     } );
 }
 
@@ -272,17 +275,18 @@ PutRecordOutcome SageMakerFeatureStoreRuntimeClient::PutRecord(const PutRecordRe
 
 PutRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::PutRecordCallable(const PutRecordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRecord(request); } );
+  std::shared_ptr<PutRecordRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutRecordOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutRecord(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SageMakerFeatureStoreRuntimeClient::PutRecordAsync(const PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutRecordRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutRecord(request), context);
+      handler(this, *pRequest, PutRecord(*pRequest), context);
     } );
 }
 

@@ -198,17 +198,18 @@ BatchPutPropertyValuesOutcome IoTTwinMakerClient::BatchPutPropertyValues(const B
 
 BatchPutPropertyValuesOutcomeCallable IoTTwinMakerClient::BatchPutPropertyValuesCallable(const BatchPutPropertyValuesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchPutPropertyValuesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchPutPropertyValues(request); } );
+  std::shared_ptr<BatchPutPropertyValuesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchPutPropertyValuesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchPutPropertyValues(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::BatchPutPropertyValuesAsync(const BatchPutPropertyValuesRequest& request, const BatchPutPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchPutPropertyValuesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchPutPropertyValues(request), context);
+      handler(this, *pRequest, BatchPutPropertyValues(*pRequest), context);
     } );
 }
 
@@ -238,17 +239,18 @@ CreateComponentTypeOutcome IoTTwinMakerClient::CreateComponentType(const CreateC
 
 CreateComponentTypeOutcomeCallable IoTTwinMakerClient::CreateComponentTypeCallable(const CreateComponentTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateComponentTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateComponentType(request); } );
+  std::shared_ptr<CreateComponentTypeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateComponentTypeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateComponentType(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::CreateComponentTypeAsync(const CreateComponentTypeRequest& request, const CreateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateComponentTypeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateComponentType(request), context);
+      handler(this, *pRequest, CreateComponentType(*pRequest), context);
     } );
 }
 
@@ -272,17 +274,18 @@ CreateEntityOutcome IoTTwinMakerClient::CreateEntity(const CreateEntityRequest& 
 
 CreateEntityOutcomeCallable IoTTwinMakerClient::CreateEntityCallable(const CreateEntityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEntityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEntity(request); } );
+  std::shared_ptr<CreateEntityRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateEntityOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateEntity(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::CreateEntityAsync(const CreateEntityRequest& request, const CreateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateEntityRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateEntity(request), context);
+      handler(this, *pRequest, CreateEntity(*pRequest), context);
     } );
 }
 
@@ -306,17 +309,18 @@ CreateSceneOutcome IoTTwinMakerClient::CreateScene(const CreateSceneRequest& req
 
 CreateSceneOutcomeCallable IoTTwinMakerClient::CreateSceneCallable(const CreateSceneRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSceneOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateScene(request); } );
+  std::shared_ptr<CreateSceneRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateSceneOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateScene(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::CreateSceneAsync(const CreateSceneRequest& request, const CreateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateSceneRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateScene(request), context);
+      handler(this, *pRequest, CreateScene(*pRequest), context);
     } );
 }
 
@@ -339,17 +343,18 @@ CreateWorkspaceOutcome IoTTwinMakerClient::CreateWorkspace(const CreateWorkspace
 
 CreateWorkspaceOutcomeCallable IoTTwinMakerClient::CreateWorkspaceCallable(const CreateWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkspace(request); } );
+  std::shared_ptr<CreateWorkspaceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorkspaceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateWorkspace(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::CreateWorkspaceAsync(const CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateWorkspaceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateWorkspace(request), context);
+      handler(this, *pRequest, CreateWorkspace(*pRequest), context);
     } );
 }
 
@@ -379,17 +384,18 @@ DeleteComponentTypeOutcome IoTTwinMakerClient::DeleteComponentType(const DeleteC
 
 DeleteComponentTypeOutcomeCallable IoTTwinMakerClient::DeleteComponentTypeCallable(const DeleteComponentTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteComponentTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteComponentType(request); } );
+  std::shared_ptr<DeleteComponentTypeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteComponentTypeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteComponentType(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::DeleteComponentTypeAsync(const DeleteComponentTypeRequest& request, const DeleteComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteComponentTypeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteComponentType(request), context);
+      handler(this, *pRequest, DeleteComponentType(*pRequest), context);
     } );
 }
 
@@ -419,17 +425,18 @@ DeleteEntityOutcome IoTTwinMakerClient::DeleteEntity(const DeleteEntityRequest& 
 
 DeleteEntityOutcomeCallable IoTTwinMakerClient::DeleteEntityCallable(const DeleteEntityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEntityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEntity(request); } );
+  std::shared_ptr<DeleteEntityRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEntityOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteEntity(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::DeleteEntityAsync(const DeleteEntityRequest& request, const DeleteEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteEntityRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteEntity(request), context);
+      handler(this, *pRequest, DeleteEntity(*pRequest), context);
     } );
 }
 
@@ -459,17 +466,18 @@ DeleteSceneOutcome IoTTwinMakerClient::DeleteScene(const DeleteSceneRequest& req
 
 DeleteSceneOutcomeCallable IoTTwinMakerClient::DeleteSceneCallable(const DeleteSceneRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSceneOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteScene(request); } );
+  std::shared_ptr<DeleteSceneRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSceneOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteScene(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::DeleteSceneAsync(const DeleteSceneRequest& request, const DeleteSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteSceneRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteScene(request), context);
+      handler(this, *pRequest, DeleteScene(*pRequest), context);
     } );
 }
 
@@ -492,17 +500,18 @@ DeleteWorkspaceOutcome IoTTwinMakerClient::DeleteWorkspace(const DeleteWorkspace
 
 DeleteWorkspaceOutcomeCallable IoTTwinMakerClient::DeleteWorkspaceCallable(const DeleteWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkspace(request); } );
+  std::shared_ptr<DeleteWorkspaceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkspaceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteWorkspace(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::DeleteWorkspaceAsync(const DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteWorkspaceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteWorkspace(request), context);
+      handler(this, *pRequest, DeleteWorkspace(*pRequest), context);
     } );
 }
 
@@ -519,17 +528,18 @@ ExecuteQueryOutcome IoTTwinMakerClient::ExecuteQuery(const ExecuteQueryRequest& 
 
 ExecuteQueryOutcomeCallable IoTTwinMakerClient::ExecuteQueryCallable(const ExecuteQueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExecuteQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteQuery(request); } );
+  std::shared_ptr<ExecuteQueryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ExecuteQueryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ExecuteQuery(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::ExecuteQueryAsync(const ExecuteQueryRequest& request, const ExecuteQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ExecuteQueryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ExecuteQuery(request), context);
+      handler(this, *pRequest, ExecuteQuery(*pRequest), context);
     } );
 }
 
@@ -559,17 +569,18 @@ GetComponentTypeOutcome IoTTwinMakerClient::GetComponentType(const GetComponentT
 
 GetComponentTypeOutcomeCallable IoTTwinMakerClient::GetComponentTypeCallable(const GetComponentTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetComponentTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComponentType(request); } );
+  std::shared_ptr<GetComponentTypeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetComponentTypeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetComponentType(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::GetComponentTypeAsync(const GetComponentTypeRequest& request, const GetComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetComponentTypeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetComponentType(request), context);
+      handler(this, *pRequest, GetComponentType(*pRequest), context);
     } );
 }
 
@@ -599,17 +610,18 @@ GetEntityOutcome IoTTwinMakerClient::GetEntity(const GetEntityRequest& request) 
 
 GetEntityOutcomeCallable IoTTwinMakerClient::GetEntityCallable(const GetEntityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetEntityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEntity(request); } );
+  std::shared_ptr<GetEntityRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetEntityOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetEntity(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::GetEntityAsync(const GetEntityRequest& request, const GetEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetEntityRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetEntity(request), context);
+      handler(this, *pRequest, GetEntity(*pRequest), context);
     } );
 }
 
@@ -626,17 +638,18 @@ GetPricingPlanOutcome IoTTwinMakerClient::GetPricingPlan(const GetPricingPlanReq
 
 GetPricingPlanOutcomeCallable IoTTwinMakerClient::GetPricingPlanCallable(const GetPricingPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPricingPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPricingPlan(request); } );
+  std::shared_ptr<GetPricingPlanRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetPricingPlanOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetPricingPlan(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::GetPricingPlanAsync(const GetPricingPlanRequest& request, const GetPricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetPricingPlanRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetPricingPlan(request), context);
+      handler(this, *pRequest, GetPricingPlan(*pRequest), context);
     } );
 }
 
@@ -660,17 +673,18 @@ GetPropertyValueOutcome IoTTwinMakerClient::GetPropertyValue(const GetPropertyVa
 
 GetPropertyValueOutcomeCallable IoTTwinMakerClient::GetPropertyValueCallable(const GetPropertyValueRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPropertyValueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPropertyValue(request); } );
+  std::shared_ptr<GetPropertyValueRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetPropertyValueOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetPropertyValue(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::GetPropertyValueAsync(const GetPropertyValueRequest& request, const GetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetPropertyValueRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetPropertyValue(request), context);
+      handler(this, *pRequest, GetPropertyValue(*pRequest), context);
     } );
 }
 
@@ -694,17 +708,18 @@ GetPropertyValueHistoryOutcome IoTTwinMakerClient::GetPropertyValueHistory(const
 
 GetPropertyValueHistoryOutcomeCallable IoTTwinMakerClient::GetPropertyValueHistoryCallable(const GetPropertyValueHistoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPropertyValueHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPropertyValueHistory(request); } );
+  std::shared_ptr<GetPropertyValueHistoryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetPropertyValueHistoryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetPropertyValueHistory(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::GetPropertyValueHistoryAsync(const GetPropertyValueHistoryRequest& request, const GetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetPropertyValueHistoryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetPropertyValueHistory(request), context);
+      handler(this, *pRequest, GetPropertyValueHistory(*pRequest), context);
     } );
 }
 
@@ -734,17 +749,18 @@ GetSceneOutcome IoTTwinMakerClient::GetScene(const GetSceneRequest& request) con
 
 GetSceneOutcomeCallable IoTTwinMakerClient::GetSceneCallable(const GetSceneRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSceneOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetScene(request); } );
+  std::shared_ptr<GetSceneRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSceneOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetScene(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::GetSceneAsync(const GetSceneRequest& request, const GetSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSceneRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetScene(request), context);
+      handler(this, *pRequest, GetScene(*pRequest), context);
     } );
 }
 
@@ -767,17 +783,18 @@ GetWorkspaceOutcome IoTTwinMakerClient::GetWorkspace(const GetWorkspaceRequest& 
 
 GetWorkspaceOutcomeCallable IoTTwinMakerClient::GetWorkspaceCallable(const GetWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkspace(request); } );
+  std::shared_ptr<GetWorkspaceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetWorkspaceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetWorkspace(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::GetWorkspaceAsync(const GetWorkspaceRequest& request, const GetWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetWorkspaceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetWorkspace(request), context);
+      handler(this, *pRequest, GetWorkspace(*pRequest), context);
     } );
 }
 
@@ -801,17 +818,18 @@ ListComponentTypesOutcome IoTTwinMakerClient::ListComponentTypes(const ListCompo
 
 ListComponentTypesOutcomeCallable IoTTwinMakerClient::ListComponentTypesCallable(const ListComponentTypesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListComponentTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComponentTypes(request); } );
+  std::shared_ptr<ListComponentTypesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListComponentTypesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListComponentTypes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::ListComponentTypesAsync(const ListComponentTypesRequest& request, const ListComponentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListComponentTypesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListComponentTypes(request), context);
+      handler(this, *pRequest, ListComponentTypes(*pRequest), context);
     } );
 }
 
@@ -835,17 +853,18 @@ ListEntitiesOutcome IoTTwinMakerClient::ListEntities(const ListEntitiesRequest& 
 
 ListEntitiesOutcomeCallable IoTTwinMakerClient::ListEntitiesCallable(const ListEntitiesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEntities(request); } );
+  std::shared_ptr<ListEntitiesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEntitiesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEntities(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::ListEntitiesAsync(const ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEntitiesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEntities(request), context);
+      handler(this, *pRequest, ListEntities(*pRequest), context);
     } );
 }
 
@@ -869,17 +888,18 @@ ListScenesOutcome IoTTwinMakerClient::ListScenes(const ListScenesRequest& reques
 
 ListScenesOutcomeCallable IoTTwinMakerClient::ListScenesCallable(const ListScenesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListScenesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListScenes(request); } );
+  std::shared_ptr<ListScenesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListScenesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListScenes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::ListScenesAsync(const ListScenesRequest& request, const ListScenesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListScenesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListScenes(request), context);
+      handler(this, *pRequest, ListScenes(*pRequest), context);
     } );
 }
 
@@ -896,17 +916,18 @@ ListTagsForResourceOutcome IoTTwinMakerClient::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable IoTTwinMakerClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -923,17 +944,18 @@ ListWorkspacesOutcome IoTTwinMakerClient::ListWorkspaces(const ListWorkspacesReq
 
 ListWorkspacesOutcomeCallable IoTTwinMakerClient::ListWorkspacesCallable(const ListWorkspacesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListWorkspacesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkspaces(request); } );
+  std::shared_ptr<ListWorkspacesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListWorkspacesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListWorkspaces(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::ListWorkspacesAsync(const ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListWorkspacesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListWorkspaces(request), context);
+      handler(this, *pRequest, ListWorkspaces(*pRequest), context);
     } );
 }
 
@@ -950,17 +972,18 @@ TagResourceOutcome IoTTwinMakerClient::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable IoTTwinMakerClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -987,17 +1010,18 @@ UntagResourceOutcome IoTTwinMakerClient::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable IoTTwinMakerClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -1027,17 +1051,18 @@ UpdateComponentTypeOutcome IoTTwinMakerClient::UpdateComponentType(const UpdateC
 
 UpdateComponentTypeOutcomeCallable IoTTwinMakerClient::UpdateComponentTypeCallable(const UpdateComponentTypeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateComponentTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateComponentType(request); } );
+  std::shared_ptr<UpdateComponentTypeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateComponentTypeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateComponentType(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::UpdateComponentTypeAsync(const UpdateComponentTypeRequest& request, const UpdateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateComponentTypeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateComponentType(request), context);
+      handler(this, *pRequest, UpdateComponentType(*pRequest), context);
     } );
 }
 
@@ -1067,17 +1092,18 @@ UpdateEntityOutcome IoTTwinMakerClient::UpdateEntity(const UpdateEntityRequest& 
 
 UpdateEntityOutcomeCallable IoTTwinMakerClient::UpdateEntityCallable(const UpdateEntityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateEntityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEntity(request); } );
+  std::shared_ptr<UpdateEntityRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEntityOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateEntity(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::UpdateEntityAsync(const UpdateEntityRequest& request, const UpdateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateEntityRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateEntity(request), context);
+      handler(this, *pRequest, UpdateEntity(*pRequest), context);
     } );
 }
 
@@ -1094,17 +1120,18 @@ UpdatePricingPlanOutcome IoTTwinMakerClient::UpdatePricingPlan(const UpdatePrici
 
 UpdatePricingPlanOutcomeCallable IoTTwinMakerClient::UpdatePricingPlanCallable(const UpdatePricingPlanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdatePricingPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePricingPlan(request); } );
+  std::shared_ptr<UpdatePricingPlanRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePricingPlanOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdatePricingPlan(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::UpdatePricingPlanAsync(const UpdatePricingPlanRequest& request, const UpdatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdatePricingPlanRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdatePricingPlan(request), context);
+      handler(this, *pRequest, UpdatePricingPlan(*pRequest), context);
     } );
 }
 
@@ -1134,17 +1161,18 @@ UpdateSceneOutcome IoTTwinMakerClient::UpdateScene(const UpdateSceneRequest& req
 
 UpdateSceneOutcomeCallable IoTTwinMakerClient::UpdateSceneCallable(const UpdateSceneRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSceneOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateScene(request); } );
+  std::shared_ptr<UpdateSceneRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSceneOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateScene(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::UpdateSceneAsync(const UpdateSceneRequest& request, const UpdateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateSceneRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateScene(request), context);
+      handler(this, *pRequest, UpdateScene(*pRequest), context);
     } );
 }
 
@@ -1167,17 +1195,18 @@ UpdateWorkspaceOutcome IoTTwinMakerClient::UpdateWorkspace(const UpdateWorkspace
 
 UpdateWorkspaceOutcomeCallable IoTTwinMakerClient::UpdateWorkspaceCallable(const UpdateWorkspaceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkspace(request); } );
+  std::shared_ptr<UpdateWorkspaceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkspaceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateWorkspace(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void IoTTwinMakerClient::UpdateWorkspaceAsync(const UpdateWorkspaceRequest& request, const UpdateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateWorkspaceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateWorkspace(request), context);
+      handler(this, *pRequest, UpdateWorkspace(*pRequest), context);
     } );
 }
 

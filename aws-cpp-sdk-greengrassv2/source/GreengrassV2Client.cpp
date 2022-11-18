@@ -189,17 +189,18 @@ AssociateServiceRoleToAccountOutcome GreengrassV2Client::AssociateServiceRoleToA
 
 AssociateServiceRoleToAccountOutcomeCallable GreengrassV2Client::AssociateServiceRoleToAccountCallable(const AssociateServiceRoleToAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateServiceRoleToAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateServiceRoleToAccount(request); } );
+  std::shared_ptr<AssociateServiceRoleToAccountRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateServiceRoleToAccountOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateServiceRoleToAccount(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::AssociateServiceRoleToAccountAsync(const AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateServiceRoleToAccountRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateServiceRoleToAccount(request), context);
+      handler(this, *pRequest, AssociateServiceRoleToAccount(*pRequest), context);
     } );
 }
 
@@ -221,17 +222,18 @@ BatchAssociateClientDeviceWithCoreDeviceOutcome GreengrassV2Client::BatchAssocia
 
 BatchAssociateClientDeviceWithCoreDeviceOutcomeCallable GreengrassV2Client::BatchAssociateClientDeviceWithCoreDeviceCallable(const BatchAssociateClientDeviceWithCoreDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchAssociateClientDeviceWithCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchAssociateClientDeviceWithCoreDevice(request); } );
+  std::shared_ptr<BatchAssociateClientDeviceWithCoreDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchAssociateClientDeviceWithCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchAssociateClientDeviceWithCoreDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::BatchAssociateClientDeviceWithCoreDeviceAsync(const BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchAssociateClientDeviceWithCoreDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchAssociateClientDeviceWithCoreDevice(request), context);
+      handler(this, *pRequest, BatchAssociateClientDeviceWithCoreDevice(*pRequest), context);
     } );
 }
 
@@ -253,17 +255,18 @@ BatchDisassociateClientDeviceFromCoreDeviceOutcome GreengrassV2Client::BatchDisa
 
 BatchDisassociateClientDeviceFromCoreDeviceOutcomeCallable GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDeviceCallable(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchDisassociateClientDeviceFromCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDisassociateClientDeviceFromCoreDevice(request); } );
+  std::shared_ptr<BatchDisassociateClientDeviceFromCoreDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< BatchDisassociateClientDeviceFromCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->BatchDisassociateClientDeviceFromCoreDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDeviceAsync(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request, const BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<BatchDisassociateClientDeviceFromCoreDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, BatchDisassociateClientDeviceFromCoreDevice(request), context);
+      handler(this, *pRequest, BatchDisassociateClientDeviceFromCoreDevice(*pRequest), context);
     } );
 }
 
@@ -285,17 +288,18 @@ CancelDeploymentOutcome GreengrassV2Client::CancelDeployment(const CancelDeploym
 
 CancelDeploymentOutcomeCallable GreengrassV2Client::CancelDeploymentCallable(const CancelDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CancelDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelDeployment(request); } );
+  std::shared_ptr<CancelDeploymentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CancelDeploymentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CancelDeployment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::CancelDeploymentAsync(const CancelDeploymentRequest& request, const CancelDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CancelDeploymentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CancelDeployment(request), context);
+      handler(this, *pRequest, CancelDeployment(*pRequest), context);
     } );
 }
 
@@ -310,17 +314,18 @@ CreateComponentVersionOutcome GreengrassV2Client::CreateComponentVersion(const C
 
 CreateComponentVersionOutcomeCallable GreengrassV2Client::CreateComponentVersionCallable(const CreateComponentVersionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateComponentVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateComponentVersion(request); } );
+  std::shared_ptr<CreateComponentVersionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateComponentVersionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateComponentVersion(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::CreateComponentVersionAsync(const CreateComponentVersionRequest& request, const CreateComponentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateComponentVersionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateComponentVersion(request), context);
+      handler(this, *pRequest, CreateComponentVersion(*pRequest), context);
     } );
 }
 
@@ -335,17 +340,18 @@ CreateDeploymentOutcome GreengrassV2Client::CreateDeployment(const CreateDeploym
 
 CreateDeploymentOutcomeCallable GreengrassV2Client::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDeployment(request); } );
+  std::shared_ptr<CreateDeploymentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateDeployment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateDeploymentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateDeployment(request), context);
+      handler(this, *pRequest, CreateDeployment(*pRequest), context);
     } );
 }
 
@@ -366,17 +372,18 @@ DeleteComponentOutcome GreengrassV2Client::DeleteComponent(const DeleteComponent
 
 DeleteComponentOutcomeCallable GreengrassV2Client::DeleteComponentCallable(const DeleteComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteComponent(request); } );
+  std::shared_ptr<DeleteComponentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteComponentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteComponent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteComponentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteComponent(request), context);
+      handler(this, *pRequest, DeleteComponent(*pRequest), context);
     } );
 }
 
@@ -397,17 +404,18 @@ DeleteCoreDeviceOutcome GreengrassV2Client::DeleteCoreDevice(const DeleteCoreDev
 
 DeleteCoreDeviceOutcomeCallable GreengrassV2Client::DeleteCoreDeviceCallable(const DeleteCoreDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCoreDevice(request); } );
+  std::shared_ptr<DeleteCoreDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteCoreDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::DeleteCoreDeviceAsync(const DeleteCoreDeviceRequest& request, const DeleteCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteCoreDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteCoreDevice(request), context);
+      handler(this, *pRequest, DeleteCoreDevice(*pRequest), context);
     } );
 }
 
@@ -428,17 +436,18 @@ DeleteDeploymentOutcome GreengrassV2Client::DeleteDeployment(const DeleteDeploym
 
 DeleteDeploymentOutcomeCallable GreengrassV2Client::DeleteDeploymentCallable(const DeleteDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDeployment(request); } );
+  std::shared_ptr<DeleteDeploymentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDeploymentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteDeployment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::DeleteDeploymentAsync(const DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteDeploymentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteDeployment(request), context);
+      handler(this, *pRequest, DeleteDeployment(*pRequest), context);
     } );
 }
 
@@ -460,17 +469,18 @@ DescribeComponentOutcome GreengrassV2Client::DescribeComponent(const DescribeCom
 
 DescribeComponentOutcomeCallable GreengrassV2Client::DescribeComponentCallable(const DescribeComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeComponent(request); } );
+  std::shared_ptr<DescribeComponentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeComponentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeComponent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::DescribeComponentAsync(const DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeComponentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeComponent(request), context);
+      handler(this, *pRequest, DescribeComponent(*pRequest), context);
     } );
 }
 
@@ -485,17 +495,18 @@ DisassociateServiceRoleFromAccountOutcome GreengrassV2Client::DisassociateServic
 
 DisassociateServiceRoleFromAccountOutcomeCallable GreengrassV2Client::DisassociateServiceRoleFromAccountCallable(const DisassociateServiceRoleFromAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateServiceRoleFromAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateServiceRoleFromAccount(request); } );
+  std::shared_ptr<DisassociateServiceRoleFromAccountRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateServiceRoleFromAccountOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateServiceRoleFromAccount(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::DisassociateServiceRoleFromAccountAsync(const DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateServiceRoleFromAccountRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateServiceRoleFromAccount(request), context);
+      handler(this, *pRequest, DisassociateServiceRoleFromAccount(*pRequest), context);
     } );
 }
 
@@ -516,17 +527,18 @@ GetComponentOutcome GreengrassV2Client::GetComponent(const GetComponentRequest& 
 
 GetComponentOutcomeCallable GreengrassV2Client::GetComponentCallable(const GetComponentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComponent(request); } );
+  std::shared_ptr<GetComponentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetComponentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetComponent(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetComponentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetComponent(request), context);
+      handler(this, *pRequest, GetComponent(*pRequest), context);
     } );
 }
 
@@ -554,17 +566,18 @@ GetComponentVersionArtifactOutcome GreengrassV2Client::GetComponentVersionArtifa
 
 GetComponentVersionArtifactOutcomeCallable GreengrassV2Client::GetComponentVersionArtifactCallable(const GetComponentVersionArtifactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetComponentVersionArtifactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComponentVersionArtifact(request); } );
+  std::shared_ptr<GetComponentVersionArtifactRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetComponentVersionArtifactOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetComponentVersionArtifact(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::GetComponentVersionArtifactAsync(const GetComponentVersionArtifactRequest& request, const GetComponentVersionArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetComponentVersionArtifactRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetComponentVersionArtifact(request), context);
+      handler(this, *pRequest, GetComponentVersionArtifact(*pRequest), context);
     } );
 }
 
@@ -586,17 +599,18 @@ GetConnectivityInfoOutcome GreengrassV2Client::GetConnectivityInfo(const GetConn
 
 GetConnectivityInfoOutcomeCallable GreengrassV2Client::GetConnectivityInfoCallable(const GetConnectivityInfoRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetConnectivityInfoOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnectivityInfo(request); } );
+  std::shared_ptr<GetConnectivityInfoRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetConnectivityInfoOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetConnectivityInfo(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::GetConnectivityInfoAsync(const GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetConnectivityInfoRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetConnectivityInfo(request), context);
+      handler(this, *pRequest, GetConnectivityInfo(*pRequest), context);
     } );
 }
 
@@ -617,17 +631,18 @@ GetCoreDeviceOutcome GreengrassV2Client::GetCoreDevice(const GetCoreDeviceReques
 
 GetCoreDeviceOutcomeCallable GreengrassV2Client::GetCoreDeviceCallable(const GetCoreDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCoreDevice(request); } );
+  std::shared_ptr<GetCoreDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCoreDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::GetCoreDeviceAsync(const GetCoreDeviceRequest& request, const GetCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCoreDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCoreDevice(request), context);
+      handler(this, *pRequest, GetCoreDevice(*pRequest), context);
     } );
 }
 
@@ -648,17 +663,18 @@ GetDeploymentOutcome GreengrassV2Client::GetDeployment(const GetDeploymentReques
 
 GetDeploymentOutcomeCallable GreengrassV2Client::GetDeploymentCallable(const GetDeploymentRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeployment(request); } );
+  std::shared_ptr<GetDeploymentRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDeployment(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDeploymentRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDeployment(request), context);
+      handler(this, *pRequest, GetDeployment(*pRequest), context);
     } );
 }
 
@@ -673,17 +689,18 @@ GetServiceRoleForAccountOutcome GreengrassV2Client::GetServiceRoleForAccount(con
 
 GetServiceRoleForAccountOutcomeCallable GreengrassV2Client::GetServiceRoleForAccountCallable(const GetServiceRoleForAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetServiceRoleForAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServiceRoleForAccount(request); } );
+  std::shared_ptr<GetServiceRoleForAccountRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetServiceRoleForAccountOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetServiceRoleForAccount(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::GetServiceRoleForAccountAsync(const GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetServiceRoleForAccountRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetServiceRoleForAccount(request), context);
+      handler(this, *pRequest, GetServiceRoleForAccount(*pRequest), context);
     } );
 }
 
@@ -705,17 +722,18 @@ ListClientDevicesAssociatedWithCoreDeviceOutcome GreengrassV2Client::ListClientD
 
 ListClientDevicesAssociatedWithCoreDeviceOutcomeCallable GreengrassV2Client::ListClientDevicesAssociatedWithCoreDeviceCallable(const ListClientDevicesAssociatedWithCoreDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListClientDevicesAssociatedWithCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListClientDevicesAssociatedWithCoreDevice(request); } );
+  std::shared_ptr<ListClientDevicesAssociatedWithCoreDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListClientDevicesAssociatedWithCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListClientDevicesAssociatedWithCoreDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::ListClientDevicesAssociatedWithCoreDeviceAsync(const ListClientDevicesAssociatedWithCoreDeviceRequest& request, const ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListClientDevicesAssociatedWithCoreDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListClientDevicesAssociatedWithCoreDevice(request), context);
+      handler(this, *pRequest, ListClientDevicesAssociatedWithCoreDevice(*pRequest), context);
     } );
 }
 
@@ -737,17 +755,18 @@ ListComponentVersionsOutcome GreengrassV2Client::ListComponentVersions(const Lis
 
 ListComponentVersionsOutcomeCallable GreengrassV2Client::ListComponentVersionsCallable(const ListComponentVersionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListComponentVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComponentVersions(request); } );
+  std::shared_ptr<ListComponentVersionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListComponentVersionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListComponentVersions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::ListComponentVersionsAsync(const ListComponentVersionsRequest& request, const ListComponentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListComponentVersionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListComponentVersions(request), context);
+      handler(this, *pRequest, ListComponentVersions(*pRequest), context);
     } );
 }
 
@@ -762,17 +781,18 @@ ListComponentsOutcome GreengrassV2Client::ListComponents(const ListComponentsReq
 
 ListComponentsOutcomeCallable GreengrassV2Client::ListComponentsCallable(const ListComponentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComponents(request); } );
+  std::shared_ptr<ListComponentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListComponentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListComponents(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListComponentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListComponents(request), context);
+      handler(this, *pRequest, ListComponents(*pRequest), context);
     } );
 }
 
@@ -787,17 +807,18 @@ ListCoreDevicesOutcome GreengrassV2Client::ListCoreDevices(const ListCoreDevices
 
 ListCoreDevicesOutcomeCallable GreengrassV2Client::ListCoreDevicesCallable(const ListCoreDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCoreDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCoreDevices(request); } );
+  std::shared_ptr<ListCoreDevicesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListCoreDevicesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListCoreDevices(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::ListCoreDevicesAsync(const ListCoreDevicesRequest& request, const ListCoreDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListCoreDevicesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListCoreDevices(request), context);
+      handler(this, *pRequest, ListCoreDevices(*pRequest), context);
     } );
 }
 
@@ -812,17 +833,18 @@ ListDeploymentsOutcome GreengrassV2Client::ListDeployments(const ListDeployments
 
 ListDeploymentsOutcomeCallable GreengrassV2Client::ListDeploymentsCallable(const ListDeploymentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeployments(request); } );
+  std::shared_ptr<ListDeploymentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDeployments(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDeploymentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDeployments(request), context);
+      handler(this, *pRequest, ListDeployments(*pRequest), context);
     } );
 }
 
@@ -844,17 +866,18 @@ ListEffectiveDeploymentsOutcome GreengrassV2Client::ListEffectiveDeployments(con
 
 ListEffectiveDeploymentsOutcomeCallable GreengrassV2Client::ListEffectiveDeploymentsCallable(const ListEffectiveDeploymentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEffectiveDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEffectiveDeployments(request); } );
+  std::shared_ptr<ListEffectiveDeploymentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListEffectiveDeploymentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListEffectiveDeployments(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::ListEffectiveDeploymentsAsync(const ListEffectiveDeploymentsRequest& request, const ListEffectiveDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListEffectiveDeploymentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListEffectiveDeployments(request), context);
+      handler(this, *pRequest, ListEffectiveDeployments(*pRequest), context);
     } );
 }
 
@@ -876,17 +899,18 @@ ListInstalledComponentsOutcome GreengrassV2Client::ListInstalledComponents(const
 
 ListInstalledComponentsOutcomeCallable GreengrassV2Client::ListInstalledComponentsCallable(const ListInstalledComponentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListInstalledComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInstalledComponents(request); } );
+  std::shared_ptr<ListInstalledComponentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListInstalledComponentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListInstalledComponents(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::ListInstalledComponentsAsync(const ListInstalledComponentsRequest& request, const ListInstalledComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListInstalledComponentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListInstalledComponents(request), context);
+      handler(this, *pRequest, ListInstalledComponents(*pRequest), context);
     } );
 }
 
@@ -907,17 +931,18 @@ ListTagsForResourceOutcome GreengrassV2Client::ListTagsForResource(const ListTag
 
 ListTagsForResourceOutcomeCallable GreengrassV2Client::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -932,17 +957,18 @@ ResolveComponentCandidatesOutcome GreengrassV2Client::ResolveComponentCandidates
 
 ResolveComponentCandidatesOutcomeCallable GreengrassV2Client::ResolveComponentCandidatesCallable(const ResolveComponentCandidatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResolveComponentCandidatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResolveComponentCandidates(request); } );
+  std::shared_ptr<ResolveComponentCandidatesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ResolveComponentCandidatesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ResolveComponentCandidates(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::ResolveComponentCandidatesAsync(const ResolveComponentCandidatesRequest& request, const ResolveComponentCandidatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ResolveComponentCandidatesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ResolveComponentCandidates(request), context);
+      handler(this, *pRequest, ResolveComponentCandidates(*pRequest), context);
     } );
 }
 
@@ -963,17 +989,18 @@ TagResourceOutcome GreengrassV2Client::TagResource(const TagResourceRequest& req
 
 TagResourceOutcomeCallable GreengrassV2Client::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -999,17 +1026,18 @@ UntagResourceOutcome GreengrassV2Client::UntagResource(const UntagResourceReques
 
 UntagResourceOutcomeCallable GreengrassV2Client::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -1031,17 +1059,18 @@ UpdateConnectivityInfoOutcome GreengrassV2Client::UpdateConnectivityInfo(const U
 
 UpdateConnectivityInfoOutcomeCallable GreengrassV2Client::UpdateConnectivityInfoCallable(const UpdateConnectivityInfoRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectivityInfoOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnectivityInfo(request); } );
+  std::shared_ptr<UpdateConnectivityInfoRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectivityInfoOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateConnectivityInfo(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void GreengrassV2Client::UpdateConnectivityInfoAsync(const UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateConnectivityInfoRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateConnectivityInfo(request), context);
+      handler(this, *pRequest, UpdateConnectivityInfo(*pRequest), context);
     } );
 }
 

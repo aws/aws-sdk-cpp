@@ -172,17 +172,18 @@ DeleteReportDefinitionOutcome ApplicationCostProfilerClient::DeleteReportDefinit
 
 DeleteReportDefinitionOutcomeCallable ApplicationCostProfilerClient::DeleteReportDefinitionCallable(const DeleteReportDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReportDefinition(request); } );
+  std::shared_ptr<DeleteReportDefinitionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteReportDefinition(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApplicationCostProfilerClient::DeleteReportDefinitionAsync(const DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteReportDefinitionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteReportDefinition(request), context);
+      handler(this, *pRequest, DeleteReportDefinition(*pRequest), context);
     } );
 }
 
@@ -203,17 +204,18 @@ GetReportDefinitionOutcome ApplicationCostProfilerClient::GetReportDefinition(co
 
 GetReportDefinitionOutcomeCallable ApplicationCostProfilerClient::GetReportDefinitionCallable(const GetReportDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReportDefinition(request); } );
+  std::shared_ptr<GetReportDefinitionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetReportDefinition(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApplicationCostProfilerClient::GetReportDefinitionAsync(const GetReportDefinitionRequest& request, const GetReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetReportDefinitionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetReportDefinition(request), context);
+      handler(this, *pRequest, GetReportDefinition(*pRequest), context);
     } );
 }
 
@@ -228,17 +230,18 @@ ImportApplicationUsageOutcome ApplicationCostProfilerClient::ImportApplicationUs
 
 ImportApplicationUsageOutcomeCallable ApplicationCostProfilerClient::ImportApplicationUsageCallable(const ImportApplicationUsageRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportApplicationUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportApplicationUsage(request); } );
+  std::shared_ptr<ImportApplicationUsageRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ImportApplicationUsageOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ImportApplicationUsage(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApplicationCostProfilerClient::ImportApplicationUsageAsync(const ImportApplicationUsageRequest& request, const ImportApplicationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ImportApplicationUsageRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ImportApplicationUsage(request), context);
+      handler(this, *pRequest, ImportApplicationUsage(*pRequest), context);
     } );
 }
 
@@ -253,17 +256,18 @@ ListReportDefinitionsOutcome ApplicationCostProfilerClient::ListReportDefinition
 
 ListReportDefinitionsOutcomeCallable ApplicationCostProfilerClient::ListReportDefinitionsCallable(const ListReportDefinitionsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListReportDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReportDefinitions(request); } );
+  std::shared_ptr<ListReportDefinitionsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListReportDefinitionsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListReportDefinitions(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApplicationCostProfilerClient::ListReportDefinitionsAsync(const ListReportDefinitionsRequest& request, const ListReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListReportDefinitionsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListReportDefinitions(request), context);
+      handler(this, *pRequest, ListReportDefinitions(*pRequest), context);
     } );
 }
 
@@ -278,17 +282,18 @@ PutReportDefinitionOutcome ApplicationCostProfilerClient::PutReportDefinition(co
 
 PutReportDefinitionOutcomeCallable ApplicationCostProfilerClient::PutReportDefinitionCallable(const PutReportDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutReportDefinition(request); } );
+  std::shared_ptr<PutReportDefinitionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutReportDefinition(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApplicationCostProfilerClient::PutReportDefinitionAsync(const PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutReportDefinitionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutReportDefinition(request), context);
+      handler(this, *pRequest, PutReportDefinition(*pRequest), context);
     } );
 }
 
@@ -309,17 +314,18 @@ UpdateReportDefinitionOutcome ApplicationCostProfilerClient::UpdateReportDefinit
 
 UpdateReportDefinitionOutcomeCallable ApplicationCostProfilerClient::UpdateReportDefinitionCallable(const UpdateReportDefinitionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReportDefinition(request); } );
+  std::shared_ptr<UpdateReportDefinitionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateReportDefinitionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateReportDefinition(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void ApplicationCostProfilerClient::UpdateReportDefinitionAsync(const UpdateReportDefinitionRequest& request, const UpdateReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateReportDefinitionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateReportDefinition(request), context);
+      handler(this, *pRequest, UpdateReportDefinition(*pRequest), context);
     } );
 }
 

@@ -182,17 +182,18 @@ CreateBudgetOutcome BudgetsClient::CreateBudget(const CreateBudgetRequest& reque
 
 CreateBudgetOutcomeCallable BudgetsClient::CreateBudgetCallable(const CreateBudgetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBudgetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBudget(request); } );
+  std::shared_ptr<CreateBudgetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateBudgetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateBudget(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::CreateBudgetAsync(const CreateBudgetRequest& request, const CreateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateBudgetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateBudget(request), context);
+      handler(this, *pRequest, CreateBudget(*pRequest), context);
     } );
 }
 
@@ -206,17 +207,18 @@ CreateBudgetActionOutcome BudgetsClient::CreateBudgetAction(const CreateBudgetAc
 
 CreateBudgetActionOutcomeCallable BudgetsClient::CreateBudgetActionCallable(const CreateBudgetActionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBudgetActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBudgetAction(request); } );
+  std::shared_ptr<CreateBudgetActionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateBudgetActionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateBudgetAction(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::CreateBudgetActionAsync(const CreateBudgetActionRequest& request, const CreateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateBudgetActionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateBudgetAction(request), context);
+      handler(this, *pRequest, CreateBudgetAction(*pRequest), context);
     } );
 }
 
@@ -230,17 +232,18 @@ CreateNotificationOutcome BudgetsClient::CreateNotification(const CreateNotifica
 
 CreateNotificationOutcomeCallable BudgetsClient::CreateNotificationCallable(const CreateNotificationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateNotificationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNotification(request); } );
+  std::shared_ptr<CreateNotificationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateNotificationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateNotification(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::CreateNotificationAsync(const CreateNotificationRequest& request, const CreateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateNotificationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateNotification(request), context);
+      handler(this, *pRequest, CreateNotification(*pRequest), context);
     } );
 }
 
@@ -254,17 +257,18 @@ CreateSubscriberOutcome BudgetsClient::CreateSubscriber(const CreateSubscriberRe
 
 CreateSubscriberOutcomeCallable BudgetsClient::CreateSubscriberCallable(const CreateSubscriberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateSubscriberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSubscriber(request); } );
+  std::shared_ptr<CreateSubscriberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateSubscriberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateSubscriber(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::CreateSubscriberAsync(const CreateSubscriberRequest& request, const CreateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateSubscriberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateSubscriber(request), context);
+      handler(this, *pRequest, CreateSubscriber(*pRequest), context);
     } );
 }
 
@@ -278,17 +282,18 @@ DeleteBudgetOutcome BudgetsClient::DeleteBudget(const DeleteBudgetRequest& reque
 
 DeleteBudgetOutcomeCallable BudgetsClient::DeleteBudgetCallable(const DeleteBudgetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBudgetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBudget(request); } );
+  std::shared_ptr<DeleteBudgetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBudgetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteBudget(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DeleteBudgetAsync(const DeleteBudgetRequest& request, const DeleteBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteBudgetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteBudget(request), context);
+      handler(this, *pRequest, DeleteBudget(*pRequest), context);
     } );
 }
 
@@ -302,17 +307,18 @@ DeleteBudgetActionOutcome BudgetsClient::DeleteBudgetAction(const DeleteBudgetAc
 
 DeleteBudgetActionOutcomeCallable BudgetsClient::DeleteBudgetActionCallable(const DeleteBudgetActionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBudgetActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBudgetAction(request); } );
+  std::shared_ptr<DeleteBudgetActionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBudgetActionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteBudgetAction(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DeleteBudgetActionAsync(const DeleteBudgetActionRequest& request, const DeleteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteBudgetActionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteBudgetAction(request), context);
+      handler(this, *pRequest, DeleteBudgetAction(*pRequest), context);
     } );
 }
 
@@ -326,17 +332,18 @@ DeleteNotificationOutcome BudgetsClient::DeleteNotification(const DeleteNotifica
 
 DeleteNotificationOutcomeCallable BudgetsClient::DeleteNotificationCallable(const DeleteNotificationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteNotificationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNotification(request); } );
+  std::shared_ptr<DeleteNotificationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNotificationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteNotification(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DeleteNotificationAsync(const DeleteNotificationRequest& request, const DeleteNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteNotificationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteNotification(request), context);
+      handler(this, *pRequest, DeleteNotification(*pRequest), context);
     } );
 }
 
@@ -350,17 +357,18 @@ DeleteSubscriberOutcome BudgetsClient::DeleteSubscriber(const DeleteSubscriberRe
 
 DeleteSubscriberOutcomeCallable BudgetsClient::DeleteSubscriberCallable(const DeleteSubscriberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteSubscriberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSubscriber(request); } );
+  std::shared_ptr<DeleteSubscriberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSubscriberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteSubscriber(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DeleteSubscriberAsync(const DeleteSubscriberRequest& request, const DeleteSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteSubscriberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteSubscriber(request), context);
+      handler(this, *pRequest, DeleteSubscriber(*pRequest), context);
     } );
 }
 
@@ -374,17 +382,18 @@ DescribeBudgetOutcome BudgetsClient::DescribeBudget(const DescribeBudgetRequest&
 
 DescribeBudgetOutcomeCallable BudgetsClient::DescribeBudgetCallable(const DescribeBudgetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudget(request); } );
+  std::shared_ptr<DescribeBudgetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeBudget(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DescribeBudgetAsync(const DescribeBudgetRequest& request, const DescribeBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeBudgetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeBudget(request), context);
+      handler(this, *pRequest, DescribeBudget(*pRequest), context);
     } );
 }
 
@@ -398,17 +407,18 @@ DescribeBudgetActionOutcome BudgetsClient::DescribeBudgetAction(const DescribeBu
 
 DescribeBudgetActionOutcomeCallable BudgetsClient::DescribeBudgetActionCallable(const DescribeBudgetActionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetAction(request); } );
+  std::shared_ptr<DescribeBudgetActionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeBudgetAction(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DescribeBudgetActionAsync(const DescribeBudgetActionRequest& request, const DescribeBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeBudgetActionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeBudgetAction(request), context);
+      handler(this, *pRequest, DescribeBudgetAction(*pRequest), context);
     } );
 }
 
@@ -422,17 +432,18 @@ DescribeBudgetActionHistoriesOutcome BudgetsClient::DescribeBudgetActionHistorie
 
 DescribeBudgetActionHistoriesOutcomeCallable BudgetsClient::DescribeBudgetActionHistoriesCallable(const DescribeBudgetActionHistoriesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionHistoriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetActionHistories(request); } );
+  std::shared_ptr<DescribeBudgetActionHistoriesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionHistoriesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeBudgetActionHistories(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DescribeBudgetActionHistoriesAsync(const DescribeBudgetActionHistoriesRequest& request, const DescribeBudgetActionHistoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeBudgetActionHistoriesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeBudgetActionHistories(request), context);
+      handler(this, *pRequest, DescribeBudgetActionHistories(*pRequest), context);
     } );
 }
 
@@ -446,17 +457,18 @@ DescribeBudgetActionsForAccountOutcome BudgetsClient::DescribeBudgetActionsForAc
 
 DescribeBudgetActionsForAccountOutcomeCallable BudgetsClient::DescribeBudgetActionsForAccountCallable(const DescribeBudgetActionsForAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionsForAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetActionsForAccount(request); } );
+  std::shared_ptr<DescribeBudgetActionsForAccountRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionsForAccountOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeBudgetActionsForAccount(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DescribeBudgetActionsForAccountAsync(const DescribeBudgetActionsForAccountRequest& request, const DescribeBudgetActionsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeBudgetActionsForAccountRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeBudgetActionsForAccount(request), context);
+      handler(this, *pRequest, DescribeBudgetActionsForAccount(*pRequest), context);
     } );
 }
 
@@ -470,17 +482,18 @@ DescribeBudgetActionsForBudgetOutcome BudgetsClient::DescribeBudgetActionsForBud
 
 DescribeBudgetActionsForBudgetOutcomeCallable BudgetsClient::DescribeBudgetActionsForBudgetCallable(const DescribeBudgetActionsForBudgetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionsForBudgetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetActionsForBudget(request); } );
+  std::shared_ptr<DescribeBudgetActionsForBudgetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetActionsForBudgetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeBudgetActionsForBudget(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DescribeBudgetActionsForBudgetAsync(const DescribeBudgetActionsForBudgetRequest& request, const DescribeBudgetActionsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeBudgetActionsForBudgetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeBudgetActionsForBudget(request), context);
+      handler(this, *pRequest, DescribeBudgetActionsForBudget(*pRequest), context);
     } );
 }
 
@@ -494,17 +507,18 @@ DescribeBudgetNotificationsForAccountOutcome BudgetsClient::DescribeBudgetNotifi
 
 DescribeBudgetNotificationsForAccountOutcomeCallable BudgetsClient::DescribeBudgetNotificationsForAccountCallable(const DescribeBudgetNotificationsForAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetNotificationsForAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetNotificationsForAccount(request); } );
+  std::shared_ptr<DescribeBudgetNotificationsForAccountRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetNotificationsForAccountOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeBudgetNotificationsForAccount(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DescribeBudgetNotificationsForAccountAsync(const DescribeBudgetNotificationsForAccountRequest& request, const DescribeBudgetNotificationsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeBudgetNotificationsForAccountRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeBudgetNotificationsForAccount(request), context);
+      handler(this, *pRequest, DescribeBudgetNotificationsForAccount(*pRequest), context);
     } );
 }
 
@@ -518,17 +532,18 @@ DescribeBudgetPerformanceHistoryOutcome BudgetsClient::DescribeBudgetPerformance
 
 DescribeBudgetPerformanceHistoryOutcomeCallable BudgetsClient::DescribeBudgetPerformanceHistoryCallable(const DescribeBudgetPerformanceHistoryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetPerformanceHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetPerformanceHistory(request); } );
+  std::shared_ptr<DescribeBudgetPerformanceHistoryRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetPerformanceHistoryOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeBudgetPerformanceHistory(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DescribeBudgetPerformanceHistoryAsync(const DescribeBudgetPerformanceHistoryRequest& request, const DescribeBudgetPerformanceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeBudgetPerformanceHistoryRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeBudgetPerformanceHistory(request), context);
+      handler(this, *pRequest, DescribeBudgetPerformanceHistory(*pRequest), context);
     } );
 }
 
@@ -542,17 +557,18 @@ DescribeBudgetsOutcome BudgetsClient::DescribeBudgets(const DescribeBudgetsReque
 
 DescribeBudgetsOutcomeCallable BudgetsClient::DescribeBudgetsCallable(const DescribeBudgetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgets(request); } );
+  std::shared_ptr<DescribeBudgetsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeBudgets(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DescribeBudgetsAsync(const DescribeBudgetsRequest& request, const DescribeBudgetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeBudgetsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeBudgets(request), context);
+      handler(this, *pRequest, DescribeBudgets(*pRequest), context);
     } );
 }
 
@@ -566,17 +582,18 @@ DescribeNotificationsForBudgetOutcome BudgetsClient::DescribeNotificationsForBud
 
 DescribeNotificationsForBudgetOutcomeCallable BudgetsClient::DescribeNotificationsForBudgetCallable(const DescribeNotificationsForBudgetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeNotificationsForBudgetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNotificationsForBudget(request); } );
+  std::shared_ptr<DescribeNotificationsForBudgetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeNotificationsForBudgetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeNotificationsForBudget(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DescribeNotificationsForBudgetAsync(const DescribeNotificationsForBudgetRequest& request, const DescribeNotificationsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeNotificationsForBudgetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeNotificationsForBudget(request), context);
+      handler(this, *pRequest, DescribeNotificationsForBudget(*pRequest), context);
     } );
 }
 
@@ -590,17 +607,18 @@ DescribeSubscribersForNotificationOutcome BudgetsClient::DescribeSubscribersForN
 
 DescribeSubscribersForNotificationOutcomeCallable BudgetsClient::DescribeSubscribersForNotificationCallable(const DescribeSubscribersForNotificationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeSubscribersForNotificationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSubscribersForNotification(request); } );
+  std::shared_ptr<DescribeSubscribersForNotificationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSubscribersForNotificationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeSubscribersForNotification(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::DescribeSubscribersForNotificationAsync(const DescribeSubscribersForNotificationRequest& request, const DescribeSubscribersForNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeSubscribersForNotificationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeSubscribersForNotification(request), context);
+      handler(this, *pRequest, DescribeSubscribersForNotification(*pRequest), context);
     } );
 }
 
@@ -614,17 +632,18 @@ ExecuteBudgetActionOutcome BudgetsClient::ExecuteBudgetAction(const ExecuteBudge
 
 ExecuteBudgetActionOutcomeCallable BudgetsClient::ExecuteBudgetActionCallable(const ExecuteBudgetActionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExecuteBudgetActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteBudgetAction(request); } );
+  std::shared_ptr<ExecuteBudgetActionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ExecuteBudgetActionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ExecuteBudgetAction(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::ExecuteBudgetActionAsync(const ExecuteBudgetActionRequest& request, const ExecuteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ExecuteBudgetActionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ExecuteBudgetAction(request), context);
+      handler(this, *pRequest, ExecuteBudgetAction(*pRequest), context);
     } );
 }
 
@@ -638,17 +657,18 @@ UpdateBudgetOutcome BudgetsClient::UpdateBudget(const UpdateBudgetRequest& reque
 
 UpdateBudgetOutcomeCallable BudgetsClient::UpdateBudgetCallable(const UpdateBudgetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBudgetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBudget(request); } );
+  std::shared_ptr<UpdateBudgetRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBudgetOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateBudget(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::UpdateBudgetAsync(const UpdateBudgetRequest& request, const UpdateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateBudgetRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateBudget(request), context);
+      handler(this, *pRequest, UpdateBudget(*pRequest), context);
     } );
 }
 
@@ -662,17 +682,18 @@ UpdateBudgetActionOutcome BudgetsClient::UpdateBudgetAction(const UpdateBudgetAc
 
 UpdateBudgetActionOutcomeCallable BudgetsClient::UpdateBudgetActionCallable(const UpdateBudgetActionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateBudgetActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBudgetAction(request); } );
+  std::shared_ptr<UpdateBudgetActionRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBudgetActionOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateBudgetAction(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::UpdateBudgetActionAsync(const UpdateBudgetActionRequest& request, const UpdateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateBudgetActionRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateBudgetAction(request), context);
+      handler(this, *pRequest, UpdateBudgetAction(*pRequest), context);
     } );
 }
 
@@ -686,17 +707,18 @@ UpdateNotificationOutcome BudgetsClient::UpdateNotification(const UpdateNotifica
 
 UpdateNotificationOutcomeCallable BudgetsClient::UpdateNotificationCallable(const UpdateNotificationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateNotificationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNotification(request); } );
+  std::shared_ptr<UpdateNotificationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNotificationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateNotification(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::UpdateNotificationAsync(const UpdateNotificationRequest& request, const UpdateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateNotificationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateNotification(request), context);
+      handler(this, *pRequest, UpdateNotification(*pRequest), context);
     } );
 }
 
@@ -710,17 +732,18 @@ UpdateSubscriberOutcome BudgetsClient::UpdateSubscriber(const UpdateSubscriberRe
 
 UpdateSubscriberOutcomeCallable BudgetsClient::UpdateSubscriberCallable(const UpdateSubscriberRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateSubscriberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSubscriber(request); } );
+  std::shared_ptr<UpdateSubscriberRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSubscriberOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateSubscriber(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void BudgetsClient::UpdateSubscriberAsync(const UpdateSubscriberRequest& request, const UpdateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateSubscriberRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateSubscriber(request), context);
+      handler(this, *pRequest, UpdateSubscriber(*pRequest), context);
     } );
 }
 

@@ -162,17 +162,18 @@ GetPersonalizedRankingOutcome PersonalizeRuntimeClient::GetPersonalizedRanking(c
 
 GetPersonalizedRankingOutcomeCallable PersonalizeRuntimeClient::GetPersonalizedRankingCallable(const GetPersonalizedRankingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPersonalizedRankingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPersonalizedRanking(request); } );
+  std::shared_ptr<GetPersonalizedRankingRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetPersonalizedRankingOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetPersonalizedRanking(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PersonalizeRuntimeClient::GetPersonalizedRankingAsync(const GetPersonalizedRankingRequest& request, const GetPersonalizedRankingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetPersonalizedRankingRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetPersonalizedRanking(request), context);
+      handler(this, *pRequest, GetPersonalizedRanking(*pRequest), context);
     } );
 }
 
@@ -187,17 +188,18 @@ GetRecommendationsOutcome PersonalizeRuntimeClient::GetRecommendations(const Get
 
 GetRecommendationsOutcomeCallable PersonalizeRuntimeClient::GetRecommendationsCallable(const GetRecommendationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecommendations(request); } );
+  std::shared_ptr<GetRecommendationsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRecommendationsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRecommendations(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void PersonalizeRuntimeClient::GetRecommendationsAsync(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRecommendationsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRecommendations(request), context);
+      handler(this, *pRequest, GetRecommendations(*pRequest), context);
     } );
 }
 

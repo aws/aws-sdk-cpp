@@ -176,17 +176,18 @@ AssociateCreatedArtifactOutcome MigrationHubClient::AssociateCreatedArtifact(con
 
 AssociateCreatedArtifactOutcomeCallable MigrationHubClient::AssociateCreatedArtifactCallable(const AssociateCreatedArtifactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateCreatedArtifactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateCreatedArtifact(request); } );
+  std::shared_ptr<AssociateCreatedArtifactRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateCreatedArtifactOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateCreatedArtifact(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::AssociateCreatedArtifactAsync(const AssociateCreatedArtifactRequest& request, const AssociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateCreatedArtifactRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateCreatedArtifact(request), context);
+      handler(this, *pRequest, AssociateCreatedArtifact(*pRequest), context);
     } );
 }
 
@@ -200,17 +201,18 @@ AssociateDiscoveredResourceOutcome MigrationHubClient::AssociateDiscoveredResour
 
 AssociateDiscoveredResourceOutcomeCallable MigrationHubClient::AssociateDiscoveredResourceCallable(const AssociateDiscoveredResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateDiscoveredResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateDiscoveredResource(request); } );
+  std::shared_ptr<AssociateDiscoveredResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateDiscoveredResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateDiscoveredResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::AssociateDiscoveredResourceAsync(const AssociateDiscoveredResourceRequest& request, const AssociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateDiscoveredResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateDiscoveredResource(request), context);
+      handler(this, *pRequest, AssociateDiscoveredResource(*pRequest), context);
     } );
 }
 
@@ -224,17 +226,18 @@ CreateProgressUpdateStreamOutcome MigrationHubClient::CreateProgressUpdateStream
 
 CreateProgressUpdateStreamOutcomeCallable MigrationHubClient::CreateProgressUpdateStreamCallable(const CreateProgressUpdateStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateProgressUpdateStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProgressUpdateStream(request); } );
+  std::shared_ptr<CreateProgressUpdateStreamRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateProgressUpdateStreamOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateProgressUpdateStream(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::CreateProgressUpdateStreamAsync(const CreateProgressUpdateStreamRequest& request, const CreateProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateProgressUpdateStreamRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateProgressUpdateStream(request), context);
+      handler(this, *pRequest, CreateProgressUpdateStream(*pRequest), context);
     } );
 }
 
@@ -248,17 +251,18 @@ DeleteProgressUpdateStreamOutcome MigrationHubClient::DeleteProgressUpdateStream
 
 DeleteProgressUpdateStreamOutcomeCallable MigrationHubClient::DeleteProgressUpdateStreamCallable(const DeleteProgressUpdateStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteProgressUpdateStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProgressUpdateStream(request); } );
+  std::shared_ptr<DeleteProgressUpdateStreamRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProgressUpdateStreamOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteProgressUpdateStream(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::DeleteProgressUpdateStreamAsync(const DeleteProgressUpdateStreamRequest& request, const DeleteProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteProgressUpdateStreamRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteProgressUpdateStream(request), context);
+      handler(this, *pRequest, DeleteProgressUpdateStream(*pRequest), context);
     } );
 }
 
@@ -272,17 +276,18 @@ DescribeApplicationStateOutcome MigrationHubClient::DescribeApplicationState(con
 
 DescribeApplicationStateOutcomeCallable MigrationHubClient::DescribeApplicationStateCallable(const DescribeApplicationStateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeApplicationStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApplicationState(request); } );
+  std::shared_ptr<DescribeApplicationStateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeApplicationStateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeApplicationState(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::DescribeApplicationStateAsync(const DescribeApplicationStateRequest& request, const DescribeApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeApplicationStateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeApplicationState(request), context);
+      handler(this, *pRequest, DescribeApplicationState(*pRequest), context);
     } );
 }
 
@@ -296,17 +301,18 @@ DescribeMigrationTaskOutcome MigrationHubClient::DescribeMigrationTask(const Des
 
 DescribeMigrationTaskOutcomeCallable MigrationHubClient::DescribeMigrationTaskCallable(const DescribeMigrationTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeMigrationTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMigrationTask(request); } );
+  std::shared_ptr<DescribeMigrationTaskRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMigrationTaskOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeMigrationTask(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::DescribeMigrationTaskAsync(const DescribeMigrationTaskRequest& request, const DescribeMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeMigrationTaskRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeMigrationTask(request), context);
+      handler(this, *pRequest, DescribeMigrationTask(*pRequest), context);
     } );
 }
 
@@ -320,17 +326,18 @@ DisassociateCreatedArtifactOutcome MigrationHubClient::DisassociateCreatedArtifa
 
 DisassociateCreatedArtifactOutcomeCallable MigrationHubClient::DisassociateCreatedArtifactCallable(const DisassociateCreatedArtifactRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateCreatedArtifactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateCreatedArtifact(request); } );
+  std::shared_ptr<DisassociateCreatedArtifactRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateCreatedArtifactOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateCreatedArtifact(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::DisassociateCreatedArtifactAsync(const DisassociateCreatedArtifactRequest& request, const DisassociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateCreatedArtifactRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateCreatedArtifact(request), context);
+      handler(this, *pRequest, DisassociateCreatedArtifact(*pRequest), context);
     } );
 }
 
@@ -344,17 +351,18 @@ DisassociateDiscoveredResourceOutcome MigrationHubClient::DisassociateDiscovered
 
 DisassociateDiscoveredResourceOutcomeCallable MigrationHubClient::DisassociateDiscoveredResourceCallable(const DisassociateDiscoveredResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateDiscoveredResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateDiscoveredResource(request); } );
+  std::shared_ptr<DisassociateDiscoveredResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateDiscoveredResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DisassociateDiscoveredResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::DisassociateDiscoveredResourceAsync(const DisassociateDiscoveredResourceRequest& request, const DisassociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DisassociateDiscoveredResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DisassociateDiscoveredResource(request), context);
+      handler(this, *pRequest, DisassociateDiscoveredResource(*pRequest), context);
     } );
 }
 
@@ -368,17 +376,18 @@ ImportMigrationTaskOutcome MigrationHubClient::ImportMigrationTask(const ImportM
 
 ImportMigrationTaskOutcomeCallable MigrationHubClient::ImportMigrationTaskCallable(const ImportMigrationTaskRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportMigrationTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportMigrationTask(request); } );
+  std::shared_ptr<ImportMigrationTaskRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ImportMigrationTaskOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ImportMigrationTask(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::ImportMigrationTaskAsync(const ImportMigrationTaskRequest& request, const ImportMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ImportMigrationTaskRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ImportMigrationTask(request), context);
+      handler(this, *pRequest, ImportMigrationTask(*pRequest), context);
     } );
 }
 
@@ -392,17 +401,18 @@ ListApplicationStatesOutcome MigrationHubClient::ListApplicationStates(const Lis
 
 ListApplicationStatesOutcomeCallable MigrationHubClient::ListApplicationStatesCallable(const ListApplicationStatesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationStatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplicationStates(request); } );
+  std::shared_ptr<ListApplicationStatesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationStatesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListApplicationStates(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::ListApplicationStatesAsync(const ListApplicationStatesRequest& request, const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListApplicationStatesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListApplicationStates(request), context);
+      handler(this, *pRequest, ListApplicationStates(*pRequest), context);
     } );
 }
 
@@ -416,17 +426,18 @@ ListCreatedArtifactsOutcome MigrationHubClient::ListCreatedArtifacts(const ListC
 
 ListCreatedArtifactsOutcomeCallable MigrationHubClient::ListCreatedArtifactsCallable(const ListCreatedArtifactsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListCreatedArtifactsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCreatedArtifacts(request); } );
+  std::shared_ptr<ListCreatedArtifactsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListCreatedArtifactsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListCreatedArtifacts(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::ListCreatedArtifactsAsync(const ListCreatedArtifactsRequest& request, const ListCreatedArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListCreatedArtifactsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListCreatedArtifacts(request), context);
+      handler(this, *pRequest, ListCreatedArtifacts(*pRequest), context);
     } );
 }
 
@@ -440,17 +451,18 @@ ListDiscoveredResourcesOutcome MigrationHubClient::ListDiscoveredResources(const
 
 ListDiscoveredResourcesOutcomeCallable MigrationHubClient::ListDiscoveredResourcesCallable(const ListDiscoveredResourcesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDiscoveredResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDiscoveredResources(request); } );
+  std::shared_ptr<ListDiscoveredResourcesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDiscoveredResourcesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDiscoveredResources(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::ListDiscoveredResourcesAsync(const ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDiscoveredResourcesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDiscoveredResources(request), context);
+      handler(this, *pRequest, ListDiscoveredResources(*pRequest), context);
     } );
 }
 
@@ -464,17 +476,18 @@ ListMigrationTasksOutcome MigrationHubClient::ListMigrationTasks(const ListMigra
 
 ListMigrationTasksOutcomeCallable MigrationHubClient::ListMigrationTasksCallable(const ListMigrationTasksRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMigrationTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMigrationTasks(request); } );
+  std::shared_ptr<ListMigrationTasksRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListMigrationTasksOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListMigrationTasks(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::ListMigrationTasksAsync(const ListMigrationTasksRequest& request, const ListMigrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListMigrationTasksRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListMigrationTasks(request), context);
+      handler(this, *pRequest, ListMigrationTasks(*pRequest), context);
     } );
 }
 
@@ -488,17 +501,18 @@ ListProgressUpdateStreamsOutcome MigrationHubClient::ListProgressUpdateStreams(c
 
 ListProgressUpdateStreamsOutcomeCallable MigrationHubClient::ListProgressUpdateStreamsCallable(const ListProgressUpdateStreamsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProgressUpdateStreamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProgressUpdateStreams(request); } );
+  std::shared_ptr<ListProgressUpdateStreamsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListProgressUpdateStreamsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListProgressUpdateStreams(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::ListProgressUpdateStreamsAsync(const ListProgressUpdateStreamsRequest& request, const ListProgressUpdateStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListProgressUpdateStreamsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListProgressUpdateStreams(request), context);
+      handler(this, *pRequest, ListProgressUpdateStreams(*pRequest), context);
     } );
 }
 
@@ -512,17 +526,18 @@ NotifyApplicationStateOutcome MigrationHubClient::NotifyApplicationState(const N
 
 NotifyApplicationStateOutcomeCallable MigrationHubClient::NotifyApplicationStateCallable(const NotifyApplicationStateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< NotifyApplicationStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->NotifyApplicationState(request); } );
+  std::shared_ptr<NotifyApplicationStateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< NotifyApplicationStateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->NotifyApplicationState(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::NotifyApplicationStateAsync(const NotifyApplicationStateRequest& request, const NotifyApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<NotifyApplicationStateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, NotifyApplicationState(request), context);
+      handler(this, *pRequest, NotifyApplicationState(*pRequest), context);
     } );
 }
 
@@ -536,17 +551,18 @@ NotifyMigrationTaskStateOutcome MigrationHubClient::NotifyMigrationTaskState(con
 
 NotifyMigrationTaskStateOutcomeCallable MigrationHubClient::NotifyMigrationTaskStateCallable(const NotifyMigrationTaskStateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< NotifyMigrationTaskStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->NotifyMigrationTaskState(request); } );
+  std::shared_ptr<NotifyMigrationTaskStateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< NotifyMigrationTaskStateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->NotifyMigrationTaskState(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::NotifyMigrationTaskStateAsync(const NotifyMigrationTaskStateRequest& request, const NotifyMigrationTaskStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<NotifyMigrationTaskStateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, NotifyMigrationTaskState(request), context);
+      handler(this, *pRequest, NotifyMigrationTaskState(*pRequest), context);
     } );
 }
 
@@ -560,17 +576,18 @@ PutResourceAttributesOutcome MigrationHubClient::PutResourceAttributes(const Put
 
 PutResourceAttributesOutcomeCallable MigrationHubClient::PutResourceAttributesCallable(const PutResourceAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutResourceAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourceAttributes(request); } );
+  std::shared_ptr<PutResourceAttributesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< PutResourceAttributesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->PutResourceAttributes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void MigrationHubClient::PutResourceAttributesAsync(const PutResourceAttributesRequest& request, const PutResourceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<PutResourceAttributesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, PutResourceAttributes(request), context);
+      handler(this, *pRequest, PutResourceAttributes(*pRequest), context);
     } );
 }
 

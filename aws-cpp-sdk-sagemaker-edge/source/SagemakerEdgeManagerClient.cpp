@@ -163,17 +163,18 @@ GetDeploymentsOutcome SagemakerEdgeManagerClient::GetDeployments(const GetDeploy
 
 GetDeploymentsOutcomeCallable SagemakerEdgeManagerClient::GetDeploymentsCallable(const GetDeploymentsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeployments(request); } );
+  std::shared_ptr<GetDeploymentsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDeployments(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SagemakerEdgeManagerClient::GetDeploymentsAsync(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDeploymentsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDeployments(request), context);
+      handler(this, *pRequest, GetDeployments(*pRequest), context);
     } );
 }
 
@@ -188,17 +189,18 @@ GetDeviceRegistrationOutcome SagemakerEdgeManagerClient::GetDeviceRegistration(c
 
 GetDeviceRegistrationOutcomeCallable SagemakerEdgeManagerClient::GetDeviceRegistrationCallable(const GetDeviceRegistrationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeviceRegistrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeviceRegistration(request); } );
+  std::shared_ptr<GetDeviceRegistrationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDeviceRegistrationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDeviceRegistration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SagemakerEdgeManagerClient::GetDeviceRegistrationAsync(const GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDeviceRegistrationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDeviceRegistration(request), context);
+      handler(this, *pRequest, GetDeviceRegistration(*pRequest), context);
     } );
 }
 
@@ -213,17 +215,18 @@ SendHeartbeatOutcome SagemakerEdgeManagerClient::SendHeartbeat(const SendHeartbe
 
 SendHeartbeatOutcomeCallable SagemakerEdgeManagerClient::SendHeartbeatCallable(const SendHeartbeatRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SendHeartbeatOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendHeartbeat(request); } );
+  std::shared_ptr<SendHeartbeatRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SendHeartbeatOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SendHeartbeat(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SagemakerEdgeManagerClient::SendHeartbeatAsync(const SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SendHeartbeatRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SendHeartbeat(request), context);
+      handler(this, *pRequest, SendHeartbeat(*pRequest), context);
     } );
 }
 
