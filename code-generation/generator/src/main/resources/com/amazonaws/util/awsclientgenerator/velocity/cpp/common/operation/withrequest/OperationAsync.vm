@@ -1,13 +1,22 @@
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")
+#set($refText = "&")
 #else
 #set($constText = "const ")
+#set($refText = "")
 #end
 void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
 #if($operation.result.shape.hasEventStreamMembers())
-  AWS_MAKE_ASYNC_STREAMING_OPERATION(${operation.name}, request, handler, context, m_executor.get());
+  m_executor->Submit( [this, ${refText}request, handler, context]()
+    {
+      handler(this, request, ${operation.name}(request), context);
+    } );
 #else
-  AWS_MAKE_ASYNC_OPERATION(${operation.name}, request, handler, context, m_executor.get());
+  std::shared_ptr<${operation.request.shape.name}> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
+    {
+      handler(this, *pRequest, ${operation.name}(*pRequest), context);
+    } );
 #end
 }
