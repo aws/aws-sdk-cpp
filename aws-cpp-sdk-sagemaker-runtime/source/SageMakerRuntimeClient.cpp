@@ -86,10 +86,10 @@ SageMakerRuntimeClient::SageMakerRuntimeClient(const std::shared_ptr<AWSCredenti
     /* Legacy constructors due deprecation */
   SageMakerRuntimeClient::SageMakerRuntimeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerRuntimeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
@@ -101,10 +101,10 @@ SageMakerRuntimeClient::SageMakerRuntimeClient(const std::shared_ptr<AWSCredenti
 SageMakerRuntimeClient::SageMakerRuntimeClient(const AWSCredentials& credentials,
                                                const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -116,10 +116,10 @@ SageMakerRuntimeClient::SageMakerRuntimeClient(const AWSCredentials& credentials
 SageMakerRuntimeClient::SageMakerRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                                const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
@@ -169,17 +169,18 @@ InvokeEndpointOutcome SageMakerRuntimeClient::InvokeEndpoint(const InvokeEndpoin
 
 InvokeEndpointOutcomeCallable SageMakerRuntimeClient::InvokeEndpointCallable(const InvokeEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InvokeEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InvokeEndpoint(request); } );
+  std::shared_ptr<InvokeEndpointRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< InvokeEndpointOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->InvokeEndpoint(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SageMakerRuntimeClient::InvokeEndpointAsync(const InvokeEndpointRequest& request, const InvokeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<InvokeEndpointRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, InvokeEndpoint(request), context);
+      handler(this, *pRequest, InvokeEndpoint(*pRequest), context);
     } );
 }
 
@@ -206,17 +207,18 @@ InvokeEndpointAsyncOutcome SageMakerRuntimeClient::InvokeEndpointAsync(const Inv
 
 InvokeEndpointAsyncOutcomeCallable SageMakerRuntimeClient::InvokeEndpointAsyncCallable(const InvokeEndpointAsyncRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InvokeEndpointAsyncOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InvokeEndpointAsync(request); } );
+  std::shared_ptr<InvokeEndpointAsyncRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< InvokeEndpointAsyncOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->InvokeEndpointAsync(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void SageMakerRuntimeClient::InvokeEndpointAsyncAsync(const InvokeEndpointAsyncRequest& request, const InvokeEndpointAsyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<InvokeEndpointAsyncRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, InvokeEndpointAsync(request), context);
+      handler(this, *pRequest, InvokeEndpointAsync(*pRequest), context);
     } );
 }
 

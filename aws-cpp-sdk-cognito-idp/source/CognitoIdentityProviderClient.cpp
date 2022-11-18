@@ -260,17 +260,18 @@ AddCustomAttributesOutcome CognitoIdentityProviderClient::AddCustomAttributes(co
 
 AddCustomAttributesOutcomeCallable CognitoIdentityProviderClient::AddCustomAttributesCallable(const AddCustomAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddCustomAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddCustomAttributes(request); } );
+  std::shared_ptr<AddCustomAttributesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AddCustomAttributesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AddCustomAttributes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AddCustomAttributesAsync(const AddCustomAttributesRequest& request, const AddCustomAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AddCustomAttributesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AddCustomAttributes(request), context);
+      handler(this, *pRequest, AddCustomAttributes(*pRequest), context);
     } );
 }
 
@@ -284,17 +285,18 @@ AdminAddUserToGroupOutcome CognitoIdentityProviderClient::AdminAddUserToGroup(co
 
 AdminAddUserToGroupOutcomeCallable CognitoIdentityProviderClient::AdminAddUserToGroupCallable(const AdminAddUserToGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminAddUserToGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminAddUserToGroup(request); } );
+  std::shared_ptr<AdminAddUserToGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminAddUserToGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminAddUserToGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminAddUserToGroupAsync(const AdminAddUserToGroupRequest& request, const AdminAddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminAddUserToGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminAddUserToGroup(request), context);
+      handler(this, *pRequest, AdminAddUserToGroup(*pRequest), context);
     } );
 }
 
@@ -308,17 +310,18 @@ AdminConfirmSignUpOutcome CognitoIdentityProviderClient::AdminConfirmSignUp(cons
 
 AdminConfirmSignUpOutcomeCallable CognitoIdentityProviderClient::AdminConfirmSignUpCallable(const AdminConfirmSignUpRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminConfirmSignUpOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminConfirmSignUp(request); } );
+  std::shared_ptr<AdminConfirmSignUpRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminConfirmSignUpOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminConfirmSignUp(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminConfirmSignUpAsync(const AdminConfirmSignUpRequest& request, const AdminConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminConfirmSignUpRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminConfirmSignUp(request), context);
+      handler(this, *pRequest, AdminConfirmSignUp(*pRequest), context);
     } );
 }
 
@@ -332,17 +335,18 @@ AdminCreateUserOutcome CognitoIdentityProviderClient::AdminCreateUser(const Admi
 
 AdminCreateUserOutcomeCallable CognitoIdentityProviderClient::AdminCreateUserCallable(const AdminCreateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminCreateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminCreateUser(request); } );
+  std::shared_ptr<AdminCreateUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminCreateUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminCreateUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminCreateUserAsync(const AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminCreateUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminCreateUser(request), context);
+      handler(this, *pRequest, AdminCreateUser(*pRequest), context);
     } );
 }
 
@@ -356,17 +360,18 @@ AdminDeleteUserOutcome CognitoIdentityProviderClient::AdminDeleteUser(const Admi
 
 AdminDeleteUserOutcomeCallable CognitoIdentityProviderClient::AdminDeleteUserCallable(const AdminDeleteUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminDeleteUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminDeleteUser(request); } );
+  std::shared_ptr<AdminDeleteUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminDeleteUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminDeleteUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminDeleteUserAsync(const AdminDeleteUserRequest& request, const AdminDeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminDeleteUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminDeleteUser(request), context);
+      handler(this, *pRequest, AdminDeleteUser(*pRequest), context);
     } );
 }
 
@@ -380,17 +385,18 @@ AdminDeleteUserAttributesOutcome CognitoIdentityProviderClient::AdminDeleteUserA
 
 AdminDeleteUserAttributesOutcomeCallable CognitoIdentityProviderClient::AdminDeleteUserAttributesCallable(const AdminDeleteUserAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminDeleteUserAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminDeleteUserAttributes(request); } );
+  std::shared_ptr<AdminDeleteUserAttributesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminDeleteUserAttributesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminDeleteUserAttributes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminDeleteUserAttributesAsync(const AdminDeleteUserAttributesRequest& request, const AdminDeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminDeleteUserAttributesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminDeleteUserAttributes(request), context);
+      handler(this, *pRequest, AdminDeleteUserAttributes(*pRequest), context);
     } );
 }
 
@@ -404,17 +410,18 @@ AdminDisableProviderForUserOutcome CognitoIdentityProviderClient::AdminDisablePr
 
 AdminDisableProviderForUserOutcomeCallable CognitoIdentityProviderClient::AdminDisableProviderForUserCallable(const AdminDisableProviderForUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminDisableProviderForUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminDisableProviderForUser(request); } );
+  std::shared_ptr<AdminDisableProviderForUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminDisableProviderForUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminDisableProviderForUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminDisableProviderForUserAsync(const AdminDisableProviderForUserRequest& request, const AdminDisableProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminDisableProviderForUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminDisableProviderForUser(request), context);
+      handler(this, *pRequest, AdminDisableProviderForUser(*pRequest), context);
     } );
 }
 
@@ -428,17 +435,18 @@ AdminDisableUserOutcome CognitoIdentityProviderClient::AdminDisableUser(const Ad
 
 AdminDisableUserOutcomeCallable CognitoIdentityProviderClient::AdminDisableUserCallable(const AdminDisableUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminDisableUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminDisableUser(request); } );
+  std::shared_ptr<AdminDisableUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminDisableUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminDisableUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminDisableUserAsync(const AdminDisableUserRequest& request, const AdminDisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminDisableUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminDisableUser(request), context);
+      handler(this, *pRequest, AdminDisableUser(*pRequest), context);
     } );
 }
 
@@ -452,17 +460,18 @@ AdminEnableUserOutcome CognitoIdentityProviderClient::AdminEnableUser(const Admi
 
 AdminEnableUserOutcomeCallable CognitoIdentityProviderClient::AdminEnableUserCallable(const AdminEnableUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminEnableUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminEnableUser(request); } );
+  std::shared_ptr<AdminEnableUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminEnableUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminEnableUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminEnableUserAsync(const AdminEnableUserRequest& request, const AdminEnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminEnableUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminEnableUser(request), context);
+      handler(this, *pRequest, AdminEnableUser(*pRequest), context);
     } );
 }
 
@@ -476,17 +485,18 @@ AdminForgetDeviceOutcome CognitoIdentityProviderClient::AdminForgetDevice(const 
 
 AdminForgetDeviceOutcomeCallable CognitoIdentityProviderClient::AdminForgetDeviceCallable(const AdminForgetDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminForgetDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminForgetDevice(request); } );
+  std::shared_ptr<AdminForgetDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminForgetDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminForgetDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminForgetDeviceAsync(const AdminForgetDeviceRequest& request, const AdminForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminForgetDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminForgetDevice(request), context);
+      handler(this, *pRequest, AdminForgetDevice(*pRequest), context);
     } );
 }
 
@@ -500,17 +510,18 @@ AdminGetDeviceOutcome CognitoIdentityProviderClient::AdminGetDevice(const AdminG
 
 AdminGetDeviceOutcomeCallable CognitoIdentityProviderClient::AdminGetDeviceCallable(const AdminGetDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminGetDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminGetDevice(request); } );
+  std::shared_ptr<AdminGetDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminGetDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminGetDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminGetDeviceAsync(const AdminGetDeviceRequest& request, const AdminGetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminGetDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminGetDevice(request), context);
+      handler(this, *pRequest, AdminGetDevice(*pRequest), context);
     } );
 }
 
@@ -524,17 +535,18 @@ AdminGetUserOutcome CognitoIdentityProviderClient::AdminGetUser(const AdminGetUs
 
 AdminGetUserOutcomeCallable CognitoIdentityProviderClient::AdminGetUserCallable(const AdminGetUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminGetUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminGetUser(request); } );
+  std::shared_ptr<AdminGetUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminGetUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminGetUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminGetUserAsync(const AdminGetUserRequest& request, const AdminGetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminGetUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminGetUser(request), context);
+      handler(this, *pRequest, AdminGetUser(*pRequest), context);
     } );
 }
 
@@ -548,17 +560,18 @@ AdminInitiateAuthOutcome CognitoIdentityProviderClient::AdminInitiateAuth(const 
 
 AdminInitiateAuthOutcomeCallable CognitoIdentityProviderClient::AdminInitiateAuthCallable(const AdminInitiateAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminInitiateAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminInitiateAuth(request); } );
+  std::shared_ptr<AdminInitiateAuthRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminInitiateAuthOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminInitiateAuth(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminInitiateAuthAsync(const AdminInitiateAuthRequest& request, const AdminInitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminInitiateAuthRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminInitiateAuth(request), context);
+      handler(this, *pRequest, AdminInitiateAuth(*pRequest), context);
     } );
 }
 
@@ -572,17 +585,18 @@ AdminLinkProviderForUserOutcome CognitoIdentityProviderClient::AdminLinkProvider
 
 AdminLinkProviderForUserOutcomeCallable CognitoIdentityProviderClient::AdminLinkProviderForUserCallable(const AdminLinkProviderForUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminLinkProviderForUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminLinkProviderForUser(request); } );
+  std::shared_ptr<AdminLinkProviderForUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminLinkProviderForUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminLinkProviderForUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminLinkProviderForUserAsync(const AdminLinkProviderForUserRequest& request, const AdminLinkProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminLinkProviderForUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminLinkProviderForUser(request), context);
+      handler(this, *pRequest, AdminLinkProviderForUser(*pRequest), context);
     } );
 }
 
@@ -596,17 +610,18 @@ AdminListDevicesOutcome CognitoIdentityProviderClient::AdminListDevices(const Ad
 
 AdminListDevicesOutcomeCallable CognitoIdentityProviderClient::AdminListDevicesCallable(const AdminListDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminListDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminListDevices(request); } );
+  std::shared_ptr<AdminListDevicesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminListDevicesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminListDevices(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminListDevicesAsync(const AdminListDevicesRequest& request, const AdminListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminListDevicesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminListDevices(request), context);
+      handler(this, *pRequest, AdminListDevices(*pRequest), context);
     } );
 }
 
@@ -620,17 +635,18 @@ AdminListGroupsForUserOutcome CognitoIdentityProviderClient::AdminListGroupsForU
 
 AdminListGroupsForUserOutcomeCallable CognitoIdentityProviderClient::AdminListGroupsForUserCallable(const AdminListGroupsForUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminListGroupsForUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminListGroupsForUser(request); } );
+  std::shared_ptr<AdminListGroupsForUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminListGroupsForUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminListGroupsForUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminListGroupsForUserAsync(const AdminListGroupsForUserRequest& request, const AdminListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminListGroupsForUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminListGroupsForUser(request), context);
+      handler(this, *pRequest, AdminListGroupsForUser(*pRequest), context);
     } );
 }
 
@@ -644,17 +660,18 @@ AdminListUserAuthEventsOutcome CognitoIdentityProviderClient::AdminListUserAuthE
 
 AdminListUserAuthEventsOutcomeCallable CognitoIdentityProviderClient::AdminListUserAuthEventsCallable(const AdminListUserAuthEventsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminListUserAuthEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminListUserAuthEvents(request); } );
+  std::shared_ptr<AdminListUserAuthEventsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminListUserAuthEventsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminListUserAuthEvents(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminListUserAuthEventsAsync(const AdminListUserAuthEventsRequest& request, const AdminListUserAuthEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminListUserAuthEventsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminListUserAuthEvents(request), context);
+      handler(this, *pRequest, AdminListUserAuthEvents(*pRequest), context);
     } );
 }
 
@@ -668,17 +685,18 @@ AdminRemoveUserFromGroupOutcome CognitoIdentityProviderClient::AdminRemoveUserFr
 
 AdminRemoveUserFromGroupOutcomeCallable CognitoIdentityProviderClient::AdminRemoveUserFromGroupCallable(const AdminRemoveUserFromGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminRemoveUserFromGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminRemoveUserFromGroup(request); } );
+  std::shared_ptr<AdminRemoveUserFromGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminRemoveUserFromGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminRemoveUserFromGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminRemoveUserFromGroupAsync(const AdminRemoveUserFromGroupRequest& request, const AdminRemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminRemoveUserFromGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminRemoveUserFromGroup(request), context);
+      handler(this, *pRequest, AdminRemoveUserFromGroup(*pRequest), context);
     } );
 }
 
@@ -692,17 +710,18 @@ AdminResetUserPasswordOutcome CognitoIdentityProviderClient::AdminResetUserPassw
 
 AdminResetUserPasswordOutcomeCallable CognitoIdentityProviderClient::AdminResetUserPasswordCallable(const AdminResetUserPasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminResetUserPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminResetUserPassword(request); } );
+  std::shared_ptr<AdminResetUserPasswordRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminResetUserPasswordOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminResetUserPassword(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminResetUserPasswordAsync(const AdminResetUserPasswordRequest& request, const AdminResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminResetUserPasswordRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminResetUserPassword(request), context);
+      handler(this, *pRequest, AdminResetUserPassword(*pRequest), context);
     } );
 }
 
@@ -716,17 +735,18 @@ AdminRespondToAuthChallengeOutcome CognitoIdentityProviderClient::AdminRespondTo
 
 AdminRespondToAuthChallengeOutcomeCallable CognitoIdentityProviderClient::AdminRespondToAuthChallengeCallable(const AdminRespondToAuthChallengeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminRespondToAuthChallengeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminRespondToAuthChallenge(request); } );
+  std::shared_ptr<AdminRespondToAuthChallengeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminRespondToAuthChallengeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminRespondToAuthChallenge(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminRespondToAuthChallengeAsync(const AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminRespondToAuthChallengeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminRespondToAuthChallenge(request), context);
+      handler(this, *pRequest, AdminRespondToAuthChallenge(*pRequest), context);
     } );
 }
 
@@ -740,17 +760,18 @@ AdminSetUserMFAPreferenceOutcome CognitoIdentityProviderClient::AdminSetUserMFAP
 
 AdminSetUserMFAPreferenceOutcomeCallable CognitoIdentityProviderClient::AdminSetUserMFAPreferenceCallable(const AdminSetUserMFAPreferenceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminSetUserMFAPreferenceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminSetUserMFAPreference(request); } );
+  std::shared_ptr<AdminSetUserMFAPreferenceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminSetUserMFAPreferenceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminSetUserMFAPreference(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminSetUserMFAPreferenceAsync(const AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminSetUserMFAPreferenceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminSetUserMFAPreference(request), context);
+      handler(this, *pRequest, AdminSetUserMFAPreference(*pRequest), context);
     } );
 }
 
@@ -764,17 +785,18 @@ AdminSetUserPasswordOutcome CognitoIdentityProviderClient::AdminSetUserPassword(
 
 AdminSetUserPasswordOutcomeCallable CognitoIdentityProviderClient::AdminSetUserPasswordCallable(const AdminSetUserPasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminSetUserPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminSetUserPassword(request); } );
+  std::shared_ptr<AdminSetUserPasswordRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminSetUserPasswordOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminSetUserPassword(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminSetUserPasswordAsync(const AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminSetUserPasswordRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminSetUserPassword(request), context);
+      handler(this, *pRequest, AdminSetUserPassword(*pRequest), context);
     } );
 }
 
@@ -788,17 +810,18 @@ AdminSetUserSettingsOutcome CognitoIdentityProviderClient::AdminSetUserSettings(
 
 AdminSetUserSettingsOutcomeCallable CognitoIdentityProviderClient::AdminSetUserSettingsCallable(const AdminSetUserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminSetUserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminSetUserSettings(request); } );
+  std::shared_ptr<AdminSetUserSettingsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminSetUserSettingsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminSetUserSettings(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminSetUserSettingsAsync(const AdminSetUserSettingsRequest& request, const AdminSetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminSetUserSettingsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminSetUserSettings(request), context);
+      handler(this, *pRequest, AdminSetUserSettings(*pRequest), context);
     } );
 }
 
@@ -812,17 +835,18 @@ AdminUpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::AdminUpdateAu
 
 AdminUpdateAuthEventFeedbackOutcomeCallable CognitoIdentityProviderClient::AdminUpdateAuthEventFeedbackCallable(const AdminUpdateAuthEventFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminUpdateAuthEventFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminUpdateAuthEventFeedback(request); } );
+  std::shared_ptr<AdminUpdateAuthEventFeedbackRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminUpdateAuthEventFeedbackOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminUpdateAuthEventFeedback(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminUpdateAuthEventFeedbackAsync(const AdminUpdateAuthEventFeedbackRequest& request, const AdminUpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminUpdateAuthEventFeedbackRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminUpdateAuthEventFeedback(request), context);
+      handler(this, *pRequest, AdminUpdateAuthEventFeedback(*pRequest), context);
     } );
 }
 
@@ -836,17 +860,18 @@ AdminUpdateDeviceStatusOutcome CognitoIdentityProviderClient::AdminUpdateDeviceS
 
 AdminUpdateDeviceStatusOutcomeCallable CognitoIdentityProviderClient::AdminUpdateDeviceStatusCallable(const AdminUpdateDeviceStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminUpdateDeviceStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminUpdateDeviceStatus(request); } );
+  std::shared_ptr<AdminUpdateDeviceStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminUpdateDeviceStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminUpdateDeviceStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminUpdateDeviceStatusAsync(const AdminUpdateDeviceStatusRequest& request, const AdminUpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminUpdateDeviceStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminUpdateDeviceStatus(request), context);
+      handler(this, *pRequest, AdminUpdateDeviceStatus(*pRequest), context);
     } );
 }
 
@@ -860,17 +885,18 @@ AdminUpdateUserAttributesOutcome CognitoIdentityProviderClient::AdminUpdateUserA
 
 AdminUpdateUserAttributesOutcomeCallable CognitoIdentityProviderClient::AdminUpdateUserAttributesCallable(const AdminUpdateUserAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminUpdateUserAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminUpdateUserAttributes(request); } );
+  std::shared_ptr<AdminUpdateUserAttributesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminUpdateUserAttributesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminUpdateUserAttributes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminUpdateUserAttributesAsync(const AdminUpdateUserAttributesRequest& request, const AdminUpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminUpdateUserAttributesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminUpdateUserAttributes(request), context);
+      handler(this, *pRequest, AdminUpdateUserAttributes(*pRequest), context);
     } );
 }
 
@@ -884,17 +910,18 @@ AdminUserGlobalSignOutOutcome CognitoIdentityProviderClient::AdminUserGlobalSign
 
 AdminUserGlobalSignOutOutcomeCallable CognitoIdentityProviderClient::AdminUserGlobalSignOutCallable(const AdminUserGlobalSignOutRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminUserGlobalSignOutOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminUserGlobalSignOut(request); } );
+  std::shared_ptr<AdminUserGlobalSignOutRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AdminUserGlobalSignOutOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AdminUserGlobalSignOut(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AdminUserGlobalSignOutAsync(const AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AdminUserGlobalSignOutRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AdminUserGlobalSignOut(request), context);
+      handler(this, *pRequest, AdminUserGlobalSignOut(*pRequest), context);
     } );
 }
 
@@ -908,17 +935,18 @@ AssociateSoftwareTokenOutcome CognitoIdentityProviderClient::AssociateSoftwareTo
 
 AssociateSoftwareTokenOutcomeCallable CognitoIdentityProviderClient::AssociateSoftwareTokenCallable(const AssociateSoftwareTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateSoftwareTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateSoftwareToken(request); } );
+  std::shared_ptr<AssociateSoftwareTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< AssociateSoftwareTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->AssociateSoftwareToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::AssociateSoftwareTokenAsync(const AssociateSoftwareTokenRequest& request, const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<AssociateSoftwareTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, AssociateSoftwareToken(request), context);
+      handler(this, *pRequest, AssociateSoftwareToken(*pRequest), context);
     } );
 }
 
@@ -932,17 +960,18 @@ ChangePasswordOutcome CognitoIdentityProviderClient::ChangePassword(const Change
 
 ChangePasswordOutcomeCallable CognitoIdentityProviderClient::ChangePasswordCallable(const ChangePasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ChangePasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ChangePassword(request); } );
+  std::shared_ptr<ChangePasswordRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ChangePasswordOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ChangePassword(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ChangePasswordAsync(const ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ChangePasswordRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ChangePassword(request), context);
+      handler(this, *pRequest, ChangePassword(*pRequest), context);
     } );
 }
 
@@ -956,17 +985,18 @@ ConfirmDeviceOutcome CognitoIdentityProviderClient::ConfirmDevice(const ConfirmD
 
 ConfirmDeviceOutcomeCallable CognitoIdentityProviderClient::ConfirmDeviceCallable(const ConfirmDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ConfirmDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfirmDevice(request); } );
+  std::shared_ptr<ConfirmDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ConfirmDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ConfirmDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ConfirmDeviceAsync(const ConfirmDeviceRequest& request, const ConfirmDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ConfirmDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ConfirmDevice(request), context);
+      handler(this, *pRequest, ConfirmDevice(*pRequest), context);
     } );
 }
 
@@ -980,17 +1010,18 @@ ConfirmForgotPasswordOutcome CognitoIdentityProviderClient::ConfirmForgotPasswor
 
 ConfirmForgotPasswordOutcomeCallable CognitoIdentityProviderClient::ConfirmForgotPasswordCallable(const ConfirmForgotPasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ConfirmForgotPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfirmForgotPassword(request); } );
+  std::shared_ptr<ConfirmForgotPasswordRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ConfirmForgotPasswordOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ConfirmForgotPassword(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ConfirmForgotPasswordAsync(const ConfirmForgotPasswordRequest& request, const ConfirmForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ConfirmForgotPasswordRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ConfirmForgotPassword(request), context);
+      handler(this, *pRequest, ConfirmForgotPassword(*pRequest), context);
     } );
 }
 
@@ -1004,17 +1035,18 @@ ConfirmSignUpOutcome CognitoIdentityProviderClient::ConfirmSignUp(const ConfirmS
 
 ConfirmSignUpOutcomeCallable CognitoIdentityProviderClient::ConfirmSignUpCallable(const ConfirmSignUpRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ConfirmSignUpOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfirmSignUp(request); } );
+  std::shared_ptr<ConfirmSignUpRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ConfirmSignUpOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ConfirmSignUp(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ConfirmSignUpAsync(const ConfirmSignUpRequest& request, const ConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ConfirmSignUpRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ConfirmSignUp(request), context);
+      handler(this, *pRequest, ConfirmSignUp(*pRequest), context);
     } );
 }
 
@@ -1028,17 +1060,18 @@ CreateGroupOutcome CognitoIdentityProviderClient::CreateGroup(const CreateGroupR
 
 CreateGroupOutcomeCallable CognitoIdentityProviderClient::CreateGroupCallable(const CreateGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGroup(request); } );
+  std::shared_ptr<CreateGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateGroup(request), context);
+      handler(this, *pRequest, CreateGroup(*pRequest), context);
     } );
 }
 
@@ -1052,17 +1085,18 @@ CreateIdentityProviderOutcome CognitoIdentityProviderClient::CreateIdentityProvi
 
 CreateIdentityProviderOutcomeCallable CognitoIdentityProviderClient::CreateIdentityProviderCallable(const CreateIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateIdentityProvider(request); } );
+  std::shared_ptr<CreateIdentityProviderRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateIdentityProvider(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::CreateIdentityProviderAsync(const CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateIdentityProviderRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateIdentityProvider(request), context);
+      handler(this, *pRequest, CreateIdentityProvider(*pRequest), context);
     } );
 }
 
@@ -1076,17 +1110,18 @@ CreateResourceServerOutcome CognitoIdentityProviderClient::CreateResourceServer(
 
 CreateResourceServerOutcomeCallable CognitoIdentityProviderClient::CreateResourceServerCallable(const CreateResourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourceServer(request); } );
+  std::shared_ptr<CreateResourceServerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateResourceServerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateResourceServer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::CreateResourceServerAsync(const CreateResourceServerRequest& request, const CreateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateResourceServerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateResourceServer(request), context);
+      handler(this, *pRequest, CreateResourceServer(*pRequest), context);
     } );
 }
 
@@ -1100,17 +1135,18 @@ CreateUserImportJobOutcome CognitoIdentityProviderClient::CreateUserImportJob(co
 
 CreateUserImportJobOutcomeCallable CognitoIdentityProviderClient::CreateUserImportJobCallable(const CreateUserImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserImportJob(request); } );
+  std::shared_ptr<CreateUserImportJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateUserImportJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateUserImportJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::CreateUserImportJobAsync(const CreateUserImportJobRequest& request, const CreateUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateUserImportJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateUserImportJob(request), context);
+      handler(this, *pRequest, CreateUserImportJob(*pRequest), context);
     } );
 }
 
@@ -1124,17 +1160,18 @@ CreateUserPoolOutcome CognitoIdentityProviderClient::CreateUserPool(const Create
 
 CreateUserPoolOutcomeCallable CognitoIdentityProviderClient::CreateUserPoolCallable(const CreateUserPoolRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserPool(request); } );
+  std::shared_ptr<CreateUserPoolRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateUserPoolOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateUserPool(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::CreateUserPoolAsync(const CreateUserPoolRequest& request, const CreateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateUserPoolRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateUserPool(request), context);
+      handler(this, *pRequest, CreateUserPool(*pRequest), context);
     } );
 }
 
@@ -1148,17 +1185,18 @@ CreateUserPoolClientOutcome CognitoIdentityProviderClient::CreateUserPoolClient(
 
 CreateUserPoolClientOutcomeCallable CognitoIdentityProviderClient::CreateUserPoolClientCallable(const CreateUserPoolClientRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserPoolClient(request); } );
+  std::shared_ptr<CreateUserPoolClientRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateUserPoolClient(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::CreateUserPoolClientAsync(const CreateUserPoolClientRequest& request, const CreateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateUserPoolClientRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateUserPoolClient(request), context);
+      handler(this, *pRequest, CreateUserPoolClient(*pRequest), context);
     } );
 }
 
@@ -1172,17 +1210,18 @@ CreateUserPoolDomainOutcome CognitoIdentityProviderClient::CreateUserPoolDomain(
 
 CreateUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::CreateUserPoolDomainCallable(const CreateUserPoolDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserPoolDomain(request); } );
+  std::shared_ptr<CreateUserPoolDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< CreateUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->CreateUserPoolDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::CreateUserPoolDomainAsync(const CreateUserPoolDomainRequest& request, const CreateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<CreateUserPoolDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, CreateUserPoolDomain(request), context);
+      handler(this, *pRequest, CreateUserPoolDomain(*pRequest), context);
     } );
 }
 
@@ -1196,17 +1235,18 @@ DeleteGroupOutcome CognitoIdentityProviderClient::DeleteGroup(const DeleteGroupR
 
 DeleteGroupOutcomeCallable CognitoIdentityProviderClient::DeleteGroupCallable(const DeleteGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGroup(request); } );
+  std::shared_ptr<DeleteGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteGroup(request), context);
+      handler(this, *pRequest, DeleteGroup(*pRequest), context);
     } );
 }
 
@@ -1220,17 +1260,18 @@ DeleteIdentityProviderOutcome CognitoIdentityProviderClient::DeleteIdentityProvi
 
 DeleteIdentityProviderOutcomeCallable CognitoIdentityProviderClient::DeleteIdentityProviderCallable(const DeleteIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteIdentityProvider(request); } );
+  std::shared_ptr<DeleteIdentityProviderRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteIdentityProvider(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DeleteIdentityProviderAsync(const DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteIdentityProviderRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteIdentityProvider(request), context);
+      handler(this, *pRequest, DeleteIdentityProvider(*pRequest), context);
     } );
 }
 
@@ -1244,17 +1285,18 @@ DeleteResourceServerOutcome CognitoIdentityProviderClient::DeleteResourceServer(
 
 DeleteResourceServerOutcomeCallable CognitoIdentityProviderClient::DeleteResourceServerCallable(const DeleteResourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourceServer(request); } );
+  std::shared_ptr<DeleteResourceServerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceServerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteResourceServer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DeleteResourceServerAsync(const DeleteResourceServerRequest& request, const DeleteResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteResourceServerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteResourceServer(request), context);
+      handler(this, *pRequest, DeleteResourceServer(*pRequest), context);
     } );
 }
 
@@ -1268,17 +1310,18 @@ DeleteUserOutcome CognitoIdentityProviderClient::DeleteUser(const DeleteUserRequ
 
 DeleteUserOutcomeCallable CognitoIdentityProviderClient::DeleteUserCallable(const DeleteUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUser(request); } );
+  std::shared_ptr<DeleteUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteUser(request), context);
+      handler(this, *pRequest, DeleteUser(*pRequest), context);
     } );
 }
 
@@ -1292,17 +1335,18 @@ DeleteUserAttributesOutcome CognitoIdentityProviderClient::DeleteUserAttributes(
 
 DeleteUserAttributesOutcomeCallable CognitoIdentityProviderClient::DeleteUserAttributesCallable(const DeleteUserAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserAttributes(request); } );
+  std::shared_ptr<DeleteUserAttributesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserAttributesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteUserAttributes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DeleteUserAttributesAsync(const DeleteUserAttributesRequest& request, const DeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteUserAttributesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteUserAttributes(request), context);
+      handler(this, *pRequest, DeleteUserAttributes(*pRequest), context);
     } );
 }
 
@@ -1316,17 +1360,18 @@ DeleteUserPoolOutcome CognitoIdentityProviderClient::DeleteUserPool(const Delete
 
 DeleteUserPoolOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoolCallable(const DeleteUserPoolRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserPool(request); } );
+  std::shared_ptr<DeleteUserPoolRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserPoolOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteUserPool(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DeleteUserPoolAsync(const DeleteUserPoolRequest& request, const DeleteUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteUserPoolRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteUserPool(request), context);
+      handler(this, *pRequest, DeleteUserPool(*pRequest), context);
     } );
 }
 
@@ -1340,17 +1385,18 @@ DeleteUserPoolClientOutcome CognitoIdentityProviderClient::DeleteUserPoolClient(
 
 DeleteUserPoolClientOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoolClientCallable(const DeleteUserPoolClientRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserPoolClient(request); } );
+  std::shared_ptr<DeleteUserPoolClientRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteUserPoolClient(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DeleteUserPoolClientAsync(const DeleteUserPoolClientRequest& request, const DeleteUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteUserPoolClientRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteUserPoolClient(request), context);
+      handler(this, *pRequest, DeleteUserPoolClient(*pRequest), context);
     } );
 }
 
@@ -1364,17 +1410,18 @@ DeleteUserPoolDomainOutcome CognitoIdentityProviderClient::DeleteUserPoolDomain(
 
 DeleteUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoolDomainCallable(const DeleteUserPoolDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserPoolDomain(request); } );
+  std::shared_ptr<DeleteUserPoolDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DeleteUserPoolDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DeleteUserPoolDomainAsync(const DeleteUserPoolDomainRequest& request, const DeleteUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DeleteUserPoolDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DeleteUserPoolDomain(request), context);
+      handler(this, *pRequest, DeleteUserPoolDomain(*pRequest), context);
     } );
 }
 
@@ -1388,17 +1435,18 @@ DescribeIdentityProviderOutcome CognitoIdentityProviderClient::DescribeIdentityP
 
 DescribeIdentityProviderOutcomeCallable CognitoIdentityProviderClient::DescribeIdentityProviderCallable(const DescribeIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIdentityProvider(request); } );
+  std::shared_ptr<DescribeIdentityProviderRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeIdentityProvider(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DescribeIdentityProviderAsync(const DescribeIdentityProviderRequest& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeIdentityProviderRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeIdentityProvider(request), context);
+      handler(this, *pRequest, DescribeIdentityProvider(*pRequest), context);
     } );
 }
 
@@ -1412,17 +1460,18 @@ DescribeResourceServerOutcome CognitoIdentityProviderClient::DescribeResourceSer
 
 DescribeResourceServerOutcomeCallable CognitoIdentityProviderClient::DescribeResourceServerCallable(const DescribeResourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResourceServer(request); } );
+  std::shared_ptr<DescribeResourceServerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeResourceServerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeResourceServer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DescribeResourceServerAsync(const DescribeResourceServerRequest& request, const DescribeResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeResourceServerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeResourceServer(request), context);
+      handler(this, *pRequest, DescribeResourceServer(*pRequest), context);
     } );
 }
 
@@ -1436,17 +1485,18 @@ DescribeRiskConfigurationOutcome CognitoIdentityProviderClient::DescribeRiskConf
 
 DescribeRiskConfigurationOutcomeCallable CognitoIdentityProviderClient::DescribeRiskConfigurationCallable(const DescribeRiskConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRiskConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRiskConfiguration(request); } );
+  std::shared_ptr<DescribeRiskConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRiskConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeRiskConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DescribeRiskConfigurationAsync(const DescribeRiskConfigurationRequest& request, const DescribeRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeRiskConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeRiskConfiguration(request), context);
+      handler(this, *pRequest, DescribeRiskConfiguration(*pRequest), context);
     } );
 }
 
@@ -1460,17 +1510,18 @@ DescribeUserImportJobOutcome CognitoIdentityProviderClient::DescribeUserImportJo
 
 DescribeUserImportJobOutcomeCallable CognitoIdentityProviderClient::DescribeUserImportJobCallable(const DescribeUserImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeUserImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUserImportJob(request); } );
+  std::shared_ptr<DescribeUserImportJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeUserImportJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeUserImportJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DescribeUserImportJobAsync(const DescribeUserImportJobRequest& request, const DescribeUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeUserImportJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeUserImportJob(request), context);
+      handler(this, *pRequest, DescribeUserImportJob(*pRequest), context);
     } );
 }
 
@@ -1484,17 +1535,18 @@ DescribeUserPoolOutcome CognitoIdentityProviderClient::DescribeUserPool(const De
 
 DescribeUserPoolOutcomeCallable CognitoIdentityProviderClient::DescribeUserPoolCallable(const DescribeUserPoolRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeUserPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUserPool(request); } );
+  std::shared_ptr<DescribeUserPoolRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeUserPoolOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeUserPool(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DescribeUserPoolAsync(const DescribeUserPoolRequest& request, const DescribeUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeUserPoolRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeUserPool(request), context);
+      handler(this, *pRequest, DescribeUserPool(*pRequest), context);
     } );
 }
 
@@ -1508,17 +1560,18 @@ DescribeUserPoolClientOutcome CognitoIdentityProviderClient::DescribeUserPoolCli
 
 DescribeUserPoolClientOutcomeCallable CognitoIdentityProviderClient::DescribeUserPoolClientCallable(const DescribeUserPoolClientRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUserPoolClient(request); } );
+  std::shared_ptr<DescribeUserPoolClientRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeUserPoolClient(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DescribeUserPoolClientAsync(const DescribeUserPoolClientRequest& request, const DescribeUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeUserPoolClientRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeUserPoolClient(request), context);
+      handler(this, *pRequest, DescribeUserPoolClient(*pRequest), context);
     } );
 }
 
@@ -1532,17 +1585,18 @@ DescribeUserPoolDomainOutcome CognitoIdentityProviderClient::DescribeUserPoolDom
 
 DescribeUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::DescribeUserPoolDomainCallable(const DescribeUserPoolDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUserPoolDomain(request); } );
+  std::shared_ptr<DescribeUserPoolDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeUserPoolDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::DescribeUserPoolDomainAsync(const DescribeUserPoolDomainRequest& request, const DescribeUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeUserPoolDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeUserPoolDomain(request), context);
+      handler(this, *pRequest, DescribeUserPoolDomain(*pRequest), context);
     } );
 }
 
@@ -1556,17 +1610,18 @@ ForgetDeviceOutcome CognitoIdentityProviderClient::ForgetDevice(const ForgetDevi
 
 ForgetDeviceOutcomeCallable CognitoIdentityProviderClient::ForgetDeviceCallable(const ForgetDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ForgetDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ForgetDevice(request); } );
+  std::shared_ptr<ForgetDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ForgetDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ForgetDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ForgetDeviceAsync(const ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ForgetDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ForgetDevice(request), context);
+      handler(this, *pRequest, ForgetDevice(*pRequest), context);
     } );
 }
 
@@ -1580,17 +1635,18 @@ ForgotPasswordOutcome CognitoIdentityProviderClient::ForgotPassword(const Forgot
 
 ForgotPasswordOutcomeCallable CognitoIdentityProviderClient::ForgotPasswordCallable(const ForgotPasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ForgotPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ForgotPassword(request); } );
+  std::shared_ptr<ForgotPasswordRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ForgotPasswordOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ForgotPassword(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ForgotPasswordAsync(const ForgotPasswordRequest& request, const ForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ForgotPasswordRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ForgotPassword(request), context);
+      handler(this, *pRequest, ForgotPassword(*pRequest), context);
     } );
 }
 
@@ -1604,17 +1660,18 @@ GetCSVHeaderOutcome CognitoIdentityProviderClient::GetCSVHeader(const GetCSVHead
 
 GetCSVHeaderOutcomeCallable CognitoIdentityProviderClient::GetCSVHeaderCallable(const GetCSVHeaderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCSVHeaderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCSVHeader(request); } );
+  std::shared_ptr<GetCSVHeaderRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetCSVHeaderOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetCSVHeader(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::GetCSVHeaderAsync(const GetCSVHeaderRequest& request, const GetCSVHeaderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetCSVHeaderRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetCSVHeader(request), context);
+      handler(this, *pRequest, GetCSVHeader(*pRequest), context);
     } );
 }
 
@@ -1628,17 +1685,18 @@ GetDeviceOutcome CognitoIdentityProviderClient::GetDevice(const GetDeviceRequest
 
 GetDeviceOutcomeCallable CognitoIdentityProviderClient::GetDeviceCallable(const GetDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDevice(request); } );
+  std::shared_ptr<GetDeviceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetDeviceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetDevice(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetDeviceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetDevice(request), context);
+      handler(this, *pRequest, GetDevice(*pRequest), context);
     } );
 }
 
@@ -1652,17 +1710,18 @@ GetGroupOutcome CognitoIdentityProviderClient::GetGroup(const GetGroupRequest& r
 
 GetGroupOutcomeCallable CognitoIdentityProviderClient::GetGroupCallable(const GetGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGroup(request); } );
+  std::shared_ptr<GetGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetGroup(request), context);
+      handler(this, *pRequest, GetGroup(*pRequest), context);
     } );
 }
 
@@ -1676,17 +1735,18 @@ GetIdentityProviderByIdentifierOutcome CognitoIdentityProviderClient::GetIdentit
 
 GetIdentityProviderByIdentifierOutcomeCallable CognitoIdentityProviderClient::GetIdentityProviderByIdentifierCallable(const GetIdentityProviderByIdentifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetIdentityProviderByIdentifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIdentityProviderByIdentifier(request); } );
+  std::shared_ptr<GetIdentityProviderByIdentifierRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetIdentityProviderByIdentifierOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetIdentityProviderByIdentifier(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::GetIdentityProviderByIdentifierAsync(const GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetIdentityProviderByIdentifierRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetIdentityProviderByIdentifier(request), context);
+      handler(this, *pRequest, GetIdentityProviderByIdentifier(*pRequest), context);
     } );
 }
 
@@ -1700,17 +1760,18 @@ GetSigningCertificateOutcome CognitoIdentityProviderClient::GetSigningCertificat
 
 GetSigningCertificateOutcomeCallable CognitoIdentityProviderClient::GetSigningCertificateCallable(const GetSigningCertificateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSigningCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSigningCertificate(request); } );
+  std::shared_ptr<GetSigningCertificateRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetSigningCertificateOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetSigningCertificate(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::GetSigningCertificateAsync(const GetSigningCertificateRequest& request, const GetSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetSigningCertificateRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetSigningCertificate(request), context);
+      handler(this, *pRequest, GetSigningCertificate(*pRequest), context);
     } );
 }
 
@@ -1724,17 +1785,18 @@ GetUICustomizationOutcome CognitoIdentityProviderClient::GetUICustomization(cons
 
 GetUICustomizationOutcomeCallable CognitoIdentityProviderClient::GetUICustomizationCallable(const GetUICustomizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUICustomizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUICustomization(request); } );
+  std::shared_ptr<GetUICustomizationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetUICustomizationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetUICustomization(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::GetUICustomizationAsync(const GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetUICustomizationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetUICustomization(request), context);
+      handler(this, *pRequest, GetUICustomization(*pRequest), context);
     } );
 }
 
@@ -1748,17 +1810,18 @@ GetUserOutcome CognitoIdentityProviderClient::GetUser(const GetUserRequest& requ
 
 GetUserOutcomeCallable CognitoIdentityProviderClient::GetUserCallable(const GetUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUser(request); } );
+  std::shared_ptr<GetUserRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetUserOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetUser(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::GetUserAsync(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetUserRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetUser(request), context);
+      handler(this, *pRequest, GetUser(*pRequest), context);
     } );
 }
 
@@ -1772,17 +1835,18 @@ GetUserAttributeVerificationCodeOutcome CognitoIdentityProviderClient::GetUserAt
 
 GetUserAttributeVerificationCodeOutcomeCallable CognitoIdentityProviderClient::GetUserAttributeVerificationCodeCallable(const GetUserAttributeVerificationCodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserAttributeVerificationCodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUserAttributeVerificationCode(request); } );
+  std::shared_ptr<GetUserAttributeVerificationCodeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetUserAttributeVerificationCodeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetUserAttributeVerificationCode(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::GetUserAttributeVerificationCodeAsync(const GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetUserAttributeVerificationCodeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetUserAttributeVerificationCode(request), context);
+      handler(this, *pRequest, GetUserAttributeVerificationCode(*pRequest), context);
     } );
 }
 
@@ -1796,17 +1860,18 @@ GetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::GetUserPoolMfaConfig(
 
 GetUserPoolMfaConfigOutcomeCallable CognitoIdentityProviderClient::GetUserPoolMfaConfigCallable(const GetUserPoolMfaConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserPoolMfaConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUserPoolMfaConfig(request); } );
+  std::shared_ptr<GetUserPoolMfaConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetUserPoolMfaConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetUserPoolMfaConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::GetUserPoolMfaConfigAsync(const GetUserPoolMfaConfigRequest& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetUserPoolMfaConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetUserPoolMfaConfig(request), context);
+      handler(this, *pRequest, GetUserPoolMfaConfig(*pRequest), context);
     } );
 }
 
@@ -1820,17 +1885,18 @@ GlobalSignOutOutcome CognitoIdentityProviderClient::GlobalSignOut(const GlobalSi
 
 GlobalSignOutOutcomeCallable CognitoIdentityProviderClient::GlobalSignOutCallable(const GlobalSignOutRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GlobalSignOutOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GlobalSignOut(request); } );
+  std::shared_ptr<GlobalSignOutRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GlobalSignOutOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GlobalSignOut(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::GlobalSignOutAsync(const GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GlobalSignOutRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GlobalSignOut(request), context);
+      handler(this, *pRequest, GlobalSignOut(*pRequest), context);
     } );
 }
 
@@ -1844,17 +1910,18 @@ InitiateAuthOutcome CognitoIdentityProviderClient::InitiateAuth(const InitiateAu
 
 InitiateAuthOutcomeCallable CognitoIdentityProviderClient::InitiateAuthCallable(const InitiateAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InitiateAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InitiateAuth(request); } );
+  std::shared_ptr<InitiateAuthRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< InitiateAuthOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->InitiateAuth(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::InitiateAuthAsync(const InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<InitiateAuthRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, InitiateAuth(request), context);
+      handler(this, *pRequest, InitiateAuth(*pRequest), context);
     } );
 }
 
@@ -1868,17 +1935,18 @@ ListDevicesOutcome CognitoIdentityProviderClient::ListDevices(const ListDevicesR
 
 ListDevicesOutcomeCallable CognitoIdentityProviderClient::ListDevicesCallable(const ListDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDevices(request); } );
+  std::shared_ptr<ListDevicesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListDevicesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListDevices(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListDevicesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListDevices(request), context);
+      handler(this, *pRequest, ListDevices(*pRequest), context);
     } );
 }
 
@@ -1892,17 +1960,18 @@ ListGroupsOutcome CognitoIdentityProviderClient::ListGroups(const ListGroupsRequ
 
 ListGroupsOutcomeCallable CognitoIdentityProviderClient::ListGroupsCallable(const ListGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroups(request); } );
+  std::shared_ptr<ListGroupsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListGroupsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListGroups(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListGroupsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListGroups(request), context);
+      handler(this, *pRequest, ListGroups(*pRequest), context);
     } );
 }
 
@@ -1916,17 +1985,18 @@ ListIdentityProvidersOutcome CognitoIdentityProviderClient::ListIdentityProvider
 
 ListIdentityProvidersOutcomeCallable CognitoIdentityProviderClient::ListIdentityProvidersCallable(const ListIdentityProvidersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListIdentityProvidersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIdentityProviders(request); } );
+  std::shared_ptr<ListIdentityProvidersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListIdentityProvidersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListIdentityProviders(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ListIdentityProvidersAsync(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListIdentityProvidersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListIdentityProviders(request), context);
+      handler(this, *pRequest, ListIdentityProviders(*pRequest), context);
     } );
 }
 
@@ -1940,17 +2010,18 @@ ListResourceServersOutcome CognitoIdentityProviderClient::ListResourceServers(co
 
 ListResourceServersOutcomeCallable CognitoIdentityProviderClient::ListResourceServersCallable(const ListResourceServersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListResourceServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceServers(request); } );
+  std::shared_ptr<ListResourceServersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceServersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListResourceServers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ListResourceServersAsync(const ListResourceServersRequest& request, const ListResourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListResourceServersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListResourceServers(request), context);
+      handler(this, *pRequest, ListResourceServers(*pRequest), context);
     } );
 }
 
@@ -1964,17 +2035,18 @@ ListTagsForResourceOutcome CognitoIdentityProviderClient::ListTagsForResource(co
 
 ListTagsForResourceOutcomeCallable CognitoIdentityProviderClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListTagsForResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListTagsForResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListTagsForResource(request), context);
+      handler(this, *pRequest, ListTagsForResource(*pRequest), context);
     } );
 }
 
@@ -1988,17 +2060,18 @@ ListUserImportJobsOutcome CognitoIdentityProviderClient::ListUserImportJobs(cons
 
 ListUserImportJobsOutcomeCallable CognitoIdentityProviderClient::ListUserImportJobsCallable(const ListUserImportJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUserImportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserImportJobs(request); } );
+  std::shared_ptr<ListUserImportJobsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListUserImportJobsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListUserImportJobs(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ListUserImportJobsAsync(const ListUserImportJobsRequest& request, const ListUserImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListUserImportJobsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListUserImportJobs(request), context);
+      handler(this, *pRequest, ListUserImportJobs(*pRequest), context);
     } );
 }
 
@@ -2012,17 +2085,18 @@ ListUserPoolClientsOutcome CognitoIdentityProviderClient::ListUserPoolClients(co
 
 ListUserPoolClientsOutcomeCallable CognitoIdentityProviderClient::ListUserPoolClientsCallable(const ListUserPoolClientsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUserPoolClientsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserPoolClients(request); } );
+  std::shared_ptr<ListUserPoolClientsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListUserPoolClientsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListUserPoolClients(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ListUserPoolClientsAsync(const ListUserPoolClientsRequest& request, const ListUserPoolClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListUserPoolClientsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListUserPoolClients(request), context);
+      handler(this, *pRequest, ListUserPoolClients(*pRequest), context);
     } );
 }
 
@@ -2036,17 +2110,18 @@ ListUserPoolsOutcome CognitoIdentityProviderClient::ListUserPools(const ListUser
 
 ListUserPoolsOutcomeCallable CognitoIdentityProviderClient::ListUserPoolsCallable(const ListUserPoolsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUserPoolsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserPools(request); } );
+  std::shared_ptr<ListUserPoolsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListUserPoolsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListUserPools(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ListUserPoolsAsync(const ListUserPoolsRequest& request, const ListUserPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListUserPoolsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListUserPools(request), context);
+      handler(this, *pRequest, ListUserPools(*pRequest), context);
     } );
 }
 
@@ -2060,17 +2135,18 @@ ListUsersOutcome CognitoIdentityProviderClient::ListUsers(const ListUsersRequest
 
 ListUsersOutcomeCallable CognitoIdentityProviderClient::ListUsersCallable(const ListUsersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUsersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUsers(request); } );
+  std::shared_ptr<ListUsersRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListUsersOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListUsers(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListUsersRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListUsers(request), context);
+      handler(this, *pRequest, ListUsers(*pRequest), context);
     } );
 }
 
@@ -2084,17 +2160,18 @@ ListUsersInGroupOutcome CognitoIdentityProviderClient::ListUsersInGroup(const Li
 
 ListUsersInGroupOutcomeCallable CognitoIdentityProviderClient::ListUsersInGroupCallable(const ListUsersInGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUsersInGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUsersInGroup(request); } );
+  std::shared_ptr<ListUsersInGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListUsersInGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListUsersInGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ListUsersInGroupAsync(const ListUsersInGroupRequest& request, const ListUsersInGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListUsersInGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListUsersInGroup(request), context);
+      handler(this, *pRequest, ListUsersInGroup(*pRequest), context);
     } );
 }
 
@@ -2108,17 +2185,18 @@ ResendConfirmationCodeOutcome CognitoIdentityProviderClient::ResendConfirmationC
 
 ResendConfirmationCodeOutcomeCallable CognitoIdentityProviderClient::ResendConfirmationCodeCallable(const ResendConfirmationCodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResendConfirmationCodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResendConfirmationCode(request); } );
+  std::shared_ptr<ResendConfirmationCodeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ResendConfirmationCodeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ResendConfirmationCode(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::ResendConfirmationCodeAsync(const ResendConfirmationCodeRequest& request, const ResendConfirmationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ResendConfirmationCodeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ResendConfirmationCode(request), context);
+      handler(this, *pRequest, ResendConfirmationCode(*pRequest), context);
     } );
 }
 
@@ -2132,17 +2210,18 @@ RespondToAuthChallengeOutcome CognitoIdentityProviderClient::RespondToAuthChalle
 
 RespondToAuthChallengeOutcomeCallable CognitoIdentityProviderClient::RespondToAuthChallengeCallable(const RespondToAuthChallengeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RespondToAuthChallengeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RespondToAuthChallenge(request); } );
+  std::shared_ptr<RespondToAuthChallengeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RespondToAuthChallengeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RespondToAuthChallenge(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::RespondToAuthChallengeAsync(const RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RespondToAuthChallengeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RespondToAuthChallenge(request), context);
+      handler(this, *pRequest, RespondToAuthChallenge(*pRequest), context);
     } );
 }
 
@@ -2156,17 +2235,18 @@ RevokeTokenOutcome CognitoIdentityProviderClient::RevokeToken(const RevokeTokenR
 
 RevokeTokenOutcomeCallable CognitoIdentityProviderClient::RevokeTokenCallable(const RevokeTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RevokeTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeToken(request); } );
+  std::shared_ptr<RevokeTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< RevokeTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->RevokeToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::RevokeTokenAsync(const RevokeTokenRequest& request, const RevokeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<RevokeTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, RevokeToken(request), context);
+      handler(this, *pRequest, RevokeToken(*pRequest), context);
     } );
 }
 
@@ -2180,17 +2260,18 @@ SetRiskConfigurationOutcome CognitoIdentityProviderClient::SetRiskConfiguration(
 
 SetRiskConfigurationOutcomeCallable CognitoIdentityProviderClient::SetRiskConfigurationCallable(const SetRiskConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetRiskConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetRiskConfiguration(request); } );
+  std::shared_ptr<SetRiskConfigurationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SetRiskConfigurationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SetRiskConfiguration(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::SetRiskConfigurationAsync(const SetRiskConfigurationRequest& request, const SetRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SetRiskConfigurationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SetRiskConfiguration(request), context);
+      handler(this, *pRequest, SetRiskConfiguration(*pRequest), context);
     } );
 }
 
@@ -2204,17 +2285,18 @@ SetUICustomizationOutcome CognitoIdentityProviderClient::SetUICustomization(cons
 
 SetUICustomizationOutcomeCallable CognitoIdentityProviderClient::SetUICustomizationCallable(const SetUICustomizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetUICustomizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetUICustomization(request); } );
+  std::shared_ptr<SetUICustomizationRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SetUICustomizationOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SetUICustomization(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::SetUICustomizationAsync(const SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SetUICustomizationRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SetUICustomization(request), context);
+      handler(this, *pRequest, SetUICustomization(*pRequest), context);
     } );
 }
 
@@ -2228,17 +2310,18 @@ SetUserMFAPreferenceOutcome CognitoIdentityProviderClient::SetUserMFAPreference(
 
 SetUserMFAPreferenceOutcomeCallable CognitoIdentityProviderClient::SetUserMFAPreferenceCallable(const SetUserMFAPreferenceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetUserMFAPreferenceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetUserMFAPreference(request); } );
+  std::shared_ptr<SetUserMFAPreferenceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SetUserMFAPreferenceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SetUserMFAPreference(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::SetUserMFAPreferenceAsync(const SetUserMFAPreferenceRequest& request, const SetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SetUserMFAPreferenceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SetUserMFAPreference(request), context);
+      handler(this, *pRequest, SetUserMFAPreference(*pRequest), context);
     } );
 }
 
@@ -2252,17 +2335,18 @@ SetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::SetUserPoolMfaConfig(
 
 SetUserPoolMfaConfigOutcomeCallable CognitoIdentityProviderClient::SetUserPoolMfaConfigCallable(const SetUserPoolMfaConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetUserPoolMfaConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetUserPoolMfaConfig(request); } );
+  std::shared_ptr<SetUserPoolMfaConfigRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SetUserPoolMfaConfigOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SetUserPoolMfaConfig(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::SetUserPoolMfaConfigAsync(const SetUserPoolMfaConfigRequest& request, const SetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SetUserPoolMfaConfigRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SetUserPoolMfaConfig(request), context);
+      handler(this, *pRequest, SetUserPoolMfaConfig(*pRequest), context);
     } );
 }
 
@@ -2276,17 +2360,18 @@ SetUserSettingsOutcome CognitoIdentityProviderClient::SetUserSettings(const SetU
 
 SetUserSettingsOutcomeCallable CognitoIdentityProviderClient::SetUserSettingsCallable(const SetUserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetUserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetUserSettings(request); } );
+  std::shared_ptr<SetUserSettingsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SetUserSettingsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SetUserSettings(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::SetUserSettingsAsync(const SetUserSettingsRequest& request, const SetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SetUserSettingsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SetUserSettings(request), context);
+      handler(this, *pRequest, SetUserSettings(*pRequest), context);
     } );
 }
 
@@ -2300,17 +2385,18 @@ SignUpOutcome CognitoIdentityProviderClient::SignUp(const SignUpRequest& request
 
 SignUpOutcomeCallable CognitoIdentityProviderClient::SignUpCallable(const SignUpRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SignUpOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SignUp(request); } );
+  std::shared_ptr<SignUpRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< SignUpOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->SignUp(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::SignUpAsync(const SignUpRequest& request, const SignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<SignUpRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, SignUp(request), context);
+      handler(this, *pRequest, SignUp(*pRequest), context);
     } );
 }
 
@@ -2324,17 +2410,18 @@ StartUserImportJobOutcome CognitoIdentityProviderClient::StartUserImportJob(cons
 
 StartUserImportJobOutcomeCallable CognitoIdentityProviderClient::StartUserImportJobCallable(const StartUserImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartUserImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartUserImportJob(request); } );
+  std::shared_ptr<StartUserImportJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StartUserImportJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StartUserImportJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::StartUserImportJobAsync(const StartUserImportJobRequest& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StartUserImportJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StartUserImportJob(request), context);
+      handler(this, *pRequest, StartUserImportJob(*pRequest), context);
     } );
 }
 
@@ -2348,17 +2435,18 @@ StopUserImportJobOutcome CognitoIdentityProviderClient::StopUserImportJob(const 
 
 StopUserImportJobOutcomeCallable CognitoIdentityProviderClient::StopUserImportJobCallable(const StopUserImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopUserImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopUserImportJob(request); } );
+  std::shared_ptr<StopUserImportJobRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< StopUserImportJobOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->StopUserImportJob(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::StopUserImportJobAsync(const StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<StopUserImportJobRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, StopUserImportJob(request), context);
+      handler(this, *pRequest, StopUserImportJob(*pRequest), context);
     } );
 }
 
@@ -2372,17 +2460,18 @@ TagResourceOutcome CognitoIdentityProviderClient::TagResource(const TagResourceR
 
 TagResourceOutcomeCallable CognitoIdentityProviderClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->TagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<TagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, TagResource(request), context);
+      handler(this, *pRequest, TagResource(*pRequest), context);
     } );
 }
 
@@ -2396,17 +2485,18 @@ UntagResourceOutcome CognitoIdentityProviderClient::UntagResource(const UntagRes
 
 UntagResourceOutcomeCallable CognitoIdentityProviderClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UntagResource(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UntagResourceRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UntagResource(request), context);
+      handler(this, *pRequest, UntagResource(*pRequest), context);
     } );
 }
 
@@ -2420,17 +2510,18 @@ UpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::UpdateAuthEventFee
 
 UpdateAuthEventFeedbackOutcomeCallable CognitoIdentityProviderClient::UpdateAuthEventFeedbackCallable(const UpdateAuthEventFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAuthEventFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAuthEventFeedback(request); } );
+  std::shared_ptr<UpdateAuthEventFeedbackRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAuthEventFeedbackOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateAuthEventFeedback(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::UpdateAuthEventFeedbackAsync(const UpdateAuthEventFeedbackRequest& request, const UpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateAuthEventFeedbackRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateAuthEventFeedback(request), context);
+      handler(this, *pRequest, UpdateAuthEventFeedback(*pRequest), context);
     } );
 }
 
@@ -2444,17 +2535,18 @@ UpdateDeviceStatusOutcome CognitoIdentityProviderClient::UpdateDeviceStatus(cons
 
 UpdateDeviceStatusOutcomeCallable CognitoIdentityProviderClient::UpdateDeviceStatusCallable(const UpdateDeviceStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDeviceStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDeviceStatus(request); } );
+  std::shared_ptr<UpdateDeviceStatusRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDeviceStatusOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateDeviceStatus(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::UpdateDeviceStatusAsync(const UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateDeviceStatusRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateDeviceStatus(request), context);
+      handler(this, *pRequest, UpdateDeviceStatus(*pRequest), context);
     } );
 }
 
@@ -2468,17 +2560,18 @@ UpdateGroupOutcome CognitoIdentityProviderClient::UpdateGroup(const UpdateGroupR
 
 UpdateGroupOutcomeCallable CognitoIdentityProviderClient::UpdateGroupCallable(const UpdateGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGroup(request); } );
+  std::shared_ptr<UpdateGroupRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGroupOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateGroup(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateGroupRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateGroup(request), context);
+      handler(this, *pRequest, UpdateGroup(*pRequest), context);
     } );
 }
 
@@ -2492,17 +2585,18 @@ UpdateIdentityProviderOutcome CognitoIdentityProviderClient::UpdateIdentityProvi
 
 UpdateIdentityProviderOutcomeCallable CognitoIdentityProviderClient::UpdateIdentityProviderCallable(const UpdateIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIdentityProvider(request); } );
+  std::shared_ptr<UpdateIdentityProviderRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateIdentityProvider(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::UpdateIdentityProviderAsync(const UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateIdentityProviderRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateIdentityProvider(request), context);
+      handler(this, *pRequest, UpdateIdentityProvider(*pRequest), context);
     } );
 }
 
@@ -2516,17 +2610,18 @@ UpdateResourceServerOutcome CognitoIdentityProviderClient::UpdateResourceServer(
 
 UpdateResourceServerOutcomeCallable CognitoIdentityProviderClient::UpdateResourceServerCallable(const UpdateResourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourceServer(request); } );
+  std::shared_ptr<UpdateResourceServerRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceServerOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateResourceServer(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::UpdateResourceServerAsync(const UpdateResourceServerRequest& request, const UpdateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateResourceServerRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateResourceServer(request), context);
+      handler(this, *pRequest, UpdateResourceServer(*pRequest), context);
     } );
 }
 
@@ -2540,17 +2635,18 @@ UpdateUserAttributesOutcome CognitoIdentityProviderClient::UpdateUserAttributes(
 
 UpdateUserAttributesOutcomeCallable CognitoIdentityProviderClient::UpdateUserAttributesCallable(const UpdateUserAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserAttributes(request); } );
+  std::shared_ptr<UpdateUserAttributesRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateUserAttributesOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateUserAttributes(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::UpdateUserAttributesAsync(const UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateUserAttributesRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateUserAttributes(request), context);
+      handler(this, *pRequest, UpdateUserAttributes(*pRequest), context);
     } );
 }
 
@@ -2564,17 +2660,18 @@ UpdateUserPoolOutcome CognitoIdentityProviderClient::UpdateUserPool(const Update
 
 UpdateUserPoolOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoolCallable(const UpdateUserPoolRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserPool(request); } );
+  std::shared_ptr<UpdateUserPoolRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateUserPoolOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateUserPool(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::UpdateUserPoolAsync(const UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateUserPoolRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateUserPool(request), context);
+      handler(this, *pRequest, UpdateUserPool(*pRequest), context);
     } );
 }
 
@@ -2588,17 +2685,18 @@ UpdateUserPoolClientOutcome CognitoIdentityProviderClient::UpdateUserPoolClient(
 
 UpdateUserPoolClientOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoolClientCallable(const UpdateUserPoolClientRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserPoolClient(request); } );
+  std::shared_ptr<UpdateUserPoolClientRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateUserPoolClient(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::UpdateUserPoolClientAsync(const UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateUserPoolClientRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateUserPoolClient(request), context);
+      handler(this, *pRequest, UpdateUserPoolClient(*pRequest), context);
     } );
 }
 
@@ -2612,17 +2710,18 @@ UpdateUserPoolDomainOutcome CognitoIdentityProviderClient::UpdateUserPoolDomain(
 
 UpdateUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoolDomainCallable(const UpdateUserPoolDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserPoolDomain(request); } );
+  std::shared_ptr<UpdateUserPoolDomainRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< UpdateUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->UpdateUserPoolDomain(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::UpdateUserPoolDomainAsync(const UpdateUserPoolDomainRequest& request, const UpdateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<UpdateUserPoolDomainRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, UpdateUserPoolDomain(request), context);
+      handler(this, *pRequest, UpdateUserPoolDomain(*pRequest), context);
     } );
 }
 
@@ -2636,17 +2735,18 @@ VerifySoftwareTokenOutcome CognitoIdentityProviderClient::VerifySoftwareToken(co
 
 VerifySoftwareTokenOutcomeCallable CognitoIdentityProviderClient::VerifySoftwareTokenCallable(const VerifySoftwareTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< VerifySoftwareTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->VerifySoftwareToken(request); } );
+  std::shared_ptr<VerifySoftwareTokenRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< VerifySoftwareTokenOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->VerifySoftwareToken(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::VerifySoftwareTokenAsync(const VerifySoftwareTokenRequest& request, const VerifySoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<VerifySoftwareTokenRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, VerifySoftwareToken(request), context);
+      handler(this, *pRequest, VerifySoftwareToken(*pRequest), context);
     } );
 }
 
@@ -2660,17 +2760,18 @@ VerifyUserAttributeOutcome CognitoIdentityProviderClient::VerifyUserAttribute(co
 
 VerifyUserAttributeOutcomeCallable CognitoIdentityProviderClient::VerifyUserAttributeCallable(const VerifyUserAttributeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< VerifyUserAttributeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->VerifyUserAttribute(request); } );
+  std::shared_ptr<VerifyUserAttributeRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< VerifyUserAttributeOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->VerifyUserAttribute(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void CognitoIdentityProviderClient::VerifyUserAttributeAsync(const VerifyUserAttributeRequest& request, const VerifyUserAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<VerifyUserAttributeRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, VerifyUserAttribute(request), context);
+      handler(this, *pRequest, VerifyUserAttribute(*pRequest), context);
     } );
 }
 

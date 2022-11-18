@@ -163,17 +163,18 @@ DescribeStreamOutcome DynamoDBStreamsClient::DescribeStream(const DescribeStream
 
 DescribeStreamOutcomeCallable DynamoDBStreamsClient::DescribeStreamCallable(const DescribeStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStream(request); } );
+  std::shared_ptr<DescribeStreamRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStreamOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->DescribeStream(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DynamoDBStreamsClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<DescribeStreamRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, DescribeStream(request), context);
+      handler(this, *pRequest, DescribeStream(*pRequest), context);
     } );
 }
 
@@ -187,17 +188,18 @@ GetRecordsOutcome DynamoDBStreamsClient::GetRecords(const GetRecordsRequest& req
 
 GetRecordsOutcomeCallable DynamoDBStreamsClient::GetRecordsCallable(const GetRecordsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecordsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecords(request); } );
+  std::shared_ptr<GetRecordsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetRecordsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetRecords(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DynamoDBStreamsClient::GetRecordsAsync(const GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetRecordsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetRecords(request), context);
+      handler(this, *pRequest, GetRecords(*pRequest), context);
     } );
 }
 
@@ -211,17 +213,18 @@ GetShardIteratorOutcome DynamoDBStreamsClient::GetShardIterator(const GetShardIt
 
 GetShardIteratorOutcomeCallable DynamoDBStreamsClient::GetShardIteratorCallable(const GetShardIteratorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetShardIteratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetShardIterator(request); } );
+  std::shared_ptr<GetShardIteratorRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< GetShardIteratorOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->GetShardIterator(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DynamoDBStreamsClient::GetShardIteratorAsync(const GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<GetShardIteratorRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, GetShardIterator(request), context);
+      handler(this, *pRequest, GetShardIterator(*pRequest), context);
     } );
 }
 
@@ -235,17 +238,18 @@ ListStreamsOutcome DynamoDBStreamsClient::ListStreams(const ListStreamsRequest& 
 
 ListStreamsOutcomeCallable DynamoDBStreamsClient::ListStreamsCallable(const ListStreamsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStreamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreams(request); } );
+  std::shared_ptr<ListStreamsRequest> pRequest = request.Clone();
+  auto task = Aws::MakeShared< std::packaged_task< ListStreamsOutcome() > >(ALLOCATION_TAG, [this, pRequest](){ return this->ListStreams(*pRequest); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
-
 void DynamoDBStreamsClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  std::shared_ptr<ListStreamsRequest> pRequest = request.Clone();
+  m_executor->Submit( [this, pRequest, handler, context]()
     {
-      handler(this, request, ListStreams(request), context);
+      handler(this, *pRequest, ListStreams(*pRequest), context);
     } );
 }
 
