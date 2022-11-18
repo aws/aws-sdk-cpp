@@ -22,8 +22,10 @@
 #include <aws/cloudfront/CloudFrontErrorMarshaller.h>
 #include <aws/cloudfront/CloudFrontEndpointProvider.h>
 #include <aws/cloudfront/model/AssociateAlias2020_05_31Request.h>
+#include <aws/cloudfront/model/CopyDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateCloudFrontOriginAccessIdentity2020_05_31Request.h>
+#include <aws/cloudfront/model/CreateContinuousDeploymentPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateDistributionWithTags2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateFieldLevelEncryptionConfig2020_05_31Request.h>
@@ -41,6 +43,7 @@
 #include <aws/cloudfront/model/CreateStreamingDistributionWithTags2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteCloudFrontOriginAccessIdentity2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteContinuousDeploymentPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteFieldLevelEncryptionProfile2020_05_31Request.h>
@@ -58,6 +61,8 @@
 #include <aws/cloudfront/model/GetCachePolicyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentityConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/GetContinuousDeploymentPolicy2020_05_31Request.h>
+#include <aws/cloudfront/model/GetContinuousDeploymentPolicyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/GetDistributionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetFieldLevelEncryption2020_05_31Request.h>
@@ -83,6 +88,7 @@
 #include <aws/cloudfront/model/ListCachePolicies2020_05_31Request.h>
 #include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2020_05_31Request.h>
 #include <aws/cloudfront/model/ListConflictingAliases2020_05_31Request.h>
+#include <aws/cloudfront/model/ListContinuousDeploymentPolicies2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributions2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByCachePolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByKeyGroup2020_05_31Request.h>
@@ -108,6 +114,7 @@
 #include <aws/cloudfront/model/UntagResource2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateContinuousDeploymentPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2020_05_31Request.h>
@@ -285,6 +292,38 @@ void CloudFrontClient::AssociateAlias2020_05_31Async(const AssociateAlias2020_05
     } );
 }
 
+CopyDistribution2020_05_31Outcome CloudFrontClient::CopyDistribution2020_05_31(const CopyDistribution2020_05_31Request& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CopyDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PrimaryDistributionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CopyDistribution2020_05_31", "Required field: PrimaryDistributionId, is not set");
+    return CopyDistribution2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrimaryDistributionId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CopyDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrimaryDistributionId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/copy");
+  return CopyDistribution2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CopyDistribution2020_05_31OutcomeCallable CloudFrontClient::CopyDistribution2020_05_31Callable(const CopyDistribution2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CopyDistribution2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyDistribution2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::CopyDistribution2020_05_31Async(const CopyDistribution2020_05_31Request& request, const CopyDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CopyDistribution2020_05_31(request), context);
+    } );
+}
+
 CreateCachePolicy2020_05_31Outcome CloudFrontClient::CreateCachePolicy2020_05_31(const CreateCachePolicy2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCachePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -332,6 +371,31 @@ void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31Async(const
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateCloudFrontOriginAccessIdentity2020_05_31(request), context);
+    } );
+}
+
+CreateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::CreateContinuousDeploymentPolicy2020_05_31(const CreateContinuousDeploymentPolicy2020_05_31Request& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy");
+  return CreateContinuousDeploymentPolicy2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateContinuousDeploymentPolicy2020_05_31OutcomeCallable CloudFrontClient::CreateContinuousDeploymentPolicy2020_05_31Callable(const CreateContinuousDeploymentPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateContinuousDeploymentPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContinuousDeploymentPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::CreateContinuousDeploymentPolicy2020_05_31Async(const CreateContinuousDeploymentPolicy2020_05_31Request& request, const CreateContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateContinuousDeploymentPolicy2020_05_31(request), context);
     } );
 }
 
@@ -789,6 +853,37 @@ void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2020_05_31Async(const
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteCloudFrontOriginAccessIdentity2020_05_31(request), context);
+    } );
+}
+
+DeleteContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::DeleteContinuousDeploymentPolicy2020_05_31(const DeleteContinuousDeploymentPolicy2020_05_31Request& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContinuousDeploymentPolicy2020_05_31", "Required field: Id, is not set");
+    return DeleteContinuousDeploymentPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  return DeleteContinuousDeploymentPolicy2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE));
+}
+
+DeleteContinuousDeploymentPolicy2020_05_31OutcomeCallable CloudFrontClient::DeleteContinuousDeploymentPolicy2020_05_31Callable(const DeleteContinuousDeploymentPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteContinuousDeploymentPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContinuousDeploymentPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::DeleteContinuousDeploymentPolicy2020_05_31Async(const DeleteContinuousDeploymentPolicy2020_05_31Request& request, const DeleteContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteContinuousDeploymentPolicy2020_05_31(request), context);
     } );
 }
 
@@ -1319,6 +1414,69 @@ void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2020_05_31Async(co
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetCloudFrontOriginAccessIdentityConfig2020_05_31(request), context);
+    } );
+}
+
+GetContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::GetContinuousDeploymentPolicy2020_05_31(const GetContinuousDeploymentPolicy2020_05_31Request& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetContinuousDeploymentPolicy2020_05_31", "Required field: Id, is not set");
+    return GetContinuousDeploymentPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  return GetContinuousDeploymentPolicy2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetContinuousDeploymentPolicy2020_05_31OutcomeCallable CloudFrontClient::GetContinuousDeploymentPolicy2020_05_31Callable(const GetContinuousDeploymentPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetContinuousDeploymentPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContinuousDeploymentPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetContinuousDeploymentPolicy2020_05_31Async(const GetContinuousDeploymentPolicy2020_05_31Request& request, const GetContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetContinuousDeploymentPolicy2020_05_31(request), context);
+    } );
+}
+
+GetContinuousDeploymentPolicyConfig2020_05_31Outcome CloudFrontClient::GetContinuousDeploymentPolicyConfig2020_05_31(const GetContinuousDeploymentPolicyConfig2020_05_31Request& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContinuousDeploymentPolicyConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetContinuousDeploymentPolicyConfig2020_05_31", "Required field: Id, is not set");
+    return GetContinuousDeploymentPolicyConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetContinuousDeploymentPolicyConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+  return GetContinuousDeploymentPolicyConfig2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetContinuousDeploymentPolicyConfig2020_05_31OutcomeCallable CloudFrontClient::GetContinuousDeploymentPolicyConfig2020_05_31Callable(const GetContinuousDeploymentPolicyConfig2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetContinuousDeploymentPolicyConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContinuousDeploymentPolicyConfig2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetContinuousDeploymentPolicyConfig2020_05_31Async(const GetContinuousDeploymentPolicyConfig2020_05_31Request& request, const GetContinuousDeploymentPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetContinuousDeploymentPolicyConfig2020_05_31(request), context);
     } );
 }
 
@@ -2100,6 +2258,31 @@ void CloudFrontClient::ListConflictingAliases2020_05_31Async(const ListConflicti
     } );
 }
 
+ListContinuousDeploymentPolicies2020_05_31Outcome CloudFrontClient::ListContinuousDeploymentPolicies2020_05_31(const ListContinuousDeploymentPolicies2020_05_31Request& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContinuousDeploymentPolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListContinuousDeploymentPolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy");
+  return ListContinuousDeploymentPolicies2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListContinuousDeploymentPolicies2020_05_31OutcomeCallable CloudFrontClient::ListContinuousDeploymentPolicies2020_05_31Callable(const ListContinuousDeploymentPolicies2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListContinuousDeploymentPolicies2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContinuousDeploymentPolicies2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListContinuousDeploymentPolicies2020_05_31Async(const ListContinuousDeploymentPolicies2020_05_31Request& request, const ListContinuousDeploymentPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListContinuousDeploymentPolicies2020_05_31(request), context);
+    } );
+}
+
 ListDistributions2020_05_31Outcome CloudFrontClient::ListDistributions2020_05_31(const ListDistributions2020_05_31Request& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributions2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2817,6 +3000,37 @@ void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2020_05_31Async(const
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateCloudFrontOriginAccessIdentity2020_05_31(request), context);
+    } );
+}
+
+UpdateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::UpdateContinuousDeploymentPolicy2020_05_31(const UpdateContinuousDeploymentPolicy2020_05_31Request& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateContinuousDeploymentPolicy2020_05_31", "Required field: Id, is not set");
+    return UpdateContinuousDeploymentPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  return UpdateContinuousDeploymentPolicy2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT));
+}
+
+UpdateContinuousDeploymentPolicy2020_05_31OutcomeCallable CloudFrontClient::UpdateContinuousDeploymentPolicy2020_05_31Callable(const UpdateContinuousDeploymentPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateContinuousDeploymentPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContinuousDeploymentPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::UpdateContinuousDeploymentPolicy2020_05_31Async(const UpdateContinuousDeploymentPolicy2020_05_31Request& request, const UpdateContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContinuousDeploymentPolicy2020_05_31(request), context);
     } );
 }
 

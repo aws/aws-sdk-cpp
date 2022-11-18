@@ -107,6 +107,30 @@ namespace CloudFront
         virtual void AssociateAlias2020_05_31Async(const Model::AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a staging distribution using the configuration of the provided
+         * primary distribution. A staging distribution is a copy of an existing
+         * distribution (called the primary distribution) that you can use in a continuous
+         * deployment workflow.</p> <p>After you create a staging distribution, you can use
+         * <code>UpdateDistribution</code> to modify the staging distribution’s
+         * configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to
+         * incrementally move traffic to the staging distribution.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CopyDistribution2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CopyDistribution2020_05_31Outcome CopyDistribution2020_05_31(const Model::CopyDistribution2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for CopyDistribution2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CopyDistribution2020_05_31OutcomeCallable CopyDistribution2020_05_31Callable(const Model::CopyDistribution2020_05_31Request& request) const;
+
+        /**
+         * An Async wrapper for CopyDistribution2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CopyDistribution2020_05_31Async(const Model::CopyDistribution2020_05_31Request& request, const CopyDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a cache policy.</p> <p>After you create a cache policy, you can
          * attach it to one or more cache behaviors. When it’s attached to a cache
          * behavior, the cache policy determines the following:</p> <ul> <li> <p>The values
@@ -163,20 +187,33 @@ namespace CloudFront
         virtual void CreateCloudFrontOriginAccessIdentity2020_05_31Async(const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request& request, const CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new web distribution. You create a CloudFront distribution to tell
-         * CloudFront where you want content to be delivered from, and the details about
-         * how to track and manage content delivery. Send a <code>POST</code> request to
-         * the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution
-         * ID</code> resource.</p>  <p>When you update a distribution, there are
-         * more required fields than when you create a distribution. When you update your
-         * distribution by using <a
-         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>,
-         * follow the steps included in the documentation to get the current configuration
-         * and then make your updates. This helps to make sure that you include all of the
-         * required fields. To view a summary, see <a
-         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
-         * Fields for Create Distribution and Update Distribution</a> in the <i>Amazon
-         * CloudFront Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * <p>Creates a continuous deployment policy that distributes traffic for a custom
+         * domain name to two different CloudFront distributions.</p> <p>To use a
+         * continuous deployment policy, first use <code>CopyDistribution</code> to create
+         * a staging distribution, then use <code>UpdateDistribution</code> to modify the
+         * staging distribution’s configuration.</p> <p>After you create and update a
+         * staging distribution, you can use a continuous deployment policy to
+         * incrementally move traffic to the staging distribution. This workflow enables
+         * you to test changes to a distribution’s configuration before moving all of your
+         * domain’s production traffic to the new configuration.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateContinuousDeploymentPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContinuousDeploymentPolicy2020_05_31Outcome CreateContinuousDeploymentPolicy2020_05_31(const Model::CreateContinuousDeploymentPolicy2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for CreateContinuousDeploymentPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateContinuousDeploymentPolicy2020_05_31OutcomeCallable CreateContinuousDeploymentPolicy2020_05_31Callable(const Model::CreateContinuousDeploymentPolicy2020_05_31Request& request) const;
+
+        /**
+         * An Async wrapper for CreateContinuousDeploymentPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateContinuousDeploymentPolicy2020_05_31Async(const Model::CreateContinuousDeploymentPolicy2020_05_31Request& request, const CreateContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a CloudFront distribution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -550,6 +587,26 @@ namespace CloudFront
         virtual void DeleteCloudFrontOriginAccessIdentity2020_05_31Async(const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request, const DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a continuous deployment policy.</p> <p>You cannot delete a continuous
+         * deployment policy that’s attached to a primary distribution. First update your
+         * distribution to remove the continuous deployment policy, then you can delete the
+         * policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteContinuousDeploymentPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContinuousDeploymentPolicy2020_05_31Outcome DeleteContinuousDeploymentPolicy2020_05_31(const Model::DeleteContinuousDeploymentPolicy2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for DeleteContinuousDeploymentPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteContinuousDeploymentPolicy2020_05_31OutcomeCallable DeleteContinuousDeploymentPolicy2020_05_31Callable(const Model::DeleteContinuousDeploymentPolicy2020_05_31Request& request) const;
+
+        /**
+         * An Async wrapper for DeleteContinuousDeploymentPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteContinuousDeploymentPolicy2020_05_31Async(const Model::DeleteContinuousDeploymentPolicy2020_05_31Request& request, const DeleteContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Delete a distribution. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution2020_05_31">AWS
          * API Reference</a></p>
@@ -918,6 +975,43 @@ namespace CloudFront
          * An Async wrapper for GetCloudFrontOriginAccessIdentityConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCloudFrontOriginAccessIdentityConfig2020_05_31Async(const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request, const GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a continuous deployment policy, including metadata (the policy’s
+         * identifier and the date and time when the policy was last
+         * modified).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContinuousDeploymentPolicy2020_05_31Outcome GetContinuousDeploymentPolicy2020_05_31(const Model::GetContinuousDeploymentPolicy2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for GetContinuousDeploymentPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContinuousDeploymentPolicy2020_05_31OutcomeCallable GetContinuousDeploymentPolicy2020_05_31Callable(const Model::GetContinuousDeploymentPolicy2020_05_31Request& request) const;
+
+        /**
+         * An Async wrapper for GetContinuousDeploymentPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContinuousDeploymentPolicy2020_05_31Async(const Model::GetContinuousDeploymentPolicy2020_05_31Request& request, const GetContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets configuration information about a continuous deployment
+         * policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicyConfig2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContinuousDeploymentPolicyConfig2020_05_31Outcome GetContinuousDeploymentPolicyConfig2020_05_31(const Model::GetContinuousDeploymentPolicyConfig2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for GetContinuousDeploymentPolicyConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContinuousDeploymentPolicyConfig2020_05_31OutcomeCallable GetContinuousDeploymentPolicyConfig2020_05_31Callable(const Model::GetContinuousDeploymentPolicyConfig2020_05_31Request& request) const;
+
+        /**
+         * An Async wrapper for GetContinuousDeploymentPolicyConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContinuousDeploymentPolicyConfig2020_05_31Async(const Model::GetContinuousDeploymentPolicyConfig2020_05_31Request& request, const GetContinuousDeploymentPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the information about a distribution.</p><p><h3>See Also:</h3>   <a
@@ -1432,6 +1526,30 @@ namespace CloudFront
          * An Async wrapper for ListConflictingAliases2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListConflictingAliases2020_05_31Async(const Model::ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of the continuous deployment policies in your Amazon Web Services
+         * account.</p> <p>You can optionally specify the maximum number of items to
+         * receive in the response. If the total number of items in the list exceeds the
+         * maximum that you specify, or the default maximum, the response is paginated. To
+         * get the next page of items, send a subsequent request that specifies the
+         * <code>NextMarker</code> value from the current response as the
+         * <code>Marker</code> value in the subsequent request.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListContinuousDeploymentPolicies2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListContinuousDeploymentPolicies2020_05_31Outcome ListContinuousDeploymentPolicies2020_05_31(const Model::ListContinuousDeploymentPolicies2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for ListContinuousDeploymentPolicies2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListContinuousDeploymentPolicies2020_05_31OutcomeCallable ListContinuousDeploymentPolicies2020_05_31Callable(const Model::ListContinuousDeploymentPolicies2020_05_31Request& request) const;
+
+        /**
+         * An Async wrapper for ListContinuousDeploymentPolicies2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListContinuousDeploymentPolicies2020_05_31Async(const Model::ListContinuousDeploymentPolicies2020_05_31Request& request, const ListContinuousDeploymentPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List CloudFront distributions.</p><p><h3>See Also:</h3>   <a
@@ -1972,56 +2090,53 @@ namespace CloudFront
         virtual void UpdateCloudFrontOriginAccessIdentity2020_05_31Async(const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request, const UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the configuration for a web distribution. </p>  <p>When
-         * you update a distribution, there are more required fields than when you create a
-         * distribution. When you update your distribution by using this API action, follow
-         * the steps here to get the current configuration and then make your updates, to
-         * make sure that you include all of the required fields. To view a summary, see <a
-         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
-         * Fields for Create Distribution and Update Distribution</a> in the <i>Amazon
-         * CloudFront Developer Guide</i>.</p>  <p>The update process includes
-         * getting the current distribution configuration, updating the XML document that
-         * is returned to make your changes, and then submitting an
-         * <code>UpdateDistribution</code> request to make the updates.</p> <p>For
-         * information about updating a distribution using the CloudFront console instead,
-         * see <a
-         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html">Creating
-         * a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>
-         * <b>To update a web distribution using the CloudFront API</b> </p> <ol> <li>
-         * <p>Submit a <a
-         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a>
-         * request to get the current configuration and an <code>Etag</code> header for the
-         * distribution.</p>  <p>If you update the distribution again, you must get a
-         * new <code>Etag</code> header.</p>  </li> <li> <p>Update the XML document
-         * that was returned in the response to your <code>GetDistributionConfig</code>
-         * request to include your changes. </p>  <p>When you edit the XML file,
-         * be aware of the following:</p> <ul> <li> <p>You must strip out the ETag
-         * parameter that is returned.</p> </li> <li> <p>Additional fields are required
-         * when you update a distribution. There may be fields included in the XML file for
-         * features that you haven't configured for your distribution. This is expected and
-         * required to successfully update the distribution.</p> </li> <li> <p>You can't
-         * change the value of <code>CallerReference</code>. If you try to change this
-         * value, CloudFront returns an <code>IllegalUpdate</code> error. </p> </li> <li>
-         * <p>The new configuration replaces the existing configuration; the values that
-         * you specify in an <code>UpdateDistribution</code> request are not merged into
-         * your existing configuration. When you add, delete, or replace values in an
-         * element that allows multiple values (for example, <code>CNAME</code>), you must
-         * specify all of the values that you want to appear in the updated distribution.
-         * In addition, you must update the corresponding <code>Quantity</code>
-         * element.</p> </li> </ul>  </li> <li> <p>Submit an
-         * <code>UpdateDistribution</code> request to update the configuration for your
-         * distribution:</p> <ul> <li> <p>In the request body, include the XML document
-         * that you updated in Step 2. The request body must include an XML document with a
-         * <code>DistributionConfig</code> element.</p> </li> <li> <p>Set the value of the
-         * HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header
-         * that CloudFront returned when you submitted the
-         * <code>GetDistributionConfig</code> request in Step 1.</p> </li> </ul> </li> <li>
-         * <p>Review the response to the <code>UpdateDistribution</code> request to confirm
-         * that the configuration was successfully updated.</p> </li> <li> <p>Optional:
-         * Submit a <a
-         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
-         * request to confirm that your changes have propagated. When propagation is
-         * complete, the value of <code>Status</code> is <code>Deployed</code>.</p> </li>
+         * <p>Updates a continuous deployment policy. You can update a continuous
+         * deployment policy to enable or disable it, to change the percentage of traffic
+         * that it sends to the staging distribution, or to change the staging distribution
+         * that it sends traffic to.</p> <p>When you update a continuous deployment policy
+         * configuration, all the fields are updated with the values that are provided in
+         * the request. You cannot update some fields independent of others. To update a
+         * continuous deployment policy configuration:</p> <ol> <li> <p>Use
+         * <code>GetContinuousDeploymentPolicyConfig</code> to get the current
+         * configuration.</p> </li> <li> <p>Locally modify the fields in the continuous
+         * deployment policy configuration that you want to update.</p> </li> <li> <p>Use
+         * <code>UpdateContinuousDeploymentPolicy</code>, providing the entire continuous
+         * deployment policy configuration, including the fields that you modified and
+         * those that you didn’t.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateContinuousDeploymentPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContinuousDeploymentPolicy2020_05_31Outcome UpdateContinuousDeploymentPolicy2020_05_31(const Model::UpdateContinuousDeploymentPolicy2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for UpdateContinuousDeploymentPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateContinuousDeploymentPolicy2020_05_31OutcomeCallable UpdateContinuousDeploymentPolicy2020_05_31Callable(const Model::UpdateContinuousDeploymentPolicy2020_05_31Request& request) const;
+
+        /**
+         * An Async wrapper for UpdateContinuousDeploymentPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateContinuousDeploymentPolicy2020_05_31Async(const Model::UpdateContinuousDeploymentPolicy2020_05_31Request& request, const UpdateContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the configuration for a CloudFront distribution.</p> <p>The update
+         * process includes getting the current distribution configuration, updating it to
+         * make your changes, and then submitting an <code>UpdateDistribution</code>
+         * request to make the updates.</p> <p> <b>To update a web distribution using the
+         * CloudFront API</b> </p> <ol> <li> <p>Use <code>GetDistributionConfig</code> to
+         * get the current configuration, including the version identifier
+         * (<code>ETag</code>).</p> </li> <li> <p>Update the distribution configuration
+         * that was returned in the response. Note the following important requirements and
+         * restrictions:</p> <ul> <li> <p>You must rename the <code>ETag</code> field to
+         * <code>IfMatch</code>, leaving the value unchanged. (Set the value of
+         * <code>IfMatch</code> to the value of <code>ETag</code>, then remove the
+         * <code>ETag</code> field.)</p> </li> <li> <p>You can’t change the value of
+         * <code>CallerReference</code>.</p> </li> </ul> </li> <li> <p>Submit an
+         * <code>UpdateDistribution</code> request, providing the distribution
+         * configuration. The new configuration replaces the existing configuration. The
+         * values that you specify in an <code>UpdateDistribution</code> request are not
+         * merged into your existing configuration. Make sure to include all fields: the
+         * ones that you modified and also the ones that you didn’t.</p> </li>
          * </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution2020_05_31">AWS
          * API Reference</a></p>

@@ -134,73 +134,125 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN
+     * with no <code>accountID</code> if <code>PrincipalType</code> is
+     * <code>IAM_PATTERN</code>. </p> <p>You can associate multiple <code>IAM</code>
+     * patterns even if the account has no principal with that name. This is useful in
+     * Principal Name Sharing if you want to share a principal without creating it in
+     * the account that owns the portfolio. </p>
      */
     inline const Aws::String& GetPrincipalARN() const{ return m_principalARN; }
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN
+     * with no <code>accountID</code> if <code>PrincipalType</code> is
+     * <code>IAM_PATTERN</code>. </p> <p>You can associate multiple <code>IAM</code>
+     * patterns even if the account has no principal with that name. This is useful in
+     * Principal Name Sharing if you want to share a principal without creating it in
+     * the account that owns the portfolio. </p>
      */
     inline bool PrincipalARNHasBeenSet() const { return m_principalARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN
+     * with no <code>accountID</code> if <code>PrincipalType</code> is
+     * <code>IAM_PATTERN</code>. </p> <p>You can associate multiple <code>IAM</code>
+     * patterns even if the account has no principal with that name. This is useful in
+     * Principal Name Sharing if you want to share a principal without creating it in
+     * the account that owns the portfolio. </p>
      */
     inline void SetPrincipalARN(const Aws::String& value) { m_principalARNHasBeenSet = true; m_principalARN = value; }
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN
+     * with no <code>accountID</code> if <code>PrincipalType</code> is
+     * <code>IAM_PATTERN</code>. </p> <p>You can associate multiple <code>IAM</code>
+     * patterns even if the account has no principal with that name. This is useful in
+     * Principal Name Sharing if you want to share a principal without creating it in
+     * the account that owns the portfolio. </p>
      */
     inline void SetPrincipalARN(Aws::String&& value) { m_principalARNHasBeenSet = true; m_principalARN = std::move(value); }
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN
+     * with no <code>accountID</code> if <code>PrincipalType</code> is
+     * <code>IAM_PATTERN</code>. </p> <p>You can associate multiple <code>IAM</code>
+     * patterns even if the account has no principal with that name. This is useful in
+     * Principal Name Sharing if you want to share a principal without creating it in
+     * the account that owns the portfolio. </p>
      */
     inline void SetPrincipalARN(const char* value) { m_principalARNHasBeenSet = true; m_principalARN.assign(value); }
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN
+     * with no <code>accountID</code> if <code>PrincipalType</code> is
+     * <code>IAM_PATTERN</code>. </p> <p>You can associate multiple <code>IAM</code>
+     * patterns even if the account has no principal with that name. This is useful in
+     * Principal Name Sharing if you want to share a principal without creating it in
+     * the account that owns the portfolio. </p>
      */
     inline AssociatePrincipalWithPortfolioRequest& WithPrincipalARN(const Aws::String& value) { SetPrincipalARN(value); return *this;}
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN
+     * with no <code>accountID</code> if <code>PrincipalType</code> is
+     * <code>IAM_PATTERN</code>. </p> <p>You can associate multiple <code>IAM</code>
+     * patterns even if the account has no principal with that name. This is useful in
+     * Principal Name Sharing if you want to share a principal without creating it in
+     * the account that owns the portfolio. </p>
      */
     inline AssociatePrincipalWithPortfolioRequest& WithPrincipalARN(Aws::String&& value) { SetPrincipalARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group).</p>
+     * <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN
+     * with no <code>accountID</code> if <code>PrincipalType</code> is
+     * <code>IAM_PATTERN</code>. </p> <p>You can associate multiple <code>IAM</code>
+     * patterns even if the account has no principal with that name. This is useful in
+     * Principal Name Sharing if you want to share a principal without creating it in
+     * the account that owns the portfolio. </p>
      */
     inline AssociatePrincipalWithPortfolioRequest& WithPrincipalARN(const char* value) { SetPrincipalARN(value); return *this;}
 
 
     /**
-     * <p>The principal type. The supported value is <code>IAM</code>.</p>
+     * <p>The principal type. The supported value is <code>IAM</code> if you use a
+     * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
+     * <code>accountID</code>. </p>
      */
     inline const PrincipalType& GetPrincipalType() const{ return m_principalType; }
 
     /**
-     * <p>The principal type. The supported value is <code>IAM</code>.</p>
+     * <p>The principal type. The supported value is <code>IAM</code> if you use a
+     * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
+     * <code>accountID</code>. </p>
      */
     inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
 
     /**
-     * <p>The principal type. The supported value is <code>IAM</code>.</p>
+     * <p>The principal type. The supported value is <code>IAM</code> if you use a
+     * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
+     * <code>accountID</code>. </p>
      */
     inline void SetPrincipalType(const PrincipalType& value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
 
     /**
-     * <p>The principal type. The supported value is <code>IAM</code>.</p>
+     * <p>The principal type. The supported value is <code>IAM</code> if you use a
+     * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
+     * <code>accountID</code>. </p>
      */
     inline void SetPrincipalType(PrincipalType&& value) { m_principalTypeHasBeenSet = true; m_principalType = std::move(value); }
 
     /**
-     * <p>The principal type. The supported value is <code>IAM</code>.</p>
+     * <p>The principal type. The supported value is <code>IAM</code> if you use a
+     * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
+     * <code>accountID</code>. </p>
      */
     inline AssociatePrincipalWithPortfolioRequest& WithPrincipalType(const PrincipalType& value) { SetPrincipalType(value); return *this;}
 
     /**
-     * <p>The principal type. The supported value is <code>IAM</code>.</p>
+     * <p>The principal type. The supported value is <code>IAM</code> if you use a
+     * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
+     * <code>accountID</code>. </p>
      */
     inline AssociatePrincipalWithPortfolioRequest& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
 

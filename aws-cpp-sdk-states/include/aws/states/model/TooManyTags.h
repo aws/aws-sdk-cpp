@@ -26,8 +26,7 @@ namespace Model
   /**
    * <p>You've exceeded the number of tags allowed for a resource. See the <a
    * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits
-   * Topic</a> in the AWS Step Functions Developer Guide.</p><p><h3>See Also:</h3>  
-   * <a
+   * Topic</a> in the Step Functions Developer Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TooManyTags">AWS
    * API Reference</a></p>
    */

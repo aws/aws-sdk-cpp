@@ -278,6 +278,27 @@ namespace Model
      */
     inline ProfilerConfig& AddProfilingParameters(const char* key, const char* value) { m_profilingParametersHasBeenSet = true; m_profilingParameters.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>To disable system monitoring and profiling, set to <code>True</code>.</p>
+     */
+    inline bool GetDisableProfiler() const{ return m_disableProfiler; }
+
+    /**
+     * <p>To disable system monitoring and profiling, set to <code>True</code>.</p>
+     */
+    inline bool DisableProfilerHasBeenSet() const { return m_disableProfilerHasBeenSet; }
+
+    /**
+     * <p>To disable system monitoring and profiling, set to <code>True</code>.</p>
+     */
+    inline void SetDisableProfiler(bool value) { m_disableProfilerHasBeenSet = true; m_disableProfiler = value; }
+
+    /**
+     * <p>To disable system monitoring and profiling, set to <code>True</code>.</p>
+     */
+    inline ProfilerConfig& WithDisableProfiler(bool value) { SetDisableProfiler(value); return *this;}
+
   private:
 
     Aws::String m_s3OutputPath;
@@ -288,6 +309,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_profilingParameters;
     bool m_profilingParametersHasBeenSet = false;
+
+    bool m_disableProfiler;
+    bool m_disableProfilerHasBeenSet = false;
   };
 
 } // namespace Model

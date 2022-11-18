@@ -215,8 +215,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -284,8 +284,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -353,8 +353,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -422,8 +422,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -491,8 +491,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -560,8 +560,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -629,8 +629,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -698,8 +698,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM

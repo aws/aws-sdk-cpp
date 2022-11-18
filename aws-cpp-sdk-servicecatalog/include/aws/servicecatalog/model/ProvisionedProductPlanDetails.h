@@ -440,32 +440,32 @@ namespace Model
 
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedTime() const{ return m_updatedTime; }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline bool UpdatedTimeHasBeenSet() const { return m_updatedTimeHasBeenSet; }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline void SetUpdatedTime(const Aws::Utils::DateTime& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = value; }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline void SetUpdatedTime(Aws::Utils::DateTime&& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = std::move(value); }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline ProvisionedProductPlanDetails& WithUpdatedTime(const Aws::Utils::DateTime& value) { SetUpdatedTime(value); return *this;}
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline ProvisionedProductPlanDetails& WithUpdatedTime(Aws::Utils::DateTime&& value) { SetUpdatedTime(std::move(value)); return *this;}
 

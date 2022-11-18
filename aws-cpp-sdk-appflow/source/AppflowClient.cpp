@@ -42,6 +42,7 @@
 #include <aws/appflow/model/UnregisterConnectorRequest.h>
 #include <aws/appflow/model/UntagResourceRequest.h>
 #include <aws/appflow/model/UpdateConnectorProfileRequest.h>
+#include <aws/appflow/model/UpdateConnectorRegistrationRequest.h>
 #include <aws/appflow/model/UpdateFlowRequest.h>
 
 using namespace Aws;
@@ -716,6 +717,31 @@ void AppflowClient::UpdateConnectorProfileAsync(const UpdateConnectorProfileRequ
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateConnectorProfile(request), context);
+    } );
+}
+
+UpdateConnectorRegistrationOutcome AppflowClient::UpdateConnectorRegistration(const UpdateConnectorRegistrationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConnectorRegistration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateConnectorRegistration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/update-connector-registration");
+  return UpdateConnectorRegistrationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectorRegistrationOutcomeCallable AppflowClient::UpdateConnectorRegistrationCallable(const UpdateConnectorRegistrationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectorRegistrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnectorRegistration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppflowClient::UpdateConnectorRegistrationAsync(const UpdateConnectorRegistrationRequest& request, const UpdateConnectorRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateConnectorRegistration(request), context);
     } );
 }
 

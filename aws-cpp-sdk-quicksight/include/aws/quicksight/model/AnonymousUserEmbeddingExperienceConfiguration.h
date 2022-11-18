@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/AnonymousUserDashboardEmbeddingConfiguration.h>
 #include <aws/quicksight/model/AnonymousUserDashboardVisualEmbeddingConfiguration.h>
+#include <aws/quicksight/model/AnonymousUserQSearchBarEmbeddingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -112,6 +113,37 @@ namespace Model
      */
     inline AnonymousUserEmbeddingExperienceConfiguration& WithDashboardVisual(AnonymousUserDashboardVisualEmbeddingConfiguration&& value) { SetDashboardVisual(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline const AnonymousUserQSearchBarEmbeddingConfiguration& GetQSearchBar() const{ return m_qSearchBar; }
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline bool QSearchBarHasBeenSet() const { return m_qSearchBarHasBeenSet; }
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline void SetQSearchBar(const AnonymousUserQSearchBarEmbeddingConfiguration& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = value; }
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline void SetQSearchBar(AnonymousUserQSearchBarEmbeddingConfiguration&& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = std::move(value); }
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline AnonymousUserEmbeddingExperienceConfiguration& WithQSearchBar(const AnonymousUserQSearchBarEmbeddingConfiguration& value) { SetQSearchBar(value); return *this;}
+
+    /**
+     * <p>The Q search bar that you want to use for anonymous user embedding.</p>
+     */
+    inline AnonymousUserEmbeddingExperienceConfiguration& WithQSearchBar(AnonymousUserQSearchBarEmbeddingConfiguration&& value) { SetQSearchBar(std::move(value)); return *this;}
+
   private:
 
     AnonymousUserDashboardEmbeddingConfiguration m_dashboard;
@@ -119,6 +151,9 @@ namespace Model
 
     AnonymousUserDashboardVisualEmbeddingConfiguration m_dashboardVisual;
     bool m_dashboardVisualHasBeenSet = false;
+
+    AnonymousUserQSearchBarEmbeddingConfiguration m_qSearchBar;
+    bool m_qSearchBarHasBeenSet = false;
   };
 
 } // namespace Model

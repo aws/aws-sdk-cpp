@@ -18,8 +18,10 @@
 /* End of generic header includes */
 
 /* Service model headers required in CloudFrontClient header */
+#include <aws/cloudfront/model/CopyDistribution2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateCachePolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateCloudFrontOriginAccessIdentity2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateContinuousDeploymentPolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateDistribution2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateDistributionWithTags2020_05_31Result.h>
 #include <aws/cloudfront/model/CreateFieldLevelEncryptionConfig2020_05_31Result.h>
@@ -41,6 +43,8 @@
 #include <aws/cloudfront/model/GetCachePolicyConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2020_05_31Result.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentityConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetContinuousDeploymentPolicy2020_05_31Result.h>
+#include <aws/cloudfront/model/GetContinuousDeploymentPolicyConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/GetDistribution2020_05_31Result.h>
 #include <aws/cloudfront/model/GetDistributionConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/GetFieldLevelEncryption2020_05_31Result.h>
@@ -66,6 +70,7 @@
 #include <aws/cloudfront/model/ListCachePolicies2020_05_31Result.h>
 #include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2020_05_31Result.h>
 #include <aws/cloudfront/model/ListConflictingAliases2020_05_31Result.h>
+#include <aws/cloudfront/model/ListContinuousDeploymentPolicies2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributions2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByCachePolicyId2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByKeyGroup2020_05_31Result.h>
@@ -89,6 +94,7 @@
 #include <aws/cloudfront/model/TestFunction2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateCachePolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateContinuousDeploymentPolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateDistribution2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2020_05_31Result.h>
@@ -142,8 +148,10 @@ namespace Aws
     {
       /* Service model forward declarations required in CloudFrontClient header */
       class AssociateAlias2020_05_31Request;
+      class CopyDistribution2020_05_31Request;
       class CreateCachePolicy2020_05_31Request;
       class CreateCloudFrontOriginAccessIdentity2020_05_31Request;
+      class CreateContinuousDeploymentPolicy2020_05_31Request;
       class CreateDistribution2020_05_31Request;
       class CreateDistributionWithTags2020_05_31Request;
       class CreateFieldLevelEncryptionConfig2020_05_31Request;
@@ -161,6 +169,7 @@ namespace Aws
       class CreateStreamingDistributionWithTags2020_05_31Request;
       class DeleteCachePolicy2020_05_31Request;
       class DeleteCloudFrontOriginAccessIdentity2020_05_31Request;
+      class DeleteContinuousDeploymentPolicy2020_05_31Request;
       class DeleteDistribution2020_05_31Request;
       class DeleteFieldLevelEncryptionConfig2020_05_31Request;
       class DeleteFieldLevelEncryptionProfile2020_05_31Request;
@@ -178,6 +187,8 @@ namespace Aws
       class GetCachePolicyConfig2020_05_31Request;
       class GetCloudFrontOriginAccessIdentity2020_05_31Request;
       class GetCloudFrontOriginAccessIdentityConfig2020_05_31Request;
+      class GetContinuousDeploymentPolicy2020_05_31Request;
+      class GetContinuousDeploymentPolicyConfig2020_05_31Request;
       class GetDistribution2020_05_31Request;
       class GetDistributionConfig2020_05_31Request;
       class GetFieldLevelEncryption2020_05_31Request;
@@ -203,6 +214,7 @@ namespace Aws
       class ListCachePolicies2020_05_31Request;
       class ListCloudFrontOriginAccessIdentities2020_05_31Request;
       class ListConflictingAliases2020_05_31Request;
+      class ListContinuousDeploymentPolicies2020_05_31Request;
       class ListDistributions2020_05_31Request;
       class ListDistributionsByCachePolicyId2020_05_31Request;
       class ListDistributionsByKeyGroup2020_05_31Request;
@@ -228,6 +240,7 @@ namespace Aws
       class UntagResource2020_05_31Request;
       class UpdateCachePolicy2020_05_31Request;
       class UpdateCloudFrontOriginAccessIdentity2020_05_31Request;
+      class UpdateContinuousDeploymentPolicy2020_05_31Request;
       class UpdateDistribution2020_05_31Request;
       class UpdateFieldLevelEncryptionConfig2020_05_31Request;
       class UpdateFieldLevelEncryptionProfile2020_05_31Request;
@@ -243,8 +256,10 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> AssociateAlias2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<CopyDistribution2020_05_31Result, CloudFrontError> CopyDistribution2020_05_31Outcome;
       typedef Aws::Utils::Outcome<CreateCachePolicy2020_05_31Result, CloudFrontError> CreateCachePolicy2020_05_31Outcome;
       typedef Aws::Utils::Outcome<CreateCloudFrontOriginAccessIdentity2020_05_31Result, CloudFrontError> CreateCloudFrontOriginAccessIdentity2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<CreateContinuousDeploymentPolicy2020_05_31Result, CloudFrontError> CreateContinuousDeploymentPolicy2020_05_31Outcome;
       typedef Aws::Utils::Outcome<CreateDistribution2020_05_31Result, CloudFrontError> CreateDistribution2020_05_31Outcome;
       typedef Aws::Utils::Outcome<CreateDistributionWithTags2020_05_31Result, CloudFrontError> CreateDistributionWithTags2020_05_31Outcome;
       typedef Aws::Utils::Outcome<CreateFieldLevelEncryptionConfig2020_05_31Result, CloudFrontError> CreateFieldLevelEncryptionConfig2020_05_31Outcome;
@@ -262,6 +277,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateStreamingDistributionWithTags2020_05_31Result, CloudFrontError> CreateStreamingDistributionWithTags2020_05_31Outcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteCachePolicy2020_05_31Outcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteContinuousDeploymentPolicy2020_05_31Outcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteDistribution2020_05_31Outcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteFieldLevelEncryptionConfig2020_05_31Outcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteFieldLevelEncryptionProfile2020_05_31Outcome;
@@ -279,6 +295,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetCachePolicyConfig2020_05_31Result, CloudFrontError> GetCachePolicyConfig2020_05_31Outcome;
       typedef Aws::Utils::Outcome<GetCloudFrontOriginAccessIdentity2020_05_31Result, CloudFrontError> GetCloudFrontOriginAccessIdentity2020_05_31Outcome;
       typedef Aws::Utils::Outcome<GetCloudFrontOriginAccessIdentityConfig2020_05_31Result, CloudFrontError> GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<GetContinuousDeploymentPolicy2020_05_31Result, CloudFrontError> GetContinuousDeploymentPolicy2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<GetContinuousDeploymentPolicyConfig2020_05_31Result, CloudFrontError> GetContinuousDeploymentPolicyConfig2020_05_31Outcome;
       typedef Aws::Utils::Outcome<GetDistribution2020_05_31Result, CloudFrontError> GetDistribution2020_05_31Outcome;
       typedef Aws::Utils::Outcome<GetDistributionConfig2020_05_31Result, CloudFrontError> GetDistributionConfig2020_05_31Outcome;
       typedef Aws::Utils::Outcome<GetFieldLevelEncryption2020_05_31Result, CloudFrontError> GetFieldLevelEncryption2020_05_31Outcome;
@@ -304,6 +322,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListCachePolicies2020_05_31Result, CloudFrontError> ListCachePolicies2020_05_31Outcome;
       typedef Aws::Utils::Outcome<ListCloudFrontOriginAccessIdentities2020_05_31Result, CloudFrontError> ListCloudFrontOriginAccessIdentities2020_05_31Outcome;
       typedef Aws::Utils::Outcome<ListConflictingAliases2020_05_31Result, CloudFrontError> ListConflictingAliases2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<ListContinuousDeploymentPolicies2020_05_31Result, CloudFrontError> ListContinuousDeploymentPolicies2020_05_31Outcome;
       typedef Aws::Utils::Outcome<ListDistributions2020_05_31Result, CloudFrontError> ListDistributions2020_05_31Outcome;
       typedef Aws::Utils::Outcome<ListDistributionsByCachePolicyId2020_05_31Result, CloudFrontError> ListDistributionsByCachePolicyId2020_05_31Outcome;
       typedef Aws::Utils::Outcome<ListDistributionsByKeyGroup2020_05_31Result, CloudFrontError> ListDistributionsByKeyGroup2020_05_31Outcome;
@@ -329,6 +348,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> UntagResource2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateCachePolicy2020_05_31Result, CloudFrontError> UpdateCachePolicy2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateCloudFrontOriginAccessIdentity2020_05_31Result, CloudFrontError> UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<UpdateContinuousDeploymentPolicy2020_05_31Result, CloudFrontError> UpdateContinuousDeploymentPolicy2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateDistribution2020_05_31Result, CloudFrontError> UpdateDistribution2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateFieldLevelEncryptionConfig2020_05_31Result, CloudFrontError> UpdateFieldLevelEncryptionConfig2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateFieldLevelEncryptionProfile2020_05_31Result, CloudFrontError> UpdateFieldLevelEncryptionProfile2020_05_31Outcome;
@@ -344,8 +364,10 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<AssociateAlias2020_05_31Outcome> AssociateAlias2020_05_31OutcomeCallable;
+      typedef std::future<CopyDistribution2020_05_31Outcome> CopyDistribution2020_05_31OutcomeCallable;
       typedef std::future<CreateCachePolicy2020_05_31Outcome> CreateCachePolicy2020_05_31OutcomeCallable;
       typedef std::future<CreateCloudFrontOriginAccessIdentity2020_05_31Outcome> CreateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
+      typedef std::future<CreateContinuousDeploymentPolicy2020_05_31Outcome> CreateContinuousDeploymentPolicy2020_05_31OutcomeCallable;
       typedef std::future<CreateDistribution2020_05_31Outcome> CreateDistribution2020_05_31OutcomeCallable;
       typedef std::future<CreateDistributionWithTags2020_05_31Outcome> CreateDistributionWithTags2020_05_31OutcomeCallable;
       typedef std::future<CreateFieldLevelEncryptionConfig2020_05_31Outcome> CreateFieldLevelEncryptionConfig2020_05_31OutcomeCallable;
@@ -363,6 +385,7 @@ namespace Aws
       typedef std::future<CreateStreamingDistributionWithTags2020_05_31Outcome> CreateStreamingDistributionWithTags2020_05_31OutcomeCallable;
       typedef std::future<DeleteCachePolicy2020_05_31Outcome> DeleteCachePolicy2020_05_31OutcomeCallable;
       typedef std::future<DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome> DeleteCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
+      typedef std::future<DeleteContinuousDeploymentPolicy2020_05_31Outcome> DeleteContinuousDeploymentPolicy2020_05_31OutcomeCallable;
       typedef std::future<DeleteDistribution2020_05_31Outcome> DeleteDistribution2020_05_31OutcomeCallable;
       typedef std::future<DeleteFieldLevelEncryptionConfig2020_05_31Outcome> DeleteFieldLevelEncryptionConfig2020_05_31OutcomeCallable;
       typedef std::future<DeleteFieldLevelEncryptionProfile2020_05_31Outcome> DeleteFieldLevelEncryptionProfile2020_05_31OutcomeCallable;
@@ -380,6 +403,8 @@ namespace Aws
       typedef std::future<GetCachePolicyConfig2020_05_31Outcome> GetCachePolicyConfig2020_05_31OutcomeCallable;
       typedef std::future<GetCloudFrontOriginAccessIdentity2020_05_31Outcome> GetCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
       typedef std::future<GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome> GetCloudFrontOriginAccessIdentityConfig2020_05_31OutcomeCallable;
+      typedef std::future<GetContinuousDeploymentPolicy2020_05_31Outcome> GetContinuousDeploymentPolicy2020_05_31OutcomeCallable;
+      typedef std::future<GetContinuousDeploymentPolicyConfig2020_05_31Outcome> GetContinuousDeploymentPolicyConfig2020_05_31OutcomeCallable;
       typedef std::future<GetDistribution2020_05_31Outcome> GetDistribution2020_05_31OutcomeCallable;
       typedef std::future<GetDistributionConfig2020_05_31Outcome> GetDistributionConfig2020_05_31OutcomeCallable;
       typedef std::future<GetFieldLevelEncryption2020_05_31Outcome> GetFieldLevelEncryption2020_05_31OutcomeCallable;
@@ -405,6 +430,7 @@ namespace Aws
       typedef std::future<ListCachePolicies2020_05_31Outcome> ListCachePolicies2020_05_31OutcomeCallable;
       typedef std::future<ListCloudFrontOriginAccessIdentities2020_05_31Outcome> ListCloudFrontOriginAccessIdentities2020_05_31OutcomeCallable;
       typedef std::future<ListConflictingAliases2020_05_31Outcome> ListConflictingAliases2020_05_31OutcomeCallable;
+      typedef std::future<ListContinuousDeploymentPolicies2020_05_31Outcome> ListContinuousDeploymentPolicies2020_05_31OutcomeCallable;
       typedef std::future<ListDistributions2020_05_31Outcome> ListDistributions2020_05_31OutcomeCallable;
       typedef std::future<ListDistributionsByCachePolicyId2020_05_31Outcome> ListDistributionsByCachePolicyId2020_05_31OutcomeCallable;
       typedef std::future<ListDistributionsByKeyGroup2020_05_31Outcome> ListDistributionsByKeyGroup2020_05_31OutcomeCallable;
@@ -430,6 +456,7 @@ namespace Aws
       typedef std::future<UntagResource2020_05_31Outcome> UntagResource2020_05_31OutcomeCallable;
       typedef std::future<UpdateCachePolicy2020_05_31Outcome> UpdateCachePolicy2020_05_31OutcomeCallable;
       typedef std::future<UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome> UpdateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
+      typedef std::future<UpdateContinuousDeploymentPolicy2020_05_31Outcome> UpdateContinuousDeploymentPolicy2020_05_31OutcomeCallable;
       typedef std::future<UpdateDistribution2020_05_31Outcome> UpdateDistribution2020_05_31OutcomeCallable;
       typedef std::future<UpdateFieldLevelEncryptionConfig2020_05_31Outcome> UpdateFieldLevelEncryptionConfig2020_05_31OutcomeCallable;
       typedef std::future<UpdateFieldLevelEncryptionProfile2020_05_31Outcome> UpdateFieldLevelEncryptionProfile2020_05_31OutcomeCallable;
@@ -448,8 +475,10 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const CloudFrontClient*, const Model::AssociateAlias2020_05_31Request&, const Model::AssociateAlias2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAlias2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CopyDistribution2020_05_31Request&, const Model::CopyDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDistribution2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateCachePolicy2020_05_31Request&, const Model::CreateCachePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCachePolicy2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request&, const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateContinuousDeploymentPolicy2020_05_31Request&, const Model::CreateContinuousDeploymentPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateDistribution2020_05_31Request&, const Model::CreateDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDistribution2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateDistributionWithTags2020_05_31Request&, const Model::CreateDistributionWithTags2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDistributionWithTags2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateFieldLevelEncryptionConfig2020_05_31Request&, const Model::CreateFieldLevelEncryptionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler;
@@ -467,6 +496,7 @@ namespace Aws
     typedef std::function<void(const CloudFrontClient*, const Model::CreateStreamingDistributionWithTags2020_05_31Request&, const Model::CreateStreamingDistributionWithTags2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingDistributionWithTags2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteCachePolicy2020_05_31Request&, const Model::DeleteCachePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCachePolicy2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Request&, const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DeleteContinuousDeploymentPolicy2020_05_31Request&, const Model::DeleteContinuousDeploymentPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteDistribution2020_05_31Request&, const Model::DeleteDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDistribution2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteFieldLevelEncryptionConfig2020_05_31Request&, const Model::DeleteFieldLevelEncryptionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteFieldLevelEncryptionProfile2020_05_31Request&, const Model::DeleteFieldLevelEncryptionProfile2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler;
@@ -484,6 +514,8 @@ namespace Aws
     typedef std::function<void(const CloudFrontClient*, const Model::GetCachePolicyConfig2020_05_31Request&, const Model::GetCachePolicyConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCachePolicyConfig2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::GetCloudFrontOriginAccessIdentity2020_05_31Request&, const Model::GetCloudFrontOriginAccessIdentity2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Request&, const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetContinuousDeploymentPolicy2020_05_31Request&, const Model::GetContinuousDeploymentPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetContinuousDeploymentPolicyConfig2020_05_31Request&, const Model::GetContinuousDeploymentPolicyConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContinuousDeploymentPolicyConfig2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::GetDistribution2020_05_31Request&, const Model::GetDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistribution2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::GetDistributionConfig2020_05_31Request&, const Model::GetDistributionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistributionConfig2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::GetFieldLevelEncryption2020_05_31Request&, const Model::GetFieldLevelEncryption2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFieldLevelEncryption2020_05_31ResponseReceivedHandler;
@@ -509,6 +541,7 @@ namespace Aws
     typedef std::function<void(const CloudFrontClient*, const Model::ListCachePolicies2020_05_31Request&, const Model::ListCachePolicies2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCachePolicies2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request&, const Model::ListCloudFrontOriginAccessIdentities2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListConflictingAliases2020_05_31Request&, const Model::ListConflictingAliases2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConflictingAliases2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListContinuousDeploymentPolicies2020_05_31Request&, const Model::ListContinuousDeploymentPolicies2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContinuousDeploymentPolicies2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListDistributions2020_05_31Request&, const Model::ListDistributions2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributions2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListDistributionsByCachePolicyId2020_05_31Request&, const Model::ListDistributionsByCachePolicyId2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListDistributionsByKeyGroup2020_05_31Request&, const Model::ListDistributionsByKeyGroup2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributionsByKeyGroup2020_05_31ResponseReceivedHandler;
@@ -534,6 +567,7 @@ namespace Aws
     typedef std::function<void(const CloudFrontClient*, const Model::UntagResource2020_05_31Request&, const Model::UntagResource2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResource2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateCachePolicy2020_05_31Request&, const Model::UpdateCachePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCachePolicy2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Request&, const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UpdateContinuousDeploymentPolicy2020_05_31Request&, const Model::UpdateContinuousDeploymentPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateDistribution2020_05_31Request&, const Model::UpdateDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDistribution2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateFieldLevelEncryptionConfig2020_05_31Request&, const Model::UpdateFieldLevelEncryptionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateFieldLevelEncryptionProfile2020_05_31Request&, const Model::UpdateFieldLevelEncryptionProfile2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler;

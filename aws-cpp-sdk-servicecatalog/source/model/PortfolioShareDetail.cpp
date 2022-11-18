@@ -25,7 +25,9 @@ PortfolioShareDetail::PortfolioShareDetail() :
     m_accepted(false),
     m_acceptedHasBeenSet(false),
     m_shareTagOptions(false),
-    m_shareTagOptionsHasBeenSet(false)
+    m_shareTagOptionsHasBeenSet(false),
+    m_sharePrincipals(false),
+    m_sharePrincipalsHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ PortfolioShareDetail::PortfolioShareDetail(JsonView jsonValue) :
     m_accepted(false),
     m_acceptedHasBeenSet(false),
     m_shareTagOptions(false),
-    m_shareTagOptionsHasBeenSet(false)
+    m_shareTagOptionsHasBeenSet(false),
+    m_sharePrincipals(false),
+    m_sharePrincipalsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +75,13 @@ PortfolioShareDetail& PortfolioShareDetail::operator =(JsonView jsonValue)
     m_shareTagOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SharePrincipals"))
+  {
+    m_sharePrincipals = jsonValue.GetBool("SharePrincipals");
+
+    m_sharePrincipalsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -98,6 +109,12 @@ JsonValue PortfolioShareDetail::Jsonize() const
   if(m_shareTagOptionsHasBeenSet)
   {
    payload.WithBool("ShareTagOptions", m_shareTagOptions);
+
+  }
+
+  if(m_sharePrincipalsHasBeenSet)
+  {
+   payload.WithBool("SharePrincipals", m_sharePrincipals);
 
   }
 

@@ -71,9 +71,9 @@ static const int INVALID_T_T_L_ORDER_HASH = HashingUtils::HashString("InvalidTTL
 static const int TOO_MANY_FIELD_LEVEL_ENCRYPTION_QUERY_ARG_PROFILES_HASH = HashingUtils::HashString("TooManyFieldLevelEncryptionQueryArgProfiles");
 static const int C_N_A_M_E_ALREADY_EXISTS_HASH = HashingUtils::HashString("CNAMEAlreadyExists");
 static const int TOO_MANY_RESPONSE_HEADERS_POLICIES_HASH = HashingUtils::HashString("TooManyResponseHeadersPolicies");
-static const int TOO_MANY_COOKIES_IN_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyCookiesInCachePolicy");
 static const int INVALID_REQUIRED_PROTOCOL_HASH = HashingUtils::HashString("InvalidRequiredProtocol");
 static const int TOO_MANY_DISTRIBUTIONS_WITH_LAMBDA_ASSOCIATIONS_HASH = HashingUtils::HashString("TooManyDistributionsWithLambdaAssociations");
+static const int TOO_MANY_COOKIES_IN_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyCookiesInCachePolicy");
 static const int FUNCTION_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FunctionSizeLimitExceeded");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperation");
 static const int INVALID_FUNCTION_ASSOCIATION_HASH = HashingUtils::HashString("InvalidFunctionAssociation");
@@ -97,8 +97,8 @@ static const int FUNCTION_IN_USE_HASH = HashingUtils::HashString("FunctionInUse"
 static const int TOO_MANY_FUNCTIONS_HASH = HashingUtils::HashString("TooManyFunctions");
 static const int FIELD_LEVEL_ENCRYPTION_PROFILE_SIZE_EXCEEDED_HASH = HashingUtils::HashString("FieldLevelEncryptionProfileSizeExceeded");
 static const int TOO_MANY_CACHE_BEHAVIORS_HASH = HashingUtils::HashString("TooManyCacheBehaviors");
-static const int TOO_MANY_HEADERS_IN_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyHeadersInCachePolicy");
 static const int TOO_MANY_ORIGIN_GROUPS_PER_DISTRIBUTION_HASH = HashingUtils::HashString("TooManyOriginGroupsPerDistribution");
+static const int TOO_MANY_HEADERS_IN_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyHeadersInCachePolicy");
 static const int FIELD_LEVEL_ENCRYPTION_CONFIG_IN_USE_HASH = HashingUtils::HashString("FieldLevelEncryptionConfigInUse");
 static const int TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_ORIGIN_REQUEST_POLICY_HASH = HashingUtils::HashString("TooManyDistributionsAssociatedToOriginRequestPolicy");
 static const int FIELD_LEVEL_ENCRYPTION_PROFILE_IN_USE_HASH = HashingUtils::HashString("FieldLevelEncryptionProfileInUse");
@@ -109,18 +109,19 @@ static const int TOO_MANY_PUBLIC_KEYS_IN_KEY_GROUP_HASH = HashingUtils::HashStri
 static const int INVALID_DEFAULT_ROOT_OBJECT_HASH = HashingUtils::HashString("InvalidDefaultRootObject");
 static const int ORIGIN_ACCESS_CONTROL_ALREADY_EXISTS_HASH = HashingUtils::HashString("OriginAccessControlAlreadyExists");
 static const int NO_SUCH_FIELD_LEVEL_ENCRYPTION_CONFIG_HASH = HashingUtils::HashString("NoSuchFieldLevelEncryptionConfig");
+static const int STAGING_DISTRIBUTION_IN_USE_HASH = HashingUtils::HashString("StagingDistributionInUse");
 static const int INVALID_WEB_A_C_L_ID_HASH = HashingUtils::HashString("InvalidWebACLId");
 static const int INVALID_ORIGIN_ACCESS_CONTROL_HASH = HashingUtils::HashString("InvalidOriginAccessControl");
 static const int STREAMING_DISTRIBUTION_NOT_DISABLED_HASH = HashingUtils::HashString("StreamingDistributionNotDisabled");
 static const int TOO_MANY_TRUSTED_SIGNERS_HASH = HashingUtils::HashString("TooManyTrustedSigners");
 static const int NO_SUCH_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_HASH = HashingUtils::HashString("NoSuchCloudFrontOriginAccessIdentity");
 static const int CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("CloudFrontOriginAccessIdentityAlreadyExists");
-static const int ILLEGAL_ORIGIN_ACCESS_CONFIGURATION_HASH = HashingUtils::HashString("IllegalOriginAccessConfiguration");
 static const int INVALID_FORWARD_COOKIES_HASH = HashingUtils::HashString("InvalidForwardCookies");
 static const int TRUSTED_KEY_GROUP_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TrustedKeyGroupDoesNotExist");
+static const int ILLEGAL_ORIGIN_ACCESS_CONFIGURATION_HASH = HashingUtils::HashString("IllegalOriginAccessConfiguration");
 static const int QUERY_ARG_PROFILE_EMPTY_HASH = HashingUtils::HashString("QueryArgProfileEmpty");
-static const int TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyDistributionsAssociatedToCachePolicy");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailed");
+static const int TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyDistributionsAssociatedToCachePolicy");
 static const int NO_SUCH_ORIGIN_ACCESS_CONTROL_HASH = HashingUtils::HashString("NoSuchOriginAccessControl");
 static const int TOO_MANY_COOKIE_NAMES_IN_WHITE_LIST_HASH = HashingUtils::HashString("TooManyCookieNamesInWhiteList");
 static const int TEST_FUNCTION_FAILED_HASH = HashingUtils::HashString("TestFunctionFailed");
@@ -139,8 +140,8 @@ static const int STREAMING_DISTRIBUTION_ALREADY_EXISTS_HASH = HashingUtils::Hash
 static const int NO_SUCH_RESPONSE_HEADERS_POLICY_HASH = HashingUtils::HashString("NoSuchResponseHeadersPolicy");
 static const int ILLEGAL_UPDATE_HASH = HashingUtils::HashString("IllegalUpdate");
 static const int TOO_MANY_DISTRIBUTIONS_WITH_SINGLE_FUNCTION_A_R_N_HASH = HashingUtils::HashString("TooManyDistributionsWithSingleFunctionARN");
-static const int CACHE_POLICY_ALREADY_EXISTS_HASH = HashingUtils::HashString("CachePolicyAlreadyExists");
 static const int NO_SUCH_ORIGIN_REQUEST_POLICY_HASH = HashingUtils::HashString("NoSuchOriginRequestPolicy");
+static const int CACHE_POLICY_ALREADY_EXISTS_HASH = HashingUtils::HashString("CachePolicyAlreadyExists");
 static const int TOO_MANY_DISTRIBUTION_C_N_A_M_ES_HASH = HashingUtils::HashString("TooManyDistributionCNAMEs");
 static const int INVALID_RELATIVE_PATH_HASH = HashingUtils::HashString("InvalidRelativePath");
 static const int INVALID_VIEWER_CERTIFICATE_HASH = HashingUtils::HashString("InvalidViewerCertificate");
@@ -430,11 +431,6 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_RESPONSE_HEADERS_POLICIES), false);
     return true;
   }
-  else if (hashCode == TOO_MANY_COOKIES_IN_CACHE_POLICY_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_COOKIES_IN_CACHE_POLICY), false);
-    return true;
-  }
   else if (hashCode == INVALID_REQUIRED_PROTOCOL_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_REQUIRED_PROTOCOL), false);
@@ -443,6 +439,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == TOO_MANY_DISTRIBUTIONS_WITH_LAMBDA_ASSOCIATIONS_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_DISTRIBUTIONS_WITH_LAMBDA_ASSOCIATIONS), false);
+    return true;
+  }
+  else if (hashCode == TOO_MANY_COOKIES_IN_CACHE_POLICY_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_COOKIES_IN_CACHE_POLICY), false);
     return true;
   }
   else if (hashCode == FUNCTION_SIZE_LIMIT_EXCEEDED_HASH)
@@ -560,14 +561,14 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_CACHE_BEHAVIORS), false);
     return true;
   }
-  else if (hashCode == TOO_MANY_HEADERS_IN_CACHE_POLICY_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_HEADERS_IN_CACHE_POLICY), false);
-    return true;
-  }
   else if (hashCode == TOO_MANY_ORIGIN_GROUPS_PER_DISTRIBUTION_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_ORIGIN_GROUPS_PER_DISTRIBUTION), false);
+    return true;
+  }
+  else if (hashCode == TOO_MANY_HEADERS_IN_CACHE_POLICY_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_HEADERS_IN_CACHE_POLICY), false);
     return true;
   }
   else if (hashCode == FIELD_LEVEL_ENCRYPTION_CONFIG_IN_USE_HASH)
@@ -620,6 +621,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::NO_SUCH_FIELD_LEVEL_ENCRYPTION_CONFIG), false);
     return true;
   }
+  else if (hashCode == STAGING_DISTRIBUTION_IN_USE_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::STAGING_DISTRIBUTION_IN_USE), false);
+    return true;
+  }
   else if (hashCode == INVALID_WEB_A_C_L_ID_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_WEB_A_C_L_ID), false);
@@ -650,11 +656,6 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_ALREADY_EXISTS), false);
     return true;
   }
-  else if (hashCode == ILLEGAL_ORIGIN_ACCESS_CONFIGURATION_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::ILLEGAL_ORIGIN_ACCESS_CONFIGURATION), false);
-    return true;
-  }
   else if (hashCode == INVALID_FORWARD_COOKIES_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_FORWARD_COOKIES), false);
@@ -665,19 +666,24 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TRUSTED_KEY_GROUP_DOES_NOT_EXIST), false);
     return true;
   }
+  else if (hashCode == ILLEGAL_ORIGIN_ACCESS_CONFIGURATION_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::ILLEGAL_ORIGIN_ACCESS_CONFIGURATION), false);
+    return true;
+  }
   else if (hashCode == QUERY_ARG_PROFILE_EMPTY_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::QUERY_ARG_PROFILE_EMPTY), false);
     return true;
   }
-  else if (hashCode == TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_CACHE_POLICY_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_CACHE_POLICY), false);
-    return true;
-  }
   else if (hashCode == PRECONDITION_FAILED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::PRECONDITION_FAILED), false);
+    return true;
+  }
+  else if (hashCode == TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_CACHE_POLICY_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_CACHE_POLICY), false);
     return true;
   }
   else if (hashCode == NO_SUCH_ORIGIN_ACCESS_CONTROL_HASH)
@@ -770,11 +776,6 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_DISTRIBUTIONS_WITH_SINGLE_FUNCTION_A_R_N), false);
     return true;
   }
-  else if (hashCode == CACHE_POLICY_ALREADY_EXISTS_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::CACHE_POLICY_ALREADY_EXISTS), false);
-    return true;
-  }
   return false;
 }
 
@@ -783,6 +784,11 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
   if (hashCode == NO_SUCH_ORIGIN_REQUEST_POLICY_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::NO_SUCH_ORIGIN_REQUEST_POLICY), false);
+    return true;
+  }
+  else if (hashCode == CACHE_POLICY_ALREADY_EXISTS_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::CACHE_POLICY_ALREADY_EXISTS), false);
     return true;
   }
   else if (hashCode == TOO_MANY_DISTRIBUTION_C_N_A_M_ES_HASH)

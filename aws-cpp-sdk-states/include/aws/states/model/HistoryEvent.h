@@ -897,37 +897,37 @@ namespace Model
 
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline const LambdaFunctionSucceededEventDetails& GetLambdaFunctionSucceededEventDetails() const{ return m_lambdaFunctionSucceededEventDetails; }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline bool LambdaFunctionSucceededEventDetailsHasBeenSet() const { return m_lambdaFunctionSucceededEventDetailsHasBeenSet; }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline void SetLambdaFunctionSucceededEventDetails(const LambdaFunctionSucceededEventDetails& value) { m_lambdaFunctionSucceededEventDetailsHasBeenSet = true; m_lambdaFunctionSucceededEventDetails = value; }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline void SetLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails&& value) { m_lambdaFunctionSucceededEventDetailsHasBeenSet = true; m_lambdaFunctionSucceededEventDetails = std::move(value); }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline HistoryEvent& WithLambdaFunctionSucceededEventDetails(const LambdaFunctionSucceededEventDetails& value) { SetLambdaFunctionSucceededEventDetails(value); return *this;}
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline HistoryEvent& WithLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails&& value) { SetLambdaFunctionSucceededEventDetails(std::move(value)); return *this;}

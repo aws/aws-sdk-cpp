@@ -18,7 +18,9 @@ CreatePortfolioShareRequest::CreatePortfolioShareRequest() :
     m_accountIdHasBeenSet(false),
     m_organizationNodeHasBeenSet(false),
     m_shareTagOptions(false),
-    m_shareTagOptionsHasBeenSet(false)
+    m_shareTagOptionsHasBeenSet(false),
+    m_sharePrincipals(false),
+    m_sharePrincipalsHasBeenSet(false)
 {
 }
 
@@ -53,6 +55,12 @@ Aws::String CreatePortfolioShareRequest::SerializePayload() const
   if(m_shareTagOptionsHasBeenSet)
   {
    payload.WithBool("ShareTagOptions", m_shareTagOptions);
+
+  }
+
+  if(m_sharePrincipalsHasBeenSet)
+  {
+   payload.WithBool("SharePrincipals", m_sharePrincipals);
 
   }
 

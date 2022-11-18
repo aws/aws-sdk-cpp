@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about a failed lambda function schedule event that occurred
+   * <p>Contains details about a failed Lambda function schedule event that occurred
    * during an execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionScheduleFailedEventDetails">AWS
    * API Reference</a></p>

@@ -1106,8 +1106,8 @@ namespace EC2
         /**
          * <p>Removes your Amazon Web Services account from the launch permissions for the
          * specified AMI. For more information, see <a
-         * href="https://docs.aws.amazon.com/">Cancel sharing an AMI with your Amazon Web
-         * Services account</a> in the <i>Amazon Elastic Compute Cloud User
+         * href="https://docs.aws.amazon.com/">Cancel having an AMI shared with your Amazon
+         * Web Services account</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">AWS
          * API Reference</a></p>
@@ -1266,7 +1266,7 @@ namespace EC2
          * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p> <p>For more information about the prerequisites and
          * limits when copying an AMI, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
          * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">AWS API
@@ -1731,8 +1731,8 @@ namespace EC2
          * those volumes. When you launch an instance from this new AMI, the instance
          * automatically launches with those additional volumes.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
-         * Amazon EBS-Backed Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
+         * an Amazon EBS-backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">AWS API
          * Reference</a></p>
@@ -4648,7 +4648,7 @@ namespace EC2
          * Bin retention rule, the AMI is retained in the Recycle Bin for the specified
          * retention period. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p> <p>When you
+         * Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When you
          * deregister an AMI, it doesn't affect any instances that you've already launched
          * from the AMI. You'll continue to incur usage costs for those instances until you
          * terminate them.</p> <p>When you deregister an Amazon EBS-backed AMI, it doesn't
@@ -11206,8 +11206,8 @@ namespace EC2
          * <p>Registers an AMI. When you're creating an AMI, this is the final step you
          * must complete before you can launch an instance from the AMI. For more
          * information about creating AMIs, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
-         * your own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create
+         * your own AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *  <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
          * yourself. We recommend that you always use <a>CreateImage</a> unless you have a
@@ -11243,8 +11243,8 @@ namespace EC2
          * matching billing product code, the Reserved Instance will not be applied to the
          * On-Demand Instance. For information about how to obtain the platform details and
          * billing information of an AMI, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
-         * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
+         * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">AWS
          * API Reference</a></p>

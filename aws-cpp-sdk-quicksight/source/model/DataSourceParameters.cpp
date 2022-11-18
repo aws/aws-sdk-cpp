@@ -40,7 +40,8 @@ DataSourceParameters::DataSourceParameters() :
     m_teradataParametersHasBeenSet(false),
     m_twitterParametersHasBeenSet(false),
     m_amazonOpenSearchParametersHasBeenSet(false),
-    m_exasolParametersHasBeenSet(false)
+    m_exasolParametersHasBeenSet(false),
+    m_databricksParametersHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ DataSourceParameters::DataSourceParameters(JsonView jsonValue) :
     m_teradataParametersHasBeenSet(false),
     m_twitterParametersHasBeenSet(false),
     m_amazonOpenSearchParametersHasBeenSet(false),
-    m_exasolParametersHasBeenSet(false)
+    m_exasolParametersHasBeenSet(false),
+    m_databricksParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -227,6 +229,13 @@ DataSourceParameters& DataSourceParameters::operator =(JsonView jsonValue)
     m_exasolParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DatabricksParameters"))
+  {
+    m_databricksParameters = jsonValue.GetObject("DatabricksParameters");
+
+    m_databricksParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -363,6 +372,12 @@ JsonValue DataSourceParameters::Jsonize() const
   if(m_exasolParametersHasBeenSet)
   {
    payload.WithObject("ExasolParameters", m_exasolParameters.Jsonize());
+
+  }
+
+  if(m_databricksParametersHasBeenSet)
+  {
+   payload.WithObject("DatabricksParameters", m_databricksParameters.Jsonize());
 
   }
 

@@ -28,7 +28,8 @@ ProvisioningArtifactDetail::ProvisioningArtifactDetail() :
     m_active(false),
     m_activeHasBeenSet(false),
     m_guidance(ProvisioningArtifactGuidance::NOT_SET),
-    m_guidanceHasBeenSet(false)
+    m_guidanceHasBeenSet(false),
+    m_sourceRevisionHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ProvisioningArtifactDetail::ProvisioningArtifactDetail(JsonView jsonValue) :
     m_active(false),
     m_activeHasBeenSet(false),
     m_guidance(ProvisioningArtifactGuidance::NOT_SET),
-    m_guidanceHasBeenSet(false)
+    m_guidanceHasBeenSet(false),
+    m_sourceRevisionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +100,13 @@ ProvisioningArtifactDetail& ProvisioningArtifactDetail::operator =(JsonView json
     m_guidanceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceRevision"))
+  {
+    m_sourceRevision = jsonValue.GetString("SourceRevision");
+
+    m_sourceRevisionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +151,12 @@ JsonValue ProvisioningArtifactDetail::Jsonize() const
   if(m_guidanceHasBeenSet)
   {
    payload.WithString("Guidance", ProvisioningArtifactGuidanceMapper::GetNameForProvisioningArtifactGuidance(m_guidance));
+  }
+
+  if(m_sourceRevisionHasBeenSet)
+  {
+   payload.WithString("SourceRevision", m_sourceRevision);
+
   }
 
   return payload;
